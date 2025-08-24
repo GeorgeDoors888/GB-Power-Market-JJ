@@ -1,0 +1,12 @@
+demand:
+  DEMAND: https://data.elexon.co.uk/bmrs/api/v1/demand
+  ROLLINGSYSTEMDEMAND: https://data.elexon.co.uk/bmrs/api/v1/demand/rollingSystemDemand
+  STREAM: https://data.elexon.co.uk/bmrs/api/v1/demand/stream
+generation_forecast:
+  DAILY: https://data.elexon.co.uk/bmrs/api/v1/forecast/availability/daily
+  HISTORY: https://data.elexon.co.uk/bmrs/api/v1/forecast/availability/daily/history
+  WEEKLY: https://data.elexon.co.uk/bmrs/api/v1/forecast/availability/weekly
+system:
+  FREQUENCY: https://data.elexon.co.uk/bmrs/api/v1/system/frequency
+  STREAM: https://data.elexon.co.uk/bmrs/api/v1/system/frequency/stream
+  WARNINGS: https://data.elexon.co.uk/bmrs/api/v1/system/warnings

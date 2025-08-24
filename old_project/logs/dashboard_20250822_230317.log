@@ -1,0 +1,41 @@
+
+  You can now view your Streamlit app in your browser.
+
+  Local URL: http://localhost:8505
+  Network URL: http://192.168.1.190:8505
+  External URL: http://109.149.1.166:8505
+
+2025-08-22 23:03:49.471 Uncaught app execution
+Traceback (most recent call last):
+  File "/Users/georgemajor/Jibber Jabber ChatGPT/8_august_jibber_jabber/venv/lib/python3.13/site-packages/streamlit/runtime/scriptrunner/exec_code.py", line 128, in exec_func_with_error_handling
+    result = func()
+  File "/Users/georgemajor/Jibber Jabber ChatGPT/8_august_jibber_jabber/venv/lib/python3.13/site-packages/streamlit/runtime/scriptrunner/script_runner.py", line 669, in code_to_exec
+    exec(code, module.__dict__)  # noqa: S102
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/georgemajor/Jibber Jabber ChatGPT/8_august_jibber_jabber/gb_energy_dashboard_improved.py", line 1397, in <module>
+    main()
+    ~~~~^^
+  File "/Users/georgemajor/Jibber Jabber ChatGPT/8_august_jibber_jabber/gb_energy_dashboard_improved.py", line 807, in main
+    st.plotly_chart(fig, use_container_width=True)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/georgemajor/Jibber Jabber ChatGPT/8_august_jibber_jabber/venv/lib/python3.13/site-packages/streamlit/runtime/metrics_util.py", line 443, in wrapped_func
+    result = non_optional_func(*args, **kwargs)
+  File "/Users/georgemajor/Jibber Jabber ChatGPT/8_august_jibber_jabber/venv/lib/python3.13/site-packages/streamlit/elements/plotly_chart.py", line 556, in plotly_chart
+    plotly_chart_proto.id = compute_and_register_element_id(
+                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        "plotly_chart",
+        ^^^^^^^^^^^^^^^
+    ...<8 lines>...
+        use_container_width=use_container_width,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/georgemajor/Jibber Jabber ChatGPT/8_august_jibber_jabber/venv/lib/python3.13/site-packages/streamlit/elements/lib/utils.py", line 274, in compute_and_register_element_id
+    _register_element_id(ctx, element_type_for_error, element_id)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/georgemajor/Jibber Jabber ChatGPT/8_august_jibber_jabber/venv/lib/python3.13/site-packages/streamlit/elements/lib/utils.py", line 148, in _register_element_id
+    raise StreamlitDuplicateElementId(element_type)
+streamlit.errors.StreamlitDuplicateElementId: There are multiple `plotly_chart` elements with the same auto-generated ID. When this element is created, it is assigned an internal ID based on the element type and provided parameters. Multiple elements with the same type and parameters will cause this error.
+
+To fix this error, please pass a unique `key` argument to the `plotly_chart` element.
+  Stopping...

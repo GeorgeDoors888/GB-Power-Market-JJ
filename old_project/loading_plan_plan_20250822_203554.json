@@ -1,0 +1,43 @@
+{
+  "loading_steps": [
+    {
+      "source_category": "demand",
+      "target_table": "uk_energy_prod.elexon_demand_outturn",
+      "file_count": 8,
+      "sample_files": [
+        "demand/demand_2016-01-01.json",
+        "demand/demand_2016-01-02.json",
+        "demand/demand_2016-01-03.json"
+      ],
+      "loading_command": "bq load --source_format=CSV uk_energy_prod.elexon_demand_outturn gs://elexon-historical-data-storage/demand/*",
+      "validation_query": "SELECT COUNT(*) as row_count, MIN(timestamp_column) as min_date, MAX(timestamp_column) as max_date FROM uk_energy_prod.elexon_demand_outturn"
+    },
+    {
+      "source_category": "frequency",
+      "target_table": "uk_energy_data.elexon_frequency",
+      "file_count": 8,
+      "sample_files": [
+        "frequency/frequency_2016-01-01.json",
+        "frequency/frequency_2016-01-02.json",
+        "frequency/frequency_2016-01-03.json"
+      ],
+      "loading_command": "bq load --source_format=CSV uk_energy_data.elexon_frequency gs://elexon-historical-data-storage/frequency/*",
+      "validation_query": "SELECT COUNT(*) as row_count, MIN(timestamp_column) as min_date, MAX(timestamp_column) as max_date FROM uk_energy_data.elexon_frequency"
+    },
+    {
+      "source_category": "generation",
+      "target_table": "uk_energy_prod.elexon_generation_outturn",
+      "file_count": 9,
+      "sample_files": [
+        "generation/generation_2016-01-01.json",
+        "generation/generation_2016-01-02.json",
+        "generation/generation_2016-01-03.json"
+      ],
+      "loading_command": "bq load --source_format=CSV uk_energy_prod.elexon_generation_outturn gs://elexon-historical-data-storage/generation/*",
+      "validation_query": "SELECT COUNT(*) as row_count, MIN(timestamp_column) as min_date, MAX(timestamp_column) as max_date FROM uk_energy_prod.elexon_generation_outturn"
+    }
+  ],
+  "estimated_row_count": 0,
+  "estimated_size_bytes": 0,
+  "timestamp": "2025-08-22T20:35:54.035712"
+}

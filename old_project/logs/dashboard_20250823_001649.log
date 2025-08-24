@@ -1,0 +1,101 @@
+
+  You can now view your Streamlit app in your browser.
+
+  Local URL: http://localhost:8501
+  Network URL: http://192.168.1.190:8501
+  External URL: http://109.149.1.166:8501
+
+2025-08-23 00:16:58.602 Uncaught app execution
+Traceback (most recent call last):
+  File "/Users/georgemajor/Jibber Jabber ChatGPT/8_august_jibber_jabber/venv/lib/python3.13/site-packages/streamlit/runtime/caching/hashing.py", line 616, in _to_bytes
+    reduce_data = obj.__reduce__()
+  File "/opt/homebrew/Cellar/python@3.13/3.13.5/Frameworks/Python.framework/Versions/3.13/lib/python3.13/copyreg.py", line 90, in _reduce_ex
+    dict = getstate()
+  File "/Users/georgemajor/Jibber Jabber ChatGPT/8_august_jibber_jabber/venv/lib/python3.13/site-packages/google/cloud/client/__init__.py", line 212, in __getstate__
+    raise PicklingError(
+    ...<6 lines>...
+    )
+_pickle.PicklingError: Pickling client objects is explicitly not supported.
+Clients have non-trivial state that is local and unpickleable.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/georgemajor/Jibber Jabber ChatGPT/8_august_jibber_jabber/venv/lib/python3.13/site-packages/streamlit/runtime/caching/cache_utils.py", line 467, in _make_value_key
+    update_hash(
+    ~~~~~~~~~~~^
+        arg_value,
+        ^^^^^^^^^^
+    ...<3 lines>...
+        hash_source=func,
+        ^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/georgemajor/Jibber Jabber ChatGPT/8_august_jibber_jabber/venv/lib/python3.13/site-packages/streamlit/runtime/caching/hashing.py", line 170, in update_hash
+    ch.update(hasher, val)
+    ~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/georgemajor/Jibber Jabber ChatGPT/8_august_jibber_jabber/venv/lib/python3.13/site-packages/streamlit/runtime/caching/hashing.py", line 346, in update
+    b = self.to_bytes(obj)
+  File "/Users/georgemajor/Jibber Jabber ChatGPT/8_august_jibber_jabber/venv/lib/python3.13/site-packages/streamlit/runtime/caching/hashing.py", line 328, in to_bytes
+    b = b"%s:%s" % (tname, self._to_bytes(obj))
+                           ~~~~~~~~~~~~~~^^^^^
+  File "/Users/georgemajor/Jibber Jabber ChatGPT/8_august_jibber_jabber/venv/lib/python3.13/site-packages/streamlit/runtime/caching/hashing.py", line 618, in _to_bytes
+    raise UnhashableTypeError() from ex
+streamlit.runtime.caching.cache_errors.UnhashableTypeError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/georgemajor/Jibber Jabber ChatGPT/8_august_jibber_jabber/venv/lib/python3.13/site-packages/streamlit/runtime/scriptrunner/exec_code.py", line 128, in exec_func_with_error_handling
+    result = func()
+  File "/Users/georgemajor/Jibber Jabber ChatGPT/8_august_jibber_jabber/venv/lib/python3.13/site-packages/streamlit/runtime/scriptrunner/script_runner.py", line 669, in code_to_exec
+    exec(code, module.__dict__)  # noqa: S102
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/georgemajor/Jibber Jabber ChatGPT/8_august_jibber_jabber/live_energy_dashboard.py", line 401, in <module>
+    main()
+    ~~~~^^
+  File "/Users/georgemajor/Jibber Jabber ChatGPT/8_august_jibber_jabber/live_energy_dashboard.py", line 332, in main
+    status = get_data_update_status(client)
+  File "/Users/georgemajor/Jibber Jabber ChatGPT/8_august_jibber_jabber/venv/lib/python3.13/site-packages/streamlit/runtime/caching/cache_utils.py", line 227, in __call__
+    return self._get_or_create_cached_value(args, kwargs, spinner_message)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/georgemajor/Jibber Jabber ChatGPT/8_august_jibber_jabber/venv/lib/python3.13/site-packages/streamlit/runtime/caching/cache_utils.py", line 242, in _get_or_create_cached_value
+    value_key = _make_value_key(
+        cache_type=self._info.cache_type,
+    ...<3 lines>...
+        hash_funcs=self._info.hash_funcs,
+    )
+  File "/Users/georgemajor/Jibber Jabber ChatGPT/8_august_jibber_jabber/venv/lib/python3.13/site-packages/streamlit/runtime/caching/cache_utils.py", line 475, in _make_value_key
+    raise UnhashableParamError(cache_type, func, arg_name, arg_value, exc)
+  File "/Users/georgemajor/Jibber Jabber ChatGPT/8_august_jibber_jabber/venv/lib/python3.13/site-packages/streamlit/runtime/caching/cache_utils.py", line 467, in _make_value_key
+    update_hash(
+    ~~~~~~~~~~~^
+        arg_value,
+        ^^^^^^^^^^
+    ...<3 lines>...
+        hash_source=func,
+        ^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/georgemajor/Jibber Jabber ChatGPT/8_august_jibber_jabber/venv/lib/python3.13/site-packages/streamlit/runtime/caching/hashing.py", line 170, in update_hash
+    ch.update(hasher, val)
+    ~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/georgemajor/Jibber Jabber ChatGPT/8_august_jibber_jabber/venv/lib/python3.13/site-packages/streamlit/runtime/caching/hashing.py", line 346, in update
+    b = self.to_bytes(obj)
+  File "/Users/georgemajor/Jibber Jabber ChatGPT/8_august_jibber_jabber/venv/lib/python3.13/site-packages/streamlit/runtime/caching/hashing.py", line 328, in to_bytes
+    b = b"%s:%s" % (tname, self._to_bytes(obj))
+                           ~~~~~~~~~~~~~~^^^^^
+  File "/Users/georgemajor/Jibber Jabber ChatGPT/8_august_jibber_jabber/venv/lib/python3.13/site-packages/streamlit/runtime/caching/hashing.py", line 618, in _to_bytes
+    raise UnhashableTypeError() from ex
+streamlit.runtime.caching.cache_errors.UnhashableParamError: Cannot hash argument 'client' (of type `google.cloud.bigquery.client.Client`) in 'get_data_update_status'.
+
+To address this, you can tell Streamlit not to hash this argument by adding a
+leading underscore to the argument's name in the function signature:
+
+```
+@st.cache_data
+def get_data_update_status(_client, ...):
+    ...
+```
+            
+  Stopping...

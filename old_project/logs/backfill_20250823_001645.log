@@ -1,0 +1,38 @@
+2025-08-23 00:16:48,786 - INFO - ✅ Data Backfiller initialized
+2025-08-23 00:16:48,786 - INFO - 🔄 Starting backfill for elexon_demand_outturn
+Traceback (most recent call last):
+  File "/Users/georgemajor/Jibber Jabber ChatGPT/8_august_jibber_jabber/backfill_missing_data.py", line 305, in <module>
+    backfiller.backfill_all_tables(start_date, end_date, args.tables)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/georgemajor/Jibber Jabber ChatGPT/8_august_jibber_jabber/backfill_missing_data.py", line 281, in backfill_all_tables
+    success = self.backfill_table(table_name, start_date, end_date)
+  File "/Users/georgemajor/Jibber Jabber ChatGPT/8_august_jibber_jabber/backfill_missing_data.py", line 240, in backfill_table
+    missing_dates = self.find_missing_dates(table_name, start_date, end_date)
+  File "/Users/georgemajor/Jibber Jabber ChatGPT/8_august_jibber_jabber/backfill_missing_data.py", line 134, in find_missing_dates
+    results = query_job.result()
+  File "/Users/georgemajor/Jibber Jabber ChatGPT/8_august_jibber_jabber/venv/lib/python3.13/site-packages/google/cloud/bigquery/job/query.py", line 1706, in result
+    while not is_job_done():
+              ~~~~~~~~~~~^^
+  File "/Users/georgemajor/Jibber Jabber ChatGPT/8_august_jibber_jabber/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+        target,
+    ...<3 lines>...
+        on_error=on_error,
+    )
+  File "/Users/georgemajor/Jibber Jabber ChatGPT/8_august_jibber_jabber/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+        exc,
+    ...<6 lines>...
+        timeout,
+    )
+  File "/Users/georgemajor/Jibber Jabber ChatGPT/8_august_jibber_jabber/venv/lib/python3.13/site-packages/google/api_core/retry/retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/Users/georgemajor/Jibber Jabber ChatGPT/8_august_jibber_jabber/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+  File "/Users/georgemajor/Jibber Jabber ChatGPT/8_august_jibber_jabber/venv/lib/python3.13/site-packages/google/cloud/bigquery/job/query.py", line 1655, in is_job_done
+    raise job_failed_exception
+google.api_core.exceptions.BadRequest: 400 Unrecognized name: settlement_date; Did you mean settlementDate? at [4:15]; reason: invalidQuery, location: query, message: Unrecognized name: settlement_date; Did you mean settlementDate? at [4:15]
+
+Location: europe-west2
+Job ID: 8e6015be-5260-4489-94f0-f42b982268fd
+

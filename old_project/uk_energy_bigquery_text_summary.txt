@@ -1,0 +1,108 @@
+UK ENERGY DATASET IN BIGQUERY - COMPREHENSIVE SUMMARY
+==================================================
+
+Generated: 2025-08-23
+Project: UK Energy Data Intelligence Platform
+Location: europe-west2 (London)
+
+OVERVIEW
+--------
+This document provides a comprehensive overview of the UK energy dataset stored in BigQuery. The dataset contains 97 tables, including 88 tables from National Grid ESO (NESO) and 9 tables from Elexon. All data is properly stored in the europe-west2 (London) region, complying with UK data residency requirements.
+
+DATA SOURCES
+-----------
+
+NESO Data (88 tables):
+* Skip rates data (29 tables)
+* Dispatch transparency (10 tables)
+* Static reference data (10 tables)
+* Network infrastructure (24 tables)
+* Balancing mechanisms (2 tables)
+* Demand forecasts (5 tables)
+* Capacity market (4 tables)
+* Carbon intensity (2 tables)
+* Generation data (1 table)
+* Constraint information (1 table)
+
+Elexon Data (9 tables):
+* Demand outturn
+* Generation outturn
+* System frequency
+* System warnings
+
+DATA TIMEFRAMES
+--------------
+Most time-series data covers 2024-2025, with historical data back to 2020. Tables are categorized as:
+
+1. Live production tables - Empty or minimal rows, ready for data collection
+2. Temporary staging tables - Containing test data (100 rows) with "_temp_" in name
+3. Historical imports - Containing data from previous years (2016 onwards)
+
+Example date ranges:
+* elexon_demand_outturn: 2025-08-08 (test data)
+* elexon_demand_outturn_temp: 2025-08-16 to 2025-08-18 (test data)
+* neso_dispatch_transparency tables: April 2020 to March 2025
+
+KEY DATA TABLES
+--------------
+
+Demand Data:
+* neso_demand_forecasts - Daily demand projections
+* elexon_demand_outturn - Actual demand recorded
+  - Key fields: settlementDate, settlementPeriod, demand, publishTime
+
+Generation Data:
+* elexon_generation_outturn - Actual generation by type
+  - Includes: total output, fuel type breakdown, timestamps
+
+Balancing Mechanism Data:
+* neso_dispatch_transparency_all_boas_* - Five tables covering 2020-2025
+  - Contains detailed balancing actions by the system operator
+
+Geographic Data:
+* neso_dno_licence_areas - Distribution Network Operator boundaries
+* neso_generation_charging_zones - Generation charging zones
+* neso_grid_supply_points - Grid connection points (2018-2025 versions)
+  - All include GeoJSON data for spatial visualization
+
+Reference Data:
+* neso_transmission_capacity_tec_register - Capacity information
+* neso_school_holiday - School holiday dates affecting demand
+* neso_static_system_operating_plan - System operation parameters
+
+DATA STRUCTURE
+-------------
+
+Schema Design:
+* Time-series tables include timestamp, date, period, and measurement fields
+* Geographic tables include GeoJSON spatial data with WGS84 coordinates
+* Reference tables include static identifiers and metadata
+
+Data Types:
+* DATE - Calendar dates
+* TIMESTAMP/DATETIME - Time-precise events
+* INTEGER - Discrete values and IDs
+* FLOAT - Continuous measurements
+* STRING - Textual data and identifiers
+* RECORD - Nested structures (particularly in Elexon import tables)
+
+DATA QUALITY ASSESSMENT
+---------------------
+1. Completeness: Many production tables are empty, ready for data collection
+2. Test Data: Temporary tables contain synthetic test data (100 rows)
+3. Schema Design: Proper typing with consistent naming conventions
+4. Historical Coverage: Data back to 2016 for some metrics, comprehensive from 2020
+5. Spatial Data: Geographic information enables UK energy system spatial analysis
+
+RECOMMENDATIONS
+-------------
+1. Implement automated data collection for empty production tables
+2. Standardize numeric data storage (use FLOAT/INTEGER, not STRING)
+3. Verify historical import date ranges align with intended coverage
+4. Mark or remove test data tables to avoid confusion
+5. Create comprehensive data dictionary and schema documentation
+6. Design optimized views for frequently accessed data patterns
+
+CONCLUSION
+---------
+The BigQuery dataset provides a comprehensive foundation for UK energy system analysis. While many tables contain test data or are empty, the structure is robust and ready for production use. The geographic data enables spatial analysis, while historical data supports long-term studies. The proper regional placement ensures the dataset meets UK regulatory requirements.

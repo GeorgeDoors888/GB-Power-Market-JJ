@@ -1,0 +1,1201 @@
+🚀 NESO COMPREHENSIVE DATA DOWNLOADER
+============================================================
+📅 Target: All NESO data (excluding BOD and frequency)
+🌤️  Includes: Met Office weather data
+🔍 Features: Proper rate limiting and cloud storage
+
+🔍 DISCOVERING NESO ORGANIZATIONS...
+   Found 15 organizations
+   📁 ancillary-services - Ancillary services
+   📁 balancing - Balancing costs
+   📁 carbon-intensity1 - Carbon intensity
+   📁 connection-registers - Connection registers
+   📁 constraint-management - Constraint management
+   📁 plans-reports-analysis - Data Portal changes and known issues
+   📁 demand - Demand
+   📁 dfs - Demand Flexibility Service
+   📁 electricity-market-reform - Electricity Market Reform
+   📁 future-energy-scenarios - FES: Pathways to Net Zero
+   📁 generation - Generation
+   📁 interconnectors - Interconnectors
+   📁 network-charges - Network charges
+   📁 system - System
+   📁 trade-data - Trading
+🔍 DISCOVERING NESO DATASETS...
+   Found 120 total packages
+   📊 Processed 10/120 packages...
+   📊 Processed 20/120 packages...
+   📊 Processed 30/120 packages...
+   📊 Processed 40/120 packages...
+   📊 Processed 50/120 packages...
+   📊 Processed 60/120 packages...
+   📊 Processed 70/120 packages...
+   📊 Processed 80/120 packages...
+   📊 Processed 90/120 packages...
+   📊 Processed 100/120 packages...
+   📊 Processed 110/120 packages...
+   📊 Processed 120/120 packages...
+✅ Discovered 120 detailed datasets
+🔍 FILTERING DATASETS (excluding BOD and frequency data)...
+   ✅ Included: 14 Days Ahead Operational Metered Wind Forecasts
+   ✅ Included: 14 Days Ahead Wind Forecasts
+   ✅ Included: Day Ahead Demand Forecast
+   ✅ Included: 2-14 Days Ahead Demand Forecast
+   ✅ Included: 24 Months Ahead Constraint Cost Forecast
+   ✅ Included: 24 Months Ahead Constraint Limits
+   ✅ Included: 2 Day Ahead Demand Forecast
+   ✅ Included: 7 Day Ahead Demand Forecast
+   ✅ Included: Assistance for Areas of High Electricity Distribution Costs (AAHEDC) Tariffs
+   ✅ Included: Aggregated Balancing Services Adjustment Data (BSAD)
+   ✅ Included: Ancillary Services Important Industry Notifications
+   ✅ Included: Balancing Reserve Auction Requirement Forecast
+   ✅ Included: Balancing Services Adjustment Data (BSAD) Forward Contracts
+   ✅ Included: Balancing Services Contract Enactment
+   ✅ Included: Daily Balancing Services Use of System (BSUoS) Forecast
+   ✅ Included: BritNed - NESO's Intraday Trading Limit
+   ✅ Included: BSUoS Fixed Tariffs
+   ✅ Included: Monthly Balancing Services Use of System (BSUoS) Forecast Data
+   ❌ Excluded: Capacity Market Register (contains 'bod')
+   ✅ Included: Carbon Intensity of Balancing Actions
+   ✅ Included: Constraint Breakdown Costs and Volume
+   ✅ Included: Constraint Management Intertrip Service Information (CMIS)
+   ✅ Included: Contract Transfer of Obligation
+   ✅ Included: Country Carbon Intensity Forecast
+   ✅ Included: Current Balancing Services Use of System (BSUoS) Charges
+   ✅ Included: Daily Balancing Services Use of System (BSUoS) Cost Data
+   ✅ Included: Daily Balancing Services Use of System (BSUoS) Volume Data
+   ✅ Included: Demand Data Update
+   ✅ Included: Daily operational planning margin requirement (OPMR)
+   ✅ Included: Daily Wind Availability
+   ✅ Included: Data Portal: Planned Changes & Known Issues
+   ✅ Included: Day Ahead Constraint Flows and Limits
+   ✅ Included: Day Ahead Half Hourly Demand Forecast Performance
+   ✅ Included: Day Ahead Wind Forecast
+   ✅ Included: Demand Flexibility Service
+   ❌ Excluded: Demand Flexibility Service 2023/24 (contains 'bid')
+   ❌ Excluded: Demand Flexibility Service 2022/23: Live Events (contains 'bid')
+   ❌ Excluded: Demand Flexibility Service 2022/23: Test Events (contains 'bid')
+   ✅ Included: Demand Profile Dates
+   ✅ Included: Disaggregated Balancing Services Adjustment Data (BSAD)
+   ❌ Excluded: Dispatch Transparency (contains 'bid')
+   ✅ Included: Dynamic Containment 4 Day Forecast
+   ✅ Included: Dynamic Containment, Regulation and Moderation auction results
+   ✅ Included: Dynamic Moderation Requirements
+   ✅ Included: Dynamic Regulation Requirements
+   ✅ Included: Enduring Auction Capability (EAC) auction results
+   ✅ Included: EAC-BR Auction Results
+   ✅ Included: EAC-BR Mock Auction Results
+   ✅ Included: EAC mock auction results
+   ✅ Included: ElecLink - NESO's Net Transfer Capacity
+   ✅ Included: Embedded Register
+   ✅ Included: Embedded Wind and Solar Forecasts
+   ✅ Included: ETYS GB Transmission System Boundaries
+   ✅ Included: FES: Pathways to Net Zero – Electricity Demand Summary Data table (ED1)
+   ✅ Included: FES: Pathways to Net Zero – European Electricity Supply Data Table (ES2)
+   ✅ Included: FES: Pathways to Net Zero – Flexibility Data table (FLX1)
+   ✅ Included: FES: Pathways to Net Zero – Natural Gas demand definitions Data table (ED4)
+   ✅ Included: FES: Pathways to Net Zero – Natural Gas, Residential and non-domestic (I&C) Heat Demand Summary Data table (ED3)
+   ✅ Included: FES: Pathways to Net Zero – Road Transport Notes Data Table (ED6)
+   ✅ Included: FES: Pathways to Net Zero – Road Transport Summary Data table (ED5)
+   ✅ Included: FES: Pathways to Net Zero – Whole System & Gas Supply Data table (WS1)
+   ✅ Included: FES: Pathways to Net Zero – Whole System & Gas Supply - Emissions Data table (WS2)
+   ❌ Excluded: Firm Frequency Response (FFR) Post Tender Reports (contains 'frequency')
+   ✅ Included: FES: Pathways to Net Zero – Electricity Supply Data Table (ES1)
+   ✅ Included: FES: Pathways to Net Zero Building Block Data
+   ❌ Excluded: Great Britain System Inertia Bid and Offer Costs (contains 'bid')
+   ✅ Included: GIS Boundaries for GB DNO Licence Areas
+   ✅ Included: GIS Boundaries for GB Generation Charging Zones
+   ✅ Included: GIS Boundaries for GB Grid Supply Points
+   ✅ Included: Historic Demand Data
+   ✅ Included: Historic generation mix and carbon intensity
+   ✅ Included: Historic GTMA (Grid Trade Master Agreement) Trades Data
+   ✅ Included: IFA - NESO's Intraday Transfer Limit
+   ✅ Included: IFA2 - NESO's Intraday Transfer Limit
+   ✅ Included: Index Linked Contracted Energy Volume
+   ✅ Included: Interconnector Register
+   ❌ Excluded: Interconnector Requirement and Auction Summary Data (contains 'bid')
+   ✅ Included: Levelised cost of green hydrogen
+   ✅ Included: Local Authority Level Spatial Heat Model Outputs (FES)
+   ✅ Included: Long Term (2-52 weeks ahead) National Demand Forecast
+   ✅ Included: Long-Term Forecasts for DC, DM and DR Requirements
+   ✅ Included: Monthly operational metered wind output
+   ✅ Included: National Carbon Intensity Forecast
+   ✅ Included: National Demand Balancing Mechanism Units
+   ✅ Included: Daily & Weekly NRAPM (Negative Reserve Active Power Margin) Forecast
+   ✅ Included: NemoLink - NESO's Net Transfer Capacity
+   ✅ Included: Non-BM ancillary service dispatch platform (ASDP) instructions
+   ✅ Included: Non-BM Ancillary Service Dispatch Platform (ASDP) Window Prices
+   ✅ Included: North Sea Link - NESO's Net Transfer Capacity
+   ✅ Included: Obligatory Reactive Power Service (ORPS)
+   ❌ Excluded: Optional Downward Flexibility Management (ODFM) Market Information (contains 'frequency')
+   ✅ Included: Voltage System Costs
+   ❌ Excluded: Phase 2: FFR Auction Results Summary (contains 'frequency')
+   ❌ Excluded: Quick Reserve Auction Requirement Forecast (contains 'frequency')
+   ✅ Included: Regional breakdown of FES data (Electricity)
+   ✅ Included: Regional Carbon Intensity Forecast
+   ✅ Included: School Holiday Percentages
+   ✅ Included: Short Term Operating Reserve (STOR) Day Ahead Auction Results
+   ✅ Included: Short Term Operating Reserve (STOR) day ahead buy curve
+   ✅ Included: Skip Rates
+   ✅ Included: Stability Pathfinder service information
+   ❌ Excluded: Static Firm Frequency Response auction results (contains 'frequency')
+   ❌ Excluded: Static Firm Frequency Response Requirement (contains 'frequency')
+   ✅ Included: Short Term Operating Reserve (STOR) Windows
+   ✅ Included: Super Stable Export Limit Contract Enactment
+   ❌ Excluded: System Frequency (contains 'frequency')
+   ✅ Included: System Inertia
+   ❌ Excluded: System Inertia Cost (contains 'offer')
+   ✅ Included: System Operating Plan (SOP)
+   ✅ Included: Thermal Constraint Costs
+   ✅ Included: Transmission Entry Capacity (TEC) register
+   ✅ Included: Transmission Losses
+   ✅ Included: Transmission Network Use of System (TNUoS) Tariffs
+   ✅ Included: Upcoming trades
+   ✅ Included: Viking Link - NESO's Net Transfer Capacity
+   ✅ Included: Week Ahead Overnight Voltage Requirement
+   ✅ Included: Weekly operational planning margin requirement (OPMR)
+   ✅ Included: Weekly Wind Availability
+   ✅ Included: Wind BOA Volumes
+   ✅ Included: Year Ahead Constraint Limits
+📊 FILTERING RESULTS:
+   ✅ Included: 105 datasets
+   ❌ Excluded: 15 datasets (BOD/frequency)
+🌤️  CHECKING FOR MET OFFICE WEATHER DATA...
+   🌤️  Found: 14 Days Ahead Operational Metered Wind Forecasts
+   🌤️  Found: 14 Days Ahead Wind Forecasts
+   🌤️  Found: Day Ahead Demand Forecast
+   🌤️  Found: 2-14 Days Ahead Demand Forecast
+   🌤️  Found: 24 Months Ahead Constraint Cost Forecast
+   🌤️  Found: 2 Day Ahead Demand Forecast
+   🌤️  Found: 7 Day Ahead Demand Forecast
+   🌤️  Found: Assistance for Areas of High Electricity Distribution Costs (AAHEDC) Tariffs
+   🌤️  Found: Balancing Reserve Auction Requirement Forecast
+   🌤️  Found: Daily Balancing Services Use of System (BSUoS) Forecast
+   🌤️  Found: BSUoS Fixed Tariffs
+   🌤️  Found: Monthly Balancing Services Use of System (BSUoS) Forecast Data
+   🌤️  Found: Country Carbon Intensity Forecast
+   🌤️  Found: Demand Data Update
+   🌤️  Found: Daily operational planning margin requirement (OPMR)
+   🌤️  Found: Daily Wind Availability
+   🌤️  Found: Day Ahead Half Hourly Demand Forecast Performance
+   🌤️  Found: Day Ahead Wind Forecast
+   🌤️  Found: Demand Profile Dates
+   🌤️  Found: Dynamic Containment 4 Day Forecast
+   🌤️  Found: Dynamic Moderation Requirements
+   🌤️  Found: Dynamic Regulation Requirements
+   🌤️  Found: EAC mock auction results
+   🌤️  Found: Embedded Wind and Solar Forecasts
+   🌤️  Found: FES: Pathways to Net Zero Building Block Data
+   🌤️  Found: GIS Boundaries for GB Grid Supply Points
+   🌤️  Found: Historic Demand Data
+   🌤️  Found: Interconnector Register
+   🌤️  Found: Long Term (2-52 weeks ahead) National Demand Forecast
+   🌤️  Found: Long-Term Forecasts for DC, DM and DR Requirements
+   🌤️  Found: Monthly operational metered wind output
+   🌤️  Found: National Carbon Intensity Forecast
+   🌤️  Found: Daily & Weekly NRAPM (Negative Reserve Active Power Margin) Forecast
+   🌤️  Found: Non-BM Ancillary Service Dispatch Platform (ASDP) Window Prices
+   🌤️  Found: Regional breakdown of FES data (Electricity)
+   🌤️  Found: Regional Carbon Intensity Forecast
+   🌤️  Found: Short Term Operating Reserve (STOR) Windows
+   🌤️  Found: Transmission Losses
+   🌤️  Found: Transmission Network Use of System (TNUoS) Tariffs
+   🌤️  Found: Upcoming trades
+   🌤️  Found: Weekly operational planning margin requirement (OPMR)
+   🌤️  Found: Weekly Wind Availability
+   🌤️  Found: Wind BOA Volumes
+   🌤️  Total Met Office datasets: 43
+
+📥 STARTING DOWNLOADS (105 datasets)...
+
+📊 Progress: 1/105
+📥 DOWNLOADING: 14 Days Ahead Operational Metered Wind Forecasts
+   📄 Resource: 14 Day Ahead Operational Metered Wind Forecast (csv)
+      ☁️  Uploaded: neso_data/14-days-ahead-operational-metered-wind-forecasts/20250820_114130_14 Day Ahead Operational Metered Wind Forecast.csv (0.04 MB, 651 records)
+   📄 Resource: 14 Day Ahead Operational Metered Windfarm-Level Wind Forecast (csv)
+      ☁️  Uploaded: neso_data/14-days-ahead-operational-metered-wind-forecasts/20250820_114201_14 Day Ahead Operational Metered Windfarm-Level Wind Forecast.csv (0.90 MB, 10000 records)
+   ✅ Downloaded 2/2 resources
+
+📊 Progress: 2/105
+📥 DOWNLOADING: 14 Days Ahead Wind Forecasts
+   📄 Resource: 14 Days Ahead Wind Forecast (csv)
+      ☁️  Uploaded: neso_data/14-days-ahead-wind-forecasts/20250820_114230_14 Days Ahead Wind Forecast.csv (0.04 MB, 651 records)
+   📄 Resource: 14 Day Ahead Wind BMU Forecast (csv)
+      ☁️  Uploaded: neso_data/14-days-ahead-wind-forecasts/20250820_114301_14 Day Ahead Wind BMU Forecast.csv (0.91 MB, 10000 records)
+   ✅ Downloaded 2/2 resources
+
+📊 Progress: 3/105
+📥 DOWNLOADING: Day Ahead Demand Forecast
+   📄 Resource: Day Ahead National Demand Forecast (csv)
+      ☁️  Uploaded: neso_data/1-day-ahead-demand-forecast/20250820_114330_Day Ahead National Demand Forecast.csv (0.00 MB, 11 records)
+   📄 Resource: Demand Curve - Sample (png)
+      ☁️  Uploaded: neso_data/1-day-ahead-demand-forecast/20250820_114402_Demand Curve - Sample.png (0.13 MB)
+   📄 Resource: Historic Day Ahead Demand Forecasts (csv)
+      ☁️  Uploaded: neso_data/1-day-ahead-demand-forecast/20250820_114431_Historic Day Ahead Demand Forecasts.csv (0.59 MB, 10000 records)
+   ✅ Downloaded 3/3 resources
+
+📊 Progress: 4/105
+📥 DOWNLOADING: 2-14 Days Ahead Demand Forecast
+   📄 Resource: Historic 2-14 Day Ahead Demand Forecasts (csv)
+      ☁️  Uploaded: neso_data/2-14-days-ahead-national-demand-forecast/20250820_114501_Historic 2-14 Day Ahead Demand Forecasts.csv (0.58 MB, 10000 records)
+   📄 Resource: 2-14 Days Ahead Cardinal Point Forecast (csv)
+      ☁️  Uploaded: neso_data/2-14-days-ahead-national-demand-forecast/20250820_114530_2-14 Days Ahead Cardinal Point Forecast.csv (0.01 MB, 143 records)
+   📄 Resource: 2-14 Days Ahead Half Hourly Forecast (csv)
+      ☁️  Uploaded: neso_data/2-14-days-ahead-national-demand-forecast/20250820_114600_2-14 Days Ahead Half Hourly Forecast.csv (0.03 MB, 624 records)
+   ✅ Downloaded 3/3 resources
+
+📊 Progress: 5/105
+📥 DOWNLOADING: 24 Months Ahead Constraint Cost Forecast
+   📄 Resource: 24 Months Ahead Constraint Cost Forecast (csv)
+      ☁️  Uploaded: neso_data/24-months-ahead-constraint-cost-forecast/20250820_114630_24 Months Ahead Constraint Cost Forecast.csv (0.00 MB, 24 records)
+   ✅ Downloaded 1/1 resources
+
+📊 Progress: 6/105
+📥 DOWNLOADING: 24 Months Ahead Constraint Limits
+   📄 Resource: 24 Months ahead constraint limits  (csv)
+      ☁️  Uploaded: neso_data/24-months-ahead-constraint-limits/20250820_114700_24 Months ahead constraint limits .csv (0.01 MB, 104 records)
+   📄 Resource: Scotland network constraint diagram (pdf)
+      ☁️  Uploaded: neso_data/24-months-ahead-constraint-limits/20250820_114732_Scotland network constraint diagram.pdf (0.23 MB)
+   📄 Resource: E&W network constraint diagram (pdf)
+      ☁️  Uploaded: neso_data/24-months-ahead-constraint-limits/20250820_114802_E&W network constraint diagram.pdf (0.39 MB)
+   ✅ Downloaded 3/3 resources
+
+📊 Progress: 7/105
+📥 DOWNLOADING: 2 Day Ahead Demand Forecast
+   📄 Resource: 2 Day Ahead Demand Forecast (csv)
+      ☁️  Uploaded: neso_data/2-day-ahead-demand-forecast/20250820_114830_2 Day Ahead Demand Forecast.csv (0.00 MB, 11 records)
+   📄 Resource: Demand Curve - Sample (png)
+      ☁️  Uploaded: neso_data/2-day-ahead-demand-forecast/20250820_114902_Demand Curve - Sample.png (0.13 MB)
+   📄 Resource: Historic 2 Day Ahead Demand Forecasts (csv)
+      ☁️  Uploaded: neso_data/2-day-ahead-demand-forecast/20250820_114930_Historic 2 Day Ahead Demand Forecasts.csv (0.58 MB, 9918 records)
+   ✅ Downloaded 3/3 resources
+
+📊 Progress: 8/105
+📥 DOWNLOADING: 7 Day Ahead Demand Forecast
+   📄 Resource: 7 Day Ahead Demand Forecast (csv)
+      ☁️  Uploaded: neso_data/7-day-ahead-national-forecast/20250820_115000_7 Day Ahead Demand Forecast.csv (0.00 MB, 11 records)
+   📄 Resource: Demand Curve - Sample (png)
+      ☁️  Uploaded: neso_data/7-day-ahead-national-forecast/20250820_115032_Demand Curve - Sample.png (0.13 MB)
+   📄 Resource: Historic 7 Day Ahead Demand Forecasts (csv)
+      ☁️  Uploaded: neso_data/7-day-ahead-national-forecast/20250820_115100_Historic 7 Day Ahead Demand Forecasts.csv (0.58 MB, 10000 records)
+   ✅ Downloaded 3/3 resources
+
+📊 Progress: 9/105
+📥 DOWNLOADING: Assistance for Areas of High Electricity Distribution Costs (AAHEDC) Tariffs
+   📄 Resource: Assistance for Areas of High Electricity Distribution Costs (AAHEDC) Tariffs (csv)
+      ☁️  Uploaded: neso_data/aahedc-tariffs/20250820_115130_Assistance for Areas of High Electricity Distribution Costs (AAHEDC) Tariffs.csv (0.00 MB, 7 records)
+   ✅ Downloaded 1/1 resources
+
+📊 Progress: 10/105
+📥 DOWNLOADING: Aggregated Balancing Services Adjustment Data (BSAD)
+   📄 Resource: Aggregated BSAD 2013-14 (csv)
+      ☁️  Uploaded: neso_data/aggregated-bsad/20250820_115201_Aggregated BSAD 2013-14.csv (0.44 MB, 10000 records)
+   📄 Resource: Aggregated BSAD 2014-15 (csv)
+      ☁️  Uploaded: neso_data/aggregated-bsad/20250820_115230_Aggregated BSAD 2014-15.csv (0.13 MB, 3024 records)
+   📄 Resource: Aggregated BSAD 2016-17 (csv)
+      ☁️  Uploaded: neso_data/aggregated-bsad/20250820_115301_Aggregated BSAD 2016-17.csv (0.43 MB, 10000 records)
+   📄 Resource: Aggregated BSAD 2017-18 (csv)
+      ☁️  Uploaded: neso_data/aggregated-bsad/20250820_115331_Aggregated BSAD 2017-18.csv (0.43 MB, 10000 records)
+   📄 Resource: Aggregated BSAD 2018-19 (csv)
+      ☁️  Uploaded: neso_data/aggregated-bsad/20250820_115401_Aggregated BSAD 2018-19.csv (0.43 MB, 10000 records)
+   📄 Resource: Aggregated BSAD 2019-20 (csv)
+      ☁️  Uploaded: neso_data/aggregated-bsad/20250820_115431_Aggregated BSAD 2019-20.csv (0.43 MB, 10000 records)
+   📄 Resource: Aggregated BSAD 2020-21 (csv)
+      ☁️  Uploaded: neso_data/aggregated-bsad/20250820_115501_Aggregated BSAD 2020-21.csv (0.34 MB, 10000 records)
+   📄 Resource: Aggregated BSAD 2021-22 (csv)
+      ☁️  Uploaded: neso_data/aggregated-bsad/20250820_115531_Aggregated BSAD 2021-22.csv (0.34 MB, 10000 records)
+   📄 Resource: Aggregated BSAD 2022-23 (csv)
+      ☁️  Uploaded: neso_data/aggregated-bsad/20250820_115601_Aggregated BSAD 2022-23.csv (0.34 MB, 10000 records)
+   📄 Resource: Aggregated BSAD 2023-24 (csv)
+      ☁️  Uploaded: neso_data/aggregated-bsad/20250820_115631_Aggregated BSAD 2023-24.csv (0.34 MB, 10000 records)
+   📄 Resource: Aggregated BSAD 2024-25 (csv)
+      ☁️  Uploaded: neso_data/aggregated-bsad/20250820_115701_Aggregated BSAD 2024-25.csv (0.34 MB, 10000 records)
+   📄 Resource: Aggregated BSAD 2025-26 (csv)
+      ☁️  Uploaded: neso_data/aggregated-bsad/20250820_115731_Aggregated BSAD 2025-26.csv (0.23 MB, 6816 records)
+   ✅ Downloaded 12/12 resources
+   ⏱️  Elapsed: 0.3 hours
+   💾 Downloaded: 9.5 MB
+
+📊 Progress: 11/105
+📥 DOWNLOADING: Ancillary Services Important Industry Notifications
+   📄 Resource: DC, DM, DR Important Industry Notifications (csv)
+      ☁️  Uploaded: neso_data/ancillary-services-important-industry-notifications/20250820_115800_DC, DM, DR Important Industry Notifications.csv (0.01 MB, 19 records)
+   📄 Resource: STOR Important Industry Notifications (csv)
+      ☁️  Uploaded: neso_data/ancillary-services-important-industry-notifications/20250820_115830_STOR Important Industry Notifications.csv (0.00 MB, 9 records)
+   📄 Resource: SFFR Important Industry Notifications (csv)
+      ☁️  Uploaded: neso_data/ancillary-services-important-industry-notifications/20250820_115900_SFFR Important Industry Notifications.csv (0.00 MB, 1 records)
+   📄 Resource: Balancing Reserve Important Industry Notifications (csv)
+      ☁️  Uploaded: neso_data/ancillary-services-important-industry-notifications/20250820_115930_Balancing Reserve Important Industry Notifications.csv (0.00 MB, 2 records)
+   📄 Resource: Quick Reserve Important Industry Notifications (csv)
+      ☁️  Uploaded: neso_data/ancillary-services-important-industry-notifications/20250820_120000_Quick Reserve Important Industry Notifications.csv (0.00 MB, 7 records)
+   ✅ Downloaded 5/5 resources
+
+📊 Progress: 12/105
+📥 DOWNLOADING: Balancing Reserve Auction Requirement Forecast
+   📄 Resource: Balancing Reserve Requirements Medium term forecast (Archive) (csv)
+      ☁️  Uploaded: neso_data/balancing-reserve-auction-requirement-forecast/20250820_120031_Balancing Reserve Requirements Medium term forecast (Archive).csv (0.97 MB, 10000 records)
+   📄 Resource: Balancing Reserve Requirements Medium term forecast (csv)
+      ☁️  Uploaded: neso_data/balancing-reserve-auction-requirement-forecast/20250820_120100_Balancing Reserve Requirements Medium term forecast.csv (0.07 MB, 672 records)
+   📄 Resource: Balancing Reserve Day ahead auction requirement forecast (Archive) (csv)
+      ☁️  Uploaded: neso_data/balancing-reserve-auction-requirement-forecast/20250820_120131_Balancing Reserve Day ahead auction requirement forecast (Archive).csv (0.94 MB, 10000 records)
+   📄 Resource: Balancing Reserve Day ahead auction requirements forecast (csv)
+      ☁️  Uploaded: neso_data/balancing-reserve-auction-requirement-forecast/20250820_120201_Balancing Reserve Day ahead auction requirements forecast.csv (0.00 MB, 48 records)
+   ✅ Downloaded 4/4 resources
+
+📊 Progress: 13/105
+📥 DOWNLOADING: Balancing Services Adjustment Data (BSAD) Forward Contracts
+   📄 Resource: BSAD Forward Contracts 2016-17 (csv)
+      ☁️  Uploaded: neso_data/balancing-services-adjustment-data-forward-contracts/20250820_120234_BSAD Forward Contracts 2016-17.csv (0.42 MB, 10000 records)
+   📄 Resource: BSAD Forward Contracts 2017-18 (csv)
+      ☁️  Uploaded: neso_data/balancing-services-adjustment-data-forward-contracts/20250820_120301_BSAD Forward Contracts 2017-18.csv (0.42 MB, 10000 records)
+   📄 Resource: BSAD Forward Contracts 2018-19 (csv)
+      ☁️  Uploaded: neso_data/balancing-services-adjustment-data-forward-contracts/20250820_120331_BSAD Forward Contracts 2018-19.csv (0.42 MB, 10000 records)
+   📄 Resource: BSAD Forward Contracts 2019-20 (csv)
+      ☁️  Uploaded: neso_data/balancing-services-adjustment-data-forward-contracts/20250820_120401_BSAD Forward Contracts 2019-20.csv (0.43 MB, 10000 records)
+   📄 Resource: BSAD Forward Contracts 2020-21 (csv)
+      ☁️  Uploaded: neso_data/balancing-services-adjustment-data-forward-contracts/20250820_120447_BSAD Forward Contracts 2020-21.csv (0.35 MB, 10000 records)
+   📄 Resource: BSAD Forward Contracts 2021-22 (csv)
+      ☁️  Uploaded: neso_data/balancing-services-adjustment-data-forward-contracts/20250820_120515_BSAD Forward Contracts 2021-22.csv (0.33 MB, 10000 records)
+   📄 Resource: BSAD Forward Contracts 2022-23 (csv)
+      ☁️  Uploaded: neso_data/balancing-services-adjustment-data-forward-contracts/20250820_120532_BSAD Forward Contracts 2022-23.csv (0.34 MB, 10000 records)
+   📄 Resource: BSAD Forward Contracts 2023-24 (csv)
+      ☁️  Uploaded: neso_data/balancing-services-adjustment-data-forward-contracts/20250820_120602_BSAD Forward Contracts 2023-24.csv (0.33 MB, 10000 records)
+   📄 Resource: BSAD Forward Contracts 2024-25 (csv)
+      ☁️  Uploaded: neso_data/balancing-services-adjustment-data-forward-contracts/20250820_120631_BSAD Forward Contracts 2024-25.csv (0.33 MB, 10000 records)
+   📄 Resource: BSAD Forward Contracts 2025-26 (csv)
+      ☁️  Uploaded: neso_data/balancing-services-adjustment-data-forward-contracts/20250820_120701_BSAD Forward Contracts 2025-26.csv (0.22 MB, 6816 records)
+   ✅ Downloaded 10/10 resources
+
+📊 Progress: 14/105
+📥 DOWNLOADING: Balancing Services Contract Enactment
+   📄 Resource: Balancing Service Contract Enactment 21-22 (Pre June 2021) (csv)
+      ☁️  Uploaded: neso_data/balancing-services-contract-enactment/20250820_120731_Balancing Service Contract Enactment 21-22 (Pre June 2021).csv (0.01 MB, 79 records)
+   📄 Resource: Balancing Contract Enactment FY 21-22 (csv)
+      ☁️  Uploaded: neso_data/balancing-services-contract-enactment/20250820_120801_Balancing Contract Enactment FY 21-22.csv (0.01 MB, 72 records)
+   📄 Resource: Balancing Contract Enactment FY 22-23 (csv)
+      ☁️  Uploaded: neso_data/balancing-services-contract-enactment/20250820_120831_Balancing Contract Enactment FY 22-23.csv (0.00 MB, 3 records)
+   📄 Resource: Balancing Contract Enactment FY 23-24 (csv)
+      ☁️  Uploaded: neso_data/balancing-services-contract-enactment/20250820_120901_Balancing Contract Enactment FY 23-24.csv (0.00 MB, 5 records)
+   📄 Resource: Balancing Contract Enactment (Archived files) (zip)
+      ☁️  Uploaded: neso_data/balancing-services-contract-enactment/20250820_120932_Balancing Contract Enactment (Archived files).zip (0.00 MB)
+   📄 Resource: Balancing Contract Enactment FY 25-26 (csv)
+      ☁️  Uploaded: neso_data/balancing-services-contract-enactment/20250820_121001_Balancing Contract Enactment FY 25-26.csv (0.00 MB, 1 records)
+   ✅ Downloaded 6/6 resources
+
+📊 Progress: 15/105
+📥 DOWNLOADING: Daily Balancing Services Use of System (BSUoS) Forecast
+   📄 Resource: Daily BSUoS Forecast 2018-19 (csv)
+      ☁️  Uploaded: neso_data/balancing-services-use-of-system-bsuos-daily-forecast/20250820_121031_Daily BSUoS Forecast 2018-19.csv (0.20 MB, 6045 records)
+   📄 Resource: Daily BSUoS Forecast 2019-20 (csv)
+      ☁️  Uploaded: neso_data/balancing-services-use-of-system-bsuos-daily-forecast/20250820_121101_Daily BSUoS Forecast 2019-20.csv (0.34 MB, 10000 records)
+   📄 Resource: Daily BSUoS Forecast 2020-21 (csv)
+      ☁️  Uploaded: neso_data/balancing-services-use-of-system-bsuos-daily-forecast/20250820_121131_Daily BSUoS Forecast 2020-21.csv (0.44 MB, 10000 records)
+   📄 Resource: Daily BSUoS Forecast 2021-22 (csv)
+      ☁️  Uploaded: neso_data/balancing-services-use-of-system-bsuos-daily-forecast/20250820_121201_Daily BSUoS Forecast 2021-22.csv (0.36 MB, 10000 records)
+   📄 Resource: Daily BSUoS Forecast 2022-23 (csv)
+      ☁️  Uploaded: neso_data/balancing-services-use-of-system-bsuos-daily-forecast/20250820_121231_Daily BSUoS Forecast 2022-23.csv (0.40 MB, 10000 records)
+   ✅ Downloaded 5/5 resources
+
+📊 Progress: 16/105
+📥 DOWNLOADING: BritNed - NESO's Intraday Trading Limit
+   📄 Resource: BritNed DA & ID Weekly ITLs 20221012 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_121301_BritNed DA & ID Weekly ITLs 20221012.csv (0.01 MB, 168 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20221019 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_121331_BritNed DA & ID Weekly ITLs 20221019.csv (0.01 MB, 120 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20221026 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_121401_BritNed DA & ID Weekly ITLs 20221026.csv (0.01 MB, 144 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20221102 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_121431_BritNed DA & ID Weekly ITLs 20221102.csv (0.01 MB, 168 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20221109 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_121501_BritNed DA & ID Weekly ITLs 20221109.csv (0.01 MB, 169 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20221116 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_121531_BritNed DA & ID Weekly ITLs 20221116.csv (0.00 MB, 73 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20221123 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_121601_BritNed DA & ID Weekly ITLs 20221123.csv (0.01 MB, 145 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20221130 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_121631_BritNed DA & ID Weekly ITLs 20221130.csv (0.01 MB, 168 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20221207 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_121701_BritNed DA & ID Weekly ITLs 20221207.csv (0.01 MB, 168 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20221214 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_121731_BritNed DA & ID Weekly ITLs 20221214.csv (0.01 MB, 144 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20221221 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_121801_BritNed DA & ID Weekly ITLs 20221221.csv (0.00 MB, 25 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20221228 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_121831_BritNed DA & ID Weekly ITLs 20221228.csv (0.00 MB, 25 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20230104 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_121901_BritNed DA & ID Weekly ITLs 20230104.csv (0.00 MB, 73 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20230111 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_121931_BritNed DA & ID Weekly ITLs 20230111.csv (0.00 MB, 97 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20230118 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_122001_BritNed DA & ID Weekly ITLs 20230118.csv (0.01 MB, 120 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20230125 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_122031_BritNed DA & ID Weekly ITLs 20230125.csv (0.00 MB, 97 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20230201 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_122101_BritNed DA & ID Weekly ITLs 20230201.csv (0.01 MB, 121 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20230208 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_122131_BritNed DA & ID Weekly ITLs 20230208.csv (0.01 MB, 168 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20230215 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_122201_BritNed DA & ID Weekly ITLs 20230215.csv (0.01 MB, 145 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20230222 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_122231_BritNed DA & ID Weekly ITLs 20230222.csv (0.00 MB, 24 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20230301 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_122301_BritNed DA & ID Weekly ITLs 20230301.csv (0.01 MB, 145 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20230308 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_122331_BritNed DA & ID Weekly ITLs 20230308.csv (0.00 MB, 73 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20230315 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_122401_BritNed DA & ID Weekly ITLs 20230315.csv (0.01 MB, 168 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20230322 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_122431_BritNed DA & ID Weekly ITLs 20230322.csv (0.00 MB, 73 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20230329 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_122501_BritNed DA & ID Weekly ITLs 20230329.csv (0.00 MB, 97 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20230405 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_122531_BritNed DA & ID Weekly ITLs 20230405.csv (0.01 MB, 120 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20230412 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_122601_BritNed DA & ID Weekly ITLs 20230412.csv (0.01 MB, 120 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20230419 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_122631_BritNed DA & ID Weekly ITLs 20230419.csv (0.01 MB, 168 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20230426 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_122701_BritNed DA & ID Weekly ITLs 20230426.csv (0.00 MB, 97 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20230503 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_122731_BritNed DA & ID Weekly ITLs 20230503.csv (0.01 MB, 120 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20230510 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_122801_BritNed DA & ID Weekly ITLs 20230510.csv (0.01 MB, 144 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20230517 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_122831_BritNed DA & ID Weekly ITLs 20230517.csv (0.00 MB, 25 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20230524 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_122901_BritNed DA & ID Weekly ITLs 20230524.csv (0.00 MB, 73 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20230531 (csv)2025-08-20 13:12:39,432 - ERROR - Datastore request failed for 8db596d3-720c-414b-bb96-3dc9bbf16d24: HTTPSConnectionPool(host='api.neso.energy', port=443): Read timed out. (read timeout=60)
+
+      ☁️  Uploaded: neso_data/brit-ned/20250820_122931_BritNed DA & ID Weekly ITLs 20230531.csv (0.00 MB, 72 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20230607 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_123001_BritNed DA & ID Weekly ITLs 20230607.csv (0.00 MB, 96 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20230614 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_123031_BritNed DA & ID Weekly ITLs 20230614.csv (0.01 MB, 144 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20230621 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_123101_BritNed DA & ID Weekly ITLs 20230621.csv (0.01 MB, 144 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20230628 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_123131_BritNed DA & ID Weekly ITLs 20230628.csv (0.01 MB, 168 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20230705 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_123201_BritNed DA & ID Weekly ITLs 20230705.csv (0.01 MB, 121 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20230712 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_123231_BritNed DA & ID Weekly ITLs 20230712.csv (0.01 MB, 121 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20230719 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_123301_BritNed DA & ID Weekly ITLs 20230719.csv (0.00 MB, 24 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20230726 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_123331_BritNed DA & ID Weekly ITLs 20230726.csv (0.00 MB, 72 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20230802 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_123401_BritNed DA & ID Weekly ITLs 20230802.csv (0.00 MB, 24 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20230809 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_123431_BritNed DA & ID Weekly ITLs 20230809.csv (0.01 MB, 144 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20230816 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_123501_BritNed DA & ID Weekly ITLs 20230816.csv (0.01 MB, 169 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20230823 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_123531_BritNed DA & ID Weekly ITLs 20230823.csv (0.01 MB, 121 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20230830 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_123601_BritNed DA & ID Weekly ITLs 20230830.csv (0.00 MB, 73 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20230906 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_123631_BritNed DA & ID Weekly ITLs 20230906.csv (0.01 MB, 145 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20230913 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_123701_BritNed DA & ID Weekly ITLs 20230913.csv (0.00 MB, 97 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20230920 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_123819_BritNed DA & ID Weekly ITLs 20230920.csv (0.00 MB, 72 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20230927 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_123835_BritNed DA & ID Weekly ITLs 20230927.csv (0.00 MB, 120 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20231004 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_123900_BritNed DA & ID Weekly ITLs 20231004.csv (0.01 MB, 144 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20231011 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_123920_BritNed DA & ID Weekly ITLs 20231011.csv (0.00 MB, 48 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20231018 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_123950_BritNed DA & ID Weekly ITLs 20231018.csv (0.00 MB, 72 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20231101 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_124020_BritNed DA & ID Weekly ITLs 20231101.csv (0.00 MB, 24 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20231108 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_124050_BritNed DA & ID Weekly ITLs 20231108.csv (0.00 MB, 48 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20231115 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_124120_BritNed DA & ID Weekly ITLs 20231115.csv (0.00 MB, 72 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20231122 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_124150_BritNed DA & ID Weekly ITLs 20231122.csv (0.00 MB, 120 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20231129 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_124220_BritNed DA & ID Weekly ITLs 20231129.csv (0.00 MB, 96 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20231206 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_124250_BritNed DA & ID Weekly ITLs 20231206.csv (0.00 MB, 72 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20231213 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_124320_BritNed DA & ID Weekly ITLs 20231213.csv (0.01 MB, 120 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20231220 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_124350_BritNed DA & ID Weekly ITLs 20231220.csv (0.00 MB, 24 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20231227 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_124420_BritNed DA & ID Weekly ITLs 20231227.csv (0.00 MB, 24 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20240103 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_124450_BritNed DA & ID Weekly ITLs 20240103.csv (0.00 MB, 24 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20240110 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_124520_BritNed DA & ID Weekly ITLs 20240110.csv (0.01 MB, 168 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20240117 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_124550_BritNed DA & ID Weekly ITLs 20240117.csv (0.00 MB, 120 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20240124 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_124620_BritNed DA & ID Weekly ITLs 20240124.csv (0.00 MB, 96 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20240131 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_124650_BritNed DA & ID Weekly ITLs 20240131.csv (0.01 MB, 120 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20240207 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_124720_BritNed DA & ID Weekly ITLs 20240207.csv (0.00 MB, 48 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20240214 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_124750_BritNed DA & ID Weekly ITLs 20240214.csv (0.00 MB, 48 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20240221 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_124820_BritNed DA & ID Weekly ITLs 20240221.csv (0.00 MB, 72 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20240228 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_124850_BritNed DA & ID Weekly ITLs 20240228.csv (0.00 MB, 72 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20240306 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_124920_BritNed DA & ID Weekly ITLs 20240306.csv (0.00 MB, 72 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20240313 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_124950_BritNed DA & ID Weekly ITLs 20240313.csv (0.00 MB, 96 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20240320 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_125020_BritNed DA & ID Weekly ITLs 20240320.csv (0.00 MB, 72 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20240327 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_125050_BritNed DA & ID Weekly ITLs 20240327.csv (0.00 MB, 24 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20240403 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_125120_BritNed DA & ID Weekly ITLs 20240403.csv (0.00 MB, 24 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20240417 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_125150_BritNed DA & ID Weekly ITLs 20240417.csv (0.00 MB, 72 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20240424 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_125220_BritNed DA & ID Weekly ITLs 20240424.csv (0.00 MB, 48 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20240501 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_125250_BritNed DA & ID Weekly ITLs 20240501.csv (0.00 MB, 24 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20240508 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_125320_BritNed DA & ID Weekly ITLs 20240508.csv (0.00 MB, 120 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20240515 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_125350_BritNed DA & ID Weekly ITLs 20240515.csv (0.01 MB, 168 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20240522 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_125420_BritNed DA & ID Weekly ITLs 20240522.csv (0.01 MB, 144 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20240529 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_125450_BritNed DA & ID Weekly ITLs 20240529.csv (0.00 MB, 96 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20240605 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_125520_BritNed DA & ID Weekly ITLs 20240605.csv (0.01 MB, 144 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20240612 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_125550_BritNed DA & ID Weekly ITLs 20240612.csv (0.01 MB, 120 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20240619 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_125620_BritNed DA & ID Weekly ITLs 20240619.csv (0.00 MB, 96 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20240626 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_125650_BritNed DA & ID Weekly ITLs 20240626.csv (0.00 MB, 96 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20240807 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_125720_BritNed DA & ID Weekly ITLs 20240807.csv (0.00 MB, 24 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20240814 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_125750_BritNed DA & ID Weekly ITLs 20240814.csv (0.00 MB, 96 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20240821 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_125820_BritNed DA & ID Weekly ITLs 20240821.csv (0.01 MB, 168 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20240828 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_125850_BritNed DA & ID Weekly ITLs 20240828.csv (0.01 MB, 168 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20240904 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_125920_BritNed DA & ID Weekly ITLs 20240904.csv (0.01 MB, 168 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20240911 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_125950_BritNed DA & ID Weekly ITLs 20240911.csv (0.00 MB, 72 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20240918 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_130020_BritNed DA & ID Weekly ITLs 20240918.csv (0.01 MB, 168 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20240925 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_130050_BritNed DA & ID Weekly ITLs 20240925.csv (0.01 MB, 144 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20241002 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_130121_BritNed DA & ID Weekly ITLs 20241002.csv (0.01 MB, 144 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20241009 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_130152_BritNed DA & ID Weekly ITLs 20241009.csv (0.01 MB, 144 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20241016 (csv)
+      ℹ️  No data records found
+   📄 Resource: BritNed DA & ID Weekly ITLs 20241023 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_130322_BritNed DA & ID Weekly ITLs 20241023.csv (0.01 MB, 169 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20241030 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_130339_BritNed DA & ID Weekly ITLs 20241030.csv (0.01 MB, 144 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20241106 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_130409_BritNed DA & ID Weekly ITLs 20241106.csv (0.01 MB, 144 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20241113 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_130439_BritNed DA & ID Weekly ITLs 20241113.csv (0.01 MB, 168 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20241120 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_130509_BritNed DA & ID Weekly ITLs 20241120.csv (0.01 MB, 168 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20241127 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_130539_BritNed DA & ID Weekly ITLs 20241127.csv (0.01 MB, 144 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20241204 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_130609_BritNed DA & ID Weekly ITLs 20241204.csv (0.00 MB, 48 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20250129 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_130639_BritNed DA & ID Weekly ITLs 20250129.csv (0.00 MB, 48 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20250205 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_130709_BritNed DA & ID Weekly ITLs 20250205.csv (0.01 MB, 144 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20250212 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_130739_BritNed DA & ID Weekly ITLs 20250212.csv (0.01 MB, 168 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20250219 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_130809_BritNed DA & ID Weekly ITLs 20250219.csv (0.01 MB, 168 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20250226 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_130839_BritNed DA & ID Weekly ITLs 20250226.csv (0.01 MB, 168 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20250305 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_130909_BritNed DA & ID Weekly ITLs 20250305.csv (0.01 MB, 120 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20250312 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_130939_BritNed DA & ID Weekly ITLs 20250312.csv (0.00 MB, 48 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20250319 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_131009_BritNed DA & ID Weekly ITLs 20250319.csv (0.00 MB, 48 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20250326 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_131039_BritNed DA & ID Weekly ITLs 20250326.csv (0.01 MB, 144 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20250407 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_131109_BritNed DA & ID Weekly ITLs 20250407.csv (0.00 MB, 24 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20250411 (csv)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20250416 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_131323_BritNed DA & ID Weekly ITLs 20250416.csv (0.01 MB, 120 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20250423 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_131330_BritNed DA & ID Weekly ITLs 20250423.csv (0.00 MB, 72 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20250430 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_131354_BritNed DA & ID Weekly ITLs 20250430.csv (0.00 MB, 48 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20250507 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_131424_BritNed DA & ID Weekly ITLs 20250507.csv (0.00 MB, 96 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20250514 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_131454_BritNed DA & ID Weekly ITLs 20250514.csv (0.00 MB, 48 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20250524 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_131524_BritNed DA & ID Weekly ITLs 20250524.csv (0.00 MB, 96 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20250528 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_131554_BritNed DA & ID Weekly ITLs 20250528.csv (0.00 MB, 48 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20250604 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_131624_BritNed DA & ID Weekly ITLs 20250604.csv (0.00 MB, 48 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20250611 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_131654_BritNed DA & ID Weekly ITLs 20250611.csv (0.00 MB, 24 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20250618 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_131724_BritNed DA & ID Weekly ITLs 20250618.csv (0.00 MB, 96 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20250627 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_131754_BritNed DA & ID Weekly ITLs 20250627.csv (0.01 MB, 120 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20250702 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_131824_BritNed DA & ID Weekly ITLs 20250702.csv (0.01 MB, 144 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20250709 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_131854_BritNed DA & ID Weekly ITLs 20250709.csv (0.01 MB, 144 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20250716 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_131924_BritNed DA & ID Weekly ITLs 20250716.csv (0.00 MB, 120 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20250723 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_131954_BritNed DA & ID Weekly ITLs 20250723.csv (0.00 MB, 96 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20250730 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_132024_BritNed DA & ID Weekly ITLs 20250730.csv (0.00 MB, 96 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20250806 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_132054_BritNed DA & ID Weekly ITLs 20250806.csv (0.00 MB, 96 records)
+   📄 Resource: BritNed DA & ID Weekly ITLs 20250813 (csv)
+      ☁️  Uploaded: neso_data/brit-ned/20250820_132124_BritNed DA & ID Weekly ITLs 20250813.csv (0.01 MB, 120 records)
+   ✅ Downloaded 133/135 resources
+
+📊 Progress: 17/105
+📥 DOWNLOADING: BSUoS Fixed Tariffs
+   📄 Resource:  Balancing Services Use of System Charges (BSUoS) Tariffs (csv)
+      ☁️  Uploaded: neso_data/bsuos-fixed-tariffs/20250820_132154_ Balancing Services Use of System Charges (BSUoS) Tariffs.csv (0.00 MB, 11 records)
+   ✅ Downloaded 1/1 resources
+
+📊 Progress: 18/105
+📥 DOWNLOADING: Monthly Balancing Services Use of System (BSUoS) Forecast Data
+   📄 Resource: BSUoS_Report_Jan 19 - Mar 20 (xlsx)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_132227_BSUoS_Report_Jan 19 - Mar 20.xlsx (10.86 MB)
+   📄 Resource: Monthly BSUoS Actual Summary Mar_20 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_132254_Monthly BSUoS Actual Summary Mar_20.csv (0.00 MB, 12 records)
+   📄 Resource: Monthly BSUoS Forecast Summary Mar_20 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_132324_Monthly BSUoS Forecast Summary Mar_20.csv (0.01 MB, 26 records)
+   📄 Resource: Monthly BSUoS Summary Mar_20 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_132354_Monthly BSUoS Summary Mar_20.csv (0.01 MB, 36 records)
+   📄 Resource: Monthly BSUoS Actual Summary Apr_20 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_132424_Monthly BSUoS Actual Summary Apr_20.csv (0.00 MB, 12 records)
+   📄 Resource: Monthly BSUoS Forecast Summary Apr_20 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_132454_Monthly BSUoS Forecast Summary Apr_20.csv (0.01 MB, 26 records)
+   📄 Resource: Monthly BSUoS Summary Apr_20 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_132524_Monthly BSUoS Summary Apr_20.csv (0.01 MB, 36 records)
+   📄 Resource: Impact on BSUoS due to COVID-19 low demands – Excluding new services (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_132554_Impact on BSUoS due to COVID-19 low demands – Excluding new services.csv (0.01 MB, 36 records)
+   📄 Resource: Monthly BSUoS Actual Summary May_20 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_132624_Monthly BSUoS Actual Summary May_20.csv (0.00 MB, 12 records)
+   📄 Resource: Monthly BSUoS Forecast Summary May_20 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_132654_Monthly BSUoS Forecast Summary May_20.csv (0.01 MB, 24 records)
+   📄 Resource: Monthly BSUoS Summary May_20 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_132724_Monthly BSUoS Summary May_20.csv (0.01 MB, 24 records)
+   📄 Resource: BSUoS Forecast for May 2020 – Including new services (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_132754_BSUoS Forecast for May 2020 – Including new services.csv (0.01 MB, 36 records)
+   📄 Resource: Monthly BSUoS Actual Summary Jun_20 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_132824_Monthly BSUoS Actual Summary Jun_20.csv (0.00 MB, 12 records)
+   📄 Resource: Monthly BSUoS Forecast Summary June 5 Percent (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_132854_Monthly BSUoS Forecast Summary June 5 Percent.csv (0.01 MB, 24 records)
+   📄 Resource: Monthly BSUoS Forecast Summary June 10 Percent (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_132924_Monthly BSUoS Forecast Summary June 10 Percent.csv (0.01 MB, 24 records)
+   📄 Resource: Monthly BSUoS Forecast Summary June 15 Percent (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_132954_Monthly BSUoS Forecast Summary June 15 Percent.csv (0.01 MB, 24 records)
+   📄 Resource: Monthly BSUoS Summary June 5 Percent (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_133024_Monthly BSUoS Summary June 5 Percent.csv (0.01 MB, 36 records)
+   📄 Resource: Monthly BSUoS Summary June 10 Percent (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_133054_Monthly BSUoS Summary June 10 Percent.csv (0.01 MB, 36 records)
+   📄 Resource: Monthly BSUoS Summary June 15 Percent (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_133124_Monthly BSUoS Summary June 15 Percent.csv (0.01 MB, 36 records)
+   📄 Resource: Monthly BSUoS Actual Summary Jul_20 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_133154_Monthly BSUoS Actual Summary Jul_20.csv (0.00 MB, 12 records)
+   📄 Resource: Monthly BSUoS Forecast Summary July 5 Percent  (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_133224_Monthly BSUoS Forecast Summary July 5 Percent .csv (0.01 MB, 24 records)
+   📄 Resource: Monthly BSUoS Forecast Summary July 10 Percent  (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_133254_Monthly BSUoS Forecast Summary July 10 Percent .csv (0.01 MB, 24 records)
+   📄 Resource: Monthly BSUoS Forecast Summary July 15 Percent  (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_133324_Monthly BSUoS Forecast Summary July 15 Percent .csv (0.01 MB, 24 records)
+   📄 Resource: Monthly BSUOS Summary July 5 Percent (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_133354_Monthly BSUOS Summary July 5 Percent.csv (0.01 MB, 36 records)
+   📄 Resource: Monthly BSUOS Summary July 10 Percent (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_133424_Monthly BSUOS Summary July 10 Percent.csv (0.01 MB, 36 records)
+   📄 Resource: Monthly BSUOS Summary July 15 Percent (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_133454_Monthly BSUOS Summary July 15 Percent.csv (0.01 MB, 36 records)
+   📄 Resource: Monthly BSUoS Actual Summary August_20 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_133524_Monthly BSUoS Actual Summary August_20.csv (0.00 MB, 12 records)
+   📄 Resource: Monthly BSUOS Forecast Summary August 5 Percent (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_133554_Monthly BSUOS Forecast Summary August 5 Percent.csv (0.01 MB, 24 records)
+   📄 Resource: Monthly BSUOS Forecast Summary August 10 Percent (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_133624_Monthly BSUOS Forecast Summary August 10 Percent.csv (0.01 MB, 24 records)
+   📄 Resource: Monthly BSUOS Forecast Summary August 15 Percent (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_133654_Monthly BSUOS Forecast Summary August 15 Percent.csv (0.01 MB, 24 records)
+   📄 Resource: Monthly BSUOS Summary August 5 Percent (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_133724_Monthly BSUOS Summary August 5 Percent.csv (0.01 MB, 36 records)
+   📄 Resource: Monthly BSUOS Summary August 10 Percent (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_133754_Monthly BSUOS Summary August 10 Percent.csv (0.01 MB, 36 records)
+   📄 Resource: Monthly BSUOS Summary August 15 Percent (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_133824_Monthly BSUOS Summary August 15 Percent.csv (0.01 MB, 36 records)
+   📄 Resource: Monthly BSUoS Actual Summary Sep_20 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_133854_Monthly BSUoS Actual Summary Sep_20.csv (0.00 MB, 12 records)
+   📄 Resource: Monthly BSUOS Forecast Summary September 5 percent (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_133924_Monthly BSUOS Forecast Summary September 5 percent.csv (0.01 MB, 24 records)
+   📄 Resource: Monthly BSUOS Forecast Summary September 10 Percent (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_133954_Monthly BSUOS Forecast Summary September 10 Percent.csv (0.01 MB, 24 records)
+   📄 Resource: Monthly BSUOS Forecast Summary September 15 Percent (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_134024_Monthly BSUOS Forecast Summary September 15 Percent.csv (0.01 MB, 24 records)
+   📄 Resource: Monthly BSUOS Summary September 5 Percent (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_134054_Monthly BSUOS Summary September 5 Percent.csv (0.01 MB, 36 records)
+   📄 Resource: Monthly BSUOS Summary September 10 Percent (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_134124_Monthly BSUOS Summary September 10 Percent.csv (0.01 MB, 36 records)
+   📄 Resource: Monthly BSUOS Summary September 15 Percent (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_134154_Monthly BSUOS Summary September 15 Percent.csv (0.01 MB, 36 records)
+   📄 Resource: Monthly BSUoS Actual Summary Oct_20 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_134224_Monthly BSUoS Actual Summary Oct_20.csv (0.00 MB, 12 records)
+   📄 Resource: Monthly BSUoS Forecast Summary Oct_20 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_134254_Monthly BSUoS Forecast Summary Oct_20.csv (0.01 MB, 24 records)
+   📄 Resource: Monthly BSUoS Summary Oct_20 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_134324_Monthly BSUoS Summary Oct_20.csv (0.01 MB, 36 records)
+   📄 Resource: Monthly BSUoS Forecast Summary Nov_20 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_134354_Monthly BSUoS Forecast Summary Nov_20.csv (0.00 MB, 12 records)
+   📄 Resource: Monthly BSUoS Summary Nov_20 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_134424_Monthly BSUoS Summary Nov_20.csv (0.01 MB, 36 records)
+   📄 Resource: Monthly BSUoS Actual Summary Nov_20 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_134454_Monthly BSUoS Actual Summary Nov_20.csv (0.00 MB, 12 records)
+   📄 Resource: Monthly BSUoS Actual Summary Dec_20 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_134524_Monthly BSUoS Actual Summary Dec_20.csv (0.00 MB, 12 records)
+   📄 Resource: Monthly BSUoS Forecast Summary Dec_20 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_134554_Monthly BSUoS Forecast Summary Dec_20.csv (0.01 MB, 26 records)
+   📄 Resource: Monthly BSUoS Summary Dec_20 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_134625_Monthly BSUoS Summary Dec_20.csv (0.01 MB, 36 records)
+   📄 Resource: Monthly BSUoS Actual Summary January 2021 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_134654_Monthly BSUoS Actual Summary January 2021.csv (0.00 MB, 12 records)
+   📄 Resource: Monthly BSUoS Forecast Summary January 2021 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_134726_Monthly BSUoS Forecast Summary January 2021.csv (0.01 MB, 26 records)
+   📄 Resource: Monthly BSUoS Summary January 2021 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_134754_Monthly BSUoS Summary January 2021.csv (0.01 MB, 36 records)
+   📄 Resource: Monthly BSUOS Actual Summary February 2021 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_134824_Monthly BSUOS Actual Summary February 2021.csv (0.00 MB, 12 records)
+   📄 Resource: Monthly BSUOS Forecast Summary February 2021 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_134854_Monthly BSUOS Forecast Summary February 2021.csv (0.01 MB, 26 records)
+   📄 Resource: Monthly BSUOS Summary February 2021 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_134924_Monthly BSUOS Summary February 2021.csv (0.01 MB, 36 records)
+   📄 Resource: Monthly BSUOS Actual Summary March 2021 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_134957_Monthly BSUOS Actual Summary March 2021.csv (0.00 MB, 12 records)
+   📄 Resource: Monthly BSUOS Forecast Summary March 2021 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_135025_Monthly BSUOS Forecast Summary March 2021.csv (0.01 MB, 26 records)
+   📄 Resource: Monthly BSUOS Summary March 2021 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_135055_Monthly BSUOS Summary March 2021.csv (0.01 MB, 36 records)
+   📄 Resource: Monthly BSUoS Actual Summary April 2021 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_135125_Monthly BSUoS Actual Summary April 2021.csv (0.00 MB, 12 records)
+   📄 Resource: Monthly BSUoS Forecast Summary April 2021 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_135155_Monthly BSUoS Forecast Summary April 2021.csv (0.01 MB, 26 records)
+   📄 Resource: Monthly BSUoS Summary April 2021 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_135225_Monthly BSUoS Summary April 2021.csv (0.01 MB, 36 records)
+   📄 Resource: Monthly BSUoS Actual Summary May 2021 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_135255_Monthly BSUoS Actual Summary May 2021.csv (0.00 MB, 12 records)
+   📄 Resource: Monthly BSUoS Forecast Summary May 2021 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_135325_Monthly BSUoS Forecast Summary May 2021.csv (0.01 MB, 24 records)
+   📄 Resource: Monthly BSUoS Summary May 2021 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_135355_Monthly BSUoS Summary May 2021.csv (0.01 MB, 36 records)
+   📄 Resource: Monthly BSUoS Actual Summary June 2021 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_135425_Monthly BSUoS Actual Summary June 2021.csv (0.00 MB, 12 records)
+   📄 Resource: Monthly BSUoS Forecast Summary June 2021 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_135455_Monthly BSUoS Forecast Summary June 2021.csv (0.01 MB, 24 records)
+   📄 Resource: Monthly BSUoS Summary June 2021 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_135525_Monthly BSUoS Summary June 2021.csv (0.01 MB, 36 records)
+   📄 Resource: Monthly BSUoS Actual Summary July 2021 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_135555_Monthly BSUoS Actual Summary July 2021.csv (0.00 MB, 12 records)
+   📄 Resource: Monthly BSUoS Forecast Summary July 2021 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_135625_Monthly BSUoS Forecast Summary July 2021.csv (0.01 MB, 24 records)
+   📄 Resource: Monthly BSUoS Summary July 2021 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_135655_Monthly BSUoS Summary July 2021.csv (0.01 MB, 36 records)
+   📄 Resource: Monthly BSUoS Actual Summary August 2021 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_135725_Monthly BSUoS Actual Summary August 2021.csv (0.00 MB, 12 records)
+   📄 Resource: Monthly BSUoS Forecast Summary August 2021 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_135755_Monthly BSUoS Forecast Summary August 2021.csv (0.01 MB, 24 records)
+   📄 Resource: Monthly BSUoS Summary August 2021 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_135825_Monthly BSUoS Summary August 2021.csv (0.01 MB, 36 records)
+   📄 Resource: Monthly BSUoS Actual Summary September 2021 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_135855_Monthly BSUoS Actual Summary September 2021.csv (0.00 MB, 12 records)
+   📄 Resource: Monthly BSUoS Forecast Summary September 2021 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_135925_Monthly BSUoS Forecast Summary September 2021.csv (0.01 MB, 24 records)
+   📄 Resource: Monthly BSUoS Summary September 2021 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_135955_Monthly BSUoS Summary September 2021.csv (0.01 MB, 36 records)
+   📄 Resource: Monthly BSUoS Actual Summary October 2021 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_140025_Monthly BSUoS Actual Summary October 2021.csv (0.00 MB, 12 records)
+   📄 Resource: Monthly BSUoS Forecast Summary October 2021 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_140055_Monthly BSUoS Forecast Summary October 2021.csv (0.01 MB, 24 records)
+   📄 Resource: Monthly BSUoS Summary October 2021 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_140125_Monthly BSUoS Summary October 2021.csv (0.01 MB, 36 records)
+   📄 Resource: Monthly BSUoS Actual Summary November 2021 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_140155_Monthly BSUoS Actual Summary November 2021.csv (0.00 MB, 12 records)
+   📄 Resource: Monthly BSUoS Forecast Summary November 2021 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_140225_Monthly BSUoS Forecast Summary November 2021.csv (0.01 MB, 24 records)
+   📄 Resource: Monthly BSUoS Summary November 2021 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_140255_Monthly BSUoS Summary November 2021.csv (0.01 MB, 36 records)
+   📄 Resource: Monthly BSUoS Actual Summary December 2021 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_140325_Monthly BSUoS Actual Summary December 2021.csv (0.00 MB, 12 records)
+   📄 Resource: Monthly BSUoS Forecast Summary December 2021 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_140355_Monthly BSUoS Forecast Summary December 2021.csv (0.01 MB, 26 records)
+   📄 Resource: Monthly BSUoS Summary December 2021 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_140425_Monthly BSUoS Summary December 2021.csv (0.01 MB, 36 records)
+   📄 Resource: BSUoS Forecasting Update Jan 2022 - Communications Pack (pdf)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_140457_BSUoS Forecasting Update Jan 2022 - Communications Pack.pdf (0.39 MB)
+   📄 Resource: Monthly BSUoS Forecast Summary February 2022 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_140525_Monthly BSUoS Forecast Summary February 2022.csv (0.00 MB, 25 records)
+   📄 Resource: Monthly BSUoS Forecast Summary March 2022 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_140555_Monthly BSUoS Forecast Summary March 2022.csv (0.00 MB, 25 records)
+   📄 Resource: Monthly BSUoS Forecast Summary April 2022 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_140625_Monthly BSUoS Forecast Summary April 2022.csv (0.00 MB, 25 records)
+   📄 Resource: Monthly BSUoS Forecast Summary May 2022 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_140655_Monthly BSUoS Forecast Summary May 2022.csv (0.00 MB, 25 records)
+   📄 Resource: Monthly BSUoS Forecast Summary June 2022 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_140725_Monthly BSUoS Forecast Summary June 2022.csv (0.00 MB, 24 records)
+   📄 Resource: Monthly BSUoS Forecast Summary July 2022 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_140755_Monthly BSUoS Forecast Summary July 2022.csv (0.00 MB, 24 records)
+   📄 Resource: Monthly BSUoS Forecast Summary August 2022 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_140825_Monthly BSUoS Forecast Summary August 2022.csv (0.00 MB, 24 records)
+   📄 Resource: Monthly BSUoS Forecast Summary September 2022 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_140855_Monthly BSUoS Forecast Summary September 2022.csv (0.00 MB, 24 records)
+   📄 Resource: Monthly BSUoS Forecast Summary September 2022 with Winter Contingency Cost (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_140925_Monthly BSUoS Forecast Summary September 2022 with Winter Contingency Cost.csv (0.00 MB, 24 records)
+   📄 Resource: Monthly BSUoS Forecast Summary October 2022 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_140955_Monthly BSUoS Forecast Summary October 2022.csv (0.00 MB, 24 records)
+   📄 Resource: Monthly BSUoS Forecast Summary November 2022 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_141025_Monthly BSUoS Forecast Summary November 2022.csv (0.00 MB, 24 records)
+   📄 Resource: Monthly BSUoS Forecast Summary December 2022 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_141055_Monthly BSUoS Forecast Summary December 2022.csv (0.00 MB, 24 records)
+   📄 Resource: Monthly BSUoS Forecast Summary January 2023 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_141125_Monthly BSUoS Forecast Summary January 2023.csv (0.00 MB, 24 records)
+   📄 Resource: Monthly BSUoS Forecast Summary February 2023 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_141155_Monthly BSUoS Forecast Summary February 2023.csv (0.00 MB, 24 records)
+   📄 Resource: Monthly BSUoS Forecast Summary March 2023 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_141225_Monthly BSUoS Forecast Summary March 2023.csv (0.00 MB, 24 records)
+   📄 Resource: Monthly BSUoS Forecast Summary April 2023 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_141255_Monthly BSUoS Forecast Summary April 2023.csv (0.00 MB, 24 records)
+   📄 Resource: Monthly BSUoS Forecast Summary May 2023 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_141325_Monthly BSUoS Forecast Summary May 2023.csv (0.00 MB, 24 records)
+   📄 Resource: Monthly BSUoS Forecast Summary June 2023 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_141355_Monthly BSUoS Forecast Summary June 2023.csv (0.00 MB, 24 records)
+   📄 Resource: Monthly BSUoS Forecast Summary July 2023 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_141425_Monthly BSUoS Forecast Summary July 2023.csv (0.00 MB, 24 records)
+   📄 Resource: Monthly BSUoS Forecast Summary August 2023 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_141455_Monthly BSUoS Forecast Summary August 2023.csv (0.00 MB, 24 records)
+   📄 Resource: Monthly BSUoS Forecast Summary September 2023 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_141525_Monthly BSUoS Forecast Summary September 2023.csv (0.00 MB, 24 records)
+   📄 Resource: Monthly BSUoS Forecast Summary October 2023 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_141555_Monthly BSUoS Forecast Summary October 2023.csv (0.00 MB, 24 records)
+   📄 Resource: Monthly BSUoS Forecast Summary November 2023 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_141625_Monthly BSUoS Forecast Summary November 2023.csv (0.00 MB, 24 records)
+   📄 Resource: Monthly BSUoS Forecast Summary December 2023 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_141655_Monthly BSUoS Forecast Summary December 2023.csv (0.00 MB, 24 records)
+   📄 Resource: Monthly BSUoS Forecast Summary January 2024 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_141725_Monthly BSUoS Forecast Summary January 2024.csv (0.00 MB, 24 records)
+   📄 Resource: Monthly BSUoS Forecast Summary February 2024 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_141755_Monthly BSUoS Forecast Summary February 2024.csv (0.00 MB, 24 records)
+   📄 Resource: Monthly BSUoS Forecast Summary March 2024 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_141825_Monthly BSUoS Forecast Summary March 2024.csv (0.00 MB, 24 records)
+   📄 Resource: Monthly BSUoS Forecast Summary April 2024 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_141855_Monthly BSUoS Forecast Summary April 2024.csv (0.00 MB, 25 records)
+   📄 Resource: Monthly BSUoS Forecast Summary May 2024 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_141925_Monthly BSUoS Forecast Summary May 2024.csv (0.00 MB, 24 records)
+   📄 Resource: Monthly BSUoS Forecast Summary June 2024 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_142031_Monthly BSUoS Forecast Summary June 2024.csv (0.00 MB, 24 records)
+   📄 Resource: Monthly BSUoS Forecast Summary July 2024 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_142031_Monthly BSUoS Forecast Summary July 2024.csv (0.00 MB, 24 records)
+   📄 Resource: Monthly BSUoS Forecast Summary August 2024 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_142107_Monthly BSUoS Forecast Summary August 2024.csv (0.00 MB, 24 records)
+   📄 Resource: Monthly BSUoS Forecast Summary September 2024 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_142131_Monthly BSUoS Forecast Summary September 2024.csv (0.00 MB, 24 records)
+   📄 Resource: Monthly BSUoS Forecast Summary October 2024 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_142201_Monthly BSUoS Forecast Summary October 2024.csv (0.00 MB, 24 records)
+   📄 Resource: Monthly BSUoS Forecast Summary November 2024 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_142231_Monthly BSUoS Forecast Summary November 2024.csv (0.00 MB, 24 records)
+   📄 Resource: Monthly BSUoS Forecast Summary December 2024 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_142301_Monthly BSUoS Forecast Summary December 2024.csv (0.00 MB, 24 records)
+   📄 Resource: Monthly BSUoS Forecast Summary January 2025 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_142331_Monthly BSUoS Forecast Summary January 2025.csv (0.00 MB, 24 records)
+   📄 Resource: Monthly BSUoS Forecast Summary February 2025 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_142401_Monthly BSUoS Forecast Summary February 2025.csv (0.00 MB, 24 records)
+   📄 Resource: Monthly BSUoS Forecast Summary March 2025 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_142431_Monthly BSUoS Forecast Summary March 2025.csv (0.00 MB, 25 records)
+   📄 Resource: Monthly BSUoS Forecast Summary April 2025 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_142501_Monthly BSUoS Forecast Summary April 2025.csv (0.00 MB, 24 records)
+   📄 Resource: Monthly BSUoS Forecast Summary May 2025 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_142531_Monthly BSUoS Forecast Summary May 2025.csv (0.00 MB, 24 records)
+   📄 Resource: Monthly BSUoS Forecast Summary June 2025 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_142601_Monthly BSUoS Forecast Summary June 2025.csv (0.00 MB, 24 records)
+   📄 Resource: Monthly BSUoS Forecast Summary July 2025 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_142631_Monthly BSUoS Forecast Summary July 2025.csv (0.00 MB, 24 records)
+   📄 Resource: Monthly BSUoS Forecast Summary August 2025 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_142701_Monthly BSUoS Forecast Summary August 2025.csv (0.00 MB, 24 records)
+   📄 Resource: Monthly BSUoS Forecast Summary September 2025 (csv)
+      ☁️  Uploaded: neso_data/bsuos-monthly-forecast/20250820_142731_Monthly BSUoS Forecast Summary September 2025.csv (0.00 MB, 24 records)
+   ✅ Downloaded 131/131 resources
+
+📊 Progress: 19/105
+📥 DOWNLOADING: Carbon Intensity of Balancing Actions
+   📄 Resource: ESO Carbon Intensity Balancing Actions Methodology (pdf)
+      ☁️  Uploaded: neso_data/carbon-intensity-of-balancing-actions/20250820_142803_ESO Carbon Intensity Balancing Actions Methodology.pdf (0.22 MB)
+   📄 Resource: Carbon Intensity of Balancing Actions (csv)
+      ☁️  Uploaded: neso_data/carbon-intensity-of-balancing-actions/20250820_142831_Carbon Intensity of Balancing Actions.csv (0.50 MB, 10000 records)
+   ✅ Downloaded 2/2 resources
+
+📊 Progress: 20/105
+📥 DOWNLOADING: Constraint Breakdown Costs and Volume
+   📄 Resource: Constraint Breakdown 2017-2018 (csv)
+      ☁️  Uploaded: neso_data/constraint-breakdown/20250820_142901_Constraint Breakdown 2017-2018.csv (0.02 MB, 365 records)
+   📄 Resource: Constraint Breakdown 2018-2019 (csv)
+      ☁️  Uploaded: neso_data/constraint-breakdown/20250820_142931_Constraint Breakdown 2018-2019.csv (0.02 MB, 365 records)
+   📄 Resource: Constraint Breakdown 2019-2020 (csv)
+      ☁️  Uploaded: neso_data/constraint-breakdown/20250820_143001_Constraint Breakdown 2019-2020.csv (0.02 MB, 366 records)
+   📄 Resource: Constraint Breakdown 2020-2021 (csv)
+      ☁️  Uploaded: neso_data/constraint-breakdown/20250820_143031_Constraint Breakdown 2020-2021.csv (0.02 MB, 365 records)
+   📄 Resource: Constraint Breakdown 2021-2022 (csv)
+      ☁️  Uploaded: neso_data/constraint-breakdown/20250820_143101_Constraint Breakdown 2021-2022.csv (0.02 MB, 365 records)
+   📄 Resource: Constraint Breakdown 2022-2023 (csv)
+      ☁️  Uploaded: neso_data/constraint-breakdown/20250820_143131_Constraint Breakdown 2022-2023.csv (0.02 MB, 365 records)
+   📄 Resource: Constraint Breakdown 2023-2024 (csv)
+      ☁️  Uploaded: neso_data/constraint-breakdown/20250820_143201_Constraint Breakdown 2023-2024.csv (0.02 MB, 366 records)
+   📄 Resource: Constraint Breakdown 2024-2025 (csv)
+      ☁️  Uploaded: neso_data/constraint-breakdown/20250820_143231_Constraint Breakdown 2024-2025.csv (0.02 MB, 365 records)
+   📄 Resource: Constraint Breakdown 2025-2026 (csv)
+      ☁️  Uploaded: neso_data/constraint-breakdown/20250820_143301_Constraint Breakdown 2025-2026.csv (0.01 MB, 131 records)
+   ✅ Downloaded 9/9 resources
+   ⏱️  Elapsed: 2.9 hours
+   💾 Downloaded: 30.1 MB
+
+📊 Progress: 21/105
+📥 DOWNLOADING: Constraint Management Intertrip Service Information (CMIS)
+   📄 Resource: Constraint Management Intertrip Arming 2022-2023 (csv)
+      ☁️  Uploaded: neso_data/constraint-management-intertrip-service-information-cmis/20250820_143331_Constraint Management Intertrip Arming 2022-2023.csv (0.03 MB, 441 records)
+   📄 Resource: Constraint Management Intertrip Arming 2023-2024 (csv)
+      ☁️  Uploaded: neso_data/constraint-management-intertrip-service-information-cmis/20250820_143401_Constraint Management Intertrip Arming 2023-2024.csv (0.01 MB, 110 records)
+   📄 Resource: Constraint Management Intertrip Arming 2024-2025 (csv)
+      ☁️  Uploaded: neso_data/constraint-management-intertrip-service-information-cmis/20250820_143431_Constraint Management Intertrip Arming 2024-2025.csv (0.02 MB, 246 records)
+   📄 Resource: Constraint Management Intertrip Arming 2025-2026 (csv)
+      ☁️  Uploaded: neso_data/constraint-management-intertrip-service-information-cmis/20250820_143501_Constraint Management Intertrip Arming 2025-2026.csv (0.00 MB, 44 records)2025-08-20 15:04:09,804 - ERROR - Datastore request failed for a01c3587-0e29-4e8b-81e6-37a32776fd8a: HTTPSConnectionPool(host='api.neso.energy', port=443): Read timed out. (read timeout=60)
+
+   ✅ Downloaded 4/4 resources
+
+📊 Progress: 22/105
+📥 DOWNLOADING: Contract Transfer of Obligation
+   📄 Resource: Contract Transfer of Obligation 2024-2025 (csv)
+      ℹ️  No data records found
+   ✅ Downloaded 0/1 resources
+
+📊 Progress: 23/105
+📥 DOWNLOADING: Country Carbon Intensity Forecast
+   📄 Resource: Country Carbon Intensity Forecast (csv)
+      ☁️  Uploaded: neso_data/country-carbon-intensity-forecast/20250820_143602_Country Carbon Intensity Forecast.csv (0.40 MB, 10000 records)
+   ✅ Downloaded 1/1 resources
+
+📊 Progress: 24/105
+📥 DOWNLOADING: Current Balancing Services Use of System (BSUoS) Charges
+   📄 Resource: Historic II BSUoS Data (csv)
+      ☁️  Uploaded: neso_data/current-balancing-services-use-of-system-bsuos-data/20250820_143631_Historic II BSUoS Data.csv (0.57 MB, 10000 records)
+   📄 Resource: Historic II BSUoS Data 2023-2024 (csv)
+      ☁️  Uploaded: neso_data/current-balancing-services-use-of-system-bsuos-data/20250820_143702_Historic II BSUoS Data 2023-2024.csv (0.75 MB, 10000 records)
+   📄 Resource: Historic SF BSUoS Data (csv)
+      ☁️  Uploaded: neso_data/current-balancing-services-use-of-system-bsuos-data/20250820_143731_Historic SF BSUoS Data.csv (0.57 MB, 10000 records)
+   📄 Resource: Historic RF BSUoS Data (csv)
+      ☁️  Uploaded: neso_data/current-balancing-services-use-of-system-bsuos-data/20250820_143801_Historic RF BSUoS Data.csv (0.57 MB, 10000 records)
+   📄 Resource: Historic SF BSUoS Data 2023-2024 (csv)
+      ☁️  Uploaded: neso_data/current-balancing-services-use-of-system-bsuos-data/20250820_143832_Historic SF BSUoS Data 2023-2024.csv (0.75 MB, 10000 records)
+   📄 Resource: CMP381 II BSUoS Data (xlsx)
+      ☁️  Uploaded: neso_data/current-balancing-services-use-of-system-bsuos-data/20250820_143903_CMP381 II BSUoS Data.xlsx (0.63 MB)
+   📄 Resource: CMP381 SF BSUoS Data (xlsx)
+      ☁️  Uploaded: neso_data/current-balancing-services-use-of-system-bsuos-data/20250820_143933_CMP381 SF BSUoS Data.xlsx (0.63 MB)
+   📄 Resource: CMP395 II BSUoS Data (xlsx)
+      ☁️  Uploaded: neso_data/current-balancing-services-use-of-system-bsuos-data/20250820_144003_CMP395 II BSUoS Data.xlsx (0.75 MB)
+   📄 Resource: CMP395 SF BSUoS Data (xlsx)
+      ☁️  Uploaded: neso_data/current-balancing-services-use-of-system-bsuos-data/20250820_144033_CMP395 SF BSUoS Data.xlsx (0.82 MB)
+   📄 Resource: Current II BSUoS Data (csv)
+      ☁️  Uploaded: neso_data/current-balancing-services-use-of-system-bsuos-data/20250820_144101_Current II BSUoS Data.csv (0.43 MB, 6432 records)
+   📄 Resource: Current SF BSUoS Data (csv)
+      ☁️  Uploaded: neso_data/current-balancing-services-use-of-system-bsuos-data/20250820_144132_Current SF BSUoS Data.csv (0.44 MB, 5712 records)
+   📄 Resource: Current RF BSUoS Data (csv)
+      ☁️  Uploaded: neso_data/current-balancing-services-use-of-system-bsuos-data/20250820_144201_Current RF BSUoS Data.csv (0.30 MB, 4416 records)
+   📄 Resource: Historic II BSUoS Data 2024-2025 (csv)
+      ☁️  Uploaded: neso_data/current-balancing-services-use-of-system-bsuos-data/20250820_144231_Historic II BSUoS Data 2024-2025.csv (0.05 MB, 624 records)
+   📄 Resource: Historic SF BSUoS Data 2024-2025 (csv)
+      ☁️  Uploaded: neso_data/current-balancing-services-use-of-system-bsuos-data/20250820_144302_Historic SF BSUoS Data 2024-2025.csv (0.74 MB, 10000 records)
+   📄 Resource: Historic RF BSUoS Data 2023-2024 (csv)
+      ☁️  Uploaded: neso_data/current-balancing-services-use-of-system-bsuos-data/20250820_144332_Historic RF BSUoS Data 2023-2024.csv (0.75 MB, 10000 records)
+   ✅ Downloaded 15/15 resources
+
+📊 Progress: 25/105
+📥 DOWNLOADING: Daily Balancing Services Use of System (BSUoS) Cost Data
+   📄 Resource: Daily Balancing Costs 2017-2018 (csv)
+      ☁️  Uploaded: neso_data/daily-balancing-costs-balancing-services-use-of-system/20250820_144402_Daily Balancing Costs 2017-2018.csv (0.65 MB, 10000 records)
+   📄 Resource: Daily Balancing Costs 2018-2019 (csv)
+      ☁️  Uploaded: neso_data/daily-balancing-costs-balancing-services-use-of-system/20250820_144432_Daily Balancing Costs 2018-2019.csv (0.77 MB, 10000 records)
+   📄 Resource: Daily Balancing Costs 2019-2020 (csv)
+      ☁️  Uploaded: neso_data/daily-balancing-costs-balancing-services-use-of-system/20250820_144502_Daily Balancing Costs 2019-2020.csv (0.66 MB, 10000 records)
+   📄 Resource: Daily Balancing Costs 2020-2021 (csv)
+      ☁️  Uploaded: neso_data/daily-balancing-costs-balancing-services-use-of-system/20250820_144533_Daily Balancing Costs 2020-2021.csv (0.68 MB, 10000 records)
+   📄 Resource: Daily Balancing Costs 2021-2022 (csv)
+      ☁️  Uploaded: neso_data/daily-balancing-costs-balancing-services-use-of-system/20250820_144602_Daily Balancing Costs 2021-2022.csv (0.80 MB, 10000 records)
+   📄 Resource: Daily Balancing Costs 2022-2023 (csv)
+      ☁️  Uploaded: neso_data/daily-balancing-costs-balancing-services-use-of-system/20250820_144632_Daily Balancing Costs 2022-2023.csv (0.81 MB, 10000 records)
+   📄 Resource: Daily Balancing Costs 2023-2024 (csv)
+      ☁️  Uploaded: neso_data/daily-balancing-costs-balancing-services-use-of-system/20250820_144702_Daily Balancing Costs 2023-2024.csv (0.79 MB, 10000 records)
+   📄 Resource: Daily Balancing Costs 2024-2025 (csv)
+      ☁️  Uploaded: neso_data/daily-balancing-costs-balancing-services-use-of-system/20250820_144732_Daily Balancing Costs 2024-2025.csv (0.81 MB, 10000 records)
+   📄 Resource: Missing Settlement Periods since January 2017 (xlsx)
+      ☁️  Uploaded: neso_data/daily-balancing-costs-balancing-services-use-of-system/20250820_144803_Missing Settlement Periods since January 2017.xlsx (0.01 MB)
+   📄 Resource: Daily Balancing Costs 2025-2026 (csv)
+      ☁️  Uploaded: neso_data/daily-balancing-costs-balancing-services-use-of-system/20250820_144832_Daily Balancing Costs 2025-2026.csv (0.53 MB, 6336 records)
+   ✅ Downloaded 10/10 resources
+
+📊 Progress: 26/105
+📥 DOWNLOADING: Daily Balancing Services Use of System (BSUoS) Volume Data
+   📄 Resource: Daily Balancing Volume 2017-2018 (csv)
+      ☁️  Uploaded: neso_data/daily-balancing-volume-balancing-services-use-of-system/20250820_144902_Daily Balancing Volume 2017-2018.csv (0.68 MB, 10000 records)
+   📄 Resource: Daily Balancing Volume 2018-2019 (csv)
+      ☁️  Uploaded: neso_data/daily-balancing-volume-balancing-services-use-of-system/20250820_144932_Daily Balancing Volume 2018-2019.csv (0.68 MB, 10000 records)
+   📄 Resource: Daily Balancing Volume 2019-2020 (csv)
+      ☁️  Uploaded: neso_data/daily-balancing-volume-balancing-services-use-of-system/20250820_145002_Daily Balancing Volume 2019-2020.csv (0.70 MB, 10000 records)
+   📄 Resource: Daily Balancing Volume 2020-2021 (csv)
+      ☁️  Uploaded: neso_data/daily-balancing-volume-balancing-services-use-of-system/20250820_145032_Daily Balancing Volume 2020-2021.csv (0.70 MB, 10000 records)
+   📄 Resource: Daily Balancing Volume 2021-2022 (csv)
+      ☁️  Uploaded: neso_data/daily-balancing-volume-balancing-services-use-of-system/20250820_145102_Daily Balancing Volume 2021-2022.csv (0.69 MB, 10000 records)
+   📄 Resource: Daily Balancing Volume 2022-2023 (csv)
+      ☁️  Uploaded: neso_data/daily-balancing-volume-balancing-services-use-of-system/20250820_145132_Daily Balancing Volume 2022-2023.csv (0.68 MB, 10000 records)
+   📄 Resource: Daily Balancing Volume 2023-2024 (csv)
+      ☁️  Uploaded: neso_data/daily-balancing-volume-balancing-services-use-of-system/20250820_145202_Daily Balancing Volume 2023-2024.csv (0.67 MB, 10000 records)
+   📄 Resource: Daily Balancing Volume 2024-2025 (csv)
+      ☁️  Uploaded: neso_data/daily-balancing-volume-balancing-services-use-of-system/20250820_145232_Daily Balancing Volume 2024-2025.csv (0.68 MB, 10000 records)
+   📄 Resource: Missing Settlement Periods since January 2017 (xlsx)
+      ☁️  Uploaded: neso_data/daily-balancing-volume-balancing-services-use-of-system/20250820_145304_Missing Settlement Periods since January 2017.xlsx (0.01 MB)2025-08-20 15:22:10,278 - ERROR - Datastore request failed for 700a73ff-38e9-45ff-a674-085bcbfc9faf: HTTPSConnectionPool(host='api.neso.energy', port=443): Read timed out. (read timeout=60)
+
+   📄 Resource: Daily Balancing Volume 2025-2026 (csv)
+      ☁️  Uploaded: neso_data/daily-balancing-volume-balancing-services-use-of-system/20250820_145333_Daily Balancing Volume 2025-2026.csv (0.45 MB, 6336 records)
+   ✅ Downloaded 10/10 resources
+
+📊 Progress: 27/105
+📥 DOWNLOADING: Demand Data Update
+   📄 Resource: Demand Data Update (csv)
+      ☁️  Uploaded: neso_data/daily-demand-update/20250820_145402_Demand Data Update.csv (0.28 MB, 2784 records)
+   📄 Resource: Frequently Asked Questions (FAQ) (doc)
+      ☁️  Uploaded: neso_data/daily-demand-update/20250820_145434_Frequently Asked Questions (FAQ).doc (0.16 MB)
+   ✅ Downloaded 2/2 resources
+
+📊 Progress: 28/105
+📥 DOWNLOADING: Daily operational planning margin requirement (OPMR)
+   📄 Resource: Daily Operational Planning Margin Requirement (csv)
+      ☁️  Uploaded: neso_data/daily-opmr/20250820_145559_Daily Operational Planning Margin Requirement.csv (0.82 MB, 10000 records)
+   ✅ Downloaded 1/1 resources
+
+📊 Progress: 29/105
+📥 DOWNLOADING: Daily Wind Availability
+   📄 Resource: Daily Wind Availability (csv)
+      ☁️  Uploaded: neso_data/daily-wind-availability/20250820_145600_Daily Wind Availability.csv (0.08 MB, 3120 records)
+   ✅ Downloaded 1/1 resources
+
+📊 Progress: 30/105
+📥 DOWNLOADING: Data Portal: Planned Changes & Known Issues
+   📄 Resource: Planned Changes and Issues Log (csv)
+      ☁️  Uploaded: neso_data/data-portal-planned-changes-known-issues/20250820_145630_Planned Changes and Issues Log.csv (0.10 MB, 166 records)
+   ✅ Downloaded 1/1 resources
+   ⏱️  Elapsed: 3.3 hours
+   💾 Downloaded: 53.2 MB
+
+📊 Progress: 31/105
+📥 DOWNLOADING: Day Ahead Constraint Flows and Limits
+   📄 Resource: Network Diagram England & Wales (pdf)
+      ☁️  Uploaded: neso_data/day-ahead-constraint-flows-and-limits/20250820_145701_Network Diagram England & Wales.pdf (0.42 MB)
+   📄 Resource: Day Ahead Constraint Flows and Limits (csv)
+      ☁️  Uploaded: neso_data/day-ahead-constraint-flows-and-limits/20250820_145730_Day Ahead Constraint Flows and Limits.csv (0.43 MB, 10000 records)
+   📄 Resource: Network Diagram Scotland (pdf)
+      ☁️  Uploaded: neso_data/day-ahead-constraint-flows-and-limits/20250820_145801_Network Diagram Scotland.pdf (0.32 MB)
+   ✅ Downloaded 3/3 resources
+
+📊 Progress: 32/105
+📥 DOWNLOADING: Day Ahead Half Hourly Demand Forecast Performance
+   📄 Resource: Day Ahead Half Hourly Demand Forecast Performance (csv)
+      ☁️  Uploaded: neso_data/day-ahead-half-hourly-demand-forecast-performance/20250820_145830_Day Ahead Half Hourly Demand Forecast Performance.csv (0.88 MB, 10000 records)
+   ✅ Downloaded 1/1 resources
+
+📊 Progress: 33/105
+📥 DOWNLOADING: Day Ahead Wind Forecast
+   📄 Resource: Day Ahead Wind Forecast (csv)
+      ☁️  Uploaded: neso_data/day-ahead-wind-forecast/20250820_145859_Day Ahead Wind Forecast.csv (0.00 MB, 48 records)
+   📄 Resource: Historic Day Ahead Wind Forecasts (csv)
+      ☁️  Uploaded: neso_data/day-ahead-wind-forecast/20250820_145930_Historic Day Ahead Wind Forecasts.csv (0.67 MB, 10000 records)
+   📄 Resource: Day Ahead Wind BMU Forecast (csv)
+      ☁️  Uploaded: neso_data/day-ahead-wind-forecast/20250820_150000_Day Ahead Wind BMU Forecast.csv (0.91 MB, 10000 records)
+   ✅ Downloaded 3/3 resources
+
+📊 Progress: 34/105
+📥 DOWNLOADING: Demand Flexibility Service
+   📄 Resource: DFS Service Requirement (csv)
+      ☁️  Uploaded: neso_data/demand-flexibility/20250820_150058_DFS Service Requirement.csv (0.31 MB, 726 records)
+   📄 Resource: DFS Industry Notification (csv)
+      ☁️  Uploaded: neso_data/demand-flexibility/20250820_150106_DFS Industry Notification.csv (0.01 MB, 128 records)
+   📄 Resource: DFS Utilisation Report (csv)
+      ☁️  Uploaded: neso_data/demand-flexibility/20250820_150130_DFS Utilisation Report.csv (1.04 MB, 7385 records)
+   📄 Resource: DFS Utilisation Report Summary (csv)
+      ☁️  Uploaded: neso_data/demand-flexibility/20250820_150200_DFS Utilisation Report Summary.csv (0.04 MB, 724 records)
+   ✅ Downloaded 4/4 resources
+
+📊 Progress: 35/105
+📥 DOWNLOADING: Demand Profile Dates
+   📄 Resource: Demand Profile Dates (csv)
+      ☁️  Uploaded: neso_data/demand-profile-dates/20250820_150309_Demand Profile Dates.csv (0.07 MB, 2802 records)
+   ✅ Downloaded 1/1 resources
+
+📊 Progress: 36/105
+📥 DOWNLOADING: Disaggregated Balancing Services Adjustment Data (BSAD)
+   📄 Resource: Disaggregated BSAD 2013-14 (csv)
+   📄 Resource: Disaggregated BSAD 2014-15 (csv)
+      ☁️  Uploaded: neso_data/disaggregated-bsad/20250820_150433_Disaggregated BSAD 2014-15.csv (0.37 MB, 10000 records)
+   📄 Resource: Disaggregated BSAD 2015-16 (csv)
+      ☁️  Uploaded: neso_data/disaggregated-bsad/20250820_150452_Disaggregated BSAD 2015-16.csv (0.39 MB, 10000 records)
+   📄 Resource: Disaggregated BSAD 2016-17 (csv)
+      ☁️  Uploaded: neso_data/disaggregated-bsad/20250820_150510_Disaggregated BSAD 2016-17.csv (0.30 MB, 10000 records)
+   📄 Resource: Disaggregated BSAD 2017-18 (csv)
+      ☁️  Uploaded: neso_data/disaggregated-bsad/20250820_150542_Disaggregated BSAD 2017-18.csv (0.39 MB, 10000 records)
+   📄 Resource: Disaggregated BSAD 2018-19 (csv)
+      ☁️  Uploaded: neso_data/disaggregated-bsad/20250820_150610_Disaggregated BSAD 2018-19.csv (0.29 MB, 10000 records)
+   📄 Resource: Disaggregated BSAD 2019-20 (csv)
+      ☁️  Uploaded: neso_data/disaggregated-bsad/20250820_150640_Disaggregated BSAD 2019-20.csv (0.30 MB, 10000 records)
+   📄 Resource: Disaggregated BSAD 2020-21 (csv)
+      ☁️  Uploaded: neso_data/disaggregated-bsad/20250820_150710_Disaggregated BSAD 2020-21.csv (0.31 MB, 10000 records)
+   📄 Resource: Disaggregated BSAD 2021-22 (csv)
+      ☁️  Uploaded: neso_data/disaggregated-bsad/20250820_150740_Disaggregated BSAD 2021-22.csv (0.32 MB, 10000 records)
+   📄 Resource: Disaggregated BSAD 2022-23 (csv)
+      ☁️  Uploaded: neso_data/disaggregated-bsad/20250820_150810_Disaggregated BSAD 2022-23.csv (0.39 MB, 10000 records)
+   📄 Resource: Disaggregated BSAD 2023-24 (csv)
+      ☁️  Uploaded: neso_data/disaggregated-bsad/20250820_150840_Disaggregated BSAD 2023-24.csv (0.31 MB, 10000 records)
+   📄 Resource: Disaggregated BSAD 2024-25 (csv)
+      ☁️  Uploaded: neso_data/disaggregated-bsad/20250820_150910_Disaggregated BSAD 2024-25.csv (0.31 MB, 10000 records)
+   📄 Resource: Disaggregated BSAD 2025-26 (csv)
+      ☁️  Uploaded: neso_data/disaggregated-bsad/20250820_150940_Disaggregated BSAD 2025-26.csv (0.32 MB, 10000 records)
+   ✅ Downloaded 12/13 resources
+
+📊 Progress: 37/105
+📥 DOWNLOADING: Dynamic Containment 4 Day Forecast
+   📄 Resource: Dynamic Containment - 4 Day forecast (csv)
+      ☁️  Uploaded: neso_data/dynamic-containment-4-day-forecast/20250820_151010_Dynamic Containment - 4 Day forecast.csv (0.00 MB, 8 records)
+   📄 Resource: Dynamic Containment 4 Day Forecast - History (csv)
+      ☁️  Uploaded: neso_data/dynamic-containment-4-day-forecast/20250820_151040_Dynamic Containment 4 Day Forecast - History.csv (0.56 MB, 9740 records)
+   ✅ Downloaded 2/2 resources
+
+📊 Progress: 38/105
+📥 DOWNLOADING: Dynamic Containment, Regulation and Moderation auction results
+   📄 Resource: Dynamic Containment Masterdata (csv)
+      ☁️  Uploaded: neso_data/dynamic-containment-data/20250820_151110_Dynamic Containment Masterdata.csv (1.58 MB, 10000 records)
+   📄 Resource: DC, DR & DM Results Summary Master Data 2021-2023 (csv)
+      ☁️  Uploaded: neso_data/dynamic-containment-data/20250820_151140_DC, DR & DM Results Summary Master Data 2021-2023.csv (0.66 MB, 10000 records)
+   📄 Resource: DC, DR & DM Results By Unit Master Data 2021-2023 (csv)
+      ☁️  Uploaded: neso_data/dynamic-containment-data/20250820_151210_DC, DR & DM Results By Unit Mas

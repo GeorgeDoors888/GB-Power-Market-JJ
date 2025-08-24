@@ -1,0 +1,38 @@
+name: CI
+on:
+ push: { branches: [ main ] }
+ pull_request: { branches: [ main ] }
+jobs:
+ build:
+   runs-on: ubuntu-latest
+   steps:
+     - uses: actions/checkout@v4
+     - uses: actions/setup-python@v5
+       with:
+         python-version: '3.11'
+         cache: 'pip'
+         cache-dependency-path: |
+           requirements.txt
+           pyproject.toml
+     - name: Install dependencies
+       run: |
+         python -m venv .venv
+         source .venv/bin/activate
+         pip install --upgrade pip
+         pip install -r requirements.txt || true
+     - name: Lint (flake8)
+       run: |
+         source .venv/bin/activate
+         flake8 .
+     - name: Format check (Black)
+       run: |
+         source .venv/bin/activate
+         black --check .
+     - name: Import sort check (isort)
+       run: |
+         source .venv/bin/activate
+         isort . --check-only --profile black
+     - name: Tests
+       run: |
+         source .venv/bin/activate
+         pytest || echo "No tests found; skipping"

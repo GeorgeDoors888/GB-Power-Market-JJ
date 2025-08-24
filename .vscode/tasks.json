@@ -1,0 +1,49 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Docs: Serve (MkDocs)",
+      "type": "shell",
+      "command": "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/bin/mkdocs serve -a 127.0.0.1:8000",
+      "group": "build"
+    },
+    {
+      "label": "AI Memory: Reindex",
+      "type": "shell",
+      "command": "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/bin/python tools/ai_memory/index_repo.py",
+      "group": "build"
+    },
+    {
+      "label": "AI Memory: Search (prompt)",
+      "type": "shell",
+      "command": "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/bin/python tools/ai_memory/search_memory.py \"{input:query}\" -k 10",
+      "group": "test"
+    },
+    {
+      "label": "Lint",
+      "type": "shell",
+      "command": "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/bin/python -m flake8 .",
+      "group": "test"
+    },
+    {
+      "label": "Format",
+      "type": "shell",
+      "command": "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/bin/python -m black . && /Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/bin/python -m isort . --profile black",
+      "group": "build"
+    },
+    {
+      "label": "Run tests",
+      "type": "shell",
+      "command": "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/bin/python -m pytest -q",
+      "group": "test"
+    }
+  ],
+  "inputs": [
+    {
+      "id": "query",
+      "type": "promptString",
+      "description": "What are you looking for?",
+      "default": "authentication"
+    }
+  ]
+}

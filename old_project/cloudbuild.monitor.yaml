@@ -1,0 +1,11 @@
+steps:
+  # Build the container image
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', '${_IMAGE_NAME}', '-f', 'Dockerfile.monitor', '.']
+
+# Push the container image to Container Registry
+images:
+  - '${_IMAGE_NAME}'
+    
+substitutions:
+  _IMAGE_NAME: gcr.io/${PROJECT_ID}/bmrs-monitor  # Will be automatically substituted

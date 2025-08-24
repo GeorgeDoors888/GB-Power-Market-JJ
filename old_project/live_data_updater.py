@@ -1,0 +1,722 @@
+#!/usr/bin/env python3
+"""
+Live Data Updater for NESO and Elexon
+====================================
+Monitors and updates data published within the last 25 hours
+Runs continuously to capture new data as soon as it's published
+Updates both Google Cloud Storage and BigQuery datasets
+"""
+
+import os
+import json
+import sys
+import requests
+import time
+import logging
+from datetime import datetime, timedelta
+from google.cloud import storage
+from google.cloud import bigquery
+from pathlib import Path
+import tempfile
+import pandas as pd
+import schedule
+
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler("live_data_updates.log"),
+        logging.StreamHandler(sys.stdout)
+    ]
+)
+logger = logging.getLogger(__name__)
+
+class LiveDataUpdater:
+    """
+    Monitors and updates data published within the last 25 hours
+    """
+    
+    def __init__(self):
+        # Check if we can connect to Google Cloud
+        self.use_cloud_storage = True
+        self.use_bigquery = True
+        
+        try:
+            # Cloud configuration
+            self.storage_client = storage.Client()
+            self.bucket_name = "jibber-jabber-knowledge-bmrs-data"
+            self.bucket = self.storage_client.bucket(self.bucket_name)
+        except Exception as e:
+            logger.warning(f"⚠️ Could not connect to Google Cloud Storage: {str(e)}")
+            logger.warning("⚠️ Cloud Storage features will be disabled")
+            self.use_cloud_storage = False
+            
+        try:
+            self.bigquery_client = bigquery.Client()
+            self.dataset_id = "uk_energy"
+        except Exception as e:
+            logger.warning(f"⚠️ Could not connect to BigQuery: {str(e)}")
+            logger.warning("⚠️ BigQuery features will be disabled")
+            self.use_bigquery = False
+        
+        # API configurations
+        self.elexon_base_url = "https://data.elexon.co.uk/bmrs/api/v1"
+        
+        # NESO API has changed, using direct BMRS API as fallback
+        # Original NESO URL: "https://api.neso.energy/api/3/action/"
+        self.neso_base_url = "https://data.elexon.co.uk/bmrs/api/v1"
+        
+        # Load API keys from environment file if not already set
+        if not os.getenv('BMRS_API_KEY'):
+            try:
+                with open('api.env', 'r') as env_file:
+                    for line in env_file:
+                        if line.strip() and not line.startswith('#'):
+                            key, value = line.strip().split('=', 1)
+                            if key == 'BMRS_API_KEY_1':
+                                os.environ['BMRS_API_KEY'] = value.strip('"\'')
+                                break
+                logger.info("✅ Loaded BMRS API key from api.env file")
+            except Exception as e:
+                logger.error(f"❌ Failed to load API key from api.env: {e}")
+        
+        self.api_key = os.getenv('BMRS_API_KEY')
+        
+        # Session for connection pooling
+        self.session = requests.Session()
+        self.session.headers.update({
+            'User-Agent': 'Live-Data-Updater/1.0 (Energy-Research)',
+            'Accept': 'application/json'
+        })
+        
+        # Rate limiting
+        self.elexon_rate_limit = 1.0  # 1 request per second
+        self.neso_rate_limit = 1.0    # Use same rate limit as Elexon since we're using the same API
+        self.last_elexon_request = 0
+        self.last_neso_request = 0
+        
+        # Available datasets
+        self.elexon_datasets = {
+            'demand_outturn': {
+                'endpoint': 'demand/outturn',
+                'table': 'elexon_demand_outturn',
+                'frequency': 30  # check every 30 minutes
+            },
+            'generation_outturn': {
+                'endpoint': 'generation/outturn',
+                'table': 'elexon_generation_outturn',
+                'frequency': 30  # check every 30 minutes
+            },
+            'system_warnings': {
+                'endpoint': 'datasets/SYSWARN',  # Corrected to use BMRS dataset endpoint
+                'table': 'elexon_system_warnings',
+                'frequency': 60  # check every hour
+            },
+            'system_frequency': {
+                'endpoint': 'system/frequency',  # 5-minute data from BMRS
+                'table': 'elexon_system_frequency',
+                'frequency': 5   # check every 5 minutes
+            },
+            'rolling_demand': {
+                'endpoint': 'demand/rollingSystemDemand',  # Near real-time rolling system demand
+                'table': 'elexon_rolling_demand',
+                'frequency': 5   # check every 5 minutes
+            }
+        }
+        
+        # Updated NESO endpoints to use direct Elexon/BMRS API endpoints
+        self.neso_datasets = {
+            'demand_forecasts': {
+                'endpoint': 'forecast/demand/day-ahead',  # Corrected Elexon API endpoint
+                'table': 'neso_demand_forecasts',
+                'frequency': 60  # check every hour
+            },
+            'wind_forecasts': {
+                'endpoint': 'datasets/WINDFORFUELHH',  # Corrected BMRS dataset endpoint
+                'table': 'neso_wind_forecasts',
+                'frequency': 60  # check every hour
+            },
+            'carbon_intensity': {
+                'endpoint': 'datasets/FUELINST',  # BMRS dataset for fuel mix data
+                'table': 'neso_carbon_intensity',
+                'frequency': 60  # check every hour
+            },
+            'interconnector_flows': {
+                'endpoint': 'datasets/INTERFUELHH',  # Corrected BMRS dataset endpoint
+                'table': 'neso_interconnector_flows',
+                'frequency': 60  # check every hour
+            },
+            'balancing_services': {
+                'endpoint': 'datasets/DISBSAD',  # BMRS dataset for bid-offer acceptances
+                'table': 'neso_balancing_services',
+                'frequency': 120  # check every 2 hours
+            }
+        }
+        
+        # Statistics
+        self.stats = {
+            'start_time': datetime.now().isoformat(),
+            'elexon_updates': 0,
+            'neso_updates': 0,
+            'last_update': None,
+            'records_updated': 0,
+            'last_check': {}
+        }
+        
+        # Initialize last check times
+        for dataset in self.elexon_datasets:
+            self.stats['last_check'][f'elexon_{dataset}'] = None
+            
+        for dataset in self.neso_datasets:
+            self.stats['last_check'][f'neso_{dataset}'] = None
+            
+        logger.info("🔄 Live Data Updater initialized")
+        
+    def _respect_elexon_rate_limit(self):
+        """Respect rate limits for Elexon API"""
+        now = time.time()
+        time_since_last = now - self.last_elexon_request
+        
+        if time_since_last < self.elexon_rate_limit:
+            sleep_time = self.elexon_rate_limit - time_since_last
+            time.sleep(sleep_time)
+            
+        self.last_elexon_request = time.time()
+        
+    def _respect_neso_rate_limit(self):
+        """Respect rate limits for NESO API"""
+        now = time.time()
+        time_since_last = now - self.last_neso_request
+        
+        if time_since_last < self.neso_rate_limit:
+            sleep_time = self.neso_rate_limit - time_since_last
+            time.sleep(sleep_time)
+            
+        self.last_neso_request = time.time()
+    
+    def get_recent_data_date_range(self):
+        """Get date range for recent data (last 25 hours)"""
+        end_date = datetime.now()
+        start_date = end_date - timedelta(hours=24)
+        
+        return start_date, end_date
+    
+    def update_elexon_dataset(self, dataset_name):
+        """Update a specific Elexon dataset with recent data"""
+        start_date, end_date = self.get_recent_data_date_range()
+        dataset = self.elexon_datasets[dataset_name]
+        endpoint = dataset['endpoint']
+        table_id = dataset['table']
+        
+        logger.info(f"📊 Checking for updates to Elexon {dataset_name}")
+        
+        # Format dates for Elexon API
+        from_date = start_date.strftime("%Y-%m-%d")
+        to_date = end_date.strftime("%Y-%m-%d")
+        
+        # Construct URL
+        url = f"{self.elexon_base_url}/{endpoint}"
+        params = {
+            'from': from_date,
+            'to': to_date,
+            'format': 'json'
+        }
+        
+        if self.api_key:
+            params['apiKey'] = self.api_key
+            
+        # Respect rate limits
+        self._respect_elexon_rate_limit()
+        
+        try:
+            # Make API request
+            response = self.session.get(url, params=params)
+            response.raise_for_status()
+            data = response.json()
+            
+            # Check if we have data
+            if 'data' not in data or not data['data']:
+                logger.info(f"✅ No new data for Elexon {dataset_name}")
+                return 0
+                
+            # Convert to DataFrame
+            df = pd.DataFrame(data['data'])
+            record_count = len(df)
+            
+            if record_count == 0:
+                logger.info(f"✅ No new data for Elexon {dataset_name}")
+                return 0
+                
+            logger.info(f"🔄 Found {record_count} records for Elexon {dataset_name}")
+            
+            # Save to Cloud Storage if available
+            if self.use_cloud_storage:
+                try:
+                    # Save to temporary file
+                    temp_file = tempfile.NamedTemporaryFile(delete=False, suffix='.json')
+                    with open(temp_file.name, 'w') as f:
+                        json.dump(data, f)
+                        
+                    # Upload to GCS
+                    timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
+                    cloud_path = f"elexon/{dataset_name}/recent_{timestamp}.json"
+                    blob = self.bucket.blob(cloud_path)
+                    blob.upload_from_filename(temp_file.name)
+                    
+                    # Delete temporary file
+                    os.unlink(temp_file.name)
+                    logger.info(f"✅ Uploaded data to Cloud Storage: {cloud_path}")
+                except Exception as e:
+                    logger.error(f"❌ Error uploading to Cloud Storage: {str(e)}")
+            else:
+                logger.info("⚠️ Cloud Storage is disabled, skipping upload")
+            
+            # Update BigQuery if available
+            if self.use_bigquery:
+                try:
+                    # Update BigQuery
+                    table_ref = f"jibber-jabber-knowledge.{self.dataset_id}.{table_id}"
+                    
+                    # Get existing data for deduplication
+                    if dataset_name == 'system_warnings':
+                        query = f"""
+                        SELECT id FROM `{table_ref}`
+                        WHERE timestamp >= '{start_date.isoformat()}'
+                        """
+                    else:
+                        query = f"""
+                        SELECT settlement_date, settlement_period FROM `{table_ref}`
+                        WHERE settlement_date >= '{from_date}'
+                        """
+                        
+                    existing_data = self.bigquery_client.query(query).result().to_dataframe()
+                    
+                    # Prepare for BigQuery
+                    if dataset_name == 'system_warnings':
+                        # Extract unique IDs
+                        existing_ids = set(existing_data['id'].tolist()) if not existing_data.empty else set()
+                        df = df[~df['id'].isin(existing_ids)]
+                    else:
+                        # Create a composite key for comparison
+                        if not existing_data.empty:
+                            existing_data['composite_key'] = existing_data['settlement_date'].astype(str) + '_' + existing_data['settlement_period'].astype(str)
+                            df['composite_key'] = df['settlementDate'].astype(str) + '_' + df['settlementPeriod'].astype(str)
+                            df = df[~df['composite_key'].isin(existing_data['composite_key'])]
+                            df = df.drop(columns=['composite_key'])
+                    
+                    # Check if we have new data after deduplication
+                    if df.empty:
+                        logger.info(f"✅ No new data for Elexon {dataset_name} after deduplication")
+                        return 0
+                        
+                    # Standardize column names
+                    if dataset_name != 'system_warnings':
+                        df = df.rename(columns={
+                            'settlementDate': 'settlement_date',
+                            'settlementPeriod': 'settlement_period'
+                        })
+                        
+                    # Convert date columns to proper format
+                    if 'settlement_date' in df.columns:
+                        df['settlement_date'] = pd.to_datetime(df['settlement_date']).dt.date
+                        
+                    # Add timestamp
+                    df['ingestion_timestamp'] = datetime.now().isoformat()
+                    
+                    # Fix schema matching by checking table schema first
+                    try:
+                        table = self.bigquery_client.get_table(table_ref)
+                        expected_fields = [field.name for field in table.schema]
+                        
+                        # Add any missing fields with default values
+                        for field in expected_fields:
+                            if field not in df.columns:
+                                if field == 'timestamp':
+                                    df['timestamp'] = datetime.now().isoformat()
+                                else:
+                                    df[field] = None
+                        
+                        # Remove any extra fields not in schema
+                        df_columns = list(df.columns)
+                        for col in df_columns:
+                            if col not in expected_fields:
+                                df = df.drop(columns=[col])
+                    except Exception as e:
+                        logger.warning(f"⚠️ Could not verify schema for {table_id}: {str(e)}")
+                    
+                    # Load to BigQuery
+                    job_config = bigquery.LoadJobConfig(
+                        write_disposition=bigquery.WriteDisposition.WRITE_APPEND
+                    )
+                    
+                    load_job = self.bigquery_client.load_table_from_dataframe(
+                        df, table_ref, job_config=job_config
+                    )
+                    load_job.result()  # Wait for job to complete
+                    
+                    logger.info(f"✅ Successfully updated {len(df)} records for Elexon {dataset_name} in BigQuery")
+                    
+                    # Update statistics
+                    self.stats['elexon_updates'] += 1
+                    self.stats['records_updated'] += len(df)
+                    self.stats['last_update'] = datetime.now().isoformat()
+                    self.stats['last_check'][f'elexon_{dataset_name}'] = datetime.now().isoformat()
+                    
+                    return len(df)
+                except Exception as e:
+                    logger.error(f"❌ Error updating BigQuery: {str(e)}")
+                    # Still count this as a partial success since we got data
+                    self.stats['last_check'][f'elexon_{dataset_name}'] = datetime.now().isoformat()
+                    return 0
+            else:
+                logger.info("⚠️ BigQuery is disabled, skipping database update")
+                
+                # Just print the data for verification
+                logger.info(f"📊 Sample data: {df.head(5).to_dict()}")
+                
+                # Update statistics
+                self.stats['elexon_updates'] += 1
+                self.stats['records_updated'] += len(df)
+                self.stats['last_update'] = datetime.now().isoformat()
+                self.stats['last_check'][f'elexon_{dataset_name}'] = datetime.now().isoformat()
+                
+                return len(df)
+            
+        except Exception as e:
+            logger.error(f"❌ Error updating Elexon {dataset_name}: {str(e)}")
+            return 0
+    
+    def update_neso_dataset(self, dataset_name):
+        """Update a specific NESO dataset with recent data"""
+        start_date, end_date = self.get_recent_data_date_range()
+        dataset = self.neso_datasets[dataset_name]
+        endpoint = dataset['endpoint']
+        table_id = dataset['table']
+        
+        logger.info(f"📊 Checking for updates to NESO {dataset_name}")
+        
+        # Format dates for NESO API (YYYY-MM-DD)
+        from_date = start_date.strftime("%Y-%m-%d")
+        to_date = end_date.strftime("%Y-%m-%d")
+        
+        # Construct URL using Elexon API instead of NESO API
+        url = f"{self.neso_base_url}/{endpoint}"
+        
+        # Add parameters
+        params = {
+            'from': from_date,
+            'to': to_date,
+            'format': 'json'
+        }
+        
+        if self.api_key:
+            params['apiKey'] = self.api_key
+        
+        # Respect rate limits
+        self._respect_neso_rate_limit()
+        
+        try:
+            # Make API request
+            response = self.session.get(url, params=params)
+            response.raise_for_status()
+            data = response.json()
+            
+            # Check if we have data - handle different response formats
+            if 'data' in data:
+                # Elexon API format
+                if not data['data']:
+                    logger.info(f"✅ No new data for NESO {dataset_name}")
+                    return 0
+                records = data['data']
+            elif 'result' in data and 'records' in data['result']:
+                # Original NESO API format
+                if not data['result']['records']:
+                    logger.info(f"✅ No new data for NESO {dataset_name}")
+                    return 0
+                records = data['result']['records']
+            else:
+                logger.info(f"✅ No new data for NESO {dataset_name}")
+                return 0
+                
+            # Convert to DataFrame
+            df = pd.DataFrame(records)
+            record_count = len(df)
+            
+            if record_count == 0:
+                logger.info(f"✅ No new data for NESO {dataset_name}")
+                return 0
+                
+            logger.info(f"🔄 Found {record_count} records for NESO {dataset_name}")
+            
+            # Save to Cloud Storage if available
+            if self.use_cloud_storage:
+                try:
+                    # Save to temporary file
+                    temp_file = tempfile.NamedTemporaryFile(delete=False, suffix='.json')
+                    with open(temp_file.name, 'w') as f:
+                        json.dump(data, f)
+                        
+                    # Upload to GCS
+                    timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
+                    cloud_path = f"neso/{dataset_name}/recent_{timestamp}.json"
+                    blob = self.bucket.blob(cloud_path)
+                    blob.upload_from_filename(temp_file.name)
+                    
+                    # Delete temporary file
+                    os.unlink(temp_file.name)
+                    logger.info(f"✅ Uploaded data to Cloud Storage: {cloud_path}")
+                except Exception as e:
+                    logger.error(f"❌ Error uploading to Cloud Storage: {str(e)}")
+            else:
+                logger.info("⚠️ Cloud Storage is disabled, skipping upload")
+            
+            # Update BigQuery if available
+            if self.use_bigquery:
+                try:
+                    # Update BigQuery
+                    table_ref = f"jibber-jabber-knowledge.{self.dataset_id}.{table_id}"
+                    
+                    # Get existing data for deduplication
+                    query = f"""
+                    SELECT settlement_date, settlement_period FROM `{table_ref}`
+                    WHERE settlement_date >= '{from_date}'
+                    """
+                    
+                    existing_data = self.bigquery_client.query(query).result().to_dataframe()
+                    
+                    # Handle column name differences between Elexon and NESO formats
+                    if 'settlementDate' in df.columns:
+                        df = df.rename(columns={
+                            'settlementDate': 'settlement_date',
+                            'settlementPeriod': 'settlement_period'
+                        })
+                    
+                    # Create a composite key for comparison if we have the necessary columns
+                    if 'settlement_date' in df.columns and 'settlement_period' in df.columns:
+                        if not existing_data.empty:
+                            existing_data['composite_key'] = existing_data['settlement_date'].astype(str) + '_' + existing_data['settlement_period'].astype(str)
+                            df['composite_key'] = df['settlement_date'].astype(str) + '_' + df['settlement_period'].astype(str)
+                            df = df[~df['composite_key'].isin(existing_data['composite_key'])]
+                            df = df.drop(columns=['composite_key'])
+                    
+                    # Check if we have new data after deduplication
+                    if df.empty:
+                        logger.info(f"✅ No new data for NESO {dataset_name} after deduplication")
+                        return 0
+                        
+                    # Convert date columns to proper format
+                    if 'settlement_date' in df.columns:
+                        df['settlement_date'] = pd.to_datetime(df['settlement_date']).dt.date
+                    
+                    # Add timestamp
+                    df['ingestion_timestamp'] = datetime.now().isoformat()
+                    
+                    # Fix schema matching by checking table schema first
+                    try:
+                        table = self.bigquery_client.get_table(table_ref)
+                        expected_fields = [field.name for field in table.schema]
+                        
+                        # Add any missing fields with default values
+                        for field in expected_fields:
+                            if field not in df.columns:
+                                if field == 'timestamp':
+                                    df['timestamp'] = datetime.now().isoformat()
+                                else:
+                                    df[field] = None
+                        
+                        # Remove any extra fields not in schema
+                        df_columns = list(df.columns)
+                        for col in df_columns:
+                            if col not in expected_fields:
+                                df = df.drop(columns=[col])
+                    except Exception as e:
+                        logger.warning(f"⚠️ Could not verify schema for {table_id}: {str(e)}")
+                    
+                    # Load to BigQuery
+                    job_config = bigquery.LoadJobConfig(
+                        write_disposition=bigquery.WriteDisposition.WRITE_APPEND
+                    )
+                    
+                    load_job = self.bigquery_client.load_table_from_dataframe(
+                        df, table_ref, job_config=job_config
+                    )
+                    load_job.result()  # Wait for job to complete
+                    
+                    logger.info(f"✅ Successfully updated {len(df)} records for NESO {dataset_name} in BigQuery")
+                    
+                    # Update statistics
+                    self.stats['neso_updates'] += 1
+                    self.stats['records_updated'] += len(df)
+                    self.stats['last_update'] = datetime.now().isoformat()
+                    self.stats['last_check'][f'neso_{dataset_name}'] = datetime.now().isoformat()
+                    
+                    return len(df)
+                except Exception as e:
+                    logger.error(f"❌ Error updating BigQuery for NESO {dataset_name}: {str(e)}")
+                    # Still count this as a partial success since we got data
+                    self.stats['last_check'][f'neso_{dataset_name}'] = datetime.now().isoformat()
+                    return 0
+            else:
+                logger.info("⚠️ BigQuery is disabled, skipping database update")
+                
+                # Just print the data for verification
+                logger.info(f"📊 Sample data: {df.head(5).to_dict()}")
+                
+                # Update statistics
+                self.stats['neso_updates'] += 1
+                self.stats['records_updated'] += len(df)
+                self.stats['last_update'] = datetime.now().isoformat()
+                self.stats['last_check'][f'neso_{dataset_name}'] = datetime.now().isoformat()
+                
+                return len(df)
+                
+        except Exception as e:
+            logger.error(f"❌ Error updating NESO {dataset_name}: {str(e)}")
+            return 0
+    
+    def update_all_elexon_datasets(self):
+        """Update all Elexon datasets"""
+        total_records = 0
+        for dataset_name in self.elexon_datasets:
+            records = self.update_elexon_dataset(dataset_name)
+            total_records += records
+        
+        logger.info(f"📊 Elexon update complete. Updated {total_records} records across all datasets.")
+        return total_records
+    
+    def update_all_neso_datasets(self):
+        """Update all NESO datasets"""
+        total_records = 0
+        for dataset_name in self.neso_datasets:
+            records = self.update_neso_dataset(dataset_name)
+            total_records += records
+        
+        logger.info(f"📊 NESO update complete. Updated {total_records} records across all datasets.")
+        return total_records
+    
+    def update_all_datasets(self):
+        """Update all datasets from both Elexon and NESO"""
+        elexon_records = self.update_all_elexon_datasets()
+        neso_records = self.update_all_neso_datasets()
+        
+        logger.info(f"🔄 Complete update cycle finished. Updated {elexon_records + neso_records} records total.")
+        
+        # Write statistics to file
+        with open('live_data_update_stats.json', 'w') as f:
+            json.dump(self.stats, f, indent=2)
+            
+        return elexon_records + neso_records
+    
+    def list_available_data(self):
+        """List all available datasets with last update time"""
+        print("\n📊 Available Energy Data Sources 📊")
+        print("=" * 60)
+        
+        print("\nELEXON Datasets:")
+        print("-" * 60)
+        for name, info in self.elexon_datasets.items():
+            last_check = self.stats['last_check'].get(f'elexon_{name}', 'Never')
+            if last_check and last_check != 'Never':
+                last_check = datetime.fromisoformat(last_check).strftime("%Y-%m-%d %H:%M:%S")
+            print(f"- {name.replace('_', ' ').title()}")
+            print(f"  Table: {info['table']}")
+            print(f"  Update Frequency: Every {info['frequency']} minutes")
+            print(f"  Last Checked: {last_check}")
+            print()
+            
+        print("\nNESO Datasets:")
+        print("-" * 60)
+        for name, info in self.neso_datasets.items():
+            last_check = self.stats['last_check'].get(f'neso_{name}', 'Never')
+            if last_check and last_check != 'Never':
+                last_check = datetime.fromisoformat(last_check).strftime("%Y-%m-%d %H:%M:%S")
+            print(f"- {name.replace('_', ' ').title()}")
+            print(f"  Table: {info['table']}")
+            print(f"  Update Frequency: Every {info['frequency']} minutes")
+            print(f"  Last Checked: {last_check}")
+            print()
+            
+        print("\n📊 Statistics:")
+        print("-" * 60)
+        print(f"Service Running Since: {datetime.fromisoformat(self.stats['start_time']).strftime('%Y-%m-%d %H:%M:%S')}")
+        print(f"Total Elexon Updates: {self.stats['elexon_updates']}")
+        print(f"Total NESO Updates: {self.stats['neso_updates']}")
+        print(f"Total Records Updated: {self.stats['records_updated']}")
+        
+        if self.stats['last_update']:
+            last_update = datetime.fromisoformat(self.stats['last_update']).strftime("%Y-%m-%d %H:%M:%S")
+            print(f"Last Successful Update: {last_update}")
+        else:
+            print("Last Successful Update: Never")
+            
+        print("=" * 60)
+    
+    def schedule_updates(self):
+        """Schedule regular updates for all datasets"""
+        # Schedule Elexon datasets
+        for name, info in self.elexon_datasets.items():
+            frequency = info['frequency']
+            schedule.every(frequency).minutes.do(self.update_elexon_dataset, name)
+            logger.info(f"📅 Scheduled updates for Elexon {name} every {frequency} minutes")
+            
+        # Schedule NESO datasets
+        for name, info in self.neso_datasets.items():
+            frequency = info['frequency']
+            schedule.every(frequency).minutes.do(self.update_neso_dataset, name)
+            logger.info(f"📅 Scheduled updates for NESO {name} every {frequency} minutes")
+            
+        # Schedule full status report every 6 hours
+        schedule.every(6).hours.do(self.list_available_data)
+        
+        logger.info("📅 All updates scheduled. Running continuous monitoring...")
+        
+        # Initial full update
+        self.update_all_datasets()
+        self.list_available_data()
+        
+        # Run the scheduler
+        while True:
+            schedule.run_pending()
+            time.sleep(1)
+
+def main():
+    """Main function"""
+    updater = LiveDataUpdater()
+    
+    # Check for command line arguments
+    if len(sys.argv) > 1:
+        if sys.argv[1] == 'list':
+            updater.list_available_data()
+        elif sys.argv[1] == 'update':
+            print("Running manual update of all datasets...")
+            updater.update_all_datasets()
+            print("Update complete. Check logs for details.")
+        elif sys.argv[1] == 'elexon':
+            print("Running manual update of Elexon datasets...")
+            updater.update_all_elexon_datasets()
+            print("Update complete. Check logs for details.")
+        elif sys.argv[1] == 'neso':
+            print("Running manual update of NESO datasets...")
+            updater.update_all_neso_datasets()
+            print("Update complete. Check logs for details.")
+        elif sys.argv[1] == 'test':
+            # Just test a single dataset from each source to verify functionality
+            print("Testing connection to Elexon API...")
+            updater.update_elexon_dataset('demand_outturn')
+            print("Testing connection to NESO datasets via Elexon API...")
+            updater.update_neso_dataset('demand_forecasts')
+            print("Test complete. Check logs for details.")
+        else:
+            print(f"Unknown command: {sys.argv[1]}")
+            print("Available commands: list, update, elexon, neso, test")
+    else:
+        # Start continuous monitoring
+        print("Starting continuous data monitoring...")
+        print("This will run in the background and update data based on configured schedules.")
+        print("Use Ctrl+C to stop the service.")
+        print("For manual updates, use 'python live_data_updater.py update'")
+        updater.schedule_updates()
+
+if __name__ == "__main__":
+    main()

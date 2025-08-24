@@ -1,0 +1,8 @@
+datasets:
+  FUELHH: https://data.elexon.co.uk/bmrs/api/v1/datasets/FUELHH
+  FREQ: https://data.elexon.co.uk/bmrs/api/v1/system/frequency
+  INDO: https://data.elexon.co.uk/bmrs/api/v1/demand/outturn
+
+balancing:
+  BOD: https://data.elexon.co.uk/balancing/api/v1/bid-offer/all
+  MID: https://data.elexon.co.uk/balancing/api/v1/pricing/market-index

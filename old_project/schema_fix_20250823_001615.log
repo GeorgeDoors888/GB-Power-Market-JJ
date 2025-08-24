@@ -1,0 +1,59 @@
+2025-08-23 00:16:15,432 - INFO - Starting schema fix process
+2025-08-23 00:16:16,229 - INFO - Fixing schema for elexon_demand_outturn
+2025-08-23 00:16:16,633 - INFO - Field publishTime missing in elexon_demand_outturn
+2025-08-23 00:16:19,377 - ERROR - Error copying data to fixed table elexon_demand_outturn: 400 Unrecognized name: publishTime at [3:20]; reason: invalidQuery, location: query, message: Unrecognized name: publishTime at [3:20]
+
+Location: europe-west2
+Job ID: 50841ec3-31f6-4841-995a-c97ae487cd98
+
+2025-08-23 00:16:19,378 - INFO - Fixing schema for elexon_generation_outturn
+2025-08-23 00:16:19,524 - INFO - Field recordType missing in elexon_generation_outturn
+2025-08-23 00:16:22,317 - ERROR - Error copying data to fixed table elexon_generation_outturn: 400 Unrecognized name: recordType at [3:20]; reason: invalidQuery, location: query, message: Unrecognized name: recordType at [3:20]
+
+Location: europe-west2
+Job ID: a7521f7c-0caa-416a-99f8-64124e651ff6
+
+2025-08-23 00:16:22,318 - INFO - Fixing schema for elexon_system_warnings
+2025-08-23 00:16:22,507 - INFO - Field publishTime missing in elexon_system_warnings
+2025-08-23 00:16:25,177 - ERROR - Error copying data to fixed table elexon_system_warnings: 400 Unrecognized name: publishTime at [3:20]; reason: invalidQuery, location: query, message: Unrecognized name: publishTime at [3:20]
+
+Location: europe-west2
+Job ID: f8dd43a7-0886-4f7b-ace3-ae940a06e476
+
+2025-08-23 00:16:25,177 - INFO - Fixing schema for neso_demand_forecasts
+2025-08-23 00:16:25,287 - INFO - Field publishTime has wrong type in neso_demand_forecasts (is STRING, should be TIMESTAMP)
+2025-08-23 00:16:27,642 - ERROR - Error copying data to fixed table neso_demand_forecasts: 400 GET https://bigquery.googleapis.com/bigquery/v2/projects/jibber-jabber-knowledge/queries/50da86a6-a107-40f8-8822-7b90817ab870?maxResults=0&location=europe-west2&prettyPrint=false: Unrecognized name: demand at [3:67]
+
+Location: europe-west2
+Job ID: 50da86a6-a107-40f8-8822-7b90817ab870
+
+2025-08-23 00:16:27,643 - INFO - Fixing schema for neso_wind_forecasts
+2025-08-23 00:16:27,785 - INFO - Field publishTime missing in neso_wind_forecasts
+2025-08-23 00:16:30,256 - ERROR - Error copying data to fixed table neso_wind_forecasts: 400 Unrecognized name: publishTime at [3:20]; reason: invalidQuery, location: query, message: Unrecognized name: publishTime at [3:20]
+
+Location: europe-west2
+Job ID: 0ce785ea-04f1-412e-9048-2fe677dae60e
+
+2025-08-23 00:16:30,257 - INFO - Fixing schema for neso_carbon_intensity
+2025-08-23 00:16:30,370 - INFO - Field publishTime missing in neso_carbon_intensity
+2025-08-23 00:16:34,127 - ERROR - Error copying data to fixed table neso_carbon_intensity: 400 GET https://bigquery.googleapis.com/bigquery/v2/projects/jibber-jabber-knowledge/queries/92c0b493-0150-462f-ac7b-6a630d4f82d3?maxResults=0&location=europe-west2&prettyPrint=false: Unrecognized name: publishTime at [3:20]
+
+Location: europe-west2
+Job ID: 92c0b493-0150-462f-ac7b-6a630d4f82d3
+
+2025-08-23 00:16:34,128 - INFO - Fixing schema for neso_interconnector_flows
+2025-08-23 00:16:34,231 - INFO - Field publishTime missing in neso_interconnector_flows
+2025-08-23 00:16:36,853 - ERROR - Error copying data to fixed table neso_interconnector_flows: 400 GET https://bigquery.googleapis.com/bigquery/v2/projects/jibber-jabber-knowledge/queries/5cf36979-ed67-41c1-952d-3f1021f2b305?maxResults=0&location=europe-west2&prettyPrint=false: Unrecognized name: publishTime at [3:20]
+
+Location: europe-west2
+Job ID: 5cf36979-ed67-41c1-952d-3f1021f2b305
+
+2025-08-23 00:16:36,854 - INFO - Fixing schema for neso_balancing_services
+2025-08-23 00:16:36,958 - INFO - Field dataset missing in neso_balancing_services
+2025-08-23 00:16:40,476 - ERROR - Error copying data to fixed table neso_balancing_services: 400 Unrecognized name: dataset at [3:20]; reason: invalidQuery, location: query, message: Unrecognized name: dataset at [3:20]
+
+Location: europe-west2
+Job ID: 6417e958-5d2c-4227-80a1-c69e09f0c51b
+
+2025-08-23 00:16:40,477 - INFO - Fixed 0/8 tables
+2025-08-23 00:16:40,477 - INFO - Schema fix process complete

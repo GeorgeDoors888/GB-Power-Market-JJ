@@ -1,0 +1,35 @@
+[1;33mStopping any existing live data updater processes...[0m
+[1;33mKilling existing process with PID 80277[0m
+[1;33mKilling existing monitor process with PID 78567[0m
+[0;34mSetting up environment...[0m
+[0;34mChecking Python environment...[0m
+Python 3.13.5 (main, Jun 11 2025, 15:36:57) [Clang 17.0.0 (clang-1700.0.13.3)]
+[0;34mChecking dependencies...[0m
+[0;32mGoogle Cloud packages found.[0m
+[1;33mSetting Google Cloud credentials...[0m
+[0;32mStarting live data updater service...[0m
+[0;34mThis service will continuously monitor and update data from Elexon BMRS[0m
+[0;34mData published within the last 25 hours will be captured as soon as it's available[0m
+[0;34mLogs will be saved to logs/live_data_updater_20250822_234015.log[0m
+
+[0;32mLive data updater service is running with PID 81208[0m
+[0;32mSetting up process monitoring...[0m
+[0;32mProcess monitor is running with PID 81211[0m
+[0;34mThe service is now running in the background[0m
+[0;34mTo view logs, run: [1;33mtail -f logs/live_data_updater_20250822_234015.log[0m
+[0;34mTo stop the service, run: [1;33mpkill -f live_data_updater.py[0m
+
+[0;34mAvailable commands:[0m
+[1;33mpython live_data_updater.py list[0m - List available data sources
+[1;33mpython live_data_updater.py update[0m - Manually trigger a full update
+[1;33mpython live_data_updater.py elexon[0m - Update only Elexon datasets
+[1;33mpython live_data_updater.py neso[0m - Update only NESO datasets
+
+[0;32mService is fully operational![0m
+./monitor_live_updater.sh: line 25: 15860 Terminated: 15          python live_data_updater.py > "${LOG_DIR}/live_data_updater_$(date +%Y%m%d_%H%M%S).log" 2>&1
+./monitor_live_updater.sh: line 25: 18416 Terminated: 15          python live_data_updater.py > "${LOG_DIR}/live_data_updater_$(date +%Y%m%d_%H%M%S).log" 2>&1
+./monitor_live_updater.sh: line 25: 19898 Terminated: 15          python live_data_updater.py > "${LOG_DIR}/live_data_updater_$(date +%Y%m%d_%H%M%S).log" 2>&1
+./monitor_live_updater.sh: line 25: 21170 Terminated: 15          python live_data_updater.py > "${LOG_DIR}/live_data_updater_$(date +%Y%m%d_%H%M%S).log" 2>&1
+./monitor_live_updater.sh: line 25: 25458 Terminated: 15          python live_data_updater.py > "${LOG_DIR}/live_data_updater_$(date +%Y%m%d_%H%M%S).log" 2>&1
+./monitor_live_updater.sh: line 25: 34869 Terminated: 15          python live_data_updater.py > "${LOG_DIR}/live_data_updater_$(date +%Y%m%d_%H%M%S).log" 2>&1
+./monitor_live_updater.sh: line 25: 35969 Terminated: 15          python live_data_updater.py > "${LOG_DIR}/live_data_updater_$(date +%Y%m%d_%H%M%S).log" 2>&1

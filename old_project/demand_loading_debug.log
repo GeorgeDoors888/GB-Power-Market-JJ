@@ -1,0 +1,319 @@
+[2025-08-22 20:43:30] Starting historical data loading process
+[2025-08-22 20:43:30] Using bucket: elexon-historical-data-storage
+[2025-08-22 20:43:30] Processing dataset(s): demand
+[2025-08-22 20:43:30] Processing demand data...
+[2025-08-22 20:43:32] Found 8 demand files
+[2025-08-22 20:43:32] Found file: demand/demand_2016-01-01.json
+[2025-08-22 20:43:32] Found file: demand/demand_2016-01-02.json
+[2025-08-22 20:43:32] Found file: demand/demand_2016-01-03.json
+[2025-08-22 20:43:32] Found file: demand/demand_2016-01-04.json
+[2025-08-22 20:43:32] Found file: demand/demand_2016-01-05.json
+[2025-08-22 20:43:32] Found file: demand/demand_2016-01-06.json
+[2025-08-22 20:43:32] Found file: demand/demand_2016-01-07.json
+[2025-08-22 20:43:32] Found file: demand/demand_2016-01-08.json
+[2025-08-22 20:43:32] Processing demand/demand_2016-01-01.json
+[2025-08-22 20:43:32] Raw content: {"data":[{"dataset":"ITSDO","publishTime":"2025-08-08T09:30:00Z","startTime":"2025-08-08T09:00:00Z","settlementDate":"2025-08-08","settlementPeriod":21,"demand":22897}]}...
+[2025-08-22 20:43:32] Transforming demand data: {
+  "data": [
+    {
+      "dataset": "ITSDO",
+      "publishTime": "2025-08-08T09:30:00Z",
+      "startTime": "2025-08-08T09:00:00Z",
+      "settlementDate": "2025-08-08",
+      "settlementPeriod": 21,
+      "demand": 22897
+    }
+  ]
+}
+[2025-08-22 20:43:32] Transformed row: {
+  "timestamp": "2025-08-08T09:00:00Z",
+  "settlement_date": "2025-08-08",
+  "settlement_period": 21,
+  "national_demand": 22897,
+  "england_wales_demand": null,
+  "embedded_wind_generation": null,
+  "embedded_solar_generation": null,
+  "non_bm_stor": null,
+  "non_bm_wind": null
+}
+[2025-08-22 20:43:34] Target table schema: [SchemaField('timestamp', 'DATETIME', 'REQUIRED', None, None, (), None), SchemaField('settlement_date', 'DATE', 'REQUIRED', None, None, (), None), SchemaField('settlement_period', 'INTEGER', 'REQUIRED', None, None, (), None), SchemaField('national_demand', 'FLOAT', 'NULLABLE', None, None, (), None), SchemaField('england_wales_demand', 'FLOAT', 'NULLABLE', None, None, (), None), SchemaField('embedded_wind_generation', 'FLOAT', 'NULLABLE', None, None, (), None), SchemaField('embedded_solar_generation', 'FLOAT', 'NULLABLE', None, None, (), None), SchemaField('non_bm_stor', 'FLOAT', 'NULLABLE', None, None, (), None), SchemaField('non_bm_wind', 'FLOAT', 'NULLABLE', None, None, (), None)]
+[2025-08-22 20:43:34] First row to load: {
+  "timestamp": "2025-08-08T09:00:00Z",
+  "settlement_date": "2025-08-08",
+  "settlement_period": 21,
+  "national_demand": 22897,
+  "england_wales_demand": null,
+  "embedded_wind_generation": null,
+  "embedded_solar_generation": null,
+  "non_bm_stor": null,
+  "non_bm_wind": null
+}
+[2025-08-22 20:43:34] Errors loading data to jibber-jabber-knowledge.uk_energy_prod.elexon_demand_outturn: [{'index': 0, 'errors': [{'reason': 'invalid', 'location': 'timestamp', 'debugInfo': '', 'message': 'Invalid datetime string "2025-08-08T09:00:00Z"'}]}]
+[2025-08-22 20:43:34] Processing demand/demand_2016-01-02.json
+[2025-08-22 20:43:34] Raw content: {"data":[{"dataset":"ITSDO","publishTime":"2025-08-08T09:30:00Z","startTime":"2025-08-08T09:00:00Z","settlementDate":"2025-08-08","settlementPeriod":21,"demand":22897}]}...
+[2025-08-22 20:43:34] Transforming demand data: {
+  "data": [
+    {
+      "dataset": "ITSDO",
+      "publishTime": "2025-08-08T09:30:00Z",
+      "startTime": "2025-08-08T09:00:00Z",
+      "settlementDate": "2025-08-08",
+      "settlementPeriod": 21,
+      "demand": 22897
+    }
+  ]
+}
+[2025-08-22 20:43:34] Transformed row: {
+  "timestamp": "2025-08-08T09:00:00Z",
+  "settlement_date": "2025-08-08",
+  "settlement_period": 21,
+  "national_demand": 22897,
+  "england_wales_demand": null,
+  "embedded_wind_generation": null,
+  "embedded_solar_generation": null,
+  "non_bm_stor": null,
+  "non_bm_wind": null
+}
+[2025-08-22 20:43:36] Target table schema: [SchemaField('timestamp', 'DATETIME', 'REQUIRED', None, None, (), None), SchemaField('settlement_date', 'DATE', 'REQUIRED', None, None, (), None), SchemaField('settlement_period', 'INTEGER', 'REQUIRED', None, None, (), None), SchemaField('national_demand', 'FLOAT', 'NULLABLE', None, None, (), None), SchemaField('england_wales_demand', 'FLOAT', 'NULLABLE', None, None, (), None), SchemaField('embedded_wind_generation', 'FLOAT', 'NULLABLE', None, None, (), None), SchemaField('embedded_solar_generation', 'FLOAT', 'NULLABLE', None, None, (), None), SchemaField('non_bm_stor', 'FLOAT', 'NULLABLE', None, None, (), None), SchemaField('non_bm_wind', 'FLOAT', 'NULLABLE', None, None, (), None)]
+[2025-08-22 20:43:36] First row to load: {
+  "timestamp": "2025-08-08T09:00:00Z",
+  "settlement_date": "2025-08-08",
+  "settlement_period": 21,
+  "national_demand": 22897,
+  "england_wales_demand": null,
+  "embedded_wind_generation": null,
+  "embedded_solar_generation": null,
+  "non_bm_stor": null,
+  "non_bm_wind": null
+}
+[2025-08-22 20:43:37] Errors loading data to jibber-jabber-knowledge.uk_energy_prod.elexon_demand_outturn: [{'index': 0, 'errors': [{'reason': 'invalid', 'location': 'timestamp', 'debugInfo': '', 'message': 'Invalid datetime string "2025-08-08T09:00:00Z"'}]}]
+[2025-08-22 20:43:37] Processing demand/demand_2016-01-03.json
+[2025-08-22 20:43:37] Raw content: {"data":[{"dataset":"ITSDO","publishTime":"2025-08-08T09:30:00Z","startTime":"2025-08-08T09:00:00Z","settlementDate":"2025-08-08","settlementPeriod":21,"demand":22897}]}...
+[2025-08-22 20:43:37] Transforming demand data: {
+  "data": [
+    {
+      "dataset": "ITSDO",
+      "publishTime": "2025-08-08T09:30:00Z",
+      "startTime": "2025-08-08T09:00:00Z",
+      "settlementDate": "2025-08-08",
+      "settlementPeriod": 21,
+      "demand": 22897
+    }
+  ]
+}
+[2025-08-22 20:43:37] Transformed row: {
+  "timestamp": "2025-08-08T09:00:00Z",
+  "settlement_date": "2025-08-08",
+  "settlement_period": 21,
+  "national_demand": 22897,
+  "england_wales_demand": null,
+  "embedded_wind_generation": null,
+  "embedded_solar_generation": null,
+  "non_bm_stor": null,
+  "non_bm_wind": null
+}
+[2025-08-22 20:43:39] Target table schema: [SchemaField('timestamp', 'DATETIME', 'REQUIRED', None, None, (), None), SchemaField('settlement_date', 'DATE', 'REQUIRED', None, None, (), None), SchemaField('settlement_period', 'INTEGER', 'REQUIRED', None, None, (), None), SchemaField('national_demand', 'FLOAT', 'NULLABLE', None, None, (), None), SchemaField('england_wales_demand', 'FLOAT', 'NULLABLE', None, None, (), None), SchemaField('embedded_wind_generation', 'FLOAT', 'NULLABLE', None, None, (), None), SchemaField('embedded_solar_generation', 'FLOAT', 'NULLABLE', None, None, (), None), SchemaField('non_bm_stor', 'FLOAT', 'NULLABLE', None, None, (), None), SchemaField('non_bm_wind', 'FLOAT', 'NULLABLE', None, None, (), None)]
+[2025-08-22 20:43:39] First row to load: {
+  "timestamp": "2025-08-08T09:00:00Z",
+  "settlement_date": "2025-08-08",
+  "settlement_period": 21,
+  "national_demand": 22897,
+  "england_wales_demand": null,
+  "embedded_wind_generation": null,
+  "embedded_solar_generation": null,
+  "non_bm_stor": null,
+  "non_bm_wind": null
+}
+[2025-08-22 20:43:39] Errors loading data to jibber-jabber-knowledge.uk_energy_prod.elexon_demand_outturn: [{'index': 0, 'errors': [{'reason': 'invalid', 'location': 'timestamp', 'debugInfo': '', 'message': 'Invalid datetime string "2025-08-08T09:00:00Z"'}]}]
+[2025-08-22 20:43:39] Processing demand/demand_2016-01-04.json
+[2025-08-22 20:43:39] Raw content: {"data":[{"dataset":"ITSDO","publishTime":"2025-08-08T09:30:00Z","startTime":"2025-08-08T09:00:00Z","settlementDate":"2025-08-08","settlementPeriod":21,"demand":22897}]}...
+[2025-08-22 20:43:39] Transforming demand data: {
+  "data": [
+    {
+      "dataset": "ITSDO",
+      "publishTime": "2025-08-08T09:30:00Z",
+      "startTime": "2025-08-08T09:00:00Z",
+      "settlementDate": "2025-08-08",
+      "settlementPeriod": 21,
+      "demand": 22897
+    }
+  ]
+}
+[2025-08-22 20:43:39] Transformed row: {
+  "timestamp": "2025-08-08T09:00:00Z",
+  "settlement_date": "2025-08-08",
+  "settlement_period": 21,
+  "national_demand": 22897,
+  "england_wales_demand": null,
+  "embedded_wind_generation": null,
+  "embedded_solar_generation": null,
+  "non_bm_stor": null,
+  "non_bm_wind": null
+}
+[2025-08-22 20:43:42] Target table schema: [SchemaField('timestamp', 'DATETIME', 'REQUIRED', None, None, (), None), SchemaField('settlement_date', 'DATE', 'REQUIRED', None, None, (), None), SchemaField('settlement_period', 'INTEGER', 'REQUIRED', None, None, (), None), SchemaField('national_demand', 'FLOAT', 'NULLABLE', None, None, (), None), SchemaField('england_wales_demand', 'FLOAT', 'NULLABLE', None, None, (), None), SchemaField('embedded_wind_generation', 'FLOAT', 'NULLABLE', None, None, (), None), SchemaField('embedded_solar_generation', 'FLOAT', 'NULLABLE', None, None, (), None), SchemaField('non_bm_stor', 'FLOAT', 'NULLABLE', None, None, (), None), SchemaField('non_bm_wind', 'FLOAT', 'NULLABLE', None, None, (), None)]
+[2025-08-22 20:43:42] First row to load: {
+  "timestamp": "2025-08-08T09:00:00Z",
+  "settlement_date": "2025-08-08",
+  "settlement_period": 21,
+  "national_demand": 22897,
+  "england_wales_demand": null,
+  "embedded_wind_generation": null,
+  "embedded_solar_generation": null,
+  "non_bm_stor": null,
+  "non_bm_wind": null
+}
+[2025-08-22 20:43:42] Errors loading data to jibber-jabber-knowledge.uk_energy_prod.elexon_demand_outturn: [{'index': 0, 'errors': [{'reason': 'invalid', 'location': 'timestamp', 'debugInfo': '', 'message': 'Invalid datetime string "2025-08-08T09:00:00Z"'}]}]
+[2025-08-22 20:43:42] Processing demand/demand_2016-01-05.json
+[2025-08-22 20:43:42] Raw content: {"data":[{"dataset":"ITSDO","publishTime":"2025-08-08T09:30:00Z","startTime":"2025-08-08T09:00:00Z","settlementDate":"2025-08-08","settlementPeriod":21,"demand":22897}]}...
+[2025-08-22 20:43:42] Transforming demand data: {
+  "data": [
+    {
+      "dataset": "ITSDO",
+      "publishTime": "2025-08-08T09:30:00Z",
+      "startTime": "2025-08-08T09:00:00Z",
+      "settlementDate": "2025-08-08",
+      "settlementPeriod": 21,
+      "demand": 22897
+    }
+  ]
+}
+[2025-08-22 20:43:42] Transformed row: {
+  "timestamp": "2025-08-08T09:00:00Z",
+  "settlement_date": "2025-08-08",
+  "settlement_period": 21,
+  "national_demand": 22897,
+  "england_wales_demand": null,
+  "embedded_wind_generation": null,
+  "embedded_solar_generation": null,
+  "non_bm_stor": null,
+  "non_bm_wind": null
+}
+[2025-08-22 20:43:44] Target table schema: [SchemaField('timestamp', 'DATETIME', 'REQUIRED', None, None, (), None), SchemaField('settlement_date', 'DATE', 'REQUIRED', None, None, (), None), SchemaField('settlement_period', 'INTEGER', 'REQUIRED', None, None, (), None), SchemaField('national_demand', 'FLOAT', 'NULLABLE', None, None, (), None), SchemaField('england_wales_demand', 'FLOAT', 'NULLABLE', None, None, (), None), SchemaField('embedded_wind_generation', 'FLOAT', 'NULLABLE', None, None, (), None), SchemaField('embedded_solar_generation', 'FLOAT', 'NULLABLE', None, None, (), None), SchemaField('non_bm_stor', 'FLOAT', 'NULLABLE', None, None, (), None), SchemaField('non_bm_wind', 'FLOAT', 'NULLABLE', None, None, (), None)]
+[2025-08-22 20:43:44] First row to load: {
+  "timestamp": "2025-08-08T09:00:00Z",
+  "settlement_date": "2025-08-08",
+  "settlement_period": 21,
+  "national_demand": 22897,
+  "england_wales_demand": null,
+  "embedded_wind_generation": null,
+  "embedded_solar_generation": null,
+  "non_bm_stor": null,
+  "non_bm_wind": null
+}
+[2025-08-22 20:43:45] Errors loading data to jibber-jabber-knowledge.uk_energy_prod.elexon_demand_outturn: [{'index': 0, 'errors': [{'reason': 'invalid', 'location': 'timestamp', 'debugInfo': '', 'message': 'Invalid datetime string "2025-08-08T09:00:00Z"'}]}]
+[2025-08-22 20:43:45] Processing demand/demand_2016-01-06.json
+[2025-08-22 20:43:45] Raw content: {"data":[{"dataset":"ITSDO","publishTime":"2025-08-08T09:30:00Z","startTime":"2025-08-08T09:00:00Z","settlementDate":"2025-08-08","settlementPeriod":21,"demand":22897}]}...
+[2025-08-22 20:43:45] Transforming demand data: {
+  "data": [
+    {
+      "dataset": "ITSDO",
+      "publishTime": "2025-08-08T09:30:00Z",
+      "startTime": "2025-08-08T09:00:00Z",
+      "settlementDate": "2025-08-08",
+      "settlementPeriod": 21,
+      "demand": 22897
+    }
+  ]
+}
+[2025-08-22 20:43:45] Transformed row: {
+  "timestamp": "2025-08-08T09:00:00Z",
+  "settlement_date": "2025-08-08",
+  "settlement_period": 21,
+  "national_demand": 22897,
+  "england_wales_demand": null,
+  "embedded_wind_generation": null,
+  "embedded_solar_generation": null,
+  "non_bm_stor": null,
+  "non_bm_wind": null
+}
+[2025-08-22 20:43:47] Target table schema: [SchemaField('timestamp', 'DATETIME', 'REQUIRED', None, None, (), None), SchemaField('settlement_date', 'DATE', 'REQUIRED', None, None, (), None), SchemaField('settlement_period', 'INTEGER', 'REQUIRED', None, None, (), None), SchemaField('national_demand', 'FLOAT', 'NULLABLE', None, None, (), None), SchemaField('england_wales_demand', 'FLOAT', 'NULLABLE', None, None, (), None), SchemaField('embedded_wind_generation', 'FLOAT', 'NULLABLE', None, None, (), None), SchemaField('embedded_solar_generation', 'FLOAT', 'NULLABLE', None, None, (), None), SchemaField('non_bm_stor', 'FLOAT', 'NULLABLE', None, None, (), None), SchemaField('non_bm_wind', 'FLOAT', 'NULLABLE', None, None, (), None)]
+[2025-08-22 20:43:47] First row to load: {
+  "timestamp": "2025-08-08T09:00:00Z",
+  "settlement_date": "2025-08-08",
+  "settlement_period": 21,
+  "national_demand": 22897,
+  "england_wales_demand": null,
+  "embedded_wind_generation": null,
+  "embedded_solar_generation": null,
+  "non_bm_stor": null,
+  "non_bm_wind": null
+}
+[2025-08-22 20:43:47] Errors loading data to jibber-jabber-knowledge.uk_energy_prod.elexon_demand_outturn: [{'index': 0, 'errors': [{'reason': 'invalid', 'location': 'timestamp', 'debugInfo': '', 'message': 'Invalid datetime string "2025-08-08T09:00:00Z"'}]}]
+[2025-08-22 20:43:47] Processing demand/demand_2016-01-07.json
+[2025-08-22 20:43:47] Raw content: {"data":[{"dataset":"ITSDO","publishTime":"2025-08-08T09:30:00Z","startTime":"2025-08-08T09:00:00Z","settlementDate":"2025-08-08","settlementPeriod":21,"demand":22897}]}...
+[2025-08-22 20:43:47] Transforming demand data: {
+  "data": [
+    {
+      "dataset": "ITSDO",
+      "publishTime": "2025-08-08T09:30:00Z",
+      "startTime": "2025-08-08T09:00:00Z",
+      "settlementDate": "2025-08-08",
+      "settlementPeriod": 21,
+      "demand": 22897
+    }
+  ]
+}
+[2025-08-22 20:43:47] Transformed row: {
+  "timestamp": "2025-08-08T09:00:00Z",
+  "settlement_date": "2025-08-08",
+  "settlement_period": 21,
+  "national_demand": 22897,
+  "england_wales_demand": null,
+  "embedded_wind_generation": null,
+  "embedded_solar_generation": null,
+  "non_bm_stor": null,
+  "non_bm_wind": null
+}
+[2025-08-22 20:43:50] Target table schema: [SchemaField('timestamp', 'DATETIME', 'REQUIRED', None, None, (), None), SchemaField('settlement_date', 'DATE', 'REQUIRED', None, None, (), None), SchemaField('settlement_period', 'INTEGER', 'REQUIRED', None, None, (), None), SchemaField('national_demand', 'FLOAT', 'NULLABLE', None, None, (), None), SchemaField('england_wales_demand', 'FLOAT', 'NULLABLE', None, None, (), None), SchemaField('embedded_wind_generation', 'FLOAT', 'NULLABLE', None, None, (), None), SchemaField('embedded_solar_generation', 'FLOAT', 'NULLABLE', None, None, (), None), SchemaField('non_bm_stor', 'FLOAT', 'NULLABLE', None, None, (), None), SchemaField('non_bm_wind', 'FLOAT', 'NULLABLE', None, None, (), None)]
+[2025-08-22 20:43:50] First row to load: {
+  "timestamp": "2025-08-08T09:00:00Z",
+  "settlement_date": "2025-08-08",
+  "settlement_period": 21,
+  "national_demand": 22897,
+  "england_wales_demand": null,
+  "embedded_wind_generation": null,
+  "embedded_solar_generation": null,
+  "non_bm_stor": null,
+  "non_bm_wind": null
+}
+[2025-08-22 20:43:50] Errors loading data to jibber-jabber-knowledge.uk_energy_prod.elexon_demand_outturn: [{'index': 0, 'errors': [{'reason': 'invalid', 'location': 'timestamp', 'debugInfo': '', 'message': 'Invalid datetime string "2025-08-08T09:00:00Z"'}]}]
+[2025-08-22 20:43:50] Processing demand/demand_2016-01-08.json
+[2025-08-22 20:43:50] Raw content: {"data":[{"dataset":"ITSDO","publishTime":"2025-08-08T09:30:00Z","startTime":"2025-08-08T09:00:00Z","settlementDate":"2025-08-08","settlementPeriod":21,"demand":22897}]}...
+[2025-08-22 20:43:50] Transforming demand data: {
+  "data": [
+    {
+      "dataset": "ITSDO",
+      "publishTime": "2025-08-08T09:30:00Z",
+      "startTime": "2025-08-08T09:00:00Z",
+      "settlementDate": "2025-08-08",
+      "settlementPeriod": 21,
+      "demand": 22897
+    }
+  ]
+}
+[2025-08-22 20:43:50] Transformed row: {
+  "timestamp": "2025-08-08T09:00:00Z",
+  "settlement_date": "2025-08-08",
+  "settlement_period": 21,
+  "national_demand": 22897,
+  "england_wales_demand": null,
+  "embedded_wind_generation": null,
+  "embedded_solar_generation": null,
+  "non_bm_stor": null,
+  "non_bm_wind": null
+}
+[2025-08-22 20:43:53] Target table schema: [SchemaField('timestamp', 'DATETIME', 'REQUIRED', None, None, (), None), SchemaField('settlement_date', 'DATE', 'REQUIRED', None, None, (), None), SchemaField('settlement_period', 'INTEGER', 'REQUIRED', None, None, (), None), SchemaField('national_demand', 'FLOAT', 'NULLABLE', None, None, (), None), SchemaField('england_wales_demand', 'FLOAT', 'NULLABLE', None, None, (), None), SchemaField('embedded_wind_generation', 'FLOAT', 'NULLABLE', None, None, (), None), SchemaField('embedded_solar_generation', 'FLOAT', 'NULLABLE', None, None, (), None), SchemaField('non_bm_stor', 'FLOAT', 'NULLABLE', None, None, (), None), SchemaField('non_bm_wind', 'FLOAT', 'NULLABLE', None, None, (), None)]
+[2025-08-22 20:43:53] First row to load: {
+  "timestamp": "2025-08-08T09:00:00Z",
+  "settlement_date": "2025-08-08",
+  "settlement_period": 21,
+  "national_demand": 22897,
+  "england_wales_demand": null,
+  "embedded_wind_generation": null,
+  "embedded_solar_generation": null,
+  "non_bm_stor": null,
+  "non_bm_wind": null
+}
+[2025-08-22 20:43:53] Errors loading data to jibber-jabber-knowledge.uk_energy_prod.elexon_demand_outturn: [{'index': 0, 'errors': [{'reason': 'invalid', 'location': 'timestamp', 'debugInfo': '', 'message': 'Invalid datetime string "2025-08-08T09:00:00Z"'}]}]
+[2025-08-22 20:43:53] Demand data processing complete. Loaded 0 rows from 0/8 files
+[2025-08-22 20:43:53] Historical data loading process completed with errors

@@ -1,0 +1,297 @@
+{
+  "test_info": {
+    "test_timestamp": "2025-08-08T19:11:26.908078",
+    "test_purpose": "Check 2017 historical data availability",
+    "total_tests": 32
+  },
+  "results": [
+    {
+      "method": "settlement_period",
+      "date": "2017-01-15",
+      "settlement_period": 15,
+      "status_code": 200,
+      "success": true,
+      "record_count": 64,
+      "error": null
+    },
+    {
+      "method": "settlement_period",
+      "date": "2017-01-15",
+      "settlement_period": 29,
+      "status_code": 200,
+      "success": true,
+      "record_count": 39,
+      "error": null
+    },
+    {
+      "method": "settlement_period",
+      "date": "2017-01-15",
+      "settlement_period": 35,
+      "status_code": 200,
+      "success": true,
+      "record_count": 57,
+      "error": null
+    },
+    {
+      "method": "bulk_dataset",
+      "date": "2017-01-15",
+      "settlement_period": null,
+      "status_code": 200,
+      "success": true,
+      "record_count": 2243,
+      "error": null
+    },
+    {
+      "method": "settlement_period",
+      "date": "2017-03-15",
+      "settlement_period": 15,
+      "status_code": 200,
+      "success": true,
+      "record_count": 49,
+      "error": null
+    },
+    {
+      "method": "settlement_period",
+      "date": "2017-03-15",
+      "settlement_period": 29,
+      "status_code": 200,
+      "success": true,
+      "record_count": 80,
+      "error": null
+    },
+    {
+      "method": "settlement_period",
+      "date": "2017-03-15",
+      "settlement_period": 35,
+      "status_code": 200,
+      "success": true,
+      "record_count": 89,
+      "error": null
+    },
+    {
+      "method": "bulk_dataset",
+      "date": "2017-03-15",
+      "settlement_period": null,
+      "status_code": 200,
+      "success": true,
+      "record_count": 3310,
+      "error": null
+    },
+    {
+      "method": "settlement_period",
+      "date": "2017-06-15",
+      "settlement_period": 15,
+      "status_code": 200,
+      "success": true,
+      "record_count": 94,
+      "error": null
+    },
+    {
+      "method": "settlement_period",
+      "date": "2017-06-15",
+      "settlement_period": 29,
+      "status_code": 200,
+      "success": true,
+      "record_count": 66,
+      "error": null
+    },
+    {
+      "method": "settlement_period",
+      "date": "2017-06-15",
+      "settlement_period": 35,
+      "status_code": 200,
+      "success": true,
+      "record_count": 57,
+      "error": null
+    },
+    {
+      "method": "bulk_dataset",
+      "date": "2017-06-15",
+      "settlement_period": null,
+      "status_code": 200,
+      "success": true,
+      "record_count": 2774,
+      "error": null
+    },
+    {
+      "method": "settlement_period",
+      "date": "2017-09-15",
+      "settlement_period": 15,
+      "status_code": 200,
+      "success": true,
+      "record_count": 61,
+      "error": null
+    },
+    {
+      "method": "settlement_period",
+      "date": "2017-09-15",
+      "settlement_period": 29,
+      "status_code": 200,
+      "success": true,
+      "record_count": 35,
+      "error": null
+    },
+    {
+      "method": "settlement_period",
+      "date": "2017-09-15",
+      "settlement_period": 35,
+      "status_code": 200,
+      "success": true,
+      "record_count": 39,
+      "error": null
+    },
+    {
+      "method": "bulk_dataset",
+      "date": "2017-09-15",
+      "settlement_period": null,
+      "status_code": 200,
+      "success": true,
+      "record_count": 1717,
+      "error": null
+    },
+    {
+      "method": "settlement_period",
+      "date": "2017-12-15",
+      "settlement_period": 15,
+      "status_code": 200,
+      "success": true,
+      "record_count": 110,
+      "error": null
+    },
+    {
+      "method": "settlement_period",
+      "date": "2017-12-15",
+      "settlement_period": 29,
+      "status_code": 200,
+      "success": true,
+      "record_count": 99,
+      "error": null
+    },
+    {
+      "method": "settlement_period",
+      "date": "2017-12-15",
+      "settlement_period": 35,
+      "status_code": 200,
+      "success": true,
+      "record_count": 104,
+      "error": null
+    },
+    {
+      "method": "bulk_dataset",
+      "date": "2017-12-15",
+      "settlement_period": null,
+      "status_code": 200,
+      "success": true,
+      "record_count": 2968,
+      "error": null
+    },
+    {
+      "method": "settlement_period",
+      "date": "2018-06-15",
+      "settlement_period": 15,
+      "status_code": 200,
+      "success": true,
+      "record_count": 134,
+      "error": null
+    },
+    {
+      "method": "settlement_period",
+      "date": "2018-06-15",
+      "settlement_period": 29,
+      "status_code": 200,
+      "success": true,
+      "record_count": 49,
+      "error": null
+    },
+    {
+      "method": "settlement_period",
+      "date": "2018-06-15",
+      "settlement_period": 35,
+      "status_code": 200,
+      "success": true,
+      "record_count": 62,
+      "error": null
+    },
+    {
+      "method": "bulk_dataset",
+      "date": "2018-06-15",
+      "settlement_period": null,
+      "status_code": 200,
+      "success": true,
+      "record_count": 2808,
+      "error": null
+    },
+    {
+      "method": "settlement_period",
+      "date": "2019-06-15",
+      "settlement_period": 15,
+      "status_code": 200,
+      "success": true,
+      "record_count": 71,
+      "error": null
+    },
+    {
+      "method": "settlement_period",
+      "date": "2019-06-15",
+      "settlement_period": 29,
+      "status_code": 200,
+      "success": true,
+      "record_count": 85,
+      "error": null
+    },
+    {
+      "method": "settlement_period",
+      "date": "2019-06-15",
+      "settlement_period": 35,
+      "status_code": 200,
+      "success": true,
+      "record_count": 98,
+      "error": null
+    },
+    {
+      "method": "bulk_dataset",
+      "date": "2019-06-15",
+      "settlement_period": null,
+      "status_code": 200,
+      "success": true,
+      "record_count": 2960,
+      "error": null
+    },
+    {
+      "method": "settlement_period",
+      "date": "2024-06-25",
+      "settlement_period": 15,
+      "status_code": 200,
+      "success": true,
+      "record_count": 226,
+      "error": null
+    },
+    {
+      "method": "settlement_period",
+      "date": "2024-06-25",
+      "settlement_period": 29,
+      "status_code": 200,
+      "success": true,
+      "record_count": 168,
+      "error": null
+    },
+    {
+      "method": "settlement_period",
+      "date": "2024-06-25",
+      "settlement_period": 35,
+      "status_code": 200,
+      "success": true,
+      "record_count": 51,
+      "error": null
+    },
+    {
+      "method": "bulk_dataset",
+      "date": "2024-06-25",
+      "settlement_period": null,
+      "status_code": 200,
+      "success": true,
+      "record_count": 3740,
+      "error": null
+    }
+  ]
+}

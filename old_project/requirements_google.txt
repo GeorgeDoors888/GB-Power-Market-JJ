@@ -1,0 +1,27 @@
+# Core dependencies
+requests>=2.31.0
+python-dotenv>=1.0.0
+
+# Google Cloud APIs
+google-cloud-storage>=2.10.0
+google-cloud-scheduler>=2.13.3
+google-auth>=2.23.0
+google-api-python-client>=2.100.0
+google-auth-httplib2>=0.1.1
+google-auth-oauthlib>=1.0.0
+
+# Deployment dependencies
+gunicorn>=20.1.0
+flask>=2.0.1
+
+# Web framework for monitoring dashboard
+flask>=2.3.3
+gunicorn>=21.2.0
+
+# Async processing
+aiohttp>=3.8.5
+asyncio-throttle>=1.0.2
+
+# Monitoring and logging
+google-cloud-logging>=3.8.0
+google-cloud-monitoring>=2.16.0

@@ -1,0 +1,1 @@
+[{"name":"data","type":"STRING","mode":"REPEATED"},{"name":"source","type":"STRING","mode":"NULLABLE"},{"name":"download_timestamp","type":"TIMESTAMP","mode":"NULLABLE"},{"name":"record_count","type":"INTEGER","mode":"NULLABLE"},{"name":"data_type","type":"STRING","mode":"NULLABLE"},{"name":"date","type":"DATE","mode":"NULLABLE"}]

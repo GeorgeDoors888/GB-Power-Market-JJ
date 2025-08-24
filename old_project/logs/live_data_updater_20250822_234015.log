@@ -1,0 +1,123 @@
+2025-08-22 23:40:18,043 - WARNING - ⚠️ Could not connect to Google Cloud Storage: The file /Users/georgemajor/Jibber Jabber ChatGPT/8_august_jibber_jabber/client_secret.json does not have a valid type. Type is None, expected one of ('authorized_user', 'service_account', 'external_account', 'external_account_authorized_user', 'impersonated_service_account', 'gdch_service_account').
+2025-08-22 23:40:18,043 - WARNING - ⚠️ Cloud Storage features will be disabled
+2025-08-22 23:40:18,043 - WARNING - ⚠️ Could not connect to BigQuery: The file /Users/georgemajor/Jibber Jabber ChatGPT/8_august_jibber_jabber/client_secret.json does not have a valid type. Type is None, expected one of ('authorized_user', 'service_account', 'external_account', 'external_account_authorized_user', 'impersonated_service_account', 'gdch_service_account').
+2025-08-22 23:40:18,043 - WARNING - ⚠️ BigQuery features will be disabled
+2025-08-22 23:40:18,043 - INFO - 🔄 Live Data Updater initialized
+Starting continuous data monitoring...
+This will run in the background and update data based on configured schedules.
+Use Ctrl+C to stop the service.
+For manual updates, use 'python live_data_updater.py update'
+2025-08-22 23:40:18,043 - INFO - 📅 Scheduled updates for Elexon demand_outturn every 30 minutes
+2025-08-22 23:40:18,043 - INFO - 📅 Scheduled updates for Elexon generation_outturn every 30 minutes
+2025-08-22 23:40:18,043 - INFO - 📅 Scheduled updates for Elexon system_warnings every 60 minutes
+2025-08-22 23:40:18,043 - INFO - 📅 Scheduled updates for NESO demand_forecasts every 60 minutes
+2025-08-22 23:40:18,043 - INFO - 📅 Scheduled updates for NESO wind_forecasts every 60 minutes
+2025-08-22 23:40:18,043 - INFO - 📅 Scheduled updates for NESO carbon_intensity every 60 minutes
+2025-08-22 23:40:18,043 - INFO - 📅 Scheduled updates for NESO interconnector_flows every 60 minutes
+2025-08-22 23:40:18,043 - INFO - 📅 Scheduled updates for NESO balancing_services every 120 minutes
+2025-08-22 23:40:18,043 - INFO - 📅 All updates scheduled. Running continuous monitoring...
+2025-08-22 23:40:18,043 - INFO - 📊 Checking for updates to Elexon demand_outturn
+2025-08-22 23:40:18,112 - INFO - 🔄 Found 1391 records for Elexon demand_outturn
+2025-08-22 23:40:18,112 - INFO - ⚠️ Cloud Storage is disabled, skipping upload
+2025-08-22 23:40:18,112 - INFO - ⚠️ BigQuery is disabled, skipping database update
+2025-08-22 23:40:18,114 - INFO - 📊 Sample data: {'publishTime': {0: '2025-07-24T23:30:00Z', 1: '2025-07-25T00:00:00Z', 2: '2025-07-25T00:30:00Z', 3: '2025-07-25T01:00:00Z', 4: '2025-07-25T01:30:00Z'}, 'startTime': {0: '2025-07-24T23:00:00Z', 1: '2025-07-24T23:30:00Z', 2: '2025-07-25T00:00:00Z', 3: '2025-07-25T00:30:00Z', 4: '2025-07-25T01:00:00Z'}, 'settlementDate': {0: '2025-07-25', 1: '2025-07-25', 2: '2025-07-25', 3: '2025-07-25', 4: '2025-07-25'}, 'settlementPeriod': {0: 1, 1: 2, 2: 3, 3: 4, 4: 5}, 'initialDemandOutturn': {0: 22412, 1: 21607, 2: 21192, 3: 21052, 4: 20674}, 'initialTransmissionSystemDemandOutturn': {0: 25490, 1: 24487, 2: 24173, 3: 24001, 4: 23975}}
+2025-08-22 23:40:18,114 - INFO - 📊 Checking for updates to Elexon generation_outturn
+2025-08-22 23:40:19,064 - INFO - 🔄 Found 289 records for Elexon generation_outturn
+2025-08-22 23:40:19,064 - INFO - ⚠️ Cloud Storage is disabled, skipping upload
+2025-08-22 23:40:19,064 - INFO - ⚠️ BigQuery is disabled, skipping database update
+2025-08-22 23:40:19,065 - INFO - 📊 Sample data: {'recordType': {0: 'VD', 1: 'VD', 2: 'VD', 3: 'VD', 4: 'VD'}, 'startTime': {0: '2025-08-21T00:00:00Z', 1: '2025-08-21T00:05:00Z', 2: '2025-08-21T00:10:00Z', 3: '2025-08-21T00:15:00Z', 4: '2025-08-21T00:20:00Z'}, 'demand': {0: 23830, 1: 23766, 2: 23611, 3: 23555, 4: 23438}}
+2025-08-22 23:40:19,066 - INFO - 📊 Checking for updates to Elexon system_warnings
+2025-08-22 23:40:20,091 - INFO - 🔄 Found 1 records for Elexon system_warnings
+2025-08-22 23:40:20,091 - INFO - ⚠️ Cloud Storage is disabled, skipping upload
+2025-08-22 23:40:20,091 - INFO - ⚠️ BigQuery is disabled, skipping database update
+2025-08-22 23:40:20,091 - INFO - 📊 Sample data: {'dataset': {0: 'SYS_WARN'}, 'publishTime': {0: '2025-08-22T12:22:00Z'}, 'warningType': {0: 'SO-SO TRADES'}, 'warningText': {0: 'NATIONAL ENERGY SYSTEM OPERATOR NOTIFICATION of excess energy prices used for settlement outside of BALIT for SO to SO Transactions\r\\nover the National Grid/RTE  Interconnector.\r\\n\r\\nPrices cover 23:00Hrs Today to 05:00Hrs Tomorrow (UK local time) and are in Euro/MWh.\r\\nFrom RTE: Offer 350.00; Bid 0.00 From NESO: Offer 701.21; Bid -210.36\r\\n\r\\nPrices cover 05:00Hrs Tomorrow to 19:00Hrs Tomorrow (UK local time) and are in Euro/MWh.\r\\nFrom RTE: Offer 350.00; Bid -32.35 From NESO: Offer 1168.68; Bid -210.36\r\\n\r\\nPrices cover 19:00Hrs Tomorrow to 23:00Hrs Tomorrow (UK local time) and are in Euro/MWh.\r\\nFrom RTE: Offer 350.00; Bid 0.00 From NESO: Offer 1168.68; Bid -210.36\r\\n\r\\n\r\\n'}}
+2025-08-22 23:40:20,092 - INFO - 📊 Elexon update complete. Updated 1681 records across all datasets.
+2025-08-22 23:40:20,092 - INFO - 📊 Checking for updates to NESO demand_forecasts
+2025-08-22 23:40:20,114 - INFO - 🔄 Found 59 records for NESO demand_forecasts
+2025-08-22 23:40:20,114 - INFO - ⚠️ Cloud Storage is disabled, skipping upload
+2025-08-22 23:40:20,114 - INFO - ⚠️ BigQuery is disabled, skipping database update
+2025-08-22 23:40:20,115 - INFO - 📊 Sample data: {'startTime': {0: '2025-08-22T22:30:00Z', 1: '2025-08-22T23:00:00Z', 2: '2025-08-22T23:30:00Z', 3: '2025-08-23T00:00:00Z', 4: '2025-08-23T00:30:00Z'}, 'settlementDate': {0: '2025-08-22', 1: '2025-08-23', 2: '2025-08-23', 3: '2025-08-23', 4: '2025-08-23'}, 'settlementPeriod': {0: 48, 1: 1, 2: 2, 3: 3, 4: 4}, 'boundary': {0: 'N', 1: 'N', 2: 'N', 3: 'N', 4: 'N'}, 'publishTime': {0: '2025-08-22T22:17:00Z', 1: '2025-08-22T22:17:00Z', 2: '2025-08-22T22:17:00Z', 3: '2025-08-22T22:17:00Z', 4: '2025-08-22T22:17:00Z'}, 'transmissionSystemDemand': {0: 23856, 1: 23345, 2: 22607, 3: 22210, 4: 21890}, 'nationalDemand': {0: 21909, 1: 21500, 2: 20849, 3: 20457, 4: 20200}}
+2025-08-22 23:40:20,115 - INFO - 📊 Checking for updates to NESO wind_forecasts
+2025-08-22 23:40:21,117 - ERROR - ❌ Error updating NESO wind_forecasts: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/WINDFORFUELHH?from=2025-08-21&to=2025-08-22&format=json
+2025-08-22 23:40:21,117 - INFO - 📊 Checking for updates to NESO carbon_intensity
+2025-08-22 23:40:22,166 - INFO - 🔄 Found 5680 records for NESO carbon_intensity
+2025-08-22 23:40:22,166 - INFO - ⚠️ Cloud Storage is disabled, skipping upload
+2025-08-22 23:40:22,166 - INFO - ⚠️ BigQuery is disabled, skipping database update
+2025-08-22 23:40:22,166 - INFO - 📊 Sample data: {'dataset': {0: 'FUELINST', 1: 'FUELINST', 2: 'FUELINST', 3: 'FUELINST', 4: 'FUELINST'}, 'publishTime': {0: '2025-08-22T22:40:00Z', 1: '2025-08-22T22:40:00Z', 2: '2025-08-22T22:40:00Z', 3: '2025-08-22T22:40:00Z', 4: '2025-08-22T22:40:00Z'}, 'startTime': {0: '2025-08-22T22:35:00Z', 1: '2025-08-22T22:35:00Z', 2: '2025-08-22T22:35:00Z', 3: '2025-08-22T22:35:00Z', 4: '2025-08-22T22:35:00Z'}, 'settlementDate': {0: '2025-08-22', 1: '2025-08-22', 2: '2025-08-22', 3: '2025-08-22', 4: '2025-08-22'}, 'settlementPeriod': {0: 48, 1: 48, 2: 48, 3: 48, 4: 48}, 'fuelType': {0: 'BIOMASS', 1: 'CCGT', 2: 'COAL', 3: 'INTELEC', 4: 'INTEW'}, 'generation': {0: 2969, 1: 9351, 2: 0, 3: 972, 4: -476}}
+2025-08-22 23:40:22,167 - INFO - 📊 Checking for updates to NESO interconnector_flows
+2025-08-22 23:40:23,127 - ERROR - ❌ Error updating NESO interconnector_flows: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/INTERFUELHH?from=2025-08-21&to=2025-08-22&format=json
+2025-08-22 23:40:23,127 - INFO - 📊 Checking for updates to NESO balancing_services
+2025-08-22 23:40:24,187 - INFO - 🔄 Found 519 records for NESO balancing_services
+2025-08-22 23:40:24,187 - INFO - ⚠️ Cloud Storage is disabled, skipping upload
+2025-08-22 23:40:24,187 - INFO - ⚠️ BigQuery is disabled, skipping database update
+2025-08-22 23:40:24,188 - INFO - 📊 Sample data: {'dataset': {0: 'DISBSAD', 1: 'DISBSAD', 2: 'DISBSAD', 3: 'DISBSAD', 4: 'DISBSAD'}, 'settlementDate': {0: '2025-08-22', 1: '2025-08-22', 2: '2025-08-22', 3: '2025-08-22', 4: '2025-08-22'}, 'settlementPeriod': {0: 3, 1: 2, 2: 2, 3: 2, 4: 2}, 'id': {0: 1, 1: 1, 2: 2, 3: 3, 4: 4}, 'cost': {0: 16500.0, 1: 16500.0, 2: 1648.0, 3: 2040.0, 4: 1142.4}, 'volume': {0: 100.0, 1: 100.0, 2: 16.0, 3: 20.0, 4: 11.2}, 'soFlag': {0: True, 1: True, 2: False, 3: False, 4: False}, 'storFlag': {0: False, 1: False, 2: False, 3: False, 4: False}, 'partyId': {0: 'RWE Supply & Trading GmbH', 1: 'RWE Supply & Trading GmbH', 2: 'HABITAT ENERGY LIMITED', 3: 'HABITAT ENERGY LIMITED', 4: 'HABITAT ENERGY LIMITED'}, 'assetId': {0: 'DIDCB5', 1: 'DIDCB5', 2: 'OFR-HAB-4', 3: 'OFR-HAB-1', 4: 'OFR-HAB-6'}, 'isTendered': {0: True, 1: True, 2: False, 3: False, 4: False}, 'service': {0: 'System', 1: 'System', 2: 'Non-BM FR', 3: 'Non-BM FR', 4: 'Non-BM FR'}}
+2025-08-22 23:40:24,188 - INFO - 📊 NESO update complete. Updated 6258 records across all datasets.
+2025-08-22 23:40:24,188 - INFO - 🔄 Complete update cycle finished. Updated 7939 records total.
+
+📊 Available Energy Data Sources 📊
+============================================================
+
+ELEXON Datasets:
+------------------------------------------------------------
+- Demand Outturn
+  Table: elexon_demand_outturn
+  Update Frequency: Every 30 minutes
+  Last Checked: 2025-08-22 23:40:18
+
+- Generation Outturn
+  Table: elexon_generation_outturn
+  Update Frequency: Every 30 minutes
+  Last Checked: 2025-08-22 23:40:19
+
+- System Warnings
+  Table: elexon_system_warnings
+  Update Frequency: Every 60 minutes
+  Last Checked: 2025-08-22 23:40:20
+
+
+NESO Datasets:
+------------------------------------------------------------
+- Demand Forecasts
+  Table: neso_demand_forecasts
+  Update Frequency: Every 60 minutes
+  Last Checked: 2025-08-22 23:40:20
+
+- Wind Forecasts
+  Table: neso_wind_forecasts
+  Update Frequency: Every 60 minutes
+  Last Checked: None
+
+- Carbon Intensity
+  Table: neso_carbon_intensity
+  Update Frequency: Every 60 minutes
+  Last Checked: 2025-08-22 23:40:22
+
+- Interconnector Flows
+  Table: neso_interconnector_flows
+  Update Frequency: Every 60 minutes
+  Last Checked: None
+
+- Balancing Services
+  Table: neso_balancing_services
+  Update Frequency: Every 120 minutes
+  Last Checked: 2025-08-22 23:40:24
+
+
+📊 Statistics:
+------------------------------------------------------------
+Service Running Since: 2025-08-22 23:40:18
+Total Elexon Updates: 3
+Total NESO Updates: 3
+Total Records Updated: 7939
+Last Successful Update: 2025-08-22 23:40:24
+============================================================
+2025-08-23 00:10:18,298 - INFO - 📊 Checking for updates to Elexon demand_outturn
+2025-08-23 00:10:18,734 - INFO - 🔄 Found 1392 records for Elexon demand_outturn
+2025-08-23 00:10:18,734 - INFO - ⚠️ Cloud Storage is disabled, skipping upload
+2025-08-23 00:10:18,734 - INFO - ⚠️ BigQuery is disabled, skipping database update
+2025-08-23 00:10:18,744 - INFO - 📊 Sample data: {'publishTime': {0: '2025-07-24T23:30:00Z', 1: '2025-07-25T00:00:00Z', 2: '2025-07-25T00:30:00Z', 3: '2025-07-25T01:00:00Z', 4: '2025-07-25T01:30:00Z'}, 'startTime': {0: '2025-07-24T23:00:00Z', 1: '2025-07-24T23:30:00Z', 2: '2025-07-25T00:00:00Z', 3: '2025-07-25T00:30:00Z', 4: '2025-07-25T01:00:00Z'}, 'settlementDate': {0: '2025-07-25', 1: '2025-07-25', 2: '2025-07-25', 3: '2025-07-25', 4: '2025-07-25'}, 'settlementPeriod': {0: 1, 1: 2, 2: 3, 3: 4, 4: 5}, 'initialDemandOutturn': {0: 22412, 1: 21607, 2: 21192, 3: 21052, 4: 20674}, 'initialTransmissionSystemDemandOutturn': {0: 25490, 1: 24487, 2: 24173, 3: 24001, 4: 23975}}
+2025-08-23 00:10:18,745 - INFO - 📊 Checking for updates to Elexon generation_outturn
+2025-08-23 00:10:19,350 - INFO - 🔄 Found 565 records for Elexon generation_outturn
+2025-08-23 00:10:19,350 - INFO - ⚠️ Cloud Storage is disabled, skipping upload
+2025-08-23 00:10:19,350 - INFO - ⚠️ BigQuery is disabled, skipping database update
+2025-08-23 00:10:19,351 - INFO - 📊 Sample data: {'recordType': {0: 'VD', 1: 'VD', 2: 'VD', 3: 'VD', 4: 'VD'}, 'startTime': {0: '2025-08-21T00:00:00Z', 1: '2025-08-21T00:05:00Z', 2: '2025-08-21T00:10:00Z', 3: '2025-08-21T00:15:00Z', 4: '2025-08-21T00:20:00Z'}, 'demand': {0: 23830, 1: 23766, 2: 23611, 3: 23555, 4: 23438}}

@@ -1,0 +1,1433 @@
+{
+  "jibber-jabber-knowledge": {
+    "project_id": "jibber-jabber-knowledge",
+    "scan_time": "2025-08-23T14:56:25.985480",
+    "resources": [
+      {
+        "resource_type": "gcs_bucket",
+        "name": "elexon-historical-data-storage",
+        "full_path": "gs://elexon-historical-data-storage/",
+        "contains_neso_data": false,
+        "contains_elexon_data": true,
+        "sample_files": [
+          "beb/beb_20160101_0000_20160101_0200.json",
+          "beb/beb_20160101_0200_20160101_0400.json",
+          "beb/beb_20160101_0400_20160101_0600.json",
+          "beb/beb_20160101_0600_20160101_0800.json",
+          "beb/beb_20160101_0800_20160101_1000.json",
+          "beb/beb_20160101_1000_20160101_1200.json",
+          "beb/beb_20160101_1200_20160101_1400.json",
+          "beb/beb_20160101_1400_20160101_1600.json",
+          "beb/beb_20160101_1600_20160101_1800.json",
+          "beb/beb_20160101_1800_20160101_2000.json"
+        ],
+        "creation_time": "2025-08-07T11:28:15.694Z",
+        "labels": {}
+      },
+      {
+        "resource_type": "gcs_bucket",
+        "name": "jibber-jabber-knowledge-bmrs-data",
+        "full_path": "gs://jibber-jabber-knowledge-bmrs-data/",
+        "contains_neso_data": false,
+        "contains_elexon_data": true,
+        "sample_files": [
+          "analysis/historical_data_analysis_20250819_231133.json",
+          "bmrs/B1610_stream/20250820T225644Z.jsonl",
+          "bmrs/B1610_stream/20250821T085245Z.jsonl",
+          "bmrs/DCI_stream/20250820T225727Z.jsonl",
+          "bmrs/DCI_stream/20250821T085247Z.jsonl",
+          "bmrs/DCI_stream/20250821T085831Z.jsonl",
+          "bmrs/FUELINST/20250820T225637Z.csv",
+          "bmrs/FUELINST/20250821T085239Z.csv",
+          "bmrs/INTERCONNECTORS/20250820T225729Z.csv",
+          "bmrs/INTERCONNECTORS/20250821T085249Z.csv"
+        ],
+        "creation_time": "2025-08-08T18:37:01.796Z",
+        "labels": {}
+      },
+      {
+        "resource_type": "gcs_bucket",
+        "name": "jibber-jabber-knowledge-bmrs-data-eu",
+        "full_path": "gs://jibber-jabber-knowledge-bmrs-data-eu/",
+        "contains_neso_data": false,
+        "contains_elexon_data": true,
+        "sample_files": [],
+        "creation_time": "2025-08-22T15:17:49.152Z",
+        "labels": {}
+      },
+      {
+        "resource_type": "gcs_bucket",
+        "name": "run-sources-jibber-jabber-knowledge-europe-west1",
+        "full_path": "gs://run-sources-jibber-jabber-knowledge-europe-west1/",
+        "contains_neso_data": false,
+        "contains_elexon_data": true,
+        "matching_files": [
+          "services/elexon-historical-downloader/1754908303.010771-dcd2943a93f341739e70d7436fb398bc.zip",
+          "services/elexon-research/1754910192.513467-2ffaeb8d740b49fd94cbb60bc1303cb7.zip"
+        ],
+        "total_matching_files_found": 2,
+        "creation_time": "2025-08-11T10:31:42.934Z",
+        "labels": {}
+      },
+      {
+        "resource_type": "gcs_bucket",
+        "name": "run-sources-jibber-jabber-knowledge-europe-west2",
+        "full_path": "gs://run-sources-jibber-jabber-knowledge-europe-west2/",
+        "contains_neso_data": false,
+        "contains_elexon_data": true,
+        "matching_files": [
+          "jobs/elexon-bulk-downloader/1754569029.26861-4063659dc1e74f0fa537b6b7d4dff65a.zip",
+          "services/elexon-bulk-downloader/1754504614.161766-2e0671b82fc843fbaa1caa1551485036.zip",
+          "services/elexon-bulk-downloader/1754504732.083253-64d44fd5b5d04f17a134643f89901e37.zip",
+          "services/elexon-bulk-downloader/1754504825.291458-ab93275ad1084a989f6439d5bd7439d9.zip",
+          "services/elexon-bulk-downloader/1754505398.672748-65edde466b0a4a5fb6d398b6c5853b3f.zip",
+          "services/elexon-bulk-downloader/1754505587.257899-0ecd684911c44196b9e3b692f9f29fcf.zip",
+          "services/elexon-bulk-downloader/1754507158.023466-44c6968d77f844c39e07f37dca247a8b.zip",
+          "services/elexon-downloader/1754507644.788596-7d28c4924ea842818371dad245e64013.zip",
+          "services/elexon-historical-downloader/1754509299.816677-1038e1706f1940f59f2f591a4f1b24c7.zip",
+          "services/elexon-historical-downloader/1754510995.924968-ef76ee943eec499dac28f9e6f77ac91f.zip"
+        ],
+        "total_matching_files_found": 37,
+        "creation_time": "2025-08-06T18:23:34.100Z",
+        "labels": {}
+      },
+      {
+        "resource_type": "gcs_bucket",
+        "name": "run-sources-jibber-jabber-knowledge-us-central1",
+        "full_path": "gs://run-sources-jibber-jabber-knowledge-us-central1/",
+        "contains_neso_data": false,
+        "contains_elexon_data": true,
+        "matching_files": [
+          "services/bmrs-data-collector/1754678252.173482-323cbbc077084e1999b5b060321b3132.zip",
+          "services/elexon-bulk-downloader/1754501675.610616-122e9a5892ca4745a2ddee057dddebab.zip",
+          "services/elexon-bulk-downloader/1754502314.439516-4c09012d82674a73b0f3df054a7bf784.zip",
+          "services/elexon-bulk-downloader/1754503636.609884-c842cc89d3e94091b772e53480c800e2.zip",
+          "services/elexon-bulk-downloader/1754504327.637979-aa54ad103ac44092a1841023456cff7d.zip"
+        ],
+        "total_matching_files_found": 5,
+        "creation_time": "2025-08-06T17:34:35.634Z",
+        "labels": {}
+      },
+      {
+        "resource_type": "bigquery_dataset",
+        "name": "uk_energy",
+        "full_path": "jibber-jabber-knowledge.uk_energy",
+        "contains_neso_data": true,
+        "contains_elexon_data": true,
+        "tables": [
+          {
+            "table_id": "elexon_bid_offer_acceptances",
+            "full_path": "jibber-jabber-knowledge.uk_energy.elexon_bid_offer_acceptances",
+            "contains_neso_data": false,
+            "contains_elexon_data": true,
+            "row_count": 0,
+            "size_bytes": 0,
+            "creation_time": "2025-08-20T10:43:23.126000+00:00",
+            "last_modified": "2025-08-20T10:43:23.240000+00:00"
+          },
+          {
+            "table_id": "elexon_boalf",
+            "full_path": "jibber-jabber-knowledge.uk_energy.elexon_boalf",
+            "contains_neso_data": false,
+            "contains_elexon_data": true,
+            "row_count": 0,
+            "size_bytes": 0,
+            "creation_time": "2025-08-21T08:27:57.151000+00:00",
+            "last_modified": "2025-08-21T08:27:57.199000+00:00"
+          },
+          {
+            "table_id": "elexon_demand_outturn",
+            "full_path": "jibber-jabber-knowledge.uk_energy.elexon_demand_outturn",
+            "contains_neso_data": false,
+            "contains_elexon_data": true,
+            "row_count": 0,
+            "size_bytes": 0,
+            "creation_time": "2025-08-20T10:43:23.384000+00:00",
+            "last_modified": "2025-08-20T10:43:23.443000+00:00"
+          },
+          {
+            "table_id": "elexon_demand_outturn_2023",
+            "full_path": "jibber-jabber-knowledge.uk_energy.elexon_demand_outturn_2023",
+            "contains_neso_data": false,
+            "contains_elexon_data": true,
+            "row_count": 365,
+            "size_bytes": 22265,
+            "creation_time": "2025-08-21T14:48:58.030000+00:00",
+            "last_modified": "2025-08-21T14:48:58.030000+00:00"
+          },
+          {
+            "table_id": "elexon_generation_outturn",
+            "full_path": "jibber-jabber-knowledge.uk_energy.elexon_generation_outturn",
+            "contains_neso_data": false,
+            "contains_elexon_data": true,
+            "row_count": 0,
+            "size_bytes": 0,
+            "creation_time": "2025-08-20T10:43:23.540000+00:00",
+            "last_modified": "2025-08-20T10:43:23.561000+00:00"
+          },
+          {
+            "table_id": "elexon_generation_outturn_2023",
+            "full_path": "jibber-jabber-knowledge.uk_energy.elexon_generation_outturn_2023",
+            "contains_neso_data": false,
+            "contains_elexon_data": true,
+            "row_count": 365,
+            "size_bytes": 23725,
+            "creation_time": "2025-08-21T14:49:06.378000+00:00",
+            "last_modified": "2025-08-21T14:49:06.378000+00:00"
+          },
+          {
+            "table_id": "elexon_system_warnings",
+            "full_path": "jibber-jabber-knowledge.uk_energy.elexon_system_warnings",
+            "contains_neso_data": false,
+            "contains_elexon_data": true,
+            "row_count": 0,
+            "size_bytes": 0,
+            "creation_time": "2025-08-20T10:43:23.703000+00:00",
+            "last_modified": "2025-08-20T10:43:23.841000+00:00"
+          },
+          {
+            "table_id": "neso_balancing_services",
+            "full_path": "jibber-jabber-knowledge.uk_energy.neso_balancing_services",
+            "contains_neso_data": true,
+            "contains_elexon_data": false,
+            "row_count": 0,
+            "size_bytes": 0,
+            "creation_time": "2025-08-20T10:43:24.527000+00:00",
+            "last_modified": "2025-08-20T10:43:24.551000+00:00"
+          },
+          {
+            "table_id": "neso_carbon_intensity",
+            "full_path": "jibber-jabber-knowledge.uk_energy.neso_carbon_intensity",
+            "contains_neso_data": true,
+            "contains_elexon_data": false,
+            "row_count": 0,
+            "size_bytes": 0,
+            "creation_time": "2025-08-20T10:43:24.349000+00:00",
+            "last_modified": "2025-08-20T10:43:24.432000+00:00"
+          },
+          {
+            "table_id": "neso_demand_forecasts",
+            "full_path": "jibber-jabber-knowledge.uk_energy.neso_demand_forecasts",
+            "contains_neso_data": true,
+            "contains_elexon_data": false,
+            "row_count": 0,
+            "size_bytes": 0,
+            "creation_time": "2025-08-20T10:43:23.942000+00:00",
+            "last_modified": "2025-08-20T10:43:23.962000+00:00"
+          },
+          {
+            "table_id": "neso_future_scenarios",
+            "full_path": "jibber-jabber-knowledge.uk_energy.neso_future_scenarios",
+            "contains_neso_data": true,
+            "contains_elexon_data": false,
+            "row_count": 0,
+            "size_bytes": 0,
+            "creation_time": "2025-08-20T10:43:24.760000+00:00",
+            "last_modified": "2025-08-20T10:43:24.781000+00:00"
+          },
+          {
+            "table_id": "neso_interconnector_flows",
+            "full_path": "jibber-jabber-knowledge.uk_energy.neso_interconnector_flows",
+            "contains_neso_data": true,
+            "contains_elexon_data": false,
+            "row_count": 0,
+            "size_bytes": 0,
+            "creation_time": "2025-08-20T10:43:24.640000+00:00",
+            "last_modified": "2025-08-20T10:43:24.664000+00:00"
+          },
+          {
+            "table_id": "neso_wind_forecasts",
+            "full_path": "jibber-jabber-knowledge.uk_energy.neso_wind_forecasts",
+            "contains_neso_data": true,
+            "contains_elexon_data": false,
+            "row_count": 0,
+            "size_bytes": 0,
+            "creation_time": "2025-08-20T10:43:24.096000+00:00",
+            "last_modified": "2025-08-20T10:43:24.235000+00:00"
+          },
+          {
+            "table_id": "v_bid_offer_volume_summary",
+            "full_path": "jibber-jabber-knowledge.uk_energy.v_bid_offer_volume_summary",
+            "contains_neso_data": false,
+            "contains_elexon_data": true,
+            "row_count": 0,
+            "size_bytes": 0,
+            "creation_time": "2025-08-21T23:43:45.929000+00:00",
+            "last_modified": "2025-08-21T23:43:45.929000+00:00"
+          },
+          {
+            "table_id": "v_system_warning_hotspots",
+            "full_path": "jibber-jabber-knowledge.uk_energy.v_system_warning_hotspots",
+            "contains_neso_data": false,
+            "contains_elexon_data": true,
+            "row_count": 0,
+            "size_bytes": 0,
+            "creation_time": "2025-08-21T23:43:45.489000+00:00",
+            "last_modified": "2025-08-21T23:43:45.489000+00:00"
+          }
+        ],
+        "total_tables": 24,
+        "matching_tables": 15
+      },
+      {
+        "resource_type": "bigquery_dataset",
+        "name": "uk_energy_data",
+        "full_path": "jibber-jabber-knowledge.uk_energy_data",
+        "contains_neso_data": true,
+        "contains_elexon_data": true,
+        "tables": [
+          {
+            "table_id": "elexon_bid_offer_acceptances",
+            "full_path": "jibber-jabber-knowledge.uk_energy_data.elexon_bid_offer_acceptances",
+            "contains_neso_data": false,
+            "contains_elexon_data": true,
+            "row_count": 96,
+            "size_bytes": 0,
+            "creation_time": "2025-08-22T19:35:40.753000+00:00",
+            "last_modified": "2025-08-22T19:35:40.753000+00:00"
+          },
+          {
+            "table_id": "elexon_bid_offer_acceptances_2016_import_20250822203527",
+            "full_path": "jibber-jabber-knowledge.uk_energy_data.elexon_bid_offer_acceptances_2016_import_20250822203527",
+            "contains_neso_data": false,
+            "contains_elexon_data": true,
+            "row_count": 96,
+            "size_bytes": 0,
+            "creation_time": "2025-08-22T19:35:36.624000+00:00",
+            "last_modified": "2025-08-22T19:35:36.624000+00:00"
+          },
+          {
+            "table_id": "elexon_boa_acceptances",
+            "full_path": "jibber-jabber-knowledge.uk_energy_data.elexon_boa_acceptances",
+            "contains_neso_data": false,
+            "contains_elexon_data": true,
+            "row_count": 0,
+            "size_bytes": 0,
+            "creation_time": "2025-08-19T09:33:46.518000+00:00",
+            "last_modified": "2025-08-19T09:33:46.585000+00:00"
+          },
+          {
+            "table_id": "elexon_frequency",
+            "full_path": "jibber-jabber-knowledge.uk_energy_data.elexon_frequency",
+            "contains_neso_data": false,
+            "contains_elexon_data": true,
+            "row_count": 46088,
+            "size_bytes": 1013936,
+            "creation_time": "2025-08-17T19:34:20.807000+00:00",
+            "last_modified": "2025-08-17T19:34:20.807000+00:00"
+          },
+          {
+            "table_id": "elexon_frequency_2016_import_20250822203515",
+            "full_path": "jibber-jabber-knowledge.uk_energy_data.elexon_frequency_2016_import_20250822203515",
+            "contains_neso_data": false,
+            "contains_elexon_data": true,
+            "row_count": 8,
+            "size_bytes": 1013936,
+            "creation_time": "2025-08-22T19:35:21.564000+00:00",
+            "last_modified": "2025-08-22T19:35:21.564000+00:00"
+          },
+          {
+            "table_id": "elexon_fuel_generation",
+            "full_path": "jibber-jabber-knowledge.uk_energy_data.elexon_fuel_generation",
+            "contains_neso_data": false,
+            "contains_elexon_data": true,
+            "row_count": 4992,
+            "size_bytes": 273024,
+            "creation_time": "2025-08-17T19:34:25.448000+00:00",
+            "last_modified": "2025-08-17T19:34:25.448000+00:00"
+          },
+          {
+            "table_id": "elexon_system_prices",
+            "full_path": "jibber-jabber-knowledge.uk_energy_data.elexon_system_prices",
+            "contains_neso_data": false,
+            "contains_elexon_data": true,
+            "row_count": 0,
+            "size_bytes": 0,
+            "creation_time": "2025-08-15T18:56:34.083000+00:00",
+            "last_modified": "2025-08-15T18:56:34.323000+00:00"
+          },
+          {
+            "table_id": "neso_gsp_demand",
+            "full_path": "jibber-jabber-knowledge.uk_energy_data.neso_gsp_demand",
+            "contains_neso_data": true,
+            "contains_elexon_data": false,
+            "row_count": 0,
+            "size_bytes": 0,
+            "creation_time": "2025-08-15T18:56:35.510000+00:00",
+            "last_modified": "2025-08-15T18:56:35.723000+00:00"
+          }
+        ],
+        "total_tables": 10,
+        "matching_tables": 8
+      },
+      {
+        "resource_type": "bigquery_dataset",
+        "name": "uk_energy_data_gemini_eu",
+        "full_path": "jibber-jabber-knowledge.uk_energy_data_gemini_eu",
+        "contains_neso_data": false,
+        "contains_elexon_data": true,
+        "tables": [
+          {
+            "table_id": "elexon_frequency",
+            "full_path": "jibber-jabber-knowledge.uk_energy_data_gemini_eu.elexon_frequency",
+            "contains_neso_data": false,
+            "contains_elexon_data": true,
+            "row_count": 46088,
+            "size_bytes": 1013936,
+            "creation_time": "2025-08-18T12:48:27.886000+00:00",
+            "last_modified": "2025-08-18T12:48:27.886000+00:00"
+          },
+          {
+            "table_id": "elexon_fuel_generation",
+            "full_path": "jibber-jabber-knowledge.uk_energy_data_gemini_eu.elexon_fuel_generation",
+            "contains_neso_data": false,
+            "contains_elexon_data": true,
+            "row_count": 4992,
+            "size_bytes": 273024,
+            "creation_time": "2025-08-18T12:49:00.544000+00:00",
+            "last_modified": "2025-08-18T12:49:00.544000+00:00"
+          }
+        ],
+        "total_tables": 3,
+        "matching_tables": 2
+      },
+      {
+        "resource_type": "bigquery_dataset",
+        "name": "uk_energy_prod",
+        "full_path": "jibber-jabber-knowledge.uk_energy_prod",
+        "contains_neso_data": true,
+        "contains_elexon_data": true,
+        "tables": [
+          {
+            "table_id": "elexon_demand_outturn",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.elexon_demand_outturn",
+            "contains_neso_data": false,
+            "contains_elexon_data": true,
+            "row_count": 5,
+            "size_bytes": 240,
+            "creation_time": "2025-08-22T23:16:19.055000+00:00",
+            "last_modified": "2025-08-23T11:13:05.611000+00:00"
+          },
+          {
+            "table_id": "elexon_demand_outturn_2016_import_20250822203511",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.elexon_demand_outturn_2016_import_20250822203511",
+            "contains_neso_data": false,
+            "contains_elexon_data": true,
+            "row_count": 8,
+            "size_bytes": 376,
+            "creation_time": "2025-08-22T19:35:15.830000+00:00",
+            "last_modified": "2025-08-22T19:35:15.830000+00:00"
+          },
+          {
+            "table_id": "elexon_demand_outturn_temp_20250823001616",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.elexon_demand_outturn_temp_20250823001616",
+            "contains_neso_data": false,
+            "contains_elexon_data": true,
+            "row_count": 100,
+            "size_bytes": 7200,
+            "creation_time": "2025-08-22T23:16:18.453000+00:00",
+            "last_modified": "2025-08-22T23:16:18.453000+00:00"
+          },
+          {
+            "table_id": "elexon_frequency",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.elexon_frequency",
+            "contains_neso_data": false,
+            "contains_elexon_data": true,
+            "row_count": 46088,
+            "size_bytes": 368704,
+            "creation_time": "2025-08-23T09:53:46.289000+00:00",
+            "last_modified": "2025-08-23T11:13:13.019000+00:00"
+          },
+          {
+            "table_id": "elexon_generation_outturn",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.elexon_generation_outturn",
+            "contains_neso_data": false,
+            "contains_elexon_data": true,
+            "row_count": 0,
+            "size_bytes": 0,
+            "creation_time": "2025-08-22T23:16:22.041000+00:00",
+            "last_modified": "2025-08-22T23:16:22.078000+00:00"
+          },
+          {
+            "table_id": "elexon_generation_outturn_2016_import_20250822203523",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.elexon_generation_outturn_2016_import_20250822203523",
+            "contains_neso_data": false,
+            "contains_elexon_data": true,
+            "row_count": 8,
+            "size_bytes": 273024,
+            "creation_time": "2025-08-22T19:35:27.950000+00:00",
+            "last_modified": "2025-08-22T19:35:27.950000+00:00"
+          },
+          {
+            "table_id": "elexon_generation_outturn_temp_20250823001619",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.elexon_generation_outturn_temp_20250823001619",
+            "contains_neso_data": false,
+            "contains_elexon_data": true,
+            "row_count": 100,
+            "size_bytes": 6190,
+            "creation_time": "2025-08-22T23:16:21.413000+00:00",
+            "last_modified": "2025-08-22T23:16:21.413000+00:00"
+          },
+          {
+            "table_id": "elexon_system_warnings",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.elexon_system_warnings",
+            "contains_neso_data": false,
+            "contains_elexon_data": true,
+            "row_count": 0,
+            "size_bytes": 0,
+            "creation_time": "2025-08-22T23:16:24.911000+00:00",
+            "last_modified": "2025-08-22T23:16:24.945000+00:00"
+          },
+          {
+            "table_id": "elexon_system_warnings_temp_20250823001622",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.elexon_system_warnings_temp_20250823001622",
+            "contains_neso_data": false,
+            "contains_elexon_data": true,
+            "row_count": 56,
+            "size_bytes": 7556,
+            "creation_time": "2025-08-22T23:16:24.304000+00:00",
+            "last_modified": "2025-08-22T23:16:24.304000+00:00"
+          },
+          {
+            "table_id": "neso_balancing_services",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_balancing_services",
+            "contains_neso_data": true,
+            "contains_elexon_data": false,
+            "row_count": 0,
+            "size_bytes": 0,
+            "creation_time": "2025-08-22T23:16:39.840000+00:00",
+            "last_modified": "2025-08-22T23:16:39.855000+00:00"
+          },
+          {
+            "table_id": "neso_balancing_services_temp_20250823001636",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_balancing_services_temp_20250823001636",
+            "contains_neso_data": true,
+            "contains_elexon_data": false,
+            "row_count": 35607,
+            "size_bytes": 2534640,
+            "creation_time": "2025-08-22T23:16:39.168000+00:00",
+            "last_modified": "2025-08-22T23:16:39.168000+00:00"
+          },
+          {
+            "table_id": "neso_capacity_market_cmu_20250820",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_capacity_market_cmu_20250820",
+            "contains_neso_data": true,
+            "contains_elexon_data": false,
+            "row_count": 16152,
+            "size_bytes": 7108031,
+            "creation_time": "2025-08-23T11:42:54.812000+00:00",
+            "last_modified": "2025-08-23T11:42:57.167000+00:00"
+          },
+          {
+            "table_id": "neso_capacity_market_component",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_capacity_market_component",
+            "contains_neso_data": true,
+            "contains_elexon_data": false,
+            "row_count": 726679,
+            "size_bytes": 121613352,
+            "creation_time": "2025-08-23T11:54:42.780000+00:00",
+            "last_modified": "2025-08-23T11:54:55.125000+00:00"
+          },
+          {
+            "table_id": "neso_capacity_market_component_20250820",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_capacity_market_component_20250820",
+            "contains_neso_data": true,
+            "contains_elexon_data": false,
+            "row_count": 0,
+            "size_bytes": 0,
+            "creation_time": "2025-08-23T11:43:01.185000+00:00",
+            "last_modified": "2025-08-23T11:43:01.213000+00:00"
+          },
+          {
+            "table_id": "neso_carbon_intensity",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_carbon_intensity",
+            "contains_neso_data": true,
+            "contains_elexon_data": false,
+            "row_count": 0,
+            "size_bytes": 0,
+            "creation_time": "2025-08-22T23:16:33.150000+00:00",
+            "last_modified": "2025-08-22T23:16:33.171000+00:00"
+          },
+          {
+            "table_id": "neso_carbon_intensity_temp_20250823001630",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_carbon_intensity_temp_20250823001630",
+            "contains_neso_data": true,
+            "contains_elexon_data": false,
+            "row_count": 35088,
+            "size_bytes": 6596832,
+            "creation_time": "2025-08-22T23:16:32.668000+00:00",
+            "last_modified": "2025-08-22T23:16:32.668000+00:00"
+          },
+          {
+            "table_id": "neso_constraint_cost_24m",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_constraint_cost_24m",
+            "contains_neso_data": true,
+            "contains_elexon_data": false,
+            "row_count": 1,
+            "size_bytes": 24,
+            "creation_time": "2025-08-23T11:54:37.218000+00:00",
+            "last_modified": "2025-08-23T11:54:39.056000+00:00"
+          },
+          {
+            "table_id": "neso_demand_forecast_1d",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_demand_forecast_1d",
+            "contains_neso_data": true,
+            "contains_elexon_data": false,
+            "row_count": 11,
+            "size_bytes": 620,
+            "creation_time": "2025-08-23T11:34:45.131000+00:00",
+            "last_modified": "2025-08-23T11:44:58.195000+00:00"
+          },
+          {
+            "table_id": "neso_demand_forecasts",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_demand_forecasts",
+            "contains_neso_data": true,
+            "contains_elexon_data": false,
+            "row_count": 0,
+            "size_bytes": 0,
+            "creation_time": "2025-08-22T23:16:27.317000+00:00",
+            "last_modified": "2025-08-22T23:16:27.352000+00:00"
+          },
+          {
+            "table_id": "neso_demand_forecasts_temp_20250823001625",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_demand_forecasts_temp_20250823001625",
+            "contains_neso_data": true,
+            "contains_elexon_data": false,
+            "row_count": 100,
+            "size_bytes": 13560,
+            "creation_time": "2025-08-22T23:16:26.834000+00:00",
+            "last_modified": "2025-08-22T23:16:26.834000+00:00"
+          },
+          {
+            "table_id": "neso_dispatch_transparency_all_boas_april2020_march2021",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_dispatch_transparency_all_boas_april2020_march2021",
+            "contains_neso_data": true,
+            "contains_elexon_data": false,
+            "row_count": 25996,
+            "size_bytes": 5217752,
+            "creation_time": "2025-08-23T11:43:41.594000+00:00",
+            "last_modified": "2025-08-23T11:43:43.621000+00:00"
+          },
+          {
+            "table_id": "neso_dispatch_transparency_all_boas_april2021_march2022",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_dispatch_transparency_all_boas_april2021_march2022",
+            "contains_neso_data": true,
+            "contains_elexon_data": false,
+            "row_count": 533891,
+            "size_bytes": 98081546,
+            "creation_time": "2025-08-23T11:44:05.658000+00:00",
+            "last_modified": "2025-08-23T11:44:17.088000+00:00"
+          },
+          {
+            "table_id": "neso_dispatch_transparency_all_boas_april2022_march2023",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_dispatch_transparency_all_boas_april2022_march2023",
+            "contains_neso_data": true,
+            "contains_elexon_data": false,
+            "row_count": 535086,
+            "size_bytes": 115052365,
+            "creation_time": "2025-08-23T11:44:19.416000+00:00",
+            "last_modified": "2025-08-23T11:44:31.835000+00:00"
+          },
+          {
+            "table_id": "neso_dispatch_transparency_all_boas_april2023_march2024",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_dispatch_transparency_all_boas_april2023_march2024",
+            "contains_neso_data": true,
+            "contains_elexon_data": false,
+            "row_count": 733560,
+            "size_bytes": 153363216,
+            "creation_time": "2025-08-23T11:43:46.184000+00:00",
+            "last_modified": "2025-08-23T11:44:02.216000+00:00"
+          },
+          {
+            "table_id": "neso_dispatch_transparency_all_boas_april2024_march2025",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_dispatch_transparency_all_boas_april2024_march2025",
+            "contains_neso_data": true,
+            "contains_elexon_data": false,
+            "row_count": 1594331,
+            "size_bytes": 312273964,
+            "creation_time": "2025-08-23T11:43:12.376000+00:00",
+            "last_modified": "2025-08-23T11:43:39.151000+00:00"
+          },
+          {
+            "table_id": "neso_dispatch_transparency_potential_alternatives_actions_april2020_march2021",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_dispatch_transparency_potential_alternatives_actions_april2020_march2021",
+            "contains_neso_data": true,
+            "contains_elexon_data": true,
+            "row_count": 6821,
+            "size_bytes": 813692,
+            "creation_time": "2025-08-23T11:44:44.160000+00:00",
+            "last_modified": "2025-08-23T11:44:46.024000+00:00"
+          },
+          {
+            "table_id": "neso_dispatch_transparency_potential_alternatives_actions_april2021_march2022",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_dispatch_transparency_potential_alternatives_actions_april2021_march2022",
+            "contains_neso_data": true,
+            "contains_elexon_data": true,
+            "row_count": 73838,
+            "size_bytes": 9021814,
+            "creation_time": "2025-08-23T11:43:02.896000+00:00",
+            "last_modified": "2025-08-23T11:43:05.145000+00:00"
+          },
+          {
+            "table_id": "neso_dispatch_transparency_potential_alternatives_actions_april2022_march2023",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_dispatch_transparency_potential_alternatives_actions_april2022_march2023",
+            "contains_neso_data": true,
+            "contains_elexon_data": true,
+            "row_count": 118723,
+            "size_bytes": 14521877,
+            "creation_time": "2025-08-23T11:43:06.440000+00:00",
+            "last_modified": "2025-08-23T11:43:08.872000+00:00"
+          },
+          {
+            "table_id": "neso_dispatch_transparency_potential_alternatives_actions_april2023_march2024",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_dispatch_transparency_potential_alternatives_actions_april2023_march2024",
+            "contains_neso_data": true,
+            "contains_elexon_data": true,
+            "row_count": 205092,
+            "size_bytes": 24419312,
+            "creation_time": "2025-08-23T11:44:47.794000+00:00",
+            "last_modified": "2025-08-23T11:44:51.590000+00:00"
+          },
+          {
+            "table_id": "neso_dispatch_transparency_potential_alternatives_actions_april2024_march2025",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_dispatch_transparency_potential_alternatives_actions_april2024_march2025",
+            "contains_neso_data": true,
+            "contains_elexon_data": true,
+            "row_count": 226947,
+            "size_bytes": 26695494,
+            "creation_time": "2025-08-23T11:44:35.537000+00:00",
+            "last_modified": "2025-08-23T11:44:41.565000+00:00"
+          },
+          {
+            "table_id": "neso_dno_licence_areas",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_dno_licence_areas",
+            "contains_neso_data": true,
+            "contains_elexon_data": false,
+            "row_count": 14,
+            "size_bytes": 2386153,
+            "creation_time": "2025-08-23T11:19:31.921000+00:00",
+            "last_modified": "2025-08-23T11:19:37.047000+00:00"
+          },
+          {
+            "table_id": "neso_dno_licence_areas_2024",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_dno_licence_areas_2024",
+            "contains_neso_data": true,
+            "contains_elexon_data": false,
+            "row_count": 14,
+            "size_bytes": 2418292,
+            "creation_time": "2025-08-23T11:19:19.896000+00:00",
+            "last_modified": "2025-08-23T11:19:24.901000+00:00"
+          },
+          {
+            "table_id": "neso_dynamic_containment_4d",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_dynamic_containment_4d",
+            "contains_neso_data": true,
+            "contains_elexon_data": false,
+            "row_count": 8,
+            "size_bytes": 592,
+            "creation_time": "2025-08-23T11:34:58.383000+00:00",
+            "last_modified": "2025-08-23T11:45:11.717000+00:00"
+          },
+          {
+            "table_id": "neso_embedded_register_embedded_register_22_august_2025",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_embedded_register_embedded_register_22_august_2025",
+            "contains_neso_data": true,
+            "contains_elexon_data": false,
+            "row_count": 558,
+            "size_bytes": 96674,
+            "creation_time": "2025-08-23T11:36:44.984000+00:00",
+            "last_modified": "2025-08-23T11:36:46.551000+00:00"
+          },
+          {
+            "table_id": "neso_generation_charging_zones",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_generation_charging_zones",
+            "contains_neso_data": true,
+            "contains_elexon_data": false,
+            "row_count": 27,
+            "size_bytes": 40110,
+            "creation_time": "2025-08-23T11:19:26.682000+00:00",
+            "last_modified": "2025-08-23T11:19:30.418000+00:00"
+          },
+          {
+            "table_id": "neso_grid_supply_points_2018",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_grid_supply_points_2018",
+            "contains_neso_data": true,
+            "contains_elexon_data": false,
+            "row_count": 329,
+            "size_bytes": 2631639,
+            "creation_time": "2025-08-23T11:20:41.386000+00:00",
+            "last_modified": "2025-08-23T11:20:46.194000+00:00"
+          },
+          {
+            "table_id": "neso_grid_supply_points_2022",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_grid_supply_points_2022",
+            "contains_neso_data": true,
+            "contains_elexon_data": false,
+            "row_count": 333,
+            "size_bytes": 11161205,
+            "creation_time": "2025-08-23T11:20:01.009000+00:00",
+            "last_modified": "2025-08-23T11:20:10.947000+00:00"
+          },
+          {
+            "table_id": "neso_grid_supply_points_2025_jan",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_grid_supply_points_2025_jan",
+            "contains_neso_data": true,
+            "contains_elexon_data": false,
+            "row_count": 340,
+            "size_bytes": 9790576,
+            "creation_time": "2025-08-23T11:20:14.130000+00:00",
+            "last_modified": "2025-08-23T11:20:28.483000+00:00"
+          },
+          {
+            "table_id": "neso_grid_supply_points_2025_jan_wgs84",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_grid_supply_points_2025_jan_wgs84",
+            "contains_neso_data": true,
+            "contains_elexon_data": false,
+            "row_count": 340,
+            "size_bytes": 9468058,
+            "creation_time": "2025-08-23T11:19:50.598000+00:00",
+            "last_modified": "2025-08-23T11:19:58.248000+00:00"
+          },
+          {
+            "table_id": "neso_grid_supply_points_2025_latest",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_grid_supply_points_2025_latest",
+            "contains_neso_data": true,
+            "contains_elexon_data": false,
+            "row_count": 349,
+            "size_bytes": 9962466,
+            "creation_time": "2025-08-23T11:19:39.232000+00:00",
+            "last_modified": "2025-08-23T11:19:48.289000+00:00"
+          },
+          {
+            "table_id": "neso_grid_supply_points_2025_latest_wgs84",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_grid_supply_points_2025_latest_wgs84",
+            "contains_neso_data": true,
+            "contains_elexon_data": false,
+            "row_count": 349,
+            "size_bytes": 9620073,
+            "creation_time": "2025-08-23T11:20:30.334000+00:00",
+            "last_modified": "2025-08-23T11:20:39.869000+00:00"
+          },
+          {
+            "table_id": "neso_interconnector_flows",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_interconnector_flows",
+            "contains_neso_data": true,
+            "contains_elexon_data": false,
+            "row_count": 0,
+            "size_bytes": 0,
+            "creation_time": "2025-08-22T23:16:36.643000+00:00",
+            "last_modified": "2025-08-22T23:16:36.663000+00:00"
+          },
+          {
+            "table_id": "neso_interconnector_flows_temp_20250823001634",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_interconnector_flows_temp_20250823001634",
+            "contains_neso_data": true,
+            "contains_elexon_data": false,
+            "row_count": 100,
+            "size_bytes": 10360,
+            "creation_time": "2025-08-22T23:16:35.948000+00:00",
+            "last_modified": "2025-08-22T23:16:35.948000+00:00"
+          },
+          {
+            "table_id": "neso_interconnector_register_interconnector_register_22_august_2025",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_interconnector_register_interconnector_register_22_august_2025",
+            "contains_neso_data": true,
+            "contains_elexon_data": false,
+            "row_count": 33,
+            "size_bytes": 5323,
+            "creation_time": "2025-08-23T11:42:51.740000+00:00",
+            "last_modified": "2025-08-23T11:42:53.352000+00:00"
+          },
+          {
+            "table_id": "neso_national_demand_52w",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_national_demand_52w",
+            "contains_neso_data": true,
+            "contains_elexon_data": false,
+            "row_count": 1,
+            "size_bytes": 76,
+            "creation_time": "2025-08-23T11:34:55.861000+00:00",
+            "last_modified": "2025-08-23T11:45:07.518000+00:00"
+          },
+          {
+            "table_id": "neso_national_demand_bm_units_bmunits_11_08_25",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_national_demand_bm_units_bmunits_11_08_25",
+            "contains_neso_data": true,
+            "contains_elexon_data": false,
+            "row_count": 827,
+            "size_bytes": 7762,
+            "creation_time": "2025-08-23T11:34:42.304000+00:00",
+            "last_modified": "2025-08-23T11:44:54.885000+00:00"
+          },
+          {
+            "table_id": "neso_national_forecast_7d",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_national_forecast_7d",
+            "contains_neso_data": true,
+            "contains_elexon_data": false,
+            "row_count": 11,
+            "size_bytes": 620,
+            "creation_time": "2025-08-23T11:34:52.178000+00:00",
+            "last_modified": "2025-08-23T11:45:04.683000+00:00"
+          },
+          {
+            "table_id": "neso_school_holiday_school_holiday_2021_22",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_school_holiday_school_holiday_2021_22",
+            "contains_neso_data": true,
+            "contains_elexon_data": false,
+            "row_count": 73595,
+            "size_bytes": 3017036,
+            "creation_time": "2025-08-23T11:27:26.887000+00:00",
+            "last_modified": "2025-08-23T11:35:59.824000+00:00"
+          },
+          {
+            "table_id": "neso_school_holiday_school_holiday_2022_23",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_school_holiday_school_holiday_2022_23",
+            "contains_neso_data": true,
+            "contains_elexon_data": false,
+            "row_count": 72718,
+            "size_bytes": 2986733,
+            "creation_time": "2025-08-23T11:27:33.330000+00:00",
+            "last_modified": "2025-08-23T11:36:09.500000+00:00"
+          },
+          {
+            "table_id": "neso_school_holiday_school_holiday_2023_24",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_school_holiday_school_holiday_2023_24",
+            "contains_neso_data": true,
+            "contains_elexon_data": false,
+            "row_count": 72512,
+            "size_bytes": 2978272,
+            "creation_time": "2025-08-23T11:27:21.670000+00:00",
+            "last_modified": "2025-08-23T11:35:55.124000+00:00"
+          },
+          {
+            "table_id": "neso_school_holiday_school_holiday_2024_25",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_school_holiday_school_holiday_2024_25",
+            "contains_neso_data": true,
+            "contains_elexon_data": false,
+            "row_count": 71829,
+            "size_bytes": 2955399,
+            "creation_time": "2025-08-23T11:27:30.600000+00:00",
+            "last_modified": "2025-08-23T11:36:03.381000+00:00"
+          },
+          {
+            "table_id": "neso_school_holiday_school_holiday_2025_26",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_school_holiday_school_holiday_2025_26",
+            "contains_neso_data": true,
+            "contains_elexon_data": false,
+            "row_count": 72036,
+            "size_bytes": 2963916,
+            "creation_time": "2025-08-23T11:27:18.511000+00:00",
+            "last_modified": "2025-08-23T11:35:51.557000+00:00"
+          },
+          {
+            "table_id": "neso_skip_rates_1_skip_rates_summary",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_skip_rates_1_skip_rates_summary",
+            "contains_neso_data": true,
+            "contains_elexon_data": false,
+            "row_count": 72000,
+            "size_bytes": 6758400,
+            "creation_time": "2025-08-23T11:29:01.545000+00:00",
+            "last_modified": "2025-08-23T11:37:51.955000+00:00"
+          },
+          {
+            "table_id": "neso_skip_rates_2_in_merit_data_bm_skips_01_2025",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_skip_rates_2_in_merit_data_bm_skips_01_2025",
+            "contains_neso_data": true,
+            "contains_elexon_data": true,
+            "row_count": 2511503,
+            "size_bytes": 251206584,
+            "creation_time": "2025-08-23T11:33:15.330000+00:00",
+            "last_modified": "2025-08-23T11:42:04.546000+00:00"
+          },
+          {
+            "table_id": "neso_skip_rates_2_in_merit_data_bm_skips_02_2025",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_skip_rates_2_in_merit_data_bm_skips_02_2025",
+            "contains_neso_data": true,
+            "contains_elexon_data": true,
+            "row_count": 3072847,
+            "size_bytes": 307529822,
+            "creation_time": "2025-08-23T11:31:29.072000+00:00",
+            "last_modified": "2025-08-23T11:40:24.936000+00:00"
+          },
+          {
+            "table_id": "neso_skip_rates_2_in_merit_data_bm_skips_03_2025",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_skip_rates_2_in_merit_data_bm_skips_03_2025",
+            "contains_neso_data": true,
+            "contains_elexon_data": true,
+            "row_count": 2971728,
+            "size_bytes": 297600734,
+            "creation_time": "2025-08-23T11:31:10.249000+00:00",
+            "last_modified": "2025-08-23T11:40:05.596000+00:00"
+          },
+          {
+            "table_id": "neso_skip_rates_2_in_merit_data_bm_skips_04_2025",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_skip_rates_2_in_merit_data_bm_skips_04_2025",
+            "contains_neso_data": true,
+            "contains_elexon_data": true,
+            "row_count": 2237392,
+            "size_bytes": 224948150,
+            "creation_time": "2025-08-23T11:28:48.222000+00:00",
+            "last_modified": "2025-08-23T11:37:48.039000+00:00"
+          },
+          {
+            "table_id": "neso_skip_rates_2_in_merit_data_bm_skips_05_2025",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_skip_rates_2_in_merit_data_bm_skips_05_2025",
+            "contains_neso_data": true,
+            "contains_elexon_data": true,
+            "row_count": 3245649,
+            "size_bytes": 327685159,
+            "creation_time": "2025-08-23T11:29:07.422000+00:00",
+            "last_modified": "2025-08-23T11:38:11.143000+00:00"
+          },
+          {
+            "table_id": "neso_skip_rates_2_in_merit_data_bm_skips_06_2025",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_skip_rates_2_in_merit_data_bm_skips_06_2025",
+            "contains_neso_data": true,
+            "contains_elexon_data": true,
+            "row_count": 4389909,
+            "size_bytes": 442175045,
+            "creation_time": "2025-08-23T11:32:17.183000+00:00",
+            "last_modified": "2025-08-23T11:41:21.540000+00:00"
+          },
+          {
+            "table_id": "neso_skip_rates_2_in_merit_data_bm_skips_07_2025",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_skip_rates_2_in_merit_data_bm_skips_07_2025",
+            "contains_neso_data": true,
+            "contains_elexon_data": true,
+            "row_count": 2667411,
+            "size_bytes": 268627015,
+            "creation_time": "2025-08-23T11:31:57.557000+00:00",
+            "last_modified": "2025-08-23T11:40:56.025000+00:00"
+          },
+          {
+            "table_id": "neso_skip_rates_2_in_merit_data_bm_skips_08_2025",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_skip_rates_2_in_merit_data_bm_skips_08_2025",
+            "contains_neso_data": true,
+            "contains_elexon_data": true,
+            "row_count": 2856733,
+            "size_bytes": 288560668,
+            "creation_time": "2025-08-23T11:30:52.925000+00:00",
+            "last_modified": "2025-08-23T11:39:47.617000+00:00"
+          },
+          {
+            "table_id": "neso_skip_rates_2_in_merit_data_bm_skips_12_2024",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_skip_rates_2_in_merit_data_bm_skips_12_2024",
+            "contains_neso_data": true,
+            "contains_elexon_data": true,
+            "row_count": 2676676,
+            "size_bytes": 268468859,
+            "creation_time": "2025-08-23T11:29:40.370000+00:00",
+            "last_modified": "2025-08-23T11:38:43.748000+00:00"
+          },
+          {
+            "table_id": "neso_skip_rates_3_in_merit_data_post_system_actions_skips_01_2025",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_skip_rates_3_in_merit_data_post_system_actions_skips_01_2025",
+            "contains_neso_data": true,
+            "contains_elexon_data": true,
+            "row_count": 1981031,
+            "size_bytes": 198948867,
+            "creation_time": "2025-08-23T11:32:40.103000+00:00",
+            "last_modified": "2025-08-23T11:41:36.314000+00:00"
+          },
+          {
+            "table_id": "neso_skip_rates_3_in_merit_data_post_system_actions_skips_02_2025",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_skip_rates_3_in_merit_data_post_system_actions_skips_02_2025",
+            "contains_neso_data": true,
+            "contains_elexon_data": true,
+            "row_count": 2064633,
+            "size_bytes": 208056361,
+            "creation_time": "2025-08-23T11:28:20.826000+00:00",
+            "last_modified": "2025-08-23T11:37:19.209000+00:00"
+          },
+          {
+            "table_id": "neso_skip_rates_3_in_merit_data_post_system_actions_skips_03_2025",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_skip_rates_3_in_merit_data_post_system_actions_skips_03_2025",
+            "contains_neso_data": true,
+            "contains_elexon_data": true,
+            "row_count": 2106439,
+            "size_bytes": 212171964,
+            "creation_time": "2025-08-23T11:28:05.692000+00:00",
+            "last_modified": "2025-08-23T11:37:02.086000+00:00"
+          },
+          {
+            "table_id": "neso_skip_rates_3_in_merit_data_post_system_actions_skips_04_2025",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_skip_rates_3_in_merit_data_post_system_actions_skips_04_2025",
+            "contains_neso_data": true,
+            "contains_elexon_data": true,
+            "row_count": 1861935,
+            "size_bytes": 187896244,
+            "creation_time": "2025-08-23T11:30:11.054000+00:00",
+            "last_modified": "2025-08-23T11:39:10.419000+00:00"
+          },
+          {
+            "table_id": "neso_skip_rates_3_in_merit_data_post_system_actions_skips_05_2025",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_skip_rates_3_in_merit_data_post_system_actions_skips_05_2025",
+            "contains_neso_data": true,
+            "contains_elexon_data": true,
+            "row_count": 2657270,
+            "size_bytes": 269634133,
+            "creation_time": "2025-08-23T11:30:27.777000+00:00",
+            "last_modified": "2025-08-23T11:39:26.271000+00:00"
+          },
+          {
+            "table_id": "neso_skip_rates_3_in_merit_data_post_system_actions_skips_06_2025",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_skip_rates_3_in_merit_data_post_system_actions_skips_06_2025",
+            "contains_neso_data": true,
+            "contains_elexon_data": true,
+            "row_count": 3307368,
+            "size_bytes": 335462460,
+            "creation_time": "2025-08-23T11:33:47.080000+00:00",
+            "last_modified": "2025-08-23T11:42:38.537000+00:00"
+          },
+          {
+            "table_id": "neso_skip_rates_3_in_merit_data_post_system_actions_skips_07_2025",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_skip_rates_3_in_merit_data_post_system_actions_skips_07_2025",
+            "contains_neso_data": true,
+            "contains_elexon_data": true,
+            "row_count": 2029183,
+            "size_bytes": 205619109,
+            "creation_time": "2025-08-23T11:33:32.184000+00:00",
+            "last_modified": "2025-08-23T11:42:19.043000+00:00"
+          },
+          {
+            "table_id": "neso_skip_rates_3_in_merit_data_post_system_actions_skips_08_2025",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_skip_rates_3_in_merit_data_post_system_actions_skips_08_2025",
+            "contains_neso_data": true,
+            "contains_elexon_data": true,
+            "row_count": 2226244,
+            "size_bytes": 226388074,
+            "creation_time": "2025-08-23T11:29:25.541000+00:00",
+            "last_modified": "2025-08-23T11:38:26.441000+00:00"
+          },
+          {
+            "table_id": "neso_skip_rates_3_in_merit_data_post_system_actions_skips_12_2024",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_skip_rates_3_in_merit_data_post_system_actions_skips_12_2024",
+            "contains_neso_data": true,
+            "contains_elexon_data": true,
+            "row_count": 1774191,
+            "size_bytes": 179442931,
+            "creation_time": "2025-08-23T11:29:56.067000+00:00",
+            "last_modified": "2025-08-23T11:38:56.957000+00:00"
+          },
+          {
+            "table_id": "neso_skip_rates_4_exclusions_01_2025",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_skip_rates_4_exclusions_01_2025",
+            "contains_neso_data": true,
+            "contains_elexon_data": true,
+            "row_count": 393936,
+            "size_bytes": 42824474,
+            "creation_time": "2025-08-23T11:30:46.689000+00:00",
+            "last_modified": "2025-08-23T11:39:32.256000+00:00"
+          },
+          {
+            "table_id": "neso_skip_rates_4_exclusions_02_2025",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_skip_rates_4_exclusions_02_2025",
+            "contains_neso_data": true,
+            "contains_elexon_data": true,
+            "row_count": 641204,
+            "size_bytes": 69491576,
+            "creation_time": "2025-08-23T11:34:06.625000+00:00",
+            "last_modified": "2025-08-23T11:42:45.292000+00:00"
+          },
+          {
+            "table_id": "neso_skip_rates_4_exclusions_03_2025",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_skip_rates_4_exclusions_03_2025",
+            "contains_neso_data": true,
+            "contains_elexon_data": true,
+            "row_count": 570739,
+            "size_bytes": 62053603,
+            "creation_time": "2025-08-23T11:34:13.520000+00:00",
+            "last_modified": "2025-08-23T11:42:50.708000+00:00"
+          },
+          {
+            "table_id": "neso_skip_rates_4_exclusions_04_2025",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_skip_rates_4_exclusions_04_2025",
+            "contains_neso_data": true,
+            "contains_elexon_data": true,
+            "row_count": 295291,
+            "size_bytes": 32173378,
+            "creation_time": "2025-08-23T11:33:04.052000+00:00",
+            "last_modified": "2025-08-23T11:41:45.490000+00:00"
+          },
+          {
+            "table_id": "neso_skip_rates_4_exclusions_05_2025",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_skip_rates_4_exclusions_05_2025",
+            "contains_neso_data": true,
+            "contains_elexon_data": true,
+            "row_count": 470308,
+            "size_bytes": 50987675,
+            "creation_time": "2025-08-23T11:32:57.162000+00:00",
+            "last_modified": "2025-08-23T11:41:41.084000+00:00"
+          },
+          {
+            "table_id": "neso_skip_rates_4_exclusions_06_2025",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_skip_rates_4_exclusions_06_2025",
+            "contains_neso_data": true,
+            "contains_elexon_data": true,
+            "row_count": 801110,
+            "size_bytes": 87249338,
+            "creation_time": "2025-08-23T11:28:34.779000+00:00",
+            "last_modified": "2025-08-23T11:37:28.466000+00:00"
+          },
+          {
+            "table_id": "neso_skip_rates_4_exclusions_07_2025",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_skip_rates_4_exclusions_07_2025",
+            "contains_neso_data": true,
+            "contains_elexon_data": true,
+            "row_count": 435893,
+            "size_bytes": 47215167,
+            "creation_time": "2025-08-23T11:28:41.676000+00:00",
+            "last_modified": "2025-08-23T11:37:33.942000+00:00"
+          },
+          {
+            "table_id": "neso_skip_rates_4_exclusions_08_2025",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_skip_rates_4_exclusions_08_2025",
+            "contains_neso_data": true,
+            "contains_elexon_data": true,
+            "row_count": 472872,
+            "size_bytes": 51174575,
+            "creation_time": "2025-08-23T11:33:08.465000+00:00",
+            "last_modified": "2025-08-23T11:41:49.551000+00:00"
+          },
+          {
+            "table_id": "neso_skip_rates_4_exclusions_12_2025",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_skip_rates_4_exclusions_12_2025",
+            "contains_neso_data": true,
+            "contains_elexon_data": true,
+            "row_count": 605103,
+            "size_bytes": 65855303,
+            "creation_time": "2025-08-23T11:31:45.926000+00:00",
+            "last_modified": "2025-08-23T11:40:36.766000+00:00"
+          },
+          {
+            "table_id": "neso_skip_rates_5_fuel_type_skip_rate",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_skip_rates_5_fuel_type_skip_rate",
+            "contains_neso_data": true,
+            "contains_elexon_data": true,
+            "row_count": 53069,
+            "size_bytes": 3546115,
+            "creation_time": "2025-08-23T11:31:52.842000+00:00",
+            "last_modified": "2025-08-23T11:40:40.431000+00:00"
+          },
+          {
+            "table_id": "neso_static_ancillary_services_important_industry_notifications_balancing_reserve_important_industry_notifications",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_static_ancillary_services_important_industry_notifications_balancing_reserve_important_industry_notifications",
+            "contains_neso_data": true,
+            "contains_elexon_data": false,
+            "row_count": 2,
+            "size_bytes": 616,
+            "creation_time": "2025-08-23T11:27:39.836000+00:00",
+            "last_modified": "2025-08-23T11:36:15.249000+00:00"
+          },
+          {
+            "table_id": "neso_static_ancillary_services_important_industry_notifications_dc_dm_dr_important_industry_notifications",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_static_ancillary_services_important_industry_notifications_dc_dm_dr_important_industry_notifications",
+            "contains_neso_data": true,
+            "contains_elexon_data": false,
+            "row_count": 19,
+            "size_bytes": 6767,
+            "creation_time": "2025-08-23T11:27:46.687000+00:00",
+            "last_modified": "2025-08-23T11:36:21.635000+00:00"
+          },
+          {
+            "table_id": "neso_static_ancillary_services_important_industry_notifications_qr_important_industry_notifications",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_static_ancillary_services_important_industry_notifications_qr_important_industry_notifications",
+            "contains_neso_data": true,
+            "contains_elexon_data": false,
+            "row_count": 7,
+            "size_bytes": 1518,
+            "creation_time": "2025-08-23T11:27:49.761000+00:00",
+            "last_modified": "2025-08-23T11:36:25.237000+00:00"
+          },
+          {
+            "table_id": "neso_static_ancillary_services_important_industry_notifications_sffr_important_industry_notifications",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_static_ancillary_services_important_industry_notifications_sffr_important_industry_notifications",
+            "contains_neso_data": true,
+            "contains_elexon_data": false,
+            "row_count": 1,
+            "size_bytes": 74,
+            "creation_time": "2025-08-23T11:27:36.568000+00:00",
+            "last_modified": "2025-08-23T11:36:12.588000+00:00"
+          },
+          {
+            "table_id": "neso_static_ancillary_services_important_industry_notifications_stor_important_industry_notifications",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_static_ancillary_services_important_industry_notifications_stor_important_industry_notifications",
+            "contains_neso_data": true,
+            "contains_elexon_data": false,
+            "row_count": 9,
+            "size_bytes": 2406,
+            "creation_time": "2025-08-23T11:27:42.878000+00:00",
+            "last_modified": "2025-08-23T11:36:19.007000+00:00"
+          },
+          {
+            "table_id": "neso_static_contract_transfer_of_obligation_contract_transfer",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_static_contract_transfer_of_obligation_contract_transfer",
+            "contains_neso_data": true,
+            "contains_elexon_data": false,
+            "row_count": 0,
+            "size_bytes": 0,
+            "creation_time": "2025-08-23T11:27:12.937000+00:00",
+            "last_modified": "2025-08-23T11:35:45.340000+00:00"
+          },
+          {
+            "table_id": "neso_static_data_portal_planned_changes_known_issues_23021dfa_a3b8_4f62_93bc_b60186c53fa4_21_08_2025",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_static_data_portal_planned_changes_known_issues_23021dfa_a3b8_4f62_93bc_b60186c53fa4_21_08_2025",
+            "contains_neso_data": true,
+            "contains_elexon_data": false,
+            "row_count": 168,
+            "size_bytes": 111618,
+            "creation_time": "2025-08-23T11:28:00.990000+00:00",
+            "last_modified": "2025-08-23T11:36:43.025000+00:00"
+          },
+          {
+            "table_id": "neso_static_demand_profile_dates_profile_dates",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_static_demand_profile_dates_profile_dates",
+            "contains_neso_data": true,
+            "contains_elexon_data": false,
+            "row_count": 2805,
+            "size_bytes": 67320,
+            "creation_time": "2025-08-23T11:27:07.296000+00:00",
+            "last_modified": "2025-08-23T13:28:02.864000+00:00"
+          },
+          {
+            "table_id": "neso_static_stor_windows_stor_committed_windows",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_static_stor_windows_stor_committed_windows",
+            "contains_neso_data": true,
+            "contains_elexon_data": false,
+            "row_count": 1826,
+            "size_bytes": 95257,
+            "creation_time": "2025-08-23T11:36:32.298000+00:00",
+            "last_modified": "2025-08-23T11:36:33.801000+00:00"
+          },
+          {
+            "table_id": "neso_static_system_operating_plan_sop_sop_data_table_updated_20210625051044",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_static_system_operating_plan_sop_sop_data_table_updated_20210625051044",
+            "contains_neso_data": true,
+            "contains_elexon_data": false,
+            "row_count": 8,
+            "size_bytes": 5208,
+            "creation_time": "2025-08-23T11:27:15.687000+00:00",
+            "last_modified": "2025-08-23T11:35:48.945000+00:00"
+          },
+          {
+            "table_id": "neso_transmission_capacity_tec_register_22_august_2025",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_transmission_capacity_tec_register_22_august_2025",
+            "contains_neso_data": true,
+            "contains_elexon_data": false,
+            "row_count": 2263,
+            "size_bytes": 477938,
+            "creation_time": "2025-08-23T11:36:28.828000+00:00",
+            "last_modified": "2025-08-23T11:36:30.371000+00:00"
+          },
+          {
+            "table_id": "neso_transmission_losses_financial_year_losses",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_transmission_losses_financial_year_losses",
+            "contains_neso_data": true,
+            "contains_elexon_data": false,
+            "row_count": 12,
+            "size_bytes": 492,
+            "creation_time": "2025-08-23T11:27:57.485000+00:00",
+            "last_modified": "2025-08-23T11:36:39.934000+00:00"
+          },
+          {
+            "table_id": "neso_transmission_losses_monthly_losses",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_transmission_losses_monthly_losses",
+            "contains_neso_data": true,
+            "contains_elexon_data": false,
+            "row_count": 148,
+            "size_bytes": 7252,
+            "creation_time": "2025-08-23T11:27:54.671000+00:00",
+            "last_modified": "2025-08-23T11:36:36.471000+00:00"
+          },
+          {
+            "table_id": "neso_wind_forecast_14d",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_wind_forecast_14d",
+            "contains_neso_data": true,
+            "contains_elexon_data": false,
+            "row_count": 651,
+            "size_bytes": 55986,
+            "creation_time": "2025-08-23T11:34:48.676000+00:00",
+            "last_modified": "2025-08-23T11:45:01.469000+00:00"
+          },
+          {
+            "table_id": "neso_wind_forecasts",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_wind_forecasts",
+            "contains_neso_data": true,
+            "contains_elexon_data": false,
+            "row_count": 0,
+            "size_bytes": 0,
+            "creation_time": "2025-08-22T23:16:29.995000+00:00",
+            "last_modified": "2025-08-22T23:16:30.032000+00:00"
+          },
+          {
+            "table_id": "neso_wind_forecasts_temp_20250823001627",
+            "full_path": "jibber-jabber-knowledge.uk_energy_prod.neso_wind_forecasts_temp_20250823001627",
+            "contains_neso_data": true,
+            "contains_elexon_data": false,
+            "row_count": 100,
+            "size_bytes": 8380,
+            "creation_time": "2025-08-22T23:16:29.362000+00:00",
+            "last_modified": "2025-08-22T23:16:29.362000+00:00"
+          }
+        ],
+        "total_tables": 97,
+        "matching_tables": 97
+      },
+      {
+        "resource_type": "bigquery_dataset",
+        "name": "us_central1_gemini_models",
+        "full_path": "jibber-jabber-knowledge.us_central1_gemini_models",
+        "contains_neso_data": true,
+        "contains_elexon_data": true,
+        "tables": [
+          {
+            "table_id": "elexon_frequency",
+            "full_path": "jibber-jabber-knowledge.us_central1_gemini_models.elexon_frequency",
+            "contains_neso_data": false,
+            "contains_elexon_data": true,
+            "row_count": 46088,
+            "size_bytes": 1013936,
+            "creation_time": "2025-08-18T17:15:08.035000+00:00",
+            "last_modified": "2025-08-18T17:15:08.035000+00:00"
+          },
+          {
+            "table_id": "elexon_fuel_generation",
+            "full_path": "jibber-jabber-knowledge.us_central1_gemini_models.elexon_fuel_generation",
+            "contains_neso_data": false,
+            "contains_elexon_data": true,
+            "row_count": 4992,
+            "size_bytes": 273024,
+            "creation_time": "2025-08-18T17:15:34.777000+00:00",
+            "last_modified": "2025-08-18T17:15:34.777000+00:00"
+          },
+          {
+            "table_id": "elexon_system_prices",
+            "full_path": "jibber-jabber-knowledge.us_central1_gemini_models.elexon_system_prices",
+            "contains_neso_data": false,
+            "contains_elexon_data": true,
+            "row_count": 0,
+            "size_bytes": 0,
+            "creation_time": "2025-08-18T17:20:21.372000+00:00",
+            "last_modified": "2025-08-18T17:20:21.372000+00:00"
+          },
+          {
+            "table_id": "neso_gsp_demand",
+            "full_path": "jibber-jabber-knowledge.us_central1_gemini_models.neso_gsp_demand",
+            "contains_neso_data": true,
+            "contains_elexon_data": false,
+            "row_count": 0,
+            "size_bytes": 0,
+            "creation_time": "2025-08-18T17:20:58.446000+00:00",
+            "last_modified": "2025-08-18T17:20:58.446000+00:00"
+          }
+        ],
+        "total_tables": 5,
+        "matching_tables": 4
+      }
+    ],
+    "summary": {
+      "total_resources_found": 11,
+      "resources_with_neso_data": 4,
+      "resources_with_elexon_data": 11
+    }
+  }
+}

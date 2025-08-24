@@ -1,0 +1,15 @@
+site_name: jibber-jabber 24 august 2025 big bop
+theme:
+ name: material
+nav:
+ - Home: index.md
+ - Architecture: architecture.md
+ - ADRs:
+     - ADR 0001: adr/0001-record-architecture-decision.md
+ - Copilot Model Picker: copilot-model-picker.md
+markdown_extensions:
+ - toc: { permalink: true }
+ - admonition
+ - tables
+ - codehilite
+ - attr_list

@@ -1,0 +1,545 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>NESO and Elexon Data Scan Results</title>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 20px; }
+            h1, h2, h3 { color: #333; }
+            .project { margin-bottom: 30px; border: 1px solid #ddd; padding: 15px; border-radius: 5px; }
+            .summary { background-color: #f5f5f5; padding: 10px; margin-bottom: 15px; border-radius: 5px; }
+            .resource { margin-bottom: 15px; border-left: 4px solid #2196F3; padding-left: 10px; }
+            .neso { color: #4CAF50; font-weight: bold; }
+            .elexon { color: #FF9800; font-weight: bold; }
+            table { border-collapse: collapse; width: 100%; margin-top: 10px; }
+            th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+            th { background-color: #f2f2f2; }
+            .tables-container { max-height: 300px; overflow-y: auto; margin-top: 10px; }
+        </style>
+    </head>
+    <body>
+        <h1>NESO and Elexon Data Scan Results</h1>
+        <p>Scan performed: 2025-08-22 20:06:30</p>
+    
+        <div class="project">
+            <h2>Project: jibber-jabber-knowledge</h2>
+            <div class="summary">
+                <h3>Summary</h3>
+                <p>Total resources with NESO/Elexon data: 11</p>
+                <p>Resources with NESO data: 4</p>
+                <p>Resources with Elexon data: 11</p>
+            </div>
+        
+                <h3>Google Cloud Storage Buckets (6)</h3>
+                
+                    <div class="resource">
+                        <h4>Bucket: elexon-historical-data-storage</h4>
+                        <p>Path: gs://elexon-historical-data-storage/</p>
+                        <p>Contains NESO data: <span class="">False</span></p>
+                        <p>Contains Elexon data: <span class="elexon">True</span></p>
+                    
+                        <p>Sample files:</p>
+                        <ul>
+                        <li>beb/beb_20160101_0000_20160101_0200.json</li><li>beb/beb_20160101_0200_20160101_0400.json</li><li>beb/beb_20160101_0400_20160101_0600.json</li><li>beb/beb_20160101_0600_20160101_0800.json</li><li>beb/beb_20160101_0800_20160101_1000.json</li><li>beb/beb_20160101_1000_20160101_1200.json</li><li>beb/beb_20160101_1200_20160101_1400.json</li><li>beb/beb_20160101_1400_20160101_1600.json</li><li>beb/beb_20160101_1600_20160101_1800.json</li><li>beb/beb_20160101_1800_20160101_2000.json</li></ul></div>
+                    <div class="resource">
+                        <h4>Bucket: jibber-jabber-knowledge-bmrs-data</h4>
+                        <p>Path: gs://jibber-jabber-knowledge-bmrs-data/</p>
+                        <p>Contains NESO data: <span class="">False</span></p>
+                        <p>Contains Elexon data: <span class="elexon">True</span></p>
+                    
+                        <p>Sample files:</p>
+                        <ul>
+                        <li>analysis/historical_data_analysis_20250819_231133.json</li><li>bmrs/B1610_stream/20250820T225644Z.jsonl</li><li>bmrs/B1610_stream/20250821T085245Z.jsonl</li><li>bmrs/DCI_stream/20250820T225727Z.jsonl</li><li>bmrs/DCI_stream/20250821T085247Z.jsonl</li><li>bmrs/DCI_stream/20250821T085831Z.jsonl</li><li>bmrs/FUELINST/20250820T225637Z.csv</li><li>bmrs/FUELINST/20250821T085239Z.csv</li><li>bmrs/INTERCONNECTORS/20250820T225729Z.csv</li><li>bmrs/INTERCONNECTORS/20250821T085249Z.csv</li></ul></div>
+                    <div class="resource">
+                        <h4>Bucket: jibber-jabber-knowledge-bmrs-data-eu</h4>
+                        <p>Path: gs://jibber-jabber-knowledge-bmrs-data-eu/</p>
+                        <p>Contains NESO data: <span class="">False</span></p>
+                        <p>Contains Elexon data: <span class="elexon">True</span></p>
+                    </div>
+                    <div class="resource">
+                        <h4>Bucket: run-sources-jibber-jabber-knowledge-europe-west1</h4>
+                        <p>Path: gs://run-sources-jibber-jabber-knowledge-europe-west1/</p>
+                        <p>Contains NESO data: <span class="">False</span></p>
+                        <p>Contains Elexon data: <span class="elexon">True</span></p>
+                    
+                        <p>Matching files (showing 2 of 2):</p>
+                        <ul>
+                        <li>services/elexon-historical-downloader/1754908303.010771-dcd2943a93f341739e70d7436fb398bc.zip</li><li>services/elexon-research/1754910192.513467-2ffaeb8d740b49fd94cbb60bc1303cb7.zip</li></ul></div>
+                    <div class="resource">
+                        <h4>Bucket: run-sources-jibber-jabber-knowledge-europe-west2</h4>
+                        <p>Path: gs://run-sources-jibber-jabber-knowledge-europe-west2/</p>
+                        <p>Contains NESO data: <span class="">False</span></p>
+                        <p>Contains Elexon data: <span class="elexon">True</span></p>
+                    
+                        <p>Matching files (showing 10 of 37):</p>
+                        <ul>
+                        <li>jobs/elexon-bulk-downloader/1754569029.26861-4063659dc1e74f0fa537b6b7d4dff65a.zip</li><li>services/elexon-bulk-downloader/1754504614.161766-2e0671b82fc843fbaa1caa1551485036.zip</li><li>services/elexon-bulk-downloader/1754504732.083253-64d44fd5b5d04f17a134643f89901e37.zip</li><li>services/elexon-bulk-downloader/1754504825.291458-ab93275ad1084a989f6439d5bd7439d9.zip</li><li>services/elexon-bulk-downloader/1754505398.672748-65edde466b0a4a5fb6d398b6c5853b3f.zip</li><li>services/elexon-bulk-downloader/1754505587.257899-0ecd684911c44196b9e3b692f9f29fcf.zip</li><li>services/elexon-bulk-downloader/1754507158.023466-44c6968d77f844c39e07f37dca247a8b.zip</li><li>services/elexon-downloader/1754507644.788596-7d28c4924ea842818371dad245e64013.zip</li><li>services/elexon-historical-downloader/1754509299.816677-1038e1706f1940f59f2f591a4f1b24c7.zip</li><li>services/elexon-historical-downloader/1754510995.924968-ef76ee943eec499dac28f9e6f77ac91f.zip</li></ul></div>
+                    <div class="resource">
+                        <h4>Bucket: run-sources-jibber-jabber-knowledge-us-central1</h4>
+                        <p>Path: gs://run-sources-jibber-jabber-knowledge-us-central1/</p>
+                        <p>Contains NESO data: <span class="">False</span></p>
+                        <p>Contains Elexon data: <span class="elexon">True</span></p>
+                    
+                        <p>Matching files (showing 5 of 5):</p>
+                        <ul>
+                        <li>services/bmrs-data-collector/1754678252.173482-323cbbc077084e1999b5b060321b3132.zip</li><li>services/elexon-bulk-downloader/1754501675.610616-122e9a5892ca4745a2ddee057dddebab.zip</li><li>services/elexon-bulk-downloader/1754502314.439516-4c09012d82674a73b0f3df054a7bf784.zip</li><li>services/elexon-bulk-downloader/1754503636.609884-c842cc89d3e94091b772e53480c800e2.zip</li><li>services/elexon-bulk-downloader/1754504327.637979-aa54ad103ac44092a1841023456cff7d.zip</li></ul></div>
+                <h3>BigQuery Datasets (5)</h3>
+                
+                    <div class="resource">
+                        <h4>Dataset: uk_energy</h4>
+                        <p>Path: jibber-jabber-knowledge.uk_energy</p>
+                        <p>Contains NESO data: <span class="neso">True</span></p>
+                        <p>Contains Elexon data: <span class="elexon">True</span></p>
+                        <p>Total tables: 24, Matching tables: 15</p>
+                    
+                        <p>Tables with NESO/Elexon data:</p>
+                        <div class="tables-container">
+                            <table>
+                                <tr>
+                                    <th>Table</th>
+                                    <th>NESO Data</th>
+                                    <th>Elexon Data</th>
+                                    <th>Row Count</th>
+                                    <th>Size</th>
+                                    <th>Created</th>
+                                    <th>Modified</th>
+                                </tr>
+                        
+                            <tr>
+                                <td>elexon_bid_offer_acceptances</td>
+                                <td class="">False</td>
+                                <td class="elexon">True</td>
+                                <td>0</td>
+                                <td>0 bytes</td>
+                                <td>2025-08-20T10:43:23.126000+00:00</td>
+                                <td>2025-08-20T10:43:23.240000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>elexon_boalf</td>
+                                <td class="">False</td>
+                                <td class="elexon">True</td>
+                                <td>0</td>
+                                <td>0 bytes</td>
+                                <td>2025-08-21T08:27:57.151000+00:00</td>
+                                <td>2025-08-21T08:27:57.199000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>elexon_demand_outturn</td>
+                                <td class="">False</td>
+                                <td class="elexon">True</td>
+                                <td>0</td>
+                                <td>0 bytes</td>
+                                <td>2025-08-20T10:43:23.384000+00:00</td>
+                                <td>2025-08-20T10:43:23.443000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>elexon_demand_outturn_2023</td>
+                                <td class="">False</td>
+                                <td class="elexon">True</td>
+                                <td>365</td>
+                                <td>22265 bytes</td>
+                                <td>2025-08-21T14:48:58.030000+00:00</td>
+                                <td>2025-08-21T14:48:58.030000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>elexon_generation_outturn</td>
+                                <td class="">False</td>
+                                <td class="elexon">True</td>
+                                <td>0</td>
+                                <td>0 bytes</td>
+                                <td>2025-08-20T10:43:23.540000+00:00</td>
+                                <td>2025-08-20T10:43:23.561000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>elexon_generation_outturn_2023</td>
+                                <td class="">False</td>
+                                <td class="elexon">True</td>
+                                <td>365</td>
+                                <td>23725 bytes</td>
+                                <td>2025-08-21T14:49:06.378000+00:00</td>
+                                <td>2025-08-21T14:49:06.378000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>elexon_system_warnings</td>
+                                <td class="">False</td>
+                                <td class="elexon">True</td>
+                                <td>0</td>
+                                <td>0 bytes</td>
+                                <td>2025-08-20T10:43:23.703000+00:00</td>
+                                <td>2025-08-20T10:43:23.841000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_balancing_services</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>0</td>
+                                <td>0 bytes</td>
+                                <td>2025-08-20T10:43:24.527000+00:00</td>
+                                <td>2025-08-20T10:43:24.551000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_carbon_intensity</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>0</td>
+                                <td>0 bytes</td>
+                                <td>2025-08-20T10:43:24.349000+00:00</td>
+                                <td>2025-08-20T10:43:24.432000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_demand_forecasts</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>0</td>
+                                <td>0 bytes</td>
+                                <td>2025-08-20T10:43:23.942000+00:00</td>
+                                <td>2025-08-20T10:43:23.962000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_future_scenarios</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>0</td>
+                                <td>0 bytes</td>
+                                <td>2025-08-20T10:43:24.760000+00:00</td>
+                                <td>2025-08-20T10:43:24.781000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_interconnector_flows</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>0</td>
+                                <td>0 bytes</td>
+                                <td>2025-08-20T10:43:24.640000+00:00</td>
+                                <td>2025-08-20T10:43:24.664000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_wind_forecasts</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>0</td>
+                                <td>0 bytes</td>
+                                <td>2025-08-20T10:43:24.096000+00:00</td>
+                                <td>2025-08-20T10:43:24.235000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>v_bid_offer_volume_summary</td>
+                                <td class="">False</td>
+                                <td class="elexon">True</td>
+                                <td>0</td>
+                                <td>0 bytes</td>
+                                <td>2025-08-21T23:43:45.929000+00:00</td>
+                                <td>2025-08-21T23:43:45.929000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>v_system_warning_hotspots</td>
+                                <td class="">False</td>
+                                <td class="elexon">True</td>
+                                <td>0</td>
+                                <td>0 bytes</td>
+                                <td>2025-08-21T23:43:45.489000+00:00</td>
+                                <td>2025-08-21T23:43:45.489000+00:00</td>
+                            </tr>
+                            
+                            </table>
+                        </div>
+                        </div>
+                    <div class="resource">
+                        <h4>Dataset: uk_energy_data</h4>
+                        <p>Path: jibber-jabber-knowledge.uk_energy_data</p>
+                        <p>Contains NESO data: <span class="neso">True</span></p>
+                        <p>Contains Elexon data: <span class="elexon">True</span></p>
+                        <p>Total tables: 7, Matching tables: 5</p>
+                    
+                        <p>Tables with NESO/Elexon data:</p>
+                        <div class="tables-container">
+                            <table>
+                                <tr>
+                                    <th>Table</th>
+                                    <th>NESO Data</th>
+                                    <th>Elexon Data</th>
+                                    <th>Row Count</th>
+                                    <th>Size</th>
+                                    <th>Created</th>
+                                    <th>Modified</th>
+                                </tr>
+                        
+                            <tr>
+                                <td>elexon_boa_acceptances</td>
+                                <td class="">False</td>
+                                <td class="elexon">True</td>
+                                <td>0</td>
+                                <td>0 bytes</td>
+                                <td>2025-08-19T09:33:46.518000+00:00</td>
+                                <td>2025-08-19T09:33:46.585000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>elexon_frequency</td>
+                                <td class="">False</td>
+                                <td class="elexon">True</td>
+                                <td>46088</td>
+                                <td>1013936 bytes</td>
+                                <td>2025-08-17T19:34:20.807000+00:00</td>
+                                <td>2025-08-17T19:34:20.807000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>elexon_fuel_generation</td>
+                                <td class="">False</td>
+                                <td class="elexon">True</td>
+                                <td>4992</td>
+                                <td>273024 bytes</td>
+                                <td>2025-08-17T19:34:25.448000+00:00</td>
+                                <td>2025-08-17T19:34:25.448000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>elexon_system_prices</td>
+                                <td class="">False</td>
+                                <td class="elexon">True</td>
+                                <td>0</td>
+                                <td>0 bytes</td>
+                                <td>2025-08-15T18:56:34.083000+00:00</td>
+                                <td>2025-08-15T18:56:34.323000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_gsp_demand</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>0</td>
+                                <td>0 bytes</td>
+                                <td>2025-08-15T18:56:35.510000+00:00</td>
+                                <td>2025-08-15T18:56:35.723000+00:00</td>
+                            </tr>
+                            
+                            </table>
+                        </div>
+                        </div>
+                    <div class="resource">
+                        <h4>Dataset: uk_energy_data_gemini_eu</h4>
+                        <p>Path: jibber-jabber-knowledge.uk_energy_data_gemini_eu</p>
+                        <p>Contains NESO data: <span class="">False</span></p>
+                        <p>Contains Elexon data: <span class="elexon">True</span></p>
+                        <p>Total tables: 3, Matching tables: 2</p>
+                    
+                        <p>Tables with NESO/Elexon data:</p>
+                        <div class="tables-container">
+                            <table>
+                                <tr>
+                                    <th>Table</th>
+                                    <th>NESO Data</th>
+                                    <th>Elexon Data</th>
+                                    <th>Row Count</th>
+                                    <th>Size</th>
+                                    <th>Created</th>
+                                    <th>Modified</th>
+                                </tr>
+                        
+                            <tr>
+                                <td>elexon_frequency</td>
+                                <td class="">False</td>
+                                <td class="elexon">True</td>
+                                <td>46088</td>
+                                <td>1013936 bytes</td>
+                                <td>2025-08-18T12:48:27.886000+00:00</td>
+                                <td>2025-08-18T12:48:27.886000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>elexon_fuel_generation</td>
+                                <td class="">False</td>
+                                <td class="elexon">True</td>
+                                <td>4992</td>
+                                <td>273024 bytes</td>
+                                <td>2025-08-18T12:49:00.544000+00:00</td>
+                                <td>2025-08-18T12:49:00.544000+00:00</td>
+                            </tr>
+                            
+                            </table>
+                        </div>
+                        </div>
+                    <div class="resource">
+                        <h4>Dataset: uk_energy_prod</h4>
+                        <p>Path: jibber-jabber-knowledge.uk_energy_prod</p>
+                        <p>Contains NESO data: <span class="neso">True</span></p>
+                        <p>Contains Elexon data: <span class="elexon">True</span></p>
+                        <p>Total tables: 8, Matching tables: 8</p>
+                    
+                        <p>Tables with NESO/Elexon data:</p>
+                        <div class="tables-container">
+                            <table>
+                                <tr>
+                                    <th>Table</th>
+                                    <th>NESO Data</th>
+                                    <th>Elexon Data</th>
+                                    <th>Row Count</th>
+                                    <th>Size</th>
+                                    <th>Created</th>
+                                    <th>Modified</th>
+                                </tr>
+                        
+                            <tr>
+                                <td>elexon_demand_outturn</td>
+                                <td class="">False</td>
+                                <td class="elexon">True</td>
+                                <td>0</td>
+                                <td>0 bytes</td>
+                                <td>2025-08-22T15:13:41.011000+00:00</td>
+                                <td>2025-08-22T15:20:00.511000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>elexon_generation_outturn</td>
+                                <td class="">False</td>
+                                <td class="elexon">True</td>
+                                <td>0</td>
+                                <td>0 bytes</td>
+                                <td>2025-08-22T15:13:45.353000+00:00</td>
+                                <td>2025-08-22T15:20:10.973000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>elexon_system_warnings</td>
+                                <td class="">False</td>
+                                <td class="elexon">True</td>
+                                <td>56</td>
+                                <td>7556 bytes</td>
+                                <td>2025-08-22T15:46:32.370000+00:00</td>
+                                <td>2025-08-22T18:48:45.609000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_balancing_services</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>35088</td>
+                                <td>2526336 bytes</td>
+                                <td>2025-08-22T15:13:31.927000+00:00</td>
+                                <td>2025-08-22T18:48:09.201000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_carbon_intensity</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>35088</td>
+                                <td>6596832 bytes</td>
+                                <td>2025-08-22T15:46:32.662000+00:00</td>
+                                <td>2025-08-22T18:48:22.638000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_demand_forecasts</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>35088</td>
+                                <td>2245632 bytes</td>
+                                <td>2025-08-22T15:11:08.929000+00:00</td>
+                                <td>2025-08-22T18:47:34.697000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_interconnector_flows</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>210528</td>
+                                <td>19719456 bytes</td>
+                                <td>2025-08-22T15:46:32.941000+00:00</td>
+                                <td>2025-08-22T18:48:38.565000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_wind_forecasts</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>175440</td>
+                                <td>15824688 bytes</td>
+                                <td>2025-08-22T15:13:36.312000+00:00</td>
+                                <td>2025-08-22T18:47:56.103000+00:00</td>
+                            </tr>
+                            
+                            </table>
+                        </div>
+                        </div>
+                    <div class="resource">
+                        <h4>Dataset: us_central1_gemini_models</h4>
+                        <p>Path: jibber-jabber-knowledge.us_central1_gemini_models</p>
+                        <p>Contains NESO data: <span class="neso">True</span></p>
+                        <p>Contains Elexon data: <span class="elexon">True</span></p>
+                        <p>Total tables: 5, Matching tables: 4</p>
+                    
+                        <p>Tables with NESO/Elexon data:</p>
+                        <div class="tables-container">
+                            <table>
+                                <tr>
+                                    <th>Table</th>
+                                    <th>NESO Data</th>
+                                    <th>Elexon Data</th>
+                                    <th>Row Count</th>
+                                    <th>Size</th>
+                                    <th>Created</th>
+                                    <th>Modified</th>
+                                </tr>
+                        
+                            <tr>
+                                <td>elexon_frequency</td>
+                                <td class="">False</td>
+                                <td class="elexon">True</td>
+                                <td>46088</td>
+                                <td>1013936 bytes</td>
+                                <td>2025-08-18T17:15:08.035000+00:00</td>
+                                <td>2025-08-18T17:15:08.035000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>elexon_fuel_generation</td>
+                                <td class="">False</td>
+                                <td class="elexon">True</td>
+                                <td>4992</td>
+                                <td>273024 bytes</td>
+                                <td>2025-08-18T17:15:34.777000+00:00</td>
+                                <td>2025-08-18T17:15:34.777000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>elexon_system_prices</td>
+                                <td class="">False</td>
+                                <td class="elexon">True</td>
+                                <td>0</td>
+                                <td>0 bytes</td>
+                                <td>2025-08-18T17:20:21.372000+00:00</td>
+                                <td>2025-08-18T17:20:21.372000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_gsp_demand</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>0</td>
+                                <td>0 bytes</td>
+                                <td>2025-08-18T17:20:58.446000+00:00</td>
+                                <td>2025-08-18T17:20:58.446000+00:00</td>
+                            </tr>
+                            
+                            </table>
+                        </div>
+                        </div></div>
+    </body>
+    </html>
+    

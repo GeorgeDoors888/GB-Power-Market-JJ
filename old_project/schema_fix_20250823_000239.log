@@ -1,0 +1,42 @@
+2025-08-23 00:02:40,298 - INFO - Starting schema fix
+2025-08-23 00:02:40,299 - INFO - Processing table elexon_demand_outturn
+2025-08-23 00:02:40,299 - INFO - Generating test data for elexon_demand_outturn
+2025-08-23 00:02:40,620 - INFO - Uploading 100 rows to elexon_demand_outturn
+2025-08-23 00:02:43,034 - INFO - ✅ Successfully loaded 100 rows to elexon_demand_outturn
+2025-08-23 00:02:43,035 - INFO - ✅ Fixed schema for elexon_demand_outturn
+2025-08-23 00:02:43,035 - INFO - Processing table elexon_generation_outturn
+2025-08-23 00:02:43,035 - INFO - Generating test data for elexon_generation_outturn
+2025-08-23 00:02:43,195 - INFO - Uploading 100 rows to elexon_generation_outturn
+2025-08-23 00:02:45,929 - INFO - ✅ Successfully loaded 100 rows to elexon_generation_outturn
+2025-08-23 00:02:45,929 - INFO - ✅ Fixed schema for elexon_generation_outturn
+2025-08-23 00:02:45,929 - INFO - Processing table elexon_system_warnings
+2025-08-23 00:02:45,929 - INFO - Generating test data for elexon_system_warnings
+2025-08-23 00:02:46,091 - INFO - Uploading 100 rows to elexon_system_warnings
+2025-08-23 00:02:47,164 - ERROR - ❌ Error loading data to elexon_system_warnings: 400 The field specified for DAY partitioning can only be of type TIMESTAMP, DATETIME or DATE. The type found is: STRING.; reason: invalidQuery, location: query, message: The field specified for DAY partitioning can only be of type TIMESTAMP, DATETIME or DATE. The type found is: STRING.
+2025-08-23 00:02:47,164 - ERROR - ❌ Failed to fix schema for elexon_system_warnings
+2025-08-23 00:02:47,164 - INFO - Processing table neso_demand_forecasts
+2025-08-23 00:02:47,164 - INFO - Generating test data for neso_demand_forecasts
+2025-08-23 00:02:47,394 - INFO - Uploading 100 rows to neso_demand_forecasts
+2025-08-23 00:02:52,787 - INFO - ✅ Successfully loaded 100 rows to neso_demand_forecasts
+2025-08-23 00:02:52,787 - INFO - ✅ Fixed schema for neso_demand_forecasts
+2025-08-23 00:02:52,787 - INFO - Processing table neso_wind_forecasts
+2025-08-23 00:02:52,787 - INFO - Generating test data for neso_wind_forecasts
+2025-08-23 00:02:52,904 - INFO - Uploading 100 rows to neso_wind_forecasts
+2025-08-23 00:02:55,906 - INFO - ✅ Successfully loaded 100 rows to neso_wind_forecasts
+2025-08-23 00:02:55,906 - INFO - ✅ Fixed schema for neso_wind_forecasts
+2025-08-23 00:02:55,906 - INFO - Processing table neso_carbon_intensity
+2025-08-23 00:02:55,906 - INFO - Generating test data for neso_carbon_intensity
+2025-08-23 00:02:56,056 - INFO - Uploading 100 rows to neso_carbon_intensity
+2025-08-23 00:02:57,656 - ERROR - ❌ Error loading data to neso_carbon_intensity: 400 The field specified for DAY partitioning can only be of type TIMESTAMP, DATETIME or DATE. The type found is: STRING.; reason: invalidQuery, location: query, message: The field specified for DAY partitioning can only be of type TIMESTAMP, DATETIME or DATE. The type found is: STRING.
+2025-08-23 00:02:57,657 - ERROR - ❌ Failed to fix schema for neso_carbon_intensity
+2025-08-23 00:02:57,657 - INFO - Processing table neso_interconnector_flows
+2025-08-23 00:02:57,657 - INFO - Generating test data for neso_interconnector_flows
+2025-08-23 00:02:57,876 - INFO - Uploading 100 rows to neso_interconnector_flows
+2025-08-23 00:03:00,896 - INFO - ✅ Successfully loaded 100 rows to neso_interconnector_flows
+2025-08-23 00:03:00,896 - INFO - ✅ Fixed schema for neso_interconnector_flows
+2025-08-23 00:03:00,896 - INFO - Processing table neso_balancing_services
+2025-08-23 00:03:00,896 - INFO - Generating test data for neso_balancing_services
+2025-08-23 00:03:01,054 - INFO - Uploading 100 rows to neso_balancing_services
+2025-08-23 00:03:01,709 - ERROR - ❌ Error loading data to neso_balancing_services: 400 The field specified for DAY partitioning can only be of type TIMESTAMP, DATETIME or DATE. The type found is: STRING.; reason: invalidQuery, location: query, message: The field specified for DAY partitioning can only be of type TIMESTAMP, DATETIME or DATE. The type found is: STRING.
+2025-08-23 00:03:01,709 - ERROR - ❌ Failed to fix schema for neso_balancing_services
+2025-08-23 00:03:01,709 - INFO - Schema fix complete

@@ -1,0 +1,408 @@
+{
+  "tables_with_2016_data": [
+    {
+      "dataset": "uk_energy_data",
+      "table": "elexon_fuel_generation",
+      "min_date": "2016-01-01",
+      "max_date": "2016-01-08",
+      "status": "4992 rows"
+    },
+    {
+      "dataset": "uk_energy_data_gemini_eu",
+      "table": "elexon_fuel_generation",
+      "min_date": "2016-01-01",
+      "max_date": "2016-01-08",
+      "status": "4992 rows"
+    }
+  ],
+  "tables_with_partial_range": [
+    {
+      "dataset": "uk_energy",
+      "table": "elexon_bid_offer_acceptances",
+      "min_date": "None",
+      "max_date": "None",
+      "status": "0 rows"
+    },
+    {
+      "dataset": "uk_energy",
+      "table": "elexon_boalf",
+      "min_date": "None",
+      "max_date": "None",
+      "status": "0 rows"
+    },
+    {
+      "dataset": "uk_energy",
+      "table": "elexon_demand_outturn",
+      "min_date": "None",
+      "max_date": "None",
+      "status": "0 rows"
+    },
+    {
+      "dataset": "uk_energy",
+      "table": "elexon_demand_outturn_2023",
+      "min_date": "2025-08-21",
+      "max_date": "2025-08-21",
+      "status": "365 rows"
+    },
+    {
+      "dataset": "uk_energy",
+      "table": "elexon_generation_outturn",
+      "min_date": "None",
+      "max_date": "None",
+      "status": "0 rows"
+    },
+    {
+      "dataset": "uk_energy",
+      "table": "elexon_generation_outturn_2023",
+      "min_date": "2025-08-21",
+      "max_date": "2025-08-21",
+      "status": "365 rows"
+    },
+    {
+      "dataset": "uk_energy",
+      "table": "elexon_system_warnings",
+      "min_date": "None",
+      "max_date": "None",
+      "status": "0 rows"
+    },
+    {
+      "dataset": "uk_energy",
+      "table": "neso_balancing_services",
+      "min_date": "None",
+      "max_date": "None",
+      "status": "0 rows"
+    },
+    {
+      "dataset": "uk_energy",
+      "table": "neso_carbon_intensity",
+      "min_date": "None",
+      "max_date": "None",
+      "status": "0 rows"
+    },
+    {
+      "dataset": "uk_energy",
+      "table": "neso_demand_forecasts",
+      "min_date": "None",
+      "max_date": "None",
+      "status": "0 rows"
+    },
+    {
+      "dataset": "uk_energy",
+      "table": "neso_interconnector_flows",
+      "min_date": "None",
+      "max_date": "None",
+      "status": "0 rows"
+    },
+    {
+      "dataset": "uk_energy",
+      "table": "neso_wind_forecasts",
+      "min_date": "None",
+      "max_date": "None",
+      "status": "0 rows"
+    },
+    {
+      "dataset": "uk_energy",
+      "table": "_ingestion_manifest",
+      "min_date": "None",
+      "max_date": "None",
+      "status": "0 rows"
+    },
+    {
+      "dataset": "uk_energy",
+      "table": "carbon_intensity_trends",
+      "min_date": "None",
+      "max_date": "None",
+      "status": "0 rows"
+    },
+    {
+      "dataset": "uk_energy",
+      "table": "hourly_energy_balance",
+      "min_date": "None",
+      "max_date": "None",
+      "status": "0 rows"
+    },
+    {
+      "dataset": "uk_energy",
+      "table": "v_daily_peak_summary",
+      "min_date": "None",
+      "max_date": "None",
+      "status": "0 rows"
+    },
+    {
+      "dataset": "uk_energy",
+      "table": "v_daily_price_volatility",
+      "min_date": "None",
+      "max_date": "None",
+      "status": "0 rows"
+    },
+    {
+      "dataset": "uk_energy",
+      "table": "v_generation_mix_snapshot",
+      "min_date": "None",
+      "max_date": "None",
+      "status": "0 rows"
+    },
+    {
+      "dataset": "uk_energy",
+      "table": "v_hourly_energy_balance",
+      "min_date": "None",
+      "max_date": "None",
+      "status": "0 rows"
+    },
+    {
+      "dataset": "uk_energy",
+      "table": "v_price_spread_drivers",
+      "min_date": "None",
+      "max_date": "None",
+      "status": "0 rows"
+    },
+    {
+      "dataset": "uk_energy",
+      "table": "v_renewable_vs_system_prices",
+      "min_date": "None",
+      "max_date": "None",
+      "status": "0 rows"
+    },
+    {
+      "dataset": "uk_energy_analysis",
+      "table": "daily_carbon_intensity",
+      "min_date": "None",
+      "max_date": "None",
+      "status": "0 rows"
+    },
+    {
+      "dataset": "uk_energy_analysis",
+      "table": "daily_demand_mix",
+      "min_date": "None",
+      "max_date": "None",
+      "status": "0 rows"
+    },
+    {
+      "dataset": "uk_energy_data",
+      "table": "elexon_boa_acceptances",
+      "min_date": "None",
+      "max_date": "None",
+      "status": "0 rows"
+    },
+    {
+      "dataset": "uk_energy_data",
+      "table": "elexon_frequency",
+      "min_date": "2025-08-07",
+      "max_date": "2025-08-08",
+      "status": "46088 rows"
+    },
+    {
+      "dataset": "uk_energy_data",
+      "table": "elexon_system_prices",
+      "min_date": "None",
+      "max_date": "None",
+      "status": "0 rows"
+    },
+    {
+      "dataset": "uk_energy_data",
+      "table": "neso_gsp_demand",
+      "min_date": "None",
+      "max_date": "None",
+      "status": "0 rows"
+    },
+    {
+      "dataset": "uk_energy_data",
+      "table": "met_office_weather",
+      "min_date": "2024-01-01",
+      "max_date": "2024-07-31",
+      "status": "213 rows"
+    },
+    {
+      "dataset": "uk_energy_data",
+      "table": "vw_bq_inventory",
+      "min_date": "2025-08-15",
+      "max_date": "2025-08-19",
+      "status": "7 rows"
+    },
+    {
+      "dataset": "uk_energy_data_gemini_eu",
+      "table": "elexon_frequency",
+      "min_date": "2025-08-07",
+      "max_date": "2025-08-08",
+      "status": "46088 rows"
+    },
+    {
+      "dataset": "uk_energy_data_gemini_eu",
+      "table": "met_office_weather",
+      "min_date": "2024-01-01",
+      "max_date": "2024-07-31",
+      "status": "213 rows"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "elexon_demand_outturn",
+      "min_date": "None",
+      "max_date": "None",
+      "status": "0 rows"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "elexon_generation_outturn",
+      "min_date": "None",
+      "max_date": "None",
+      "status": "0 rows"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "elexon_system_warnings",
+      "min_date": "2023-01-10",
+      "max_date": "2024-12-25",
+      "status": "56 rows"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_balancing_services",
+      "min_date": "2023-01-01",
+      "max_date": "2024-12-31",
+      "status": "35088 rows"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_carbon_intensity",
+      "min_date": "2023-01-01",
+      "max_date": "2024-12-31",
+      "status": "35088 rows"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_demand_forecasts",
+      "min_date": "2022-12-31",
+      "max_date": "2024-12-30",
+      "status": "35088 rows"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_interconnector_flows",
+      "min_date": "2023-01-01",
+      "max_date": "2024-12-31",
+      "status": "210528 rows"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_wind_forecasts",
+      "min_date": "2023-01-01",
+      "max_date": "2025-01-01",
+      "status": "175440 rows"
+    },
+    {
+      "dataset": "uk_energy_silver",
+      "table": "daily_balancing_costs",
+      "min_date": "None",
+      "max_date": "None",
+      "status": "0 rows"
+    },
+    {
+      "dataset": "uk_energy_silver",
+      "table": "daily_carbon_intensity",
+      "min_date": "None",
+      "max_date": "None",
+      "status": "0 rows"
+    },
+    {
+      "dataset": "uk_energy_silver",
+      "table": "daily_demand_mix",
+      "min_date": "None",
+      "max_date": "None",
+      "status": "0 rows"
+    },
+    {
+      "dataset": "uk_energy_silver",
+      "table": "daily_interconnector_flows",
+      "min_date": "None",
+      "max_date": "None",
+      "status": "0 rows"
+    }
+  ],
+  "tables_with_no_2016_data": [],
+  "tables_with_errors": [
+    {
+      "dataset": "uk_energy",
+      "table": "neso_future_scenarios",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy",
+      "table": "v_bid_offer_volume_summary",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy",
+      "table": "v_system_warning_hotspots",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_analysis",
+      "table": "correlation_matrix",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_analysis",
+      "table": "decomposition_carbon",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_analysis",
+      "table": "decomposition_wind",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_analysis",
+      "table": "regression_balancing_cost",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_analysis",
+      "table": "regression_carbon_intensity",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_analysis",
+      "table": "seasonal_carbon_intensity",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_analysis",
+      "table": "seasonal_interconnector_flow",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_analysis",
+      "table": "seasonal_wind_generation",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    }
+  ],
+  "summary": {
+    "tables_with_2016_data": 2,
+    "tables_with_partial_range": 43,
+    "tables_with_no_2016_data": 0,
+    "tables_with_errors": 11,
+    "scan_date": "2025-08-22"
+  }
+}

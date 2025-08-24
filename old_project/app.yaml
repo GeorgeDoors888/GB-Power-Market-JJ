@@ -1,0 +1,24 @@
+# Google Cloud Run Configuration for BMRS Data Collection
+
+runtime: python39
+
+env_variables:
+  BMRS_API_KEY: "03omen6i9lhv5fa"
+  GOOGLE_CLOUD_PROJECT: "jibber-jabber-knowledge"
+  
+# Resource allocation for historical data processing
+resources:
+  cpu: 2
+  memory: 2Gi
+
+# Auto-scaling configuration
+automatic_scaling:
+  min_instances: 0
+  max_instances: 10
+  target_cpu_utilization: 60
+
+# Timeout for long-running historical data collection
+timeout: 3600s
+
+# Allow unauthenticated access for webhook triggers
+ingress: all

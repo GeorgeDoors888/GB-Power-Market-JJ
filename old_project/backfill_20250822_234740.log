@@ -1,0 +1,351 @@
+2025-08-22 23:47:42,970 - INFO - ✅ Data Backfiller initialized
+2025-08-22 23:47:42,971 - INFO - 🔄 Starting backfill for elexon_demand_outturn
+2025-08-22 23:47:44,158 - INFO - 🔍 Found 30 missing dates for elexon_demand_outturn
+2025-08-22 23:47:44,158 - INFO - 🔄 Processing elexon_demand_outturn for 2025-07-23
+2025-08-22 23:47:44,683 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/07/2025-07-23.json
+2025-08-22 23:47:45,435 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_demand_outturn. Field timestamp is missing in new schema
+2025-08-22 23:47:45,435 - INFO - 🔄 Processing elexon_demand_outturn for 2025-07-24
+2025-08-22 23:47:45,732 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/07/2025-07-24.json
+2025-08-22 23:47:46,143 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_demand_outturn. Field timestamp is missing in new schema
+2025-08-22 23:47:46,144 - INFO - 🔄 Processing elexon_demand_outturn for 2025-07-25
+2025-08-22 23:47:46,779 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/07/2025-07-25.json
+2025-08-22 23:47:47,085 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_demand_outturn. Field timestamp is missing in new schema
+2025-08-22 23:47:47,085 - INFO - 🔄 Processing elexon_demand_outturn for 2025-07-26
+2025-08-22 23:47:47,917 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/07/2025-07-26.json
+2025-08-22 23:47:48,208 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_demand_outturn. Field timestamp is missing in new schema
+2025-08-22 23:47:48,209 - INFO - 🔄 Processing elexon_demand_outturn for 2025-07-27
+2025-08-22 23:47:48,754 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/07/2025-07-27.json
+2025-08-22 23:47:49,048 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_demand_outturn. Field timestamp is missing in new schema
+2025-08-22 23:47:49,048 - INFO - 🔄 Processing elexon_demand_outturn for 2025-07-28
+2025-08-22 23:47:49,688 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/07/2025-07-28.json
+2025-08-22 23:47:49,981 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_demand_outturn. Field timestamp is missing in new schema
+2025-08-22 23:47:49,981 - INFO - 🔄 Processing elexon_demand_outturn for 2025-07-29
+2025-08-22 23:47:50,701 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/07/2025-07-29.json
+2025-08-22 23:47:51,046 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_demand_outturn. Field timestamp is missing in new schema
+2025-08-22 23:47:51,046 - INFO - 🔄 Processing elexon_demand_outturn for 2025-07-30
+2025-08-22 23:47:51,679 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/07/2025-07-30.json
+2025-08-22 23:47:52,076 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_demand_outturn. Field timestamp is missing in new schema
+2025-08-22 23:47:52,076 - INFO - 🔄 Processing elexon_demand_outturn for 2025-07-31
+2025-08-22 23:47:52,676 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/07/2025-07-31.json
+2025-08-22 23:47:53,057 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_demand_outturn. Field timestamp is missing in new schema
+2025-08-22 23:47:53,057 - INFO - 🔄 Processing elexon_demand_outturn for 2025-08-01
+2025-08-22 23:47:53,995 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/08/2025-08-01.json
+2025-08-22 23:47:54,236 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_demand_outturn. Field timestamp is missing in new schema
+2025-08-22 23:47:54,237 - INFO - 🔄 Processing elexon_demand_outturn for 2025-08-02
+2025-08-22 23:47:54,872 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/08/2025-08-02.json
+2025-08-22 23:47:55,196 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_demand_outturn. Field timestamp is missing in new schema
+2025-08-22 23:47:55,197 - INFO - 🔄 Processing elexon_demand_outturn for 2025-08-03
+2025-08-22 23:47:55,783 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/08/2025-08-03.json
+2025-08-22 23:47:56,093 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_demand_outturn. Field timestamp is missing in new schema
+2025-08-22 23:47:56,093 - INFO - 🔄 Processing elexon_demand_outturn for 2025-08-04
+2025-08-22 23:47:56,706 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/08/2025-08-04.json
+2025-08-22 23:47:57,499 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_demand_outturn. Field timestamp is missing in new schema
+2025-08-22 23:47:57,499 - INFO - 🔄 Processing elexon_demand_outturn for 2025-08-05
+2025-08-22 23:47:57,710 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/08/2025-08-05.json
+2025-08-22 23:47:58,020 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_demand_outturn. Field timestamp is missing in new schema
+2025-08-22 23:47:58,020 - INFO - 🔄 Processing elexon_demand_outturn for 2025-08-06
+2025-08-22 23:47:58,742 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/08/2025-08-06.json
+2025-08-22 23:47:59,011 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_demand_outturn. Field timestamp is missing in new schema
+2025-08-22 23:47:59,011 - INFO - 🔄 Processing elexon_demand_outturn for 2025-08-07
+2025-08-22 23:47:59,762 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/08/2025-08-07.json
+2025-08-22 23:48:00,073 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_demand_outturn. Field timestamp is missing in new schema
+2025-08-22 23:48:00,073 - INFO - 🔄 Processing elexon_demand_outturn for 2025-08-09
+2025-08-22 23:48:00,807 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/08/2025-08-09.json
+2025-08-22 23:48:01,119 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_demand_outturn. Field timestamp is missing in new schema
+2025-08-22 23:48:01,120 - INFO - 🔄 Processing elexon_demand_outturn for 2025-08-10
+2025-08-22 23:48:01,752 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/08/2025-08-10.json
+2025-08-22 23:48:02,060 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_demand_outturn. Field timestamp is missing in new schema
+2025-08-22 23:48:02,061 - INFO - 🔄 Processing elexon_demand_outturn for 2025-08-11
+2025-08-22 23:48:02,999 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/08/2025-08-11.json
+2025-08-22 23:48:03,321 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_demand_outturn. Field timestamp is missing in new schema
+2025-08-22 23:48:03,321 - INFO - 🔄 Processing elexon_demand_outturn for 2025-08-12
+2025-08-22 23:48:03,809 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/08/2025-08-12.json
+2025-08-22 23:48:04,091 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_demand_outturn. Field timestamp is missing in new schema
+2025-08-22 23:48:04,092 - INFO - 🔄 Processing elexon_demand_outturn for 2025-08-13
+2025-08-22 23:48:04,836 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/08/2025-08-13.json
+2025-08-22 23:48:05,167 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_demand_outturn. Field timestamp is missing in new schema
+2025-08-22 23:48:05,167 - INFO - 🔄 Processing elexon_demand_outturn for 2025-08-14
+2025-08-22 23:48:05,765 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/08/2025-08-14.json
+2025-08-22 23:48:06,047 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_demand_outturn. Field timestamp is missing in new schema
+2025-08-22 23:48:06,047 - INFO - 🔄 Processing elexon_demand_outturn for 2025-08-15
+2025-08-22 23:48:06,795 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/08/2025-08-15.json
+2025-08-22 23:48:07,101 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_demand_outturn. Field timestamp is missing in new schema
+2025-08-22 23:48:07,102 - INFO - 🔄 Processing elexon_demand_outturn for 2025-08-16
+2025-08-22 23:48:07,852 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/08/2025-08-16.json
+2025-08-22 23:48:08,146 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_demand_outturn. Field timestamp is missing in new schema
+2025-08-22 23:48:08,146 - INFO - 🔄 Processing elexon_demand_outturn for 2025-08-17
+2025-08-22 23:48:08,783 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/08/2025-08-17.json
+2025-08-22 23:48:09,047 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_demand_outturn. Field timestamp is missing in new schema
+2025-08-22 23:48:09,047 - INFO - 🔄 Processing elexon_demand_outturn for 2025-08-18
+2025-08-22 23:48:09,823 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/08/2025-08-18.json
+2025-08-22 23:48:10,030 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_demand_outturn. Field timestamp is missing in new schema
+2025-08-22 23:48:10,030 - INFO - 🔄 Processing elexon_demand_outturn for 2025-08-19
+2025-08-22 23:48:10,775 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/08/2025-08-19.json
+2025-08-22 23:48:11,027 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_demand_outturn. Field timestamp is missing in new schema
+2025-08-22 23:48:11,028 - INFO - 🔄 Processing elexon_demand_outturn for 2025-08-20
+2025-08-22 23:48:11,823 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/08/2025-08-20.json
+2025-08-22 23:48:12,078 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_demand_outturn. Field timestamp is missing in new schema
+2025-08-22 23:48:12,078 - INFO - 🔄 Processing elexon_demand_outturn for 2025-08-21
+2025-08-22 23:48:12,871 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/08/2025-08-21.json
+2025-08-22 23:48:13,180 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_demand_outturn. Field timestamp is missing in new schema
+2025-08-22 23:48:13,180 - INFO - 🔄 Processing elexon_demand_outturn for 2025-08-22
+2025-08-22 23:48:13,782 - INFO - ✅ Saved 47 records to GCS: bmrs_data/elexon_demand_outturn/2025/08/2025-08-22.json
+2025-08-22 23:48:14,036 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_demand_outturn. Field timestamp is missing in new schema
+2025-08-22 23:48:14,036 - INFO - ✅ Backfilled 0/30 dates for elexon_demand_outturn
+2025-08-22 23:48:14,036 - INFO - 🔄 Starting backfill for elexon_generation_outturn
+2025-08-22 23:48:14,720 - INFO - 🔍 Found 31 missing dates for elexon_generation_outturn
+2025-08-22 23:48:14,721 - INFO - 🔄 Processing elexon_generation_outturn for 2025-07-23
+2025-08-22 23:48:14,986 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/07/2025-07-23.json
+2025-08-22 23:48:15,313 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_generation_outturn. Field timestamp is missing in new schema
+2025-08-22 23:48:15,315 - INFO - 🔄 Processing elexon_generation_outturn for 2025-07-24
+2025-08-22 23:48:16,018 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/07/2025-07-24.json
+2025-08-22 23:48:16,248 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_generation_outturn. Field timestamp is missing in new schema
+2025-08-22 23:48:16,249 - INFO - 🔄 Processing elexon_generation_outturn for 2025-07-25
+2025-08-22 23:48:17,068 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/07/2025-07-25.json
+2025-08-22 23:48:17,257 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_generation_outturn. Field timestamp is missing in new schema
+2025-08-22 23:48:17,257 - INFO - 🔄 Processing elexon_generation_outturn for 2025-07-26
+2025-08-22 23:48:17,980 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/07/2025-07-26.json
+2025-08-22 23:48:18,211 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_generation_outturn. Field timestamp is missing in new schema
+2025-08-22 23:48:18,211 - INFO - 🔄 Processing elexon_generation_outturn for 2025-07-27
+2025-08-22 23:48:19,003 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/07/2025-07-27.json
+2025-08-22 23:48:19,318 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_generation_outturn. Field timestamp is missing in new schema
+2025-08-22 23:48:19,318 - INFO - 🔄 Processing elexon_generation_outturn for 2025-07-28
+2025-08-22 23:48:20,017 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/07/2025-07-28.json
+2025-08-22 23:48:20,211 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_generation_outturn. Field timestamp is missing in new schema
+2025-08-22 23:48:20,212 - INFO - 🔄 Processing elexon_generation_outturn for 2025-07-29
+2025-08-22 23:48:20,990 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/07/2025-07-29.json
+2025-08-22 23:48:21,260 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_generation_outturn. Field timestamp is missing in new schema
+2025-08-22 23:48:21,261 - INFO - 🔄 Processing elexon_generation_outturn for 2025-07-30
+2025-08-22 23:48:22,039 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/07/2025-07-30.json
+2025-08-22 23:48:22,310 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_generation_outturn. Field timestamp is missing in new schema
+2025-08-22 23:48:22,311 - INFO - 🔄 Processing elexon_generation_outturn for 2025-07-31
+2025-08-22 23:48:23,088 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/07/2025-07-31.json
+2025-08-22 23:48:23,263 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_generation_outturn. Field timestamp is missing in new schema
+2025-08-22 23:48:23,264 - INFO - 🔄 Processing elexon_generation_outturn for 2025-08-01
+2025-08-22 23:48:24,118 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/08/2025-08-01.json
+2025-08-22 23:48:24,301 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_generation_outturn. Field timestamp is missing in new schema
+2025-08-22 23:48:24,301 - INFO - 🔄 Processing elexon_generation_outturn for 2025-08-02
+2025-08-22 23:48:25,017 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/08/2025-08-02.json
+2025-08-22 23:48:25,224 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_generation_outturn. Field timestamp is missing in new schema
+2025-08-22 23:48:25,224 - INFO - 🔄 Processing elexon_generation_outturn for 2025-08-03
+2025-08-22 23:48:26,031 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/08/2025-08-03.json
+2025-08-22 23:48:26,271 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_generation_outturn. Field timestamp is missing in new schema
+2025-08-22 23:48:26,272 - INFO - 🔄 Processing elexon_generation_outturn for 2025-08-04
+2025-08-22 23:48:27,078 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/08/2025-08-04.json
+2025-08-22 23:48:27,338 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_generation_outturn. Field timestamp is missing in new schema
+2025-08-22 23:48:27,339 - INFO - 🔄 Processing elexon_generation_outturn for 2025-08-05
+2025-08-22 23:48:28,078 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/08/2025-08-05.json
+2025-08-22 23:48:28,304 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_generation_outturn. Field timestamp is missing in new schema
+2025-08-22 23:48:28,304 - INFO - 🔄 Processing elexon_generation_outturn for 2025-08-06
+2025-08-22 23:48:29,014 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/08/2025-08-06.json
+2025-08-22 23:48:29,299 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_generation_outturn. Field timestamp is missing in new schema
+2025-08-22 23:48:29,299 - INFO - 🔄 Processing elexon_generation_outturn for 2025-08-07
+2025-08-22 23:48:30,024 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/08/2025-08-07.json
+2025-08-22 23:48:30,275 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_generation_outturn. Field timestamp is missing in new schema
+2025-08-22 23:48:30,276 - INFO - 🔄 Processing elexon_generation_outturn for 2025-08-08
+2025-08-22 23:48:31,029 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/08/2025-08-08.json
+2025-08-22 23:48:31,264 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_generation_outturn. Field timestamp is missing in new schema
+2025-08-22 23:48:31,265 - INFO - 🔄 Processing elexon_generation_outturn for 2025-08-09
+2025-08-22 23:48:32,028 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/08/2025-08-09.json
+2025-08-22 23:48:32,271 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_generation_outturn. Field timestamp is missing in new schema
+2025-08-22 23:48:32,271 - INFO - 🔄 Processing elexon_generation_outturn for 2025-08-10
+2025-08-22 23:48:33,063 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/08/2025-08-10.json
+2025-08-22 23:48:33,318 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_generation_outturn. Field timestamp is missing in new schema
+2025-08-22 23:48:33,319 - INFO - 🔄 Processing elexon_generation_outturn for 2025-08-11
+2025-08-22 23:48:34,101 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/08/2025-08-11.json
+2025-08-22 23:48:34,369 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_generation_outturn. Field timestamp is missing in new schema
+2025-08-22 23:48:34,370 - INFO - 🔄 Processing elexon_generation_outturn for 2025-08-12
+2025-08-22 23:48:35,112 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/08/2025-08-12.json
+2025-08-22 23:48:35,286 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_generation_outturn. Field timestamp is missing in new schema
+2025-08-22 23:48:35,286 - INFO - 🔄 Processing elexon_generation_outturn for 2025-08-13
+2025-08-22 23:48:36,026 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/08/2025-08-13.json
+2025-08-22 23:48:36,220 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_generation_outturn. Field timestamp is missing in new schema
+2025-08-22 23:48:36,220 - INFO - 🔄 Processing elexon_generation_outturn for 2025-08-14
+2025-08-22 23:48:37,070 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/08/2025-08-14.json
+2025-08-22 23:48:37,349 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_generation_outturn. Field timestamp is missing in new schema
+2025-08-22 23:48:37,349 - INFO - 🔄 Processing elexon_generation_outturn for 2025-08-15
+2025-08-22 23:48:38,058 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/08/2025-08-15.json
+2025-08-22 23:48:38,240 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_generation_outturn. Field timestamp is missing in new schema
+2025-08-22 23:48:38,241 - INFO - 🔄 Processing elexon_generation_outturn for 2025-08-16
+2025-08-22 23:48:39,085 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/08/2025-08-16.json
+2025-08-22 23:48:39,292 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_generation_outturn. Field timestamp is missing in new schema
+2025-08-22 23:48:39,293 - INFO - 🔄 Processing elexon_generation_outturn for 2025-08-17
+2025-08-22 23:48:40,133 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/08/2025-08-17.json
+2025-08-22 23:48:40,382 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_generation_outturn. Field timestamp is missing in new schema
+2025-08-22 23:48:40,382 - INFO - 🔄 Processing elexon_generation_outturn for 2025-08-18
+2025-08-22 23:48:41,060 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/08/2025-08-18.json
+2025-08-22 23:48:41,300 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_generation_outturn. Field timestamp is missing in new schema
+2025-08-22 23:48:41,301 - INFO - 🔄 Processing elexon_generation_outturn for 2025-08-19
+2025-08-22 23:48:42,120 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/08/2025-08-19.json
+2025-08-22 23:48:42,406 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_generation_outturn. Field timestamp is missing in new schema
+2025-08-22 23:48:42,407 - INFO - 🔄 Processing elexon_generation_outturn for 2025-08-20
+2025-08-22 23:48:43,076 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/08/2025-08-20.json
+2025-08-22 23:48:43,284 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_generation_outturn. Field timestamp is missing in new schema
+2025-08-22 23:48:43,284 - INFO - 🔄 Processing elexon_generation_outturn for 2025-08-21
+2025-08-22 23:48:44,131 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/08/2025-08-21.json
+2025-08-22 23:48:44,349 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_generation_outturn. Field timestamp is missing in new schema
+2025-08-22 23:48:44,349 - INFO - 🔄 Processing elexon_generation_outturn for 2025-08-22
+2025-08-22 23:48:45,100 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/08/2025-08-22.json
+2025-08-22 23:48:45,377 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_generation_outturn. Field timestamp is missing in new schema
+2025-08-22 23:48:45,377 - INFO - ✅ Backfilled 0/31 dates for elexon_generation_outturn
+2025-08-22 23:48:45,377 - INFO - 🔄 Starting backfill for neso_demand_forecasts
+2025-08-22 23:48:45,973 - INFO - 🔍 Found 31 missing dates for neso_demand_forecasts
+2025-08-22 23:48:45,973 - INFO - 🔄 Processing neso_demand_forecasts for 2025-07-23
+2025-08-22 23:48:46,195 - INFO - ✅ Saved 58 records to GCS: bmrs_data/neso_demand_forecasts/2025/07/2025-07-23.json
+2025-08-22 23:48:48,717 - INFO - ✅ Loaded 58 rows to BigQuery table uk_energy_prod.neso_demand_forecasts
+2025-08-22 23:48:48,717 - INFO - 🔄 Processing neso_demand_forecasts for 2025-07-24
+2025-08-22 23:48:48,929 - INFO - ✅ Saved 58 records to GCS: bmrs_data/neso_demand_forecasts/2025/07/2025-07-24.json
+2025-08-22 23:48:52,093 - INFO - ✅ Loaded 58 rows to BigQuery table uk_energy_prod.neso_demand_forecasts
+2025-08-22 23:48:52,094 - INFO - 🔄 Processing neso_demand_forecasts for 2025-07-25
+2025-08-22 23:48:52,530 - INFO - ✅ Saved 58 records to GCS: bmrs_data/neso_demand_forecasts/2025/07/2025-07-25.json
+2025-08-22 23:48:54,589 - INFO - ✅ Loaded 58 rows to BigQuery table uk_energy_prod.neso_demand_forecasts
+2025-08-22 23:48:54,589 - INFO - 🔄 Processing neso_demand_forecasts for 2025-07-26
+2025-08-22 23:48:54,834 - INFO - ✅ Saved 58 records to GCS: bmrs_data/neso_demand_forecasts/2025/07/2025-07-26.json
+2025-08-22 23:48:58,017 - INFO - ✅ Loaded 58 rows to BigQuery table uk_energy_prod.neso_demand_forecasts
+2025-08-22 23:48:58,018 - INFO - 🔄 Processing neso_demand_forecasts for 2025-07-27
+2025-08-22 23:48:58,243 - INFO - ✅ Saved 58 records to GCS: bmrs_data/neso_demand_forecasts/2025/07/2025-07-27.json
+2025-08-22 23:49:01,412 - INFO - ✅ Loaded 58 rows to BigQuery table uk_energy_prod.neso_demand_forecasts
+2025-08-22 23:49:01,413 - INFO - 🔄 Processing neso_demand_forecasts for 2025-07-28
+2025-08-22 23:49:01,654 - INFO - ✅ Saved 58 records to GCS: bmrs_data/neso_demand_forecasts/2025/07/2025-07-28.json
+2025-08-22 23:49:04,541 - INFO - ✅ Loaded 58 rows to BigQuery table uk_energy_prod.neso_demand_forecasts
+2025-08-22 23:49:04,542 - INFO - 🔄 Processing neso_demand_forecasts for 2025-07-29
+2025-08-22 23:49:04,866 - INFO - ✅ Saved 58 records to GCS: bmrs_data/neso_demand_forecasts/2025/07/2025-07-29.json
+2025-08-22 23:49:07,177 - INFO - ✅ Loaded 58 rows to BigQuery table uk_energy_prod.neso_demand_forecasts
+2025-08-22 23:49:07,178 - INFO - 🔄 Processing neso_demand_forecasts for 2025-07-30
+2025-08-22 23:49:07,407 - INFO - ✅ Saved 58 records to GCS: bmrs_data/neso_demand_forecasts/2025/07/2025-07-30.json
+2025-08-22 23:49:09,892 - INFO - ✅ Loaded 58 rows to BigQuery table uk_energy_prod.neso_demand_forecasts
+2025-08-22 23:49:09,892 - INFO - 🔄 Processing neso_demand_forecasts for 2025-07-31
+2025-08-22 23:49:10,145 - INFO - ✅ Saved 58 records to GCS: bmrs_data/neso_demand_forecasts/2025/07/2025-07-31.json
+2025-08-22 23:49:12,350 - INFO - ✅ Loaded 58 rows to BigQuery table uk_energy_prod.neso_demand_forecasts
+2025-08-22 23:49:12,350 - INFO - 🔄 Processing neso_demand_forecasts for 2025-08-01
+2025-08-22 23:49:12,643 - INFO - ✅ Saved 58 records to GCS: bmrs_data/neso_demand_forecasts/2025/08/2025-08-01.json
+2025-08-22 23:49:14,783 - INFO - ✅ Loaded 58 rows to BigQuery table uk_energy_prod.neso_demand_forecasts
+2025-08-22 23:49:14,784 - INFO - 🔄 Processing neso_demand_forecasts for 2025-08-02
+2025-08-22 23:49:15,037 - INFO - ✅ Saved 58 records to GCS: bmrs_data/neso_demand_forecasts/2025/08/2025-08-02.json
+2025-08-22 23:49:18,934 - INFO - ✅ Loaded 58 rows to BigQuery table uk_energy_prod.neso_demand_forecasts
+2025-08-22 23:49:18,936 - INFO - 🔄 Processing neso_demand_forecasts for 2025-08-03
+2025-08-22 23:49:19,177 - INFO - ✅ Saved 58 records to GCS: bmrs_data/neso_demand_forecasts/2025/08/2025-08-03.json
+2025-08-22 23:49:21,555 - INFO - ✅ Loaded 58 rows to BigQuery table uk_energy_prod.neso_demand_forecasts
+2025-08-22 23:49:21,555 - INFO - 🔄 Processing neso_demand_forecasts for 2025-08-04
+2025-08-22 23:49:21,773 - INFO - ✅ Saved 58 records to GCS: bmrs_data/neso_demand_forecasts/2025/08/2025-08-04.json
+2025-08-22 23:49:25,040 - INFO - ✅ Loaded 58 rows to BigQuery table uk_energy_prod.neso_demand_forecasts
+2025-08-22 23:49:25,041 - INFO - 🔄 Processing neso_demand_forecasts for 2025-08-05
+2025-08-22 23:49:25,283 - INFO - ✅ Saved 58 records to GCS: bmrs_data/neso_demand_forecasts/2025/08/2025-08-05.json
+2025-08-22 23:49:28,167 - INFO - ✅ Loaded 58 rows to BigQuery table uk_energy_prod.neso_demand_forecasts
+2025-08-22 23:49:28,167 - INFO - 🔄 Processing neso_demand_forecasts for 2025-08-06
+2025-08-22 23:49:28,409 - INFO - ✅ Saved 58 records to GCS: bmrs_data/neso_demand_forecasts/2025/08/2025-08-06.json
+2025-08-22 23:49:30,471 - INFO - ✅ Loaded 58 rows to BigQuery table uk_energy_prod.neso_demand_forecasts
+2025-08-22 23:49:30,472 - INFO - 🔄 Processing neso_demand_forecasts for 2025-08-07
+2025-08-22 23:49:30,737 - INFO - ✅ Saved 58 records to GCS: bmrs_data/neso_demand_forecasts/2025/08/2025-08-07.json
+2025-08-22 23:49:32,613 - INFO - ✅ Loaded 58 rows to BigQuery table uk_energy_prod.neso_demand_forecasts
+2025-08-22 23:49:32,614 - INFO - 🔄 Processing neso_demand_forecasts for 2025-08-08
+2025-08-22 23:49:32,847 - INFO - ✅ Saved 58 records to GCS: bmrs_data/neso_demand_forecasts/2025/08/2025-08-08.json
+2025-08-22 23:49:36,812 - INFO - ✅ Loaded 58 rows to BigQuery table uk_energy_prod.neso_demand_forecasts
+2025-08-22 23:49:36,813 - INFO - 🔄 Processing neso_demand_forecasts for 2025-08-09
+2025-08-22 23:49:37,071 - INFO - ✅ Saved 58 records to GCS: bmrs_data/neso_demand_forecasts/2025/08/2025-08-09.json
+2025-08-22 23:49:40,165 - INFO - ✅ Loaded 58 rows to BigQuery table uk_energy_prod.neso_demand_forecasts
+2025-08-22 23:49:40,165 - INFO - 🔄 Processing neso_demand_forecasts for 2025-08-10
+2025-08-22 23:49:40,427 - INFO - ✅ Saved 58 records to GCS: bmrs_data/neso_demand_forecasts/2025/08/2025-08-10.json
+2025-08-22 23:49:42,603 - INFO - ✅ Loaded 58 rows to BigQuery table uk_energy_prod.neso_demand_forecasts
+2025-08-22 23:49:42,603 - INFO - 🔄 Processing neso_demand_forecasts for 2025-08-11
+2025-08-22 23:49:42,913 - INFO - ✅ Saved 58 records to GCS: bmrs_data/neso_demand_forecasts/2025/08/2025-08-11.json
+2025-08-22 23:49:45,527 - INFO - ✅ Loaded 58 rows to BigQuery table uk_energy_prod.neso_demand_forecasts
+2025-08-22 23:49:45,527 - INFO - 🔄 Processing neso_demand_forecasts for 2025-08-12
+2025-08-22 23:49:45,774 - INFO - ✅ Saved 58 records to GCS: bmrs_data/neso_demand_forecasts/2025/08/2025-08-12.json
+2025-08-22 23:49:48,489 - INFO - ✅ Loaded 58 rows to BigQuery table uk_energy_prod.neso_demand_forecasts
+2025-08-22 23:49:48,489 - INFO - 🔄 Processing neso_demand_forecasts for 2025-08-13
+2025-08-22 23:49:48,815 - INFO - ✅ Saved 58 records to GCS: bmrs_data/neso_demand_forecasts/2025/08/2025-08-13.json
+2025-08-22 23:49:51,734 - INFO - ✅ Loaded 58 rows to BigQuery table uk_energy_prod.neso_demand_forecasts
+2025-08-22 23:49:51,735 - INFO - 🔄 Processing neso_demand_forecasts for 2025-08-14
+2025-08-22 23:49:51,976 - INFO - ✅ Saved 58 records to GCS: bmrs_data/neso_demand_forecasts/2025/08/2025-08-14.json
+2025-08-22 23:49:54,757 - INFO - ✅ Loaded 58 rows to BigQuery table uk_energy_prod.neso_demand_forecasts
+2025-08-22 23:49:54,757 - INFO - 🔄 Processing neso_demand_forecasts for 2025-08-15
+2025-08-22 23:49:55,015 - INFO - ✅ Saved 58 records to GCS: bmrs_data/neso_demand_forecasts/2025/08/2025-08-15.json
+2025-08-22 23:49:57,081 - INFO - ✅ Loaded 58 rows to BigQuery table uk_energy_prod.neso_demand_forecasts
+2025-08-22 23:49:57,081 - INFO - 🔄 Processing neso_demand_forecasts for 2025-08-16
+2025-08-22 23:49:57,423 - INFO - ✅ Saved 58 records to GCS: bmrs_data/neso_demand_forecasts/2025/08/2025-08-16.json
+2025-08-22 23:49:59,434 - INFO - ✅ Loaded 58 rows to BigQuery table uk_energy_prod.neso_demand_forecasts
+2025-08-22 23:49:59,434 - INFO - 🔄 Processing neso_demand_forecasts for 2025-08-17
+2025-08-22 23:49:59,676 - INFO - ✅ Saved 58 records to GCS: bmrs_data/neso_demand_forecasts/2025/08/2025-08-17.json
+2025-08-22 23:50:01,664 - INFO - ✅ Loaded 58 rows to BigQuery table uk_energy_prod.neso_demand_forecasts
+2025-08-22 23:50:01,665 - INFO - 🔄 Processing neso_demand_forecasts for 2025-08-18
+2025-08-22 23:50:01,931 - INFO - ✅ Saved 58 records to GCS: bmrs_data/neso_demand_forecasts/2025/08/2025-08-18.json
+2025-08-22 23:50:04,659 - INFO - ✅ Loaded 58 rows to BigQuery table uk_energy_prod.neso_demand_forecasts
+2025-08-22 23:50:04,659 - INFO - 🔄 Processing neso_demand_forecasts for 2025-08-19
+2025-08-22 23:50:04,909 - INFO - ✅ Saved 58 records to GCS: bmrs_data/neso_demand_forecasts/2025/08/2025-08-19.json
+2025-08-22 23:50:07,429 - INFO - ✅ Loaded 58 rows to BigQuery table uk_energy_prod.neso_demand_forecasts
+2025-08-22 23:50:07,430 - INFO - 🔄 Processing neso_demand_forecasts for 2025-08-20
+2025-08-22 23:50:07,694 - INFO - ✅ Saved 58 records to GCS: bmrs_data/neso_demand_forecasts/2025/08/2025-08-20.json
+2025-08-22 23:50:09,853 - INFO - ✅ Loaded 58 rows to BigQuery table uk_energy_prod.neso_demand_forecasts
+2025-08-22 23:50:09,853 - INFO - 🔄 Processing neso_demand_forecasts for 2025-08-21
+2025-08-22 23:50:10,078 - INFO - ✅ Saved 58 records to GCS: bmrs_data/neso_demand_forecasts/2025/08/2025-08-21.json
+2025-08-22 23:50:12,323 - INFO - ✅ Loaded 58 rows to BigQuery table uk_energy_prod.neso_demand_forecasts
+2025-08-22 23:50:12,323 - INFO - 🔄 Processing neso_demand_forecasts for 2025-08-22
+2025-08-22 23:50:12,648 - INFO - ✅ Saved 58 records to GCS: bmrs_data/neso_demand_forecasts/2025/08/2025-08-22.json
+2025-08-22 23:50:17,192 - INFO - ✅ Loaded 58 rows to BigQuery table uk_energy_prod.neso_demand_forecasts
+2025-08-22 23:50:17,193 - INFO - ✅ Backfilled 31/31 dates for neso_demand_forecasts
+2025-08-22 23:50:17,193 - INFO - 🔄 Starting backfill for neso_wind_forecasts
+2025-08-22 23:50:17,988 - INFO - 🔍 Found 31 missing dates for neso_wind_forecasts
+2025-08-22 23:50:17,988 - INFO - 🔄 Processing neso_wind_forecasts for 2025-07-23
+2025-08-22 23:50:18,018 - ERROR - ❌ Error fetching data for neso_wind_forecasts on 2025-07-23: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/WINDFORFUELHH?settlementDateFrom=2025-07-23&settlementDateTo=2025-07-23
+2025-08-22 23:50:18,019 - INFO - 🔄 Processing neso_wind_forecasts for 2025-07-24
+2025-08-22 23:50:19,007 - ERROR - ❌ Error fetching data for neso_wind_forecasts on 2025-07-24: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/WINDFORFUELHH?settlementDateFrom=2025-07-24&settlementDateTo=2025-07-24
+2025-08-22 23:50:19,007 - INFO - 🔄 Processing neso_wind_forecasts for 2025-07-25
+2025-08-22 23:50:20,016 - ERROR - ❌ Error fetching data for neso_wind_forecasts on 2025-07-25: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/WINDFORFUELHH?settlementDateFrom=2025-07-25&settlementDateTo=2025-07-25
+2025-08-22 23:50:20,017 - INFO - 🔄 Processing neso_wind_forecasts for 2025-07-26
+2025-08-22 23:50:21,023 - ERROR - ❌ Error fetching data for neso_wind_forecasts on 2025-07-26: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/WINDFORFUELHH?settlementDateFrom=2025-07-26&settlementDateTo=2025-07-26
+2025-08-22 23:50:21,023 - INFO - 🔄 Processing neso_wind_forecasts for 2025-07-27
+2025-08-22 23:50:22,027 - ERROR - ❌ Error fetching data for neso_wind_forecasts on 2025-07-27: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/WINDFORFUELHH?settlementDateFrom=2025-07-27&settlementDateTo=2025-07-27
+2025-08-22 23:50:22,028 - INFO - 🔄 Processing neso_wind_forecasts for 2025-07-28
+2025-08-22 23:50:23,033 - ERROR - ❌ Error fetching data for neso_wind_forecasts on 2025-07-28: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/WINDFORFUELHH?settlementDateFrom=2025-07-28&settlementDateTo=2025-07-28
+2025-08-22 23:50:23,033 - INFO - 🔄 Processing neso_wind_forecasts for 2025-07-29
+2025-08-22 23:50:24,036 - ERROR - ❌ Error fetching data for neso_wind_forecasts on 2025-07-29: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/WINDFORFUELHH?settlementDateFrom=2025-07-29&settlementDateTo=2025-07-29
+2025-08-22 23:50:24,036 - INFO - 🔄 Processing neso_wind_forecasts for 2025-07-30
+2025-08-22 23:50:25,030 - ERROR - ❌ Error fetching data for neso_wind_forecasts on 2025-07-30: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/WINDFORFUELHH?settlementDateFrom=2025-07-30&settlementDateTo=2025-07-30
+2025-08-22 23:50:25,030 - INFO - 🔄 Processing neso_wind_forecasts for 2025-07-31
+2025-08-22 23:50:26,057 - ERROR - ❌ Error fetching data for neso_wind_forecasts on 2025-07-31: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/WINDFORFUELHH?settlementDateFrom=2025-07-31&settlementDateTo=2025-07-31
+2025-08-22 23:50:26,058 - INFO - 🔄 Processing neso_wind_forecasts for 2025-08-01
+2025-08-22 23:50:27,108 - ERROR - ❌ Error fetching data for neso_wind_forecasts on 2025-08-01: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/WINDFORFUELHH?settlementDateFrom=2025-08-01&settlementDateTo=2025-08-01
+2025-08-22 23:50:27,109 - INFO - 🔄 Processing neso_wind_forecasts for 2025-08-02
+2025-08-22 23:50:28,040 - ERROR - ❌ Error fetching data for neso_wind_forecasts on 2025-08-02: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/WINDFORFUELHH?settlementDateFrom=2025-08-02&settlementDateTo=2025-08-02
+2025-08-22 23:50:28,041 - INFO - 🔄 Processing neso_wind_forecasts for 2025-08-03
+2025-08-22 23:50:29,047 - ERROR - ❌ Error fetching data for neso_wind_forecasts on 2025-08-03: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/WINDFORFUELHH?settlementDateFrom=2025-08-03&settlementDateTo=2025-08-03
+2025-08-22 23:50:29,048 - INFO - 🔄 Processing neso_wind_forecasts for 2025-08-04
+2025-08-22 23:50:30,048 - ERROR - ❌ Error fetching data for neso_wind_forecasts on 2025-08-04: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/WINDFORFUELHH?settlementDateFrom=2025-08-04&settlementDateTo=2025-08-04
+2025-08-22 23:50:30,048 - INFO - 🔄 Processing neso_wind_forecasts for 2025-08-05
+2025-08-22 23:50:31,055 - ERROR - ❌ Error fetching data for neso_wind_forecasts on 2025-08-05: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/WINDFORFUELHH?settlementDateFrom=2025-08-05&settlementDateTo=2025-08-05
+2025-08-22 23:50:31,056 - INFO - 🔄 Processing neso_wind_forecasts for 2025-08-06
+2025-08-22 23:50:32,058 - ERROR - ❌ Error fetching data for neso_wind_forecasts on 2025-08-06: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/WINDFORFUELHH?settlementDateFrom=2025-08-06&settlementDateTo=2025-08-06
+2025-08-22 23:50:32,058 - INFO - 🔄 Processing neso_wind_forecasts for 2025-08-07
+2025-08-22 23:50:33,054 - ERROR - ❌ Error fetching data for neso_wind_forecasts on 2025-08-07: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/WINDFORFUELHH?settlementDateFrom=2025-08-07&settlementDateTo=2025-08-07
+2025-08-22 23:50:33,054 - INFO - 🔄 Processing neso_wind_forecasts for 2025-08-08
+2025-08-22 23:50:34,065 - ERROR - ❌ Error fetching data for neso_wind_forecasts on 2025-08-08: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/WINDFORFUELHH?settlementDateFrom=2025-08-08&settlementDateTo=2025-08-08
+2025-08-22 23:50:34,066 - INFO - 🔄 Processing neso_wind_forecasts for 2025-08-09
+2025-08-22 23:50:35,057 - ERROR - ❌ Error fetching data for neso_wind_forecasts on 2025-08-09: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/WINDFORFUELHH?settlementDateFrom=2025-08-09&settlementDateTo=2025-08-09
+2025-08-22 23:50:35,058 - INFO - 🔄 Processing neso_wind_forecasts for 2025-08-10
+2025-08-22 23:50:36,061 - ERROR - ❌ Error fetching data for neso_wind_forecasts on 2025-08-10: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/WINDFORFUELHH?settlementDateFrom=2025-08-10&settlementDateTo=2025-08-10
+2025-08-22 23:50:36,061 - INFO - 🔄 Processing neso_wind_forecasts for 2025-08-11
+2025-08-22 23:50:37,067 - ERROR - ❌ Error fetching data for neso_wind_forecasts on 2025-08-11: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/WINDFORFUELHH?settlementDateFrom=2025-08-11&settlementDateTo=2025-08-11
+2025-08-22 23:50:37,067 - INFO - 🔄 Processing neso_wind_forecasts for 2025-08-12
+2025-08-22 23:50:38,100 - ERROR - ❌ Error fetching data for neso_wind_forecasts on 2025-08-12: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/WINDFORFUELHH?settlementDateFrom=2025-08-12&settlementDateTo=2025-08-12
+2025-08-22 23:50:38,101 - INFO - 🔄 Processing neso_wind_forecasts for 2025-08-13
+2025-08-22 23:50:39,152 - ERROR - ❌ Error fetching data for neso_wind_forecasts on 2025-08-13: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/WINDFORFUELHH?settlementDateFrom=2025-08-13&settlementDateTo=2025-08-13
+2025-08-22 23:50:39,152 - INFO - 🔄 Processing neso_wind_forecasts for 2025-08-14
+2025-08-22 23:50:40,076 - ERROR - ❌ Error fetching data for neso_wind_forecasts on 2025-08-14: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/WINDFORFUELHH?settlementDateFrom=2025-08-14&settlementDateTo=2025-08-14
+2025-08-22 23:50:40,076 - INFO - 🔄 Processing neso_wind_forecasts for 2025-08-15
+2025-08-22 23:50:41,077 - ERROR - ❌ Error fetching data for neso_wind_forecasts on 2025-08-15: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/WINDFORFUELHH?settlementDateFrom=2025-08-15&settlementDateTo=2025-08-15
+2025-08-22 23:50:41,077 - INFO - 🔄 Processing neso_wind_forecasts for 2025-08-16
+2025-08-22 23:50:42,082 - ERROR - ❌ Error fetching data for neso_wind_forecasts on 2025-08-16: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/WINDFORFUELHH?settlementDateFrom=2025-08-16&settlementDateTo=2025-08-16
+2025-08-22 23:50:42,082 - INFO - 🔄 Processing neso_wind_forecasts for 2025-08-17
+2025-08-22 23:50:43,085 - ERROR - ❌ Error fetching data for neso_wind_forecasts on 2025-08-17: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/WINDFORFUELHH?settlementDateFrom=2025-08-17&settlementDateTo=2025-08-17
+2025-08-22 23:50:43,085 - INFO - 🔄 Processing neso_wind_forecasts for 2025-08-18
+2025-08-22 23:50:44,101 - ERROR - ❌ Error fetching data for neso_wind_forecasts on 2025-08-18: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/WINDFORFUELHH?settlementDateFrom=2025-08-18&settlementDateTo=2025-08-18
+2025-08-22 23:50:44,101 - INFO - 🔄 Processing neso_wind_forecasts for 2025-08-19
+2025-08-22 23:50:45,099 - ERROR - ❌ Error fetching data for neso_wind_forecasts on 2025-08-19: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/WINDFORFUELHH?settlementDateFrom=2025-08-19&settlementDateTo=2025-08-19
+2025-08-22 23:50:45,099 - INFO - 🔄 Processing neso_wind_forecasts for 2025-08-20
+2025-08-22 23:50:46,096 - ERROR - ❌ Error fetching data for neso_wind_forecasts on 2025-08-20: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/WINDFORFUELHH?settlementDateFrom=2025-08-20&settlementDateTo=2025-08-20
+2025-08-22 23:50:46,096 - INFO - 🔄 Processing neso_wind_forecasts for 2025-08-21
+2025-08-22 23:50:47,109 - ERROR - ❌ Error fetching data for neso_wind_forecasts on 2025-08-21: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/WINDFORFUELHH?settlementDateFrom=2025-08-21&settlementDateTo=2025-08-21
+2025-08-22 23:50:47,109 - INFO - 🔄 Processing neso_wind_forecasts for 2025-08-22
+2025-08-22 23:50:48,118 - ERROR - ❌ Error fetching data for neso_wind_forecasts on 2025-08-22: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/WINDFORFUELHH?settlementDateFrom=2025-08-22&settlementDateTo=2025-08-22
+2025-08-22 23:50:48,119 - INFO - ✅ Backfilled 0/31 dates for neso_wind_forecasts

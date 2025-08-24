@@ -1,0 +1,104 @@
+{
+  "title": "UK Energy Data Range Investigation and Resolution",
+  "date": "2025-08-22",
+  "findings": {
+    "investigation_date": "2025-08-22",
+    "data_range_discrepancy": {
+      "documented_range": "2016-2025",
+      "actual_range": "primarily 2023-2024",
+      "tables_with_2016_data": [
+        {
+          "dataset": "uk_energy_data",
+          "table": "elexon_fuel_generation",
+          "date_range": "2016-01-01 to 2016-01-08"
+        },
+        {
+          "dataset": "uk_energy_data_gemini_eu",
+          "table": "elexon_fuel_generation",
+          "date_range": "2016-01-01 to 2016-01-08"
+        }
+      ]
+    },
+    "historical_data_location": {
+      "gcs_bucket": "elexon-historical-data-storage",
+      "file_counts_by_year": {
+        "2016": 59,
+        "2017": 32,
+        "2018": 32,
+        "2019": 32,
+        "2020": 33,
+        "2021": 33,
+        "2022": 36
+      }
+    },
+    "resolution_tools": [
+      {
+        "name": "check_date_ranges_2016_to_present.py",
+        "purpose": "Identify date ranges in BigQuery tables"
+      },
+      {
+        "name": "scan_gcs_for_historical_data.py",
+        "purpose": "Find historical data in GCS buckets"
+      },
+      {
+        "name": "gcs_to_bq_loader.py",
+        "purpose": "Generate loading plans for historical data"
+      },
+      {
+        "name": "load_2016_data.py",
+        "purpose": "Directly load 2016 data from GCS to BigQuery"
+      }
+    ],
+    "report_files": [
+      {
+        "name": "UK_ENERGY_DATA_INVESTIGATION_REPORT.md",
+        "purpose": "Comprehensive findings report"
+      },
+      {
+        "name": "uk_energy_date_ranges_*.md",
+        "purpose": "BigQuery table date range analysis"
+      },
+      {
+        "name": "gcs_historical_data_scan_*.md",
+        "purpose": "GCS historical data analysis"
+      },
+      {
+        "name": "loading_plan_*.md",
+        "purpose": "Data loading plans"
+      }
+    ]
+  },
+  "resolution_steps": [
+    {
+      "step": 1,
+      "description": "Load 2016 data from GCS to BigQuery",
+      "command": "python load_2016_data.py",
+      "estimated_time": "30 minutes"
+    },
+    {
+      "step": 2,
+      "description": "Verify 2016 data loading",
+      "command": "SELECT COUNT(*) as row_count, MIN(date_column) as min_date, MAX(date_column) as max_date FROM table WHERE EXTRACT(YEAR FROM date_column) = 2016",
+      "estimated_time": "5 minutes"
+    },
+    {
+      "step": 3,
+      "description": "Generate loading plan for 2017-2022 data",
+      "command": "python gcs_to_bq_loader.py --bucket elexon-historical-data-storage",
+      "estimated_time": "10 minutes"
+    },
+    {
+      "step": 4,
+      "description": "Execute loading plan for 2017-2022 data",
+      "command": "Follow instructions in loading_plan_*.md",
+      "estimated_time": "2-3 hours"
+    },
+    {
+      "step": 5,
+      "description": "Update documentation with actual data ranges",
+      "command": "Manual documentation updates",
+      "estimated_time": "30 minutes"
+    }
+  ],
+  "conclusion": "The investigation confirms that there is a significant discrepancy between the documented data range (2016-2025) and what's actually available in BigQuery (primarily 2023-2024). However, we've located historical data from 2016-2022 in GCS storage that can be loaded to resolve this issue. The provided tools and reports should enable a complete resolution of this data discrepancy."
+}

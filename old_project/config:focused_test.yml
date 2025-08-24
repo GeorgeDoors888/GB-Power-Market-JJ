@@ -1,0 +1,21 @@
+balancing_mechanism:
+  ACCEPTANCES: https://data.elexon.co.uk/bmrs/api/v1/balancing/acceptances
+  BID_OFFER: https://data.elexon.co.uk/bmrs/api/v1/balancing/bid-offer
+bmrs_key_datasets:
+  B1610: https://data.elexon.co.uk/bmrs/api/v1/datasets/B1610
+  FUELHH: https://data.elexon.co.uk/bmrs/api/v1/datasets/FUELHH
+  INDO: https://data.elexon.co.uk/bmrs/api/v1/datasets/INDO
+demand:
+  DEMAND: https://data.elexon.co.uk/bmrs/api/v1/demand
+  ROLLINGSYSTEMDEMAND: https://data.elexon.co.uk/bmrs/api/v1/demand/rollingSystemDemand
+generation_actual:
+  ACTUAL_STREAMS: https://data.elexon.co.uk/bmrs/api/v1/generation/actual/streams
+  OUTTURN: https://data.elexon.co.uk/bmrs/api/v1/generation/outturn
+generation_forecast:
+  DAILY: https://data.elexon.co.uk/bmrs/api/v1/forecast/availability/daily
+  WEEKLY: https://data.elexon.co.uk/bmrs/api/v1/forecast/availability/weekly
+market_pricing:
+  MARKET_INDEX: https://data.elexon.co.uk/bmrs/api/v1/balancing/pricing/market-index
+system:
+  FREQUENCY: https://data.elexon.co.uk/bmrs/api/v1/system/frequency
+  WARNINGS: https://data.elexon.co.uk/bmrs/api/v1/system/warnings

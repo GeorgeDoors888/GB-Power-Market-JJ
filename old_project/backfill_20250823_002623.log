@@ -1,0 +1,192 @@
+2025-08-23 00:26:27,321 - INFO - ✅ Data Backfiller initialized
+2025-08-23 00:26:27,322 - INFO - 🔄 Starting backfill for elexon_demand_outturn
+2025-08-23 00:26:28,461 - INFO - 🔍 Found 8 missing dates for elexon_demand_outturn
+2025-08-23 00:26:28,461 - INFO - 🔄 Processing elexon_demand_outturn for 2025-08-16
+2025-08-23 00:26:29,085 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/08/2025-08-16.json
+2025-08-23 00:26:29,324 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:26:29,324 - INFO - 🔄 Processing elexon_demand_outturn for 2025-08-17
+2025-08-23 00:26:29,718 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/08/2025-08-17.json
+2025-08-23 00:26:29,866 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:26:29,866 - INFO - 🔄 Processing elexon_demand_outturn for 2025-08-18
+2025-08-23 00:26:30,724 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/08/2025-08-18.json
+2025-08-23 00:26:30,871 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:26:30,871 - INFO - 🔄 Processing elexon_demand_outturn for 2025-08-19
+2025-08-23 00:26:31,726 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/08/2025-08-19.json
+2025-08-23 00:26:31,820 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:26:31,820 - INFO - 🔄 Processing elexon_demand_outturn for 2025-08-20
+2025-08-23 00:26:32,751 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/08/2025-08-20.json
+2025-08-23 00:26:32,872 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:26:32,873 - INFO - 🔄 Processing elexon_demand_outturn for 2025-08-21
+2025-08-23 00:26:33,804 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/08/2025-08-21.json
+2025-08-23 00:26:33,952 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:26:33,952 - INFO - 🔄 Processing elexon_demand_outturn for 2025-08-22
+2025-08-23 00:26:34,717 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/08/2025-08-22.json
+2025-08-23 00:26:34,851 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:26:34,851 - INFO - 🔄 Processing elexon_demand_outturn for 2025-08-23
+2025-08-23 00:26:35,521 - WARNING - ⚠️ No data returned for elexon_demand_outturn on 2025-08-23
+2025-08-23 00:26:35,521 - INFO - ✅ Backfilled 0/8 dates for elexon_demand_outturn
+2025-08-23 00:26:35,522 - INFO - 🔄 Starting backfill for elexon_generation_outturn
+2025-08-23 00:26:36,178 - INFO - 🔍 Found 8 missing dates for elexon_generation_outturn
+2025-08-23 00:26:36,179 - INFO - 🔄 Processing elexon_generation_outturn for 2025-08-16
+2025-08-23 00:26:36,773 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/08/2025-08-16.json
+2025-08-23 00:26:36,949 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "startTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:26:36,950 - INFO - 🔄 Processing elexon_generation_outturn for 2025-08-17
+2025-08-23 00:26:37,795 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/08/2025-08-17.json
+2025-08-23 00:26:38,159 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "startTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:26:38,160 - INFO - 🔄 Processing elexon_generation_outturn for 2025-08-18
+2025-08-23 00:26:39,207 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/08/2025-08-18.json
+2025-08-23 00:26:39,322 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "startTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:26:39,322 - INFO - 🔄 Processing elexon_generation_outturn for 2025-08-19
+2025-08-23 00:26:40,108 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/08/2025-08-19.json
+2025-08-23 00:26:40,275 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "startTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:26:40,275 - INFO - 🔄 Processing elexon_generation_outturn for 2025-08-20
+2025-08-23 00:26:40,905 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/08/2025-08-20.json
+2025-08-23 00:26:41,142 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "startTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:26:41,142 - INFO - 🔄 Processing elexon_generation_outturn for 2025-08-21
+2025-08-23 00:26:41,938 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/08/2025-08-21.json
+2025-08-23 00:26:42,033 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "startTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:26:42,034 - INFO - 🔄 Processing elexon_generation_outturn for 2025-08-22
+2025-08-23 00:26:42,778 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/08/2025-08-22.json
+2025-08-23 00:26:42,880 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "startTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:26:42,880 - INFO - 🔄 Processing elexon_generation_outturn for 2025-08-23
+2025-08-23 00:26:43,821 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/08/2025-08-23.json
+2025-08-23 00:26:43,897 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "startTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:26:43,898 - INFO - ✅ Backfilled 0/8 dates for elexon_generation_outturn
+2025-08-23 00:26:43,898 - INFO - 🔄 Starting backfill for elexon_system_warnings
+2025-08-23 00:26:44,603 - INFO - 🔍 Found 8 missing dates for elexon_system_warnings
+2025-08-23 00:26:44,604 - INFO - 🔄 Processing elexon_system_warnings for 2025-08-16
+2025-08-23 00:26:44,843 - INFO - ✅ Saved 1 records to GCS: bmrs_data/elexon_system_warnings/2025/08/2025-08-16.json
+2025-08-23 00:26:44,952 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:26:44,952 - INFO - 🔄 Processing elexon_system_warnings for 2025-08-17
+2025-08-23 00:26:45,860 - INFO - ✅ Saved 1 records to GCS: bmrs_data/elexon_system_warnings/2025/08/2025-08-17.json
+2025-08-23 00:26:45,949 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:26:45,949 - INFO - 🔄 Processing elexon_system_warnings for 2025-08-18
+2025-08-23 00:26:46,905 - INFO - ✅ Saved 1 records to GCS: bmrs_data/elexon_system_warnings/2025/08/2025-08-18.json
+2025-08-23 00:26:46,987 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:26:46,988 - INFO - 🔄 Processing elexon_system_warnings for 2025-08-19
+2025-08-23 00:26:47,863 - INFO - ✅ Saved 1 records to GCS: bmrs_data/elexon_system_warnings/2025/08/2025-08-19.json
+2025-08-23 00:26:48,063 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:26:48,063 - INFO - 🔄 Processing elexon_system_warnings for 2025-08-20
+2025-08-23 00:26:48,879 - INFO - ✅ Saved 1 records to GCS: bmrs_data/elexon_system_warnings/2025/08/2025-08-20.json
+2025-08-23 00:26:49,112 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:26:49,112 - INFO - 🔄 Processing elexon_system_warnings for 2025-08-21
+2025-08-23 00:26:49,886 - INFO - ✅ Saved 1 records to GCS: bmrs_data/elexon_system_warnings/2025/08/2025-08-21.json
+2025-08-23 00:26:50,158 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:26:50,158 - INFO - 🔄 Processing elexon_system_warnings for 2025-08-22
+2025-08-23 00:26:50,904 - INFO - ✅ Saved 1 records to GCS: bmrs_data/elexon_system_warnings/2025/08/2025-08-22.json
+2025-08-23 00:26:50,996 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:26:50,996 - INFO - 🔄 Processing elexon_system_warnings for 2025-08-23
+2025-08-23 00:26:51,946 - INFO - ✅ Saved 1 records to GCS: bmrs_data/elexon_system_warnings/2025/08/2025-08-23.json
+2025-08-23 00:26:52,045 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:26:52,045 - INFO - ✅ Backfilled 0/8 dates for elexon_system_warnings
+2025-08-23 00:26:52,046 - INFO - 🔄 Starting backfill for neso_demand_forecasts
+2025-08-23 00:26:52,778 - INFO - 🔍 Found 8 missing dates for neso_demand_forecasts
+2025-08-23 00:26:52,778 - INFO - 🔄 Processing neso_demand_forecasts for 2025-08-16
+2025-08-23 00:26:52,999 - INFO - ✅ Saved 57 records to GCS: bmrs_data/neso_demand_forecasts/2025/08/2025-08-16.json
+2025-08-23 00:26:53,093 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "settlementDate" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:26:53,093 - INFO - 🔄 Processing neso_demand_forecasts for 2025-08-17
+2025-08-23 00:26:54,050 - INFO - ✅ Saved 57 records to GCS: bmrs_data/neso_demand_forecasts/2025/08/2025-08-17.json
+2025-08-23 00:26:54,166 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "settlementDate" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:26:54,166 - INFO - 🔄 Processing neso_demand_forecasts for 2025-08-18
+2025-08-23 00:26:55,102 - INFO - ✅ Saved 57 records to GCS: bmrs_data/neso_demand_forecasts/2025/08/2025-08-18.json
+2025-08-23 00:26:55,189 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "settlementDate" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:26:55,189 - INFO - 🔄 Processing neso_demand_forecasts for 2025-08-19
+2025-08-23 00:26:56,537 - INFO - ✅ Saved 57 records to GCS: bmrs_data/neso_demand_forecasts/2025/08/2025-08-19.json
+2025-08-23 00:26:56,625 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "settlementDate" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:26:56,625 - INFO - 🔄 Processing neso_demand_forecasts for 2025-08-20
+2025-08-23 00:26:57,017 - INFO - ✅ Saved 57 records to GCS: bmrs_data/neso_demand_forecasts/2025/08/2025-08-20.json
+2025-08-23 00:26:57,099 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "settlementDate" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:26:57,100 - INFO - 🔄 Processing neso_demand_forecasts for 2025-08-21
+2025-08-23 00:26:58,136 - INFO - ✅ Saved 57 records to GCS: bmrs_data/neso_demand_forecasts/2025/08/2025-08-21.json
+2025-08-23 00:26:58,235 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "settlementDate" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:26:58,235 - INFO - 🔄 Processing neso_demand_forecasts for 2025-08-22
+2025-08-23 00:26:59,026 - INFO - ✅ Saved 57 records to GCS: bmrs_data/neso_demand_forecasts/2025/08/2025-08-22.json
+2025-08-23 00:26:59,106 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "settlementDate" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:26:59,106 - INFO - 🔄 Processing neso_demand_forecasts for 2025-08-23
+2025-08-23 00:27:00,039 - INFO - ✅ Saved 57 records to GCS: bmrs_data/neso_demand_forecasts/2025/08/2025-08-23.json
+2025-08-23 00:27:00,143 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "settlementDate" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:27:00,143 - INFO - ✅ Backfilled 0/8 dates for neso_demand_forecasts
+2025-08-23 00:27:00,143 - INFO - 🔄 Starting backfill for neso_wind_forecasts
+2025-08-23 00:27:00,802 - INFO - 🔍 Found 8 missing dates for neso_wind_forecasts
+2025-08-23 00:27:00,802 - INFO - 🔄 Processing neso_wind_forecasts for 2025-08-16
+2025-08-23 00:27:00,818 - ERROR - ❌ Error fetching data for neso_wind_forecasts on 2025-08-16: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/WINDFORFUELHH?settlementDateFrom=2025-08-16&settlementDateTo=2025-08-16
+2025-08-23 00:27:00,818 - INFO - 🔄 Processing neso_wind_forecasts for 2025-08-17
+2025-08-23 00:27:01,818 - ERROR - ❌ Error fetching data for neso_wind_forecasts on 2025-08-17: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/WINDFORFUELHH?settlementDateFrom=2025-08-17&settlementDateTo=2025-08-17
+2025-08-23 00:27:01,819 - INFO - 🔄 Processing neso_wind_forecasts for 2025-08-18
+2025-08-23 00:27:02,817 - ERROR - ❌ Error fetching data for neso_wind_forecasts on 2025-08-18: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/WINDFORFUELHH?settlementDateFrom=2025-08-18&settlementDateTo=2025-08-18
+2025-08-23 00:27:02,817 - INFO - 🔄 Processing neso_wind_forecasts for 2025-08-19
+2025-08-23 00:27:03,824 - ERROR - ❌ Error fetching data for neso_wind_forecasts on 2025-08-19: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/WINDFORFUELHH?settlementDateFrom=2025-08-19&settlementDateTo=2025-08-19
+2025-08-23 00:27:03,824 - INFO - 🔄 Processing neso_wind_forecasts for 2025-08-20
+2025-08-23 00:27:04,829 - ERROR - ❌ Error fetching data for neso_wind_forecasts on 2025-08-20: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/WINDFORFUELHH?settlementDateFrom=2025-08-20&settlementDateTo=2025-08-20
+2025-08-23 00:27:04,831 - INFO - 🔄 Processing neso_wind_forecasts for 2025-08-21
+2025-08-23 00:27:05,840 - ERROR - ❌ Error fetching data for neso_wind_forecasts on 2025-08-21: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/WINDFORFUELHH?settlementDateFrom=2025-08-21&settlementDateTo=2025-08-21
+2025-08-23 00:27:05,840 - INFO - 🔄 Processing neso_wind_forecasts for 2025-08-22
+2025-08-23 00:27:06,837 - ERROR - ❌ Error fetching data for neso_wind_forecasts on 2025-08-22: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/WINDFORFUELHH?settlementDateFrom=2025-08-22&settlementDateTo=2025-08-22
+2025-08-23 00:27:06,837 - INFO - 🔄 Processing neso_wind_forecasts for 2025-08-23
+2025-08-23 00:27:07,891 - ERROR - ❌ Error fetching data for neso_wind_forecasts on 2025-08-23: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/WINDFORFUELHH?settlementDateFrom=2025-08-23&settlementDateTo=2025-08-23
+2025-08-23 00:27:07,891 - INFO - ✅ Backfilled 0/8 dates for neso_wind_forecasts
+2025-08-23 00:27:07,891 - INFO - 🔄 Starting backfill for neso_carbon_intensity
+2025-08-23 00:27:08,591 - INFO - 🔍 Found 8 missing dates for neso_carbon_intensity
+2025-08-23 00:27:08,591 - INFO - 🔄 Processing neso_carbon_intensity for 2025-08-16
+2025-08-23 00:27:09,821 - INFO - ✅ Saved 5760 records to GCS: bmrs_data/neso_carbon_intensity/2025/08/2025-08-16.json
+2025-08-23 00:27:09,976 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:27:09,976 - INFO - 🔄 Processing neso_carbon_intensity for 2025-08-17
+2025-08-23 00:27:11,024 - INFO - ✅ Saved 5760 records to GCS: bmrs_data/neso_carbon_intensity/2025/08/2025-08-17.json
+2025-08-23 00:27:11,114 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:27:11,114 - INFO - 🔄 Processing neso_carbon_intensity for 2025-08-18
+2025-08-23 00:27:12,203 - INFO - ✅ Saved 5760 records to GCS: bmrs_data/neso_carbon_intensity/2025/08/2025-08-18.json
+2025-08-23 00:27:12,290 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:27:12,291 - INFO - 🔄 Processing neso_carbon_intensity for 2025-08-19
+2025-08-23 00:27:13,272 - INFO - ✅ Saved 5760 records to GCS: bmrs_data/neso_carbon_intensity/2025/08/2025-08-19.json
+2025-08-23 00:27:13,344 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:27:13,344 - INFO - 🔄 Processing neso_carbon_intensity for 2025-08-20
+2025-08-23 00:27:14,293 - INFO - ✅ Saved 5760 records to GCS: bmrs_data/neso_carbon_intensity/2025/08/2025-08-20.json
+2025-08-23 00:27:14,410 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:27:14,410 - INFO - 🔄 Processing neso_carbon_intensity for 2025-08-21
+2025-08-23 00:27:15,403 - INFO - ✅ Saved 5760 records to GCS: bmrs_data/neso_carbon_intensity/2025/08/2025-08-21.json
+2025-08-23 00:27:15,493 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:27:15,493 - INFO - 🔄 Processing neso_carbon_intensity for 2025-08-22
+2025-08-23 00:27:16,917 - INFO - ✅ Saved 5760 records to GCS: bmrs_data/neso_carbon_intensity/2025/08/2025-08-22.json
+2025-08-23 00:27:17,016 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:27:17,016 - INFO - 🔄 Processing neso_carbon_intensity for 2025-08-23
+2025-08-23 00:27:17,312 - INFO - ✅ Saved 100 records to GCS: bmrs_data/neso_carbon_intensity/2025/08/2025-08-23.json
+2025-08-23 00:27:17,407 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:27:17,407 - INFO - ✅ Backfilled 0/8 dates for neso_carbon_intensity
+2025-08-23 00:27:17,407 - INFO - 🔄 Starting backfill for neso_interconnector_flows
+2025-08-23 00:27:18,054 - INFO - 🔍 Found 8 missing dates for neso_interconnector_flows
+2025-08-23 00:27:18,054 - INFO - 🔄 Processing neso_interconnector_flows for 2025-08-16
+2025-08-23 00:27:18,066 - ERROR - ❌ Error fetching data for neso_interconnector_flows on 2025-08-16: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/INTERFUELHH?settlementDateFrom=2025-08-16&settlementDateTo=2025-08-16
+2025-08-23 00:27:18,066 - INFO - 🔄 Processing neso_interconnector_flows for 2025-08-17
+2025-08-23 00:27:19,074 - ERROR - ❌ Error fetching data for neso_interconnector_flows on 2025-08-17: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/INTERFUELHH?settlementDateFrom=2025-08-17&settlementDateTo=2025-08-17
+2025-08-23 00:27:19,075 - INFO - 🔄 Processing neso_interconnector_flows for 2025-08-18
+2025-08-23 00:27:20,208 - ERROR - ❌ Error fetching data for neso_interconnector_flows on 2025-08-18: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/INTERFUELHH?settlementDateFrom=2025-08-18&settlementDateTo=2025-08-18
+2025-08-23 00:27:20,214 - INFO - 🔄 Processing neso_interconnector_flows for 2025-08-19
+2025-08-23 00:27:21,077 - ERROR - ❌ Error fetching data for neso_interconnector_flows on 2025-08-19: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/INTERFUELHH?settlementDateFrom=2025-08-19&settlementDateTo=2025-08-19
+2025-08-23 00:27:21,077 - INFO - 🔄 Processing neso_interconnector_flows for 2025-08-20
+2025-08-23 00:27:22,090 - ERROR - ❌ Error fetching data for neso_interconnector_flows on 2025-08-20: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/INTERFUELHH?settlementDateFrom=2025-08-20&settlementDateTo=2025-08-20
+2025-08-23 00:27:22,090 - INFO - 🔄 Processing neso_interconnector_flows for 2025-08-21
+2025-08-23 00:27:23,092 - ERROR - ❌ Error fetching data for neso_interconnector_flows on 2025-08-21: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/INTERFUELHH?settlementDateFrom=2025-08-21&settlementDateTo=2025-08-21
+2025-08-23 00:27:23,092 - INFO - 🔄 Processing neso_interconnector_flows for 2025-08-22
+2025-08-23 00:27:24,134 - ERROR - ❌ Error fetching data for neso_interconnector_flows on 2025-08-22: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/INTERFUELHH?settlementDateFrom=2025-08-22&settlementDateTo=2025-08-22
+2025-08-23 00:27:24,134 - INFO - 🔄 Processing neso_interconnector_flows for 2025-08-23
+2025-08-23 00:27:25,179 - ERROR - ❌ Error fetching data for neso_interconnector_flows on 2025-08-23: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/INTERFUELHH?settlementDateFrom=2025-08-23&settlementDateTo=2025-08-23
+2025-08-23 00:27:25,180 - INFO - ✅ Backfilled 0/8 dates for neso_interconnector_flows
+2025-08-23 00:27:25,180 - INFO - 🔄 Starting backfill for neso_balancing_services
+2025-08-23 00:27:25,937 - INFO - 🔍 Found 8 missing dates for neso_balancing_services
+2025-08-23 00:27:25,937 - INFO - 🔄 Processing neso_balancing_services for 2025-08-16
+2025-08-23 00:27:26,096 - ERROR - ❌ Error fetching data for neso_balancing_services on 2025-08-16: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/DISBSAD?settlementDateFrom=2025-08-16&settlementDateTo=2025-08-16
+2025-08-23 00:27:26,096 - INFO - 🔄 Processing neso_balancing_services for 2025-08-17
+2025-08-23 00:27:27,102 - ERROR - ❌ Error fetching data for neso_balancing_services on 2025-08-17: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/DISBSAD?settlementDateFrom=2025-08-17&settlementDateTo=2025-08-17
+2025-08-23 00:27:27,102 - INFO - 🔄 Processing neso_balancing_services for 2025-08-18
+2025-08-23 00:27:28,107 - ERROR - ❌ Error fetching data for neso_balancing_services on 2025-08-18: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/DISBSAD?settlementDateFrom=2025-08-18&settlementDateTo=2025-08-18
+2025-08-23 00:27:28,108 - INFO - 🔄 Processing neso_balancing_services for 2025-08-19
+2025-08-23 00:27:29,113 - ERROR - ❌ Error fetching data for neso_balancing_services on 2025-08-19: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/DISBSAD?settlementDateFrom=2025-08-19&settlementDateTo=2025-08-19
+2025-08-23 00:27:29,113 - INFO - 🔄 Processing neso_balancing_services for 2025-08-20
+2025-08-23 00:27:30,117 - ERROR - ❌ Error fetching data for neso_balancing_services on 2025-08-20: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/DISBSAD?settlementDateFrom=2025-08-20&settlementDateTo=2025-08-20
+2025-08-23 00:27:30,118 - INFO - 🔄 Processing neso_balancing_services for 2025-08-21
+2025-08-23 00:27:31,116 - ERROR - ❌ Error fetching data for neso_balancing_services on 2025-08-21: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/DISBSAD?settlementDateFrom=2025-08-21&settlementDateTo=2025-08-21
+2025-08-23 00:27:31,116 - INFO - 🔄 Processing neso_balancing_services for 2025-08-22
+2025-08-23 00:27:32,132 - ERROR - ❌ Error fetching data for neso_balancing_services on 2025-08-22: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/DISBSAD?settlementDateFrom=2025-08-22&settlementDateTo=2025-08-22
+2025-08-23 00:27:32,132 - INFO - 🔄 Processing neso_balancing_services for 2025-08-23
+2025-08-23 00:27:33,128 - ERROR - ❌ Error fetching data for neso_balancing_services on 2025-08-23: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/DISBSAD?settlementDateFrom=2025-08-23&settlementDateTo=2025-08-23
+2025-08-23 00:27:33,128 - INFO - ✅ Backfilled 0/8 dates for neso_balancing_services

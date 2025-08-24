@@ -1,0 +1,25 @@
+{
+  "query_period": {
+    "start_date": "2025-08-01",
+    "end_date": "2025-08-03"
+  },
+  "record_count": 144,
+  "date_range": "2025-08-01 to 2025-08-03",
+  "settlement_periods": 48,
+  "total_demand": 5092825.7,
+  "average_demand": 35366.84513888889,
+  "min_demand": 24356.94,
+  "max_demand": 51408.93,
+  "available_columns": [
+    "publishTime",
+    "startTime",
+    "settlementDate",
+    "settlementPeriod",
+    "initialDemandOutturn",
+    "initialTransmissionSystemDemandOutturn"
+  ],
+  "data_preview": [
+    {
+      "publishTime": "2025-08-01T00:00:00",
+      "startTime": "2025-08-01T00:00:00",
+      "settlementDate": 

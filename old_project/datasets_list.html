@@ -1,0 +1,1465 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>NESO and Elexon Data Scan Results</title>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 20px; }
+            h1, h2, h3 { color: #333; }
+            .project { margin-bottom: 30px; border: 1px solid #ddd; padding: 15px; border-radius: 5px; }
+            .summary { background-color: #f5f5f5; padding: 10px; margin-bottom: 15px; border-radius: 5px; }
+            .resource { margin-bottom: 15px; border-left: 4px solid #2196F3; padding-left: 10px; }
+            .neso { color: #4CAF50; font-weight: bold; }
+            .elexon { color: #FF9800; font-weight: bold; }
+            table { border-collapse: collapse; width: 100%; margin-top: 10px; }
+            th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+            th { background-color: #f2f2f2; }
+            .tables-container { max-height: 300px; overflow-y: auto; margin-top: 10px; }
+        </style>
+    </head>
+    <body>
+        <h1>NESO and Elexon Data Scan Results</h1>
+        <p>Scan performed: 2025-08-23 14:56:57</p>
+    
+        <div class="project">
+            <h2>Project: jibber-jabber-knowledge</h2>
+            <div class="summary">
+                <h3>Summary</h3>
+                <p>Total resources with NESO/Elexon data: 11</p>
+                <p>Resources with NESO data: 4</p>
+                <p>Resources with Elexon data: 11</p>
+            </div>
+        
+                <h3>Google Cloud Storage Buckets (6)</h3>
+                
+                    <div class="resource">
+                        <h4>Bucket: elexon-historical-data-storage</h4>
+                        <p>Path: gs://elexon-historical-data-storage/</p>
+                        <p>Contains NESO data: <span class="">False</span></p>
+                        <p>Contains Elexon data: <span class="elexon">True</span></p>
+                    
+                        <p>Sample files:</p>
+                        <ul>
+                        <li>beb/beb_20160101_0000_20160101_0200.json</li><li>beb/beb_20160101_0200_20160101_0400.json</li><li>beb/beb_20160101_0400_20160101_0600.json</li><li>beb/beb_20160101_0600_20160101_0800.json</li><li>beb/beb_20160101_0800_20160101_1000.json</li><li>beb/beb_20160101_1000_20160101_1200.json</li><li>beb/beb_20160101_1200_20160101_1400.json</li><li>beb/beb_20160101_1400_20160101_1600.json</li><li>beb/beb_20160101_1600_20160101_1800.json</li><li>beb/beb_20160101_1800_20160101_2000.json</li></ul></div>
+                    <div class="resource">
+                        <h4>Bucket: jibber-jabber-knowledge-bmrs-data</h4>
+                        <p>Path: gs://jibber-jabber-knowledge-bmrs-data/</p>
+                        <p>Contains NESO data: <span class="">False</span></p>
+                        <p>Contains Elexon data: <span class="elexon">True</span></p>
+                    
+                        <p>Sample files:</p>
+                        <ul>
+                        <li>analysis/historical_data_analysis_20250819_231133.json</li><li>bmrs/B1610_stream/20250820T225644Z.jsonl</li><li>bmrs/B1610_stream/20250821T085245Z.jsonl</li><li>bmrs/DCI_stream/20250820T225727Z.jsonl</li><li>bmrs/DCI_stream/20250821T085247Z.jsonl</li><li>bmrs/DCI_stream/20250821T085831Z.jsonl</li><li>bmrs/FUELINST/20250820T225637Z.csv</li><li>bmrs/FUELINST/20250821T085239Z.csv</li><li>bmrs/INTERCONNECTORS/20250820T225729Z.csv</li><li>bmrs/INTERCONNECTORS/20250821T085249Z.csv</li></ul></div>
+                    <div class="resource">
+                        <h4>Bucket: jibber-jabber-knowledge-bmrs-data-eu</h4>
+                        <p>Path: gs://jibber-jabber-knowledge-bmrs-data-eu/</p>
+                        <p>Contains NESO data: <span class="">False</span></p>
+                        <p>Contains Elexon data: <span class="elexon">True</span></p>
+                    </div>
+                    <div class="resource">
+                        <h4>Bucket: run-sources-jibber-jabber-knowledge-europe-west1</h4>
+                        <p>Path: gs://run-sources-jibber-jabber-knowledge-europe-west1/</p>
+                        <p>Contains NESO data: <span class="">False</span></p>
+                        <p>Contains Elexon data: <span class="elexon">True</span></p>
+                    
+                        <p>Matching files (showing 2 of 2):</p>
+                        <ul>
+                        <li>services/elexon-historical-downloader/1754908303.010771-dcd2943a93f341739e70d7436fb398bc.zip</li><li>services/elexon-research/1754910192.513467-2ffaeb8d740b49fd94cbb60bc1303cb7.zip</li></ul></div>
+                    <div class="resource">
+                        <h4>Bucket: run-sources-jibber-jabber-knowledge-europe-west2</h4>
+                        <p>Path: gs://run-sources-jibber-jabber-knowledge-europe-west2/</p>
+                        <p>Contains NESO data: <span class="">False</span></p>
+                        <p>Contains Elexon data: <span class="elexon">True</span></p>
+                    
+                        <p>Matching files (showing 10 of 37):</p>
+                        <ul>
+                        <li>jobs/elexon-bulk-downloader/1754569029.26861-4063659dc1e74f0fa537b6b7d4dff65a.zip</li><li>services/elexon-bulk-downloader/1754504614.161766-2e0671b82fc843fbaa1caa1551485036.zip</li><li>services/elexon-bulk-downloader/1754504732.083253-64d44fd5b5d04f17a134643f89901e37.zip</li><li>services/elexon-bulk-downloader/1754504825.291458-ab93275ad1084a989f6439d5bd7439d9.zip</li><li>services/elexon-bulk-downloader/1754505398.672748-65edde466b0a4a5fb6d398b6c5853b3f.zip</li><li>services/elexon-bulk-downloader/1754505587.257899-0ecd684911c44196b9e3b692f9f29fcf.zip</li><li>services/elexon-bulk-downloader/1754507158.023466-44c6968d77f844c39e07f37dca247a8b.zip</li><li>services/elexon-downloader/1754507644.788596-7d28c4924ea842818371dad245e64013.zip</li><li>services/elexon-historical-downloader/1754509299.816677-1038e1706f1940f59f2f591a4f1b24c7.zip</li><li>services/elexon-historical-downloader/1754510995.924968-ef76ee943eec499dac28f9e6f77ac91f.zip</li></ul></div>
+                    <div class="resource">
+                        <h4>Bucket: run-sources-jibber-jabber-knowledge-us-central1</h4>
+                        <p>Path: gs://run-sources-jibber-jabber-knowledge-us-central1/</p>
+                        <p>Contains NESO data: <span class="">False</span></p>
+                        <p>Contains Elexon data: <span class="elexon">True</span></p>
+                    
+                        <p>Matching files (showing 5 of 5):</p>
+                        <ul>
+                        <li>services/bmrs-data-collector/1754678252.173482-323cbbc077084e1999b5b060321b3132.zip</li><li>services/elexon-bulk-downloader/1754501675.610616-122e9a5892ca4745a2ddee057dddebab.zip</li><li>services/elexon-bulk-downloader/1754502314.439516-4c09012d82674a73b0f3df054a7bf784.zip</li><li>services/elexon-bulk-downloader/1754503636.609884-c842cc89d3e94091b772e53480c800e2.zip</li><li>services/elexon-bulk-downloader/1754504327.637979-aa54ad103ac44092a1841023456cff7d.zip</li></ul></div>
+                <h3>BigQuery Datasets (5)</h3>
+                
+                    <div class="resource">
+                        <h4>Dataset: uk_energy</h4>
+                        <p>Path: jibber-jabber-knowledge.uk_energy</p>
+                        <p>Contains NESO data: <span class="neso">True</span></p>
+                        <p>Contains Elexon data: <span class="elexon">True</span></p>
+                        <p>Total tables: 24, Matching tables: 15</p>
+                    
+                        <p>Tables with NESO/Elexon data:</p>
+                        <div class="tables-container">
+                            <table>
+                                <tr>
+                                    <th>Table</th>
+                                    <th>NESO Data</th>
+                                    <th>Elexon Data</th>
+                                    <th>Row Count</th>
+                                    <th>Size</th>
+                                    <th>Created</th>
+                                    <th>Modified</th>
+                                </tr>
+                        
+                            <tr>
+                                <td>elexon_bid_offer_acceptances</td>
+                                <td class="">False</td>
+                                <td class="elexon">True</td>
+                                <td>0</td>
+                                <td>0 bytes</td>
+                                <td>2025-08-20T10:43:23.126000+00:00</td>
+                                <td>2025-08-20T10:43:23.240000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>elexon_boalf</td>
+                                <td class="">False</td>
+                                <td class="elexon">True</td>
+                                <td>0</td>
+                                <td>0 bytes</td>
+                                <td>2025-08-21T08:27:57.151000+00:00</td>
+                                <td>2025-08-21T08:27:57.199000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>elexon_demand_outturn</td>
+                                <td class="">False</td>
+                                <td class="elexon">True</td>
+                                <td>0</td>
+                                <td>0 bytes</td>
+                                <td>2025-08-20T10:43:23.384000+00:00</td>
+                                <td>2025-08-20T10:43:23.443000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>elexon_demand_outturn_2023</td>
+                                <td class="">False</td>
+                                <td class="elexon">True</td>
+                                <td>365</td>
+                                <td>22265 bytes</td>
+                                <td>2025-08-21T14:48:58.030000+00:00</td>
+                                <td>2025-08-21T14:48:58.030000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>elexon_generation_outturn</td>
+                                <td class="">False</td>
+                                <td class="elexon">True</td>
+                                <td>0</td>
+                                <td>0 bytes</td>
+                                <td>2025-08-20T10:43:23.540000+00:00</td>
+                                <td>2025-08-20T10:43:23.561000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>elexon_generation_outturn_2023</td>
+                                <td class="">False</td>
+                                <td class="elexon">True</td>
+                                <td>365</td>
+                                <td>23725 bytes</td>
+                                <td>2025-08-21T14:49:06.378000+00:00</td>
+                                <td>2025-08-21T14:49:06.378000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>elexon_system_warnings</td>
+                                <td class="">False</td>
+                                <td class="elexon">True</td>
+                                <td>0</td>
+                                <td>0 bytes</td>
+                                <td>2025-08-20T10:43:23.703000+00:00</td>
+                                <td>2025-08-20T10:43:23.841000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_balancing_services</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>0</td>
+                                <td>0 bytes</td>
+                                <td>2025-08-20T10:43:24.527000+00:00</td>
+                                <td>2025-08-20T10:43:24.551000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_carbon_intensity</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>0</td>
+                                <td>0 bytes</td>
+                                <td>2025-08-20T10:43:24.349000+00:00</td>
+                                <td>2025-08-20T10:43:24.432000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_demand_forecasts</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>0</td>
+                                <td>0 bytes</td>
+                                <td>2025-08-20T10:43:23.942000+00:00</td>
+                                <td>2025-08-20T10:43:23.962000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_future_scenarios</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>0</td>
+                                <td>0 bytes</td>
+                                <td>2025-08-20T10:43:24.760000+00:00</td>
+                                <td>2025-08-20T10:43:24.781000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_interconnector_flows</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>0</td>
+                                <td>0 bytes</td>
+                                <td>2025-08-20T10:43:24.640000+00:00</td>
+                                <td>2025-08-20T10:43:24.664000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_wind_forecasts</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>0</td>
+                                <td>0 bytes</td>
+                                <td>2025-08-20T10:43:24.096000+00:00</td>
+                                <td>2025-08-20T10:43:24.235000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>v_bid_offer_volume_summary</td>
+                                <td class="">False</td>
+                                <td class="elexon">True</td>
+                                <td>0</td>
+                                <td>0 bytes</td>
+                                <td>2025-08-21T23:43:45.929000+00:00</td>
+                                <td>2025-08-21T23:43:45.929000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>v_system_warning_hotspots</td>
+                                <td class="">False</td>
+                                <td class="elexon">True</td>
+                                <td>0</td>
+                                <td>0 bytes</td>
+                                <td>2025-08-21T23:43:45.489000+00:00</td>
+                                <td>2025-08-21T23:43:45.489000+00:00</td>
+                            </tr>
+                            
+                            </table>
+                        </div>
+                        </div>
+                    <div class="resource">
+                        <h4>Dataset: uk_energy_data</h4>
+                        <p>Path: jibber-jabber-knowledge.uk_energy_data</p>
+                        <p>Contains NESO data: <span class="neso">True</span></p>
+                        <p>Contains Elexon data: <span class="elexon">True</span></p>
+                        <p>Total tables: 10, Matching tables: 8</p>
+                    
+                        <p>Tables with NESO/Elexon data:</p>
+                        <div class="tables-container">
+                            <table>
+                                <tr>
+                                    <th>Table</th>
+                                    <th>NESO Data</th>
+                                    <th>Elexon Data</th>
+                                    <th>Row Count</th>
+                                    <th>Size</th>
+                                    <th>Created</th>
+                                    <th>Modified</th>
+                                </tr>
+                        
+                            <tr>
+                                <td>elexon_bid_offer_acceptances</td>
+                                <td class="">False</td>
+                                <td class="elexon">True</td>
+                                <td>96</td>
+                                <td>0 bytes</td>
+                                <td>2025-08-22T19:35:40.753000+00:00</td>
+                                <td>2025-08-22T19:35:40.753000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>elexon_bid_offer_acceptances_2016_import_20250822203527</td>
+                                <td class="">False</td>
+                                <td class="elexon">True</td>
+                                <td>96</td>
+                                <td>0 bytes</td>
+                                <td>2025-08-22T19:35:36.624000+00:00</td>
+                                <td>2025-08-22T19:35:36.624000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>elexon_boa_acceptances</td>
+                                <td class="">False</td>
+                                <td class="elexon">True</td>
+                                <td>0</td>
+                                <td>0 bytes</td>
+                                <td>2025-08-19T09:33:46.518000+00:00</td>
+                                <td>2025-08-19T09:33:46.585000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>elexon_frequency</td>
+                                <td class="">False</td>
+                                <td class="elexon">True</td>
+                                <td>46088</td>
+                                <td>1013936 bytes</td>
+                                <td>2025-08-17T19:34:20.807000+00:00</td>
+                                <td>2025-08-17T19:34:20.807000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>elexon_frequency_2016_import_20250822203515</td>
+                                <td class="">False</td>
+                                <td class="elexon">True</td>
+                                <td>8</td>
+                                <td>1013936 bytes</td>
+                                <td>2025-08-22T19:35:21.564000+00:00</td>
+                                <td>2025-08-22T19:35:21.564000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>elexon_fuel_generation</td>
+                                <td class="">False</td>
+                                <td class="elexon">True</td>
+                                <td>4992</td>
+                                <td>273024 bytes</td>
+                                <td>2025-08-17T19:34:25.448000+00:00</td>
+                                <td>2025-08-17T19:34:25.448000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>elexon_system_prices</td>
+                                <td class="">False</td>
+                                <td class="elexon">True</td>
+                                <td>0</td>
+                                <td>0 bytes</td>
+                                <td>2025-08-15T18:56:34.083000+00:00</td>
+                                <td>2025-08-15T18:56:34.323000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_gsp_demand</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>0</td>
+                                <td>0 bytes</td>
+                                <td>2025-08-15T18:56:35.510000+00:00</td>
+                                <td>2025-08-15T18:56:35.723000+00:00</td>
+                            </tr>
+                            
+                            </table>
+                        </div>
+                        </div>
+                    <div class="resource">
+                        <h4>Dataset: uk_energy_data_gemini_eu</h4>
+                        <p>Path: jibber-jabber-knowledge.uk_energy_data_gemini_eu</p>
+                        <p>Contains NESO data: <span class="">False</span></p>
+                        <p>Contains Elexon data: <span class="elexon">True</span></p>
+                        <p>Total tables: 3, Matching tables: 2</p>
+                    
+                        <p>Tables with NESO/Elexon data:</p>
+                        <div class="tables-container">
+                            <table>
+                                <tr>
+                                    <th>Table</th>
+                                    <th>NESO Data</th>
+                                    <th>Elexon Data</th>
+                                    <th>Row Count</th>
+                                    <th>Size</th>
+                                    <th>Created</th>
+                                    <th>Modified</th>
+                                </tr>
+                        
+                            <tr>
+                                <td>elexon_frequency</td>
+                                <td class="">False</td>
+                                <td class="elexon">True</td>
+                                <td>46088</td>
+                                <td>1013936 bytes</td>
+                                <td>2025-08-18T12:48:27.886000+00:00</td>
+                                <td>2025-08-18T12:48:27.886000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>elexon_fuel_generation</td>
+                                <td class="">False</td>
+                                <td class="elexon">True</td>
+                                <td>4992</td>
+                                <td>273024 bytes</td>
+                                <td>2025-08-18T12:49:00.544000+00:00</td>
+                                <td>2025-08-18T12:49:00.544000+00:00</td>
+                            </tr>
+                            
+                            </table>
+                        </div>
+                        </div>
+                    <div class="resource">
+                        <h4>Dataset: uk_energy_prod</h4>
+                        <p>Path: jibber-jabber-knowledge.uk_energy_prod</p>
+                        <p>Contains NESO data: <span class="neso">True</span></p>
+                        <p>Contains Elexon data: <span class="elexon">True</span></p>
+                        <p>Total tables: 97, Matching tables: 97</p>
+                    
+                        <p>Tables with NESO/Elexon data:</p>
+                        <div class="tables-container">
+                            <table>
+                                <tr>
+                                    <th>Table</th>
+                                    <th>NESO Data</th>
+                                    <th>Elexon Data</th>
+                                    <th>Row Count</th>
+                                    <th>Size</th>
+                                    <th>Created</th>
+                                    <th>Modified</th>
+                                </tr>
+                        
+                            <tr>
+                                <td>elexon_demand_outturn</td>
+                                <td class="">False</td>
+                                <td class="elexon">True</td>
+                                <td>5</td>
+                                <td>240 bytes</td>
+                                <td>2025-08-22T23:16:19.055000+00:00</td>
+                                <td>2025-08-23T11:13:05.611000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>elexon_demand_outturn_2016_import_20250822203511</td>
+                                <td class="">False</td>
+                                <td class="elexon">True</td>
+                                <td>8</td>
+                                <td>376 bytes</td>
+                                <td>2025-08-22T19:35:15.830000+00:00</td>
+                                <td>2025-08-22T19:35:15.830000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>elexon_demand_outturn_temp_20250823001616</td>
+                                <td class="">False</td>
+                                <td class="elexon">True</td>
+                                <td>100</td>
+                                <td>7200 bytes</td>
+                                <td>2025-08-22T23:16:18.453000+00:00</td>
+                                <td>2025-08-22T23:16:18.453000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>elexon_frequency</td>
+                                <td class="">False</td>
+                                <td class="elexon">True</td>
+                                <td>46088</td>
+                                <td>368704 bytes</td>
+                                <td>2025-08-23T09:53:46.289000+00:00</td>
+                                <td>2025-08-23T11:13:13.019000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>elexon_generation_outturn</td>
+                                <td class="">False</td>
+                                <td class="elexon">True</td>
+                                <td>0</td>
+                                <td>0 bytes</td>
+                                <td>2025-08-22T23:16:22.041000+00:00</td>
+                                <td>2025-08-22T23:16:22.078000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>elexon_generation_outturn_2016_import_20250822203523</td>
+                                <td class="">False</td>
+                                <td class="elexon">True</td>
+                                <td>8</td>
+                                <td>273024 bytes</td>
+                                <td>2025-08-22T19:35:27.950000+00:00</td>
+                                <td>2025-08-22T19:35:27.950000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>elexon_generation_outturn_temp_20250823001619</td>
+                                <td class="">False</td>
+                                <td class="elexon">True</td>
+                                <td>100</td>
+                                <td>6190 bytes</td>
+                                <td>2025-08-22T23:16:21.413000+00:00</td>
+                                <td>2025-08-22T23:16:21.413000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>elexon_system_warnings</td>
+                                <td class="">False</td>
+                                <td class="elexon">True</td>
+                                <td>0</td>
+                                <td>0 bytes</td>
+                                <td>2025-08-22T23:16:24.911000+00:00</td>
+                                <td>2025-08-22T23:16:24.945000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>elexon_system_warnings_temp_20250823001622</td>
+                                <td class="">False</td>
+                                <td class="elexon">True</td>
+                                <td>56</td>
+                                <td>7556 bytes</td>
+                                <td>2025-08-22T23:16:24.304000+00:00</td>
+                                <td>2025-08-22T23:16:24.304000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_balancing_services</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>0</td>
+                                <td>0 bytes</td>
+                                <td>2025-08-22T23:16:39.840000+00:00</td>
+                                <td>2025-08-22T23:16:39.855000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_balancing_services_temp_20250823001636</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>35607</td>
+                                <td>2534640 bytes</td>
+                                <td>2025-08-22T23:16:39.168000+00:00</td>
+                                <td>2025-08-22T23:16:39.168000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_capacity_market_cmu_20250820</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>16152</td>
+                                <td>7108031 bytes</td>
+                                <td>2025-08-23T11:42:54.812000+00:00</td>
+                                <td>2025-08-23T11:42:57.167000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_capacity_market_component</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>726679</td>
+                                <td>121613352 bytes</td>
+                                <td>2025-08-23T11:54:42.780000+00:00</td>
+                                <td>2025-08-23T11:54:55.125000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_capacity_market_component_20250820</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>0</td>
+                                <td>0 bytes</td>
+                                <td>2025-08-23T11:43:01.185000+00:00</td>
+                                <td>2025-08-23T11:43:01.213000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_carbon_intensity</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>0</td>
+                                <td>0 bytes</td>
+                                <td>2025-08-22T23:16:33.150000+00:00</td>
+                                <td>2025-08-22T23:16:33.171000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_carbon_intensity_temp_20250823001630</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>35088</td>
+                                <td>6596832 bytes</td>
+                                <td>2025-08-22T23:16:32.668000+00:00</td>
+                                <td>2025-08-22T23:16:32.668000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_constraint_cost_24m</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>1</td>
+                                <td>24 bytes</td>
+                                <td>2025-08-23T11:54:37.218000+00:00</td>
+                                <td>2025-08-23T11:54:39.056000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_demand_forecast_1d</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>11</td>
+                                <td>620 bytes</td>
+                                <td>2025-08-23T11:34:45.131000+00:00</td>
+                                <td>2025-08-23T11:44:58.195000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_demand_forecasts</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>0</td>
+                                <td>0 bytes</td>
+                                <td>2025-08-22T23:16:27.317000+00:00</td>
+                                <td>2025-08-22T23:16:27.352000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_demand_forecasts_temp_20250823001625</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>100</td>
+                                <td>13560 bytes</td>
+                                <td>2025-08-22T23:16:26.834000+00:00</td>
+                                <td>2025-08-22T23:16:26.834000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_dispatch_transparency_all_boas_april2020_march2021</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>25996</td>
+                                <td>5217752 bytes</td>
+                                <td>2025-08-23T11:43:41.594000+00:00</td>
+                                <td>2025-08-23T11:43:43.621000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_dispatch_transparency_all_boas_april2021_march2022</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>533891</td>
+                                <td>98081546 bytes</td>
+                                <td>2025-08-23T11:44:05.658000+00:00</td>
+                                <td>2025-08-23T11:44:17.088000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_dispatch_transparency_all_boas_april2022_march2023</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>535086</td>
+                                <td>115052365 bytes</td>
+                                <td>2025-08-23T11:44:19.416000+00:00</td>
+                                <td>2025-08-23T11:44:31.835000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_dispatch_transparency_all_boas_april2023_march2024</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>733560</td>
+                                <td>153363216 bytes</td>
+                                <td>2025-08-23T11:43:46.184000+00:00</td>
+                                <td>2025-08-23T11:44:02.216000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_dispatch_transparency_all_boas_april2024_march2025</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>1594331</td>
+                                <td>312273964 bytes</td>
+                                <td>2025-08-23T11:43:12.376000+00:00</td>
+                                <td>2025-08-23T11:43:39.151000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_dispatch_transparency_potential_alternatives_actions_april2020_march2021</td>
+                                <td class="neso">True</td>
+                                <td class="elexon">True</td>
+                                <td>6821</td>
+                                <td>813692 bytes</td>
+                                <td>2025-08-23T11:44:44.160000+00:00</td>
+                                <td>2025-08-23T11:44:46.024000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_dispatch_transparency_potential_alternatives_actions_april2021_march2022</td>
+                                <td class="neso">True</td>
+                                <td class="elexon">True</td>
+                                <td>73838</td>
+                                <td>9021814 bytes</td>
+                                <td>2025-08-23T11:43:02.896000+00:00</td>
+                                <td>2025-08-23T11:43:05.145000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_dispatch_transparency_potential_alternatives_actions_april2022_march2023</td>
+                                <td class="neso">True</td>
+                                <td class="elexon">True</td>
+                                <td>118723</td>
+                                <td>14521877 bytes</td>
+                                <td>2025-08-23T11:43:06.440000+00:00</td>
+                                <td>2025-08-23T11:43:08.872000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_dispatch_transparency_potential_alternatives_actions_april2023_march2024</td>
+                                <td class="neso">True</td>
+                                <td class="elexon">True</td>
+                                <td>205092</td>
+                                <td>24419312 bytes</td>
+                                <td>2025-08-23T11:44:47.794000+00:00</td>
+                                <td>2025-08-23T11:44:51.590000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_dispatch_transparency_potential_alternatives_actions_april2024_march2025</td>
+                                <td class="neso">True</td>
+                                <td class="elexon">True</td>
+                                <td>226947</td>
+                                <td>26695494 bytes</td>
+                                <td>2025-08-23T11:44:35.537000+00:00</td>
+                                <td>2025-08-23T11:44:41.565000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_dno_licence_areas</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>14</td>
+                                <td>2386153 bytes</td>
+                                <td>2025-08-23T11:19:31.921000+00:00</td>
+                                <td>2025-08-23T11:19:37.047000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_dno_licence_areas_2024</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>14</td>
+                                <td>2418292 bytes</td>
+                                <td>2025-08-23T11:19:19.896000+00:00</td>
+                                <td>2025-08-23T11:19:24.901000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_dynamic_containment_4d</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>8</td>
+                                <td>592 bytes</td>
+                                <td>2025-08-23T11:34:58.383000+00:00</td>
+                                <td>2025-08-23T11:45:11.717000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_embedded_register_embedded_register_22_august_2025</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>558</td>
+                                <td>96674 bytes</td>
+                                <td>2025-08-23T11:36:44.984000+00:00</td>
+                                <td>2025-08-23T11:36:46.551000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_generation_charging_zones</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>27</td>
+                                <td>40110 bytes</td>
+                                <td>2025-08-23T11:19:26.682000+00:00</td>
+                                <td>2025-08-23T11:19:30.418000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_grid_supply_points_2018</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>329</td>
+                                <td>2631639 bytes</td>
+                                <td>2025-08-23T11:20:41.386000+00:00</td>
+                                <td>2025-08-23T11:20:46.194000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_grid_supply_points_2022</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>333</td>
+                                <td>11161205 bytes</td>
+                                <td>2025-08-23T11:20:01.009000+00:00</td>
+                                <td>2025-08-23T11:20:10.947000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_grid_supply_points_2025_jan</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>340</td>
+                                <td>9790576 bytes</td>
+                                <td>2025-08-23T11:20:14.130000+00:00</td>
+                                <td>2025-08-23T11:20:28.483000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_grid_supply_points_2025_jan_wgs84</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>340</td>
+                                <td>9468058 bytes</td>
+                                <td>2025-08-23T11:19:50.598000+00:00</td>
+                                <td>2025-08-23T11:19:58.248000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_grid_supply_points_2025_latest</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>349</td>
+                                <td>9962466 bytes</td>
+                                <td>2025-08-23T11:19:39.232000+00:00</td>
+                                <td>2025-08-23T11:19:48.289000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_grid_supply_points_2025_latest_wgs84</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>349</td>
+                                <td>9620073 bytes</td>
+                                <td>2025-08-23T11:20:30.334000+00:00</td>
+                                <td>2025-08-23T11:20:39.869000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_interconnector_flows</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>0</td>
+                                <td>0 bytes</td>
+                                <td>2025-08-22T23:16:36.643000+00:00</td>
+                                <td>2025-08-22T23:16:36.663000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_interconnector_flows_temp_20250823001634</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>100</td>
+                                <td>10360 bytes</td>
+                                <td>2025-08-22T23:16:35.948000+00:00</td>
+                                <td>2025-08-22T23:16:35.948000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_interconnector_register_interconnector_register_22_august_2025</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>33</td>
+                                <td>5323 bytes</td>
+                                <td>2025-08-23T11:42:51.740000+00:00</td>
+                                <td>2025-08-23T11:42:53.352000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_national_demand_52w</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>1</td>
+                                <td>76 bytes</td>
+                                <td>2025-08-23T11:34:55.861000+00:00</td>
+                                <td>2025-08-23T11:45:07.518000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_national_demand_bm_units_bmunits_11_08_25</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>827</td>
+                                <td>7762 bytes</td>
+                                <td>2025-08-23T11:34:42.304000+00:00</td>
+                                <td>2025-08-23T11:44:54.885000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_national_forecast_7d</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>11</td>
+                                <td>620 bytes</td>
+                                <td>2025-08-23T11:34:52.178000+00:00</td>
+                                <td>2025-08-23T11:45:04.683000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_school_holiday_school_holiday_2021_22</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>73595</td>
+                                <td>3017036 bytes</td>
+                                <td>2025-08-23T11:27:26.887000+00:00</td>
+                                <td>2025-08-23T11:35:59.824000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_school_holiday_school_holiday_2022_23</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>72718</td>
+                                <td>2986733 bytes</td>
+                                <td>2025-08-23T11:27:33.330000+00:00</td>
+                                <td>2025-08-23T11:36:09.500000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_school_holiday_school_holiday_2023_24</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>72512</td>
+                                <td>2978272 bytes</td>
+                                <td>2025-08-23T11:27:21.670000+00:00</td>
+                                <td>2025-08-23T11:35:55.124000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_school_holiday_school_holiday_2024_25</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>71829</td>
+                                <td>2955399 bytes</td>
+                                <td>2025-08-23T11:27:30.600000+00:00</td>
+                                <td>2025-08-23T11:36:03.381000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_school_holiday_school_holiday_2025_26</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>72036</td>
+                                <td>2963916 bytes</td>
+                                <td>2025-08-23T11:27:18.511000+00:00</td>
+                                <td>2025-08-23T11:35:51.557000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_skip_rates_1_skip_rates_summary</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>72000</td>
+                                <td>6758400 bytes</td>
+                                <td>2025-08-23T11:29:01.545000+00:00</td>
+                                <td>2025-08-23T11:37:51.955000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_skip_rates_2_in_merit_data_bm_skips_01_2025</td>
+                                <td class="neso">True</td>
+                                <td class="elexon">True</td>
+                                <td>2511503</td>
+                                <td>251206584 bytes</td>
+                                <td>2025-08-23T11:33:15.330000+00:00</td>
+                                <td>2025-08-23T11:42:04.546000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_skip_rates_2_in_merit_data_bm_skips_02_2025</td>
+                                <td class="neso">True</td>
+                                <td class="elexon">True</td>
+                                <td>3072847</td>
+                                <td>307529822 bytes</td>
+                                <td>2025-08-23T11:31:29.072000+00:00</td>
+                                <td>2025-08-23T11:40:24.936000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_skip_rates_2_in_merit_data_bm_skips_03_2025</td>
+                                <td class="neso">True</td>
+                                <td class="elexon">True</td>
+                                <td>2971728</td>
+                                <td>297600734 bytes</td>
+                                <td>2025-08-23T11:31:10.249000+00:00</td>
+                                <td>2025-08-23T11:40:05.596000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_skip_rates_2_in_merit_data_bm_skips_04_2025</td>
+                                <td class="neso">True</td>
+                                <td class="elexon">True</td>
+                                <td>2237392</td>
+                                <td>224948150 bytes</td>
+                                <td>2025-08-23T11:28:48.222000+00:00</td>
+                                <td>2025-08-23T11:37:48.039000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_skip_rates_2_in_merit_data_bm_skips_05_2025</td>
+                                <td class="neso">True</td>
+                                <td class="elexon">True</td>
+                                <td>3245649</td>
+                                <td>327685159 bytes</td>
+                                <td>2025-08-23T11:29:07.422000+00:00</td>
+                                <td>2025-08-23T11:38:11.143000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_skip_rates_2_in_merit_data_bm_skips_06_2025</td>
+                                <td class="neso">True</td>
+                                <td class="elexon">True</td>
+                                <td>4389909</td>
+                                <td>442175045 bytes</td>
+                                <td>2025-08-23T11:32:17.183000+00:00</td>
+                                <td>2025-08-23T11:41:21.540000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_skip_rates_2_in_merit_data_bm_skips_07_2025</td>
+                                <td class="neso">True</td>
+                                <td class="elexon">True</td>
+                                <td>2667411</td>
+                                <td>268627015 bytes</td>
+                                <td>2025-08-23T11:31:57.557000+00:00</td>
+                                <td>2025-08-23T11:40:56.025000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_skip_rates_2_in_merit_data_bm_skips_08_2025</td>
+                                <td class="neso">True</td>
+                                <td class="elexon">True</td>
+                                <td>2856733</td>
+                                <td>288560668 bytes</td>
+                                <td>2025-08-23T11:30:52.925000+00:00</td>
+                                <td>2025-08-23T11:39:47.617000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_skip_rates_2_in_merit_data_bm_skips_12_2024</td>
+                                <td class="neso">True</td>
+                                <td class="elexon">True</td>
+                                <td>2676676</td>
+                                <td>268468859 bytes</td>
+                                <td>2025-08-23T11:29:40.370000+00:00</td>
+                                <td>2025-08-23T11:38:43.748000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_skip_rates_3_in_merit_data_post_system_actions_skips_01_2025</td>
+                                <td class="neso">True</td>
+                                <td class="elexon">True</td>
+                                <td>1981031</td>
+                                <td>198948867 bytes</td>
+                                <td>2025-08-23T11:32:40.103000+00:00</td>
+                                <td>2025-08-23T11:41:36.314000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_skip_rates_3_in_merit_data_post_system_actions_skips_02_2025</td>
+                                <td class="neso">True</td>
+                                <td class="elexon">True</td>
+                                <td>2064633</td>
+                                <td>208056361 bytes</td>
+                                <td>2025-08-23T11:28:20.826000+00:00</td>
+                                <td>2025-08-23T11:37:19.209000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_skip_rates_3_in_merit_data_post_system_actions_skips_03_2025</td>
+                                <td class="neso">True</td>
+                                <td class="elexon">True</td>
+                                <td>2106439</td>
+                                <td>212171964 bytes</td>
+                                <td>2025-08-23T11:28:05.692000+00:00</td>
+                                <td>2025-08-23T11:37:02.086000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_skip_rates_3_in_merit_data_post_system_actions_skips_04_2025</td>
+                                <td class="neso">True</td>
+                                <td class="elexon">True</td>
+                                <td>1861935</td>
+                                <td>187896244 bytes</td>
+                                <td>2025-08-23T11:30:11.054000+00:00</td>
+                                <td>2025-08-23T11:39:10.419000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_skip_rates_3_in_merit_data_post_system_actions_skips_05_2025</td>
+                                <td class="neso">True</td>
+                                <td class="elexon">True</td>
+                                <td>2657270</td>
+                                <td>269634133 bytes</td>
+                                <td>2025-08-23T11:30:27.777000+00:00</td>
+                                <td>2025-08-23T11:39:26.271000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_skip_rates_3_in_merit_data_post_system_actions_skips_06_2025</td>
+                                <td class="neso">True</td>
+                                <td class="elexon">True</td>
+                                <td>3307368</td>
+                                <td>335462460 bytes</td>
+                                <td>2025-08-23T11:33:47.080000+00:00</td>
+                                <td>2025-08-23T11:42:38.537000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_skip_rates_3_in_merit_data_post_system_actions_skips_07_2025</td>
+                                <td class="neso">True</td>
+                                <td class="elexon">True</td>
+                                <td>2029183</td>
+                                <td>205619109 bytes</td>
+                                <td>2025-08-23T11:33:32.184000+00:00</td>
+                                <td>2025-08-23T11:42:19.043000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_skip_rates_3_in_merit_data_post_system_actions_skips_08_2025</td>
+                                <td class="neso">True</td>
+                                <td class="elexon">True</td>
+                                <td>2226244</td>
+                                <td>226388074 bytes</td>
+                                <td>2025-08-23T11:29:25.541000+00:00</td>
+                                <td>2025-08-23T11:38:26.441000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_skip_rates_3_in_merit_data_post_system_actions_skips_12_2024</td>
+                                <td class="neso">True</td>
+                                <td class="elexon">True</td>
+                                <td>1774191</td>
+                                <td>179442931 bytes</td>
+                                <td>2025-08-23T11:29:56.067000+00:00</td>
+                                <td>2025-08-23T11:38:56.957000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_skip_rates_4_exclusions_01_2025</td>
+                                <td class="neso">True</td>
+                                <td class="elexon">True</td>
+                                <td>393936</td>
+                                <td>42824474 bytes</td>
+                                <td>2025-08-23T11:30:46.689000+00:00</td>
+                                <td>2025-08-23T11:39:32.256000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_skip_rates_4_exclusions_02_2025</td>
+                                <td class="neso">True</td>
+                                <td class="elexon">True</td>
+                                <td>641204</td>
+                                <td>69491576 bytes</td>
+                                <td>2025-08-23T11:34:06.625000+00:00</td>
+                                <td>2025-08-23T11:42:45.292000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_skip_rates_4_exclusions_03_2025</td>
+                                <td class="neso">True</td>
+                                <td class="elexon">True</td>
+                                <td>570739</td>
+                                <td>62053603 bytes</td>
+                                <td>2025-08-23T11:34:13.520000+00:00</td>
+                                <td>2025-08-23T11:42:50.708000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_skip_rates_4_exclusions_04_2025</td>
+                                <td class="neso">True</td>
+                                <td class="elexon">True</td>
+                                <td>295291</td>
+                                <td>32173378 bytes</td>
+                                <td>2025-08-23T11:33:04.052000+00:00</td>
+                                <td>2025-08-23T11:41:45.490000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_skip_rates_4_exclusions_05_2025</td>
+                                <td class="neso">True</td>
+                                <td class="elexon">True</td>
+                                <td>470308</td>
+                                <td>50987675 bytes</td>
+                                <td>2025-08-23T11:32:57.162000+00:00</td>
+                                <td>2025-08-23T11:41:41.084000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_skip_rates_4_exclusions_06_2025</td>
+                                <td class="neso">True</td>
+                                <td class="elexon">True</td>
+                                <td>801110</td>
+                                <td>87249338 bytes</td>
+                                <td>2025-08-23T11:28:34.779000+00:00</td>
+                                <td>2025-08-23T11:37:28.466000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_skip_rates_4_exclusions_07_2025</td>
+                                <td class="neso">True</td>
+                                <td class="elexon">True</td>
+                                <td>435893</td>
+                                <td>47215167 bytes</td>
+                                <td>2025-08-23T11:28:41.676000+00:00</td>
+                                <td>2025-08-23T11:37:33.942000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_skip_rates_4_exclusions_08_2025</td>
+                                <td class="neso">True</td>
+                                <td class="elexon">True</td>
+                                <td>472872</td>
+                                <td>51174575 bytes</td>
+                                <td>2025-08-23T11:33:08.465000+00:00</td>
+                                <td>2025-08-23T11:41:49.551000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_skip_rates_4_exclusions_12_2025</td>
+                                <td class="neso">True</td>
+                                <td class="elexon">True</td>
+                                <td>605103</td>
+                                <td>65855303 bytes</td>
+                                <td>2025-08-23T11:31:45.926000+00:00</td>
+                                <td>2025-08-23T11:40:36.766000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_skip_rates_5_fuel_type_skip_rate</td>
+                                <td class="neso">True</td>
+                                <td class="elexon">True</td>
+                                <td>53069</td>
+                                <td>3546115 bytes</td>
+                                <td>2025-08-23T11:31:52.842000+00:00</td>
+                                <td>2025-08-23T11:40:40.431000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_static_ancillary_services_important_industry_notifications_balancing_reserve_important_industry_notifications</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>2</td>
+                                <td>616 bytes</td>
+                                <td>2025-08-23T11:27:39.836000+00:00</td>
+                                <td>2025-08-23T11:36:15.249000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_static_ancillary_services_important_industry_notifications_dc_dm_dr_important_industry_notifications</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>19</td>
+                                <td>6767 bytes</td>
+                                <td>2025-08-23T11:27:46.687000+00:00</td>
+                                <td>2025-08-23T11:36:21.635000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_static_ancillary_services_important_industry_notifications_qr_important_industry_notifications</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>7</td>
+                                <td>1518 bytes</td>
+                                <td>2025-08-23T11:27:49.761000+00:00</td>
+                                <td>2025-08-23T11:36:25.237000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_static_ancillary_services_important_industry_notifications_sffr_important_industry_notifications</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>1</td>
+                                <td>74 bytes</td>
+                                <td>2025-08-23T11:27:36.568000+00:00</td>
+                                <td>2025-08-23T11:36:12.588000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_static_ancillary_services_important_industry_notifications_stor_important_industry_notifications</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>9</td>
+                                <td>2406 bytes</td>
+                                <td>2025-08-23T11:27:42.878000+00:00</td>
+                                <td>2025-08-23T11:36:19.007000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_static_contract_transfer_of_obligation_contract_transfer</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>0</td>
+                                <td>0 bytes</td>
+                                <td>2025-08-23T11:27:12.937000+00:00</td>
+                                <td>2025-08-23T11:35:45.340000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_static_data_portal_planned_changes_known_issues_23021dfa_a3b8_4f62_93bc_b60186c53fa4_21_08_2025</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>168</td>
+                                <td>111618 bytes</td>
+                                <td>2025-08-23T11:28:00.990000+00:00</td>
+                                <td>2025-08-23T11:36:43.025000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_static_demand_profile_dates_profile_dates</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>2805</td>
+                                <td>67320 bytes</td>
+                                <td>2025-08-23T11:27:07.296000+00:00</td>
+                                <td>2025-08-23T13:28:02.864000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_static_stor_windows_stor_committed_windows</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>1826</td>
+                                <td>95257 bytes</td>
+                                <td>2025-08-23T11:36:32.298000+00:00</td>
+                                <td>2025-08-23T11:36:33.801000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_static_system_operating_plan_sop_sop_data_table_updated_20210625051044</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>8</td>
+                                <td>5208 bytes</td>
+                                <td>2025-08-23T11:27:15.687000+00:00</td>
+                                <td>2025-08-23T11:35:48.945000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_transmission_capacity_tec_register_22_august_2025</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>2263</td>
+                                <td>477938 bytes</td>
+                                <td>2025-08-23T11:36:28.828000+00:00</td>
+                                <td>2025-08-23T11:36:30.371000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_transmission_losses_financial_year_losses</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>12</td>
+                                <td>492 bytes</td>
+                                <td>2025-08-23T11:27:57.485000+00:00</td>
+                                <td>2025-08-23T11:36:39.934000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_transmission_losses_monthly_losses</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>148</td>
+                                <td>7252 bytes</td>
+                                <td>2025-08-23T11:27:54.671000+00:00</td>
+                                <td>2025-08-23T11:36:36.471000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_wind_forecast_14d</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>651</td>
+                                <td>55986 bytes</td>
+                                <td>2025-08-23T11:34:48.676000+00:00</td>
+                                <td>2025-08-23T11:45:01.469000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_wind_forecasts</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>0</td>
+                                <td>0 bytes</td>
+                                <td>2025-08-22T23:16:29.995000+00:00</td>
+                                <td>2025-08-22T23:16:30.032000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_wind_forecasts_temp_20250823001627</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>100</td>
+                                <td>8380 bytes</td>
+                                <td>2025-08-22T23:16:29.362000+00:00</td>
+                                <td>2025-08-22T23:16:29.362000+00:00</td>
+                            </tr>
+                            
+                            </table>
+                        </div>
+                        </div>
+                    <div class="resource">
+                        <h4>Dataset: us_central1_gemini_models</h4>
+                        <p>Path: jibber-jabber-knowledge.us_central1_gemini_models</p>
+                        <p>Contains NESO data: <span class="neso">True</span></p>
+                        <p>Contains Elexon data: <span class="elexon">True</span></p>
+                        <p>Total tables: 5, Matching tables: 4</p>
+                    
+                        <p>Tables with NESO/Elexon data:</p>
+                        <div class="tables-container">
+                            <table>
+                                <tr>
+                                    <th>Table</th>
+                                    <th>NESO Data</th>
+                                    <th>Elexon Data</th>
+                                    <th>Row Count</th>
+                                    <th>Size</th>
+                                    <th>Created</th>
+                                    <th>Modified</th>
+                                </tr>
+                        
+                            <tr>
+                                <td>elexon_frequency</td>
+                                <td class="">False</td>
+                                <td class="elexon">True</td>
+                                <td>46088</td>
+                                <td>1013936 bytes</td>
+                                <td>2025-08-18T17:15:08.035000+00:00</td>
+                                <td>2025-08-18T17:15:08.035000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>elexon_fuel_generation</td>
+                                <td class="">False</td>
+                                <td class="elexon">True</td>
+                                <td>4992</td>
+                                <td>273024 bytes</td>
+                                <td>2025-08-18T17:15:34.777000+00:00</td>
+                                <td>2025-08-18T17:15:34.777000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>elexon_system_prices</td>
+                                <td class="">False</td>
+                                <td class="elexon">True</td>
+                                <td>0</td>
+                                <td>0 bytes</td>
+                                <td>2025-08-18T17:20:21.372000+00:00</td>
+                                <td>2025-08-18T17:20:21.372000+00:00</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>neso_gsp_demand</td>
+                                <td class="neso">True</td>
+                                <td class="">False</td>
+                                <td>0</td>
+                                <td>0 bytes</td>
+                                <td>2025-08-18T17:20:58.446000+00:00</td>
+                                <td>2025-08-18T17:20:58.446000+00:00</td>
+                            </tr>
+                            
+                            </table>
+                        </div>
+                        </div></div>
+    </body>
+    </html>
+    

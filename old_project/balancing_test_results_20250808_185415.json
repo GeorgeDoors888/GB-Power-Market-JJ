@@ -1,0 +1,562 @@
+[
+  {
+    "endpoint": "balancing/acceptances/all",
+    "description": "Market-wide bid-offer acceptances (BOALF) - Date: 2024-06-25 - Strategy 1",
+    "params": {
+      "settlementDate": "2024-06-25",
+      "settlementPeriod": 29,
+      "apikey": "03omen6i9lhv5fa"
+    },
+    "status_code": 200,
+    "success": true,
+    "response_size": 60579,
+    "data_count": 168,
+    "error": null
+  },
+  {
+    "endpoint": "balancing/acceptances/all",
+    "description": "Market-wide bid-offer acceptances (BOALF) - Date: 2024-06-25 - Strategy 2",
+    "params": {
+      "settlementDate": "2024-06-25",
+      "settlementPeriod": 15,
+      "apikey": "03omen6i9lhv5fa"
+    },
+    "status_code": 200,
+    "success": true,
+    "response_size": 81519,
+    "data_count": 226,
+    "error": null
+  },
+  {
+    "endpoint": "balancing/acceptances/all",
+    "description": "Market-wide bid-offer acceptances (BOALF) - Date: 2024-06-25 - Strategy 3",
+    "params": {
+      "settlementDate": "2024-06-25",
+      "settlementPeriod": 29,
+      "format": "json",
+      "apikey": "03omen6i9lhv5fa"
+    },
+    "status_code": 200,
+    "success": true,
+    "response_size": 60579,
+    "data_count": 168,
+    "error": null
+  },
+  {
+    "endpoint": "balancing/acceptances/all",
+    "description": "Market-wide bid-offer acceptances (BOALF) - Date: 2024-06-24 - Strategy 1",
+    "params": {
+      "settlementDate": "2024-06-24",
+      "settlementPeriod": 29,
+      "apikey": "03omen6i9lhv5fa"
+    },
+    "status_code": 200,
+    "success": true,
+    "response_size": 85147,
+    "data_count": 236,
+    "error": null
+  },
+  {
+    "endpoint": "balancing/acceptances/all",
+    "description": "Market-wide bid-offer acceptances (BOALF) - Date: 2024-06-24 - Strategy 2",
+    "params": {
+      "settlementDate": "2024-06-24",
+      "settlementPeriod": 15,
+      "apikey": "03omen6i9lhv5fa"
+    },
+    "status_code": 200,
+    "success": true,
+    "response_size": 60646,
+    "data_count": 168,
+    "error": null
+  },
+  {
+    "endpoint": "balancing/acceptances/all",
+    "description": "Market-wide bid-offer acceptances (BOALF) - Date: 2024-06-24 - Strategy 3",
+    "params": {
+      "settlementDate": "2024-06-24",
+      "settlementPeriod": 29,
+      "format": "json",
+      "apikey": "03omen6i9lhv5fa"
+    },
+    "status_code": 200,
+    "success": true,
+    "response_size": 85147,
+    "data_count": 236,
+    "error": null
+  },
+  {
+    "endpoint": "balancing/acceptances/bmu",
+    "description": "BMU-specific bid-offer acceptances - Date: 2024-06-25 - Strategy 1",
+    "params": {
+      "settlementDate": "2024-06-25",
+      "settlementPeriod": 29,
+      "bmUnit": "T_ABRBO-1",
+      "apikey": "03omen6i9lhv5fa"
+    },
+    "status_code": 400,
+    "success": false,
+    "response_size": 312,
+    "data_count": 0,
+    "error": "{\"type\":\"https://tools.ietf.org/html/rfc9110#section-15.5.1\",\"title\":\"One or more validation errors occurred.\",\"status\":400,\"errors\":{\"AcceptanceNumber\":[\"The value 'bmu' is not valid for AcceptanceNu"
+  },
+  {
+    "endpoint": "balancing/acceptances/bmu",
+    "description": "BMU-specific bid-offer acceptances - Date: 2024-06-25 - Strategy 2",
+    "params": {
+      "settlementDate": "2024-06-25",
+      "settlementPeriod": 29,
+      "bmUnit": "ABRBO-1",
+      "apikey": "03omen6i9lhv5fa"
+    },
+    "status_code": 400,
+    "success": false,
+    "response_size": 312,
+    "data_count": 0,
+    "error": "{\"type\":\"https://tools.ietf.org/html/rfc9110#section-15.5.1\",\"title\":\"One or more validation errors occurred.\",\"status\":400,\"errors\":{\"AcceptanceNumber\":[\"The value 'bmu' is not valid for AcceptanceNu"
+  },
+  {
+    "endpoint": "balancing/acceptances/bmu",
+    "description": "BMU-specific bid-offer acceptances - Date: 2024-06-24 - Strategy 1",
+    "params": {
+      "settlementDate": "2024-06-24",
+      "settlementPeriod": 29,
+      "bmUnit": "T_ABRBO-1",
+      "apikey": "03omen6i9lhv5fa"
+    },
+    "status_code": 400,
+    "success": false,
+    "response_size": 312,
+    "data_count": 0,
+    "error": "{\"type\":\"https://tools.ietf.org/html/rfc9110#section-15.5.1\",\"title\":\"One or more validation errors occurred.\",\"status\":400,\"errors\":{\"AcceptanceNumber\":[\"The value 'bmu' is not valid for AcceptanceNu"
+  },
+  {
+    "endpoint": "balancing/acceptances/bmu",
+    "description": "BMU-specific bid-offer acceptances - Date: 2024-06-24 - Strategy 2",
+    "params": {
+      "settlementDate": "2024-06-24",
+      "settlementPeriod": 29,
+      "bmUnit": "ABRBO-1",
+      "apikey": "03omen6i9lhv5fa"
+    },
+    "status_code": 400,
+    "success": false,
+    "response_size": 312,
+    "data_count": 0,
+    "error": "{\"type\":\"https://tools.ietf.org/html/rfc9110#section-15.5.1\",\"title\":\"One or more validation errors occurred.\",\"status\":400,\"errors\":{\"AcceptanceNumber\":[\"The value 'bmu' is not valid for AcceptanceNu"
+  },
+  {
+    "endpoint": "datasets/BOD",
+    "description": "Bid-offer data (BOD) - Date: 2024-06-25 - Strategy 1",
+    "params": {
+      "from": "2024-06-25",
+      "to": "2024-06-26",
+      "apikey": "03omen6i9lhv5fa"
+    },
+    "status_code": 400,
+    "success": false,
+    "response_size": 278,
+    "data_count": 0,
+    "error": "{\"type\":\"https://tools.ietf.org/html/rfc9110#section-15.5.1\",\"title\":\"One or more validation errors occurred.\",\"status\":400,\"errors\":{\"\":[\"The date range between From and To inclusive must not exceed "
+  },
+  {
+    "endpoint": "datasets/BOD",
+    "description": "Bid-offer data (BOD) - Date: 2024-06-25 - Strategy 2",
+    "params": {
+      "settlementDate": "2024-06-25",
+      "settlementPeriod": 29,
+      "apikey": "03omen6i9lhv5fa"
+    },
+    "status_code": 404,
+    "success": false,
+    "response_size": 54,
+    "data_count": 0,
+    "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+  },
+  {
+    "endpoint": "datasets/BOD",
+    "description": "Bid-offer data (BOD) - Date: 2024-06-24 - Strategy 1",
+    "params": {
+      "from": "2024-06-24",
+      "to": "2024-06-25",
+      "apikey": "03omen6i9lhv5fa"
+    },
+    "status_code": 400,
+    "success": false,
+    "response_size": 278,
+    "data_count": 0,
+    "error": "{\"type\":\"https://tools.ietf.org/html/rfc9110#section-15.5.1\",\"title\":\"One or more validation errors occurred.\",\"status\":400,\"errors\":{\"\":[\"The date range between From and To inclusive must not exceed "
+  },
+  {
+    "endpoint": "datasets/BOD",
+    "description": "Bid-offer data (BOD) - Date: 2024-06-24 - Strategy 2",
+    "params": {
+      "settlementDate": "2024-06-24",
+      "settlementPeriod": 29,
+      "apikey": "03omen6i9lhv5fa"
+    },
+    "status_code": 404,
+    "success": false,
+    "response_size": 54,
+    "data_count": 0,
+    "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+  },
+  {
+    "endpoint": "balancing/dynamic/all",
+    "description": "Dynamic balancing data - Date: 2024-06-25 - Strategy 1",
+    "params": {
+      "from": "2024-06-25",
+      "to": "2024-06-26",
+      "apikey": "03omen6i9lhv5fa"
+    },
+    "status_code": 404,
+    "success": false,
+    "response_size": 54,
+    "data_count": 0,
+    "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+  },
+  {
+    "endpoint": "balancing/dynamic/all",
+    "description": "Dynamic balancing data - Date: 2024-06-24 - Strategy 1",
+    "params": {
+      "from": "2024-06-24",
+      "to": "2024-06-25",
+      "apikey": "03omen6i9lhv5fa"
+    },
+    "status_code": 404,
+    "success": false,
+    "response_size": 54,
+    "data_count": 0,
+    "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+  },
+  {
+    "endpoint": "balancing/acceptances/volumes",
+    "description": "Acceptance volumes - Date: 2024-06-25 - Strategy 1",
+    "params": {
+      "settlementDate": "2024-06-25",
+      "settlementPeriod": 29,
+      "apikey": "03omen6i9lhv5fa"
+    },
+    "status_code": 400,
+    "success": false,
+    "response_size": 316,
+    "data_count": 0,
+    "error": "{\"type\":\"https://tools.ietf.org/html/rfc9110#section-15.5.1\",\"title\":\"One or more validation errors occurred.\",\"status\":400,\"errors\":{\"AcceptanceNumber\":[\"The value 'volumes' is not valid for Acceptan"
+  },
+  {
+    "endpoint": "balancing/acceptances/volumes",
+    "description": "Acceptance volumes - Date: 2024-06-24 - Strategy 1",
+    "params": {
+      "settlementDate": "2024-06-24",
+      "settlementPeriod": 29,
+      "apikey": "03omen6i9lhv5fa"
+    },
+    "status_code": 400,
+    "success": false,
+    "response_size": 316,
+    "data_count": 0,
+    "error": "{\"type\":\"https://tools.ietf.org/html/rfc9110#section-15.5.1\",\"title\":\"One or more validation errors occurred.\",\"status\":400,\"errors\":{\"AcceptanceNumber\":[\"The value 'volumes' is not valid for Acceptan"
+  },
+  {
+    "endpoint": "balancing/balancing-services-use-of-system",
+    "description": "balancing/balancing-services-use-of-system - Strategy 1",
+    "params": {
+      "settlementDate": "2024-06-25",
+      "settlementPeriod": 29,
+      "apikey": "03omen6i9lhv5fa"
+    },
+    "status_code": 404,
+    "success": false,
+    "response_size": 54,
+    "data_count": 0,
+    "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+  },
+  {
+    "endpoint": "balancing/balancing-services-use-of-system",
+    "description": "balancing/balancing-services-use-of-system - Strategy 2",
+    "params": {
+      "from": "2024-06-25",
+      "to": "2024-06-26",
+      "apikey": "03omen6i9lhv5fa"
+    },
+    "status_code": 404,
+    "success": false,
+    "response_size": 54,
+    "data_count": 0,
+    "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+  },
+  {
+    "endpoint": "balancing/balancing-services-use-of-system",
+    "description": "balancing/balancing-services-use-of-system - Strategy 3",
+    "params": {
+      "date": "2024-06-25",
+      "apikey": "03omen6i9lhv5fa"
+    },
+    "status_code": 404,
+    "success": false,
+    "response_size": 54,
+    "data_count": 0,
+    "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+  },
+  {
+    "endpoint": "balancing/response-energy-prices",
+    "description": "balancing/response-energy-prices - Strategy 1",
+    "params": {
+      "settlementDate": "2024-06-25",
+      "settlementPeriod": 29,
+      "apikey": "03omen6i9lhv5fa"
+    },
+    "status_code": 404,
+    "success": false,
+    "response_size": 54,
+    "data_count": 0,
+    "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+  },
+  {
+    "endpoint": "balancing/response-energy-prices",
+    "description": "balancing/response-energy-prices - Strategy 2",
+    "params": {
+      "from": "2024-06-25",
+      "to": "2024-06-26",
+      "apikey": "03omen6i9lhv5fa"
+    },
+    "status_code": 404,
+    "success": false,
+    "response_size": 54,
+    "data_count": 0,
+    "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+  },
+  {
+    "endpoint": "balancing/response-energy-prices",
+    "description": "balancing/response-energy-prices - Strategy 3",
+    "params": {
+      "date": "2024-06-25",
+      "apikey": "03omen6i9lhv5fa"
+    },
+    "status_code": 404,
+    "success": false,
+    "response_size": 54,
+    "data_count": 0,
+    "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+  },
+  {
+    "endpoint": "balancing/system-prices",
+    "description": "balancing/system-prices - Strategy 1",
+    "params": {
+      "settlementDate": "2024-06-25",
+      "settlementPeriod": 29,
+      "apikey": "03omen6i9lhv5fa"
+    },
+    "status_code": 404,
+    "success": false,
+    "response_size": 54,
+    "data_count": 0,
+    "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+  },
+  {
+    "endpoint": "balancing/system-prices",
+    "description": "balancing/system-prices - Strategy 2",
+    "params": {
+      "from": "2024-06-25",
+      "to": "2024-06-26",
+      "apikey": "03omen6i9lhv5fa"
+    },
+    "status_code": 404,
+    "success": false,
+    "response_size": 54,
+    "data_count": 0,
+    "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+  },
+  {
+    "endpoint": "balancing/system-prices",
+    "description": "balancing/system-prices - Strategy 3",
+    "params": {
+      "date": "2024-06-25",
+      "apikey": "03omen6i9lhv5fa"
+    },
+    "status_code": 404,
+    "success": false,
+    "response_size": 54,
+    "data_count": 0,
+    "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+  },
+  {
+    "endpoint": "balancing/system-sell-buy-price",
+    "description": "balancing/system-sell-buy-price - Strategy 1",
+    "params": {
+      "settlementDate": "2024-06-25",
+      "settlementPeriod": 29,
+      "apikey": "03omen6i9lhv5fa"
+    },
+    "status_code": 404,
+    "success": false,
+    "response_size": 54,
+    "data_count": 0,
+    "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+  },
+  {
+    "endpoint": "balancing/system-sell-buy-price",
+    "description": "balancing/system-sell-buy-price - Strategy 2",
+    "params": {
+      "from": "2024-06-25",
+      "to": "2024-06-26",
+      "apikey": "03omen6i9lhv5fa"
+    },
+    "status_code": 404,
+    "success": false,
+    "response_size": 54,
+    "data_count": 0,
+    "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+  },
+  {
+    "endpoint": "balancing/system-sell-buy-price",
+    "description": "balancing/system-sell-buy-price - Strategy 3",
+    "params": {
+      "date": "2024-06-25",
+      "apikey": "03omen6i9lhv5fa"
+    },
+    "status_code": 404,
+    "success": false,
+    "response_size": 54,
+    "data_count": 0,
+    "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+  },
+  {
+    "endpoint": "datasets/BOALF",
+    "description": "datasets/BOALF - Strategy 1",
+    "params": {
+      "settlementDate": "2024-06-25",
+      "settlementPeriod": 29,
+      "apikey": "03omen6i9lhv5fa"
+    },
+    "status_code": 404,
+    "success": false,
+    "response_size": 54,
+    "data_count": 0,
+    "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+  },
+  {
+    "endpoint": "datasets/BOALF",
+    "description": "datasets/BOALF - Strategy 2",
+    "params": {
+      "from": "2024-06-25",
+      "to": "2024-06-26",
+      "apikey": "03omen6i9lhv5fa"
+    },
+    "status_code": 200,
+    "success": true,
+    "response_size": 1498808,
+    "data_count": 3740,
+    "error": null
+  },
+  {
+    "endpoint": "datasets/DERSYS",
+    "description": "datasets/DERSYS - Strategy 1",
+    "params": {
+      "settlementDate": "2024-06-25",
+      "settlementPeriod": 29,
+      "apikey": "03omen6i9lhv5fa"
+    },
+    "status_code": 404,
+    "success": false,
+    "response_size": 54,
+    "data_count": 0,
+    "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+  },
+  {
+    "endpoint": "datasets/DERSYS",
+    "description": "datasets/DERSYS - Strategy 2",
+    "params": {
+      "from": "2024-06-25",
+      "to": "2024-06-26",
+      "apikey": "03omen6i9lhv5fa"
+    },
+    "status_code": 404,
+    "success": false,
+    "response_size": 54,
+    "data_count": 0,
+    "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+  },
+  {
+    "endpoint": "datasets/DERSYS",
+    "description": "datasets/DERSYS - Strategy 3",
+    "params": {
+      "date": "2024-06-25",
+      "apikey": "03omen6i9lhv5fa"
+    },
+    "status_code": 404,
+    "success": false,
+    "response_size": 54,
+    "data_count": 0,
+    "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+  },
+  {
+    "endpoint": "datasets/MID",
+    "description": "datasets/MID - Strategy 1",
+    "params": {
+      "settlementDate": "2024-06-25",
+      "settlementPeriod": 29,
+      "apikey": "03omen6i9lhv5fa"
+    },
+    "status_code": 404,
+    "success": false,
+    "response_size": 54,
+    "data_count": 0,
+    "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+  },
+  {
+    "endpoint": "datasets/MID",
+    "description": "datasets/MID - Strategy 2",
+    "params": {
+      "from": "2024-06-25",
+      "to": "2024-06-26",
+      "apikey": "03omen6i9lhv5fa"
+    },
+    "status_code": 200,
+    "success": true,
+    "response_size": 15721,
+    "data_count": 98,
+    "error": null
+  },
+  {
+    "endpoint": "datasets/SYSMEM",
+    "description": "datasets/SYSMEM - Strategy 1",
+    "params": {
+      "settlementDate": "2024-06-25",
+      "settlementPeriod": 29,
+      "apikey": "03omen6i9lhv5fa"
+    },
+    "status_code": 404,
+    "success": false,
+    "response_size": 54,
+    "data_count": 0,
+    "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+  },
+  {
+    "endpoint": "datasets/SYSMEM",
+    "description": "datasets/SYSMEM - Strategy 2",
+    "params": {
+      "from": "2024-06-25",
+      "to": "2024-06-26",
+      "apikey": "03omen6i9lhv5fa"
+    },
+    "status_code": 404,
+    "success": false,
+    "response_size": 54,
+    "data_count": 0,
+    "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+  },
+  {
+    "endpoint": "datasets/SYSMEM",
+    "description": "datasets/SYSMEM - Strategy 3",
+    "params": {
+      "date": "2024-06-25",
+      "apikey": "03omen6i9lhv5fa"
+    },
+    "status_code": 404,
+    "success": false,
+    "response_size": 54,
+    "data_count": 0,
+    "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+  }
+]

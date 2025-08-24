@@ -1,0 +1,52 @@
+2025-08-23 00:18:17,412 - INFO - 🔄 Live Data Updater initialized
+Running manual update of all datasets...
+2025-08-23 00:18:17,412 - INFO - 📊 Checking for updates to Elexon demand_outturn
+2025-08-23 00:18:17,474 - INFO - 🔄 Found 1392 records for Elexon demand_outturn
+2025-08-23 00:18:18,403 - INFO - ✅ Uploaded data to Cloud Storage: elexon/demand_outturn/recent_20250823001817.json
+2025-08-23 00:18:18,898 - ERROR - ❌ Error updating BigQuery: 400 Unrecognized name: settlement_date; Did you mean settlementDate? at [3:31]; reason: invalidQuery, location: query, message: Unrecognized name: settlement_date; Did you mean settlementDate? at [3:31]
+
+Location: europe-west2
+Job ID: c378a2dc-9b20-4101-92a6-b33d44f7e76a
+
+2025-08-23 00:18:18,898 - INFO - 📊 Checking for updates to Elexon generation_outturn
+2025-08-23 00:18:18,953 - INFO - 🔄 Found 567 records for Elexon generation_outturn
+2025-08-23 00:18:19,316 - INFO - ✅ Uploaded data to Cloud Storage: elexon/generation_outturn/recent_20250823001818.json
+2025-08-23 00:18:19,596 - ERROR - ❌ Error updating BigQuery: 400 Unrecognized name: settlement_date; Did you mean settlementDate? at [3:31]; reason: invalidQuery, location: query, message: Unrecognized name: settlement_date; Did you mean settlementDate? at [3:31]
+
+Location: europe-west2
+Job ID: c64aad8c-c762-481c-9e8d-7fec28e5e4d7
+
+2025-08-23 00:18:19,597 - INFO - 📊 Checking for updates to Elexon system_warnings
+2025-08-23 00:18:19,950 - INFO - 🔄 Found 1 records for Elexon system_warnings
+2025-08-23 00:18:20,162 - INFO - ✅ Uploaded data to Cloud Storage: elexon/system_warnings/recent_20250823001819.json
+2025-08-23 00:18:20,467 - ERROR - ❌ Error updating BigQuery: 400 Unrecognized name: timestamp at [3:31]; reason: invalidQuery, location: query, message: Unrecognized name: timestamp at [3:31]
+
+Location: europe-west2
+Job ID: 6784f410-d930-425e-aff9-bde301a2b8d2
+
+2025-08-23 00:18:20,467 - INFO - 📊 Elexon update complete. Updated 0 records across all datasets.
+2025-08-23 00:18:20,467 - INFO - 📊 Checking for updates to NESO demand_forecasts
+2025-08-23 00:18:20,481 - INFO - 🔄 Found 57 records for NESO demand_forecasts
+2025-08-23 00:18:20,760 - INFO - ✅ Uploaded data to Cloud Storage: neso/demand_forecasts/recent_20250823001820.json
+2025-08-23 00:18:21,022 - ERROR - ❌ Error updating BigQuery for NESO demand_forecasts: 400 Unrecognized name: settlement_date; Did you mean settlementDate? at [3:27]; reason: invalidQuery, location: query, message: Unrecognized name: settlement_date; Did you mean settlementDate? at [3:27]
+
+Location: europe-west2
+Job ID: 249a6961-0004-499f-8266-92fca505122c
+
+2025-08-23 00:18:21,022 - INFO - 📊 Checking for updates to NESO wind_forecasts
+2025-08-23 00:18:21,525 - ERROR - ❌ Error updating NESO wind_forecasts: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/WINDFORFUELHH?from=2025-08-21&to=2025-08-23&format=json&apiKey=x1~8Q~lvOVm4H7jfQVZXtiCal47_vdYoLWjEla~P
+2025-08-23 00:18:21,525 - INFO - 📊 Checking for updates to NESO carbon_intensity
+2025-08-23 00:18:22,611 - INFO - 🔄 Found 5820 records for NESO carbon_intensity
+2025-08-23 00:18:23,628 - INFO - ✅ Uploaded data to Cloud Storage: neso/carbon_intensity/recent_20250823001822.json
+2025-08-23 00:18:23,866 - ERROR - ❌ Error updating BigQuery for NESO carbon_intensity: 400 Unrecognized name: settlement_date; Did you mean settlementDate? at [3:27]; reason: invalidQuery, location: query, message: Unrecognized name: settlement_date; Did you mean settlementDate? at [3:27]
+
+Location: europe-west2
+Job ID: be7eb8e5-d4ab-45f8-bc77-73fdf1f3d8d5
+
+2025-08-23 00:18:23,866 - INFO - 📊 Checking for updates to NESO interconnector_flows
+2025-08-23 00:18:23,878 - ERROR - ❌ Error updating NESO interconnector_flows: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/INTERFUELHH?from=2025-08-21&to=2025-08-23&format=json&apiKey=x1~8Q~lvOVm4H7jfQVZXtiCal47_vdYoLWjEla~P
+2025-08-23 00:18:23,878 - INFO - 📊 Checking for updates to NESO balancing_services
+2025-08-23 00:18:24,884 - ERROR - ❌ Error updating NESO balancing_services: 400 Client Error: Bad Request for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/DISBSAD?from=2025-08-21&to=2025-08-23&format=json&apiKey=x1~8Q~lvOVm4H7jfQVZXtiCal47_vdYoLWjEla~P
+2025-08-23 00:18:24,884 - INFO - 📊 NESO update complete. Updated 0 records across all datasets.
+2025-08-23 00:18:24,884 - INFO - 🔄 Complete update cycle finished. Updated 0 records total.
+Update complete. Check logs for details.

@@ -1,0 +1,47 @@
+
+  You can now view your Streamlit app in your browser.
+
+  Local URL: http://localhost:8505
+  Network URL: http://192.168.1.190:8505
+  External URL: http://109.149.1.166:8505
+
+2025-08-22 22:37:12.458 Uncaught app execution
+Traceback (most recent call last):
+  File "/Users/georgemajor/Jibber Jabber ChatGPT/8_august_jibber_jabber/venv/lib/python3.13/site-packages/streamlit/runtime/scriptrunner/exec_code.py", line 128, in exec_func_with_error_handling
+    result = func()
+  File "/Users/georgemajor/Jibber Jabber ChatGPT/8_august_jibber_jabber/venv/lib/python3.13/site-packages/streamlit/runtime/scriptrunner/script_runner.py", line 669, in code_to_exec
+    exec(code, module.__dict__)  # noqa: S102
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/georgemajor/Jibber Jabber ChatGPT/8_august_jibber_jabber/gb_energy_dashboard.py", line 1121, in <module>
+    main()
+    ~~~~^^
+  File "/Users/georgemajor/Jibber Jabber ChatGPT/8_august_jibber_jabber/gb_energy_dashboard.py", line 980, in main
+    fig = plot_time_series(df, key, height=chart_height)
+  File "/Users/georgemajor/Jibber Jabber ChatGPT/8_august_jibber_jabber/gb_energy_dashboard.py", line 353, in plot_time_series
+    fillcolor=f'rgba({",".join(map(str, px.colors.hex_to_rgb(color)))},0.2)',
+                                        ~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/Users/georgemajor/Jibber Jabber ChatGPT/8_august_jibber_jabber/venv/lib/python3.13/site-packages/_plotly_utils/colors/__init__.py", line 762, in hex_to_rgb
+    return tuple(
+        int(value[i : i + rgb_section_length], 16)
+        for i in range(0, hex_total_length, rgb_section_length)
+    )
+  File "/Users/georgemajor/Jibber Jabber ChatGPT/8_august_jibber_jabber/venv/lib/python3.13/site-packages/_plotly_utils/colors/__init__.py", line 763, in <genexpr>
+    int(value[i : i + rgb_section_length], 16)
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 16: 'l'
+2025-08-22 22:39:23.855 Script compilation error
+Traceback (most recent call last):
+  File "/Users/georgemajor/Jibber Jabber ChatGPT/8_august_jibber_jabber/venv/lib/python3.13/site-packages/streamlit/runtime/scriptrunner/script_runner.py", line 571, in _run_script
+    code = self._script_cache.get_bytecode(script_path)
+  File "/Users/georgemajor/Jibber Jabber ChatGPT/8_august_jibber_jabber/venv/lib/python3.13/site-packages/streamlit/runtime/scriptrunner/script_cache.py", line 72, in get_bytecode
+    filebody = magic.add_magic(filebody, script_path)
+  File "/Users/georgemajor/Jibber Jabber ChatGPT/8_august_jibber_jabber/venv/lib/python3.13/site-packages/streamlit/runtime/scriptrunner/magic.py", line 45, in add_magic
+    tree = ast.parse(code, script_path, "exec")
+  File "/opt/homebrew/Cellar/python@3.13/3.13.5/Frameworks/Python.framework/Versions/3.13/lib/python3.13/ast.py", line 50, in parse
+    return compile(source, filename, mode, flags,
+                   _feature_version=feature_version, optimize=optimize)
+  File "/Users/georgemajor/Jibber Jabber ChatGPT/8_august_jibber_jabber/gb_energy_dashboard.py", line 398
+    marker=dict(
+IndentationError: unexpected indent
+2025-08-22 22:39:23.972 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+  Stopping...

@@ -1,0 +1,49 @@
+{
+  "creationTime": "1755819823788",
+  "etag": "kOZSOwWZggNUrBWZcOo8AA==",
+  "id": "jibber-jabber-knowledge:uk_energy.v_hourly_energy_balance",
+  "kind": "bigquery#table",
+  "lastModifiedTime": "1755819823788",
+  "location": "europe-west2",
+  "numActiveLogicalBytes": "0",
+  "numBytes": "0",
+  "numLongTermBytes": "0",
+  "numLongTermLogicalBytes": "0",
+  "numRows": "0",
+  "numTotalLogicalBytes": "0",
+  "schema": {
+    "fields": [
+      {
+        "name": "hour",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "avg_frequency",
+        "type": "FLOAT"
+      },
+      {
+        "name": "avg_demand",
+        "type": "FLOAT"
+      },
+      {
+        "name": "total_wind_generation",
+        "type": "FLOAT"
+      },
+      {
+        "name": "total_solar_generation",
+        "type": "FLOAT"
+      }
+    ]
+  },
+  "selfLink": "https://bigquery.googleapis.com/bigquery/v2/projects/jibber-jabber-knowledge/datasets/uk_energy/tables/v_hourly_energy_balance",
+  "tableReference": {
+    "datasetId": "uk_energy",
+    "projectId": "jibber-jabber-knowledge",
+    "tableId": "v_hourly_energy_balance"
+  },
+  "type": "VIEW",
+  "view": {
+    "query": "WITH demand_data AS (\n  SELECT\n    TIMESTAMP_TRUNC(TIMESTAMP(settlement_date), HOUR) as hour,\n    AVG(national_demand) as avg_demand\n  FROM `jibber-jabber-knowledge.uk_energy.elexon_demand_outturn`\n  GROUP BY 1\n),\ngeneration_data AS (\n  SELECT\n    TIMESTAMP_TRUNC(TIMESTAMP(settlement_date), HOUR) as hour,\n    SUM(CASE WHEN fuel_type = 'WIND' THEN generation_mw ELSE 0 END) as total_wind_generation,\n    SUM(CASE WHEN fuel_type = 'SOLAR' THEN generation_mw ELSE 0 END) as total_solar_generation\n  FROM `jibber-jabber-knowledge.uk_energy.elexon_generation_outturn`\n  GROUP BY 1\n)\nSELECT\n  d.hour,\n  50.0 AS avg_frequency, -- Placeholder: Frequency data source not identified yet\n  d.avg_demand,\n  g.total_wind_generation,\n  g.total_solar_generation\nFROM demand_data d\nJOIN generation_data g ON d.hour = g.hour\nORDER BY d.hour DESC",
+    "useLegacySql": false
+  }
+}

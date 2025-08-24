@@ -1,0 +1,12 @@
+2025-08-23 01:59:28,714 [INFO] Starting BOD analysis from 2023-08-23 to 2025-08-23
+2025-08-23 01:59:28,714 [INFO] Using credentials from: /Users/georgemajor/Jibber Jabber ChatGPT/8_august_jibber_jabber/service_account_key.json
+2025-08-23 01:59:28,714 [INFO] Loading data...
+2025-08-23 01:59:28,714 [INFO] Generating synthetic data from 2023-08-23 to 2025-08-23
+2025-08-23 01:59:28,795 [INFO] Generated synthetic BOD data: 35136 rows
+2025-08-23 01:59:28,795 [INFO] Generating synthetic data from 2023-08-23 to 2025-08-23
+2025-08-23 01:59:28,822 [INFO] Generated synthetic Imbalance/NIV data: 35136 rows
+2025-08-23 01:59:28,822 [INFO] Generating synthetic data from 2023-08-23 to 2025-08-23
+2025-08-23 01:59:28,853 [INFO] Generated synthetic Demand data: 35136 rows
+2025-08-23 01:59:29,307 [INFO] Generated synthetic Generation Mix data: 245952 rows
+2025-08-23 01:59:29,316 [INFO] Data loaded: BOD=35136 rows, ImpNIV=35136 rows, Demand=35136 rows, GenMix=245952 rows
+2025-08-23 01:59:29,316 [INFO] Analysis completed successfully

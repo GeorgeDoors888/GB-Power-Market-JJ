@@ -1,0 +1,19 @@
+{
+  "start_time": "2025-08-23T00:41:20.371990",
+  "elexon_updates": 5,
+  "neso_updates": 3,
+  "last_update": "2025-08-23T00:41:28.580238",
+  "records_updated": 13730,
+  "last_check": {
+    "elexon_demand_outturn": "2025-08-23T00:41:20.481198",
+    "elexon_generation_outturn": "2025-08-23T00:41:21.393555",
+    "elexon_system_warnings": "2025-08-23T00:41:22.443089",
+    "elexon_system_frequency": "2025-08-23T00:41:23.494287",
+    "elexon_rolling_demand": "2025-08-23T00:41:24.553325",
+    "neso_demand_forecasts": "2025-08-23T00:41:24.579684",
+    "neso_wind_forecasts": null,
+    "neso_carbon_intensity": "2025-08-23T00:41:26.682046",
+    "neso_interconnector_flows": null,
+    "neso_balancing_services": "2025-08-23T00:41:28.580241"
+  }
+}

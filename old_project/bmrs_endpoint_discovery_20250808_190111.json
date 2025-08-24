@@ -1,0 +1,4369 @@
+{
+  "discovery_timestamp": "2025-08-08T19:01:11.242814",
+  "summary": {
+    "total_endpoints_tested": 338,
+    "successful_responses": 2,
+    "endpoints_with_data": 2,
+    "new_working_endpoints": 2
+  },
+  "working_endpoints": [
+    {
+      "endpoint": "demand/outturn",
+      "description": "Demand outturn",
+      "working_params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 29
+      },
+      "data_count": 29
+    },
+    {
+      "endpoint": "datasets/SYSWARN",
+      "description": "System warnings",
+      "working_params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 29
+      },
+      "data_count": 1
+    }
+  ],
+  "all_test_results": [
+    {
+      "endpoint": "balancing/physical",
+      "description": "Physical balancing data - Strategy 1",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 29
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/physical",
+      "description": "Physical balancing data - Strategy 2",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/physical",
+      "description": "Physical balancing data - Strategy 3",
+      "params": {
+        "date": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/physical",
+      "description": "Physical balancing data - Strategy 4",
+      "params": {
+        "settlementDate": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/physical",
+      "description": "Physical balancing data - Strategy 5",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 15
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/physical",
+      "description": "Physical balancing data - Strategy 6",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26",
+        "format": "json"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/settlement",
+      "description": "Settlement balancing data - Strategy 1",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 29
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/settlement",
+      "description": "Settlement balancing data - Strategy 2",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/settlement",
+      "description": "Settlement balancing data - Strategy 3",
+      "params": {
+        "date": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/settlement",
+      "description": "Settlement balancing data - Strategy 4",
+      "params": {
+        "settlementDate": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/settlement",
+      "description": "Settlement balancing data - Strategy 5",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 15
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/settlement",
+      "description": "Settlement balancing data - Strategy 6",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26",
+        "format": "json"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/services",
+      "description": "Balancing services data - Strategy 1",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 29
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/services",
+      "description": "Balancing services data - Strategy 2",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/services",
+      "description": "Balancing services data - Strategy 3",
+      "params": {
+        "date": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/services",
+      "description": "Balancing services data - Strategy 4",
+      "params": {
+        "settlementDate": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/services",
+      "description": "Balancing services data - Strategy 5",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 15
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/services",
+      "description": "Balancing services data - Strategy 6",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26",
+        "format": "json"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/constraints",
+      "description": "Constraint balancing data - Strategy 1",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 29
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/constraints",
+      "description": "Constraint balancing data - Strategy 2",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/constraints",
+      "description": "Constraint balancing data - Strategy 3",
+      "params": {
+        "date": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/constraints",
+      "description": "Constraint balancing data - Strategy 4",
+      "params": {
+        "settlementDate": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/constraints",
+      "description": "Constraint balancing data - Strategy 5",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 15
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/constraints",
+      "description": "Constraint balancing data - Strategy 6",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26",
+        "format": "json"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/marginal",
+      "description": "Marginal balancing data - Strategy 1",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 29
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/marginal",
+      "description": "Marginal balancing data - Strategy 2",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/marginal",
+      "description": "Marginal balancing data - Strategy 3",
+      "params": {
+        "date": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/marginal",
+      "description": "Marginal balancing data - Strategy 4",
+      "params": {
+        "settlementDate": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/marginal",
+      "description": "Marginal balancing data - Strategy 5",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 15
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/marginal",
+      "description": "Marginal balancing data - Strategy 6",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26",
+        "format": "json"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/response",
+      "description": "Response balancing data - Strategy 1",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 29
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/response",
+      "description": "Response balancing data - Strategy 2",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/response",
+      "description": "Response balancing data - Strategy 3",
+      "params": {
+        "date": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/response",
+      "description": "Response balancing data - Strategy 4",
+      "params": {
+        "settlementDate": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/response",
+      "description": "Response balancing data - Strategy 5",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 15
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/response",
+      "description": "Response balancing data - Strategy 6",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26",
+        "format": "json"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/pricing/energy",
+      "description": "Energy pricing data - Strategy 1",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 29
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/pricing/energy",
+      "description": "Energy pricing data - Strategy 2",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/pricing/energy",
+      "description": "Energy pricing data - Strategy 3",
+      "params": {
+        "date": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/pricing/energy",
+      "description": "Energy pricing data - Strategy 4",
+      "params": {
+        "settlementDate": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/pricing/energy",
+      "description": "Energy pricing data - Strategy 5",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 15
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/pricing/energy",
+      "description": "Energy pricing data - Strategy 6",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26",
+        "format": "json"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/pricing/system",
+      "description": "System pricing data - Strategy 1",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 29
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/pricing/system",
+      "description": "System pricing data - Strategy 2",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/pricing/system",
+      "description": "System pricing data - Strategy 3",
+      "params": {
+        "date": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/pricing/system",
+      "description": "System pricing data - Strategy 4",
+      "params": {
+        "settlementDate": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/pricing/system",
+      "description": "System pricing data - Strategy 5",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 15
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/pricing/system",
+      "description": "System pricing data - Strategy 6",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26",
+        "format": "json"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/pricing/marginal",
+      "description": "Marginal pricing data - Strategy 1",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 29
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/pricing/marginal",
+      "description": "Marginal pricing data - Strategy 2",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/pricing/marginal",
+      "description": "Marginal pricing data - Strategy 3",
+      "params": {
+        "date": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/pricing/marginal",
+      "description": "Marginal pricing data - Strategy 4",
+      "params": {
+        "settlementDate": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/pricing/marginal",
+      "description": "Marginal pricing data - Strategy 5",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 15
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/pricing/marginal",
+      "description": "Marginal pricing data - Strategy 6",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26",
+        "format": "json"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/volumes/total",
+      "description": "Total balancing volumes - Strategy 1",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 29
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/volumes/total",
+      "description": "Total balancing volumes - Strategy 2",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/volumes/total",
+      "description": "Total balancing volumes - Strategy 3",
+      "params": {
+        "date": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/volumes/total",
+      "description": "Total balancing volumes - Strategy 4",
+      "params": {
+        "settlementDate": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/volumes/total",
+      "description": "Total balancing volumes - Strategy 5",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 15
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/volumes/total",
+      "description": "Total balancing volumes - Strategy 6",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26",
+        "format": "json"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/volumes/by-fuel",
+      "description": "Balancing volumes by fuel type - Strategy 1",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 29
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/volumes/by-fuel",
+      "description": "Balancing volumes by fuel type - Strategy 2",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/volumes/by-fuel",
+      "description": "Balancing volumes by fuel type - Strategy 3",
+      "params": {
+        "date": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/volumes/by-fuel",
+      "description": "Balancing volumes by fuel type - Strategy 4",
+      "params": {
+        "settlementDate": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/volumes/by-fuel",
+      "description": "Balancing volumes by fuel type - Strategy 5",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 15
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/volumes/by-fuel",
+      "description": "Balancing volumes by fuel type - Strategy 6",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26",
+        "format": "json"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/volumes/by-region",
+      "description": "Balancing volumes by region - Strategy 1",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 29
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/volumes/by-region",
+      "description": "Balancing volumes by region - Strategy 2",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/volumes/by-region",
+      "description": "Balancing volumes by region - Strategy 3",
+      "params": {
+        "date": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/volumes/by-region",
+      "description": "Balancing volumes by region - Strategy 4",
+      "params": {
+        "settlementDate": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/volumes/by-region",
+      "description": "Balancing volumes by region - Strategy 5",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 15
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/volumes/by-region",
+      "description": "Balancing volumes by region - Strategy 6",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26",
+        "format": "json"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/imbalance",
+      "description": "System imbalance data - Strategy 1",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 29
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/imbalance",
+      "description": "System imbalance data - Strategy 2",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/imbalance",
+      "description": "System imbalance data - Strategy 3",
+      "params": {
+        "date": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/imbalance",
+      "description": "System imbalance data - Strategy 4",
+      "params": {
+        "settlementDate": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/imbalance",
+      "description": "System imbalance data - Strategy 5",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 15
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/imbalance",
+      "description": "System imbalance data - Strategy 6",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26",
+        "format": "json"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/reserves",
+      "description": "Reserve balancing data - Strategy 1",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 29
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/reserves",
+      "description": "Reserve balancing data - Strategy 2",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/reserves",
+      "description": "Reserve balancing data - Strategy 3",
+      "params": {
+        "date": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/reserves",
+      "description": "Reserve balancing data - Strategy 4",
+      "params": {
+        "settlementDate": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/reserves",
+      "description": "Reserve balancing data - Strategy 5",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 15
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/reserves",
+      "description": "Reserve balancing data - Strategy 6",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26",
+        "format": "json"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/regulation",
+      "description": "Regulation balancing data - Strategy 1",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 29
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/regulation",
+      "description": "Regulation balancing data - Strategy 2",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/regulation",
+      "description": "Regulation balancing data - Strategy 3",
+      "params": {
+        "date": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/regulation",
+      "description": "Regulation balancing data - Strategy 4",
+      "params": {
+        "settlementDate": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/regulation",
+      "description": "Regulation balancing data - Strategy 5",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 15
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "balancing/regulation",
+      "description": "Regulation balancing data - Strategy 6",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26",
+        "format": "json"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/outturn/total",
+      "description": "Total generation outturn - Strategy 1",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 29
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/outturn/total",
+      "description": "Total generation outturn - Strategy 2",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/outturn/total",
+      "description": "Total generation outturn - Strategy 3",
+      "params": {
+        "date": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/outturn/total",
+      "description": "Total generation outturn - Strategy 4",
+      "params": {
+        "settlementDate": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/outturn/total",
+      "description": "Total generation outturn - Strategy 5",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 15
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/outturn/total",
+      "description": "Total generation outturn - Strategy 6",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26",
+        "format": "json"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/outturn/by-fuel-type",
+      "description": "Generation by fuel type - Strategy 1",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 29
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/outturn/by-fuel-type",
+      "description": "Generation by fuel type - Strategy 2",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/outturn/by-fuel-type",
+      "description": "Generation by fuel type - Strategy 3",
+      "params": {
+        "date": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/outturn/by-fuel-type",
+      "description": "Generation by fuel type - Strategy 4",
+      "params": {
+        "settlementDate": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/outturn/by-fuel-type",
+      "description": "Generation by fuel type - Strategy 5",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 15
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/outturn/by-fuel-type",
+      "description": "Generation by fuel type - Strategy 6",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26",
+        "format": "json"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/forecast/total",
+      "description": "Total generation forecast - Strategy 1",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 29
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/forecast/total",
+      "description": "Total generation forecast - Strategy 2",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/forecast/total",
+      "description": "Total generation forecast - Strategy 3",
+      "params": {
+        "date": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/forecast/total",
+      "description": "Total generation forecast - Strategy 4",
+      "params": {
+        "settlementDate": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/forecast/total",
+      "description": "Total generation forecast - Strategy 5",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 15
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/forecast/total",
+      "description": "Total generation forecast - Strategy 6",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26",
+        "format": "json"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/forecast/by-fuel-type",
+      "description": "Forecast by fuel type - Strategy 1",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 29
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/forecast/by-fuel-type",
+      "description": "Forecast by fuel type - Strategy 2",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/forecast/by-fuel-type",
+      "description": "Forecast by fuel type - Strategy 3",
+      "params": {
+        "date": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/forecast/by-fuel-type",
+      "description": "Forecast by fuel type - Strategy 4",
+      "params": {
+        "settlementDate": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/forecast/by-fuel-type",
+      "description": "Forecast by fuel type - Strategy 5",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 15
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/forecast/by-fuel-type",
+      "description": "Forecast by fuel type - Strategy 6",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26",
+        "format": "json"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/wind/total",
+      "description": "Total wind generation - Strategy 1",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 29
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/wind/total",
+      "description": "Total wind generation - Strategy 2",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/wind/total",
+      "description": "Total wind generation - Strategy 3",
+      "params": {
+        "date": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/wind/total",
+      "description": "Total wind generation - Strategy 4",
+      "params": {
+        "settlementDate": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/wind/total",
+      "description": "Total wind generation - Strategy 5",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 15
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/wind/total",
+      "description": "Total wind generation - Strategy 6",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26",
+        "format": "json"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/wind/onshore",
+      "description": "Onshore wind generation - Strategy 1",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 29
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/wind/onshore",
+      "description": "Onshore wind generation - Strategy 2",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/wind/onshore",
+      "description": "Onshore wind generation - Strategy 3",
+      "params": {
+        "date": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/wind/onshore",
+      "description": "Onshore wind generation - Strategy 4",
+      "params": {
+        "settlementDate": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/wind/onshore",
+      "description": "Onshore wind generation - Strategy 5",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 15
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/wind/onshore",
+      "description": "Onshore wind generation - Strategy 6",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26",
+        "format": "json"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/wind/offshore",
+      "description": "Offshore wind generation - Strategy 1",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 29
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/wind/offshore",
+      "description": "Offshore wind generation - Strategy 2",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/wind/offshore",
+      "description": "Offshore wind generation - Strategy 3",
+      "params": {
+        "date": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/wind/offshore",
+      "description": "Offshore wind generation - Strategy 4",
+      "params": {
+        "settlementDate": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/wind/offshore",
+      "description": "Offshore wind generation - Strategy 5",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 15
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/wind/offshore",
+      "description": "Offshore wind generation - Strategy 6",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26",
+        "format": "json"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/wind/forecast",
+      "description": "Wind generation forecast - Strategy 1",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 29
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/wind/forecast",
+      "description": "Wind generation forecast - Strategy 2",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/wind/forecast",
+      "description": "Wind generation forecast - Strategy 3",
+      "params": {
+        "date": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/wind/forecast",
+      "description": "Wind generation forecast - Strategy 4",
+      "params": {
+        "settlementDate": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/wind/forecast",
+      "description": "Wind generation forecast - Strategy 5",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 15
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/wind/forecast",
+      "description": "Wind generation forecast - Strategy 6",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26",
+        "format": "json"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/solar/total",
+      "description": "Total solar generation - Strategy 1",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 29
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/solar/total",
+      "description": "Total solar generation - Strategy 2",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/solar/total",
+      "description": "Total solar generation - Strategy 3",
+      "params": {
+        "date": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/solar/total",
+      "description": "Total solar generation - Strategy 4",
+      "params": {
+        "settlementDate": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/solar/total",
+      "description": "Total solar generation - Strategy 5",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 15
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/solar/total",
+      "description": "Total solar generation - Strategy 6",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26",
+        "format": "json"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/solar/forecast",
+      "description": "Solar generation forecast - Strategy 1",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 29
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/solar/forecast",
+      "description": "Solar generation forecast - Strategy 2",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/solar/forecast",
+      "description": "Solar generation forecast - Strategy 3",
+      "params": {
+        "date": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/solar/forecast",
+      "description": "Solar generation forecast - Strategy 4",
+      "params": {
+        "settlementDate": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/solar/forecast",
+      "description": "Solar generation forecast - Strategy 5",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 15
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/solar/forecast",
+      "description": "Solar generation forecast - Strategy 6",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26",
+        "format": "json"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/nuclear",
+      "description": "Nuclear generation - Strategy 1",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 29
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/nuclear",
+      "description": "Nuclear generation - Strategy 2",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/nuclear",
+      "description": "Nuclear generation - Strategy 3",
+      "params": {
+        "date": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/nuclear",
+      "description": "Nuclear generation - Strategy 4",
+      "params": {
+        "settlementDate": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/nuclear",
+      "description": "Nuclear generation - Strategy 5",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 15
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/nuclear",
+      "description": "Nuclear generation - Strategy 6",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26",
+        "format": "json"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/thermal",
+      "description": "Thermal generation - Strategy 1",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 29
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/thermal",
+      "description": "Thermal generation - Strategy 2",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/thermal",
+      "description": "Thermal generation - Strategy 3",
+      "params": {
+        "date": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/thermal",
+      "description": "Thermal generation - Strategy 4",
+      "params": {
+        "settlementDate": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/thermal",
+      "description": "Thermal generation - Strategy 5",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 15
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/thermal",
+      "description": "Thermal generation - Strategy 6",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26",
+        "format": "json"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/hydro",
+      "description": "Hydro generation - Strategy 1",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 29
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/hydro",
+      "description": "Hydro generation - Strategy 2",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/hydro",
+      "description": "Hydro generation - Strategy 3",
+      "params": {
+        "date": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/hydro",
+      "description": "Hydro generation - Strategy 4",
+      "params": {
+        "settlementDate": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/hydro",
+      "description": "Hydro generation - Strategy 5",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 15
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/hydro",
+      "description": "Hydro generation - Strategy 6",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26",
+        "format": "json"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/interconnector/total",
+      "description": "Total interconnector flows - Strategy 1",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 29
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/interconnector/total",
+      "description": "Total interconnector flows - Strategy 2",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/interconnector/total",
+      "description": "Total interconnector flows - Strategy 3",
+      "params": {
+        "date": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/interconnector/total",
+      "description": "Total interconnector flows - Strategy 4",
+      "params": {
+        "settlementDate": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/interconnector/total",
+      "description": "Total interconnector flows - Strategy 5",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 15
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/interconnector/total",
+      "description": "Total interconnector flows - Strategy 6",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26",
+        "format": "json"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/interconnector/by-link",
+      "description": "Flows by interconnector link - Strategy 1",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 29
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/interconnector/by-link",
+      "description": "Flows by interconnector link - Strategy 2",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/interconnector/by-link",
+      "description": "Flows by interconnector link - Strategy 3",
+      "params": {
+        "date": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/interconnector/by-link",
+      "description": "Flows by interconnector link - Strategy 4",
+      "params": {
+        "settlementDate": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/interconnector/by-link",
+      "description": "Flows by interconnector link - Strategy 5",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 15
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "generation/interconnector/by-link",
+      "description": "Flows by interconnector link - Strategy 6",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26",
+        "format": "json"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "demand/total",
+      "description": "Total national demand - Strategy 1",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 29
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "demand/total",
+      "description": "Total national demand - Strategy 2",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "demand/total",
+      "description": "Total national demand - Strategy 3",
+      "params": {
+        "date": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "demand/total",
+      "description": "Total national demand - Strategy 4",
+      "params": {
+        "settlementDate": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "demand/total",
+      "description": "Total national demand - Strategy 5",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 15
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "demand/total",
+      "description": "Total national demand - Strategy 6",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26",
+        "format": "json"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "demand/forecast",
+      "description": "Demand forecast - Strategy 1",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 29
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "demand/forecast",
+      "description": "Demand forecast - Strategy 2",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "demand/forecast",
+      "description": "Demand forecast - Strategy 3",
+      "params": {
+        "date": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "demand/forecast",
+      "description": "Demand forecast - Strategy 4",
+      "params": {
+        "settlementDate": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "demand/forecast",
+      "description": "Demand forecast - Strategy 5",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 15
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "demand/forecast",
+      "description": "Demand forecast - Strategy 6",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26",
+        "format": "json"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "demand/outturn",
+      "description": "Demand outturn - Strategy 1",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 29
+      },
+      "status_code": 200,
+      "success": true,
+      "response_size": 5909,
+      "data_count": 29,
+      "error": null
+    },
+    {
+      "endpoint": "demand/regional/total",
+      "description": "Total regional demand - Strategy 1",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 29
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "demand/regional/total",
+      "description": "Total regional demand - Strategy 2",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "demand/regional/total",
+      "description": "Total regional demand - Strategy 3",
+      "params": {
+        "date": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "demand/regional/total",
+      "description": "Total regional demand - Strategy 4",
+      "params": {
+        "settlementDate": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "demand/regional/total",
+      "description": "Total regional demand - Strategy 5",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 15
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "demand/regional/total",
+      "description": "Total regional demand - Strategy 6",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26",
+        "format": "json"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "demand/regional/by-gsp",
+      "description": "Demand by GSP region - Strategy 1",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 29
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "demand/regional/by-gsp",
+      "description": "Demand by GSP region - Strategy 2",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "demand/regional/by-gsp",
+      "description": "Demand by GSP region - Strategy 3",
+      "params": {
+        "date": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "demand/regional/by-gsp",
+      "description": "Demand by GSP region - Strategy 4",
+      "params": {
+        "settlementDate": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "demand/regional/by-gsp",
+      "description": "Demand by GSP region - Strategy 5",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 15
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "demand/regional/by-gsp",
+      "description": "Demand by GSP region - Strategy 6",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26",
+        "format": "json"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "demand/transmission",
+      "description": "Transmission system demand - Strategy 1",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 29
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "demand/transmission",
+      "description": "Transmission system demand - Strategy 2",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "demand/transmission",
+      "description": "Transmission system demand - Strategy 3",
+      "params": {
+        "date": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "demand/transmission",
+      "description": "Transmission system demand - Strategy 4",
+      "params": {
+        "settlementDate": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "demand/transmission",
+      "description": "Transmission system demand - Strategy 5",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 15
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "demand/transmission",
+      "description": "Transmission system demand - Strategy 6",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26",
+        "format": "json"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "demand/embedded",
+      "description": "Embedded generation adjusted demand - Strategy 1",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 29
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "demand/embedded",
+      "description": "Embedded generation adjusted demand - Strategy 2",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "demand/embedded",
+      "description": "Embedded generation adjusted demand - Strategy 3",
+      "params": {
+        "date": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "demand/embedded",
+      "description": "Embedded generation adjusted demand - Strategy 4",
+      "params": {
+        "settlementDate": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "demand/embedded",
+      "description": "Embedded generation adjusted demand - Strategy 5",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 15
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "demand/embedded",
+      "description": "Embedded generation adjusted demand - Strategy 6",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26",
+        "format": "json"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "demand/peak/daily",
+      "description": "Daily peak demand - Strategy 1",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 29
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "demand/peak/daily",
+      "description": "Daily peak demand - Strategy 2",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "demand/peak/daily",
+      "description": "Daily peak demand - Strategy 3",
+      "params": {
+        "date": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "demand/peak/daily",
+      "description": "Daily peak demand - Strategy 4",
+      "params": {
+        "settlementDate": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "demand/peak/daily",
+      "description": "Daily peak demand - Strategy 5",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 15
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "demand/peak/daily",
+      "description": "Daily peak demand - Strategy 6",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26",
+        "format": "json"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "demand/peak/weekly",
+      "description": "Weekly peak demand - Strategy 1",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 29
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "demand/peak/weekly",
+      "description": "Weekly peak demand - Strategy 2",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "demand/peak/weekly",
+      "description": "Weekly peak demand - Strategy 3",
+      "params": {
+        "date": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "demand/peak/weekly",
+      "description": "Weekly peak demand - Strategy 4",
+      "params": {
+        "settlementDate": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "demand/peak/weekly",
+      "description": "Weekly peak demand - Strategy 5",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 15
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "demand/peak/weekly",
+      "description": "Weekly peak demand - Strategy 6",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26",
+        "format": "json"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "demand/peak/annual",
+      "description": "Annual peak demand - Strategy 1",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 29
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "demand/peak/annual",
+      "description": "Annual peak demand - Strategy 2",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "demand/peak/annual",
+      "description": "Annual peak demand - Strategy 3",
+      "params": {
+        "date": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "demand/peak/annual",
+      "description": "Annual peak demand - Strategy 4",
+      "params": {
+        "settlementDate": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "demand/peak/annual",
+      "description": "Annual peak demand - Strategy 5",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 15
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "demand/peak/annual",
+      "description": "Annual peak demand - Strategy 6",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26",
+        "format": "json"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/SYSWARN",
+      "description": "System warnings - Strategy 1",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 29
+      },
+      "status_code": 200,
+      "success": true,
+      "response_size": 827,
+      "data_count": 1,
+      "error": null
+    },
+    {
+      "endpoint": "datasets/SYSDEM",
+      "description": "System demand - Strategy 1",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 29
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/SYSDEM",
+      "description": "System demand - Strategy 2",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/SYSDEM",
+      "description": "System demand - Strategy 3",
+      "params": {
+        "date": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/SYSDEM",
+      "description": "System demand - Strategy 4",
+      "params": {
+        "settlementDate": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/SYSDEM",
+      "description": "System demand - Strategy 5",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 15
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/SYSDEM",
+      "description": "System demand - Strategy 6",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26",
+        "format": "json"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/SYSPRICE",
+      "description": "System prices - Strategy 1",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 29
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/SYSPRICE",
+      "description": "System prices - Strategy 2",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/SYSPRICE",
+      "description": "System prices - Strategy 3",
+      "params": {
+        "date": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/SYSPRICE",
+      "description": "System prices - Strategy 4",
+      "params": {
+        "settlementDate": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/SYSPRICE",
+      "description": "System prices - Strategy 5",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 15
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/SYSPRICE",
+      "description": "System prices - Strategy 6",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26",
+        "format": "json"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/BMUNIT",
+      "description": "BM unit data - Strategy 1",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 29
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/BMUNIT",
+      "description": "BM unit data - Strategy 2",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/BMUNIT",
+      "description": "BM unit data - Strategy 3",
+      "params": {
+        "date": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/BMUNIT",
+      "description": "BM unit data - Strategy 4",
+      "params": {
+        "settlementDate": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/BMUNIT",
+      "description": "BM unit data - Strategy 5",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 15
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/BMUNIT",
+      "description": "BM unit data - Strategy 6",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26",
+        "format": "json"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/BMRS",
+      "description": "BMRS data - Strategy 1",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 29
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/BMRS",
+      "description": "BMRS data - Strategy 2",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/BMRS",
+      "description": "BMRS data - Strategy 3",
+      "params": {
+        "date": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/BMRS",
+      "description": "BMRS data - Strategy 4",
+      "params": {
+        "settlementDate": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/BMRS",
+      "description": "BMRS data - Strategy 5",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 15
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/BMRS",
+      "description": "BMRS data - Strategy 6",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26",
+        "format": "json"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/BODC",
+      "description": "Bid-offer data by consumption - Strategy 1",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 29
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/BODC",
+      "description": "Bid-offer data by consumption - Strategy 2",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/BODC",
+      "description": "Bid-offer data by consumption - Strategy 3",
+      "params": {
+        "date": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/BODC",
+      "description": "Bid-offer data by consumption - Strategy 4",
+      "params": {
+        "settlementDate": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/BODC",
+      "description": "Bid-offer data by consumption - Strategy 5",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 15
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/BODC",
+      "description": "Bid-offer data by consumption - Strategy 6",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26",
+        "format": "json"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/DEMAND",
+      "description": "Demand data - Strategy 1",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 29
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/DEMAND",
+      "description": "Demand data - Strategy 2",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/DEMAND",
+      "description": "Demand data - Strategy 3",
+      "params": {
+        "date": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/DEMAND",
+      "description": "Demand data - Strategy 4",
+      "params": {
+        "settlementDate": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/DEMAND",
+      "description": "Demand data - Strategy 5",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 15
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/DEMAND",
+      "description": "Demand data - Strategy 6",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26",
+        "format": "json"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/DEMFOR",
+      "description": "Demand forecast - Strategy 1",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 29
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/DEMFOR",
+      "description": "Demand forecast - Strategy 2",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/DEMFOR",
+      "description": "Demand forecast - Strategy 3",
+      "params": {
+        "date": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/DEMFOR",
+      "description": "Demand forecast - Strategy 4",
+      "params": {
+        "settlementDate": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/DEMFOR",
+      "description": "Demand forecast - Strategy 5",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 15
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/DEMFOR",
+      "description": "Demand forecast - Strategy 6",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26",
+        "format": "json"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/GENERATION",
+      "description": "Generation data - Strategy 1",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 29
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/GENERATION",
+      "description": "Generation data - Strategy 2",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/GENERATION",
+      "description": "Generation data - Strategy 3",
+      "params": {
+        "date": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/GENERATION",
+      "description": "Generation data - Strategy 4",
+      "params": {
+        "settlementDate": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/GENERATION",
+      "description": "Generation data - Strategy 5",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 15
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/GENERATION",
+      "description": "Generation data - Strategy 6",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26",
+        "format": "json"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/GENFOR",
+      "description": "Generation forecast - Strategy 1",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 29
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/GENFOR",
+      "description": "Generation forecast - Strategy 2",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/GENFOR",
+      "description": "Generation forecast - Strategy 3",
+      "params": {
+        "date": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/GENFOR",
+      "description": "Generation forecast - Strategy 4",
+      "params": {
+        "settlementDate": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/GENFOR",
+      "description": "Generation forecast - Strategy 5",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 15
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/GENFOR",
+      "description": "Generation forecast - Strategy 6",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26",
+        "format": "json"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/WIND",
+      "description": "Wind generation data - Strategy 1",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 29
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/WIND",
+      "description": "Wind generation data - Strategy 2",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/WIND",
+      "description": "Wind generation data - Strategy 3",
+      "params": {
+        "date": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/WIND",
+      "description": "Wind generation data - Strategy 4",
+      "params": {
+        "settlementDate": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/WIND",
+      "description": "Wind generation data - Strategy 5",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 15
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/WIND",
+      "description": "Wind generation data - Strategy 6",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26",
+        "format": "json"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/SOLAR",
+      "description": "Solar generation data - Strategy 1",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 29
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/SOLAR",
+      "description": "Solar generation data - Strategy 2",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/SOLAR",
+      "description": "Solar generation data - Strategy 3",
+      "params": {
+        "date": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/SOLAR",
+      "description": "Solar generation data - Strategy 4",
+      "params": {
+        "settlementDate": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/SOLAR",
+      "description": "Solar generation data - Strategy 5",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 15
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/SOLAR",
+      "description": "Solar generation data - Strategy 6",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26",
+        "format": "json"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/MARKET",
+      "description": "Market data - Strategy 1",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 29
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/MARKET",
+      "description": "Market data - Strategy 2",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/MARKET",
+      "description": "Market data - Strategy 3",
+      "params": {
+        "date": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/MARKET",
+      "description": "Market data - Strategy 4",
+      "params": {
+        "settlementDate": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/MARKET",
+      "description": "Market data - Strategy 5",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 15
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/MARKET",
+      "description": "Market data - Strategy 6",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26",
+        "format": "json"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/PRICES",
+      "description": "Price data - Strategy 1",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 29
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/PRICES",
+      "description": "Price data - Strategy 2",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/PRICES",
+      "description": "Price data - Strategy 3",
+      "params": {
+        "date": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/PRICES",
+      "description": "Price data - Strategy 4",
+      "params": {
+        "settlementDate": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/PRICES",
+      "description": "Price data - Strategy 5",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 15
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/PRICES",
+      "description": "Price data - Strategy 6",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26",
+        "format": "json"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/TRADING",
+      "description": "Trading data - Strategy 1",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 29
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/TRADING",
+      "description": "Trading data - Strategy 2",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/TRADING",
+      "description": "Trading data - Strategy 3",
+      "params": {
+        "date": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/TRADING",
+      "description": "Trading data - Strategy 4",
+      "params": {
+        "settlementDate": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/TRADING",
+      "description": "Trading data - Strategy 5",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 15
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/TRADING",
+      "description": "Trading data - Strategy 6",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26",
+        "format": "json"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/SYSCON",
+      "description": "System configuration - Strategy 1",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 29
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/SYSCON",
+      "description": "System configuration - Strategy 2",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/SYSCON",
+      "description": "System configuration - Strategy 3",
+      "params": {
+        "date": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/SYSCON",
+      "description": "System configuration - Strategy 4",
+      "params": {
+        "settlementDate": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/SYSCON",
+      "description": "System configuration - Strategy 5",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 15
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/SYSCON",
+      "description": "System configuration - Strategy 6",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26",
+        "format": "json"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/MARGIN",
+      "description": "System margin - Strategy 1",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 29
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/MARGIN",
+      "description": "System margin - Strategy 2",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/MARGIN",
+      "description": "System margin - Strategy 3",
+      "params": {
+        "date": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/MARGIN",
+      "description": "System margin - Strategy 4",
+      "params": {
+        "settlementDate": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/MARGIN",
+      "description": "System margin - Strategy 5",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 15
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/MARGIN",
+      "description": "System margin - Strategy 6",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26",
+        "format": "json"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/RESERVE",
+      "description": "Reserve data - Strategy 1",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 29
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/RESERVE",
+      "description": "Reserve data - Strategy 2",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/RESERVE",
+      "description": "Reserve data - Strategy 3",
+      "params": {
+        "date": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/RESERVE",
+      "description": "Reserve data - Strategy 4",
+      "params": {
+        "settlementDate": "2024-06-25"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/RESERVE",
+      "description": "Reserve data - Strategy 5",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 15
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    },
+    {
+      "endpoint": "datasets/RESERVE",
+      "description": "Reserve data - Strategy 6",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26",
+        "format": "json"
+      },
+      "status_code": 404,
+      "success": false,
+      "response_size": 54,
+      "data_count": 0,
+      "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+    }
+  ]
+}

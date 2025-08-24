@@ -1,0 +1,10 @@
+name: Bug report
+description: Report a problem
+body:
+ - type: textarea
+   id: what-happened
+   attributes:
+     label: What happened?
+     placeholder: Steps to reproduce...
+   validations:
+     required: true

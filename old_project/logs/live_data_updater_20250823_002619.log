@@ -1,0 +1,4 @@
+2025-08-23 00:26:27,271 - INFO - ✅ Loaded BMRS API key from api.env file
+2025-08-23 00:26:27,272 - INFO - 🔄 Live Data Updater initialized
+Unknown command: run
+Available commands: list, update, elexon, neso, test

@@ -1,0 +1,31 @@
+FROM python:3.10-slim
+
+WORKDIR /app
+
+# Copy requirements first for better layer caching
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Install Google Cloud SDK for bq command
+RUN apt-get update && apt-get install -y \
+    curl \
+    apt-transport-https \
+    ca-certificates \
+    gnupg \
+    && mkdir -p /usr/share/keyrings \
+    && curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | gpg --dearmor > /usr/share/keyrings/cloud.google.gpg \
+    && echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | tee -a /etc/apt/sources.list.d/google-cloud-sdk.list \
+    && apt-get update && apt-get install -y google-cloud-sdk \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy the application code
+COPY *.py .
+COPY *.env .
+COPY *.json .
+
+# Create a simple Flask wrapper for our script
+COPY flask_wrapper.py .
+
+# Default command
+CMD ["python", "flask_wrapper.py"]

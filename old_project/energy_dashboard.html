@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Energy Data Dashboard</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart', 'bar', 'line']});
+        google.charts.setOnLoadCallback(initDashboard);
+
+        function initDashboard() {
+            document.getElementById('filterButton').addEventListener('click', function() {
+                const selectedDate = document.getElementById('dateFilter').value;
+                console.log("Filtering for date:", selectedDate);
+                drawCharts(selectedDate);
+            });
+            drawCharts();
+        }
+
+        function drawCharts(date = null) {
+            // For demo purposes, we ignore the date filter. In a real use case, data would be filtered.
+
+            // 1. Line Chart - Daily Energy Demand
+            var demandData = google.visualization.arrayToDataTable([
+                ['Day', 'Demand (MW)'],
+                ['Mon', 32000], ['Tue', 34000], ['Wed', 30000],
+                ['Thu', 36000], ['Fri', 37000], ['Sat', 28000], ['Sun', 26000]
+            ]);
+
+            var demandOptions = {
+                title: 'Daily Energy Demand (MW)',
+                curveType: 'function',
+                legend: { position: 'bottom' },
+                colors: ['#3366cc']
+            };
+
+            var demandChart = new google.visualization.LineChart(document.getElementById('demand_chart'));
+            demandChart.draw(demandData, demandOptions);
+
+            // 2. Column Chart - Generation by Fuel Type
+            var fuelData = google.visualization.arrayToDataTable([
+                ['Fuel Type', 'GWh'],
+                ['Gas', 1200],
+                ['Nuclear', 800],
+                ['Wind', 950],
+                ['Solar', 600],
+                ['Coal', 400]
+            ]);
+
+            var fuelOptions = {
+                title: 'Generation by Fuel Type (GWh)',
+                legend: { position: 'none' },
+                colors: ['#109618'],
+                vAxis: { title: 'GWh' },
+                hAxis: { title: 'Fuel Type' }
+            };
+
+            var fuelChart = new google.visualization.ColumnChart(document.getElementById('fuel_chart'));
+            fuelChart.draw(fuelData, fuelOptions);
+
+            // 3. Pie Chart - Energy Cost Breakdown
+            var costData = google.visualization.arrayToDataTable([
+                ['Component', 'Cost'],
+                ['DUoS', 35],
+                ['TNUoS', 25],
+                ['BSUoS', 15],
+                ['CfD', 10],
+                ['Others', 15]
+            ]);
+
+            var costOptions = {
+                title: 'Energy Cost Breakdown (%)',
+                pieHole: 0.4,
+                colors: ['#3366cc', '#dc3912', '#ff9900', '#109618', '#990099']
+            };
+
+            var costChart = new google.visualization.PieChart(document.getElementById('cost_chart'));
+            costChart.draw(costData, costOptions);
+
+            // 4. Bar Chart - Emissions by Fuel
+            var emissionsData = google.visualization.arrayToDataTable([
+                ['Fuel Type', 'CO2 (tons)'],
+                ['Gas', 50000], ['Coal', 70000], ['Wind', 0], ['Solar', 0], ['Nuclear', 1000]
+            ]);
+
+            var emissionsOptions = {
+                title: 'Emissions by Fuel Type',
+                legend: { position: 'none' },
+                colors: ['#e2431e'],
+                hAxis: { title: 'CO2 Emissions (tons)' },
+                vAxis: { title: 'Fuel Type' },
+                bars: 'horizontal'
+            };
+
+            var emissionsChart = new google.visualization.BarChart(document.getElementById('emissions_chart'));
+            emissionsChart.draw(emissionsData, emissionsOptions);
+        }
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+            margin: 0;
+            padding: 0;
+        }
+        .dashboard-container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 30px;
+        }
+        .filter-block {
+            background: #fff;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .filter-block label {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .filter-block input, .filter-block button {
+            padding: 8px 12px;
+            font-size: 1em;
+            margin-right: 10px;
+        }
+        .chart-block {
+            background: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #444;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="filter-block">
+            <label for="dateFilter">Select Date:</label>
+            <input type="date" id="dateFilter">
+            <button id="filterButton">Apply Filter</button>
+        </div>
+
+        <div class="chart-block">
+            <h2>📈 Daily Energy Demand</h2>
+            <div id="demand_chart" style="height: 400px;"></div>
+        </div>
+        <div class="chart-block">
+            <h2>⚡ Generation by Fuel Type</h2>
+            <div id="fuel_chart" style="height: 400px;"></div>
+        </div>
+        <div class="chart-block">
+            <h2>💰 Energy Cost Breakdown</h2>
+            <div id="cost_chart" style="height: 400px;"></div>
+        </div>
+        <div class="chart-block">
+            <h2>🌍 Emissions by Fuel Type</h2>
+            <div id="emissions_chart" style="height: 400px;"></div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+{
+  "bucket": "jibber-jabber-knowledge-bmrs-data",
+  "prefix": "bmrs_data",
+  "generated_at": "2025-08-09T23:46:18.680469Z",
+  "years": [
+    {
+      "year": 2016,
+      "collected_files": 366,
+      "target_files": 366,
+      "completion_pct": 100.0
+    },
+    {
+      "year": 2017,
+      "collected_files": 365,
+      "target_files": 365,
+      "completion_pct": 100.0
+    },
+    {
+      "year": 2018,
+      "collected_files": 365,
+      "target_files": 365,
+      "completion_pct": 100.0
+    },
+    {
+      "year": 2019,
+      "collected_files": 365,
+      "target_files": 365,
+      "completion_pct": 100.0
+    },
+    {
+      "year": 2020,
+      "collected_files": 366,
+      "target_files": 366,
+      "completion_pct": 100.0
+    },
+    {
+      "year": 2021,
+      "collected_files": 365,
+      "target_files": 365,
+      "completion_pct": 100.0
+    },
+    {
+      "year": 2022,
+      "collected_files": 30,
+      "target_files": 365,
+      "completion_pct": 8.2
+    },
+    {
+      "year": 2023,
+      "collected_files": 0,
+      "target_files": 365,
+      "completion_pct": 0.0
+    },
+    {
+      "year": 2024,
+      "collected_files": 3,
+      "target_files": 366,
+      "completion_pct": 0.8
+    },
+    {
+      "year": 2025,
+      "collected_files": 181,
+      "target_files": 220,
+      "completion_pct": 82.3
+    }
+  ],
+  "totals": {
+    "collected": 2406,
+    "target": 3508,
+    "overall_completion_pct": 68.6
+  },
+  "storage_bytes": 5459589555,
+  "storage_gb": 5.085
+}

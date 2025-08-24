@@ -1,0 +1,24 @@
+{
+ "name": "Python Project Dev",
+ "image": "mcr.microsoft.com/devcontainers/python:3.11",
+ "features": {
+   "ghcr.io/devcontainers/features/common-utils:2": {}
+ },
+ "postCreateCommand": "pip install -r requirements.txt || true",
+ "customizations": {
+   "vscode": {
+     "extensions": [
+       "ms-python.python",
+       "ms-python.vscode-pylance",
+       "ms-python.black-formatter",
+       "ms-python.isort",
+       "ms-toolsai.jupyter",
+       "editorconfig.editorconfig",
+       "GitHub.copilot",
+       "GitHub.copilot-chat",
+       "openai.chatgpt"
+     ]
+   }
+ },
+ "remoteUser": "vscode"
+}

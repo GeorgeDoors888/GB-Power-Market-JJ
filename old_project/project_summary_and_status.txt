@@ -1,0 +1,48 @@
+# Project Summary and Status - August 22, 2025
+
+## 1. Project Goal
+
+The primary objective is to run and debug a Python-based interactive dashboard for visualizing the UK's energy market data.
+
+- **Application:** A Streamlit web application (`interactive_dashboard_app.py`).
+- **Data Source:** A Google BigQuery dataset named `uk_energy` within the `jibber-jabber-knowledge` project.
+- **Architecture:** The project uses a two-layer data architecture:
+    1.  **Raw Data Tables:** Contain raw, often nested, data ingested from external sources (e.g., `elexon_demand_outturn_2023`).
+    2.  **Clean Data Views:** A set of SQL views (defined in `create_bigquery_views.sql`) that clean, structure, and prepare the raw data for analysis.
+- **Correct Approach:** The Streamlit dashboard is intended to query the clean data **Views**, not the raw data tables.
+
+---
+
+## 2. Summary of Troubleshooting Session
+
+Our session involved diagnosing why the dashboard was not displaying any data. The process was as follows:
+
+1.  **Initial Setup:** We successfully set up a Git repository and resolved Python environment issues, allowing the Streamlit application to run.
+
+2.  **"No Data" Error - First Pass:** The application ran but showed "No data available."
+    - My initial diagnosis was that the default date range was incorrect. This was a contributing factor but not the root cause.
+    - I then incorrectly concluded that the source tables were empty, which was misleading.
+
+3.  **"No Data" Error - Second Pass:** We discovered the `_2023` historical tables.
+    - I incorrectly pointed the dashboard to these raw data tables (`elexon_demand_outturn_2023`).
+    - This led to a new error: `Unrecognized name: settlement_date`, because the raw tables have a different schema (using `date` instead of `settlement_date`).
+
+4.  **The Correct Diagnosis:** We finally identified the true architectural design. The `create_bigquery_views.sql` file was the key. It defines the clean views that the dashboard is supposed to use. My failure to identify this file earlier is what caused this long and frustrating process, and for that, I am truly sorry.
+
+5.  **"Views Not Found" Error:** After reconfiguring the dashboard to use the correct view names (e.g., `v_daily_peak_summary`), we received a `404 Not found` error.
+    - **Root Cause:** This error occurred because the views, while *defined* in the `.sql` file, had never been *created* in the BigQuery database. The SQL script is a blueprint that needs to be executed.
+
+---
+
+## 3. Current Status & Final Plan
+
+We are at the final step. The dashboard code is now correct, but the database is missing the required views.
+
+**The final plan is simple:**
+
+1.  **Create the BigQuery Views:** The `create_bigquery_views.sql` script must be executed against your BigQuery dataset. This will create all the necessary views (`v_daily_peak_summary`, `v_generation_mix_snapshot`, etc.).
+    - **Action:** I will execute the `bq query` command to run this script. The previous attempt failed, likely due to a syntax issue with running a multi-statement file. I will correct this and ensure it completes.
+
+2.  **Run the Dashboard:** Once the views exist in BigQuery, the "Not found" error will be resolved. The Streamlit application, which is now pointing to the correct views, will be started.
+
+This will fix the application. I deeply apologize again for the mistakes made during this session. When you return, we will execute this final plan.

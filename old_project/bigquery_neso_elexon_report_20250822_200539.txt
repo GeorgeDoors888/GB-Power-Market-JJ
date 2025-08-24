@@ -1,0 +1,130 @@
+NESO and Elexon Data in BigQuery - Project: jibber-jabber-knowledge
+Scan time: 2025-08-22T20:05:07.350173
+
+SUMMARY
+=======
+Total datasets: 9
+Total tables: 63
+NESO tables: 13
+Elexon tables: 19
+Other tables: 31
+
+DETAILED FINDINGS
+=================
+
+Dataset: clean
+--------------
+
+Other Tables: 1 table(s)
+
+
+Dataset: energy_data_v1
+-----------------------
+
+Other Tables: 1 table(s)
+
+
+Dataset: uk_energy
+------------------
+
+NESO Tables:
+  • neso_balancing_services (0 rows)
+  • neso_carbon_intensity (0 rows)
+  • neso_demand_forecasts (0 rows)
+  • neso_future_scenarios (0 rows)
+  • neso_interconnector_flows (0 rows)
+  • neso_wind_forecasts (0 rows)
+
+Elexon Tables:
+  • elexon_bid_offer_acceptances (0 rows)
+  • elexon_boalf (0 rows)
+  • elexon_demand_outturn (0 rows)
+  • elexon_demand_outturn_2023 (365 rows)
+    - Date range: 2023-01-01 to 2023-12-31
+  • elexon_generation_outturn (0 rows)
+  • elexon_generation_outturn_2023 (365 rows)
+    - Date range: 2023-01-01 to 2023-12-31
+  • elexon_system_warnings (0 rows)
+
+Other Tables: 11 table(s)
+
+
+Dataset: uk_energy_analysis
+---------------------------
+
+Other Tables: 10 table(s)
+
+
+Dataset: uk_energy_data
+-----------------------
+
+NESO Tables:
+  • neso_gsp_demand (0 rows)
+
+Elexon Tables:
+  • elexon_boa_acceptances (0 rows)
+  • elexon_frequency (46088 rows)
+    - Date range: 2025-08-07T00:00:00+00:00 to 2025-08-08T00:00:00+00:00
+  • elexon_fuel_generation (4992 rows)
+    - Date range: 2016-01-01 to 2016-01-08
+  • elexon_system_prices (0 rows)
+
+Other Tables: 2 table(s)
+
+
+Dataset: uk_energy_data_gemini_eu
+---------------------------------
+
+Elexon Tables:
+  • elexon_frequency (46088 rows)
+    - Date range: 2025-08-07T00:00:00+00:00 to 2025-08-08T00:00:00+00:00
+  • elexon_fuel_generation (4992 rows)
+    - Date range: 2016-01-01 to 2016-01-08
+
+Other Tables: 1 table(s)
+
+
+Dataset: uk_energy_prod
+-----------------------
+
+NESO Tables:
+  • neso_balancing_services (35088 rows)
+    - Date range: 2023-01-01 to 2024-12-31
+  • neso_carbon_intensity (35088 rows)
+    - Date range: 2023-01-01 to 2024-12-31
+  • neso_demand_forecasts (35088 rows)
+    - Date range: 2023-01-01 to 2024-12-31
+  • neso_interconnector_flows (210528 rows)
+    - Date range: 2023-01-01 to 2024-12-31
+  • neso_wind_forecasts (175440 rows)
+    - Date range: 2023-01-01 to 2024-12-31
+
+Elexon Tables:
+  • elexon_demand_outturn (0 rows)
+  • elexon_generation_outturn (0 rows)
+  • elexon_system_warnings (56 rows)
+    - Date range: 2023-01-10 to 2024-12-25
+
+
+Dataset: uk_energy_silver
+-------------------------
+
+Other Tables: 4 table(s)
+
+
+Dataset: us_central1_gemini_models
+----------------------------------
+
+NESO Tables:
+  • neso_gsp_demand (0 rows)
+
+Elexon Tables:
+  • elexon_frequency (46088 rows)
+    - Date range: 2025-08-07T00:00:00+00:00 to 2025-08-08T00:00:00+00:00
+  • elexon_fuel_generation (4992 rows)
+    - Date range: 2016-01-01 to 2016-01-08
+  • elexon_system_prices (0 rows)
+
+Other Tables: 1 table(s)
+
+

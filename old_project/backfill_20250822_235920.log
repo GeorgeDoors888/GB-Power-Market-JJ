@@ -1,0 +1,95 @@
+2025-08-22 23:59:26,000 - INFO - ✅ Data Backfiller initialized
+2025-08-22 23:59:26,001 - INFO - 🔄 Starting backfill for elexon_demand_outturn
+2025-08-22 23:59:26,980 - INFO - 🔍 Found 14 missing dates for elexon_demand_outturn
+2025-08-22 23:59:26,980 - INFO - 🔄 Processing elexon_demand_outturn for 2025-08-09
+2025-08-22 23:59:27,930 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/08/2025-08-09.json
+2025-08-22 23:59:28,566 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_demand_outturn. Field timestamp is missing in new schema
+2025-08-22 23:59:28,567 - INFO - 🔄 Processing elexon_demand_outturn for 2025-08-10
+2025-08-22 23:59:28,895 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/08/2025-08-10.json
+2025-08-22 23:59:29,426 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_demand_outturn. Field timestamp is missing in new schema
+2025-08-22 23:59:29,426 - INFO - 🔄 Processing elexon_demand_outturn for 2025-08-11
+2025-08-22 23:59:29,844 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/08/2025-08-11.json
+2025-08-22 23:59:30,433 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_demand_outturn. Field timestamp is missing in new schema
+2025-08-22 23:59:30,436 - INFO - 🔄 Processing elexon_demand_outturn for 2025-08-12
+2025-08-22 23:59:30,802 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/08/2025-08-12.json
+2025-08-22 23:59:31,144 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_demand_outturn. Field timestamp is missing in new schema
+2025-08-22 23:59:31,147 - INFO - 🔄 Processing elexon_demand_outturn for 2025-08-13
+2025-08-22 23:59:31,832 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/08/2025-08-13.json
+2025-08-22 23:59:32,112 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_demand_outturn. Field timestamp is missing in new schema
+2025-08-22 23:59:32,112 - INFO - 🔄 Processing elexon_demand_outturn for 2025-08-14
+2025-08-22 23:59:32,883 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/08/2025-08-14.json
+2025-08-22 23:59:33,242 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_demand_outturn. Field timestamp is missing in new schema
+2025-08-22 23:59:33,242 - INFO - 🔄 Processing elexon_demand_outturn for 2025-08-15
+2025-08-22 23:59:33,815 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/08/2025-08-15.json
+2025-08-22 23:59:34,043 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_demand_outturn. Field timestamp is missing in new schema
+2025-08-22 23:59:34,044 - INFO - 🔄 Processing elexon_demand_outturn for 2025-08-16
+2025-08-22 23:59:34,839 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/08/2025-08-16.json
+2025-08-22 23:59:35,365 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_demand_outturn. Field timestamp is missing in new schema
+2025-08-22 23:59:35,366 - INFO - 🔄 Processing elexon_demand_outturn for 2025-08-17
+2025-08-22 23:59:35,825 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/08/2025-08-17.json
+2025-08-22 23:59:36,348 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_demand_outturn. Field timestamp is missing in new schema
+2025-08-22 23:59:36,349 - INFO - 🔄 Processing elexon_demand_outturn for 2025-08-18
+2025-08-22 23:59:36,820 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/08/2025-08-18.json
+2025-08-22 23:59:37,510 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_demand_outturn. Field timestamp is missing in new schema
+2025-08-22 23:59:37,511 - INFO - 🔄 Processing elexon_demand_outturn for 2025-08-19
+2025-08-22 23:59:37,831 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/08/2025-08-19.json
+2025-08-22 23:59:38,232 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_demand_outturn. Field timestamp is missing in new schema
+2025-08-22 23:59:38,232 - INFO - 🔄 Processing elexon_demand_outturn for 2025-08-20
+2025-08-22 23:59:38,994 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/08/2025-08-20.json
+2025-08-22 23:59:39,387 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_demand_outturn. Field timestamp is missing in new schema
+2025-08-22 23:59:39,387 - INFO - 🔄 Processing elexon_demand_outturn for 2025-08-21
+2025-08-22 23:59:39,934 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/08/2025-08-21.json
+2025-08-22 23:59:40,219 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_demand_outturn. Field timestamp is missing in new schema
+2025-08-22 23:59:40,219 - INFO - 🔄 Processing elexon_demand_outturn for 2025-08-22
+2025-08-22 23:59:40,857 - INFO - ✅ Saved 47 records to GCS: bmrs_data/elexon_demand_outturn/2025/08/2025-08-22.json
+2025-08-22 23:59:41,267 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_demand_outturn. Field timestamp is missing in new schema
+2025-08-22 23:59:41,267 - INFO - ✅ Backfilled 0/14 dates for elexon_demand_outturn
+2025-08-22 23:59:41,267 - INFO - 🔄 Starting backfill for elexon_generation_outturn
+2025-08-22 23:59:42,097 - INFO - 🔍 Found 15 missing dates for elexon_generation_outturn
+2025-08-22 23:59:42,098 - INFO - 🔄 Processing elexon_generation_outturn for 2025-08-08
+2025-08-22 23:59:42,424 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/08/2025-08-08.json
+2025-08-22 23:59:42,667 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_generation_outturn. Field timestamp is missing in new schema
+2025-08-22 23:59:42,668 - INFO - 🔄 Processing elexon_generation_outturn for 2025-08-09
+2025-08-22 23:59:43,379 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/08/2025-08-09.json
+2025-08-22 23:59:44,061 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_generation_outturn. Field timestamp is missing in new schema
+2025-08-22 23:59:44,061 - INFO - 🔄 Processing elexon_generation_outturn for 2025-08-10
+2025-08-22 23:59:44,416 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/08/2025-08-10.json
+2025-08-22 23:59:44,878 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_generation_outturn. Field timestamp is missing in new schema
+2025-08-22 23:59:44,878 - INFO - 🔄 Processing elexon_generation_outturn for 2025-08-11
+2025-08-22 23:59:45,467 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/08/2025-08-11.json
+2025-08-22 23:59:45,788 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_generation_outturn. Field timestamp is missing in new schema
+2025-08-22 23:59:45,788 - INFO - 🔄 Processing elexon_generation_outturn for 2025-08-12
+2025-08-22 23:59:46,369 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/08/2025-08-12.json
+2025-08-22 23:59:46,650 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_generation_outturn. Field timestamp is missing in new schema
+2025-08-22 23:59:46,651 - INFO - 🔄 Processing elexon_generation_outturn for 2025-08-13
+2025-08-22 23:59:47,400 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/08/2025-08-13.json
+2025-08-22 23:59:47,719 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_generation_outturn. Field timestamp is missing in new schema
+2025-08-22 23:59:47,719 - INFO - 🔄 Processing elexon_generation_outturn for 2025-08-14
+2025-08-22 23:59:48,422 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/08/2025-08-14.json
+2025-08-22 23:59:48,789 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_generation_outturn. Field timestamp is missing in new schema
+2025-08-22 23:59:48,790 - INFO - 🔄 Processing elexon_generation_outturn for 2025-08-15
+2025-08-22 23:59:49,390 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/08/2025-08-15.json
+2025-08-22 23:59:49,660 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_generation_outturn. Field timestamp is missing in new schema
+2025-08-22 23:59:49,661 - INFO - 🔄 Processing elexon_generation_outturn for 2025-08-16
+2025-08-22 23:59:50,433 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/08/2025-08-16.json
+2025-08-22 23:59:50,709 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_generation_outturn. Field timestamp is missing in new schema
+2025-08-22 23:59:50,709 - INFO - 🔄 Processing elexon_generation_outturn for 2025-08-17
+2025-08-22 23:59:51,442 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/08/2025-08-17.json
+2025-08-22 23:59:51,757 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_generation_outturn. Field timestamp is missing in new schema
+2025-08-22 23:59:51,757 - INFO - 🔄 Processing elexon_generation_outturn for 2025-08-18
+2025-08-22 23:59:52,384 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/08/2025-08-18.json
+2025-08-22 23:59:52,648 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_generation_outturn. Field timestamp is missing in new schema
+2025-08-22 23:59:52,648 - INFO - 🔄 Processing elexon_generation_outturn for 2025-08-19
+2025-08-22 23:59:53,414 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/08/2025-08-19.json
+2025-08-22 23:59:53,660 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_generation_outturn. Field timestamp is missing in new schema
+2025-08-22 23:59:53,660 - INFO - 🔄 Processing elexon_generation_outturn for 2025-08-20
+2025-08-22 23:59:54,396 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/08/2025-08-20.json
+2025-08-22 23:59:54,686 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_generation_outturn. Field timestamp is missing in new schema
+2025-08-22 23:59:54,686 - INFO - 🔄 Processing elexon_generation_outturn for 2025-08-21
+2025-08-22 23:59:55,430 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/08/2025-08-21.json
+2025-08-22 23:59:55,607 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_generation_outturn. Field timestamp is missing in new schema
+2025-08-22 23:59:55,607 - INFO - 🔄 Processing elexon_generation_outturn for 2025-08-22
+2025-08-22 23:59:56,479 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/08/2025-08-22.json
+2025-08-22 23:59:56,686 - ERROR - ❌ Error loading to BigQuery: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_generation_outturn. Field timestamp is missing in new schema
+2025-08-22 23:59:56,686 - INFO - ✅ Backfilled 0/15 dates for elexon_generation_outturn
+2025-08-22 23:59:56,686 - INFO - 🔄 Starting backfill for elexon_system_warnings

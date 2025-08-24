@@ -1,0 +1,32 @@
+2025-08-22 23:16:07,314 - INFO - 🔄 Live Data Updater initialized
+2025-08-22 23:16:07,315 - INFO - 📅 Scheduled updates for Elexon demand_outturn every 30 minutes
+2025-08-22 23:16:07,315 - INFO - 📅 Scheduled updates for Elexon generation_outturn every 30 minutes
+2025-08-22 23:16:07,315 - INFO - 📅 Scheduled updates for Elexon system_warnings every 60 minutes
+2025-08-22 23:16:07,315 - INFO - 📅 Scheduled updates for NESO demand_forecasts every 60 minutes
+2025-08-22 23:16:07,315 - INFO - 📅 Scheduled updates for NESO wind_forecasts every 60 minutes
+2025-08-22 23:16:07,315 - INFO - 📅 Scheduled updates for NESO carbon_intensity every 60 minutes
+2025-08-22 23:16:07,315 - INFO - 📅 Scheduled updates for NESO interconnector_flows every 60 minutes
+2025-08-22 23:16:07,315 - INFO - 📅 Scheduled updates for NESO balancing_services every 120 minutes
+2025-08-22 23:16:07,315 - INFO - 📅 All updates scheduled. Running continuous monitoring...
+2025-08-22 23:16:07,315 - INFO - 📊 Checking for updates to Elexon demand_outturn
+2025-08-22 23:16:07,508 - INFO - 🔄 Found 1390 records for Elexon demand_outturn
+Error converting Pandas column with name: "settlement_date" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-22 23:16:12,173 - ERROR - ❌ Error updating Elexon demand_outturn: Error converting Pandas column with name: "settlement_date" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-22 23:16:12,174 - INFO - 📊 Checking for updates to Elexon generation_outturn
+2025-08-22 23:16:12,201 - INFO - 🔄 Found 289 records for Elexon generation_outturn
+2025-08-22 23:16:14,200 - ERROR - ❌ Error updating Elexon generation_outturn: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/jibber-jabber-knowledge/jobs?uploadType=multipart: Provided Schema does not match Table jibber-jabber-knowledge:uk_energy_prod.elexon_generation_outturn. Field timestamp is missing in new schema
+2025-08-22 23:16:14,201 - INFO - 📊 Checking for updates to Elexon system_warnings
+2025-08-22 23:16:14,210 - ERROR - ❌ Error updating Elexon system_warnings: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/bmrs/api/v1/system-warnings?from=2025-08-21&to=2025-08-22&format=json
+2025-08-22 23:16:14,211 - INFO - 📊 Elexon update complete. Updated 0 records across all datasets.
+2025-08-22 23:16:14,211 - INFO - 📊 Checking for updates to NESO demand_forecasts
+2025-08-22 23:16:14,403 - ERROR - ❌ Error updating NESO demand_forecasts: 404 Client Error: Not Found for url: https://api.neso.energy/api/3/action/datastore_search?resource_id=neso-demand-forecasts&q=settlement_date%3A%3E%3D2025-08-21+settlement_date%3A%3C%3D2025-08-22&sort=settlement_date+desc%2C+settlement_period+desc&limit=1000
+2025-08-22 23:16:14,404 - INFO - 📊 Checking for updates to NESO wind_forecasts
+2025-08-22 23:16:44,299 - ERROR - ❌ Error updating NESO wind_forecasts: 404 Client Error: Not Found for url: https://api.neso.energy/api/3/action/datastore_search?resource_id=neso-wind-forecasts&q=settlement_date%3A%3E%3D2025-08-21+settlement_date%3A%3C%3D2025-08-22&sort=settlement_date+desc%2C+settlement_period+desc&limit=1000
+2025-08-22 23:16:44,300 - INFO - 📊 Checking for updates to NESO carbon_intensity
+2025-08-22 23:17:14,339 - ERROR - ❌ Error updating NESO carbon_intensity: 404 Client Error: Not Found for url: https://api.neso.energy/api/3/action/datastore_search?resource_id=neso-carbon-intensity&q=settlement_date%3A%3E%3D2025-08-21+settlement_date%3A%3C%3D2025-08-22&sort=settlement_date+desc%2C+settlement_period+desc&limit=1000
+2025-08-22 23:17:14,340 - INFO - 📊 Checking for updates to NESO interconnector_flows
+2025-08-22 23:17:44,299 - ERROR - ❌ Error updating NESO interconnector_flows: 404 Client Error: Not Found for url: https://api.neso.energy/api/3/action/datastore_search?resource_id=neso-interconnector-flows&q=settlement_date%3A%3E%3D2025-08-21+settlement_date%3A%3C%3D2025-08-22&sort=settlement_date+desc%2C+settlement_period+desc&limit=1000
+2025-08-22 23:17:44,300 - INFO - 📊 Checking for updates to NESO balancing_services
+2025-08-22 23:18:14,324 - ERROR - ❌ Error updating NESO balancing_services: 404 Client Error: Not Found for url: https://api.neso.energy/api/3/action/datastore_search?resource_id=neso-balancing-services&q=settlement_date%3A%3E%3D2025-08-21+settlement_date%3A%3C%3D2025-08-22&sort=settlement_date+desc%2C+settlement_period+desc&limit=1000
+2025-08-22 23:18:14,327 - INFO - 📊 NESO update complete. Updated 0 records across all datasets.
+2025-08-22 23:18:14,327 - INFO - 🔄 Complete update cycle finished. Updated 0 records total.

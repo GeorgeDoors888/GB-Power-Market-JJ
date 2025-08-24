@@ -1,0 +1,1154 @@
+[
+  {
+    "publishTime": "2025-08-01T00:00:00",
+    "startTime": "2025-08-01T00:00:00",
+    "settlementDate": "2025-08-01",
+    "settlementPeriod": 1,
+    "initialDemandOutturn": 30133.94,
+    "initialTransmissionSystemDemandOutturn": 35789.32
+  },
+  {
+    "publishTime": "2025-08-01T01:00:00",
+    "startTime": "2025-08-01T01:00:00",
+    "settlementDate": "2025-08-01",
+    "settlementPeriod": 2,
+    "initialDemandOutturn": 42789.48,
+    "initialTransmissionSystemDemandOutturn": 30557.05
+  },
+  {
+    "publishTime": "2025-08-01T01:00:00",
+    "startTime": "2025-08-01T01:00:00",
+    "settlementDate": "2025-08-01",
+    "settlementPeriod": 3,
+    "initialDemandOutturn": 30327.39,
+    "initialTransmissionSystemDemandOutturn": 25133.15
+  },
+  {
+    "publishTime": "2025-08-01T02:00:00",
+    "startTime": "2025-08-01T02:00:00",
+    "settlementDate": "2025-08-01",
+    "settlementPeriod": 4,
+    "initialDemandOutturn": 43013.06,
+    "initialTransmissionSystemDemandOutturn": 24952.71
+  },
+  {
+    "publishTime": "2025-08-01T02:00:00",
+    "startTime": "2025-08-01T02:00:00",
+    "settlementDate": "2025-08-01",
+    "settlementPeriod": 5,
+    "initialDemandOutturn": 37327.03,
+    "initialTransmissionSystemDemandOutturn": 25084.27
+  },
+  {
+    "publishTime": "2025-08-01T03:00:00",
+    "startTime": "2025-08-01T03:00:00",
+    "settlementDate": "2025-08-01",
+    "settlementPeriod": 6,
+    "initialDemandOutturn": 36914.52,
+    "initialTransmissionSystemDemandOutturn": 28326.38
+  },
+  {
+    "publishTime": "2025-08-01T03:00:00",
+    "startTime": "2025-08-01T03:00:00",
+    "settlementDate": "2025-08-01",
+    "settlementPeriod": 7,
+    "initialDemandOutturn": 45989.99,
+    "initialTransmissionSystemDemandOutturn": 34947.4
+  },
+  {
+    "publishTime": "2025-08-01T04:00:00",
+    "startTime": "2025-08-01T04:00:00",
+    "settlementDate": "2025-08-01",
+    "settlementPeriod": 8,
+    "initialDemandOutturn": 35727.46,
+    "initialTransmissionSystemDemandOutturn": 32536.53
+  },
+  {
+    "publishTime": "2025-08-01T04:00:00",
+    "startTime": "2025-08-01T04:00:00",
+    "settlementDate": "2025-08-01",
+    "settlementPeriod": 9,
+    "initialDemandOutturn": 29750.24,
+    "initialTransmissionSystemDemandOutturn": 32361.69
+  },
+  {
+    "publishTime": "2025-08-01T05:00:00",
+    "startTime": "2025-08-01T05:00:00",
+    "settlementDate": "2025-08-01",
+    "settlementPeriod": 10,
+    "initialDemandOutturn": 35946.7,
+    "initialTransmissionSystemDemandOutturn": 31490.15
+  },
+  {
+    "publishTime": "2025-08-01T05:00:00",
+    "startTime": "2025-08-01T05:00:00",
+    "settlementDate": "2025-08-01",
+    "settlementPeriod": 11,
+    "initialDemandOutturn": 42804.9,
+    "initialTransmissionSystemDemandOutturn": 33097.57
+  },
+  {
+    "publishTime": "2025-08-01T06:00:00",
+    "startTime": "2025-08-01T06:00:00",
+    "settlementDate": "2025-08-01",
+    "settlementPeriod": 12,
+    "initialDemandOutturn": 34217.63,
+    "initialTransmissionSystemDemandOutturn": 27285.04
+  },
+  {
+    "publishTime": "2025-08-01T06:00:00",
+    "startTime": "2025-08-01T06:00:00",
+    "settlementDate": "2025-08-01",
+    "settlementPeriod": 13,
+    "initialDemandOutturn": 35582.38,
+    "initialTransmissionSystemDemandOutturn": 36644.61
+  },
+  {
+    "publishTime": "2025-08-01T07:00:00",
+    "startTime": "2025-08-01T07:00:00",
+    "settlementDate": "2025-08-01",
+    "settlementPeriod": 14,
+    "initialDemandOutturn": 30646.34,
+    "initialTransmissionSystemDemandOutturn": 25974.47
+  },
+  {
+    "publishTime": "2025-08-01T07:00:00",
+    "startTime": "2025-08-01T07:00:00",
+    "settlementDate": "2025-08-01",
+    "settlementPeriod": 15,
+    "initialDemandOutturn": 37347.91,
+    "initialTransmissionSystemDemandOutturn": 37732.79
+  },
+  {
+    "publishTime": "2025-08-01T08:00:00",
+    "startTime": "2025-08-01T08:00:00",
+    "settlementDate": "2025-08-01",
+    "settlementPeriod": 16,
+    "initialDemandOutturn": 36741.63,
+    "initialTransmissionSystemDemandOutturn": 30252.98
+  },
+  {
+    "publishTime": "2025-08-01T08:00:00",
+    "startTime": "2025-08-01T08:00:00",
+    "settlementDate": "2025-08-01",
+    "settlementPeriod": 17,
+    "initialDemandOutturn": 38511.49,
+    "initialTransmissionSystemDemandOutturn": 34012.49
+  },
+  {
+    "publishTime": "2025-08-01T09:00:00",
+    "startTime": "2025-08-01T09:00:00",
+    "settlementDate": "2025-08-01",
+    "settlementPeriod": 18,
+    "initialDemandOutturn": 39506.94,
+    "initialTransmissionSystemDemandOutturn": 34580.71
+  },
+  {
+    "publishTime": "2025-08-01T09:00:00",
+    "startTime": "2025-08-01T09:00:00",
+    "settlementDate": "2025-08-01",
+    "settlementPeriod": 19,
+    "initialDemandOutturn": 25690.16,
+    "initialTransmissionSystemDemandOutturn": 35581.57
+  },
+  {
+    "publishTime": "2025-08-01T10:00:00",
+    "startTime": "2025-08-01T10:00:00",
+    "settlementDate": "2025-08-01",
+    "settlementPeriod": 20,
+    "initialDemandOutturn": 32205.32,
+    "initialTransmissionSystemDemandOutturn": 33641.93
+  },
+  {
+    "publishTime": "2025-08-01T10:00:00",
+    "startTime": "2025-08-01T10:00:00",
+    "settlementDate": "2025-08-01",
+    "settlementPeriod": 21,
+    "initialDemandOutturn": 33493.88,
+    "initialTransmissionSystemDemandOutturn": 26679.11
+  },
+  {
+    "publishTime": "2025-08-01T11:00:00",
+    "startTime": "2025-08-01T11:00:00",
+    "settlementDate": "2025-08-01",
+    "settlementPeriod": 22,
+    "initialDemandOutturn": 36037.34,
+    "initialTransmissionSystemDemandOutturn": 30464.2
+  },
+  {
+    "publishTime": "2025-08-01T11:00:00",
+    "startTime": "2025-08-01T11:00:00",
+    "settlementDate": "2025-08-01",
+    "settlementPeriod": 23,
+    "initialDemandOutturn": 34455.32,
+    "initialTransmissionSystemDemandOutturn": 30022.33
+  },
+  {
+    "publishTime": "2025-08-01T12:00:00",
+    "startTime": "2025-08-01T12:00:00",
+    "settlementDate": "2025-08-01",
+    "settlementPeriod": 24,
+    "initialDemandOutturn": 37186.99,
+    "initialTransmissionSystemDemandOutturn": 28714.92
+  },
+  {
+    "publishTime": "2025-08-01T12:00:00",
+    "startTime": "2025-08-01T12:00:00",
+    "settlementDate": "2025-08-01",
+    "settlementPeriod": 25,
+    "initialDemandOutturn": 42339.96,
+    "initialTransmissionSystemDemandOutturn": 30178.28
+  },
+  {
+    "publishTime": "2025-08-01T13:00:00",
+    "startTime": "2025-08-01T13:00:00",
+    "settlementDate": "2025-08-01",
+    "settlementPeriod": 26,
+    "initialDemandOutturn": 40943.57,
+    "initialTransmissionSystemDemandOutturn": 32870.3
+  },
+  {
+    "publishTime": "2025-08-01T13:00:00",
+    "startTime": "2025-08-01T13:00:00",
+    "settlementDate": "2025-08-01",
+    "settlementPeriod": 27,
+    "initialDemandOutturn": 34078.3,
+    "initialTransmissionSystemDemandOutturn": 29582.36
+  },
+  {
+    "publishTime": "2025-08-01T14:00:00",
+    "startTime": "2025-08-01T14:00:00",
+    "settlementDate": "2025-08-01",
+    "settlementPeriod": 28,
+    "initialDemandOutturn": 34537.73,
+    "initialTransmissionSystemDemandOutturn": 34239.66
+  },
+  {
+    "publishTime": "2025-08-01T14:00:00",
+    "startTime": "2025-08-01T14:00:00",
+    "settlementDate": "2025-08-01",
+    "settlementPeriod": 29,
+    "initialDemandOutturn": 33038.75,
+    "initialTransmissionSystemDemandOutturn": 31186.7
+  },
+  {
+    "publishTime": "2025-08-01T15:00:00",
+    "startTime": "2025-08-01T15:00:00",
+    "settlementDate": "2025-08-01",
+    "settlementPeriod": 30,
+    "initialDemandOutturn": 36635.89,
+    "initialTransmissionSystemDemandOutturn": 29166.29
+  },
+  {
+    "publishTime": "2025-08-01T15:00:00",
+    "startTime": "2025-08-01T15:00:00",
+    "settlementDate": "2025-08-01",
+    "settlementPeriod": 31,
+    "initialDemandOutturn": 39015.78,
+    "initialTransmissionSystemDemandOutturn": 30397.34
+  },
+  {
+    "publishTime": "2025-08-01T16:00:00",
+    "startTime": "2025-08-01T16:00:00",
+    "settlementDate": "2025-08-01",
+    "settlementPeriod": 32,
+    "initialDemandOutturn": 27217.35,
+    "initialTransmissionSystemDemandOutturn": 29360.64
+  },
+  {
+    "publishTime": "2025-08-01T16:00:00",
+    "startTime": "2025-08-01T16:00:00",
+    "settlementDate": "2025-08-01",
+    "settlementPeriod": 33,
+    "initialDemandOutturn": 24584.56,
+    "initialTransmissionSystemDemandOutturn": 33435.07
+  },
+  {
+    "publishTime": "2025-08-01T17:00:00",
+    "startTime": "2025-08-01T17:00:00",
+    "settlementDate": "2025-08-01",
+    "settlementPeriod": 34,
+    "initialDemandOutturn": 30986.49,
+    "initialTransmissionSystemDemandOutturn": 34919.1
+  },
+  {
+    "publishTime": "2025-08-01T17:00:00",
+    "startTime": "2025-08-01T17:00:00",
+    "settlementDate": "2025-08-01",
+    "settlementPeriod": 35,
+    "initialDemandOutturn": 29568.4,
+    "initialTransmissionSystemDemandOutturn": 33971.55
+  },
+  {
+    "publishTime": "2025-08-01T18:00:00",
+    "startTime": "2025-08-01T18:00:00",
+    "settlementDate": "2025-08-01",
+    "settlementPeriod": 36,
+    "initialDemandOutturn": 51408.93,
+    "initialTransmissionSystemDemandOutturn": 28811.43
+  },
+  {
+    "publishTime": "2025-08-01T18:00:00",
+    "startTime": "2025-08-01T18:00:00",
+    "settlementDate": "2025-08-01",
+    "settlementPeriod": 37,
+    "initialDemandOutturn": 33041.55,
+    "initialTransmissionSystemDemandOutturn": 31295.99
+  },
+  {
+    "publishTime": "2025-08-01T19:00:00",
+    "startTime": "2025-08-01T19:00:00",
+    "settlementDate": "2025-08-01",
+    "settlementPeriod": 38,
+    "initialDemandOutturn": 25443.76,
+    "initialTransmissionSystemDemandOutturn": 32860.19
+  },
+  {
+    "publishTime": "2025-08-01T19:00:00",
+    "startTime": "2025-08-01T19:00:00",
+    "settlementDate": "2025-08-01",
+    "settlementPeriod": 39,
+    "initialDemandOutturn": 41988.82,
+    "initialTransmissionSystemDemandOutturn": 33182.83
+  },
+  {
+    "publishTime": "2025-08-01T20:00:00",
+    "startTime": "2025-08-01T20:00:00",
+    "settlementDate": "2025-08-01",
+    "settlementPeriod": 40,
+    "initialDemandOutturn": 36348.92,
+    "initialTransmissionSystemDemandOutturn": 29381.69
+  },
+  {
+    "publishTime": "2025-08-01T20:00:00",
+    "startTime": "2025-08-01T20:00:00",
+    "settlementDate": "2025-08-01",
+    "settlementPeriod": 41,
+    "initialDemandOutturn": 39651.45,
+    "initialTransmissionSystemDemandOutturn": 27511.05
+  },
+  {
+    "publishTime": "2025-08-01T21:00:00",
+    "startTime": "2025-08-01T21:00:00",
+    "settlementDate": "2025-08-01",
+    "settlementPeriod": 42,
+    "initialDemandOutturn": 28440.54,
+    "initialTransmissionSystemDemandOutturn": 29468.42
+  },
+  {
+    "publishTime": "2025-08-01T21:00:00",
+    "startTime": "2025-08-01T21:00:00",
+    "settlementDate": "2025-08-01",
+    "settlementPeriod": 43,
+    "initialDemandOutturn": 39602.96,
+    "initialTransmissionSystemDemandOutturn": 25071.72
+  },
+  {
+    "publishTime": "2025-08-01T22:00:00",
+    "startTime": "2025-08-01T22:00:00",
+    "settlementDate": "2025-08-01",
+    "settlementPeriod": 44,
+    "initialDemandOutturn": 41033.74,
+    "initialTransmissionSystemDemandOutturn": 30227.17
+  },
+  {
+    "publishTime": "2025-08-01T22:00:00",
+    "startTime": "2025-08-01T22:00:00",
+    "settlementDate": "2025-08-01",
+    "settlementPeriod": 45,
+    "initialDemandOutturn": 36044.48,
+    "initialTransmissionSystemDemandOutturn": 26972.03
+  },
+  {
+    "publishTime": "2025-08-01T23:00:00",
+    "startTime": "2025-08-01T23:00:00",
+    "settlementDate": "2025-08-01",
+    "settlementPeriod": 46,
+    "initialDemandOutturn": 39378.16,
+    "initialTransmissionSystemDemandOutturn": 31734.18
+  },
+  {
+    "publishTime": "2025-08-01T23:00:00",
+    "startTime": "2025-08-01T23:00:00",
+    "settlementDate": "2025-08-01",
+    "settlementPeriod": 47,
+    "initialDemandOutturn": 30754.79,
+    "initialTransmissionSystemDemandOutturn": 28719.51
+  },
+  {
+    "publishTime": "2025-08-02T00:00:00",
+    "startTime": "2025-08-02T00:00:00",
+    "settlementDate": "2025-08-01",
+    "settlementPeriod": 48,
+    "initialDemandOutturn": 33200.34,
+    "initialTransmissionSystemDemandOutturn": 25503.05
+  },
+  {
+    "publishTime": "2025-08-02T00:00:00",
+    "startTime": "2025-08-02T00:00:00",
+    "settlementDate": "2025-08-02",
+    "settlementPeriod": 1,
+    "initialDemandOutturn": 31543.68,
+    "initialTransmissionSystemDemandOutturn": 38736.06
+  },
+  {
+    "publishTime": "2025-08-02T01:00:00",
+    "startTime": "2025-08-02T01:00:00",
+    "settlementDate": "2025-08-02",
+    "settlementPeriod": 2,
+    "initialDemandOutturn": 31849.82,
+    "initialTransmissionSystemDemandOutturn": 30955.86
+  },
+  {
+    "publishTime": "2025-08-02T01:00:00",
+    "startTime": "2025-08-02T01:00:00",
+    "settlementDate": "2025-08-02",
+    "settlementPeriod": 3,
+    "initialDemandOutturn": 37269.77,
+    "initialTransmissionSystemDemandOutturn": 31802.93
+  },
+  {
+    "publishTime": "2025-08-02T02:00:00",
+    "startTime": "2025-08-02T02:00:00",
+    "settlementDate": "2025-08-02",
+    "settlementPeriod": 4,
+    "initialDemandOutturn": 38213.17,
+    "initialTransmissionSystemDemandOutturn": 24094.27
+  },
+  {
+    "publishTime": "2025-08-02T02:00:00",
+    "startTime": "2025-08-02T02:00:00",
+    "settlementDate": "2025-08-02",
+    "settlementPeriod": 5,
+    "initialDemandOutturn": 34712.7,
+    "initialTransmissionSystemDemandOutturn": 32366.58
+  },
+  {
+    "publishTime": "2025-08-02T03:00:00",
+    "startTime": "2025-08-02T03:00:00",
+    "settlementDate": "2025-08-02",
+    "settlementPeriod": 6,
+    "initialDemandOutturn": 38497.78,
+    "initialTransmissionSystemDemandOutturn": 30170.14
+  },
+  {
+    "publishTime": "2025-08-02T03:00:00",
+    "startTime": "2025-08-02T03:00:00",
+    "settlementDate": "2025-08-02",
+    "settlementPeriod": 7,
+    "initialDemandOutturn": 40802.75,
+    "initialTransmissionSystemDemandOutturn": 32482.86
+  },
+  {
+    "publishTime": "2025-08-02T04:00:00",
+    "startTime": "2025-08-02T04:00:00",
+    "settlementDate": "2025-08-02",
+    "settlementPeriod": 8,
+    "initialDemandOutturn": 32383.19,
+    "initialTransmissionSystemDemandOutturn": 21780.81
+  },
+  {
+    "publishTime": "2025-08-02T04:00:00",
+    "startTime": "2025-08-02T04:00:00",
+    "settlementDate": "2025-08-02",
+    "settlementPeriod": 9,
+    "initialDemandOutturn": 32635.01,
+    "initialTransmissionSystemDemandOutturn": 31812.44
+  },
+  {
+    "publishTime": "2025-08-02T05:00:00",
+    "startTime": "2025-08-02T05:00:00",
+    "settlementDate": "2025-08-02",
+    "settlementPeriod": 10,
+    "initialDemandOutturn": 32875.2,
+    "initialTransmissionSystemDemandOutturn": 26268.43
+  },
+  {
+    "publishTime": "2025-08-02T05:00:00",
+    "startTime": "2025-08-02T05:00:00",
+    "settlementDate": "2025-08-02",
+    "settlementPeriod": 11,
+    "initialDemandOutturn": 24356.94,
+    "initialTransmissionSystemDemandOutturn": 26961.51
+  },
+  {
+    "publishTime": "2025-08-02T06:00:00",
+    "startTime": "2025-08-02T06:00:00",
+    "settlementDate": "2025-08-02",
+    "settlementPeriod": 12,
+    "initialDemandOutturn": 36336.75,
+    "initialTransmissionSystemDemandOutturn": 29236.33
+  },
+  {
+    "publishTime": "2025-08-02T06:00:00",
+    "startTime": "2025-08-02T06:00:00",
+    "settlementDate": "2025-08-02",
+    "settlementPeriod": 13,
+    "initialDemandOutturn": 32025.02,
+    "initialTransmissionSystemDemandOutturn": 25939.66
+  },
+  {
+    "publishTime": "2025-08-02T07:00:00",
+    "startTime": "2025-08-02T07:00:00",
+    "settlementDate": "2025-08-02",
+    "settlementPeriod": 14,
+    "initialDemandOutturn": 35576.45,
+    "initialTransmissionSystemDemandOutturn": 34186.61
+  },
+  {
+    "publishTime": "2025-08-02T07:00:00",
+    "startTime": "2025-08-02T07:00:00",
+    "settlementDate": "2025-08-02",
+    "settlementPeriod": 15,
+    "initialDemandOutturn": 44032.34,
+    "initialTransmissionSystemDemandOutturn": 30312.4
+  },
+  {
+    "publishTime": "2025-08-02T08:00:00",
+    "startTime": "2025-08-02T08:00:00",
+    "settlementDate": "2025-08-02",
+    "settlementPeriod": 16,
+    "initialDemandOutturn": 39493.13,
+    "initialTransmissionSystemDemandOutturn": 32751.35
+  },
+  {
+    "publishTime": "2025-08-02T08:00:00",
+    "startTime": "2025-08-02T08:00:00",
+    "settlementDate": "2025-08-02",
+    "settlementPeriod": 17,
+    "initialDemandOutturn": 33666.26,
+    "initialTransmissionSystemDemandOutturn": 32233.76
+  },
+  {
+    "publishTime": "2025-08-02T09:00:00",
+    "startTime": "2025-08-02T09:00:00",
+    "settlementDate": "2025-08-02",
+    "settlementPeriod": 18,
+    "initialDemandOutturn": 33827.16,
+    "initialTransmissionSystemDemandOutturn": 39106.17
+  },
+  {
+    "publishTime": "2025-08-02T09:00:00",
+    "startTime": "2025-08-02T09:00:00",
+    "settlementDate": "2025-08-02",
+    "settlementPeriod": 19,
+    "initialDemandOutturn": 30442.56,
+    "initialTransmissionSystemDemandOutturn": 29492.28
+  },
+  {
+    "publishTime": "2025-08-02T10:00:00",
+    "startTime": "2025-08-02T10:00:00",
+    "settlementDate": "2025-08-02",
+    "settlementPeriod": 20,
+    "initialDemandOutturn": 33442.07,
+    "initialTransmissionSystemDemandOutturn": 27343.44
+  },
+  {
+    "publishTime": "2025-08-02T10:00:00",
+    "startTime": "2025-08-02T10:00:00",
+    "settlementDate": "2025-08-02",
+    "settlementPeriod": 21,
+    "initialDemandOutturn": 35555.5,
+    "initialTransmissionSystemDemandOutturn": 29000.87
+  },
+  {
+    "publishTime": "2025-08-02T11:00:00",
+    "startTime": "2025-08-02T11:00:00",
+    "settlementDate": "2025-08-02",
+    "settlementPeriod": 22,
+    "initialDemandOutturn": 33894.42,
+    "initialTransmissionSystemDemandOutturn": 25560.71
+  },
+  {
+    "publishTime": "2025-08-02T11:00:00",
+    "startTime": "2025-08-02T11:00:00",
+    "settlementDate": "2025-08-02",
+    "settlementPeriod": 23,
+    "initialDemandOutturn": 33163.19,
+    "initialTransmissionSystemDemandOutturn": 31401.49
+  },
+  {
+    "publishTime": "2025-08-02T12:00:00",
+    "startTime": "2025-08-02T12:00:00",
+    "settlementDate": "2025-08-02",
+    "settlementPeriod": 24,
+    "initialDemandOutturn": 25169.0,
+    "initialTransmissionSystemDemandOutturn": 27856.81
+  },
+  {
+    "publishTime": "2025-08-02T12:00:00",
+    "startTime": "2025-08-02T12:00:00",
+    "settlementDate": "2025-08-02",
+    "settlementPeriod": 25,
+    "initialDemandOutturn": 32187.19,
+    "initialTransmissionSystemDemandOutturn": 38619.79
+  },
+  {
+    "publishTime": "2025-08-02T13:00:00",
+    "startTime": "2025-08-02T13:00:00",
+    "settlementDate": "2025-08-02",
+    "settlementPeriod": 26,
+    "initialDemandOutturn": 30966.65,
+    "initialTransmissionSystemDemandOutturn": 24840.63
+  },
+  {
+    "publishTime": "2025-08-02T13:00:00",
+    "startTime": "2025-08-02T13:00:00",
+    "settlementDate": "2025-08-02",
+    "settlementPeriod": 27,
+    "initialDemandOutturn": 38121.05,
+    "initialTransmissionSystemDemandOutturn": 24804.54
+  },
+  {
+    "publishTime": "2025-08-02T14:00:00",
+    "startTime": "2025-08-02T14:00:00",
+    "settlementDate": "2025-08-02",
+    "settlementPeriod": 28,
+    "initialDemandOutturn": 34554.41,
+    "initialTransmissionSystemDemandOutturn": 30392.25
+  },
+  {
+    "publishTime": "2025-08-02T14:00:00",
+    "startTime": "2025-08-02T14:00:00",
+    "settlementDate": "2025-08-02",
+    "settlementPeriod": 29,
+    "initialDemandOutturn": 42982.63,
+    "initialTransmissionSystemDemandOutturn": 31929.78
+  },
+  {
+    "publishTime": "2025-08-02T15:00:00",
+    "startTime": "2025-08-02T15:00:00",
+    "settlementDate": "2025-08-02",
+    "settlementPeriod": 30,
+    "initialDemandOutturn": 36710.83,
+    "initialTransmissionSystemDemandOutturn": 31203.69
+  },
+  {
+    "publishTime": "2025-08-02T15:00:00",
+    "startTime": "2025-08-02T15:00:00",
+    "settlementDate": "2025-08-02",
+    "settlementPeriod": 31,
+    "initialDemandOutturn": 33224.75,
+    "initialTransmissionSystemDemandOutturn": 33607.04
+  },
+  {
+    "publishTime": "2025-08-02T16:00:00",
+    "startTime": "2025-08-02T16:00:00",
+    "settlementDate": "2025-08-02",
+    "settlementPeriod": 32,
+    "initialDemandOutturn": 36544.7,
+    "initialTransmissionSystemDemandOutturn": 29696.67
+  },
+  {
+    "publishTime": "2025-08-02T16:00:00",
+    "startTime": "2025-08-02T16:00:00",
+    "settlementDate": "2025-08-02",
+    "settlementPeriod": 33,
+    "initialDemandOutturn": 34967.96,
+    "initialTransmissionSystemDemandOutturn": 34433.66
+  },
+  {
+    "publishTime": "2025-08-02T17:00:00",
+    "startTime": "2025-08-02T17:00:00",
+    "settlementDate": "2025-08-02",
+    "settlementPeriod": 34,
+    "initialDemandOutturn": 34063.67,
+    "initialTransmissionSystemDemandOutturn": 33343.86
+  },
+  {
+    "publishTime": "2025-08-02T17:00:00",
+    "startTime": "2025-08-02T17:00:00",
+    "settlementDate": "2025-08-02",
+    "settlementPeriod": 35,
+    "initialDemandOutturn": 36582.9,
+    "initialTransmissionSystemDemandOutturn": 27458.07
+  },
+  {
+    "publishTime": "2025-08-02T18:00:00",
+    "startTime": "2025-08-02T18:00:00",
+    "settlementDate": "2025-08-02",
+    "settlementPeriod": 36,
+    "initialDemandOutturn": 29955.58,
+    "initialTransmissionSystemDemandOutturn": 36004.99
+  },
+  {
+    "publishTime": "2025-08-02T18:00:00",
+    "startTime": "2025-08-02T18:00:00",
+    "settlementDate": "2025-08-02",
+    "settlementPeriod": 37,
+    "initialDemandOutturn": 42086.52,
+    "initialTransmissionSystemDemandOutturn": 33078.27
+  },
+  {
+    "publishTime": "2025-08-02T19:00:00",
+    "startTime": "2025-08-02T19:00:00",
+    "settlementDate": "2025-08-02",
+    "settlementPeriod": 38,
+    "initialDemandOutturn": 38940.81,
+    "initialTransmissionSystemDemandOutturn": 39046.8
+  },
+  {
+    "publishTime": "2025-08-02T19:00:00",
+    "startTime": "2025-08-02T19:00:00",
+    "settlementDate": "2025-08-02",
+    "settlementPeriod": 39,
+    "initialDemandOutturn": 30373.02,
+    "initialTransmissionSystemDemandOutturn": 39579.03
+  },
+  {
+    "publishTime": "2025-08-02T20:00:00",
+    "startTime": "2025-08-02T20:00:00",
+    "settlementDate": "2025-08-02",
+    "settlementPeriod": 40,
+    "initialDemandOutturn": 32110.61,
+    "initialTransmissionSystemDemandOutturn": 33010.9
+  },
+  {
+    "publishTime": "2025-08-02T20:00:00",
+    "startTime": "2025-08-02T20:00:00",
+    "settlementDate": "2025-08-02",
+    "settlementPeriod": 41,
+    "initialDemandOutturn": 36626.75,
+    "initialTransmissionSystemDemandOutturn": 32293.94
+  },
+  {
+    "publishTime": "2025-08-02T21:00:00",
+    "startTime": "2025-08-02T21:00:00",
+    "settlementDate": "2025-08-02",
+    "settlementPeriod": 42,
+    "initialDemandOutturn": 34000.06,
+    "initialTransmissionSystemDemandOutturn": 30774.7
+  },
+  {
+    "publishTime": "2025-08-02T21:00:00",
+    "startTime": "2025-08-02T21:00:00",
+    "settlementDate": "2025-08-02",
+    "settlementPeriod": 43,
+    "initialDemandOutturn": 35943.65,
+    "initialTransmissionSystemDemandOutturn": 23160.74
+  },
+  {
+    "publishTime": "2025-08-02T22:00:00",
+    "startTime": "2025-08-02T22:00:00",
+    "settlementDate": "2025-08-02",
+    "settlementPeriod": 44,
+    "initialDemandOutturn": 30479.68,
+    "initialTransmissionSystemDemandOutturn": 33075.98
+  },
+  {
+    "publishTime": "2025-08-02T22:00:00",
+    "startTime": "2025-08-02T22:00:00",
+    "settlementDate": "2025-08-02",
+    "settlementPeriod": 45,
+    "initialDemandOutturn": 32880.22,
+    "initialTransmissionSystemDemandOutturn": 27564.81
+  },
+  {
+    "publishTime": "2025-08-02T23:00:00",
+    "startTime": "2025-08-02T23:00:00",
+    "settlementDate": "2025-08-02",
+    "settlementPeriod": 46,
+    "initialDemandOutturn": 38207.26,
+    "initialTransmissionSystemDemandOutturn": 32288.06
+  },
+  {
+    "publishTime": "2025-08-02T23:00:00",
+    "startTime": "2025-08-02T23:00:00",
+    "settlementDate": "2025-08-02",
+    "settlementPeriod": 47,
+    "initialDemandOutturn": 35375.08,
+    "initialTransmissionSystemDemandOutturn": 35706.28
+  },
+  {
+    "publishTime": "2025-08-03T00:00:00",
+    "startTime": "2025-08-03T00:00:00",
+    "settlementDate": "2025-08-02",
+    "settlementPeriod": 48,
+    "initialDemandOutturn": 33837.95,
+    "initialTransmissionSystemDemandOutturn": 32091.35
+  },
+  {
+    "publishTime": "2025-08-03T00:00:00",
+    "startTime": "2025-08-03T00:00:00",
+    "settlementDate": "2025-08-03",
+    "settlementPeriod": 1,
+    "initialDemandOutturn": 35781.09,
+    "initialTransmissionSystemDemandOutturn": 27750.75
+  },
+  {
+    "publishTime": "2025-08-03T01:00:00",
+    "startTime": "2025-08-03T01:00:00",
+    "settlementDate": "2025-08-03",
+    "settlementPeriod": 2,
+    "initialDemandOutturn": 35432.42,
+    "initialTransmissionSystemDemandOutturn": 32048.76
+  },
+  {
+    "publishTime": "2025-08-03T01:00:00",
+    "startTime": "2025-08-03T01:00:00",
+    "settlementDate": "2025-08-03",
+    "settlementPeriod": 3,
+    "initialDemandOutturn": 29950.69,
+    "initialTransmissionSystemDemandOutturn": 18396.91
+  },
+  {
+    "publishTime": "2025-08-03T02:00:00",
+    "startTime": "2025-08-03T02:00:00",
+    "settlementDate": "2025-08-03",
+    "settlementPeriod": 4,
+    "initialDemandOutturn": 38141.03,
+    "initialTransmissionSystemDemandOutturn": 30882.5
+  },
+  {
+    "publishTime": "2025-08-03T02:00:00",
+    "startTime": "2025-08-03T02:00:00",
+    "settlementDate": "2025-08-03",
+    "settlementPeriod": 5,
+    "initialDemandOutturn": 33590.83,
+    "initialTransmissionSystemDemandOutturn": 32140.5
+  },
+  {
+    "publishTime": "2025-08-03T03:00:00",
+    "startTime": "2025-08-03T03:00:00",
+    "settlementDate": "2025-08-03",
+    "settlementPeriod": 6,
+    "initialDemandOutturn": 37393.83,
+    "initialTransmissionSystemDemandOutturn": 24972.51
+  },
+  {
+    "publishTime": "2025-08-03T03:00:00",
+    "startTime": "2025-08-03T03:00:00",
+    "settlementDate": "2025-08-03",
+    "settlementPeriod": 7,
+    "initialDemandOutturn": 39804.75,
+    "initialTransmissionSystemDemandOutturn": 27865.79
+  },
+  {
+    "publishTime": "2025-08-03T04:00:00",
+    "startTime": "2025-08-03T04:00:00",
+    "settlementDate": "2025-08-03",
+    "settlementPeriod": 8,
+    "initialDemandOutturn": 38488.76,
+    "initialTransmissionSystemDemandOutturn": 27546.57
+  },
+  {
+    "publishTime": "2025-08-03T04:00:00",
+    "startTime": "2025-08-03T04:00:00",
+    "settlementDate": "2025-08-03",
+    "settlementPeriod": 9,
+    "initialDemandOutturn": 25508.28,
+    "initialTransmissionSystemDemandOutturn": 29074.31
+  },
+  {
+    "publishTime": "2025-08-03T05:00:00",
+    "startTime": "2025-08-03T05:00:00",
+    "settlementDate": "2025-08-03",
+    "settlementPeriod": 10,
+    "initialDemandOutturn": 38271.28,
+    "initialTransmissionSystemDemandOutturn": 24755.59
+  },
+  {
+    "publishTime": "2025-08-03T05:00:00",
+    "startTime": "2025-08-03T05:00:00",
+    "settlementDate": "2025-08-03",
+    "settlementPeriod": 11,
+    "initialDemandOutturn": 38085.57,
+    "initialTransmissionSystemDemandOutturn": 24440.48
+  },
+  {
+    "publishTime": "2025-08-03T06:00:00",
+    "startTime": "2025-08-03T06:00:00",
+    "settlementDate": "2025-08-03",
+    "settlementPeriod": 12,
+    "initialDemandOutturn": 36920.49,
+    "initialTransmissionSystemDemandOutturn": 36189.33
+  },
+  {
+    "publishTime": "2025-08-03T06:00:00",
+    "startTime": "2025-08-03T06:00:00",
+    "settlementDate": "2025-08-03",
+    "settlementPeriod": 13,
+    "initialDemandOutturn": 34882.76,
+    "initialTransmissionSystemDemandOutturn": 38578.04
+  },
+  {
+    "publishTime": "2025-08-03T07:00:00",
+    "startTime": "2025-08-03T07:00:00",
+    "settlementDate": "2025-08-03",
+    "settlementPeriod": 14,
+    "initialDemandOutturn": 27404.25,
+    "initialTransmissionSystemDemandOutturn": 30637.91
+  },
+  {
+    "publishTime": "2025-08-03T07:00:00",
+    "startTime": "2025-08-03T07:00:00",
+    "settlementDate": "2025-08-03",
+    "settlementPeriod": 15,
+    "initialDemandOutturn": 37603.75,
+    "initialTransmissionSystemDemandOutturn": 36026.81
+  },
+  {
+    "publishTime": "2025-08-03T08:00:00",
+    "startTime": "2025-08-03T08:00:00",
+    "settlementDate": "2025-08-03",
+    "settlementPeriod": 16,
+    "initialDemandOutturn": 36747.27,
+    "initialTransmissionSystemDemandOutturn": 34505.31
+  },
+  {
+    "publishTime": "2025-08-03T08:00:00",
+    "startTime": "2025-08-03T08:00:00",
+    "settlementDate": "2025-08-03",
+    "settlementPeriod": 17,
+    "initialDemandOutturn": 36000.41,
+    "initialTransmissionSystemDemandOutturn": 32253.58
+  },
+  {
+    "publishTime": "2025-08-03T09:00:00",
+    "startTime": "2025-08-03T09:00:00",
+    "settlementDate": "2025-08-03",
+    "settlementPeriod": 18,
+    "initialDemandOutturn": 42791.91,
+    "initialTransmissionSystemDemandOutturn": 32647.88
+  },
+  {
+    "publishTime": "2025-08-03T09:00:00",
+    "startTime": "2025-08-03T09:00:00",
+    "settlementDate": "2025-08-03",
+    "settlementPeriod": 19,
+    "initialDemandOutturn": 28872.02,
+    "initialTransmissionSystemDemandOutturn": 26928.42
+  },
+  {
+    "publishTime": "2025-08-03T10:00:00",
+    "startTime": "2025-08-03T10:00:00",
+    "settlementDate": "2025-08-03",
+    "settlementPeriod": 20,
+    "initialDemandOutturn": 34068.04,
+    "initialTransmissionSystemDemandOutturn": 28773.73
+  },
+  {
+    "publishTime": "2025-08-03T10:00:00",
+    "startTime": "2025-08-03T10:00:00",
+    "settlementDate": "2025-08-03",
+    "settlementPeriod": 21,
+    "initialDemandOutturn": 37019.59,
+    "initialTransmissionSystemDemandOutturn": 35819.8
+  },
+  {
+    "publishTime": "2025-08-03T11:00:00",
+    "startTime": "2025-08-03T11:00:00",
+    "settlementDate": "2025-08-03",
+    "settlementPeriod": 22,
+    "initialDemandOutturn": 44112.73,
+    "initialTransmissionSystemDemandOutturn": 29476.31
+  },
+  {
+    "publishTime": "2025-08-03T11:00:00",
+    "startTime": "2025-08-03T11:00:00",
+    "settlementDate": "2025-08-03",
+    "settlementPeriod": 23,
+    "initialDemandOutturn": 29888.28,
+    "initialTransmissionSystemDemandOutturn": 24476.19
+  },
+  {
+    "publishTime": "2025-08-03T12:00:00",
+    "startTime": "2025-08-03T12:00:00",
+    "settlementDate": "2025-08-03",
+    "settlementPeriod": 24,
+    "initialDemandOutturn": 26159.58,
+    "initialTransmissionSystemDemandOutturn": 32361.6
+  },
+  {
+    "publishTime": "2025-08-03T12:00:00",
+    "startTime": "2025-08-03T12:00:00",
+    "settlementDate": "2025-08-03",
+    "settlementPeriod": 25,
+    "initialDemandOutturn": 41151.5,
+    "initialTransmissionSystemDemandOutturn": 27969.99
+  },
+  {
+    "publishTime": "2025-08-03T13:00:00",
+    "startTime": "2025-08-03T13:00:00",
+    "settlementDate": "2025-08-03",
+    "settlementPeriod": 26,
+    "initialDemandOutturn": 37424.18,
+    "initialTransmissionSystemDemandOutturn": 35204.33
+  },
+  {
+    "publishTime": "2025-08-03T13:00:00",
+    "startTime": "2025-08-03T13:00:00",
+    "settlementDate": "2025-08-03",
+    "settlementPeriod": 27,
+    "initialDemandOutturn": 34676.55,
+    "initialTransmissionSystemDemandOutturn": 35990.1
+  },
+  {
+    "publishTime": "2025-08-03T14:00:00",
+    "startTime": "2025-08-03T14:00:00",
+    "settlementDate": "2025-08-03",
+    "settlementPeriod": 28,
+    "initialDemandOutturn": 40719.47,
+    "initialTransmissionSystemDemandOutturn": 29652.97
+  },
+  {
+    "publishTime": "2025-08-03T14:00:00",
+    "startTime": "2025-08-03T14:00:00",
+    "settlementDate": "2025-08-03",
+    "settlementPeriod": 29,
+    "initialDemandOutturn": 34517.8,
+    "initialTransmissionSystemDemandOutturn": 27230.54
+  },
+  {
+    "publishTime": "2025-08-03T15:00:00",
+    "startTime": "2025-08-03T15:00:00",
+    "settlementDate": "2025-08-03",
+    "settlementPeriod": 30,
+    "initialDemandOutturn": 33284.72,
+    "initialTransmissionSystemDemandOutturn": 30045.07
+  },
+  {
+    "publishTime": "2025-08-03T15:00:00",
+    "startTime": "2025-08-03T15:00:00",
+    "settlementDate": "2025-08-03",
+    "settlementPeriod": 31,
+    "initialDemandOutturn": 34691.4,
+    "initialTransmissionSystemDemandOutturn": 23534.15
+  },
+  {
+    "publishTime": "2025-08-03T16:00:00",
+    "startTime": "2025-08-03T16:00:00",
+    "settlementDate": "2025-08-03",
+    "settlementPeriod": 32,
+    "initialDemandOutturn": 38175.85,
+    "initialTransmissionSystemDemandOutturn": 29096.49
+  },
+  {
+    "publishTime": "2025-08-03T16:00:00",
+    "startTime": "2025-08-03T16:00:00",
+    "settlementDate": "2025-08-03",
+    "settlementPeriod": 33,
+    "initialDemandOutturn": 40881.24,
+    "initialTransmissionSystemDemandOutturn": 33012.61
+  },
+  {
+    "publishTime": "2025-08-03T17:00:00",
+    "startTime": "2025-08-03T17:00:00",
+    "settlementDate": "2025-08-03",
+    "settlementPeriod": 34,
+    "initialDemandOutturn": 44781.73,
+    "initialTransmissionSystemDemandOutturn": 28438.28
+  },
+  {
+    "publishTime": "2025-08-03T17:00:00",
+    "startTime": "2025-08-03T17:00:00",
+    "settlementDate": "2025-08-03",
+    "settlementPeriod": 35,
+    "initialDemandOutturn": 38942.94,
+    "initialTransmissionSystemDemandOutturn": 27845.4
+  },
+  {
+    "publishTime": "2025-08-03T18:00:00",
+    "startTime": "2025-08-03T18:00:00",
+    "settlementDate": "2025-08-03",
+    "settlementPeriod": 36,
+    "initialDemandOutturn": 36343.48,
+    "initialTransmissionSystemDemandOutturn": 31858.69
+  },
+  {
+    "publishTime": "2025-08-03T18:00:00",
+    "startTime": "2025-08-03T18:00:00",
+    "settlementDate": "2025-08-03",
+    "settlementPeriod": 37,
+    "initialDemandOutturn": 28987.37,
+    "initialTransmissionSystemDemandOutturn": 35530.14
+  },
+  {
+    "publishTime": "2025-08-03T19:00:00",
+    "startTime": "2025-08-03T19:00:00",
+    "settlementDate": "2025-08-03",
+    "settlementPeriod": 38,
+    "initialDemandOutturn": 40158.71,
+    "initialTransmissionSystemDemandOutturn": 23269.53
+  },
+  {
+    "publishTime": "2025-08-03T19:00:00",
+    "startTime": "2025-08-03T19:00:00",
+    "settlementDate": "2025-08-03",
+    "settlementPeriod": 39,
+    "initialDemandOutturn": 42687.75,
+    "initialTransmissionSystemDemandOutturn": 33068.44
+  },
+  {
+    "publishTime": "2025-08-03T20:00:00",
+    "startTime": "2025-08-03T20:00:00",
+    "settlementDate": "2025-08-03",
+    "settlementPeriod": 40,
+    "initialDemandOutturn": 30114.95,
+    "initialTransmissionSystemDemandOutturn": 29637.31
+  },
+  {
+    "publishTime": "2025-08-03T20:00:00",
+    "startTime": "2025-08-03T20:00:00",
+    "settlementDate": "2025-08-03",
+    "settlementPeriod": 41,
+    "initialDemandOutturn": 31862.49,
+    "initialTransmissionSystemDemandOutturn": 25455.19
+  },
+  {
+    "publishTime": "2025-08-03T21:00:00",
+    "startTime": "2025-08-03T21:00:00",
+    "settlementDate": "2025-08-03",
+    "settlementPeriod": 42,
+    "initialDemandOutturn": 42146.17,
+    "initialTransmissionSystemDemandOutturn": 30716.5
+  },
+  {
+    "publishTime": "2025-08-03T21:00:00",
+    "startTime": "2025-08-03T21:00:00",
+    "settlementDate": "2025-08-03",
+    "settlementPeriod": 43,
+    "initialDemandOutturn": 35177.82,
+    "initialTransmissionSystemDemandOutturn": 23359.06
+  },
+  {
+    "publishTime": "2025-08-03T22:00:00",
+    "startTime": "2025-08-03T22:00:00",
+    "settlementDate": "2025-08-03",
+    "settlementPeriod": 44,
+    "initialDemandOutturn": 35971.72,
+    "initialTransmissionSystemDemandOutturn": 24487.11
+  },
+  {
+    "publishTime": "2025-08-03T22:00:00",
+    "startTime": "2025-08-03T22:00:00",
+    "settlementDate": "2025-08-03",
+    "settlementPeriod": 45,
+    "initialDemandOutturn": 37095.53,
+    "initialTransmissionSystemDemandOutturn": 33652.78
+  },
+  {
+    "publishTime": "2025-08-03T23:00:00",
+    "startTime": "2025-08-03T23:00:00",
+    "settlementDate": "2025-08-03",
+    "settlementPeriod": 46,
+    "initialDemandOutturn": 25725.94,
+    "initialTransmissionSystemDemandOutturn": 29186.39
+  },
+  {
+    "publishTime": "2025-08-03T23:00:00",
+    "startTime": "2025-08-03T23:00:00",
+    "settlementDate": "2025-08-03",
+    "settlementPeriod": 47,
+    "initialDemandOutturn": 27668.54,
+    "initialTransmissionSystemDemandOutturn": 32710.89
+  },
+  {
+    "publishTime": "2025-08-04T00:00:00",
+    "startTime": "2025-08-04T00:00:00",
+    "settlementDate": "2025-08-03",
+    "settlementPeriod": 48,
+    "initialDemandOutturn": 41597.19,
+    "initialTransmissionSystemDemandOutturn": 31111.25
+  }
+]

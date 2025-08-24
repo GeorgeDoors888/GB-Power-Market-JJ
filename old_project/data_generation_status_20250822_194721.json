@@ -1,0 +1,44 @@
+{
+  "neso_demand_forecasts": {
+    "generated": true,
+    "start_date": "2023-01-01",
+    "end_date": "2024-12-31",
+    "row_count": 35088,
+    "last_updated": "2025-08-22T19:47:24.629396"
+  },
+  "neso_wind_forecasts": {
+    "generated": true,
+    "start_date": "2023-01-01",
+    "end_date": "2024-12-31",
+    "row_count": 175440,
+    "last_updated": "2025-08-22T19:47:45.072521"
+  },
+  "neso_balancing_services": {
+    "generated": true,
+    "start_date": "2023-01-01",
+    "end_date": "2024-12-31",
+    "row_count": 35088,
+    "last_updated": "2025-08-22T19:47:59.114533"
+  },
+  "neso_carbon_intensity": {
+    "generated": true,
+    "start_date": "2023-01-01",
+    "end_date": "2024-12-31",
+    "row_count": 35088,
+    "last_updated": "2025-08-22T19:48:11.842208"
+  },
+  "neso_interconnector_flows": {
+    "generated": true,
+    "start_date": "2023-01-01",
+    "end_date": "2024-12-31",
+    "row_count": 210528,
+    "last_updated": "2025-08-22T19:48:26.595198"
+  },
+  "elexon_system_warnings": {
+    "generated": true,
+    "start_date": "2023-01-01",
+    "end_date": "2024-12-31",
+    "row_count": 56,
+    "last_updated": "2025-08-22T19:48:42.801362"
+  }
+}

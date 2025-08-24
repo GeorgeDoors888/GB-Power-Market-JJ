@@ -1,0 +1,2777 @@
+UK ENERGY DATASET IN BIGQUERY - SUMMARY REPORT
+==============================================
+
+Generated on: 2025-08-23 12:59:10
+BigQuery project: jibber-jabber-knowledge
+BigQuery dataset: uk_energy_prod
+Dataset location: europe-west2 (London)
+
+Fixed version generated on: 2025-08-23 13:12:37
+Note: Query errors have been reformatted for better readability
+
+SUMMARY STATISTICS
+-----------------
+Total tables: 97
+NESO tables: 88
+Elexon tables: 9
+Other tables: 0
+
+NESO DATA CATEGORIES
+------------------
+skip: 29 tables
+dispatch: 10 tables
+static: 10 tables
+grid: 6 tables
+school: 5 tables
+capacity: 3 tables
+demand: 3 tables
+interconnector: 3 tables
+national: 3 tables
+transmission: 3 tables
+wind: 3 tables
+balancing: 2 tables
+carbon: 2 tables
+dno: 2 tables
+constraint: 1 tables
+dynamic: 1 tables
+embedded: 1 tables
+generation: 1 tables
+
+1. NESO TABLES
+============
+
+Table: neso_balancing_services
+------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: aaa6e777-6c6f-47f9-998b-27cd6da9c1b4
+
+Schema (12 columns):
+  - STRING: 4 columns
+  - BOOLEAN: 3 columns
+  - INTEGER: 2 columns
+  - FLOAT: 2 columns
+  - DATE: 1 columns
+Sample fields:
+  - dataset (STRING)
+  - settlementDate (DATE)
+  - settlementPeriod (INTEGER)
+  - id (INTEGER)
+  - cost (FLOAT)
+  - volume (FLOAT)
+  - soFlag (BOOLEAN)
+  - storFlag (BOOLEAN)
+  - partyId (STRING)
+  - assetId (STRING)
+  ... and 2 more fields
+Date ranges:
+  - settlementDate: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: f856814a-c7d6-4f70-bcc0-ca85d83eb79f
+
+
+Table: neso_balancing_services_temp_20250823001636
+--------------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: 0081e2e7-4c78-4f38-8a7f-1286ff4bedd5
+
+Schema (9 columns):
+  - FLOAT: 6 columns
+  - DATE: 2 columns
+  - INTEGER: 1 columns
+Sample fields:
+  - charge_date (DATE)
+  - settlement_period (INTEGER)
+  - bsuos_rate_pounds_mwh (FLOAT)
+  - volume_mwh (FLOAT)
+  - cost_pounds (FLOAT)
+  - balancing_services_cost (FLOAT)
+  - transmission_losses_cost (FLOAT)
+  - constraint_costs (FLOAT)
+  - settlement_date (DATE)
+Date ranges:
+  - charge_date: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: e93dd174-7143-4ac0-8974-8738fc3c44c8
+
+  - settlement_date: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 4be6c09c-7269-4d85-be15-1a0ef5fc8ba3
+
+
+Table: neso_capacity_market_cmu_20250820
+----------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: 81e61025-a97a-4def-8684-e65a795d5359
+
+Schema (76 columns):
+  - STRING: 57 columns
+  - FLOAT: 18 columns
+  - INTEGER: 1 columns
+Sample fields:
+  - auction_name (STRING)
+  - cmu_id (STRING)
+  - type (STRING)
+  - auction (STRING)
+  - delivery_year (INTEGER)
+  - name_of_applicant (STRING)
+  - agent_name (STRING)
+  - cm_unit_name (STRING)
+  - parent_company (STRING)
+  - secondary_trading_contact___telephone (STRING)
+  ... and 66 more fields
+Date ranges:
+  - date_of_issue_of_dsr_test_certificate: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: c4ae6a3d-24c0-48a4-ac76-dcc29ffcfea8
+
+  - date_of_issue_of_capacity_agreement: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 3229498e-e359-412e-acdf-e32cf3dfb8b0
+
+  - date_for_financial_commitment_milestone: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: d24c9963-301d-44b2-9137-32882e54d4fa
+
+
+Table: neso_capacity_market_component
+-------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: e12eb3ea-1698-4d49-ae71-36a0dfc91d5b
+
+Schema (17 columns):
+  - STRING: 17 columns
+Sample fields:
+  - auction_name (STRING)
+  - cmu_id (STRING)
+  - component_id (STRING)
+  - delivery_year (STRING)
+  - type (STRING)
+  - generating_technology_class (STRING)
+  - permitted_on_site_generating_unit (STRING)
+  - primary_fuel_of_component (STRING)
+  - connection___dsr_capacity (STRING)
+  - de_rated_capacity (STRING)
+  ... and 7 more fields
+
+Table: neso_capacity_market_component_20250820
+----------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: b4967ba9-ba42-4570-b2f7-60098ac36c3d
+
+Schema (17 columns):
+  - STRING: 10 columns
+  - FLOAT: 6 columns
+  - INTEGER: 1 columns
+Sample fields:
+  - auction_name (STRING)
+  - cmu_id (STRING)
+  - component_id (STRING)
+  - delivery_year (INTEGER)
+  - type (STRING)
+  - generating_technology_class (STRING)
+  - permitted_on_site_generating_unit (STRING)
+  - primary_fuel_of_component (STRING)
+  - connection___dsr_capacity (FLOAT)
+  - de_rated_capacity (FLOAT)
+  ... and 7 more fields
+
+Table: neso_carbon_intensity
+----------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: bd3eb771-e1c1-42c6-b470-e1511d5f1f92
+
+Schema (5 columns):
+  - TIMESTAMP: 1 columns
+  - DATE: 1 columns
+  - INTEGER: 1 columns
+  - STRING: 1 columns
+  - FLOAT: 1 columns
+Sample fields:
+  - publishTime (TIMESTAMP)
+  - settlementDate (DATE)
+  - settlementPeriod (INTEGER)
+  - fuel_type (STRING)
+  - generation (FLOAT)
+Date ranges:
+  - publishTime: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: beaec6a0-a94e-4be6-965b-45cf692c858b
+
+  - settlementDate: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 04497766-f8e7-4097-983d-fe3725e78f46
+
+
+Table: neso_carbon_intensity_temp_20250823001630
+------------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: 424beb8e-b907-46b9-8684-8519fec3d1c0
+
+Schema (7 columns):
+  - STRING: 4 columns
+  - DATE: 1 columns
+  - INTEGER: 1 columns
+  - FLOAT: 1 columns
+Sample fields:
+  - measurement_date (DATE)
+  - measurement_time (STRING)
+  - carbon_intensity_gco2_kwh (INTEGER)
+  - forecast_carbon_intensity_gco2_kwh (FLOAT)
+  - generation_mix (STRING)
+  - region (STRING)
+  - data_source (STRING)
+Date ranges:
+  - measurement_date: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 9a4f9e5f-feaf-488c-b9fb-a72944cb6bbb
+
+  - measurement_time: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 5c36ef3d-3994-4ecb-8fb1-bb86f47bf013
+
+
+Table: neso_constraint_cost_24m
+-------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: 852c6531-3689-49ea-a071-ff2022bf102a
+
+Schema (4 columns):
+  - STRING: 2 columns
+  - INTEGER: 1 columns
+  - FLOAT: 1 columns
+Sample fields:
+  - _id (INTEGER)
+  - month (STRING)
+  - constraint_cost_gbp_m (FLOAT)
+  - field3 (STRING)
+
+Table: neso_demand_forecast_1d
+------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: 58032363-fbdb-4d4e-9001-456e2cba2438
+
+Schema (9 columns):
+  - INTEGER: 6 columns
+  - STRING: 3 columns
+Sample fields:
+  - _id (INTEGER)
+  - daysahead (INTEGER)
+  - targetdate (INTEGER)
+  - forecastdemand (INTEGER)
+  - cardinalpoint (STRING)
+  - cp_type (STRING)
+  - cp_st_time (INTEGER)
+  - cp_end_time (INTEGER)
+  - f_point (STRING)
+Date ranges:
+  - targetdate: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 91c1d65a-5e08-4f68-941d-caade4f6df1e
+
+  - cp_st_time: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: e77fbff0-7183-4f32-bdf8-161892ad1bf6
+
+  - cp_end_time: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: c6261f47-2f42-4b05-98f1-65ba1d60bc6a
+
+
+Table: neso_demand_forecasts
+----------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: 5078dd2f-1d29-4e68-8f06-6c1d658264b8
+
+Schema (4 columns):
+  - TIMESTAMP: 1 columns
+  - DATE: 1 columns
+  - INTEGER: 1 columns
+  - FLOAT: 1 columns
+Sample fields:
+  - publishTime (TIMESTAMP)
+  - settlementDate (DATE)
+  - settlementPeriod (INTEGER)
+  - demand (FLOAT)
+Date ranges:
+  - publishTime: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: ca5cf217-2492-4980-8aee-1f917de43ccd
+
+  - settlementDate: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 855f5fe1-d81c-41d9-8343-3aad6ba9f7ad
+
+
+Table: neso_demand_forecasts_temp_20250823001625
+------------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: 8e40cf37-d148-4676-a6b3-4f0535bfa61e
+
+Schema (15 columns):
+  - STRING: 5 columns
+  - INTEGER: 5 columns
+  - FLOAT: 4 columns
+  - DATE: 1 columns
+Sample fields:
+  - startTime (STRING)
+  - settlementDate (STRING)
+  - settlementPeriod (INTEGER)
+  - boundary (STRING)
+  - publishTime (STRING)
+  - transmissionSystemDemand (INTEGER)
+  - nationalDemand (INTEGER)
+  - forecast_date (STRING)
+  - settlement_date (DATE)
+  - settlement_period (INTEGER)
+  ... and 5 more fields
+Date ranges:
+  - startTime: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: ab48b231-8901-42fe-a980-c09127007789
+
+  - settlementDate: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 7396ae1a-9276-4cae-b952-9d84080a05ad
+
+  - publishTime: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 9dd9f3b0-5eed-4fd0-be80-7f4a79864143
+
+
+Table: neso_dispatch_transparency_all_boas_april2020_march2021
+--------------------------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: a9b3afdf-9444-48ba-9945-9a653092b9cf
+
+Schema (16 columns):
+  - FLOAT: 9 columns
+  - STRING: 7 columns
+Sample fields:
+  - accept_time (STRING)
+  - accepting_party (STRING)
+  - accepted_bmu (STRING)
+  - boa_ref (FLOAT)
+  - main_sp (FLOAT)
+  - exclude_boa_reasons (STRING)
+  - net_vol_mwh (FLOAT)
+  - avg_price_gbp_mwh (FLOAT)
+  - notice_time_mins (FLOAT)
+  - time_to_target_mins (FLOAT)
+  ... and 6 more fields
+Date ranges:
+  - accept_time: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 11d8365f-5629-4631-9b12-545ee5e49638
+
+  - notice_time_mins: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 49dbc71f-b4cb-4a0c-9f9d-c4bafeb222da
+
+  - time_to_target_mins: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: c9493046-9093-476b-a6bf-1437497711d9
+
+
+Table: neso_dispatch_transparency_all_boas_april2021_march2022
+--------------------------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: a954f55c-e151-44ba-b782-12308b5398db
+
+Schema (16 columns):
+  - FLOAT: 9 columns
+  - STRING: 7 columns
+Sample fields:
+  - accept_time (STRING)
+  - accepting_party (STRING)
+  - accepted_bmu (STRING)
+  - boa_ref (FLOAT)
+  - main_sp (FLOAT)
+  - exclude_boa_reasons (STRING)
+  - net_vol_mwh (FLOAT)
+  - avg_price_gbp_mwh (FLOAT)
+  - notice_time_mins (FLOAT)
+  - time_to_target_mins (FLOAT)
+  ... and 6 more fields
+Date ranges:
+  - accept_time: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 89f7fad4-f80e-4d69-8bc6-fdc193b95645
+
+  - notice_time_mins: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 1588c20a-015a-497f-a972-033feb63f4f7
+
+  - time_to_target_mins: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: a11c3d57-4658-4fca-b00c-c29e508654f1
+
+
+Table: neso_dispatch_transparency_all_boas_april2022_march2023
+--------------------------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: a9b9440e-b4e0-4fdc-9b8c-4567abe83628
+
+Schema (16 columns):
+  - FLOAT: 9 columns
+  - STRING: 7 columns
+Sample fields:
+  - accept_time (STRING)
+  - accepting_party (STRING)
+  - accepted_bmu (STRING)
+  - boa_ref (FLOAT)
+  - main_sp (FLOAT)
+  - exclude_boa_reasons (STRING)
+  - net_vol_mwh (FLOAT)
+  - avg_price_gbp_mwh (FLOAT)
+  - notice_time_mins (FLOAT)
+  - time_to_target_mins (FLOAT)
+  ... and 6 more fields
+Date ranges:
+  - accept_time: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 3b41bdac-88a5-4a82-8c21-2fe3b4206c2f
+
+  - notice_time_mins: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: b597e512-7ff8-4680-838b-573862cd5834
+
+  - time_to_target_mins: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 5e5e1c7f-06f4-49b6-8e8d-006601c8a587
+
+
+Table: neso_dispatch_transparency_all_boas_april2023_march2024
+--------------------------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: a699c3b6-9a46-438e-bbc0-2c4877ba332a
+
+Schema (16 columns):
+  - FLOAT: 9 columns
+  - STRING: 7 columns
+Sample fields:
+  - accept_time (STRING)
+  - accepting_party (STRING)
+  - accepted_bmu (STRING)
+  - boa_ref (FLOAT)
+  - main_sp (FLOAT)
+  - exclude_boa_reasons (STRING)
+  - net_vol_mwh (FLOAT)
+  - avg_price_gbp_mwh (FLOAT)
+  - notice_time_mins (FLOAT)
+  - time_to_target_mins (FLOAT)
+  ... and 6 more fields
+Date ranges:
+  - accept_time: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 766c6401-2545-4590-948a-5e9f06ff8de5
+
+  - notice_time_mins: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 94efd123-4b0a-45fe-88f1-da3c07564db6
+
+  - time_to_target_mins: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 2a335e40-8e00-4162-918f-8c5607ac44d2
+
+
+Table: neso_dispatch_transparency_all_boas_april2024_march2025
+--------------------------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: 7015ecf2-1a0b-4b22-ba14-ff98ee00e585
+
+Schema (16 columns):
+  - FLOAT: 9 columns
+  - STRING: 7 columns
+Sample fields:
+  - accept_time (STRING)
+  - accepting_party (STRING)
+  - accepted_bmu (STRING)
+  - boa_ref (FLOAT)
+  - main_sp (FLOAT)
+  - exclude_boa_reasons (STRING)
+  - net_vol_mwh (FLOAT)
+  - avg_price_gbp_mwh (FLOAT)
+  - notice_time_mins (FLOAT)
+  - time_to_target_mins (FLOAT)
+  ... and 6 more fields
+Date ranges:
+  - accept_time: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: e86a88f9-bba0-474e-8d3f-318fd3ae6ec6
+
+  - notice_time_mins: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: e7144e3a-9b32-40fd-ab95-657aebe71f2f
+
+  - time_to_target_mins: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 1a3fb8c7-aa63-4f4d-b5e9-ebdd06b8e481
+
+
+Table: neso_dispatch_transparency_potential_alternatives_actions_april2020_march2021
+------------------------------------------------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: 9caf8ca0-0b2e-4ba3-beff-51da6f28563e
+
+Schema (13 columns):
+  - FLOAT: 8 columns
+  - STRING: 5 columns
+Sample fields:
+  - sett_date (STRING)
+  - sett_period (FLOAT)
+  - accepted_bmu (STRING)
+  - boa_ref (FLOAT)
+  - bid_offer (STRING)
+  - boa_price_gbp_mwh (FLOAT)
+  - alternative_bmu (STRING)
+  - reason_group (STRING)
+  - bid_price_gbp_mwh (FLOAT)
+  - offer_price_gbp_mwh (FLOAT)
+  ... and 3 more fields
+Date ranges:
+  - sett_date: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 86847174-ef25-4700-8d93-5bcb4a61914f
+
+
+Table: neso_dispatch_transparency_potential_alternatives_actions_april2021_march2022
+------------------------------------------------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: d73fc6c2-47ec-497c-bb5f-b8b9c73d470c
+
+Schema (13 columns):
+  - FLOAT: 8 columns
+  - STRING: 5 columns
+Sample fields:
+  - sett_date (STRING)
+  - sett_period (FLOAT)
+  - accepted_bmu (STRING)
+  - boa_ref (FLOAT)
+  - bid_offer (STRING)
+  - boa_price_gbp_mwh (FLOAT)
+  - alternative_bmu (STRING)
+  - reason_group (STRING)
+  - bid_price_gbp_mwh (FLOAT)
+  - offer_price_gbp_mwh (FLOAT)
+  ... and 3 more fields
+Date ranges:
+  - sett_date: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 56b64dad-9e5e-4e15-9665-ed69f2ddffae
+
+
+Table: neso_dispatch_transparency_potential_alternatives_actions_april2022_march2023
+------------------------------------------------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: fe5d6506-5363-4112-8c87-dd1737ad1918
+
+Schema (13 columns):
+  - FLOAT: 8 columns
+  - STRING: 5 columns
+Sample fields:
+  - sett_date (STRING)
+  - sett_period (FLOAT)
+  - accepted_bmu (STRING)
+  - boa_ref (FLOAT)
+  - bid_offer (STRING)
+  - boa_price_gbp_mwh (FLOAT)
+  - alternative_bmu (STRING)
+  - reason_group (STRING)
+  - bid_price_gbp_mwh (FLOAT)
+  - offer_price_gbp_mwh (FLOAT)
+  ... and 3 more fields
+Date ranges:
+  - sett_date: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: b25a919a-16d3-4acd-9401-ad885b3cf245
+
+
+Table: neso_dispatch_transparency_potential_alternatives_actions_april2023_march2024
+------------------------------------------------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: 2f3441fc-0d5c-4662-91e6-a3a1a5896c1c
+
+Schema (13 columns):
+  - FLOAT: 8 columns
+  - STRING: 5 columns
+Sample fields:
+  - sett_date (STRING)
+  - sett_period (FLOAT)
+  - accepted_bmu (STRING)
+  - boa_ref (FLOAT)
+  - bid_offer (STRING)
+  - boa_price_gbp_mwh (FLOAT)
+  - alternative_bmu (STRING)
+  - reason_group (STRING)
+  - bid_price_gbp_mwh (FLOAT)
+  - offer_price_gbp_mwh (FLOAT)
+  ... and 3 more fields
+Date ranges:
+  - sett_date: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 3fc690be-66f8-4796-8a3d-14c296369d2f
+
+
+Table: neso_dispatch_transparency_potential_alternatives_actions_april2024_march2025
+------------------------------------------------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: cbcb11bd-18f2-4382-b3f2-80f391d7e873
+
+Schema (13 columns):
+  - FLOAT: 8 columns
+  - STRING: 5 columns
+Sample fields:
+  - sett_date (STRING)
+  - sett_period (FLOAT)
+  - accepted_bmu (STRING)
+  - boa_ref (FLOAT)
+  - bid_offer (STRING)
+  - boa_price_gbp_mwh (FLOAT)
+  - alternative_bmu (STRING)
+  - reason_group (STRING)
+  - bid_price_gbp_mwh (FLOAT)
+  - offer_price_gbp_mwh (FLOAT)
+  ... and 3 more fields
+Date ranges:
+  - sett_date: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 74751a41-7208-44c3-9a23-cc026628c51a
+
+
+Table: neso_dno_licence_areas
+-----------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: 46a8051c-33e7-4d8a-bfd8-0b31817a88ad
+
+Schema (5 columns):
+  - STRING: 5 columns
+Sample fields:
+  - geometry (STRING)
+  - name (STRING)
+  - id (STRING)
+  - owner (STRING)
+  - dno (STRING)
+
+Table: neso_dno_licence_areas_2024
+----------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: dbdac7b1-f430-44ad-948f-db69ffbb0c16
+
+Schema (5 columns):
+  - STRING: 5 columns
+Sample fields:
+  - geometry (STRING)
+  - name (STRING)
+  - id (STRING)
+  - owner (STRING)
+  - dno (STRING)
+
+Table: neso_dynamic_containment_4d
+----------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: 3be9a6fd-c15c-4f6d-97d1-6101e2b8b7a0
+
+Schema (9 columns):
+  - INTEGER: 7 columns
+  - STRING: 2 columns
+Sample fields:
+  - _id (INTEGER)
+  - date (STRING)
+  - service_type (STRING)
+  - efa_1 (INTEGER)
+  - efa_2 (INTEGER)
+  - efa_3 (INTEGER)
+  - efa_4 (INTEGER)
+  - efa_5 (INTEGER)
+  - efa_6 (INTEGER)
+Date ranges:
+  - date: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: f445583f-2d3e-49de-8dbf-1d49127c5e4c
+
+
+Table: neso_embedded_register_embedded_register_22_august_2025
+--------------------------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: 2b2537df-110c-4f0a-a162-d90ef9ba0466
+
+Schema (13 columns):
+  - STRING: 9 columns
+  - FLOAT: 4 columns
+Sample fields:
+  - project_name (STRING)
+  - customer_name (STRING)
+  - connection_site (STRING)
+  - stage (FLOAT)
+  - mw_connected (FLOAT)
+  - mw_increase___decrease (FLOAT)
+  - cumulative_total_capacity_mw (FLOAT)
+  - mw_effective_from (STRING)
+  - project_status (STRING)
+  - host_to (STRING)
+  ... and 3 more fields
+
+Table: neso_generation_charging_zones
+-------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: 1e644dfe-ee9b-41d0-ab12-fa31d6608171
+
+Schema (5 columns):
+  - STRING: 5 columns
+Sample fields:
+  - geometry (STRING)
+  - name (STRING)
+  - id (STRING)
+  - zone_number (STRING)
+  - zone (STRING)
+
+Table: neso_grid_supply_points_2018
+-----------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: 9592debe-1d2f-4749-80c2-d191b7ee54f6
+
+Schema (5 columns):
+  - STRING: 5 columns
+Sample fields:
+  - geometry (STRING)
+  - name (STRING)
+  - id (STRING)
+  - gsp_group (STRING)
+  - _gsp_group_id (STRING)
+
+Table: neso_grid_supply_points_2022
+-----------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: 648162cf-8ae5-4682-a02c-9e7f0057b562
+
+Schema (5 columns):
+  - STRING: 5 columns
+Sample fields:
+  - geometry (STRING)
+  - name (STRING)
+  - id (STRING)
+  - gsp_group (STRING)
+  - _gsp_group_id (STRING)
+
+Table: neso_grid_supply_points_2025_jan
+---------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: e6717a5d-f4c0-4d03-97ec-a8fd8f6dd8fe
+
+Schema (5 columns):
+  - STRING: 5 columns
+Sample fields:
+  - geometry (STRING)
+  - name (STRING)
+  - id (STRING)
+  - gsp_group (STRING)
+  - gsp_id (STRING)
+
+Table: neso_grid_supply_points_2025_jan_wgs84
+---------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: 0328ffbe-4f93-4c5d-a1f0-1e3d42f72ff8
+
+Schema (5 columns):
+  - STRING: 5 columns
+Sample fields:
+  - geometry (STRING)
+  - name (STRING)
+  - id (STRING)
+  - gsp_group (STRING)
+  - gsp_id (STRING)
+
+Table: neso_grid_supply_points_2025_latest
+------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: c0056951-0acf-49bd-b768-6b78bebad88c
+
+Schema (5 columns):
+  - STRING: 5 columns
+Sample fields:
+  - geometry (STRING)
+  - name (STRING)
+  - id (STRING)
+  - gsp_group (STRING)
+  - gsp_id (STRING)
+
+Table: neso_grid_supply_points_2025_latest_wgs84
+------------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: 446e9d8d-35db-48c7-8728-ed59c1da4de9
+
+Schema (5 columns):
+  - STRING: 5 columns
+Sample fields:
+  - geometry (STRING)
+  - name (STRING)
+  - id (STRING)
+  - gsp_group (STRING)
+  - gsp_id (STRING)
+
+Table: neso_interconnector_flows
+--------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: fd18fa87-58ba-4443-ac8e-74b736a49387
+
+Schema (5 columns):
+  - TIMESTAMP: 1 columns
+  - DATE: 1 columns
+  - INTEGER: 1 columns
+  - STRING: 1 columns
+  - FLOAT: 1 columns
+Sample fields:
+  - publishTime (TIMESTAMP)
+  - settlementDate (DATE)
+  - settlementPeriod (INTEGER)
+  - interconnector_name (STRING)
+  - quantity (FLOAT)
+Date ranges:
+  - publishTime: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 9d83bb25-ce25-4520-a2e6-17d501c3d70d
+
+  - settlementDate: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: db10d4b0-dc99-4649-a5fa-ca616dc7ad4c
+
+
+Table: neso_interconnector_flows_temp_20250823001634
+----------------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: 3ff96a2e-1e6c-4b7f-be74-7d442c4efeb0
+
+Schema (11 columns):
+  - STRING: 5 columns
+  - FLOAT: 3 columns
+  - INTEGER: 2 columns
+  - DATE: 1 columns
+Sample fields:
+  - settlement_date (DATE)
+  - settlement_period (INTEGER)
+  - interconnector_id (STRING)
+  - interconnector_name (STRING)
+  - connected_country (STRING)
+  - flow_mw (FLOAT)
+  - direction (STRING)
+  - capacity_mw (INTEGER)
+  - utilization_pct (FLOAT)
+  - price_differential_gbp_mwh (FLOAT)
+  ... and 1 more fields
+Date ranges:
+  - settlement_date: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: dd05b1d1-b1ed-40de-80d7-1353ccdfbc25
+
+  - forecast_timestamp: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 9e4b8465-603a-4c82-8c6f-a821c64e746c
+
+
+Table: neso_interconnector_register_interconnector_register_22_august_2025
+--------------------------------------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: 6d995945-6ca8-4092-b809-0c730452baa2
+
+Schema (14 columns):
+  - STRING: 7 columns
+  - INTEGER: 6 columns
+  - FLOAT: 1 columns
+Sample fields:
+  - project_name (STRING)
+  - customer_name (STRING)
+  - connection_site (STRING)
+  - stage (FLOAT)
+  - mw_import___current (INTEGER)
+  - mw_export___current (INTEGER)
+  - mw_import___increase___decrease (INTEGER)
+  - mw_export___increase___decrease (INTEGER)
+  - mw_import___total (INTEGER)
+  - mw_export___total (INTEGER)
+  ... and 4 more fields
+
+Table: neso_national_demand_52w
+-------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: 173e5375-ca2b-42e5-8627-e8d9def7e94c
+
+Schema (9 columns):
+  - INTEGER: 8 columns
+  - STRING: 1 columns
+Sample fields:
+  - _id (INTEGER)
+  - calendar_year (INTEGER)
+  - financial_year (INTEGER)
+  - esiwk (INTEGER)
+  - cdate_peak (STRING)
+  - tsd_peak (INTEGER)
+  - tsd_min (INTEGER)
+  - day_min (INTEGER)
+  - night_min (INTEGER)
+Date ranges:
+  - cdate_peak: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: a6e04336-1ce6-48ab-a067-47f2a189b0da
+
+
+Table: neso_national_demand_bm_units_bmunits_11_08_25
+-----------------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: 4083ee18-bc5b-418d-a626-ce01da79834e
+
+Schema (1 columns):
+  - STRING: 1 columns
+Sample fields:
+  - bm_name (STRING)
+
+Table: neso_national_forecast_7d
+--------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: 87263bd0-bb8b-4ddc-af27-958657a7ad7b
+
+Schema (9 columns):
+  - INTEGER: 6 columns
+  - STRING: 3 columns
+Sample fields:
+  - _id (INTEGER)
+  - daysahead (INTEGER)
+  - targetdate (INTEGER)
+  - forecastdemand (INTEGER)
+  - cardinalpoint (STRING)
+  - cp_type (STRING)
+  - cp_st_time (INTEGER)
+  - cp_end_time (INTEGER)
+  - f_point (STRING)
+Date ranges:
+  - targetdate: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: f0d99ace-fe38-4bd3-b4f9-4d424974eff9
+
+  - cp_st_time: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: a691dd99-e0fd-427f-8658-b7b3b67ed3c5
+
+  - cp_end_time: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 0853088c-4e3f-4580-a631-ad04b560b204
+
+
+Table: neso_school_holiday_school_holiday_2021_22
+-------------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: 857f2396-6d90-40e9-b261-ff406647a79a
+
+Schema (4 columns):
+  - STRING: 2 columns
+  - FLOAT: 2 columns
+Sample fields:
+  - local_authority (STRING)
+  - multiplier (FLOAT)
+  - date (STRING)
+  - school_holiday (FLOAT)
+Date ranges:
+  - date: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 23eb1f03-260c-409a-87dd-99eaf6e6d30a
+
+
+Table: neso_school_holiday_school_holiday_2022_23
+-------------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: 6de8dd93-dafa-469a-9bb0-ccd9ae89671d
+
+Schema (4 columns):
+  - STRING: 2 columns
+  - FLOAT: 2 columns
+Sample fields:
+  - local_authority (STRING)
+  - multiplier (FLOAT)
+  - date (STRING)
+  - school_holiday (FLOAT)
+Date ranges:
+  - date: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: bfa16f26-2b55-41e8-9fc6-e18f24202143
+
+
+Table: neso_school_holiday_school_holiday_2023_24
+-------------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: 327da6a2-9758-4f03-a0f8-35cbb29ad5ce
+
+Schema (4 columns):
+  - STRING: 2 columns
+  - FLOAT: 2 columns
+Sample fields:
+  - local_authority (STRING)
+  - multiplier (FLOAT)
+  - date (STRING)
+  - school_holiday (FLOAT)
+Date ranges:
+  - date: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 50995bf1-e16f-443b-8a5a-4ec2b2120bab
+
+
+Table: neso_school_holiday_school_holiday_2024_25
+-------------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: c25afe5d-48a2-4f0b-ab05-1842739b2f72
+
+Schema (4 columns):
+  - STRING: 2 columns
+  - FLOAT: 2 columns
+Sample fields:
+  - local_authority (STRING)
+  - multiplier (FLOAT)
+  - date (STRING)
+  - school_holiday (FLOAT)
+Date ranges:
+  - date: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 7fe6e00a-ebb6-472b-9894-bf3abeb89800
+
+
+Table: neso_school_holiday_school_holiday_2025_26
+-------------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: b4234c44-4c51-4733-bef1-15292a112f42
+
+Schema (4 columns):
+  - STRING: 2 columns
+  - FLOAT: 2 columns
+Sample fields:
+  - local_authority (STRING)
+  - multiplier (FLOAT)
+  - date (STRING)
+  - school_holiday (FLOAT)
+Date ranges:
+  - date: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 91bfa772-c7dc-4fb1-869f-4965caf45dd8
+
+
+Table: neso_skip_rates_1_skip_rates_summary
+-------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: 46c9bbf4-bc9b-47ee-a74f-49c349213bc9
+
+Schema (10 columns):
+  - FLOAT: 8 columns
+  - STRING: 1 columns
+  - INTEGER: 1 columns
+Sample fields:
+  - settlement_period_start (STRING)
+  - stage (INTEGER)
+  - bm_skip_rate_offers_percent (FLOAT)
+  - bm_total_volume_skipped_offers_mwh (FLOAT)
+  - post_system_action_skip_rate_offers_percent (FLOAT)
+  - post_system_action_total_volume_skipped_offers_mwh (FLOAT)
+  - bm_skip_rate_bids_percent (FLOAT)
+  - bm_total_volume_skipped_bids_mwh (FLOAT)
+  - post_system_action_skip_rate_bids_percent (FLOAT)
+  - post_system_action_total_volume_skipped_bids_mwh (FLOAT)
+
+Table: neso_skip_rates_2_in_merit_data_bm_skips_01_2025
+-------------------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: 79fb8072-ad21-465a-8da8-992e5919fc53
+
+Schema (11 columns):
+  - FLOAT: 5 columns
+  - STRING: 4 columns
+  - INTEGER: 2 columns
+Sample fields:
+  - date (STRING)
+  - bm_unit (STRING)
+  - fuel (STRING)
+  - bid_offer (STRING)
+  - stage (INTEGER)
+  - available_volume_mwh (FLOAT)
+  - average_price_per_mwh (FLOAT)
+  - pair_id (INTEGER)
+  - accepted_volume_mwh (FLOAT)
+  - in_merit_volume_mwh (FLOAT)
+  ... and 1 more fields
+Date ranges:
+  - date: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: e1cc51ac-91d2-46c1-9e90-3d09e52074b0
+
+
+Table: neso_skip_rates_2_in_merit_data_bm_skips_02_2025
+-------------------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: 373d5f6a-c174-46c2-a101-27015efa940f
+
+Schema (11 columns):
+  - FLOAT: 5 columns
+  - STRING: 4 columns
+  - INTEGER: 2 columns
+Sample fields:
+  - date (STRING)
+  - bm_unit (STRING)
+  - fuel (STRING)
+  - bid_offer (STRING)
+  - stage (INTEGER)
+  - available_volume_mwh (FLOAT)
+  - average_price_per_mwh (FLOAT)
+  - pair_id (INTEGER)
+  - accepted_volume_mwh (FLOAT)
+  - in_merit_volume_mwh (FLOAT)
+  ... and 1 more fields
+Date ranges:
+  - date: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: cb031277-11ce-4a5d-bbaf-2f04c31b14a4
+
+
+Table: neso_skip_rates_2_in_merit_data_bm_skips_03_2025
+-------------------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: 5fa4bfa0-144b-49df-980a-b93021ad73ed
+
+Schema (11 columns):
+  - FLOAT: 5 columns
+  - STRING: 4 columns
+  - INTEGER: 2 columns
+Sample fields:
+  - date (STRING)
+  - bm_unit (STRING)
+  - fuel (STRING)
+  - bid_offer (STRING)
+  - stage (INTEGER)
+  - available_volume_mwh (FLOAT)
+  - average_price_per_mwh (FLOAT)
+  - pair_id (INTEGER)
+  - accepted_volume_mwh (FLOAT)
+  - in_merit_volume_mwh (FLOAT)
+  ... and 1 more fields
+Date ranges:
+  - date: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 5c33a1a9-65a1-4e5c-8736-0931b0c44d7d
+
+
+Table: neso_skip_rates_2_in_merit_data_bm_skips_04_2025
+-------------------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: 3ffdcd77-5844-4553-90f2-34f03be6e5a7
+
+Schema (11 columns):
+  - FLOAT: 5 columns
+  - STRING: 4 columns
+  - INTEGER: 2 columns
+Sample fields:
+  - date (STRING)
+  - bm_unit (STRING)
+  - fuel (STRING)
+  - bid_offer (STRING)
+  - stage (INTEGER)
+  - available_volume_mwh (FLOAT)
+  - average_price_per_mwh (FLOAT)
+  - pair_id (INTEGER)
+  - accepted_volume_mwh (FLOAT)
+  - in_merit_volume_mwh (FLOAT)
+  ... and 1 more fields
+Date ranges:
+  - date: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: de4eb268-9d5a-4c85-92fd-3d58b0c66ae8
+
+
+Table: neso_skip_rates_2_in_merit_data_bm_skips_05_2025
+-------------------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: 039f9d0f-ca1e-4349-833c-210142915fc0
+
+Schema (11 columns):
+  - FLOAT: 5 columns
+  - STRING: 4 columns
+  - INTEGER: 2 columns
+Sample fields:
+  - date (STRING)
+  - bm_unit (STRING)
+  - fuel (STRING)
+  - bid_offer (STRING)
+  - stage (INTEGER)
+  - available_volume_mwh (FLOAT)
+  - average_price_per_mwh (FLOAT)
+  - pair_id (INTEGER)
+  - accepted_volume_mwh (FLOAT)
+  - in_merit_volume_mwh (FLOAT)
+  ... and 1 more fields
+Date ranges:
+  - date: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: c930523e-473f-4ed8-82b6-e10e17928c56
+
+
+Table: neso_skip_rates_2_in_merit_data_bm_skips_06_2025
+-------------------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: 9acee7e6-587e-42d1-bf7a-5f43f10424de
+
+Schema (11 columns):
+  - FLOAT: 5 columns
+  - STRING: 4 columns
+  - INTEGER: 2 columns
+Sample fields:
+  - date (STRING)
+  - bm_unit (STRING)
+  - fuel (STRING)
+  - bid_offer (STRING)
+  - stage (INTEGER)
+  - available_volume_mwh (FLOAT)
+  - average_price_per_mwh (FLOAT)
+  - pair_id (INTEGER)
+  - accepted_volume_mwh (FLOAT)
+  - in_merit_volume_mwh (FLOAT)
+  ... and 1 more fields
+Date ranges:
+  - date: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 061b05dc-83e6-434c-a63d-664eb511ca27
+
+
+Table: neso_skip_rates_2_in_merit_data_bm_skips_07_2025
+-------------------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: a82f3ed5-0b15-4ccc-969d-6b4147fe9ad5
+
+Schema (11 columns):
+  - FLOAT: 5 columns
+  - STRING: 4 columns
+  - INTEGER: 2 columns
+Sample fields:
+  - date (STRING)
+  - bm_unit (STRING)
+  - fuel (STRING)
+  - bid_offer (STRING)
+  - stage (INTEGER)
+  - available_volume_mwh (FLOAT)
+  - average_price_per_mwh (FLOAT)
+  - pair_id (INTEGER)
+  - accepted_volume_mwh (FLOAT)
+  - in_merit_volume_mwh (FLOAT)
+  ... and 1 more fields
+Date ranges:
+  - date: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 89bf4c86-0be5-4838-a60e-d7fbfd440637
+
+
+Table: neso_skip_rates_2_in_merit_data_bm_skips_08_2025
+-------------------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: d9ec4ed6-ed3a-4d0b-a6a2-6a0ac1fa7253
+
+Schema (11 columns):
+  - FLOAT: 5 columns
+  - STRING: 4 columns
+  - INTEGER: 2 columns
+Sample fields:
+  - date (STRING)
+  - bm_unit (STRING)
+  - fuel (STRING)
+  - bid_offer (STRING)
+  - stage (INTEGER)
+  - available_volume_mwh (FLOAT)
+  - average_price_per_mwh (FLOAT)
+  - pair_id (INTEGER)
+  - accepted_volume_mwh (FLOAT)
+  - in_merit_volume_mwh (FLOAT)
+  ... and 1 more fields
+Date ranges:
+  - date: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 81db0944-51ae-4a27-ba4f-7ae203c812ee
+
+
+Table: neso_skip_rates_2_in_merit_data_bm_skips_12_2024
+-------------------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: 29315dfe-2a86-4b27-8873-2ce1491625dc
+
+Schema (11 columns):
+  - FLOAT: 5 columns
+  - STRING: 4 columns
+  - INTEGER: 2 columns
+Sample fields:
+  - date (STRING)
+  - bm_unit (STRING)
+  - fuel (STRING)
+  - bid_offer (STRING)
+  - stage (INTEGER)
+  - available_volume_mwh (FLOAT)
+  - average_price_per_mwh (FLOAT)
+  - pair_id (INTEGER)
+  - accepted_volume_mwh (FLOAT)
+  - in_merit_volume_mwh (FLOAT)
+  ... and 1 more fields
+Date ranges:
+  - date: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 4b5c8371-29bd-4cf1-a549-59358ad29ea7
+
+
+Table: neso_skip_rates_3_in_merit_data_post_system_actions_skips_01_2025
+------------------------------------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: a1b36dc2-3752-4e06-86df-075cbcf5cc8c
+
+Schema (11 columns):
+  - FLOAT: 5 columns
+  - STRING: 4 columns
+  - INTEGER: 2 columns
+Sample fields:
+  - date (STRING)
+  - bm_unit (STRING)
+  - fuel (STRING)
+  - bid_offer (STRING)
+  - stage (INTEGER)
+  - available_volume_mwh (FLOAT)
+  - average_price_per_mwh (FLOAT)
+  - pair_id (INTEGER)
+  - accepted_volume_mwh (FLOAT)
+  - in_merit_volume_mwh (FLOAT)
+  ... and 1 more fields
+Date ranges:
+  - date: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 5a49b8ab-c44b-4924-8b6d-698a31d13549
+
+
+Table: neso_skip_rates_3_in_merit_data_post_system_actions_skips_02_2025
+------------------------------------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: 3ddfd873-2a40-42d5-9f33-415f893665da
+
+Schema (11 columns):
+  - FLOAT: 5 columns
+  - STRING: 4 columns
+  - INTEGER: 2 columns
+Sample fields:
+  - date (STRING)
+  - bm_unit (STRING)
+  - fuel (STRING)
+  - bid_offer (STRING)
+  - stage (INTEGER)
+  - available_volume_mwh (FLOAT)
+  - average_price_per_mwh (FLOAT)
+  - pair_id (INTEGER)
+  - accepted_volume_mwh (FLOAT)
+  - in_merit_volume_mwh (FLOAT)
+  ... and 1 more fields
+Date ranges:
+  - date: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: b06740bb-14d0-4214-9c6f-0da15ad2e850
+
+
+Table: neso_skip_rates_3_in_merit_data_post_system_actions_skips_03_2025
+------------------------------------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: 2db29f33-f43a-435a-8716-5e64189b0cd5
+
+Schema (11 columns):
+  - FLOAT: 5 columns
+  - STRING: 4 columns
+  - INTEGER: 2 columns
+Sample fields:
+  - date (STRING)
+  - bm_unit (STRING)
+  - fuel (STRING)
+  - bid_offer (STRING)
+  - stage (INTEGER)
+  - available_volume_mwh (FLOAT)
+  - average_price_per_mwh (FLOAT)
+  - pair_id (INTEGER)
+  - accepted_volume_mwh (FLOAT)
+  - in_merit_volume_mwh (FLOAT)
+  ... and 1 more fields
+Date ranges:
+  - date: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: e4f5df3c-e69b-4aec-ad60-8ccd50a2ae60
+
+
+Table: neso_skip_rates_3_in_merit_data_post_system_actions_skips_04_2025
+------------------------------------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: 90ed40e1-164b-41a5-b7a4-ae04dc2bdb93
+
+Schema (11 columns):
+  - FLOAT: 5 columns
+  - STRING: 4 columns
+  - INTEGER: 2 columns
+Sample fields:
+  - date (STRING)
+  - bm_unit (STRING)
+  - fuel (STRING)
+  - bid_offer (STRING)
+  - stage (INTEGER)
+  - available_volume_mwh (FLOAT)
+  - average_price_per_mwh (FLOAT)
+  - pair_id (INTEGER)
+  - accepted_volume_mwh (FLOAT)
+  - in_merit_volume_mwh (FLOAT)
+  ... and 1 more fields
+Date ranges:
+  - date: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: f4138018-34b6-49ac-99b9-d480a19e02f4
+
+
+Table: neso_skip_rates_3_in_merit_data_post_system_actions_skips_05_2025
+------------------------------------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: 8cf6d22e-b885-4e6d-8890-a13f7b10f50e
+
+Schema (11 columns):
+  - FLOAT: 5 columns
+  - STRING: 4 columns
+  - INTEGER: 2 columns
+Sample fields:
+  - date (STRING)
+  - bm_unit (STRING)
+  - fuel (STRING)
+  - bid_offer (STRING)
+  - stage (INTEGER)
+  - available_volume_mwh (FLOAT)
+  - average_price_per_mwh (FLOAT)
+  - pair_id (INTEGER)
+  - accepted_volume_mwh (FLOAT)
+  - in_merit_volume_mwh (FLOAT)
+  ... and 1 more fields
+Date ranges:
+  - date: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 940a19a7-bbf7-466f-8992-796cb00241c8
+
+
+Table: neso_skip_rates_3_in_merit_data_post_system_actions_skips_06_2025
+------------------------------------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: 9245d2c0-c075-419f-8f8f-e04e269a324a
+
+Schema (11 columns):
+  - FLOAT: 5 columns
+  - STRING: 4 columns
+  - INTEGER: 2 columns
+Sample fields:
+  - date (STRING)
+  - bm_unit (STRING)
+  - fuel (STRING)
+  - bid_offer (STRING)
+  - stage (INTEGER)
+  - available_volume_mwh (FLOAT)
+  - average_price_per_mwh (FLOAT)
+  - pair_id (INTEGER)
+  - accepted_volume_mwh (FLOAT)
+  - in_merit_volume_mwh (FLOAT)
+  ... and 1 more fields
+Date ranges:
+  - date: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 8349191e-2216-442d-99ca-1e0f51ffda4c
+
+
+Table: neso_skip_rates_3_in_merit_data_post_system_actions_skips_07_2025
+------------------------------------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: 4a487f47-e73b-4f1e-a1f8-a6b168b48c91
+
+Schema (11 columns):
+  - FLOAT: 5 columns
+  - STRING: 4 columns
+  - INTEGER: 2 columns
+Sample fields:
+  - date (STRING)
+  - bm_unit (STRING)
+  - fuel (STRING)
+  - bid_offer (STRING)
+  - stage (INTEGER)
+  - available_volume_mwh (FLOAT)
+  - average_price_per_mwh (FLOAT)
+  - pair_id (INTEGER)
+  - accepted_volume_mwh (FLOAT)
+  - in_merit_volume_mwh (FLOAT)
+  ... and 1 more fields
+Date ranges:
+  - date: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: d1cdd3c9-8d1d-4c20-976b-69d77317d90e
+
+
+Table: neso_skip_rates_3_in_merit_data_post_system_actions_skips_08_2025
+------------------------------------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: e3049636-0f1b-48cf-8c00-1880c98ca4e1
+
+Schema (11 columns):
+  - FLOAT: 5 columns
+  - STRING: 4 columns
+  - INTEGER: 2 columns
+Sample fields:
+  - date (STRING)
+  - bm_unit (STRING)
+  - fuel (STRING)
+  - bid_offer (STRING)
+  - stage (INTEGER)
+  - available_volume_mwh (FLOAT)
+  - average_price_per_mwh (FLOAT)
+  - pair_id (INTEGER)
+  - accepted_volume_mwh (FLOAT)
+  - in_merit_volume_mwh (FLOAT)
+  ... and 1 more fields
+Date ranges:
+  - date: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 20dcc9a8-d765-48d0-b3ff-5bd66e0e5f71
+
+
+Table: neso_skip_rates_3_in_merit_data_post_system_actions_skips_12_2024
+------------------------------------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: bdf79853-5564-4712-93be-cd63192835d6
+
+Schema (11 columns):
+  - FLOAT: 5 columns
+  - STRING: 4 columns
+  - INTEGER: 2 columns
+Sample fields:
+  - date (STRING)
+  - bm_unit (STRING)
+  - fuel (STRING)
+  - bid_offer (STRING)
+  - stage (INTEGER)
+  - available_volume_mwh (FLOAT)
+  - average_price_per_mwh (FLOAT)
+  - pair_id (INTEGER)
+  - accepted_volume_mwh (FLOAT)
+  - in_merit_volume_mwh (FLOAT)
+  ... and 1 more fields
+Date ranges:
+  - date: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 2a6fcdcd-b355-4a63-a589-0082c4a990b0
+
+
+Table: neso_skip_rates_4_exclusions_01_2025
+-------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: 74ced20a-3060-4b22-bab1-abe42f900163
+
+Schema (10 columns):
+  - STRING: 6 columns
+  - INTEGER: 2 columns
+  - FLOAT: 2 columns
+Sample fields:
+  - date (STRING)
+  - bm_unit (STRING)
+  - fuel (STRING)
+  - bid_offer (STRING)
+  - excluded_from_accepted_or_feasible_merit_stack (STRING)
+  - exclusion_stage (INTEGER)
+  - pair_id (INTEGER)
+  - average_price_per_mwh (FLOAT)
+  - excluded_volume_mwh (FLOAT)
+  - exclusion_reason (STRING)
+Date ranges:
+  - date: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: fad69415-11de-4400-b5f8-bc2adc207e43
+
+
+Table: neso_skip_rates_4_exclusions_02_2025
+-------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: 57727823-52f5-4b4e-aa57-8c12397d50ab
+
+Schema (10 columns):
+  - STRING: 6 columns
+  - INTEGER: 2 columns
+  - FLOAT: 2 columns
+Sample fields:
+  - date (STRING)
+  - bm_unit (STRING)
+  - fuel (STRING)
+  - bid_offer (STRING)
+  - excluded_from_accepted_or_feasible_merit_stack (STRING)
+  - exclusion_stage (INTEGER)
+  - pair_id (INTEGER)
+  - average_price_per_mwh (FLOAT)
+  - excluded_volume_mwh (FLOAT)
+  - exclusion_reason (STRING)
+Date ranges:
+  - date: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 5c396448-6513-4114-8c06-2ec79882a4ba
+
+
+Table: neso_skip_rates_4_exclusions_03_2025
+-------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: 5ddebc06-21de-40f1-b505-cb9eafa1eb50
+
+Schema (10 columns):
+  - STRING: 6 columns
+  - INTEGER: 2 columns
+  - FLOAT: 2 columns
+Sample fields:
+  - date (STRING)
+  - bm_unit (STRING)
+  - fuel (STRING)
+  - bid_offer (STRING)
+  - excluded_from_accepted_or_feasible_merit_stack (STRING)
+  - exclusion_stage (INTEGER)
+  - pair_id (INTEGER)
+  - average_price_per_mwh (FLOAT)
+  - excluded_volume_mwh (FLOAT)
+  - exclusion_reason (STRING)
+Date ranges:
+  - date: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 88198d8f-28bb-4827-b3a3-b5d287ecfb1a
+
+
+Table: neso_skip_rates_4_exclusions_04_2025
+-------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: 4c7d64eb-5fcb-4a13-8f20-94ed4769bd81
+
+Schema (10 columns):
+  - STRING: 6 columns
+  - INTEGER: 2 columns
+  - FLOAT: 2 columns
+Sample fields:
+  - date (STRING)
+  - bm_unit (STRING)
+  - fuel (STRING)
+  - bid_offer (STRING)
+  - excluded_from_accepted_or_feasible_merit_stack (STRING)
+  - exclusion_stage (INTEGER)
+  - pair_id (INTEGER)
+  - average_price_per_mwh (FLOAT)
+  - excluded_volume_mwh (FLOAT)
+  - exclusion_reason (STRING)
+Date ranges:
+  - date: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: be9bfd04-de47-46d9-be11-2399d8593121
+
+
+Table: neso_skip_rates_4_exclusions_05_2025
+-------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: 99eb11b0-b443-4ce9-bf2f-63a70812528f
+
+Schema (10 columns):
+  - STRING: 6 columns
+  - INTEGER: 2 columns
+  - FLOAT: 2 columns
+Sample fields:
+  - date (STRING)
+  - bm_unit (STRING)
+  - fuel (STRING)
+  - bid_offer (STRING)
+  - excluded_from_accepted_or_feasible_merit_stack (STRING)
+  - exclusion_stage (INTEGER)
+  - pair_id (INTEGER)
+  - average_price_per_mwh (FLOAT)
+  - excluded_volume_mwh (FLOAT)
+  - exclusion_reason (STRING)
+Date ranges:
+  - date: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 8f47f684-0494-4359-a3ca-5065ae2fa270
+
+
+Table: neso_skip_rates_4_exclusions_06_2025
+-------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: b4d3193f-3906-4f94-b0f6-e511476a7960
+
+Schema (10 columns):
+  - STRING: 6 columns
+  - INTEGER: 2 columns
+  - FLOAT: 2 columns
+Sample fields:
+  - date (STRING)
+  - bm_unit (STRING)
+  - fuel (STRING)
+  - bid_offer (STRING)
+  - excluded_from_accepted_or_feasible_merit_stack (STRING)
+  - exclusion_stage (INTEGER)
+  - pair_id (INTEGER)
+  - average_price_per_mwh (FLOAT)
+  - excluded_volume_mwh (FLOAT)
+  - exclusion_reason (STRING)
+Date ranges:
+  - date: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 089af7c6-41e4-452e-8d2e-e532f94d3e5a
+
+
+Table: neso_skip_rates_4_exclusions_07_2025
+-------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: e6592649-0bd2-4c25-b402-387b7463e424
+
+Schema (10 columns):
+  - STRING: 6 columns
+  - INTEGER: 2 columns
+  - FLOAT: 2 columns
+Sample fields:
+  - date (STRING)
+  - bm_unit (STRING)
+  - fuel (STRING)
+  - bid_offer (STRING)
+  - excluded_from_accepted_or_feasible_merit_stack (STRING)
+  - exclusion_stage (INTEGER)
+  - pair_id (INTEGER)
+  - average_price_per_mwh (FLOAT)
+  - excluded_volume_mwh (FLOAT)
+  - exclusion_reason (STRING)
+Date ranges:
+  - date: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: ab19201f-6d39-432e-b9fb-924bd5227ee7
+
+
+Table: neso_skip_rates_4_exclusions_08_2025
+-------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: 62be2abb-c84d-4f16-a223-6ba06afb107a
+
+Schema (10 columns):
+  - STRING: 6 columns
+  - INTEGER: 2 columns
+  - FLOAT: 2 columns
+Sample fields:
+  - date (STRING)
+  - bm_unit (STRING)
+  - fuel (STRING)
+  - bid_offer (STRING)
+  - excluded_from_accepted_or_feasible_merit_stack (STRING)
+  - exclusion_stage (INTEGER)
+  - pair_id (INTEGER)
+  - average_price_per_mwh (FLOAT)
+  - excluded_volume_mwh (FLOAT)
+  - exclusion_reason (STRING)
+Date ranges:
+  - date: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 072c1bbf-9b4a-42f5-9153-1805be83f5cd
+
+
+Table: neso_skip_rates_4_exclusions_12_2025
+-------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: a3cfb2e0-9e23-482e-a0bc-1e8519328d4c
+
+Schema (10 columns):
+  - STRING: 6 columns
+  - INTEGER: 2 columns
+  - FLOAT: 2 columns
+Sample fields:
+  - date (STRING)
+  - bm_unit (STRING)
+  - fuel (STRING)
+  - bid_offer (STRING)
+  - excluded_from_accepted_or_feasible_merit_stack (STRING)
+  - exclusion_stage (INTEGER)
+  - pair_id (INTEGER)
+  - average_price_per_mwh (FLOAT)
+  - excluded_volume_mwh (FLOAT)
+  - exclusion_reason (STRING)
+Date ranges:
+  - date: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 2fcc49c7-32dc-4236-a5b2-32170aa7a788
+
+
+Table: neso_skip_rates_5_fuel_type_skip_rate
+--------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: ca48fabd-0863-4e35-a767-7e29d64f7e18
+
+Schema (7 columns):
+  - FLOAT: 4 columns
+  - STRING: 3 columns
+Sample fields:
+  - settlement_period_start (STRING)
+  - bid_offer (STRING)
+  - fuel (STRING)
+  - relative_technology_skip_rate (FLOAT)
+  - technology_specific_skip_rate (FLOAT)
+  - fuel_in_merit_volume_mwh (FLOAT)
+  - fuel_skipped_volume_mwh (FLOAT)
+
+Table: neso_static_ancillary_services_important_industry_notifications_balancing_reserve_important_industry_notifications
+-------------------------------------------------------------------------------------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: dea521d7-bde6-4191-9a3a-0e37345fd85b
+
+Schema (6 columns):
+  - STRING: 4 columns
+  - FLOAT: 2 columns
+Sample fields:
+  - notification_issued_date_time (STRING)
+  - service (STRING)
+  - description (STRING)
+  - effective_from_date_time (STRING)
+  - effective_to_date_time (FLOAT)
+  - notes (FLOAT)
+Date ranges:
+  - notification_issued_date_time: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 2fa12b5a-99e8-4de0-8cae-66996bb3418b
+
+  - effective_from_date_time: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: a931834e-b3f2-4b22-baf1-403b5d1bda48
+
+  - effective_to_date_time: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: e11ca39f-1e3e-43eb-abee-1e6d56c85926
+
+
+Table: neso_static_ancillary_services_important_industry_notifications_dc_dm_dr_important_industry_notifications
+----------------------------------------------------------------------------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: 75b5d6dd-7067-406e-b5a9-a7ad9222dffb
+
+Schema (6 columns):
+  - STRING: 6 columns
+Sample fields:
+  - notification_issued_date_time (STRING)
+  - service (STRING)
+  - description (STRING)
+  - effective_from_date_time (STRING)
+  - effective_to_date_time (STRING)
+  - notes (STRING)
+Date ranges:
+  - notification_issued_date_time: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 52ff9bfc-12e9-4dae-a5cf-62969e53a2e6
+
+  - effective_from_date_time: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 111670c0-57f9-4374-bc57-319ab091cf2c
+
+  - effective_to_date_time: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: a50be312-1877-4037-833d-8b41a6df0349
+
+
+Table: neso_static_ancillary_services_important_industry_notifications_qr_important_industry_notifications
+----------------------------------------------------------------------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: 9de4d24f-1077-43ab-8ff4-705aa5b527bd
+
+Schema (5 columns):
+  - STRING: 5 columns
+Sample fields:
+  - notification_issued_date_time (STRING)
+  - description (STRING)
+  - effective_from_date_time (STRING)
+  - effective_to_date_time (STRING)
+  - notes (STRING)
+Date ranges:
+  - notification_issued_date_time: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: f8a2c96b-1792-48fa-bedf-359c556cffcb
+
+  - effective_from_date_time: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: fa925652-ca36-4a13-9ae9-bbc56b424be5
+
+  - effective_to_date_time: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 28234d8f-a441-48c4-b23b-674b5f0d865f
+
+
+Table: neso_static_ancillary_services_important_industry_notifications_sffr_important_industry_notifications
+------------------------------------------------------------------------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: 0a9ecd5e-9fe2-4fbd-a15a-faa4b8e14d3f
+
+Schema (6 columns):
+  - STRING: 5 columns
+  - FLOAT: 1 columns
+Sample fields:
+  - notification_issued_date_time (STRING)
+  - service (STRING)
+  - description (FLOAT)
+  - effective_from_date_time (STRING)
+  - effective_to_date_time (STRING)
+  - notes (STRING)
+Date ranges:
+  - notification_issued_date_time: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 016ab9f3-d5b7-4387-accb-fb27c787dd61
+
+  - effective_from_date_time: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 19ac21d0-2d5e-4b05-a748-1f6fbbd510ac
+
+  - effective_to_date_time: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 99a30cbd-7b62-4e39-a936-6c5011dc7105
+
+
+Table: neso_static_ancillary_services_important_industry_notifications_stor_important_industry_notifications
+------------------------------------------------------------------------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: 504d5305-1b07-456a-bc98-c87d02e2e1df
+
+Schema (6 columns):
+  - STRING: 6 columns
+Sample fields:
+  - notification_issued_date_time (STRING)
+  - service (STRING)
+  - description (STRING)
+  - effective_from_date_time (STRING)
+  - effective_to_date_time (STRING)
+  - notes (STRING)
+Date ranges:
+  - notification_issued_date_time: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 72f10a42-c211-471e-8111-6a9253fefc4f
+
+  - effective_from_date_time: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 11981c94-d0a8-4396-be0a-8ca6e3f54ba1
+
+  - effective_to_date_time: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 0b1d52e5-626b-4de7-806c-e836ad764927
+
+
+Table: neso_static_contract_transfer_of_obligation_contract_transfer
+--------------------------------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: d4f31d74-3419-490b-b332-6e4b271d4188
+
+Schema (14 columns):
+  - STRING: 14 columns
+Sample fields:
+  - registeredauctionparticipant (STRING)
+  - auctionunit (STRING)
+  - servicetype (STRING)
+  - auctionproduct (STRING)
+  - executedquantity (STRING)
+  - clearingprice (STRING)
+  - deliverystart (STRING)
+  - deliveryend (STRING)
+  - technologytype (STRING)
+  - postcode (STRING)
+  ... and 4 more fields
+
+Table: neso_static_data_portal_planned_changes_known_issues_23021dfa_a3b8_4f62_93bc_b60186c53fa4_21_08_2025
+-----------------------------------------------------------------------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: d5b42180-635c-43de-8854-623777d1c8f0
+
+Schema (10 columns):
+  - STRING: 9 columns
+  - INTEGER: 1 columns
+Sample fields:
+  - po (INTEGER)
+  - change_issue_title (STRING)
+  - description (STRING)
+  - dataset_specific (STRING)
+  - file_specific (STRING)
+  - status (STRING)
+  - change_datetime_from (STRING)
+  - change_datetime_to (STRING)
+  - last_updated (STRING)
+  - notes (STRING)
+Date ranges:
+  - change_datetime_from: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: aacb729e-7c6a-4459-b883-5d3127d794df
+
+  - change_datetime_to: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: c2c7e8df-49a8-4d4e-bfb3-a263621316b6
+
+  - last_updated: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: df8a8bbd-16f8-4730-b782-2deb483527bc
+
+
+Table: neso_static_demand_profile_dates_profile_dates
+-----------------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: ceaac9d4-4737-4b1e-9ca2-56959d1e95d6
+
+Schema (2 columns):
+  - STRING: 2 columns
+Sample fields:
+  - forecast_date (STRING)
+  - profile_date (STRING)
+Date ranges:
+  - forecast_date: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 2089c693-f745-407e-8f45-06668555a808
+
+  - profile_date: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 4100c65e-e838-4f13-a477-7177eb51e873
+
+
+Table: neso_static_stor_windows_stor_committed_windows
+------------------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: 85c5b337-3d14-4904-806a-89e2b54c11b1
+
+Schema (7 columns):
+  - STRING: 6 columns
+  - FLOAT: 1 columns
+Sample fields:
+  - date (STRING)
+  - season (FLOAT)
+  - wd_nwd (STRING)
+  - window_1_start_time (STRING)
+  - window_1_end_time (STRING)
+  - window_2_start_time (STRING)
+  - window_2_end_time (STRING)
+Date ranges:
+  - date: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 576a8c81-ad92-495d-a65e-4574e614d5b3
+
+  - window_1_start_time: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: c2d78cd9-9f19-411f-9536-572fb7ce0cca
+
+  - window_1_end_time: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: d782b439-285b-46e3-a939-6621800b9aaa
+
+
+Table: neso_static_system_operating_plan_sop_sop_data_table_updated_20210625051044
+----------------------------------------------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: 167d5774-b092-4dbb-91d8-2f216da4906e
+
+Schema (75 columns):
+  - INTEGER: 69 columns
+  - STRING: 6 columns
+Sample fields:
+  - sop_datetime (STRING)
+  - report_date (STRING)
+  - latest_version (INTEGER)
+  - latest_status (STRING)
+  - cardinal_point (STRING)
+  - customer_demand_forcast (INTEGER)
+  - station_transformer (INTEGER)
+  - dsbr (INTEGER)
+  - total_sop_demand (INTEGER)
+  - standing_reserve_requirement (INTEGER)
+  ... and 65 more fields
+Date ranges:
+  - sop_datetime: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: b0b59388-d625-4309-b221-4ae8a5caf320
+
+  - report_date: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 2eeac8b6-ad07-417e-b295-3e93b3b0a75a
+
+  - sop_report_creation_time_gmt: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: da7e3cf9-b3ae-4ddf-b419-1987a86c0aa1
+
+
+Table: neso_transmission_capacity_tec_register_22_august_2025
+-------------------------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: b162b1a7-9522-4fde-9b8a-c72a3fabc9eb
+
+Schema (14 columns):
+  - STRING: 10 columns
+  - FLOAT: 4 columns
+Sample fields:
+  - project_name (STRING)
+  - customer_name (STRING)
+  - connection_site (STRING)
+  - stage (FLOAT)
+  - mw_connected (FLOAT)
+  - mw_increase___decrease (FLOAT)
+  - cumulative_total_capacity_mw (FLOAT)
+  - mw_effective_from (STRING)
+  - project_status (STRING)
+  - agreement_type (STRING)
+  ... and 4 more fields
+
+Table: neso_transmission_losses_financial_year_losses
+-----------------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: f21db448-1214-4201-bef6-ca636505fb26
+
+Schema (5 columns):
+  - FLOAT: 4 columns
+  - STRING: 1 columns
+Sample fields:
+  - financial_year (STRING)
+  - sum_of_nget (FLOAT)
+  - sum_of_spt (FLOAT)
+  - sum_of_shetl (FLOAT)
+  - sum_of_gb_totals (FLOAT)
+
+Table: neso_transmission_losses_monthly_losses
+----------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: fe89ffc7-5419-4902-8790-ed9f2a4e62dc
+
+Schema (6 columns):
+  - FLOAT: 4 columns
+  - STRING: 2 columns
+Sample fields:
+  - financial_year (STRING)
+  - month (STRING)
+  - nget (FLOAT)
+  - spt (FLOAT)
+  - shetl (FLOAT)
+  - gb_totals (FLOAT)
+
+Table: neso_wind_forecast_14d
+-----------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: 6c3c798a-c9a8-4def-8649-a2d1580c6095
+
+Schema (7 columns):
+  - INTEGER: 4 columns
+  - STRING: 3 columns
+Sample fields:
+  - _id (INTEGER)
+  - datetime (STRING)
+  - date (STRING)
+  - settlement_period (INTEGER)
+  - capacity (INTEGER)
+  - wind_forecast (INTEGER)
+  - forecastdatetime (STRING)
+Date ranges:
+  - datetime: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: dc4eb946-2274-44e5-bdcf-b765e157749f
+
+  - date: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 4b245cc5-1d5b-46aa-82d2-38b0da4c3f6a
+
+  - forecastdatetime: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 67ad7895-35f5-49da-bfbe-cd4e7a81ee83
+
+
+Table: neso_wind_forecasts
+--------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: c5ed4486-6734-4c5c-8332-928fb1d918dc
+
+Schema (5 columns):
+  - TIMESTAMP: 1 columns
+  - DATE: 1 columns
+  - INTEGER: 1 columns
+  - FLOAT: 1 columns
+  - STRING: 1 columns
+Sample fields:
+  - publishTime (TIMESTAMP)
+  - settlementDate (DATE)
+  - settlementPeriod (INTEGER)
+  - quantity (FLOAT)
+  - windType (STRING)
+Date ranges:
+  - publishTime: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: a578fc0c-67f0-43f9-af3d-3b27ce74061f
+
+  - settlementDate: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 64b6bae5-635e-4c55-b494-fba36a33968c
+
+
+Table: neso_wind_forecasts_temp_20250823001627
+----------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: fc8dcb29-300b-4fe5-8c64-b1eda0b46a2a
+
+Schema (10 columns):
+  - FLOAT: 4 columns
+  - STRING: 3 columns
+  - INTEGER: 2 columns
+  - DATE: 1 columns
+Sample fields:
+  - forecast_timestamp (STRING)
+  - settlement_date (DATE)
+  - settlement_period (INTEGER)
+  - wind_farm_id (STRING)
+  - wind_farm_name (STRING)
+  - capacity_mw (INTEGER)
+  - forecast_output_mw (FLOAT)
+  - actual_output_mw (FLOAT)
+  - availability_factor (FLOAT)
+  - wind_speed_ms (FLOAT)
+Date ranges:
+  - forecast_timestamp: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: c1cc824d-608e-4a2a-9487-9716b84f599c
+
+  - settlement_date: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 801af426-4253-49eb-a07d-1e036a51bb73
+
+
+2. ELEXON TABLES
+==============
+
+Table: elexon_demand_outturn
+----------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: ece8a48d-7a29-49c7-8b33-c777761123b8
+
+Schema (6 columns):
+  - TIMESTAMP: 2 columns
+  - FLOAT: 2 columns
+  - DATE: 1 columns
+  - INTEGER: 1 columns
+Sample fields:
+  - publishTime (TIMESTAMP)
+  - startTime (TIMESTAMP)
+  - settlementDate (DATE)
+  - settlementPeriod (INTEGER)
+  - initialDemandOutturn (FLOAT)
+  - initialTransmissionSystemDemandOutturn (FLOAT)
+Date ranges:
+  - publishTime: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 00533b14-fdc1-4f08-a135-878648f4909e
+
+  - startTime: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 4a6db52a-81ea-4f9d-ab69-40166c59a10e
+
+  - settlementDate: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 0028f309-3e82-40b4-a4c8-b256f6b93131
+
+
+Table: elexon_demand_outturn_2016_import_20250822203511
+-------------------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: 93800ce4-a3cb-4570-87af-9ceb08bd1043
+
+Schema (1 columns):
+  - RECORD: 1 columns
+Sample fields:
+  - data (RECORD)
+
+Table: elexon_demand_outturn_temp_20250823001616
+------------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: 7b04c49b-7888-4ae6-b401-96a893207f19
+
+Schema (9 columns):
+  - FLOAT: 6 columns
+  - DATETIME: 1 columns
+  - DATE: 1 columns
+  - INTEGER: 1 columns
+Sample fields:
+  - timestamp (DATETIME)
+  - settlement_date (DATE)
+  - settlement_period (INTEGER)
+  - national_demand (FLOAT)
+  - england_wales_demand (FLOAT)
+  - embedded_wind_generation (FLOAT)
+  - embedded_solar_generation (FLOAT)
+  - non_bm_stor (FLOAT)
+  - non_bm_wind (FLOAT)
+Date ranges:
+  - timestamp: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 649644c0-82a3-4bce-8801-93e02790e2ac
+
+  - settlement_date: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 3e2beab6-9e09-4ade-bd68-a0b072e4f073
+
+
+Table: elexon_frequency
+-----------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: 70e0a713-0a70-46e6-8a32-287f34a13155
+
+Schema (4 columns):
+  - DATETIME: 1 columns
+  - DATE: 1 columns
+  - INTEGER: 1 columns
+  - FLOAT: 1 columns
+Sample fields:
+  - timestamp (DATETIME)
+  - settlement_date (DATE)
+  - settlement_period (INTEGER)
+  - frequency (FLOAT)
+Date ranges:
+  - timestamp: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 178ece2b-690f-477d-8b25-be02df9dbda4
+
+  - settlement_date: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 5cfcc569-4438-44d9-ab6c-470040b5d529
+
+
+Table: elexon_generation_outturn
+--------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: 1a89633a-9b7c-4d2d-b826-1a0f82a1c0eb
+
+Schema (5 columns):
+  - STRING: 1 columns
+  - TIMESTAMP: 1 columns
+  - DATE: 1 columns
+  - INTEGER: 1 columns
+  - FLOAT: 1 columns
+Sample fields:
+  - recordType (STRING)
+  - startTime (TIMESTAMP)
+  - settlementDate (DATE)
+  - settlementPeriod (INTEGER)
+  - demand (FLOAT)
+Date ranges:
+  - startTime: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 1d2085e5-9e78-454e-9fc6-d0e886ac1f4d
+
+  - settlementDate: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 0c39a25d-acd0-4bed-8d50-6346c7e28684
+
+
+Table: elexon_generation_outturn_2016_import_20250822203523
+-----------------------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: 597da73b-556e-4e80-8c6c-ea4483b91e36
+
+Schema (1 columns):
+  - RECORD: 1 columns
+Sample fields:
+  - data (RECORD)
+
+Table: elexon_generation_outturn_temp_20250823001619
+----------------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: d8615e92-55b9-44f9-b078-85bd8d2c3301
+
+Schema (7 columns):
+  - FLOAT: 3 columns
+  - DATETIME: 1 columns
+  - DATE: 1 columns
+  - INTEGER: 1 columns
+  - STRING: 1 columns
+Sample fields:
+  - timestamp (DATETIME)
+  - settlement_date (DATE)
+  - settlement_period (INTEGER)
+  - fuel_type (STRING)
+  - generation_mw (FLOAT)
+  - generation_percentage (FLOAT)
+  - capacity_factor (FLOAT)
+Date ranges:
+  - timestamp: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 8e4cfacd-6871-4832-9b67-19d21a0b4be1
+
+  - settlement_date: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: d09282a0-3ace-4db8-8841-58ce941ac353
+
+
+Table: elexon_system_warnings
+-----------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: 443a6ef6-e463-403d-846c-727d6f6db62c
+
+Schema (5 columns):
+  - STRING: 3 columns
+  - TIMESTAMP: 1 columns
+  - DATE: 1 columns
+Sample fields:
+  - publishTime (TIMESTAMP)
+  - warningType (STRING)
+  - messageText (STRING)
+  - settlementDate (DATE)
+  - warningId (STRING)
+Date ranges:
+  - publishTime: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: 4ad71c58-3edd-4fff-b62c-aad9821b65de
+
+  - settlementDate: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: cc8ef10d-5c07-4b25-b20c-a5aec12d400a
+
+
+Table: elexon_system_warnings_temp_20250823001622
+-------------------------------------------------
+Row count: Unable to determine (Query error: Unexpected end of script at [1:30]; reason: invalidQuery, location: query, message: Syntax error: Unexpected end of script at [1:30])
+
+Location: europe-west2
+Job ID: 442066b8-f023-427a-ba6e-5cd9b6f58f5a
+
+Schema (11 columns):
+  - STRING: 6 columns
+  - DATETIME: 3 columns
+  - DATE: 1 columns
+  - FLOAT: 1 columns
+Sample fields:
+  - warning_id (STRING)
+  - warning_type (STRING)
+  - warning_date (DATE)
+  - start_time (DATETIME)
+  - end_time (DATETIME)
+  - severity (STRING)
+  - message (STRING)
+  - affected_area (STRING)
+  - status (STRING)
+  - resolution_time (DATETIME)
+  ... and 1 more fields
+Date ranges:
+  - warning_date: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: c62a64ab-cdf7-44cc-bf68-2f76080d8383
+
+  - start_time: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: ec28822e-6e65-4ec0-b0e5-98a3f4bddfc6
+
+  - end_time: Unable to determine (Query error)
+
+Location: europe-west2
+Job ID: fa22ee5d-e7c8-4ce1-be25-37e79327fa0f
+
+

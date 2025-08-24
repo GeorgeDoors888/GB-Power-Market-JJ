@@ -1,0 +1,695 @@
+[
+  {
+    "table": "neso_demand_forecasts",
+    "exists": true,
+    "row_count": 0,
+    "min_date": null,
+    "max_date": null,
+    "findings": [
+      {
+        "severity": "ERROR",
+        "table": "neso_demand_forecasts",
+        "check": "row_count",
+        "detail": "No rows"
+      },
+      {
+        "severity": "WARN",
+        "table": "neso_demand_forecasts",
+        "check": "date_range",
+        "detail": "Could not determine date range"
+      },
+      {
+        "severity": "OK",
+        "table": "neso_demand_forecasts",
+        "check": "schema",
+        "detail": "All required columns present"
+      },
+      {
+        "severity": "OK",
+        "table": "neso_demand_forecasts",
+        "check": "nulls",
+        "detail": "settlement_date: nan% NULL"
+      },
+      {
+        "severity": "OK",
+        "table": "neso_demand_forecasts",
+        "check": "nulls",
+        "detail": "settlement_period: nan% NULL"
+      },
+      {
+        "severity": "OK",
+        "table": "neso_demand_forecasts",
+        "check": "nulls",
+        "detail": "national_demand_forecast: nan% NULL"
+      },
+      {
+        "severity": "WARN",
+        "table": "neso_demand_forecasts",
+        "check": "type",
+        "detail": "Column 'national_demand_forecast' is FLOAT but all values appear castable"
+      },
+      {
+        "severity": "WARN",
+        "table": "neso_demand_forecasts",
+        "check": "type",
+        "detail": "Column 'temperature_forecast' is FLOAT but all values appear castable"
+      },
+      {
+        "severity": "WARN",
+        "table": "neso_demand_forecasts",
+        "check": "type",
+        "detail": "Column 'wind_forecast' is FLOAT but all values appear castable"
+      },
+      {
+        "severity": "WARN",
+        "table": "neso_demand_forecasts",
+        "check": "type",
+        "detail": "Column 'solar_forecast' is FLOAT but all values appear castable"
+      },
+      {
+        "severity": "OK",
+        "table": "neso_demand_forecasts",
+        "check": "settlement_period_range",
+        "detail": "All settlement_period values in 1..50"
+      },
+      {
+        "severity": "WARN",
+        "table": "neso_demand_forecasts",
+        "check": "sp_continuity",
+        "detail": "No dates found"
+      }
+    ]
+  },
+  {
+    "table": "neso_wind_forecasts",
+    "exists": true,
+    "row_count": 0,
+    "min_date": null,
+    "max_date": null,
+    "findings": [
+      {
+        "severity": "ERROR",
+        "table": "neso_wind_forecasts",
+        "check": "row_count",
+        "detail": "No rows"
+      },
+      {
+        "severity": "WARN",
+        "table": "neso_wind_forecasts",
+        "check": "date_range",
+        "detail": "Could not determine date range"
+      },
+      {
+        "severity": "OK",
+        "table": "neso_wind_forecasts",
+        "check": "schema",
+        "detail": "All required columns present"
+      },
+      {
+        "severity": "OK",
+        "table": "neso_wind_forecasts",
+        "check": "nulls",
+        "detail": "settlement_date: nan% NULL"
+      },
+      {
+        "severity": "OK",
+        "table": "neso_wind_forecasts",
+        "check": "nulls",
+        "detail": "settlement_period: nan% NULL"
+      },
+      {
+        "severity": "OK",
+        "table": "neso_wind_forecasts",
+        "check": "nulls",
+        "detail": "forecast_output_mw: nan% NULL"
+      },
+      {
+        "severity": "WARN",
+        "table": "neso_wind_forecasts",
+        "check": "type",
+        "detail": "Column 'forecast_output_mw' is FLOAT but all values appear castable"
+      },
+      {
+        "severity": "WARN",
+        "table": "neso_wind_forecasts",
+        "check": "type",
+        "detail": "Column 'actual_output_mw' is FLOAT but all values appear castable"
+      },
+      {
+        "severity": "WARN",
+        "table": "neso_wind_forecasts",
+        "check": "type",
+        "detail": "Column 'capacity_mw' is FLOAT but all values appear castable"
+      },
+      {
+        "severity": "WARN",
+        "table": "neso_wind_forecasts",
+        "check": "type",
+        "detail": "Column 'wind_speed_ms' is FLOAT but all values appear castable"
+      },
+      {
+        "severity": "OK",
+        "table": "neso_wind_forecasts",
+        "check": "settlement_period_range",
+        "detail": "All settlement_period values in 1..50"
+      }
+    ]
+  },
+  {
+    "table": "neso_balancing_services",
+    "exists": true,
+    "row_count": 0,
+    "min_date": null,
+    "max_date": null,
+    "findings": [
+      {
+        "severity": "ERROR",
+        "table": "neso_balancing_services",
+        "check": "row_count",
+        "detail": "No rows"
+      },
+      {
+        "severity": "WARN",
+        "table": "neso_balancing_services",
+        "check": "date_range",
+        "detail": "Could not determine date range"
+      },
+      {
+        "severity": "OK",
+        "table": "neso_balancing_services",
+        "check": "schema",
+        "detail": "All required columns present"
+      },
+      {
+        "severity": "OK",
+        "table": "neso_balancing_services",
+        "check": "nulls",
+        "detail": "charge_date: nan% NULL"
+      },
+      {
+        "severity": "OK",
+        "table": "neso_balancing_services",
+        "check": "nulls",
+        "detail": "settlement_period: nan% NULL"
+      },
+      {
+        "severity": "OK",
+        "table": "neso_balancing_services",
+        "check": "nulls",
+        "detail": "cost_pounds: nan% NULL"
+      },
+      {
+        "severity": "OK",
+        "table": "neso_balancing_services",
+        "check": "nulls",
+        "detail": "volume_mwh: nan% NULL"
+      },
+      {
+        "severity": "OK",
+        "table": "neso_balancing_services",
+        "check": "nulls",
+        "detail": "bsuos_rate_pounds_mwh: nan% NULL"
+      },
+      {
+        "severity": "WARN",
+        "table": "neso_balancing_services",
+        "check": "type",
+        "detail": "Column 'cost_pounds' is FLOAT but all values appear castable"
+      },
+      {
+        "severity": "WARN",
+        "table": "neso_balancing_services",
+        "check": "type",
+        "detail": "Column 'volume_mwh' is FLOAT but all values appear castable"
+      },
+      {
+        "severity": "WARN",
+        "table": "neso_balancing_services",
+        "check": "type",
+        "detail": "Column 'bsuos_rate_pounds_mwh' is FLOAT but all values appear castable"
+      },
+      {
+        "severity": "WARN",
+        "table": "neso_balancing_services",
+        "check": "type",
+        "detail": "Column 'constraint_costs' is FLOAT but all values appear castable"
+      }
+    ]
+  },
+  {
+    "table": "neso_interconnector_flows",
+    "exists": true,
+    "row_count": 0,
+    "min_date": null,
+    "max_date": null,
+    "findings": [
+      {
+        "severity": "ERROR",
+        "table": "neso_interconnector_flows",
+        "check": "row_count",
+        "detail": "No rows"
+      },
+      {
+        "severity": "WARN",
+        "table": "neso_interconnector_flows",
+        "check": "date_range",
+        "detail": "Could not determine date range"
+      },
+      {
+        "severity": "OK",
+        "table": "neso_interconnector_flows",
+        "check": "schema",
+        "detail": "All required columns present"
+      },
+      {
+        "severity": "OK",
+        "table": "neso_interconnector_flows",
+        "check": "nulls",
+        "detail": "trading_date: nan% NULL"
+      },
+      {
+        "severity": "OK",
+        "table": "neso_interconnector_flows",
+        "check": "nulls",
+        "detail": "settlement_period: nan% NULL"
+      },
+      {
+        "severity": "OK",
+        "table": "neso_interconnector_flows",
+        "check": "nulls",
+        "detail": "interconnector_name: nan% NULL"
+      },
+      {
+        "severity": "OK",
+        "table": "neso_interconnector_flows",
+        "check": "nulls",
+        "detail": "actual_flow_mw: nan% NULL"
+      },
+      {
+        "severity": "WARN",
+        "table": "neso_interconnector_flows",
+        "check": "type",
+        "detail": "Column 'actual_flow_mw' is FLOAT but all values appear castable"
+      },
+      {
+        "severity": "WARN",
+        "table": "neso_interconnector_flows",
+        "check": "type",
+        "detail": "Column 'max_import_capacity_mw' is FLOAT but all values appear castable"
+      },
+      {
+        "severity": "WARN",
+        "table": "neso_interconnector_flows",
+        "check": "type",
+        "detail": "Column 'max_export_capacity_mw' is FLOAT but all values appear castable"
+      },
+      {
+        "severity": "WARN",
+        "table": "neso_interconnector_flows",
+        "check": "type",
+        "detail": "Column 'day_ahead_price_uk' is FLOAT but all values appear castable"
+      },
+      {
+        "severity": "WARN",
+        "table": "neso_interconnector_flows",
+        "check": "type",
+        "detail": "Column 'day_ahead_price_foreign' is FLOAT but all values appear castable"
+      },
+      {
+        "severity": "OK",
+        "table": "neso_interconnector_flows",
+        "check": "settlement_period_range",
+        "detail": "All settlement_period values in 1..50"
+      }
+    ]
+  },
+  {
+    "table": "neso_carbon_intensity",
+    "exists": true,
+    "row_count": 0,
+    "min_date": null,
+    "max_date": null,
+    "findings": [
+      {
+        "severity": "ERROR",
+        "table": "neso_carbon_intensity",
+        "check": "row_count",
+        "detail": "No rows"
+      },
+      {
+        "severity": "WARN",
+        "table": "neso_carbon_intensity",
+        "check": "date_range",
+        "detail": "Could not determine date range"
+      },
+      {
+        "severity": "OK",
+        "table": "neso_carbon_intensity",
+        "check": "schema",
+        "detail": "All required columns present"
+      },
+      {
+        "severity": "OK",
+        "table": "neso_carbon_intensity",
+        "check": "nulls",
+        "detail": "timestamp: nan% NULL"
+      },
+      {
+        "severity": "OK",
+        "table": "neso_carbon_intensity",
+        "check": "nulls",
+        "detail": "carbon_intensity_gco2_kwh: nan% NULL"
+      },
+      {
+        "severity": "WARN",
+        "table": "neso_carbon_intensity",
+        "check": "type",
+        "detail": "Column 'carbon_intensity_gco2_kwh' is FLOAT but all values appear castable"
+      },
+      {
+        "severity": "WARN",
+        "table": "neso_carbon_intensity",
+        "check": "type",
+        "detail": "Column 'renewable_percentage' is FLOAT but all values appear castable"
+      },
+      {
+        "severity": "WARN",
+        "table": "neso_carbon_intensity",
+        "check": "type",
+        "detail": "Column 'fossil_percentage' is FLOAT but all values appear castable"
+      },
+      {
+        "severity": "WARN",
+        "table": "neso_carbon_intensity",
+        "check": "type",
+        "detail": "Column 'nuclear_percentage' is FLOAT but all values appear castable"
+      },
+      {
+        "severity": "WARN",
+        "table": "neso_carbon_intensity",
+        "check": "type",
+        "detail": "Column 'imports_percentage' is FLOAT but all values appear castable"
+      }
+    ]
+  },
+  {
+    "table": "elexon_demand_outturn",
+    "exists": true,
+    "row_count": 0,
+    "min_date": null,
+    "max_date": null,
+    "findings": [
+      {
+        "severity": "ERROR",
+        "table": "elexon_demand_outturn",
+        "check": "row_count",
+        "detail": "No rows"
+      },
+      {
+        "severity": "WARN",
+        "table": "elexon_demand_outturn",
+        "check": "date_range",
+        "detail": "Could not determine date range"
+      },
+      {
+        "severity": "OK",
+        "table": "elexon_demand_outturn",
+        "check": "schema",
+        "detail": "All required columns present"
+      },
+      {
+        "severity": "OK",
+        "table": "elexon_demand_outturn",
+        "check": "nulls",
+        "detail": "settlement_date: nan% NULL"
+      },
+      {
+        "severity": "OK",
+        "table": "elexon_demand_outturn",
+        "check": "nulls",
+        "detail": "settlement_period: nan% NULL"
+      },
+      {
+        "severity": "OK",
+        "table": "elexon_demand_outturn",
+        "check": "nulls",
+        "detail": "national_demand: nan% NULL"
+      },
+      {
+        "severity": "WARN",
+        "table": "elexon_demand_outturn",
+        "check": "type",
+        "detail": "Column 'national_demand' is FLOAT but all values appear castable"
+      },
+      {
+        "severity": "WARN",
+        "table": "elexon_demand_outturn",
+        "check": "type",
+        "detail": "Column 'england_wales_demand' is FLOAT but all values appear castable"
+      },
+      {
+        "severity": "WARN",
+        "table": "elexon_demand_outturn",
+        "check": "type",
+        "detail": "Column 'embedded_wind_generation' is FLOAT but all values appear castable"
+      },
+      {
+        "severity": "WARN",
+        "table": "elexon_demand_outturn",
+        "check": "type",
+        "detail": "Column 'embedded_solar_generation' is FLOAT but all values appear castable"
+      },
+      {
+        "severity": "OK",
+        "table": "elexon_demand_outturn",
+        "check": "settlement_period_range",
+        "detail": "All settlement_period values in 1..50"
+      },
+      {
+        "severity": "WARN",
+        "table": "elexon_demand_outturn",
+        "check": "sp_continuity",
+        "detail": "No dates found"
+      }
+    ]
+  },
+  {
+    "table": "elexon_generation_outturn",
+    "exists": true,
+    "row_count": 0,
+    "min_date": null,
+    "max_date": null,
+    "findings": [
+      {
+        "severity": "ERROR",
+        "table": "elexon_generation_outturn",
+        "check": "row_count",
+        "detail": "No rows"
+      },
+      {
+        "severity": "WARN",
+        "table": "elexon_generation_outturn",
+        "check": "date_range",
+        "detail": "Could not determine date range"
+      },
+      {
+        "severity": "OK",
+        "table": "elexon_generation_outturn",
+        "check": "schema",
+        "detail": "All required columns present"
+      },
+      {
+        "severity": "OK",
+        "table": "elexon_generation_outturn",
+        "check": "nulls",
+        "detail": "settlement_date: nan% NULL"
+      },
+      {
+        "severity": "OK",
+        "table": "elexon_generation_outturn",
+        "check": "nulls",
+        "detail": "settlement_period: nan% NULL"
+      },
+      {
+        "severity": "OK",
+        "table": "elexon_generation_outturn",
+        "check": "nulls",
+        "detail": "fuel_type: nan% NULL"
+      },
+      {
+        "severity": "OK",
+        "table": "elexon_generation_outturn",
+        "check": "nulls",
+        "detail": "generation_mw: nan% NULL"
+      },
+      {
+        "severity": "WARN",
+        "table": "elexon_generation_outturn",
+        "check": "type",
+        "detail": "Column 'generation_mw' is FLOAT but all values appear castable"
+      },
+      {
+        "severity": "WARN",
+        "table": "elexon_generation_outturn",
+        "check": "type",
+        "detail": "Column 'generation_percentage' is FLOAT but all values appear castable"
+      },
+      {
+        "severity": "WARN",
+        "table": "elexon_generation_outturn",
+        "check": "type",
+        "detail": "Column 'capacity_factor' is FLOAT but all values appear castable"
+      },
+      {
+        "severity": "OK",
+        "table": "elexon_generation_outturn",
+        "check": "settlement_period_range",
+        "detail": "All settlement_period values in 1..50"
+      }
+    ]
+  },
+  {
+    "table": "elexon_bid_offer_acceptances",
+    "exists": true,
+    "row_count": 0,
+    "min_date": null,
+    "max_date": null,
+    "findings": [
+      {
+        "severity": "ERROR",
+        "table": "elexon_bid_offer_acceptances",
+        "check": "row_count",
+        "detail": "No rows"
+      },
+      {
+        "severity": "WARN",
+        "table": "elexon_bid_offer_acceptances",
+        "check": "date_range",
+        "detail": "Could not determine date range"
+      },
+      {
+        "severity": "OK",
+        "table": "elexon_bid_offer_acceptances",
+        "check": "schema",
+        "detail": "All required columns present"
+      },
+      {
+        "severity": "OK",
+        "table": "elexon_bid_offer_acceptances",
+        "check": "nulls",
+        "detail": "settlement_date: nan% NULL"
+      },
+      {
+        "severity": "OK",
+        "table": "elexon_bid_offer_acceptances",
+        "check": "nulls",
+        "detail": "settlement_period: nan% NULL"
+      },
+      {
+        "severity": "OK",
+        "table": "elexon_bid_offer_acceptances",
+        "check": "nulls",
+        "detail": "bmu_id: nan% NULL"
+      },
+      {
+        "severity": "OK",
+        "table": "elexon_bid_offer_acceptances",
+        "check": "nulls",
+        "detail": "bid_price: nan% NULL"
+      },
+      {
+        "severity": "OK",
+        "table": "elexon_bid_offer_acceptances",
+        "check": "nulls",
+        "detail": "offer_price: nan% NULL"
+      },
+      {
+        "severity": "WARN",
+        "table": "elexon_bid_offer_acceptances",
+        "check": "type",
+        "detail": "Column 'bid_price' is FLOAT but all values appear castable"
+      },
+      {
+        "severity": "WARN",
+        "table": "elexon_bid_offer_acceptances",
+        "check": "type",
+        "detail": "Column 'offer_price' is FLOAT but all values appear castable"
+      },
+      {
+        "severity": "WARN",
+        "table": "elexon_bid_offer_acceptances",
+        "check": "type",
+        "detail": "Column 'bid_volume' is FLOAT but all values appear castable"
+      },
+      {
+        "severity": "WARN",
+        "table": "elexon_bid_offer_acceptances",
+        "check": "type",
+        "detail": "Column 'offer_volume' is FLOAT but all values appear castable"
+      },
+      {
+        "severity": "WARN",
+        "table": "elexon_bid_offer_acceptances",
+        "check": "type",
+        "detail": "Column 'accepted_bid_volume' is FLOAT but all values appear castable"
+      },
+      {
+        "severity": "WARN",
+        "table": "elexon_bid_offer_acceptances",
+        "check": "type",
+        "detail": "Column 'accepted_offer_volume' is FLOAT but all values appear castable"
+      },
+      {
+        "severity": "OK",
+        "table": "elexon_bid_offer_acceptances",
+        "check": "settlement_period_range",
+        "detail": "All settlement_period values in 1..50"
+      }
+    ]
+  },
+  {
+    "table": "elexon_system_warnings",
+    "exists": true,
+    "row_count": 0,
+    "min_date": null,
+    "max_date": null,
+    "findings": [
+      {
+        "severity": "ERROR",
+        "table": "elexon_system_warnings",
+        "check": "row_count",
+        "detail": "No rows"
+      },
+      {
+        "severity": "WARN",
+        "table": "elexon_system_warnings",
+        "check": "date_range",
+        "detail": "Could not determine date range"
+      },
+      {
+        "severity": "OK",
+        "table": "elexon_system_warnings",
+        "check": "schema",
+        "detail": "All required columns present"
+      },
+      {
+        "severity": "OK",
+        "table": "elexon_system_warnings",
+        "check": "nulls",
+        "detail": "timestamp: nan% NULL"
+      },
+      {
+        "severity": "OK",
+        "table": "elexon_system_warnings",
+        "check": "nulls",
+        "detail": "warning_type: nan% NULL"
+      },
+      {
+        "severity": "OK",
+        "table": "elexon_system_warnings",
+        "check": "nulls",
+        "detail": "severity: nan% NULL"
+      }
+    ]
+  }
+]

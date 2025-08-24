@@ -1,0 +1,4 @@
+  File "/Users/georgemajor/Jibber Jabber ChatGPT/8_august_jibber_jabber/live_data_updater.py", line 127
+    }
+    ^
+SyntaxError: unmatched '}'

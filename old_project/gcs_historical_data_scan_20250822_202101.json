@@ -1,0 +1,1581 @@
+{
+  "buckets_with_neso_data": [
+    {
+      "bucket": "elexon-historical-data-storage",
+      "neso_files": 165
+    }
+  ],
+  "buckets_with_elexon_data": [],
+  "files_by_year": {
+    "2016": [
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "demand/demand_2016-01-01.json",
+        "size": 169,
+        "updated": "2025-08-08T09:47:52.631000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "demand/demand_2016-01-02.json",
+        "size": 169,
+        "updated": "2025-08-08T09:47:54.871000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "demand/demand_2016-01-03.json",
+        "size": 169,
+        "updated": "2025-08-08T09:47:56.952000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "demand/demand_2016-01-04.json",
+        "size": 169,
+        "updated": "2025-08-08T09:47:59.082000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "demand/demand_2016-01-05.json",
+        "size": 169,
+        "updated": "2025-08-08T09:48:01.132000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "demand/demand_2016-01-06.json",
+        "size": 169,
+        "updated": "2025-08-08T09:48:03.227000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "demand/demand_2016-01-07.json",
+        "size": 169,
+        "updated": "2025-08-08T09:48:05.314000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "demand/demand_2016-01-08.json",
+        "size": 169,
+        "updated": "2025-08-08T09:48:07.336000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "frequency/frequency_2016-01-01.json",
+        "size": 454468,
+        "updated": "2025-08-08T09:47:52.844000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "frequency/frequency_2016-01-02.json",
+        "size": 454468,
+        "updated": "2025-08-08T09:47:55.059000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "frequency/frequency_2016-01-03.json",
+        "size": 454468,
+        "updated": "2025-08-08T09:47:57.135000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "frequency/frequency_2016-01-04.json",
+        "size": 454468,
+        "updated": "2025-08-08T09:47:59.264000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "frequency/frequency_2016-01-05.json",
+        "size": 454468,
+        "updated": "2025-08-08T09:48:01.239000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "frequency/frequency_2016-01-06.json",
+        "size": 454468,
+        "updated": "2025-08-08T09:48:03.440000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "frequency/frequency_2016-01-07.json",
+        "size": 454468,
+        "updated": "2025-08-08T09:48:05.415000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "frequency/frequency_2016-01-08.json",
+        "size": 454468,
+        "updated": "2025-08-08T09:48:07.517000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "generation/generation_2016-01-01.json",
+        "size": 112781,
+        "updated": "2025-08-08T09:47:52.726000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "generation/generation_2016-01-02.json",
+        "size": 112863,
+        "updated": "2025-08-08T09:47:54.953000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "generation/generation_2016-01-03.json",
+        "size": 112795,
+        "updated": "2025-08-08T09:47:57.035000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "generation/generation_2016-01-04.json",
+        "size": 112862,
+        "updated": "2025-08-08T09:47:59.160000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "generation/generation_2016-01-05.json",
+        "size": 112880,
+        "updated": "2025-08-08T09:48:01.318000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "generation/generation_2016-01-06.json",
+        "size": 112843,
+        "updated": "2025-08-08T09:48:03.305000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "generation/generation_2016-01-07.json",
+        "size": 112863,
+        "updated": "2025-08-08T09:48:05.493000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "generation/generation_2016-01-08.json",
+        "size": 112880,
+        "updated": "2025-08-08T09:48:07.410000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/balancing/emergency_orders/EBOCF_20240716.csv",
+        "size": 2708,
+        "updated": "2025-08-11T21:18:20.807000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/balancing/non_gen_capacity/IMBALNGC_20240716.csv",
+        "size": 6086,
+        "updated": "2025-08-11T21:18:28.716000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/balancing/offer_bid_exchange/AOBE_20240716.csv",
+        "size": 13331,
+        "updated": "2025-08-11T21:18:13.088000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/boalf_core/bid_offer_data/BOD_20240716.csv",
+        "size": 32456,
+        "updated": "2025-08-11T21:16:05.329000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/boalf_core/revenue_data/BOALF_20240716.csv",
+        "size": 33506,
+        "updated": "2025-08-11T21:16:13.542000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/demand/forecasts/NDF_20240716.csv",
+        "size": 1268,
+        "updated": "2025-08-11T21:18:43.787000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/demand/system_demand/ITSDO_20240716.csv",
+        "size": 1316,
+        "updated": "2025-08-11T21:18:36.273000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/generation/actual_generation/AGPT_20240716.csv",
+        "size": 15416,
+        "updated": "2025-08-11T21:16:21.619000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/generation/fuel_half_hourly/FUELHH_20240716.csv",
+        "size": 1364,
+        "updated": "2025-08-11T21:16:38.554000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/generation/fuel_instantaneous/FUELINST_20240716.csv",
+        "size": 90551,
+        "updated": "2025-08-11T21:16:30.270000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/interconnectors/french_flow/FFICF_20240716.csv",
+        "size": 1316,
+        "updated": "2025-08-11T21:18:51.692000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/notifications/notice_to_bid/NTB_20240716.csv",
+        "size": 20577,
+        "updated": "2025-08-11T21:17:02.319000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/notifications/physical/PN_20240716.csv",
+        "size": 29906,
+        "updated": "2025-08-11T21:16:46.575000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/notifications/quiescent/QPN_20240716.csv",
+        "size": 15413,
+        "updated": "2025-08-11T21:16:54.484000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/settlement/disbursement/DISBSAD_20240716.csv",
+        "size": 1412,
+        "updated": "2025-08-11T21:17:25.078000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/settlement/energy_linked/MELS_20240716.csv",
+        "size": 1440,
+        "updated": "2025-08-11T21:17:17.535000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/settlement/market_index/MILS_20240716.csv",
+        "size": 1440,
+        "updated": "2025-08-11T21:17:09.950000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/settlement/net_balancing/NETBSAD_20240716.csv",
+        "size": 1412,
+        "updated": "2025-08-11T21:17:32.666000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/system_ops/frequency/FREQ_20240716.csv",
+        "size": 91845,
+        "updated": "2025-08-11T21:17:41.023000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/system_ops/loss_of_load/LOLP_20240716.csv",
+        "size": 1268,
+        "updated": "2025-08-11T21:18:05.016000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/system_ops/net_imbalance/NETIMBAL_20240716.csv",
+        "size": 1460,
+        "updated": "2025-08-11T21:17:57.376000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/system_ops/so_transactions/SOSO_20240716.csv",
+        "size": 2608,
+        "updated": "2025-08-11T21:17:49.440000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/transmission/bidding_zones/B1610_20240716.csv",
+        "size": 1316,
+        "updated": "2025-08-11T21:18:59.193000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/1-day-ahead-demand-forecast/9847e7bb-986e-49be-8138-717b25933fbb/1-day-ahead-demand-forecast_9847e7bb-986e-49be-8138-717b25933fbb_20250811_110032.275316.csv",
+        "size": 3349310,
+        "updated": "2025-08-11T21:35:13.201000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/24-months-ahead-constraint-limits/a9bafbd9-b393-4a5b-bc6f-09d6cdeea583/24-months-ahead-constraint-limits_a9bafbd9-b393-4a5b-bc6f-09d6cdeea583_20250616_160122.793115.pdf",
+        "size": 408523,
+        "updated": "2025-08-12T23:51:37.476000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/24-months-ahead-constraint-limits/bf4e1174-9aa7-4c0d-b444-5d22785053eb/24-months-ahead-constraint-limits_bf4e1174-9aa7-4c0d-b444-5d22785053eb_20250616_161538.707866.pdf",
+        "size": 236575,
+        "updated": "2025-08-12T23:51:33.213000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/aggregated-bsad/6ecea816-d98a-4174-80b2-1536765fe711/aggregated-bsad_6ecea816-d98a-4174-80b2-1536765fe711_20191213_130717.566451.csv",
+        "size": 793406,
+        "updated": "2025-08-12T23:59:52.259000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/balancing-services-use-of-system-bsuos-daily-forecast/b98095a8-310a-4fee-8d51-e20531c49465/balancing-services-use-of-system-bsuos-daily-forecast_b98095a8-310a-4fee-8d51-e20531c49465_20230402_150016.562043.csv",
+        "size": 744972,
+        "updated": "2025-08-13T00:49:41.835000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/brit-ned/0cde599a-bc16-4486-80da-127c83c68e14/brit-ned_0cde599a-bc16-4486-80da-127c83c68e14_20250514_083132.005212.csv",
+        "size": 4342,
+        "updated": "2025-08-13T00:57:09.070000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/brit-ned/5335579f-da7b-474e-b4ec-6fb826af040f/brit-ned_5335579f-da7b-474e-b4ec-6fb826af040f_20240828_083434.388516.csv",
+        "size": 6950,
+        "updated": "2025-08-13T00:55:17.834000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/brit-ned/669c7c73-6d66-475c-87f5-c7a64014b3bf/brit-ned_669c7c73-6d66-475c-87f5-c7a64014b3bf_20230816_073728.434173.csv",
+        "size": 5954,
+        "updated": "2025-08-13T00:52:25.357000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/brit-ned/68be7816-7bbb-4788-8884-25aaa9a26062/brit-ned_68be7816-7bbb-4788-8884-25aaa9a26062_20250806_092634.713990.csv",
+        "size": 3935,
+        "updated": "2025-08-13T00:57:55.178000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/brit-ned/707022a4-a31f-4c74-9bd9-5b2a9e4bf26a/brit-ned_707022a4-a31f-4c74-9bd9-5b2a9e4bf26a_20250716_083113.443881.csv",
+        "size": 6100,
+        "updated": "2025-08-13T00:57:43.839000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/brit-ned/8db596d3-720c-414b-bb96-3dc9bbf16d24/brit-ned_8db596d3-720c-414b-bb96-3dc9bbf16d24_20250416_101638.635754.csv",
+        "size": 1924,
+        "updated": "2025-08-13T00:56:53.886000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/brit-ned/b51a8d55-62ff-4a47-bc14-a238b3048a25/brit-ned_b51a8d55-62ff-4a47-bc14-a238b3048a25_20221130_181816.899119.csv",
+        "size": 7006,
+        "updated": "2025-08-13T00:50:09.439000+00:00"
+      }
+    ],
+    "2017": [
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/balancing/emergency_orders/EBOCF_20240717.csv",
+        "size": 2708,
+        "updated": "2025-08-11T21:18:20.992000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/balancing/non_gen_capacity/IMBALNGC_20240717.csv",
+        "size": 6086,
+        "updated": "2025-08-11T21:18:28.895000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/balancing/offer_bid_exchange/AOBE_20240717.csv",
+        "size": 13331,
+        "updated": "2025-08-11T21:18:13.273000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/boalf_core/bid_offer_data/BOD_20240717.csv",
+        "size": 32469,
+        "updated": "2025-08-11T21:16:05.533000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/boalf_core/revenue_data/BOALF_20240717.csv",
+        "size": 33506,
+        "updated": "2025-08-11T21:16:13.747000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/demand/forecasts/NDF_20240717.csv",
+        "size": 1268,
+        "updated": "2025-08-11T21:18:43.973000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/demand/system_demand/ITSDO_20240717.csv",
+        "size": 1316,
+        "updated": "2025-08-11T21:18:36.448000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/generation/actual_generation/AGPT_20240717.csv",
+        "size": 15414,
+        "updated": "2025-08-11T21:16:21.808000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/generation/fuel_half_hourly/FUELHH_20240717.csv",
+        "size": 1364,
+        "updated": "2025-08-11T21:16:38.729000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/generation/fuel_instantaneous/FUELINST_20240717.csv",
+        "size": 90551,
+        "updated": "2025-08-11T21:16:30.489000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/interconnectors/french_flow/FFICF_20240717.csv",
+        "size": 1316,
+        "updated": "2025-08-11T21:18:51.873000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/notifications/notice_to_bid/NTB_20240717.csv",
+        "size": 20577,
+        "updated": "2025-08-11T21:17:02.513000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/notifications/physical/PN_20240717.csv",
+        "size": 29906,
+        "updated": "2025-08-11T21:16:46.759000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/notifications/quiescent/QPN_20240717.csv",
+        "size": 15413,
+        "updated": "2025-08-11T21:16:54.683000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/settlement/disbursement/DISBSAD_20240717.csv",
+        "size": 1412,
+        "updated": "2025-08-11T21:17:25.258000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/settlement/energy_linked/MELS_20240717.csv",
+        "size": 1439,
+        "updated": "2025-08-11T21:17:17.711000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/settlement/market_index/MILS_20240717.csv",
+        "size": 1439,
+        "updated": "2025-08-11T21:17:10.130000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/settlement/net_balancing/NETBSAD_20240717.csv",
+        "size": 1412,
+        "updated": "2025-08-11T21:17:32.846000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/system_ops/frequency/FREQ_20240717.csv",
+        "size": 91871,
+        "updated": "2025-08-11T21:17:41.253000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/system_ops/loss_of_load/LOLP_20240717.csv",
+        "size": 1268,
+        "updated": "2025-08-11T21:18:05.268000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/system_ops/net_imbalance/NETIMBAL_20240717.csv",
+        "size": 1460,
+        "updated": "2025-08-11T21:17:57.550000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/system_ops/so_transactions/SOSO_20240717.csv",
+        "size": 2608,
+        "updated": "2025-08-11T21:17:49.620000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/transmission/bidding_zones/B1610_20240717.csv",
+        "size": 1316,
+        "updated": "2025-08-11T21:18:59.399000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/aggregated-bsad/6ecea816-d98a-4174-80b2-1536765fe711/aggregated-bsad_6ecea816-d98a-4174-80b2-1536765fe711_20191213_130717.566451.csv",
+        "size": 793406,
+        "updated": "2025-08-12T23:59:52.259000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/balancing-reserve-auction-requirement-forecast/019f6fba-4f17-4056-9ef8-31df44ff2e30/balancing-reserve-auction-requirement-forecast_019f6fba-4f17-4056-9ef8-31df44ff2e30_20250812_083834.954129.csv",
+        "size": 4910,
+        "updated": "2025-08-13T00:21:07.259000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/balancing-reserve-auction-requirement-forecast/fb2e0eea-b1c0-4ba3-a817-0561182a6e26/balancing-reserve-auction-requirement-forecast_fb2e0eea-b1c0-4ba3-a817-0561182a6e26_20250812_083839.290580.csv",
+        "size": 2692880,
+        "updated": "2025-08-13T00:17:49.974000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/brit-ned/0a546c80-0d5b-4217-a2d8-44c3c391bb04/brit-ned_0a546c80-0d5b-4217-a2d8-44c3c391bb04_20240911_090048.919313.csv",
+        "size": 6979,
+        "updated": "2025-08-13T00:55:25.203000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/brit-ned/25c5f049-8317-4add-b9c9-0e22b749b795/brit-ned_25c5f049-8317-4add-b9c9-0e22b749b795_20250326_101923.356902.csv",
+        "size": 1912,
+        "updated": "2025-08-13T00:56:42.784000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/brit-ned/59b7d9d1-4a71-4be3-ada0-437dbd4b2740/brit-ned_59b7d9d1-4a71-4be3-ada0-437dbd4b2740_20250604_080040.584117.csv",
+        "size": 2118,
+        "updated": "2025-08-13T00:57:20.429000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/brit-ned/870495e8-8f95-4817-8615-c40ca5ebef4e/brit-ned_870495e8-8f95-4817-8615-c40ca5ebef4e_20240410_071207.595265.csv",
+        "size": 1092,
+        "updated": "2025-08-13T00:54:26.480000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/brit-ned/91df114c-6c0a-4217-a963-8608f0ec619e/brit-ned_91df114c-6c0a-4217-a963-8608f0ec619e_20241002_112045.013711.csv",
+        "size": 6839,
+        "updated": "2025-08-13T00:55:36.210000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/brit-ned/aa06b618-91de-4596-afb6-8bb12137d86c/brit-ned_aa06b618-91de-4596-afb6-8bb12137d86c_20240117_093314.981862.csv",
+        "size": 7687,
+        "updated": "2025-08-13T00:53:42.394000+00:00"
+      }
+    ],
+    "2018": [
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/balancing/emergency_orders/EBOCF_20240718.csv",
+        "size": 2708,
+        "updated": "2025-08-11T21:18:21.163000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/balancing/non_gen_capacity/IMBALNGC_20240718.csv",
+        "size": 6086,
+        "updated": "2025-08-11T21:18:29.078000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/balancing/offer_bid_exchange/AOBE_20240718.csv",
+        "size": 13331,
+        "updated": "2025-08-11T21:18:13.452000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/boalf_core/bid_offer_data/BOD_20240718.csv",
+        "size": 32480,
+        "updated": "2025-08-11T21:16:05.728000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/boalf_core/revenue_data/BOALF_20240718.csv",
+        "size": 33506,
+        "updated": "2025-08-11T21:16:13.940000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/demand/forecasts/NDF_20240718.csv",
+        "size": 1268,
+        "updated": "2025-08-11T21:18:44.140000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/demand/system_demand/ITSDO_20240718.csv",
+        "size": 1316,
+        "updated": "2025-08-11T21:18:36.616000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/generation/actual_generation/AGPT_20240718.csv",
+        "size": 15420,
+        "updated": "2025-08-11T21:16:21.995000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/generation/fuel_half_hourly/FUELHH_20240718.csv",
+        "size": 1364,
+        "updated": "2025-08-11T21:16:38.920000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/generation/fuel_instantaneous/FUELINST_20240718.csv",
+        "size": 90551,
+        "updated": "2025-08-11T21:16:30.755000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/interconnectors/french_flow/FFICF_20240718.csv",
+        "size": 1316,
+        "updated": "2025-08-11T21:18:52.046000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/notifications/notice_to_bid/NTB_20240718.csv",
+        "size": 20577,
+        "updated": "2025-08-11T21:17:02.691000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/notifications/physical/PN_20240718.csv",
+        "size": 29906,
+        "updated": "2025-08-11T21:16:46.963000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/notifications/quiescent/QPN_20240718.csv",
+        "size": 15413,
+        "updated": "2025-08-11T21:16:54.889000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/settlement/disbursement/DISBSAD_20240718.csv",
+        "size": 1412,
+        "updated": "2025-08-11T21:17:25.430000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/settlement/energy_linked/MELS_20240718.csv",
+        "size": 1441,
+        "updated": "2025-08-11T21:17:17.888000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/settlement/market_index/MILS_20240718.csv",
+        "size": 1439,
+        "updated": "2025-08-11T21:17:10.320000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/settlement/net_balancing/NETBSAD_20240718.csv",
+        "size": 1412,
+        "updated": "2025-08-11T21:17:33.022000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/system_ops/frequency/FREQ_20240718.csv",
+        "size": 91834,
+        "updated": "2025-08-11T21:17:41.489000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/system_ops/loss_of_load/LOLP_20240718.csv",
+        "size": 1268,
+        "updated": "2025-08-11T21:18:05.432000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/system_ops/net_imbalance/NETIMBAL_20240718.csv",
+        "size": 1460,
+        "updated": "2025-08-11T21:17:57.724000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/system_ops/so_transactions/SOSO_20240718.csv",
+        "size": 2608,
+        "updated": "2025-08-11T21:17:49.793000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/transmission/bidding_zones/B1610_20240718.csv",
+        "size": 1316,
+        "updated": "2025-08-11T21:18:59.577000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/2-14-days-ahead-national-demand-forecast/7c0411cd-2714-4bb5-a408-adb065edf34d/2-14-days-ahead-national-demand-forecast_7c0411cd-2714-4bb5-a408-adb065edf34d_20250812_124718.112868.csv",
+        "size": 29001,
+        "updated": "2025-08-12T23:51:17.970000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/aahedc-tariffs/ffd29cc8-3c55-4e83-aa0e-73212d4fedba/aahedc-tariffs_ffd29cc8-3c55-4e83-aa0e-73212d4fedba_20250714_082018.094468.csv",
+        "size": 526,
+        "updated": "2025-08-12T23:54:00.756000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/ancillary-services-important-industry-notifications/5d6c5cf8-7f18-43d9-ab8c-ba3f88352f30/ancillary-services-important-industry-notifications_5d6c5cf8-7f18-43d9-ab8c-ba3f88352f30_20250731_085338.878268.csv",
+        "size": 7051,
+        "updated": "2025-08-13T00:14:24.415000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/balancing-services-adjustment-data-forward-contracts/c435e464-f4d5-4ec2-b8f5-693416e22baa/balancing-services-adjustment-data-forward-contracts_c435e464-f4d5-4ec2-b8f5-693416e22baa_20220331_124018.824382.csv",
+        "size": 607814,
+        "updated": "2025-08-13T00:32:40.127000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/balancing-services-contract-enactment/f75a1dcb-de6e-4c20-8407-e37d5e67cf79/balancing-services-contract-enactment_f75a1dcb-de6e-4c20-8407-e37d5e67cf79_20230107_194318.676821.csv",
+        "size": 10330,
+        "updated": "2025-08-13T00:39:11.932000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/brit-ned/67fd41a6-3c5a-44e7-934d-83d72d81586f/brit-ned_67fd41a6-3c5a-44e7-934d-83d72d81586f_20230920_085251.524818.csv",
+        "size": 4137,
+        "updated": "2025-08-13T00:52:43.713000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/brit-ned/89e3ec54-aa42-44a6-a106-d0d298f2d835/brit-ned_89e3ec54-aa42-44a6-a106-d0d298f2d835_20250618_082405.730949.csv",
+        "size": 1004,
+        "updated": "2025-08-13T00:57:28.593000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/brit-ned/8d286f18-3395-45ff-85da-aa7f8f66911c/brit-ned_8d286f18-3395-45ff-85da-aa7f8f66911c_20240214_085413.865050.csv",
+        "size": 1963,
+        "updated": "2025-08-13T00:53:57.082000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/brit-ned/aa06b618-91de-4596-afb6-8bb12137d86c/brit-ned_aa06b618-91de-4596-afb6-8bb12137d86c_20240117_093314.981862.csv",
+        "size": 7687,
+        "updated": "2025-08-13T00:53:42.394000+00:00"
+      }
+    ],
+    "2019": [
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/balancing/emergency_orders/EBOCF_20240719.csv",
+        "size": 2708,
+        "updated": "2025-08-11T21:18:21.344000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/balancing/non_gen_capacity/IMBALNGC_20240719.csv",
+        "size": 6086,
+        "updated": "2025-08-11T21:18:29.251000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/balancing/offer_bid_exchange/AOBE_20240719.csv",
+        "size": 13331,
+        "updated": "2025-08-11T21:18:13.674000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/boalf_core/bid_offer_data/BOD_20240719.csv",
+        "size": 32496,
+        "updated": "2025-08-11T21:16:05.934000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/boalf_core/revenue_data/BOALF_20240719.csv",
+        "size": 33506,
+        "updated": "2025-08-11T21:16:14.146000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/demand/forecasts/NDF_20240719.csv",
+        "size": 1268,
+        "updated": "2025-08-11T21:18:44.323000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/demand/system_demand/ITSDO_20240719.csv",
+        "size": 1316,
+        "updated": "2025-08-11T21:18:36.782000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/generation/actual_generation/AGPT_20240719.csv",
+        "size": 15415,
+        "updated": "2025-08-11T21:16:22.181000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/generation/fuel_half_hourly/FUELHH_20240719.csv",
+        "size": 1364,
+        "updated": "2025-08-11T21:16:39.093000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/generation/fuel_instantaneous/FUELINST_20240719.csv",
+        "size": 90551,
+        "updated": "2025-08-11T21:16:30.975000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/interconnectors/french_flow/FFICF_20240719.csv",
+        "size": 1316,
+        "updated": "2025-08-11T21:18:52.230000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/notifications/notice_to_bid/NTB_20240719.csv",
+        "size": 20577,
+        "updated": "2025-08-11T21:17:02.887000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/notifications/physical/PN_20240719.csv",
+        "size": 29906,
+        "updated": "2025-08-11T21:16:47.143000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/notifications/quiescent/QPN_20240719.csv",
+        "size": 15413,
+        "updated": "2025-08-11T21:16:55.075000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/settlement/disbursement/DISBSAD_20240719.csv",
+        "size": 1412,
+        "updated": "2025-08-11T21:17:25.607000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/settlement/energy_linked/MELS_20240719.csv",
+        "size": 1439,
+        "updated": "2025-08-11T21:17:18.069000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/settlement/market_index/MILS_20240719.csv",
+        "size": 1439,
+        "updated": "2025-08-11T21:17:10.498000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/settlement/net_balancing/NETBSAD_20240719.csv",
+        "size": 1412,
+        "updated": "2025-08-11T21:17:33.207000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/system_ops/frequency/FREQ_20240719.csv",
+        "size": 91862,
+        "updated": "2025-08-11T21:17:41.720000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/system_ops/loss_of_load/LOLP_20240719.csv",
+        "size": 1268,
+        "updated": "2025-08-11T21:18:05.623000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/system_ops/net_imbalance/NETIMBAL_20240719.csv",
+        "size": 1460,
+        "updated": "2025-08-11T21:17:57.897000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/system_ops/so_transactions/SOSO_20240719.csv",
+        "size": 2608,
+        "updated": "2025-08-11T21:17:49.980000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/transmission/bidding_zones/B1610_20240719.csv",
+        "size": 1316,
+        "updated": "2025-08-11T21:18:59.752000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/balancing-services-adjustment-data-forward-contracts/5d0f2119-1ba6-4d7d-8db5-ea4e23720aa9/balancing-services-adjustment-data-forward-contracts_5d0f2119-1ba6-4d7d-8db5-ea4e23720aa9_20211125_181636.056809.csv",
+        "size": 635267,
+        "updated": "2025-08-13T00:30:45.336000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/balancing-services-adjustment-data-forward-contracts/93f9bdde-1fd9-4619-99e2-d1c5e38239e1/balancing-services-adjustment-data-forward-contracts_93f9bdde-1fd9-4619-99e2-d1c5e38239e1_20250808_124835.423468.csv",
+        "size": 608898,
+        "updated": "2025-08-13T00:38:25.509000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/balancing-services-contract-enactment/ed753a4b-1b8c-4b07-9997-b5c0e09da041/balancing-services-contract-enactment_ed753a4b-1b8c-4b07-9997-b5c0e09da041_20230124_034019.307106.csv",
+        "size": 627,
+        "updated": "2025-08-13T00:39:19.398000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/brit-ned/10432bfd-2102-4eda-8c6d-bed2a4df676b/brit-ned_10432bfd-2102-4eda-8c6d-bed2a4df676b_20221019_153613.309223.csv",
+        "size": 8580,
+        "updated": "2025-08-13T00:49:47.298000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/brit-ned/1e67fdb3-31d4-421d-9fc9-c212b41a8ab0/brit-ned_1e67fdb3-31d4-421d-9fc9-c212b41a8ab0_20240207_094142.308019.csv",
+        "size": 5313,
+        "updated": "2025-08-13T00:53:53.442000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/brit-ned/3d9036a4-1459-4439-9db1-c4479f97901b/brit-ned_3d9036a4-1459-4439-9db1-c4479f97901b_20240619_083256.667152.csv",
+        "size": 5421,
+        "updated": "2025-08-13T00:54:59.513000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/brit-ned/5c49a1ab-bed9-43e2-9e69-c9c37a16602b/brit-ned_5c49a1ab-bed9-43e2-9e69-c9c37a16602b_20250319_102523.444246.csv",
+        "size": 1912,
+        "updated": "2025-08-13T00:56:39.187000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/brit-ned/7f97b143-c569-4132-9ebf-e17b58585f9f/brit-ned_7f97b143-c569-4132-9ebf-e17b58585f9f_20250219_090854.218225.csv",
+        "size": 7341,
+        "updated": "2025-08-13T00:56:24.378000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/brit-ned/b51a8d55-62ff-4a47-bc14-a238b3048a25/brit-ned_b51a8d55-62ff-4a47-bc14-a238b3048a25_20221130_181816.899119.csv",
+        "size": 7006,
+        "updated": "2025-08-13T00:50:09.439000+00:00"
+      }
+    ],
+    "2020": [
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/balancing/emergency_orders/EBOCF_20240720.csv",
+        "size": 2708,
+        "updated": "2025-08-11T21:18:21.520000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/balancing/non_gen_capacity/IMBALNGC_20240720.csv",
+        "size": 6086,
+        "updated": "2025-08-11T21:18:29.419000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/balancing/offer_bid_exchange/AOBE_20240720.csv",
+        "size": 13331,
+        "updated": "2025-08-11T21:18:13.856000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/boalf_core/bid_offer_data/BOD_20240720.csv",
+        "size": 32495,
+        "updated": "2025-08-11T21:16:06.146000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/boalf_core/revenue_data/BOALF_20240720.csv",
+        "size": 33506,
+        "updated": "2025-08-11T21:16:14.351000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/demand/forecasts/NDF_20240720.csv",
+        "size": 1268,
+        "updated": "2025-08-11T21:18:44.504000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/demand/system_demand/ITSDO_20240720.csv",
+        "size": 1316,
+        "updated": "2025-08-11T21:18:36.954000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/generation/actual_generation/AGPT_20240720.csv",
+        "size": 15412,
+        "updated": "2025-08-11T21:16:22.359000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/generation/fuel_half_hourly/FUELHH_20240720.csv",
+        "size": 1364,
+        "updated": "2025-08-11T21:16:39.276000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/generation/fuel_instantaneous/FUELINST_20240720.csv",
+        "size": 90551,
+        "updated": "2025-08-11T21:16:31.194000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/interconnectors/french_flow/FFICF_20240720.csv",
+        "size": 1316,
+        "updated": "2025-08-11T21:18:52.414000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/notifications/notice_to_bid/NTB_20240720.csv",
+        "size": 20577,
+        "updated": "2025-08-11T21:17:03.080000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/notifications/physical/PN_20240720.csv",
+        "size": 29906,
+        "updated": "2025-08-11T21:16:47.338000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/notifications/quiescent/QPN_20240720.csv",
+        "size": 15413,
+        "updated": "2025-08-11T21:16:55.264000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/settlement/disbursement/DISBSAD_20240720.csv",
+        "size": 1412,
+        "updated": "2025-08-11T21:17:25.777000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/settlement/energy_linked/MELS_20240720.csv",
+        "size": 1439,
+        "updated": "2025-08-11T21:17:18.243000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/settlement/market_index/MILS_20240720.csv",
+        "size": 1439,
+        "updated": "2025-08-11T21:17:10.682000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/settlement/net_balancing/NETBSAD_20240720.csv",
+        "size": 1412,
+        "updated": "2025-08-11T21:17:33.396000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/system_ops/frequency/FREQ_20240720.csv",
+        "size": 91833,
+        "updated": "2025-08-11T21:17:41.946000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/system_ops/loss_of_load/LOLP_20240720.csv",
+        "size": 1268,
+        "updated": "2025-08-11T21:18:05.827000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/system_ops/net_imbalance/NETIMBAL_20240720.csv",
+        "size": 1460,
+        "updated": "2025-08-11T21:17:58.075000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/system_ops/so_transactions/SOSO_20240720.csv",
+        "size": 2608,
+        "updated": "2025-08-11T21:17:50.471000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/transmission/bidding_zones/B1610_20240720.csv",
+        "size": 1316,
+        "updated": "2025-08-11T21:18:59.937000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/aggregated-bsad/ec526741-f629-4620-9e31-d14da373392e/aggregated-bsad_ec526741-f629-4620-9e31-d14da373392e_20211125_181713.412080.csv",
+        "size": 635969,
+        "updated": "2025-08-13T00:05:56.824000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/balancing-services-contract-enactment/f75a1dcb-de6e-4c20-8407-e37d5e67cf79/balancing-services-contract-enactment_f75a1dcb-de6e-4c20-8407-e37d5e67cf79_20230107_194318.676821.csv",
+        "size": 10330,
+        "updated": "2025-08-13T00:39:11.932000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/brit-ned/08987582-d94e-42e3-8124-54b853c92944/brit-ned_08987582-d94e-42e3-8124-54b853c92944_20231220_084911.669324.csv",
+        "size": 5751,
+        "updated": "2025-08-13T00:53:27.785000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/brit-ned/105be229-893d-4a04-a3e4-2e97d9d15cd9/brit-ned_105be229-893d-4a04-a3e4-2e97d9d15cd9_20241120_101331.045088.csv",
+        "size": 7269,
+        "updated": "2025-08-13T00:56:02.329000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/brit-ned/67fd41a6-3c5a-44e7-934d-83d72d81586f/brit-ned_67fd41a6-3c5a-44e7-934d-83d72d81586f_20230920_085251.524818.csv",
+        "size": 4137,
+        "updated": "2025-08-13T00:52:43.713000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/brit-ned/6c51f881-6b72-49e4-88ad-2fc4ee97ecb3/brit-ned_6c51f881-6b72-49e4-88ad-2fc4ee97ecb3_20240320_100023.549388.csv",
+        "size": 3838,
+        "updated": "2025-08-13T00:54:15.442000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/brit-ned/7de2143d-f0b5-4d9e-9a20-588a392ed060/brit-ned_7de2143d-f0b5-4d9e-9a20-588a392ed060_20241127_110138.752073.csv",
+        "size": 7275,
+        "updated": "2025-08-13T00:56:05.977000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/brit-ned/9206c32f-35cb-447f-aec9-8ebf25a4e704/brit-ned_9206c32f-35cb-447f-aec9-8ebf25a4e704_20230111_100520.347025.csv",
+        "size": 3582,
+        "updated": "2025-08-13T00:50:31.445000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/brit-ned/ad4523df-6d1d-4974-9198-dcd1269188f8/brit-ned_ad4523df-6d1d-4974-9198-dcd1269188f8_20250625_071614.024120.csv",
+        "size": 3918,
+        "updated": "2025-08-13T00:57:32.491000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/brit-ned/bbd48f9d-8a63-4fbf-9954-5185552b0520/brit-ned_bbd48f9d-8a63-4fbf-9954-5185552b0520_20240131_082721.994110.csv",
+        "size": 4085,
+        "updated": "2025-08-13T00:53:49.804000+00:00"
+      }
+    ],
+    "2021": [
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/balancing/emergency_orders/EBOCF_20240721.csv",
+        "size": 2708,
+        "updated": "2025-08-11T21:18:21.694000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/balancing/non_gen_capacity/IMBALNGC_20240721.csv",
+        "size": 6086,
+        "updated": "2025-08-11T21:18:29.594000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/balancing/offer_bid_exchange/AOBE_20240721.csv",
+        "size": 13331,
+        "updated": "2025-08-11T21:18:14.037000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/boalf_core/bid_offer_data/BOD_20240721.csv",
+        "size": 32468,
+        "updated": "2025-08-11T21:16:06.332000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/boalf_core/revenue_data/BOALF_20240721.csv",
+        "size": 33506,
+        "updated": "2025-08-11T21:16:14.546000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/demand/forecasts/NDF_20240721.csv",
+        "size": 1268,
+        "updated": "2025-08-11T21:18:44.672000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/demand/system_demand/ITSDO_20240721.csv",
+        "size": 1316,
+        "updated": "2025-08-11T21:18:37.141000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/generation/actual_generation/AGPT_20240721.csv",
+        "size": 15416,
+        "updated": "2025-08-11T21:16:22.541000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/generation/fuel_half_hourly/FUELHH_20240721.csv",
+        "size": 1364,
+        "updated": "2025-08-11T21:16:39.448000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/generation/fuel_instantaneous/FUELINST_20240721.csv",
+        "size": 90551,
+        "updated": "2025-08-11T21:16:31.405000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/interconnectors/french_flow/FFICF_20240721.csv",
+        "size": 1316,
+        "updated": "2025-08-11T21:18:52.589000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/notifications/notice_to_bid/NTB_20240721.csv",
+        "size": 20577,
+        "updated": "2025-08-11T21:17:03.269000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/notifications/physical/PN_20240721.csv",
+        "size": 29906,
+        "updated": "2025-08-11T21:16:47.533000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/notifications/quiescent/QPN_20240721.csv",
+        "size": 15413,
+        "updated": "2025-08-11T21:16:55.458000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/settlement/disbursement/DISBSAD_20240721.csv",
+        "size": 1412,
+        "updated": "2025-08-11T21:17:25.963000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/settlement/energy_linked/MELS_20240721.csv",
+        "size": 1440,
+        "updated": "2025-08-11T21:17:18.426000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/settlement/market_index/MILS_20240721.csv",
+        "size": 1439,
+        "updated": "2025-08-11T21:17:10.855000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/settlement/net_balancing/NETBSAD_20240721.csv",
+        "size": 1412,
+        "updated": "2025-08-11T21:17:33.583000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/system_ops/frequency/FREQ_20240721.csv",
+        "size": 91862,
+        "updated": "2025-08-11T21:17:42.185000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/system_ops/loss_of_load/LOLP_20240721.csv",
+        "size": 1268,
+        "updated": "2025-08-11T21:18:06.082000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/system_ops/net_imbalance/NETIMBAL_20240721.csv",
+        "size": 1460,
+        "updated": "2025-08-11T21:17:58.240000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/system_ops/so_transactions/SOSO_20240721.csv",
+        "size": 2608,
+        "updated": "2025-08-11T21:17:50.662000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/transmission/bidding_zones/B1610_20240721.csv",
+        "size": 1316,
+        "updated": "2025-08-11T21:19:00.118000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/aggregated-bsad/6fee3fb4-6cff-4c32-b22e-e39d1b16b03e/aggregated-bsad_6fee3fb4-6cff-4c32-b22e-e39d1b16b03e_20220331_124021.473940.csv",
+        "size": 635390,
+        "updated": "2025-08-13T00:07:52.096000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/balancing-services-adjustment-data-forward-contracts/7ce8164f-0f0c-4940-b821-ca232e2eefaf/balancing-services-adjustment-data-forward-contracts_7ce8164f-0f0c-4940-b821-ca232e2eefaf_20200402_190959.585431.csv",
+        "size": 790902,
+        "updated": "2025-08-13T00:28:50.279000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/balancing-services-contract-enactment/f75a1dcb-de6e-4c20-8407-e37d5e67cf79/balancing-services-contract-enactment_f75a1dcb-de6e-4c20-8407-e37d5e67cf79_20230107_194318.676821.csv",
+        "size": 10330,
+        "updated": "2025-08-13T00:39:11.932000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/balancing-services-use-of-system-bsuos-daily-forecast/25e4acc4-e1b3-48f5-af8c-8d6f84291791/balancing-services-use-of-system-bsuos-daily-forecast_25e4acc4-e1b3-48f5-af8c-8d6f84291791_20220421_123450.046758.csv",
+        "size": 660976,
+        "updated": "2025-08-13T00:47:47.392000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/brit-ned/13c35840-4152-460d-b7f8-38d4fa303728/brit-ned_13c35840-4152-460d-b7f8-38d4fa303728_20250521_090911.296841.csv",
+        "size": 2176,
+        "updated": "2025-08-13T00:57:12.810000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/brit-ned/3d152205-5023-4a46-86a8-2b6b07a0fb9b/brit-ned_3d152205-5023-4a46-86a8-2b6b07a0fb9b_20240403_082821.715088.csv",
+        "size": 1235,
+        "updated": "2025-08-13T00:54:22.777000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/brit-ned/51ff0c0e-c896-4774-aa6f-17b8835fe55f/brit-ned_51ff0c0e-c896-4774-aa6f-17b8835fe55f_20240821_092712.570889.csv",
+        "size": 3886,
+        "updated": "2025-08-13T00:55:14.177000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/brit-ned/88998f41-1ce7-4c7c-9781-4a6a0465ab5a/brit-ned_88998f41-1ce7-4c7c-9781-4a6a0465ab5a_20231227_092521.627612.csv",
+        "size": 1296,
+        "updated": "2025-08-13T00:53:31.420000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/brit-ned/b7c0daed-9e35-42ff-87aa-93b1fbd91cd7/brit-ned_b7c0daed-9e35-42ff-87aa-93b1fbd91cd7_20240221_085543.172342.csv",
+        "size": 1910,
+        "updated": "2025-08-13T00:54:00.773000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/brit-ned/bbd48f9d-8a63-4fbf-9954-5185552b0520/brit-ned_bbd48f9d-8a63-4fbf-9954-5185552b0520_20240131_082721.994110.csv",
+        "size": 4085,
+        "updated": "2025-08-13T00:53:49.804000+00:00"
+      }
+    ],
+    "2022": [
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/balancing/emergency_orders/EBOCF_20240722.csv",
+        "size": 2708,
+        "updated": "2025-08-11T21:18:22.205000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/balancing/non_gen_capacity/IMBALNGC_20240722.csv",
+        "size": 6086,
+        "updated": "2025-08-11T21:18:29.779000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/balancing/offer_bid_exchange/AOBE_20240722.csv",
+        "size": 13331,
+        "updated": "2025-08-11T21:18:14.228000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/boalf_core/bid_offer_data/BOD_20240722.csv",
+        "size": 32516,
+        "updated": "2025-08-11T21:16:06.543000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/boalf_core/revenue_data/BOALF_20240722.csv",
+        "size": 33506,
+        "updated": "2025-08-11T21:16:14.770000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/demand/forecasts/NDF_20240722.csv",
+        "size": 1268,
+        "updated": "2025-08-11T21:18:44.855000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/demand/system_demand/ITSDO_20240722.csv",
+        "size": 1316,
+        "updated": "2025-08-11T21:18:37.320000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/generation/actual_generation/AGPT_20240722.csv",
+        "size": 15415,
+        "updated": "2025-08-11T21:16:22.724000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/generation/fuel_half_hourly/FUELHH_20240722.csv",
+        "size": 1364,
+        "updated": "2025-08-11T21:16:39.627000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/generation/fuel_instantaneous/FUELINST_20240722.csv",
+        "size": 90551,
+        "updated": "2025-08-11T21:16:31.644000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/interconnectors/french_flow/FFICF_20240722.csv",
+        "size": 1316,
+        "updated": "2025-08-11T21:18:52.773000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/notifications/notice_to_bid/NTB_20240722.csv",
+        "size": 20577,
+        "updated": "2025-08-11T21:17:03.451000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/notifications/physical/PN_20240722.csv",
+        "size": 29906,
+        "updated": "2025-08-11T21:16:47.723000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/notifications/quiescent/QPN_20240722.csv",
+        "size": 15413,
+        "updated": "2025-08-11T21:16:55.637000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/settlement/disbursement/DISBSAD_20240722.csv",
+        "size": 1412,
+        "updated": "2025-08-11T21:17:26.153000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/settlement/energy_linked/MELS_20240722.csv",
+        "size": 1439,
+        "updated": "2025-08-11T21:17:18.601000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/settlement/market_index/MILS_20240722.csv",
+        "size": 1439,
+        "updated": "2025-08-11T21:17:11.041000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/settlement/net_balancing/NETBSAD_20240722.csv",
+        "size": 1412,
+        "updated": "2025-08-11T21:17:33.775000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/system_ops/frequency/FREQ_20240722.csv",
+        "size": 91856,
+        "updated": "2025-08-11T21:17:42.424000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/system_ops/loss_of_load/LOLP_20240722.csv",
+        "size": 1268,
+        "updated": "2025-08-11T21:18:06.264000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/system_ops/net_imbalance/NETIMBAL_20240722.csv",
+        "size": 1460,
+        "updated": "2025-08-11T21:17:58.419000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/system_ops/so_transactions/SOSO_20240722.csv",
+        "size": 2608,
+        "updated": "2025-08-11T21:17:50.840000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "historical_data/2024-07/transmission/bidding_zones/B1610_20240722.csv",
+        "size": 1316,
+        "updated": "2025-08-11T21:19:00.301000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/14-days-ahead-operational-metered-wind-forecasts/31e6d895-af48-41bd-a4db-28a78c7e9c4b/14-days-ahead-operational-metered-wind-forecasts_31e6d895-af48-41bd-a4db-28a78c7e9c4b_20250811_205722.388362.csv",
+        "size": 15151641,
+        "updated": "2025-08-11T21:20:16.847000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/24-months-ahead-constraint-limits/a9bafbd9-b393-4a5b-bc6f-09d6cdeea583/24-months-ahead-constraint-limits_a9bafbd9-b393-4a5b-bc6f-09d6cdeea583_20250616_160122.793115.pdf",
+        "size": 408523,
+        "updated": "2025-08-12T23:51:37.476000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/aggregated-bsad/cfb65cd4-e41c-4587-9c78-31004827bee6/aggregated-bsad_cfb65cd4-e41c-4587-9c78-31004827bee6_20200402_191822.982415.csv",
+        "size": 794920,
+        "updated": "2025-08-13T00:04:01.829000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/balancing-services-use-of-system-bsuos-daily-forecast/586d0e6b-cc03-4312-9df3-407438715eb2/balancing-services-use-of-system-bsuos-daily-forecast_586d0e6b-cc03-4312-9df3-407438715eb2_20220109_160022.506568.csv",
+        "size": 1437651,
+        "updated": "2025-08-13T00:45:52.826000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/brit-ned/16c97f2d-26ec-47a0-b4fd-f8cc50d67d58/brit-ned_16c97f2d-26ec-47a0-b4fd-f8cc50d67d58_20230322_104700.628150.csv",
+        "size": 8262,
+        "updated": "2025-08-13T00:51:08.383000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/brit-ned/2248834b-c822-494a-8f1c-ee3cf04705c7/brit-ned_2248834b-c822-494a-8f1c-ee3cf04705c7_20221102_130723.272437.csv",
+        "size": 6921,
+        "updated": "2025-08-13T00:49:54.610000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/brit-ned/32783822-9e65-4b27-abe5-6350262ec7b2/brit-ned_32783822-9e65-4b27-abe5-6350262ec7b2_20240508_084643.912242.csv",
+        "size": 1090,
+        "updated": "2025-08-13T00:54:37.453000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/brit-ned/3805fbe4-b62c-4c00-8984-e88a1d9cd37c/brit-ned_3805fbe4-b62c-4c00-8984-e88a1d9cd37c_20231004_101722.745946.csv",
+        "size": 4915,
+        "updated": "2025-08-13T00:52:51.041000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/brit-ned/48f556c5-33bb-4ac1-bcf6-24d001aacada/brit-ned_48f556c5-33bb-4ac1-bcf6-24d001aacada_20231122_112334.689363.csv",
+        "size": 3038,
+        "updated": "2025-08-13T00:53:13.056000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/brit-ned/850f4805-a839-450c-bf2c-1b76090f637c/brit-ned_850f4805-a839-450c-bf2c-1b76090f637c_20250305_084322.160094.csv",
+        "size": 7623,
+        "updated": "2025-08-13T00:56:31.779000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/brit-ned/885e6cb7-a000-48cc-a4b8-1028f0f4688e/brit-ned_885e6cb7-a000-48cc-a4b8-1028f0f4688e_20230222_103154.936745.csv",
+        "size": 7299,
+        "updated": "2025-08-13T00:50:53.602000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/brit-ned/9e78d6a3-1814-4db3-9a27-e604807c92e9/brit-ned_9e78d6a3-1814-4db3-9a27-e604807c92e9_20240522_091107.008031.csv",
+        "size": 7493,
+        "updated": "2025-08-13T00:54:44.794000+00:00"
+      },
+      {
+        "bucket": "elexon-historical-data-storage",
+        "file": "neso/brit-ned/b9e7f19e-07dc-43af-a67a-68e9588616ee/brit-ned_b9e7f19e-07dc-43af-a67a-68e9588616ee_20221222_115606.285329.csv",
+        "size": 7424,
+        "updated": "2025-08-13T00:50:20.441000+00:00"
+      }
+    ]
+  },
+  "summary": {
+    "total_neso_buckets": 1,
+    "total_elexon_buckets": 0,
+    "files_by_year_count": {
+      "2016": 59,
+      "2017": 32,
+      "2018": 32,
+      "2019": 32,
+      "2020": 33,
+      "2021": 33,
+      "2022": 36
+    },
+    "scan_date": "2025-08-22 20:21:01"
+  }
+}

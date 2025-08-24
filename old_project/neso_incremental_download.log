@@ -1,0 +1,263 @@
+2025-08-20 12:03:11,519 - INFO - 🚀 Starting NESO Incremental Download...
+2025-08-20 12:03:11,519 - INFO - 🔍 Discovering all available NESO datasets...
+2025-08-20 12:03:12,737 - INFO - 📊 Total packages discovered: 120
+2025-08-20 12:03:12,745 - INFO - 🔍 Checking existing datasets in cloud storage...
+2025-08-20 12:03:13,304 - INFO - ✅ Found 18 existing datasets in cloud storage
+2025-08-20 12:03:13,305 - INFO - 🔧 Filtering datasets (excluding BOD and frequency data)...
+2025-08-20 12:03:13,305 - INFO - ✅ Filtered to 116 datasets (4 excluded)
+2025-08-20 12:03:13,305 - INFO - 📊 Dataset Analysis:
+2025-08-20 12:03:13,305 - INFO -    • Total available (filtered): 116
+2025-08-20 12:03:13,305 - INFO -    • Already downloaded: 18
+2025-08-20 12:03:13,305 - INFO -    • Missing to download: 103
+2025-08-20 12:03:13,305 - INFO - 📥 Starting download of 103 missing datasets...
+2025-08-20 12:03:13,305 - INFO - 📦 [1/103] balancing-services-contract-enactment
+2025-08-20 12:03:13,305 - INFO - 📦 Processing dataset: balancing-services-contract-enactment
+2025-08-20 12:03:14,760 - INFO - 📥 Downloading: Balancing Service Contract Enactment 21-22 (Pre June 2021)
+2025-08-20 12:03:20,000 - INFO - ✅ Uploaded: neso_data/balancing-services-contract-enactment/20250820_120319_Balancing Service Contract Enactment 21-22 (Pre June 2021).txt
+2025-08-20 12:04:38,621 - INFO - 🛑 Download interrupted by user
+2025-08-20 12:04:38,645 - INFO - 🎯 INCREMENTAL DOWNLOAD COMPLETE!
+2025-08-20 12:04:38,645 - INFO - ⏱️  Duration: 0:01:27.125210
+2025-08-20 12:04:38,645 - INFO - ✅ New downloads: 0
+2025-08-20 12:04:38,646 - INFO - 🗂️  Already had: 18
+2025-08-20 12:04:38,646 - INFO - ❌ Failed: 0
+2025-08-20 12:04:38,646 - INFO - ⏭️  Skipped (BOD/freq): 4
+2025-08-20 12:04:38,867 - INFO - 📊 Progress summary saved: neso_data/incremental_summary_20250820_120438.json
+2025-08-20 12:04:38,867 - INFO - 📊 Total NESO datasets now available: 18
+2025-08-20 12:04:50,478 - INFO - 🚀 Starting NESO Incremental Download...
+2025-08-20 12:04:50,478 - INFO - 🔍 Discovering all available NESO datasets...
+2025-08-20 12:04:51,589 - INFO - 📊 Total packages discovered: 120
+2025-08-20 12:04:51,590 - INFO - 🔍 Checking existing datasets in cloud storage...
+2025-08-20 12:04:52,129 - INFO - ✅ Found 20 existing datasets in cloud storage
+2025-08-20 12:04:52,130 - INFO - 🔧 Filtering datasets (excluding BOD and frequency data)...
+2025-08-20 12:04:52,130 - INFO - ✅ Filtered to 116 datasets (4 excluded)
+2025-08-20 12:04:52,130 - INFO - 📊 Dataset Analysis:
+2025-08-20 12:04:52,130 - INFO -    • Total available (filtered): 116
+2025-08-20 12:04:52,130 - INFO -    • Already downloaded: 20
+2025-08-20 12:04:52,130 - INFO -    • Missing to download: 102
+2025-08-20 12:04:52,130 - INFO - 📥 Starting download of 102 missing datasets...
+2025-08-20 12:04:52,130 - INFO - 📦 [1/102] balancing-services-use-of-system-bsuos-daily-forecast
+2025-08-20 12:04:52,130 - INFO - 📦 Processing dataset: balancing-services-use-of-system-bsuos-daily-forecast
+2025-08-20 12:04:53,270 - INFO - 📥 Downloading: Daily BSUoS Forecast 2018-19
+2025-08-20 12:04:55,768 - INFO - ✅ Uploaded: neso_data/balancing-services-use-of-system-bsuos-daily-forecast/20250820_120455_Daily BSUoS Forecast 2018-19.csv
+2025-08-20 12:06:55,800 - INFO - 📥 Downloading: Daily BSUoS Forecast 2019-20
+2025-08-20 12:06:58,515 - INFO - ✅ Uploaded: neso_data/balancing-services-use-of-system-bsuos-daily-forecast/20250820_120657_Daily BSUoS Forecast 2019-20.csv
+2025-08-20 12:07:01,623 - INFO - 🛑 Download interrupted by user
+2025-08-20 12:07:01,635 - INFO - 🎯 INCREMENTAL DOWNLOAD COMPLETE!
+2025-08-20 12:07:01,635 - INFO - ⏱️  Duration: 0:02:11.156702
+2025-08-20 12:07:01,635 - INFO - ✅ New downloads: 0
+2025-08-20 12:07:01,636 - INFO - 🗂️  Already had: 20
+2025-08-20 12:07:01,636 - INFO - ❌ Failed: 0
+2025-08-20 12:07:01,636 - INFO - ⏭️  Skipped (BOD/freq): 4
+2025-08-20 12:07:01,867 - INFO - 📊 Progress summary saved: neso_data/incremental_summary_20250820_120701.json
+2025-08-20 12:07:01,868 - INFO - 📊 Total NESO datasets now available: 20
+2025-08-20 12:07:49,384 - INFO - 🚀 Starting NESO Incremental Download...
+2025-08-20 12:07:49,384 - INFO - 🔍 Discovering all available NESO datasets...
+2025-08-20 12:07:50,513 - INFO - 📊 Total packages discovered: 120
+2025-08-20 12:07:50,514 - INFO - 🔍 Checking existing datasets in cloud storage...
+2025-08-20 12:07:51,133 - INFO - ✅ Found 22 existing datasets in cloud storage
+2025-08-20 12:07:51,133 - INFO - 🔧 Filtering datasets (excluding BOD and frequency data)...
+2025-08-20 12:07:51,133 - INFO - ✅ Filtered to 116 datasets (4 excluded)
+2025-08-20 12:07:51,133 - INFO - 📊 Dataset Analysis:
+2025-08-20 12:07:51,133 - INFO -    • Total available (filtered): 116
+2025-08-20 12:07:51,133 - INFO -    • Already downloaded: 22
+2025-08-20 12:07:51,133 - INFO -    • Missing to download: 101
+2025-08-20 12:07:51,133 - INFO - 📥 Starting download of 101 missing datasets...
+2025-08-20 12:07:51,133 - INFO - 📦 [1/101] brit-ned
+2025-08-20 12:07:51,133 - INFO - 📦 Processing dataset: brit-ned
+2025-08-20 12:07:52,307 - INFO - 📥 Downloading: BritNed DA & ID Weekly ITLs 20221012
+2025-08-20 12:07:54,339 - INFO - ✅ Uploaded: neso_data/brit-ned/20250820_120754_BritNed DA & ID Weekly ITLs 20221012.csv
+2025-08-20 12:09:54,351 - INFO - 📥 Downloading: BritNed DA & ID Weekly ITLs 20221019
+2025-08-20 12:09:56,381 - INFO - ✅ Uploaded: neso_data/brit-ned/20250820_120956_BritNed DA & ID Weekly ITLs 20221019.csv
+2025-08-20 12:11:56,393 - INFO - 📥 Downloading: BritNed DA & ID Weekly ITLs 20221026
+2025-08-20 12:11:58,770 - INFO - ✅ Uploaded: neso_data/brit-ned/20250820_121158_BritNed DA & ID Weekly ITLs 20221026.csv
+2025-08-20 12:13:58,860 - INFO - 📥 Downloading: BritNed DA & ID Weekly ITLs 20221102
+2025-08-20 12:14:00,899 - INFO - ✅ Uploaded: neso_data/brit-ned/20250820_121400_BritNed DA & ID Weekly ITLs 20221102.csv
+2025-08-20 12:16:00,937 - INFO - 📥 Downloading: BritNed DA & ID Weekly ITLs 20221109
+2025-08-20 12:16:05,144 - INFO - ✅ Uploaded: neso_data/brit-ned/20250820_121604_BritNed DA & ID Weekly ITLs 20221109.csv
+2025-08-20 12:18:05,160 - INFO - 📥 Downloading: BritNed DA & ID Weekly ITLs 20221116
+2025-08-20 12:18:07,328 - INFO - ✅ Uploaded: neso_data/brit-ned/20250820_121807_BritNed DA & ID Weekly ITLs 20221116.csv
+2025-08-20 12:20:07,348 - INFO - 📥 Downloading: BritNed DA & ID Weekly ITLs 20221123
+2025-08-20 12:20:09,620 - INFO - ✅ Uploaded: neso_data/brit-ned/20250820_122009_BritNed DA & ID Weekly ITLs 20221123.csv
+2025-08-20 12:22:09,641 - INFO - 📥 Downloading: BritNed DA & ID Weekly ITLs 20221130
+2025-08-20 12:22:12,594 - INFO - ✅ Uploaded: neso_data/brit-ned/20250820_122212_BritNed DA & ID Weekly ITLs 20221130.csv
+2025-08-20 12:24:12,606 - INFO - 📥 Downloading: BritNed DA & ID Weekly ITLs 20221207
+2025-08-20 12:24:15,020 - INFO - ✅ Uploaded: neso_data/brit-ned/20250820_122414_BritNed DA & ID Weekly ITLs 20221207.csv
+2025-08-20 12:26:10,946 - INFO - 🛑 Download interrupted by user
+2025-08-20 12:26:10,957 - INFO - 🎯 INCREMENTAL DOWNLOAD COMPLETE!
+2025-08-20 12:26:10,958 - INFO - ⏱️  Duration: 0:18:21.573030
+2025-08-20 12:26:10,958 - INFO - ✅ New downloads: 0
+2025-08-20 12:26:10,958 - INFO - 🗂️  Already had: 22
+2025-08-20 12:26:10,958 - INFO - ❌ Failed: 0
+2025-08-20 12:26:10,958 - INFO - ⏭️  Skipped (BOD/freq): 4
+2025-08-20 12:26:11,282 - INFO - 📊 Progress summary saved: neso_data/incremental_summary_20250820_122610.json
+2025-08-20 12:26:11,283 - INFO - 📊 Total NESO datasets now available: 22
+2025-08-20 12:27:58,300 - INFO - 🚀 Starting NESO Incremental Download...
+2025-08-20 12:27:58,300 - INFO - 🔍 Discovering all available NESO datasets...
+2025-08-20 12:27:59,422 - INFO - 📊 Total packages discovered: 120
+2025-08-20 12:27:59,423 - INFO - 🔍 Checking existing datasets in cloud storage...
+2025-08-20 12:28:00,049 - INFO - ✅ Found 24 existing datasets in cloud storage
+2025-08-20 12:28:00,049 - INFO - 🔧 Filtering datasets (excluding BOD and frequency data)...
+2025-08-20 12:28:00,049 - INFO - ✅ Filtered to 116 datasets (4 excluded)
+2025-08-20 12:28:00,049 - INFO - 📊 Dataset Analysis:
+2025-08-20 12:28:00,049 - INFO -    • Total available (filtered): 116
+2025-08-20 12:28:00,049 - INFO -    • Already downloaded: 24
+2025-08-20 12:28:00,049 - INFO -    • Missing to download: 100
+2025-08-20 12:28:00,049 - INFO - 📥 Starting download of 100 missing datasets...
+2025-08-20 12:28:00,049 - INFO - 📦 [1/100] bsuos-fixed-tariffs
+2025-08-20 12:28:00,049 - INFO - 📦 Processing dataset: bsuos-fixed-tariffs
+2025-08-20 12:28:01,219 - INFO - 📥 Downloading:  Balancing Services Use of System Charges (BSUoS) Tariffs
+2025-08-20 12:28:03,140 - INFO - ✅ Uploaded: neso_data/bsuos-fixed-tariffs/20250820_122802_Balancing Services Use of System Charges (BSUoS) Tariffs.csv
+2025-08-20 12:30:03,152 - INFO - ✅ Dataset complete: bsuos-fixed-tariffs (1 files)
+2025-08-20 12:30:03,153 - INFO - 📦 [2/100] bsuos-monthly-forecast
+2025-08-20 12:30:03,153 - INFO - 📦 Processing dataset: bsuos-monthly-forecast
+2025-08-20 12:30:04,359 - INFO - 📥 Downloading: BSUoS_Report_Jan 19 - Mar 20
+2025-08-20 12:30:12,411 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_123007_BSUoS_Report_Jan 19 - Mar 20.txt
+2025-08-20 12:32:12,424 - INFO - 📥 Downloading: Monthly BSUoS Actual Summary Mar_20
+2025-08-20 12:32:14,687 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_123214_Monthly BSUoS Actual Summary Mar_20.csv
+2025-08-20 12:34:14,742 - INFO - 📥 Downloading: Monthly BSUoS Forecast Summary Mar_20
+2025-08-20 12:34:17,083 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_123416_Monthly BSUoS Forecast Summary Mar_20.csv
+2025-08-20 12:36:17,097 - INFO - 📥 Downloading: Monthly BSUoS Summary Mar_20
+2025-08-20 12:36:19,319 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_123619_Monthly BSUoS Summary Mar_20.csv
+2025-08-20 12:38:19,342 - INFO - 📥 Downloading: Monthly BSUoS Actual Summary Apr_20
+2025-08-20 12:38:21,938 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_123821_Monthly BSUoS Actual Summary Apr_20.csv
+2025-08-20 12:40:21,950 - INFO - 📥 Downloading: Monthly BSUoS Forecast Summary Apr_20
+2025-08-20 12:40:23,760 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_124023_Monthly BSUoS Forecast Summary Apr_20.csv
+2025-08-20 12:42:23,774 - INFO - 📥 Downloading: Monthly BSUoS Summary Apr_20
+2025-08-20 12:42:25,790 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_124225_Monthly BSUoS Summary Apr_20.csv
+2025-08-20 12:44:25,803 - INFO - 📥 Downloading: Impact on BSUoS due to COVID-19 low demands – Excluding new services
+2025-08-20 12:44:27,656 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_124427_Impact on BSUoS due to COVID-19 low demands – Excluding new services.csv
+2025-08-20 12:46:27,679 - INFO - 📥 Downloading: Monthly BSUoS Actual Summary May_20
+2025-08-20 12:46:29,882 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_124629_Monthly BSUoS Actual Summary May_20.csv
+2025-08-20 12:48:29,906 - INFO - 📥 Downloading: Monthly BSUoS Forecast Summary May_20
+2025-08-20 12:48:32,221 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_124831_Monthly BSUoS Forecast Summary May_20.csv
+2025-08-20 12:50:32,244 - INFO - 📥 Downloading: Monthly BSUoS Summary May_20
+2025-08-20 12:50:34,244 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_125034_Monthly BSUoS Summary May_20.csv
+2025-08-20 12:52:34,349 - INFO - 📥 Downloading: BSUoS Forecast for May 2020 – Including new services
+2025-08-20 12:52:36,394 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_125236_BSUoS Forecast for May 2020 – Including new services.csv
+2025-08-20 12:54:36,428 - INFO - 📥 Downloading: Monthly BSUoS Actual Summary Jun_20
+2025-08-20 12:54:38,227 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_125438_Monthly BSUoS Actual Summary Jun_20.csv
+2025-08-20 12:56:38,262 - INFO - 📥 Downloading: Monthly BSUoS Forecast Summary June 5 Percent
+2025-08-20 12:56:40,514 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_125640_Monthly BSUoS Forecast Summary June 5 Percent.csv
+2025-08-20 12:58:40,572 - INFO - 📥 Downloading: Monthly BSUoS Forecast Summary June 10 Percent
+2025-08-20 12:58:42,659 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_125842_Monthly BSUoS Forecast Summary June 10 Percent.csv
+2025-08-20 13:00:42,679 - INFO - 📥 Downloading: Monthly BSUoS Forecast Summary June 15 Percent
+2025-08-20 13:00:44,667 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_130044_Monthly BSUoS Forecast Summary June 15 Percent.csv
+2025-08-20 13:02:44,697 - INFO - 📥 Downloading: Monthly BSUoS Summary June 5 Percent
+2025-08-20 13:02:47,198 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_130246_Monthly BSUoS Summary June 5 Percent.csv
+2025-08-20 13:04:47,218 - INFO - 📥 Downloading: Monthly BSUoS Summary June 10 Percent
+2025-08-20 13:04:49,255 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_130449_Monthly BSUoS Summary June 10 Percent.csv
+2025-08-20 13:06:49,267 - INFO - 📥 Downloading: Monthly BSUoS Summary June 15 Percent
+2025-08-20 13:06:51,240 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_130651_Monthly BSUoS Summary June 15 Percent.csv
+2025-08-20 13:08:51,258 - INFO - 📥 Downloading: Monthly BSUoS Actual Summary Jul_20
+2025-08-20 13:08:54,358 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_130853_Monthly BSUoS Actual Summary Jul_20.csv
+2025-08-20 13:10:54,369 - INFO - 📥 Downloading: Monthly BSUoS Forecast Summary July 5 Percent 
+2025-08-20 13:10:56,662 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_131056_Monthly BSUoS Forecast Summary July 5 Percent.csv
+2025-08-20 13:12:56,747 - INFO - 📥 Downloading: Monthly BSUoS Forecast Summary July 10 Percent 
+2025-08-20 13:12:58,623 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_131258_Monthly BSUoS Forecast Summary July 10 Percent.csv
+2025-08-20 13:14:58,645 - INFO - 📥 Downloading: Monthly BSUoS Forecast Summary July 15 Percent 
+2025-08-20 13:15:00,957 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_131500_Monthly BSUoS Forecast Summary July 15 Percent.csv
+2025-08-20 13:17:00,974 - INFO - 📥 Downloading: Monthly BSUOS Summary July 5 Percent
+2025-08-20 13:17:03,138 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_131702_Monthly BSUOS Summary July 5 Percent.csv
+2025-08-20 13:19:03,168 - INFO - 📥 Downloading: Monthly BSUOS Summary July 10 Percent
+2025-08-20 13:19:05,363 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_131905_Monthly BSUOS Summary July 10 Percent.csv
+2025-08-20 13:21:05,384 - INFO - 📥 Downloading: Monthly BSUOS Summary July 15 Percent
+2025-08-20 13:21:07,384 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_132107_Monthly BSUOS Summary July 15 Percent.csv
+2025-08-20 13:23:07,424 - INFO - 📥 Downloading: Monthly BSUoS Actual Summary August_20
+2025-08-20 13:23:09,449 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_132309_Monthly BSUoS Actual Summary August_20.csv
+2025-08-20 13:25:09,462 - INFO - 📥 Downloading: Monthly BSUOS Forecast Summary August 5 Percent
+2025-08-20 13:25:11,874 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_132511_Monthly BSUOS Forecast Summary August 5 Percent.csv
+2025-08-20 13:27:11,897 - INFO - 📥 Downloading: Monthly BSUOS Forecast Summary August 10 Percent
+2025-08-20 13:27:14,107 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_132713_Monthly BSUOS Forecast Summary August 10 Percent.csv
+2025-08-20 13:29:14,152 - INFO - 📥 Downloading: Monthly BSUOS Forecast Summary August 15 Percent
+2025-08-20 13:29:16,501 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_132916_Monthly BSUOS Forecast Summary August 15 Percent.csv
+2025-08-20 13:31:16,581 - INFO - 📥 Downloading: Monthly BSUOS Summary August 5 Percent
+2025-08-20 13:31:18,710 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_133118_Monthly BSUOS Summary August 5 Percent.csv
+2025-08-20 13:33:18,724 - INFO - 📥 Downloading: Monthly BSUOS Summary August 10 Percent
+2025-08-20 13:33:20,927 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_133320_Monthly BSUOS Summary August 10 Percent.csv
+2025-08-20 13:35:20,941 - INFO - 📥 Downloading: Monthly BSUOS Summary August 15 Percent
+2025-08-20 13:35:22,966 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_133522_Monthly BSUOS Summary August 15 Percent.csv
+2025-08-20 13:37:23,013 - INFO - 📥 Downloading: Monthly BSUoS Actual Summary Sep_20
+2025-08-20 13:37:25,197 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_133724_Monthly BSUoS Actual Summary Sep_20.csv
+2025-08-20 13:39:25,226 - INFO - 📥 Downloading: Monthly BSUOS Forecast Summary September 5 percent
+2025-08-20 13:39:27,584 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_133927_Monthly BSUOS Forecast Summary September 5 percent.csv
+2025-08-20 13:41:27,614 - INFO - 📥 Downloading: Monthly BSUOS Forecast Summary September 10 Percent
+2025-08-20 13:41:29,594 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_134129_Monthly BSUOS Forecast Summary September 10 Percent.csv
+2025-08-20 13:43:29,606 - INFO - 📥 Downloading: Monthly BSUOS Forecast Summary September 15 Percent
+2025-08-20 13:43:31,661 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_134331_Monthly BSUOS Forecast Summary September 15 Percent.csv
+2025-08-20 13:45:31,675 - INFO - 📥 Downloading: Monthly BSUOS Summary September 5 Percent
+2025-08-20 13:45:33,786 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_134533_Monthly BSUOS Summary September 5 Percent.csv
+2025-08-20 13:47:33,805 - INFO - 📥 Downloading: Monthly BSUOS Summary September 10 Percent
+2025-08-20 13:47:36,050 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_134735_Monthly BSUOS Summary September 10 Percent.csv
+2025-08-20 13:49:36,090 - INFO - 📥 Downloading: Monthly BSUOS Summary September 15 Percent
+2025-08-20 13:49:38,530 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_134938_Monthly BSUOS Summary September 15 Percent.csv
+2025-08-20 13:51:38,623 - INFO - 📥 Downloading: Monthly BSUoS Actual Summary Oct_20
+2025-08-20 13:51:41,025 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_135140_Monthly BSUoS Actual Summary Oct_20.csv
+2025-08-20 13:53:41,047 - INFO - 📥 Downloading: Monthly BSUoS Forecast Summary Oct_20
+2025-08-20 13:53:43,042 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_135342_Monthly BSUoS Forecast Summary Oct_20.csv
+2025-08-20 13:55:43,069 - INFO - 📥 Downloading: Monthly BSUoS Summary Oct_20
+2025-08-20 13:55:44,921 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_135544_Monthly BSUoS Summary Oct_20.csv
+2025-08-20 13:57:45,031 - INFO - 📥 Downloading: Monthly BSUoS Forecast Summary Nov_20
+2025-08-20 13:57:47,211 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_135747_Monthly BSUoS Forecast Summary Nov_20.csv
+2025-08-20 13:59:47,243 - INFO - 📥 Downloading: Monthly BSUoS Summary Nov_20
+2025-08-20 13:59:49,627 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_135949_Monthly BSUoS Summary Nov_20.csv
+2025-08-20 14:01:49,847 - INFO - 📥 Downloading: Monthly BSUoS Actual Summary Nov_20
+2025-08-20 14:01:52,370 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_140152_Monthly BSUoS Actual Summary Nov_20.csv
+2025-08-20 14:03:52,392 - INFO - 📥 Downloading: Monthly BSUoS Actual Summary Dec_20
+2025-08-20 14:03:54,629 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_140354_Monthly BSUoS Actual Summary Dec_20.csv
+2025-08-20 14:05:54,656 - INFO - 📥 Downloading: Monthly BSUoS Forecast Summary Dec_20
+2025-08-20 14:05:56,727 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_140556_Monthly BSUoS Forecast Summary Dec_20.csv
+2025-08-20 14:07:56,747 - INFO - 📥 Downloading: Monthly BSUoS Summary Dec_20
+2025-08-20 14:07:58,966 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_140758_Monthly BSUoS Summary Dec_20.csv
+2025-08-20 14:09:59,047 - INFO - 📥 Downloading: Monthly BSUoS Actual Summary January 2021
+2025-08-20 14:10:01,163 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_141000_Monthly BSUoS Actual Summary January 2021.csv
+2025-08-20 14:12:01,194 - INFO - 📥 Downloading: Monthly BSUoS Forecast Summary January 2021
+2025-08-20 14:12:03,225 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_141202_Monthly BSUoS Forecast Summary January 2021.csv
+2025-08-20 14:14:03,245 - INFO - 📥 Downloading: Monthly BSUoS Summary January 2021
+2025-08-20 14:14:05,487 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_141405_Monthly BSUoS Summary January 2021.csv
+2025-08-20 14:16:05,522 - INFO - 📥 Downloading: Monthly BSUOS Actual Summary February 2021
+2025-08-20 14:16:07,626 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_141607_Monthly BSUOS Actual Summary February 2021.csv
+2025-08-20 14:18:07,671 - INFO - 📥 Downloading: Monthly BSUOS Forecast Summary February 2021
+2025-08-20 14:18:09,580 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_141809_Monthly BSUOS Forecast Summary February 2021.csv
+2025-08-20 14:20:09,622 - INFO - 📥 Downloading: Monthly BSUOS Summary February 2021
+2025-08-20 14:20:12,013 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_142011_Monthly BSUOS Summary February 2021.csv
+2025-08-20 14:22:12,040 - INFO - 📥 Downloading: Monthly BSUOS Actual Summary March 2021
+2025-08-20 14:22:14,074 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_142213_Monthly BSUOS Actual Summary March 2021.csv
+2025-08-20 14:24:14,086 - INFO - 📥 Downloading: Monthly BSUOS Forecast Summary March 2021
+2025-08-20 14:24:16,265 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_142416_Monthly BSUOS Forecast Summary March 2021.csv
+2025-08-20 14:26:16,277 - INFO - 📥 Downloading: Monthly BSUOS Summary March 2021
+2025-08-20 14:26:18,437 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_142618_Monthly BSUOS Summary March 2021.csv
+2025-08-20 14:28:18,517 - INFO - 📥 Downloading: Monthly BSUoS Actual Summary April 2021
+2025-08-20 14:28:20,700 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_142820_Monthly BSUoS Actual Summary April 2021.csv
+2025-08-20 14:30:20,721 - INFO - 📥 Downloading: Monthly BSUoS Forecast Summary April 2021
+2025-08-20 14:30:23,065 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_143022_Monthly BSUoS Forecast Summary April 2021.csv
+2025-08-20 14:32:23,082 - INFO - 📥 Downloading: Monthly BSUoS Summary April 2021
+2025-08-20 14:32:25,000 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_143224_Monthly BSUoS Summary April 2021.csv
+2025-08-20 14:34:25,018 - INFO - 📥 Downloading: Monthly BSUoS Actual Summary May 2021
+2025-08-20 14:34:27,483 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_143427_Monthly BSUoS Actual Summary May 2021.csv
+2025-08-20 14:36:27,496 - INFO - 📥 Downloading: Monthly BSUoS Forecast Summary May 2021
+2025-08-20 14:36:29,747 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_143629_Monthly BSUoS Forecast Summary May 2021.csv
+2025-08-20 14:38:29,764 - INFO - 📥 Downloading: Monthly BSUoS Summary May 2021
+2025-08-20 14:38:32,046 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_143831_Monthly BSUoS Summary May 2021.csv
+2025-08-20 14:40:32,062 - INFO - 📥 Downloading: Monthly BSUoS Actual Summary June 2021
+2025-08-20 14:40:34,383 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_144034_Monthly BSUoS Actual Summary June 2021.csv
+2025-08-20 14:42:34,391 - INFO - 📥 Downloading: Monthly BSUoS Forecast Summary June 2021
+2025-08-20 14:42:36,533 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_144236_Monthly BSUoS Forecast Summary June 2021.csv
+2025-08-20 14:44:36,707 - INFO - 📥 Downloading: Monthly BSUoS Summary June 2021
+2025-08-20 14:44:39,182 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_144438_Monthly BSUoS Summary June 2021.csv
+2025-08-20 14:46:39,211 - INFO - 📥 Downloading: Monthly BSUoS Actual Summary July 2021
+2025-08-20 14:46:41,342 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_144641_Monthly BSUoS Actual Summary July 2021.csv
+2025-08-20 14:48:41,386 - INFO - 📥 Downloading: Monthly BSUoS Forecast Summary July 2021
+2025-08-20 14:48:43,645 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_144843_Monthly BSUoS Forecast Summary July 2021.csv
+2025-08-20 14:50:43,655 - INFO - 📥 Downloading: Monthly BSUoS Summary July 2021
+2025-08-20 14:50:45,840 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_145045_Monthly BSUoS Summary July 2021.csv
+2025-08-20 14:52:45,852 - INFO - 📥 Downloading: Monthly BSUoS Actual Summary August 2021
+2025-08-20 14:52:48,063 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_145247_Monthly BSUoS Actual Summary August 2021.csv
+2025-08-20 14:54:48,124 - INFO - 📥 Downloading: Monthly BSUoS Forecast Summary August 2021
+2025-08-20 14:54:50,298 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_145450_Monthly BSUoS Forecast Summary August 2021.csv
+2025-08-20 14:56:50,318 - INFO - 📥 Downloading: Monthly BSUoS Summary August 2021
+2025-08-20 14:56:52,254 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_145652_Monthly BSUoS Summary August 2021.csv
+2025-08-20 14:58:52,270 - INFO - 📥 Downloading: Monthly BSUoS Actual Summary September 2021
+2025-08-20 14:58:54,656 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_145854_Monthly BSUoS Actual Summary September 2021.csv
+2025-08-20 15:00:54,687 - INFO - 📥 Downloading: Monthly BSUoS Forecast Summary September 2021
+2025-08-20 15:00:56,757 - INFO - ✅ Uploaded: neso_data/bsuos-monthly-forecast/20250820_150056_Monthly BSUoS Forecast Summary September 2021.csv
+2025-08-20 15:02:56,782 - INFO - 📥 Downloading: Monthly BSUoS Summary September 2021

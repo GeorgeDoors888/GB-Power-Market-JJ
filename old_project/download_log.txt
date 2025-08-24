@@ -1,0 +1,12 @@
+Applying endpoint filter -> ['B1610']
+Configured max_workers=1 dry_run_cap=None timeout=180s retries=5 endpoint_filter=B1610 date_window=2025-08-01→2025-08-02
+Building download tasks...
+Listing existing blobs in GCS (this may take a while)...
+Starting parallel download of 2 files with 1 workers...
+Downloading: https://api.bmreports.com/BMRS/B1610/v2?APIKey=03omen6i9lhv5fa&SettlementDate=2025-08-01&NGCBMUnitID=*&ServiceType=csv -> bmrs_data_all/B1610/v2/2025/08/01.json
+Downloading: https://api.bmreports.com/BMRS/B1610/v2?APIKey=03omen6i9lhv5fa&SettlementDate=2025-08-02&NGCBMUnitID=*&ServiceType=csv -> bmrs_data_all/B1610/v2/2025/08/02.json
+[ERROR] bmrs_data_all/B1610/v2/2025/08/01.json: HTTPSConnectionPool(host='api.bmreports.com', port=443): Max retries exceeded with url: /BMRS/B1610/v2?APIKey=03omen6i9lhv5fa&SettlementDate=2025-08-01&NGCBMUnitID=*&ServiceType=csv (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x10b22a850>, 'Connection to api.bmreports.com timed out. (connect timeout=180)'))
+[PROGRESS] 1/2 files | 0.00 GB | Rate: 0.00 files/s | ETA: 0.32h | Elapsed: 0.32h
+[ERROR] bmrs_data_all/B1610/v2/2025/08/02.json: HTTPSConnectionPool(host='api.bmreports.com', port=443): Max retries exceeded with url: /BMRS/B1610/v2?APIKey=03omen6i9lhv5fa&SettlementDate=2025-08-02&NGCBMUnitID=*&ServiceType=csv (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x10b22b9d0>, 'Connection to api.bmreports.com timed out. (connect timeout=180)'))
+[PROGRESS] 2/2 files | 0.00 GB | Rate: 0.00 files/s | ETA: 0.00h | Elapsed: 0.64h
+[COMPLETE] 2/2 files | 0.00 GB | Elapsed: 0.64h

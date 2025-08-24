@@ -1,0 +1,3261 @@
+{
+  "project": "jibber-jabber-knowledge",
+  "scan_time": "2025-08-22T20:05:07.350173",
+  "datasets": [
+    {
+      "dataset_id": "clean",
+      "tables": [
+        {
+          "table_id": "vw_bq_inventory",
+          "full_id": "jibber-jabber-knowledge.clean.vw_bq_inventory",
+          "row_count": 0,
+          "size_bytes": 0,
+          "created": "2025-08-17T17:01:46.001000+00:00",
+          "modified": "2025-08-17T17:01:46.001000+00:00",
+          "schema": [
+            {
+              "name": "table_schema",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "table_name",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "table_type",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "creation_time",
+              "type": "TIMESTAMP",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "size_bytes",
+              "type": "INTEGER",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "size_gb",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            }
+          ],
+          "data_source": "Unknown"
+        }
+      ]
+    },
+    {
+      "dataset_id": "energy_data_v1",
+      "tables": [
+        {
+          "table_id": "unknown_data",
+          "full_id": "jibber-jabber-knowledge.energy_data_v1.unknown_data",
+          "row_count": 1,
+          "size_bytes": 6,
+          "created": "2025-08-17T13:48:44.770000+00:00",
+          "modified": "2025-08-17T13:48:44.770000+00:00",
+          "schema": [
+            {
+              "name": "ping",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            }
+          ],
+          "data_source": "Unknown"
+        }
+      ]
+    },
+    {
+      "dataset_id": "uk_energy",
+      "tables": [
+        {
+          "table_id": "_ingestion_manifest",
+          "full_id": "jibber-jabber-knowledge.uk_energy._ingestion_manifest",
+          "row_count": 0,
+          "size_bytes": 0,
+          "created": "2025-08-20T11:28:48.257000+00:00",
+          "modified": "2025-08-20T11:28:48.294000+00:00",
+          "schema": [
+            {
+              "name": "object_name",
+              "type": "STRING",
+              "mode": "REQUIRED"
+            },
+            {
+              "name": "table_id",
+              "type": "STRING",
+              "mode": "REQUIRED"
+            },
+            {
+              "name": "loaded_at",
+              "type": "TIMESTAMP",
+              "mode": "REQUIRED"
+            },
+            {
+              "name": "size_bytes",
+              "type": "INTEGER",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "etag",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            }
+          ],
+          "data_source": "Unknown"
+        },
+        {
+          "table_id": "carbon_intensity_trends",
+          "full_id": "jibber-jabber-knowledge.uk_energy.carbon_intensity_trends",
+          "row_count": 0,
+          "size_bytes": 0,
+          "created": "2025-08-20T17:01:31.644000+00:00",
+          "modified": "2025-08-20T17:01:31.644000+00:00",
+          "schema": [
+            {
+              "name": "date",
+              "type": "DATE",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "region_code",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "avg_carbon_intensity",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "avg_renewable_pct",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "avg_fossil_pct",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "peak_carbon_intensity",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "min_carbon_intensity",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            }
+          ],
+          "data_source": "Unknown"
+        },
+        {
+          "table_id": "elexon_bid_offer_acceptances",
+          "full_id": "jibber-jabber-knowledge.uk_energy.elexon_bid_offer_acceptances",
+          "row_count": 0,
+          "size_bytes": 0,
+          "created": "2025-08-20T10:43:23.126000+00:00",
+          "modified": "2025-08-20T10:43:23.240000+00:00",
+          "schema": [
+            {
+              "name": "timestamp",
+              "type": "DATETIME",
+              "mode": "REQUIRED"
+            },
+            {
+              "name": "settlement_date",
+              "type": "DATE",
+              "mode": "REQUIRED"
+            },
+            {
+              "name": "settlement_period",
+              "type": "INTEGER",
+              "mode": "REQUIRED"
+            },
+            {
+              "name": "bmu_id",
+              "type": "STRING",
+              "mode": "REQUIRED"
+            },
+            {
+              "name": "bid_price",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "offer_price",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "bid_volume",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "offer_volume",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "accepted_bid_volume",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "accepted_offer_volume",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "so_flag",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "stor_flag",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            }
+          ],
+          "data_source": "Elexon"
+        },
+        {
+          "table_id": "elexon_boalf",
+          "full_id": "jibber-jabber-knowledge.uk_energy.elexon_boalf",
+          "row_count": 0,
+          "size_bytes": 0,
+          "created": "2025-08-21T08:27:57.151000+00:00",
+          "modified": "2025-08-21T08:27:57.199000+00:00",
+          "schema": [
+            {
+              "name": "settlementDate",
+              "type": "DATE",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "settlementPeriod",
+              "type": "INTEGER",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "timeFrom",
+              "type": "TIMESTAMP",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "timeTo",
+              "type": "TIMESTAMP",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "levelFrom",
+              "type": "NUMERIC",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "levelTo",
+              "type": "NUMERIC",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "nationalGridBmUnit",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "bmUnit",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "acceptanceNumber",
+              "type": "INTEGER",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "acceptanceTime",
+              "type": "TIMESTAMP",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "deemedBoFlag",
+              "type": "BOOLEAN",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "soFlag",
+              "type": "BOOLEAN",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "storFlag",
+              "type": "BOOLEAN",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "rrFlag",
+              "type": "BOOLEAN",
+              "mode": "NULLABLE"
+            }
+          ],
+          "data_source": "Elexon"
+        },
+        {
+          "table_id": "elexon_demand_outturn",
+          "full_id": "jibber-jabber-knowledge.uk_energy.elexon_demand_outturn",
+          "row_count": 0,
+          "size_bytes": 0,
+          "created": "2025-08-20T10:43:23.384000+00:00",
+          "modified": "2025-08-20T10:43:23.443000+00:00",
+          "schema": [
+            {
+              "name": "timestamp",
+              "type": "DATETIME",
+              "mode": "REQUIRED"
+            },
+            {
+              "name": "settlement_date",
+              "type": "DATE",
+              "mode": "REQUIRED"
+            },
+            {
+              "name": "settlement_period",
+              "type": "INTEGER",
+              "mode": "REQUIRED"
+            },
+            {
+              "name": "national_demand",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "england_wales_demand",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "embedded_wind_generation",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "embedded_solar_generation",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "non_bm_stor",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "non_bm_wind",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            }
+          ],
+          "data_source": "Elexon"
+        },
+        {
+          "table_id": "elexon_demand_outturn_2023",
+          "full_id": "jibber-jabber-knowledge.uk_energy.elexon_demand_outturn_2023",
+          "row_count": 365,
+          "size_bytes": 22265,
+          "created": "2025-08-21T14:48:58.030000+00:00",
+          "modified": "2025-08-21T14:48:58.030000+00:00",
+          "schema": [
+            {
+              "name": "data",
+              "type": "STRING",
+              "mode": "REPEATED"
+            },
+            {
+              "name": "source",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "download_timestamp",
+              "type": "TIMESTAMP",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "record_count",
+              "type": "INTEGER",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "data_type",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "date",
+              "type": "DATE",
+              "mode": "NULLABLE"
+            }
+          ],
+          "data_source": "Elexon",
+          "date_range": {
+            "min_date": "2023-01-01",
+            "max_date": "2023-12-31",
+            "date_column": "date"
+          }
+        },
+        {
+          "table_id": "elexon_generation_outturn",
+          "full_id": "jibber-jabber-knowledge.uk_energy.elexon_generation_outturn",
+          "row_count": 0,
+          "size_bytes": 0,
+          "created": "2025-08-20T10:43:23.540000+00:00",
+          "modified": "2025-08-20T10:43:23.561000+00:00",
+          "schema": [
+            {
+              "name": "timestamp",
+              "type": "DATETIME",
+              "mode": "REQUIRED"
+            },
+            {
+              "name": "settlement_date",
+              "type": "DATE",
+              "mode": "REQUIRED"
+            },
+            {
+              "name": "settlement_period",
+              "type": "INTEGER",
+              "mode": "REQUIRED"
+            },
+            {
+              "name": "fuel_type",
+              "type": "STRING",
+              "mode": "REQUIRED"
+            },
+            {
+              "name": "generation_mw",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "generation_percentage",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "capacity_factor",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            }
+          ],
+          "data_source": "Elexon"
+        },
+        {
+          "table_id": "elexon_generation_outturn_2023",
+          "full_id": "jibber-jabber-knowledge.uk_energy.elexon_generation_outturn_2023",
+          "row_count": 365,
+          "size_bytes": 23725,
+          "created": "2025-08-21T14:49:06.378000+00:00",
+          "modified": "2025-08-21T14:49:06.378000+00:00",
+          "schema": [
+            {
+              "name": "data",
+              "type": "STRING",
+              "mode": "REPEATED"
+            },
+            {
+              "name": "source",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "download_timestamp",
+              "type": "TIMESTAMP",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "record_count",
+              "type": "INTEGER",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "data_type",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "date",
+              "type": "DATE",
+              "mode": "NULLABLE"
+            }
+          ],
+          "data_source": "Elexon",
+          "date_range": {
+            "min_date": "2023-01-01",
+            "max_date": "2023-12-31",
+            "date_column": "date"
+          }
+        },
+        {
+          "table_id": "elexon_system_warnings",
+          "full_id": "jibber-jabber-knowledge.uk_energy.elexon_system_warnings",
+          "row_count": 0,
+          "size_bytes": 0,
+          "created": "2025-08-20T10:43:23.703000+00:00",
+          "modified": "2025-08-20T10:43:23.841000+00:00",
+          "schema": [
+            {
+              "name": "timestamp",
+              "type": "DATETIME",
+              "mode": "REQUIRED"
+            },
+            {
+              "name": "warning_type",
+              "type": "STRING",
+              "mode": "REQUIRED"
+            },
+            {
+              "name": "warning_text",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "start_time",
+              "type": "DATETIME",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "end_time",
+              "type": "DATETIME",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "affected_regions",
+              "type": "STRING",
+              "mode": "REPEATED"
+            },
+            {
+              "name": "severity",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            }
+          ],
+          "data_source": "Elexon"
+        },
+        {
+          "table_id": "hourly_energy_balance",
+          "full_id": "jibber-jabber-knowledge.uk_energy.hourly_energy_balance",
+          "row_count": 0,
+          "size_bytes": 0,
+          "created": "2025-08-20T17:01:31.065000+00:00",
+          "modified": "2025-08-20T17:01:31.065000+00:00",
+          "schema": [
+            {
+              "name": "settlement_date",
+              "type": "DATE",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "hour_of_day",
+              "type": "INTEGER",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "avg_demand_mw",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "wind_generation_mw",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "solar_generation_mw",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "nuclear_generation_mw",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "gas_generation_mw",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            }
+          ],
+          "data_source": "Unknown"
+        },
+        {
+          "table_id": "neso_balancing_services",
+          "full_id": "jibber-jabber-knowledge.uk_energy.neso_balancing_services",
+          "row_count": 0,
+          "size_bytes": 0,
+          "created": "2025-08-20T10:43:24.527000+00:00",
+          "modified": "2025-08-20T10:43:24.551000+00:00",
+          "schema": [
+            {
+              "name": "charge_date",
+              "type": "DATE",
+              "mode": "REQUIRED"
+            },
+            {
+              "name": "settlement_period",
+              "type": "INTEGER",
+              "mode": "REQUIRED"
+            },
+            {
+              "name": "bsuos_rate_pounds_mwh",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "volume_mwh",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "cost_pounds",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "balancing_services_cost",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "transmission_losses_cost",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "constraint_costs",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            }
+          ],
+          "data_source": "NESO"
+        },
+        {
+          "table_id": "neso_carbon_intensity",
+          "full_id": "jibber-jabber-knowledge.uk_energy.neso_carbon_intensity",
+          "row_count": 0,
+          "size_bytes": 0,
+          "created": "2025-08-20T10:43:24.349000+00:00",
+          "modified": "2025-08-20T10:43:24.432000+00:00",
+          "schema": [
+            {
+              "name": "timestamp",
+              "type": "DATETIME",
+              "mode": "REQUIRED"
+            },
+            {
+              "name": "region_code",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "carbon_intensity_gco2_kwh",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "renewable_percentage",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "fossil_percentage",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "nuclear_percentage",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "imports_percentage",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            }
+          ],
+          "data_source": "NESO"
+        },
+        {
+          "table_id": "neso_demand_forecasts",
+          "full_id": "jibber-jabber-knowledge.uk_energy.neso_demand_forecasts",
+          "row_count": 0,
+          "size_bytes": 0,
+          "created": "2025-08-20T10:43:23.942000+00:00",
+          "modified": "2025-08-20T10:43:23.962000+00:00",
+          "schema": [
+            {
+              "name": "forecast_date",
+              "type": "DATE",
+              "mode": "REQUIRED"
+            },
+            {
+              "name": "settlement_date",
+              "type": "DATE",
+              "mode": "REQUIRED"
+            },
+            {
+              "name": "settlement_period",
+              "type": "INTEGER",
+              "mode": "REQUIRED"
+            },
+            {
+              "name": "national_demand_forecast",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "temperature_forecast",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "wind_forecast",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "solar_forecast",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "forecast_error",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            }
+          ],
+          "data_source": "NESO"
+        },
+        {
+          "table_id": "neso_future_scenarios",
+          "full_id": "jibber-jabber-knowledge.uk_energy.neso_future_scenarios",
+          "row_count": 0,
+          "size_bytes": 0,
+          "created": "2025-08-20T10:43:24.760000+00:00",
+          "modified": "2025-08-20T10:43:24.781000+00:00",
+          "schema": [
+            {
+              "name": "scenario_year",
+              "type": "INTEGER",
+              "mode": "REQUIRED"
+            },
+            {
+              "name": "scenario_name",
+              "type": "STRING",
+              "mode": "REQUIRED"
+            },
+            {
+              "name": "technology_type",
+              "type": "STRING",
+              "mode": "REQUIRED"
+            },
+            {
+              "name": "capacity_gw",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "generation_twh",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "capacity_factor",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "capex_billion_pounds",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "opex_billion_pounds",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            }
+          ],
+          "data_source": "NESO"
+        },
+        {
+          "table_id": "neso_interconnector_flows",
+          "full_id": "jibber-jabber-knowledge.uk_energy.neso_interconnector_flows",
+          "row_count": 0,
+          "size_bytes": 0,
+          "created": "2025-08-20T10:43:24.640000+00:00",
+          "modified": "2025-08-20T10:43:24.664000+00:00",
+          "schema": [
+            {
+              "name": "trading_date",
+              "type": "DATE",
+              "mode": "REQUIRED"
+            },
+            {
+              "name": "settlement_period",
+              "type": "INTEGER",
+              "mode": "REQUIRED"
+            },
+            {
+              "name": "interconnector_name",
+              "type": "STRING",
+              "mode": "REQUIRED"
+            },
+            {
+              "name": "max_import_capacity_mw",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "max_export_capacity_mw",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "scheduled_import_mw",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "scheduled_export_mw",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "actual_flow_mw",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "day_ahead_price_uk",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "day_ahead_price_foreign",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            }
+          ],
+          "data_source": "NESO"
+        },
+        {
+          "table_id": "neso_wind_forecasts",
+          "full_id": "jibber-jabber-knowledge.uk_energy.neso_wind_forecasts",
+          "row_count": 0,
+          "size_bytes": 0,
+          "created": "2025-08-20T10:43:24.096000+00:00",
+          "modified": "2025-08-20T10:43:24.235000+00:00",
+          "schema": [
+            {
+              "name": "forecast_timestamp",
+              "type": "DATETIME",
+              "mode": "REQUIRED"
+            },
+            {
+              "name": "settlement_date",
+              "type": "DATE",
+              "mode": "REQUIRED"
+            },
+            {
+              "name": "settlement_period",
+              "type": "INTEGER",
+              "mode": "REQUIRED"
+            },
+            {
+              "name": "wind_farm_id",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "wind_farm_name",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "capacity_mw",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "forecast_output_mw",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "actual_output_mw",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "availability_factor",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "wind_speed_ms",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            }
+          ],
+          "data_source": "NESO"
+        },
+        {
+          "table_id": "v_bid_offer_volume_summary",
+          "full_id": "jibber-jabber-knowledge.uk_energy.v_bid_offer_volume_summary",
+          "row_count": 0,
+          "size_bytes": 0,
+          "created": "2025-08-21T23:43:45.929000+00:00",
+          "modified": "2025-08-21T23:43:45.929000+00:00",
+          "schema": [
+            {
+              "name": "acceptance_type",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "total_volume_mwh",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "avg_volume_mwh",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "number_of_acceptances",
+              "type": "INTEGER",
+              "mode": "NULLABLE"
+            }
+          ],
+          "data_source": "Unknown"
+        },
+        {
+          "table_id": "v_daily_peak_summary",
+          "full_id": "jibber-jabber-knowledge.uk_energy.v_daily_peak_summary",
+          "row_count": 0,
+          "size_bytes": 0,
+          "created": "2025-08-21T23:43:45.076000+00:00",
+          "modified": "2025-08-21T23:43:45.076000+00:00",
+          "schema": [
+            {
+              "name": "day",
+              "type": "DATE",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "peak_demand",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "peak_wind_generation",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "peak_solar_generation",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "peak_nuclear_generation",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "peak_gas_generation",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            }
+          ],
+          "data_source": "Unknown"
+        },
+        {
+          "table_id": "v_daily_price_volatility",
+          "full_id": "jibber-jabber-knowledge.uk_energy.v_daily_price_volatility",
+          "row_count": 0,
+          "size_bytes": 0,
+          "created": "2025-08-21T23:43:46.750000+00:00",
+          "modified": "2025-08-21T23:43:46.750000+00:00",
+          "schema": [
+            {
+              "name": "day",
+              "type": "DATE",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "ssp_volatility",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "sbp_volatility",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "ssp_range",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "sbp_range",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            }
+          ],
+          "data_source": "Unknown"
+        },
+        {
+          "table_id": "v_generation_mix_snapshot",
+          "full_id": "jibber-jabber-knowledge.uk_energy.v_generation_mix_snapshot",
+          "row_count": 0,
+          "size_bytes": 0,
+          "created": "2025-08-21T23:43:46.335000+00:00",
+          "modified": "2025-08-21T23:43:46.335000+00:00",
+          "schema": [
+            {
+              "name": "time",
+              "type": "DATE",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "settlement_period",
+              "type": "INTEGER",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "fuel_type",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "generation",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            }
+          ],
+          "data_source": "Unknown"
+        },
+        {
+          "table_id": "v_hourly_energy_balance",
+          "full_id": "jibber-jabber-knowledge.uk_energy.v_hourly_energy_balance",
+          "row_count": 0,
+          "size_bytes": 0,
+          "created": "2025-08-21T23:43:43.788000+00:00",
+          "modified": "2025-08-21T23:43:43.788000+00:00",
+          "schema": [
+            {
+              "name": "hour",
+              "type": "TIMESTAMP",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "avg_frequency",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "avg_demand",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "total_wind_generation",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "total_solar_generation",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            }
+          ],
+          "data_source": "Unknown"
+        },
+        {
+          "table_id": "v_price_spread_drivers",
+          "full_id": "jibber-jabber-knowledge.uk_energy.v_price_spread_drivers",
+          "row_count": 0,
+          "size_bytes": 0,
+          "created": "2025-08-21T23:43:44.142000+00:00",
+          "modified": "2025-08-21T23:43:44.142000+00:00",
+          "schema": [
+            {
+              "name": "hour",
+              "type": "TIMESTAMP",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "avg_ssp",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "avg_sbp",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "avg_price_spread",
+              "type": "INTEGER",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "avg_wind_generation",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "warning_count",
+              "type": "INTEGER",
+              "mode": "NULLABLE"
+            }
+          ],
+          "data_source": "Unknown"
+        },
+        {
+          "table_id": "v_renewable_vs_system_prices",
+          "full_id": "jibber-jabber-knowledge.uk_energy.v_renewable_vs_system_prices",
+          "row_count": 0,
+          "size_bytes": 0,
+          "created": "2025-08-21T23:43:44.625000+00:00",
+          "modified": "2025-08-21T23:43:44.625000+00:00",
+          "schema": [
+            {
+              "name": "hour",
+              "type": "TIMESTAMP",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "avg_wind",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "avg_solar",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "avg_ssp",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "avg_sbp",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            }
+          ],
+          "data_source": "Unknown"
+        },
+        {
+          "table_id": "v_system_warning_hotspots",
+          "full_id": "jibber-jabber-knowledge.uk_energy.v_system_warning_hotspots",
+          "row_count": 0,
+          "size_bytes": 0,
+          "created": "2025-08-21T23:43:45.489000+00:00",
+          "modified": "2025-08-21T23:43:45.489000+00:00",
+          "schema": [
+            {
+              "name": "day_of_week",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "hour_of_day",
+              "type": "INTEGER",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "warning_count",
+              "type": "INTEGER",
+              "mode": "NULLABLE"
+            }
+          ],
+          "data_source": "Unknown"
+        }
+      ]
+    },
+    {
+      "dataset_id": "uk_energy_analysis",
+      "tables": [
+        {
+          "table_id": "correlation_matrix",
+          "full_id": "jibber-jabber-knowledge.uk_energy_analysis.correlation_matrix",
+          "row_count": 13,
+          "size_bytes": 1171,
+          "created": "2025-08-20T17:43:38.229000+00:00",
+          "modified": "2025-08-22T18:40:15.204000+00:00",
+          "schema": [
+            {
+              "name": "variable",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "settlement_period",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "wind_generation",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "temperature",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "total_flow_mw",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "total_capacity_mw",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "avg_utilization_pct",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "carbon_intensity",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "warning_count",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "total_balancing_cost",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "total_volume_mwh",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "cost_per_mwh",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "month",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "dow",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            }
+          ],
+          "data_source": "Unknown"
+        },
+        {
+          "table_id": "daily_carbon_intensity",
+          "full_id": "jibber-jabber-knowledge.uk_energy_analysis.daily_carbon_intensity",
+          "row_count": 0,
+          "size_bytes": 0,
+          "created": "2025-08-20T17:46:21.778000+00:00",
+          "modified": "2025-08-20T17:46:21.778000+00:00",
+          "schema": [
+            {
+              "name": "date",
+              "type": "DATE",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "avg_ci",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "max_ci",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "min_ci",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "avg_renewables_pct",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            }
+          ],
+          "data_source": "Unknown"
+        },
+        {
+          "table_id": "daily_demand_mix",
+          "full_id": "jibber-jabber-knowledge.uk_energy_analysis.daily_demand_mix",
+          "row_count": 0,
+          "size_bytes": 0,
+          "created": "2025-08-20T17:46:20.154000+00:00",
+          "modified": "2025-08-20T17:46:20.154000+00:00",
+          "schema": [
+            {
+              "name": "date",
+              "type": "DATE",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "avg_national_demand_mw",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "avg_wind_mw",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "avg_solar_mw",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "avg_nuclear_mw",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "avg_gas_mw",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            }
+          ],
+          "data_source": "Unknown"
+        },
+        {
+          "table_id": "decomposition_carbon",
+          "full_id": "jibber-jabber-knowledge.uk_energy_analysis.decomposition_carbon",
+          "row_count": 1,
+          "size_bytes": 117,
+          "created": "2025-08-22T18:40:38.024000+00:00",
+          "modified": "2025-08-22T18:40:39.568000+00:00",
+          "schema": [
+            {
+              "name": "metric",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "period",
+              "type": "INTEGER",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "trend_mean",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "trend_std",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "seasonal_mean",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "seasonal_std",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "resid_mean",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "resid_std",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "plot_path",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            }
+          ],
+          "data_source": "Unknown"
+        },
+        {
+          "table_id": "decomposition_wind",
+          "full_id": "jibber-jabber-knowledge.uk_energy_analysis.decomposition_wind",
+          "row_count": 1,
+          "size_bytes": 115,
+          "created": "2025-08-22T18:40:34.309000+00:00",
+          "modified": "2025-08-22T18:40:36.203000+00:00",
+          "schema": [
+            {
+              "name": "metric",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "period",
+              "type": "INTEGER",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "trend_mean",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "trend_std",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "seasonal_mean",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "seasonal_std",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "resid_mean",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "resid_std",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "plot_path",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            }
+          ],
+          "data_source": "Unknown"
+        },
+        {
+          "table_id": "regression_balancing_cost",
+          "full_id": "jibber-jabber-knowledge.uk_energy_analysis.regression_balancing_cost",
+          "row_count": 1,
+          "size_bytes": 106,
+          "created": "2025-08-22T18:40:30.784000+00:00",
+          "modified": "2025-08-22T18:40:32.530000+00:00",
+          "schema": [
+            {
+              "name": "model",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "n_obs",
+              "type": "INTEGER",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "r_squared",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "adj_r_squared",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "intercept",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "p_intercept",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "beta_wind_generation",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "p_wind_generation",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "beta_temperature",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "p_temperature",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "beta_carbon_intensity",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "p_carbon_intensity",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            }
+          ],
+          "data_source": "Unknown"
+        },
+        {
+          "table_id": "regression_carbon_intensity",
+          "full_id": "jibber-jabber-knowledge.uk_energy_analysis.regression_carbon_intensity",
+          "row_count": 1,
+          "size_bytes": 94,
+          "created": "2025-08-22T18:40:27.510000+00:00",
+          "modified": "2025-08-22T18:40:29.172000+00:00",
+          "schema": [
+            {
+              "name": "model",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "n_obs",
+              "type": "INTEGER",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "r_squared",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "adj_r_squared",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "intercept",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "p_intercept",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "beta_wind_generation",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "p_wind_generation",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "beta_temperature",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "p_temperature",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            }
+          ],
+          "data_source": "Unknown"
+        },
+        {
+          "table_id": "seasonal_carbon_intensity",
+          "full_id": "jibber-jabber-knowledge.uk_energy_analysis.seasonal_carbon_intensity",
+          "row_count": 9,
+          "size_bytes": 972,
+          "created": "2025-08-22T18:40:21.609000+00:00",
+          "modified": "2025-08-22T18:40:23.327000+00:00",
+          "schema": [
+            {
+              "name": "period_num",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "period_name",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "mean",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "std",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "count",
+              "type": "INTEGER",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "metric",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "period_type",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "plot_path",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            }
+          ],
+          "data_source": "Unknown"
+        },
+        {
+          "table_id": "seasonal_interconnector_flow",
+          "full_id": "jibber-jabber-knowledge.uk_energy_analysis.seasonal_interconnector_flow",
+          "row_count": 9,
+          "size_bytes": 918,
+          "created": "2025-08-22T18:40:24.307000+00:00",
+          "modified": "2025-08-22T18:40:25.918000+00:00",
+          "schema": [
+            {
+              "name": "period_num",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "period_name",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "mean",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "std",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "count",
+              "type": "INTEGER",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "metric",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "period_type",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "plot_path",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            }
+          ],
+          "data_source": "Unknown"
+        },
+        {
+          "table_id": "seasonal_wind_generation",
+          "full_id": "jibber-jabber-knowledge.uk_energy_analysis.seasonal_wind_generation",
+          "row_count": 9,
+          "size_bytes": 954,
+          "created": "2025-08-22T18:40:18.726000+00:00",
+          "modified": "2025-08-22T18:40:20.492000+00:00",
+          "schema": [
+            {
+              "name": "period_num",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "period_name",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "mean",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "std",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "count",
+              "type": "INTEGER",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "metric",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "period_type",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "plot_path",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            }
+          ],
+          "data_source": "Unknown"
+        }
+      ]
+    },
+    {
+      "dataset_id": "uk_energy_data",
+      "tables": [
+        {
+          "table_id": "elexon_boa_acceptances",
+          "full_id": "jibber-jabber-knowledge.uk_energy_data.elexon_boa_acceptances",
+          "row_count": 0,
+          "size_bytes": 0,
+          "created": "2025-08-19T09:33:46.518000+00:00",
+          "modified": "2025-08-19T09:33:46.585000+00:00",
+          "schema": [
+            {
+              "name": "time",
+              "type": "TIMESTAMP",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "settlementDate",
+              "type": "DATE",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "settlementPeriod",
+              "type": "INTEGER",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "bmUnit",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "acceptanceVolume",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "acceptanceType",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "bidOfferType",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "price",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "soFlag",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            }
+          ],
+          "data_source": "Elexon"
+        },
+        {
+          "table_id": "elexon_frequency",
+          "full_id": "jibber-jabber-knowledge.uk_energy_data.elexon_frequency",
+          "row_count": 46088,
+          "size_bytes": 1013936,
+          "created": "2025-08-17T19:34:20.807000+00:00",
+          "modified": "2025-08-17T19:34:20.807000+00:00",
+          "schema": [
+            {
+              "name": "frequency",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "measurementTime",
+              "type": "TIMESTAMP",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "dataset",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            }
+          ],
+          "data_source": "Elexon",
+          "date_range": {
+            "min_date": "2025-08-07T00:00:00+00:00",
+            "max_date": "2025-08-08T00:00:00+00:00",
+            "date_column": "measurementTime"
+          }
+        },
+        {
+          "table_id": "elexon_fuel_generation",
+          "full_id": "jibber-jabber-knowledge.uk_energy_data.elexon_fuel_generation",
+          "row_count": 4992,
+          "size_bytes": 273024,
+          "created": "2025-08-17T19:34:25.448000+00:00",
+          "modified": "2025-08-17T19:34:25.448000+00:00",
+          "schema": [
+            {
+              "name": "fuelType",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "settlementDate",
+              "type": "DATE",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "generation",
+              "type": "INTEGER",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "settlementPeriod",
+              "type": "INTEGER",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "startTime",
+              "type": "TIMESTAMP",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "publishTime",
+              "type": "TIMESTAMP",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "dataset",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            }
+          ],
+          "data_source": "Elexon",
+          "date_range": {
+            "min_date": "2016-01-01",
+            "max_date": "2016-01-08",
+            "date_column": "settlementDate"
+          }
+        },
+        {
+          "table_id": "elexon_system_prices",
+          "full_id": "jibber-jabber-knowledge.uk_energy_data.elexon_system_prices",
+          "row_count": 0,
+          "size_bytes": 0,
+          "created": "2025-08-15T18:56:34.083000+00:00",
+          "modified": "2025-08-15T18:56:34.323000+00:00",
+          "schema": [
+            {
+              "name": "time",
+              "type": "TIMESTAMP",
+              "mode": "REQUIRED"
+            },
+            {
+              "name": "settlementDate",
+              "type": "DATE",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "settlementPeriod",
+              "type": "INTEGER",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "systemSellPrice",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "systemBuyPrice",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            }
+          ],
+          "data_source": "Elexon"
+        },
+        {
+          "table_id": "met_office_weather",
+          "full_id": "jibber-jabber-knowledge.uk_energy_data.met_office_weather",
+          "row_count": 213,
+          "size_bytes": 25560,
+          "created": "2025-08-17T20:19:36.958000+00:00",
+          "modified": "2025-08-17T20:19:36.958000+00:00",
+          "schema": [
+            {
+              "name": "date",
+              "type": "DATE",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "temperature_mean",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "temperature_min",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "temperature_max",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "wind_speed_mean",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "wind_speed_max",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "pressure_hpa",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "humidity_percent",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "source",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "storm_event",
+              "type": "BOOLEAN",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "high_wind_event",
+              "type": "BOOLEAN",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "cold_snap_event",
+              "type": "BOOLEAN",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "heat_wave_event",
+              "type": "BOOLEAN",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "month",
+              "type": "INTEGER",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "temperature_mean_z_score",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "wind_speed_mean_z_score",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "temp_extreme_cold",
+              "type": "BOOLEAN",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "temp_extreme_hot",
+              "type": "BOOLEAN",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "wind_extreme_high",
+              "type": "BOOLEAN",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "wind_extreme_low",
+              "type": "BOOLEAN",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "extreme_weather_day",
+              "type": "BOOLEAN",
+              "mode": "NULLABLE"
+            }
+          ],
+          "data_source": "Unknown",
+          "date_range": {
+            "min_date": "2024-01-01",
+            "max_date": "2024-07-31",
+            "date_column": "date"
+          }
+        },
+        {
+          "table_id": "neso_gsp_demand",
+          "full_id": "jibber-jabber-knowledge.uk_energy_data.neso_gsp_demand",
+          "row_count": 0,
+          "size_bytes": 0,
+          "created": "2025-08-15T18:56:35.510000+00:00",
+          "modified": "2025-08-15T18:56:35.723000+00:00",
+          "schema": [
+            {
+              "name": "time",
+              "type": "TIMESTAMP",
+              "mode": "REQUIRED"
+            },
+            {
+              "name": "gsp_id",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "gsp_name",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "demand_mw",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            }
+          ],
+          "data_source": "NESO"
+        },
+        {
+          "table_id": "vw_bq_inventory",
+          "full_id": "jibber-jabber-knowledge.uk_energy_data.vw_bq_inventory",
+          "row_count": 0,
+          "size_bytes": 0,
+          "created": "2025-08-17T19:21:27.571000+00:00",
+          "modified": "2025-08-17T19:21:27.571000+00:00",
+          "schema": [
+            {
+              "name": "table_catalog",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "table_schema",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "table_name",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "total_rows",
+              "type": "INTEGER",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "size_bytes",
+              "type": "INTEGER",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "creation_time",
+              "type": "TIMESTAMP",
+              "mode": "NULLABLE"
+            }
+          ],
+          "data_source": "Unknown"
+        }
+      ]
+    },
+    {
+      "dataset_id": "uk_energy_data_gemini_eu",
+      "tables": [
+        {
+          "table_id": "elexon_frequency",
+          "full_id": "jibber-jabber-knowledge.uk_energy_data_gemini_eu.elexon_frequency",
+          "row_count": 46088,
+          "size_bytes": 1013936,
+          "created": "2025-08-18T12:48:27.886000+00:00",
+          "modified": "2025-08-18T12:48:27.886000+00:00",
+          "schema": [
+            {
+              "name": "frequency",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "measurementTime",
+              "type": "TIMESTAMP",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "dataset",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            }
+          ],
+          "data_source": "Elexon",
+          "date_range": {
+            "min_date": "2025-08-07T00:00:00+00:00",
+            "max_date": "2025-08-08T00:00:00+00:00",
+            "date_column": "measurementTime"
+          }
+        },
+        {
+          "table_id": "elexon_fuel_generation",
+          "full_id": "jibber-jabber-knowledge.uk_energy_data_gemini_eu.elexon_fuel_generation",
+          "row_count": 4992,
+          "size_bytes": 273024,
+          "created": "2025-08-18T12:49:00.544000+00:00",
+          "modified": "2025-08-18T12:49:00.544000+00:00",
+          "schema": [
+            {
+              "name": "fuelType",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "settlementDate",
+              "type": "DATE",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "generation",
+              "type": "INTEGER",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "settlementPeriod",
+              "type": "INTEGER",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "startTime",
+              "type": "TIMESTAMP",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "publishTime",
+              "type": "TIMESTAMP",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "dataset",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            }
+          ],
+          "data_source": "Elexon",
+          "date_range": {
+            "min_date": "2016-01-01",
+            "max_date": "2016-01-08",
+            "date_column": "settlementDate"
+          }
+        },
+        {
+          "table_id": "met_office_weather",
+          "full_id": "jibber-jabber-knowledge.uk_energy_data_gemini_eu.met_office_weather",
+          "row_count": 213,
+          "size_bytes": 25560,
+          "created": "2025-08-18T12:40:00.739000+00:00",
+          "modified": "2025-08-18T12:40:00.739000+00:00",
+          "schema": [
+            {
+              "name": "date",
+              "type": "DATE",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "temperature_mean",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "temperature_min",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "temperature_max",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "wind_speed_mean",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "wind_speed_max",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "pressure_hpa",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "humidity_percent",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "source",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "storm_event",
+              "type": "BOOLEAN",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "high_wind_event",
+              "type": "BOOLEAN",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "cold_snap_event",
+              "type": "BOOLEAN",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "heat_wave_event",
+              "type": "BOOLEAN",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "month",
+              "type": "INTEGER",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "temperature_mean_z_score",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "wind_speed_mean_z_score",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "temp_extreme_cold",
+              "type": "BOOLEAN",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "temp_extreme_hot",
+              "type": "BOOLEAN",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "wind_extreme_high",
+              "type": "BOOLEAN",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "wind_extreme_low",
+              "type": "BOOLEAN",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "extreme_weather_day",
+              "type": "BOOLEAN",
+              "mode": "NULLABLE"
+            }
+          ],
+          "data_source": "Unknown",
+          "date_range": {
+            "min_date": "2024-01-01",
+            "max_date": "2024-07-31",
+            "date_column": "date"
+          }
+        }
+      ]
+    },
+    {
+      "dataset_id": "uk_energy_prod",
+      "tables": [
+        {
+          "table_id": "elexon_demand_outturn",
+          "full_id": "jibber-jabber-knowledge.uk_energy_prod.elexon_demand_outturn",
+          "row_count": 0,
+          "size_bytes": 0,
+          "created": "2025-08-22T15:13:41.011000+00:00",
+          "modified": "2025-08-22T15:20:00.511000+00:00",
+          "schema": [
+            {
+              "name": "timestamp",
+              "type": "DATETIME",
+              "mode": "REQUIRED"
+            },
+            {
+              "name": "settlement_date",
+              "type": "DATE",
+              "mode": "REQUIRED"
+            },
+            {
+              "name": "settlement_period",
+              "type": "INTEGER",
+              "mode": "REQUIRED"
+            },
+            {
+              "name": "national_demand",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "england_wales_demand",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "embedded_wind_generation",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "embedded_solar_generation",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "non_bm_stor",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "non_bm_wind",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            }
+          ],
+          "data_source": "Elexon"
+        },
+        {
+          "table_id": "elexon_generation_outturn",
+          "full_id": "jibber-jabber-knowledge.uk_energy_prod.elexon_generation_outturn",
+          "row_count": 0,
+          "size_bytes": 0,
+          "created": "2025-08-22T15:13:45.353000+00:00",
+          "modified": "2025-08-22T15:20:10.973000+00:00",
+          "schema": [
+            {
+              "name": "timestamp",
+              "type": "DATETIME",
+              "mode": "REQUIRED"
+            },
+            {
+              "name": "settlement_date",
+              "type": "DATE",
+              "mode": "REQUIRED"
+            },
+            {
+              "name": "settlement_period",
+              "type": "INTEGER",
+              "mode": "REQUIRED"
+            },
+            {
+              "name": "fuel_type",
+              "type": "STRING",
+              "mode": "REQUIRED"
+            },
+            {
+              "name": "generation_mw",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "generation_percentage",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "capacity_factor",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            }
+          ],
+          "data_source": "Elexon"
+        },
+        {
+          "table_id": "elexon_system_warnings",
+          "full_id": "jibber-jabber-knowledge.uk_energy_prod.elexon_system_warnings",
+          "row_count": 56,
+          "size_bytes": 7556,
+          "created": "2025-08-22T15:46:32.370000+00:00",
+          "modified": "2025-08-22T18:48:45.609000+00:00",
+          "schema": [
+            {
+              "name": "warning_id",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "warning_type",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "warning_date",
+              "type": "DATE",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "start_time",
+              "type": "DATETIME",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "end_time",
+              "type": "DATETIME",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "severity",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "message",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "affected_area",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "status",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "resolution_time",
+              "type": "DATETIME",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "impact_mw",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            }
+          ],
+          "data_source": "Elexon",
+          "date_range": {
+            "min_date": "2023-01-10",
+            "max_date": "2024-12-25",
+            "date_column": "warning_date"
+          }
+        },
+        {
+          "table_id": "neso_balancing_services",
+          "full_id": "jibber-jabber-knowledge.uk_energy_prod.neso_balancing_services",
+          "row_count": 35088,
+          "size_bytes": 2526336,
+          "created": "2025-08-22T15:13:31.927000+00:00",
+          "modified": "2025-08-22T18:48:09.201000+00:00",
+          "schema": [
+            {
+              "name": "charge_date",
+              "type": "DATE",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "settlement_period",
+              "type": "INTEGER",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "bsuos_rate_pounds_mwh",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "volume_mwh",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "cost_pounds",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "balancing_services_cost",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "transmission_losses_cost",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "constraint_costs",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "settlement_date",
+              "type": "DATE",
+              "mode": "NULLABLE"
+            }
+          ],
+          "data_source": "NESO",
+          "date_range": {
+            "min_date": "2023-01-01",
+            "max_date": "2024-12-31",
+            "date_column": "settlement_date"
+          }
+        },
+        {
+          "table_id": "neso_carbon_intensity",
+          "full_id": "jibber-jabber-knowledge.uk_energy_prod.neso_carbon_intensity",
+          "row_count": 35088,
+          "size_bytes": 6596832,
+          "created": "2025-08-22T15:46:32.662000+00:00",
+          "modified": "2025-08-22T18:48:22.638000+00:00",
+          "schema": [
+            {
+              "name": "measurement_date",
+              "type": "DATE",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "measurement_time",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "carbon_intensity_gco2_kwh",
+              "type": "INTEGER",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "forecast_carbon_intensity_gco2_kwh",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "generation_mix",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "region",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "data_source",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            }
+          ],
+          "data_source": "NESO",
+          "date_range": {
+            "min_date": "2023-01-01",
+            "max_date": "2024-12-31",
+            "date_column": "measurement_date"
+          }
+        },
+        {
+          "table_id": "neso_demand_forecasts",
+          "full_id": "jibber-jabber-knowledge.uk_energy_prod.neso_demand_forecasts",
+          "row_count": 35088,
+          "size_bytes": 2245632,
+          "created": "2025-08-22T15:11:08.929000+00:00",
+          "modified": "2025-08-22T18:47:34.697000+00:00",
+          "schema": [
+            {
+              "name": "forecast_date",
+              "type": "DATE",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "settlement_date",
+              "type": "DATE",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "settlement_period",
+              "type": "INTEGER",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "national_demand_forecast",
+              "type": "INTEGER",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "temperature_forecast",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "wind_forecast",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "solar_forecast",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "forecast_error",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            }
+          ],
+          "data_source": "NESO",
+          "date_range": {
+            "min_date": "2023-01-01",
+            "max_date": "2024-12-31",
+            "date_column": "settlement_date"
+          }
+        },
+        {
+          "table_id": "neso_interconnector_flows",
+          "full_id": "jibber-jabber-knowledge.uk_energy_prod.neso_interconnector_flows",
+          "row_count": 210528,
+          "size_bytes": 19719456,
+          "created": "2025-08-22T15:46:32.941000+00:00",
+          "modified": "2025-08-22T18:48:38.565000+00:00",
+          "schema": [
+            {
+              "name": "settlement_date",
+              "type": "DATE",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "settlement_period",
+              "type": "INTEGER",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "interconnector_id",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "interconnector_name",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "connected_country",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "flow_mw",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "direction",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "capacity_mw",
+              "type": "INTEGER",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "utilization_pct",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "price_differential_gbp_mwh",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "forecast_timestamp",
+              "type": "DATETIME",
+              "mode": "NULLABLE"
+            }
+          ],
+          "data_source": "NESO",
+          "date_range": {
+            "min_date": "2023-01-01",
+            "max_date": "2024-12-31",
+            "date_column": "settlement_date"
+          }
+        },
+        {
+          "table_id": "neso_wind_forecasts",
+          "full_id": "jibber-jabber-knowledge.uk_energy_prod.neso_wind_forecasts",
+          "row_count": 175440,
+          "size_bytes": 15824688,
+          "created": "2025-08-22T15:13:36.312000+00:00",
+          "modified": "2025-08-22T18:47:56.103000+00:00",
+          "schema": [
+            {
+              "name": "forecast_timestamp",
+              "type": "DATETIME",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "settlement_date",
+              "type": "DATE",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "settlement_period",
+              "type": "INTEGER",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "wind_farm_id",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "wind_farm_name",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "capacity_mw",
+              "type": "INTEGER",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "forecast_output_mw",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "actual_output_mw",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "availability_factor",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "wind_speed_ms",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            }
+          ],
+          "data_source": "NESO",
+          "date_range": {
+            "min_date": "2023-01-01",
+            "max_date": "2024-12-31",
+            "date_column": "settlement_date"
+          }
+        }
+      ]
+    },
+    {
+      "dataset_id": "uk_energy_silver",
+      "tables": [
+        {
+          "table_id": "daily_balancing_costs",
+          "full_id": "jibber-jabber-knowledge.uk_energy_silver.daily_balancing_costs",
+          "row_count": 0,
+          "size_bytes": 0,
+          "created": "2025-08-20T10:58:57.536000+00:00",
+          "modified": "2025-08-20T10:58:57.536000+00:00",
+          "schema": [
+            {
+              "name": "charge_date",
+              "type": "DATE",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "total_cost_pounds",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "total_constraint_costs",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "avg_bsuos_rate",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            }
+          ],
+          "data_source": "Unknown"
+        },
+        {
+          "table_id": "daily_carbon_intensity",
+          "full_id": "jibber-jabber-knowledge.uk_energy_silver.daily_carbon_intensity",
+          "row_count": 0,
+          "size_bytes": 0,
+          "created": "2025-08-20T10:58:55.637000+00:00",
+          "modified": "2025-08-20T10:58:55.637000+00:00",
+          "schema": [
+            {
+              "name": "date",
+              "type": "DATE",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "avg_ci",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "max_ci",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "min_ci",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "avg_renewables_pct",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            }
+          ],
+          "data_source": "Unknown"
+        },
+        {
+          "table_id": "daily_demand_mix",
+          "full_id": "jibber-jabber-knowledge.uk_energy_silver.daily_demand_mix",
+          "row_count": 0,
+          "size_bytes": 0,
+          "created": "2025-08-20T10:58:53.798000+00:00",
+          "modified": "2025-08-20T10:58:53.798000+00:00",
+          "schema": [
+            {
+              "name": "date",
+              "type": "DATE",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "avg_national_demand_mw",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "avg_wind_mw",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "avg_solar_mw",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "avg_nuclear_mw",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "avg_gas_mw",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            }
+          ],
+          "data_source": "Unknown"
+        },
+        {
+          "table_id": "daily_interconnector_flows",
+          "full_id": "jibber-jabber-knowledge.uk_energy_silver.daily_interconnector_flows",
+          "row_count": 0,
+          "size_bytes": 0,
+          "created": "2025-08-20T10:58:59.756000+00:00",
+          "modified": "2025-08-20T10:58:59.756000+00:00",
+          "schema": [
+            {
+              "name": "trading_date",
+              "type": "DATE",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "interconnector_name",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "net_flow_mw",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "avg_import_cap_mw",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "avg_export_cap_mw",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "avg_price_uk",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "avg_price_foreign",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            }
+          ],
+          "data_source": "Unknown"
+        }
+      ]
+    },
+    {
+      "dataset_id": "us_central1_gemini_models",
+      "tables": [
+        {
+          "table_id": "elexon_frequency",
+          "full_id": "jibber-jabber-knowledge.us_central1_gemini_models.elexon_frequency",
+          "row_count": 46088,
+          "size_bytes": 1013936,
+          "created": "2025-08-18T17:15:08.035000+00:00",
+          "modified": "2025-08-18T17:15:08.035000+00:00",
+          "schema": [
+            {
+              "name": "frequency",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "measurementTime",
+              "type": "TIMESTAMP",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "dataset",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            }
+          ],
+          "data_source": "Elexon",
+          "date_range": {
+            "min_date": "2025-08-07T00:00:00+00:00",
+            "max_date": "2025-08-08T00:00:00+00:00",
+            "date_column": "measurementTime"
+          }
+        },
+        {
+          "table_id": "elexon_fuel_generation",
+          "full_id": "jibber-jabber-knowledge.us_central1_gemini_models.elexon_fuel_generation",
+          "row_count": 4992,
+          "size_bytes": 273024,
+          "created": "2025-08-18T17:15:34.777000+00:00",
+          "modified": "2025-08-18T17:15:34.777000+00:00",
+          "schema": [
+            {
+              "name": "fuelType",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "settlementDate",
+              "type": "DATE",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "generation",
+              "type": "INTEGER",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "settlementPeriod",
+              "type": "INTEGER",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "startTime",
+              "type": "TIMESTAMP",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "publishTime",
+              "type": "TIMESTAMP",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "dataset",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            }
+          ],
+          "data_source": "Elexon",
+          "date_range": {
+            "min_date": "2016-01-01",
+            "max_date": "2016-01-08",
+            "date_column": "settlementDate"
+          }
+        },
+        {
+          "table_id": "elexon_system_prices",
+          "full_id": "jibber-jabber-knowledge.us_central1_gemini_models.elexon_system_prices",
+          "row_count": 0,
+          "size_bytes": 0,
+          "created": "2025-08-18T17:20:21.372000+00:00",
+          "modified": "2025-08-18T17:20:21.372000+00:00",
+          "schema": [
+            {
+              "name": "time",
+              "type": "TIMESTAMP",
+              "mode": "REQUIRED"
+            },
+            {
+              "name": "settlementDate",
+              "type": "DATE",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "settlementPeriod",
+              "type": "INTEGER",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "systemSellPrice",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "systemBuyPrice",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            }
+          ],
+          "data_source": "Elexon"
+        },
+        {
+          "table_id": "met_office_weather",
+          "full_id": "jibber-jabber-knowledge.us_central1_gemini_models.met_office_weather",
+          "row_count": 213,
+          "size_bytes": 25560,
+          "created": "2025-08-18T17:17:04.171000+00:00",
+          "modified": "2025-08-18T17:17:04.171000+00:00",
+          "schema": [
+            {
+              "name": "date",
+              "type": "DATE",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "temperature_mean",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "temperature_min",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "temperature_max",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "wind_speed_mean",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "wind_speed_max",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "pressure_hpa",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "humidity_percent",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "source",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "storm_event",
+              "type": "BOOLEAN",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "high_wind_event",
+              "type": "BOOLEAN",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "cold_snap_event",
+              "type": "BOOLEAN",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "heat_wave_event",
+              "type": "BOOLEAN",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "month",
+              "type": "INTEGER",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "temperature_mean_z_score",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "wind_speed_mean_z_score",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "temp_extreme_cold",
+              "type": "BOOLEAN",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "temp_extreme_hot",
+              "type": "BOOLEAN",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "wind_extreme_high",
+              "type": "BOOLEAN",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "wind_extreme_low",
+              "type": "BOOLEAN",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "extreme_weather_day",
+              "type": "BOOLEAN",
+              "mode": "NULLABLE"
+            }
+          ],
+          "data_source": "Unknown",
+          "date_range": {
+            "min_date": "2024-01-01",
+            "max_date": "2024-07-31",
+            "date_column": "date"
+          }
+        },
+        {
+          "table_id": "neso_gsp_demand",
+          "full_id": "jibber-jabber-knowledge.us_central1_gemini_models.neso_gsp_demand",
+          "row_count": 0,
+          "size_bytes": 0,
+          "created": "2025-08-18T17:20:58.446000+00:00",
+          "modified": "2025-08-18T17:20:58.446000+00:00",
+          "schema": [
+            {
+              "name": "time",
+              "type": "TIMESTAMP",
+              "mode": "REQUIRED"
+            },
+            {
+              "name": "gsp_id",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "gsp_name",
+              "type": "STRING",
+              "mode": "NULLABLE"
+            },
+            {
+              "name": "demand_mw",
+              "type": "FLOAT",
+              "mode": "NULLABLE"
+            }
+          ],
+          "data_source": "NESO"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_datasets": 9,
+    "total_tables": 63,
+    "neso_tables": 13,
+    "elexon_tables": 19,
+    "other_tables": 31
+  }
+}

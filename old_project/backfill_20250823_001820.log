@@ -1,0 +1,300 @@
+2025-08-23 00:18:22,629 - INFO - ✅ Data Backfiller initialized
+2025-08-23 00:18:22,629 - INFO - 🔄 Starting backfill for elexon_demand_outturn
+2025-08-23 00:18:23,702 - INFO - 🔍 Found 31 missing dates for elexon_demand_outturn
+2025-08-23 00:18:23,703 - INFO - 🔄 Processing elexon_demand_outturn for 2025-07-24
+2025-08-23 00:18:24,191 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/07/2025-07-24.json
+2025-08-23 00:18:24,439 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:18:24,439 - INFO - 🔄 Processing elexon_demand_outturn for 2025-07-25
+2025-08-23 00:18:24,995 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/07/2025-07-25.json
+2025-08-23 00:18:25,189 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:18:25,189 - INFO - 🔄 Processing elexon_demand_outturn for 2025-07-26
+2025-08-23 00:18:25,992 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/07/2025-07-26.json
+2025-08-23 00:18:26,096 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:18:26,096 - INFO - 🔄 Processing elexon_demand_outturn for 2025-07-27
+2025-08-23 00:18:27,015 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/07/2025-07-27.json
+2025-08-23 00:18:27,097 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:18:27,097 - INFO - 🔄 Processing elexon_demand_outturn for 2025-07-28
+2025-08-23 00:18:28,130 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/07/2025-07-28.json
+2025-08-23 00:18:28,238 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:18:28,238 - INFO - 🔄 Processing elexon_demand_outturn for 2025-07-29
+2025-08-23 00:18:28,988 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/07/2025-07-29.json
+2025-08-23 00:18:29,115 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:18:29,115 - INFO - 🔄 Processing elexon_demand_outturn for 2025-07-30
+2025-08-23 00:18:29,967 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/07/2025-07-30.json
+2025-08-23 00:18:30,061 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:18:30,061 - INFO - 🔄 Processing elexon_demand_outturn for 2025-07-31
+2025-08-23 00:18:30,977 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/07/2025-07-31.json
+2025-08-23 00:18:31,066 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:18:31,068 - INFO - 🔄 Processing elexon_demand_outturn for 2025-08-01
+2025-08-23 00:18:32,024 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/08/2025-08-01.json
+2025-08-23 00:18:32,146 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:18:32,146 - INFO - 🔄 Processing elexon_demand_outturn for 2025-08-02
+2025-08-23 00:18:33,048 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/08/2025-08-02.json
+2025-08-23 00:18:33,168 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:18:33,168 - INFO - 🔄 Processing elexon_demand_outturn for 2025-08-03
+2025-08-23 00:18:33,987 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/08/2025-08-03.json
+2025-08-23 00:18:34,101 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:18:34,101 - INFO - 🔄 Processing elexon_demand_outturn for 2025-08-04
+2025-08-23 00:18:35,198 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/08/2025-08-04.json
+2025-08-23 00:18:35,312 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:18:35,312 - INFO - 🔄 Processing elexon_demand_outturn for 2025-08-05
+2025-08-23 00:18:35,996 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/08/2025-08-05.json
+2025-08-23 00:18:36,197 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:18:36,198 - INFO - 🔄 Processing elexon_demand_outturn for 2025-08-06
+2025-08-23 00:18:37,023 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/08/2025-08-06.json
+2025-08-23 00:18:37,106 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:18:37,106 - INFO - 🔄 Processing elexon_demand_outturn for 2025-08-07
+2025-08-23 00:18:38,007 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/08/2025-08-07.json
+2025-08-23 00:18:38,089 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:18:38,089 - INFO - 🔄 Processing elexon_demand_outturn for 2025-08-08
+2025-08-23 00:18:39,043 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/08/2025-08-08.json
+2025-08-23 00:18:39,130 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:18:39,130 - INFO - 🔄 Processing elexon_demand_outturn for 2025-08-09
+2025-08-23 00:18:40,081 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/08/2025-08-09.json
+2025-08-23 00:18:40,160 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:18:40,160 - INFO - 🔄 Processing elexon_demand_outturn for 2025-08-10
+2025-08-23 00:18:41,050 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/08/2025-08-10.json
+2025-08-23 00:18:41,164 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:18:41,164 - INFO - 🔄 Processing elexon_demand_outturn for 2025-08-11
+2025-08-23 00:18:42,045 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/08/2025-08-11.json
+2025-08-23 00:18:42,126 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:18:42,126 - INFO - 🔄 Processing elexon_demand_outturn for 2025-08-12
+2025-08-23 00:18:43,034 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/08/2025-08-12.json
+2025-08-23 00:18:43,129 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:18:43,130 - INFO - 🔄 Processing elexon_demand_outturn for 2025-08-13
+2025-08-23 00:18:44,055 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/08/2025-08-13.json
+2025-08-23 00:18:44,132 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:18:44,132 - INFO - 🔄 Processing elexon_demand_outturn for 2025-08-14
+2025-08-23 00:18:45,102 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/08/2025-08-14.json
+2025-08-23 00:18:45,186 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:18:45,186 - INFO - 🔄 Processing elexon_demand_outturn for 2025-08-15
+2025-08-23 00:18:46,152 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/08/2025-08-15.json
+2025-08-23 00:18:46,248 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:18:46,248 - INFO - 🔄 Processing elexon_demand_outturn for 2025-08-16
+2025-08-23 00:18:47,074 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/08/2025-08-16.json
+2025-08-23 00:18:47,204 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:18:47,204 - INFO - 🔄 Processing elexon_demand_outturn for 2025-08-17
+2025-08-23 00:18:48,072 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/08/2025-08-17.json
+2025-08-23 00:18:48,157 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:18:48,157 - INFO - 🔄 Processing elexon_demand_outturn for 2025-08-18
+2025-08-23 00:18:49,123 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/08/2025-08-18.json
+2025-08-23 00:18:49,299 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:18:49,299 - INFO - 🔄 Processing elexon_demand_outturn for 2025-08-19
+2025-08-23 00:18:50,098 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/08/2025-08-19.json
+2025-08-23 00:18:50,183 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:18:50,184 - INFO - 🔄 Processing elexon_demand_outturn for 2025-08-20
+2025-08-23 00:18:51,170 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/08/2025-08-20.json
+2025-08-23 00:18:51,278 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:18:51,278 - INFO - 🔄 Processing elexon_demand_outturn for 2025-08-21
+2025-08-23 00:18:52,173 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/08/2025-08-21.json
+2025-08-23 00:18:52,253 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:18:52,253 - INFO - 🔄 Processing elexon_demand_outturn for 2025-08-22
+2025-08-23 00:18:53,081 - INFO - ✅ Saved 48 records to GCS: bmrs_data/elexon_demand_outturn/2025/08/2025-08-22.json
+2025-08-23 00:18:53,175 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:18:53,176 - INFO - 🔄 Processing elexon_demand_outturn for 2025-08-23
+2025-08-23 00:18:53,858 - WARNING - ⚠️ No data returned for elexon_demand_outturn on 2025-08-23
+2025-08-23 00:18:53,859 - INFO - ✅ Backfilled 0/31 dates for elexon_demand_outturn
+2025-08-23 00:18:53,859 - INFO - 🔄 Starting backfill for elexon_generation_outturn
+2025-08-23 00:18:54,543 - INFO - 🔍 Found 31 missing dates for elexon_generation_outturn
+2025-08-23 00:18:54,544 - INFO - 🔄 Processing elexon_generation_outturn for 2025-07-24
+2025-08-23 00:18:55,711 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/07/2025-07-24.json
+2025-08-23 00:18:55,812 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "startTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:18:55,812 - INFO - 🔄 Processing elexon_generation_outturn for 2025-07-25
+2025-08-23 00:18:56,226 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/07/2025-07-25.json
+2025-08-23 00:18:56,306 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "startTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:18:56,306 - INFO - 🔄 Processing elexon_generation_outturn for 2025-07-26
+2025-08-23 00:18:57,316 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/07/2025-07-26.json
+2025-08-23 00:18:57,412 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "startTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:18:57,412 - INFO - 🔄 Processing elexon_generation_outturn for 2025-07-27
+2025-08-23 00:18:58,237 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/07/2025-07-27.json
+2025-08-23 00:18:58,318 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "startTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:18:58,318 - INFO - 🔄 Processing elexon_generation_outturn for 2025-07-28
+2025-08-23 00:18:59,363 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/07/2025-07-28.json
+2025-08-23 00:18:59,447 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "startTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:18:59,448 - INFO - 🔄 Processing elexon_generation_outturn for 2025-07-29
+2025-08-23 00:19:00,221 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/07/2025-07-29.json
+2025-08-23 00:19:00,401 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "startTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:19:00,402 - INFO - 🔄 Processing elexon_generation_outturn for 2025-07-30
+2025-08-23 00:19:01,412 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/07/2025-07-30.json
+2025-08-23 00:19:01,498 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "startTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:19:01,498 - INFO - 🔄 Processing elexon_generation_outturn for 2025-07-31
+2025-08-23 00:19:02,436 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/07/2025-07-31.json
+2025-08-23 00:19:02,529 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "startTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:19:02,529 - INFO - 🔄 Processing elexon_generation_outturn for 2025-08-01
+2025-08-23 00:19:03,357 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/08/2025-08-01.json
+2025-08-23 00:19:03,462 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "startTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:19:03,462 - INFO - 🔄 Processing elexon_generation_outturn for 2025-08-02
+2025-08-23 00:19:04,510 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/08/2025-08-02.json
+2025-08-23 00:19:04,593 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "startTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:19:04,593 - INFO - 🔄 Processing elexon_generation_outturn for 2025-08-03
+2025-08-23 00:19:05,279 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/08/2025-08-03.json
+2025-08-23 00:19:05,356 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "startTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:19:05,356 - INFO - 🔄 Processing elexon_generation_outturn for 2025-08-04
+2025-08-23 00:19:06,337 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/08/2025-08-04.json
+2025-08-23 00:19:06,432 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "startTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:19:06,432 - INFO - 🔄 Processing elexon_generation_outturn for 2025-08-05
+2025-08-23 00:19:07,294 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/08/2025-08-05.json
+2025-08-23 00:19:07,384 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "startTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:19:07,384 - INFO - 🔄 Processing elexon_generation_outturn for 2025-08-06
+2025-08-23 00:19:08,258 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/08/2025-08-06.json
+2025-08-23 00:19:08,343 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "startTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:19:08,343 - INFO - 🔄 Processing elexon_generation_outturn for 2025-08-07
+2025-08-23 00:19:09,318 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/08/2025-08-07.json
+2025-08-23 00:19:09,407 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "startTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:19:09,408 - INFO - 🔄 Processing elexon_generation_outturn for 2025-08-08
+2025-08-23 00:19:10,301 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/08/2025-08-08.json
+2025-08-23 00:19:10,422 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "startTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:19:10,422 - INFO - 🔄 Processing elexon_generation_outturn for 2025-08-09
+2025-08-23 00:19:11,344 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/08/2025-08-09.json
+2025-08-23 00:19:11,429 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "startTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:19:11,429 - INFO - 🔄 Processing elexon_generation_outturn for 2025-08-10
+2025-08-23 00:19:12,470 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/08/2025-08-10.json
+2025-08-23 00:19:12,564 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "startTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:19:12,564 - INFO - 🔄 Processing elexon_generation_outturn for 2025-08-11
+2025-08-23 00:19:13,420 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/08/2025-08-11.json
+2025-08-23 00:19:13,529 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "startTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:19:13,529 - INFO - 🔄 Processing elexon_generation_outturn for 2025-08-12
+2025-08-23 00:19:14,470 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/08/2025-08-12.json
+2025-08-23 00:19:14,543 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "startTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:19:14,544 - INFO - 🔄 Processing elexon_generation_outturn for 2025-08-13
+2025-08-23 00:19:15,520 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/08/2025-08-13.json
+2025-08-23 00:19:15,601 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "startTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:19:15,601 - INFO - 🔄 Processing elexon_generation_outturn for 2025-08-14
+2025-08-23 00:19:16,274 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/08/2025-08-14.json
+2025-08-23 00:19:16,358 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "startTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:19:16,359 - INFO - 🔄 Processing elexon_generation_outturn for 2025-08-15
+2025-08-23 00:19:17,386 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/08/2025-08-15.json
+2025-08-23 00:19:17,470 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "startTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:19:17,470 - INFO - 🔄 Processing elexon_generation_outturn for 2025-08-16
+2025-08-23 00:19:18,308 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/08/2025-08-16.json
+2025-08-23 00:19:18,441 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "startTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:19:18,441 - INFO - 🔄 Processing elexon_generation_outturn for 2025-08-17
+2025-08-23 00:19:19,309 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/08/2025-08-17.json
+2025-08-23 00:19:19,409 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "startTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:19:19,409 - INFO - 🔄 Processing elexon_generation_outturn for 2025-08-18
+2025-08-23 00:19:20,334 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/08/2025-08-18.json
+2025-08-23 00:19:20,427 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "startTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:19:20,427 - INFO - 🔄 Processing elexon_generation_outturn for 2025-08-19
+2025-08-23 00:19:21,334 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/08/2025-08-19.json
+2025-08-23 00:19:21,420 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "startTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:19:21,421 - INFO - 🔄 Processing elexon_generation_outturn for 2025-08-20
+2025-08-23 00:19:22,333 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/08/2025-08-20.json
+2025-08-23 00:19:22,412 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "startTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:19:22,413 - INFO - 🔄 Processing elexon_generation_outturn for 2025-08-21
+2025-08-23 00:19:23,381 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/08/2025-08-21.json
+2025-08-23 00:19:23,463 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "startTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:19:23,464 - INFO - 🔄 Processing elexon_generation_outturn for 2025-08-22
+2025-08-23 00:19:24,452 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/08/2025-08-22.json
+2025-08-23 00:19:24,542 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "startTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:19:24,542 - INFO - 🔄 Processing elexon_generation_outturn for 2025-08-23
+2025-08-23 00:19:25,372 - INFO - ✅ Saved 575 records to GCS: bmrs_data/elexon_generation_outturn/2025/08/2025-08-23.json
+2025-08-23 00:19:25,484 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "startTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:19:25,484 - INFO - ✅ Backfilled 0/31 dates for elexon_generation_outturn
+2025-08-23 00:19:25,484 - INFO - 🔄 Starting backfill for elexon_system_warnings
+2025-08-23 00:19:26,317 - INFO - 🔍 Found 31 missing dates for elexon_system_warnings
+2025-08-23 00:19:26,317 - INFO - 🔄 Processing elexon_system_warnings for 2025-07-24
+2025-08-23 00:19:26,541 - INFO - ✅ Saved 1 records to GCS: bmrs_data/elexon_system_warnings/2025/07/2025-07-24.json
+2025-08-23 00:19:26,676 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:19:26,676 - INFO - 🔄 Processing elexon_system_warnings for 2025-07-25
+2025-08-23 00:19:27,577 - INFO - ✅ Saved 1 records to GCS: bmrs_data/elexon_system_warnings/2025/07/2025-07-25.json
+2025-08-23 00:19:27,669 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:19:27,669 - INFO - 🔄 Processing elexon_system_warnings for 2025-07-26
+2025-08-23 00:19:28,625 - INFO - ✅ Saved 1 records to GCS: bmrs_data/elexon_system_warnings/2025/07/2025-07-26.json
+2025-08-23 00:19:28,762 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:19:28,762 - INFO - 🔄 Processing elexon_system_warnings for 2025-07-27
+2025-08-23 00:19:29,537 - INFO - ✅ Saved 1 records to GCS: bmrs_data/elexon_system_warnings/2025/07/2025-07-27.json
+2025-08-23 00:19:29,676 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:19:29,676 - INFO - 🔄 Processing elexon_system_warnings for 2025-07-28
+2025-08-23 00:19:30,550 - INFO - ✅ Saved 1 records to GCS: bmrs_data/elexon_system_warnings/2025/07/2025-07-28.json
+2025-08-23 00:19:30,727 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:19:30,727 - INFO - 🔄 Processing elexon_system_warnings for 2025-07-29
+2025-08-23 00:19:31,570 - INFO - ✅ Saved 1 records to GCS: bmrs_data/elexon_system_warnings/2025/07/2025-07-29.json
+2025-08-23 00:19:31,649 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:19:31,649 - INFO - 🔄 Processing elexon_system_warnings for 2025-07-30
+2025-08-23 00:19:32,641 - INFO - ✅ Saved 1 records to GCS: bmrs_data/elexon_system_warnings/2025/07/2025-07-30.json
+2025-08-23 00:19:32,734 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:19:32,734 - INFO - 🔄 Processing elexon_system_warnings for 2025-07-31
+2025-08-23 00:19:33,576 - INFO - ✅ Saved 1 records to GCS: bmrs_data/elexon_system_warnings/2025/07/2025-07-31.json
+2025-08-23 00:19:33,686 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:19:33,687 - INFO - 🔄 Processing elexon_system_warnings for 2025-08-01
+2025-08-23 00:19:34,600 - INFO - ✅ Saved 1 records to GCS: bmrs_data/elexon_system_warnings/2025/08/2025-08-01.json
+2025-08-23 00:19:34,728 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:19:34,728 - INFO - 🔄 Processing elexon_system_warnings for 2025-08-02
+2025-08-23 00:19:35,665 - INFO - ✅ Saved 1 records to GCS: bmrs_data/elexon_system_warnings/2025/08/2025-08-02.json
+2025-08-23 00:19:35,753 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:19:35,753 - INFO - 🔄 Processing elexon_system_warnings for 2025-08-03
+2025-08-23 00:19:36,580 - INFO - ✅ Saved 1 records to GCS: bmrs_data/elexon_system_warnings/2025/08/2025-08-03.json
+2025-08-23 00:19:36,657 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:19:36,657 - INFO - 🔄 Processing elexon_system_warnings for 2025-08-04
+2025-08-23 00:19:37,580 - INFO - ✅ Saved 1 records to GCS: bmrs_data/elexon_system_warnings/2025/08/2025-08-04.json
+2025-08-23 00:19:37,676 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:19:37,676 - INFO - 🔄 Processing elexon_system_warnings for 2025-08-05
+2025-08-23 00:19:38,596 - INFO - ✅ Saved 1 records to GCS: bmrs_data/elexon_system_warnings/2025/08/2025-08-05.json
+2025-08-23 00:19:38,723 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:19:38,723 - INFO - 🔄 Processing elexon_system_warnings for 2025-08-06
+2025-08-23 00:19:39,634 - INFO - ✅ Saved 1 records to GCS: bmrs_data/elexon_system_warnings/2025/08/2025-08-06.json
+2025-08-23 00:19:39,750 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:19:39,750 - INFO - 🔄 Processing elexon_system_warnings for 2025-08-07
+2025-08-23 00:19:40,681 - INFO - ✅ Saved 1 records to GCS: bmrs_data/elexon_system_warnings/2025/08/2025-08-07.json
+2025-08-23 00:19:40,771 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:19:40,771 - INFO - 🔄 Processing elexon_system_warnings for 2025-08-08
+2025-08-23 00:19:41,606 - INFO - ✅ Saved 1 records to GCS: bmrs_data/elexon_system_warnings/2025/08/2025-08-08.json
+2025-08-23 00:19:41,733 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:19:41,733 - INFO - 🔄 Processing elexon_system_warnings for 2025-08-09
+2025-08-23 00:19:42,611 - INFO - ✅ Saved 1 records to GCS: bmrs_data/elexon_system_warnings/2025/08/2025-08-09.json
+2025-08-23 00:19:42,786 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:19:42,786 - INFO - 🔄 Processing elexon_system_warnings for 2025-08-10
+2025-08-23 00:19:43,626 - INFO - ✅ Saved 1 records to GCS: bmrs_data/elexon_system_warnings/2025/08/2025-08-10.json
+2025-08-23 00:19:43,700 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:19:43,700 - INFO - 🔄 Processing elexon_system_warnings for 2025-08-11
+2025-08-23 00:19:44,608 - INFO - ✅ Saved 1 records to GCS: bmrs_data/elexon_system_warnings/2025/08/2025-08-11.json
+2025-08-23 00:19:44,709 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:19:44,709 - INFO - 🔄 Processing elexon_system_warnings for 2025-08-12
+2025-08-23 00:19:45,648 - INFO - ✅ Saved 1 records to GCS: bmrs_data/elexon_system_warnings/2025/08/2025-08-12.json
+2025-08-23 00:19:45,729 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:19:45,729 - INFO - 🔄 Processing elexon_system_warnings for 2025-08-13
+2025-08-23 00:19:46,664 - INFO - ✅ Saved 1 records to GCS: bmrs_data/elexon_system_warnings/2025/08/2025-08-13.json
+2025-08-23 00:19:46,756 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:19:46,756 - INFO - 🔄 Processing elexon_system_warnings for 2025-08-14
+2025-08-23 00:19:47,711 - INFO - ✅ Saved 1 records to GCS: bmrs_data/elexon_system_warnings/2025/08/2025-08-14.json
+2025-08-23 00:19:47,812 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:19:47,812 - INFO - 🔄 Processing elexon_system_warnings for 2025-08-15
+2025-08-23 00:19:48,628 - INFO - ✅ Saved 1 records to GCS: bmrs_data/elexon_system_warnings/2025/08/2025-08-15.json
+2025-08-23 00:19:48,729 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:19:48,729 - INFO - 🔄 Processing elexon_system_warnings for 2025-08-16
+2025-08-23 00:19:49,636 - INFO - ✅ Saved 1 records to GCS: bmrs_data/elexon_system_warnings/2025/08/2025-08-16.json
+2025-08-23 00:19:49,714 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:19:49,715 - INFO - 🔄 Processing elexon_system_warnings for 2025-08-17
+2025-08-23 00:19:50,655 - INFO - ✅ Saved 1 records to GCS: bmrs_data/elexon_system_warnings/2025/08/2025-08-17.json
+2025-08-23 00:19:50,736 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:19:50,736 - INFO - 🔄 Processing elexon_system_warnings for 2025-08-18
+2025-08-23 00:19:51,694 - INFO - ✅ Saved 1 records to GCS: bmrs_data/elexon_system_warnings/2025/08/2025-08-18.json
+2025-08-23 00:19:51,795 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:19:51,796 - INFO - 🔄 Processing elexon_system_warnings for 2025-08-19
+2025-08-23 00:19:52,641 - INFO - ✅ Saved 1 records to GCS: bmrs_data/elexon_system_warnings/2025/08/2025-08-19.json
+2025-08-23 00:19:52,748 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:19:52,748 - INFO - 🔄 Processing elexon_system_warnings for 2025-08-20
+2025-08-23 00:19:53,662 - INFO - ✅ Saved 1 records to GCS: bmrs_data/elexon_system_warnings/2025/08/2025-08-20.json
+2025-08-23 00:19:53,797 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:19:53,797 - INFO - 🔄 Processing elexon_system_warnings for 2025-08-21
+2025-08-23 00:19:54,666 - INFO - ✅ Saved 1 records to GCS: bmrs_data/elexon_system_warnings/2025/08/2025-08-21.json
+2025-08-23 00:19:54,752 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:19:54,753 - INFO - 🔄 Processing elexon_system_warnings for 2025-08-22
+2025-08-23 00:19:55,676 - INFO - ✅ Saved 1 records to GCS: bmrs_data/elexon_system_warnings/2025/08/2025-08-22.json
+2025-08-23 00:19:55,770 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:19:55,770 - INFO - 🔄 Processing elexon_system_warnings for 2025-08-23
+2025-08-23 00:19:56,658 - INFO - ✅ Saved 1 records to GCS: bmrs_data/elexon_system_warnings/2025/08/2025-08-23.json
+2025-08-23 00:19:56,746 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "publishTime" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:19:56,747 - INFO - ✅ Backfilled 0/31 dates for elexon_system_warnings
+2025-08-23 00:19:56,747 - INFO - 🔄 Starting backfill for neso_demand_forecasts
+2025-08-23 00:19:57,457 - INFO - 🔍 Found 31 missing dates for neso_demand_forecasts
+2025-08-23 00:19:57,458 - INFO - 🔄 Processing neso_demand_forecasts for 2025-07-24
+2025-08-23 00:19:57,741 - INFO - ✅ Saved 57 records to GCS: bmrs_data/neso_demand_forecasts/2025/07/2025-07-24.json
+2025-08-23 00:19:57,843 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "settlementDate" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:19:57,843 - INFO - 🔄 Processing neso_demand_forecasts for 2025-07-25
+2025-08-23 00:19:58,759 - INFO - ✅ Saved 57 records to GCS: bmrs_data/neso_demand_forecasts/2025/07/2025-07-25.json
+2025-08-23 00:19:58,882 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "settlementDate" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:19:58,886 - INFO - 🔄 Processing neso_demand_forecasts for 2025-07-26
+2025-08-23 00:19:59,878 - INFO - ✅ Saved 57 records to GCS: bmrs_data/neso_demand_forecasts/2025/07/2025-07-26.json
+2025-08-23 00:19:59,977 - ERROR - ❌ Error loading to BigQuery: Error converting Pandas column with name: "settlementDate" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-08-23 00:19:59,977 - INFO - 🔄 Processing neso_demand_forecasts for 2025-07-27

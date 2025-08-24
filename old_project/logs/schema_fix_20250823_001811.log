@@ -1,0 +1,19 @@
+2025-08-23 00:18:12,285 - INFO - Starting schema fix process
+2025-08-23 00:18:13,168 - INFO - Fixing schema for elexon_demand_outturn
+2025-08-23 00:18:13,424 - INFO - Schema for elexon_demand_outturn is already correct
+2025-08-23 00:18:13,424 - INFO - Fixing schema for elexon_generation_outturn
+2025-08-23 00:18:13,650 - INFO - Schema for elexon_generation_outturn is already correct
+2025-08-23 00:18:13,650 - INFO - Fixing schema for elexon_system_warnings
+2025-08-23 00:18:13,784 - INFO - Schema for elexon_system_warnings is already correct
+2025-08-23 00:18:13,784 - INFO - Fixing schema for neso_demand_forecasts
+2025-08-23 00:18:13,928 - INFO - Schema for neso_demand_forecasts is already correct
+2025-08-23 00:18:13,929 - INFO - Fixing schema for neso_wind_forecasts
+2025-08-23 00:18:14,018 - INFO - Schema for neso_wind_forecasts is already correct
+2025-08-23 00:18:14,019 - INFO - Fixing schema for neso_carbon_intensity
+2025-08-23 00:18:14,175 - INFO - Schema for neso_carbon_intensity is already correct
+2025-08-23 00:18:14,175 - INFO - Fixing schema for neso_interconnector_flows
+2025-08-23 00:18:14,269 - INFO - Schema for neso_interconnector_flows is already correct
+2025-08-23 00:18:14,269 - INFO - Fixing schema for neso_balancing_services
+2025-08-23 00:18:14,387 - INFO - Schema for neso_balancing_services is already correct
+2025-08-23 00:18:14,388 - INFO - Fixed 8/8 tables
+2025-08-23 00:18:14,388 - INFO - Schema fix process complete

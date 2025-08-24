@@ -1,0 +1,74 @@
+[
+  {
+    "gcs_category": "beb",
+    "file_count": 96,
+    "bq_table": "Unknown - manual mapping needed",
+    "bq_dataset": "Unknown - manual mapping needed",
+    "description": "No automatic mapping available",
+    "sample_files": [
+      "beb/beb_20160101_0000_20160101_0200.json",
+      "beb/beb_20160101_0200_20160101_0400.json",
+      "beb/beb_20160101_0400_20160101_0600.json"
+    ]
+  },
+  {
+    "gcs_category": "demand",
+    "file_count": 8,
+    "bq_table": "elexon_demand_outturn",
+    "bq_dataset": "uk_energy_prod",
+    "description": "Demand data including forecasts and actuals",
+    "sample_files": [
+      "demand/demand_2016-01-01.json",
+      "demand/demand_2016-01-02.json",
+      "demand/demand_2016-01-03.json"
+    ]
+  },
+  {
+    "gcs_category": "frequency",
+    "file_count": 8,
+    "bq_table": "elexon_frequency",
+    "bq_dataset": "uk_energy_data",
+    "description": "System frequency data",
+    "sample_files": [
+      "frequency/frequency_2016-01-01.json",
+      "frequency/frequency_2016-01-02.json",
+      "frequency/frequency_2016-01-03.json"
+    ]
+  },
+  {
+    "gcs_category": "generation",
+    "file_count": 9,
+    "bq_table": "elexon_generation_outturn",
+    "bq_dataset": "uk_energy_prod",
+    "description": "Generation data including fuel type breakdowns",
+    "sample_files": [
+      "generation/generation_2016-01-01.json",
+      "generation/generation_2016-01-02.json",
+      "generation/generation_2016-01-03.json"
+    ]
+  },
+  {
+    "gcs_category": "historical_data",
+    "file_count": 714,
+    "bq_table": "Unknown - manual mapping needed",
+    "bq_dataset": "Unknown - manual mapping needed",
+    "description": "No automatic mapping available",
+    "sample_files": [
+      "historical_data/2024-07/balancing/emergency_orders/EBOCF_20240701.csv",
+      "historical_data/2024-07/balancing/emergency_orders/EBOCF_20240702.csv",
+      "historical_data/2024-07/balancing/emergency_orders/EBOCF_20240703.csv"
+    ]
+  },
+  {
+    "gcs_category": "neso",
+    "file_count": 165,
+    "bq_table": "Unknown - manual mapping needed",
+    "bq_dataset": "Unknown - manual mapping needed",
+    "description": "No automatic mapping available",
+    "sample_files": [
+      "neso/1-day-ahead-demand-forecast/9847e7bb-986e-49be-8138-717b25933fbb/1-day-ahead-demand-forecast_9847e7bb-986e-49be-8138-717b25933fbb_20250811_110032.275316.csv",
+      "neso/1-day-ahead-demand-forecast/9847e7bb-986e-49be-8138-717b25933fbb/1-day-ahead-demand-forecast_9847e7bb-986e-49be-8138-717b25933fbb_20250812_110027.408541.csv",
+      "neso/1-day-ahead-demand-forecast/aec5601a-7f3e-4c4c-bf56-d8e4184d3c5b/1-day-ahead-demand-forecast_aec5601a-7f3e-4c4c-bf56-d8e4184d3c5b_20250811_110008.273742.csv"
+    ]
+  }
+]

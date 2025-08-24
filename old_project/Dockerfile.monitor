@@ -1,0 +1,16 @@
+FROM python:3.9-slim
+
+# Set working directory
+WORKDIR /app
+
+# Install dependencies
+COPY requirements_google.txt .
+RUN pip install --no-cache-dir -r requirements_google.txt
+
+# Copy application code
+COPY collection_stats.py .
+COPY monitor_app.py .
+
+# Set the entrypoint
+ENV PORT 8080
+CMD ["python", "monitor_app.py"]

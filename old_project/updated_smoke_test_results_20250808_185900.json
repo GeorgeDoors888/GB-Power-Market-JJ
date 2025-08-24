@@ -1,0 +1,571 @@
+{
+  "test_timestamp": "2025-08-08T18:59:00.093181",
+  "test_summary": {
+    "total_tests": 20,
+    "successful_tests": 19,
+    "failed_tests": 1,
+    "success_rate": 95.0
+  },
+  "detailed_results": [
+    {
+      "endpoint": "balancing/acceptances/all",
+      "description": "Bid-offer acceptances - recent (2025-08-06) - Period 15",
+      "params": {
+        "settlementDate": "2025-08-06",
+        "settlementPeriod": 15
+      },
+      "status_code": 200,
+      "success": true,
+      "response_time": 0.15,
+      "response_size": 320262,
+      "data_count": 888,
+      "sample_data": {
+        "settlementDate": "2025-08-06",
+        "settlementPeriodFrom": 15,
+        "settlementPeriodTo": 16,
+        "timeFrom": "2025-08-06T06:29:00Z",
+        "timeTo": "2025-08-06T06:59:00Z",
+        "levelFrom": 0,
+        "levelTo": 0,
+        "nationalGridBmUnit": "BETHW-1",
+        "bmUnit": "E_BETHW-1",
+        "acceptanceNumber": 70458,
+        "acceptanceTime": "2025-08-06T06:14:00Z",
+        "deemedBoFlag": false,
+        "soFlag": true,
+        "storFlag": false,
+        "rrFlag": false
+      },
+      "error": null
+    },
+    {
+      "endpoint": "balancing/acceptances/all",
+      "description": "Bid-offer acceptances - recent (2025-08-06) - Period 29",
+      "params": {
+        "settlementDate": "2025-08-06",
+        "settlementPeriod": 29
+      },
+      "status_code": 200,
+      "success": true,
+      "response_time": 0.07,
+      "response_size": 44759,
+      "data_count": 124,
+      "sample_data": {
+        "settlementDate": "2025-08-06",
+        "settlementPeriodFrom": 29,
+        "settlementPeriodTo": 30,
+        "timeFrom": "2025-08-06T13:29:00Z",
+        "timeTo": "2025-08-06T13:59:00Z",
+        "levelFrom": 14,
+        "levelTo": 14,
+        "nationalGridBmUnit": "EDINW-1",
+        "bmUnit": "T_EDINW-1",
+        "acceptanceNumber": 79188,
+        "acceptanceTime": "2025-08-06T13:27:00Z",
+        "deemedBoFlag": false,
+        "soFlag": true,
+        "storFlag": false,
+        "rrFlag": false
+      },
+      "error": null
+    },
+    {
+      "endpoint": "balancing/acceptances/all",
+      "description": "Bid-offer acceptances - recent (2025-08-06) - Period 35",
+      "params": {
+        "settlementDate": "2025-08-06",
+        "settlementPeriod": 35
+      },
+      "status_code": 200,
+      "success": true,
+      "response_time": 0.08,
+      "response_size": 86433,
+      "data_count": 239,
+      "sample_data": {
+        "settlementDate": "2025-08-06",
+        "settlementPeriodFrom": 35,
+        "settlementPeriodTo": 36,
+        "timeFrom": "2025-08-06T16:29:00Z",
+        "timeTo": "2025-08-06T16:31:00Z",
+        "levelFrom": 1,
+        "levelTo": 1,
+        "nationalGridBmUnit": "SWGTB-1",
+        "bmUnit": "2__MCMRO003",
+        "acceptanceNumber": 11648,
+        "acceptanceTime": "2025-08-06T16:22:00Z",
+        "deemedBoFlag": false,
+        "soFlag": false,
+        "storFlag": false,
+        "rrFlag": false
+      },
+      "error": null
+    },
+    {
+      "endpoint": "balancing/acceptances/all",
+      "description": "Bid-offer acceptances - week_ago (2025-08-01) - Period 15",
+      "params": {
+        "settlementDate": "2025-08-01",
+        "settlementPeriod": 15
+      },
+      "status_code": 200,
+      "success": true,
+      "response_time": 0.08,
+      "response_size": 192901,
+      "data_count": 534,
+      "sample_data": {
+        "settlementDate": "2025-08-01",
+        "settlementPeriodFrom": 15,
+        "settlementPeriodTo": 17,
+        "timeFrom": "2025-08-01T06:29:00Z",
+        "timeTo": "2025-08-01T07:00:00Z",
+        "levelFrom": 370,
+        "levelTo": 370,
+        "nationalGridBmUnit": "PEHE-1",
+        "bmUnit": "T_PEHE-1",
+        "acceptanceNumber": 177187,
+        "acceptanceTime": "2025-08-01T05:35:00Z",
+        "deemedBoFlag": false,
+        "soFlag": true,
+        "storFlag": false,
+        "rrFlag": false
+      },
+      "error": null
+    },
+    {
+      "endpoint": "balancing/acceptances/all",
+      "description": "Bid-offer acceptances - week_ago (2025-08-01) - Period 29",
+      "params": {
+        "settlementDate": "2025-08-01",
+        "settlementPeriod": 29
+      },
+      "status_code": 200,
+      "success": true,
+      "response_time": 0.12,
+      "response_size": 145362,
+      "data_count": 402,
+      "sample_data": {
+        "settlementDate": "2025-08-01",
+        "settlementPeriodFrom": 29,
+        "settlementPeriodTo": 30,
+        "timeFrom": "2025-08-01T13:29:00Z",
+        "timeTo": "2025-08-01T13:59:00Z",
+        "levelFrom": 0,
+        "levelTo": 0,
+        "nationalGridBmUnit": "CLVHS-1",
+        "bmUnit": "T_CLVHS-1",
+        "acceptanceNumber": 315,
+        "acceptanceTime": "2025-08-01T13:20:00Z",
+        "deemedBoFlag": false,
+        "soFlag": true,
+        "storFlag": false,
+        "rrFlag": false
+      },
+      "error": null
+    },
+    {
+      "endpoint": "balancing/acceptances/all",
+      "description": "Bid-offer acceptances - week_ago (2025-08-01) - Period 35",
+      "params": {
+        "settlementDate": "2025-08-01",
+        "settlementPeriod": 35
+      },
+      "status_code": 200,
+      "success": true,
+      "response_time": 0.08,
+      "response_size": 34656,
+      "data_count": 96,
+      "sample_data": {
+        "settlementDate": "2025-08-01",
+        "settlementPeriodFrom": 35,
+        "settlementPeriodTo": 36,
+        "timeFrom": "2025-08-01T16:29:00Z",
+        "timeTo": "2025-08-01T16:43:00Z",
+        "levelFrom": 122,
+        "levelTo": 420,
+        "nationalGridBmUnit": "ROCK-1",
+        "bmUnit": "T_ROCK-1",
+        "acceptanceNumber": 218199,
+        "acceptanceTime": "2025-08-01T15:37:00Z",
+        "deemedBoFlag": false,
+        "soFlag": false,
+        "storFlag": false,
+        "rrFlag": false
+      },
+      "error": null
+    },
+    {
+      "endpoint": "balancing/acceptances/all",
+      "description": "Bid-offer acceptances - month_ago (2025-07-09) - Period 15",
+      "params": {
+        "settlementDate": "2025-07-09",
+        "settlementPeriod": 15
+      },
+      "status_code": 200,
+      "success": true,
+      "response_time": 0.09,
+      "response_size": 183904,
+      "data_count": 509,
+      "sample_data": {
+        "settlementDate": "2025-07-09",
+        "settlementPeriodFrom": 15,
+        "settlementPeriodTo": 16,
+        "timeFrom": "2025-07-09T06:29:00Z",
+        "timeTo": "2025-07-09T06:32:00Z",
+        "levelFrom": 25,
+        "levelTo": 25,
+        "nationalGridBmUnit": "THMRB-1",
+        "bmUnit": "E_THMRB-1",
+        "acceptanceNumber": 31586,
+        "acceptanceTime": "2025-07-09T06:21:00Z",
+        "deemedBoFlag": false,
+        "soFlag": false,
+        "storFlag": false,
+        "rrFlag": false
+      },
+      "error": null
+    },
+    {
+      "endpoint": "balancing/acceptances/all",
+      "description": "Bid-offer acceptances - month_ago (2025-07-09) - Period 29",
+      "params": {
+        "settlementDate": "2025-07-09",
+        "settlementPeriod": 29
+      },
+      "status_code": 200,
+      "success": true,
+      "response_time": 0.11,
+      "response_size": 289169,
+      "data_count": 799,
+      "sample_data": {
+        "settlementDate": "2025-07-09",
+        "settlementPeriodFrom": 29,
+        "settlementPeriodTo": 30,
+        "timeFrom": "2025-07-09T13:29:00Z",
+        "timeTo": "2025-07-09T13:59:00Z",
+        "levelFrom": -47,
+        "levelTo": -47,
+        "nationalGridBmUnit": "BLHLB-2",
+        "bmUnit": "T_BLHLB-2",
+        "acceptanceNumber": 9068,
+        "acceptanceTime": "2025-07-09T13:25:00Z",
+        "deemedBoFlag": false,
+        "soFlag": true,
+        "storFlag": false,
+        "rrFlag": false
+      },
+      "error": null
+    },
+    {
+      "endpoint": "balancing/acceptances/all",
+      "description": "Bid-offer acceptances - month_ago (2025-07-09) - Period 35",
+      "params": {
+        "settlementDate": "2025-07-09",
+        "settlementPeriod": 35
+      },
+      "status_code": 200,
+      "success": true,
+      "response_time": 0.07,
+      "response_size": 80126,
+      "data_count": 221,
+      "sample_data": {
+        "settlementDate": "2025-07-09",
+        "settlementPeriodFrom": 35,
+        "settlementPeriodTo": 37,
+        "timeFrom": "2025-07-09T16:29:00Z",
+        "timeTo": "2025-07-09T17:04:00Z",
+        "levelFrom": -155,
+        "levelTo": -155,
+        "nationalGridBmUnit": "FOYE-1",
+        "bmUnit": "T_FOYE-1",
+        "acceptanceNumber": 192027,
+        "acceptanceTime": "2025-07-09T16:15:00Z",
+        "deemedBoFlag": false,
+        "soFlag": true,
+        "storFlag": false,
+        "rrFlag": false
+      },
+      "error": null
+    },
+    {
+      "endpoint": "balancing/acceptances/all",
+      "description": "Bid-offer acceptances - known_good (2024-06-25) - Period 15",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 15
+      },
+      "status_code": 200,
+      "success": true,
+      "response_time": 0.08,
+      "response_size": 81519,
+      "data_count": 226,
+      "sample_data": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriodFrom": 15,
+        "settlementPeriodTo": 16,
+        "timeFrom": "2024-06-25T06:29:00Z",
+        "timeTo": "2024-06-25T06:31:00Z",
+        "levelFrom": 10,
+        "levelTo": 10,
+        "nationalGridBmUnit": "COWB-1",
+        "bmUnit": "T_COWB-1",
+        "acceptanceNumber": 16157,
+        "acceptanceTime": "2024-06-25T06:12:00Z",
+        "deemedBoFlag": false,
+        "soFlag": false,
+        "storFlag": false,
+        "rrFlag": false
+      },
+      "error": null
+    },
+    {
+      "endpoint": "balancing/acceptances/all",
+      "description": "Bid-offer acceptances - known_good (2024-06-25) - Period 29",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 29
+      },
+      "status_code": 200,
+      "success": true,
+      "response_time": 0.08,
+      "response_size": 60579,
+      "data_count": 168,
+      "sample_data": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriodFrom": 29,
+        "settlementPeriodTo": 30,
+        "timeFrom": "2024-06-25T13:29:00Z",
+        "timeTo": "2024-06-25T13:31:00Z",
+        "levelFrom": 0,
+        "levelTo": 0,
+        "nationalGridBmUnit": "ROARB-1",
+        "bmUnit": "E_ROARB-1",
+        "acceptanceNumber": 195,
+        "acceptanceTime": "2024-06-25T13:19:00Z",
+        "deemedBoFlag": false,
+        "soFlag": false,
+        "storFlag": false,
+        "rrFlag": false
+      },
+      "error": null
+    },
+    {
+      "endpoint": "balancing/acceptances/all",
+      "description": "Bid-offer acceptances - known_good (2024-06-25) - Period 35",
+      "params": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriod": 35
+      },
+      "status_code": 200,
+      "success": true,
+      "response_time": 0.06,
+      "response_size": 18520,
+      "data_count": 51,
+      "sample_data": {
+        "settlementDate": "2024-06-25",
+        "settlementPeriodFrom": 35,
+        "settlementPeriodTo": 36,
+        "timeFrom": "2024-06-25T16:29:00Z",
+        "timeTo": "2024-06-25T16:33:00Z",
+        "levelFrom": 270,
+        "levelTo": 330,
+        "nationalGridBmUnit": "CNQPS-2",
+        "bmUnit": "T_CNQPS-2",
+        "acceptanceNumber": 98605,
+        "acceptanceTime": "2024-06-25T16:12:00Z",
+        "deemedBoFlag": false,
+        "soFlag": false,
+        "storFlag": false,
+        "rrFlag": false
+      },
+      "error": null
+    },
+    {
+      "endpoint": "datasets/BOALF",
+      "description": "BOALF dataset - recent (2025-08-06) - 1 day range",
+      "params": {
+        "from": "2025-08-06",
+        "to": "2025-08-07"
+      },
+      "status_code": 200,
+      "success": true,
+      "response_time": 0.32,
+      "response_size": 9266624,
+      "data_count": 23144,
+      "sample_data": {
+        "dataset": "BOALF",
+        "settlementDate": "2025-08-07",
+        "settlementPeriodFrom": 3,
+        "settlementPeriodTo": 4,
+        "timeFrom": "2025-08-07T00:00:00Z",
+        "timeTo": "2025-08-07T00:30:00Z",
+        "levelFrom": 0,
+        "levelTo": 0,
+        "acceptanceNumber": 6010,
+        "acceptanceTime": "2025-08-06T23:45:00Z",
+        "deemedBoFlag": false,
+        "soFlag": true,
+        "amendmentFlag": "ORI",
+        "storFlag": false,
+        "rrFlag": false,
+        "nationalGridBmUnit": "BROCW-1",
+        "bmUnit": "T_BROCW-1"
+      },
+      "error": null
+    },
+    {
+      "endpoint": "datasets/BOALF",
+      "description": "BOALF dataset - week_ago (2025-08-01) - 1 day range",
+      "params": {
+        "from": "2025-08-01",
+        "to": "2025-08-02"
+      },
+      "status_code": 200,
+      "success": true,
+      "response_time": 0.26,
+      "response_size": 5972098,
+      "data_count": 14904,
+      "sample_data": {
+        "dataset": "BOALF",
+        "settlementDate": "2025-08-02",
+        "settlementPeriodFrom": 3,
+        "settlementPeriodTo": 4,
+        "timeFrom": "2025-08-02T00:00:00Z",
+        "timeTo": "2025-08-02T00:30:00Z",
+        "levelFrom": 0,
+        "levelTo": 0,
+        "acceptanceNumber": 177219,
+        "acceptanceTime": "2025-08-01T23:02:00Z",
+        "deemedBoFlag": false,
+        "soFlag": true,
+        "amendmentFlag": "ORI",
+        "storFlag": false,
+        "rrFlag": false,
+        "nationalGridBmUnit": "PEHE-1",
+        "bmUnit": "T_PEHE-1"
+      },
+      "error": null
+    },
+    {
+      "endpoint": "datasets/MID",
+      "description": "Market Index Data - recent (2025-08-06)",
+      "params": {
+        "from": "2025-08-06",
+        "to": "2025-08-07"
+      },
+      "status_code": 200,
+      "success": true,
+      "response_time": 0.06,
+      "response_size": 15724,
+      "data_count": 98,
+      "sample_data": {
+        "dataset": "MID",
+        "startTime": "2025-08-07T00:00:00Z",
+        "dataProvider": "APXMIDP",
+        "settlementDate": "2025-08-07",
+        "settlementPeriod": 3,
+        "price": 54.38,
+        "volume": 2237.25
+      },
+      "error": null
+    },
+    {
+      "endpoint": "datasets/MID",
+      "description": "Market Index Data - week_ago (2025-08-01)",
+      "params": {
+        "from": "2025-08-01",
+        "to": "2025-08-02"
+      },
+      "status_code": 200,
+      "success": true,
+      "response_time": 0.09,
+      "response_size": 15722,
+      "data_count": 98,
+      "sample_data": {
+        "dataset": "MID",
+        "startTime": "2025-08-02T00:00:00Z",
+        "dataProvider": "APXMIDP",
+        "settlementDate": "2025-08-02",
+        "settlementPeriod": 3,
+        "price": 70.59,
+        "volume": 1225.05
+      },
+      "error": null
+    },
+    {
+      "endpoint": "datasets/BOD",
+      "description": "Bid-Offer Data (BOD)",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26"
+      },
+      "status_code": 400,
+      "success": false,
+      "response_time": 0.07,
+      "response_size": 278,
+      "data_count": 0,
+      "sample_data": null,
+      "error": "{\"type\":\"https://tools.ietf.org/html/rfc9110#section-15.5.1\",\"title\":\"One or more validation errors occurred.\",\"status\":400,\"errors\":{\"\":[\"The date range between From and To inclusive must not exceed "
+    },
+    {
+      "endpoint": "datasets/FREQ",
+      "description": "System Frequency Data",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26"
+      },
+      "status_code": 200,
+      "success": true,
+      "response_time": 0.13,
+      "response_size": 454468,
+      "data_count": 5761,
+      "sample_data": {
+        "dataset": "FREQ",
+        "measurementTime": "2025-08-08T00:00:00Z",
+        "frequency": 50.048
+      },
+      "error": null
+    },
+    {
+      "endpoint": "datasets/TEMP",
+      "description": "Temperature Data",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26"
+      },
+      "status_code": 200,
+      "success": true,
+      "response_time": 0.06,
+      "response_size": 3402,
+      "data_count": 32,
+      "sample_data": {
+        "dataset": "TEMP",
+        "measurementDate": "2025-08-08",
+        "publishTime": "2025-08-08T15:45:00Z",
+        "temperature": 18.4
+      },
+      "error": null
+    },
+    {
+      "endpoint": "datasets/INDO",
+      "description": "Initial National Demand Outturn",
+      "params": {
+        "from": "2024-06-25",
+        "to": "2024-06-26"
+      },
+      "status_code": 200,
+      "success": true,
+      "response_time": 0.06,
+      "response_size": 168,
+      "data_count": 1,
+      "sample_data": {
+        "dataset": "INDO",
+        "publishTime": "2025-08-08T17:30:00Z",
+        "startTime": "2025-08-08T17:00:00Z",
+        "settlementDate": "2025-08-08",
+        "settlementPeriod": 37,
+        "demand": 23674
+      },
+      "error": null
+    }
+  ]
+}
