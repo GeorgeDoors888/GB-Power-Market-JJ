@@ -1,0 +1,1081 @@
+{
+  "tables_with_2016_data": [
+    {
+      "dataset": "uk_energy_data",
+      "table": "elexon_fuel_generation",
+      "min_date": "2016-01-01",
+      "max_date": "2016-01-08",
+      "status": "4992 rows"
+    },
+    {
+      "dataset": "uk_energy_data_gemini_eu",
+      "table": "elexon_fuel_generation",
+      "min_date": "2016-01-01",
+      "max_date": "2016-01-08",
+      "status": "4992 rows"
+    }
+  ],
+  "tables_with_partial_range": [
+    {
+      "dataset": "uk_energy",
+      "table": "elexon_bid_offer_acceptances",
+      "min_date": "None",
+      "max_date": "None",
+      "status": "0 rows"
+    },
+    {
+      "dataset": "uk_energy",
+      "table": "elexon_boalf",
+      "min_date": "None",
+      "max_date": "None",
+      "status": "0 rows"
+    },
+    {
+      "dataset": "uk_energy",
+      "table": "elexon_demand_outturn",
+      "min_date": "None",
+      "max_date": "None",
+      "status": "0 rows"
+    },
+    {
+      "dataset": "uk_energy",
+      "table": "elexon_demand_outturn_2023",
+      "min_date": "2025-08-21",
+      "max_date": "2025-08-21",
+      "status": "365 rows"
+    },
+    {
+      "dataset": "uk_energy",
+      "table": "elexon_generation_outturn",
+      "min_date": "None",
+      "max_date": "None",
+      "status": "0 rows"
+    },
+    {
+      "dataset": "uk_energy",
+      "table": "elexon_generation_outturn_2023",
+      "min_date": "2025-08-21",
+      "max_date": "2025-08-21",
+      "status": "365 rows"
+    },
+    {
+      "dataset": "uk_energy",
+      "table": "elexon_system_warnings",
+      "min_date": "None",
+      "max_date": "None",
+      "status": "0 rows"
+    },
+    {
+      "dataset": "uk_energy",
+      "table": "neso_balancing_services",
+      "min_date": "None",
+      "max_date": "None",
+      "status": "0 rows"
+    },
+    {
+      "dataset": "uk_energy",
+      "table": "neso_carbon_intensity",
+      "min_date": "None",
+      "max_date": "None",
+      "status": "0 rows"
+    },
+    {
+      "dataset": "uk_energy",
+      "table": "neso_demand_forecasts",
+      "min_date": "None",
+      "max_date": "None",
+      "status": "0 rows"
+    },
+    {
+      "dataset": "uk_energy",
+      "table": "neso_interconnector_flows",
+      "min_date": "None",
+      "max_date": "None",
+      "status": "0 rows"
+    },
+    {
+      "dataset": "uk_energy",
+      "table": "neso_wind_forecasts",
+      "min_date": "None",
+      "max_date": "None",
+      "status": "0 rows"
+    },
+    {
+      "dataset": "uk_energy",
+      "table": "_ingestion_manifest",
+      "min_date": "None",
+      "max_date": "None",
+      "status": "0 rows"
+    },
+    {
+      "dataset": "uk_energy",
+      "table": "carbon_intensity_trends",
+      "min_date": "None",
+      "max_date": "None",
+      "status": "0 rows"
+    },
+    {
+      "dataset": "uk_energy",
+      "table": "hourly_energy_balance",
+      "min_date": "None",
+      "max_date": "None",
+      "status": "0 rows"
+    },
+    {
+      "dataset": "uk_energy",
+      "table": "v_daily_peak_summary",
+      "min_date": "None",
+      "max_date": "None",
+      "status": "0 rows"
+    },
+    {
+      "dataset": "uk_energy",
+      "table": "v_daily_price_volatility",
+      "min_date": "None",
+      "max_date": "None",
+      "status": "0 rows"
+    },
+    {
+      "dataset": "uk_energy",
+      "table": "v_generation_mix_snapshot",
+      "min_date": "None",
+      "max_date": "None",
+      "status": "0 rows"
+    },
+    {
+      "dataset": "uk_energy",
+      "table": "v_hourly_energy_balance",
+      "min_date": "None",
+      "max_date": "None",
+      "status": "0 rows"
+    },
+    {
+      "dataset": "uk_energy",
+      "table": "v_price_spread_drivers",
+      "min_date": "None",
+      "max_date": "None",
+      "status": "0 rows"
+    },
+    {
+      "dataset": "uk_energy",
+      "table": "v_renewable_vs_system_prices",
+      "min_date": "None",
+      "max_date": "None",
+      "status": "0 rows"
+    },
+    {
+      "dataset": "uk_energy_analysis",
+      "table": "daily_carbon_intensity",
+      "min_date": "None",
+      "max_date": "None",
+      "status": "0 rows"
+    },
+    {
+      "dataset": "uk_energy_analysis",
+      "table": "daily_demand_mix",
+      "min_date": "None",
+      "max_date": "None",
+      "status": "0 rows"
+    },
+    {
+      "dataset": "uk_energy_data",
+      "table": "elexon_boa_acceptances",
+      "min_date": "None",
+      "max_date": "None",
+      "status": "0 rows"
+    },
+    {
+      "dataset": "uk_energy_data",
+      "table": "elexon_frequency",
+      "min_date": "2025-08-07",
+      "max_date": "2025-08-08",
+      "status": "46088 rows"
+    },
+    {
+      "dataset": "uk_energy_data",
+      "table": "elexon_system_prices",
+      "min_date": "None",
+      "max_date": "None",
+      "status": "0 rows"
+    },
+    {
+      "dataset": "uk_energy_data",
+      "table": "neso_gsp_demand",
+      "min_date": "None",
+      "max_date": "None",
+      "status": "0 rows"
+    },
+    {
+      "dataset": "uk_energy_data",
+      "table": "met_office_weather",
+      "min_date": "2024-01-01",
+      "max_date": "2024-07-31",
+      "status": "213 rows"
+    },
+    {
+      "dataset": "uk_energy_data",
+      "table": "vw_bq_inventory",
+      "min_date": "2025-08-15",
+      "max_date": "2025-08-24",
+      "status": "12 rows"
+    },
+    {
+      "dataset": "uk_energy_data_gemini_eu",
+      "table": "elexon_frequency",
+      "min_date": "2025-08-07",
+      "max_date": "2025-08-08",
+      "status": "46088 rows"
+    },
+    {
+      "dataset": "uk_energy_data_gemini_eu",
+      "table": "met_office_weather",
+      "min_date": "2024-01-01",
+      "max_date": "2024-07-31",
+      "status": "213 rows"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "elexon_demand_outturn",
+      "min_date": "2025-08-08",
+      "max_date": "2025-08-08",
+      "status": "13 rows"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "elexon_demand_outturn_temp_20250823001616",
+      "min_date": "2025-08-16",
+      "max_date": "2025-08-18",
+      "status": "100 rows"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "elexon_frequency",
+      "min_date": "None",
+      "max_date": "None",
+      "status": "92176 rows"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "elexon_generation_outturn_temp_20250823001619",
+      "min_date": "2025-08-16",
+      "max_date": "2025-08-18",
+      "status": "100 rows"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "elexon_system_warnings",
+      "min_date": "None",
+      "max_date": "None",
+      "status": "0 rows"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "elexon_system_warnings_temp_20250823001622",
+      "min_date": "2023-01-10",
+      "max_date": "2024-12-25",
+      "status": "56 rows"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_balancing_services",
+      "min_date": "None",
+      "max_date": "None",
+      "status": "0 rows"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_balancing_services_temp_20250823001636",
+      "min_date": "2023-01-01",
+      "max_date": "2024-12-31",
+      "status": "35607 rows"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_carbon_intensity",
+      "min_date": "None",
+      "max_date": "None",
+      "status": "0 rows"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_carbon_intensity_temp_20250823001630",
+      "min_date": "2023-01-01",
+      "max_date": "2024-12-31",
+      "status": "35088 rows"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_demand_forecasts",
+      "min_date": "None",
+      "max_date": "None",
+      "status": "0 rows"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_demand_forecasts_temp_20250823001625",
+      "min_date": "2025-08-16",
+      "max_date": "2025-08-18",
+      "status": "100 rows"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_interconnector_flows",
+      "min_date": "None",
+      "max_date": "None",
+      "status": "0 rows"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_interconnector_flows_temp_20250823001634",
+      "min_date": "2025-08-16",
+      "max_date": "2025-08-18",
+      "status": "100 rows"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_wind_forecasts",
+      "min_date": "None",
+      "max_date": "None",
+      "status": "0 rows"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_wind_forecasts_temp_20250823001627",
+      "min_date": "2025-08-16",
+      "max_date": "2025-08-18",
+      "status": "100 rows"
+    },
+    {
+      "dataset": "uk_energy_silver",
+      "table": "daily_balancing_costs",
+      "min_date": "None",
+      "max_date": "None",
+      "status": "0 rows"
+    },
+    {
+      "dataset": "uk_energy_silver",
+      "table": "daily_carbon_intensity",
+      "min_date": "None",
+      "max_date": "None",
+      "status": "0 rows"
+    },
+    {
+      "dataset": "uk_energy_silver",
+      "table": "daily_demand_mix",
+      "min_date": "None",
+      "max_date": "None",
+      "status": "0 rows"
+    },
+    {
+      "dataset": "uk_energy_silver",
+      "table": "daily_interconnector_flows",
+      "min_date": "None",
+      "max_date": "None",
+      "status": "0 rows"
+    }
+  ],
+  "tables_with_no_2016_data": [
+    {
+      "dataset": "uk_energy_prod",
+      "table": "elexon_generation_outturn",
+      "min_date": "2015-12-31",
+      "max_date": "2016-01-08",
+      "status": "384 rows"
+    }
+  ],
+  "tables_with_errors": [
+    {
+      "dataset": "uk_energy",
+      "table": "neso_future_scenarios",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy",
+      "table": "v_bid_offer_volume_summary",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy",
+      "table": "v_system_warning_hotspots",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_analysis",
+      "table": "correlation_matrix",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_analysis",
+      "table": "decomposition_carbon",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_analysis",
+      "table": "decomposition_wind",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_analysis",
+      "table": "regression_balancing_cost",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_analysis",
+      "table": "regression_carbon_intensity",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_analysis",
+      "table": "seasonal_carbon_intensity",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_analysis",
+      "table": "seasonal_interconnector_flow",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_analysis",
+      "table": "seasonal_wind_generation",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_data",
+      "table": "elexon_bid_offer_acceptances",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_data",
+      "table": "elexon_bid_offer_acceptances_2016_import_20250822203527",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_data",
+      "table": "elexon_bid_offer_acceptances_2016_import_20250824200333",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_data",
+      "table": "elexon_frequency_2016_import_20250822203515",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_data",
+      "table": "elexon_frequency_2016_import_20250824200322",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "elexon_demand_outturn_2016_import_20250822203511",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "elexon_demand_outturn_2016_import_20250824200317",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "elexon_generation_outturn_2016_import_20250822203523",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "elexon_generation_outturn_2016_import_20250824200328",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_capacity_market_cmu_20250820",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_capacity_market_component",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_capacity_market_component_20250820",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_constraint_cost_24m",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_demand_forecast_1d",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_dispatch_transparency_all_boas_april2020_march2021",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_dispatch_transparency_all_boas_april2021_march2022",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_dispatch_transparency_all_boas_april2022_march2023",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_dispatch_transparency_all_boas_april2023_march2024",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_dispatch_transparency_all_boas_april2024_march2025",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_dispatch_transparency_potential_alternatives_actions_april2020_march2021",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_dispatch_transparency_potential_alternatives_actions_april2021_march2022",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_dispatch_transparency_potential_alternatives_actions_april2022_march2023",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_dispatch_transparency_potential_alternatives_actions_april2023_march2024",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_dispatch_transparency_potential_alternatives_actions_april2024_march2025",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_dno_licence_areas",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_dno_licence_areas_2024",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_dynamic_containment_4d",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_embedded_register_embedded_register_22_august_2025",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_generation_charging_zones",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_grid_supply_points_2018",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_grid_supply_points_2022",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_grid_supply_points_2025_jan",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_grid_supply_points_2025_jan_wgs84",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_grid_supply_points_2025_latest",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_grid_supply_points_2025_latest_wgs84",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_interconnector_register_interconnector_register_22_august_2025",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_national_demand_52w",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_national_demand_bm_units_bmunits_11_08_25",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_national_forecast_7d",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_school_holiday_school_holiday_2021_22",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_school_holiday_school_holiday_2022_23",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_school_holiday_school_holiday_2023_24",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_school_holiday_school_holiday_2024_25",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_school_holiday_school_holiday_2025_26",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_skip_rates_1_skip_rates_summary",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_skip_rates_2_in_merit_data_bm_skips_01_2025",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_skip_rates_2_in_merit_data_bm_skips_02_2025",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_skip_rates_2_in_merit_data_bm_skips_03_2025",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_skip_rates_2_in_merit_data_bm_skips_04_2025",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_skip_rates_2_in_merit_data_bm_skips_05_2025",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_skip_rates_2_in_merit_data_bm_skips_06_2025",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_skip_rates_2_in_merit_data_bm_skips_07_2025",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_skip_rates_2_in_merit_data_bm_skips_08_2025",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_skip_rates_2_in_merit_data_bm_skips_12_2024",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_skip_rates_3_in_merit_data_post_system_actions_skips_01_2025",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_skip_rates_3_in_merit_data_post_system_actions_skips_02_2025",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_skip_rates_3_in_merit_data_post_system_actions_skips_03_2025",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_skip_rates_3_in_merit_data_post_system_actions_skips_04_2025",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_skip_rates_3_in_merit_data_post_system_actions_skips_05_2025",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_skip_rates_3_in_merit_data_post_system_actions_skips_06_2025",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_skip_rates_3_in_merit_data_post_system_actions_skips_07_2025",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_skip_rates_3_in_merit_data_post_system_actions_skips_08_2025",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_skip_rates_3_in_merit_data_post_system_actions_skips_12_2024",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_skip_rates_4_exclusions_01_2025",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_skip_rates_4_exclusions_02_2025",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_skip_rates_4_exclusions_03_2025",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_skip_rates_4_exclusions_04_2025",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_skip_rates_4_exclusions_05_2025",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_skip_rates_4_exclusions_06_2025",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_skip_rates_4_exclusions_07_2025",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_skip_rates_4_exclusions_08_2025",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_skip_rates_4_exclusions_12_2025",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_skip_rates_5_fuel_type_skip_rate",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_static_ancillary_services_important_industry_notifications_balancing_reserve_important_industry_notifications",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_static_ancillary_services_important_industry_notifications_dc_dm_dr_important_industry_notifications",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_static_ancillary_services_important_industry_notifications_qr_important_industry_notifications",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_static_ancillary_services_important_industry_notifications_sffr_important_industry_notifications",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_static_ancillary_services_important_industry_notifications_stor_important_industry_notifications",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_static_contract_transfer_of_obligation_contract_transfer",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_static_data_portal_planned_changes_known_issues_23021dfa_a3b8_4f62_93bc_b60186c53fa4_21_08_2025",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_static_demand_profile_dates_profile_dates",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_static_stor_windows_stor_committed_windows",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_static_system_operating_plan_sop_sop_data_table_updated_20210625051044",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_transmission_capacity_tec_register_22_august_2025",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_transmission_losses_financial_year_losses",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_transmission_losses_monthly_losses",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    },
+    {
+      "dataset": "uk_energy_prod",
+      "table": "neso_wind_forecast_14d",
+      "min_date": null,
+      "max_date": null,
+      "status": "No date columns found"
+    }
+  ],
+  "summary": {
+    "tables_with_2016_data": 2,
+    "tables_with_partial_range": 51,
+    "tables_with_no_2016_data": 1,
+    "tables_with_errors": 98,
+    "scan_date": "2025-08-24"
+  }
+}

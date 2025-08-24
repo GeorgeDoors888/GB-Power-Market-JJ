@@ -55,48 +55,99 @@ def get_file_content(blob):
         print_with_timestamp(f"Error reading {blob.name}: {str(e)}")
         return None
 
+
+# --- Elexon and NESO Table Transformations ---
 def transform_demand_data(data):
-    """Transform demand data to match BigQuery schema."""
+    """Transform Elexon demand data to match BigQuery schema (elexon_demand_outturn)."""
     transformed_rows = []
-    
     if 'data' not in data:
         print_with_timestamp("Warning: No 'data' field in JSON")
         return []
-        
     for item in data['data']:
-        # Convert fields to match schema
         row = {
-            'timestamp': format_datetime(item.get('startTime')),
-            'settlement_date': format_date(item.get('settlementDate')),
-            'settlement_period': item.get('settlementPeriod'),
-            'national_demand': item.get('demand'),
-            'england_wales_demand': None,  # Not in source data
-            'embedded_wind_generation': None,  # Not in source data
-            'embedded_solar_generation': None,  # Not in source data
-            'non_bm_stor': None,  # Not in source data
-            'non_bm_wind': None  # Not in source data
+            'publishTime': format_datetime(item.get('publishTime')),
+            'startTime': format_datetime(item.get('startTime')),
+            'settlementDate': format_date(item.get('settlementDate')),
+            'settlementPeriod': item.get('settlementPeriod'),
+            'initialDemandOutturn': item.get('initialDemandOutturn'),
+            'initialTransmissionSystemDemandOutturn': item.get('initialTransmissionSystemDemandOutturn')
         }
         transformed_rows.append(row)
-    
     return transformed_rows
 
-def transform_frequency_data(data):
-    """Transform frequency data to match BigQuery schema."""
+def transform_neso_demand_forecasts(data):
+    """Transform NESO demand forecasts to match BigQuery schema."""
     transformed_rows = []
-    
     if 'data' not in data:
         print_with_timestamp("Warning: No 'data' field in JSON")
         return []
-        
     for item in data['data']:
-        # Convert fields to match schema
         row = {
-            'timestamp': format_datetime(item.get('startTime')),
-            'frequency': item.get('frequency'),
-            'source': 'historical_data'
+            'publishTime': format_datetime(item.get('publishTime')),
+            'settlementDate': format_date(item.get('settlementDate')),
+            'settlementPeriod': item.get('settlementPeriod'),
+            'demand': item.get('demand')
         }
         transformed_rows.append(row)
-    
+    return transformed_rows
+
+def transform_neso_carbon_intensity(data):
+    """Transform NESO carbon intensity to match BigQuery schema."""
+    transformed_rows = []
+    if 'data' not in data:
+        print_with_timestamp("Warning: No 'data' field in JSON")
+        return []
+    for item in data['data']:
+        row = {
+            'publishTime': format_datetime(item.get('publishTime')),
+            'settlementDate': format_date(item.get('settlementDate')),
+            'settlementPeriod': item.get('settlementPeriod'),
+            'fuel_type': item.get('fuel_type'),
+            'generation': item.get('generation')
+        }
+        transformed_rows.append(row)
+    return transformed_rows
+
+def transform_neso_balancing_services(data):
+    """Transform NESO balancing services to match BigQuery schema."""
+    transformed_rows = []
+    if 'data' not in data:
+        print_with_timestamp("Warning: No 'data' field in JSON")
+        return []
+    for item in data['data']:
+        row = {
+            'dataset': item.get('dataset'),
+            'settlementDate': format_date(item.get('settlementDate')),
+            'settlementPeriod': item.get('settlementPeriod'),
+            'id': item.get('id'),
+            'cost': item.get('cost'),
+            'volume': item.get('volume'),
+            'soFlag': item.get('soFlag'),
+            'storFlag': item.get('storFlag'),
+            'partyId': item.get('partyId'),
+            'assetId': item.get('assetId'),
+            'isTendered': item.get('isTendered'),
+            'service': item.get('service')
+        }
+        transformed_rows.append(row)
+    return transformed_rows
+
+# Add more NESO/Elexon transformation functions as needed
+
+def transform_frequency_data(data):
+    """Transform Elexon frequency data to match BigQuery schema (elexon_frequency)."""
+    transformed_rows = []
+    if 'data' not in data:
+        print_with_timestamp("Warning: No 'data' field in JSON")
+        return []
+    for item in data['data']:
+        row = {
+            'timestamp': format_datetime(item.get('timestamp')),
+            'settlement_date': format_date(item.get('settlement_date')),
+            'settlement_period': item.get('settlement_period'),
+            'frequency': item.get('frequency')
+        }
+        transformed_rows.append(row)
     return transformed_rows
 
 def transform_generation_data(data):
@@ -108,15 +159,13 @@ def transform_generation_data(data):
         return []
         
     for item in data['data']:
-        # Convert fields to match schema
+        # Only include fields present in the BigQuery schema
         row = {
-            'timestamp': format_datetime(item.get('startTime')),
-            'settlement_date': format_date(item.get('settlementDate')),
-            'settlement_period': item.get('settlementPeriod'),
-            'ccgt': item.get('ccgt'),
-            'oil': item.get('oil'),
-            'coal': item.get('coal'),
-            'nuclear': item.get('nuclear')
+            'recordType': item.get('recordType'),
+            'startTime': format_datetime(item.get('startTime')),
+            'settlementDate': format_date(item.get('settlementDate')),
+            'settlementPeriod': item.get('settlementPeriod'),
+            'demand': item.get('demand')
         }
         transformed_rows.append(row)
     
@@ -147,31 +196,85 @@ def load_data_to_bigquery(rows, table_ref):
         print_with_timestamp(f"Exception during load: {str(e)}")
         return False
 
+
 def process_demand_data(bucket_name):
-    """Process demand data from GCS to BigQuery."""
     print_with_timestamp("Processing demand data...")
     table_ref = "jibber-jabber-knowledge.uk_energy_prod.elexon_demand_outturn"
-    
-    # List files
     blobs = list_gcs_files(bucket_name, "demand/")
     print_with_timestamp(f"Found {len(blobs)} demand files")
-    
     total_rows = 0
     success_count = 0
-    
     for blob in blobs:
         print_with_timestamp(f"Processing {blob.name}")
         data = get_file_content(blob)
         if not data:
             continue
-            
         transformed_rows = transform_demand_data(data)
         if transformed_rows:
             if load_data_to_bigquery(transformed_rows, table_ref):
                 total_rows += len(transformed_rows)
                 success_count += 1
-    
     print_with_timestamp(f"Demand data processing complete. Loaded {total_rows} rows from {success_count}/{len(blobs)} files")
+    return success_count > 0
+
+def process_neso_demand_forecasts(bucket_name):
+    print_with_timestamp("Processing NESO demand forecasts...")
+    table_ref = "jibber-jabber-knowledge.uk_energy_prod.neso_demand_forecasts"
+    blobs = list_gcs_files(bucket_name, "neso/demand_forecasts/")
+    print_with_timestamp(f"Found {len(blobs)} NESO demand forecast files")
+    total_rows = 0
+    success_count = 0
+    for blob in blobs:
+        print_with_timestamp(f"Processing {blob.name}")
+        data = get_file_content(blob)
+        if not data:
+            continue
+        transformed_rows = transform_neso_demand_forecasts(data)
+        if transformed_rows:
+            if load_data_to_bigquery(transformed_rows, table_ref):
+                total_rows += len(transformed_rows)
+                success_count += 1
+    print_with_timestamp(f"NESO demand forecasts processing complete. Loaded {total_rows} rows from {success_count}/{len(blobs)} files")
+    return success_count > 0
+
+def process_neso_carbon_intensity(bucket_name):
+    print_with_timestamp("Processing NESO carbon intensity...")
+    table_ref = "jibber-jabber-knowledge.uk_energy_prod.neso_carbon_intensity"
+    blobs = list_gcs_files(bucket_name, "neso/carbon_intensity/")
+    print_with_timestamp(f"Found {len(blobs)} NESO carbon intensity files")
+    total_rows = 0
+    success_count = 0
+    for blob in blobs:
+        print_with_timestamp(f"Processing {blob.name}")
+        data = get_file_content(blob)
+        if not data:
+            continue
+        transformed_rows = transform_neso_carbon_intensity(data)
+        if transformed_rows:
+            if load_data_to_bigquery(transformed_rows, table_ref):
+                total_rows += len(transformed_rows)
+                success_count += 1
+    print_with_timestamp(f"NESO carbon intensity processing complete. Loaded {total_rows} rows from {success_count}/{len(blobs)} files")
+    return success_count > 0
+
+def process_neso_balancing_services(bucket_name):
+    print_with_timestamp("Processing NESO balancing services...")
+    table_ref = "jibber-jabber-knowledge.uk_energy_prod.neso_balancing_services"
+    blobs = list_gcs_files(bucket_name, "neso/balancing_services/")
+    print_with_timestamp(f"Found {len(blobs)} NESO balancing services files")
+    total_rows = 0
+    success_count = 0
+    for blob in blobs:
+        print_with_timestamp(f"Processing {blob.name}")
+        data = get_file_content(blob)
+        if not data:
+            continue
+        transformed_rows = transform_neso_balancing_services(data)
+        if transformed_rows:
+            if load_data_to_bigquery(transformed_rows, table_ref):
+                total_rows += len(transformed_rows)
+                success_count += 1
+    print_with_timestamp(f"NESO balancing services processing complete. Loaded {total_rows} rows from {success_count}/{len(blobs)} files")
     return success_count > 0
 
 def process_frequency_data(bucket_name):
@@ -228,39 +331,43 @@ def process_generation_data(bucket_name):
     print_with_timestamp(f"Generation data processing complete. Loaded {total_rows} rows from {success_count}/{len(blobs)} files")
     return success_count > 0
 
+
 def main():
     """Main function to execute the data loading process."""
     parser = argparse.ArgumentParser(description='Load historical data from GCS to BigQuery with schema transformation')
     parser.add_argument('--bucket', type=str, default='elexon-historical-data-storage', 
                         help='GCS bucket name (default: elexon-historical-data-storage)')
-    parser.add_argument('--dataset', type=str, choices=['demand', 'frequency', 'generation', 'all'], 
-                        default='all', help='Dataset to process (default: all)')
-    
+    parser.add_argument('--dataset', type=str, choices=[
+        'demand', 'frequency', 'generation',
+        'neso_demand_forecasts', 'neso_carbon_intensity', 'neso_balancing_services',
+        'all'], default='all', help='Dataset to process (default: all)')
     args = parser.parse_args()
-    
     print_with_timestamp(f"Starting historical data loading process")
     print_with_timestamp(f"Using bucket: {args.bucket}")
     print_with_timestamp(f"Processing dataset(s): {args.dataset}")
-    
     success = True
-    
     if args.dataset == 'demand' or args.dataset == 'all':
         if not process_demand_data(args.bucket):
             success = False
-    
     if args.dataset == 'frequency' or args.dataset == 'all':
         if not process_frequency_data(args.bucket):
             success = False
-    
     if args.dataset == 'generation' or args.dataset == 'all':
         if not process_generation_data(args.bucket):
             success = False
-    
+    if args.dataset == 'neso_demand_forecasts' or args.dataset == 'all':
+        if not process_neso_demand_forecasts(args.bucket):
+            success = False
+    if args.dataset == 'neso_carbon_intensity' or args.dataset == 'all':
+        if not process_neso_carbon_intensity(args.bucket):
+            success = False
+    if args.dataset == 'neso_balancing_services' or args.dataset == 'all':
+        if not process_neso_balancing_services(args.bucket):
+            success = False
     if success:
         print_with_timestamp("Historical data loading process completed successfully")
     else:
         print_with_timestamp("Historical data loading process completed with errors")
-    
     return 0 if success else 1
 
 if __name__ == "__main__":
