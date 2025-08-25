@@ -1,0 +1,1011 @@
+{
+  "manifest": [
+    {
+      "code": "DEMAND_OUTTURN",
+      "name": "Demand outturn (system demand)",
+      "route": "/demand/outturn",
+      "params": [
+        "from",
+        "to",
+        "format"
+      ],
+      "granularity": "PT30M",
+      "bq_table": "uk_energy_prod.demand_outturn",
+      "id_fields": [
+        "publishTime",
+        "settlementDate",
+        "settlementPeriod"
+      ],
+      "notes": "Works with from/to date or datetime; returns national demand outturn."
+    },
+    {
+      "code": "ROLLING_DEMAND",
+      "name": "Rolling system demand",
+      "route": "/datasets/GENERATION_OUTTURN",
+      "params": [
+        "from",
+        "to",
+        "format"
+      ],
+      "granularity": "PT30M",
+      "bq_table": "uk_energy_prod.rolling_demand",
+      "id_fields": [
+        "settlementDate",
+        "settlementPeriod"
+      ],
+      "window_days": 7,
+      "notes": "Some environments redirect this route; use /datasets/NDF for forecasts, not rolling."
+    },
+    {
+      "code": "NDF",
+      "name": "National Demand Forecast (Day Ahead)",
+      "route": "/datasets/NDF",
+      "params": [
+        "from",
+        "to",
+        "format"
+      ],
+      "granularity": "PT30M",
+      "bq_table": "uk_energy_prod.ndf",
+      "id_fields": [
+        "publishingPeriodCommencingTime",
+        "settlementDate",
+        "settlementPeriod"
+      ]
+    },
+    {
+      "code": "INDO",
+      "name": "Initial Demand Outturn (Indo)",
+      "route": "/datasets/INDO",
+      "params": [
+        "from",
+        "to",
+        "format"
+      ],
+      "granularity": "PT30M",
+      "bq_table": "uk_energy_prod.indo",
+      "id_fields": [
+        "publishingPeriodCommencingTime",
+        "settlementDate",
+        "settlementPeriod"
+      ]
+    },
+    {
+      "code": "SYSWARN",
+      "name": "System warnings",
+      "route": "/datasets/SYSWARN",
+      "params": [
+        "from",
+        "to",
+        "format"
+      ],
+      "granularity": "EVENT",
+      "bq_table": "uk_energy_prod.system_warnings",
+      "id_fields": [
+        "messageId",
+        "publishTime"
+      ]
+    },
+    {
+      "code": "FREQ",
+      "name": "System frequency",
+      "route": "/system/frequency",
+      "params": [
+        "from",
+        "to",
+        "format"
+      ],
+      "granularity": "PT1M",
+      "bq_table": "uk_energy_prod.system_frequency",
+      "id_fields": [
+        "publishTime"
+      ],
+      "window_days": 1,
+      "notes": "If 400, narrow date range (large windows may be rejected)."
+    },
+    {
+      "code": "FUELINST",
+      "name": "Instantaneous generation by fuel",
+      "route": "/datasets/FUELINST",
+      "params": [
+        "from",
+        "to",
+        "format"
+      ],
+      "granularity": "PT5M",
+      "bq_table": "uk_energy_prod.fuelinst",
+      "id_fields": [
+        "publishTime"
+      ]
+    },
+    {
+      "code": "FUELHH",
+      "name": "Half-hourly generation by fuel",
+      "route": "/datasets/FUELHH",
+      "params": [
+        "from",
+        "to",
+        "format"
+      ],
+      "granularity": "PT30M",
+      "bq_table": "uk_energy_prod.fuelhh",
+      "id_fields": [
+        "publishingPeriodCommencingTime"
+      ]
+    },
+    {
+      "code": "GENOUT",
+      "name": "Generation outturn (by BMU)",
+      "route": "/datasets/GENOUT",
+      "params": [
+        "from",
+        "to",
+        "bmUnit",
+        "format"
+      ],
+      "granularity": "PT30M",
+      "bq_table": "uk_energy_prod.generation_outturn_bmu",
+      "id_fields": [
+        "bmUnit",
+        "publishingPeriodCommencingTime"
+      ],
+      "notes": "Set bmUnit to fetch by unit; use paging."
+    },
+    {
+      "code": "FUELINSTHHCUR",
+      "name": "Half-hourly fuel mix current",
+      "route": "/datasets/FUELINSTHHCUR",
+      "params": [
+        "from",
+        "to",
+        "format"
+      ],
+      "granularity": "PT30M",
+      "bq_table": "uk_energy_prod.fuelinsthhcur",
+      "id_fields": [
+        "publishingPeriodCommencingTime"
+      ]
+    },
+    {
+      "code": "INTTR",
+      "name": "Interconnector net transfers",
+      "route": "/datasets/INTTR",
+      "params": [
+        "from",
+        "to",
+        "format"
+      ],
+      "granularity": "PT30M",
+      "bq_table": "uk_energy_prod.interconnector_transfers",
+      "id_fields": [
+        "publishingPeriodCommencingTime",
+        "interconnectorId"
+      ]
+    },
+    {
+      "code": "ITL",
+      "name": "Interconnector Trading Limits (ITL)",
+      "route": "/datasets/ITL",
+      "params": [
+        "from",
+        "to",
+        "interconnectorId",
+        "format"
+      ],
+      "granularity": "PT30M",
+      "bq_table": "uk_energy_prod.itls",
+      "id_fields": [
+        "publishingPeriodCommencingTime",
+        "interconnectorId"
+      ]
+    },
+    {
+      "code": "INTFCD",
+      "name": "Interconnector flow capability (NTC)",
+      "route": "/datasets/INTFCD",
+      "params": [
+        "from",
+        "to",
+        "interconnectorId",
+        "format"
+      ],
+      "granularity": "PT30M",
+      "bq_table": "uk_energy_prod.ntc",
+      "id_fields": [
+        "publishingPeriodCommencingTime",
+        "interconnectorId"
+      ]
+    },
+    {
+      "code": "B1770",
+      "name": "System Sell/Buy Price (SSP/SSB)",
+      "route": "/datasets/B1770",
+      "params": [
+        "from",
+        "to",
+        "format"
+      ],
+      "granularity": "PT30M",
+      "bq_table": "uk_energy_prod.ssp_ssb",
+      "id_fields": [
+        "publishingPeriodCommencingTime"
+      ]
+    },
+    {
+      "code": "B1770_v2",
+      "name": "System Prices v2",
+      "route": "/datasets/B1770/v2",
+      "params": [
+        "from",
+        "to",
+        "format"
+      ],
+      "granularity": "PT30M",
+      "bq_table": "uk_energy_prod.system_prices_v2",
+      "id_fields": [
+        "publishingPeriodCommencingTime"
+      ]
+    },
+    {
+      "code": "B1780",
+      "name": "Imbalance Price (view)",
+      "route": "/datasets/B1780",
+      "params": [
+        "from",
+        "to",
+        "format"
+      ],
+      "granularity": "PT30M",
+      "bq_table": "uk_energy_prod.imbalance_price",
+      "id_fields": [
+        "publishingPeriodCommencingTime"
+      ]
+    },
+    {
+      "code": "B0950",
+      "name": "Market Index Price (MIP)",
+      "route": "/datasets/B0950",
+      "params": [
+        "from",
+        "to",
+        "format"
+      ],
+      "granularity": "PT30M",
+      "bq_table": "uk_energy_prod.mip",
+      "id_fields": [
+        "publishingPeriodCommencingTime"
+      ]
+    },
+    {
+      "code": "BOD",
+      "name": "Bids and Offers Data (acceptances)",
+      "route": "/datasets/BOD",
+      "params": [
+        "from",
+        "to",
+        "bmUnit",
+        "format"
+      ],
+      "granularity": "PT1M",
+      "bq_table": "uk_energy_prod.bod",
+      "id_fields": [
+        "acceptanceId"
+      ],
+      "notes": "High volume; filter by date and/or bmUnit."
+    },
+    {
+      "code": "BOAL",
+      "name": "Bid-Offer Acceptance Level (BOAL)",
+      "route": "/datasets/BOAL",
+      "params": [
+        "from",
+        "to",
+        "bmUnit",
+        "format"
+      ],
+      "granularity": "PT1M",
+      "bq_table": "uk_energy_prod.boal",
+      "id_fields": [
+        "acceptanceId",
+        "boalSequence"
+      ]
+    },
+    {
+      "code": "BOALF",
+      "name": "Bid-Offer Acceptance LVL (Final)",
+      "route": "/datasets/BOALF",
+      "params": [
+        "from",
+        "to",
+        "bmUnit",
+        "format"
+      ],
+      "granularity": "PT1M",
+      "bq_table": "uk_energy_prod.boalf",
+      "id_fields": [
+        "acceptanceId",
+        "boalSequence"
+      ]
+    },
+    {
+      "code": "FPN",
+      "name": "Final Physical Notifications",
+      "route": "/datasets/FPN",
+      "params": [
+        "from",
+        "to",
+        "bmUnit",
+        "format"
+      ],
+      "granularity": "PT1M",
+      "bq_table": "uk_energy_prod.fpn",
+      "id_fields": [
+        "bmUnit",
+        "timeFrom"
+      ]
+    },
+    {
+      "code": "PN",
+      "name": "Physical Notifications (PN)",
+      "route": "/datasets/PN",
+      "params": [
+        "from",
+        "to",
+        "bmUnit",
+        "format"
+      ],
+      "granularity": "PT1M",
+      "bq_table": "uk_energy_prod.pn",
+      "id_fields": [
+        "bmUnit",
+        "timeFrom"
+      ]
+    },
+    {
+      "code": "DLB",
+      "name": "Daily Balancing Actions (vol)",
+      "route": "/datasets/DLB",
+      "params": [
+        "from",
+        "to",
+        "format"
+      ],
+      "granularity": "DAILY",
+      "bq_table": "uk_energy_prod.daily_balancing_volume",
+      "id_fields": [
+        "date"
+      ]
+    },
+    {
+      "code": "DLF",
+      "name": "Daily Balancing Actions (cost)",
+      "route": "/datasets/DLF",
+      "params": [
+        "from",
+        "to",
+        "format"
+      ],
+      "granularity": "DAILY",
+      "bq_table": "uk_energy_prod.daily_balancing_cost",
+      "id_fields": [
+        "date"
+      ]
+    },
+    {
+      "code": "BSAD",
+      "name": "Balancing Services Adjustment Data",
+      "route": "/datasets/BSAD",
+      "params": [
+        "from",
+        "to",
+        "format"
+      ],
+      "granularity": "PT30M",
+      "bq_table": "uk_energy_prod.bsad",
+      "id_fields": [
+        "publishingPeriodCommencingTime"
+      ]
+    },
+    {
+      "code": "BSUOS",
+      "name": "BSUoS tariff (daily)",
+      "route": "/datasets/BSUOS",
+      "params": [
+        "from",
+        "to",
+        "format"
+      ],
+      "granularity": "DAILY",
+      "bq_table": "uk_energy_prod.bsuos",
+      "id_fields": [
+        "date"
+      ]
+    },
+    {
+      "code": "B1440",
+      "name": "Solar forecasts (day)",
+      "route": "/datasets/B1440",
+      "params": [
+        "from",
+        "to",
+        "format"
+      ],
+      "granularity": "PT30M",
+      "bq_table": "uk_energy_prod.solar_forecast",
+      "id_fields": [
+        "publishingPeriodCommencingTime"
+      ]
+    },
+    {
+      "code": "B1610",
+      "name": "Wind generation forecast (day)",
+      "route": "/datasets/B1610",
+      "params": [
+        "from",
+        "to",
+        "format"
+      ],
+      "granularity": "PT30M",
+      "bq_table": "uk_energy_prod.wind_forecast",
+      "id_fields": [
+        "publishingPeriodCommencingTime"
+      ]
+    },
+    {
+      "code": "B1630",
+      "name": "Wind & Solar outturn",
+      "route": "/datasets/B1630",
+      "params": [
+        "from",
+        "to",
+        "format"
+      ],
+      "granularity": "PT30M",
+      "bq_table": "uk_energy_prod.wind_solar_outturn",
+      "id_fields": [
+        "publishingPeriodCommencingTime"
+      ]
+    },
+    {
+      "code": "B0620",
+      "name": "Total Load - Day ahead (MTU)",
+      "route": "/datasets/B0620",
+      "params": [
+        "from",
+        "to",
+        "format"
+      ],
+      "granularity": "PT60M",
+      "bq_table": "uk_energy_prod.b0620",
+      "id_fields": [
+        "utcTime"
+      ]
+    },
+    {
+      "code": "B0630",
+      "name": "Total Load - Week ahead",
+      "route": "/datasets/B0630",
+      "params": [
+        "from",
+        "to",
+        "format"
+      ],
+      "granularity": "WEEKLY",
+      "bq_table": "uk_energy_prod.b0630",
+      "id_fields": [
+        "week"
+      ]
+    },
+    {
+      "code": "B0640",
+      "name": "Total Load - Month ahead",
+      "route": "/datasets/B0640",
+      "params": [
+        "from",
+        "to",
+        "format"
+      ],
+      "granularity": "MONTHLY",
+      "bq_table": "uk_energy_prod.b0640",
+      "id_fields": [
+        "month"
+      ]
+    },
+    {
+      "code": "REMIT",
+      "name": "REMIT events (aggregated)",
+      "route": "/datasets/REMIT",
+      "params": [
+        "from",
+        "to",
+        "format"
+      ],
+      "granularity": "EVENT",
+      "bq_table": "uk_energy_prod.remit",
+      "id_fields": [
+        "eventId",
+        "publishTime"
+      ]
+    },
+    {
+      "code": "REMITBM",
+      "name": "REMIT BM data (detail)",
+      "route": "/datasets/REMITBM",
+      "params": [
+        "from",
+        "to",
+        "format"
+      ],
+      "granularity": "EVENT",
+      "bq_table": "uk_energy_prod.remit_bm",
+      "id_fields": [
+        "eventId",
+        "publishTime"
+      ]
+    },
+    {
+      "code": "B0230",
+      "name": "De-rated margin (DRM) forecast",
+      "route": "/datasets/B0230",
+      "params": [
+        "from",
+        "to",
+        "format"
+      ],
+      "granularity": "PT30M",
+      "bq_table": "uk_energy_prod.drm_forecast",
+      "id_fields": [
+        "publishingPeriodCommencingTime"
+      ]
+    },
+    {
+      "code": "B0010",
+      "name": "Actual generation by BMU (MEL/MIL)",
+      "route": "/datasets/B0010",
+      "params": [
+        "from",
+        "to",
+        "bmUnit",
+        "format"
+      ],
+      "granularity": "PT30M",
+      "bq_table": "uk_energy_prod.b0010",
+      "id_fields": [
+        "bmUnit",
+        "publishingPeriodCommencingTime"
+      ]
+    },
+    {
+      "code": "MEL",
+      "name": "Maximum Export Limit (MEL)",
+      "route": "/datasets/MEL",
+      "params": [
+        "from",
+        "to",
+        "bmUnit",
+        "format"
+      ],
+      "granularity": "PT30M",
+      "bq_table": "uk_energy_prod.mel",
+      "id_fields": [
+        "bmUnit",
+        "publishingPeriodCommencingTime"
+      ]
+    },
+    {
+      "code": "MIL",
+      "name": "Minimum Import Limit (MIL)",
+      "route": "/datasets/MIL",
+      "params": [
+        "from",
+        "to",
+        "bmUnit",
+        "format"
+      ],
+      "granularity": "PT30M",
+      "bq_table": "uk_energy_prod.mil",
+      "id_fields": [
+        "bmUnit",
+        "publishingPeriodCommencingTime"
+      ]
+    },
+    {
+      "code": "B1615",
+      "name": "Unplanned outage notifications",
+      "route": "/datasets/B1615",
+      "params": [
+        "from",
+        "to",
+        "format"
+      ],
+      "granularity": "EVENT",
+      "bq_table": "uk_energy_prod.outages_unplanned",
+      "id_fields": [
+        "eventId"
+      ]
+    },
+    {
+      "code": "B1620",
+      "name": "Planned outage notifications",
+      "route": "/datasets/B1620",
+      "params": [
+        "from",
+        "to",
+        "format"
+      ],
+      "granularity": "EVENT",
+      "bq_table": "uk_energy_prod.outages_planned",
+      "id_fields": [
+        "eventId"
+      ]
+    },
+    {
+      "code": "B0610",
+      "name": "System adequacy - LoLP",
+      "route": "/datasets/B0610",
+      "params": [
+        "from",
+        "to",
+        "format"
+      ],
+      "granularity": "PT30M",
+      "bq_table": "uk_energy_prod.lolp",
+      "id_fields": [
+        "publishingPeriodCommencingTime"
+      ]
+    },
+    {
+      "code": "B0611",
+      "name": "Surplus (MW) forecast",
+      "route": "/datasets/B0611",
+      "params": [
+        "from",
+        "to",
+        "format"
+      ],
+      "granularity": "PT30M",
+      "bq_table": "uk_energy_prod.surplus",
+      "id_fields": [
+        "publishingPeriodCommencingTime"
+      ]
+    },
+    {
+      "code": "BMREG",
+      "name": "BM Unit registration",
+      "route": "/datasets/BMREG",
+      "params": [
+        "from",
+        "to",
+        "format"
+      ],
+      "granularity": "EVENT",
+      "bq_table": "uk_energy_prod.bm_registration",
+      "id_fields": [
+        "bmUnit",
+        "effectiveFrom"
+      ]
+    },
+    {
+      "code": "BMUD",
+      "name": "BM Unit dataset (static)",
+      "route": "/datasets/BMUD",
+      "params": [
+        "from",
+        "to",
+        "format"
+      ],
+      "granularity": "STATIC",
+      "bq_table": "uk_energy_prod.bm_units",
+      "id_fields": [
+        "bmUnit"
+      ]
+    },
+    {
+      "code": "CIF",
+      "name": "Carbon Intensity (Fuel mix)",
+      "route": "/datasets/CIF",
+      "params": [
+        "from",
+        "to",
+        "format"
+      ],
+      "granularity": "PT30M",
+      "bq_table": "uk_energy_prod.carbon_intensity_fuel",
+      "id_fields": [
+        "publishingPeriodCommencingTime"
+      ]
+    },
+    {
+      "code": "CIBA",
+      "name": "Carbon Intensity of Balancing Actions",
+      "route": "/datasets/CIBA",
+      "params": [
+        "from",
+        "to",
+        "format"
+      ],
+      "granularity": "PT30M",
+      "bq_table": "uk_energy_prod.ci_balancing_actions",
+      "id_fields": [
+        "publishingPeriodCommencingTime"
+      ]
+    },
+    {
+      "code": "ASR",
+      "name": "Available System Reserve",
+      "route": "/datasets/ASR",
+      "params": [
+        "from",
+        "to",
+        "format"
+      ],
+      "granularity": "PT30M",
+      "bq_table": "uk_energy_prod.available_system_reserve",
+      "id_fields": [
+        "publishingPeriodCommencingTime"
+      ]
+    },
+    {
+      "code": "OPMR",
+      "name": "Operational Planning Margin Requirement",
+      "route": "/datasets/OPMR",
+      "params": [
+        "from",
+        "to",
+        "format"
+      ],
+      "granularity": "DAILY",
+      "bq_table": "uk_energy_prod.opmr",
+      "id_fields": [
+        "date"
+      ]
+    },
+    {
+      "code": "EMR",
+      "name": "Emissions reporting (aggregate)",
+      "route": "/datasets/EMR",
+      "params": [
+        "from",
+        "to",
+        "format"
+      ],
+      "granularity": "PT30M",
+      "bq_table": "uk_energy_prod.emissions",
+      "id_fields": [
+        "publishingPeriodCommencingTime"
+      ]
+    },
+    {
+      "code": "DCI",
+      "name": "Demand Control Instruction stream",
+      "route": "/datasets/DCI/stream",
+      "params": [
+        "publishDateTimeFrom",
+        "publishDateTimeto",
+        "format"
+      ],
+      "granularity": "EVENT",
+      "bq_table": "uk_energy_prod.dci_stream",
+      "id_fields": [
+        "mRID",
+        "revisionNumber"
+      ]
+    },
+    {
+      "code": "PN_stream",
+      "name": "PN stream",
+      "route": "/datasets/PN/stream",
+      "params": [
+        "publishDateTimeFrom",
+        "publishDateTimeto",
+        "format"
+      ],
+      "granularity": "EVENT",
+      "bq_table": "uk_energy_prod.pn_stream",
+      "id_fields": [
+        "mRID",
+        "revisionNumber"
+      ]
+    },
+    {
+      "code": "FUELINST_stream",
+      "name": "FUELINST stream",
+      "route": "/datasets/FUELINST/stream",
+      "params": [
+        "publishDateTimeFrom",
+        "publishDateTimeto",
+        "format"
+      ],
+      "granularity": "EVENT",
+      "bq_table": "uk_energy_prod.fuelinst_stream",
+      "id_fields": [
+        "mRID",
+        "revisionNumber"
+      ]
+    },
+    {
+      "code": "B1740",
+      "name": "Day-ahead aggregated trades",
+      "route": "/datasets/B1740",
+      "params": [
+        "from",
+        "to",
+        "format"
+      ],
+      "granularity": "DAILY",
+      "bq_table": "uk_energy_prod.day_ahead_trades",
+      "id_fields": [
+        "date"
+      ]
+    },
+    {
+      "code": "B1745",
+      "name": "Intra-day aggregated trades",
+      "route": "/datasets/B1745",
+      "params": [
+        "from",
+        "to",
+        "format"
+      ],
+      "granularity": "DAILY",
+      "bq_table": "uk_energy_prod.intra_day_trades",
+      "id_fields": [
+        "date"
+      ]
+    },
+    {
+      "code": "B1625",
+      "name": "Transmission losses (half-hourly)",
+      "route": "/datasets/B1625",
+      "params": [
+        "from",
+        "to",
+        "format"
+      ],
+      "granularity": "PT30M",
+      "bq_table": "uk_energy_prod.transmission_losses",
+      "id_fields": [
+        "publishingPeriodCommencingTime"
+      ]
+    },
+    {
+      "code": "B1760",
+      "name": "Curtailment volumes (wind)",
+      "route": "/datasets/B1760",
+      "params": [
+        "from",
+        "to",
+        "format"
+      ],
+      "granularity": "PT30M",
+      "bq_table": "uk_energy_prod.curtailment_wind",
+      "id_fields": [
+        "publishingPeriodCommencingTime"
+      ]
+    },
+    {
+      "code": "NONBM",
+      "name": "Non-BM instructions",
+      "route": "/datasets/NONBM",
+      "params": [
+        "from",
+        "to",
+        "format"
+      ],
+      "granularity": "PT1M",
+      "bq_table": "uk_energy_prod.nonbm",
+      "id_fields": [
+        "acceptanceId"
+      ]
+    },
+    {
+      "code": "MN",
+      "name": "Electricity Margin Notice (EMN)",
+      "route": "/datasets/MN",
+      "params": [
+        "from",
+        "to",
+        "format"
+      ],
+      "granularity": "EVENT",
+      "bq_table": "uk_energy_prod.margin_notice",
+      "id_fields": [
+        "noticeId",
+        "publishTime"
+      ]
+    },
+    {
+      "code": "IFA2ITL",
+      "name": "IFA2 Trading Limits",
+      "route": "/datasets/ITL",
+      "params": [
+        "from",
+        "to",
+        "interconnectorId",
+        "format"
+      ],
+      "granularity": "PT30M",
+      "bq_table": "uk_energy_prod.ifa2_itl",
+      "id_fields": [
+        "publishingPeriodCommencingTime",
+        "interconnectorId"
+      ],
+      "notes": "Set interconnectorId=IFA2"
+    },
+    {
+      "code": "B1320",
+      "name": "Actual Aggregated Generation per Type",
+      "route": "/datasets/B1320",
+      "params": [
+        "from",
+        "to",
+        "format"
+      ],
+      "granularity": "PT30M",
+      "bq_table": "uk_energy_prod.b1320_generation_type",
+      "id_fields": [
+        "publishingPeriodCommencingTime"
+      ]
+    },
+    {
+      "code": "B1330",
+      "name": "FPN by fuel type",
+      "route": "/datasets/B1330",
+      "params": [
+        "from",
+        "to",
+        "format"
+      ],
+      "granularity": "PT30M",
+      "bq_table": "uk_energy_prod.b1330_fpn_fuel",
+      "id_fields": [
+        "publishingPeriodCommencingTime"
+      ]
+    },
+    {
+      "code": "B1617",
+      "name": "Transmission System Demand",
+      "route": "/datasets/B1617",
+      "params": [
+        "from",
+        "to",
+        "format"
+      ],
+      "granularity": "PT30M",
+      "bq_table": "uk_energy_prod.b1617_system_demand",
+      "id_fields": [
+        "publishingPeriodCommencingTime"
+      ]
+    },
+    {
+      "code": "B0710",
+      "name": "TSO Outage profile (aggregated)",
+      "route": "/datasets/B0710",
+      "params": [
+        "from",
+        "to",
+        "format"
+      ],
+      "granularity": "PT60M",
+      "bq_table": "uk_energy_prod.b0710_tso_outage",
+      "id_fields": [
+        "utcTime"
+      ]
+    },
+    {
+      "code": "B1520",
+      "name": "Dynamic line rating (DLR)",
+      "route": "/datasets/B1520",
+      "params": [
+        "from",
+        "to",
+        "format"
+      ],
+      "granularity": "PT60M",
+      "bq_table": "uk_energy_prod.b1520_dlr",
+      "id_fields": [
+        "utcTime"
+      ]
+    }
+  ]
+}

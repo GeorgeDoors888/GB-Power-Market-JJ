@@ -513,7 +513,7 @@ class DirectBODAnalysis:
         if bod_df.empty:
             log.warning("BOD dataframe is empty - creating minimal daily frame")
             # Create a date range from start to end
-            dates = pd.date_range(start=self.start_date, end=self.end_date, freq='D')
+            dates = pd.date_range(start=self.start_date, end=self.end_date, freq='D')  # 'D' is safe for days
             bod_daily = pd.DataFrame({'settlement_date': [d.date() for d in dates]})
         else:
             # Calculate daily BOD KPIs

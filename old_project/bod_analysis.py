@@ -278,7 +278,7 @@ def derive_daily_kpis(bod: pd.DataFrame,
         # Create a minimal dataframe with dates
         start = pd.to_datetime(CFG.start_date)
         end = pd.to_datetime(CFG.end_date)
-        dates = pd.date_range(start=start, end=end, freq='D')
+        dates = pd.date_range(start=start, end=end, freq='D')  # 'D' is safe for days
         bod = pd.DataFrame({
             'settlement_date': dates,
             'bid_offer_flag': 'BID',  # Add missing columns
@@ -398,7 +398,7 @@ def monthly_rollups(daily: pd.DataFrame) -> pd.DataFrame:
     if all(col not in daily.columns for col in monthly_cols[1:]):
         start = pd.to_datetime(CFG.start_date)
         end = pd.to_datetime(CFG.end_date)
-        months = pd.date_range(start=start, end=end, freq='MS')
+    months = pd.date_range(start=start, end=end, freq='MS')  # 'MS' is month start, not deprecated
         return pd.DataFrame({'ym': months})
     
     aggs = {
