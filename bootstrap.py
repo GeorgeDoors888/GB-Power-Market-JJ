@@ -121,10 +121,10 @@ def gh_api(url: str, method="GET", data=None, token=GITHUB_TOKEN):
 def ensure_venv():
     if not VENV_DIR.exists():
         run(f"{shlex.quote(sys.executable)} -m venv {shlex.quote(VENV_DIR.as_posix())}")
-    run(f"{PIP_BIN} install --upgrade pip", check=False)
+    run(f"{shlex.quote(PIP_BIN)} install --upgrade pip", check=False)
     if DEV_PY_PACKAGES:
         run(
-            f"{PIP_BIN} install " + " ".join(shlex.quote(p) for p in DEV_PY_PACKAGES),
+            f"{shlex.quote(PIP_BIN)} install " + " ".join(shlex.quote(p) for p in DEV_PY_PACKAGES),
             check=False,
         )
     (WS_ROOT / "requirements.txt").write_text(
@@ -179,37 +179,37 @@ def write_vscode():
             {
                 "label": "Docs: Serve (MkDocs)",
                 "type": "shell",
-                "command": f"{MKDOCS_BIN} serve -a 127.0.0.1:8000",
+                "command": f"{shlex.quote(MKDOCS_BIN)} serve -a 127.0.0.1:8000",
                 "group": "build",
             },
             {
                 "label": "AI Memory: Reindex",
                 "type": "shell",
-                "command": f"{PY_BIN} tools/ai_memory/index_repo.py",
+                "command": f"{shlex.quote(PY_BIN)} tools/ai_memory/index_repo.py",
                 "group": "build",
             },
             {
                 "label": "AI Memory: Search (prompt)",
                 "type": "shell",
-                "command": f'{PY_BIN} tools/ai_memory/search_memory.py "{{input:query}}" -k 10',
+                "command": f"{shlex.quote(PY_BIN)} tools/ai_memory/search_memory.py '{{input:query}}' -k 10",
                 "group": "test",
             },
             {
                 "label": "Lint",
                 "type": "shell",
-                "command": f"{PY_BIN} -m flake8 .",
+                "command": f"{shlex.quote(PY_BIN)} -m flake8 .",
                 "group": "test",
             },
             {
                 "label": "Format",
                 "type": "shell",
-                "command": f"{PY_BIN} -m black . && {PY_BIN} -m isort . --profile black",
+                "command": f"{shlex.quote(PY_BIN)} -m black . && {shlex.quote(PY_BIN)} -m isort . --profile black",
                 "group": "build",
             },
             {
                 "label": "Run tests",
                 "type": "shell",
-                "command": f"{PY_BIN} -m pytest -q",
+                "command": f"{shlex.quote(PY_BIN)} -m pytest -q",
                 "group": "test",
             },
         ],
@@ -904,7 +904,7 @@ profile = "black"
 # ----------------------------
 def git_commit_and_push(remote_url: str | None, owner: str | None):
     # Install pre-commit
-    run(f"{PRE_COMMIT_BIN} install", check=False)
+    run(f"{shlex.quote(PRE_COMMIT_BIN)} install", check=False)
     run("git add -A")
     run(
         'git commit -m "chore: bootstrap (private, VS Code, CI, security, devcontainer, docs, AI memory)"',
