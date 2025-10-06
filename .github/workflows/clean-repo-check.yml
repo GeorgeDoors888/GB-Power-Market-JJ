@@ -1,0 +1,43 @@
+name: Clean Repo Check
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check-clean-repo:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Find disallowed files
+      run: |
+        echo "🔍 Scanning for forbidden files..."
+        forbidden=$(find . \( \
+          -name '.DS_Store' -o \
+          -name '*.log' -o \
+          -name '.zsh_history' -o \
+          -name '.bash_history' -o \
+          -path './Library/CloudStorage/*' -o \
+          -path './Trash/*' -o \
+          -path './OneDrive-*/*' -o \
+          -name '.env' -o \
+          -name 'venv' -o \
+          -name '.venv' \
+        \) -print)
+
+        if [[ -n "$forbidden" ]]; then
+          echo "❌ Forbidden files detected:"
+          echo "$forbidden"
+          exit 1
+        else
+          echo "✅ No forbidden files found."
+        fi
+
+    - name: Optional – Lint Python files
+      run: |
+        echo "🧼 Running Python linting..."
+        pip install black
+        black --check .
