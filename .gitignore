@@ -7,3 +7,5 @@ dist/
 build/
 tools/ai_memory/indexdir/
 context/
+.DS_Store
+**/.DS_Store
