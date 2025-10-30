@@ -52,8 +52,8 @@ load_dotenv()
 
 # Configuration
 BMRS_BASE = "https://data.elexon.co.uk/bmrs/api/v1/datasets"
-BQ_PROJECT = "jibber-jabber-knowledge"
-BQ_DATASET = "elexon_data_landing_zone"
+BQ_PROJECT = "inner-cinema-476211-u9"
+BQ_DATASET = "uk_energy_prod"
 MAX_RETRIES = 5
 RETRY_BACKOFF = 5.0  # seconds
 TIMEOUT = (10, 90)  # (connect, read) timeout in seconds

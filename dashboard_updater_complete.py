@@ -15,23 +15,22 @@ import re
 PROJECT_ID = "inner-cinema-476211-u9"
 DATASET_ID = "uk_energy_prod"
 DASHBOARD_SHEET_ID = "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8"
-SERVICE_ACCOUNT_FILE = "jibber_jabber_key.json"
 
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = SERVICE_ACCOUNT_FILE
+# Use Application Default Credentials for BigQuery (gcloud auth)
 bq_client = bigquery.Client(project=PROJECT_ID)
 
-SCOPES = [
-    'https://www.googleapis.com/auth/spreadsheets',
-    'https://www.googleapis.com/auth/drive'
-]
+import pickle
 
 def get_sheets_client():
-    """Initialize Google Sheets client"""
+    """Initialize Google Sheets client using OAuth token"""
     try:
-        creds = Credentials.from_service_account_file(SERVICE_ACCOUNT_FILE, scopes=SCOPES)
+        # Load OAuth credentials from token.pickle
+        with open('token.pickle', 'rb') as token:
+            creds = pickle.load(token)
         return gspread.authorize(creds)
     except Exception as e:
-        print(f"❌ Failed to authenticate: {e}")
+        print(f"❌ Failed to authenticate with Google Sheets: {e}")
+        print(f"   Make sure token.pickle exists and is valid")
         return None
 
 def get_latest_mid_prices():

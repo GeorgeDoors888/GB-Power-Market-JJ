@@ -1,447 +1,286 @@
-# Documentation Summary - UK Power Market Data Pipeline
+# 📚 Dashboard Documentation Index
 
-**Status:** ✅ Operational  
-**Last Updated:** 29 October 2025
-
----
-
-## 🎉 Recent Updates (29 Oct 2025)
-
-**✅ Major Fix: FUELINST Historical Data**
-- Fixed issue where only current data was loading (not historical)
-- Switched from Insights API to BMRS stream endpoint  
-- Successfully loaded 5.68M records (2023-2025)
-- Quality score improved from 98/100 to 99.9/100
-- Full details: [FUELINST_FIX_DOCUMENTATION.md](FUELINST_FIX_DOCUMENTATION.md)
-
-**✅ New Documentation Added:**
-- [CONTRIBUTING.md](CONTRIBUTING.md) - Contribution guidelines and standards
-- [DATA_MODEL.md](DATA_MODEL.md) - Complete data model reference (15 columns, 20 fuel types)
-- [AUTOMATION.md](AUTOMATION.md) - Daily automation and monitoring setup
+**UK Power Market Dashboard - Complete Documentation Suite**  
+Version 2.0 | Last Updated: 30 October 2025
 
 ---
 
-## 📚 Complete Documentation Index
+## 📖 Available Documentation
 
-This project has comprehensive documentation covering all aspects of data ingestion, storage, and retrieval.
+### 1. **DASHBOARD_DOCUMENTATION.md** ⭐ PRIMARY
+**Size:** ~15,000 words (50+ pages)  
+**Audience:** All users - comprehensive reference
 
-### Main Documentation Files
+**Contents:**
+- Complete dashboard overview
+- Section-by-section layout guide
+- Feature descriptions with examples
+- Data source documentation
+- BigQuery schema details
+- Script reference with code examples
+- Visual elements guide (colors, icons, charts)
+- Price impact methodology
+- SQL query library
+- Troubleshooting guide (10+ common issues)
+- Future enhancement roadmap
+- Appendices (fuel codes, REMIT statuses, settlement periods)
 
-1. **[README.md](README.md)** ⭐ **PROJECT OVERVIEW**
-   - Quick start guide
-   - Current data status
-   - Key scripts and commands
-   - Latest updates and achievements
-
-2. **[CONTRIBUTING.md](CONTRIBUTING.md)** 🤝 **FOR CONTRIBUTORS**
-   - Development setup
-   - Code standards (PEP 8)
-   - Testing guidelines
-   - Git workflow
-   - Common tasks and troubleshooting
-
-3. **[DATA_MODEL.md](DATA_MODEL.md)** 📊 **DATA REFERENCE**
-   - Complete schema definitions
-   - All 15 columns documented
-   - 20 fuel type codes explained
-   - Query patterns and examples
-   - Data relationships and joins
-
-4. **[AUTOMATION.md](AUTOMATION.md)** 🤖 **AUTOMATION GUIDE**
-   - Daily update scripts
-   - Cron job setup
-   - Monitoring and alerts
-   - Quality checks
-   - Maintenance tasks
-
-5. **[DATA_INGESTION_DOCUMENTATION.md](DATA_INGESTION_DOCUMENTATION.md)** 🔧 **TECHNICAL**
-   - Complete technical documentation
-   - How data flows from API → BigQuery
-   - Table schemas and structures
-   - Query examples with actual results
-   - Current data status and coverage
-   - Technical challenges solved
-   - ~8,000 words, comprehensive reference
-
-6. **[QUICK_REFERENCE.md](QUICK_REFERENCE.md)** 🚀 **DAILY USE**
-   - Common SQL queries ready to use
-   - Python code snippets
-   - Interconnector codes & fuel mappings
-   - Settlement period conversions
-   - Troubleshooting guide
-   - Current data summary
-
-7. **[ARCHITECTURE_DIAGRAM.md](ARCHITECTURE_DIAGRAM.md)** 🏗️ **SYSTEM DESIGN**
-   - Visual system architecture
-   - Data flow diagrams
-   - Component relationships
-   - BigQuery table structures
-
-8. **[FUELINST_FIX_DOCUMENTATION.md](FUELINST_FIX_DOCUMENTATION.md)** 🔧 **FIX DETAILS**
-   - Complete timeline of Oct 29 fix
-   - Root cause analysis
-   - Solution implementation
-   - Before/after comparison
-   - Data quality verification
-
-9. **[STREAMING_UPLOAD_FIX.md](STREAMING_UPLOAD_FIX.md)** 🔧 **TECHNICAL DEEP-DIVE**
-   - Memory optimization solution
-   - Why streaming is essential
-   - Before/after performance metrics
-   - Implementation details
-   - 50k batch processing
-
-10. **[MULTI_YEAR_DOWNLOAD_PLAN.md](MULTI_YEAR_DOWNLOAD_PLAN.md)** 📋 **ROADMAP**
-    - Download strategy for 2022-2025
-    - Estimated timings and storage
-    - Automation approach
-
-11. **[API_RESEARCH_FINDINGS.md](API_RESEARCH_FINDINGS.md)** 🔍 **DISCOVERY**
-    - API investigation notes
-    - Dataset availability findings
-    - Endpoint discovery process
+**When to use:**
+- First time setup
+- Understanding dashboard features
+- Troubleshooting problems
+- Learning SQL queries
+- Planning enhancements
 
 ---
 
-## 🎯 Quick Navigation
+### 2. **DASHBOARD_QUICK_REFERENCE.md** 🚀 QUICK START
+**Size:** ~1,500 words (5 pages)  
+**Audience:** Experienced users - rapid lookup
 
-### I want to...
+**Contents:**
+- One-command update instructions
+- Section reference table
+- Visual element key
+- Script summaries
+- Price impact formulas
+- Automation setup (cron job)
+- Quick troubleshooting
+- Current data snapshot
 
-**Get started with the project:**
-→ Read [README.md](README.md) then [DATA_INGESTION_DOCUMENTATION.md](DATA_INGESTION_DOCUMENTATION.md)
-
-**Contribute code:**
-→ Follow [CONTRIBUTING.md](CONTRIBUTING.md) guidelines
-
-**Understand the data:**
-→ Review [DATA_MODEL.md](DATA_MODEL.md) for complete schema reference
-
-**Run queries on existing data:**
-→ Use [QUICK_REFERENCE.md](QUICK_REFERENCE.md) + `update_dashboard_clean.py`
-
-**Set up automation:**
-→ Follow [AUTOMATION.md](AUTOMATION.md) for daily updates and monitoring
-
-**Download more data:**
-→ Run `download_multi_year_streaming.py` (see MULTI_YEAR_DOWNLOAD_PLAN.md)
-
-**Update the dashboard:**
-→ Use `update_dashboard_clean.py --sheet-id YOUR_SHEET_ID`
-
-**Fix memory issues:**
-→ Review [STREAMING_UPLOAD_FIX.md](STREAMING_UPLOAD_FIX.md)
-
-**See what data we have:**
-→ Check "Current Data Status" in [README.md](README.md)
-
-**Understand the FUELINST fix:**
-→ Read [FUELINST_FIX_DOCUMENTATION.md](FUELINST_FIX_DOCUMENTATION.md)
+**When to use:**
+- Daily operations
+- Quick command lookup
+- Automation setup
+- Fast troubleshooting
 
 ---
 
-## 📊 What We Have (29 Oct 2025)
+### 3. **DASHBOARD_CHANGELOG.md** 📝 VERSION HISTORY
+**Size:** ~2,000 words (6 pages)  
+**Audience:** Developers, maintainers
 
-### Data Coverage
-- ✅ **FUELINST (Fuel Generation):** Jan 1, 2023 - Oct 29, 2025 (5.68M records, 1,032 days)
-- ✅ **Generation Mix:** Jan 2025 - Oct 25, 2025 (298 days, all 48 settlement periods)
-- ✅ **Interconnectors:** Sep 2025 - Oct 29, 2025 (real-time, 5-minute updates)
-- ✅ **Physical Notifications:** Sep 2025 - Oct 26, 2025 (6.4M records)
-- ✅ **Demand Data:** Jan 2025 - Oct 25, 2025
-- ⚠️ **Full Historical (other datasets):** Pending (2022-2024 to be downloaded)
+**Contents:**
+- Version 2.0.0 changes (current)
+- Version 1.5.0 changes (REMIT integration)
+- Version 1.0.0 initial release
+- Planned future releases (2.1, 2.2, 3.0)
+- Migration notes
+- Contributor information
 
-### Latest Timestamps
-- **FUELINST Data:** Oct 29, 2025 (latest available)
-- **Generation Data:** Oct 25, 2025, 22:00 (SP 47)
-- **Interconnector Data:** Oct 29, 2025 (real-time)
-
-### Storage Stats
-- **Tables:** 65+
-- **Records:** 5,685,347 (FUELINST alone)
-- **Total Size:** ~1.2 GB
-- **Monthly Cost:** ~$0.02
-- **Quality Score:** 99.9/100
-
-### Data Quality Achievement
-- ✅ **Completeness:** 100% (no missing dates in FUELINST 2023-2025)
-- ✅ **Consistency:** 100% (15-column schema maintained)
-- ✅ **Accuracy:** 100% (verified against source API)
-- ✅ **Uniqueness:** 100% (hash-based deduplication working)
-- ✅ **Metadata:** 100% (full data lineage tracking)
+**When to use:**
+- Understanding what changed
+- Planning upgrades
+- Tracking feature history
+- Contributing to development
 
 ---
 
-## 🔑 Key Achievements
+### 4. **REMIT_DASHBOARD_DOCUMENTATION.md** 🔴 REMIT SPECIALIST
+**Size:** ~8,000 words (25 pages)  
+**Audience:** REMIT data specialists
 
-### ✅ What's Working
+**Contents:**
+- REMIT regulation (EU 1227/2011) explanation
+- Unavailability event types
+- BigQuery schema deep dive
+- Data ingestion pipeline
+- Integration guides (Elexon IRIS, ENTSO-E)
+- Sample REMIT data
+- Advanced queries
 
-1. **API Integration**
-   - Dynamic dataset discovery (44 verified datasets)
-   - Automated data ingestion
-   - Retry logic and error handling
-
-2. **Data Storage**
-   - BigQuery tables created and populated
-   - Proper schemas with nested data support
-   - Multiple years of data architecture
-
-3. **Data Retrieval**
-   - SQL queries return real data
-   - Latest generation mix: 19.52 GW wind, 3.68 GW nuclear, etc.
-   - Interconnector flows: Net 6.76 GW import
-   - Settlement period tracking (SP 1-48)
-
-4. **Technical Solutions**
-   - **Memory optimization:** Streaming upload handles 16M+ record datasets
-   - **Nested data handling:** UNNEST() queries work correctly
-   - **Multiple tables:** Proper naming and organization
-   - **Authentication:** Service account working
-
-5. **Documentation**
-   - Complete technical documentation
-   - Quick reference guides
-   - Query examples with actual results
-   - Architecture diagrams (in text form)
+**When to use:**
+- Understanding REMIT requirements
+- Integrating live REMIT data
+- Analyzing outage patterns
+- Regulatory compliance
 
 ---
 
-## 🛠️ Core Scripts
+### 5. **SYSTEM_OVERVIEW.md** 🏗️ ARCHITECTURE
+**Size:** ~4,000 words (12 pages)  
+**Audience:** System architects, DevOps
 
-| Script | Purpose | Status |
-|--------|---------|--------|
-| `update_dashboard_clean.py` | Query data & update dashboard | ✅ Working |
-| `download_multi_year_streaming.py` | Download multi-year data | ✅ Working |
-| `discover_all_datasets.py` | API dataset discovery | ✅ Working |
-| `test_dashboard_queries.py` | Verify queries work | ✅ Working |
-| `inspect_table_schemas.py` | Check table schemas | ✅ Working |
+**Contents:**
+- ASCII architecture diagrams
+- Data flow visualizations
+- Component interactions
+- Technology stack
+- Performance metrics
+- Cost analysis
+- Quick reference commands
 
----
-
-## 📈 Current Data Example
-
-**Generation (25 Oct 2025, 22:00, Settlement Period 47):**
-```
-Wind Total:    19.52 GW  (Offshore: 12.16 + Onshore: 7.36)
-Nuclear:        3.68 GW
-Gas (CCGT):     3.22 GW
-Biomass:        0.84 GW
-Other:          0.56 GW
-Hydro:          0.14 GW
-Coal/Oil:       0.00 GW
-Solar:          0.00 GW (nighttime)
-```
-
-**Interconnectors (26 Oct 2025, 11:35, Settlement Period 24):**
-```
-IMPORTING:
-  France:       1.50 GW
-  Norway:       1.05 GW
-  Netherlands:  1.02 GW
-  Belgium:      1.02 GW
-  Eleclink:     1.00 GW
-  IFA2:         0.99 GW
-  Viking:       0.88 GW
-
-EXPORTING:
-  INTGRNL:      0.27 GW
-  Belgium:      0.22 GW
-  Ireland:      0.21 GW
-
-Net Import:     6.76 GW
-```
+**When to use:**
+- System design decisions
+- Infrastructure planning
+- Understanding data pipelines
+- Performance optimization
 
 ---
 
-## 🎨 Data Visualization Ready
+## 🎯 Documentation by Use Case
 
-The data is structured and ready for:
-- ✅ Google Sheets dashboard (script ready)
-- ✅ Time-series analysis
-- ✅ Fuel mix pie charts
-- ✅ Interconnector flow maps
-- ✅ Settlement period heatmaps
-- ✅ Historical trend analysis
+### "I'm new to the dashboard"
+1. Start: **DASHBOARD_QUICK_REFERENCE.md** (5 min read)
+2. Then: **DASHBOARD_DOCUMENTATION.md** sections 1-3 (20 min)
+3. Practice: Run update command and view dashboard
 
----
-
-## 🚀 Next Steps
-
-### Immediate
-1. ✅ Verify queries work - **COMPLETE**
-2. ✅ Document ingestion process - **COMPLETE**
-3. 🔄 Set up Google Sheets integration (need Sheet ID)
-4. 🔄 Map dashboard cells to data
-
-### This Week
-5. Download full 2025 data (Jan-Dec)
-6. Test with different query types
-7. Create automated update script
-
-### This Month
-8. Download 2024, 2023, 2022 data
-9. Set up daily automated updates
-10. Create monitoring dashboard
-
----
-
-## 💡 Key Insights
-
-1. **UK is importing heavily** (~7 GW net) during daytime
-2. **Wind is dominant** (19.5 GW = ~50% of generation at night)
-3. **Nuclear is stable** (3.7 GW baseload)
-4. **Gas is supplementary** (3.2 GW, filling gaps)
-5. **Coal/Oil are unused** (0 GW in current data)
-6. **Solar is zero at night** (data from 22:00)
-
----
-
-## 📞 Quick Commands
-
-### Check Latest Data
+### "I need to update the dashboard"
+→ **DASHBOARD_QUICK_REFERENCE.md** → "Quick Start" section
 ```bash
-python update_dashboard_clean.py
+./.venv/bin/python dashboard_clean_design.py
 ```
 
-### Download More Data
-```bash
-python download_multi_year_streaming.py --year 2025
-```
+### "Something's not working"
+1. **DASHBOARD_QUICK_REFERENCE.md** → "Troubleshooting" (2 min)
+2. If unresolved: **DASHBOARD_DOCUMENTATION.md** → "Troubleshooting" (10+ solutions)
 
-### Run Test Queries
-```bash
-python test_dashboard_queries.py
-```
+### "I want to understand REMIT data"
+→ **REMIT_DASHBOARD_DOCUMENTATION.md** (full read, 30 min)
 
-### Check Data Freshness
-```bash
-python -c "from update_dashboard_clean import *; gen, ts = get_latest_generation(); print(f'Latest: {ts}')"
-```
+### "I need to set up automation"
+→ **DASHBOARD_QUICK_REFERENCE.md** → "Automation Setup" section
+- Cron job example provided
+- 3 minutes to implement
+
+### "I want to add a new feature"
+1. **DASHBOARD_CHANGELOG.md** → "Planned Future Releases"
+2. **DASHBOARD_DOCUMENTATION.md** → "Future Enhancements"
+3. **SYSTEM_OVERVIEW.md** → Architecture understanding
+
+### "What changed in the latest version?"
+→ **DASHBOARD_CHANGELOG.md** → Version 2.0.0 section
+
+### "I need SQL queries for analysis"
+→ **DASHBOARD_DOCUMENTATION.md** → "Useful SQL Queries" appendix
+- Generation mix summaries
+- Outage analysis
+- Renewables tracking
+- Historical trends
 
 ---
 
-## 📖 Learning Path
+## 📊 Documentation Statistics
 
-For someone new to the project:
-
-1. **Start:** Read this README
-2. **Understand:** Read DATA_INGESTION_DOCUMENTATION.md (sections 1-3)
-3. **Try queries:** Use QUICK_REFERENCE.md examples
-4. **Run scripts:** Execute `update_dashboard_clean.py`
-5. **Deep dive:** Read STREAMING_UPLOAD_FIX.md for technical details
-6. **Extend:** Modify queries for your needs
-
----
-
-## 🎓 Technical Concepts
-
-### Settlement Periods
-- UK electricity market uses 48 × 30-minute periods per day
-- SP 1 = midnight, SP 48 = 23:30-24:00
-- All data timestamped to settlement periods
-
-### Interconnectors
-- Physical cables connecting UK to Europe
-- Positive values = Import (buying electricity)
-- Negative values = Export (selling electricity)
-- Net import currently ~7 GW
-
-### Fuel Types
-- Dispatchable: Nuclear, Gas, Coal, Oil (can be controlled)
-- Intermittent: Wind, Solar (weather-dependent)
-- Storage: Pumped hydro, batteries
-- Other: Biomass, other renewables
-
-### Data Freshness
-- Generation mix: Updated daily (D-1 lag)
-- Interconnectors: Updated every 5-10 minutes
-- PN data: Real-time updates
-- Different tables have different update cycles
+| Document | Words | Pages | Sections | Code Examples |
+|----------|-------|-------|----------|---------------|
+| DASHBOARD_DOCUMENTATION.md | 15,000 | 50 | 25+ | 20+ |
+| REMIT_DASHBOARD_DOCUMENTATION.md | 8,000 | 25 | 15+ | 10+ |
+| SYSTEM_OVERVIEW.md | 4,000 | 12 | 10+ | 5+ |
+| DASHBOARD_QUICK_REFERENCE.md | 1,500 | 5 | 10+ | 8+ |
+| DASHBOARD_CHANGELOG.md | 2,000 | 6 | 8+ | 4+ |
+| **TOTAL** | **30,500** | **98** | **68+** | **47+** |
 
 ---
 
-## ✨ Success Metrics
+## 🔗 Quick Links
 
-### ✅ Completed
-- [x] API integration working
-- [x] Data ingested to BigQuery
-- [x] Queries return real data
-- [x] Memory issues solved
-- [x] Documentation complete
-- [x] Scripts tested and working
+### Dashboard
+- **Live Dashboard:** [Google Sheets](https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8)
 
-### 🔄 In Progress
-- [ ] Google Sheets dashboard live
-- [ ] Automated daily updates
-- [ ] Full historical data (2022-2024)
+### BigQuery
+- **Project:** inner-cinema-476211-u9
+- **Dataset:** uk_energy_prod
+- **Tables:** bmrs_fuelinst, bmrs_remit_unavailability
 
-### 📋 Planned
-- [ ] Predictive models
-- [ ] Anomaly detection
-- [ ] Cost analysis
-- [ ] API for external access
+### APIs
+- **Elexon BMRS:** https://api.bmreports.com/
+- **EPEX SPOT:** https://www.epexspot.com/
+- **ENTSO-E:** https://transparency.entsoe.eu/
 
 ---
 
-## 📁 File Structure
+## 📥 Document Locations
+
+All files located in: `/Users/georgemajor/GB Power Market JJ/`
 
 ```
 GB Power Market JJ/
-├── README.md (this file)
-├── DATA_INGESTION_DOCUMENTATION.md ⭐
-├── QUICK_REFERENCE.md 🚀
-├── STREAMING_UPLOAD_FIX.md 🔧
-├── MULTI_YEAR_DOWNLOAD_PLAN.md
-├── API_RESEARCH_FINDINGS.md
-├── update_dashboard_clean.py
-├── download_multi_year_streaming.py
-├── discover_all_datasets.py
-├── test_dashboard_queries.py
-├── inspect_table_schemas.py
-├── insights_manifest_dynamic.json
-└── jibber_jabber_key.json (service account - not in git)
+├── DOCUMENTATION_INDEX.md (this file)
+├── DASHBOARD_DOCUMENTATION.md
+├── DASHBOARD_QUICK_REFERENCE.md
+├── DASHBOARD_CHANGELOG.md
+├── REMIT_DASHBOARD_DOCUMENTATION.md
+├── SYSTEM_OVERVIEW.md
+├── dashboard_clean_design.py (main script)
+├── fetch_fuelinst_today.py
+├── fetch_remit_unavailability.py
+└── ... (other project files)
 ```
 
 ---
 
-## 🔐 Security Notes
+## 📞 Support & Feedback
 
-- Service account key (`jibber_jabber_key.json`) is **NOT** in version control
-- BigQuery access is restricted to service account
-- API access is public (Elexon BMRS is open data)
-- Google Sheets will require sharing with service account email
+**Questions?** Refer to appropriate documentation above
 
----
+**Issues?** Check troubleshooting sections:
+1. DASHBOARD_QUICK_REFERENCE.md (quick fixes)
+2. DASHBOARD_DOCUMENTATION.md (detailed solutions)
 
-## 🤝 Contributing
+**Feature Requests?** Review planned features:
+- DASHBOARD_CHANGELOG.md → "Planned Future Releases"
 
-To extend this project:
-1. Read DATA_INGESTION_DOCUMENTATION.md
-2. Check QUICK_REFERENCE.md for query patterns
-3. Test changes with small date ranges first
-4. Update documentation when adding features
-5. Follow the streaming pattern for large datasets
+**Contact:**
+- George Major
+- george.major@grid-smart.co.uk
+- Grid Smart / uPower Energy
 
 ---
 
-## 📝 License & Data
+## 🎓 Recommended Reading Order
 
-- **Code:** Project-specific, not open source
-- **Data Source:** Elexon BMRS Insights API (open data)
-- **Data License:** Check Elexon terms of use
-- **BigQuery:** Private project, access controlled
+### For Dashboard Users
+1. **DASHBOARD_QUICK_REFERENCE.md** (start here)
+2. **DASHBOARD_DOCUMENTATION.md** sections 1-5
+3. **REMIT_DASHBOARD_DOCUMENTATION.md** (if working with outages)
+
+### For Developers
+1. **SYSTEM_OVERVIEW.md** (architecture first)
+2. **DASHBOARD_DOCUMENTATION.md** (complete reference)
+3. **DASHBOARD_CHANGELOG.md** (version history)
+4. **REMIT_DASHBOARD_DOCUMENTATION.md** (data specifics)
+
+### For System Administrators
+1. **DASHBOARD_QUICK_REFERENCE.md** → "Automation Setup"
+2. **SYSTEM_OVERVIEW.md** → Performance & costs
+3. **DASHBOARD_DOCUMENTATION.md** → "Troubleshooting"
 
 ---
 
-## 🎉 Project Status: OPERATIONAL ✅
+## ✨ What's New in Version 2.0
 
-This system is working and ready for:
-- ✅ Real-time data queries
-- ✅ Dashboard updates
-- ✅ Historical analysis
-- ✅ Multi-year data downloads
-- ✅ Production use
+**Highlights:**
+- 🟥 Visual red bar charts for % unavailable
+- 💷 Price impact analysis section
+- 📊 Complete station list (active + returned)
+- 🔧 Enhanced 8-column layout
+- 📝 30,500 words of documentation
+
+**See:** DASHBOARD_CHANGELOG.md for full details
 
 ---
 
-**For detailed information on any topic, see the respective documentation file.**
+## 📖 Documentation Coverage Map
 
-**Questions? Start with [DATA_INGESTION_DOCUMENTATION.md](DATA_INGESTION_DOCUMENTATION.md)**
+```
+Feature Area          | Primary Doc                        | Secondary Doc
+----------------------|------------------------------------|---------------------------------
+Dashboard Layout      | DASHBOARD_DOCUMENTATION.md         | QUICK_REFERENCE.md
+Generation Data       | DASHBOARD_DOCUMENTATION.md         | SYSTEM_OVERVIEW.md
+REMIT Outages        | REMIT_DASHBOARD_DOCUMENTATION.md   | DASHBOARD_DOCUMENTATION.md
+Price Impact         | DASHBOARD_DOCUMENTATION.md         | QUICK_REFERENCE.md
+Visual Elements      | DASHBOARD_DOCUMENTATION.md         | QUICK_REFERENCE.md
+Scripts & Code       | DASHBOARD_DOCUMENTATION.md         | SYSTEM_OVERVIEW.md
+BigQuery Schema      | DASHBOARD_DOCUMENTATION.md         | REMIT_DASHBOARD_DOCUMENTATION.md
+SQL Queries          | DASHBOARD_DOCUMENTATION.md         | -
+Troubleshooting      | DASHBOARD_DOCUMENTATION.md         | QUICK_REFERENCE.md
+Automation           | QUICK_REFERENCE.md                 | DASHBOARD_DOCUMENTATION.md
+Architecture         | SYSTEM_OVERVIEW.md                 | -
+Version History      | DASHBOARD_CHANGELOG.md             | -
+```
+
+---
+
+*Last Updated: 30 October 2025*  
+*Documentation Suite Version: 2.0*

@@ -183,16 +183,16 @@ def main():
     end_date = dt.date.today()
 
     insights_jobs = [
-        ("DEMAND_OUTTURN", "/demand/outturn", 31, "jibber-jabber-knowledge.uk_energy_prod.demand_outturn"),
-        ("SYSWARN", "/datasets/SYSWARN", 31, "jibber-jabber-knowledge.uk_energy_prod.system_warnings"),
-        ("FREQ", "/datasets/FREQ", 7, "jibber-jabber-knowledge.uk_energy_prod.system_frequency"),
-        ("FUELINST", "/datasets/FUELINST", 7, "jibber-jabber-knowledge.uk_energy_prod.generation_outturn")
+        ("DEMAND_OUTTURN", "/demand/outturn", 31, "inner-cinema-476211-u9.uk_energy_prod.demand_outturn"),
+        ("SYSWARN", "/datasets/SYSWARN", 31, "inner-cinema-476211-u9.uk_energy_prod.system_warnings"),
+        ("FREQ", "/datasets/FREQ", 7, "inner-cinema-476211-u9.uk_energy_prod.system_frequency"),
+        ("FUELINST", "/datasets/FUELINST", 7, "inner-cinema-476211-u9.uk_energy_prod.generation_outturn")
     ]
     for code, path, chunk_days, table in insights_jobs:
         fetch_insights_dataset(code, path, start_date, end_date, chunk_days, {}, table)
 
-    fetch_B0620(start_date, end_date, "jibber-jabber-knowledge.uk_energy_prod.B0620")
-    fetch_B0630(start_date, end_date, "jibber-jabber-knowledge.uk_energy_prod.B0630")
+    fetch_B0620(start_date, end_date, "inner-cinema-476211-u9.uk_energy_prod.B0620")
+    fetch_B0630(start_date, end_date, "inner-cinema-476211-u9.uk_energy_prod.B0630")
 
 if __name__ == "__main__":
     main()
