@@ -1,0 +1,42 @@
+==========================================
+Duplicate Cleanup & Ingestion Restart
+==========================================
+
+Step 1: Checking for running processes...
+✅ No ingestion processes running
+
+Step 2: Getting list of BMRS tables...
+Found 2 BMRS tables
+
+Step 3: Cleaning duplicates from all tables...
+This may take several minutes...
+
+Processing 2 tables...
+
+[1/2] bmrs_boalf
+  🔧 bmrs_boalf: Removing 633,434 duplicates...
+  ✅ bmrs_boalf: Cleaned! (3,750,118 unique rows)
+[2/2] bmrs_bod
+  ✅ bmrs_bod: No duplicates (5,062,269 rows)
+
+✅ All tables processed!
+
+==========================================
+Step 4: Restarting ingestion with improvements
+==========================================
+
+Starting 2025 ingestion...
+Log file: jan_aug_ingest_20251027_001331.log
+✅ Process started (PID: 13489)
+
+✅ Ingestion is running!
+
+To monitor: tail -f jan_aug_ingest_20251027_001331.log
+To check process: ps aux | grep 13489
+
+Setting up automatic 2024 ingestion...
+✅ Auto-start for 2024 configured
+
+==========================================
+All done! Ingestion is running.
+==========================================

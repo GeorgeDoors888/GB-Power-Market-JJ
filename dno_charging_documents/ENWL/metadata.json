@@ -1,0 +1,14 @@
+{
+  "mpan_id": "16",
+  "dno_key": "ENWL",
+  "dno_name": "Electricity North West",
+  "short_code": "ENWL",
+  "market_id": "NORW",
+  "gsp_group": "G",
+  "gsp_name": "North West",
+  "website": "https://www.enwl.co.uk",
+  "data_portal": "https://enwl.opendatasoft.com",
+  "documents": [],
+  "last_updated": "2025-10-30T00:33:46.346600",
+  "document_count": 0
+}

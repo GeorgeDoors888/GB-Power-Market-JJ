@@ -1,0 +1,77 @@
+{
+  "total_dnos": 14,
+  "dnos_with_docs": 5,
+  "total_documents": 11,
+  "by_dno": {
+    "UKPN-LPN": {
+      "dno_name": "UK Power Networks (London)",
+      "document_count": 3,
+      "has_portal": true
+    },
+    "UKPN-EPN": {
+      "dno_name": "UK Power Networks (Eastern)",
+      "document_count": 3,
+      "has_portal": true
+    },
+    "UKPN-SPN": {
+      "dno_name": "UK Power Networks (South Eastern)",
+      "document_count": 3,
+      "has_portal": true
+    },
+    "ENWL": {
+      "dno_name": "Electricity North West",
+      "document_count": 0,
+      "has_portal": true
+    },
+    "NPg-NE": {
+      "dno_name": "Northern Powergrid (North East)",
+      "document_count": 1,
+      "has_portal": true
+    },
+    "NPg-Y": {
+      "dno_name": "Northern Powergrid (Yorkshire)",
+      "document_count": 1,
+      "has_portal": true
+    },
+    "SP-Distribution": {
+      "dno_name": "SP Energy Networks (SPD)",
+      "document_count": 0,
+      "has_portal": false
+    },
+    "SP-Manweb": {
+      "dno_name": "SP Energy Networks (SPM)",
+      "document_count": 0,
+      "has_portal": false
+    },
+    "SSE-SHEPD": {
+      "dno_name": "Scottish Hydro Electric Power Distribution (SHEPD)",
+      "document_count": 0,
+      "has_portal": true
+    },
+    "SSE-SEPD": {
+      "dno_name": "Southern Electric Power Distribution (SEPD)",
+      "document_count": 0,
+      "has_portal": true
+    },
+    "NGED-WM": {
+      "dno_name": "National Grid Electricity Distribution \u2013 West Midlands (WMID)",
+      "document_count": 0,
+      "has_portal": false
+    },
+    "NGED-EM": {
+      "dno_name": "National Grid Electricity Distribution \u2013 East Midlands (EMID)",
+      "document_count": 0,
+      "has_portal": false
+    },
+    "NGED-SW": {
+      "dno_name": "National Grid Electricity Distribution \u2013 South West (SWEST)",
+      "document_count": 0,
+      "has_portal": false
+    },
+    "NGED-SWales": {
+      "dno_name": "National Grid Electricity Distribution \u2013 South Wales (SWALES)",
+      "document_count": 0,
+      "has_portal": false
+    }
+  }
+}

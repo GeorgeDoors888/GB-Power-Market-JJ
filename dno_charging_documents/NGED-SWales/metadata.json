@@ -1,0 +1,14 @@
+{
+  "mpan_id": "21",
+  "dno_key": "NGED-SWales",
+  "dno_name": "National Grid Electricity Distribution \u2013 South Wales (SWALES)",
+  "short_code": "SWALES",
+  "market_id": "SWAE",
+  "gsp_group": "K",
+  "gsp_name": "South Wales",
+  "website": "https://www.nationalgrid.com/electricity-distribution",
+  "data_portal": null,
+  "documents": [],
+  "last_updated": "2025-10-30T00:33:57.930035",
+  "document_count": 0
+}

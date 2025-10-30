@@ -1,0 +1,14 @@
+{
+  "mpan_id": "17",
+  "dno_key": "SSE-SHEPD",
+  "dno_name": "Scottish Hydro Electric Power Distribution (SHEPD)",
+  "short_code": "SHEPD",
+  "market_id": "HYDE",
+  "gsp_group": "P",
+  "gsp_name": "North Scotland",
+  "website": "https://www.ssen.co.uk",
+  "data_portal": "https://ssen-transmissionnetwork.opendatasoft.com",
+  "documents": [],
+  "last_updated": "2025-10-30T00:33:52.878380",
+  "document_count": 0
+}

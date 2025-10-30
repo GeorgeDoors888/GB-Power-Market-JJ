@@ -1,0 +1,19 @@
+/Library/Frameworks/Python.framework/Versions/3.11/Resources/Python.app/Contents/MacOS/Python: can't open file '/Users/georgemajor/GB Power Market JJ/realtime_updater.py': [Errno 2] No such file or directory
+2025-10-30 01:20:06,515 - INFO - ================================================================================
+2025-10-30 01:20:06,515 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 01:20:06,515 - INFO - ================================================================================
+2025-10-30 01:20:07,217 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 975303ff-f294-48fc-8c7b-c5bea8244ee9
+
+2025-10-30 01:20:07,721 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 217f2bf9-9f07-47b6-adf3-077ae8070357
+
+2025-10-30 01:20:07,721 - INFO - 🔄 Fetching data from 2025-10-30 01:05 to 2025-10-30 01:20 UTC
+2025-10-30 01:20:07,721 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 01:20:13,610 - INFO - ✅ Real-time update completed successfully
+2025-10-30 01:20:13,611 - INFO -    Output: ['google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Table expiration time must be less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Table expiration time must be less than 60 days while in sandbox mode.', '2025-10-30 01:20:12,785 - INFO - 🌐 Fetching BMRS dataset=WIND_SOLAR_GEN from=2025-10-30 00:00:00+00:00 to=2025-10-31 00:00:00+00:00', '2025-10-30 01:20:13,043 - INFO - HTTP Request: GET https://data.elexon.co.uk/bmrs/api/v1/generation/actual/per-type/wind-and-solar?from=2025-10-30&to=2025-10-31&format=json "HTTP/1.1 200 OK"', '2025-10-30 01:20:13,258 - INFO - No data returned for WIND_SOLAR_GEN in window 2025-10-30 00:00:00+00:00-2025-10-31 00:00:00+00:00', '2025-10-30 01:20:13,258 - INFO - ✅ Ingestion run completed.']
+2025-10-30 01:20:13,612 - INFO - ✅ Update cycle completed successfully

@@ -1,0 +1,21 @@
+2025-10-29 10:51:33,955 - INFO - BigQuery dataset 'uk_energy_prod' exists.
+All Datasets:   0%|          | 0/1 [00:00<?, ?it/s]Dataset: FUELINST:   0%|          | 0/1 [00:00<?, ?it/s]                                                        Dataset: FUELINST:   0%|          | 0/1 [00:00<?, ?it/s]                                                        Dataset: FUELINST:   0%|          | 0/1 [00:00<?, ?it/s]                                                        Dataset: FUELINST:   0%|          | 0/1 [00:01<?, ?it/s]                                                        Dataset: FUELINST:   0%|          | 0/1 [00:01<?, ?it/s]Dataset: FUELINST: 100%|██████████| 1/1 [00:01<00:00,  1.40s/it]Dataset: FUELINST: 100%|██████████| 1/1 [00:01<00:00,  1.40s/it]
+2025-10-29 10:51:33,966 - INFO - Overwrite enabled. Clearing data for bmrs_fuelinst between 2025-01-01 00:00:00+00:00 and 2025-10-29 00:00:00+00:00
+2025-10-29 10:51:34,293 - WARNING - 🔥 Deleting data from /projects/inner-cinema-476211-u9/datasets/uk_energy_prod/tables/bmrs_fuelinst for range 2025-01-01T00:00:00+00:00 to 2025-10-29T00:00:00+00:00
+2025-10-29 10:51:35,366 - ERROR - ❌ BMRS_FUELINST: Failed to clear date range: 400 GET https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/queries/eaf71fde-07a9-4a5b-a100-5fa583cb854e?maxResults=0&location=US&prettyPrint=false: No matching signature for operator >= for argument types: DATETIME, TIMESTAMP
+  Signature: T1 >= T1
+    Unable to find common supertype for templated argument <T1>
+      Input types for <T1>: {TIMESTAMP, DATETIME} at [1:73]
+
+Location: US
+Job ID: eaf71fde-07a9-4a5b-a100-5fa583cb854e
+
+2025-10-29 10:51:35,368 - ERROR - Failed to clear date range for bmrs_fuelinst, stopping for this dataset: 400 GET https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/queries/eaf71fde-07a9-4a5b-a100-5fa583cb854e?maxResults=0&location=US&prettyPrint=false: No matching signature for operator >= for argument types: DATETIME, TIMESTAMP
+  Signature: T1 >= T1
+    Unable to find common supertype for templated argument <T1>
+      Input types for <T1>: {TIMESTAMP, DATETIME} at [1:73]
+
+Location: US
+Job ID: eaf71fde-07a9-4a5b-a100-5fa583cb854e
+
+2025-10-29 10:51:35,371 - INFO - ✅ Ingestion run completed.

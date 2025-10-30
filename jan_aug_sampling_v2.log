@@ -1,0 +1,475 @@
+================================================================================
+🧪 JAN-AUG 2025 SAMPLING TEST (Simplified)
+================================================================================
+
+Purpose: Verify record density claim
+  Baseline: Sep-Oct 2025 = 648,828 records/day
+  Claim: Jan-Aug 2025 = ~300k records/day
+
+Strategy: Download 1 week from each month (56 days total)
+Datasets: 8 key datasets
+================================================================================
+
+✅ Connected to BigQuery project: inner-cinema-476211-u9
+✅ Using dataset: uk_energy_prod
+
+
+================================================================================
+📅 MONTH: January 2025 (Days 1 - 7)
+================================================================================
+
+  📦 PN...         ⚠️  Chunk error (2025-01-01 to 2025-01-04): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/PN?from=2025-01-01T00%3A00%3A00Z&to=2025-01-04T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+        ⚠️  Chunk error (2025-01-04 to 2025-01-07): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/PN?from=2025-01-04T00%3A00%3A00Z&to=2025-01-07T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+        ⚠️  Chunk error (2025-01-07 to 2025-01-08): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/PN?from=2025-01-07T00%3A00%3A00Z&to=2025-01-08T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+⚠️  No data
+  📦 BOD...         ⚠️  Chunk error (2025-01-01 to 2025-01-04): Client error '400 Bad Request' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/BOD?from=2025-01-01T00%3A00%3A00Z&to=2025-01-04T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+        ⚠️  Chunk error (2025-01-04 to 2025-01-07): Client error '400 Bad Request' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/BOD?from=2025-01-04T00%3A00%3A00Z&to=2025-01-07T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+        ⚠️  Chunk error (2025-01-07 to 2025-01-08): Client error '400 Bad Request' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/BOD?from=2025-01-07T00%3A00%3A00Z&to=2025-01-08T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+⚠️  No data
+  📦 FREQ...         ⚠️  Table inner-cinema-476211-u9.uk_energy_prod.freq_sample_january_2025 not found, skipping
+✅ 0 records in 1.0s
+  📦 INDOD...         ⚠️  Chunk error (2025-01-01 to 2025-01-04): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/INDOD?from=2025-01-01T00%3A00%3A00Z&to=2025-01-04T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+        ⚠️  Chunk error (2025-01-04 to 2025-01-07): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/INDOD?from=2025-01-04T00%3A00%3A00Z&to=2025-01-07T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+        ⚠️  Chunk error (2025-01-07 to 2025-01-08): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/INDOD?from=2025-01-07T00%3A00%3A00Z&to=2025-01-08T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+⚠️  No data
+  📦 FUELHH...         ⚠️  Table inner-cinema-476211-u9.uk_energy_prod.fuelhh_sample_january_2025 not found, skipping
+✅ 0 records in 0.8s
+  📦 B1610...         ⚠️  Chunk error (2025-01-01 to 2025-01-04): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/B1610?from=2025-01-01T00%3A00%3A00Z&to=2025-01-04T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+        ⚠️  Chunk error (2025-01-04 to 2025-01-07): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/B1610?from=2025-01-04T00%3A00%3A00Z&to=2025-01-07T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+        ⚠️  Chunk error (2025-01-07 to 2025-01-08): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/B1610?from=2025-01-07T00%3A00%3A00Z&to=2025-01-08T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+⚠️  No data
+  📦 DETSYSPRICES...         ⚠️  Chunk error (2025-01-01 to 2025-01-04): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/DETSYSPRICES?from=2025-01-01T00%3A00%3A00Z&to=2025-01-04T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+        ⚠️  Chunk error (2025-01-04 to 2025-01-07): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/DETSYSPRICES?from=2025-01-04T00%3A00%3A00Z&to=2025-01-07T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+        ⚠️  Chunk error (2025-01-07 to 2025-01-08): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/DETSYSPRICES?from=2025-01-07T00%3A00%3A00Z&to=2025-01-08T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+⚠️  No data
+  📦 DISBSAD...         ⚠️  Chunk error (2025-01-01 to 2025-01-04): Client error '400 Bad Request' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/DISBSAD?from=2025-01-01T00%3A00%3A00Z&to=2025-01-04T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+        ⚠️  Chunk error (2025-01-04 to 2025-01-07): Client error '400 Bad Request' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/DISBSAD?from=2025-01-04T00%3A00%3A00Z&to=2025-01-07T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+        ⚠️  Chunk error (2025-01-07 to 2025-01-08): Client error '400 Bad Request' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/DISBSAD?from=2025-01-07T00%3A00%3A00Z&to=2025-01-08T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+⚠️  No data
+
+  📊 January Total: 0 records in 3.1s
+  📈 Average: 0 records/day
+
+================================================================================
+📅 MONTH: February 2025 (Days 1 - 7)
+================================================================================
+
+  📦 PN...         ⚠️  Chunk error (2025-02-01 to 2025-02-04): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/PN?from=2025-02-01T00%3A00%3A00Z&to=2025-02-04T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+        ⚠️  Chunk error (2025-02-04 to 2025-02-07): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/PN?from=2025-02-04T00%3A00%3A00Z&to=2025-02-07T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+        ⚠️  Chunk error (2025-02-07 to 2025-02-08): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/PN?from=2025-02-07T00%3A00%3A00Z&to=2025-02-08T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+⚠️  No data
+  📦 BOD...         ⚠️  Chunk error (2025-02-01 to 2025-02-04): Client error '400 Bad Request' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/BOD?from=2025-02-01T00%3A00%3A00Z&to=2025-02-04T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+        ⚠️  Chunk error (2025-02-04 to 2025-02-07): Client error '400 Bad Request' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/BOD?from=2025-02-04T00%3A00%3A00Z&to=2025-02-07T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+        ⚠️  Chunk error (2025-02-07 to 2025-02-08): Client error '400 Bad Request' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/BOD?from=2025-02-07T00%3A00%3A00Z&to=2025-02-08T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+⚠️  No data
+  📦 FREQ...         ⚠️  Table inner-cinema-476211-u9.uk_energy_prod.freq_sample_february_2025 not found, skipping
+✅ 0 records in 0.9s
+  📦 INDOD...         ⚠️  Chunk error (2025-02-01 to 2025-02-04): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/INDOD?from=2025-02-01T00%3A00%3A00Z&to=2025-02-04T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+        ⚠️  Chunk error (2025-02-04 to 2025-02-07): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/INDOD?from=2025-02-04T00%3A00%3A00Z&to=2025-02-07T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+        ⚠️  Chunk error (2025-02-07 to 2025-02-08): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/INDOD?from=2025-02-07T00%3A00%3A00Z&to=2025-02-08T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+⚠️  No data
+  📦 FUELHH...         ⚠️  Table inner-cinema-476211-u9.uk_energy_prod.fuelhh_sample_february_2025 not found, skipping
+✅ 0 records in 0.8s
+  📦 B1610...         ⚠️  Chunk error (2025-02-01 to 2025-02-04): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/B1610?from=2025-02-01T00%3A00%3A00Z&to=2025-02-04T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+        ⚠️  Chunk error (2025-02-04 to 2025-02-07): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/B1610?from=2025-02-04T00%3A00%3A00Z&to=2025-02-07T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+        ⚠️  Chunk error (2025-02-07 to 2025-02-08): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/B1610?from=2025-02-07T00%3A00%3A00Z&to=2025-02-08T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+⚠️  No data
+  📦 DETSYSPRICES...         ⚠️  Chunk error (2025-02-01 to 2025-02-04): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/DETSYSPRICES?from=2025-02-01T00%3A00%3A00Z&to=2025-02-04T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+        ⚠️  Chunk error (2025-02-04 to 2025-02-07): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/DETSYSPRICES?from=2025-02-04T00%3A00%3A00Z&to=2025-02-07T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+        ⚠️  Chunk error (2025-02-07 to 2025-02-08): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/DETSYSPRICES?from=2025-02-07T00%3A00%3A00Z&to=2025-02-08T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+⚠️  No data
+  📦 DISBSAD...         ⚠️  Chunk error (2025-02-01 to 2025-02-04): Client error '400 Bad Request' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/DISBSAD?from=2025-02-01T00%3A00%3A00Z&to=2025-02-04T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+        ⚠️  Chunk error (2025-02-04 to 2025-02-07): Client error '400 Bad Request' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/DISBSAD?from=2025-02-04T00%3A00%3A00Z&to=2025-02-07T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+        ⚠️  Chunk error (2025-02-07 to 2025-02-08): Client error '400 Bad Request' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/DISBSAD?from=2025-02-07T00%3A00%3A00Z&to=2025-02-08T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+⚠️  No data
+
+  📊 February Total: 0 records in 2.9s
+  📈 Average: 0 records/day
+
+================================================================================
+📅 MONTH: March 2025 (Days 1 - 7)
+================================================================================
+
+  📦 PN...         ⚠️  Chunk error (2025-03-01 to 2025-03-04): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/PN?from=2025-03-01T00%3A00%3A00Z&to=2025-03-04T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+        ⚠️  Chunk error (2025-03-04 to 2025-03-07): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/PN?from=2025-03-04T00%3A00%3A00Z&to=2025-03-07T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+        ⚠️  Chunk error (2025-03-07 to 2025-03-08): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/PN?from=2025-03-07T00%3A00%3A00Z&to=2025-03-08T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+⚠️  No data
+  📦 BOD...         ⚠️  Chunk error (2025-03-01 to 2025-03-04): Client error '400 Bad Request' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/BOD?from=2025-03-01T00%3A00%3A00Z&to=2025-03-04T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+        ⚠️  Chunk error (2025-03-04 to 2025-03-07): Client error '400 Bad Request' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/BOD?from=2025-03-04T00%3A00%3A00Z&to=2025-03-07T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+        ⚠️  Chunk error (2025-03-07 to 2025-03-08): Client error '400 Bad Request' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/BOD?from=2025-03-07T00%3A00%3A00Z&to=2025-03-08T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+⚠️  No data
+  📦 FREQ...         ⚠️  Table inner-cinema-476211-u9.uk_energy_prod.freq_sample_march_2025 not found, skipping
+✅ 0 records in 0.9s
+  📦 INDOD...         ⚠️  Chunk error (2025-03-01 to 2025-03-04): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/INDOD?from=2025-03-01T00%3A00%3A00Z&to=2025-03-04T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+        ⚠️  Chunk error (2025-03-04 to 2025-03-07): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/INDOD?from=2025-03-04T00%3A00%3A00Z&to=2025-03-07T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+        ⚠️  Chunk error (2025-03-07 to 2025-03-08): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/INDOD?from=2025-03-07T00%3A00%3A00Z&to=2025-03-08T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+⚠️  No data
+  📦 FUELHH...         ⚠️  Table inner-cinema-476211-u9.uk_energy_prod.fuelhh_sample_march_2025 not found, skipping
+✅ 0 records in 0.8s
+  📦 B1610...         ⚠️  Chunk error (2025-03-01 to 2025-03-04): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/B1610?from=2025-03-01T00%3A00%3A00Z&to=2025-03-04T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+        ⚠️  Chunk error (2025-03-04 to 2025-03-07): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/B1610?from=2025-03-04T00%3A00%3A00Z&to=2025-03-07T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+        ⚠️  Chunk error (2025-03-07 to 2025-03-08): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/B1610?from=2025-03-07T00%3A00%3A00Z&to=2025-03-08T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+⚠️  No data
+  📦 DETSYSPRICES...         ⚠️  Chunk error (2025-03-01 to 2025-03-04): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/DETSYSPRICES?from=2025-03-01T00%3A00%3A00Z&to=2025-03-04T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+        ⚠️  Chunk error (2025-03-04 to 2025-03-07): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/DETSYSPRICES?from=2025-03-04T00%3A00%3A00Z&to=2025-03-07T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+        ⚠️  Chunk error (2025-03-07 to 2025-03-08): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/DETSYSPRICES?from=2025-03-07T00%3A00%3A00Z&to=2025-03-08T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+⚠️  No data
+  📦 DISBSAD...         ⚠️  Chunk error (2025-03-01 to 2025-03-04): Client error '400 Bad Request' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/DISBSAD?from=2025-03-01T00%3A00%3A00Z&to=2025-03-04T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+        ⚠️  Chunk error (2025-03-04 to 2025-03-07): Client error '400 Bad Request' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/DISBSAD?from=2025-03-04T00%3A00%3A00Z&to=2025-03-07T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+        ⚠️  Chunk error (2025-03-07 to 2025-03-08): Client error '400 Bad Request' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/DISBSAD?from=2025-03-07T00%3A00%3A00Z&to=2025-03-08T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+⚠️  No data
+
+  📊 March Total: 0 records in 3.0s
+  📈 Average: 0 records/day
+
+================================================================================
+📅 MONTH: April 2025 (Days 1 - 7)
+================================================================================
+
+  📦 PN...         ⚠️  Chunk error (2025-04-01 to 2025-04-04): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/PN?from=2025-04-01T00%3A00%3A00Z&to=2025-04-04T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+        ⚠️  Chunk error (2025-04-04 to 2025-04-07): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/PN?from=2025-04-04T00%3A00%3A00Z&to=2025-04-07T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+        ⚠️  Chunk error (2025-04-07 to 2025-04-08): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/PN?from=2025-04-07T00%3A00%3A00Z&to=2025-04-08T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+⚠️  No data
+  📦 BOD...         ⚠️  Chunk error (2025-04-01 to 2025-04-04): Client error '400 Bad Request' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/BOD?from=2025-04-01T00%3A00%3A00Z&to=2025-04-04T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+        ⚠️  Chunk error (2025-04-04 to 2025-04-07): Client error '400 Bad Request' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/BOD?from=2025-04-04T00%3A00%3A00Z&to=2025-04-07T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+        ⚠️  Chunk error (2025-04-07 to 2025-04-08): Client error '400 Bad Request' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/BOD?from=2025-04-07T00%3A00%3A00Z&to=2025-04-08T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+⚠️  No data
+  📦 FREQ...         ⚠️  Table inner-cinema-476211-u9.uk_energy_prod.freq_sample_april_2025 not found, skipping
+✅ 0 records in 0.9s
+  📦 INDOD...         ⚠️  Chunk error (2025-04-01 to 2025-04-04): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/INDOD?from=2025-04-01T00%3A00%3A00Z&to=2025-04-04T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+        ⚠️  Chunk error (2025-04-04 to 2025-04-07): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/INDOD?from=2025-04-04T00%3A00%3A00Z&to=2025-04-07T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+        ⚠️  Chunk error (2025-04-07 to 2025-04-08): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/INDOD?from=2025-04-07T00%3A00%3A00Z&to=2025-04-08T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+⚠️  No data
+  📦 FUELHH...         ⚠️  Table inner-cinema-476211-u9.uk_energy_prod.fuelhh_sample_april_2025 not found, skipping
+✅ 0 records in 0.8s
+  📦 B1610...         ⚠️  Chunk error (2025-04-01 to 2025-04-04): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/B1610?from=2025-04-01T00%3A00%3A00Z&to=2025-04-04T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+        ⚠️  Chunk error (2025-04-04 to 2025-04-07): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/B1610?from=2025-04-04T00%3A00%3A00Z&to=2025-04-07T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+        ⚠️  Chunk error (2025-04-07 to 2025-04-08): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/B1610?from=2025-04-07T00%3A00%3A00Z&to=2025-04-08T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+⚠️  No data
+  📦 DETSYSPRICES...         ⚠️  Chunk error (2025-04-01 to 2025-04-04): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/DETSYSPRICES?from=2025-04-01T00%3A00%3A00Z&to=2025-04-04T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+        ⚠️  Chunk error (2025-04-04 to 2025-04-07): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/DETSYSPRICES?from=2025-04-04T00%3A00%3A00Z&to=2025-04-07T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+        ⚠️  Chunk error (2025-04-07 to 2025-04-08): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/DETSYSPRICES?from=2025-04-07T00%3A00%3A00Z&to=2025-04-08T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+⚠️  No data
+  📦 DISBSAD...         ⚠️  Chunk error (2025-04-01 to 2025-04-04): Client error '400 Bad Request' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/DISBSAD?from=2025-04-01T00%3A00%3A00Z&to=2025-04-04T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+        ⚠️  Chunk error (2025-04-04 to 2025-04-07): Client error '400 Bad Request' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/DISBSAD?from=2025-04-04T00%3A00%3A00Z&to=2025-04-07T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+        ⚠️  Chunk error (2025-04-07 to 2025-04-08): Client error '400 Bad Request' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/DISBSAD?from=2025-04-07T00%3A00%3A00Z&to=2025-04-08T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+⚠️  No data
+
+  📊 April Total: 0 records in 2.9s
+  📈 Average: 0 records/day
+
+================================================================================
+📅 MONTH: May 2025 (Days 1 - 7)
+================================================================================
+
+  📦 PN...         ⚠️  Chunk error (2025-05-01 to 2025-05-04): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/PN?from=2025-05-01T00%3A00%3A00Z&to=2025-05-04T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+        ⚠️  Chunk error (2025-05-04 to 2025-05-07): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/PN?from=2025-05-04T00%3A00%3A00Z&to=2025-05-07T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+        ⚠️  Chunk error (2025-05-07 to 2025-05-08): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/PN?from=2025-05-07T00%3A00%3A00Z&to=2025-05-08T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+⚠️  No data
+  📦 BOD...         ⚠️  Chunk error (2025-05-01 to 2025-05-04): Client error '400 Bad Request' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/BOD?from=2025-05-01T00%3A00%3A00Z&to=2025-05-04T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+        ⚠️  Chunk error (2025-05-04 to 2025-05-07): Client error '400 Bad Request' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/BOD?from=2025-05-04T00%3A00%3A00Z&to=2025-05-07T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+        ⚠️  Chunk error (2025-05-07 to 2025-05-08): Client error '400 Bad Request' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/BOD?from=2025-05-07T00%3A00%3A00Z&to=2025-05-08T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+⚠️  No data
+  📦 FREQ...         ⚠️  Table inner-cinema-476211-u9.uk_energy_prod.freq_sample_may_2025 not found, skipping
+✅ 0 records in 0.8s
+  📦 INDOD...         ⚠️  Chunk error (2025-05-01 to 2025-05-04): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/INDOD?from=2025-05-01T00%3A00%3A00Z&to=2025-05-04T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+        ⚠️  Chunk error (2025-05-04 to 2025-05-07): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/INDOD?from=2025-05-04T00%3A00%3A00Z&to=2025-05-07T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+        ⚠️  Chunk error (2025-05-07 to 2025-05-08): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/INDOD?from=2025-05-07T00%3A00%3A00Z&to=2025-05-08T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+⚠️  No data
+  📦 FUELHH...         ⚠️  Table inner-cinema-476211-u9.uk_energy_prod.fuelhh_sample_may_2025 not found, skipping
+✅ 0 records in 0.8s
+  📦 B1610...         ⚠️  Chunk error (2025-05-01 to 2025-05-04): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/B1610?from=2025-05-01T00%3A00%3A00Z&to=2025-05-04T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+        ⚠️  Chunk error (2025-05-04 to 2025-05-07): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/B1610?from=2025-05-04T00%3A00%3A00Z&to=2025-05-07T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+        ⚠️  Chunk error (2025-05-07 to 2025-05-08): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/B1610?from=2025-05-07T00%3A00%3A00Z&to=2025-05-08T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+⚠️  No data
+  📦 DETSYSPRICES...         ⚠️  Chunk error (2025-05-01 to 2025-05-04): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/DETSYSPRICES?from=2025-05-01T00%3A00%3A00Z&to=2025-05-04T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+        ⚠️  Chunk error (2025-05-04 to 2025-05-07): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/DETSYSPRICES?from=2025-05-04T00%3A00%3A00Z&to=2025-05-07T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+        ⚠️  Chunk error (2025-05-07 to 2025-05-08): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/DETSYSPRICES?from=2025-05-07T00%3A00%3A00Z&to=2025-05-08T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+⚠️  No data
+  📦 DISBSAD...         ⚠️  Chunk error (2025-05-01 to 2025-05-04): Client error '400 Bad Request' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/DISBSAD?from=2025-05-01T00%3A00%3A00Z&to=2025-05-04T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+        ⚠️  Chunk error (2025-05-04 to 2025-05-07): Client error '400 Bad Request' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/DISBSAD?from=2025-05-04T00%3A00%3A00Z&to=2025-05-07T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+        ⚠️  Chunk error (2025-05-07 to 2025-05-08): Client error '400 Bad Request' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/DISBSAD?from=2025-05-07T00%3A00%3A00Z&to=2025-05-08T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+⚠️  No data
+
+  📊 May Total: 0 records in 2.8s
+  📈 Average: 0 records/day
+
+================================================================================
+📅 MONTH: June 2025 (Days 1 - 7)
+================================================================================
+
+  📦 PN...         ⚠️  Chunk error (2025-06-01 to 2025-06-04): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/PN?from=2025-06-01T00%3A00%3A00Z&to=2025-06-04T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+        ⚠️  Chunk error (2025-06-04 to 2025-06-07): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/PN?from=2025-06-04T00%3A00%3A00Z&to=2025-06-07T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+        ⚠️  Chunk error (2025-06-07 to 2025-06-08): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/PN?from=2025-06-07T00%3A00%3A00Z&to=2025-06-08T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+⚠️  No data
+  📦 BOD...         ⚠️  Chunk error (2025-06-01 to 2025-06-04): Client error '400 Bad Request' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/BOD?from=2025-06-01T00%3A00%3A00Z&to=2025-06-04T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+        ⚠️  Chunk error (2025-06-04 to 2025-06-07): Client error '400 Bad Request' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/BOD?from=2025-06-04T00%3A00%3A00Z&to=2025-06-07T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+        ⚠️  Chunk error (2025-06-07 to 2025-06-08): Client error '400 Bad Request' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/BOD?from=2025-06-07T00%3A00%3A00Z&to=2025-06-08T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+⚠️  No data
+  📦 FREQ...         ⚠️  Table inner-cinema-476211-u9.uk_energy_prod.freq_sample_june_2025 not found, skipping
+✅ 0 records in 0.9s
+  📦 INDOD...         ⚠️  Chunk error (2025-06-01 to 2025-06-04): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/INDOD?from=2025-06-01T00%3A00%3A00Z&to=2025-06-04T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+        ⚠️  Chunk error (2025-06-04 to 2025-06-07): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/INDOD?from=2025-06-04T00%3A00%3A00Z&to=2025-06-07T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+        ⚠️  Chunk error (2025-06-07 to 2025-06-08): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/INDOD?from=2025-06-07T00%3A00%3A00Z&to=2025-06-08T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+⚠️  No data
+  📦 FUELHH...         ⚠️  Table inner-cinema-476211-u9.uk_energy_prod.fuelhh_sample_june_2025 not found, skipping
+✅ 0 records in 0.8s
+  📦 B1610...         ⚠️  Chunk error (2025-06-01 to 2025-06-04): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/B1610?from=2025-06-01T00%3A00%3A00Z&to=2025-06-04T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+        ⚠️  Chunk error (2025-06-04 to 2025-06-07): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/B1610?from=2025-06-04T00%3A00%3A00Z&to=2025-06-07T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+        ⚠️  Chunk error (2025-06-07 to 2025-06-08): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/B1610?from=2025-06-07T00%3A00%3A00Z&to=2025-06-08T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+⚠️  No data
+  📦 DETSYSPRICES...         ⚠️  Chunk error (2025-06-01 to 2025-06-04): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/DETSYSPRICES?from=2025-06-01T00%3A00%3A00Z&to=2025-06-04T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+        ⚠️  Chunk error (2025-06-04 to 2025-06-07): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/DETSYSPRICES?from=2025-06-04T00%3A00%3A00Z&to=2025-06-07T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+        ⚠️  Chunk error (2025-06-07 to 2025-06-08): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/DETSYSPRICES?from=2025-06-07T00%3A00%3A00Z&to=2025-06-08T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+⚠️  No data
+  📦 DISBSAD...         ⚠️  Chunk error (2025-06-01 to 2025-06-04): Client error '400 Bad Request' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/DISBSAD?from=2025-06-01T00%3A00%3A00Z&to=2025-06-04T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+        ⚠️  Chunk error (2025-06-04 to 2025-06-07): Client error '400 Bad Request' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/DISBSAD?from=2025-06-04T00%3A00%3A00Z&to=2025-06-07T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+        ⚠️  Chunk error (2025-06-07 to 2025-06-08): Client error '400 Bad Request' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/DISBSAD?from=2025-06-07T00%3A00%3A00Z&to=2025-06-08T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+⚠️  No data
+
+  📊 June Total: 0 records in 2.9s
+  📈 Average: 0 records/day
+
+================================================================================
+📅 MONTH: July 2025 (Days 1 - 7)
+================================================================================
+
+  📦 PN...         ⚠️  Chunk error (2025-07-01 to 2025-07-04): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/PN?from=2025-07-01T00%3A00%3A00Z&to=2025-07-04T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+        ⚠️  Chunk error (2025-07-04 to 2025-07-07): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/PN?from=2025-07-04T00%3A00%3A00Z&to=2025-07-07T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+        ⚠️  Chunk error (2025-07-07 to 2025-07-08): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/PN?from=2025-07-07T00%3A00%3A00Z&to=2025-07-08T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+⚠️  No data
+  📦 BOD...         ⚠️  Chunk error (2025-07-01 to 2025-07-04): Client error '400 Bad Request' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/BOD?from=2025-07-01T00%3A00%3A00Z&to=2025-07-04T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+        ⚠️  Chunk error (2025-07-04 to 2025-07-07): Client error '400 Bad Request' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/BOD?from=2025-07-04T00%3A00%3A00Z&to=2025-07-07T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+        ⚠️  Chunk error (2025-07-07 to 2025-07-08): Client error '400 Bad Request' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/BOD?from=2025-07-07T00%3A00%3A00Z&to=2025-07-08T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+⚠️  No data
+  📦 FREQ...         ⚠️  Table inner-cinema-476211-u9.uk_energy_prod.freq_sample_july_2025 not found, skipping
+✅ 0 records in 0.9s
+  📦 INDOD...         ⚠️  Chunk error (2025-07-01 to 2025-07-04): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/INDOD?from=2025-07-01T00%3A00%3A00Z&to=2025-07-04T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+        ⚠️  Chunk error (2025-07-04 to 2025-07-07): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/INDOD?from=2025-07-04T00%3A00%3A00Z&to=2025-07-07T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+        ⚠️  Chunk error (2025-07-07 to 2025-07-08): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/INDOD?from=2025-07-07T00%3A00%3A00Z&to=2025-07-08T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+⚠️  No data
+  📦 FUELHH...         ⚠️  Table inner-cinema-476211-u9.uk_energy_prod.fuelhh_sample_july_2025 not found, skipping
+✅ 0 records in 0.8s
+  📦 B1610...         ⚠️  Chunk error (2025-07-01 to 2025-07-04): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/B1610?from=2025-07-01T00%3A00%3A00Z&to=2025-07-04T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+        ⚠️  Chunk error (2025-07-04 to 2025-07-07): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/B1610?from=2025-07-04T00%3A00%3A00Z&to=2025-07-07T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+        ⚠️  Chunk error (2025-07-07 to 2025-07-08): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/B1610?from=2025-07-07T00%3A00%3A00Z&to=2025-07-08T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+⚠️  No data
+  📦 DETSYSPRICES...         ⚠️  Chunk error (2025-07-01 to 2025-07-04): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/DETSYSPRICES?from=2025-07-01T00%3A00%3A00Z&to=2025-07-04T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+        ⚠️  Chunk error (2025-07-04 to 2025-07-07): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/DETSYSPRICES?from=2025-07-04T00%3A00%3A00Z&to=2025-07-07T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+        ⚠️  Chunk error (2025-07-07 to 2025-07-08): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/DETSYSPRICES?from=2025-07-07T00%3A00%3A00Z&to=2025-07-08T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+⚠️  No data
+  📦 DISBSAD...         ⚠️  Chunk error (2025-07-01 to 2025-07-04): Client error '400 Bad Request' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/DISBSAD?from=2025-07-01T00%3A00%3A00Z&to=2025-07-04T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+        ⚠️  Chunk error (2025-07-04 to 2025-07-07): Client error '400 Bad Request' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/DISBSAD?from=2025-07-04T00%3A00%3A00Z&to=2025-07-07T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+        ⚠️  Chunk error (2025-07-07 to 2025-07-08): Client error '400 Bad Request' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/DISBSAD?from=2025-07-07T00%3A00%3A00Z&to=2025-07-08T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+⚠️  No data
+
+  📊 July Total: 0 records in 2.9s
+  📈 Average: 0 records/day
+
+================================================================================
+📅 MONTH: August 2025 (Days 1 - 7)
+================================================================================
+
+  📦 PN...         ⚠️  Chunk error (2025-08-01 to 2025-08-04): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/PN?from=2025-08-01T00%3A00%3A00Z&to=2025-08-04T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+        ⚠️  Chunk error (2025-08-04 to 2025-08-07): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/PN?from=2025-08-04T00%3A00%3A00Z&to=2025-08-07T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+        ⚠️  Chunk error (2025-08-07 to 2025-08-08): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/PN?from=2025-08-07T00%3A00%3A00Z&to=2025-08-08T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+⚠️  No data
+  📦 BOD...         ⚠️  Chunk error (2025-08-01 to 2025-08-04): Client error '400 Bad Request' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/BOD?from=2025-08-01T00%3A00%3A00Z&to=2025-08-04T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+        ⚠️  Chunk error (2025-08-04 to 2025-08-07): Client error '400 Bad Request' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/BOD?from=2025-08-04T00%3A00%3A00Z&to=2025-08-07T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+        ⚠️  Chunk error (2025-08-07 to 2025-08-08): Client error '400 Bad Request' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/BOD?from=2025-08-07T00%3A00%3A00Z&to=2025-08-08T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+⚠️  No data
+  📦 FREQ...         ⚠️  Table inner-cinema-476211-u9.uk_energy_prod.freq_sample_august_2025 not found, skipping
+✅ 0 records in 1.0s
+  📦 INDOD...         ⚠️  Chunk error (2025-08-01 to 2025-08-04): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/INDOD?from=2025-08-01T00%3A00%3A00Z&to=2025-08-04T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+        ⚠️  Chunk error (2025-08-04 to 2025-08-07): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/INDOD?from=2025-08-04T00%3A00%3A00Z&to=2025-08-07T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+        ⚠️  Chunk error (2025-08-07 to 2025-08-08): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/INDOD?from=2025-08-07T00%3A00%3A00Z&to=2025-08-08T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+⚠️  No data
+  📦 FUELHH...         ⚠️  Table inner-cinema-476211-u9.uk_energy_prod.fuelhh_sample_august_2025 not found, skipping
+✅ 0 records in 0.8s
+  📦 B1610...         ⚠️  Chunk error (2025-08-01 to 2025-08-04): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/B1610?from=2025-08-01T00%3A00%3A00Z&to=2025-08-04T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+        ⚠️  Chunk error (2025-08-04 to 2025-08-07): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/B1610?from=2025-08-04T00%3A00%3A00Z&to=2025-08-07T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+        ⚠️  Chunk error (2025-08-07 to 2025-08-08): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/B1610?from=2025-08-07T00%3A00%3A00Z&to=2025-08-08T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+⚠️  No data
+  📦 DETSYSPRICES...         ⚠️  Chunk error (2025-08-01 to 2025-08-04): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/DETSYSPRICES?from=2025-08-01T00%3A00%3A00Z&to=2025-08-04T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+        ⚠️  Chunk error (2025-08-04 to 2025-08-07): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/DETSYSPRICES?from=2025-08-04T00%3A00%3A00Z&to=2025-08-07T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+        ⚠️  Chunk error (2025-08-07 to 2025-08-08): Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/DETSYSPRICES?from=2025-08-07T00%3A00%3A00Z&to=2025-08-08T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+⚠️  No data
+  📦 DISBSAD...         ⚠️  Chunk error (2025-08-01 to 2025-08-04): Client error '400 Bad Request' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/DISBSAD?from=2025-08-01T00%3A00%3A00Z&to=2025-08-04T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+        ⚠️  Chunk error (2025-08-04 to 2025-08-07): Client error '400 Bad Request' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/DISBSAD?from=2025-08-04T00%3A00%3A00Z&to=2025-08-07T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+        ⚠️  Chunk error (2025-08-07 to 2025-08-08): Client error '400 Bad Request' for url 'https://data.elexon.co.uk/bmrs/api/v1/datasets/DISBSAD?from=2025-08-07T00%3A00%3A00Z&to=2025-08-08T23%3A59%3A59Z&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+⚠️  No data
+
+  📊 August Total: 0 records in 3.1s
+  📈 Average: 0 records/day
+
+================================================================================
+📊 SAMPLING ANALYSIS
+================================================================================
+
+Monthly Breakdown:
+  January               0 records  (       0/day)
+  February              0 records  (       0/day)
+  March                 0 records  (       0/day)
+  April                 0 records  (       0/day)
+  May                   0 records  (       0/day)
+  June                  0 records  (       0/day)
+  July                  0 records  (       0/day)
+  August                0 records  (       0/day)
+
+================================================================================
+Total Sample: 0 records over 56 days
+Average: 0 records/day
+
+Sep-Oct Baseline: 648,828 records/day
+Jan-Aug Sample:   0 records/day
+Ratio: 0.00x
+
+✅ CLAIM VALIDATED: Jan-Aug has significantly less data
+   Full Jan-Aug download estimated: ~40-60 minutes
+================================================================================
+
+💾 Results saved to: jan_aug_sampling_results_20251026_173506.json

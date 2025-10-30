@@ -1,0 +1,206 @@
+{
+  "total_files": 243,
+  "by_extension": {
+    ".pdf": 128,
+    ".xlsx": 103,
+    ".csv": 12
+  },
+  "coverage": {
+    "UKPN-LPN": {
+      "has_data": false,
+      "years": [],
+      "file_count": 0,
+      "recent_years": []
+    },
+    "UKPN-EPN": {
+      "has_data": false,
+      "years": [],
+      "file_count": 0,
+      "recent_years": []
+    },
+    "UKPN-SPN": {
+      "has_data": false,
+      "years": [],
+      "file_count": 0,
+      "recent_years": []
+    },
+    "ENWL": {
+      "has_data": false,
+      "years": [],
+      "file_count": 0,
+      "recent_years": []
+    },
+    "NPg-NE": {
+      "has_data": true,
+      "years": [
+        2023,
+        2024,
+        2025,
+        2026,
+        2027
+      ],
+      "file_count": 10,
+      "recent_years": [
+        2023,
+        2024,
+        2025,
+        2026,
+        2027
+      ],
+      "has_last_3_years": true
+    },
+    "NPg-Y": {
+      "has_data": true,
+      "years": [
+        2017,
+        2018,
+        2023,
+        2024,
+        2025,
+        2026,
+        2027
+      ],
+      "file_count": 13,
+      "recent_years": [
+        2023,
+        2024,
+        2025,
+        2026,
+        2027
+      ],
+      "has_last_3_years": true
+    },
+    "SP-Distribution": {
+      "has_data": true,
+      "years": [
+        2020,
+        2021,
+        2023,
+        2024
+      ],
+      "file_count": 8,
+      "recent_years": [
+        2023,
+        2024
+      ],
+      "has_last_3_years": false
+    },
+    "SP-Manweb": {
+      "has_data": true,
+      "years": [
+        2020,
+        2022,
+        2023,
+        2024
+      ],
+      "file_count": 9,
+      "recent_years": [
+        2022,
+        2023,
+        2024
+      ],
+      "has_last_3_years": true
+    },
+    "SSE-SHEPD": {
+      "has_data": false,
+      "years": [],
+      "file_count": 0,
+      "recent_years": []
+    },
+    "SSE-SEPD": {
+      "has_data": false,
+      "years": [],
+      "file_count": 0,
+      "recent_years": []
+    },
+    "NGED-WM": {
+      "has_data": true,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "file_count": 13,
+      "recent_years": [
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "has_last_3_years": true
+    },
+    "NGED-EM": {
+      "has_data": true,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "file_count": 13,
+      "recent_years": [
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "has_last_3_years": true
+    },
+    "NGED-SW": {
+      "has_data": true,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "file_count": 13,
+      "recent_years": [
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "has_last_3_years": true
+    },
+    "NGED-SWales": {
+      "has_data": true,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "file_count": 13,
+      "recent_years": [
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "has_last_3_years": true
+    }
+  },
+  "scan_date": "2025-10-30T01:09:39.123560"
+}

@@ -1,0 +1,22 @@
+{
+  "mpan_id": "15",
+  "dno_key": "NPg-NE",
+  "dno_name": "Northern Powergrid (North East)",
+  "short_code": "NE",
+  "market_id": "NEEB",
+  "gsp_group": "F",
+  "gsp_name": "North East",
+  "website": "https://www.northernpowergrid.com",
+  "data_portal": "https://northernpowergrid.opendatasoft.com",
+  "documents": [
+    {
+      "dataset_id": "ltds-appendix-8",
+      "title": "LTDS Appendix 8 - Interest in Connections",
+      "description": "<p><span style=\"font-size: 16px; font-family: Calibri, sans-serif;\">\nOur LTDS Appendix 8 dataset contains data on the number and nature of HV connection enquiries received for a particular area. This may help users when assessing the feasibility of making a new or additional connection. The enquires were received in the 12-month period preceding submission.\n</span></p>\n\n<p><font face=\"Calibri, sans-serif\"><span style=\"font-size: 16px;\"> \nIf you are unsure of any of the column meanings, please hover over the column heading for a description.</span></font></p>\n\n<p><font face=\"Calibri, sans-serif\"><span style=\"font-size: 20px;\"><b>Related Feature Pages</b></span></font></p>\n\n<p class=\"\"><span style=\"color: rgb(52, 51, 51); font-family: Calibri, sans-serif; font-size: 16px;\"><a href=\"https://northernpowergrid.opendatasoft.com/pages/ltds/\">Long-Term Development Statement (LTDS)</a>\u00a0-\u00a0</span><span style=\"color: rgb(52, 51, 51); font-family: Calibri, sans-serif; font-size: 16px;\">Our LTDS provides essential network and asset information required to carry out studies of the NPg network to access potential connection points.</span></p>\n\n<p class=\"\"><span style=\"color: rgb(52, 51, 51); font-family: Calibri, sans-serif; font-size: 16px;\"><a href=\"https://northernpowergrid.opendatasoft.com/pages/network_heatmaps/\">Network Availability Heat Maps</a>\u00a0-\u00a0</span><span style=\"color: rgb(52, 51, 51); font-family: Calibri, sans-serif; font-size: 16px;\">Our Heat Maps provide a high level overview of network availability at Primary, Bulk Supply and Grid Supply Point level using a traffic light system.</span></p>\n\n<p class=\"\"><span style=\"color: rgb(52, 51, 51); font-family: Calibri, sans-serif; font-size: 16px;\"><a href=\"https://northernpowergrid.opendatasoft.com/pages/connections_developers/\">Connections Developers</a>\u00a0-\u00a0</span><span style=\"color: rgb(52, 51, 51); font-family: Calibri, sans-serif; font-size: 16px;\">Our Connections developers page is the best place for anyone interested in developing a connection to our network to start, either for a demand or generation connection.</span></p>\n\n\n<p><span style=\"font-weight: bolder; font-family: Calibri, sans-serif; font-size: 20px;\">Glossary of Terms</span></p>\n<p><font face=\"Calibri, sans-serif\"><span style=\"font-size: 16px;\">Our <a href=\"https://northernpowergrid.opendatasoft.com/explore/dataset/glossary-of-terms/custom/\" target=\"_blank\">Glossary</a> dataset provides definitions for various terms and acronyms\u00a0found throughout our data. If the term you are searching for isn't in our list, please let us know via our <a href=\"mailto:opendata@northernpowergrid.com?subject=Glossary Term\" style=\"font-weight:bold\">Open Data team</a> and we will get it added!</span></font></p>\n<p><font face=\"Calibri, sans-serif\"><span style=\"font-size: 20px;\"><b>Data Governance</b></span></font></p>\n<p><font face=\"Calibri, sans-serif\"><span style=\"font-size: 16px;\">If you wish to view the data triage document for any dataset, they can be found in our <a href=\"https://northernpowergrid.opendatasoft.com/explore/dataset/data-triage-assessments/information/\" target=\"_blank\">Data Triage Assessment</a> dataset.</span></font></p>\n\n<p>This dataset <b>DOES\u00a0</b>require a login to view</p>\n\n<p>Any data caveats for the dataset are listed below</p>\n<p>- None</p>",
+      "source": "opendatasoft",
+      "url": "https://northernpowergrid.opendatasoft.com/explore/dataset/ltds-appendix-8"
+    }
+  ],
+  "last_updated": "2025-10-30T00:33:48.197606",
+  "document_count": 1
+}

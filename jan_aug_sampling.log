@@ -1,0 +1,27 @@
+================================================================================
+🧪 JAN-AUG 2025 SAMPLING TEST
+================================================================================
+
+Purpose: Verify record density claim
+  Baseline: Sep-Oct 2025 = 648,828 records/day
+  Claim: Jan-Aug 2025 = ~300k records/day
+
+Strategy: Download 1 week from each month (56 days total)
+================================================================================
+
+
+================================================================================
+📅 MONTH: January 2025 (Week 1: Jan 01 - Jan 07)
+================================================================================
+
+  📦 FREQ...         ⚠️  Error: RetryError[<Future at 0x125bd3890 state=finished raised AttributeError>]
+⚠️  No data
+  📦 SYSWARN...         ⚠️  Error: RetryError[<Future at 0x125be0110 state=finished raised AttributeError>]
+⚠️  No data
+  📦 NDF...         ⚠️  Error: RetryError[<Future at 0x125be9610 state=finished raised AttributeError>]
+⚠️  No data
+  📦 NDFD...         ⚠️  Error: RetryError[<Future at 0x125bff5d0 state=finished raised AttributeError>]
+⚠️  No data
+  📦 NDFW...         ⚠️  Error: RetryError[<Future at 0x125bfc490 state=finished raised AttributeError>]
+⚠️  No data
+  📦 TSDFD... 

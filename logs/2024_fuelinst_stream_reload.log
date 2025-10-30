@@ -1,0 +1,27 @@
+2025-10-29 10:51:29,560 - INFO - BigQuery dataset 'uk_energy_prod' exists.
+All Datasets:   0%|          | 0/1 [00:00<?, ?it/s]Dataset: FUELINST:   0%|          | 0/1 [00:00<?, ?it/s]                                                        Dataset: FUELINST:   0%|          | 0/1 [00:00<?, ?it/s]                                                        Dataset: FUELINST:   0%|          | 0/1 [00:00<?, ?it/s]                                                        Dataset: FUELINST:   0%|          | 0/1 [00:01<?, ?it/s]                                                        Dataset: FUELINST:   0%|          | 0/1 [00:01<?, ?it/s]Dataset: FUELINST: 100%|██████████| 1/1 [00:01<00:00,  1.26s/it]Dataset: FUELINST: 100%|██████████| 1/1 [00:01<00:00,  1.26s/it]
+2025-10-29 10:51:29,584 - INFO - Overwrite enabled. Clearing data for bmrs_fuelinst between 2024-01-01 00:00:00+00:00 and 2024-12-31 00:00:00+00:00
+2025-10-29 10:51:29,893 - WARNING - 🔥 Deleting data from /projects/inner-cinema-476211-u9/datasets/uk_energy_prod/tables/bmrs_fuelinst for range 2024-01-01T00:00:00+00:00 to 2024-12-31T00:00:00+00:00
+2025-10-29 10:51:30,838 - ERROR - ❌ BMRS_FUELINST: Failed to clear date range: 400 No matching signature for operator >= for argument types: DATETIME, TIMESTAMP
+  Signature: T1 >= T1
+    Unable to find common supertype for templated argument <T1>
+      Input types for <T1>: {TIMESTAMP, DATETIME} at [1:73]; reason: invalidQuery, location: query, message: No matching signature for operator >= for argument types: DATETIME, TIMESTAMP
+  Signature: T1 >= T1
+    Unable to find common supertype for templated argument <T1>
+      Input types for <T1>: {TIMESTAMP, DATETIME} at [1:73]
+
+Location: US
+Job ID: 5e8f5c73-09f0-429e-ad58-fcbc5ed65b3a
+
+2025-10-29 10:51:30,839 - ERROR - Failed to clear date range for bmrs_fuelinst, stopping for this dataset: 400 No matching signature for operator >= for argument types: DATETIME, TIMESTAMP
+  Signature: T1 >= T1
+    Unable to find common supertype for templated argument <T1>
+      Input types for <T1>: {TIMESTAMP, DATETIME} at [1:73]; reason: invalidQuery, location: query, message: No matching signature for operator >= for argument types: DATETIME, TIMESTAMP
+  Signature: T1 >= T1
+    Unable to find common supertype for templated argument <T1>
+      Input types for <T1>: {TIMESTAMP, DATETIME} at [1:73]
+
+Location: US
+Job ID: 5e8f5c73-09f0-429e-ad58-fcbc5ed65b3a
+
+2025-10-29 10:51:30,839 - INFO - ✅ Ingestion run completed.

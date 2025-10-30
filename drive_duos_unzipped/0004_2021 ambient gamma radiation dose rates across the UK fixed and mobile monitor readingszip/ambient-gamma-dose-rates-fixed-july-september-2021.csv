@@ -1,0 +1,92 @@
+Location,Units,Site Normal Level,Standard Deviation,Mean,Max,Min
+Aberdaron  ,µGy/h  ,0.10,0.01,0.10,0.13,0.09
+Aberporth  ,µGy/h  ,0.12,0.01,0.12,0.15,0.10
+Albemarle  ,µGy/h  ,0.11,0.01,0.11,0.13,0.09
+Aldergrove (Belfast Airport)  ,µGy/h  ,0.09,0.01,0.09,0.12,0.07
+Alderney  ,µGy/h  ,0.12,0.01,0.12,0.17,0.09
+Applecross  ,µGy/h  ,0.13,0.01,0.13,0.16,0.11
+Aultbea  ,µGy/h  ,0.10,0.01,0.11,0.13,0.09
+Aviemore  ,µGy/h  ,0.12,0.01,0.12,0.16,0.10
+Ballypatrick Forest  ,µGy/h  ,0.10,0.01,0.09,0.13,0.08
+Benbecula  ,µGy/h  ,0.08,0.01,0.08,0.12,0.07
+Bishopton  ,µGy/h  ,0.10,0.01,0.10,0.14,0.09
+Boscombe Down  ,µGy/h  ,0.10,0.01,0.10,0.14,0.08
+Brize Norton  ,µGy/h  ,0.09,0.01,0.09,0.12,0.07
+Brooms Barn  ,µGy/h  ,0.10,0.01,0.10,0.14,0.08
+Camborne  ,µGy/h  ,0.14,0.01,0.14,0.18,0.12
+Cardington  ,µGy/h  ,0.11,0.01,0.12,0.15,0.10
+Carlisle  ,µGy/h  ,0.12,0.01,0.12,0.15,0.09
+Carmoney  ,µGy/h  ,0.11,0.01,0.11,0.14,0.09
+Charterhall  ,µGy/h  ,0.10,0.01,0.10,0.13,0.08
+Clunie  ,µGy/h  ,0.11,0.01,0.11,0.13,0.09
+Coleshill  ,µGy/h  ,0.10,0.01,0.10,0.13,0.09
+Coningsby  ,µGy/h  ,0.10,0.01,0.10,0.14,0.09
+Cromer  ,µGy/h  ,0.10,0.01,0.10,0.13,0.08
+Dalcross (Inverness Airport)  ,µGy/h  ,0.14,0.01,0.14,0.17,0.12
+Dyce (Aberdeen Airport)  ,µGy/h  ,0.13,0.01,0.12,0.17,0.10
+East Malling  ,µGy/h  ,0.11,0.01,0.11,0.14,0.09
+Enniskillen  ,µGy/h  ,0.11,0.01,0.11,0.14,0.09
+Eskdalemuir  ,µGy/h  ,0.11,0.01,0.11,0.14,0.09
+Exeter  ,µGy/h  ,0.15,0.01,0.15,0.18,0.12
+Fylingdales  ,µGy/h  ,0.10,0.01,0.10,0.13,0.08
+Glenanne  ,µGy/h  ,0.11,0.01,0.11,0.16,0.09
+Guernsey  ,µGy/h  ,0.10,0.01,0.10,0.12,0.08
+Heathrow  ,µGy/h  ,0.10,0.01,0.11,0.14,0.09
+Herstmonceux  ,µGy/h  ,0.10,0.01,0.10,0.13,0.08
+Hurn (Bournemouth)  ,µGy/h  ,0.09,0.01,0.09,0.12,0.07
+Inverbervie  ,µGy/h  ,0.12,0.01,0.11,0.15,0.09
+Jersey  ,µGy/h  ,0.11,0.01,0.11,0.17,0.09
+Kirkwall  ,µGy/h  ,0.11,0.01,0.11,0.15,0.09
+Lake Vyrnwy  ,µGy/h  ,0.12,0.01,0.12,0.15,0.10
+Langdon Bay  ,µGy/h  ,0.10,0.01,0.10,0.13,0.08
+Leconfield*  ,µGy/h  ,0.10,0.01,0.11,0.14,0.09
+Leeming  ,µGy/h  ,0.11,0.01,0.11,0.14,0.09
+Lerwick  ,µGy/h  ,0.10,0.01,0.10,0.13,0.09
+Leuchars  ,µGy/h  ,0.11,0.01,0.12,0.15,0.09
+Linton  ,µGy/h  ,0.11,0.01,0.11,0.14,0.09
+Liscombe  ,µGy/h  ,0.13,0.01,0.14,0.17,0.11
+Lossiemouth  ,µGy/h  ,0.10,0.01,0.10,0.13,0.09
+Lydd  ,µGy/h  ,0.09,0.01,0.09,0.15,0.07
+Machrihanish  ,µGy/h  ,0.10,0.01,0.10,0.12,0.08
+Manston  ,µGy/h  ,0.11,0.01,0.11,0.15,0.09
+Marham  ,µGy/h  ,0.09,0.01,0.09,0.14,0.07
+Milford Haven  ,µGy/h  ,0.12,0.01,0.12,0.15,0.10
+Mumbles Head*  ,µGy/h  ,0.09,0.01,0.09,0.12,0.08
+Nottingham WC (Watnall)*  ,µGy/h  ,0.12,0.01,0.11,0.14,0.09
+Oban  ,µGy/h  ,0.12,0.01,0.11,0.14,0.09
+Odiham  ,µGy/h  ,0.09,0.01,0.08,0.11,0.07
+Pershore  ,µGy/h  ,0.13,0.01,0.13,0.16,0.11
+Plymouth  ,µGy/h  ,0.13,0.01,0.13,0.23,0.11
+Portland Bill  ,µGy/h  ,0.10,0.01,0.09,0.12,0.08
+Prestwick  ,µGy/h  ,0.10,0.01,0.10,0.12,0.08
+Rhyl  ,µGy/h  ,0.11,0.01,0.10,0.13,0.08
+Rostherne  ,µGy/h  ,0.10,0.01,0.10,0.13,0.08
+Rothamsted  ,µGy/h  ,0.11,0.01,0.11,0.15,0.09
+Scilly  ,µGy/h  ,0.13,0.01,0.13,0.16,0.10
+Shawbury  ,µGy/h  ,0.11,0.01,0.11,0.14,0.09
+Shin  ,µGy/h  ,0.13,0.01,0.13,0.17,0.10
+Shobdon  ,µGy/h  ,0.13,0.01,0.13,0.16,0.11
+Shoeburyness  ,µGy/h  ,0.11,0.01,0.12,0.15,0.10
+Squires Gate (Blackpool)*  ,µGy/h  ,0.09,0.01,0.09,0.12,0.07
+St Athan  ,µGy/h  ,0.11,0.01,0.11,0.14,0.09
+St Catherines (Isle of Wight)  ,µGy/h  ,0.11,0.01,0.11,0.14,0.09
+St Mawgan  ,µGy/h  ,0.13,0.01,0.13,0.16,0.10
+Stoer Head*  ,µGy/h  ,0.09,0.01,0.09,0.12,0.07
+Stornoway  ,µGy/h  ,0.10,0.01,0.10,0.12,0.08
+Strathallan  ,µGy/h  ,0.12,0.01,0.12,0.16,0.10
+Thorney Island  ,µGy/h  ,0.12,0.01,0.11,0.14,0.09
+Tiree  ,µGy/h  ,0.09,0.01,0.09,0.12,0.07
+Trawscoed  ,µGy/h  ,0.12,0.01,0.12,0.15,0.10
+Tulloch Bridge  ,µGy/h  ,0.12,0.01,0.12,0.15,0.10
+Turnhouse (Edinburgh Airport)  ,µGy/h  ,0.10,0.01,0.10,0.13,0.08
+Valley  ,µGy/h  ,0.10,0.01,0.09,0.16,0.08
+Waddington*  ,µGy/h  ,0.11,0.01,0.10,0.13,0.09
+Walney Island  ,µGy/h  ,0.10,0.01,0.11,0.14,0.09
+Warcop Range  ,µGy/h  ,0.11,0.01,0.11,0.14,0.09
+Wattisham  ,µGy/h  ,0.10,0.01,0.11,0.15,0.09
+West Freugh  ,µGy/h  ,0.10,0.01,0.10,0.13,0.08
+Wick  ,µGy/h  ,0.11,0.01,0.12,0.15,0.10
+Wilsden (Bingley)  ,µGy/h  ,0.11,0.01,0.11,0.13,0.09
+Wittering  ,µGy/h  ,0.11,0.01,0.12,0.15,0.10
+Yeovilton  ,µGy/h  ,0.11,0.01,0.11,0.14,0.09
+a.     *indicates a change to Site Normal Level during the period,,,,,,

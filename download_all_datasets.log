@@ -1,0 +1,372 @@
+======================================================================
+📅 Elexon Data Downloader - Last 7 Days
+======================================================================
+Start Date: 2025-10-18
+End Date:   2025-10-25
+Project:    inner-cinema-476211-u9
+Dataset:    uk_energy_prod
+Manifest:   insights_manifest_comprehensive.json
+======================================================================
+
+📊 Found 42 datasets to download
+
+Downloading datasets:   0%|          | 0/42 [00:00<?, ?it/s]/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/cloud/bigquery/_pandas_helpers.py:484: FutureWarning: Loading pandas DataFrame into BigQuery will require pandas-gbq package version 0.26.1 or greater in the future. Tried to import pandas-gbq and got: No module named 'pandas_gbq'
+  warnings.warn(
+Downloading datasets:   2%|▏         | 1/42 [00:04<03:09,  4.63s/it]/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/cloud/bigquery/_pandas_helpers.py:484: FutureWarning: Loading pandas DataFrame into BigQuery will require pandas-gbq package version 0.26.1 or greater in the future. Tried to import pandas-gbq and got: No module named 'pandas_gbq'
+  warnings.warn(
+Downloading datasets:   5%|▍         | 2/42 [00:08<02:36,  3.91s/it]/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/cloud/bigquery/_pandas_helpers.py:484: FutureWarning: Loading pandas DataFrame into BigQuery will require pandas-gbq package version 0.26.1 or greater in the future. Tried to import pandas-gbq and got: No module named 'pandas_gbq'
+  warnings.warn(
+Error converting Pandas column with name: "data" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+Downloading datasets:   7%|▋         | 3/42 [00:09<01:53,  2.92s/it]/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/cloud/bigquery/_pandas_helpers.py:484: FutureWarning: Loading pandas DataFrame into BigQuery will require pandas-gbq package version 0.26.1 or greater in the future. Tried to import pandas-gbq and got: No module named 'pandas_gbq'
+  warnings.warn(
+Downloading datasets:  10%|▉         | 4/42 [00:14<02:15,  3.56s/it]/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/cloud/bigquery/_pandas_helpers.py:484: FutureWarning: Loading pandas DataFrame into BigQuery will require pandas-gbq package version 0.26.1 or greater in the future. Tried to import pandas-gbq and got: No module named 'pandas_gbq'
+  warnings.warn(
+Downloading datasets:  12%|█▏        | 5/42 [00:18<02:17,  3.72s/it]/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/cloud/bigquery/_pandas_helpers.py:484: FutureWarning: Loading pandas DataFrame into BigQuery will require pandas-gbq package version 0.26.1 or greater in the future. Tried to import pandas-gbq and got: No module named 'pandas_gbq'
+  warnings.warn(
+/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/cloud/bigquery/_pandas_helpers.py:551: UserWarning: Could not determine the type of columns: data
+  warnings.warn(msg)
+Downloading datasets:  14%|█▍        | 6/42 [00:20<02:00,  3.35s/it]/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/cloud/bigquery/_pandas_helpers.py:484: FutureWarning: Loading pandas DataFrame into BigQuery will require pandas-gbq package version 0.26.1 or greater in the future. Tried to import pandas-gbq and got: No module named 'pandas_gbq'
+  warnings.warn(
+Downloading datasets:  17%|█▋        | 7/42 [00:26<02:23,  4.09s/it]/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/cloud/bigquery/_pandas_helpers.py:484: FutureWarning: Loading pandas DataFrame into BigQuery will require pandas-gbq package version 0.26.1 or greater in the future. Tried to import pandas-gbq and got: No module named 'pandas_gbq'
+  warnings.warn(
+Downloading datasets:  19%|█▉        | 8/42 [00:31<02:27,  4.34s/it]/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/cloud/bigquery/_pandas_helpers.py:484: FutureWarning: Loading pandas DataFrame into BigQuery will require pandas-gbq package version 0.26.1 or greater in the future. Tried to import pandas-gbq and got: No module named 'pandas_gbq'
+  warnings.warn(
+Downloading datasets:  21%|██▏       | 9/42 [00:37<02:37,  4.76s/it]/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/cloud/bigquery/_pandas_helpers.py:484: FutureWarning: Loading pandas DataFrame into BigQuery will require pandas-gbq package version 0.26.1 or greater in the future. Tried to import pandas-gbq and got: No module named 'pandas_gbq'
+  warnings.warn(
+Downloading datasets:  24%|██▍       | 10/42 [00:41<02:27,  4.62s/it]/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/cloud/bigquery/_pandas_helpers.py:484: FutureWarning: Loading pandas DataFrame into BigQuery will require pandas-gbq package version 0.26.1 or greater in the future. Tried to import pandas-gbq and got: No module named 'pandas_gbq'
+  warnings.warn(
+Downloading datasets:  26%|██▌       | 11/42 [01:06<05:36, 10.86s/it]/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/cloud/bigquery/_pandas_helpers.py:484: FutureWarning: Loading pandas DataFrame into BigQuery will require pandas-gbq package version 0.26.1 or greater in the future. Tried to import pandas-gbq and got: No module named 'pandas_gbq'
+  warnings.warn(
+Downloading datasets:  29%|██▊       | 12/42 [01:10<04:25,  8.84s/it]/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/cloud/bigquery/_pandas_helpers.py:484: FutureWarning: Loading pandas DataFrame into BigQuery will require pandas-gbq package version 0.26.1 or greater in the future. Tried to import pandas-gbq and got: No module named 'pandas_gbq'
+  warnings.warn(
+Downloading datasets:  31%|███       | 13/42 [01:23<04:49,  9.99s/it]/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/cloud/bigquery/_pandas_helpers.py:484: FutureWarning: Loading pandas DataFrame into BigQuery will require pandas-gbq package version 0.26.1 or greater in the future. Tried to import pandas-gbq and got: No module named 'pandas_gbq'
+  warnings.warn(
+Downloading datasets:  33%|███▎      | 14/42 [01:28<03:58,  8.52s/it]/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/cloud/bigquery/_pandas_helpers.py:484: FutureWarning: Loading pandas DataFrame into BigQuery will require pandas-gbq package version 0.26.1 or greater in the future. Tried to import pandas-gbq and got: No module named 'pandas_gbq'
+  warnings.warn(
+Downloading datasets:  36%|███▌      | 15/42 [01:32<03:16,  7.28s/it]/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/cloud/bigquery/_pandas_helpers.py:484: FutureWarning: Loading pandas DataFrame into BigQuery will require pandas-gbq package version 0.26.1 or greater in the future. Tried to import pandas-gbq and got: No module named 'pandas_gbq'
+  warnings.warn(
+Downloading datasets:  38%|███▊      | 16/42 [01:36<02:43,  6.30s/it]/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/cloud/bigquery/_pandas_helpers.py:484: FutureWarning: Loading pandas DataFrame into BigQuery will require pandas-gbq package version 0.26.1 or greater in the future. Tried to import pandas-gbq and got: No module named 'pandas_gbq'
+  warnings.warn(
+Downloading datasets:  40%|████      | 17/42 [01:40<02:17,  5.51s/it]Downloading datasets:  43%|████▎     | 18/42 [01:56<03:24,  8.50s/it]Downloading datasets:  45%|████▌     | 19/42 [02:11<04:03, 10.58s/it]/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/cloud/bigquery/_pandas_helpers.py:484: FutureWarning: Loading pandas DataFrame into BigQuery will require pandas-gbq package version 0.26.1 or greater in the future. Tried to import pandas-gbq and got: No module named 'pandas_gbq'
+  warnings.warn(
+Downloading datasets:  48%|████▊     | 20/42 [02:15<03:09,  8.61s/it]/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/cloud/bigquery/_pandas_helpers.py:484: FutureWarning: Loading pandas DataFrame into BigQuery will require pandas-gbq package version 0.26.1 or greater in the future. Tried to import pandas-gbq and got: No module named 'pandas_gbq'
+  warnings.warn(
+Downloading datasets:  50%|█████     | 21/42 [02:21<02:44,  7.82s/it]/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/cloud/bigquery/_pandas_helpers.py:484: FutureWarning: Loading pandas DataFrame into BigQuery will require pandas-gbq package version 0.26.1 or greater in the future. Tried to import pandas-gbq and got: No module named 'pandas_gbq'
+  warnings.warn(
+Downloading datasets:  52%|█████▏    | 22/42 [02:27<02:24,  7.23s/it]
+🔄 Processing: FUELINST - Generation by Fuel Type (Instant)
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/datasets/FUELINST/stream
+  📊 Retrieved 3720 rows
+📋 Table exists: inner-cinema-476211-u9.uk_energy_prod.generation_fuel_instant
+✅ Uploaded 3720 rows to uk_energy_prod.generation_fuel_instant
+
+🔄 Processing: FUELHH - Generation by Fuel Type (Half Hourly)
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/datasets/FUELHH/stream
+  📊 Retrieved 620 rows
+📋 Table exists: inner-cinema-476211-u9.uk_energy_prod.generation_fuel_hh
+✅ Uploaded 620 rows to uk_energy_prod.generation_fuel_hh
+
+🔄 Processing: GENERATION_ACTUAL_PER_TYPE - Actual Aggregated Generation per Type
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/generation/actual/per-type
+  📊 Retrieved 337 rows
+📋 Table exists: inner-cinema-476211-u9.uk_energy_prod.generation_actual_per_type
+  ❌ Error: Error converting Pandas column with name: "data" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+
+🔄 Processing: GENERATION_ACTUAL_DAY_TOTAL - Actual Generation Day Total
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/generation/actual/per-type/day-total
+  📊 Retrieved 11 rows
+📋 Table exists: inner-cinema-476211-u9.uk_energy_prod.generation_actual_day_total
+✅ Uploaded 11 rows to uk_energy_prod.generation_actual_day_total
+
+🔄 Processing: GENERATION_WIND_SOLAR - Actual Wind and Solar Generation
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/generation/actual/per-type/wind-and-solar
+  📊 Retrieved 1011 rows
+📋 Table exists: inner-cinema-476211-u9.uk_energy_prod.generation_wind_solar
+✅ Uploaded 1011 rows to uk_energy_prod.generation_wind_solar
+
+🔄 Processing: GENERATION_OUTTURN - Generation Outturn Summary
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/generation/outturn/summary
+  📊 Retrieved 47 rows
+📋 Table exists: inner-cinema-476211-u9.uk_energy_prod.generation_outturn
+  ❌ Error: 400 Provided Schema does not match Table inner-cinema-476211-u9:uk_energy_prod.generation_outturn. Cannot add fields (field: data); reason: invalid, message: Provided Schema does not match Table inner-cinema-476211-u9:uk_energy_prod.generation_outturn. Cannot add fields (field: data)
+
+🔄 Processing: INDGEN - Indicated Generation by BM Unit
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/datasets/INDGEN/stream
+  📊 Retrieved 1386 rows
+📋 Table exists: inner-cinema-476211-u9.uk_energy_prod.indicated_generation
+✅ Uploaded 1386 rows to uk_energy_prod.indicated_generation
+
+🔄 Processing: DEMAND_OUTTURN - Demand Outturn (INDO/ITSDO)
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/demand/outturn
+  📊 Retrieved 1375 rows
+📋 Table exists: inner-cinema-476211-u9.uk_energy_prod.demand_outturn
+✅ Uploaded 1375 rows to uk_energy_prod.demand_outturn
+
+🔄 Processing: DEMAND_OUTTURN_SUMMARY - Rolling System Demand
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/demand/outturn/summary
+  📊 Retrieved 169 rows
+📋 Table exists: inner-cinema-476211-u9.uk_energy_prod.demand_outturn_summary
+✅ Uploaded 169 rows to uk_energy_prod.demand_outturn_summary
+
+🔄 Processing: DEMAND_OUTTURN_DAILY - Daily Energy Transmitted (INDOD)
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/demand/outturn/daily
+  📊 Retrieved 30 rows
+📋 Table exists: inner-cinema-476211-u9.uk_energy_prod.demand_outturn_daily
+✅ Uploaded 30 rows to uk_energy_prod.demand_outturn_daily
+
+🔄 Processing: DEMAND_ACTUAL_TOTAL - Total Load Actual
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/demand/actual/total
+  📊 Retrieved 344 rows
+📋 Table exists: inner-cinema-476211-u9.uk_energy_prod.demand_actual_total
+✅ Uploaded 344 rows to uk_energy_prod.demand_actual_total
+
+🔄 Processing: NDF - National Demand Forecast
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/datasets/NDF/stream
+  📊 Retrieved 77 rows
+📋 Table exists: inner-cinema-476211-u9.uk_energy_prod.demand_forecast_national
+✅ Uploaded 77 rows to uk_energy_prod.demand_forecast_national
+
+🔄 Processing: NDFD - National Demand Forecast Day Ahead
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/datasets/NDFD/stream
+  📊 Retrieved 13 rows
+📋 Table exists: inner-cinema-476211-u9.uk_energy_prod.demand_forecast_day_ahead
+✅ Uploaded 13 rows to uk_energy_prod.demand_forecast_day_ahead
+
+🔄 Processing: NDFW - National Demand Forecast Week Ahead
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/datasets/NDFW/stream
+  📊 Retrieved 51 rows
+📋 Table exists: inner-cinema-476211-u9.uk_energy_prod.demand_forecast_week_ahead
+✅ Uploaded 51 rows to uk_energy_prod.demand_forecast_week_ahead
+
+🔄 Processing: TSDF - Transmission System Demand Forecast
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/datasets/TSDF/stream
+  📊 Retrieved 1386 rows
+📋 Table exists: inner-cinema-476211-u9.uk_energy_prod.demand_forecast_transmission
+✅ Uploaded 1386 rows to uk_energy_prod.demand_forecast_transmission
+
+🔄 Processing: TSDFD - Transmission System Demand Forecast Day Ahead
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/datasets/TSDFD/stream
+  📊 Retrieved 13 rows
+📋 Table exists: inner-cinema-476211-u9.uk_energy_prod.demand_forecast_transmission_da
+✅ Uploaded 13 rows to uk_energy_prod.demand_forecast_transmission_da
+
+🔄 Processing: DEMAND_TOTAL_DAY_AHEAD - Total Load Day Ahead Forecast
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/forecast/demand/total/day-ahead
+  📊 Retrieved 337 rows
+📋 Table exists: inner-cinema-476211-u9.uk_energy_prod.demand_total_forecast_da
+✅ Uploaded 337 rows to uk_energy_prod.demand_total_forecast_da
+
+🔄 Processing: DEMAND_PEAK_INDICATIVE - Indicative Peak Demand
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/demand/peak/indicative/settlement
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/demand/peak/indicative/settlement
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/demand/peak/indicative/settlement
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/demand/peak/indicative/settlement
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/demand/peak/indicative/settlement
+  ❌ HTTP Error 404: Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/demand/peak/indicative/settlement?from=2025-10-18&to=2025-10-25&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+
+🔄 Processing: DEMAND_PEAK_TRIAD - Triad Demand Peaks
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/demand/peak/triad
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/demand/peak/triad
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/demand/peak/triad
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/demand/peak/triad
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/demand/peak/triad
+  ❌ HTTP Error 404: Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/demand/peak/triad?from=2025-10-18&to=2025-10-25&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+
+🔄 Processing: WINDFOR - Wind Generation Forecast
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/datasets/WINDFOR/stream
+  📊 Retrieved 74 rows
+✅ Created table: inner-cinema-476211-u9.uk_energy_prod.generation_forecast_wind
+✅ Uploaded 74 rows to uk_energy_prod.generation_forecast_wind
+
+🔄 Processing: GENERATION_WIND_PEAK - Wind & Solar Generation Forecast Peak
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/forecast/generation/wind/peak
+  📊 Retrieved 8 rows
+✅ Created table: inner-cinema-476211-u9.uk_energy_prod.generation_forecast_wind_solar_peak
+✅ Uploaded 8 rows to uk_energy_prod.generation_forecast_wind_solar_peak
+
+🔄 Processing: GENERATION_DAY_AHEAD - Day-ahead Aggregated Generation
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/forecast/generation/day-ahead
+  📊 Retrieved 337 rows
+✅ Created table: inner-cinema-476211-u9.uk_energy_prod.generation_forecast_day_ahead
+✅ Uploaded 337 rows to uk_energy_prod.generation_forecast_day_ahead
+/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/cloud/bigquery/_pandas_helpers.py:484: FutureWarning: Loading pandas DataFrame into BigQuery will require pandas-gbq package version 0.26.1 or greater in the future. Tried to import pandas-gbq and got: No module named 'pandas_gbq'
+  warnings.warn(
+Downloading datasets:  55%|█████▍    | 23/42 [02:31<02:00,  6.32s/it]/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/cloud/bigquery/_pandas_helpers.py:484: FutureWarning: Loading pandas DataFrame into BigQuery will require pandas-gbq package version 0.26.1 or greater in the future. Tried to import pandas-gbq and got: No module named 'pandas_gbq'
+  warnings.warn(
+Downloading datasets:  57%|█████▋    | 24/42 [02:35<01:40,  5.58s/it]/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/cloud/bigquery/_pandas_helpers.py:484: FutureWarning: Loading pandas DataFrame into BigQuery will require pandas-gbq package version 0.26.1 or greater in the future. Tried to import pandas-gbq and got: No module named 'pandas_gbq'
+  warnings.warn(
+Downloading datasets:  60%|█████▉    | 25/42 [02:39<01:30,  5.29s/it]/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/cloud/bigquery/_pandas_helpers.py:484: FutureWarning: Loading pandas DataFrame into BigQuery will require pandas-gbq package version 0.26.1 or greater in the future. Tried to import pandas-gbq and got: No module named 'pandas_gbq'
+  warnings.warn(
+Downloading datasets:  62%|██████▏   | 26/42 [02:44<01:18,  4.93s/it]/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/cloud/bigquery/_pandas_helpers.py:484: FutureWarning: Loading pandas DataFrame into BigQuery will require pandas-gbq package version 0.26.1 or greater in the future. Tried to import pandas-gbq and got: No module named 'pandas_gbq'
+  warnings.warn(
+Downloading datasets:  64%|██████▍   | 27/42 [02:47<01:09,  4.61s/it]/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/cloud/bigquery/_pandas_helpers.py:484: FutureWarning: Loading pandas DataFrame into BigQuery will require pandas-gbq package version 0.26.1 or greater in the future. Tried to import pandas-gbq and got: No module named 'pandas_gbq'
+  warnings.warn(
+Downloading datasets:  67%|██████▋   | 28/42 [03:11<02:24, 10.33s/it]Downloading datasets:  69%|██████▉   | 29/42 [03:27<02:34, 11.86s/it]Downloading datasets:  71%|███████▏  | 30/42 [03:42<02:35, 12.94s/it]Downloading datasets:  74%|███████▍  | 31/42 [03:57<02:30, 13.68s/it]Downloading datasets:  76%|███████▌  | 32/42 [04:13<02:21, 14.19s/it]Downloading datasets:  79%|███████▊  | 33/42 [04:28<02:11, 14.57s/it]Downloading datasets:  81%|████████  | 34/42 [04:44<01:59, 14.89s/it]/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/cloud/bigquery/_pandas_helpers.py:484: FutureWarning: Loading pandas DataFrame into BigQuery will require pandas-gbq package version 0.26.1 or greater in the future. Tried to import pandas-gbq and got: No module named 'pandas_gbq'
+  warnings.warn(
+Downloading datasets:  83%|████████▎ | 35/42 [04:50<01:25, 12.22s/it]/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/cloud/bigquery/_pandas_helpers.py:484: FutureWarning: Loading pandas DataFrame into BigQuery will require pandas-gbq package version 0.26.1 or greater in the future. Tried to import pandas-gbq and got: No module named 'pandas_gbq'
+  warnings.warn(
+Error converting Pandas column with name: "isTendered" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+Downloading datasets:  86%|████████▌ | 36/42 [04:51<00:54,  9.00s/it]/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/cloud/bigquery/_pandas_helpers.py:484: FutureWarning: Loading pandas DataFrame into BigQuery will require pandas-gbq package version 0.26.1 or greater in the future. Tried to import pandas-gbq and got: No module named 'pandas_gbq'
+  warnings.warn(
+Downloading datasets:  88%|████████▊ | 37/42 [04:57<00:39,  7.94s/it]/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/cloud/bigquery/_pandas_helpers.py:484: FutureWarning: Loading pandas DataFrame into BigQuery will require pandas-gbq package version 0.26.1 or greater in the future. Tried to import pandas-gbq and got: No module named 'pandas_gbq'
+  warnings.warn(
+Downloading datasets:  90%|█████████ | 38/42 [05:01<00:27,  6.87s/it]Downloading datasets:  93%|█████████▎| 39/42 [05:17<00:28,  9.44s/it]
+🔄 Processing: UOU2T14D - Output Usable 2-14 Days Ahead
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/datasets/UOU2T14D/stream
+  📊 Retrieved 6097 rows
+✅ Created table: inner-cinema-476211-u9.uk_energy_prod.output_usable_2_14d
+✅ Uploaded 6097 rows to uk_energy_prod.output_usable_2_14d
+
+🔄 Processing: MARGIN_DAILY - Generating Plant Operating Margin Daily
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/forecast/margin/daily
+  📊 Retrieved 13 rows
+✅ Created table: inner-cinema-476211-u9.uk_energy_prod.margin_daily
+✅ Uploaded 13 rows to uk_energy_prod.margin_daily
+
+🔄 Processing: SURPLUS_DAILY - National Surplus Forecast Daily
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/forecast/surplus/daily
+  📊 Retrieved 13 rows
+✅ Created table: inner-cinema-476211-u9.uk_energy_prod.surplus_daily
+✅ Uploaded 13 rows to uk_energy_prod.surplus_daily
+
+🔄 Processing: FREQ - System Frequency
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/datasets/FREQ/stream
+  📊 Retrieved 5761 rows
+📋 Table exists: inner-cinema-476211-u9.uk_energy_prod.system_frequency
+✅ Uploaded 5761 rows to uk_energy_prod.system_frequency
+
+🔄 Processing: SYSWARN - System Warnings
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/datasets/SYSWARN/stream
+  📊 Retrieved 1 rows
+📋 Table exists: inner-cinema-476211-u9.uk_energy_prod.system_warnings
+✅ Uploaded 1 rows to uk_energy_prod.system_warnings
+
+🔄 Processing: BOD - Bid Offer Data
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/datasets/BOD/stream
+  📊 Retrieved 1182949 rows
+✅ Created table: inner-cinema-476211-u9.uk_energy_prod.bid_offer_data
+✅ Uploaded 1182949 rows to uk_energy_prod.bid_offer_data
+
+🔄 Processing: BALANCING_PHYSICAL - Physical Notifications
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/balancing/physical
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/balancing/physical
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/balancing/physical
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/balancing/physical
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/balancing/physical
+  ❌ HTTP Error 404: Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/balancing/physical?from=2025-10-18&to=2025-10-25&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+
+🔄 Processing: BALANCING_DYNAMIC - Dynamic Data
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/balancing/dynamic
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/balancing/dynamic
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/balancing/dynamic
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/balancing/dynamic
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/balancing/dynamic
+  ❌ HTTP Error 404: Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/balancing/dynamic?from=2025-10-18&to=2025-10-25&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+
+🔄 Processing: BALANCING_DYNAMIC_RATES - Dynamic Rates
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/balancing/dynamic/rates
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/balancing/dynamic/rates
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/balancing/dynamic/rates
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/balancing/dynamic/rates
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/balancing/dynamic/rates
+  ❌ HTTP Error 404: Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/balancing/dynamic/rates?from=2025-10-18&to=2025-10-25&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+
+🔄 Processing: BALANCING_BID_OFFER - Bid-Offer Pairs
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/balancing/bid-offer
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/balancing/bid-offer
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/balancing/bid-offer
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/balancing/bid-offer
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/balancing/bid-offer
+  ❌ HTTP Error 404: Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/balancing/bid-offer?from=2025-10-18&to=2025-10-25&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+
+🔄 Processing: BALANCING_ACCEPTANCES - Balancing Mechanism Acceptances
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/balancing/acceptances
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/balancing/acceptances
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/balancing/acceptances
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/balancing/acceptances
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/balancing/acceptances
+  ❌ HTTP Error 404: Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/balancing/acceptances?from=2025-10-18&to=2025-10-25&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+
+🔄 Processing: BALANCING_NONBM_VOLUMES - Non-BM Balancing Services Volumes
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/balancing/nonbm/volumes
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/balancing/nonbm/volumes
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/balancing/nonbm/volumes
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/balancing/nonbm/volumes
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/balancing/nonbm/volumes
+  ❌ HTTP Error 400: Client error '400 Bad Request' for url 'https://data.elexon.co.uk/bmrs/api/v1/balancing/nonbm/volumes?from=2025-10-18&to=2025-10-25&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+
+🔄 Processing: NETBSAD - Net Balancing Services Adjustment Data
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/datasets/NETBSAD/stream
+  📊 Retrieved 337 rows
+✅ Created table: inner-cinema-476211-u9.uk_energy_prod.netbsad
+✅ Uploaded 337 rows to uk_energy_prod.netbsad
+
+🔄 Processing: DISBSAD - Disaggregated Balancing Services Adjustment
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/datasets/DISBSAD/stream
+  📊 Retrieved 3172 rows
+✅ Created table: inner-cinema-476211-u9.uk_energy_prod.disbsad
+  ❌ Error: Error converting Pandas column with name: "isTendered" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+
+🔄 Processing: MID - Market Index Data (Prices)
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/datasets/MID/stream
+  📊 Retrieved 667 rows
+✅ Created table: inner-cinema-476211-u9.uk_energy_prod.market_index_data
+✅ Uploaded 667 rows to uk_energy_prod.market_index_data
+
+🔄 Processing: IMBALNGC - Indicated Imbalance
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/datasets/IMBALNGC/stream
+  📊 Retrieved 1386 rows
+✅ Created table: inner-cinema-476211-u9.uk_energy_prod.indicated_imbalance
+✅ Uploaded 1386 rows to uk_energy_prod.indicated_imbalance
+
+🔄 Processing: SYSTEM_PRICES - System Buy and Sell Prices
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/balancing/settlement/system-prices
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/balancing/settlement/system-prices
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/balancing/settlement/system-prices
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/balancing/settlement/system-prices
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/balancing/settlement/system-prices
+  ❌ HTTP Error 404: Client error '404 Resource Not Found' for url 'https://data.elexon.co.uk/bmrs/api/v1/balancing/settlement/system-prices?from=2025-10-18&to=2025-10-25&format=json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+
+🔄 Processing: NONBM - Short-term Operating Reserves (STOR)
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/datasets/NONBM/stream
+  📊 Retrieved 335 rows
+/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/cloud/bigquery/_pandas_helpers.py:484: FutureWarning: Loading pandas DataFrame into BigQuery will require pandas-gbq package version 0.26.1 or greater in the future. Tried to import pandas-gbq and got: No module named 'pandas_gbq'
+  warnings.warn(
+Downloading datasets:  95%|█████████▌| 40/42 [05:23<00:16,  8.42s/it]/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/cloud/bigquery/_pandas_helpers.py:484: FutureWarning: Loading pandas DataFrame into BigQuery will require pandas-gbq package version 0.26.1 or greater in the future. Tried to import pandas-gbq and got: No module named 'pandas_gbq'
+  warnings.warn(
+Downloading datasets:  98%|█████████▊| 41/42 [05:27<00:07,  7.14s/it]/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/cloud/bigquery/_pandas_helpers.py:484: FutureWarning: Loading pandas DataFrame into BigQuery will require pandas-gbq package version 0.26.1 or greater in the future. Tried to import pandas-gbq and got: No module named 'pandas_gbq'
+  warnings.warn(
+Downloading datasets: 100%|██████████| 42/42 [05:31<00:00,  6.21s/it]Downloading datasets: 100%|██████████| 42/42 [05:31<00:00,  7.89s/it]
+✅ Created table: inner-cinema-476211-u9.uk_energy_prod.stor_nonbm
+✅ Uploaded 335 rows to uk_energy_prod.stor_nonbm
+
+🔄 Processing: QAS - Quiescent Physical Notifications
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/datasets/QAS/stream
+  📊 Retrieved 19187 rows
+✅ Created table: inner-cinema-476211-u9.uk_energy_prod.quiescent_physical
+✅ Uploaded 19187 rows to uk_energy_prod.quiescent_physical
+
+🔄 Processing: SEL - Stable Export Limit
+  📥 Fetching: https://data.elexon.co.uk/bmrs/api/v1/datasets/SEL/stream
+  📊 Retrieved 870 rows
+✅ Created table: inner-cinema-476211-u9.uk_energy_prod.stable_export_limit
+✅ Uploaded 870 rows to uk_energy_prod.stable_export_limit
+
+======================================================================
+✅ Download complete!
+======================================================================
+📊 Statistics:
+   Total datasets: 42
+   Successful: 30
+   Failed: 12
+   Total rows uploaded: 1,228,578
+======================================================================

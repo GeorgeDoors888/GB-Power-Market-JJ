@@ -1,0 +1,116 @@
+🌍 TEST: Sep-Oct 2025 → Europe West 2 Dataset
+Period: 2025-09-01 to 2025-10-26
+Duration: 56 days
+Datasets: 44
+Target: uk_energy_prod_eu (europe-west2)
+================================================================================
+
+
+================================================================================
+Downloading: FUELINST
+================================================================================
+  📦 Dataset: FUELINST - Starting at 16:11:01
+    📦 8 chunks of ~7 days each
+      Progress: 2/8 chunks, 8,240 records...
+      Progress: 4/8 chunks, 16,480 records...
+      Progress: 6/8 chunks, 24,720 records...
+      Progress: 8/8 chunks, 32,960 records...
+/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/cloud/bigquery/_pandas_helpers.py:484: FutureWarning: Loading pandas DataFrame into BigQuery will require pandas-gbq package version 0.26.1 or greater in the future. Tried to import pandas-gbq and got: No module named 'pandas_gbq'
+  warnings.warn(
+  ✅ Success: 32,960 records in 5.3s (6219 rec/s)
+
+================================================================================
+Downloading: FREQ
+================================================================================
+  📦 Dataset: FREQ - Starting at 16:11:07
+    📦 8 chunks of ~7 days each
+      Progress: 2/8 chunks, 11,522 records...
+      Progress: 4/8 chunks, 23,044 records...
+      Progress: 6/8 chunks, 34,566 records...
+      Progress: 8/8 chunks, 46,088 records...
+/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/cloud/bigquery/_pandas_helpers.py:484: FutureWarning: Loading pandas DataFrame into BigQuery will require pandas-gbq package version 0.26.1 or greater in the future. Tried to import pandas-gbq and got: No module named 'pandas_gbq'
+  warnings.warn(
+  ✅ Success: 46,088 records in 4.6s (9995 rec/s)
+
+================================================================================
+Downloading: INDGEN
+================================================================================
+  📦 Dataset: INDGEN - Starting at 16:11:11
+    📦 8 chunks of ~7 days each
+      Progress: 2/8 chunks, 2,664 records...
+      Progress: 4/8 chunks, 5,328 records...
+      Progress: 6/8 chunks, 7,992 records...
+      Progress: 8/8 chunks, 10,656 records...
+/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/cloud/bigquery/_pandas_helpers.py:484: FutureWarning: Loading pandas DataFrame into BigQuery will require pandas-gbq package version 0.26.1 or greater in the future. Tried to import pandas-gbq and got: No module named 'pandas_gbq'
+  warnings.warn(
+  ✅ Success: 10,656 records in 3.6s (2938 rec/s)
+
+================================================================================
+Downloading: INDDEM
+================================================================================
+  📦 Dataset: INDDEM - Starting at 16:11:15
+    📦 8 chunks of ~7 days each
+      Progress: 2/8 chunks, 2,664 records...
+      Progress: 4/8 chunks, 5,328 records...
+      Progress: 6/8 chunks, 7,992 records...
+      Progress: 8/8 chunks, 10,656 records...
+/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/cloud/bigquery/_pandas_helpers.py:484: FutureWarning: Loading pandas DataFrame into BigQuery will require pandas-gbq package version 0.26.1 or greater in the future. Tried to import pandas-gbq and got: No module named 'pandas_gbq'
+  warnings.warn(
+  ✅ Success: 10,656 records in 4.2s (2553 rec/s)
+
+================================================================================
+Downloading: PN
+================================================================================
+  📦 Dataset: PN - Starting at 16:11:19
+    💾 Using STREAMING upload
+    📦 8 chunks of ~7 days each
+  ❌ Failed: Timeout of 600.0s exceeded, last exception: HTTPSConnectionPool(host='bigquery.googleapis.com', port=443): Max retries exceeded with url: /bigquery/v2/projects/inner-cinema-476211-u9/datasets/uk_energy_prod_eu/tables/pn_sep_oct_2025_eu/insertAll?prettyPrint=false (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:2427)')))
+
+================================================================================
+Downloading: QPN
+================================================================================
+  📦 Dataset: QPN - Starting at 16:21:08
+    💾 Using STREAMING upload
+    📦 8 chunks of ~7 days each
+  ❌ Failed: Timeout of 600.0s exceeded, last exception: HTTPSConnectionPool(host='bigquery.googleapis.com', port=443): Max retries exceeded with url: /bigquery/v2/projects/inner-cinema-476211-u9/datasets/uk_energy_prod_eu/tables/qpn_sep_oct_2025_eu/insertAll?prettyPrint=false (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:2427)')))
+
+================================================================================
+Downloading: MELS
+================================================================================
+  📦 Dataset: MELS - Starting at 16:30:42
+    💾 Using STREAMING upload
+    ⚠️  Hourly chunks: 1343 API calls
+  ❌ Failed: Timeout of 600.0s exceeded, last exception: HTTPSConnectionPool(host='bigquery.googleapis.com', port=443): Max retries exceeded with url: /bigquery/v2/projects/inner-cinema-476211-u9/datasets/uk_energy_prod_eu/tables/mels_sep_oct_2025_eu/insertAll?prettyPrint=false (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:2427)')))
+
+================================================================================
+Downloading: MILS
+================================================================================
+  📦 Dataset: MILS - Starting at 16:40:45
+    💾 Using STREAMING upload
+    ⚠️  Hourly chunks: 1343 API calls
+  ❌ Failed: Timeout of 600.0s exceeded, last exception: HTTPSConnectionPool(host='bigquery.googleapis.com', port=443): Max retries exceeded with url: /bigquery/v2/projects/inner-cinema-476211-u9/datasets/uk_energy_prod_eu/tables/mils_sep_oct_2025_eu/insertAll?prettyPrint=false (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:2427)')))
+
+================================================================================
+Downloading: BOD
+================================================================================
+  📦 Dataset: BOD - Starting at 16:50:14
+    💾 Using STREAMING upload
+    📦 8 chunks of ~7 days each
+  ❌ Failed: Timeout of 600.0s exceeded, last exception: HTTPSConnectionPool(host='bigquery.googleapis.com', port=443): Max retries exceeded with url: /bigquery/v2/projects/inner-cinema-476211-u9/datasets/uk_energy_prod_eu/tables/bod_sep_oct_2025_eu/insertAll?prettyPrint=false (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:2427)')))
+
+================================================================================
+📊 TEST RESULTS - EU REGION DOWNLOAD
+================================================================================
+✅ Successful: 4/9
+❌ Failed: 5/9
+⚠️  No Data: 0/9
+📊 Total Records: 100,360
+⏱️  Total Time: 49.1 minutes
+⚡ Overall Speed: 34 records/second
+================================================================================
+
+💾 Results saved to: sep_oct_2025_eu_test_20251026_170007.json
+
+✅ EU region test complete!
+
+Next step: Compare with US region and download Jan-Aug to verify record density!

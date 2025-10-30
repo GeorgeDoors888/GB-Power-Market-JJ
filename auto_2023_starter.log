@@ -1,0 +1,14 @@
+🔍 Monitoring 2024 ingestion (PID: 5637)
+⏳ Will auto-start 2023 when 2024 completes...
+📅 Started monitoring at 12:41 PM
+
+
+✅ 2024 ingestion completed at 07:51 PM
+🚀 Starting 2023 ingestion...
+
+✅ 2023 ingestion started at 07:51 PM
+📝 Process ID: 85125
+📄 Log file: year_2023_ingest.log
+
+Monitor with: tail -f year_2023_ingest.log
+Check status: ps aux | grep 85125

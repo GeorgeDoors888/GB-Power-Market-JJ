@@ -1,0 +1,14 @@
+{
+  "mpan_id": "14",
+  "dno_key": "NGED-WM",
+  "dno_name": "National Grid Electricity Distribution \u2013 West Midlands (WMID)",
+  "short_code": "WMID",
+  "market_id": "MIDE",
+  "gsp_group": "E",
+  "gsp_name": "West Midlands",
+  "website": "https://www.nationalgrid.com/electricity-distribution",
+  "data_portal": null,
+  "documents": [],
+  "last_updated": "2025-10-30T00:33:54.911495",
+  "document_count": 0
+}

@@ -1,0 +1,36 @@
+{
+  "mpan_id": "12",
+  "dno_key": "UKPN-LPN",
+  "dno_name": "UK Power Networks (London)",
+  "short_code": "LPN",
+  "market_id": "LOND",
+  "gsp_group": "C",
+  "gsp_name": "London",
+  "website": "https://www.ukpowernetworks.co.uk",
+  "data_portal": "https://ukpowernetworks.opendatasoft.com",
+  "documents": [
+    {
+      "dataset_id": "ukpn-rota-load-disconnection",
+      "title": "Rota Load Disconnection",
+      "description": "<p>***</p><p>Please note, this dataset has now been archived indefinitely.\u00a0</p><p>If you would like to know your block letter, please visit:\u00a0<a href=\"https://www.powercut105.com/en/find-my-block-letter\" style=\"font-family: sans-serif; font-size: 0.875rem; background-color: rgb(255, 255, 255);\">Find my block letter | UK Power Cut? Call 105 For Free | Find Your Electricity Provider</a></p><p>***</p><p>This dataset shows the primary feeding areas with their assigned rota load disconnection codes. Under various circumstances, distribution network operators (DNOs) such as UK Power Networks could be instructed to implement a schedule of rota disconnections to reduce electrical demand.</p><p>For more information, please visit the <a href=\"https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=&amp;ved=2ahUKEwi3ruLHvLqFAxXrYUEAHZRrCXIQFnoECBcQAQ&amp;url=https%3A%2F%2Fwww.energynetworks.org%2Fwork%2Femergency-planning&amp;usg=AOvVaw34ljPh_5ifrfj-UQ4Lrmak&amp;opi=89978449\" style=\"background-color: rgb(255, 255, 255);\" target=\"_blank\">Energy Networks Association's dedicated page</a><span style=\"font-family: inherit; \">.</span><br></p>\n\n\n<h2>Other</h2>\n<p><span style=\"font-family: inherit;\">Download dataset information: </span><a href=\"https://ukpowernetworks.opendatasoft.com/explore/dataset/domain-dataset0/download/?format=json&amp;refine.identifier=ukpn-rota-load-disconnection\" style=\"; background-color: rgb(255, 255, 255);\">Metadata (JSON)</a><br></p>\n\n\n<p>Definitions of key terms related to this dataset can be found in the Open Data Portal Glossary: <a href=\"https://ukpowernetworks.opendatasoft.com/pages/glossary/\" target=\"_blank\">https://ukpowernetworks.opendatasoft.com/pages/glossary/</a><a href=\"https://ukpowernetworks.opendatasoft.com/pages/glossary/\" target=\"_blank\"></a></p><p>To view this data please register and login.<br></p>",
+      "source": "opendatasoft",
+      "url": "https://ukpowernetworks.opendatasoft.com/explore/dataset/ukpn-rota-load-disconnection"
+    },
+    {
+      "dataset_id": "ukpn-distribution-use-of-system-charges-annex-2",
+      "title": "UK Power Networks Distribution Use of System Charges - Annex 2",
+      "description": "<h2 class=\"\">Introduction</h2><p>Annex 2 contains the charges to Designated Extra High Voltage (EHV) Properties and charges applied to Licensed Distribution Network Operators (LDNOs) with Designated EHV Properties/end-users embedded in networks within the UK Power Networks licence areas.\u00a0</p>\n\n<h2>Methodological Approach</h2>\n<p>This dataset was extracted and compiled from UK Power Networks Distribution Use of System charges webpage, into a dataset. </p>\n\n<h2>Quality Control Statement</h2>\n<p>The data is provided \"as is\". </p>\n\n<h2>Assurance Statement</h2>\n<p>The Open Data team has checked the data against source to ensure data accuracy and consistency. The data domain owners have checked their respective data aspects.\n</p> \n\n<h2>Other</h2>\n<p>Download dataset information:\u00a0<a href=\"https://ukpowernetworks.opendatasoft.com/explore/dataset/domain-dataset0/download/?format=json&amp;refine.identifier=ukpn-distribution-use-of-system-charges-annex-2\">Metadata (JSON)</a><br></p>\n\n\n<p>Definitions of key terms related to this dataset can be found in the Open Data Portal Glossary: <a href=\"https://ukpowernetworks.opendatasoft.com/pages/glossary/\" target=\"_blank\">https://ukpowernetworks.opendatasoft.com/pages/glossary/</a></p>",
+      "source": "opendatasoft",
+      "url": "https://ukpowernetworks.opendatasoft.com/explore/dataset/ukpn-distribution-use-of-system-charges-annex-2"
+    },
+    {
+      "dataset_id": "ukpn-distribution-use-of-system-charges-annex-1",
+      "title": "UK Power Networks Distribution Use of System Charges - Annex 1",
+      "description": "<h2 class=\"\">Introduction</h2>Annex 1 contains the charges to Low Voltage (LV), High Voltage (HV) Designated Properties and Unmetered Supplies (UMS).\n\n<h2>Methodological Approach</h2>\n<p>This dataset was extracted and compiled from UK Power Networks Distribution Use of System charges webpage, into a dataset. </p>\n\n<h2>Quality Control Statement</h2>\n<p>The data is provided \"as is\". </p>\n\n<h2>Assurance Statement</h2>\n<p>The Open Data team has checked the data against source to ensure data accuracy and consistency. The data domain owners have checked their respective data aspects.\n</p> \n\n<h2 class=\"\">Other</h2>\n<p>Download dataset information:\u00a0<a href=\"https://ukpowernetworks.opendatasoft.com/explore/dataset/domain-dataset0/download/?format=json&amp;refine.identifier=ukpn-distribution-use-of-system-charges-annex-1\">Metadata (JSON)</a><br></p>\n\n\n<p>Definitions of key terms related to this dataset can be found in the Open Data Portal Glossary: <a href=\"https://ukpowernetworks.opendatasoft.com/pages/glossary/\" target=\"_blank\">https://ukpowernetworks.opendatasoft.com/pages/glossary/</a></p>",
+      "source": "opendatasoft",
+      "url": "https://ukpowernetworks.opendatasoft.com/explore/dataset/ukpn-distribution-use-of-system-charges-annex-1"
+    }
+  ],
+  "last_updated": "2025-10-30T00:33:40.857214",
+  "document_count": 3
+}

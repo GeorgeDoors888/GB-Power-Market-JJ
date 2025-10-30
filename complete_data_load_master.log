@@ -1,0 +1,62 @@
+======================================================================
+COMPLETE DATA LOADING PLAN
+======================================================================
+Start time: Tue Oct 28 12:34:49 GMT 2025
+
+Steps:
+  1. Load 2022 full year (~8 hours)
+  2. Fix FUELINST 2023 (~30 min)
+  3. Fix FUELINST 2024 (~30 min)
+  4. Fix FUELINST 2025 Jan-Oct (~2 hours)
+  5. Load 2025 Sep-Oct all datasets (~1 hour)
+  6. Create daily update script
+
+Total estimated time: ~12 hours
+Expected completion: ~12:30 AM tomorrow
+======================================================================
+
+[STEP 1/6] Loading 2022 full year...
+Start: Tue Oct 28 12:34:49 GMT 2025
+✅ 2022 completed at Tue Oct 28 22:39:31 GMT 2025
+
+[STEP 2/6] Fixing FUELINST/FREQ/FUELHH for 2023...
+Start: Tue Oct 28 22:39:31 GMT 2025
+✅ 2023 FUELINST fix completed at Tue Oct 28 22:39:38 GMT 2025
+
+[STEP 3/6] Fixing FUELINST/FREQ/FUELHH for 2024...
+Start: Tue Oct 28 22:39:38 GMT 2025
+✅ 2024 FUELINST fix completed at Tue Oct 28 22:39:44 GMT 2025
+
+[STEP 4/6] Fixing FUELINST/FREQ/FUELHH for 2025 Jan-Oct...
+Start: Tue Oct 28 22:39:44 GMT 2025
+✅ 2025 FUELINST fix completed at Tue Oct 28 22:41:19 GMT 2025
+
+[STEP 5/6] Loading 2025 Sep-Oct all datasets...
+Start: Tue Oct 28 22:41:19 GMT 2025
+✅ 2025 Sep-Oct completed at Wed Oct 29 00:28:05 GMT 2025
+
+[STEP 6/6] Creating daily update script...
+✅ Created daily_update.sh
+
+======================================================================
+ALL STEPS COMPLETED!
+======================================================================
+End time: Wed Oct 29 00:28:05 GMT 2025
+
+Summary:
+  ✅ 2022 data loaded
+  ✅ 2023 FUELINST fixed
+  ✅ 2024 FUELINST fixed
+  ✅ 2025 FUELINST fixed
+  ✅ 2025 Sep-Oct loaded
+  ✅ Daily update script created
+
+Logs saved in: logs_20251028_123449
+
+To run daily updates:
+  ./daily_update.sh
+
+Or set up a cron job:
+  0 6 * * * cd /Users/georgemajor/GB Power Market JJ && ./daily_update.sh
+  (Runs every day at 6 AM)
+======================================================================

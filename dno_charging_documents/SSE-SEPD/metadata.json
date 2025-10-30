@@ -1,0 +1,14 @@
+{
+  "mpan_id": "20",
+  "dno_key": "SSE-SEPD",
+  "dno_name": "Southern Electric Power Distribution (SEPD)",
+  "short_code": "SEPD",
+  "market_id": "SOUT",
+  "gsp_group": "H",
+  "gsp_name": "Southern",
+  "website": "https://www.ssen.co.uk",
+  "data_portal": "https://ssen-transmissionnetwork.opendatasoft.com",
+  "documents": [],
+  "last_updated": "2025-10-30T00:33:53.906881",
+  "document_count": 0
+}
