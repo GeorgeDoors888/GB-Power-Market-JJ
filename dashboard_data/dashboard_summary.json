@@ -1,0 +1,328 @@
+{
+  "metadata": {
+    "generated": "2025-10-30T02:28:50.432730",
+    "total_records": 78901,
+    "years_covered": "2014-2026",
+    "dnos_covered": 14
+  },
+  "traffic_light": {
+    "total_records": 2309,
+    "red_count": 2174,
+    "amber_count": 24,
+    "green_count": 111
+  },
+  "transmission_charges": {
+    "tnuos_records": 113,
+    "bsuos_records": 0
+  },
+  "time_bands": {
+    "unique_bands": 1,
+    "bands_list": [
+      "Day"
+    ]
+  },
+  "by_dno": [
+    {
+      "dno_code": "EMID",
+      "dno_name": "National Grid Electricity Distribution \u2013 East Midlands",
+      "total_records": 4381,
+      "years": [
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "traffic_light_records": 246,
+      "tnuos_records": 18,
+      "bsuos_records": 0,
+      "time_bands": [
+        "Day"
+      ]
+    },
+    {
+      "dno_code": "ENWL",
+      "dno_name": "Electricity North West",
+      "total_records": 2290,
+      "years": [
+        2018,
+        2020,
+        2021,
+        2022,
+        2023,
+        2025,
+        2026
+      ],
+      "traffic_light_records": 91,
+      "tnuos_records": 0,
+      "bsuos_records": 0,
+      "time_bands": []
+    },
+    {
+      "dno_code": "EPN",
+      "dno_name": "UK Power Networks (Eastern)",
+      "total_records": 3319,
+      "years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "traffic_light_records": 146,
+      "tnuos_records": 0,
+      "bsuos_records": 0,
+      "time_bands": []
+    },
+    {
+      "dno_code": "LPN",
+      "dno_name": "UK Power Networks (London)",
+      "total_records": 3238,
+      "years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "traffic_light_records": 146,
+      "tnuos_records": 0,
+      "bsuos_records": 0,
+      "time_bands": []
+    },
+    {
+      "dno_code": "NE",
+      "dno_name": "Northern Powergrid (North East)",
+      "total_records": 4964,
+      "years": [
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "traffic_light_records": 24,
+      "tnuos_records": 4,
+      "bsuos_records": 0,
+      "time_bands": [
+        "Day"
+      ]
+    },
+    {
+      "dno_code": "SEPD",
+      "dno_name": "Southern Electric Power Distribution",
+      "total_records": 10725,
+      "years": [
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "traffic_light_records": 192,
+      "tnuos_records": 8,
+      "bsuos_records": 0,
+      "time_bands": [
+        "Day"
+      ]
+    },
+    {
+      "dno_code": "SHEPD",
+      "dno_name": "Scottish Hydro Electric Power Distribution",
+      "total_records": 13691,
+      "years": [
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "traffic_light_records": 359,
+      "tnuos_records": 10,
+      "bsuos_records": 0,
+      "time_bands": [
+        "Day"
+      ]
+    },
+    {
+      "dno_code": "SPD",
+      "dno_name": "SP Energy Networks (SPD)",
+      "total_records": 7179,
+      "years": [
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "traffic_light_records": 78,
+      "tnuos_records": 8,
+      "bsuos_records": 0,
+      "time_bands": [
+        "Day"
+      ]
+    },
+    {
+      "dno_code": "SPM",
+      "dno_name": "SP Energy Networks (SPM)",
+      "total_records": 7179,
+      "years": [
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "traffic_light_records": 89,
+      "tnuos_records": 7,
+      "bsuos_records": 0,
+      "time_bands": [
+        "Day"
+      ]
+    },
+    {
+      "dno_code": "SPN",
+      "dno_name": "UK Power Networks (South Eastern)",
+      "total_records": 3230,
+      "years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "traffic_light_records": 146,
+      "tnuos_records": 0,
+      "bsuos_records": 0,
+      "time_bands": []
+    },
+    {
+      "dno_code": "SWALES",
+      "dno_name": "National Grid Electricity Distribution \u2013 South Wales",
+      "total_records": 4083,
+      "years": [
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "traffic_light_records": 246,
+      "tnuos_records": 18,
+      "bsuos_records": 0,
+      "time_bands": [
+        "Day"
+      ]
+    },
+    {
+      "dno_code": "SWEST",
+      "dno_name": "National Grid Electricity Distribution \u2013 South West",
+      "total_records": 4156,
+      "years": [
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "traffic_light_records": 240,
+      "tnuos_records": 18,
+      "bsuos_records": 0,
+      "time_bands": [
+        "Day"
+      ]
+    },
+    {
+      "dno_code": "WMID",
+      "dno_name": "National Grid Electricity Distribution \u2013 West Midlands",
+      "total_records": 4176,
+      "years": [
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "traffic_light_records": 246,
+      "tnuos_records": 18,
+      "bsuos_records": 0,
+      "time_bands": [
+        "Day"
+      ]
+    },
+    {
+      "dno_code": "Y",
+      "dno_name": "Northern Powergrid (Yorkshire)",
+      "total_records": 6290,
+      "years": [
+        2017,
+        2019,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "traffic_light_records": 60,
+      "tnuos_records": 4,
+      "bsuos_records": 0,
+      "time_bands": [
+        "Day"
+      ]
+    }
+  ]
+}

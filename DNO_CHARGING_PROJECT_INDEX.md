@@ -9,19 +9,60 @@
 ## 📁 Quick Navigation
 
 ### 🎯 Start Here
+- **[Distribution ID Organization](#distribution-id-organization)** - 302 files organized by MPAN Distributor ID (10-23) and year
 - **[Implementation Summary](#implementation-summary)** - Current status, next steps
 - **[BigQuery Schema](#bigquery-schema)** - Database structure and tables
 - **[Spatial Data](#spatial-data)** - GeoJSON files and geographic analysis
 
 ### 📖 Comprehensive Guides
-1. **[Full Pipeline Documentation](#full-pipeline)**
-2. **[Spatial Data Catalog](#spatial-catalog)**
-3. **[Document Analysis](#document-analysis)**
+1. **[Files by Distribution ID & Year](#files-by-distribution-id)** - Complete inventory with MPAN mapping
+2. **[Full Pipeline Documentation](#full-pipeline)**
+3. **[Spatial Data Catalog](#spatial-catalog)**
+4. **[Document Analysis](#document-analysis)**
 
 ### 💻 Scripts & Tools
 - **[Python Scripts](#scripts)**
 - **[BigQuery Queries](#queries)**
 - **[Data Sources](#sources)**
+
+---
+
+## Files by Distribution ID
+
+**File:** [`DNO_FILES_BY_DISTRIBUTION_ID_AND_YEAR.md`](DNO_FILES_BY_DISTRIBUTION_ID_AND_YEAR.md) (53 KB)
+
+**Contents:**
+- ✅ **302 charging files** organized by Distribution ID (10-23) and year (2014-2026)
+- ✅ **MPAN/Distributor ID mapping** table with DNO_Key, Market Participant ID, GSP Group
+- ✅ **Coverage matrix** showing files per Distribution ID per year
+- ✅ **Detailed file listings** for each of 14 DNO license areas
+- ✅ **Data quality assessment** (High/Good/Moderate/Poor)
+- ✅ **Missing data identification** (NPg-NE has no files, SPN has only 1)
+- ✅ **File type categories** (Schedule of Charges, CDCM, PCDM, ED2 PCFM, Annexes)
+
+**Key Coverage Stats:**
+- **High Quality (13 years):** NGED areas (EMID, WMID, SWALES, SWEST) - 2014-2026 complete
+- **High Quality (10 years):** UKPN areas (EPN, LPN) - 2017-2026 complete
+- **Good Quality (7 years):** SSEN (SHEPD, SEPD), SPEN (SPM, SPD), NPg-Y - 2020-2026
+- **Gaps:** ENWL (spotty), SPN (1 file only), NPg-NE (missing)
+
+**Distribution ID Mapping:**
+| ID | DNO | MPID | GSP | Files |
+|----|-----|------|-----|-------|
+| 10 | UKPN-EPN | EELC | A | 29 |
+| 11 | NGED-EM | EMEB | B | 17 |
+| 12 | UKPN-LPN | LOND | C | 13 |
+| 13 | SP-Manweb | MANW | D | 23 |
+| 14 | NGED-WM | MIDE | E | 17 |
+| 15 | NPg-NE | NEEB | F | 0 ❌ |
+| 16 | ENWL | NORW | G | 48 |
+| 17 | SSE-SHEPD | HYDE | P | 36 |
+| 18 | SP-Distribution | SPOW | N | 19 |
+| 19 | UKPN-SPN | SEEB | J | 1 ⚠️ |
+| 20 | SSE-SEPD | SOUT | H | 40 |
+| 21 | NGED-SWales | SWAE | K | 15 |
+| 22 | NGED-SW | SWEB | L | 17 |
+| 23 | NPg-Y | YELG | M | 26 |
 
 ---
 

@@ -1,0 +1,2963 @@
+{
+  "metadata": {
+    "generated_at": "2025-10-30T01:30:50.368108",
+    "description": "DNO charging files organized by Distribution ID and Year",
+    "project": "GB Power Market - DNO DUoS Charging Analysis",
+    "folders_scanned": [
+      "/Users/georgemajor/GB Power Market JJ",
+      "/Users/georgemajor/jibber-jabber 24 august 2025 big bop"
+    ]
+  },
+  "dno_mapping": {
+    "10": {
+      "dno_key": "UKPN-EPN",
+      "name": "UK Power Networks (Eastern)",
+      "short_code": "EPN",
+      "market_participant_id": "EELC",
+      "gsp_group_id": "A",
+      "gsp_group_name": "Eastern"
+    },
+    "11": {
+      "dno_key": "NGED-EM",
+      "name": "National Grid Electricity Distribution – East Midlands",
+      "short_code": "EMID",
+      "market_participant_id": "EMEB",
+      "gsp_group_id": "B",
+      "gsp_group_name": "East Midlands"
+    },
+    "12": {
+      "dno_key": "UKPN-LPN",
+      "name": "UK Power Networks (London)",
+      "short_code": "LPN",
+      "market_participant_id": "LOND",
+      "gsp_group_id": "C",
+      "gsp_group_name": "London"
+    },
+    "13": {
+      "dno_key": "SP-Manweb",
+      "name": "SP Energy Networks (SPM)",
+      "short_code": "SPM",
+      "market_participant_id": "MANW",
+      "gsp_group_id": "D",
+      "gsp_group_name": "Merseyside & North Wales"
+    },
+    "14": {
+      "dno_key": "NGED-WM",
+      "name": "National Grid Electricity Distribution – West Midlands",
+      "short_code": "WMID",
+      "market_participant_id": "MIDE",
+      "gsp_group_id": "E",
+      "gsp_group_name": "West Midlands"
+    },
+    "15": {
+      "dno_key": "NPg-NE",
+      "name": "Northern Powergrid (North East)",
+      "short_code": "NE",
+      "market_participant_id": "NEEB",
+      "gsp_group_id": "F",
+      "gsp_group_name": "North East"
+    },
+    "16": {
+      "dno_key": "ENWL",
+      "name": "Electricity North West",
+      "short_code": "ENWL",
+      "market_participant_id": "NORW",
+      "gsp_group_id": "G",
+      "gsp_group_name": "North West"
+    },
+    "17": {
+      "dno_key": "SSE-SHEPD",
+      "name": "Scottish Hydro Electric Power Distribution",
+      "short_code": "SHEPD",
+      "market_participant_id": "HYDE",
+      "gsp_group_id": "P",
+      "gsp_group_name": "North Scotland"
+    },
+    "18": {
+      "dno_key": "SP-Distribution",
+      "name": "SP Energy Networks (SPD)",
+      "short_code": "SPD",
+      "market_participant_id": "SPOW",
+      "gsp_group_id": "N",
+      "gsp_group_name": "South Scotland"
+    },
+    "19": {
+      "dno_key": "UKPN-SPN",
+      "name": "UK Power Networks (South Eastern)",
+      "short_code": "SPN",
+      "market_participant_id": "SEEB",
+      "gsp_group_id": "J",
+      "gsp_group_name": "South Eastern"
+    },
+    "20": {
+      "dno_key": "SSE-SEPD",
+      "name": "Southern Electric Power Distribution",
+      "short_code": "SEPD",
+      "market_participant_id": "SOUT",
+      "gsp_group_id": "H",
+      "gsp_group_name": "Southern"
+    },
+    "21": {
+      "dno_key": "NGED-SWales",
+      "name": "National Grid Electricity Distribution – South Wales",
+      "short_code": "SWALES",
+      "market_participant_id": "SWAE",
+      "gsp_group_id": "K",
+      "gsp_group_name": "South Wales"
+    },
+    "22": {
+      "dno_key": "NGED-SW",
+      "name": "National Grid Electricity Distribution – South West",
+      "short_code": "SWEST",
+      "market_participant_id": "SWEB",
+      "gsp_group_id": "L",
+      "gsp_group_name": "South Western"
+    },
+    "23": {
+      "dno_key": "NPg-Y",
+      "name": "Northern Powergrid (Yorkshire)",
+      "short_code": "Y",
+      "market_participant_id": "YELG",
+      "gsp_group_id": "M",
+      "gsp_group_name": "Yorkshire"
+    }
+  },
+  "files_by_distribution_id": {
+    "10": {
+      "dno_info": {
+        "dno_key": "UKPN-EPN",
+        "name": "UK Power Networks (Eastern)",
+        "short_code": "EPN",
+        "market_participant_id": "EELC",
+        "gsp_group_id": "A",
+        "gsp_group_name": "Eastern"
+      },
+      "years": {
+        "2017": {
+          "count": 2,
+          "files": [
+            {
+              "filename": "eastern-power-networks-schedule-of-charges-and-other-tables-2017-v3-4.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/eastern-power-networks-schedule-of-charges-and-other-tables-2017-v3-4.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 352061
+            },
+            {
+              "filename": "uk_power_networks_eastern_2017_annex_1_lv_and_hv_charges.csv",
+              "path": "/Users/georgemajor/GB Power Market JJ/duos_extracted_data/uk_power_networks_eastern_2017_annex_1_lv_and_hv_charges.csv",
+              "extension": ".csv",
+              "size_bytes": 2173
+            }
+          ]
+        },
+        "2018": {
+          "count": 2,
+          "files": [
+            {
+              "filename": "eastern-power-networks-schedule-of-charges-and-other-tables-2018-v3-6.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/eastern-power-networks-schedule-of-charges-and-other-tables-2018-v3-6.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 365297
+            },
+            {
+              "filename": "uk_power_networks_eastern_2018_annex_1_lv_and_hv_charges.csv",
+              "path": "/Users/georgemajor/GB Power Market JJ/duos_extracted_data/uk_power_networks_eastern_2018_annex_1_lv_and_hv_charges.csv",
+              "extension": ".csv",
+              "size_bytes": 2402
+            }
+          ]
+        },
+        "2019": {
+          "count": 2,
+          "files": [
+            {
+              "filename": "eastern-power-networks-schedule-of-charges-and-other-tables-2019-v2-2.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/eastern-power-networks-schedule-of-charges-and-other-tables-2019-v2-2.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 365641
+            },
+            {
+              "filename": "uk_power_networks_eastern_2019_annex_1_lv_and_hv_charges.csv",
+              "path": "/Users/georgemajor/GB Power Market JJ/duos_extracted_data/uk_power_networks_eastern_2019_annex_1_lv_and_hv_charges.csv",
+              "extension": ".csv",
+              "size_bytes": 2343
+            }
+          ]
+        },
+        "2020": {
+          "count": 2,
+          "files": [
+            {
+              "filename": "eastern-power-networks-schedule-of-charges-and-other-tables-2020-v3-3.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/eastern-power-networks-schedule-of-charges-and-other-tables-2020-v3-3.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 360499
+            },
+            {
+              "filename": "uk_power_networks_eastern_2020_annex_1_lv_and_hv_charges.csv",
+              "path": "/Users/georgemajor/GB Power Market JJ/duos_extracted_data/uk_power_networks_eastern_2020_annex_1_lv_and_hv_charges.csv",
+              "extension": ".csv",
+              "size_bytes": 2361
+            }
+          ]
+        },
+        "2021": {
+          "count": 2,
+          "files": [
+            {
+              "filename": "eastern-power-networks-schedule-of-charges-and-other-tables-2021-v1-5.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/eastern-power-networks-schedule-of-charges-and-other-tables-2021-v1-5.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 363904
+            },
+            {
+              "filename": "uk_power_networks_eastern_2021_annex_1_lv,_hv_and_ums_charges.csv",
+              "path": "/Users/georgemajor/GB Power Market JJ/duos_extracted_data/uk_power_networks_eastern_2021_annex_1_lv,_hv_and_ums_charges.csv",
+              "extension": ".csv",
+              "size_bytes": 1884
+            }
+          ]
+        },
+        "2022": {
+          "count": 2,
+          "files": [
+            {
+              "filename": "eastern-power-networks-schedule-of-charges-and-other-tables-2022-v18.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/eastern-power-networks-schedule-of-charges-and-other-tables-2022-v18.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 326829
+            },
+            {
+              "filename": "uk_power_networks_eastern_2022_annex_1_lv,_hv_and_ums_charges.csv",
+              "path": "/Users/georgemajor/GB Power Market JJ/duos_extracted_data/uk_power_networks_eastern_2022_annex_1_lv,_hv_and_ums_charges.csv",
+              "extension": ".csv",
+              "size_bytes": 2795
+            }
+          ]
+        },
+        "2023": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "eastern-power-networks-schedule-of-charges-and-other-tables-2023-v17.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/eastern-power-networks-schedule-of-charges-and-other-tables-2023-v17.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 305198
+            }
+          ]
+        },
+        "2024": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "eastern-power-networks-schedule-of-charges-and-other-tables-2024-v1-8.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/eastern-power-networks-schedule-of-charges-and-other-tables-2024-v1-8.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 313633
+            }
+          ]
+        },
+        "2025": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "eastern-power-networks-schedule-of-charges-and-other-tables-2025-v1-6.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/eastern-power-networks-schedule-of-charges-and-other-tables-2025-v1-6.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 321356
+            }
+          ]
+        },
+        "2026": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "eastern-power-networks-schedule-of-charges-and-other-tables-2026-v1-2.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/eastern-power-networks-schedule-of-charges-and-other-tables-2026-v1-2.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 318384
+            }
+          ]
+        },
+        "unknown": {
+          "count": 2,
+          "files": [
+            {
+              "filename": "EPN FD Monetised Risk.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/drive_duos_unzipped/0075_schedule_2d_network_assets_workbook_0zip/EPN FD Monetised Risk.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 1747471
+            },
+            {
+              "filename": "Eastern Power Networks plc Special Conditions MARKED UP.pdf",
+              "path": "/Users/georgemajor/GB Power Market JJ/drive_duos_unzipped/0060_Annex T All electricity distribution special conditionszip/Annex T - All Electricity Distribution Special Conditions/Eastern Power Networks plc Special Conditions MARKED UP.pdf",
+              "extension": ".pdf",
+              "size_bytes": 944532
+            }
+          ]
+        }
+      },
+      "total_files": 18
+    },
+    "11": {
+      "dno_info": {
+        "dno_key": "NGED-EM",
+        "name": "National Grid Electricity Distribution – East Midlands",
+        "short_code": "EMID",
+        "market_participant_id": "EMEB",
+        "gsp_group_id": "B",
+        "gsp_group_name": "East Midlands"
+      },
+      "years": {
+        "2014": {
+          "count": 2,
+          "files": [
+            {
+              "filename": "EMEB-2014-15.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/EMEB-2014-15.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 31826
+            },
+            {
+              "filename": "EMEB-Schedule-of-charges-and-other-tables-Apr-2014-Version-10-7-%c2%a35-removed.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/EMEB-Schedule-of-charges-and-other-tables-Apr-2014-Version-10-7-%c2%a35-removed.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 249162
+            }
+          ]
+        },
+        "2015": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "EMEB-Schedule-of-charges-and-other-tables-2015-V1-10.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/EMEB-Schedule-of-charges-and-other-tables-2015-V1-10.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 310504
+            }
+          ]
+        },
+        "2016": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "EMEB-Schedule-of-charges-and-other-tables-v-1-0-2016.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/EMEB-Schedule-of-charges-and-other-tables-v-1-0-2016.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 319366
+            }
+          ]
+        },
+        "2017": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "EMEB-Schedule-of-charges-and-other-tables-v-1-0-2017.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/EMEB-Schedule-of-charges-and-other-tables-v-1-0-2017.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 321431
+            }
+          ]
+        },
+        "2018": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "EMEB-Schedule-of-charges-and-other-tables-v-1-0-2018-SOLR3.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/EMEB-Schedule-of-charges-and-other-tables-v-1-0-2018-SOLR3.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 319617
+            }
+          ]
+        },
+        "2019": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "EMEB - Schedule of charges and other tables - 2019 V.0.2 SOLR.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/EMEB - Schedule of charges and other tables - 2019 V.0.2 SOLR.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 405577
+            }
+          ]
+        },
+        "2020": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "EMEB-Schedule of charges and other tables-2020 v2.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/EMEB-Schedule of charges and other tables-2020 v2.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 375159
+            }
+          ]
+        },
+        "2021": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "EMEB-Schedule of charges and other tables-2021 V.0.2.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/EMEB-Schedule of charges and other tables-2021 V.0.2.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 392573
+            }
+          ]
+        },
+        "2022": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "EMEB-Schedule of charges and other tables-2022 V.0.1.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/EMEB-Schedule of charges and other tables-2022 V.0.1.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 370827
+            }
+          ]
+        },
+        "2023": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "EMEB-Schedule of charges and other tables-2023 V.0.1 for publishing.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/EMEB-Schedule of charges and other tables-2023 V.0.1 for publishing.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 404275
+            }
+          ]
+        },
+        "2024": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "Copy of EMEB-Schedule of charges and other tables-2024 V.0.1 for publishing.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/Copy of EMEB-Schedule of charges and other tables-2024 V.0.1 for publishing.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 422867
+            }
+          ]
+        },
+        "2025": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "EMEB - Schedule of charges and other tables- 2025 V.0.2 for publishing.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/EMEB - Schedule of charges and other tables- 2025 V.0.2 for publishing.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 336367
+            }
+          ]
+        },
+        "2026": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "EMEB - Schedule of charges and other tables- 2026 V.0.1 for publishing.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/EMEB - Schedule of charges and other tables- 2026 V.0.1 for publishing.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 317036
+            }
+          ]
+        },
+        "unknown": {
+          "count": 3,
+          "files": [
+            {
+              "filename": "EMEB-Schedule-of-charges-and-other-tables-Version7.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/EMEB-Schedule-of-charges-and-other-tables-Version7.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 150040
+            },
+            {
+              "filename": "EMID FD Monetised Risk.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/drive_duos_unzipped/0059_schedule_2_-_wpd_naw_and_mrw_0zip/EMID FD Monetised Risk.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 1776015
+            },
+            {
+              "filename": "National Grid Electricity Distribution (East Midlands) plc Special Conditions.pdf",
+              "path": "/Users/georgemajor/GB Power Market JJ/drive_duos_unzipped/0060_Annex T All electricity distribution special conditionszip/Annex T - All Electricity Distribution Special Conditions/National Grid Electricity Distribution (East Midlands) plc Special Conditions.pdf",
+              "extension": ".pdf",
+              "size_bytes": 940718
+            }
+          ]
+        }
+      },
+      "total_files": 17
+    },
+    "12": {
+      "dno_info": {
+        "dno_key": "UKPN-LPN",
+        "name": "UK Power Networks (London)",
+        "short_code": "LPN",
+        "market_participant_id": "LOND",
+        "gsp_group_id": "C",
+        "gsp_group_name": "London"
+      },
+      "years": {
+        "2017": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "london-power-networks-schedule-of-charges-and-other-tables-2017-v3-4.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/london-power-networks-schedule-of-charges-and-other-tables-2017-v3-4.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 238263
+            }
+          ]
+        },
+        "2018": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "london-power-networks-schedule-of-charges-and-other-tables-2018-v3-4.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/london-power-networks-schedule-of-charges-and-other-tables-2018-v3-4.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 233957
+            }
+          ]
+        },
+        "2019": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "london-power-networks-schedule-of-charges-and-other-tables-2019-v2-2.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/london-power-networks-schedule-of-charges-and-other-tables-2019-v2-2.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 231200
+            }
+          ]
+        },
+        "2020": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "london-power-networks-schedule-of-charges-and-other-tables-2020-v3-3.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/london-power-networks-schedule-of-charges-and-other-tables-2020-v3-3.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 227101
+            }
+          ]
+        },
+        "2021": {
+          "count": 2,
+          "files": [
+            {
+              "filename": "london-power-networks-schedule-of-charges-and-other-tables-2021-v1-5.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/london-power-networks-schedule-of-charges-and-other-tables-2021-v1-5.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 261245
+            },
+            {
+              "filename": "uk_power_networks_london_2021_annex_1_lv,_hv_and_ums_charges.csv",
+              "path": "/Users/georgemajor/GB Power Market JJ/duos_expanded_data/uk_power_networks_london_2021_annex_1_lv,_hv_and_ums_charges.csv",
+              "extension": ".csv",
+              "size_bytes": 1859
+            }
+          ]
+        },
+        "2022": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "london-power-networks-schedule-of-charges-and-other-tables-2022-v1-5.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/london-power-networks-schedule-of-charges-and-other-tables-2022-v1-5.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 150619
+            }
+          ]
+        },
+        "2023": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "london-power-networks-schedule-of-charges-and-other-tables-2023-v1-3.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/london-power-networks-schedule-of-charges-and-other-tables-2023-v1-3.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 199958
+            }
+          ]
+        },
+        "2024": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "london-power-networks-schedule-of-charges-and-other-tables-2024-v13.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/london-power-networks-schedule-of-charges-and-other-tables-2024-v13.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 205970
+            }
+          ]
+        },
+        "2025": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "london-power-networks-schedule-of-charges-and-other-tables-2025-v1-2.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/london-power-networks-schedule-of-charges-and-other-tables-2025-v1-2.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 205625
+            }
+          ]
+        },
+        "2026": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "london-power-networks-schedule-of-charges-and-other-tables-2026-v1-0.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/london-power-networks-schedule-of-charges-and-other-tables-2026-v1-0.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 204817
+            }
+          ]
+        },
+        "unknown": {
+          "count": 2,
+          "files": [
+            {
+              "filename": "LPN FD Monetised Risk.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/drive_duos_unzipped/0075_schedule_2d_network_assets_workbook_0zip/LPN FD Monetised Risk.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 1703378
+            },
+            {
+              "filename": "London Power Networks plc Special Conditions MARKED UP.pdf",
+              "path": "/Users/georgemajor/GB Power Market JJ/drive_duos_unzipped/0060_Annex T All electricity distribution special conditionszip/Annex T - All Electricity Distribution Special Conditions/London Power Networks plc Special Conditions MARKED UP.pdf",
+              "extension": ".pdf",
+              "size_bytes": 910642
+            }
+          ]
+        }
+      },
+      "total_files": 13
+    },
+    "13": {
+      "dno_info": {
+        "dno_key": "SP-Manweb",
+        "name": "SP Energy Networks (SPM)",
+        "short_code": "SPM",
+        "market_participant_id": "MANW",
+        "gsp_group_id": "D",
+        "gsp_group_name": "Merseyside & North Wales"
+      },
+      "years": {
+        "2020": {
+          "count": 2,
+          "files": [
+            {
+              "filename": "CDCM_v3_SPM_2020_21.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/duos_spm_data/CDCM_v3_SPM_2020_21.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 955556
+            },
+            {
+              "filename": "SPM - Schedule of charges and other tables - 2020_21 V.0.1- IDNO HV Tariffs v3.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/SPM - Schedule of charges and other tables - 2020_21 V.0.1- IDNO HV Tariffs v3.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 314791
+            }
+          ]
+        },
+        "2021": {
+          "count": 4,
+          "files": [
+            {
+              "filename": "CDCM_v6_2021-22-Pre-Release_20200130_SPM_DCP341.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/duos_spm_data/CDCM_v6_2021-22-Pre-Release_20200130_SPM_DCP341.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 794418
+            },
+            {
+              "filename": "SPM CDCM_v8_20211122_2023_24_Published SoLR.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/duos_spm_data/SPM CDCM_v8_20211122_2023_24_Published SoLR.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 862473
+            },
+            {
+              "filename": "SP_Manweb_Schedule_of_charges_and_other_tables_2021_V.0.1_DCP268_341_Annex_1_5_6_7_V5.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/duos_spm_data/SP_Manweb_Schedule_of_charges_and_other_tables_2021_V.0.1_DCP268_341_Annex_1_5_6_7_V5.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 320394
+            },
+            {
+              "filename": "SP_Manweb_Schedule_of_charges_and_other_tables_2021_V.0.1_DCP268_341_Annex_1_5_6_7_V6.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/SP_Manweb_Schedule_of_charges_and_other_tables_2021_V.0.1_DCP268_341_Annex_1_5_6_7_V6.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 320953
+            }
+          ]
+        },
+        "2022": {
+          "count": 3,
+          "files": [
+            {
+              "filename": "SP Manweb - Schedule of charges and other tables- 2022 V.0.9 Annex 6.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/SP Manweb - Schedule of charges and other tables- 2022 V.0.9 Annex 6.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 257278
+            },
+            {
+              "filename": "SPM CDCM_v7_2022-23_Pre-Release_20201106 SoLR.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/duos_spm_data/SPM CDCM_v7_2022-23_Pre-Release_20201106 SoLR.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 848319
+            },
+            {
+              "filename": "SPM_PCDM_v4_2022-23_Pre-Release_20201106.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/duos_spm_data/SPM_PCDM_v4_2022-23_Pre-Release_20201106.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 409135
+            }
+          ]
+        },
+        "2023": {
+          "count": 2,
+          "files": [
+            {
+              "filename": "ED2_PCFM_SPMW_20231229.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/duos_spm_data/ED2_PCFM_SPMW_20231229.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 3378225
+            },
+            {
+              "filename": "SPM_-_Schedule_of_charges_and_other_tables-_2023_V.0.5_Annex_6.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/SPM_-_Schedule_of_charges_and_other_tables-_2023_V.0.5_Annex_6.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 245561
+            }
+          ]
+        },
+        "2024": {
+          "count": 3,
+          "files": [
+            {
+              "filename": "ED2-PCFM-SPMW-20241231.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/duos_spm_data/ED2-PCFM-SPMW-20241231.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 3322616
+            },
+            {
+              "filename": "SPM 2024_25 CDCM_v9_20221027_published.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/duos_spm_data/SPM 2024_25 CDCM_v9_20221027_published.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 857151
+            },
+            {
+              "filename": "SPM-Schedule-of-charges-and-other-tables-2024-V.0.8-Annex-6.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/SPM-Schedule-of-charges-and-other-tables-2024-V.0.8-Annex-6.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 231548
+            }
+          ]
+        },
+        "2025": {
+          "count": 2,
+          "files": [
+            {
+              "filename": "SPM-Schedule-of-charges-and-other-tables-2025-V.0.7-Annex-6.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/SPM-Schedule-of-charges-and-other-tables-2025-V.0.7-Annex-6.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 232259
+            },
+            {
+              "filename": "SPM_2025_26_CDCM_v10_20231106.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/duos_spm_data/SPM_2025_26_CDCM_v10_20231106.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 873166
+            }
+          ]
+        },
+        "2026": {
+          "count": 2,
+          "files": [
+            {
+              "filename": "SPM 2026_27 CDCM_v11_20241025_Published.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/duos_spm_data/SPM 2026_27 CDCM_v11_20241025_Published.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 908126
+            },
+            {
+              "filename": "SPM-Schedule-of-charges-and-other-tables-2026-V0.1-Annex-6.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/duos_spm_data/SPM-Schedule-of-charges-and-other-tables-2026-V0.1-Annex-6.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 235554
+            }
+          ]
+        },
+        "unknown": {
+          "count": 5,
+          "files": [
+            {
+              "filename": "ED2-LRE-SPM-011-CV3-EJP-ADD - SPM 33kV RMUs Fault Level Mitigation - Addendum V1.0 REDACTED.pdf",
+              "path": "/Users/georgemajor/GB Power Market JJ/drive_duos_unzipped/0070_7afda81f_RIIO-ED2 Draft Determinations Responses ENWL_ NPg_ SPENzip/SPEN/SPEN Redacted EJP Addendums/ED2-LRE-SPM-011-CV3-EJP-ADD - SPM 33kV RMUs Fault Level Mitigation - Addendum V1.0 REDACTED.pdf",
+              "extension": ".pdf",
+              "size_bytes": 227297
+            },
+            {
+              "filename": "ED2-NLR(A)-SPM-009-OHL-EJP-ADD - 4ZC Route 132kV Overhead Line Modernisation - EJP Addendum v1.0 REDACTED.pdf",
+              "path": "/Users/georgemajor/GB Power Market JJ/drive_duos_unzipped/0070_7afda81f_RIIO-ED2 Draft Determinations Responses ENWL_ NPg_ SPENzip/SPEN/SPEN Redacted EJP Addendums/ED2-NLR(A)-SPM-009-OHL-EJP-ADD - 4ZC Route 132kV Overhead Line Modernisation - EJP Addendum v1.0 REDACTED.pdf",
+              "extension": ".pdf",
+              "size_bytes": 237686
+            },
+            {
+              "filename": "ED2-NLR(O)-SPD SPM-001-TEL-EJP-ADD - Telecoms Network Resilience Improvements - EJP Addendum V1.0 REDACTED.pdf",
+              "path": "/Users/georgemajor/GB Power Market JJ/drive_duos_unzipped/0070_7afda81f_RIIO-ED2 Draft Determinations Responses ENWL_ NPg_ SPENzip/SPEN/SPEN Redacted EJP Addendums/ED2-NLR(O)-SPD SPM-001-TEL-EJP-ADD - Telecoms Network Resilience Improvements - EJP Addendum V1.0 REDACTED.pdf",
+              "extension": ".pdf",
+              "size_bytes": 182128
+            },
+            {
+              "filename": "SP Manweb plc Special Conditions.pdf",
+              "path": "/Users/georgemajor/GB Power Market JJ/drive_duos_unzipped/0060_Annex T All electricity distribution special conditionszip/Annex T - All Electricity Distribution Special Conditions/SP Manweb plc Special Conditions.pdf",
+              "extension": ".pdf",
+              "size_bytes": 989746
+            },
+            {
+              "filename": "SPMW FD Monetised Risk.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/drive_duos_unzipped/0075_schedule_2d_network_assets_workbook_0zip/SPMW FD Monetised Risk.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 1756090
+            }
+          ]
+        }
+      },
+      "total_files": 23
+    },
+    "14": {
+      "dno_info": {
+        "dno_key": "NGED-WM",
+        "name": "National Grid Electricity Distribution – West Midlands",
+        "short_code": "WMID",
+        "market_participant_id": "MIDE",
+        "gsp_group_id": "E",
+        "gsp_group_name": "West Midlands"
+      },
+      "years": {
+        "2014": {
+          "count": 2,
+          "files": [
+            {
+              "filename": "MIDE-2014-15.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/MIDE-2014-15.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 26365
+            },
+            {
+              "filename": "MIDE-Schedule-of-charges-and-other-tables-Apr-2014-Version-10-7-%c2%a35-removed.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/MIDE-Schedule-of-charges-and-other-tables-Apr-2014-Version-10-7-%c2%a35-removed.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 226250
+            }
+          ]
+        },
+        "2015": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "MIDE-Schedule-of-charges-and-other-tables-2015-V1-10.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/MIDE-Schedule-of-charges-and-other-tables-2015-V1-10.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 280861
+            }
+          ]
+        },
+        "2016": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "MIDE-Schedule-of-charges-and-other-tables-v-1-0-2016.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/MIDE-Schedule-of-charges-and-other-tables-v-1-0-2016.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 285678
+            }
+          ]
+        },
+        "2017": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "MIDE-Schedule-of-charges-and-other-tables-v-1-0-2017.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/MIDE-Schedule-of-charges-and-other-tables-v-1-0-2017.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 289216
+            }
+          ]
+        },
+        "2018": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "MIDE-Schedule-of-charges-and-other-tables-v-1-0-2018-SOLR3.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/MIDE-Schedule-of-charges-and-other-tables-v-1-0-2018-SOLR3.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 287141
+            }
+          ]
+        },
+        "2019": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "MIDE - Schedule of charges and other tables - 2019 V.0.2 SOLR.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/MIDE - Schedule of charges and other tables - 2019 V.0.2 SOLR.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 358669
+            }
+          ]
+        },
+        "2020": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "MIDE-Schedule of charges and other tables-2020 v2.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/MIDE-Schedule of charges and other tables-2020 v2.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 329729
+            }
+          ]
+        },
+        "2021": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "MIDE-Schedule of charges and other tables-2021 V.0.2.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/MIDE-Schedule of charges and other tables-2021 V.0.2.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 358603
+            }
+          ]
+        },
+        "2022": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "MIDE-Schedule of charges and other tables-2022 V.0.1.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/MIDE-Schedule of charges and other tables-2022 V.0.1.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 337885
+            }
+          ]
+        },
+        "2023": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "MIDE-Schedule of charges and other tables-2023 V.0.1 for publishing.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/MIDE-Schedule of charges and other tables-2023 V.0.1 for publishing.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 353439
+            }
+          ]
+        },
+        "2024": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "MIDE-Schedule of charges and other tables-2024 V.0.1 for publishing.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/MIDE-Schedule of charges and other tables-2024 V.0.1 for publishing.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 304929
+            }
+          ]
+        },
+        "2025": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "MIDE - Schedule of charges and other tables- 2025 V.0.1 for publishing.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/MIDE - Schedule of charges and other tables- 2025 V.0.1 for publishing.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 275657
+            }
+          ]
+        },
+        "2026": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "MIDE - Schedule of charges and other tables- 2026 V.0.1 for publishing.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/MIDE - Schedule of charges and other tables- 2026 V.0.1 for publishing.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 228292
+            }
+          ]
+        },
+        "unknown": {
+          "count": 3,
+          "files": [
+            {
+              "filename": "MIDE-Schedule-of-charges-and-other-tables-Version7.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/MIDE-Schedule-of-charges-and-other-tables-Version7.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 126478
+            },
+            {
+              "filename": "National Grid Electricity Distribution (West Midlands) plc Special Conditions.pdf",
+              "path": "/Users/georgemajor/GB Power Market JJ/drive_duos_unzipped/0060_Annex T All electricity distribution special conditionszip/Annex T - All Electricity Distribution Special Conditions/National Grid Electricity Distribution (West Midlands) plc Special Conditions.pdf",
+              "extension": ".pdf",
+              "size_bytes": 935700
+            },
+            {
+              "filename": "WMID FD Monetised Risk.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/drive_duos_unzipped/0059_schedule_2_-_wpd_naw_and_mrw_0zip/WMID FD Monetised Risk.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 1785130
+            }
+          ]
+        }
+      },
+      "total_files": 17
+    },
+    "15": {
+      "dno_info": {
+        "dno_key": "NPg-NE",
+        "name": "Northern Powergrid (North East)",
+        "short_code": "NE",
+        "market_participant_id": "NEEB",
+        "gsp_group_id": "F",
+        "gsp_group_name": "North East"
+      },
+      "years": {
+        "2023": {
+          "count": 5,
+          "files": [
+            {
+              "filename": "Northern Powergrid (Northeast) - 2023-24 Addendum Feb-24.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/Northern Powergrid (Northeast) - 2023-24 Addendum Feb-24.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 16505
+            },
+            {
+              "filename": "Northern Powergrid (Northeast) - 2023-24 CDCM Model v0.2.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/Northern Powergrid (Northeast) - 2023-24 CDCM Model v0.2.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 920134
+            },
+            {
+              "filename": "Northern Powergrid (Northeast) - 2023-24 CDCM Tariff Movement v0.1.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/Northern Powergrid (Northeast) - 2023-24 CDCM Tariff Movement v0.1.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 63220
+            },
+            {
+              "filename": "Northern Powergrid (Northeast) - 2023-24 PCDM Model v0.1.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/Northern Powergrid (Northeast) - 2023-24 PCDM Model v0.1.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 419358
+            },
+            {
+              "filename": "Northern Powergrid (Northeast) - 2023-24 Schedule of charges and other tables v0.3.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/Northern Powergrid (Northeast) - 2023-24 Schedule of charges and other tables v0.3.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 158050
+            }
+          ]
+        },
+        "2024": {
+          "count": 5,
+          "files": [
+            {
+              "filename": "Northern Powergrid (Northeast) - 2024-25 Addendum 24-Apr-25.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/Northern Powergrid (Northeast) - 2024-25 Addendum 24-Apr-25.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 16904
+            },
+            {
+              "filename": "Northern Powergrid (Northeast) - 2024-25 CDCM Model v0.1.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/Northern Powergrid (Northeast) - 2024-25 CDCM Model v0.1.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 923200
+            },
+            {
+              "filename": "Northern Powergrid (Northeast) - 2024-25 CDCM Tariff Movement v0.1.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/Northern Powergrid (Northeast) - 2024-25 CDCM Tariff Movement v0.1.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 62290
+            },
+            {
+              "filename": "Northern Powergrid (Northeast) - 2024-25 PCDM Model v0.1.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/Northern Powergrid (Northeast) - 2024-25 PCDM Model v0.1.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 308885
+            },
+            {
+              "filename": "Northern Powergrid (Northeast) - 2024-25 Schedule of charges and other tables v0.2.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/Northern Powergrid (Northeast) - 2024-25 Schedule of charges and other tables v0.2.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 156535
+            }
+          ]
+        },
+        "2025": {
+          "count": 6,
+          "files": [
+            {
+              "filename": "Northern Powergrid (Northeast) - 2025-26 Addendum 24-Apr-25.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/Northern Powergrid (Northeast) - 2025-26 Addendum 24-Apr-25.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 16275
+            },
+            {
+              "filename": "Northern Powergrid (Northeast) - 2025-26 CDCM Model v0.1.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/Northern Powergrid (Northeast) - 2025-26 CDCM Model v0.1.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 915966
+            },
+            {
+              "filename": "Northern Powergrid (Northeast) - 2025-26 CDCM Tariff Movement v0.1.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/Northern Powergrid (Northeast) - 2025-26 CDCM Tariff Movement v0.1.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 63799
+            },
+            {
+              "filename": "Northern Powergrid (Northeast) - 2025-26 PCDM Model v0.1.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/Northern Powergrid (Northeast) - 2025-26 PCDM Model v0.1.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 309909
+            },
+            {
+              "filename": "Northern Powergrid (Northeast) - 2025-26 Schedule of charges and other tables v0.2.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/Northern Powergrid (Northeast) - 2025-26 Schedule of charges and other tables v0.2.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 155697
+            },
+            {
+              "filename": "Northern_Powergrid_Northeast_20250914_195528.csv",
+              "path": "/Users/georgemajor/GB Power Market JJ/duos_outputs2/gsheets_csv/by_dno/Northern_Powergrid_Northeast_20250914_195528.csv",
+              "extension": ".csv",
+              "size_bytes": 37970
+            }
+          ]
+        },
+        "2026": {
+          "count": 5,
+          "files": [
+            {
+              "filename": "Northern Powergrid (Northeast) - 2026-27 Addendum 24-Apr-25.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/Northern Powergrid (Northeast) - 2026-27 Addendum 24-Apr-25.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 15658
+            },
+            {
+              "filename": "Northern Powergrid (Northeast) - 2026-27 CDCM Model v0.1.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/Northern Powergrid (Northeast) - 2026-27 CDCM Model v0.1.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 911262
+            },
+            {
+              "filename": "Northern Powergrid (Northeast) - 2026-27 CDCM Tariff Movement v.01.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/Northern Powergrid (Northeast) - 2026-27 CDCM Tariff Movement v.01.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 60372
+            },
+            {
+              "filename": "Northern Powergrid (Northeast) - 2026-27 PCDM Model v0.1.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/Northern Powergrid (Northeast) - 2026-27 PCDM Model v0.1.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 309113
+            },
+            {
+              "filename": "Northern Powergrid (Northeast) - 2026-27 Schedule of charges and other tables v0.1.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/Northern Powergrid (Northeast) - 2026-27 Schedule of charges and other tables v0.1.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 157864
+            }
+          ]
+        },
+        "unknown": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "Northern Powergrid (Northeast) plc Special Conditions.pdf",
+              "path": "/Users/georgemajor/GB Power Market JJ/drive_duos_unzipped/0060_Annex T All electricity distribution special conditionszip/Annex T - All Electricity Distribution Special Conditions/Northern Powergrid (Northeast) plc Special Conditions.pdf",
+              "extension": ".pdf",
+              "size_bytes": 960813
+            }
+          ]
+        }
+      },
+      "total_files": 22
+    },
+    "16": {
+      "dno_info": {
+        "dno_key": "ENWL",
+        "name": "Electricity North West",
+        "short_code": "ENWL",
+        "market_participant_id": "NORW",
+        "gsp_group_id": "G",
+        "gsp_group_name": "North West"
+      },
+      "years": {
+        "2018": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "enwl-schedule-of-charges-and-other-table--april-2018.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/enwl-schedule-of-charges-and-other-table--april-2018.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 331627
+            }
+          ]
+        },
+        "2020": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "enwl---schedule-of-charges-and-other-tables---2020-final-v3.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/enwl---schedule-of-charges-and-other-tables---2020-final-v3.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 313142
+            }
+          ]
+        },
+        "2021": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "enwl-schedule_of_charges-2021-final-v6-llfs.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/enwl-schedule_of_charges-2021-final-v6-llfs.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 339488
+            }
+          ]
+        },
+        "2022": {
+          "count": 2,
+          "files": [
+            {
+              "filename": "Electricity North West (ENWL) Electricity Distribution Flexibility Services Procurement Statement 2022-23.pdf",
+              "path": "/Users/georgemajor/GB Power Market JJ/drive_duos_unzipped/0039_Electricity20North20West2028ENWL2920Electricity20Distribution20Flexibility20Services20Procurement20S/Electricity North West (ENWL) Electricity Distribution Flexibility Services Procurement Statement 2022-23/Electricity North West (ENWL) Electricity Distribution Flexibility Services Procurement Statement 2022-23.pdf",
+              "extension": ".pdf",
+              "size_bytes": 1678414
+            },
+            {
+              "filename": "enwl-schedule_of_charges_and_other_tables-2022v7_final.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/enwl-schedule_of_charges_and_other_tables-2022v7_final.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 312077
+            }
+          ]
+        },
+        "2023": {
+          "count": 3,
+          "files": [
+            {
+              "filename": "ENWL Distribution Flexibility Services Procurement Statement 2023.pdf",
+              "path": "/Users/georgemajor/GB Power Market JJ/drive_duos_unzipped/0061_SLC31E20-20Flexibility20Procurement20Statementszip/SLC31E - Flexibility Procurement Statements/ENWL Distribution Flexibility Services Procurement Statement 2023.pdf",
+              "extension": ".pdf",
+              "size_bytes": 2091163
+            },
+            {
+              "filename": "ENWL Distribution Flexibility Services Requirements - March 2023.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/drive_duos_unzipped/0061_SLC31E20-20Flexibility20Procurement20Statementszip/SLC31E - Flexibility Procurement Statements/ENWL Distribution Flexibility Services Requirements - March 2023.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 41121
+            },
+            {
+              "filename": "enwl---schedule-of-charges-and-other-tables--2023-final-v2.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/enwl---schedule-of-charges-and-other-tables--2023-final-v2.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 343399
+            }
+          ]
+        },
+        "2025": {
+          "count": 4,
+          "files": [
+            {
+              "filename": "ENWL Distribution Flexibility Services Procurement Statement 2025.pdf",
+              "path": "/Users/georgemajor/GB Power Market JJ/drive_duos_unzipped/0067_7e2376a9_SLC31E-Flexibility-Procurement-Statements-2025zip/SLC31E Flexibility Procurement Statements/ENWL Distribution Flexibility Services Procurement Statement 2025.pdf",
+              "extension": ".pdf",
+              "size_bytes": 1397133
+            },
+            {
+              "filename": "enwl---schedule-of-charges-and-other-tables--2025-v2_0.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/enwl---schedule-of-charges-and-other-tables--2025-v2_0.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 297520
+            },
+            {
+              "filename": "enwl_capacity_market_bq_20250913_122350.csv",
+              "path": "/Users/georgemajor/GB Power Market JJ/enwl_capacity_market_bq_20250913_122350.csv",
+              "extension": ".csv",
+              "size_bytes": 5185
+            },
+            {
+              "filename": "enwl_carbon_intensity_bq_20250913_122350.csv",
+              "path": "/Users/georgemajor/GB Power Market JJ/enwl_carbon_intensity_bq_20250913_122350.csv",
+              "extension": ".csv",
+              "size_bytes": 396
+            }
+          ]
+        },
+        "2026": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "enwl---schedule-of-charges-and-other-tables--2026-27-v1_0-final.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/enwl---schedule-of-charges-and-other-tables--2026-27-v1_0-final.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 243627
+            }
+          ]
+        },
+        "unknown": {
+          "count": 35,
+          "files": [
+            {
+              "filename": "Annex-1-enwl-overview-response.pdf",
+              "path": "/Users/georgemajor/GB Power Market JJ/drive_duos_unzipped/0070_7afda81f_RIIO-ED2 Draft Determinations Responses ENWL_ NPg_ SPENzip/ENWL/Annex-1-enwl-overview-response.pdf",
+              "extension": ".pdf",
+              "size_bytes": 1117580
+            },
+            {
+              "filename": "Annex-2-enwl-core-response_redacted.pdf",
+              "path": "/Users/georgemajor/GB Power Market JJ/drive_duos_unzipped/0070_7afda81f_RIIO-ED2 Draft Determinations Responses ENWL_ NPg_ SPENzip/ENWL/Annex-2-enwl-core-response_redacted.pdf",
+              "extension": ".pdf",
+              "size_bytes": 5140951
+            },
+            {
+              "filename": "Annex-3-enwl-finance-response-1_redacted.pdf",
+              "path": "/Users/georgemajor/GB Power Market JJ/drive_duos_unzipped/0070_7afda81f_RIIO-ED2 Draft Determinations Responses ENWL_ NPg_ SPENzip/ENWL/Annex-3-enwl-finance-response-1_redacted.pdf",
+              "extension": ".pdf",
+              "size_bytes": 2212133
+            },
+            {
+              "filename": "Annex-4-enwl-company-specific-response_redacted.pdf",
+              "path": "/Users/georgemajor/GB Power Market JJ/drive_duos_unzipped/0070_7afda81f_RIIO-ED2 Draft Determinations Responses ENWL_ NPg_ SPENzip/ENWL/Annex-4-enwl-company-specific-response_redacted.pdf",
+              "extension": ".pdf",
+              "size_bytes": 1842061
+            },
+            {
+              "filename": "ENWL FD Monetised Risk.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/drive_duos_unzipped/0075_schedule_2d_network_assets_workbook_0zip/ENWL FD Monetised Risk.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 1816578
+            },
+            {
+              "filename": "ENWL covering-letter-.pdf",
+              "path": "/Users/georgemajor/GB Power Market JJ/drive_duos_unzipped/0070_7afda81f_RIIO-ED2 Draft Determinations Responses ENWL_ NPg_ SPENzip/ENWL/ENWL covering-letter-.pdf",
+              "extension": ".pdf",
+              "size_bytes": 598320
+            },
+            {
+              "filename": "ENWL.pdf",
+              "path": "/Users/georgemajor/GB Power Market JJ/drive_duos_unzipped/0047_DUoS20SCR20-20Consultation20Responseszip/ENWL.pdf",
+              "extension": ".pdf",
+              "size_bytes": 724956
+            },
+            {
+              "filename": "Electricity North West Ltd Special Conditions MARKED UP.pdf",
+              "path": "/Users/georgemajor/GB Power Market JJ/drive_duos_unzipped/0060_Annex T All electricity distribution special conditionszip/Annex T - All Electricity Distribution Special Conditions/Electricity North West Ltd Special Conditions MARKED UP.pdf",
+              "extension": ".pdf",
+              "size_bytes": 930859
+            },
+            {
+              "filename": "LCNF_Supplementary answer form ENWL003 - Part 1.pdf",
+              "path": "/Users/georgemajor/GB Power Market JJ/temp_unzip/zip_77/aa1fe9fa_enwt2002-supplementary-answer-forms/LCNF_Supplementary answer form ENWL003 - Part 1.pdf",
+              "extension": ".pdf",
+              "size_bytes": 19150
+            },
+            {
+              "filename": "LCNF_Supplementary answer form ENWL003 - Part 2.xls",
+              "path": "/Users/georgemajor/GB Power Market JJ/temp_unzip/zip_77/aa1fe9fa_enwt2002-supplementary-answer-forms/LCNF_Supplementary answer form ENWL003 - Part 2.xls",
+              "extension": ".xls",
+              "size_bytes": 106496
+            },
+            {
+              "filename": "LCNF_Supplementary answer form ENWL003 - Part 3.xls",
+              "path": "/Users/georgemajor/GB Power Market JJ/temp_unzip/zip_77/aa1fe9fa_enwt2002-supplementary-answer-forms/LCNF_Supplementary answer form ENWL003 - Part 3.xls",
+              "extension": ".xls",
+              "size_bytes": 65536
+            },
+            {
+              "filename": "LCNF_Supplementary answer form ENWL004 - Part 1.pdf",
+              "path": "/Users/georgemajor/GB Power Market JJ/temp_unzip/zip_77/aa1fe9fa_enwt2002-supplementary-answer-forms/LCNF_Supplementary answer form ENWL004 - Part 1.pdf",
+              "extension": ".pdf",
+              "size_bytes": 17938
+            },
+            {
+              "filename": "LCNF_Supplementary answer form ENWL004 - Part 2.xls",
+              "path": "/Users/georgemajor/GB Power Market JJ/temp_unzip/zip_77/aa1fe9fa_enwt2002-supplementary-answer-forms/LCNF_Supplementary answer form ENWL004 - Part 2.xls",
+              "extension": ".xls",
+              "size_bytes": 33792
+            },
+            {
+              "filename": "LCNF_Supplementary answer form ENWL005 - Part 1.pdf",
+              "path": "/Users/georgemajor/GB Power Market JJ/temp_unzip/zip_77/aa1fe9fa_enwt2002-supplementary-answer-forms/LCNF_Supplementary answer form ENWL005 - Part 1.pdf",
+              "extension": ".pdf",
+              "size_bytes": 29035
+            },
+            {
+              "filename": "LCNF_Supplementary answer form ENWL005 - Part 2.xls",
+              "path": "/Users/georgemajor/GB Power Market JJ/temp_unzip/zip_77/aa1fe9fa_enwt2002-supplementary-answer-forms/LCNF_Supplementary answer form ENWL005 - Part 2.xls",
+              "extension": ".xls",
+              "size_bytes": 188416
+            },
+            {
+              "filename": "LCNF_Supplementary answer form ENWL005 - Part 3.pdf",
+              "path": "/Users/georgemajor/GB Power Market JJ/temp_unzip/zip_77/aa1fe9fa_enwt2002-supplementary-answer-forms/LCNF_Supplementary answer form ENWL005 - Part 3.pdf",
+              "extension": ".pdf",
+              "size_bytes": 127907
+            },
+            {
+              "filename": "LCNF_Supplementary answer form ENWL015.pdf",
+              "path": "/Users/georgemajor/GB Power Market JJ/temp_unzip/zip_77/aa1fe9fa_enwt2002-supplementary-answer-forms/LCNF_Supplementary answer form ENWL015.pdf",
+              "extension": ".pdf",
+              "size_bytes": 14797
+            },
+            {
+              "filename": "LCNF_Supplementary answer form ENWL016.pdf",
+              "path": "/Users/georgemajor/GB Power Market JJ/temp_unzip/zip_77/aa1fe9fa_enwt2002-supplementary-answer-forms/LCNF_Supplementary answer form ENWL016.pdf",
+              "extension": ".pdf",
+              "size_bytes": 11215
+            },
+            {
+              "filename": "LCNF_Supplementary answer form ENWL017.pdf",
+              "path": "/Users/georgemajor/GB Power Market JJ/temp_unzip/zip_77/aa1fe9fa_enwt2002-supplementary-answer-forms/LCNF_Supplementary answer form ENWL017.pdf",
+              "extension": ".pdf",
+              "size_bytes": 12281
+            },
+            {
+              "filename": "LCNF_Supplementary answer form ENWL018.pdf",
+              "path": "/Users/georgemajor/GB Power Market JJ/temp_unzip/zip_77/aa1fe9fa_enwt2002-supplementary-answer-forms/LCNF_Supplementary answer form ENWL018.pdf",
+              "extension": ".pdf",
+              "size_bytes": 21826
+            },
+            {
+              "filename": "LCNF_Supplementary answer form ENWL019.pdf",
+              "path": "/Users/georgemajor/GB Power Market JJ/temp_unzip/zip_77/aa1fe9fa_enwt2002-supplementary-answer-forms/LCNF_Supplementary answer form ENWL019.pdf",
+              "extension": ".pdf",
+              "size_bytes": 13383
+            },
+            {
+              "filename": "LCNF_Supplementary answer form ENWL020.pdf",
+              "path": "/Users/georgemajor/GB Power Market JJ/temp_unzip/zip_77/aa1fe9fa_enwt2002-supplementary-answer-forms/LCNF_Supplementary answer form ENWL020.pdf",
+              "extension": ".pdf",
+              "size_bytes": 13615
+            },
+            {
+              "filename": "LCNF_Supplementary answer form ENWL021.pdf",
+              "path": "/Users/georgemajor/GB Power Market JJ/temp_unzip/zip_77/aa1fe9fa_enwt2002-supplementary-answer-forms/LCNF_Supplementary answer form ENWL021.pdf",
+              "extension": ".pdf",
+              "size_bytes": 11440
+            },
+            {
+              "filename": "LCNF_Supplementary answer form ENWL022.pdf",
+              "path": "/Users/georgemajor/GB Power Market JJ/temp_unzip/zip_77/aa1fe9fa_enwt2002-supplementary-answer-forms/LCNF_Supplementary answer form ENWL022.pdf",
+              "extension": ".pdf",
+              "size_bytes": 11432
+            },
+            {
+              "filename": "LCNF_Supplementary answer form ENWL023.pdf",
+              "path": "/Users/georgemajor/GB Power Market JJ/temp_unzip/zip_77/aa1fe9fa_enwt2002-supplementary-answer-forms/LCNF_Supplementary answer form ENWL023.pdf",
+              "extension": ".pdf",
+              "size_bytes": 13507
+            },
+            {
+              "filename": "LCNF_Supplementary answer form ENWL030.pdf",
+              "path": "/Users/georgemajor/GB Power Market JJ/temp_unzip/zip_77/aa1fe9fa_enwt2002-supplementary-answer-forms/LCNF_Supplementary answer form ENWL030.pdf",
+              "extension": ".pdf",
+              "size_bytes": 12305
+            },
+            {
+              "filename": "LCNF_Supplementary answer form ENWL032.pdf",
+              "path": "/Users/georgemajor/GB Power Market JJ/temp_unzip/zip_77/aa1fe9fa_enwt2002-supplementary-answer-forms/LCNF_Supplementary answer form ENWL032.pdf",
+              "extension": ".pdf",
+              "size_bytes": 12383
+            },
+            {
+              "filename": "LCNF_Supplementary answer form ENWL033.pdf",
+              "path": "/Users/georgemajor/GB Power Market JJ/temp_unzip/zip_77/aa1fe9fa_enwt2002-supplementary-answer-forms/LCNF_Supplementary answer form ENWL033.pdf",
+              "extension": ".pdf",
+              "size_bytes": 13182
+            },
+            {
+              "filename": "LCNF_Supplementary answer form ENWL034 - (ENWT2002).pdf",
+              "path": "/Users/georgemajor/GB Power Market JJ/temp_unzip/zip_77/aa1fe9fa_enwt2002-supplementary-answer-forms/LCNF_Supplementary answer form ENWL034 - (ENWT2002).pdf",
+              "extension": ".pdf",
+              "size_bytes": 42636
+            },
+            {
+              "filename": "LCNF_Supplementary answer form ENWL035 - Part 1.pdf",
+              "path": "/Users/georgemajor/GB Power Market JJ/temp_unzip/zip_77/aa1fe9fa_enwt2002-supplementary-answer-forms/LCNF_Supplementary answer form ENWL035 - Part 1.pdf",
+              "extension": ".pdf",
+              "size_bytes": 11385
+            },
+            {
+              "filename": "LCNF_Supplementary answer form ENWL035 - Part 2.xls",
+              "path": "/Users/georgemajor/GB Power Market JJ/temp_unzip/zip_77/aa1fe9fa_enwt2002-supplementary-answer-forms/LCNF_Supplementary answer form ENWL035 - Part 2.xls",
+              "extension": ".xls",
+              "size_bytes": 129536
+            },
+            {
+              "filename": "Network Assets Workbook - ENWL.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/drive_duos_unzipped/0075_schedule_2d_network_assets_workbook_0zip/Network Assets Workbook - ENWL.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 1380530
+            },
+            {
+              "filename": "dno_datasets_enwl_full.csv",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_datasets_enwl_full.csv",
+              "extension": ".csv",
+              "size_bytes": 221877
+            },
+            {
+              "filename": "enwl---schedule-of-charges---v1_2-fy25-final.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/enwl---schedule-of-charges---v1_2-fy25-final.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 300496
+            },
+            {
+              "filename": "enwl---schedule-of-charges-and-other-tables---with-llfs-v7.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/enwl---schedule-of-charges-and-other-tables---with-llfs-v7.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 329776
+            }
+          ]
+        }
+      },
+      "total_files": 48
+    },
+    "17": {
+      "dno_info": {
+        "dno_key": "SSE-SHEPD",
+        "name": "Scottish Hydro Electric Power Distribution",
+        "short_code": "SHEPD",
+        "market_participant_id": "HYDE",
+        "gsp_group_id": "P",
+        "gsp_group_name": "North Scotland"
+      },
+      "years": {
+        "2020": {
+          "count": 5,
+          "files": [
+            {
+              "filename": "shepd-arp-model-2020-21.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/shepd-arp-model-2020-21.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 1784859
+            },
+            {
+              "filename": "shepd-cdcm-model-2020-21.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/shepd-cdcm-model-2020-21.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 980698
+            },
+            {
+              "filename": "shepd-pcdm-model-2020-21.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/shepd-pcdm-model-2020-21.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 404930
+            },
+            {
+              "filename": "shepd-schedule-of-charges-and-other-tables-april-2020_v1.2.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/shepd-schedule-of-charges-and-other-tables-april-2020_v1.2.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 295148
+            },
+            {
+              "filename": "shepd-schedule-of-charges-and-other-tables-embedded-networks-april-2020_v1.1.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/shepd-schedule-of-charges-and-other-tables-embedded-networks-april-2020_v1.1.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 207948
+            }
+          ]
+        },
+        "2021": {
+          "count": 7,
+          "files": [
+            {
+              "filename": "shepd--schedule-of-charges-and-other-tables-embedded-networks-april-2021_v1.1.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/shepd--schedule-of-charges-and-other-tables-embedded-networks-april-2021_v1.1.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 122253
+            },
+            {
+              "filename": "shepd-arp_v7_20211122_2023_24_pre-release.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/shepd-arp_v7_20211122_2023_24_pre-release.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 1192179
+            },
+            {
+              "filename": "shepd_cdcm_v5_2021-22-pre-release_20191108_final.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/shepd_cdcm_v5_2021-22-pre-release_20191108_final.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 686997
+            },
+            {
+              "filename": "shepd_cdcm_v8_20211122_2023_24_pre-release_lrsp-updates_v1.1.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/shepd_cdcm_v8_20211122_2023_24_pre-release_lrsp-updates_v1.1.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 920677
+            },
+            {
+              "filename": "shepd_pcdm_v4_2021-22-pre-release_20191108_final.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/shepd_pcdm_v4_2021-22-pre-release_20191108_final.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 401972
+            },
+            {
+              "filename": "shepd_pcdm_v4_20211122_2023_24_pre-release.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/shepd_pcdm_v4_20211122_2023_24_pre-release.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 304382
+            },
+            {
+              "filename": "shepd_schedule-of-charges-and-other-tables-april-2021_v1.4.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/shepd_schedule-of-charges-and-other-tables-april-2021_v1.4.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 200644
+            }
+          ]
+        },
+        "2022": {
+          "count": 8,
+          "files": [
+            {
+              "filename": "shepd---arp_v7_2022-23_pre-release_20201106.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/shepd---arp_v7_2022-23_pre-release_20201106.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 1216749
+            },
+            {
+              "filename": "shepd_cdcm_v7_2022-23_pre-release_20201106_final_v1.1.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/shepd_cdcm_v7_2022-23_pre-release_20201106_final_v1.1.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 914387
+            },
+            {
+              "filename": "shepd_cdcm_v9_20221027_final.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/shepd_cdcm_v9_20221027_final.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 904552
+            },
+            {
+              "filename": "shepd_pcdm_v4_2022-23_pre-release_20201106_final.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/shepd_pcdm_v4_2022-23_pre-release_20201106_final.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 414172
+            },
+            {
+              "filename": "shepd_pcdm_v5_20221027_final.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/shepd_pcdm_v5_20221027_final.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 309297
+            },
+            {
+              "filename": "shepd_schedule-of-charges-and-other-tables-april-2022.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/shepd_schedule-of-charges-and-other-tables-april-2022.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 135008
+            },
+            {
+              "filename": "shepd_schedule-of-charges-and-other-tables-april-2022_v1.3.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/shepd_schedule-of-charges-and-other-tables-april-2022_v1.3.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 214400
+            },
+            {
+              "filename": "shepd_schedule-of-charges-and-other-tables-embedded-networks-april-2022.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/shepd_schedule-of-charges-and-other-tables-embedded-networks-april-2022.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 213590
+            }
+          ]
+        },
+        "2023": {
+          "count": 5,
+          "files": [
+            {
+              "filename": "shepd---schedule-of-charges-and-other-tables-embedded-networks-april-2023_v1.3.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/shepd---schedule-of-charges-and-other-tables-embedded-networks-april-2023_v1.3.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 140218
+            },
+            {
+              "filename": "shepd---schedule-of-charges-and-other-tables_april-2023_v1.5.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/shepd---schedule-of-charges-and-other-tables_april-2023_v1.5.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 242333
+            },
+            {
+              "filename": "shepd_cdcm_v10_20231106_25-26_final.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/shepd_cdcm_v10_20231106_25-26_final.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 904581
+            },
+            {
+              "filename": "shepd_pcdm_v5_20231106_25-26_final.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/shepd_pcdm_v5_20231106_25-26_final.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 309411
+            },
+            {
+              "filename": "shepd_schedule-of-charges-and-other-tables-embedded-networks_-april-2023_v1.1_issued.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/shepd_schedule-of-charges-and-other-tables-embedded-networks_-april-2023_v1.1_issued.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 140329
+            }
+          ]
+        },
+        "2024": {
+          "count": 4,
+          "files": [
+            {
+              "filename": "shepd---schedule-of-charges-and-other-tables_april-2024_v1.2.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/shepd---schedule-of-charges-and-other-tables_april-2024_v1.2.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 246044
+            },
+            {
+              "filename": "shepd_cdcm_v11_20241025_26-27_final.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/shepd_cdcm_v11_20241025_26-27_final.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 941362
+            },
+            {
+              "filename": "shepd_pcdm_v5_20241025_26-27_final.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/shepd_pcdm_v5_20241025_26-27_final.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 326049
+            },
+            {
+              "filename": "shepd_schedule-of-charges-and-other-tables-embedded-networks-april-2024_v0.2.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/shepd_schedule-of-charges-and-other-tables-embedded-networks-april-2024_v0.2.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 140497
+            }
+          ]
+        },
+        "2025": {
+          "count": 2,
+          "files": [
+            {
+              "filename": "shepd---schedule-of-charges-and-other-tables---april-2025-v0.2.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/shepd---schedule-of-charges-and-other-tables---april-2025-v0.2.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 239961
+            },
+            {
+              "filename": "shepd---schedule-of-charges-and-other-tables--embedded-networks-april-2025-v.0.2.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/shepd---schedule-of-charges-and-other-tables--embedded-networks-april-2025-v.0.2.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 138541
+            }
+          ]
+        },
+        "2026": {
+          "count": 2,
+          "files": [
+            {
+              "filename": "shepd---schedule-of-charges-and-other-tables---april-2026-v1.0.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/shepd---schedule-of-charges-and-other-tables---april-2026-v1.0.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 217529
+            },
+            {
+              "filename": "shepd---schedule-of-charges-and-other-tables---embedded-networks-april-2026-v1.0.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/shepd---schedule-of-charges-and-other-tables---embedded-networks-april-2026-v1.0.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 163508
+            }
+          ]
+        },
+        "unknown": {
+          "count": 3,
+          "files": [
+            {
+              "filename": "SSE-SHEPD.csv",
+              "path": "/Users/georgemajor/GB Power Market JJ/duos_outputs2/by_dno/SSE-SHEPD.csv",
+              "extension": ".csv",
+              "size_bytes": 71756
+            },
+            {
+              "filename": "SSE_SHEPD.csv",
+              "path": "/Users/georgemajor/GB Power Market JJ/csv_output/SSE_SHEPD.csv",
+              "extension": ".csv",
+              "size_bytes": 71667
+            },
+            {
+              "filename": "Scottish Hydro Electric Power Distribution plc Special Conditions MARKED UP.pdf",
+              "path": "/Users/georgemajor/GB Power Market JJ/drive_duos_unzipped/0060_Annex T All electricity distribution special conditionszip/Annex T - All Electricity Distribution Special Conditions/Scottish Hydro Electric Power Distribution plc Special Conditions MARKED UP.pdf",
+              "extension": ".pdf",
+              "size_bytes": 941586
+            }
+          ]
+        }
+      },
+      "total_files": 36
+    },
+    "18": {
+      "dno_info": {
+        "dno_key": "SP-Distribution",
+        "name": "SP Energy Networks (SPD)",
+        "short_code": "SPD",
+        "market_participant_id": "SPOW",
+        "gsp_group_id": "N",
+        "gsp_group_name": "South Scotland"
+      },
+      "years": {
+        "2020": {
+          "count": 2,
+          "files": [
+            {
+              "filename": "CDCM_v3_SPD_2020_21.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/duos_spm_data/CDCM_v3_SPD_2020_21.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 1007668
+            },
+            {
+              "filename": "SPD - Schedule of charges and other tables - 2020_21 V.0.1- IDNO HV Tariffs v4.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/SPD - Schedule of charges and other tables - 2020_21 V.0.1- IDNO HV Tariffs v4.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 296644
+            }
+          ]
+        },
+        "2021": {
+          "count": 3,
+          "files": [
+            {
+              "filename": "CDCM_v6_2021-22-Pre-Release_2020_130_SPD_DCP341.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/duos_spm_data/CDCM_v6_2021-22-Pre-Release_2020_130_SPD_DCP341.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 756876
+            },
+            {
+              "filename": "SP Distribution - Schedule of charges and other tables - 2021 - DCP268_341 V8.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/SP Distribution - Schedule of charges and other tables - 2021 - DCP268_341 V8.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 307069
+            },
+            {
+              "filename": "SPD CDCM_v8_20211122_2023_24_Published_SoLR.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/SPD CDCM_v8_20211122_2023_24_Published_SoLR.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 855207
+            }
+          ]
+        },
+        "2022": {
+          "count": 2,
+          "files": [
+            {
+              "filename": "SPD CDCM_v7_2022-23_Pre-Release_20201106 SoLR.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/duos_spm_data/SPD CDCM_v7_2022-23_Pre-Release_20201106 SoLR.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 836975
+            },
+            {
+              "filename": "SPD_PCDM_v4_2022-23_Pre-Release_20201106.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/duos_spm_data/SPD_PCDM_v4_2022-23_Pre-Release_20201106.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 408494
+            }
+          ]
+        },
+        "2023": {
+          "count": 2,
+          "files": [
+            {
+              "filename": "ED2_PCFM_SPD_20231229.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/duos_spm_data/ED2_PCFM_SPD_20231229.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 3377426
+            },
+            {
+              "filename": "SPD_-_Schedule_of_charges_and_other_tables-_2023_V.0.8_Annex_6.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/duos_spm_data/SPD_-_Schedule_of_charges_and_other_tables-_2023_V.0.8_Annex_6.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 241688
+            }
+          ]
+        },
+        "2024": {
+          "count": 3,
+          "files": [
+            {
+              "filename": "ED2-PCFM-SPD-20241231.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/duos_spm_data/ED2-PCFM-SPD-20241231.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 3323429
+            },
+            {
+              "filename": "SPD 2024_25 CDCM_v9_20221027_published.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/SPD 2024_25 CDCM_v9_20221027_published.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 848490
+            },
+            {
+              "filename": "SPD-Schedule-of-charges-and-other-tables-2024-V.0.12-Annex-6.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/duos_spm_data/SPD-Schedule-of-charges-and-other-tables-2024-V.0.12-Annex-6.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 225720
+            }
+          ]
+        },
+        "2025": {
+          "count": 3,
+          "files": [
+            {
+              "filename": "SPD-Schedule-of-charges-and-other-tables-2025-V.0.9-Annex-6.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/duos_spm_data/SPD-Schedule-of-charges-and-other-tables-2025-V.0.9-Annex-6.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 225367
+            },
+            {
+              "filename": "SPD_2025_26_CDCM_v10_20231106-2.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/duos_spm_data/SPD_2025_26_CDCM_v10_20231106-2.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 863324
+            },
+            {
+              "filename": "SPD_2025_26_CDCM_v10_20231106.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/SPD_2025_26_CDCM_v10_20231106.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 862738
+            }
+          ]
+        },
+        "2026": {
+          "count": 2,
+          "files": [
+            {
+              "filename": "SPD-2026_27CDCM_v11_20241025.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/SPD-2026_27CDCM_v11_20241025.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 897860
+            },
+            {
+              "filename": "SPD-Schedule-of-charges-and-other-tables-2026-V0.2-Annex-6.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/duos_spm_data/SPD-Schedule-of-charges-and-other-tables-2026-V0.2-Annex-6.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 235523
+            }
+          ]
+        },
+        "unknown": {
+          "count": 2,
+          "files": [
+            {
+              "filename": "SP Distribution plc Special Conditions.pdf",
+              "path": "/Users/georgemajor/GB Power Market JJ/drive_duos_unzipped/0060_Annex T All electricity distribution special conditionszip/Annex T - All Electricity Distribution Special Conditions/SP Distribution plc Special Conditions.pdf",
+              "extension": ".pdf",
+              "size_bytes": 927906
+            },
+            {
+              "filename": "SPD FD Monetised Risk.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/drive_duos_unzipped/0075_schedule_2d_network_assets_workbook_0zip/SPD FD Monetised Risk.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 1692754
+            }
+          ]
+        }
+      },
+      "total_files": 19
+    },
+    "19": {
+      "dno_info": {
+        "dno_key": "UKPN-SPN",
+        "name": "UK Power Networks (South Eastern)",
+        "short_code": "SPN",
+        "market_participant_id": "SEEB",
+        "gsp_group_id": "J",
+        "gsp_group_name": "South Eastern"
+      },
+      "years": {
+        "2017": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "south-eastern-power-networks-schedule-of-charges-and-other-tables-2017-v3-4.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/south-eastern-power-networks-schedule-of-charges-and-other-tables-2017-v3-4.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 273412
+            }
+          ]
+        },
+        "2018": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "south-eastern-power-networks-schedule-of-charges-and-other-tables-2018-v3-5.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/south-eastern-power-networks-schedule-of-charges-and-other-tables-2018-v3-5.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 270120
+            }
+          ]
+        },
+        "2019": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "south-eastern-power-networks-schedule-of-charges-and-other-tables-2019-v2-2.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/south-eastern-power-networks-schedule-of-charges-and-other-tables-2019-v2-2.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 267762
+            }
+          ]
+        },
+        "2020": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "south-eastern-power-networks-schedule-of-charges-and-other-tables-2020-v3-3.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/south-eastern-power-networks-schedule-of-charges-and-other-tables-2020-v3-3.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 265964
+            }
+          ]
+        },
+        "2021": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "south-eastern-power-networks-schedule-of-charges-and-other-tables-2021-v1-5.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/south-eastern-power-networks-schedule-of-charges-and-other-tables-2021-v1-5.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 294586
+            }
+          ]
+        },
+        "2022": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "south-eastern-power-networks-schedule-of-charges-and-other-tables-2022-v1-6.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/south-eastern-power-networks-schedule-of-charges-and-other-tables-2022-v1-6.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 194763
+            }
+          ]
+        },
+        "2023": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "south-eastern-power-networks-schedule-of-charges-and-other-tables-2023-v1-5.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/south-eastern-power-networks-schedule-of-charges-and-other-tables-2023-v1-5.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 228174
+            }
+          ]
+        },
+        "2024": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "south-eastern-power-networks-schedule-of-charges-and-other-tables-2024-v1-5.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/south-eastern-power-networks-schedule-of-charges-and-other-tables-2024-v1-5.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 229020
+            }
+          ]
+        },
+        "2025": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "south-eastern-power-networks-schedule-of-charges-and-other-tables-2025-v1-3.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/south-eastern-power-networks-schedule-of-charges-and-other-tables-2025-v1-3.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 229804
+            }
+          ]
+        },
+        "2026": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "south-eastern-power-networks-schedule-of-charges-and-other-tables-2026-v1-1.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/south-eastern-power-networks-schedule-of-charges-and-other-tables-2026-v1-1.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 223295
+            }
+          ]
+        },
+        "unknown": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "South Eastern Power Networks plc Special Conditions.pdf",
+              "path": "/Users/georgemajor/GB Power Market JJ/drive_duos_unzipped/0060_Annex T All electricity distribution special conditionszip/Annex T - All Electricity Distribution Special Conditions/South Eastern Power Networks plc Special Conditions.pdf",
+              "extension": ".pdf",
+              "size_bytes": 942524
+            }
+          ]
+        }
+      },
+      "total_files": 11
+    },
+    "20": {
+      "dno_info": {
+        "dno_key": "SSE-SEPD",
+        "name": "Southern Electric Power Distribution",
+        "short_code": "SEPD",
+        "market_participant_id": "SOUT",
+        "gsp_group_id": "H",
+        "gsp_group_name": "Southern"
+      },
+      "years": {
+        "2020": {
+          "count": 2,
+          "files": [
+            {
+              "filename": "sepd-schedule-of-charges-and-other-tables-april-2020_v1.2.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/sepd-schedule-of-charges-and-other-tables-april-2020_v1.2.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 319269
+            },
+            {
+              "filename": "sepd-schedule-of-charges-and-other-tables-embedded-networks-april-2020_v1.1.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/sepd-schedule-of-charges-and-other-tables-embedded-networks-april-2020_v1.1.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 1625676
+            }
+          ]
+        },
+        "2021": {
+          "count": 7,
+          "files": [
+            {
+              "filename": "sepd--schedule-of-charges-and-other-tables-embedded-networks-april-2021_v1.1.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/sepd--schedule-of-charges-and-other-tables-embedded-networks-april-2021_v1.1.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 781225
+            },
+            {
+              "filename": "sepd-arp_v7_20211122_2023_24_pre-release.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/sepd-arp_v7_20211122_2023_24_pre-release.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 1203869
+            },
+            {
+              "filename": "sepd_cdcm_v5_2021-22-pre-release_20191108_final.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/sepd_cdcm_v5_2021-22-pre-release_20191108_final.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 702074
+            },
+            {
+              "filename": "sepd_cdcm_v8_20211122_2023_24_pre-release_lrsp-updates_v1.1.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/sepd_cdcm_v8_20211122_2023_24_pre-release_lrsp-updates_v1.1.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 910225
+            },
+            {
+              "filename": "sepd_pcdm_v4_2021-22-pre-release_20191108_final.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/sepd_pcdm_v4_2021-22-pre-release_20191108_final.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 403417
+            },
+            {
+              "filename": "sepd_pcdm_v4_20211122_2023_24_pre-release.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/sepd_pcdm_v4_20211122_2023_24_pre-release.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 415178
+            },
+            {
+              "filename": "sepd_schedule-of-charges-and-other-tables-april-2021-v1.4.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/sepd_schedule-of-charges-and-other-tables-april-2021-v1.4.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 221810
+            }
+          ]
+        },
+        "2022": {
+          "count": 7,
+          "files": [
+            {
+              "filename": "sepd_arp_v7_2022-23_pre-release_20201106.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/sepd_arp_v7_2022-23_pre-release_20201106.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 1240548
+            },
+            {
+              "filename": "sepd_cdcm_v7_2022-23_pre-release_20201106_final_v1.1.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/sepd_cdcm_v7_2022-23_pre-release_20201106_final_v1.1.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 930302
+            },
+            {
+              "filename": "sepd_cdcm_v9_20221027_final.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/sepd_cdcm_v9_20221027_final.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 925368
+            },
+            {
+              "filename": "sepd_pcdm_v4_2022-23_pre-release_20201106_final.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/sepd_pcdm_v4_2022-23_pre-release_20201106_final.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 415406
+            },
+            {
+              "filename": "sepd_pcdm_v5_20221027_final.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/sepd_pcdm_v5_20221027_final.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 309853
+            },
+            {
+              "filename": "sepd_schedule-of-charges-and-other-tables-april-2022_v1.3.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/sepd_schedule-of-charges-and-other-tables-april-2022_v1.3.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 224175
+            },
+            {
+              "filename": "sepd_schedule-of-charges-and-other-tables-embedded-networks-april-2022.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/sepd_schedule-of-charges-and-other-tables-embedded-networks-april-2022.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 900066
+            }
+          ]
+        },
+        "2023": {
+          "count": 4,
+          "files": [
+            {
+              "filename": "sepd---schedule-of-charges-and-other-tables-embedded-networks-april-2023_v1.4.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/sepd---schedule-of-charges-and-other-tables-embedded-networks-april-2023_v1.4.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 899740
+            },
+            {
+              "filename": "sepd---schedule-of-charges-and-other-tables_april-2023_v1.5.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/sepd---schedule-of-charges-and-other-tables_april-2023_v1.5.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 250248
+            },
+            {
+              "filename": "sepd_cdcm_v10_20231106_25-26_final.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/sepd_cdcm_v10_20231106_25-26_final.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 927114
+            },
+            {
+              "filename": "sepd_pcdm_v5_20231106_25-26_final.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/sepd_pcdm_v5_20231106_25-26_final.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 308967
+            }
+          ]
+        },
+        "2024": {
+          "count": 4,
+          "files": [
+            {
+              "filename": "sepd---schedule-of-charges-and-other-tables_april-2024_v1.2.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/sepd---schedule-of-charges-and-other-tables_april-2024_v1.2.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 242801
+            },
+            {
+              "filename": "sepd_cdcm_v11_20241025_26-27_final.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/duos_ssen_data/sepd/sepd_cdcm_v11_20241025_26-27_final.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 954101
+            },
+            {
+              "filename": "sepd_pcdm_v5_20241025_26-27_final.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/sepd_pcdm_v5_20241025_26-27_final.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 327431
+            },
+            {
+              "filename": "sepd_schedule-of-charges-and-other-tables-embedded-networks-april-2024_v0.3.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/sepd_schedule-of-charges-and-other-tables-embedded-networks-april-2024_v0.3.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 1029021
+            }
+          ]
+        },
+        "2025": {
+          "count": 5,
+          "files": [
+            {
+              "filename": "National_Grid_South_Wales_20250914_195528.csv",
+              "path": "/Users/georgemajor/GB Power Market JJ/duos_outputs2/gsheets_csv/by_dno/National_Grid_South_Wales_20250914_195528.csv",
+              "extension": ".csv",
+              "size_bytes": 20733
+            },
+            {
+              "filename": "National_Grid_South_West_20250914_195528.csv",
+              "path": "/Users/georgemajor/GB Power Market JJ/duos_outputs2/gsheets_csv/by_dno/National_Grid_South_West_20250914_195528.csv",
+              "extension": ".csv",
+              "size_bytes": 20272
+            },
+            {
+              "filename": "SSEN_Southern_20250914_195528.csv",
+              "path": "/Users/georgemajor/GB Power Market JJ/duos_outputs2/gsheets_csv/by_dno/SSEN_Southern_20250914_195528.csv",
+              "extension": ".csv",
+              "size_bytes": 181632
+            },
+            {
+              "filename": "sepd---schedule-of-charges-and-other-tables---april-2025-v0.2.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/sepd---schedule-of-charges-and-other-tables---april-2025-v0.2.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 249858
+            },
+            {
+              "filename": "sepd---schedule-of-charges-and-other-tables--embedded-networks-april-2025-v.0.2.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/sepd---schedule-of-charges-and-other-tables--embedded-networks-april-2025-v.0.2.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 843785
+            }
+          ]
+        },
+        "2026": {
+          "count": 2,
+          "files": [
+            {
+              "filename": "sepd---schedule-of-charges-and-other-tables---embedded-networks-april-2026-v1.1.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/sepd---schedule-of-charges-and-other-tables---embedded-networks-april-2026-v1.1.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 918241
+            },
+            {
+              "filename": "sepd---schedule-of-charges-and-other-tables--april-2026-v1.0.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/sepd---schedule-of-charges-and-other-tables--april-2026-v1.0.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 225553
+            }
+          ]
+        },
+        "unknown": {
+          "count": 9,
+          "files": [
+            {
+              "filename": "NGED-South_Wales.csv",
+              "path": "/Users/georgemajor/GB Power Market JJ/duos_outputs2/by_dno/NGED-South_Wales.csv",
+              "extension": ".csv",
+              "size_bytes": 19293
+            },
+            {
+              "filename": "NGED-South_West.csv",
+              "path": "/Users/georgemajor/GB Power Market JJ/duos_outputs2/by_dno/NGED-South_West.csv",
+              "extension": ".csv",
+              "size_bytes": 18681
+            },
+            {
+              "filename": "NGED_South_Wales.csv",
+              "path": "/Users/georgemajor/GB Power Market JJ/csv_output/NGED_South_Wales.csv",
+              "extension": ".csv",
+              "size_bytes": 19200
+            },
+            {
+              "filename": "NGED_South_West.csv",
+              "path": "/Users/georgemajor/GB Power Market JJ/csv_output/NGED_South_West.csv",
+              "extension": ".csv",
+              "size_bytes": 18620
+            },
+            {
+              "filename": "National Grid Electricity Distribution (South Wales) plc Special Conditions.pdf",
+              "path": "/Users/georgemajor/GB Power Market JJ/drive_duos_unzipped/0060_Annex T All electricity distribution special conditionszip/Annex T - All Electricity Distribution Special Conditions/National Grid Electricity Distribution (South Wales) plc Special Conditions.pdf",
+              "extension": ".pdf",
+              "size_bytes": 916306
+            },
+            {
+              "filename": "National Grid Electricity Distribution (South West) plc Special Conditions.pdf",
+              "path": "/Users/georgemajor/GB Power Market JJ/drive_duos_unzipped/0060_Annex T All electricity distribution special conditionszip/Annex T - All Electricity Distribution Special Conditions/National Grid Electricity Distribution (South West) plc Special Conditions.pdf",
+              "extension": ".pdf",
+              "size_bytes": 923416
+            },
+            {
+              "filename": "SSE-SEPD.csv",
+              "path": "/Users/georgemajor/GB Power Market JJ/duos_outputs2/by_dno/SSE-SEPD.csv",
+              "extension": ".csv",
+              "size_bytes": 171326
+            },
+            {
+              "filename": "SSE_SEPD.csv",
+              "path": "/Users/georgemajor/GB Power Market JJ/csv_output/SSE_SEPD.csv",
+              "extension": ".csv",
+              "size_bytes": 170906
+            },
+            {
+              "filename": "Southern Electric Power Distribution plc Special Conditions.pdf",
+              "path": "/Users/georgemajor/GB Power Market JJ/drive_duos_unzipped/0060_Annex T All electricity distribution special conditionszip/Annex T - All Electricity Distribution Special Conditions/Southern Electric Power Distribution plc Special Conditions.pdf",
+              "extension": ".pdf",
+              "size_bytes": 912857
+            }
+          ]
+        }
+      },
+      "total_files": 40
+    },
+    "21": {
+      "dno_info": {
+        "dno_key": "NGED-SWales",
+        "name": "National Grid Electricity Distribution – South Wales",
+        "short_code": "SWALES",
+        "market_participant_id": "SWAE",
+        "gsp_group_id": "K",
+        "gsp_group_name": "South Wales"
+      },
+      "years": {
+        "2014": {
+          "count": 2,
+          "files": [
+            {
+              "filename": "SWAE-2014-15.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/SWAE-2014-15.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 35792
+            },
+            {
+              "filename": "SWAE-Schedule-of-charges-and-other-tables-Apr-2014-Version-10-7-%c2%a35-removed.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/SWAE-Schedule-of-charges-and-other-tables-Apr-2014-Version-10-7-%c2%a35-removed.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 243978
+            }
+          ]
+        },
+        "2015": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "SWAE-Schedule-of-charges-and-other-tables-2015-V1-10.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/SWAE-Schedule-of-charges-and-other-tables-2015-V1-10.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 299079
+            }
+          ]
+        },
+        "2016": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "SWAE-Schedule-of-charges-and-other-tables-v-1-0-2016.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/SWAE-Schedule-of-charges-and-other-tables-v-1-0-2016.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 312173
+            }
+          ]
+        },
+        "2017": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "SWAE-Schedule-of-charges-and-other-tables-v-1-0-2017.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/SWAE-Schedule-of-charges-and-other-tables-v-1-0-2017.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 312071
+            }
+          ]
+        },
+        "2018": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "SWAE-Schedule-of-charges-and-other-tables-2018-SOLR3.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/SWAE-Schedule-of-charges-and-other-tables-2018-SOLR3.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 310125
+            }
+          ]
+        },
+        "2019": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "SWAE - Schedule of charges and other tables - 2019 V.0.1 SOLR.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/SWAE - Schedule of charges and other tables - 2019 V.0.1 SOLR.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 381066
+            }
+          ]
+        },
+        "2020": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "SWAE-Schedule of charges and other tables-2020 v2.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/SWAE-Schedule of charges and other tables-2020 v2.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 352058
+            }
+          ]
+        },
+        "2021": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "SWAE-Schedule of charges and other tables-2021 V.0.2.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/SWAE-Schedule of charges and other tables-2021 V.0.2.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 377475
+            }
+          ]
+        },
+        "2022": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "SWAE-Schedule of charges and other tables-2022 V.0.1.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/SWAE-Schedule of charges and other tables-2022 V.0.1.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 328059
+            }
+          ]
+        },
+        "2023": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "SWAE-Schedule of charges and other tables-2023 V.0.1 for publishing.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/SWAE-Schedule of charges and other tables-2023 V.0.1 for publishing.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 374280
+            }
+          ]
+        },
+        "2024": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "SWAE-Schedule of charges and other tables-2024 V.0.1 for publishing.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/SWAE-Schedule of charges and other tables-2024 V.0.1 for publishing.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 332574
+            }
+          ]
+        },
+        "2025": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "SWAE - Schedule of charges and other tables- 2025 V.0.1 for publishing.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/SWAE - Schedule of charges and other tables- 2025 V.0.1 for publishing.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 291988
+            }
+          ]
+        },
+        "2026": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "SWAE - Schedule of charges and other tables- 2026 V.0.1 for publishing.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/SWAE - Schedule of charges and other tables- 2026 V.0.1 for publishing.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 257891
+            }
+          ]
+        },
+        "unknown": {
+          "count": 2,
+          "files": [
+            {
+              "filename": "SWAE-Schedule-of-charges-and-other-tables-Version7.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/SWAE-Schedule-of-charges-and-other-tables-Version7.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 135810
+            },
+            {
+              "filename": "SWALES FD Monetised Risk.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/drive_duos_unzipped/0059_schedule_2_-_wpd_naw_and_mrw_0zip/SWALES FD Monetised Risk.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 1761139
+            }
+          ]
+        }
+      },
+      "total_files": 16
+    },
+    "22": {
+      "dno_info": {
+        "dno_key": "NGED-SW",
+        "name": "National Grid Electricity Distribution – South West",
+        "short_code": "SWEST",
+        "market_participant_id": "SWEB",
+        "gsp_group_id": "L",
+        "gsp_group_name": "South Western"
+      },
+      "years": {
+        "2014": {
+          "count": 2,
+          "files": [
+            {
+              "filename": "SWEB-2014-15.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/SWEB-2014-15.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 49726
+            },
+            {
+              "filename": "SWEB-Schedule-of-charges-and-other-tables-Apr-2014-Version-10-7-%c2%a35-removed.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/SWEB-Schedule-of-charges-and-other-tables-Apr-2014-Version-10-7-%c2%a35-removed.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 280613
+            }
+          ]
+        },
+        "2015": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "SWEB-Schedule-of-charges-and-other-tables-2015-V1-10.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/SWEB-Schedule-of-charges-and-other-tables-2015-V1-10.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 357325
+            }
+          ]
+        },
+        "2016": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "SWEB-Schedule-of-charges-and-other-tables-v-1-0-2016.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/SWEB-Schedule-of-charges-and-other-tables-v-1-0-2016.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 358145
+            }
+          ]
+        },
+        "2017": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "SWEB-Schedule-of-charges-and-other-tables-v-1-0-2017.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/SWEB-Schedule-of-charges-and-other-tables-v-1-0-2017.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 375361
+            }
+          ]
+        },
+        "2018": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "SWEB-Schedule-of-charges-and-other-tables-v-1-0-2018-SOLR3.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/SWEB-Schedule-of-charges-and-other-tables-v-1-0-2018-SOLR3.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 383102
+            }
+          ]
+        },
+        "2019": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "SWEB - Schedule of charges and other tables - 2019 V.0.1 SOLR.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/SWEB - Schedule of charges and other tables - 2019 V.0.1 SOLR.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 420970
+            }
+          ]
+        },
+        "2020": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "SWEB-Schedule of charges and other tables-2020 v2.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/SWEB-Schedule of charges and other tables-2020 v2.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 389338
+            }
+          ]
+        },
+        "2021": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "SWEB-Schedule of charges and other tables-2021 V.0.2.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/SWEB-Schedule of charges and other tables-2021 V.0.2.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 405261
+            }
+          ]
+        },
+        "2022": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "SWEB-Schedule of charges and other tables-2022 V.0.1.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/SWEB-Schedule of charges and other tables-2022 V.0.1.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 304556
+            }
+          ]
+        },
+        "2023": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "SWEB-Schedule of charges and other tables-2023 V.0.1 for publishing.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/SWEB-Schedule of charges and other tables-2023 V.0.1 for publishing.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 348186
+            }
+          ]
+        },
+        "2024": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "SWEB-Schedule of charges and other tables-2024 V.0.1 for publishing.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/SWEB-Schedule of charges and other tables-2024 V.0.1 for publishing.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 331861
+            }
+          ]
+        },
+        "2025": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "SWEB - Schedule of charges and other tables- 2025 V.0.1 for publishing.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/SWEB - Schedule of charges and other tables- 2025 V.0.1 for publishing.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 335595
+            }
+          ]
+        },
+        "2026": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "SWEB - Schedule of charges and other tables- 2026 V.0.1 for publishing.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/SWEB - Schedule of charges and other tables- 2026 V.0.1 for publishing.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 304941
+            }
+          ]
+        },
+        "unknown": {
+          "count": 3,
+          "files": [
+            {
+              "filename": "Copy of WPD - SWEB -Load Managed Area Notice - Isles of Scilly.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/Copy of WPD - SWEB -Load Managed Area Notice - Isles of Scilly.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 40405
+            },
+            {
+              "filename": "SWEB-Schedule-of-charges-and-other-tables-Version7.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/SWEB-Schedule-of-charges-and-other-tables-Version7.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 165444
+            },
+            {
+              "filename": "SWEST FD Monetised Risk.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/drive_duos_unzipped/0059_schedule_2_-_wpd_naw_and_mrw_0zip/SWEST FD Monetised Risk.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 1760540
+            }
+          ]
+        }
+      },
+      "total_files": 17
+    },
+    "23": {
+      "dno_info": {
+        "dno_key": "NPg-Y",
+        "name": "Northern Powergrid (Yorkshire)",
+        "short_code": "Y",
+        "market_participant_id": "YELG",
+        "gsp_group_id": "M",
+        "gsp_group_name": "Yorkshire"
+      },
+      "years": {
+        "2017": {
+          "count": 2,
+          "files": [
+            {
+              "filename": "Northern Powergrid (Yorkshire) - 2017-18 CDCM Model.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/Northern Powergrid (Yorkshire) - 2017-18 CDCM Model.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 646681
+            },
+            {
+              "filename": "Northern Powergrid (Yorkshire) - 2017-18 CDCM Tariff Movement.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/Northern Powergrid (Yorkshire) - 2017-18 CDCM Tariff Movement.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 79861
+            }
+          ]
+        },
+        "2019": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "Northern Powergrid (Yorkshire) - 2019-20 CDCM Model.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/Northern Powergrid (Yorkshire) - 2019-20 CDCM Model.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 715978
+            }
+          ]
+        },
+        "2022": {
+          "count": 1,
+          "files": [
+            {
+              "filename": "Northern Powergrid (Yorkshire) - 2022-23 Addendum Oct-22_0.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/Northern Powergrid (Yorkshire) - 2022-23 Addendum Oct-22_0.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 19882
+            }
+          ]
+        },
+        "2023": {
+          "count": 3,
+          "files": [
+            {
+              "filename": "Northern Powergrid (Yorkshire) - 2023-24 Addendum 01-Mar-24.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/Northern Powergrid (Yorkshire) - 2023-24 Addendum 01-Mar-24.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 19718
+            },
+            {
+              "filename": "Northern Powergrid (Yorkshire) - 2023-24 CDCM Model v0.2.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/Northern Powergrid (Yorkshire) - 2023-24 CDCM Model v0.2.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 921554
+            },
+            {
+              "filename": "Northern Powergrid (Yorkshire) - 2023-24 Schedule of charges and other tables v0.3.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/Northern Powergrid (Yorkshire) - 2023-24 Schedule of charges and other tables v0.3.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 204760
+            }
+          ]
+        },
+        "2024": {
+          "count": 5,
+          "files": [
+            {
+              "filename": "Northern Powergrid (Yorkshire) - 2024-25 Addendum 21-Nov-24.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/Northern Powergrid (Yorkshire) - 2024-25 Addendum 21-Nov-24.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 17952
+            },
+            {
+              "filename": "Northern Powergrid (Yorkshire) - 2024-25 CDCM Model v0.1.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/Northern Powergrid (Yorkshire) - 2024-25 CDCM Model v0.1.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 926362
+            },
+            {
+              "filename": "Northern Powergrid (Yorkshire) - 2024-25 CDCM Tariff Movement v0.1.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/Northern Powergrid (Yorkshire) - 2024-25 CDCM Tariff Movement v0.1.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 60910
+            },
+            {
+              "filename": "Northern Powergrid (Yorkshire) - 2024-25 PCDM Model v0.1.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/Northern Powergrid (Yorkshire) - 2024-25 PCDM Model v0.1.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 308512
+            },
+            {
+              "filename": "Northern Powergrid (Yorkshire) - 2024-25 Schedule of charges and other tables v0.2.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/Northern Powergrid (Yorkshire) - 2024-25 Schedule of charges and other tables v0.2.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 210810
+            }
+          ]
+        },
+        "2025": {
+          "count": 6,
+          "files": [
+            {
+              "filename": "Northern Powergrid (Yorkshire) - 2025-26 Addendum 21-Jul-25.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/Northern Powergrid (Yorkshire) - 2025-26 Addendum 21-Jul-25.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 17519
+            },
+            {
+              "filename": "Northern Powergrid (Yorkshire) - 2025-26 CDCM Model v0.1.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/Northern Powergrid (Yorkshire) - 2025-26 CDCM Model v0.1.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 919431
+            },
+            {
+              "filename": "Northern Powergrid (Yorkshire) - 2025-26 CDCM Tariff Movement v0.1.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/Northern Powergrid (Yorkshire) - 2025-26 CDCM Tariff Movement v0.1.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 63513
+            },
+            {
+              "filename": "Northern Powergrid (Yorkshire) - 2025-26 PCDM Model v0.1.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/Northern Powergrid (Yorkshire) - 2025-26 PCDM Model v0.1.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 310050
+            },
+            {
+              "filename": "Northern Powergrid (Yorkshire) - 2025-26 Schedule of charges and other tables v0.2.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/Northern Powergrid (Yorkshire) - 2025-26 Schedule of charges and other tables v0.2.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 209056
+            },
+            {
+              "filename": "Northern_Powergrid_Yorkshire_20250914_195528.csv",
+              "path": "/Users/georgemajor/GB Power Market JJ/duos_outputs2/gsheets_csv/by_dno/Northern_Powergrid_Yorkshire_20250914_195528.csv",
+              "extension": ".csv",
+              "size_bytes": 36549
+            }
+          ]
+        },
+        "2026": {
+          "count": 5,
+          "files": [
+            {
+              "filename": "Northern Powergrid (Yorkshire) - 2026-27 Addendum 21-Jul-25.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/Northern Powergrid (Yorkshire) - 2026-27 Addendum 21-Jul-25.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 15109
+            },
+            {
+              "filename": "Northern Powergrid (Yorkshire) - 2026-27 CDCM Model v0.1.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/Northern Powergrid (Yorkshire) - 2026-27 CDCM Model v0.1.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 913796
+            },
+            {
+              "filename": "Northern Powergrid (Yorkshire) - 2026-27 CDCM Tariff Movement v0.1.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/Northern Powergrid (Yorkshire) - 2026-27 CDCM Tariff Movement v0.1.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 60381
+            },
+            {
+              "filename": "Northern Powergrid (Yorkshire) - 2026-27 PCDM Model v0.1.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/Northern Powergrid (Yorkshire) - 2026-27 PCDM Model v0.1.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 309151
+            },
+            {
+              "filename": "Northern Powergrid (Yorkshire) - 2026-27 Schedule of charges and other tables v0.1.xlsx",
+              "path": "/Users/georgemajor/GB Power Market JJ/dno_data_enhanced/Northern Powergrid (Yorkshire) - 2026-27 Schedule of charges and other tables v0.1.xlsx",
+              "extension": ".xlsx",
+              "size_bytes": 199828
+            }
+          ]
+        },
+        "unknown": {
+          "count": 3,
+          "files": [
+            {
+              "filename": "NPg-Yorkshire.csv",
+              "path": "/Users/georgemajor/GB Power Market JJ/duos_outputs2/by_dno/NPg-Yorkshire.csv",
+              "extension": ".csv",
+              "size_bytes": 33005
+            },
+            {
+              "filename": "NPg_Yorkshire.csv",
+              "path": "/Users/georgemajor/GB Power Market JJ/csv_output/NPg_Yorkshire.csv",
+              "extension": ".csv",
+              "size_bytes": 32920
+            },
+            {
+              "filename": "Northern Powergrid (Yorkshire) plc Special Conditions.pdf",
+              "path": "/Users/georgemajor/GB Power Market JJ/drive_duos_unzipped/0060_Annex T All electricity distribution special conditionszip/Annex T - All Electricity Distribution Special Conditions/Northern Powergrid (Yorkshire) plc Special Conditions.pdf",
+              "extension": ".pdf",
+              "size_bytes": 1006333
+            }
+          ]
+        }
+      },
+      "total_files": 26
+    }
+  },
+  "summary": {
+    "total_files": 743,
+    "unique_files": 323,
+    "distribution_ids_found": 14,
+    "distribution_ids_missing": []
+  }
+}

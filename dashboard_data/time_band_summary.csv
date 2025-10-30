@@ -1,0 +1,42 @@
+dno_code,dno_name,year,time_band,record_count,voltages,customer_types
+EMID,National Grid Electricity Distribution – East Midlands,2014,Day,0,,
+EMID,National Grid Electricity Distribution – East Midlands,2015,Day,0,,
+NE,Northern Powergrid (North East),2023,Day,166,"LV, HV",
+NE,Northern Powergrid (North East),2024,Day,166,"LV, HV",
+NE,Northern Powergrid (North East),2025,Day,166,"LV, HV",
+NE,Northern Powergrid (North East),2026,Day,166,"LV, HV",
+SEPD,Southern Electric Power Distribution,2021,Day,498,"LV, HV",
+SEPD,Southern Electric Power Distribution,2022,Day,498,"LV, HV",
+SEPD,Southern Electric Power Distribution,2023,Day,166,"LV, HV",
+SEPD,Southern Electric Power Distribution,2024,Day,166,"LV, HV",
+SHEPD,Scottish Hydro Electric Power Distribution,2020,Day,332,"LV, HV",
+SHEPD,Scottish Hydro Electric Power Distribution,2021,Day,511,"LV, HV",Domestic
+SHEPD,Scottish Hydro Electric Power Distribution,2022,Day,524,"LV, HV",Domestic
+SHEPD,Scottish Hydro Electric Power Distribution,2023,Day,192,"LV, HV",Domestic
+SHEPD,Scottish Hydro Electric Power Distribution,2024,Day,179,"LV, HV",Domestic
+SHEPD,Scottish Hydro Electric Power Distribution,2025,Day,13,"LV, HV",Domestic
+SHEPD,Scottish Hydro Electric Power Distribution,2026,Day,13,"LV, HV",Domestic
+SPD,SP Energy Networks (SPD),2020,Day,166,"LV, HV",
+SPD,SP Energy Networks (SPD),2021,Day,332,"LV, HV",
+SPD,SP Energy Networks (SPD),2022,Day,166,"LV, HV",
+SPD,SP Energy Networks (SPD),2024,Day,166,"LV, HV",
+SPD,SP Energy Networks (SPD),2025,Day,332,"LV, HV",
+SPD,SP Energy Networks (SPD),2026,Day,166,"LV, HV",
+SPM,SP Energy Networks (SPM),2020,Day,166,"LV, HV",
+SPM,SP Energy Networks (SPM),2021,Day,332,"LV, HV",
+SPM,SP Energy Networks (SPM),2022,Day,166,"LV, HV",
+SPM,SP Energy Networks (SPM),2024,Day,166,"LV, HV",
+SPM,SP Energy Networks (SPM),2025,Day,166,"LV, HV",
+SPM,SP Energy Networks (SPM),2026,Day,166,"LV, HV",
+SWALES,National Grid Electricity Distribution – South Wales,2014,Day,0,,
+SWALES,National Grid Electricity Distribution – South Wales,2015,Day,0,,
+SWEST,National Grid Electricity Distribution – South West,2014,Day,0,,
+SWEST,National Grid Electricity Distribution – South West,2015,Day,0,,
+WMID,National Grid Electricity Distribution – West Midlands,2014,Day,0,,
+WMID,National Grid Electricity Distribution – West Midlands,2015,Day,0,,
+Y,Northern Powergrid (Yorkshire),2017,Day,0,,
+Y,Northern Powergrid (Yorkshire),2019,Day,0,,
+Y,Northern Powergrid (Yorkshire),2023,Day,166,"LV, HV",
+Y,Northern Powergrid (Yorkshire),2024,Day,166,"LV, HV",
+Y,Northern Powergrid (Yorkshire),2025,Day,166,"LV, HV",
+Y,Northern Powergrid (Yorkshire),2026,Day,166,"LV, HV",

@@ -1,0 +1,42 @@
+Year,DNO_Code,DNO_Name,Red_Rate_p_per_kWh,Amber_Rate_p_per_kWh,Green_Rate_p_per_kWh,Red_Time,Amber_Time,Green_Time,Source_Sheet,Tariff_Code
+2024,EMID,National Grid Electricity Distribution – East Midlands,6.804,1.813,1.13,16:00-19:00 Weekdays,07:00-16:00 & 19:00-23:00 Weekdays,00:00-07:00 & 23:00-24:00 Weekdays; All Weekend,Annex 4 LDNO charges,HVplus
+2024,SWALES,National Grid Electricity Distribution – South Wales,9.57,1.186,0.931,16:00-19:00 Weekdays,07:00-16:00 & 19:00-23:00 Weekdays,00:00-07:00 & 23:00-24:00 Weekdays; All Weekend,Annex 4 LDNO charges,HVplus
+2024,SWEST,National Grid Electricity Distribution – South West,12.575,1.278,1.024,16:00-19:00 Weekdays,07:00-16:00 & 19:00-23:00 Weekdays,00:00-07:00 & 23:00-24:00 Weekdays; All Weekend,Annex 4 LDNO charges,HVplus
+2024,WMID,National Grid Electricity Distribution – West Midlands,9.788,1.738,1.34,16:00-19:00 Weekdays,07:00-16:00 & 19:00-23:00 Weekdays,00:00-07:00 & 23:00-24:00 Weekdays; All Weekend,Annex 4 LDNO charges,HVplus
+2024,NE,Northern Powergrid (North East),10.023,2.061,1.734,16:00-19:00 Weekdays,07:00-16:00 & 19:00-23:00 Weekdays,00:00-07:00 & 23:00-24:00 Weekdays; All Weekend,Tariff summary,LV 10
+2024,Y,Northern Powergrid (Yorkshire),6.978,1.983,1.515,16:00-19:00 Weekdays,07:00-16:00 & 19:00-23:00 Weekdays,00:00-07:00 & 23:00-24:00 Weekdays; All Weekend,Tariff summary,LV 6
+2024,SPD,SP Energy Networks (SPD),14.981,2.278,1.743,16:00-19:00 Weekdays,07:00-16:00 & 19:00-23:00 Weekdays,00:00-07:00 & 23:00-24:00 Weekdays; All Weekend,Tariff summary,LV 14
+2024,SPM,SP Energy Networks (SPM),14.015,3.521,2.105,16:00-19:00 Weekdays,07:00-16:00 & 19:00-23:00 Weekdays,00:00-07:00 & 23:00-24:00 Weekdays; All Weekend,Tariff summary,LV 14
+2024,SHEPD,Scottish Hydro Electric Power Distribution,7.372,2.271,1.733,16:00-19:00 Weekdays,07:00-16:00 & 19:00-23:00 Weekdays,00:00-07:00 & 23:00-24:00 Weekdays; All Weekend,Annex 4 LDNO charges,HVplus
+2024,SEPD,Southern Electric Power Distribution,9.023,2.046,1.7,16:00-19:00 Weekdays,07:00-16:00 & 19:00-23:00 Weekdays,00:00-07:00 & 23:00-24:00 Weekdays; All Weekend,Annex 4 LDNO charges,HVplus
+2024,EPN,UK Power Networks (Eastern),17.562,1.296,0.984,16:00-19:00 Weekdays,07:00-16:00 & 19:00-23:00 Weekdays,00:00-07:00 & 23:00-24:00 Weekdays; All Weekend,Annex 4 LDNO charges,HVplus
+2024,LPN,UK Power Networks (London),18.093,1.295,0.534,16:00-19:00 Weekdays,07:00-16:00 & 19:00-23:00 Weekdays,00:00-07:00 & 23:00-24:00 Weekdays; All Weekend,Annex 4 LDNO charges,HVplus
+2024,SPN,UK Power Networks (South Eastern),17.043,1.196,1.08,16:00-19:00 Weekdays,07:00-16:00 & 19:00-23:00 Weekdays,00:00-07:00 & 23:00-24:00 Weekdays; All Weekend,Annex 4 LDNO charges,HVplus
+2025,ENWL,Electricity North West,31.83,3.666,2.139,16:00-19:00 Weekdays,07:00-16:00 & 19:00-23:00 Weekdays,00:00-07:00 & 23:00-24:00 Weekdays; All Weekend,Annex 4 LDNO charges,LV150
+2025,EMID,National Grid Electricity Distribution – East Midlands,10.784,1.495,0.57,16:00-19:00 Weekdays,07:00-16:00 & 19:00-23:00 Weekdays,00:00-07:00 & 23:00-24:00 Weekdays; All Weekend,Annex 4 LDNO charges,HVplus
+2025,SWALES,National Grid Electricity Distribution – South Wales,16.058,0.765,0.436,16:00-19:00 Weekdays,07:00-16:00 & 19:00-23:00 Weekdays,00:00-07:00 & 23:00-24:00 Weekdays; All Weekend,Annex 4 LDNO charges,HVplus
+2025,SWEST,National Grid Electricity Distribution – South West,20.468,1.007,0.487,16:00-19:00 Weekdays,07:00-16:00 & 19:00-23:00 Weekdays,00:00-07:00 & 23:00-24:00 Weekdays; All Weekend,Annex 4 LDNO charges,HVplus
+2025,WMID,National Grid Electricity Distribution – West Midlands,14.547,1.305,0.689,16:00-19:00 Weekdays,07:00-16:00 & 19:00-23:00 Weekdays,00:00-07:00 & 23:00-24:00 Weekdays; All Weekend,Annex 4 LDNO charges,HVplus
+2025,NE,Northern Powergrid (North East),15.528,0.981,0.311,16:00-19:00 Weekdays,07:00-16:00 & 19:00-23:00 Weekdays,00:00-07:00 & 23:00-24:00 Weekdays; All Weekend,Tariff summary,LV 15
+2025,Y,Northern Powergrid (Yorkshire),9.395,1.274,0.466,16:00-19:00 Weekdays,07:00-16:00 & 19:00-23:00 Weekdays,00:00-07:00 & 23:00-24:00 Weekdays; All Weekend,Tariff summary,LV 9
+2025,SPD,SP Energy Networks (SPD),7.749,0.622,0.35,16:00-19:00 Weekdays,07:00-16:00 & 19:00-23:00 Weekdays,00:00-07:00 & 23:00-24:00 Weekdays; All Weekend,Annex 4 LDNO charges,HVplus
+2025,SPM,SP Energy Networks (SPM),8.949,1.876,1.001,16:00-19:00 Weekdays,07:00-16:00 & 19:00-23:00 Weekdays,00:00-07:00 & 23:00-24:00 Weekdays; All Weekend,Annex 4 LDNO charges,HVplus
+2025,SHEPD,Scottish Hydro Electric Power Distribution,8.141,2.281,1.631,16:00-19:00 Weekdays,07:00-16:00 & 19:00-23:00 Weekdays,00:00-07:00 & 23:00-24:00 Weekdays; All Weekend,Annex 4 LDNO charges,HVplus
+2025,SEPD,Southern Electric Power Distribution,10.672,1.538,0.971,16:00-19:00 Weekdays,07:00-16:00 & 19:00-23:00 Weekdays,00:00-07:00 & 23:00-24:00 Weekdays; All Weekend,Annex 4 LDNO charges,HVplus
+2025,EPN,UK Power Networks (Eastern),16.026,1.356,0.899,16:00-19:00 Weekdays,07:00-16:00 & 19:00-23:00 Weekdays,00:00-07:00 & 23:00-24:00 Weekdays; All Weekend,Annex 4 LDNO charges,HVplus
+2025,LPN,UK Power Networks (London),10.149,1.591,1.216,16:00-19:00 Weekdays,07:00-16:00 & 19:00-23:00 Weekdays,00:00-07:00 & 23:00-24:00 Weekdays; All Weekend,Annex 4 LDNO charges,HVplus
+2025,SPN,UK Power Networks (South Eastern),17.888,0.848,0.723,16:00-19:00 Weekdays,07:00-16:00 & 19:00-23:00 Weekdays,00:00-07:00 & 23:00-24:00 Weekdays; All Weekend,Annex 4 LDNO charges,HVplus
+2026,ENWL,Electricity North West,30.653,3.362,2.118,16:00-19:00 Weekdays,07:00-16:00 & 19:00-23:00 Weekdays,00:00-07:00 & 23:00-24:00 Weekdays; All Weekend,Annex 4 LDNO charges,LV150
+2026,EMID,National Grid Electricity Distribution – East Midlands,13.889,1.275,0.519,16:00-19:00 Weekdays,07:00-16:00 & 19:00-23:00 Weekdays,00:00-07:00 & 23:00-24:00 Weekdays; All Weekend,Annex 4 LDNO charges,HVplus
+2026,SWALES,National Grid Electricity Distribution – South Wales,16.557,0.816,0.477,16:00-19:00 Weekdays,07:00-16:00 & 19:00-23:00 Weekdays,00:00-07:00 & 23:00-24:00 Weekdays; All Weekend,Annex 4 LDNO charges,HVplus
+2026,SWEST,National Grid Electricity Distribution – South West,19.54,1.013,0.439,16:00-19:00 Weekdays,07:00-16:00 & 19:00-23:00 Weekdays,00:00-07:00 & 23:00-24:00 Weekdays; All Weekend,Annex 4 LDNO charges,HVplus
+2026,WMID,National Grid Electricity Distribution – West Midlands,16.358,1.252,0.719,16:00-19:00 Weekdays,07:00-16:00 & 19:00-23:00 Weekdays,00:00-07:00 & 23:00-24:00 Weekdays; All Weekend,Annex 4 LDNO charges,HVplus
+2026,NE,Northern Powergrid (North East),19.755,1.07,0.294,16:00-19:00 Weekdays,07:00-16:00 & 19:00-23:00 Weekdays,00:00-07:00 & 23:00-24:00 Weekdays; All Weekend,Tariff summary,LV 19
+2026,Y,Northern Powergrid (Yorkshire),12.19,1.423,0.529,16:00-19:00 Weekdays,07:00-16:00 & 19:00-23:00 Weekdays,00:00-07:00 & 23:00-24:00 Weekdays; All Weekend,Tariff summary,LV 12
+2026,SPD,SP Energy Networks (SPD),21.459,1.833,1.1,16:00-19:00 Weekdays,07:00-16:00 & 19:00-23:00 Weekdays,00:00-07:00 & 23:00-24:00 Weekdays; All Weekend,Tariff summary,LV 21
+2026,SPM,SP Energy Networks (SPM),20.962,3.163,1.749,16:00-19:00 Weekdays,07:00-16:00 & 19:00-23:00 Weekdays,00:00-07:00 & 23:00-24:00 Weekdays; All Weekend,Tariff summary,LV 20
+2026,SHEPD,Scottish Hydro Electric Power Distribution,8.338,2.704,2.063,16:00-19:00 Weekdays,07:00-16:00 & 19:00-23:00 Weekdays,00:00-07:00 & 23:00-24:00 Weekdays; All Weekend,Annex 4 LDNO charges,HVplus
+2026,SEPD,Southern Electric Power Distribution,9.341,1.568,1.09,16:00-19:00 Weekdays,07:00-16:00 & 19:00-23:00 Weekdays,00:00-07:00 & 23:00-24:00 Weekdays; All Weekend,Annex 4 LDNO charges,HVplus
+2026,EPN,UK Power Networks (Eastern),17.451,1.478,0.895,16:00-19:00 Weekdays,07:00-16:00 & 19:00-23:00 Weekdays,00:00-07:00 & 23:00-24:00 Weekdays; All Weekend,Annex 4 LDNO charges,HVplus
+2026,LPN,UK Power Networks (London),20.312,1.297,0.215,16:00-19:00 Weekdays,07:00-16:00 & 19:00-23:00 Weekdays,00:00-07:00 & 23:00-24:00 Weekdays; All Weekend,Annex 4 LDNO charges,HVplus
+2026,SPN,UK Power Networks (South Eastern),20.92,0.932,0.741,16:00-19:00 Weekdays,07:00-16:00 & 19:00-23:00 Weekdays,00:00-07:00 & 23:00-24:00 Weekdays; All Weekend,Annex 4 LDNO charges,HVplus
