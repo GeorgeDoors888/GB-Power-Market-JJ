@@ -1,0 +1,53 @@
+# Work Summary - 9 September 2025
+
+## 1. Price Relationship Analysis
+
+### Completed Tasks:
+- Successfully corrected the `price_relationship_analyzer.py` script
+- Implemented proper calculation of System Buy/Sell Prices from DISBSAD data
+- Extended the analysis window from 24 hours to 7 days for better insights
+- Successfully executed the analysis against BigQuery data
+
+### Key Findings:
+- Average Wholesale Price: £32.40/MWh
+- Average System Buy Price: £161.89/MWh (5x higher than wholesale)
+- No System Sell actions in the last 7 days (all balancing was on the "buy" side)
+- Most extreme price event: 7 September 2025 (Period 29) - £1643.71/MWh
+
+### Technical Notes:
+- System Buy/Sell Prices must be calculated from cost/volume in DISBSAD table
+- BigQuery REST endpoint was used as Storage module wasn't available
+
+## 2. Postcode Lookup Optimization
+
+### Completed Tasks:
+- Enhanced the postcode lookup script with a two-tier approach:
+  1. First check by outward code (e.g., "SW1") for fast lookups
+  2. Detailed boundary check only when necessary
+- Implemented caching in BigQuery to store known outward code mappings
+- Added both batch processing and API server capabilities
+- Created Google Sheets integration for remote lookups
+
+### Technical Implementation:
+- Created new BigQuery table: `uk_energy_insights.postcode_dno_gsp_mapping`
+- Implemented Flask API with endpoints for single and batch processing
+- Added Google Apps Script code for integration with Google Sheets
+- Enhanced command-line interface with multiple operation modes
+
+### Benefits:
+- Significantly reduced API calls to postcodes.io
+- Minimized computationally expensive GIS operations
+- Improved scalability for large batches of postcodes
+- Enabled direct integration with Google Sheets for analysis
+
+## 3. Files Created/Modified Today:
+- `price_relationship_analyzer.py` - Corrected and extended
+- `postcode_lookup.py` - Completely rewritten with optimizations
+- `google_sheets_integration.py` - New file with Google Sheets integration code
+- `price_analysis_report.txt` - Output from the price analysis
+
+## Next Steps:
+- Consider running the postcode lookup API as a persistent service
+- Further improve the BigQuery caching mechanism by adding more indexes
+- Add a dashboard to visualize the price relationship findings
+- Expand price analysis to show correlations with generation mix

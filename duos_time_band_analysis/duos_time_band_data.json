@@ -1,0 +1,353 @@
+[
+  {
+    "dno_name": "SP Manweb",
+    "mpan_code": 13,
+    "year": "2020",
+    "time_periods": {
+      "red": "equal to 100 fixed inputs live_results_tariffs tariffs for selected charging year tariff summary powerfactor power factor, equal to 0.95 fixed inputs ten equal to 10 fixed inputs thousand equal to 1000 fixed inputs end of sheet",
+      "amber": "Typically weekdays 07:00-16:00 and 19:00-23:00 (shoulder hours)",
+      "green": "Typically weekdays 23:00-07:00 and all weekend (off-peak hours)"
+    },
+    "rate_summary": {
+      "red": {
+        "min": null,
+        "max": null,
+        "mean": null,
+        "num_columns": 0,
+        "sample_values": []
+      },
+      "amber": {
+        "min": null,
+        "max": null,
+        "mean": null,
+        "num_columns": 0,
+        "sample_values": []
+      },
+      "green": {
+        "min": null,
+        "max": null,
+        "mean": null,
+        "num_columns": 0,
+        "sample_values": []
+      }
+    }
+  },
+  {
+    "dno_name": "SP Manweb",
+    "mpan_code": 13,
+    "year": "2021",
+    "time_periods": {
+      "red": "equal to 100 fixed inputs powerfactor power factor, equal to 0.95 fixed inputs ten equal to 10 fixed inputs thousand equal to 1000 fixed inputs end of sheet",
+      "amber": "Typically weekdays 07:00-16:00 and 19:00-23:00 (shoulder hours)",
+      "green": "Typically weekdays 23:00-07:00 and all weekend (off-peak hours)"
+    },
+    "rate_summary": {
+      "red": {
+        "min": null,
+        "max": null,
+        "mean": null,
+        "num_columns": 0,
+        "sample_values": []
+      },
+      "amber": {
+        "min": null,
+        "max": null,
+        "mean": null,
+        "num_columns": 0,
+        "sample_values": []
+      },
+      "green": {
+        "min": null,
+        "max": null,
+        "mean": null,
+        "num_columns": 0,
+        "sample_values": []
+      }
+    }
+  },
+  {
+    "dno_name": "SP Manweb",
+    "mpan_code": 13,
+    "year": "2022",
+    "time_periods": {
+      "red": "equal to 100 fixed inputs powerfactor power factor, equal to 0.95 fixed inputs ten equal to 10 fixed inputs thousand equal to 1000 fixed inputs end of sheet",
+      "amber": "Typically weekdays 07:00-16:00 and 19:00-23:00 (shoulder hours)",
+      "green": "Typically weekdays 23:00-07:00 and all weekend (off-peak hours)"
+    },
+    "rate_summary": {
+      "red": {
+        "min": null,
+        "max": null,
+        "mean": null,
+        "num_columns": 0,
+        "sample_values": []
+      },
+      "amber": {
+        "min": null,
+        "max": null,
+        "mean": null,
+        "num_columns": 0,
+        "sample_values": []
+      },
+      "green": {
+        "min": null,
+        "max": null,
+        "mean": null,
+        "num_columns": 0,
+        "sample_values": []
+      }
+    }
+  },
+  {
+    "dno_name": "SP Manweb",
+    "mpan_code": 13,
+    "year": "2024",
+    "time_periods": {
+      "red": "equal to 100 fixed inputs powerfactor power factor, equal to 0.95 fixed inputs ten equal to 10 fixed inputs thousand equal to 1000 fixed inputs end of sheet",
+      "amber": "Typically weekdays 07:00-16:00 and 19:00-23:00 (shoulder hours)",
+      "green": "Typically weekdays 23:00-07:00 and all weekend (off-peak hours)"
+    },
+    "rate_summary": {
+      "red": {
+        "min": null,
+        "max": null,
+        "mean": null,
+        "num_columns": 0,
+        "sample_values": []
+      },
+      "amber": {
+        "min": null,
+        "max": null,
+        "mean": null,
+        "num_columns": 0,
+        "sample_values": []
+      },
+      "green": {
+        "min": null,
+        "max": null,
+        "mean": null,
+        "num_columns": 0,
+        "sample_values": []
+      }
+    }
+  },
+  {
+    "dno_name": "SP Manweb",
+    "mpan_code": 13,
+    "year": "2025",
+    "time_periods": {
+      "red": "equal to 100 fixed inputs powerfactor power factor, equal to 0.95 fixed inputs ten equal to 10 fixed inputs thousand equal to 1000 fixed inputs end of sheet",
+      "amber": "Typically weekdays 07:00-16:00 and 19:00-23:00 (shoulder hours)",
+      "green": "Typically weekdays 23:00-07:00 and all weekend (off-peak hours)"
+    },
+    "rate_summary": {
+      "red": {
+        "min": null,
+        "max": null,
+        "mean": null,
+        "num_columns": 0,
+        "sample_values": []
+      },
+      "amber": {
+        "min": null,
+        "max": null,
+        "mean": null,
+        "num_columns": 0,
+        "sample_values": []
+      },
+      "green": {
+        "min": null,
+        "max": null,
+        "mean": null,
+        "num_columns": 0,
+        "sample_values": []
+      }
+    }
+  },
+  {
+    "dno_name": "SP Manweb",
+    "mpan_code": 13,
+    "year": "2026",
+    "time_periods": {
+      "red": "equal to 100 fixed inputs powerfactor power factor, equal to 0.95 fixed inputs ten equal to 10 fixed inputs thousand equal to 1,000 fixed inputs million equal to 1,000,000 fixed inputs end of sheet",
+      "amber": "Typically weekdays 07:00-16:00 and 19:00-23:00 (shoulder hours)",
+      "green": "Typically weekdays 23:00-07:00 and all weekend (off-peak hours)"
+    },
+    "rate_summary": {
+      "red": {
+        "min": null,
+        "max": null,
+        "mean": null,
+        "num_columns": 0,
+        "sample_values": []
+      },
+      "amber": {
+        "min": null,
+        "max": null,
+        "mean": null,
+        "num_columns": 0,
+        "sample_values": []
+      },
+      "green": {
+        "min": null,
+        "max": null,
+        "mean": null,
+        "num_columns": 0,
+        "sample_values": []
+      }
+    }
+  },
+  {
+    "dno_name": "SSEN Hydro",
+    "mpan_code": 17,
+    "year": "2025",
+    "time_periods": {
+      "red": "properties time periods",
+      "amber": "Typically weekdays 07:00-16:00 and 19:00-23:00 (shoulder hours)",
+      "green": "band black time band yellow time band"
+    },
+    "rate_summary": {
+      "red": {
+        "min": -7.934,
+        "max": 27.011,
+        "mean": 4.4740625,
+        "num_columns": 1,
+        "sample_values": [
+          11.552,
+          11.552,
+          12.898,
+          12.898,
+          12.898
+        ]
+      },
+      "amber": {
+        "min": -2.836,
+        "max": 7.569,
+        "mean": 1.46225,
+        "num_columns": 1,
+        "sample_values": [
+          4.129,
+          4.129,
+          4.61,
+          4.61,
+          4.61
+        ]
+      },
+      "green": {
+        "min": -0.575,
+        "max": 5.411,
+        "mean": 0.46275000000000005,
+        "num_columns": 1,
+        "sample_values": [
+          0.836,
+          0.836,
+          0.934,
+          0.934,
+          0.934
+        ]
+      }
+    }
+  },
+  {
+    "dno_name": "SSEN Hydro",
+    "mpan_code": 17,
+    "year": "2026",
+    "time_periods": {
+      "red": "properties time periods",
+      "amber": "Typically weekdays 07:00-16:00 and 19:00-23:00 (shoulder hours)",
+      "green": "band black time band yellow time band"
+    },
+    "rate_summary": {
+      "red": {
+        "min": -8.397,
+        "max": 27.663,
+        "mean": 4.467375,
+        "num_columns": 1,
+        "sample_values": [
+          11.447,
+          11.447,
+          13.842,
+          13.842,
+          13.842
+        ]
+      },
+      "amber": {
+        "min": -2.929,
+        "max": 8.97,
+        "mean": 1.3507812499999998,
+        "num_columns": 1,
+        "sample_values": [
+          3.993,
+          3.993,
+          4.829,
+          4.829,
+          4.829
+        ]
+      },
+      "green": {
+        "min": -0.629,
+        "max": 6.846,
+        "mean": 0.40625,
+        "num_columns": 1,
+        "sample_values": [
+          0.857,
+          0.857,
+          1.037,
+          1.037,
+          1.037
+        ]
+      }
+    }
+  },
+  {
+    "dno_name": "SSEN Southern",
+    "mpan_code": 20,
+    "year": "2025",
+    "time_periods": {
+      "red": "properties time periods",
+      "amber": "Typically weekdays 07:00-16:00 and 19:00-23:00 (shoulder hours)",
+      "green": "band black time band yellow time band"
+    },
+    "rate_summary": {
+      "red": {
+        "min": -7.535,
+        "max": 32.2,
+        "mean": 3.8295624999999998,
+        "num_columns": 1,
+        "sample_values": [
+          12.227,
+          12.227,
+          11.827,
+          11.827,
+          11.779
+        ]
+      },
+      "amber": {
+        "min": -1.012,
+        "max": 4.642,
+        "mean": 0.43921875,
+        "num_columns": 1,
+        "sample_values": [
+          1.642,
+          1.642,
+          1.589,
+          1.589,
+          1.541
+        ]
+      },
+      "green": {
+        "min": -0.052,
+        "max": 2.93,
+        "mean": 0.10171875,
+        "num_columns": 1,
+        "sample_values": [
+          0.084,
+          0.084,
+          0.082,
+          0.082,
+          0.034
+        ]
+      }
+    }
+  }
+]

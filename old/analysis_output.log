@@ -1,0 +1,39 @@
+/Users/georgemajor/jibber-jabber 24 august 2025 big bop/gsheets_env/lib/python3.13/site-packages/google/cloud/bigquery/table.py:1994: UserWarning: BigQuery Storage module not found, fetch data with the REST endpoint instead.
+  warnings.warn(
+Starting analysis...
+Initializing Google services...
+✓ Google services initialized
+Fetching generation data...
+✓ Retrieved 0 rows of data
+Analyzing generation patterns...
+✓ Analysis complete
+Creating visualizations...
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/gsheets_env/lib/python3.13/site-packages/matplotlib/style/core.py", line 129, in use
+    style = _rc_params_in_file(style)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/gsheets_env/lib/python3.13/site-packages/matplotlib/__init__.py", line 906, in _rc_params_in_file
+    with _open_file_or_url(fname) as fd:
+         ~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.7/Frameworks/Python.framework/Versions/3.13/lib/python3.13/contextlib.py", line 141, in __enter__
+    return next(self.gen)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/gsheets_env/lib/python3.13/site-packages/matplotlib/__init__.py", line 883, in _open_file_or_url
+    with open(fname, encoding='utf-8') as f:
+         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'seaborn'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/analyze_t_humbr1.py", line 357, in <module>
+    main()
+    ~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/analyze_t_humbr1.py", line 325, in main
+    plot_files = create_visualizations(df, analysis)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/analyze_t_humbr1.py", line 116, in create_visualizations
+    plt.style.use('seaborn')
+    ~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/gsheets_env/lib/python3.13/site-packages/matplotlib/style/core.py", line 131, in use
+    raise OSError(
+    ...<2 lines>...
+        f"styles are listed in `style.available`)") from err
+OSError: 'seaborn' is not a valid package style, path of style file, URL of style file, or library style name (library styles are listed in `style.available`)

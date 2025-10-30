@@ -1,0 +1,389 @@
+[
+  {
+    "file": "bmrs_bod",
+    "rows": 50000,
+    "cols": 16,
+    "empty_columns": [],
+    "potential_date_columns": [
+      "settlementDate"
+    ],
+    "duplicate_key_count": null,
+    "key_columns": null,
+    "total_rows_in_table": 598556735,
+    "rows_sampled": 50000
+  },
+  {
+    "file": "bmrs_disbsad",
+    "rows": 50000,
+    "cols": 16,
+    "empty_columns": [
+      "partyId",
+      "assetId",
+      "isTendered",
+      "service"
+    ],
+    "potential_date_columns": [
+      "settlementDate"
+    ],
+    "duplicate_key_count": null,
+    "key_columns": null,
+    "total_rows_in_table": 706845,
+    "rows_sampled": 50000
+  },
+  {
+    "file": "bmrs_fou2t14d",
+    "rows": 50000,
+    "cols": 14,
+    "empty_columns": [
+      "systemZone"
+    ],
+    "potential_date_columns": [
+      "forecastDate"
+    ],
+    "duplicate_key_count": null,
+    "key_columns": null,
+    "total_rows_in_table": 124488,
+    "rows_sampled": 50000
+  },
+  {
+    "file": "bmrs_fou2t3yw",
+    "rows": 50000,
+    "cols": 14,
+    "empty_columns": [
+      "systemZone",
+      "biddingZone",
+      "interconnectorName"
+    ],
+    "potential_date_columns": [],
+    "duplicate_key_count": null,
+    "key_columns": null,
+    "total_rows_in_table": 1484280,
+    "rows_sampled": 50000
+  },
+  {
+    "file": "bmrs_freq",
+    "rows": 50000,
+    "cols": 7,
+    "empty_columns": [],
+    "potential_date_columns": [],
+    "duplicate_key_count": null,
+    "key_columns": null,
+    "total_rows_in_table": 20319047,
+    "rows_sampled": 50000
+  },
+  {
+    "file": "bmrs_fuelhh",
+    "rows": 40320,
+    "cols": 11,
+    "empty_columns": [],
+    "potential_date_columns": [
+      "settlementDate"
+    ],
+    "duplicate_key_count": null,
+    "key_columns": null,
+    "total_rows_in_table": 40320,
+    "rows_sampled": 40320
+  },
+  {
+    "file": "bmrs_fuelinst",
+    "rows": 50000,
+    "cols": 11,
+    "empty_columns": [],
+    "potential_date_columns": [
+      "settlementDate"
+    ],
+    "duplicate_key_count": null,
+    "key_columns": null,
+    "total_rows_in_table": 1675440,
+    "rows_sampled": 50000
+  },
+  {
+    "file": "bmrs_inddem",
+    "rows": 50000,
+    "cols": 11,
+    "empty_columns": [],
+    "potential_date_columns": [
+      "settlementDate"
+    ],
+    "duplicate_key_count": null,
+    "key_columns": null,
+    "total_rows_in_table": 489888,
+    "rows_sampled": 50000
+  },
+  {
+    "file": "bmrs_indgen",
+    "rows": 50000,
+    "cols": 11,
+    "empty_columns": [],
+    "potential_date_columns": [
+      "settlementDate"
+    ],
+    "duplicate_key_count": null,
+    "key_columns": null,
+    "total_rows_in_table": 489888,
+    "rows_sampled": 50000
+  },
+  {
+    "file": "bmrs_indo",
+    "rows": 504,
+    "cols": 10,
+    "empty_columns": [],
+    "potential_date_columns": [
+      "settlementDate"
+    ],
+    "duplicate_key_count": null,
+    "key_columns": null,
+    "total_rows_in_table": 504,
+    "rows_sampled": 504
+  },
+  {
+    "file": "bmrs_itsdo",
+    "rows": 504,
+    "cols": 10,
+    "empty_columns": [],
+    "potential_date_columns": [
+      "settlementDate"
+    ],
+    "duplicate_key_count": null,
+    "key_columns": null,
+    "total_rows_in_table": 504,
+    "rows_sampled": 504
+  },
+  {
+    "file": "bmrs_ndf",
+    "rows": 26712,
+    "cols": 11,
+    "empty_columns": [],
+    "potential_date_columns": [
+      "settlementDate"
+    ],
+    "duplicate_key_count": null,
+    "key_columns": null,
+    "total_rows_in_table": 26712,
+    "rows_sampled": 26712
+  },
+  {
+    "file": "bmrs_ndfd",
+    "rows": 6552,
+    "cols": 8,
+    "empty_columns": [],
+    "potential_date_columns": [
+      "forecastDate"
+    ],
+    "duplicate_key_count": null,
+    "key_columns": null,
+    "total_rows_in_table": 6552,
+    "rows_sampled": 6552
+  },
+  {
+    "file": "bmrs_ndfw",
+    "rows": 25704,
+    "cols": 9,
+    "empty_columns": [],
+    "potential_date_columns": [],
+    "duplicate_key_count": null,
+    "key_columns": null,
+    "total_rows_in_table": 25704,
+    "rows_sampled": 25704
+  },
+  {
+    "file": "bmrs_nonbm",
+    "rows": 50000,
+    "cols": 10,
+    "empty_columns": [],
+    "potential_date_columns": [
+      "settlementDate"
+    ],
+    "duplicate_key_count": null,
+    "key_columns": null,
+    "total_rows_in_table": 164177,
+    "rows_sampled": 50000
+  },
+  {
+    "file": "bmrs_nou2t14d",
+    "rows": 6552,
+    "cols": 10,
+    "empty_columns": [
+      "systemZone"
+    ],
+    "potential_date_columns": [
+      "forecastDate"
+    ],
+    "duplicate_key_count": null,
+    "key_columns": null,
+    "total_rows_in_table": 6552,
+    "rows_sampled": 6552
+  },
+  {
+    "file": "bmrs_nou2t3yw",
+    "rows": 50000,
+    "cols": 10,
+    "empty_columns": [
+      "systemZone"
+    ],
+    "potential_date_columns": [],
+    "duplicate_key_count": null,
+    "key_columns": null,
+    "total_rows_in_table": 78120,
+    "rows_sampled": 50000
+  },
+  {
+    "file": "bmrs_ocnmf3y",
+    "rows": 50000,
+    "cols": 9,
+    "empty_columns": [],
+    "potential_date_columns": [],
+    "duplicate_key_count": null,
+    "key_columns": null,
+    "total_rows_in_table": 78120,
+    "rows_sampled": 50000
+  },
+  {
+    "file": "bmrs_ocnmf3y2",
+    "rows": 50000,
+    "cols": 9,
+    "empty_columns": [],
+    "potential_date_columns": [],
+    "duplicate_key_count": null,
+    "key_columns": null,
+    "total_rows_in_table": 78120,
+    "rows_sampled": 50000
+  },
+  {
+    "file": "bmrs_ocnmfd",
+    "rows": 6552,
+    "cols": 8,
+    "empty_columns": [],
+    "potential_date_columns": [
+      "forecastDate"
+    ],
+    "duplicate_key_count": null,
+    "key_columns": null,
+    "total_rows_in_table": 6552,
+    "rows_sampled": 6552
+  },
+  {
+    "file": "bmrs_ocnmfd2",
+    "rows": 6552,
+    "cols": 8,
+    "empty_columns": [],
+    "potential_date_columns": [
+      "forecastDate"
+    ],
+    "duplicate_key_count": null,
+    "key_columns": null,
+    "total_rows_in_table": 6552,
+    "rows_sampled": 6552
+  },
+  {
+    "file": "bmrs_sel",
+    "rows": 50000,
+    "cols": 11,
+    "empty_columns": [],
+    "potential_date_columns": [
+      "settlementDate"
+    ],
+    "duplicate_key_count": null,
+    "key_columns": null,
+    "total_rows_in_table": 183067,
+    "rows_sampled": 50000
+  },
+  {
+    "file": "bmrs_sil",
+    "rows": 21385,
+    "cols": 11,
+    "empty_columns": [],
+    "potential_date_columns": [
+      "settlementDate"
+    ],
+    "duplicate_key_count": null,
+    "key_columns": null,
+    "total_rows_in_table": 21385,
+    "rows_sampled": 21385
+  },
+  {
+    "file": "bmrs_temp",
+    "rows": 15624,
+    "cols": 8,
+    "empty_columns": [],
+    "potential_date_columns": [
+      "measurementDate"
+    ],
+    "duplicate_key_count": null,
+    "key_columns": null,
+    "total_rows_in_table": 15624,
+    "rows_sampled": 15624
+  },
+  {
+    "file": "bmrs_tsdf",
+    "rows": 50000,
+    "cols": 11,
+    "empty_columns": [],
+    "potential_date_columns": [
+      "settlementDate"
+    ],
+    "duplicate_key_count": null,
+    "key_columns": null,
+    "total_rows_in_table": 480816,
+    "rows_sampled": 50000
+  },
+  {
+    "file": "bmrs_tsdfd",
+    "rows": 6552,
+    "cols": 8,
+    "empty_columns": [],
+    "potential_date_columns": [
+      "forecastDate"
+    ],
+    "duplicate_key_count": null,
+    "key_columns": null,
+    "total_rows_in_table": 6552,
+    "rows_sampled": 6552
+  },
+  {
+    "file": "bmrs_tsdfw",
+    "rows": 25704,
+    "cols": 9,
+    "empty_columns": [],
+    "potential_date_columns": [],
+    "duplicate_key_count": null,
+    "key_columns": null,
+    "total_rows_in_table": 25704,
+    "rows_sampled": 25704
+  },
+  {
+    "file": "bmrs_uou2t14d",
+    "rows": 50000,
+    "cols": 11,
+    "empty_columns": [],
+    "potential_date_columns": [
+      "forecastDate"
+    ],
+    "duplicate_key_count": null,
+    "key_columns": null,
+    "total_rows_in_table": 3013920,
+    "rows_sampled": 50000
+  },
+  {
+    "file": "bmrs_uou2t3yw",
+    "rows": 50000,
+    "cols": 12,
+    "empty_columns": [],
+    "potential_date_columns": [],
+    "duplicate_key_count": null,
+    "key_columns": null,
+    "total_rows_in_table": 117645000,
+    "rows_sampled": 50000
+  },
+  {
+    "file": "bmrs_windfor",
+    "rows": 36792,
+    "cols": 8,
+    "empty_columns": [],
+    "potential_date_columns": [],
+    "duplicate_key_count": null,
+    "key_columns": null,
+    "total_rows_in_table": 36792,
+    "rows_sampled": 36792
+  }
+]

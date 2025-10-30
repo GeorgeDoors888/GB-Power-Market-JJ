@@ -1,0 +1,82 @@
+{
+  "bmrs_boalf": {
+    "table": "bmrs_boalf",
+    "row_count": 10546265,
+    "size_bytes": 1148295254,
+    "creation_time": "2025-09-09 22:35:32.309000+00:00",
+    "last_modified_time": "2025-09-21 19:47:00.258000+00:00",
+    "max__ingested_utc": "2025-09-21 19:46:55.066706+00:00",
+    "min__window_from_utc": "2022-01-01 00:00:00+00:00",
+    "max__window_to_utc": "2025-09-21 16:34:35+00:00"
+  },
+  "bmrs_bod": {
+    "table": "bmrs_bod",
+    "row_count": 877411909,
+    "size_bytes": 83869744347,
+    "creation_time": "2025-09-09 22:36:13.647000+00:00",
+    "last_modified_time": "2025-09-21 19:46:50.224000+00:00",
+    "max__ingested_utc": "2025-09-21 19:46:45.428135+00:00",
+    "min__window_from_utc": "2022-01-01 00:00:00+00:00",
+    "max__window_to_utc": "2025-09-21 16:34:35+00:00"
+  },
+  "bmrs_freq": {
+    "table": "bmrs_freq",
+    "row_count": 19587393,
+    "size_bytes": 402740937,
+    "creation_time": "2025-09-09 22:36:51.163000+00:00",
+    "last_modified_time": "2025-09-21 19:45:08.842000+00:00",
+    "max__ingested_utc": "2025-09-21 19:45:05.669566+00:00",
+    "min__window_from_utc": "2025-09-14 00:00:00+00:00",
+    "max__window_to_utc": "2025-09-21 16:34:35+00:00"
+  },
+  "bmrs_fuelinst": {
+    "table": "bmrs_fuelinst",
+    "row_count": 225880,
+    "size_bytes": 77104138,
+    "creation_time": "2025-09-16 22:01:41.433000+00:00",
+    "last_modified_time": "2025-09-21 19:45:15.668000+00:00",
+    "max__ingested_utc": "2025-09-21 19:45:12.217994+00:00",
+    "min__window_from_utc": "2025-09-14 00:00:00+00:00",
+    "max__window_to_utc": "2025-09-21 16:34:35+00:00"
+  },
+  "bmrs_mels": {
+    "table": "bmrs_mels",
+    "row_count": 105286607,
+    "size_bytes": 53515992928,
+    "creation_time": "2025-09-09 22:38:28.623000+00:00",
+    "last_modified_time": "2025-09-21 19:45:39.618000+00:00",
+    "max__ingested_utc": "2025-09-21 19:45:23.404088+00:00",
+    "min__window_from_utc": "2023-01-01 00:00:00+00:00",
+    "max__window_to_utc": "2025-09-21 00:00:00+00:00"
+  },
+  "bmrs_mils": {
+    "table": "bmrs_mils",
+    "row_count": 102693154,
+    "size_bytes": 51990615408,
+    "creation_time": "2025-09-09 22:39:07.620000+00:00",
+    "last_modified_time": "2025-09-21 19:45:59.792000+00:00",
+    "max__ingested_utc": "2025-09-21 19:45:45.812282+00:00",
+    "min__window_from_utc": "2023-01-01 00:00:00+00:00",
+    "max__window_to_utc": "2025-09-21 00:00:00+00:00"
+  },
+  "bmrs_pn": {
+    "table": "bmrs_pn",
+    "row_count": 136977587,
+    "size_bytes": 54869406817,
+    "creation_time": "2025-09-12 11:44:27.664000+00:00",
+    "last_modified_time": "2025-09-21 19:47:23.719000+00:00",
+    "max__ingested_utc": "2025-09-21 19:47:07.559181+00:00",
+    "min__window_from_utc": "2022-01-01 00:00:00+00:00",
+    "max__window_to_utc": "2025-09-21 16:35:13+00:00"
+  },
+  "bmrs_qpn": {
+    "table": "bmrs_qpn",
+    "row_count": 121328743,
+    "size_bytes": 48811071169,
+    "creation_time": "2025-09-12 11:44:47.580000+00:00",
+    "last_modified_time": "2025-09-21 19:47:44.068000+00:00",
+    "max__ingested_utc": "2025-09-21 19:47:33.316943+00:00",
+    "min__window_from_utc": "2022-01-01 00:00:00+00:00",
+    "max__window_to_utc": "2025-09-21 16:35:13+00:00"
+  }
+}

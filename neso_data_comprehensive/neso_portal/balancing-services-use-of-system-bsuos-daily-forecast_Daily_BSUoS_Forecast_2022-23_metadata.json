@@ -1,0 +1,11 @@
+{
+  "source": "NESO Data Portal",
+  "dataset_id": "balancing-services-use-of-system-bsuos-daily-forecast",
+  "dataset_title": "Daily Balancing Services Use of System (BSUoS) Forecast",
+  "resource_id": "b98095a8-310a-4fee-8d51-e20531c49465",
+  "resource_name": "Daily BSUoS Forecast 2022-23",
+  "resource_format": "csv",
+  "last_modified": "2023-04-02T15:00:16.562043",
+  "size": null,
+  "description": "This file contains the Electricity System Operator's (ESO) half-hourly BSUoS forecast (Balancing Services Use of System charge). The estimated BSUoS charge is calculated by taking the forecast half-hourly balancing costs divided by the forecast BSUoS volume. \r\n\r\n<br/>\r\n\r\n**Disclaimer:** This forecast is published without prejudice and whilst every effort has been made to ensure the accuracy it is subject to several estimations and forecasts and may not bear relation to either the indicative or actual tariffs Electricity system Operator will publish at a later date.\r\n>**<span style=\"color: rgb(176,74,42)\">NOTE:</span>**  After an industry modification, CMP361 has came into force from the 1st April 2023, this will mean that this dataset will not be updated from April 2023 onward."
+}

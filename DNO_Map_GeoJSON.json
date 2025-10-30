@@ -1,0 +1,40 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "dno_id": "10",
+        "dno_name": "UKPN \u2013 Eastern Power Networks",
+        "dno_key": "UKPN_EPN"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.1,
+              52.0
+            ],
+            [
+              0.2,
+              52.0
+            ],
+            [
+              0.2,
+              52.1
+            ],
+            [
+              0.1,
+              52.1
+            ],
+            [
+              0.1,
+              52.0
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "source": "NESO Data Portal",
+  "dataset_id": "2-14-days-ahead-national-demand-forecast",
+  "dataset_title": "2-14 Days Ahead Demand Forecast",
+  "resource_id": "7c0411cd-2714-4bb5-a408-adb065edf34d",
+  "resource_name": "2-14 Days Ahead Half Hourly Forecast",
+  "resource_format": "csv",
+  "last_modified": "2025-10-29T13:46:43.768174",
+  "size": null,
+  "description": "This dataset contains national electricity demand forecasts for 2-14 days ahead (medium term) as well as all historic 2-14 days ahead forecasts. These forecasts assist the industry to make efficient decisions in balancing their supply and demand positions. <br/><br/>These files are updated twice daily, at 09:20 and 14:20."
+}

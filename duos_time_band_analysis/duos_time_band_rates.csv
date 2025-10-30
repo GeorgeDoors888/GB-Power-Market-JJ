@@ -1,0 +1,10 @@
+dno_name,mpan_code,year,band,time_period,min_rate,max_rate,mean_rate,num_columns
+SSEN Hydro,17,2025,RED,properties time periods,-7.934,27.011,4.4740625,1
+SSEN Hydro,17,2025,AMBER,Typically weekdays 07:00-16:00 and 19:00-23:00 (shoulder hours),-2.836,7.569,1.46225,1
+SSEN Hydro,17,2025,GREEN,band black time band yellow time band,-0.575,5.411,0.46275000000000005,1
+SSEN Hydro,17,2026,RED,properties time periods,-8.397,27.663,4.467375,1
+SSEN Hydro,17,2026,AMBER,Typically weekdays 07:00-16:00 and 19:00-23:00 (shoulder hours),-2.929,8.97,1.3507812499999998,1
+SSEN Hydro,17,2026,GREEN,band black time band yellow time band,-0.629,6.846,0.40625,1
+SSEN Southern,20,2025,RED,properties time periods,-7.535,32.2,3.8295624999999998,1
+SSEN Southern,20,2025,AMBER,Typically weekdays 07:00-16:00 and 19:00-23:00 (shoulder hours),-1.012,4.642,0.43921875,1
+SSEN Southern,20,2025,GREEN,band black time band yellow time band,-0.052,2.93,0.10171875,1

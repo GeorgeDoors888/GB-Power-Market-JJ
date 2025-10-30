@@ -1,0 +1,182 @@
+version: 1
+
+base_urls:
+  insights: "https://data.elexon.co.uk/bmrs/api/v1"
+  bmrs_datasets: "https://data.elexon.co.uk/bmrs/api/v1/datasets"
+
+defaults:
+  project: "jibber-jabber-knowledge"
+  dataset: "uk_energy_insights"
+  chunk: "7d"
+  format: "csv"
+  bq_write: "append"
+  params: {}
+
+groups:
+  # ─────────────────────────────────────────────────────────────
+  # INSIGHTS (opinionated / summary / reference) endpoints
+  # ─────────────────────────────────────────────────────────────
+  insights_balancing:
+    - name: balancing_acceptances
+      base: insights
+      path: "/balancing/acceptances"
+      has_from_to: true
+      chunk: "7d"
+      requires:
+        - key: bm_unit
+          type: string
+          required: true
+      bq_table: "ins_balancing_acceptances"
+
+    - name: balancing_bid_offers
+      base: insights
+      path: "/balancing/bid-offer"
+      has_from_to: true
+      chunk: "1d"
+      requires:
+        - key: bm_unit
+          type: string
+          required: true
+      bq_table: "ins_balancing_bid_offers"
+
+    - name: balancing_physical
+      base: insights
+      path: "/balancing/physical"
+      has_from_to: true
+      chunk: "7d"
+      requires:
+        - key: bm_unit
+          type: string
+          required: true
+      bq_table: "ins_balancing_physical"
+
+    - name: nonbm_disbsad_summary
+      base: insights
+      path: "/balancing/nonbm/disbsad/summary"
+      has_from_to: true
+      chunk: "7d"
+      bq_table: "ins_nonbm_disbsad_summary"
+
+    - name: nonbm_netbsad
+      base: insights
+      path: "/balancing/nonbm/netbsad"
+      has_from_to: true
+      chunk: "1d"
+      bq_table: "ins_nonbm_netbsad"
+
+  insights_generation:
+    - name: generation_availability_summary_14d
+      base: insights
+      path: "/generation/availability/summary/14d"
+      has_from_to: false
+      bq_table: "ins_generation_availability_summary_14d"
+
+    - name: generation_availability_summary_3yw
+      base: insights
+      path: "/generation/availability/summary/3yw"
+      has_from_to: false
+      bq_table: "ins_generation_availability_summary_3yw"
+
+    - name: generation_actual_national_peak_change_3yw
+      base: insights
+      path: "/generation/actual/national/peak-change/3yw"
+      has_from_to: false
+      bq_table: "ins_generation_actual_peak_change_3yw"
+
+  insights_demand:
+    - name: forecast_demand_daily_evolution
+      base: insights
+      path: "/forecast/demand/daily/evolution"
+      has_from_to: true
+      chunk: "7d"
+      bq_table: "ins_forecast_demand_daily_evolution"
+
+  insights_reference:
+    - name: reference_bmunits_all
+      base: insights
+      path: "/reference/bmunits/all"
+      has_from_to: false
+      bq_table: "ins_reference_bmunits"
+
+  # ─────────────────────────────────────────────────────────────
+  # BMRS DATASETS (classic codes under /bmrs/api/v1/datasets/{CODE})
+  # ─────────────────────────────────────────────────────────────
+  bmrs_balancing:
+    - { code: "BOD", base: bmrs_datasets, has_from_to: true, chunk: "1h", bq_table: "bmrs_bod" }
+    - { code: "BOAL", base: bmrs_datasets, has_from_to: true, chunk: "1d", bq_table: "bmrs_boal" }
+    - { code: "BOALF", base: bmrs_datasets, has_from_to: true, chunk: "1d", bq_table: "bmrs_boalf" }
+    - { code: "NETBSAD", base: bmrs_datasets, has_from_to: true, chunk: "1d", bq_table: "bmrs_netbsad" }
+    - { code: "DISBSAD", base: bmrs_datasets, has_from_to: true, chunk: "1d", bq_table: "bmrs_disbsad" }
+    - { code: "IMBALNGC", base: bmrs_datasets, has_from_to: true, chunk: "7d", bq_table: "bmrs_imbalngc" }
+    - { code: "PN", base: bmrs_datasets, has_from_to: true, chunk: "1d", bq_table: "bmrs_pn" }
+    - { code: "QPN", base: bmrs_datasets, has_from_to: true, chunk: "1d", bq_table: "bmrs_qpn" }
+    - { code: "QAS", base: bmrs_datasets, has_from_to: true, chunk: "1d", bq_table: "bmrs_qas" }
+    - { code: "RDRE", base: bmrs_datasets, has_from_to: true, chunk: "1d", bq_table: "bmrs_rdre" }
+    - { code: "RDRI", base: bmrs_datasets, has_from_to: true, chunk: "1d", bq_table: "bmrs_rdri" }
+    - { code: "RURE", base: bmrs_datasets, has_from_to: true, chunk: "1d", bq_table: "bmrs_rure" }
+    - { code: "RURI", base: bmrs_datasets, has_from_to: true, chunk: "1d", bq_table: "bmrs_ruri" }
+
+  bmrs_system_and_frequency:
+    - { code: "FREQ", base: bmrs_datasets, has_from_to: true, chunk: "1d", bq_table: "bmrs_freq" }
+    - { code: "FUELINST", base: bmrs_datasets, has_from_to: true, chunk: "1d", bq_table: "bmrs_fuelinst" }
+    - { code: "FUELHH", base: bmrs_datasets, has_from_to: true, chunk: "1d", bq_table: "bmrs_fuelhh" }
+    - { code: "TEMP", base: bmrs_datasets, has_from_to: true, chunk: "7d", bq_table: "bmrs_temp" }
+    - { code: "B1610", base: bmrs_datasets, has_from_to: true, chunk: "7d", bq_table: "bmrs_b1610" }
+
+  bmrs_demand_and_forecast:
+    - { code: "NDF", base: bmrs_datasets, has_from_to: true, chunk: "7d", bq_table: "bmrs_ndf" }
+    - { code: "NDFD", base: bmrs_datasets, has_from_to: true, chunk: "7d", bq_table: "bmrs_ndfd" }
+    - { code: "NDFW", base: bmrs_datasets, has_from_to: true, chunk: "7d", bq_table: "bmrs_ndfw" }
+    - { code: "TSDF", base: bmrs_datasets, has_from_to: true, chunk: "7d", bq_table: "bmrs_tsdf" }
+    - { code: "TSDFD", base: bmrs_datasets, has_from_to: true, chunk: "7d", bq_table: "bmrs_tsdfd" }
+    - { code: "TSDFW", base: bmrs_datasets, has_from_to: true, chunk: "7d", bq_table: "bmrs_tsdfw" }
+    - { code: "INDDEM", base: bmrs_datasets, has_from_to: true, chunk: "7d", bq_table: "bmrs_inddem" }
+
+  bmrs_generation_and_outturn:
+    - { code: "INDGEN", base: bmrs_datasets, has_from_to: true, chunk: "7d", bq_table: "bmrs_indgen" }
+    - { code: "ITSDO", base: bmrs_datasets, has_from_to: true, chunk: "7d", bq_table: "bmrs_itsdo" }
+    - { code: "INDO", base: bmrs_datasets, has_from_to: true, chunk: "7d", bq_table: "bmrs_indo" }
+    - { code: "MELNGC", base: bmrs_datasets, has_from_to: true, chunk: "7d", bq_table: "bmrs_melngc" }
+    - { code: "WINDFOR", base: bmrs_datasets, has_from_to: true, chunk: "7d", bq_table: "bmrs_windfor" }
+    - { code: "WIND", base: bmrs_datasets, has_from_to: true, chunk: "7d", bq_table: "bmrs_wind" }
+
+  bmrs_outages_and_notices:
+    - { code: "FOU2T14D", base: bmrs_datasets, has_from_to: true, chunk: "7d", bq_table: "bmrs_fou2t14d" }
+    - { code: "FOU2T3YW", base: bmrs_datasets, has_from_to: true, chunk: "7d", bq_table: "bmrs_fou2t3yw" }
+    - { code: "NOU2T14D", base: bmrs_datasets, has_from_to: true, chunk: "7d", bq_table: "bmrs_nou2t14d" }
+    - { code: "NOU2T3YW", base: bmrs_datasets, has_from_to: true, chunk: "7d", bq_table: "bmrs_nou2t3yw" }
+    - { code: "UOU2T14D", base: bmrs_datasets, has_from_to: true, chunk: "1d", bq_table: "bmrs_uou2t14d" }
+    - { code: "UOU2T3YW", base: bmrs_datasets, has_from_to: true, chunk: "1d", bq_table: "bmrs_uou2t3yw" }
+    - { code: "SEL", base: bmrs_datasets, has_from_to: true, chunk: "7d", bq_table: "bmrs_sel" }
+    - { code: "SIL", base: bmrs_datasets, has_from_to: true, chunk: "7d", bq_table: "bmrs_sil" }
+
+  bmrs_interconnectors:
+    - { code: "OCNMF3Y", base: bmrs_datasets, has_from_to: true, chunk: "7d", bq_table: "bmrs_ocnmf3y" }
+    - { code: "OCNMF3Y2", base: bmrs_datasets, has_from_to: true, chunk: "7d", bq_table: "bmrs_ocnmf3y2" }
+    - { code: "OCNMFD", base: bmrs_datasets, has_from_to: true, chunk: "7d", bq_table: "bmrs_ocnmfd" }
+    - { code: "OCNMFD2", base: bmrs_datasets, has_from_to: true, chunk: "7d", bq_table: "bmrs_ocnmfd2" }
+    - { code: "INTBPT", base: bmrs_datasets, has_from_to: true, chunk: "7d", bq_table: "bmrs_intbpt" }
+
+  bmrs_market_ops_and_misc:
+    - { code: "MIP", base: bmrs_datasets, has_from_to: true, chunk: "7d", bq_table: "bmrs_mip" }
+    - { code: "MID", base: bmrs_datasets, has_from_to: true, chunk: "7d", bq_table: "bmrs_mid" }
+    - { code: "MILS", base: bmrs_datasets, has_from_to: true, chunk: "7d", bq_table: "bmrs_mils" }
+    - { code: "MELS", base: bmrs_datasets, has_from_to: true, chunk: "7d", bq_table: "bmrs_mels" }
+    - { code: "MDP", base: bmrs_datasets, has_from_to: true, chunk: "7d", bq_table: "bmrs_mdp" }
+    - { code: "MDV", base: bmrs_datasets, has_from_to: true, chunk: "7d", bq_table: "bmrs_mdv" }
+    - { code: "MNZT", base: bmrs_datasets, has_from_to: true, chunk: "7d", bq_table: "bmrs_mnzt" }
+    - { code: "MZT", base: bmrs_datasets, has_from_to: true, chunk: "7d", bq_table: "bmrs_mzt" }
+    - { code: "NTB", base: bmrs_datasets, has_from_to: true, chunk: "7d", bq_table: "bmrs_ntb" }
+    - { code: "NTO", base: bmrs_datasets, has_from_to: true, chunk: "7d", bq_table: "bmrs_nto" }
+    - { code: "NDZ", base: bmrs_datasets, has_from_to: true, chunk: "7d", bq_table: "bmrs_ndz" }
+    - { code: "NONBM", base: bmrs_datasets, has_from_to: true, chunk: "7d", bq_table: "bmrs_nonbm" }
+  # - name: balancing_acceptances_by_unit
+  #   path: /balancing/acceptances
+  #   from_param: from
+  #   to_param: to
+  #   max_window: 1d
+  #   format: json
+  #   records_path: data
+  #   table: ins_balancing_acceptances
+  #   param_lists:
+  #     bm_unit:

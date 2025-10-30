@@ -1,0 +1,134 @@
+{
+  "results": {
+    "National Grid": [
+      {
+        "status": "error",
+        "url": "https://www.nationalgrid.com/document/177846/download",
+        "error": "404 Client Error: Not Found for url: https://www.nationalgrid.com/document/177846/download"
+      },
+      {
+        "status": "error",
+        "url": "https://www.nationalgrid.com/document/172376/download",
+        "error": "404 Client Error: Not Found for url: https://www.nationalgrid.com/document/172376/download"
+      },
+      {
+        "status": "error",
+        "url": "https://www.nationalgrid.com/document/177866/download",
+        "error": "404 Client Error: Not Found for url: https://www.nationalgrid.com/document/177866/download"
+      },
+      {
+        "status": "error",
+        "url": "https://www.nationalgrid.com/document/172396/download",
+        "error": "404 Client Error: Not Found for url: https://www.nationalgrid.com/document/172396/download"
+      },
+      {
+        "status": "error",
+        "url": "https://www.nationalgrid.com/document/177851/download",
+        "error": "404 Client Error: Not Found for url: https://www.nationalgrid.com/document/177851/download"
+      },
+      {
+        "status": "error",
+        "url": "https://www.nationalgrid.com/document/172381/download",
+        "error": "404 Client Error: Not Found for url: https://www.nationalgrid.com/document/172381/download"
+      },
+      {
+        "status": "error",
+        "url": "https://www.nationalgrid.com/document/177871/download",
+        "error": "404 Client Error: Not Found for url: https://www.nationalgrid.com/document/177871/download"
+      },
+      {
+        "status": "error",
+        "url": "https://www.nationalgrid.com/document/172401/download",
+        "error": "404 Client Error: Not Found for url: https://www.nationalgrid.com/document/172401/download"
+      },
+      {
+        "status": "error",
+        "url": "https://www.nationalgrid.com/document/177856/download",
+        "error": "404 Client Error: Not Found for url: https://www.nationalgrid.com/document/177856/download"
+      },
+      {
+        "status": "error",
+        "url": "https://www.nationalgrid.com/document/172386/download",
+        "error": "404 Client Error: Not Found for url: https://www.nationalgrid.com/document/172386/download"
+      },
+      {
+        "status": "error",
+        "url": "https://www.nationalgrid.com/document/177876/download",
+        "error": "404 Client Error: Not Found for url: https://www.nationalgrid.com/document/177876/download"
+      },
+      {
+        "status": "error",
+        "url": "https://www.nationalgrid.com/document/172406/download",
+        "error": "404 Client Error: Not Found for url: https://www.nationalgrid.com/document/172406/download"
+      },
+      {
+        "status": "error",
+        "url": "https://www.nationalgrid.com/document/177861/download",
+        "error": "404 Client Error: Not Found for url: https://www.nationalgrid.com/document/177861/download"
+      },
+      {
+        "status": "error",
+        "url": "https://www.nationalgrid.com/document/172391/download",
+        "error": "404 Client Error: Not Found for url: https://www.nationalgrid.com/document/172391/download"
+      },
+      {
+        "status": "error",
+        "url": "https://www.nationalgrid.com/document/177881/download",
+        "error": "404 Client Error: Not Found for url: https://www.nationalgrid.com/document/177881/download"
+      },
+      {
+        "status": "error",
+        "url": "https://www.nationalgrid.com/document/172411/download",
+        "error": "404 Client Error: Not Found for url: https://www.nationalgrid.com/document/172411/download"
+      }
+    ],
+    "SP Manweb": [
+      {
+        "status": "error",
+        "url": "https://www.scottishpower.com/userfiles/file/LC14-Statement-2026_SPM_v01.pdf",
+        "error": "403 Client Error: Forbidden for url: https://www.scottishpower.com/userfiles/file/LC14-Statement-2026_SPM_v01.pdf"
+      },
+      {
+        "status": "error",
+        "url": "https://www.scottishpower.com/userfiles/file/SPM_LC14_Statement_2025_V05.pdf",
+        "error": "403 Client Error: Forbidden for url: https://www.scottishpower.com/userfiles/file/SPM_LC14_Statement_2025_V05.pdf"
+      },
+      {
+        "status": "error",
+        "url": "https://www.scottishpower.com/userfiles/file/SPM-Schedule-of-charges-and-other-tables-2026-V0.1-Annex-6.xlsx",
+        "error": "403 Client Error: Forbidden for url: https://www.scottishpower.com/userfiles/file/SPM-Schedule-of-charges-and-other-tables-2026-V0.1-Annex-6.xlsx"
+      },
+      {
+        "status": "error",
+        "url": "https://www.scottishpower.com/userfiles/file/SPM-Schedule-of-charges-and-other-tables-2025-V.0.7-Annex-6.xlsx",
+        "error": "403 Client Error: Forbidden for url: https://www.scottishpower.com/userfiles/file/SPM-Schedule-of-charges-and-other-tables-2025-V.0.7-Annex-6.xlsx"
+      },
+      {
+        "status": "error",
+        "url": "https://www.scottishpower.com/userfiles/file/SPM%202026_27%20CDCM_v11_20241025_Published.xlsx",
+        "error": "403 Client Error: Forbidden for url: https://www.scottishpower.com/userfiles/file/SPM%202026_27%20CDCM_v11_20241025_Published.xlsx"
+      },
+      {
+        "status": "error",
+        "url": "https://www.scottishpower.com/userfiles/file/SPM_2025_26_CDCM_v10_20231106.xlsx",
+        "error": "403 Client Error: Forbidden for url: https://www.scottishpower.com/userfiles/file/SPM_2025_26_CDCM_v10_20231106.xlsx"
+      }
+    ],
+    "SSEN": [
+      {
+        "status": "existing",
+        "count": 11
+      }
+    ],
+    "timestamp": "20250913_151452"
+  },
+  "summary": {
+    "timestamp": "20250913_151452",
+    "total_dnos": 3,
+    "total_files": 22,
+    "success": 0,
+    "existing": 11,
+    "error": 22,
+    "success_rate": 0.0
+  }
+}

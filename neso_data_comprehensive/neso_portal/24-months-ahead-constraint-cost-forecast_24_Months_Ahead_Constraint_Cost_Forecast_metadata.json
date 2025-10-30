@@ -1,0 +1,11 @@
+{
+  "source": "NESO Data Portal",
+  "dataset_id": "24-months-ahead-constraint-cost-forecast",
+  "dataset_title": "24 Months Ahead Constraint Cost Forecast",
+  "resource_id": "28b85d3f-a1cc-4bb9-80af-600f2cca266a",
+  "resource_name": "24 Months Ahead Constraint Cost Forecast",
+  "resource_format": "csv",
+  "last_modified": "2025-10-09T10:18:16.234798",
+  "size": 384,
+  "description": "This dataset contains the 24-month ahead constraint costs on a monthly basis for the main boundaries on the transmission system. These costs are the costs of managing constraint boundaries (for thermal, voltage or stability constraints) plus the cost of meeting the voltage requirements. These costs do not include the cost of managing inertia or the largest loss of infeed.<br>"
+}

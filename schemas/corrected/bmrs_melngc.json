@@ -1,0 +1,37 @@
+[
+    {
+        "name": "boundary",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "dataset",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "margin",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "publishTime",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "settlementDate",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "settlementPeriod",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "startTime",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
+    }
+]

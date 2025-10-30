@@ -176,15 +176,15 @@ def load_impniv() -> pd.DataFrame:
             # Create synthetic data since table doesn't exist or is empty
             dates = pd.date_range(start=CFG.start_date, end=CFG.end_date)
             periods = list(range(1, 49))  # 48 settlement periods per day
-            
+
             # Create a DataFrame with all date/period combinations
             date_period = [(d.date(), p) for d in dates for p in periods]
             synthetic_df = pd.DataFrame(date_period, columns=['settlement_date', 'settlement_period'])
-            
+
             # Add synthetic price and NIV data
             synthetic_df['imbalance_price'] = np.random.normal(50, 15, len(synthetic_df))  # Mean £50/MWh
             synthetic_df['niv'] = np.random.normal(0, 500, len(synthetic_df))  # Mean 0 MWh
-            
+
             return synthetic_df
         return df
     except Exception as e:
@@ -192,15 +192,15 @@ def load_impniv() -> pd.DataFrame:
         # Create synthetic data since table doesn't exist or is empty
         dates = pd.date_range(start=CFG.start_date, end=CFG.end_date)
         periods = list(range(1, 49))  # 48 settlement periods per day
-        
+
         # Create a DataFrame with all date/period combinations
         date_period = [(d.date(), p) for d in dates for p in periods]
         synthetic_df = pd.DataFrame(date_period, columns=['settlement_date', 'settlement_period'])
-        
+
         # Add synthetic price and NIV data
         synthetic_df['imbalance_price'] = np.random.normal(50, 15, len(synthetic_df))  # Mean £50/MWh
         synthetic_df['niv'] = np.random.normal(0, 500, len(synthetic_df))  # Mean 0 MWh
-        
+
         return synthetic_df
 
 def load_demand() -> pd.DataFrame:
@@ -289,7 +289,7 @@ def derive_daily_kpis(bod: pd.DataFrame,
     else:
         bod = bod.dropna(subset=["settlement_date","settlement_period"])
         bod["abs_volume"] = bod["volume"].abs()
-        
+
         # If bid_offer_flag is missing, create it with a default value
         if "bid_offer_flag" not in bod.columns:
             log.warning("bid_offer_flag column missing - creating with default value")
@@ -320,12 +320,12 @@ def derive_daily_kpis(bod: pd.DataFrame,
                         (bod["volume"]<0) &
                         (bod["fuel"].astype(str).str.upper()=="WIND")]
         wind_curt = wind_bids.groupby("settlement_date")["abs_volume"].sum().rename("wind_curtail_mwh")
-        
+
         # Convert settlement_date to same type in both dataframes
         wind_curt = wind_curt.reset_index()
         wind_curt["settlement_date"] = pd.to_datetime(wind_curt["settlement_date"]).dt.date
         daily["settlement_date"] = pd.to_datetime(daily["settlement_date"]).dt.date
-        
+
         daily = daily.merge(wind_curt, on="settlement_date", how="left")
 
     if not imp.empty:
@@ -337,11 +337,11 @@ def derive_daily_kpis(bod: pd.DataFrame,
             total_niv=("niv","sum"),
             avg_abs_niv=("niv", lambda s: s.abs().mean())
         ).reset_index()
-        
+
         # Convert settlement_date to same type in both dataframes
         daily["settlement_date"] = pd.to_datetime(daily["settlement_date"]).dt.date
         imp_day["settlement_date"] = pd.to_datetime(imp_day["settlement_date"]).dt.date
-        
+
         daily = daily.merge(imp_day, on="settlement_date", how="left")
 
     if not demand.empty and "demand" in demand.columns:
@@ -349,10 +349,10 @@ def derive_daily_kpis(bod: pd.DataFrame,
             daily_energy_mwh=("demand", "sum"),
             peak_demand_mw=("demand","max")
         ).reset_index()
-        
+
         # Convert settlement_date to same type in both dataframes
         d_day["settlement_date"] = pd.to_datetime(d_day["settlement_date"]).dt.date
-        
+
         daily = daily.merge(d_day, on="settlement_date", how="left")
 
     if not genmix.empty:
@@ -366,7 +366,7 @@ def derive_daily_kpis(bod: pd.DataFrame,
             wind_day["settlement_date"] = pd.to_datetime(wind_day["settlement_date"]).dt.date
             daily["settlement_date"] = pd.to_datetime(daily["settlement_date"]).dt.date
             daily = daily.merge(wind_day, on="settlement_date", how="left")
-            
+
         total_gen_day = g.groupby("settlement_date")["genmwh"].sum().rename("total_gen_mwh")
         total_gen_day = total_gen_day.reset_index()
         total_gen_day["settlement_date"] = pd.to_datetime(total_gen_day["settlement_date"]).dt.date
@@ -393,14 +393,14 @@ def monthly_rollups(daily: pd.DataFrame) -> pd.DataFrame:
         monthly_cols.append("wind_curtail_mwh")
     if "peak_demand_mw" in daily.columns:
         monthly_cols.append("peak_demand_mw")
-    
+
     # Create a simple monthly dataframe if we don't have enough data
     if all(col not in daily.columns for col in monthly_cols[1:]):
         start = pd.to_datetime(CFG.start_date)
         end = pd.to_datetime(CFG.end_date)
     months = pd.date_range(start=start, end=end, freq='MS')  # 'MS' is month start, not deprecated
         return pd.DataFrame({'ym': months})
-    
+
     aggs = {
         "total_bal_vol": "sum",
         "vw_avg_price": "mean",
@@ -412,30 +412,30 @@ def monthly_rollups(daily: pd.DataFrame) -> pd.DataFrame:
         aggs["wind_curtail_mwh"] = "sum"
     if "peak_demand_mw" in daily.columns:
         aggs["peak_demand_mw"] = "max"
-    
+
     monthly = daily.groupby("ym").agg(aggs).reset_index()
     return monthly
 
 def kpi_table(daily: pd.DataFrame) -> pd.DataFrame:
     metrics = ["Total balancing volume (TWh)"]
     values = [daily["total_bal_vol"].sum()/1e6 if "total_bal_vol" in daily.columns else np.nan]
-    
+
     if "vw_avg_price" in daily.columns:
         metrics.append("Avg volume-weighted price (£/MWh)")
         values.append(daily["vw_avg_price"].mean())
-    
+
     if "max_price" in daily.columns:
         metrics.append("Max accepted price (£/MWh)")
         values.append(daily["max_price"].max())
-    
+
     if "wind_curtail_mwh" in daily.columns:
         metrics.append("Wind curtailment (TWh)")
         values.append(daily["wind_curtail_mwh"].sum()/1e6)
-    
+
     if "avg_abs_niv" in daily.columns:
         metrics.append("Avg daily NIV (abs) (MWh)")
         values.append(daily["avg_abs_niv"].mean())
-    
+
     return pd.DataFrame({
         "Metric": metrics,
         "Value": values
@@ -459,7 +459,7 @@ def plot_trend_bal_volume(daily: pd.DataFrame):
     if "total_bal_vol" not in daily.columns or daily["total_bal_vol"].isna().all():
         log.warning("No balancing volume data available for plotting")
         return None
-    
+
     monthly = daily.groupby("ym").sum(numeric_only=True)
     plt.figure(figsize=(10,5))
     plt.plot(monthly.index, monthly["total_bal_vol"])
@@ -472,7 +472,7 @@ def plot_price_extremes(daily: pd.DataFrame):
     if "vw_avg_price" not in daily.columns or daily["vw_avg_price"].isna().all():
         log.warning("No price data available for plotting")
         return None
-    
+
     plt.figure(figsize=(10,5))
     t = daily.dropna(subset=["vw_avg_price"])
     plt.plot(pd.to_datetime(t["settlement_date"]), t["vw_avg_price"])
@@ -485,12 +485,12 @@ def plot_wind_vs_balancing(daily: pd.DataFrame):
     if "wind_mwh" not in daily.columns or "total_bal_vol" not in daily.columns:
         log.warning("No wind or balancing volume data available for plotting")
         return None
-    
+
     t = daily.dropna(subset=["wind_mwh","total_bal_vol"])
     if t.empty:
         log.warning("No wind vs balancing data available for plotting after removing NaNs")
         return None
-    
+
     plt.figure(figsize=(7,6))
     plt.scatter(t["wind_mwh"], t["total_bal_vol"], alpha=0.3)
     plt.title("Wind MWh vs Balancing Volume (Daily)")
@@ -502,14 +502,14 @@ def plot_curtailment_share(daily: pd.DataFrame):
     if "wind_curtail_mwh" not in daily.columns or "wind_mwh" not in daily.columns:
         log.warning("No wind curtailment data available for plotting")
         return None
-    
+
     m = daily.copy()
     m["ratio"] = m["wind_curtail_mwh"] / (m["wind_mwh"] + 1e-9)
     s = m.groupby("ym")["ratio"].mean()
     if s.empty or s.isna().all():
         log.warning("No valid curtailment ratios available for plotting")
         return None
-    
+
     plt.figure(figsize=(10,5))
     plt.plot(s.index, s.values)
     plt.title("Average Wind Curtailment Share (Monthly)")
@@ -521,13 +521,13 @@ def plot_price_histogram(daily: pd.DataFrame):
     if "max_price" not in daily.columns or daily["max_price"].isna().all():
         log.warning("No price data available for histogram")
         return None
-    
+
     plt.figure(figsize=(8,5))
     x = daily["max_price"].dropna().clip(-500, 4000)
     if x.empty:
         log.warning("No valid price data for histogram after filtering")
         return None
-    
+
     plt.hist(x, bins=60)
     plt.title("Distribution of Daily Max Accepted Prices")
     plt.xlabel("£/MWh")
@@ -552,7 +552,7 @@ def docs_create(docs, title: str) -> str:
 def docs_insert_text(docs, doc_id: str, text: str, heading: Optional[str]=None):
     if docs is None or doc_id is None:
         return
-    
+
     try:
         reqs = []
         if heading:
@@ -573,7 +573,7 @@ def drive_upload_image(drive, path: str, parent_folder_id: Optional[str]) -> str
     if drive is None:
         log.warning("Google Drive client not available - skipping image upload")
         return None
-    
+
     try:
         file_metadata = {"name": pathlib.Path(path).name}
         if parent_folder_id:
@@ -592,7 +592,7 @@ def drive_upload_image(drive, path: str, parent_folder_id: Optional[str]) -> str
 def docs_insert_image(docs, doc_id: str, image_uri: str, caption: Optional[str]=None):
     if docs is None or doc_id is None or image_uri is None:
         return
-    
+
     try:
         reqs = [{
             "insertInlineImage": {
@@ -613,7 +613,7 @@ def docs_insert_image(docs, doc_id: str, image_uri: str, caption: Optional[str]=
 
 def run():
     log.info(f"BQ window: {CFG.start_date} → {CFG.end_date}")
-    
+
     # First, check tables and get schema
     for table_name in [CFG.tbl_bod, CFG.tbl_impniv, CFG.tbl_demand, CFG.tbl_genmix]:
         try:
@@ -622,24 +622,24 @@ def run():
             log.info(f"Available columns in {table_name}: {schema_df.columns.tolist()}")
         except Exception as e:
             log.warning(f"Could not get schema for {table_name}: {e}")
-    
+
     # Load data
     bod = load_bod()
     imp = load_impniv()
     dem = load_demand()
     mix = load_genmix()
     bmap = load_bmunit_map()
-    
+
     log.info(f"Data loaded - BOD: {len(bod)} rows, Imbalance: {len(imp)} rows, Demand: {len(dem)} rows, GenMix: {len(mix)} rows")
 
     log.info("Computing KPIs...")
     daily = derive_daily_kpis(bod, imp, dem, mix, bmap)
-    
+
     # Ensure output directories exist
     os.makedirs(CFG.out_dir, exist_ok=True)
     os.makedirs(CFG.tables_dir, exist_ok=True)
     os.makedirs(CFG.charts_dir, exist_ok=True)
-    
+
     daily.to_csv(f"{CFG.tables_dir}/daily_kpis.csv", index=False)
     log.info(f"Saved daily KPIs to {CFG.tables_dir}/daily_kpis.csv")
 
@@ -658,11 +658,11 @@ def run():
         f.write("HEADLINE KPIs\n")
         f.write("-" * 80 + "\n")
         f.write(kpis.to_string(index=False) + "\n\n")
-        
+
         f.write("MONTHLY TRENDS\n")
         f.write("-" * 80 + "\n")
         f.write(monthly.to_string(index=False) + "\n\n")
-        
+
         f.write("DATA SOURCES\n")
         f.write("-" * 80 + "\n")
         f.write(f"Project: {CFG.gcp_project}\n")
@@ -671,26 +671,26 @@ def run():
         f.write(f"Imbalance/NIV table: {CFG.tbl_impniv} ({len(imp)} rows)\n")
         f.write(f"Demand table: {CFG.tbl_demand} ({len(dem)} rows)\n")
         f.write(f"Generation Mix table: {CFG.tbl_genmix} ({len(mix)} rows)\n")
-    
+
     log.info(f"Saved human-readable summary to {CFG.out_dir}/kpi_summary.txt")
 
     log.info("Generating charts...")
     charts = []
     c1 = plot_trend_bal_volume(daily)
     if c1: charts.append((c1, "Monthly balancing volume"))
-    
+
     c2 = plot_price_extremes(daily)
     if c2: charts.append((c2, "Daily VW price"))
-    
+
     c3 = plot_wind_vs_balancing(daily)
     if c3: charts.append((c3, "Wind vs Balancing Volume (daily)"))
-    
+
     c4 = plot_curtailment_share(daily)
     if c4: charts.append((c4, "Wind curtailment share (monthly)"))
-    
+
     c5 = plot_price_histogram(daily)
     if c5: charts.append((c5, "Distribution of daily max accepted prices"))
-    
+
     log.info(f"Generated {len(charts)} charts in {CFG.charts_dir}")
 
     # Only try to create Google Doc if we have credentials
@@ -704,9 +704,9 @@ def run():
         if doc_id:
             # Executive summary
             total_twh = float(kpis.loc[kpis["Metric"].eq("Total balancing volume (TWh)"), "Value"].values[0]) if "Total balancing volume (TWh)" in kpis["Metric"].values else 0
-            
+
             avg_vw = float(kpis.loc[kpis["Metric"].eq("Avg volume-weighted price (£/MWh)"), "Value"].values[0]) if "Avg volume-weighted price (£/MWh)" in kpis["Metric"].values else 0
-            
+
             max_px = float(kpis.loc[kpis["Metric"].eq("Max accepted price (£/MWh)"), "Value"].values[0]) if "Max accepted price (£/MWh)" in kpis["Metric"].values else 0
 
             summary = (
@@ -749,7 +749,7 @@ def run():
 
             log.info(f"Report: https://docs.google.com/document/d/{doc_id}/edit")
             print("Google Doc:", f"https://docs.google.com/document/d/{doc_id}/edit")
-    
+
     log.info(f"Analysis complete. See results in {CFG.out_dir}/")
     print(f"Analysis complete. See results in {CFG.out_dir}/")
     print(f"KPI Summary: {CFG.out_dir}/kpi_summary.txt")
@@ -763,7 +763,7 @@ if __name__ == "__main__":
     parser.add_argument("--start-date", type=str, help="Start date for analysis in YYYY-MM-DD format")
     parser.add_argument("--end-date", type=str, help="End date for analysis in YYYY-MM-DD format")
     args = parser.parse_args()
-    
+
     # Create a new run function that respects the command line arguments
     def main():
         # If --no-gdoc is provided, temporarily set the credentials to None
@@ -772,21 +772,21 @@ if __name__ == "__main__":
             original_creds = CFG.google_project_credentials
             CFG.google_project_credentials = None
             log.info("Google Doc report generation disabled via --no-gdoc flag")
-        
+
         # If date range is provided, update the config
         if args.start_date:
             CFG.start_date = args.start_date
             log.info(f"Start date set to {CFG.start_date} via command line")
-        
+
         if args.end_date:
             CFG.end_date = args.end_date
             log.info(f"End date set to {CFG.end_date} via command line")
-        
+
         try:
             run()
         finally:
             # Restore the original credentials
             if args.no_gdoc and original_creds:
                 CFG.google_project_credentials = original_creds
-    
+
     main()

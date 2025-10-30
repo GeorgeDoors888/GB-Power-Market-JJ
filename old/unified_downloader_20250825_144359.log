@@ -1,0 +1,163 @@
+2025-08-25 14:43:59,729 - unified_downloader - INFO - ✅ Loaded Elexon API key from api.env file.
+2025-08-25 14:43:59,733 - unified_downloader - INFO - ✅ Authenticated with GCS and connected to bucket: jibber-jabber-knowledge-bmrs-data
+2025-08-25 14:43:59,735 - unified_downloader - INFO - 🚀 Starting download of all 53 Elexon datasets...
+2025-08-25 14:43:59,743 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: METADATA from 2025-07-01 to 2025-07-07
+2025-08-25 14:43:59,746 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: BOAL from 2025-07-01 to 2025-07-07
+2025-08-25 14:43:59,746 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: BOD from 2025-07-01 to 2025-07-07
+2025-08-25 14:43:59,747 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: DISBSAD from 2025-07-01 to 2025-07-07
+2025-08-25 14:43:59,747 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: FOU2T14D from 2025-07-01 to 2025-07-07
+2025-08-25 14:44:00,049 - unified_downloader - ERROR - ❌ Error downloading METADATA for 2025-07-01 to 2025-07-07: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/METADATA?from=2025-07-01&to=2025-07-07&format=json&apiKey=x1~8Q~lvOVm4H7jfQVZXtiCal47_vdYoLWjEla~P
+2025-08-25 14:44:00,059 - unified_downloader - ERROR - ❌ Error downloading BOAL for 2025-07-01 to 2025-07-07: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/BOAL?from=2025-07-01&to=2025-07-07&format=json&apiKey=x1~8Q~lvOVm4H7jfQVZXtiCal47_vdYoLWjEla~P
+2025-08-25 14:44:00,063 - unified_downloader - ERROR - ❌ Error downloading DISBSAD for 2025-07-01 to 2025-07-07: 400 Client Error: Bad Request for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/DISBSAD?from=2025-07-01&to=2025-07-07&format=json&apiKey=x1~8Q~lvOVm4H7jfQVZXtiCal47_vdYoLWjEla~P
+2025-08-25 14:44:00,063 - unified_downloader - ERROR - ❌ Error downloading BOD for 2025-07-01 to 2025-07-07: 400 Client Error: Bad Request for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/BOD?from=2025-07-01&to=2025-07-07&format=json&apiKey=x1~8Q~lvOVm4H7jfQVZXtiCal47_vdYoLWjEla~P
+2025-08-25 14:44:00,845 - unified_downloader - INFO - ✅ Uploaded to gs://jibber-jabber-knowledge-bmrs-data/elexon/FOU2T14D/2025/07/FOU2T14D_2025-07-01_2025-07-07.json
+2025-08-25 14:44:01,050 - unified_downloader - INFO - ✅ Completed download of Elexon dataset METADATA: 0 files
+2025-08-25 14:44:01,051 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: FOU2T3YW from 2025-07-01 to 2025-07-07
+2025-08-25 14:44:01,059 - unified_downloader - INFO - ✅ Completed download of Elexon dataset BOAL: 0 files
+2025-08-25 14:44:01,060 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: FOUT2T14D from 2025-07-01 to 2025-07-07
+2025-08-25 14:44:01,066 - unified_downloader - INFO - ✅ Completed download of Elexon dataset DISBSAD: 0 files
+2025-08-25 14:44:01,067 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: FREQ from 2025-07-01 to 2025-07-07
+2025-08-25 14:44:01,067 - unified_downloader - INFO - ✅ Completed download of Elexon dataset BOD: 0 files
+2025-08-25 14:44:01,068 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: FUELHH from 2025-07-01 to 2025-07-07
+2025-08-25 14:44:01,074 - unified_downloader - ERROR - ❌ Error downloading FOUT2T14D for 2025-07-01 to 2025-07-07: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/FOUT2T14D?from=2025-07-01&to=2025-07-07&format=json&apiKey=x1~8Q~lvOVm4H7jfQVZXtiCal47_vdYoLWjEla~P
+2025-08-25 14:44:01,706 - unified_downloader - INFO - ✅ Uploaded to gs://jibber-jabber-knowledge-bmrs-data/elexon/FUELHH/2025/07/FUELHH_2025-07-01_2025-07-07.json
+2025-08-25 14:44:01,860 - unified_downloader - INFO - ✅ Completed download of Elexon dataset FOU2T14D: 1 files
+2025-08-25 14:44:01,860 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: FUELINST from 2025-07-01 to 2025-07-07
+2025-08-25 14:44:02,088 - unified_downloader - INFO - ✅ Completed download of Elexon dataset FOUT2T14D: 0 files
+2025-08-25 14:44:02,089 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: IMBALNGC from 2025-07-01 to 2025-07-07
+2025-08-25 14:44:02,113 - unified_downloader - INFO - ✅ Uploaded to gs://jibber-jabber-knowledge-bmrs-data/elexon/FREQ/2025/07/FREQ_2025-07-01_2025-07-07.json
+2025-08-25 14:44:02,179 - unified_downloader - INFO - ✅ Uploaded to gs://jibber-jabber-knowledge-bmrs-data/elexon/FOU2T3YW/2025/07/FOU2T3YW_2025-07-01_2025-07-07.json
+2025-08-25 14:44:02,721 - unified_downloader - INFO - ✅ Completed download of Elexon dataset FUELHH: 1 files
+2025-08-25 14:44:02,722 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: INDDEM from 2025-07-01 to 2025-07-07
+2025-08-25 14:44:02,865 - unified_downloader - INFO - ✅ Uploaded to gs://jibber-jabber-knowledge-bmrs-data/elexon/FUELINST/2025/07/FUELINST_2025-07-01_2025-07-07.json
+2025-08-25 14:44:02,937 - unified_downloader - INFO - ✅ Uploaded to gs://jibber-jabber-knowledge-bmrs-data/elexon/IMBALNGC/2025/07/IMBALNGC_2025-07-01_2025-07-07.json
+2025-08-25 14:44:03,120 - unified_downloader - INFO - ✅ Completed download of Elexon dataset FREQ: 1 files
+2025-08-25 14:44:03,121 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: INDGEN from 2025-07-01 to 2025-07-07
+2025-08-25 14:44:03,184 - unified_downloader - INFO - ✅ Completed download of Elexon dataset FOU2T3YW: 1 files
+2025-08-25 14:44:03,186 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: INDO from 2025-07-01 to 2025-07-07
+2025-08-25 14:44:03,389 - unified_downloader - INFO - ✅ Uploaded to gs://jibber-jabber-knowledge-bmrs-data/elexon/INDO/2025/07/INDO_2025-07-01_2025-07-07.json
+2025-08-25 14:44:03,465 - unified_downloader - INFO - ✅ Uploaded to gs://jibber-jabber-knowledge-bmrs-data/elexon/INDDEM/2025/07/INDDEM_2025-07-01_2025-07-07.json
+2025-08-25 14:44:03,867 - unified_downloader - INFO - ✅ Completed download of Elexon dataset FUELINST: 1 files
+2025-08-25 14:44:03,869 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: ITSDO from 2025-07-01 to 2025-07-07
+2025-08-25 14:44:03,872 - unified_downloader - INFO - ✅ Uploaded to gs://jibber-jabber-knowledge-bmrs-data/elexon/INDGEN/2025/07/INDGEN_2025-07-01_2025-07-07.json
+2025-08-25 14:44:03,939 - unified_downloader - INFO - ✅ Completed download of Elexon dataset IMBALNGC: 1 files
+2025-08-25 14:44:03,940 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: MELNGC from 2025-07-01 to 2025-07-07
+2025-08-25 14:44:04,065 - unified_downloader - INFO - ✅ Uploaded to gs://jibber-jabber-knowledge-bmrs-data/elexon/ITSDO/2025/07/ITSDO_2025-07-01_2025-07-07.json
+2025-08-25 14:44:04,391 - unified_downloader - INFO - ✅ Completed download of Elexon dataset INDO: 1 files
+2025-08-25 14:44:04,392 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: MID from 2025-07-01 to 2025-07-07
+2025-08-25 14:44:04,469 - unified_downloader - INFO - ✅ Completed download of Elexon dataset INDDEM: 1 files
+2025-08-25 14:44:04,470 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: MILS from 2025-07-01 to 2025-07-07
+2025-08-25 14:44:04,493 - unified_downloader - ERROR - ❌ Error downloading MILS for 2025-07-01 to 2025-07-07: 400 Client Error: Bad Request for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/MILS?from=2025-07-01&to=2025-07-07&format=json&apiKey=x1~8Q~lvOVm4H7jfQVZXtiCal47_vdYoLWjEla~P
+2025-08-25 14:44:04,656 - unified_downloader - INFO - ✅ Uploaded to gs://jibber-jabber-knowledge-bmrs-data/elexon/MELNGC/2025/07/MELNGC_2025-07-01_2025-07-07.json
+2025-08-25 14:44:04,852 - unified_downloader - INFO - ✅ Uploaded to gs://jibber-jabber-knowledge-bmrs-data/elexon/MID/2025/07/MID_2025-07-01_2025-07-07.json
+2025-08-25 14:44:04,873 - unified_downloader - INFO - ✅ Completed download of Elexon dataset INDGEN: 1 files
+2025-08-25 14:44:04,874 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: MELS from 2025-07-01 to 2025-07-07
+2025-08-25 14:44:04,889 - unified_downloader - ERROR - ❌ Error downloading MELS for 2025-07-01 to 2025-07-07: 400 Client Error: Bad Request for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/MELS?from=2025-07-01&to=2025-07-07&format=json&apiKey=x1~8Q~lvOVm4H7jfQVZXtiCal47_vdYoLWjEla~P
+2025-08-25 14:44:05,070 - unified_downloader - INFO - ✅ Completed download of Elexon dataset ITSDO: 1 files
+2025-08-25 14:44:05,070 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: MDP from 2025-07-01 to 2025-07-07
+2025-08-25 14:44:05,101 - unified_downloader - WARNING - ⚠️ No data returned for MDP from 2025-07-01 to 2025-07-07
+2025-08-25 14:44:05,495 - unified_downloader - INFO - ✅ Completed download of Elexon dataset MILS: 0 files
+2025-08-25 14:44:05,499 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: MDV from 2025-07-01 to 2025-07-07
+2025-08-25 14:44:05,529 - unified_downloader - WARNING - ⚠️ No data returned for MDV from 2025-07-01 to 2025-07-07
+2025-08-25 14:44:05,658 - unified_downloader - INFO - ✅ Completed download of Elexon dataset MELNGC: 1 files
+2025-08-25 14:44:05,661 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: MNZT from 2025-07-01 to 2025-07-07
+2025-08-25 14:44:05,922 - unified_downloader - INFO - ✅ Completed download of Elexon dataset MELS: 0 files
+2025-08-25 14:44:05,921 - unified_downloader - INFO - ✅ Completed download of Elexon dataset MID: 1 files
+2025-08-25 14:44:05,927 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: MZT from 2025-07-01 to 2025-07-07
+2025-08-25 14:44:05,929 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: NETBSAD from 2025-07-01 to 2025-07-07
+2025-08-25 14:44:06,065 - unified_downloader - INFO - ✅ Uploaded to gs://jibber-jabber-knowledge-bmrs-data/elexon/MNZT/2025/07/MNZT_2025-07-01_2025-07-07.json
+2025-08-25 14:44:06,106 - unified_downloader - INFO - ✅ Completed download of Elexon dataset MDP: 0 files
+2025-08-25 14:44:06,106 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: NDF from 2025-07-01 to 2025-07-07
+2025-08-25 14:44:06,278 - unified_downloader - INFO - ✅ Uploaded to gs://jibber-jabber-knowledge-bmrs-data/elexon/MZT/2025/07/MZT_2025-07-01_2025-07-07.json
+2025-08-25 14:44:06,395 - unified_downloader - INFO - ✅ Uploaded to gs://jibber-jabber-knowledge-bmrs-data/elexon/NDF/2025/07/NDF_2025-07-01_2025-07-07.json
+2025-08-25 14:44:06,532 - unified_downloader - INFO - ✅ Completed download of Elexon dataset MDV: 0 files
+2025-08-25 14:44:06,532 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: NDFD from 2025-07-01 to 2025-07-07
+2025-08-25 14:44:06,554 - unified_downloader - INFO - ✅ Uploaded to gs://jibber-jabber-knowledge-bmrs-data/elexon/NETBSAD/2025/07/NETBSAD_2025-07-01_2025-07-07.json
+2025-08-25 14:44:06,745 - unified_downloader - INFO - ✅ Uploaded to gs://jibber-jabber-knowledge-bmrs-data/elexon/NDFD/2025/07/NDFD_2025-07-01_2025-07-07.json
+2025-08-25 14:44:07,071 - unified_downloader - INFO - ✅ Completed download of Elexon dataset MNZT: 1 files
+2025-08-25 14:44:07,073 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: NDFW from 2025-07-01 to 2025-07-07
+2025-08-25 14:44:07,283 - unified_downloader - INFO - ✅ Completed download of Elexon dataset MZT: 1 files
+2025-08-25 14:44:07,285 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: NONBM from 2025-07-01 to 2025-07-07
+2025-08-25 14:44:07,348 - unified_downloader - INFO - ✅ Uploaded to gs://jibber-jabber-knowledge-bmrs-data/elexon/NDFW/2025/07/NDFW_2025-07-01_2025-07-07.json
+2025-08-25 14:44:07,398 - unified_downloader - INFO - ✅ Completed download of Elexon dataset NDF: 1 files
+2025-08-25 14:44:07,398 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: NOU2T14D from 2025-07-01 to 2025-07-07
+2025-08-25 14:44:07,556 - unified_downloader - INFO - ✅ Completed download of Elexon dataset NETBSAD: 1 files
+2025-08-25 14:44:07,558 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: NOU2T3YW from 2025-07-01 to 2025-07-07
+2025-08-25 14:44:07,639 - unified_downloader - INFO - ✅ Uploaded to gs://jibber-jabber-knowledge-bmrs-data/elexon/NONBM/2025/07/NONBM_2025-07-01_2025-07-07.json
+2025-08-25 14:44:07,747 - unified_downloader - INFO - ✅ Completed download of Elexon dataset NDFD: 1 files
+2025-08-25 14:44:07,757 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: NTB from 2025-07-01 to 2025-07-07
+2025-08-25 14:44:07,800 - unified_downloader - INFO - ✅ Uploaded to gs://jibber-jabber-knowledge-bmrs-data/elexon/NOU2T14D/2025/07/NOU2T14D_2025-07-01_2025-07-07.json
+2025-08-25 14:44:07,894 - unified_downloader - INFO - ✅ Uploaded to gs://jibber-jabber-knowledge-bmrs-data/elexon/NOU2T3YW/2025/07/NOU2T3YW_2025-07-01_2025-07-07.json
+2025-08-25 14:44:08,015 - unified_downloader - INFO - ✅ Uploaded to gs://jibber-jabber-knowledge-bmrs-data/elexon/NTB/2025/07/NTB_2025-07-01_2025-07-07.json
+2025-08-25 14:44:08,348 - unified_downloader - INFO - ✅ Completed download of Elexon dataset NDFW: 1 files
+2025-08-25 14:44:08,350 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: NTO from 2025-07-01 to 2025-07-07
+2025-08-25 14:44:08,638 - unified_downloader - INFO - ✅ Uploaded to gs://jibber-jabber-knowledge-bmrs-data/elexon/NTO/2025/07/NTO_2025-07-01_2025-07-07.json
+2025-08-25 14:44:08,640 - unified_downloader - INFO - ✅ Completed download of Elexon dataset NONBM: 1 files
+2025-08-25 14:44:08,642 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: NDZ from 2025-07-01 to 2025-07-07
+2025-08-25 14:44:08,802 - unified_downloader - INFO - ✅ Completed download of Elexon dataset NOU2T14D: 1 files
+2025-08-25 14:44:08,805 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: OCNMF3Y from 2025-07-01 to 2025-07-07
+2025-08-25 14:44:08,896 - unified_downloader - INFO - ✅ Completed download of Elexon dataset NOU2T3YW: 1 files
+2025-08-25 14:44:08,897 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: OCNMF3Y2 from 2025-07-01 to 2025-07-07
+2025-08-25 14:44:09,016 - unified_downloader - INFO - ✅ Completed download of Elexon dataset NTB: 1 files
+2025-08-25 14:44:09,020 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: OCNMFD from 2025-07-01 to 2025-07-07
+2025-08-25 14:44:09,081 - unified_downloader - INFO - ✅ Uploaded to gs://jibber-jabber-knowledge-bmrs-data/elexon/OCNMF3Y/2025/07/OCNMF3Y_2025-07-01_2025-07-07.json
+2025-08-25 14:44:09,151 - unified_downloader - INFO - ✅ Uploaded to gs://jibber-jabber-knowledge-bmrs-data/elexon/OCNMF3Y2/2025/07/OCNMF3Y2_2025-07-01_2025-07-07.json
+2025-08-25 14:44:09,213 - unified_downloader - INFO - ✅ Uploaded to gs://jibber-jabber-knowledge-bmrs-data/elexon/NDZ/2025/07/NDZ_2025-07-01_2025-07-07.json
+2025-08-25 14:44:09,425 - unified_downloader - INFO - ✅ Uploaded to gs://jibber-jabber-knowledge-bmrs-data/elexon/OCNMFD/2025/07/OCNMFD_2025-07-01_2025-07-07.json
+2025-08-25 14:44:09,645 - unified_downloader - INFO - ✅ Completed download of Elexon dataset NTO: 1 files
+2025-08-25 14:44:09,647 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: OCNMFD2 from 2025-07-01 to 2025-07-07
+2025-08-25 14:44:09,972 - unified_downloader - INFO - ✅ Uploaded to gs://jibber-jabber-knowledge-bmrs-data/elexon/OCNMFD2/2025/07/OCNMFD2_2025-07-01_2025-07-07.json
+2025-08-25 14:44:10,092 - unified_downloader - INFO - ✅ Completed download of Elexon dataset OCNMF3Y: 1 files
+2025-08-25 14:44:10,098 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: PN from 2025-07-01 to 2025-07-07
+2025-08-25 14:44:10,175 - unified_downloader - INFO - ✅ Completed download of Elexon dataset OCNMF3Y2: 1 files
+2025-08-25 14:44:10,243 - unified_downloader - INFO - ✅ Completed download of Elexon dataset NDZ: 1 files
+2025-08-25 14:44:10,245 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: QAS from 2025-07-01 to 2025-07-07
+2025-08-25 14:44:10,248 - unified_downloader - ERROR - ❌ Error downloading PN for 2025-07-01 to 2025-07-07: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/PN?from=2025-07-01&to=2025-07-07&format=json&apiKey=x1~8Q~lvOVm4H7jfQVZXtiCal47_vdYoLWjEla~P
+2025-08-25 14:44:10,252 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: QPN from 2025-07-01 to 2025-07-07
+2025-08-25 14:44:10,288 - unified_downloader - ERROR - ❌ Error downloading QAS for 2025-07-01 to 2025-07-07: 400 Client Error: Bad Request for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/QAS?from=2025-07-01&to=2025-07-07&format=json&apiKey=x1~8Q~lvOVm4H7jfQVZXtiCal47_vdYoLWjEla~P
+2025-08-25 14:44:10,289 - unified_downloader - ERROR - ❌ Error downloading QPN for 2025-07-01 to 2025-07-07: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/QPN?from=2025-07-01&to=2025-07-07&format=json&apiKey=x1~8Q~lvOVm4H7jfQVZXtiCal47_vdYoLWjEla~P
+2025-08-25 14:44:10,428 - unified_downloader - INFO - ✅ Completed download of Elexon dataset OCNMFD: 1 files
+2025-08-25 14:44:10,429 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: RDRE from 2025-07-01 to 2025-07-07
+2025-08-25 14:44:10,897 - unified_downloader - INFO - ✅ Uploaded to gs://jibber-jabber-knowledge-bmrs-data/elexon/RDRE/2025/07/RDRE_2025-07-01_2025-07-07.json
+2025-08-25 14:44:10,978 - unified_downloader - INFO - ✅ Completed download of Elexon dataset OCNMFD2: 1 files
+2025-08-25 14:44:10,979 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: RDRI from 2025-07-01 to 2025-07-07
+2025-08-25 14:44:11,009 - unified_downloader - WARNING - ⚠️ No data returned for RDRI from 2025-07-01 to 2025-07-07
+2025-08-25 14:44:11,269 - unified_downloader - INFO - ✅ Completed download of Elexon dataset PN: 0 files
+2025-08-25 14:44:11,270 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: RURE from 2025-07-01 to 2025-07-07
+2025-08-25 14:44:11,292 - unified_downloader - INFO - ✅ Completed download of Elexon dataset QPN: 0 files
+2025-08-25 14:44:11,292 - unified_downloader - INFO - ✅ Completed download of Elexon dataset QAS: 0 files
+2025-08-25 14:44:11,293 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: RURI from 2025-07-01 to 2025-07-07
+2025-08-25 14:44:11,293 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: SEL from 2025-07-01 to 2025-07-07
+2025-08-25 14:44:11,513 - unified_downloader - INFO - ✅ Uploaded to gs://jibber-jabber-knowledge-bmrs-data/elexon/RURI/2025/07/RURI_2025-07-01_2025-07-07.json
+2025-08-25 14:44:11,900 - unified_downloader - INFO - ✅ Completed download of Elexon dataset RDRE: 1 files
+2025-08-25 14:44:11,902 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: SIL from 2025-07-01 to 2025-07-07
+2025-08-25 14:44:11,915 - unified_downloader - INFO - ✅ Uploaded to gs://jibber-jabber-knowledge-bmrs-data/elexon/SEL/2025/07/SEL_2025-07-01_2025-07-07.json
+2025-08-25 14:44:11,948 - unified_downloader - INFO - ✅ Uploaded to gs://jibber-jabber-knowledge-bmrs-data/elexon/RURE/2025/07/RURE_2025-07-01_2025-07-07.json
+2025-08-25 14:44:12,016 - unified_downloader - INFO - ✅ Completed download of Elexon dataset RDRI: 0 files
+2025-08-25 14:44:12,020 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: TEMP from 2025-07-01 to 2025-07-07
+2025-08-25 14:44:12,299 - unified_downloader - INFO - ✅ Uploaded to gs://jibber-jabber-knowledge-bmrs-data/elexon/TEMP/2025/07/TEMP_2025-07-01_2025-07-07.json
+2025-08-25 14:44:12,300 - unified_downloader - INFO - ✅ Uploaded to gs://jibber-jabber-knowledge-bmrs-data/elexon/SIL/2025/07/SIL_2025-07-01_2025-07-07.json
+2025-08-25 14:44:12,519 - unified_downloader - INFO - ✅ Completed download of Elexon dataset RURI: 1 files
+2025-08-25 14:44:12,532 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: TSDF from 2025-07-01 to 2025-07-07
+2025-08-25 14:44:12,919 - unified_downloader - INFO - ✅ Completed download of Elexon dataset SEL: 1 files
+2025-08-25 14:44:12,931 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: TSDFD from 2025-07-01 to 2025-07-07
+2025-08-25 14:44:12,951 - unified_downloader - INFO - ✅ Completed download of Elexon dataset RURE: 1 files
+2025-08-25 14:44:12,955 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: TSDFW from 2025-07-01 to 2025-07-07
+2025-08-25 14:44:13,134 - unified_downloader - INFO - ✅ Uploaded to gs://jibber-jabber-knowledge-bmrs-data/elexon/TSDFD/2025/07/TSDFD_2025-07-01_2025-07-07.json
+2025-08-25 14:44:13,176 - unified_downloader - INFO - ✅ Uploaded to gs://jibber-jabber-knowledge-bmrs-data/elexon/TSDFW/2025/07/TSDFW_2025-07-01_2025-07-07.json
+2025-08-25 14:44:13,307 - unified_downloader - INFO - ✅ Completed download of Elexon dataset TEMP: 1 files
+2025-08-25 14:44:13,309 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: UOU2T14D from 2025-07-01 to 2025-07-07
+2025-08-25 14:44:13,308 - unified_downloader - INFO - ✅ Completed download of Elexon dataset SIL: 1 files
+2025-08-25 14:44:13,318 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: UOU2T3YW from 2025-07-01 to 2025-07-07
+2025-08-25 14:44:13,404 - unified_downloader - INFO - ✅ Uploaded to gs://jibber-jabber-knowledge-bmrs-data/elexon/TSDF/2025/07/TSDF_2025-07-01_2025-07-07.json
+2025-08-25 14:44:14,692 - unified_downloader - INFO - ✅ Completed download of Elexon dataset TSDFW: 1 files
+2025-08-25 14:44:14,701 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: WINDFOR from 2025-07-01 to 2025-07-07
+2025-08-25 14:44:14,713 - unified_downloader - INFO - ✅ Uploaded to gs://jibber-jabber-knowledge-bmrs-data/elexon/UOU2T14D/2025/07/UOU2T14D_2025-07-01_2025-07-07.json
+2025-08-25 14:44:14,935 - unified_downloader - INFO - ✅ Completed download of Elexon dataset TSDF: 1 files
+2025-08-25 14:44:14,936 - unified_downloader - INFO - ✅ Completed download of Elexon dataset TSDFD: 1 files
+2025-08-25 14:44:15,508 - unified_downloader - INFO - ✅ Uploaded to gs://jibber-jabber-knowledge-bmrs-data/elexon/WINDFOR/2025/07/WINDFOR_2025-07-01_2025-07-07.json
+2025-08-25 14:44:16,263 - unified_downloader - INFO - ✅ Completed download of Elexon dataset UOU2T14D: 1 files
+2025-08-25 14:44:16,510 - unified_downloader - INFO - ✅ Completed download of Elexon dataset WINDFOR: 1 files
+2025-08-25 14:44:21,666 - unified_downloader - INFO - ✅ Uploaded to gs://jibber-jabber-knowledge-bmrs-data/elexon/UOU2T3YW/2025/07/UOU2T3YW_2025-07-01_2025-07-07.json
+2025-08-25 14:44:22,672 - unified_downloader - INFO - ✅ Completed download of Elexon dataset UOU2T3YW: 1 files
+2025-08-25 14:44:22,812 - unified_downloader - INFO - 🎉 All download tasks completed.

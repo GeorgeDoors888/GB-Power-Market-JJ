@@ -1,0 +1,136 @@
+DUoS ENHANCED DATA ANALYSIS REPORT V3
+===================================
+
+Analysis Date: 2025-09-14 18:18:21
+
+SUMMARY STATISTICS
+-----------------
+
+Total files processed: 159
+Total rate entries found: 1874
+
+DNO COVERAGE
+-----------
+
+SSEN Southern: 750 entries
+SSEN Hydro: 330 entries
+National Grid East Midlands: 165 entries
+Northern Powergrid Northeast: 158 entries
+Northern Powergrid Yorkshire: 153 entries
+National Grid South Wales: 88 entries
+National Grid South West: 86 entries
+Electricity North West: 78 entries
+Unknown: 66 entries
+
+YEAR COVERAGE
+------------
+
+2014: 42 entries
+2015: 32 entries
+2016: 33 entries
+2017: 40 entries
+2018: 39 entries
+2019: 40 entries
+2020: 232 entries
+2021: 242 entries
+2022: 289 entries
+2023: 295 entries
+2024: 250 entries
+2025: 177 entries
+2026: 163 entries
+
+BAND RATES SUMMARY
+-----------------
+
+RED Band:
+  Time periods (sample): 16:00-19:00 (weekdays) (default)
+  Minimum rate: 0.0010 p/kWh
+  Maximum rate: 47.3841 p/kWh
+  Average mean rate: 2.4265 p/kWh
+  Average median rate: 1.5970 p/kWh
+
+AMBER Band:
+  Time periods (sample): 07:00-16:00, 19:00-23:00 (weekdays) (default)
+  Minimum rate: 0.0003 p/kWh
+  Maximum rate: 47.6381 p/kWh
+  Average mean rate: 2.6251 p/kWh
+  Average median rate: 2.1896 p/kWh
+
+GREEN Band:
+  Time periods (sample): 23:00-07:00 (all days), all day (weekends) (default)
+  Minimum rate: 0.0000 p/kWh
+  Maximum rate: 47.2657 p/kWh
+  Average mean rate: 3.5519 p/kWh
+  Average median rate: 1.9978 p/kWh
+
+DNO RATE COMPARISON
+------------------
+
+Northern Powergrid Northeast:
+  RED Band: 2.6176 p/kWh (avg)
+    Time period: 16:00-19:00 (weekdays) (default)
+  AMBER Band: 4.8878 p/kWh (avg)
+    Time period: 07:00-16:00, 19:00-23:00 (weekdays) (default)
+  GREEN Band: 5.0513 p/kWh (avg)
+    Time period: 23:00-07:00 (all days), all day (weekends) (default)
+
+Electricity North West:
+  RED Band: 2.5741 p/kWh (avg)
+    Time period: 16:00-19:00 (weekdays) (default)
+  AMBER Band: 2.4709 p/kWh (avg)
+    Time period: 07:00-16:00, 19:00-23:00 (weekdays) (default)
+  GREEN Band: 3.2055 p/kWh (avg)
+    Time period: 23:00-07:00 (all days), all day (weekends) (default)
+
+SSEN Hydro:
+  RED Band: 1.5867 p/kWh (avg)
+    Time period: 16:00-19:00 (weekdays) (default)
+  AMBER Band: 0.9559 p/kWh (avg)
+    Time period: 07:00-16:00, 19:00-23:00 (weekdays) (default)
+  GREEN Band: 2.7196 p/kWh (avg)
+    Time period: 23:00-07:00 (all days), all day (weekends) (default)
+
+National Grid South West:
+  RED Band: 3.7732 p/kWh (avg)
+    Time period: 16:00-19:00 (weekdays) (default)
+  GREEN Band: 3.9066 p/kWh (avg)
+    Time period: 23:00-07:00 (all days), all day (weekends) (default)
+
+Northern Powergrid Yorkshire:
+  RED Band: 2.1843 p/kWh (avg)
+    Time period: 16:00-19:00 (weekdays) (default)
+  AMBER Band: 6.2174 p/kWh (avg)
+    Time period: 07:00-16:00, 19:00-23:00 (weekdays) (default)
+  GREEN Band: 4.3373 p/kWh (avg)
+    Time period: 23:00-07:00 (all days), all day (weekends) (default)
+
+Unknown:
+  RED Band: 2.6990 p/kWh (avg)
+    Time period: 16:00-19:00 (weekdays) (default)
+  AMBER Band: 0.8486 p/kWh (avg)
+    Time period: 07:00-16:00, 19:00-23:00 (weekdays) (default)
+  GREEN Band: 3.2608 p/kWh (avg)
+    Time period: 23:00-07:00 (all days), all day (weekends) (default)
+
+SSEN Southern:
+  RED Band: 2.5364 p/kWh (avg)
+    Time period: 16:00-19:00 (weekdays) (default)
+  AMBER Band: 1.9883 p/kWh (avg)
+    Time period: 07:00-16:00, 19:00-23:00 (weekdays) (default)
+  GREEN Band: 3.6751 p/kWh (avg)
+    Time period: 23:00-07:00 (all days), all day (weekends) (default)
+
+National Grid South Wales:
+  RED Band: 2.4943 p/kWh (avg)
+    Time period: 16:00-19:00 (weekdays) (default)
+  GREEN Band: 4.2249 p/kWh (avg)
+    Time period: 23:00-07:00 (all days), all day (weekends) (default)
+
+National Grid East Midlands:
+  RED Band: 2.4502 p/kWh (avg)
+    Time period: 16:00-19:00 (weekdays) (default)
+  AMBER Band: 1.0163 p/kWh (avg)
+    Time period: 07:00-16:00, 19:00-23:00 (weekdays) (default)
+  GREEN Band: 2.6971 p/kWh (avg)
+    Time period: 23:00-07:00 (all days), all day (weekends) (default)
+

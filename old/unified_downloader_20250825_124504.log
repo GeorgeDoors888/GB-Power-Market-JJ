@@ -1,0 +1,643 @@
+2025-08-25 12:45:04,901 - unified_downloader - INFO - ✅ Loaded Elexon API key from api.env file.
+2025-08-25 12:45:04,903 - unified_downloader - INFO - ✅ Authenticated with GCS and connected to bucket: jibber-jabber-knowledge-bmrs-data
+2025-08-25 12:45:04,903 - unified_downloader - INFO - 🚀 Starting download of all 53 Elexon datasets...
+2025-08-25 12:45:04,906 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: METADATA from 2025-07-01 to 2025-07-07
+2025-08-25 12:45:04,907 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: BOAL from 2025-07-01 to 2025-07-07
+2025-08-25 12:45:04,907 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: BOD from 2025-07-01 to 2025-07-07
+2025-08-25 12:45:04,907 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: DISBSAD from 2025-07-01 to 2025-07-07
+2025-08-25 12:45:04,907 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: FOU2T14D from 2025-07-01 to 2025-07-07
+2025-08-25 12:45:05,144 - unified_downloader - ERROR - ❌ Error downloading BOAL for 2025-07-01 to 2025-07-07: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/BOAL?from=2025-07-01&to=2025-07-07&format=json&apiKey=x1~8Q~lvOVm4H7jfQVZXtiCal47_vdYoLWjEla~P
+2025-08-25 12:45:05,149 - unified_downloader - ERROR - ❌ Error downloading METADATA for 2025-07-01 to 2025-07-07: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/METADATA?from=2025-07-01&to=2025-07-07&format=json&apiKey=x1~8Q~lvOVm4H7jfQVZXtiCal47_vdYoLWjEla~P
+2025-08-25 12:45:05,163 - unified_downloader - ERROR - ❌ Error downloading BOD for 2025-07-01 to 2025-07-07: 400 Client Error: Bad Request for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/BOD?from=2025-07-01&to=2025-07-07&format=json&apiKey=x1~8Q~lvOVm4H7jfQVZXtiCal47_vdYoLWjEla~P
+2025-08-25 12:45:05,163 - unified_downloader - ERROR - ❌ Error downloading DISBSAD for 2025-07-01 to 2025-07-07: 400 Client Error: Bad Request for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/DISBSAD?from=2025-07-01&to=2025-07-07&format=json&apiKey=x1~8Q~lvOVm4H7jfQVZXtiCal47_vdYoLWjEla~P
+2025-08-25 12:45:06,145 - unified_downloader - INFO - ✅ Completed download of Elexon dataset BOAL: 0 files
+2025-08-25 12:45:06,145 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: FOU2T3YW from 2025-07-01 to 2025-07-07
+2025-08-25 12:45:06,149 - unified_downloader - INFO - ✅ Completed download of Elexon dataset METADATA: 0 files
+2025-08-25 12:45:06,150 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: FOUT2T14D from 2025-07-01 to 2025-07-07
+2025-08-25 12:45:06,161 - unified_downloader - ERROR - ❌ Error downloading FOUT2T14D for 2025-07-01 to 2025-07-07: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/FOUT2T14D?from=2025-07-01&to=2025-07-07&format=json&apiKey=x1~8Q~lvOVm4H7jfQVZXtiCal47_vdYoLWjEla~P
+2025-08-25 12:45:06,164 - unified_downloader - INFO - ✅ Completed download of Elexon dataset BOD: 0 files
+2025-08-25 12:45:06,164 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: FREQ from 2025-07-01 to 2025-07-07
+2025-08-25 12:45:06,165 - unified_downloader - INFO - ✅ Completed download of Elexon dataset DISBSAD: 0 files
+2025-08-25 12:45:06,165 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: FUELHH from 2025-07-01 to 2025-07-07
+2025-08-25 12:45:06,247 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: FUELINST from 2025-07-01 to 2025-07-07
+2025-08-25 12:45:06,247 - unified_downloader - ERROR - ❌ FOU2T14D generated an exception: 403 POST https://storage.googleapis.com/upload/storage/v1/b/jibber-jabber-knowledge-bmrs-data/o?uploadType=multipart: {
+  "error": {
+    "code": 403,
+    "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+    "errors": [
+      {
+        "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+        "domain": "global",
+        "reason": "forbidden"
+      }
+    ]
+  }
+}
+: ('Request failed with status code', 403, 'Expected one of', <HTTPStatus.OK: 200>)
+2025-08-25 12:45:06,723 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: IMBALNGC from 2025-07-01 to 2025-07-07
+2025-08-25 12:45:06,723 - unified_downloader - ERROR - ❌ FUELHH generated an exception: 403 POST https://storage.googleapis.com/upload/storage/v1/b/jibber-jabber-knowledge-bmrs-data/o?uploadType=multipart: {
+  "error": {
+    "code": 403,
+    "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+    "errors": [
+      {
+        "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+        "domain": "global",
+        "reason": "forbidden"
+      }
+    ]
+  }
+}
+: ('Request failed with status code', 403, 'Expected one of', <HTTPStatus.OK: 200>)
+2025-08-25 12:45:07,105 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: INDDEM from 2025-07-01 to 2025-07-07
+2025-08-25 12:45:07,106 - unified_downloader - ERROR - ❌ FUELINST generated an exception: 403 POST https://storage.googleapis.com/upload/storage/v1/b/jibber-jabber-knowledge-bmrs-data/o?uploadType=multipart: {
+  "error": {
+    "code": 403,
+    "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+    "errors": [
+      {
+        "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+        "domain": "global",
+        "reason": "forbidden"
+      }
+    ]
+  }
+}
+: ('Request failed with status code', 403, 'Expected one of', <HTTPStatus.OK: 200>)
+2025-08-25 12:45:07,162 - unified_downloader - INFO - ✅ Completed download of Elexon dataset FOUT2T14D: 0 files
+2025-08-25 12:45:07,165 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: INDGEN from 2025-07-01 to 2025-07-07
+2025-08-25 12:45:07,235 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: INDO from 2025-07-01 to 2025-07-07
+2025-08-25 12:45:07,235 - unified_downloader - ERROR - ❌ FREQ generated an exception: 403 POST https://storage.googleapis.com/upload/storage/v1/b/jibber-jabber-knowledge-bmrs-data/o?uploadType=multipart: {
+  "error": {
+    "code": 403,
+    "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+    "errors": [
+      {
+        "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+        "domain": "global",
+        "reason": "forbidden"
+      }
+    ]
+  }
+}
+: ('Request failed with status code', 403, 'Expected one of', <HTTPStatus.OK: 200>)
+2025-08-25 12:45:07,311 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: ITSDO from 2025-07-01 to 2025-07-07
+2025-08-25 12:45:07,311 - unified_downloader - ERROR - ❌ FOU2T3YW generated an exception: 403 POST https://storage.googleapis.com/upload/storage/v1/b/jibber-jabber-knowledge-bmrs-data/o?uploadType=multipart: {
+  "error": {
+    "code": 403,
+    "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+    "errors": [
+      {
+        "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+        "domain": "global",
+        "reason": "forbidden"
+      }
+    ]
+  }
+}
+: ('Request failed with status code', 403, 'Expected one of', <HTTPStatus.OK: 200>)
+2025-08-25 12:45:07,438 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: MELNGC from 2025-07-01 to 2025-07-07
+2025-08-25 12:45:07,439 - unified_downloader - ERROR - ❌ INDO generated an exception: 403 POST https://storage.googleapis.com/upload/storage/v1/b/jibber-jabber-knowledge-bmrs-data/o?uploadType=multipart: {
+  "error": {
+    "code": 403,
+    "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+    "errors": [
+      {
+        "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+        "domain": "global",
+        "reason": "forbidden"
+      }
+    ]
+  }
+}
+: ('Request failed with status code', 403, 'Expected one of', <HTTPStatus.OK: 200>)
+2025-08-25 12:45:07,503 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: MID from 2025-07-01 to 2025-07-07
+2025-08-25 12:45:07,503 - unified_downloader - ERROR - ❌ IMBALNGC generated an exception: 403 POST https://storage.googleapis.com/upload/storage/v1/b/jibber-jabber-knowledge-bmrs-data/o?uploadType=multipart: {
+  "error": {
+    "code": 403,
+    "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+    "errors": [
+      {
+        "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+        "domain": "global",
+        "reason": "forbidden"
+      }
+    ]
+  }
+}
+: ('Request failed with status code', 403, 'Expected one of', <HTTPStatus.OK: 200>)
+2025-08-25 12:45:07,528 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: MILS from 2025-07-01 to 2025-07-07
+2025-08-25 12:45:07,529 - unified_downloader - ERROR - ❌ ITSDO generated an exception: 403 POST https://storage.googleapis.com/upload/storage/v1/b/jibber-jabber-knowledge-bmrs-data/o?uploadType=multipart: {
+  "error": {
+    "code": 403,
+    "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+    "errors": [
+      {
+        "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+        "domain": "global",
+        "reason": "forbidden"
+      }
+    ]
+  }
+}
+: ('Request failed with status code', 403, 'Expected one of', <HTTPStatus.OK: 200>)
+2025-08-25 12:45:07,613 - unified_downloader - ERROR - ❌ Error downloading MILS for 2025-07-01 to 2025-07-07: 400 Client Error: Bad Request for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/MILS?from=2025-07-01&to=2025-07-07&format=json&apiKey=x1~8Q~lvOVm4H7jfQVZXtiCal47_vdYoLWjEla~P
+2025-08-25 12:45:07,799 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: MELS from 2025-07-01 to 2025-07-07
+2025-08-25 12:45:07,799 - unified_downloader - ERROR - ❌ INDDEM generated an exception: 403 POST https://storage.googleapis.com/upload/storage/v1/b/jibber-jabber-knowledge-bmrs-data/o?uploadType=multipart: {
+  "error": {
+    "code": 403,
+    "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+    "errors": [
+      {
+        "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+        "domain": "global",
+        "reason": "forbidden"
+      }
+    ]
+  }
+}
+: ('Request failed with status code', 403, 'Expected one of', <HTTPStatus.OK: 200>)
+2025-08-25 12:45:07,822 - unified_downloader - ERROR - ❌ Error downloading MELS for 2025-07-01 to 2025-07-07: 400 Client Error: Bad Request for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/MELS?from=2025-07-01&to=2025-07-07&format=json&apiKey=x1~8Q~lvOVm4H7jfQVZXtiCal47_vdYoLWjEla~P
+2025-08-25 12:45:07,931 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: MDP from 2025-07-01 to 2025-07-07
+2025-08-25 12:45:07,931 - unified_downloader - ERROR - ❌ INDGEN generated an exception: 403 POST https://storage.googleapis.com/upload/storage/v1/b/jibber-jabber-knowledge-bmrs-data/o?uploadType=multipart: {
+  "error": {
+    "code": 403,
+    "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+    "errors": [
+      {
+        "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+        "domain": "global",
+        "reason": "forbidden"
+      }
+    ]
+  }
+}
+: ('Request failed with status code', 403, 'Expected one of', <HTTPStatus.OK: 200>)
+2025-08-25 12:45:07,955 - unified_downloader - WARNING - ⚠️ No data returned for MDP from 2025-07-01 to 2025-07-07
+2025-08-25 12:45:08,332 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: MDV from 2025-07-01 to 2025-07-07
+2025-08-25 12:45:08,333 - unified_downloader - ERROR - ❌ MID generated an exception: 403 POST https://storage.googleapis.com/upload/storage/v1/b/jibber-jabber-knowledge-bmrs-data/o?uploadType=multipart: {
+  "error": {
+    "code": 403,
+    "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+    "errors": [
+      {
+        "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+        "domain": "global",
+        "reason": "forbidden"
+      }
+    ]
+  }
+}
+: ('Request failed with status code', 403, 'Expected one of', <HTTPStatus.OK: 200>)
+2025-08-25 12:45:08,356 - unified_downloader - WARNING - ⚠️ No data returned for MDV from 2025-07-01 to 2025-07-07
+2025-08-25 12:45:08,411 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: MNZT from 2025-07-01 to 2025-07-07
+2025-08-25 12:45:08,411 - unified_downloader - ERROR - ❌ MELNGC generated an exception: 403 POST https://storage.googleapis.com/upload/storage/v1/b/jibber-jabber-knowledge-bmrs-data/o?uploadType=multipart: {
+  "error": {
+    "code": 403,
+    "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+    "errors": [
+      {
+        "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+        "domain": "global",
+        "reason": "forbidden"
+      }
+    ]
+  }
+}
+: ('Request failed with status code', 403, 'Expected one of', <HTTPStatus.OK: 200>)
+2025-08-25 12:45:08,616 - unified_downloader - INFO - ✅ Completed download of Elexon dataset MILS: 0 files
+2025-08-25 12:45:08,617 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: MZT from 2025-07-01 to 2025-07-07
+2025-08-25 12:45:08,732 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: NETBSAD from 2025-07-01 to 2025-07-07
+2025-08-25 12:45:08,733 - unified_downloader - ERROR - ❌ MNZT generated an exception: 403 POST https://storage.googleapis.com/upload/storage/v1/b/jibber-jabber-knowledge-bmrs-data/o?uploadType=multipart: {
+  "error": {
+    "code": 403,
+    "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+    "errors": [
+      {
+        "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+        "domain": "global",
+        "reason": "forbidden"
+      }
+    ]
+  }
+}
+: ('Request failed with status code', 403, 'Expected one of', <HTTPStatus.OK: 200>)
+2025-08-25 12:45:08,824 - unified_downloader - INFO - ✅ Completed download of Elexon dataset MELS: 0 files
+2025-08-25 12:45:08,824 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: NDF from 2025-07-01 to 2025-07-07
+2025-08-25 12:45:08,906 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: NDFD from 2025-07-01 to 2025-07-07
+2025-08-25 12:45:08,906 - unified_downloader - ERROR - ❌ MZT generated an exception: 403 POST https://storage.googleapis.com/upload/storage/v1/b/jibber-jabber-knowledge-bmrs-data/o?uploadType=multipart: {
+  "error": {
+    "code": 403,
+    "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+    "errors": [
+      {
+        "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+        "domain": "global",
+        "reason": "forbidden"
+      }
+    ]
+  }
+}
+: ('Request failed with status code', 403, 'Expected one of', <HTTPStatus.OK: 200>)
+2025-08-25 12:45:08,956 - unified_downloader - INFO - ✅ Completed download of Elexon dataset MDP: 0 files
+2025-08-25 12:45:08,956 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: NDFW from 2025-07-01 to 2025-07-07
+2025-08-25 12:45:09,054 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: NONBM from 2025-07-01 to 2025-07-07
+2025-08-25 12:45:09,054 - unified_downloader - ERROR - ❌ NDF generated an exception: 403 POST https://storage.googleapis.com/upload/storage/v1/b/jibber-jabber-knowledge-bmrs-data/o?uploadType=multipart: {
+  "error": {
+    "code": 403,
+    "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+    "errors": [
+      {
+        "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+        "domain": "global",
+        "reason": "forbidden"
+      }
+    ]
+  }
+}
+: ('Request failed with status code', 403, 'Expected one of', <HTTPStatus.OK: 200>)
+2025-08-25 12:45:09,123 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: NOU2T14D from 2025-07-01 to 2025-07-07
+2025-08-25 12:45:09,123 - unified_downloader - ERROR - ❌ NDFW generated an exception: 403 POST https://storage.googleapis.com/upload/storage/v1/b/jibber-jabber-knowledge-bmrs-data/o?uploadType=multipart: {
+  "error": {
+    "code": 403,
+    "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+    "errors": [
+      {
+        "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+        "domain": "global",
+        "reason": "forbidden"
+      }
+    ]
+  }
+}
+: ('Request failed with status code', 403, 'Expected one of', <HTTPStatus.OK: 200>)
+2025-08-25 12:45:09,282 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: NOU2T3YW from 2025-07-01 to 2025-07-07
+2025-08-25 12:45:09,282 - unified_downloader - ERROR - ❌ NDFD generated an exception: 403 POST https://storage.googleapis.com/upload/storage/v1/b/jibber-jabber-knowledge-bmrs-data/o?uploadType=multipart: {
+  "error": {
+    "code": 403,
+    "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+    "errors": [
+      {
+        "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+        "domain": "global",
+        "reason": "forbidden"
+      }
+    ]
+  }
+}
+: ('Request failed with status code', 403, 'Expected one of', <HTTPStatus.OK: 200>)
+2025-08-25 12:45:09,328 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: NTB from 2025-07-01 to 2025-07-07
+2025-08-25 12:45:09,328 - unified_downloader - ERROR - ❌ NETBSAD generated an exception: 403 POST https://storage.googleapis.com/upload/storage/v1/b/jibber-jabber-knowledge-bmrs-data/o?uploadType=multipart: {
+  "error": {
+    "code": 403,
+    "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+    "errors": [
+      {
+        "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+        "domain": "global",
+        "reason": "forbidden"
+      }
+    ]
+  }
+}
+: ('Request failed with status code', 403, 'Expected one of', <HTTPStatus.OK: 200>)
+2025-08-25 12:45:09,358 - unified_downloader - INFO - ✅ Completed download of Elexon dataset MDV: 0 files
+2025-08-25 12:45:09,362 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: NTO from 2025-07-01 to 2025-07-07
+2025-08-25 12:45:09,526 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: NDZ from 2025-07-01 to 2025-07-07
+2025-08-25 12:45:09,526 - unified_downloader - ERROR - ❌ NTB generated an exception: 403 POST https://storage.googleapis.com/upload/storage/v1/b/jibber-jabber-knowledge-bmrs-data/o?uploadType=multipart: {
+  "error": {
+    "code": 403,
+    "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+    "errors": [
+      {
+        "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+        "domain": "global",
+        "reason": "forbidden"
+      }
+    ]
+  }
+}
+: ('Request failed with status code', 403, 'Expected one of', <HTTPStatus.OK: 200>)
+2025-08-25 12:45:09,563 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: OCNMF3Y from 2025-07-01 to 2025-07-07
+2025-08-25 12:45:09,563 - unified_downloader - ERROR - ❌ NTO generated an exception: 403 POST https://storage.googleapis.com/upload/storage/v1/b/jibber-jabber-knowledge-bmrs-data/o?uploadType=multipart: {
+  "error": {
+    "code": 403,
+    "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+    "errors": [
+      {
+        "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+        "domain": "global",
+        "reason": "forbidden"
+      }
+    ]
+  }
+}
+: ('Request failed with status code', 403, 'Expected one of', <HTTPStatus.OK: 200>)
+2025-08-25 12:45:09,593 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: OCNMF3Y2 from 2025-07-01 to 2025-07-07
+2025-08-25 12:45:09,593 - unified_downloader - ERROR - ❌ NOU2T14D generated an exception: 403 POST https://storage.googleapis.com/upload/storage/v1/b/jibber-jabber-knowledge-bmrs-data/o?uploadType=multipart: {
+  "error": {
+    "code": 403,
+    "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+    "errors": [
+      {
+        "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+        "domain": "global",
+        "reason": "forbidden"
+      }
+    ]
+  }
+}
+: ('Request failed with status code', 403, 'Expected one of', <HTTPStatus.OK: 200>)
+2025-08-25 12:45:09,594 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: OCNMFD from 2025-07-01 to 2025-07-07
+2025-08-25 12:45:09,596 - unified_downloader - ERROR - ❌ NOU2T3YW generated an exception: 403 POST https://storage.googleapis.com/upload/storage/v1/b/jibber-jabber-knowledge-bmrs-data/o?uploadType=multipart: {
+  "error": {
+    "code": 403,
+    "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+    "errors": [
+      {
+        "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+        "domain": "global",
+        "reason": "forbidden"
+      }
+    ]
+  }
+}
+: ('Request failed with status code', 403, 'Expected one of', <HTTPStatus.OK: 200>)
+2025-08-25 12:45:09,631 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: OCNMFD2 from 2025-07-01 to 2025-07-07
+2025-08-25 12:45:09,631 - unified_downloader - ERROR - ❌ NONBM generated an exception: 403 POST https://storage.googleapis.com/upload/storage/v1/b/jibber-jabber-knowledge-bmrs-data/o?uploadType=multipart: {
+  "error": {
+    "code": 403,
+    "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+    "errors": [
+      {
+        "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+        "domain": "global",
+        "reason": "forbidden"
+      }
+    ]
+  }
+}
+: ('Request failed with status code', 403, 'Expected one of', <HTTPStatus.OK: 200>)
+2025-08-25 12:45:09,766 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: PN from 2025-07-01 to 2025-07-07
+2025-08-25 12:45:09,767 - unified_downloader - ERROR - ❌ OCNMFD generated an exception: 403 POST https://storage.googleapis.com/upload/storage/v1/b/jibber-jabber-knowledge-bmrs-data/o?uploadType=multipart: {
+  "error": {
+    "code": 403,
+    "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+    "errors": [
+      {
+        "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+        "domain": "global",
+        "reason": "forbidden"
+      }
+    ]
+  }
+}
+: ('Request failed with status code', 403, 'Expected one of', <HTTPStatus.OK: 200>)
+2025-08-25 12:45:09,781 - unified_downloader - ERROR - ❌ Error downloading PN for 2025-07-01 to 2025-07-07: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/PN?from=2025-07-01&to=2025-07-07&format=json&apiKey=x1~8Q~lvOVm4H7jfQVZXtiCal47_vdYoLWjEla~P
+2025-08-25 12:45:09,803 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: QAS from 2025-07-01 to 2025-07-07
+2025-08-25 12:45:09,803 - unified_downloader - ERROR - ❌ OCNMFD2 generated an exception: 403 POST https://storage.googleapis.com/upload/storage/v1/b/jibber-jabber-knowledge-bmrs-data/o?uploadType=multipart: {
+  "error": {
+    "code": 403,
+    "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+    "errors": [
+      {
+        "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+        "domain": "global",
+        "reason": "forbidden"
+      }
+    ]
+  }
+}
+: ('Request failed with status code', 403, 'Expected one of', <HTTPStatus.OK: 200>)
+2025-08-25 12:45:09,823 - unified_downloader - ERROR - ❌ Error downloading QAS for 2025-07-01 to 2025-07-07: 400 Client Error: Bad Request for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/QAS?from=2025-07-01&to=2025-07-07&format=json&apiKey=x1~8Q~lvOVm4H7jfQVZXtiCal47_vdYoLWjEla~P
+2025-08-25 12:45:09,969 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: QPN from 2025-07-01 to 2025-07-07
+2025-08-25 12:45:09,969 - unified_downloader - ERROR - ❌ OCNMF3Y2 generated an exception: 403 POST https://storage.googleapis.com/upload/storage/v1/b/jibber-jabber-knowledge-bmrs-data/o?uploadType=multipart: {
+  "error": {
+    "code": 403,
+    "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+    "errors": [
+      {
+        "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+        "domain": "global",
+        "reason": "forbidden"
+      }
+    ]
+  }
+}
+: ('Request failed with status code', 403, 'Expected one of', <HTTPStatus.OK: 200>)
+2025-08-25 12:45:09,985 - unified_downloader - ERROR - ❌ Error downloading QPN for 2025-07-01 to 2025-07-07: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/bmrs/api/v1/datasets/QPN?from=2025-07-01&to=2025-07-07&format=json&apiKey=x1~8Q~lvOVm4H7jfQVZXtiCal47_vdYoLWjEla~P
+2025-08-25 12:45:10,007 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: RDRE from 2025-07-01 to 2025-07-07
+2025-08-25 12:45:10,007 - unified_downloader - ERROR - ❌ OCNMF3Y generated an exception: 403 POST https://storage.googleapis.com/upload/storage/v1/b/jibber-jabber-knowledge-bmrs-data/o?uploadType=multipart: {
+  "error": {
+    "code": 403,
+    "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+    "errors": [
+      {
+        "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+        "domain": "global",
+        "reason": "forbidden"
+      }
+    ]
+  }
+}
+: ('Request failed with status code', 403, 'Expected one of', <HTTPStatus.OK: 200>)
+2025-08-25 12:45:10,182 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: RDRI from 2025-07-01 to 2025-07-07
+2025-08-25 12:45:10,182 - unified_downloader - ERROR - ❌ NDZ generated an exception: 403 POST https://storage.googleapis.com/upload/storage/v1/b/jibber-jabber-knowledge-bmrs-data/o?uploadType=multipart: {
+  "error": {
+    "code": 403,
+    "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+    "errors": [
+      {
+        "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+        "domain": "global",
+        "reason": "forbidden"
+      }
+    ]
+  }
+}
+: ('Request failed with status code', 403, 'Expected one of', <HTTPStatus.OK: 200>)
+2025-08-25 12:45:10,211 - unified_downloader - WARNING - ⚠️ No data returned for RDRI from 2025-07-01 to 2025-07-07
+2025-08-25 12:45:10,365 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: RURE from 2025-07-01 to 2025-07-07
+2025-08-25 12:45:10,365 - unified_downloader - ERROR - ❌ RDRE generated an exception: 403 POST https://storage.googleapis.com/upload/storage/v1/b/jibber-jabber-knowledge-bmrs-data/o?uploadType=multipart: {
+  "error": {
+    "code": 403,
+    "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+    "errors": [
+      {
+        "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+        "domain": "global",
+        "reason": "forbidden"
+      }
+    ]
+  }
+}
+: ('Request failed with status code', 403, 'Expected one of', <HTTPStatus.OK: 200>)
+2025-08-25 12:45:10,783 - unified_downloader - INFO - ✅ Completed download of Elexon dataset PN: 0 files
+2025-08-25 12:45:10,783 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: RURI from 2025-07-01 to 2025-07-07
+2025-08-25 12:45:10,829 - unified_downloader - INFO - ✅ Completed download of Elexon dataset QAS: 0 files
+2025-08-25 12:45:10,829 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: SEL from 2025-07-01 to 2025-07-07
+2025-08-25 12:45:10,962 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: SIL from 2025-07-01 to 2025-07-07
+2025-08-25 12:45:10,962 - unified_downloader - ERROR - ❌ RURI generated an exception: 403 POST https://storage.googleapis.com/upload/storage/v1/b/jibber-jabber-knowledge-bmrs-data/o?uploadType=multipart: {
+  "error": {
+    "code": 403,
+    "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+    "errors": [
+      {
+        "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+        "domain": "global",
+        "reason": "forbidden"
+      }
+    ]
+  }
+}
+: ('Request failed with status code', 403, 'Expected one of', <HTTPStatus.OK: 200>)
+2025-08-25 12:45:10,986 - unified_downloader - INFO - ✅ Completed download of Elexon dataset QPN: 0 files
+2025-08-25 12:45:10,986 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: TEMP from 2025-07-01 to 2025-07-07
+2025-08-25 12:45:11,066 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: TSDF from 2025-07-01 to 2025-07-07
+2025-08-25 12:45:11,066 - unified_downloader - ERROR - ❌ RURE generated an exception: 403 POST https://storage.googleapis.com/upload/storage/v1/b/jibber-jabber-knowledge-bmrs-data/o?uploadType=multipart: {
+  "error": {
+    "code": 403,
+    "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+    "errors": [
+      {
+        "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+        "domain": "global",
+        "reason": "forbidden"
+      }
+    ]
+  }
+}
+: ('Request failed with status code', 403, 'Expected one of', <HTTPStatus.OK: 200>)
+2025-08-25 12:45:11,160 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: TSDFD from 2025-07-01 to 2025-07-07
+2025-08-25 12:45:11,160 - unified_downloader - ERROR - ❌ TEMP generated an exception: 403 POST https://storage.googleapis.com/upload/storage/v1/b/jibber-jabber-knowledge-bmrs-data/o?uploadType=multipart: {
+  "error": {
+    "code": 403,
+    "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+    "errors": [
+      {
+        "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+        "domain": "global",
+        "reason": "forbidden"
+      }
+    ]
+  }
+}
+: ('Request failed with status code', 403, 'Expected one of', <HTTPStatus.OK: 200>)
+2025-08-25 12:45:11,214 - unified_downloader - INFO - ✅ Completed download of Elexon dataset RDRI: 0 files
+2025-08-25 12:45:11,215 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: TSDFW from 2025-07-01 to 2025-07-07
+2025-08-25 12:45:11,344 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: UOU2T14D from 2025-07-01 to 2025-07-07
+2025-08-25 12:45:11,345 - unified_downloader - ERROR - ❌ SEL generated an exception: 403 POST https://storage.googleapis.com/upload/storage/v1/b/jibber-jabber-knowledge-bmrs-data/o?uploadType=multipart: {
+  "error": {
+    "code": 403,
+    "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+    "errors": [
+      {
+        "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+        "domain": "global",
+        "reason": "forbidden"
+      }
+    ]
+  }
+}
+: ('Request failed with status code', 403, 'Expected one of', <HTTPStatus.OK: 200>)
+2025-08-25 12:45:11,396 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: UOU2T3YW from 2025-07-01 to 2025-07-07
+2025-08-25 12:45:11,396 - unified_downloader - ERROR - ❌ TSDFD generated an exception: 403 POST https://storage.googleapis.com/upload/storage/v1/b/jibber-jabber-knowledge-bmrs-data/o?uploadType=multipart: {
+  "error": {
+    "code": 403,
+    "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+    "errors": [
+      {
+        "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+        "domain": "global",
+        "reason": "forbidden"
+      }
+    ]
+  }
+}
+: ('Request failed with status code', 403, 'Expected one of', <HTTPStatus.OK: 200>)
+2025-08-25 12:45:11,591 - unified_downloader - INFO - ⏳ Downloading Elexon dataset: WINDFOR from 2025-07-01 to 2025-07-07
+2025-08-25 12:45:11,591 - unified_downloader - ERROR - ❌ SIL generated an exception: 403 POST https://storage.googleapis.com/upload/storage/v1/b/jibber-jabber-knowledge-bmrs-data/o?uploadType=multipart: {
+  "error": {
+    "code": 403,
+    "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+    "errors": [
+      {
+        "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+        "domain": "global",
+        "reason": "forbidden"
+      }
+    ]
+  }
+}
+: ('Request failed with status code', 403, 'Expected one of', <HTTPStatus.OK: 200>)
+2025-08-25 12:45:11,636 - unified_downloader - ERROR - ❌ TSDFW generated an exception: 403 POST https://storage.googleapis.com/upload/storage/v1/b/jibber-jabber-knowledge-bmrs-data/o?uploadType=multipart: {
+  "error": {
+    "code": 403,
+    "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+    "errors": [
+      {
+        "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+        "domain": "global",
+        "reason": "forbidden"
+      }
+    ]
+  }
+}
+: ('Request failed with status code', 403, 'Expected one of', <HTTPStatus.OK: 200>)
+2025-08-25 12:45:11,725 - unified_downloader - ERROR - ❌ TSDF generated an exception: 403 POST https://storage.googleapis.com/upload/storage/v1/b/jibber-jabber-knowledge-bmrs-data/o?uploadType=multipart: {
+  "error": {
+    "code": 403,
+    "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+    "errors": [
+      {
+        "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+        "domain": "global",
+        "reason": "forbidden"
+      }
+    ]
+  }
+}
+: ('Request failed with status code', 403, 'Expected one of', <HTTPStatus.OK: 200>)
+2025-08-25 12:45:12,001 - unified_downloader - ERROR - ❌ WINDFOR generated an exception: 403 POST https://storage.googleapis.com/upload/storage/v1/b/jibber-jabber-knowledge-bmrs-data/o?uploadType=multipart: {
+  "error": {
+    "code": 403,
+    "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+    "errors": [
+      {
+        "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+        "domain": "global",
+        "reason": "forbidden"
+      }
+    ]
+  }
+}
+: ('Request failed with status code', 403, 'Expected one of', <HTTPStatus.OK: 200>)
+2025-08-25 12:45:12,484 - unified_downloader - ERROR - ❌ UOU2T3YW generated an exception: 403 POST https://storage.googleapis.com/upload/storage/v1/b/jibber-jabber-knowledge-bmrs-data/o?uploadType=resumable: {
+  "error": {
+    "code": 403,
+    "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+    "errors": [
+      {
+        "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+        "domain": "global",
+        "reason": "forbidden"
+      }
+    ]
+  }
+}
+: ('Request failed with status code', 403, 'Expected one of', <HTTPStatus.OK: 200>, <HTTPStatus.CREATED: 201>)
+2025-08-25 12:45:12,685 - unified_downloader - ERROR - ❌ UOU2T14D generated an exception: 403 POST https://storage.googleapis.com/upload/storage/v1/b/jibber-jabber-knowledge-bmrs-data/o?uploadType=multipart: {
+  "error": {
+    "code": 403,
+    "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+    "errors": [
+      {
+        "message": "jibber-jabber-knowledge@appspot.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+        "domain": "global",
+        "reason": "forbidden"
+      }
+    ]
+  }
+}
+: ('Request failed with status code', 403, 'Expected one of', <HTTPStatus.OK: 200>)
+2025-08-25 12:45:12,687 - unified_downloader - INFO - 🎉 All download tasks completed.

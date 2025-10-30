@@ -1,0 +1,32 @@
+[
+    {
+        "name": "calendarWeekNumber",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "dataset",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "outputUsable",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "publishTime",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "systemZone",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "year",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    }
+]

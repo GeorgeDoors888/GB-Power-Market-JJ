@@ -1,0 +1,38 @@
+[2025-09-20 13:40:35] 🚀 Starting 15-minute energy data update cycle
+[2025-09-20 13:40:35] 📊 Checking what data needs updating...
+[2025-09-20 13:40:39] Tracker output: 2025-09-20 13:40:36,804 - INFO - 🚀 Starting automated data tracking update...
+2025-09-20 13:40:36,804 - WARNING - No service account credentials found. Using default ADC.
+2025-09-20 13:40:37,832 - INFO - Google Sheets connection established
+/Users/georgemajor/jibber-jabber 24 august 2025 big bop/automated_data_tracker.py:188: DeprecationWarning: The order of arguments in worksheet.update() has changed. Please pass values first and range_name secondor used named arguments (range_name=, values=)
+  self.sheet.update('A1:F1', [headers])
+2025-09-20 13:40:38,836 - INFO - Sheet headers initialized
+2025-09-20 13:40:39,062 - ERROR - Error reading from Google Sheets: the header row in the worksheet contains duplicates: ['']To manually set the header row, use the `expected_headers` parameter of `get_all_records()`
+2025-09-20 13:40:39,062 - INFO - Last Elexon update: 2025-09-20 08:40:39.062787+00:00 (240.0 minutes ago)
+2025-09-20 13:40:39,063 - INFO - 📊 Starting incremental Elexon update...
+2025-09-20 13:40:39,063 - INFO - Incremental range: 2025-09-20 to 2025-09-20
+2025-09-20 13:40:39,310 - WARNING - Could not update existing row, appending new: the header row in the worksheet contains duplicates: ['']To manually set the header row, use the `expected_headers` parameter of `get_all_records()`
+{
+  "action": "elexon_update",
+  "start_date": "2025-09-20",
+  "end_date": "2025-09-20",
+  "last_update": "2025-09-20T08:40:39.062787+00:00"
+}
+[2025-09-20 13:40:39] 📋 Action determined: unknown
+[2025-09-20 13:40:39] ❓ Unknown action: unknown
+[2025-09-20 13:40:39] Full tracker output: 2025-09-20 13:40:36,804 - INFO - 🚀 Starting automated data tracking update...
+2025-09-20 13:40:36,804 - WARNING - No service account credentials found. Using default ADC.
+2025-09-20 13:40:37,832 - INFO - Google Sheets connection established
+/Users/georgemajor/jibber-jabber 24 august 2025 big bop/automated_data_tracker.py:188: DeprecationWarning: The order of arguments in worksheet.update() has changed. Please pass values first and range_name secondor used named arguments (range_name=, values=)
+  self.sheet.update('A1:F1', [headers])
+2025-09-20 13:40:38,836 - INFO - Sheet headers initialized
+2025-09-20 13:40:39,062 - ERROR - Error reading from Google Sheets: the header row in the worksheet contains duplicates: ['']To manually set the header row, use the `expected_headers` parameter of `get_all_records()`
+2025-09-20 13:40:39,062 - INFO - Last Elexon update: 2025-09-20 08:40:39.062787+00:00 (240.0 minutes ago)
+2025-09-20 13:40:39,063 - INFO - 📊 Starting incremental Elexon update...
+2025-09-20 13:40:39,063 - INFO - Incremental range: 2025-09-20 to 2025-09-20
+2025-09-20 13:40:39,310 - WARNING - Could not update existing row, appending new: the header row in the worksheet contains duplicates: ['']To manually set the header row, use the `expected_headers` parameter of `get_all_records()`
+{
+  "action": "elexon_update",
+  "start_date": "2025-09-20",
+  "end_date": "2025-09-20",
+  "last_update": "2025-09-20T08:40:39.062787+00:00"
+}

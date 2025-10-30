@@ -1,0 +1,161 @@
+import os
+import time
+from google.oauth2 import service_account
+from googleapiclient.discovery import build
+from googleapiclient.errors import HttpError
+
+# --- Configuration ---
+KEY_FILE_PATH = 'service-account-key.json'
+USER_TO_IMPERSONATE = 'george@upowerenergy.uk'
+# Add Sheets scope for writing data
+SCOPES = ['https://www.googleapis.com/auth/drive.readonly', 'https://www.googleapis.com/auth/spreadsheets']
+SPREADSHEET_TITLE = 'Google Drive Metadata Export'
+
+def get_authenticated_services():
+    """Authenticates with service account and returns Drive and Sheets services."""
+    print("🔑 Authenticating using service account...")
+    try:
+        creds = service_account.Credentials.from_service_account_file(
+            KEY_FILE_PATH,
+            scopes=SCOPES,
+            subject=USER_TO_IMPERSONATE
+        )
+        drive_service = build('drive', 'v3', credentials=creds)
+        sheets_service = build('sheets', 'v4', credentials=creds)
+        print("✅ Authentication successful.")
+        return drive_service, sheets_service
+    except Exception as e:
+        print(f"❌ Failed to authenticate: {e}")
+        return None, None
+
+def create_spreadsheet(sheets_service):
+    """Creates a new Google Sheet and returns its ID and URL."""
+    print(f"📄 Creating new Google Sheet named '{SPREADSHEET_TITLE}'...")
+    try:
+        spreadsheet = {
+            'properties': {
+                'title': SPREADSHEET_TITLE
+            }
+        }
+        sheet = sheets_service.spreadsheets().create(body=spreadsheet, fields='spreadsheetId,spreadsheetUrl').execute()
+        sheet_id = sheet.get('spreadsheetId')
+        sheet_url = sheet.get('spreadsheetUrl')
+        print(f"✅ Sheet created successfully!")
+        print(f"➡️ URL: {sheet_url}")
+        return sheet_id
+    except HttpError as e:
+        print(f"❌ Failed to create spreadsheet: {e}")
+        return None
+
+def get_all_folders(drive_service):
+    """Fetches all folders from Drive and returns a map of ID to name."""
+    print("🗂️ Fetching all folder names from Drive... (This may take a while)")
+    folder_map = {}
+    page_token = None
+    while True:
+        try:
+            response = drive_service.files().list(
+                q="mimeType='application/vnd.google-apps.folder'",
+                spaces='drive',
+                fields='nextPageToken, files(id, name)',
+                pageToken=page_token
+            ).execute()
+            for folder in response.get('files', []):
+                folder_map[folder.get('id')] = folder.get('name')
+            page_token = response.get('nextPageToken', None)
+            print(f"    Found {len(folder_map)} folders so far...")
+            if page_token is None:
+                break
+        except HttpError as e:
+            print(f"❌ An error occurred while fetching folders: {e}")
+            break
+    print(f"✅ Found a total of {len(folder_map)} folders.")
+    return folder_map
+
+def export_metadata(drive_service, sheets_service, sheet_id, folder_map):
+    """Exports file metadata from Drive to the specified Google Sheet."""
+    print("✍️ Writing headers to spreadsheet...")
+    headers = [
+        'File ID', 'File Name', 'MIME Type', 'Size (Bytes)', 
+        'Created Time', 'Modified Time', 'Parent Folder ID(s)', 'Parent Folder Name(s)'
+    ]
+    try:
+        sheets_service.spreadsheets().values().update(
+            spreadsheetId=sheet_id,
+            range='A1',
+            valueInputOption='RAW',
+            body={'values': [headers]}
+        ).execute()
+    except HttpError as e:
+        print(f"❌ Failed to write headers: {e}")
+        return
+
+    print("📥 Starting metadata export... This will take a very long time.")
+    page_token = None
+    total_files_processed = 0
+    while True:
+        try:
+            response = drive_service.files().list(
+                q="'me' in owners", # Only files owned by the user
+                spaces='drive',
+                fields='nextPageToken, files(id, name, mimeType, size, createdTime, modifiedTime, parents)',
+                pageToken=page_token,
+                pageSize=100 # Process 100 files per API call
+            ).execute()
+            
+            files = response.get('files', [])
+            if not files:
+                print("No more files found.")
+                break
+
+            values_to_write = []
+            for f in files:
+                parent_ids = f.get('parents', [])
+                parent_names = [folder_map.get(pid, 'N/A') for pid in parent_ids]
+                
+                row = [
+                    f.get('id', ''),
+                    f.get('name', ''),
+                    f.get('mimeType', ''),
+                    f.get('size', '0'), # Default size to 0 for Google Docs etc.
+                    f.get('createdTime', ''),
+                    f.get('modifiedTime', ''),
+                    ', '.join(parent_ids),
+                    ', '.join(parent_names)
+                ]
+                values_to_write.append(row)
+
+            if values_to_write:
+                sheets_service.spreadsheets().values().append(
+                    spreadsheetId=sheet_id,
+                    range='A1',
+                    valueInputOption='RAW',
+                    insertDataOption='INSERT_ROWS',
+                    body={'values': values_to_write}
+                ).execute()
+            
+            total_files_processed += len(files)
+            print(f"    Processed {total_files_processed} files...")
+
+            page_token = response.get('nextPageToken', None)
+            if page_token is None:
+                break
+            
+            # Be respectful to the API to avoid rate limiting errors
+            time.sleep(1)
+
+        except HttpError as e:
+            print(f"❌ An error occurred during export: {e}")
+            print("    Waiting for 60 seconds before retrying...")
+            time.sleep(60)
+            continue
+
+    print(f"\n🎉 Export complete! Processed a total of {total_files_processed} files.")
+
+if __name__ == '__main__':
+    drive_service, sheets_service = get_authenticated_services()
+    if drive_service and sheets_service:
+        folder_id_map = get_all_folders(drive_service)
+        spreadsheet_id = create_spreadsheet(sheets_service)
+        if spreadsheet_id:
+            export_metadata(drive_service, sheets_service, spreadsheet_id, folder_id_map)

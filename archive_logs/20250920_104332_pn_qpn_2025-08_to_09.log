@@ -1,0 +1,85 @@
+2025-09-03 10:15:49,975 [INFO] 📄 Logging to logs/pn_qpn_2025-08_to_09.log
+2025-09-03 10:15:50,127 [INFO] ✅ Initialized BigQuery Client for project: jibber-jabber-knowledge
+2025-09-03 10:15:50,660 [INFO] BigQuery dataset 'uk_energy_insights' exists.
+2025-09-03 10:15:50,660 [INFO] 📝 Planned datasets (2): PN, QPN
+2025-09-03 10:15:50,660 [INFO] 🚀 Starting ingestion for 2 datasets...
+2025-09-03 10:15:50,661 [INFO] 🔄 Checking for existing windows for bmrs_pn
+2025-09-03 10:15:50,662 [INFO] 🔎 Querying existing windows for jibber-jabber-knowledge.uk_energy_insights.bmrs_pn between 2025-08-01 00:00:00+00:00 and 2025-09-04 00:00:00+00:00
+2025-09-03 10:15:50,889 [INFO] Table jibber-jabber-knowledge.uk_energy_insights.bmrs_pn does not exist, skipping window query.
+2025-09-03 10:15:50,889 [INFO] 🧮 Total windows to fetch for PN: 34 (batch_size=90, flush_seconds=300)
+2025-09-03 10:15:50,889 [INFO] 🌐 Fetching BMRS dataset=PN from=2025-09-03 00:00:00+00:00 to=2025-09-04 00:00:00+00:00
+2025-09-03 10:15:51,757 [INFO] 🌐 Fetching BMRS dataset=PN from=2025-09-02 00:00:00+00:00 to=2025-09-03 00:00:00+00:00
+2025-09-03 10:15:51,870 [INFO] 🌐 Fetching BMRS dataset=PN from=2025-09-01 00:00:00+00:00 to=2025-09-02 00:00:00+00:00
+2025-09-03 10:15:51,976 [INFO] 🌐 Fetching BMRS dataset=PN from=2025-08-31 00:00:00+00:00 to=2025-09-01 00:00:00+00:00
+2025-09-03 10:15:52,074 [INFO] 🌐 Fetching BMRS dataset=PN from=2025-08-30 00:00:00+00:00 to=2025-08-31 00:00:00+00:00
+2025-09-03 10:15:52,178 [INFO] 🌐 Fetching BMRS dataset=PN from=2025-08-29 00:00:00+00:00 to=2025-08-30 00:00:00+00:00
+2025-09-03 10:15:52,288 [INFO] 🌐 Fetching BMRS dataset=PN from=2025-08-28 00:00:00+00:00 to=2025-08-29 00:00:00+00:00
+2025-09-03 10:15:52,395 [INFO] 🌐 Fetching BMRS dataset=PN from=2025-08-27 00:00:00+00:00 to=2025-08-28 00:00:00+00:00
+2025-09-03 10:15:52,490 [INFO] 🌐 Fetching BMRS dataset=PN from=2025-08-26 00:00:00+00:00 to=2025-08-27 00:00:00+00:00
+2025-09-03 10:15:52,621 [INFO] 🌐 Fetching BMRS dataset=PN from=2025-08-25 00:00:00+00:00 to=2025-08-26 00:00:00+00:00
+2025-09-03 10:15:52,738 [INFO] 🌐 Fetching BMRS dataset=PN from=2025-08-24 00:00:00+00:00 to=2025-08-25 00:00:00+00:00
+2025-09-03 10:15:53,000 [INFO] 🌐 Fetching BMRS dataset=PN from=2025-08-23 00:00:00+00:00 to=2025-08-24 00:00:00+00:00
+2025-09-03 10:15:53,118 [INFO] 🌐 Fetching BMRS dataset=PN from=2025-08-22 00:00:00+00:00 to=2025-08-23 00:00:00+00:00
+2025-09-03 10:15:53,258 [INFO] 🌐 Fetching BMRS dataset=PN from=2025-08-21 00:00:00+00:00 to=2025-08-22 00:00:00+00:00
+2025-09-03 10:15:53,425 [INFO] 🌐 Fetching BMRS dataset=PN from=2025-08-20 00:00:00+00:00 to=2025-08-21 00:00:00+00:00
+2025-09-03 10:15:53,569 [INFO] 🌐 Fetching BMRS dataset=PN from=2025-08-19 00:00:00+00:00 to=2025-08-20 00:00:00+00:00
+2025-09-03 10:15:53,681 [INFO] 🌐 Fetching BMRS dataset=PN from=2025-08-18 00:00:00+00:00 to=2025-08-19 00:00:00+00:00
+2025-09-03 10:15:53,805 [INFO] 🌐 Fetching BMRS dataset=PN from=2025-08-17 00:00:00+00:00 to=2025-08-18 00:00:00+00:00
+2025-09-03 10:15:54,015 [INFO] 🌐 Fetching BMRS dataset=PN from=2025-08-16 00:00:00+00:00 to=2025-08-17 00:00:00+00:00
+2025-09-03 10:15:54,130 [INFO] 🌐 Fetching BMRS dataset=PN from=2025-08-15 00:00:00+00:00 to=2025-08-16 00:00:00+00:00
+2025-09-03 10:15:54,237 [INFO] 🌐 Fetching BMRS dataset=PN from=2025-08-14 00:00:00+00:00 to=2025-08-15 00:00:00+00:00
+2025-09-03 10:15:54,343 [INFO] 🌐 Fetching BMRS dataset=PN from=2025-08-13 00:00:00+00:00 to=2025-08-14 00:00:00+00:00
+2025-09-03 10:15:54,445 [INFO] 🌐 Fetching BMRS dataset=PN from=2025-08-12 00:00:00+00:00 to=2025-08-13 00:00:00+00:00
+2025-09-03 10:15:54,562 [INFO] 🌐 Fetching BMRS dataset=PN from=2025-08-11 00:00:00+00:00 to=2025-08-12 00:00:00+00:00
+2025-09-03 10:15:54,675 [INFO] 🌐 Fetching BMRS dataset=PN from=2025-08-10 00:00:00+00:00 to=2025-08-11 00:00:00+00:00
+2025-09-03 10:15:54,783 [INFO] 🌐 Fetching BMRS dataset=PN from=2025-08-09 00:00:00+00:00 to=2025-08-10 00:00:00+00:00
+2025-09-03 10:15:54,886 [INFO] 🌐 Fetching BMRS dataset=PN from=2025-08-08 00:00:00+00:00 to=2025-08-09 00:00:00+00:00
+2025-09-03 10:15:54,999 [INFO] 🌐 Fetching BMRS dataset=PN from=2025-08-07 00:00:00+00:00 to=2025-08-08 00:00:00+00:00
+2025-09-03 10:15:55,113 [INFO] 🌐 Fetching BMRS dataset=PN from=2025-08-06 00:00:00+00:00 to=2025-08-07 00:00:00+00:00
+2025-09-03 10:15:56,216 [INFO] 🌐 Fetching BMRS dataset=PN from=2025-08-05 00:00:00+00:00 to=2025-08-06 00:00:00+00:00
+2025-09-03 10:15:56,335 [INFO] 🌐 Fetching BMRS dataset=PN from=2025-08-04 00:00:00+00:00 to=2025-08-05 00:00:00+00:00
+2025-09-03 10:15:56,431 [INFO] 🌐 Fetching BMRS dataset=PN from=2025-08-03 00:00:00+00:00 to=2025-08-04 00:00:00+00:00
+2025-09-03 10:15:56,538 [INFO] 🌐 Fetching BMRS dataset=PN from=2025-08-02 00:00:00+00:00 to=2025-08-03 00:00:00+00:00
+2025-09-03 10:15:56,641 [INFO] 🌐 Fetching BMRS dataset=PN from=2025-08-01 00:00:00+00:00 to=2025-08-02 00:00:00+00:00
+2025-09-03 10:15:56,743 [INFO] 🏁 Finished ingest for PN: status=OK, rows=0, note=
+2025-09-03 10:15:56,744 [INFO] 🔄 Checking for existing windows for bmrs_qpn
+2025-09-03 10:15:56,744 [INFO] 🔎 Querying existing windows for jibber-jabber-knowledge.uk_energy_insights.bmrs_qpn between 2025-08-01 00:00:00+00:00 and 2025-09-04 00:00:00+00:00
+2025-09-03 10:15:56,959 [INFO] Table jibber-jabber-knowledge.uk_energy_insights.bmrs_qpn does not exist, skipping window query.
+2025-09-03 10:15:56,959 [INFO] 🧮 Total windows to fetch for QPN: 34 (batch_size=90, flush_seconds=300)
+2025-09-03 10:15:56,960 [INFO] 🌐 Fetching BMRS dataset=QPN from=2025-09-03 00:00:00+00:00 to=2025-09-04 00:00:00+00:00
+2025-09-03 10:15:57,061 [INFO] 🌐 Fetching BMRS dataset=QPN from=2025-09-02 00:00:00+00:00 to=2025-09-03 00:00:00+00:00
+2025-09-03 10:15:57,161 [INFO] 🌐 Fetching BMRS dataset=QPN from=2025-09-01 00:00:00+00:00 to=2025-09-02 00:00:00+00:00
+2025-09-03 10:15:57,271 [INFO] 🌐 Fetching BMRS dataset=QPN from=2025-08-31 00:00:00+00:00 to=2025-09-01 00:00:00+00:00
+2025-09-03 10:15:57,378 [INFO] 🌐 Fetching BMRS dataset=QPN from=2025-08-30 00:00:00+00:00 to=2025-08-31 00:00:00+00:00
+2025-09-03 10:15:57,490 [INFO] 🌐 Fetching BMRS dataset=QPN from=2025-08-29 00:00:00+00:00 to=2025-08-30 00:00:00+00:00
+2025-09-03 10:15:57,592 [INFO] 🌐 Fetching BMRS dataset=QPN from=2025-08-28 00:00:00+00:00 to=2025-08-29 00:00:00+00:00
+2025-09-03 10:15:57,688 [INFO] 🌐 Fetching BMRS dataset=QPN from=2025-08-27 00:00:00+00:00 to=2025-08-28 00:00:00+00:00
+2025-09-03 10:15:57,803 [INFO] 🌐 Fetching BMRS dataset=QPN from=2025-08-26 00:00:00+00:00 to=2025-08-27 00:00:00+00:00
+2025-09-03 10:15:57,904 [INFO] 🌐 Fetching BMRS dataset=QPN from=2025-08-25 00:00:00+00:00 to=2025-08-26 00:00:00+00:00
+2025-09-03 10:15:58,007 [INFO] 🌐 Fetching BMRS dataset=QPN from=2025-08-24 00:00:00+00:00 to=2025-08-25 00:00:00+00:00
+2025-09-03 10:15:58,109 [INFO] 🌐 Fetching BMRS dataset=QPN from=2025-08-23 00:00:00+00:00 to=2025-08-24 00:00:00+00:00
+2025-09-03 10:15:58,213 [INFO] 🌐 Fetching BMRS dataset=QPN from=2025-08-22 00:00:00+00:00 to=2025-08-23 00:00:00+00:00
+2025-09-03 10:15:58,312 [INFO] 🌐 Fetching BMRS dataset=QPN from=2025-08-21 00:00:00+00:00 to=2025-08-22 00:00:00+00:00
+2025-09-03 10:15:58,423 [INFO] 🌐 Fetching BMRS dataset=QPN from=2025-08-20 00:00:00+00:00 to=2025-08-21 00:00:00+00:00
+2025-09-03 10:15:58,528 [INFO] 🌐 Fetching BMRS dataset=QPN from=2025-08-19 00:00:00+00:00 to=2025-08-20 00:00:00+00:00
+2025-09-03 10:15:58,635 [INFO] 🌐 Fetching BMRS dataset=QPN from=2025-08-18 00:00:00+00:00 to=2025-08-19 00:00:00+00:00
+2025-09-03 10:15:58,745 [INFO] 🌐 Fetching BMRS dataset=QPN from=2025-08-17 00:00:00+00:00 to=2025-08-18 00:00:00+00:00
+2025-09-03 10:15:58,843 [INFO] 🌐 Fetching BMRS dataset=QPN from=2025-08-16 00:00:00+00:00 to=2025-08-17 00:00:00+00:00
+2025-09-03 10:15:58,950 [INFO] 🌐 Fetching BMRS dataset=QPN from=2025-08-15 00:00:00+00:00 to=2025-08-16 00:00:00+00:00
+2025-09-03 10:15:59,052 [INFO] 🌐 Fetching BMRS dataset=QPN from=2025-08-14 00:00:00+00:00 to=2025-08-15 00:00:00+00:00
+2025-09-03 10:15:59,166 [INFO] 🌐 Fetching BMRS dataset=QPN from=2025-08-13 00:00:00+00:00 to=2025-08-14 00:00:00+00:00
+2025-09-03 10:15:59,273 [INFO] 🌐 Fetching BMRS dataset=QPN from=2025-08-12 00:00:00+00:00 to=2025-08-13 00:00:00+00:00
+2025-09-03 10:15:59,378 [INFO] 🌐 Fetching BMRS dataset=QPN from=2025-08-11 00:00:00+00:00 to=2025-08-12 00:00:00+00:00
+2025-09-03 10:15:59,486 [INFO] 🌐 Fetching BMRS dataset=QPN from=2025-08-10 00:00:00+00:00 to=2025-08-11 00:00:00+00:00
+2025-09-03 10:15:59,597 [INFO] 🌐 Fetching BMRS dataset=QPN from=2025-08-09 00:00:00+00:00 to=2025-08-10 00:00:00+00:00
+2025-09-03 10:15:59,706 [INFO] 🌐 Fetching BMRS dataset=QPN from=2025-08-08 00:00:00+00:00 to=2025-08-09 00:00:00+00:00
+2025-09-03 10:15:59,815 [INFO] 🌐 Fetching BMRS dataset=QPN from=2025-08-07 00:00:00+00:00 to=2025-08-08 00:00:00+00:00
+2025-09-03 10:15:59,917 [INFO] 🌐 Fetching BMRS dataset=QPN from=2025-08-06 00:00:00+00:00 to=2025-08-07 00:00:00+00:00
+2025-09-03 10:16:00,033 [INFO] 🌐 Fetching BMRS dataset=QPN from=2025-08-05 00:00:00+00:00 to=2025-08-06 00:00:00+00:00
+2025-09-03 10:16:00,144 [INFO] 🌐 Fetching BMRS dataset=QPN from=2025-08-04 00:00:00+00:00 to=2025-08-05 00:00:00+00:00
+2025-09-03 10:16:00,250 [INFO] 🌐 Fetching BMRS dataset=QPN from=2025-08-03 00:00:00+00:00 to=2025-08-04 00:00:00+00:00
+2025-09-03 10:16:00,363 [INFO] 🌐 Fetching BMRS dataset=QPN from=2025-08-02 00:00:00+00:00 to=2025-08-03 00:00:00+00:00
+2025-09-03 10:16:00,466 [INFO] 🌐 Fetching BMRS dataset=QPN from=2025-08-01 00:00:00+00:00 to=2025-08-02 00:00:00+00:00
+2025-09-03 10:16:00,569 [INFO] 🏁 Finished ingest for QPN: status=OK, rows=0, note=
+2025-09-03 10:16:00,569 [INFO] 🎉 All datasets processed.
+2025-09-03 10:16:00,569 [INFO]    OK=2, PARTIAL=0, SKIP=0, ERR=0

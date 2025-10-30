@@ -1,0 +1,628 @@
+table_name,column_name,current_type,suggested_bq_type,note
+bmrs_boalf,_dataset,STRING,STRING,Text / identifier
+bmrs_boalf,_ingested_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_boalf,_window_from_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_boalf,_window_to_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_boalf,acceptanceNumber,INTEGER,INT64,Whole number / code
+bmrs_boalf,acceptanceTime,STRING,TIMESTAMP,UTC timestamp
+bmrs_boalf,amendmentFlag,STRING,BOOL,Boolean indicator
+bmrs_boalf,bmUnit,STRING,STRING,Text / identifier
+bmrs_boalf,dataset,STRING,STRING,Text / identifier
+bmrs_boalf,deemedBoFlag,BOOLEAN,BOOL,Boolean indicator
+bmrs_boalf,levelFrom,INTEGER,INT64,Whole number / code
+bmrs_boalf,levelTo,INTEGER,INT64,Whole number / code
+bmrs_boalf,nationalGridBmUnit,STRING,STRING,Text / identifier
+bmrs_boalf,rrFlag,BOOLEAN,BOOL,Boolean indicator
+bmrs_boalf,settlementDate,STRING,DATE,Calendar date
+bmrs_boalf,settlementPeriodFrom,INTEGER,STRING,Text / identifier
+bmrs_boalf,settlementPeriodTo,INTEGER,STRING,Text / identifier
+bmrs_boalf,soFlag,BOOLEAN,BOOL,Boolean indicator
+bmrs_boalf,storFlag,BOOLEAN,BOOL,Boolean indicator
+bmrs_boalf,timeFrom,STRING,TIMESTAMP,UTC timestamp
+bmrs_boalf,timeTo,STRING,TIMESTAMP,UTC timestamp
+bmrs_bod,_dataset,STRING,STRING,Text / identifier
+bmrs_bod,_ingested_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_bod,_window_from_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_bod,_window_to_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_bod,bid,FLOAT,STRING,Text / identifier
+bmrs_bod,bmUnit,STRING,STRING,Text / identifier
+bmrs_bod,dataset,STRING,STRING,Text / identifier
+bmrs_bod,levelFrom,INTEGER,INT64,Whole number / code
+bmrs_bod,levelTo,INTEGER,INT64,Whole number / code
+bmrs_bod,nationalGridBmUnit,STRING,STRING,Text / identifier
+bmrs_bod,offer,FLOAT,STRING,Text / identifier
+bmrs_bod,pairId,INTEGER,INT64,Whole number / code
+bmrs_bod,settlementDate,STRING,DATE,Calendar date
+bmrs_bod,settlementPeriod,INTEGER,INT64,Whole number / code
+bmrs_bod,timeFrom,STRING,TIMESTAMP,UTC timestamp
+bmrs_bod,timeTo,STRING,TIMESTAMP,UTC timestamp
+bmrs_disbsad,_dataset,STRING,STRING,Text / identifier
+bmrs_disbsad,_ingested_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_disbsad,_window_from_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_disbsad,_window_to_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_disbsad,assetId,STRING,STRING,Text / identifier
+bmrs_disbsad,cost,FLOAT,NUMERIC,Numeric quantity
+bmrs_disbsad,dataset,STRING,STRING,Text / identifier
+bmrs_disbsad,id,INTEGER,STRING,Text / identifier
+bmrs_disbsad,isTendered,BOOLEAN,BOOL,Boolean indicator
+bmrs_disbsad,partyId,STRING,STRING,Text / identifier
+bmrs_disbsad,service,STRING,STRING,Text / identifier
+bmrs_disbsad,settlementDate,STRING,DATE,Calendar date
+bmrs_disbsad,settlementPeriod,INTEGER,INT64,Whole number / code
+bmrs_disbsad,soFlag,BOOLEAN,BOOL,Boolean indicator
+bmrs_disbsad,storFlag,BOOLEAN,BOOL,Boolean indicator
+bmrs_disbsad,volume,FLOAT,NUMERIC,Numeric quantity
+bmrs_fou2t14d,_dataset,STRING,STRING,Text / identifier
+bmrs_fou2t14d,_ingested_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_fou2t14d,_window_from_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_fou2t14d,_window_to_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_fou2t14d,biddingZone,STRING,STRING,Text / identifier
+bmrs_fou2t14d,dataset,STRING,STRING,Text / identifier
+bmrs_fou2t14d,forecastDate,STRING,DATE,Calendar date
+bmrs_fou2t14d,forecastDateTimezone,STRING,STRING,Text / identifier
+bmrs_fou2t14d,fuelType,STRING,STRING,Text / identifier
+bmrs_fou2t14d,interconnector,BOOLEAN,BOOL,Boolean indicator
+bmrs_fou2t14d,interconnectorName,STRING,STRING,Text / identifier
+bmrs_fou2t14d,outputUsable,INTEGER,STRING,Text / identifier
+bmrs_fou2t14d,publishTime,STRING,TIMESTAMP,UTC timestamp
+bmrs_fou2t14d,systemZone,STRING,STRING,Text / identifier
+bmrs_fou2t3yw,_dataset,STRING,STRING,Text / identifier
+bmrs_fou2t3yw,_ingested_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_fou2t3yw,_window_from_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_fou2t3yw,_window_to_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_fou2t3yw,biddingZone,STRING,STRING,Text / identifier
+bmrs_fou2t3yw,calendarWeekNumber,INTEGER,INT64,Whole number / code
+bmrs_fou2t3yw,dataset,STRING,STRING,Text / identifier
+bmrs_fou2t3yw,fuelType,STRING,STRING,Text / identifier
+bmrs_fou2t3yw,interconnector,BOOLEAN,BOOL,Boolean indicator
+bmrs_fou2t3yw,interconnectorName,STRING,STRING,Text / identifier
+bmrs_fou2t3yw,outputUsable,INTEGER,STRING,Text / identifier
+bmrs_fou2t3yw,publishTime,STRING,TIMESTAMP,UTC timestamp
+bmrs_fou2t3yw,systemZone,STRING,STRING,Text / identifier
+bmrs_fou2t3yw,year,INTEGER,INT64,Whole number / code
+bmrs_freq,_dataset,STRING,STRING,Text / identifier
+bmrs_freq,_ingested_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_freq,_window_from_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_freq,_window_to_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_freq,dataset,STRING,STRING,Text / identifier
+bmrs_freq,frequency,FLOAT,STRING,Text / identifier
+bmrs_freq,measurementTime,STRING,TIMESTAMP,UTC timestamp
+bmrs_fuelhh,_dataset,STRING,STRING,Text / identifier
+bmrs_fuelhh,_ingested_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_fuelhh,_window_from_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_fuelhh,_window_to_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_fuelhh,dataset,STRING,STRING,Text / identifier
+bmrs_fuelhh,fuelType,STRING,STRING,Text / identifier
+bmrs_fuelhh,generation,INTEGER,NUMERIC,Numeric quantity
+bmrs_fuelhh,publishTime,STRING,TIMESTAMP,UTC timestamp
+bmrs_fuelhh,settlementDate,STRING,DATE,Calendar date
+bmrs_fuelhh,settlementPeriod,INTEGER,INT64,Whole number / code
+bmrs_fuelhh,startTime,STRING,TIMESTAMP,UTC timestamp
+bmrs_fuelinst,_dataset,STRING,STRING,Text / identifier
+bmrs_fuelinst,_ingested_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_fuelinst,_window_from_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_fuelinst,_window_to_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_fuelinst,dataset,STRING,STRING,Text / identifier
+bmrs_fuelinst,fuelType,STRING,STRING,Text / identifier
+bmrs_fuelinst,generation,INTEGER,NUMERIC,Numeric quantity
+bmrs_fuelinst,publishTime,STRING,TIMESTAMP,UTC timestamp
+bmrs_fuelinst,settlementDate,STRING,DATE,Calendar date
+bmrs_fuelinst,settlementPeriod,INTEGER,INT64,Whole number / code
+bmrs_fuelinst,startTime,STRING,TIMESTAMP,UTC timestamp
+bmrs_imbalngc,_dataset,STRING,STRING,Text / identifier
+bmrs_imbalngc,_ingested_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_imbalngc,_window_from_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_imbalngc,_window_to_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_imbalngc,boundary,STRING,STRING,Text / identifier
+bmrs_imbalngc,dataset,STRING,STRING,Text / identifier
+bmrs_imbalngc,imbalance,INTEGER,NUMERIC,Numeric quantity
+bmrs_imbalngc,publishTime,STRING,TIMESTAMP,UTC timestamp
+bmrs_imbalngc,settlementDate,STRING,DATE,Calendar date
+bmrs_imbalngc,settlementPeriod,INTEGER,INT64,Whole number / code
+bmrs_imbalngc,startTime,STRING,TIMESTAMP,UTC timestamp
+bmrs_inddem,_dataset,STRING,STRING,Text / identifier
+bmrs_inddem,_ingested_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_inddem,_window_from_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_inddem,_window_to_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_inddem,boundary,STRING,STRING,Text / identifier
+bmrs_inddem,dataset,STRING,STRING,Text / identifier
+bmrs_inddem,demand,INTEGER,NUMERIC,Numeric quantity
+bmrs_inddem,publishTime,STRING,TIMESTAMP,UTC timestamp
+bmrs_inddem,settlementDate,STRING,DATE,Calendar date
+bmrs_inddem,settlementPeriod,INTEGER,INT64,Whole number / code
+bmrs_inddem,startTime,STRING,TIMESTAMP,UTC timestamp
+bmrs_indgen,_dataset,STRING,STRING,Text / identifier
+bmrs_indgen,_ingested_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_indgen,_window_from_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_indgen,_window_to_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_indgen,boundary,STRING,STRING,Text / identifier
+bmrs_indgen,dataset,STRING,STRING,Text / identifier
+bmrs_indgen,generation,INTEGER,NUMERIC,Numeric quantity
+bmrs_indgen,publishTime,STRING,TIMESTAMP,UTC timestamp
+bmrs_indgen,settlementDate,STRING,DATE,Calendar date
+bmrs_indgen,settlementPeriod,INTEGER,INT64,Whole number / code
+bmrs_indgen,startTime,STRING,TIMESTAMP,UTC timestamp
+bmrs_indo,_dataset,STRING,STRING,Text / identifier
+bmrs_indo,_ingested_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_indo,_window_from_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_indo,_window_to_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_indo,dataset,STRING,STRING,Text / identifier
+bmrs_indo,demand,INTEGER,NUMERIC,Numeric quantity
+bmrs_indo,publishTime,STRING,TIMESTAMP,UTC timestamp
+bmrs_indo,settlementDate,STRING,DATE,Calendar date
+bmrs_indo,settlementPeriod,INTEGER,INT64,Whole number / code
+bmrs_indo,startTime,STRING,TIMESTAMP,UTC timestamp
+bmrs_itsdo,_dataset,STRING,STRING,Text / identifier
+bmrs_itsdo,_ingested_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_itsdo,_window_from_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_itsdo,_window_to_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_itsdo,dataset,STRING,STRING,Text / identifier
+bmrs_itsdo,demand,INTEGER,NUMERIC,Numeric quantity
+bmrs_itsdo,publishTime,STRING,TIMESTAMP,UTC timestamp
+bmrs_itsdo,settlementDate,STRING,DATE,Calendar date
+bmrs_itsdo,settlementPeriod,INTEGER,INT64,Whole number / code
+bmrs_itsdo,startTime,STRING,TIMESTAMP,UTC timestamp
+bmrs_mdp,_dataset,STRING,STRING,Text / identifier
+bmrs_mdp,_ingested_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_mdp,_window_from_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_mdp,_window_to_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_mdp,bmUnit,STRING,STRING,Text / identifier
+bmrs_mdp,dataset,STRING,STRING,Text / identifier
+bmrs_mdp,nationalGridBmUnit,STRING,STRING,Text / identifier
+bmrs_mdp,periodMax,INTEGER,INT64,Whole number / code
+bmrs_mdp,settlementDate,STRING,DATE,Calendar date
+bmrs_mdp,settlementPeriod,INTEGER,INT64,Whole number / code
+bmrs_mdp,time,STRING,TIMESTAMP,UTC timestamp
+bmrs_mdv,_dataset,STRING,STRING,Text / identifier
+bmrs_mdv,_ingested_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_mdv,_window_from_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_mdv,_window_to_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_mdv,bmUnit,STRING,STRING,Text / identifier
+bmrs_mdv,dataset,STRING,STRING,Text / identifier
+bmrs_mdv,nationalGridBmUnit,STRING,STRING,Text / identifier
+bmrs_mdv,settlementDate,STRING,DATE,Calendar date
+bmrs_mdv,settlementPeriod,INTEGER,INT64,Whole number / code
+bmrs_mdv,time,STRING,TIMESTAMP,UTC timestamp
+bmrs_mdv,volumeMax,INTEGER,NUMERIC,Numeric quantity
+bmrs_melngc,_dataset,STRING,STRING,Text / identifier
+bmrs_melngc,_ingested_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_melngc,_window_from_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_melngc,_window_to_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_melngc,boundary,STRING,STRING,Text / identifier
+bmrs_melngc,dataset,STRING,STRING,Text / identifier
+bmrs_melngc,margin,INTEGER,NUMERIC,Numeric quantity
+bmrs_melngc,publishTime,STRING,TIMESTAMP,UTC timestamp
+bmrs_melngc,settlementDate,STRING,DATE,Calendar date
+bmrs_melngc,settlementPeriod,INTEGER,INT64,Whole number / code
+bmrs_melngc,startTime,STRING,TIMESTAMP,UTC timestamp
+bmrs_mels,_dataset,STRING,STRING,Text / identifier
+bmrs_mels,_hash_key,STRING,STRING,Text / identifier
+bmrs_mels,_hash_source_cols,STRING,STRING,Text / identifier
+bmrs_mels,_ingested_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_mels,_source_api,STRING,STRING,Text / identifier
+bmrs_mels,_source_columns,STRING,STRING,Text / identifier
+bmrs_mels,_window_from_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_mels,_window_to_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_mels,bmUnit,STRING,STRING,Text / identifier
+bmrs_mels,dataset,STRING,STRING,Text / identifier
+bmrs_mels,levelFrom,INTEGER,INT64,Whole number / code
+bmrs_mels,levelTo,INTEGER,INT64,Whole number / code
+bmrs_mels,nationalGridBmUnit,STRING,STRING,Text / identifier
+bmrs_mels,notificationSequence,INTEGER,INT64,Whole number / code
+bmrs_mels,notificationTime,STRING,TIMESTAMP,UTC timestamp
+bmrs_mels,settlementDate,STRING,DATE,Calendar date
+bmrs_mels,settlementPeriod,INTEGER,INT64,Whole number / code
+bmrs_mels,timeFrom,STRING,TIMESTAMP,UTC timestamp
+bmrs_mels,timeTo,STRING,TIMESTAMP,UTC timestamp
+bmrs_mid,_dataset,STRING,STRING,Text / identifier
+bmrs_mid,_ingested_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_mid,_window_from_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_mid,_window_to_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_mid,dataProvider,STRING,STRING,Text / identifier
+bmrs_mid,dataset,STRING,STRING,Text / identifier
+bmrs_mid,price,FLOAT,NUMERIC,Numeric quantity
+bmrs_mid,settlementDate,STRING,DATE,Calendar date
+bmrs_mid,settlementPeriod,INTEGER,INT64,Whole number / code
+bmrs_mid,startTime,STRING,TIMESTAMP,UTC timestamp
+bmrs_mid,volume,FLOAT,NUMERIC,Numeric quantity
+bmrs_mils,_dataset,STRING,STRING,Text / identifier
+bmrs_mils,_hash_key,STRING,STRING,Text / identifier
+bmrs_mils,_hash_source_cols,STRING,STRING,Text / identifier
+bmrs_mils,_ingested_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_mils,_source_api,STRING,STRING,Text / identifier
+bmrs_mils,_source_columns,STRING,STRING,Text / identifier
+bmrs_mils,_window_from_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_mils,_window_to_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_mils,bmUnit,STRING,STRING,Text / identifier
+bmrs_mils,dataset,STRING,STRING,Text / identifier
+bmrs_mils,levelFrom,INTEGER,INT64,Whole number / code
+bmrs_mils,levelTo,INTEGER,INT64,Whole number / code
+bmrs_mils,nationalGridBmUnit,STRING,STRING,Text / identifier
+bmrs_mils,notificationSequence,INTEGER,INT64,Whole number / code
+bmrs_mils,notificationTime,STRING,TIMESTAMP,UTC timestamp
+bmrs_mils,settlementDate,STRING,DATE,Calendar date
+bmrs_mils,settlementPeriod,INTEGER,INT64,Whole number / code
+bmrs_mils,timeFrom,STRING,TIMESTAMP,UTC timestamp
+bmrs_mils,timeTo,STRING,TIMESTAMP,UTC timestamp
+bmrs_mnzt,_dataset,STRING,STRING,Text / identifier
+bmrs_mnzt,_ingested_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_mnzt,_window_from_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_mnzt,_window_to_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_mnzt,bmUnit,STRING,STRING,Text / identifier
+bmrs_mnzt,dataset,STRING,STRING,Text / identifier
+bmrs_mnzt,nationalGridBmUnit,STRING,STRING,Text / identifier
+bmrs_mnzt,periodMin,INTEGER,INT64,Whole number / code
+bmrs_mnzt,settlementDate,STRING,DATE,Calendar date
+bmrs_mnzt,settlementPeriod,INTEGER,INT64,Whole number / code
+bmrs_mnzt,time,STRING,TIMESTAMP,UTC timestamp
+bmrs_mzt,_dataset,STRING,STRING,Text / identifier
+bmrs_mzt,_ingested_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_mzt,_window_from_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_mzt,_window_to_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_mzt,bmUnit,STRING,STRING,Text / identifier
+bmrs_mzt,dataset,STRING,STRING,Text / identifier
+bmrs_mzt,nationalGridBmUnit,STRING,STRING,Text / identifier
+bmrs_mzt,periodMin,INTEGER,INT64,Whole number / code
+bmrs_mzt,settlementDate,STRING,DATE,Calendar date
+bmrs_mzt,settlementPeriod,INTEGER,INT64,Whole number / code
+bmrs_mzt,time,STRING,TIMESTAMP,UTC timestamp
+bmrs_ndf,_dataset,STRING,STRING,Text / identifier
+bmrs_ndf,_ingested_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_ndf,_window_from_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_ndf,_window_to_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_ndf,boundary,STRING,STRING,Text / identifier
+bmrs_ndf,dataset,STRING,STRING,Text / identifier
+bmrs_ndf,demand,INTEGER,NUMERIC,Numeric quantity
+bmrs_ndf,publishTime,STRING,TIMESTAMP,UTC timestamp
+bmrs_ndf,settlementDate,STRING,DATE,Calendar date
+bmrs_ndf,settlementPeriod,INTEGER,INT64,Whole number / code
+bmrs_ndf,startTime,STRING,TIMESTAMP,UTC timestamp
+bmrs_ndfd,_dataset,STRING,STRING,Text / identifier
+bmrs_ndfd,_ingested_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_ndfd,_window_from_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_ndfd,_window_to_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_ndfd,dataset,STRING,STRING,Text / identifier
+bmrs_ndfd,demand,INTEGER,NUMERIC,Numeric quantity
+bmrs_ndfd,forecastDate,STRING,DATE,Calendar date
+bmrs_ndfd,publishTime,STRING,TIMESTAMP,UTC timestamp
+bmrs_ndfw,_dataset,STRING,STRING,Text / identifier
+bmrs_ndfw,_ingested_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_ndfw,_window_from_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_ndfw,_window_to_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_ndfw,dataset,STRING,STRING,Text / identifier
+bmrs_ndfw,demand,INTEGER,NUMERIC,Numeric quantity
+bmrs_ndfw,publishTime,STRING,TIMESTAMP,UTC timestamp
+bmrs_ndfw,week,INTEGER,INT64,Whole number / code
+bmrs_ndfw,year,INTEGER,INT64,Whole number / code
+bmrs_ndz,_dataset,STRING,STRING,Text / identifier
+bmrs_ndz,_ingested_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_ndz,_window_from_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_ndz,_window_to_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_ndz,bmUnit,STRING,STRING,Text / identifier
+bmrs_ndz,dataset,STRING,STRING,Text / identifier
+bmrs_ndz,nationalGridBmUnit,STRING,STRING,Text / identifier
+bmrs_ndz,notice,INTEGER,STRING,Text / identifier
+bmrs_ndz,settlementDate,STRING,DATE,Calendar date
+bmrs_ndz,settlementPeriod,INTEGER,INT64,Whole number / code
+bmrs_ndz,time,STRING,TIMESTAMP,UTC timestamp
+bmrs_netbsad,_dataset,STRING,STRING,Text / identifier
+bmrs_netbsad,_ingested_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_netbsad,_window_from_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_netbsad,_window_to_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_netbsad,buyPricePriceAdjustment,FLOAT,NUMERIC,Numeric quantity
+bmrs_netbsad,dataset,STRING,STRING,Text / identifier
+bmrs_netbsad,netBuyPriceCostAdjustmentEnergy,FLOAT,NUMERIC,Numeric quantity
+bmrs_netbsad,netBuyPriceVolumeAdjustmentEnergy,FLOAT,NUMERIC,Numeric quantity
+bmrs_netbsad,netBuyPriceVolumeAdjustmentSystem,FLOAT,NUMERIC,Numeric quantity
+bmrs_netbsad,netSellPriceCostAdjustmentEnergy,FLOAT,NUMERIC,Numeric quantity
+bmrs_netbsad,netSellPriceVolumeAdjustmentEnergy,FLOAT,NUMERIC,Numeric quantity
+bmrs_netbsad,netSellPriceVolumeAdjustmentSystem,FLOAT,NUMERIC,Numeric quantity
+bmrs_netbsad,sellPricePriceAdjustment,FLOAT,NUMERIC,Numeric quantity
+bmrs_netbsad,settlementDate,STRING,DATE,Calendar date
+bmrs_netbsad,settlementPeriod,INTEGER,INT64,Whole number / code
+bmrs_nonbm,_dataset,STRING,STRING,Text / identifier
+bmrs_nonbm,_ingested_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_nonbm,_window_from_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_nonbm,_window_to_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_nonbm,dataset,STRING,STRING,Text / identifier
+bmrs_nonbm,generation,INTEGER,NUMERIC,Numeric quantity
+bmrs_nonbm,publishTime,STRING,TIMESTAMP,UTC timestamp
+bmrs_nonbm,settlementDate,STRING,DATE,Calendar date
+bmrs_nonbm,settlementPeriod,INTEGER,INT64,Whole number / code
+bmrs_nonbm,startTime,STRING,TIMESTAMP,UTC timestamp
+bmrs_nou2t14d,_dataset,STRING,STRING,Text / identifier
+bmrs_nou2t14d,_ingested_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_nou2t14d,_window_from_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_nou2t14d,_window_to_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_nou2t14d,dataset,STRING,STRING,Text / identifier
+bmrs_nou2t14d,forecastDate,STRING,DATE,Calendar date
+bmrs_nou2t14d,forecastDateTimezone,STRING,STRING,Text / identifier
+bmrs_nou2t14d,outputUsable,INTEGER,STRING,Text / identifier
+bmrs_nou2t14d,publishTime,STRING,TIMESTAMP,UTC timestamp
+bmrs_nou2t14d,systemZone,STRING,STRING,Text / identifier
+bmrs_nou2t3yw,_dataset,STRING,STRING,Text / identifier
+bmrs_nou2t3yw,_ingested_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_nou2t3yw,_window_from_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_nou2t3yw,_window_to_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_nou2t3yw,calendarWeekNumber,INTEGER,INT64,Whole number / code
+bmrs_nou2t3yw,dataset,STRING,STRING,Text / identifier
+bmrs_nou2t3yw,outputUsable,INTEGER,STRING,Text / identifier
+bmrs_nou2t3yw,publishTime,STRING,TIMESTAMP,UTC timestamp
+bmrs_nou2t3yw,systemZone,STRING,STRING,Text / identifier
+bmrs_nou2t3yw,year,INTEGER,INT64,Whole number / code
+bmrs_ntb,_dataset,STRING,STRING,Text / identifier
+bmrs_ntb,_ingested_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_ntb,_window_from_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_ntb,_window_to_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_ntb,bmUnit,STRING,STRING,Text / identifier
+bmrs_ntb,dataset,STRING,STRING,Text / identifier
+bmrs_ntb,nationalGridBmUnit,STRING,STRING,Text / identifier
+bmrs_ntb,notice,INTEGER,STRING,Text / identifier
+bmrs_ntb,settlementDate,STRING,DATE,Calendar date
+bmrs_ntb,settlementPeriod,INTEGER,INT64,Whole number / code
+bmrs_ntb,time,STRING,TIMESTAMP,UTC timestamp
+bmrs_nto,_dataset,STRING,STRING,Text / identifier
+bmrs_nto,_ingested_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_nto,_window_from_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_nto,_window_to_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_nto,bmUnit,STRING,STRING,Text / identifier
+bmrs_nto,dataset,STRING,STRING,Text / identifier
+bmrs_nto,nationalGridBmUnit,STRING,STRING,Text / identifier
+bmrs_nto,notice,INTEGER,STRING,Text / identifier
+bmrs_nto,settlementDate,STRING,DATE,Calendar date
+bmrs_nto,settlementPeriod,INTEGER,INT64,Whole number / code
+bmrs_nto,time,STRING,TIMESTAMP,UTC timestamp
+bmrs_ocnmf3y,_dataset,STRING,STRING,Text / identifier
+bmrs_ocnmf3y,_ingested_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_ocnmf3y,_window_from_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_ocnmf3y,_window_to_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_ocnmf3y,dataset,STRING,STRING,Text / identifier
+bmrs_ocnmf3y,publishTime,STRING,TIMESTAMP,UTC timestamp
+bmrs_ocnmf3y,surplus,INTEGER,NUMERIC,Numeric quantity
+bmrs_ocnmf3y,week,INTEGER,INT64,Whole number / code
+bmrs_ocnmf3y,year,INTEGER,INT64,Whole number / code
+bmrs_ocnmf3y2,_dataset,STRING,STRING,Text / identifier
+bmrs_ocnmf3y2,_ingested_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_ocnmf3y2,_window_from_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_ocnmf3y2,_window_to_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_ocnmf3y2,dataset,STRING,STRING,Text / identifier
+bmrs_ocnmf3y2,margin,INTEGER,NUMERIC,Numeric quantity
+bmrs_ocnmf3y2,publishTime,STRING,TIMESTAMP,UTC timestamp
+bmrs_ocnmf3y2,week,INTEGER,INT64,Whole number / code
+bmrs_ocnmf3y2,year,INTEGER,INT64,Whole number / code
+bmrs_ocnmfd,_dataset,STRING,STRING,Text / identifier
+bmrs_ocnmfd,_ingested_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_ocnmfd,_window_from_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_ocnmfd,_window_to_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_ocnmfd,dataset,STRING,STRING,Text / identifier
+bmrs_ocnmfd,forecastDate,STRING,DATE,Calendar date
+bmrs_ocnmfd,publishTime,STRING,TIMESTAMP,UTC timestamp
+bmrs_ocnmfd,surplus,INTEGER,NUMERIC,Numeric quantity
+bmrs_ocnmfd2,_dataset,STRING,STRING,Text / identifier
+bmrs_ocnmfd2,_ingested_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_ocnmfd2,_window_from_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_ocnmfd2,_window_to_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_ocnmfd2,dataset,STRING,STRING,Text / identifier
+bmrs_ocnmfd2,forecastDate,STRING,DATE,Calendar date
+bmrs_ocnmfd2,margin,INTEGER,NUMERIC,Numeric quantity
+bmrs_ocnmfd2,publishTime,STRING,TIMESTAMP,UTC timestamp
+bmrs_qas,_dataset,STRING,STRING,Text / identifier
+bmrs_qas,_ingested_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_qas,_window_from_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_qas,_window_to_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_qas,bmUnit,STRING,STRING,Text / identifier
+bmrs_qas,bmUnitApplicableBalancingServicesVolume,FLOAT,NUMERIC,Numeric quantity
+bmrs_qas,dataset,STRING,STRING,Text / identifier
+bmrs_qas,nationalGridBmUnit,STRING,STRING,Text / identifier
+bmrs_qas,settlementDate,STRING,DATE,Calendar date
+bmrs_qas,settlementPeriod,INTEGER,INT64,Whole number / code
+bmrs_rdre,_dataset,STRING,STRING,Text / identifier
+bmrs_rdre,_ingested_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_rdre,_window_from_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_rdre,_window_to_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_rdre,bmUnit,STRING,STRING,Text / identifier
+bmrs_rdre,dataset,STRING,STRING,Text / identifier
+bmrs_rdre,elbow2,FLOAT,NUMERIC,Numeric quantity
+bmrs_rdre,elbow3,FLOAT,NUMERIC,Numeric quantity
+bmrs_rdre,nationalGridBmUnit,STRING,STRING,Text / identifier
+bmrs_rdre,rate1,FLOAT,NUMERIC,Numeric quantity
+bmrs_rdre,rate2,FLOAT,NUMERIC,Numeric quantity
+bmrs_rdre,rate3,FLOAT,NUMERIC,Numeric quantity
+bmrs_rdre,settlementDate,STRING,DATE,Calendar date
+bmrs_rdre,settlementPeriod,INTEGER,INT64,Whole number / code
+bmrs_rdre,time,STRING,TIMESTAMP,UTC timestamp
+bmrs_rdri,_dataset,STRING,STRING,Text / identifier
+bmrs_rdri,_ingested_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_rdri,_window_from_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_rdri,_window_to_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_rdri,bmUnit,STRING,STRING,Text / identifier
+bmrs_rdri,dataset,STRING,STRING,Text / identifier
+bmrs_rdri,elbow2,FLOAT,NUMERIC,Numeric quantity
+bmrs_rdri,elbow3,FLOAT,NUMERIC,Numeric quantity
+bmrs_rdri,nationalGridBmUnit,STRING,STRING,Text / identifier
+bmrs_rdri,rate1,FLOAT,NUMERIC,Numeric quantity
+bmrs_rdri,rate2,FLOAT,NUMERIC,Numeric quantity
+bmrs_rdri,rate3,FLOAT,NUMERIC,Numeric quantity
+bmrs_rdri,settlementDate,STRING,DATE,Calendar date
+bmrs_rdri,settlementPeriod,INTEGER,INT64,Whole number / code
+bmrs_rdri,time,STRING,TIMESTAMP,UTC timestamp
+bmrs_rdri_new,_dataset,STRING,STRING,Text / identifier
+bmrs_rdri_new,_ingested_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_rdri_new,_window_from_utc,TIMESTAMP,TIMESTAMP,UTC timestamp
+bmrs_rdri_new,_window_to_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_rdri_new,bmUnit,STRING,STRING,Text / identifier
+bmrs_rdri_new,dataset,STRING,STRING,Text / identifier
+bmrs_rdri_new,elbow2,STRING,NUMERIC,Numeric quantity
+bmrs_rdri_new,elbow3,STRING,NUMERIC,Numeric quantity
+bmrs_rdri_new,nationalGridBmUnit,STRING,STRING,Text / identifier
+bmrs_rdri_new,other_field,FLOAT,STRING,Text / identifier
+bmrs_rdri_new,rate1,FLOAT,NUMERIC,Numeric quantity
+bmrs_rdri_new,rate2,FLOAT,NUMERIC,Numeric quantity
+bmrs_rdri_new,rate3,STRING,NUMERIC,Numeric quantity
+bmrs_rdri_new,settlementDate,STRING,DATE,Calendar date
+bmrs_rdri_new,settlementPeriod,INTEGER,INT64,Whole number / code
+bmrs_rdri_new,time,STRING,TIMESTAMP,UTC timestamp
+bmrs_rure,_dataset,STRING,STRING,Text / identifier
+bmrs_rure,_ingested_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_rure,_window_from_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_rure,_window_to_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_rure,bmUnit,STRING,STRING,Text / identifier
+bmrs_rure,dataset,STRING,STRING,Text / identifier
+bmrs_rure,elbow2,FLOAT,NUMERIC,Numeric quantity
+bmrs_rure,elbow3,FLOAT,NUMERIC,Numeric quantity
+bmrs_rure,nationalGridBmUnit,STRING,STRING,Text / identifier
+bmrs_rure,rate1,FLOAT,NUMERIC,Numeric quantity
+bmrs_rure,rate2,FLOAT,NUMERIC,Numeric quantity
+bmrs_rure,rate3,FLOAT,NUMERIC,Numeric quantity
+bmrs_rure,settlementDate,STRING,DATE,Calendar date
+bmrs_rure,settlementPeriod,INTEGER,INT64,Whole number / code
+bmrs_rure,time,STRING,TIMESTAMP,UTC timestamp
+bmrs_ruri,_dataset,STRING,STRING,Text / identifier
+bmrs_ruri,_ingested_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_ruri,_window_from_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_ruri,_window_to_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_ruri,bmUnit,STRING,STRING,Text / identifier
+bmrs_ruri,dataset,STRING,STRING,Text / identifier
+bmrs_ruri,elbow2,FLOAT,NUMERIC,Numeric quantity
+bmrs_ruri,elbow3,FLOAT,NUMERIC,Numeric quantity
+bmrs_ruri,nationalGridBmUnit,STRING,STRING,Text / identifier
+bmrs_ruri,rate1,FLOAT,NUMERIC,Numeric quantity
+bmrs_ruri,rate2,FLOAT,NUMERIC,Numeric quantity
+bmrs_ruri,rate3,FLOAT,NUMERIC,Numeric quantity
+bmrs_ruri,settlementDate,STRING,DATE,Calendar date
+bmrs_ruri,settlementPeriod,INTEGER,INT64,Whole number / code
+bmrs_ruri,time,STRING,TIMESTAMP,UTC timestamp
+bmrs_sel,_dataset,STRING,STRING,Text / identifier
+bmrs_sel,_ingested_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_sel,_window_from_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_sel,_window_to_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_sel,bmUnit,STRING,STRING,Text / identifier
+bmrs_sel,dataset,STRING,STRING,Text / identifier
+bmrs_sel,level,INTEGER,INT64,Whole number / code
+bmrs_sel,nationalGridBmUnit,STRING,STRING,Text / identifier
+bmrs_sel,settlementDate,STRING,DATE,Calendar date
+bmrs_sel,settlementPeriod,INTEGER,INT64,Whole number / code
+bmrs_sel,time,STRING,TIMESTAMP,UTC timestamp
+bmrs_sil,_dataset,STRING,STRING,Text / identifier
+bmrs_sil,_ingested_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_sil,_window_from_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_sil,_window_to_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_sil,bmUnit,STRING,STRING,Text / identifier
+bmrs_sil,dataset,STRING,STRING,Text / identifier
+bmrs_sil,level,INTEGER,INT64,Whole number / code
+bmrs_sil,nationalGridBmUnit,STRING,STRING,Text / identifier
+bmrs_sil,settlementDate,STRING,DATE,Calendar date
+bmrs_sil,settlementPeriod,INTEGER,INT64,Whole number / code
+bmrs_sil,time,STRING,TIMESTAMP,UTC timestamp
+bmrs_temp,_dataset,STRING,STRING,Text / identifier
+bmrs_temp,_ingested_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_temp,_window_from_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_temp,_window_to_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_temp,dataset,STRING,STRING,Text / identifier
+bmrs_temp,measurementDate,STRING,DATE,Calendar date
+bmrs_temp,publishTime,STRING,TIMESTAMP,UTC timestamp
+bmrs_temp,temperature,FLOAT,NUMERIC,Numeric quantity
+bmrs_temp_temp_1756487043,_dataset,STRING,STRING,Text / identifier
+bmrs_temp_temp_1756487043,_dedup_key,STRING,STRING,Text / identifier
+bmrs_temp_temp_1756487043,_ingested_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_temp_temp_1756487043,_original_columns,STRING,STRING,Text / identifier
+bmrs_temp_temp_1756487043,_schema_after,STRING,STRING,Text / identifier
+bmrs_temp_temp_1756487043,_schema_before,STRING,STRING,Text / identifier
+bmrs_temp_temp_1756487043,_source_format,STRING,STRING,Text / identifier
+bmrs_temp_temp_1756487043,_source_version,STRING,STRING,Text / identifier
+bmrs_temp_temp_1756487043,_window_from_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_temp_temp_1756487043,_window_to_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_temp_temp_1756487043,dataset,STRING,STRING,Text / identifier
+bmrs_temp_temp_1756487043,measurementDate,STRING,DATE,Calendar date
+bmrs_temp_temp_1756487043,publishTime,STRING,TIMESTAMP,UTC timestamp
+bmrs_temp_temp_1756487043,temperature,FLOAT,NUMERIC,Numeric quantity
+bmrs_tsdf,_dataset,STRING,STRING,Text / identifier
+bmrs_tsdf,_ingested_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_tsdf,_window_from_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_tsdf,_window_to_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_tsdf,boundary,STRING,STRING,Text / identifier
+bmrs_tsdf,dataset,STRING,STRING,Text / identifier
+bmrs_tsdf,demand,INTEGER,NUMERIC,Numeric quantity
+bmrs_tsdf,publishTime,STRING,TIMESTAMP,UTC timestamp
+bmrs_tsdf,settlementDate,STRING,DATE,Calendar date
+bmrs_tsdf,settlementPeriod,INTEGER,INT64,Whole number / code
+bmrs_tsdf,startTime,STRING,TIMESTAMP,UTC timestamp
+bmrs_tsdf_temp_1756487050,_dataset,STRING,STRING,Text / identifier
+bmrs_tsdf_temp_1756487050,_dedup_key,STRING,STRING,Text / identifier
+bmrs_tsdf_temp_1756487050,_ingested_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_tsdf_temp_1756487050,_original_columns,STRING,STRING,Text / identifier
+bmrs_tsdf_temp_1756487050,_schema_after,STRING,STRING,Text / identifier
+bmrs_tsdf_temp_1756487050,_schema_before,STRING,STRING,Text / identifier
+bmrs_tsdf_temp_1756487050,_source_format,STRING,STRING,Text / identifier
+bmrs_tsdf_temp_1756487050,_source_version,STRING,STRING,Text / identifier
+bmrs_tsdf_temp_1756487050,_window_from_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_tsdf_temp_1756487050,_window_to_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_tsdf_temp_1756487050,boundary,STRING,STRING,Text / identifier
+bmrs_tsdf_temp_1756487050,dataset,STRING,STRING,Text / identifier
+bmrs_tsdf_temp_1756487050,demand,INTEGER,NUMERIC,Numeric quantity
+bmrs_tsdf_temp_1756487050,publishTime,STRING,TIMESTAMP,UTC timestamp
+bmrs_tsdf_temp_1756487050,settlementDate,STRING,DATE,Calendar date
+bmrs_tsdf_temp_1756487050,settlementPeriod,INTEGER,INT64,Whole number / code
+bmrs_tsdf_temp_1756487050,startTime,STRING,TIMESTAMP,UTC timestamp
+bmrs_tsdfd,_dataset,STRING,STRING,Text / identifier
+bmrs_tsdfd,_ingested_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_tsdfd,_window_from_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_tsdfd,_window_to_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_tsdfd,dataset,STRING,STRING,Text / identifier
+bmrs_tsdfd,demand,INTEGER,NUMERIC,Numeric quantity
+bmrs_tsdfd,forecastDate,STRING,DATE,Calendar date
+bmrs_tsdfd,publishTime,STRING,TIMESTAMP,UTC timestamp
+bmrs_tsdfd_temp_1756487057,_dataset,STRING,STRING,Text / identifier
+bmrs_tsdfd_temp_1756487057,_dedup_key,STRING,STRING,Text / identifier
+bmrs_tsdfd_temp_1756487057,_ingested_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_tsdfd_temp_1756487057,_original_columns,STRING,STRING,Text / identifier
+bmrs_tsdfd_temp_1756487057,_schema_after,STRING,STRING,Text / identifier
+bmrs_tsdfd_temp_1756487057,_schema_before,STRING,STRING,Text / identifier
+bmrs_tsdfd_temp_1756487057,_source_format,STRING,STRING,Text / identifier
+bmrs_tsdfd_temp_1756487057,_source_version,STRING,STRING,Text / identifier
+bmrs_tsdfd_temp_1756487057,_window_from_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_tsdfd_temp_1756487057,_window_to_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_tsdfd_temp_1756487057,dataset,STRING,STRING,Text / identifier
+bmrs_tsdfd_temp_1756487057,demand,INTEGER,NUMERIC,Numeric quantity
+bmrs_tsdfd_temp_1756487057,forecastDate,STRING,DATE,Calendar date
+bmrs_tsdfd_temp_1756487057,publishTime,STRING,TIMESTAMP,UTC timestamp
+bmrs_tsdfw,_dataset,STRING,STRING,Text / identifier
+bmrs_tsdfw,_ingested_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_tsdfw,_window_from_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_tsdfw,_window_to_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_tsdfw,dataset,STRING,STRING,Text / identifier
+bmrs_tsdfw,demand,INTEGER,NUMERIC,Numeric quantity
+bmrs_tsdfw,publishTime,STRING,TIMESTAMP,UTC timestamp
+bmrs_tsdfw,week,INTEGER,INT64,Whole number / code
+bmrs_tsdfw,year,INTEGER,INT64,Whole number / code
+bmrs_uou2t14d,_dataset,STRING,STRING,Text / identifier
+bmrs_uou2t14d,_ingested_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_uou2t14d,_window_from_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_uou2t14d,_window_to_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_uou2t14d,bmUnit,STRING,STRING,Text / identifier
+bmrs_uou2t14d,dataset,STRING,STRING,Text / identifier
+bmrs_uou2t14d,forecastDate,STRING,DATE,Calendar date
+bmrs_uou2t14d,fuelType,STRING,STRING,Text / identifier
+bmrs_uou2t14d,nationalGridBmUnit,STRING,STRING,Text / identifier
+bmrs_uou2t14d,outputUsable,INTEGER,STRING,Text / identifier
+bmrs_uou2t14d,publishTime,STRING,TIMESTAMP,UTC timestamp
+bmrs_uou2t3yw,_dataset,STRING,STRING,Text / identifier
+bmrs_uou2t3yw,_ingested_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_uou2t3yw,_window_from_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_uou2t3yw,_window_to_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_uou2t3yw,bmUnit,STRING,STRING,Text / identifier
+bmrs_uou2t3yw,dataset,STRING,STRING,Text / identifier
+bmrs_uou2t3yw,fuelType,STRING,STRING,Text / identifier
+bmrs_uou2t3yw,nationalGridBmUnit,STRING,STRING,Text / identifier
+bmrs_uou2t3yw,outputUsable,INTEGER,STRING,Text / identifier
+bmrs_uou2t3yw,publishTime,STRING,TIMESTAMP,UTC timestamp
+bmrs_uou2t3yw,week,INTEGER,INT64,Whole number / code
+bmrs_uou2t3yw,year,INTEGER,INT64,Whole number / code
+bmrs_windfor,_dataset,STRING,STRING,Text / identifier
+bmrs_windfor,_ingested_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_windfor,_window_from_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_windfor,_window_to_utc,STRING,TIMESTAMP,UTC timestamp
+bmrs_windfor,dataset,STRING,STRING,Text / identifier
+bmrs_windfor,generation,INTEGER,NUMERIC,Numeric quantity
+bmrs_windfor,publishTime,STRING,TIMESTAMP,UTC timestamp
+bmrs_windfor,startTime,STRING,TIMESTAMP,UTC timestamp

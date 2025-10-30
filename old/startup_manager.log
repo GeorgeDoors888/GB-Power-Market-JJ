@@ -1,0 +1,12 @@
+2025-09-21 17:00:28,500 - INFO - Skipping historical data catchup as requested
+2025-09-21 17:00:28,501 - INFO - Starting 15-minute updater process
+2025-09-21 17:00:28,501 - INFO - Starting 15-minute updater: /Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/bin/python /Users/georgemajor/jibber-jabber 24 august 2025 big bop/update_all_data_15min.py --continuous --dry-run
+2025-09-21 17:00:29,506 - INFO - 15-minute updater started with PID 97583
+2025-09-21 17:00:29,506 - INFO - Startup manager completed successfully
+2025-09-21 17:00:39,518 - WARNING - 15-minute updater process has stopped
+2025-09-21 17:00:39,520 - INFO - Cleanup complete
+2025-09-21 17:04:34,172 - INFO - Skipping historical data catchup as requested
+2025-09-21 17:04:34,173 - INFO - Starting 15-minute updater process
+2025-09-21 17:04:34,173 - INFO - Starting 15-minute updater: /Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/bin/python /Users/georgemajor/jibber-jabber 24 august 2025 big bop/update_all_data_15min.py --continuous --dry-run
+2025-09-21 17:04:35,219 - INFO - 15-minute updater started with PID 99158
+2025-09-21 17:04:35,273 - INFO - Startup manager completed successfully

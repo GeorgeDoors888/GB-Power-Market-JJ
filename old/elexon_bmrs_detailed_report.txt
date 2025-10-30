@@ -1,0 +1,72 @@
+# Detailed Report on ELEXON/BMRS Datasets
+
+## Overview
+The ELEXON/BMRS datasets are categorized into various groups based on their data type and purpose. Below is a detailed breakdown of the datasets, including their categories and table names.
+
+## Categories and Tables
+
+### Market Trading
+- **Tables:**
+  - bmrs_boalf
+  - bmrs_boalf_backup
+  - bmrs_bod
+  - bmrs_bod_backup
+  - bmrs_bod_v2
+
+### System Balancing
+- **Tables:**
+  - bmrs_freq
+  - bmrs_freq_backup
+  - bmrs_mels
+  - bmrs_mels_backup
+  - bmrs_mils
+  - bmrs_mils_backup
+
+### Generation Data
+- **Tables:**
+  - bmrs_fuelhh
+  - bmrs_fuelhh_backup
+  - bmrs_fuelinst
+  - bmrs_fuelinst_backup
+
+### Demand & Forecasting
+- **Tables:**
+  - bmrs_imbalngc
+  - bmrs_imbalngc_backup
+  - bmrs_itsdo
+  - bmrs_itsdo_backup
+
+### Wind & Renewables
+- **Tables:**
+  - bmrs_windfor
+  - bmrs_windfor_backup
+
+### Technical & Monitoring
+- **Tables:**
+  - bmrs_qas
+  - bmrs_qas_backup
+  - bmrs_temp
+  - bmrs_temp_backup
+
+### Interconnectors
+- **Tables:**
+  - bmrs_fou2t14d
+  - bmrs_fou2t14d_backup
+
+### Grid Operations
+- **Tables:**
+  - bmrs_tsdf
+  - bmrs_tsdf_backup
+
+## Market Index Prices
+Market Index Price data is received from each of the appointed Market Index Data Providers (MIDPs) and reflects the price of wholesale electricity in Great Britain for the relevant period in the short-term markets. Market Index Prices are a key component in the calculation of System Buy Price and System Sell Price for each Settlement Period.
+
+### What You Need to Know While Using This Data
+- The graph's default view is the last 24 hours, and you are able to change to a week view or a custom date range.
+- The graph shows the Market Index Prices in £/MWh with a line each for price reported by APX and N2EX. The corresponding Market Volume Data in MWh is available in the tooltip when hovering over the graph.
+
+### Data Source
+[Market Index Prices Data](https://docs.google.com/spreadsheets/d/1FoA72QMekY6JSqyU7DJdFnw0SeHFdgAdoX9jhJh8D2M/edit?gid=0#gid=0)
+
+## Summary
+The ELEXON/BMRS datasets provide comprehensive data on market trading, system balancing, generation, demand forecasting, wind and renewables, technical monitoring, interconnectors, and grid operations. These datasets are essential for analyzing energy data and making informed decisions in the energy sector.

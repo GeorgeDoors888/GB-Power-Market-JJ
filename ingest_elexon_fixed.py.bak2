@@ -1,0 +1,2169 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+"""
+Modified Elexon data loader to better handle schema changes and duplicates.
+
+This script:
+1. Handles schema changes by only loading columns that exist in both source and target
+2. Adds metadata to track schema changes
+3. Provides deduplication based on source data
+4. Adds options for overwriting existing data
+
+Usage:
+python ingest_elexon_fixed.py --start 2025-08-28 --end 2025-08-29
+python ingest_elexon_fixed.py --start 2025-08-28 --end 2025-08-29 --only TEMP,TSDF
+python ingest_elexon_fixed.py --start 2025-08-28 --end 2025-08-29 --overwrite
+"""
+
+from __future__ import annotations
+
+import argparse
+import hashlib
+import io
+import json
+import logging
+import os
+import signal
+import sys
+import time
+from dataclasses import dataclass
+from datetime import date, datetime, timedelta, timezone
+from typing import Dict, Iterable, List, Optional, Set, Tuple
+
+import google.auth
+import pandas as pd
+import requests
+from dotenv import load_dotenv
+from google.api_core.exceptions import BadRequest, Conflict, DeadlineExceeded, NotFound
+from google.cloud import bigquery
+from tqdm import tqdm
+
+# Integrate ingestion logic from elexon_full_ingest.py
+from elexon_full_ingest import fetch_B0620, fetch_B0630, fetch_insights_dataset
+
+# Import schema handler for year-specific schemas
+from schema_handler import get_schema_for_dataset_and_year, get_schema_year_from_date
+
+
+# Import enhanced BigQuery utils
+from bigquery_utils import load_dataframe_with_schema_adaptation
+
+# Load environment variables from .env file
+load_dotenv()
+
+# Configuration
+BMRS_BASE = "https://data.elexon.co.uk/bmrs/api/v1/datasets"
+BQ_PROJECT = "jibber-jabber-knowledge"
+BQ_DATASET = "uk_energy_insights"
+MAX_RETRIES = 5
+RETRY_BACKOFF = 5.0  # seconds
+TIMEOUT = (10, 90)  # (connect, read) timeout in seconds
+# Set to None to disable sandbox-style auto-expiration of tables
+SANDBOX_EXPIRATION_DAYS: Optional[int] = None  # 50
+MAX_FRAMES_PER_BATCH = (
+    10  # Increased from 1 to 10 to reduce the number of load operations
+)
+# Time-based flush to avoid losing large in-memory batches on hangs
+DEFAULT_FLUSH_SECONDS = 300  # 5 minutes
+DEFAULT_BQ_LOAD_TIMEOUT_SEC = 900  # 15 minutes per load job
+
+# Per-dataset max window sizes
+CHUNK_RULES = {
+    "BOD": "1h",
+    "B1770": "1d",
+    "BOALF": "1d",
+    "COSTS": "1d",  # System Buy/Sell Prices
+    "NETBSAD": "1d",
+    "DISBSAD": "1d",
+    "IMBALNGC": "7d",
+    "PN": "1d",
+    "QPN": "1d",
+    "QAS": "1d",
+    "RDRE": "1d",
+    "RDRI": "1d",
+    "RURE": "1d",
+    "RURI": "1d",
+    "FREQ": "1d",
+    "FUELINST": "1d",
+    "FUELHH": "1d",
+    "TEMP": "7d",
+    "B1610": "7d",
+    "NDF": "7d",
+    "NDFD": "7d",
+    "NDFW": "7d",
+    "TSDF": "7d",
+    "TSDFD": "7d",
+    "TSDFW": "7d",
+    "INDDEM": "7d",
+    "INDGEN": "7d",
+    "ITSDO": "7d",
+    "INDO": "7d",
+    "MELNGC": "7d",
+    "WINDFOR": "7d",
+    "WIND": "7d",
+    "FOU2T14D": "7d",
+    "FOU2T3YW": "7d",
+    "NOU2T14D": "7d",
+    "NOU2T3YW": "7d",
+    "UOU2T14D": "1d",
+    "UOU2T3YW": "1d",
+    "SEL": "7d",
+    "SIL": "7d",
+    "OCNMF3Y": "7d",
+    "OCNMF3Y2": "7d",
+    "OCNMFD": "7d",
+    "OCNMFD2": "7d",
+    "INTBPT": "7d",
+    "MIP": "7d",
+    "MID": "7d",
+    # MILS/MELS appear stricter with ranges; default to 1d to avoid 400s
+    "MILS": "1d",
+    "MELS": "1d",
+    "MDP": "7d",
+    "MDV": "7d",
+    "MNZT": "7d",
+    "MZT": "7d",
+    "NTB": "7d",
+    "NTO": "7d",
+    "NDZ": "7d",
+    "NONBM": "7d",
+    "WIND_SOLAR_GEN": "1d",  # Actual or estimated wind and solar generation
+    "INTERCONNECTOR_FLOWS": "1d",  # Interconnector imports and exports
+    "DEMAND_FORECAST": "1d",  # Rolling system demand and forecasts
+    "SURPLUS_MARGIN": "1d",  # Surplus forecast and margin
+    "STOR": "1d",  # Short-term operating reserves
+    "MARKET_INDEX_PRICES": "1d",  # Market index prices
+}
+
+# Datasets known to be offline or unavailable
+LIKELY_OFFLINE = {"MILS", "MELS"}
+
+# Whether to include datasets marked as likely offline; set via CLI
+INCLUDE_OFFLINE: bool = False
+
+# API key management (optional; used for unified/physical endpoints if available)
+API_KEYS: List[str] = []
+_API_KEY_INDEX: int = 0
+
+
+def _load_all_api_keys() -> List[str]:
+    """Load Elexon API keys from environment variables or api.env file.
+    Returns a list (possibly empty). Does not log key material.
+    """
+    keys: List[str] = []
+    # Environment variables BMRS_API_KEY_1..20
+    for i in range(1, 21):
+        val = os.getenv(f"BMRS_API_KEY_{i}")
+        if val and val.strip():
+            keys.append(val.strip())
+    # Fallback: try local api.env in repo root
+    if not keys:
+        for candidate in ("api.env", os.path.join("old_project", "api.env")):
+            try:
+                if os.path.exists(candidate):
+                    with open(candidate, "r", encoding="utf-8") as f:
+                        for line in f:
+                            line = line.strip()
+                            if not line or line.startswith("#"):
+                                continue
+                            if line.startswith("BMRS_API_KEY_") and "=" in line:
+                                _, rhs = line.split("=", 1)
+                                rhs = rhs.strip()
+                                if rhs:
+                                    keys.append(rhs)
+            except Exception:
+                # Ignore file read issues; simply return whatever we have
+                pass
+    # De-duplicate while keeping order
+    seen = set()
+    uniq: List[str] = []
+    for k in keys:
+        if k not in seen:
+            seen.add(k)
+            uniq.append(k)
+    return uniq
+
+
+def _get_next_api_key() -> Optional[str]:
+    global API_KEYS, _API_KEY_INDEX
+    if not API_KEYS:
+        API_KEYS = _load_all_api_keys()
+    if not API_KEYS:
+        return None
+    key = API_KEYS[_API_KEY_INDEX]
+    _API_KEY_INDEX = (_API_KEY_INDEX + 1) % len(API_KEYS)
+    return key
+
+
+def _with_api_key_header(headers: Dict[str, str]) -> Dict[str, str]:
+    """Attach x-api-key header if a key is available; do not modify input dict in-place."""
+    try:
+        key = _get_next_api_key()
+    except Exception:
+        key = None
+    if not key:
+        return headers.copy()
+    new_h = headers.copy()
+    # Elexon unified API expects 'x-api-key'
+    new_h.setdefault("x-api-key", key)
+    return new_h
+
+
+# Helper classes
+class TimeoutException(Exception):
+    pass
+
+
+def timeout_handler(signum, frame):
+    raise TimeoutException
+
+
+class TqdmLoggingHandler(logging.Handler):
+    def __init__(self, level=logging.NOTSET):
+        super().__init__(level)
+
+    def emit(self, record):
+        try:
+            msg = self.format(record)
+            tqdm.write(msg)
+            self.flush()
+        except (KeyboardInterrupt, SystemExit):
+            raise
+        except Exception:
+            self.handleError(record)
+
+
+# Date and time helpers
+def _parse_iso_date(s: str) -> datetime:
+    try:
+        return datetime.fromisoformat(s).replace(tzinfo=timezone.utc)
+    except ValueError:
+        # Support YYYY-MM-DD only
+        return datetime.strptime(s, "%Y-%m-%d").replace(tzinfo=timezone.utc)
+
+
+def _chunk_to_delta(spec: str) -> timedelta:
+    spec = spec.strip().lower()
+    if spec.endswith("h"):
+        return timedelta(hours=int(spec[:-1]))
+    if spec.endswith("d"):
+        return timedelta(days=int(spec[:-1]))
+    if spec.endswith("w"):
+        return timedelta(weeks=int(spec[:-1]))
+    raise ValueError(f"Bad chunk spec '{spec}'")
+
+
+def _max_window_for(dataset: str) -> timedelta:
+    ds = dataset.upper()
+    spec = CHUNK_RULES.get(ds, "7d")
+    return _chunk_to_delta(spec)
+
+
+def _iter_windows(
+    start: datetime, end: datetime, step: timedelta
+) -> Iterable[Tuple[datetime, datetime]]:
+    """Iterate through time windows from most recent to oldest."""
+    cur = end
+    while cur > start:
+        prev = max(cur - step, start)
+        yield prev, cur
+        cur = prev
+
+
+# BigQuery helpers
+def _ensure_bq_dataset(client: bigquery.Client, dataset_id: str) -> None:
+    fq = f"{client.project}.{dataset_id}"
+    try:
+        dataset = client.get_dataset(fq)
+        logging.info("BigQuery dataset %r exists.", dataset_id)
+
+        fields_to_update = []
+        if SANDBOX_EXPIRATION_DAYS is not None:
+            if dataset.default_table_expiration_ms is None:
+                dataset.default_table_expiration_ms = (
+                    SANDBOX_EXPIRATION_DAYS * 24 * 60 * 60 * 1000
+                )
+                fields_to_update.append("default_table_expiration_ms")
+                logging.info(
+                    f"Setting default table expiration for dataset {dataset_id} to {SANDBOX_EXPIRATION_DAYS} days."
+                )
+
+            if dataset.default_partition_expiration_ms is None:
+                dataset.default_partition_expiration_ms = (
+                    SANDBOX_EXPIRATION_DAYS * 24 * 60 * 60 * 1000
+                )
+                fields_to_update.append("default_partition_expiration_ms")
+                logging.info(
+                    f"Setting default partition expiration for dataset {dataset_id} to {SANDBOX_EXPIRATION_DAYS} days."
+                )
+        else:
+            # If sandbox mode is off, ensure expiration is disabled
+            if dataset.default_table_expiration_ms is not None:
+                dataset.default_table_expiration_ms = None
+                fields_to_update.append("default_table_expiration_ms")
+                logging.info(
+                    f"Disabling default table expiration for dataset {dataset_id}."
+                )
+            if dataset.default_partition_expiration_ms is not None:
+                dataset.default_partition_expiration_ms = None
+                fields_to_update.append("default_partition_expiration_ms")
+                logging.info(
+                    f"Disabling default partition expiration for dataset {dataset_id}."
+                )
+
+        if fields_to_update:
+            client.update_dataset(dataset, fields_to_update)
+
+    except NotFound:
+        ds = bigquery.Dataset(fq)
+        ds.location = "EU"
+        if SANDBOX_EXPIRATION_DAYS is not None:
+            ds.default_table_expiration_ms = (
+                SANDBOX_EXPIRATION_DAYS * 24 * 60 * 60 * 1000
+            )
+            ds.default_partition_expiration_ms = (
+                SANDBOX_EXPIRATION_DAYS * 24 * 60 * 60 * 1000
+            )
+            client.create_dataset(ds)
+            logging.info(
+                f"Created BigQuery dataset %r with default table and partition expiration of {SANDBOX_EXPIRATION_DAYS} days.",
+                dataset_id,
+            )
+        else:
+            client.create_dataset(ds)
+            logging.info(
+                "Created BigQuery dataset %r with no default expiration.",
+                dataset_id,
+            )
+
+
+def _get_existing_windows(
+    client: bigquery.Client,
+    dataset_id: str,
+    table_name: str,
+    start: datetime,
+    end: datetime,
+) -> set[datetime]:
+    table_id = f"{client.project}.{dataset_id}.{table_name}"
+    windows = set()
+    logging.info(
+        f"🔎 Querying existing windows for {table_id} between {start} and {end}"
+    )
+    try:
+        client.get_table(table_id)
+    except NotFound:
+        logging.info(f"Table {table_id} does not exist, skipping window query.")
+        return windows
+    query = f"""
+    SELECT DISTINCT _window_from_utc FROM `{table_id}`
+    WHERE _window_from_utc IS NOT NULL
+      AND _window_from_utc >= '{start.isoformat()}'
+      AND _window_from_utc < '{end.isoformat()}'
+    """
+    try:
+        logging.debug(f"Running BQ query: {query}")
+        query_job = client.query(query, timeout=60.0)
+        for row in query_job.result(timeout=60.0):
+            if row[0] is not None:
+                windows.add(row[0])
+        logging.info("Found %d existing windows for %s", len(windows), table_name)
+    except Exception as e:
+        logging.warning("⚠️  Could not query existing windows for %s: %s", table_name, e)
+    return windows
+
+
+def _get_table_schema(client: bigquery.Client, table_id: str) -> Set[str]:
+    """Get the set of column names from an existing BQ table."""
+    try:
+        table = client.get_table(table_id)
+        return {field.name for field in table.schema}
+    except NotFound:
+        # Table doesn't exist
+        return set()
+    except Exception as e:
+        logging.warning(f"⚠️ Failed to get schema for {table_id}: {e}")
+        return set()
+
+
+def clear_bq_date_range(
+    client: bigquery.Client,
+    dataset_id: str,
+    table_name: str,
+    from_dt: datetime,
+    to_dt: datetime,
+):
+    """Clear a date range from a BigQuery table."""
+    try:
+        table_ref = client.dataset(dataset_id).table(table_name)
+
+        # Get the table to check for existence and schema
+        table = client.get_table(table_ref)
+
+        # Find the primary timestamp column, looking for common patterns
+        ts_col = None
+        for field in table.schema:
+            if field.field_type in ("TIMESTAMP", "DATETIME") and (
+                "settlementDate" in field.name
+                or "startTime" in field.name
+                or "time" in field.name
+                or "date" in field.name
+            ):
+                ts_col = field.name
+                break
+
+        if not ts_col:
+            # Fallback to the first TIMESTAMP/DATETIME column if specific names aren't found
+            ts_col = next(
+                (
+                    f.name
+                    for f in table.schema
+                    if f.field_type in ("TIMESTAMP", "DATETIME")
+                ),
+                None,
+            )
+
+        if not ts_col:
+            logging.warning(
+                f"⚠️ No suitable TIMESTAMP/DATETIME column found for {table_name}, cannot clear range."
+            )
+            return
+
+        from_ts = from_dt.isoformat()
+        to_ts = to_dt.isoformat()
+
+        query = f"DELETE FROM `{table_ref.project}.{table_ref.dataset_id}.{table_ref.table_id}` WHERE `{ts_col}` >= TIMESTAMP('{from_ts}') AND `{ts_col}` < TIMESTAMP('{to_ts}')"
+
+        logging.warning(
+            f"🔥 Deleting data from {table_ref.path} for range {from_ts} to {to_ts}"
+        )
+
+        job = client.query(query)
+        job.result()  # Wait for the job to complete
+
+        if job.errors:
+            raise RuntimeError(job.errors)
+
+        logging.info(f"✅ Successfully cleared date range for {table_name}")
+
+    except NotFound:
+        logging.info(
+            f"ℹ️ Table {table_name} does not exist, skipping date range clearing."
+        )
+        return
+    except Exception as e:
+        logging.error(f"❌ {table_name.upper()}: Failed to clear date range: {e}")
+        # Re-raise the exception to be caught by the main loop
+        raise
+
+
+# Data processing helpers
+def _flatten_json_payload(obj) -> pd.DataFrame:
+    """
+    Accepts either:
+      • dict with 'data' key (list of dicts)
+      • list[dict]
+      • scalar -> becomes 0-row df
+    Returns pandas DataFrame (possibly empty).
+    """
+    if obj is None:
+        return pd.DataFrame()
+    if isinstance(obj, dict):
+        if "data" in obj and isinstance(obj["data"], list):
+            return pd.json_normalize(obj["data"])
+        if "results" in obj and isinstance(obj["results"], list):
+            return pd.json_normalize(obj["results"])
+        # If dict of fields (single row), wrap it:
+        return pd.json_normalize([obj])
+    if isinstance(obj, list):
+        return pd.json_normalize(obj)
+    # Unknown -> empty
+    return pd.DataFrame()
+
+
+def _csv_to_df(text: str) -> pd.DataFrame:
+    # Some endpoints return CSV; use pandas to read.
+    if not text or not text.strip():
+        return pd.DataFrame()
+    return pd.read_csv(io.StringIO(text))
+
+
+def _fetch_system_prices(from_dt: datetime, to_dt: datetime) -> pd.DataFrame:
+    """
+    Fetch System Buy/Sell Prices data from BMRS API.
+    Uses the balancing/settlement/system-prices endpoint.
+    """
+    import requests
+
+    # Format dates for the API (YYYY-MM-DD)
+    start_date = from_dt.strftime("%Y-%m-%d")
+    end_date = to_dt.strftime("%Y-%m-%d")
+
+    # System prices API endpoint
+    base_url = (
+        "https://data.elexon.co.uk/bmrs/api/v1/balancing/settlement/system-prices"
+    )
+
+    # Try to get API key
+    api_key = None
+    try:
+        api_key = _get_next_api_key()
+    except Exception:
+        pass
+
+    all_data = []
+    current_date = from_dt.date()
+    end_date_obj = to_dt.date()
+
+    while current_date <= end_date_obj:
+        date_str = current_date.strftime("%Y-%m-%d")
+        url = f"{base_url}/{date_str}"
+
+        params = {}
+        if api_key:
+            params["apiKey"] = api_key
+
+        headers = {"Accept": "application/json"}
+
+        try:
+            response = requests.get(
+                url, params=params, headers=headers, timeout=TIMEOUT
+            )
+
+            if response.status_code == 200:
+                data = response.json()
+                if "data" in data and data["data"]:
+                    for item in data["data"]:
+                        # Add metadata columns
+                        item["_dataset"] = "COSTS"
+                        item["_window_from_utc"] = from_dt.isoformat()
+                        item["_window_to_utc"] = to_dt.isoformat()
+                        item["_ingested_utc"] = datetime.utcnow().isoformat()
+                        all_data.append(item)
+
+            elif response.status_code == 404:
+                logging.debug(f"No system prices data for {date_str}")
+            else:
+                logging.warning(
+                    f"Failed to fetch system prices for {date_str}: {response.status_code}"
+                )
+
+        except Exception as e:
+            logging.warning(f"Error fetching system prices for {date_str}: {e}")
+
+        current_date += timedelta(days=1)
+
+    if all_data:
+        return pd.DataFrame(all_data)
+    else:
+        # Return empty DataFrame with expected columns
+        return pd.DataFrame(
+            columns=[
+                "settlementDate",
+                "settlementPeriod",
+                "systemSellPrice",
+                "systemBuyPrice",
+                "priceCategory",
+                "_dataset",
+                "_window_from_utc",
+                "_window_to_utc",
+                "_ingested_utc",
+            ]
+        )
+
+
+def _fetch_bmrs(
+    dataset: str,
+    from_dt: datetime,
+    to_dt: datetime,
+    bm_units: Optional[List[str]] = None,
+    data_dir: Optional[str] = None,
+) -> pd.DataFrame:
+    logging.info(f"🌐 Fetching BMRS dataset={dataset} from={from_dt} to={to_dt}")
+    """
+    Fetch a single window from BMRS dataset.
+    Strategy:
+      - Always try primary JSON endpoint first.
+      - For MILS/MELS, try unified /api endpoints (including /stream and /data) BEFORE treating primary 400/422 as fatal.
+      - Only if all attempts fail with HTTP errors do we surface the last 400/422; otherwise return an empty frame.
+    """
+    ds = dataset.upper()
+
+    # Special handling for COSTS dataset (System Buy/Sell Prices)
+    if ds == "COSTS":
+        return _fetch_system_prices(from_dt, to_dt)
+
+    def rfc3339_z(dt: datetime) -> str:
+        # Ensure UTC with trailing 'Z' per RFC3339 examples in Elexon docs
+        return dt.astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+    def date_only(dt: datetime) -> str:
+        return dt.astimezone(timezone.utc).strftime("%Y-%m-%d")
+
+    # Primary path uses BMRS base with from/to as RFC3339 with trailing Z
+    primary_url = f"{BMRS_BASE}/{ds}"
+    primary_params = {"from": rfc3339_z(from_dt), "to": rfc3339_z(to_dt)}
+    # If we have an API key, pass it for BMRS base as 'apiKey'
+    try:
+        _k = _get_next_api_key()
+        if _k:
+            primary_params["apiKey"] = _k
+    except Exception:
+        pass
+
+    # Alt dataset endpoints under BMRS base (per local OpenAPI metadata)
+    alt_url_root = "https://data.elexon.co.uk/bmrs/api/v1/datasets"
+    # params can include strings or lists (e.g., bmUnit repeated params); allow object values
+    alt_variants: List[Tuple[str, Dict[str, object], Dict[str, str]]] = []
+    if ds in {"MILS", "MELS", "PN", "QPN"}:
+        # Base variants
+        # Build a helper with apiKey query param when available
+        _ak = None
+        try:
+            _ak = _get_next_api_key()
+        except Exception:
+            _ak = None
+
+        alt_variants.extend(
+            [
+                (
+                    f"{alt_url_root}/{ds}",
+                    {
+                        "from": rfc3339_z(from_dt),
+                        "to": rfc3339_z(to_dt),
+                        **({"apiKey": _ak} if _ak else {}),
+                    },
+                    {"Accept": "application/json"},
+                ),
+                (
+                    f"{alt_url_root}/{ds}/stream",
+                    {
+                        "from": rfc3339_z(from_dt),
+                        "to": rfc3339_z(to_dt),
+                        **({"apiKey": _ak} if _ak else {}),
+                    },
+                    {"Accept": "application/json"},
+                ),
+                (
+                    f"{alt_url_root}/{ds}/data",
+                    {
+                        "startTime": rfc3339_z(from_dt),
+                        "endTime": rfc3339_z(to_dt),
+                        **({"apiKey": _ak} if _ak else {}),
+                    },
+                    {"Accept": "application/json"},
+                ),
+            ]
+        )
+        # Settlement period constrained variants (helps on strict validation)
+        alt_variants.extend(
+            [
+                (
+                    f"{alt_url_root}/{ds}",
+                    {
+                        "from": rfc3339_z(from_dt),
+                        "to": rfc3339_z(to_dt),
+                        "settlementPeriodFrom": "1",
+                        "settlementPeriodTo": "50",
+                        **({"apiKey": _ak} if _ak else {}),
+                    },
+                    {"Accept": "application/json"},
+                ),
+                (
+                    f"{alt_url_root}/{ds}/stream",
+                    {
+                        "from": rfc3339_z(from_dt),
+                        "to": rfc3339_z(to_dt),
+                        "settlementPeriodFrom": "1",
+                        "settlementPeriodTo": "50",
+                        **({"apiKey": _ak} if _ak else {}),
+                    },
+                    {"Accept": "application/json"},
+                ),
+                # Date-only window with settlement period constraints (explicit per docs)
+                (
+                    f"{alt_url_root}/{ds}/stream",
+                    {
+                        "from": date_only(from_dt),
+                        "to": date_only(to_dt - timedelta(days=1)),
+                        "settlementPeriodFrom": "1",
+                        "settlementPeriodTo": "50",
+                        **({"apiKey": _ak} if _ak else {}),
+                    },
+                    {"Accept": "application/json"},
+                ),
+            ]
+        )
+
+        # Also try BMRS dataset endpoints filtered by BM Unit if provided
+        if bm_units:
+            alt_variants.append(
+                (
+                    f"{alt_url_root}/{ds}",
+                    {
+                        "from": rfc3339_z(from_dt),
+                        "to": rfc3339_z(to_dt),
+                        "bmUnit": bm_units,
+                        **({"apiKey": _ak} if _ak else {}),
+                    },
+                    {"Accept": "application/json"},
+                )
+            )
+
+    last_http_err: Optional[requests.HTTPError] = None
+
+    # Helper to process a response: return DataFrame (possibly empty) or None to keep trying
+    def process_response(resp: requests.Response) -> Optional[pd.DataFrame]:
+        try:
+            resp.raise_for_status()
+        except requests.HTTPError as e:
+            nonlocal last_http_err
+            last_http_err = e
+            return None
+        # 200 OK here
+
+        if data_dir:
+            try:
+                day_str = from_dt.strftime("%Y-%m-%d")
+                # Use a unique filename to avoid overwrites if chunking is less than a day
+                time_str = from_dt.strftime("%H%M%S")
+                save_path = os.path.join(
+                    data_dir, dataset.upper(), f"{day_str}_{time_str}.json"
+                )
+                os.makedirs(os.path.dirname(save_path), exist_ok=True)
+                with open(save_path, "w", encoding="utf-8") as f:
+                    try:
+                        json.dump(resp.json(), f, indent=2)
+                    except (json.JSONDecodeError, AttributeError):
+                        f.write(resp.text)
+                logging.info(f"💾 Saved raw data to {save_path}")
+            except Exception as save_e:
+                logging.warning(f"⚠️ Failed to save raw data for {dataset}: {save_e}")
+
+        try:
+            payload = resp.json()
+        except ValueError:
+            payload = None
+        if payload is not None:
+            df = _flatten_json_payload(payload)
+            return df  # may be empty
+        txt = resp.text or ""
+        if txt.strip():
+            return _csv_to_df(txt)
+        return pd.DataFrame()
+
+    # 1) Primary JSON
+    try:
+        rj = requests.get(
+            primary_url,
+            params=primary_params,
+            timeout=TIMEOUT,
+            headers={"Accept": "application/json"},
+        )
+        if rj.status_code == 404:
+            # Not available on this path — keep trying others
+            pass
+        else:
+            df = process_response(rj)
+            if df is not None:
+                return df
+    except Exception:
+        # Ignore and keep trying
+        pass
+
+    # 2) For MILS/MELS, try unified API variants before CSV fallback
+    if alt_variants:
+        for url, params, headers in alt_variants:
+            try:
+                r = requests.get(
+                    url, params=params, timeout=TIMEOUT, headers=headers  # type: ignore[arg-type]
+                )
+                if r.status_code == 404:
+                    continue
+                df = process_response(r)
+                if df is not None:
+                    return df
+            except Exception:
+                continue
+
+        # If unified dataset endpoints yielded no results, try the physical API as a stronger fallback
+        # Strategy: for each day in [from_dt, to_dt), query settlement periods 1..50 via /balancing/physical/all
+        # Optionally filter by BM Units if provided.
+        try:
+            phys_base = "https://data.elexon.co.uk/bmrs/api/v1/balancing/physical/all"
+            # API key for physical fallback if available
+            ak_phys = None
+            try:
+                ak_phys = _get_next_api_key()
+            except Exception:
+                ak_phys = None
+            frames: List[pd.DataFrame] = []
+            cur_day = from_dt.astimezone(timezone.utc).date()
+            end_day = (to_dt - timedelta(seconds=1)).astimezone(timezone.utc).date()
+            while cur_day <= end_day:
+                for sp in range(1, 51):
+                    params: Dict[str, object] = {
+                        "dataset": ds,
+                        "settlementDate": cur_day.strftime("%Y-%m-%d"),
+                        "settlementPeriod": str(sp),
+                    }
+                    # Support optional BMU filters using repeated bmUnit parameters
+                    if bm_units:
+                        # requests allows lists to become repeated params if we pass a list
+                        params["bmUnit"] = bm_units
+                    try:
+                        pr = requests.get(
+                            phys_base,
+                            params={
+                                **params,
+                                **({"apiKey": ak_phys} if ak_phys else {}),
+                            },  # type: ignore[arg-type]
+                            timeout=TIMEOUT,
+                            headers={"Accept": "application/json"},
+                        )
+                        if pr.status_code == 404:
+                            continue
+                        pr.raise_for_status()
+                        payload = None
+                        try:
+                            payload = pr.json()
+                        except ValueError:
+                            payload = None
+                        if payload is not None:
+                            dfp = _flatten_json_payload(payload)
+                            if not dfp.empty:
+                                # Some physical endpoints may return multiple datasets; filter to desired one
+                                if "dataset" in dfp.columns:
+                                    dfp = dfp[
+                                        dfp["dataset"].astype(str).str.upper() == ds
+                                    ]
+                                frames.append(dfp)
+                    except requests.HTTPError as e:
+                        # Treat 400/422 as no-data for offline datasets; otherwise continue trying other SPs
+                        if (
+                            getattr(e.response, "status_code", None) in (400, 422)
+                            and ds in LIKELY_OFFLINE
+                        ):
+                            continue
+                        # For other HTTP errors, continue to next SP/day
+                        continue
+                    except Exception:
+                        # Network or parse error; move on
+                        continue
+                cur_day = cur_day + timedelta(days=1)
+            if frames:
+                try:
+                    return pd.concat(frames, ignore_index=True)
+                except Exception:
+                    # If concat fails for any reason, fall back to first non-empty
+                    for fdf in frames:
+                        if not fdf.empty:
+                            return fdf
+        except Exception:
+            # Physical fallback failed entirely; proceed to CSV fallback
+            pass
+
+    # 3) CSV fallback on primary URL
+    try:
+        rc = requests.get(
+            primary_url,
+            params={**primary_params, "format": "csv"},
+            timeout=TIMEOUT,
+            headers={"Accept": "text/csv"},
+        )
+        if rc.status_code != 404:
+            df = process_response(rc)
+            if df is not None:
+                return df
+    except Exception:
+        pass
+
+    # If we reach here: if all attempts failed with HTTP errors and the last is 400/422, surface it
+    if last_http_err is not None and getattr(
+        last_http_err.response, "status_code", None
+    ) in (400, 422):
+        raise last_http_err
+
+    # Otherwise, treat as no data for this window
+    return pd.DataFrame()
+
+
+def _generate_dedup_key(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Generate a deterministic deduplication key from source data.
+    This ensures records can be uniquely identified even if metadata changes.
+    Uses content fields (non-metadata) to create a consistent hash.
+    """
+    df = df.copy()
+
+    # Filter out metadata columns that start with "_"
+    content_cols = [col for col in df.columns if not col.startswith("_")]
+
+    if not content_cols:
+        # If no content columns, use all columns
+        content_cols = df.columns.tolist()
+
+    # Track which columns were used for the hash key
+    df["_hash_source_cols"] = str(content_cols)
+
+    # Create a consistent hash of key content fields
+    try:
+        import hashlib
+        import json
+
+        def hash_row(row):
+            """Create a stable hash from row values, handling NaN values."""
+            # Filter out NaN values and convert to a stable representation
+            row_dict = {}
+            for k, v in row.items():
+                if pd.notna(v):  # Skip NaN/None values
+                    if isinstance(v, (int, float, bool)):
+                        row_dict[k] = v
+                    else:
+                        row_dict[k] = str(v)
+
+            # Create a deterministic hash
+            row_json = json.dumps(row_dict, sort_keys=True)
+            return hashlib.md5(row_json.encode()).hexdigest()
+
+        df["_hash_key"] = df[content_cols].apply(hash_row, axis=1)
+        logging.info(
+            f"Created hash keys for {len(df)} rows using {len(content_cols)} content columns"
+        )
+    except Exception as e:
+        logging.warning(f"⚠️ Failed to generate hash keys: {e}")
+        # Fallback to a simple concatenated string
+        df["_hash_key"] = df[content_cols].astype(str).sum(axis=1)
+
+    return df
+
+
+def _append_metadata_cols(
+    df: pd.DataFrame, dataset: str, from_dt: datetime, to_dt: datetime
+) -> pd.DataFrame:
+    """
+    Add standard metadata columns for tracking source, time windows, etc.
+    """
+    if df is None or df.empty:
+        return df
+    df = df.copy()
+
+    # Save original columns as metadata
+    original_cols = df.columns.tolist()
+
+    # Add standard metadata
+    df["_dataset"] = dataset.upper()
+    df["_window_from_utc"] = from_dt.replace(tzinfo=timezone.utc).isoformat()
+    df["_window_to_utc"] = to_dt.replace(tzinfo=timezone.utc).isoformat()
+    df["_ingested_utc"] = datetime.now(timezone.utc).isoformat()
+
+    # Add metadata tracking source schema
+    df["_source_columns"] = str(original_cols)
+    df["_source_api"] = "BMRS"
+
+    return df
+
+
+def _sanitize_df_for_bq(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Sanitize DataFrame for BigQuery by ensuring data types are compatible.
+    """
+    if df is None or df.empty:
+        return df
+
+    df = df.copy()
+
+    # Create deduplication key from source data
+    df = _generate_dedup_key(df)
+
+    # Convert object columns to strings, but properly handle datetime columns for PyArrow compatibility
+    for col in df.columns:
+        if df[col].dtype == "object":
+            # Enhanced datetime column detection for PyArrow compatibility
+            is_datetime_col = (
+                col.endswith("_utc")
+                or "window" in col.lower()
+                or "ingested" in col.lower()
+                or "timestamp" in col.lower()
+                or "time" in col.lower()
+                or "date" in col.lower()
+                or col.startswith("_window")
+                or col.startswith("_ingested")
+            )
+
+            if is_datetime_col:
+                logging.info(f"Converting datetime column '{col}' to pandas datetime")
+                try:
+                    # First attempt: direct pandas datetime conversion
+                    df[col] = pd.to_datetime(df[col], errors="coerce", utc=True)
+                    # Convert to timezone-naive datetime for PyArrow compatibility
+                    if df[col].dtype.name.startswith("datetime64[ns"):
+                        # Remove timezone info to make it PyArrow compatible
+                        df[col] = df[col].dt.tz_localize(None)
+                        logging.info(
+                            f"Converted datetime column '{col}' to timezone-naive for PyArrow compatibility"
+                        )
+                    # If we still have mixed types, convert to string as fallback
+                    if df[col].dtype == "object":
+                        logging.info(
+                            f"Datetime conversion failed for '{col}', converting to string"
+                        )
+                        df[col] = df[col].astype(str)
+                except Exception as e:
+                    logging.info(
+                        f"Datetime conversion error for '{col}': {e}, converting to string"
+                    )
+                    df[col] = df[col].astype(str)
+                continue
+
+            logging.info(f"Converting column '{col}' to string")
+            df[col] = df[col].astype(str)
+
+    return df
+
+
+def _safe_table_name(prefix: str, dataset: str) -> str:
+    """Create a safe BigQuery table name."""
+    import re
+
+    # BQ table names are limited to 1024 characters and can only contain letters, numbers, or underscores.
+    safe_name = re.sub(r"[^a-zA-Z0-9_]", "_", dataset.lower())
+    return f"{prefix}_{safe_name}"
+
+
+from bigquery_utils import BigQueryQuotaManager, load_dataframe_with_retry
+from rate_limit_monitor import BigQueryQuotaMonitor, RateLimitMonitor
+from schema_validator import get_schema_for_year, validate_schema_compatibility
+
+
+def _load_dataframe_safely(
+    client: bigquery.Client,
+    df: pd.DataFrame,
+    dataset_id: str,
+    table_name: str,
+    write_disposition: str = "WRITE_APPEND",
+    load_timeout_sec: int = DEFAULT_BQ_LOAD_TIMEOUT_SEC,
+) -> bool:
+    """
+    Load a DataFrame to BigQuery with smart handling of schema changes.
+    Returns True if successful, False otherwise.
+    """
+    if df is None or df.empty:
+        logging.info(f"🟡 No data to load for {table_name}")
+        return True
+
+    table_id = f"{client.project}.{dataset_id}.{table_name}"
+    logging.info(f"⬆️ Loading {len(df)} rows to {table_id}")
+
+    # Check if table exists and get schema if it does
+    table_exists = True
+    try:
+        table = client.get_table(table_id)
+        existing_columns = {field.name for field in table.schema}
+        existing_schema = {field.name: field.field_type for field in table.schema}
+        logging.info(
+            f"Found existing table {table_id} with {len(existing_columns)} columns"
+        )
+    except NotFound:
+        table_exists = False
+        existing_columns = set()
+        existing_schema = {}
+        logging.info(f"Table {table_id} does not exist, will create it")
+    except Exception as e:
+        logging.warning(f"⚠️ Failed to inspect table {table_id}: {e}")
+        table_exists = False
+        existing_columns = set()
+        existing_schema = {}
+
+    # For new tables, just load the data directly
+    if not table_exists:
+        try:
+            # Define schema based on DataFrame
+            schema = []
+            for col, dtype in df.dtypes.items():
+                field_type = "STRING"  # Default
+                if pd.api.types.is_integer_dtype(dtype):
+                    field_type = "INTEGER"
+                elif pd.api.types.is_float_dtype(dtype):
+                    field_type = "FLOAT"
+                elif pd.api.types.is_bool_dtype(dtype):
+                    field_type = "BOOLEAN"
+                elif pd.api.types.is_datetime64_any_dtype(dtype):
+                    field_type = "TIMESTAMP"
+                schema.append(bigquery.SchemaField(str(col), field_type))
+
+            # Create table with expiration if in sandbox mode
+            table = bigquery.Table(table_id, schema=schema)
+            table = client.create_table(table, exists_ok=True)
+
+            job_config = bigquery.LoadJobConfig(
+                schema=schema,
+                write_disposition=write_disposition,
+            )
+
+            # Use quota-aware loading with retries
+            quota_manager = BigQueryQuotaManager(client)
+            try:
+                load_job = load_dataframe_with_retry(
+                    client=client,
+                    df=df,
+                    table_id=table_id,
+                    job_config=job_config,
+                    quota_manager=quota_manager,
+                )
+            except Exception as e:
+                logging.error(f"Failed to load data after retries: {e}")
+                return False
+            logging.info(f"✅ Created new table {table_id} and loaded {len(df)} rows")
+            return True
+        except Exception as e:
+            logging.error(f"❌ Failed to create and load new table {table_id}: {e}")
+            return False
+
+    # For existing tables, only include columns that exist in the table
+    df_columns = set(df.columns)
+
+    # Columns allowed to load = intersection only
+    common_columns = df_columns & existing_columns
+    if not common_columns:
+        logging.error(f"❌ No common columns between DataFrame and table {table_id}")
+        return False
+
+    filtered_df = df[list(common_columns)].copy()
+    logging.info(
+        f"Filtered DataFrame from {len(df_columns)} to {len(common_columns)} columns"
+    )
+
+    # Cast DataFrame columns to match existing table schema
+    def _cast_series_to_bq_type(series: pd.Series, bq_type: str) -> pd.Series:
+        # Always convert to string first to handle mixed types, then to the target type.
+        # This is safer for pyarrow.
+        series_str = series.astype(str)
+        try:
+            if bq_type in ("STRING", "GEOGRAPHY"):
+                return series_str
+            if bq_type in ("FLOAT", "FLOAT64", "NUMERIC", "BIGNUMERIC"):
+                return pd.to_numeric(series_str, errors="coerce")
+            if bq_type in ("INTEGER", "INT64"):
+                return pd.to_numeric(series_str, errors="coerce").astype("Int64")
+            if bq_type == "BOOLEAN":
+                return (
+                    series_str.str.lower()
+                    .map(
+                        {
+                            "true": True,
+                            "1": True,
+                            "t": True,
+                            "yes": True,
+                            "nan": None,
+                            "<NA>": None,
+                            "false": False,
+                            "0": False,
+                            "f": False,
+                            "no": False,
+                        }
+                    )
+                    .astype("boolean")
+                )
+            if bq_type == "TIMESTAMP":
+                dt_series = pd.to_datetime(series_str, errors="coerce", utc=True)
+                return dt_series
+            if bq_type == "DATE":
+                return pd.to_datetime(series_str, errors="coerce", utc=True).dt.date
+            if bq_type == "DATETIME":
+                return pd.to_datetime(series_str, errors="coerce", utc=True)
+            if bq_type == "TIME":
+                return pd.to_datetime(series_str, errors="coerce", utc=True).dt.time
+        except Exception as e:
+            logging.warning(
+                f"⚠️ Casting to {bq_type} failed for series {series.name}: {e}. Falling back to string."
+            )
+            return series_str
+        return series_str
+
+    # Apply casting for each common column to match table schema
+    for col in list(common_columns):
+        bq_type = existing_schema.get(col)
+        if not bq_type:
+            continue
+        try:
+            filtered_df[col] = _cast_series_to_bq_type(filtered_df[col], bq_type)
+        except Exception as cast_e:
+            logging.warning(
+                f"⚠️ Failed to cast column '{col}' to {bq_type} for {table_id}: {cast_e} — using string fallback"
+            )
+            try:
+                filtered_df[col] = filtered_df[col].astype(str)
+            except Exception:
+                # If even that fails, drop the column from this batch
+                logging.warning(
+                    f"⚠️ Dropping column '{col}' from load due to irrecoverable casting error"
+                )
+                filtered_df = filtered_df.drop(columns=[col])
+                common_columns.discard(col)
+
+    # Load the filtered DataFrame
+    try:
+        job_config = bigquery.LoadJobConfig(
+            write_disposition=write_disposition,
+        )
+
+        # Attempt the load with limited retries on quota errors
+        MAX_LOAD_RETRIES = 5  # Increased from 3 to 5
+        for attempt in range(1, MAX_LOAD_RETRIES + 1):
+            try:
+                load_job = client.load_table_from_dataframe(
+                    filtered_df, table_id, job_config=job_config
+                )
+                try:
+                    load_job.result(timeout=load_timeout_sec)
+                except DeadlineExceeded as te:
+                    # Try to cancel and fall back to splitting the batch to reduce risk
+                    try:
+                        load_job.cancel()
+                    except Exception:
+                        pass
+                    if len(filtered_df.index) > 1:
+                        logging.warning(
+                            "⏳ Load timed out for %s (rows=%d). Splitting batch and retrying...",
+                            table_id,
+                            len(filtered_df.index),
+                        )
+                        mid = len(filtered_df.index) // 2
+                        part_a = filtered_df.iloc[:mid]
+                        part_b = filtered_df.iloc[mid:]
+                        # Recursively load smaller parts with same timeout
+                        ok_a = _load_dataframe_safely(
+                            client,
+                            part_a,
+                            dataset_id,
+                            table_name,
+                            write_disposition=write_disposition,
+                            load_timeout_sec=load_timeout_sec,
+                        )
+                        ok_b = _load_dataframe_safely(
+                            client,
+                            part_b,
+                            dataset_id,
+                            table_name,
+                            write_disposition=write_disposition,
+                            load_timeout_sec=load_timeout_sec,
+                        )
+                        if ok_a and ok_b:
+                            logging.info(
+                                "✅ Successfully loaded split batches to %s (rows=%d)",
+                                table_id,
+                                len(filtered_df.index),
+                            )
+                            return True
+                        # If split didn't help, raise to outer handler
+                    raise te
+                logging.info(
+                    f"✅ Successfully loaded {len(filtered_df)} rows to {table_id}"
+                )
+                # Add a small delay between batch loads to avoid hitting quota limits
+                time.sleep(2.0)
+                return True
+            except Exception as e:
+                msg = str(e)
+                # Backoff specifically for BigQuery quotaExceeded
+                if "quotaExceeded" in msg or "Quota exceeded" in msg:
+                    # More aggressive exponential backoff with jitter for quota issues
+                    import random
+
+                    base_wait = 30 * (2 ** (attempt - 1))  # 30s, 60s, 120s, 240s, 480s
+                    jitter = random.uniform(0.5, 1.5)  # Add 50% randomness
+                    wait_s = min(900, base_wait * jitter)  # Cap at 15 minutes
+                    logging.warning(
+                        f"⏳ Quota exceeded while loading {table_id} (attempt {attempt}/{MAX_LOAD_RETRIES}). Sleeping {wait_s:.1f}s before retry"
+                    )
+                    time.sleep(wait_s)
+                    continue
+                else:
+                    raise
+        # If we reach here, all retries exhausted
+        raise Exception(
+            f"Load retries exhausted for {table_id} after {MAX_LOAD_RETRIES} attempts due to quotaExceeded"
+        )
+    except Exception as e:
+        logging.error(f"❌ Failed to load data to {table_id}: {e}")
+
+        # Try one more time with just the basic metadata columns if they exist
+        try:
+            # Only include metadata columns that are present in the existing table
+            metadata_columns = {
+                "_dataset",
+                "_window_from_utc",
+                "_window_to_utc",
+                "_ingested_utc",
+            }
+            minimal_columns = list((metadata_columns & df_columns) & existing_columns)
+            if minimal_columns:
+                minimal_df = df[minimal_columns]
+                job_config = bigquery.LoadJobConfig(
+                    write_disposition=write_disposition,
+                )
+                load_job = client.load_table_from_dataframe(
+                    minimal_df, table_id, job_config=job_config
+                )
+                load_job.result()
+                logging.info(
+                    f"✅ Loaded minimal data ({len(minimal_columns)} columns) to {table_id}"
+                )
+                return True
+        except Exception as min_e:
+            logging.error(f"❌ Final attempt failed: {min_e}")
+
+        return False
+
+
+def _load_to_staging_table(
+    client: bigquery.Client,
+    df: pd.DataFrame,
+    dataset_id: str,
+    final_table_name: str,
+    load_timeout_sec: int = DEFAULT_BQ_LOAD_TIMEOUT_SEC,
+) -> bool:
+    """
+    Load data to a staging table, then merge into the final table.
+    This reduces the number of load operations on the final table.
+    """
+    if df is None or df.empty:
+        logging.info(f"🟡 No data to load for staging table of {final_table_name}")
+        return True
+
+    # Determine the year from the data to select appropriate schema
+    year = None
+    try:
+        # Look for date columns in the DataFrame
+        date_cols = [
+            "_window_from_utc",
+            "_window_to_utc",
+            "settlementDate",
+            "timeFrom",
+            "timeTo",
+        ]
+        for col in date_cols:
+            if col in df.columns:
+                # Get the first date value and extract year
+                first_date = df[col].iloc[0]
+                if isinstance(first_date, pd.Timestamp) or isinstance(
+                    first_date, datetime
+                ):
+                    year = first_date.year
+                    break
+                elif isinstance(first_date, str):
+                    # Try to parse string date
+                    try:
+                        parsed_date = pd.to_datetime(first_date)
+                        year = parsed_date.year
+                        break
+                    except:
+                        # Try using schema_handler for date parsing
+                        try:
+                            year = get_schema_year_from_date(first_date)
+                            break
+                        except:
+                            pass
+
+        if not year:
+            # Fallback to current year if we can't determine
+            year = datetime.now().year
+            logging.warning(
+                f"⚠️ Could not determine year from data, using current year: {year}"
+            )
+        else:
+            logging.info(f"🔍 Detected year {year} from data for {final_table_name}")
+    except Exception as e:
+        logging.warning(f"⚠️ Could not determine year from data: {e}")
+        # Fallback to current year
+        year = datetime.now().year
+
+    # Extract dataset code from final_table_name (e.g., "bmrs_bod" -> "BOD")
+    dataset_code = final_table_name.replace("bmrs_", "").upper()
+
+    # Create a staging table name with timestamp to avoid conflicts
+    staging_table_name = f"{final_table_name}_staging_{int(time.time())}"
+    staging_table_id = f"{client.project}.{dataset_id}.{staging_table_name}"
+    final_table_id = f"{client.project}.{dataset_id}.{final_table_name}"
+
+    logging.info(
+        f"⬆️ Loading {len(df)} rows to staging table {staging_table_id} (Year: {year})"
+    )
+
+    try:
+        # Get schema for the specific dataset and year using schema_handler
+        schema_fields = get_schema_for_dataset_and_year(dataset_code, year)
+
+        if not schema_fields:
+            logging.warning(
+                f"⚠️ No schema found for {dataset_code} ({year}). Using auto-detection."
+            )
+
+        # 1. Load data to the staging table with WRITE_TRUNCATE
+        job_config = bigquery.LoadJobConfig(
+            write_disposition="WRITE_TRUNCATE",  # Always replace staging table
+        )
+
+        # Add schema if available from schema_handler
+        if schema_fields:
+            # Convert schema format from list of dicts to BigQuery SchemaField objects
+            table_schema = []
+            for field in schema_fields:
+                table_schema.append(
+                    bigquery.SchemaField(
+                        name=field["name"],
+                        field_type=field["type"],
+                        mode=field.get("mode", "NULLABLE"),
+                    )
+                )
+            job_config.schema = table_schema
+            logging.info(
+                f"👍 Using year-specific schema for {dataset_code} ({year}) with {len(table_schema)} fields"
+            )
+        else:
+            # Auto-detect schema if no explicit schema is available
+            job_config.autodetect = True
+            logging.info(f"🔄 Using schema auto-detection for {dataset_code}")
+
+        # Apply table expiration if specified
+        if SANDBOX_EXPIRATION_DAYS:
+            expiration = datetime.now() + timedelta(days=SANDBOX_EXPIRATION_DAYS)
+            job_config.expiration = expiration
+
+        load_job = client.load_table_from_dataframe(
+            df, staging_table_id, job_config=job_config
+        )
+        load_job.result(timeout=load_timeout_sec)
+
+        logging.info(
+            f"✅ Successfully loaded {len(df)} rows to staging table {staging_table_id}"
+        )
+
+        # 2. Create merge query to copy data from staging to final table
+        # First check if the final table exists
+        try:
+            client.get_table(final_table_id)
+            table_exists = True
+        except NotFound:
+            table_exists = False
+
+        if table_exists:
+            # Merge data using INSERT
+            merge_query = f"""
+            INSERT INTO `{final_table_id}`
+            SELECT * FROM `{staging_table_id}`
+            """
+        else:
+            # Create the final table from the staging table
+            merge_query = f"""
+            CREATE TABLE `{final_table_id}`
+            AS SELECT * FROM `{staging_table_id}`
+            """
+
+        # Execute the merge query
+        merge_job = client.query(merge_query)
+        merge_job.result(timeout=load_timeout_sec)
+
+        logging.info(
+            f"✅ Successfully merged data from {staging_table_id} to {final_table_id}"
+        )
+
+        # 3. Clean up the staging table
+        client.delete_table(staging_table_id)
+        logging.info(f"🧹 Cleaned up staging table {staging_table_id}")
+
+        return True
+
+    except Exception as e:
+        logging.error(f"❌ Failed during staging table process: {e}")
+        # Try to clean up the staging table if it exists
+        try:
+            client.delete_table(staging_table_id, not_found_ok=True)
+        except Exception as cleanup_e:
+            logging.error(f"❌ Failed to clean up staging table: {cleanup_e}")
+        return False
+
+
+@dataclass
+class IngestResult:
+    dataset: str
+    status: str
+    rows: int = 0
+    note: str = ""
+    endpoint: str = "BMRS"
+
+
+def ingest_dataset(
+    client: bigquery.Client,
+    dataset: str,
+    start: datetime,
+    end: datetime,
+    dataset_id: str = BQ_DATASET,
+    overwrite: bool = False,
+    bm_units: Optional[List[str]] = None,
+    batch_size: int = MAX_FRAMES_PER_BATCH,
+    flush_seconds: int = DEFAULT_FLUSH_SECONDS,
+    bq_load_timeout_sec: int = DEFAULT_BQ_LOAD_TIMEOUT_SEC,
+    data_dir: Optional[str] = None,
+    disable_progress_bar: bool = False,
+    use_staging_table: bool = False,
+) -> IngestResult:
+    """
+    Ingest a dataset from BMRS API to BigQuery with improved handling of schema changes and duplicates.
+    """
+    ds = dataset.upper()
+
+    # Allow overriding the offline skip list when explicitly requested
+    if ds in LIKELY_OFFLINE and not INCLUDE_OFFLINE:
+        return IngestResult(
+            dataset=ds, status="SKIP", rows=0, note="offline/params", endpoint="BMRS"
+        )
+
+    window = _max_window_for(ds)
+    if ds == "RDRI":
+        table_name = "bmrs_rdri_new"  # Use the new table for RDRI
+    else:
+        table_name = _safe_table_name("bmrs", ds)
+
+    existing_windows = set()
+    if overwrite:
+        logging.info(f"🧹 Overwrite enabled, clearing BQ date range for {table_name}")
+        try:
+            clear_bq_date_range(client, dataset_id, table_name, start, end)
+        except Exception as e:
+            logging.error("❌ %s: Failed to clear date range: %s", ds, e)
+            return IngestResult(
+                dataset=ds,
+                status="ERR",
+                rows=0,
+                note=f"BQ clear failed: {e}",
+                endpoint="BMRS",
+            )
+    else:
+        logging.info(f"🔄 Checking for existing windows for {table_name}")
+        # Resuming: find out what's already there
+        existing_windows = _get_existing_windows(
+            client, dataset_id, table_name, start, end
+        )
+
+    # Get existing windows to support resumable ingest
+    if not overwrite:
+        existing_windows = _get_existing_windows(
+            client, dataset_id, table_name, start, end
+        )
+
+    # Iterate through all possible time windows
+    all_windows = list(_iter_windows(start, end, _max_window_for(ds)))
+
+    # Filter out windows that already exist in BQ if not in overwrite mode
+    if not overwrite and existing_windows:
+        windows_to_fetch = [
+            (from_dt, to_dt)
+            for from_dt, to_dt in all_windows
+            if from_dt not in existing_windows
+        ]
+        logging.info(
+            f"Found {len(existing_windows)} existing windows for {ds}. "
+            f"Skipping them and fetching {len(windows_to_fetch)} new windows."
+        )
+    else:
+        windows_to_fetch = all_windows
+        if overwrite:
+            logging.info(
+                f"Overwrite mode is on. Fetching all {len(windows_to_fetch)} windows for {ds}."
+            )
+        else:
+            logging.info(
+                f"No existing windows found for {ds}. "
+                f"Fetching all {len(windows_to_fetch)} windows."
+            )
+
+    logging.info(
+        "🧮 Total windows to fetch for %s: %d (batch_size=%d, flush_seconds=%d)",
+        ds,
+        len(windows_to_fetch),
+        batch_size,
+        flush_seconds,
+    )
+
+    if not windows_to_fetch:
+        logging.info("✅ No new windows to fetch for %s. Skipping.", ds)
+        return IngestResult(
+            dataset=ds, status="SKIP", rows=0, note="All windows exist", endpoint="BMRS"
+        )
+
+    frames_batch: List[pd.DataFrame] = []
+    total_rows_loaded = 0
+    any_data_loaded = False
+    failed_windows = 0
+    last_flush_time = time.time()
+
+    with tqdm(
+        total=len(windows_to_fetch),
+        desc=f"  - {ds} ({_max_window_for(ds).days} day, {timedelta(seconds=0)})",
+        unit="window",
+        disable=disable_progress_bar,
+        dynamic_ncols=True,
+    ) as pbar:
+        for from_dt, to_dt in windows_to_fetch:
+            try:
+                # Set a timeout for the fetch operation
+                signal.signal(signal.SIGALRM, timeout_handler)
+                signal.alarm(300)  # 5-minute timeout for a single fetch
+                try:
+                    df = _fetch_bmrs(
+                        ds, from_dt, to_dt, bm_units=bm_units, data_dir=data_dir
+                    )
+                finally:
+                    signal.alarm(0)  # Disable the alarm
+            except TimeoutException:
+                logging.warning("⏰ %s: Timeout fetching window %s", ds, from_dt)
+                failed_windows += 1
+                pbar.update(1)
+                continue
+            except requests.HTTPError as e:
+                # For 400/422 on offline datasets, treat as no-data and continue
+                if (
+                    getattr(e.response, "status_code", None) in (400, 422)
+                    and ds in LIKELY_OFFLINE
+                    and not INCLUDE_OFFLINE
+                ):
+                    logging.debug(
+                        "Got HTTP %d for offline dataset %s, treating as no-data.",
+                        e.response.status_code,
+                        ds,
+                    )
+                    pbar.update(1)
+                    continue
+                # Otherwise, it's a real error
+                logging.warning(
+                    "⚠️ %s: HTTP error fetching window %s: %s", ds, from_dt, e
+                )
+                failed_windows += 1
+                pbar.update(1)
+                continue
+            except Exception as e:
+                logging.warning("⚠️ %s: Error fetching window %s: %s", ds, from_dt, e)
+                failed_windows += 1
+                pbar.update(1)
+                continue
+
+            primary_params = {}  # Ensure primary_params is initialized
+            if dataset.upper() in {
+                "WIND_SOLAR_GEN",
+                "INTERCONNECTOR_FLOWS",
+                "DEMAND_FORECAST",
+                "SURPLUS_MARGIN",
+                "STOR",
+                "MARKET_INDEX_PRICES",
+            }:
+                # Add specific handling logic for these datasets if required
+                logging.info(f"Handling new dataset: {dataset}")
+                primary_params["fields"] = (
+                    "all"  # Example: Fetch all fields for these datasets
+                )
+
+            pbar.update(1)
+
+            if df is None or df.empty:
+                continue
+
+            # Append metadata and sanitize
+            df = _append_metadata_cols(df, ds, from_dt, to_dt)
+            df = _sanitize_df_for_bq(df)
+
+            # Ensure System Sell Price is included in the DataFrame transformation
+            if "SystemSellPrice" in df.columns:
+                df["SystemSellPrice"] = df["SystemSellPrice"].astype(float)
+
+            frames_batch.append(df)
+
+            # Flush batch if size or time threshold is reached
+            time_since_flush = time.time() - last_flush_time
+            if len(frames_batch) >= batch_size or (
+                time_since_flush >= flush_seconds and frames_batch
+            ):
+                logging.info(
+                    "📦 Flushing batch for %s: %d frames (size threshold reached (%d >= %d) or time threshold reached (%.1f >= %d))",
+                    ds,
+                    len(frames_batch),
+                    len(frames_batch),
+                    batch_size,
+                    time_since_flush,
+                    flush_seconds,
+                )
+                try:
+                    combined_df = pd.concat(frames_batch, ignore_index=True)
+
+                    # Use staging table approach if enabled
+                    if use_staging_table:
+                        if _load_to_staging_table(
+                            client,
+                            combined_df,
+                            dataset_id,
+                            table_name,
+                            load_timeout_sec=bq_load_timeout_sec,
+                        ):
+                            total_rows_loaded += len(combined_df)
+                            any_data_loaded = True
+                        else:
+                            logging.error(
+                                "❌ %s: Staging table load failed. Will retry with direct load.",
+                                ds,
+                            )
+                            # Fall back to direct load if staging fails
+                            if not _load_dataframe_safely(
+                                client,
+                                combined_df,
+                                dataset_id,
+                                table_name,
+                                load_timeout_sec=bq_load_timeout_sec,
+                            ):
+                                failed_windows += len(frames_batch)
+                            else:
+                                total_rows_loaded += len(combined_df)
+                                any_data_loaded = True
+                    else:
+                        # Original direct load approach
+                        if not _load_dataframe_safely(
+                            client,
+                            combined_df,
+                            dataset_id,
+                            table_name,
+                            load_timeout_sec=bq_load_timeout_sec,
+                        ):
+                            logging.error(
+                                "❌ %s: BigQuery batch load failed. Will retry window by window.",
+                                ds,
+                            )
+                            # If batch fails, try loading frames one by one
+                            for frame in frames_batch:
+                                if not _load_dataframe_safely(
+                                    client,
+                                    frame,
+                                    dataset_id,
+                                    table_name,
+                                    load_timeout_sec=bq_load_timeout_sec,
+                                ):
+                                    failed_windows += 1
+                                else:
+                                    total_rows_loaded += len(frame)
+                                    any_data_loaded = True
+                        else:
+                            total_rows_loaded += len(combined_df)
+                            any_data_loaded = True
+
+                    frames_batch.clear()
+                    last_flush_time = time.time()
+                except Exception as e:
+                    logging.error("❌ %s: BigQuery batch load failed: %s", ds, e)
+                    failed_windows += len(frames_batch)
+                    frames_batch.clear()
+                    last_flush_time = time.time()
+
+    # Final flush for any remaining frames
+    if frames_batch:
+        logging.info("📦 Flushing final batch for %s: %d frames", ds, len(frames_batch))
+        try:
+            combined_df = pd.concat(frames_batch, ignore_index=True)
+            if _load_dataframe_safely(
+                client,
+                combined_df,
+                dataset_id,
+                table_name,
+                load_timeout_sec=bq_load_timeout_sec,
+            ):
+                total_rows_loaded += len(combined_df)
+                any_data_loaded = True
+            frames_batch.clear()
+        except Exception as e:
+            logging.error("❌ %s: BigQuery final batch load failed: %s", ds, e)
+            # Even if the final batch fails, some data might have been loaded.
+            status = "PARTIAL" if any_data_loaded else "ERR"
+            return IngestResult(
+                dataset=ds,
+                status=status,
+                rows=total_rows_loaded,
+                note=f"BQ final load failed: {e}",
+                endpoint="BMRS",
+            )
+
+    status = "OK" if failed_windows == 0 else "PARTIAL"
+    note = f"{failed_windows} windows failed" if failed_windows > 0 else ""
+    return IngestResult(
+        dataset=ds, status=status, rows=total_rows_loaded, note=note, endpoint="BMRS"
+    )
+
+
+def validate_and_align_schema(
+    client: bigquery.Client, dataset_id: str, table_name: str, dataframe: pd.DataFrame
+):
+    """
+    Validate and align the BigQuery table schema with the dataset schema.
+    - Logs mismatches.
+    - Dynamically adds missing columns to the BigQuery table.
+    """
+    table_id = f"{client.project}.{dataset_id}.{table_name}"
+    logging.info(f"🔍 Validating schema for table {table_id}")
+
+    # Get existing BigQuery table schema
+    existing_schema = _get_table_schema(client, table_id)
+    dataset_schema = set(dataframe.columns)
+
+    # Identify missing and extra columns
+    missing_columns = dataset_schema - existing_schema
+    extra_columns = existing_schema - dataset_schema
+
+    if missing_columns:
+        logging.warning(
+            f"⚠️ Missing columns in BigQuery table {table_name}: {missing_columns}"
+        )
+        # Dynamically add missing columns to the BigQuery table
+        try:
+            table = client.get_table(table_id)
+            new_fields = [
+                bigquery.SchemaField(col, "STRING") for col in missing_columns
+            ]
+            table.schema += new_fields
+            client.update_table(table, ["schema"])
+            logging.info(f"✅ Added missing columns to {table_name}: {missing_columns}")
+        except Exception as e:
+            logging.error(f"❌ Failed to add missing columns to {table_name}: {e}")
+
+    if extra_columns:
+        logging.info(
+            f"ℹ️ Extra columns in BigQuery table {table_name} (not in dataset): {extra_columns}"
+        )
+
+    if not missing_columns and not extra_columns:
+        logging.info(f"✅ Schema validation passed for {table_name}")
+
+
+def _get_table_expiration_time() -> Optional[datetime]:
+    return None
+
+
+def main():
+    parser = argparse.ArgumentParser(
+        description="Elexon BMRS chunked downloader → BigQuery with improved schema handling"
+    )
+    parser.add_argument(
+        "--start", required=True, help="ISO date (YYYY-MM-DD) or full ISO8601"
+    )
+    parser.add_argument(
+        "--end",
+        required=True,
+        help="ISO date (YYYY-MM-DD) or full ISO8601 (exclusive upper bound is fine)",
+    )
+    parser.add_argument(
+        "--only",
+        default="",
+        help="Comma-separated dataset codes, e.g. BOD,BOAL,DISBSAD",
+    )
+    parser.add_argument("--project", default=BQ_PROJECT, help="BigQuery project id")
+    parser.add_argument("--dataset", default=BQ_DATASET, help="BigQuery dataset id")
+    parser.add_argument(
+        "--log-level", default="INFO", choices=["DEBUG", "INFO", "WARNING", "ERROR"]
+    )
+    parser.add_argument(
+        "--log-file",
+        default="",
+        help="Optional path to write logs to a file (in addition to console).",
+    )
+    parser.add_argument(
+        "--overwrite",
+        action="store_true",
+        help="If set, delete data in the given date range before loading.",
+    )
+    parser.add_argument(
+        "--skip-existing",
+        action="store_true",
+        help="Skip datasets that already have data in the given date range.",
+    )
+    parser.add_argument(
+        "--include-offline",
+        action="store_true",
+        help="Also attempt datasets marked as offline (MILS, MELS)",
+    )
+    parser.add_argument(
+        "--bm-units",
+        default="",
+        help="Optional comma-separated BM Unit IDs to filter MILS/MELS via physical API fallback",
+    )
+    parser.add_argument(
+        "--batch-size",
+        type=int,
+        default=MAX_FRAMES_PER_BATCH,
+        help="Number of frames per BigQuery load batch (default: 90)",
+    )
+    parser.add_argument(
+        "--flush-seconds",
+        type=int,
+        default=DEFAULT_FLUSH_SECONDS,
+        help="Time-based flush interval in seconds (default: 300)",
+    )
+    parser.add_argument(
+        "--bq-load-timeout",
+        type=int,
+        default=DEFAULT_BQ_LOAD_TIMEOUT_SEC,
+        help="Timeout in seconds for a single BigQuery load job before splitting (default: 600)",
+    )
+    parser.add_argument(
+        "--use-staging-table",
+        action="store_true",
+        help="Use staging tables to reduce load operations (reduces quota usage)",
+    )
+    parser.add_argument(
+        "--data-dir",
+        default=None,
+        help="If set, save raw JSON responses to this local directory.",
+    )
+    # Add a new argument for dry-run and live progress monitoring
+    parser.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="Simulate the ingestion process without loading data into BigQuery",
+    )
+    parser.add_argument(
+        "--monitor-progress",
+        action="store_true",
+        help="Enable live progress monitoring",
+    )
+    args = parser.parse_args()
+
+    # Use TQDM-aware logger
+    log = logging.getLogger()
+    log.setLevel(getattr(logging, args.log_level))
+    handler = TqdmLoggingHandler()
+    fmt = logging.Formatter("%(asctime)s [%(levelname)s] %(message)s")
+    handler.setFormatter(fmt)
+
+    # Set up file logging if requested
+    if args.log_file:
+        try:
+            os.makedirs(os.path.dirname(args.log_file) or ".", exist_ok=True)
+            fh = logging.FileHandler(args.log_file, encoding="utf-8")
+            fh.setLevel(getattr(logging, args.log_level))
+            fh.setFormatter(fmt)
+            log.addHandler(fh)
+            logging.info("📄 Logging to %s", args.log_file)
+        except Exception as e:
+            logging.warning("⚠️ Could not add file logger %s: %s", args.log_file, e)
+
+    # Bind CLI flag to module-level toggle
+    global INCLUDE_OFFLINE
+    INCLUDE_OFFLINE = bool(args.include_offline)
+
+    start = _parse_iso_date(args.start)
+    end = _parse_iso_date(args.end)
+    if end <= start:
+        logging.error("End must be after start.")
+        sys.exit(2)
+
+    client = bigquery.Client(project=args.project)
+    logging.info("✅ Initialized BigQuery Client for project: %s", client.project)
+
+    _ensure_bq_dataset(client, args.dataset)
+
+    # Build dataset list
+    if args.only.strip():
+        wanted = [s.strip().upper() for s in args.only.split(",") if s.strip()]
+    else:
+        # Ingest all datasets
+        wanted = [
+            "METADATA",
+            "BOAL",
+            "BOD",
+            "COSTS",  # System Buy/Sell Prices (added for bmrs_costs table)
+            "DISBSAD",
+            "FOU2T14D",
+            "FOU2T3YW",
+            "FOUT2T14D",
+            "FREQ",
+            "FUELHH",
+            "FUELINST",
+            "IMBALNGC",
+            "INDDEM",
+            "INDGEN",
+            "INDO",
+            "ITSDO",
+            "MELNGC",
+            "MID",
+            "MILS",
+            "MELS",
+            "MDP",
+            "MDV",
+            "MNZT",
+            "MZT",
+            "NETBSAD",
+            "NDF",
+            "NDFD",
+            "NDFW",
+            "NONBM",
+            "NOU2T14D",
+            "NOU2T3YW",
+            "NTB",
+            "NTO",
+            "NDZ",
+            "OCNMF3Y",
+            "OCNMF3Y2",
+            "OCNMFD",
+            "OCNMFD2",
+            "PN",
+            "QAS",
+            "QPN",
+            "RDRE",
+            "RDRI",
+            "RURE",
+            "RURI",
+            "SEL",
+            "SIL",
+            "STOR",  # Short-term operating reserves
+            "TEMP",
+            "TSDF",
+            "TSDFD",
+            "TSDFW",
+            "UOU2T14D",
+            "UOU2T3YW",
+            "WINDFOR",
+        ]
+
+    # Move UOU2T3YW to the end if present, to avoid blocking other datasets
+    if "UOU2T3YW" in wanted:
+        wanted = [ds for ds in wanted if ds != "UOU2T3YW"] + ["UOU2T3YW"]
+
+    # Skip datasets that already have data if --skip-existing is set
+    if args.skip_existing:
+        datasets_to_skip = []
+        datasets_to_process = []
+
+        for ds in wanted:
+            table_id = f"{args.project}.{args.dataset}.bmrs_{ds.lower()}"
+            try:
+                # Check if table exists and has data in the date range
+                query = f"""
+                SELECT COUNT(*) as row_count
+                FROM `{table_id}`
+                WHERE settlement_date >= '{start.date()}'
+                AND settlement_date <= '{end.date()}'
+                LIMIT 1
+                """
+                result = list(client.query(query))
+                if result and result[0].row_count > 0:
+                    datasets_to_skip.append(ds)
+                    logging.info(
+                        "⏭️  %s: Skipping - already has %d rows in date range",
+                        ds,
+                        result[0].row_count,
+                    )
+                else:
+                    datasets_to_process.append(ds)
+            except Exception:
+                # If table doesn't exist or query fails, include it for processing
+                datasets_to_process.append(ds)
+
+        if datasets_to_skip:
+            logging.info(
+                "🔄 Skipping %d datasets with existing data: %s",
+                len(datasets_to_skip),
+                ", ".join(datasets_to_skip),
+            )
+
+        wanted = datasets_to_process
+
+    # Log the planned list
+    logging.info("📝 Planned datasets (%d): %s", len(wanted), ", ".join(wanted))
+    logging.info("🚀 Starting ingestion for %d datasets...", len(wanted))
+
+    results: List[IngestResult] = []
+    bmu_list: Optional[List[str]] = None
+    if args.bm_units.strip():
+        bmu_list = [s.strip() for s in args.bm_units.split(",") if s.strip()]
+
+    disable_progress = bool(args.log_file)
+    for ds in tqdm(
+        wanted, desc="Overall Progress", unit="dataset", disable=disable_progress
+    ):
+        try:
+            result = ingest_dataset(
+                client,
+                ds,
+                start,
+                end,
+                args.dataset,
+                args.overwrite,
+                bm_units=bmu_list,
+                batch_size=max(1, int(args.batch_size or MAX_FRAMES_PER_BATCH)),
+                flush_seconds=max(5, int(args.flush_seconds or DEFAULT_FLUSH_SECONDS)),
+                bq_load_timeout_sec=max(
+                    60, int(args.bq_load_timeout or DEFAULT_BQ_LOAD_TIMEOUT_SEC)
+                ),
+                data_dir=args.data_dir,
+                disable_progress_bar=disable_progress,
+                use_staging_table=args.use_staging_table,
+            )
+            results.append(result)
+        except Exception as e:
+            logging.error("❌ %s: Unexpected error: %s", ds, e)
+            results.append(
+                IngestResult(dataset=ds, status="ERR", note=f"Unexpected error: {e}")
+            )
+
+    # Summary
+    oks = sum(1 for r in results if r.status == "OK")
+    partials = sum(1 for r in results if r.status == "PARTIAL")
+    skips = sum(1 for r in results if r.status == "SKIP")
+    errs = sum(1 for r in results if r.status == "ERR")
+    logging.info("🎉 All datasets processed.")
+    logging.info("   OK=%d, PARTIAL=%d, SKIP=%d, ERR=%d", oks, partials, skips, errs)
+
+    if skips > 0:
+        logging.info(
+            "   SKIPPED: %s",
+            ", ".join(r.dataset for r in results if r.status == "SKIP"),
+        )
+
+    if errs > 0:
+        logging.info(
+            "   ERR: %s",
+            ", ".join(f"{r.dataset}({r.note})" for r in results if r.status == "ERR"),
+        )
+
+
+# Ensure logging is configured for better visibility during execution
+import logging
+
+logging.basicConfig(
+    level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
+)
+
+# Disabled broken run_ingestion function - use main() instead
+# def run_ingestion():
+#     from google.cloud import bigquery
+#     from datetime import datetime, timedelta
+#
+#     # Initialize BigQuery client
+#     client = bigquery.Client()
+#
+#     # Define the date ranges for ingestion
+#     date_ranges = [
+#         (date(2022, 1, 1), date(2022, 12, 31)),
+#         (date(2023, 1, 1), date(2023, 12, 31)),
+#         (date(2024, 1, 1), date(2024, 12, 31)),
+#     ]
+#
+#     # Loop through each year and ingest data
+#     for start_date, end_date in date_ranges:
+#         logging.info(f"Starting ingestion for {start_date} to {end_date}")
+#         try:
+#             # Convert date to datetime before calling ingest_dataset
+#             start_datetime = datetime.combine(start_date, datetime.min.time())
+#             end_datetime = datetime.combine(end_date, datetime.min.time())
+#             ingest_dataset(client, "DATASET_NAME", start_datetime, end_datetime)
+#             logging.info(f"Successfully ingested data for {start_date} to {end_date}")
+#         except Exception as e:
+#             logging.error(f"Failed to ingest data for {start_date} to {end_date}: {e}")
+
+if __name__ == "__main__":
+    main()

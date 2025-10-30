@@ -1,0 +1,62 @@
+{
+  "Northern Powergrid": [],
+  "Electricity North West": [
+    {
+      "url": "https://enwl.co.uk/about-us/regulatory-information",
+      "dno": "Electricity North West",
+      "collection_time": "2025-09-13T12:15:26.780286",
+      "page_title": "Regulatory information",
+      "data_indicators": {
+        "duos_mentions": 0,
+        "charge_mentions": 7,
+        "price_mentions": 7,
+        "regulatory_mentions": 10
+      },
+      "downloadable_files": [
+        {
+          "url": "https://enwl.co.uk/globalassets/about-us/regulatory-information/documents/methodology-for-inv-projects/riio-ed2-methodology-for-identifying-worst-served-customer-network-investment-projects-may-20232.pdf",
+          "text": "Read more",
+          "type": "pdf"
+        },
+        {
+          "url": "https://enwl.co.uk/globalassets/about-us/regulatory-information/documents/ed2-wsc-stakeholder-report/riio-ed2-worst-served-customers-stakeholder-report-october-2024.pdf",
+          "text": "Read more",
+          "type": "pdf"
+        }
+      ],
+      "tables_found": [],
+      "total_data_score": 34
+    }
+  ],
+  "WPD Western Power": [
+    {
+      "url": "https://westernpower.co.uk/connections/charges",
+      "dno": "WPD Western Power",
+      "collection_time": "2025-09-13T12:15:29.249370",
+      "page_title": "No title",
+      "data_indicators": {
+        "duos_mentions": 0,
+        "charge_mentions": 0,
+        "price_mentions": 0,
+        "regulatory_mentions": 0
+      },
+      "downloadable_files": [],
+      "tables_found": [],
+      "total_data_score": 0
+    },
+    {
+      "url": "https://westernpower.co.uk/regulatory-information",
+      "dno": "WPD Western Power",
+      "error": "404 Client Error: Not Found for url: https://www.nationalgrid.co.uk/regulatory-information",
+      "collection_time": "2025-09-13T12:15:31.628123"
+    },
+    {
+      "url": "https://westernpower.co.uk/duos-charges",
+      "dno": "WPD Western Power",
+      "error": "404 Client Error: Not Found for url: https://www.nationalgrid.co.uk/duos-charges",
+      "collection_time": "2025-09-13T12:15:34.012547"
+    }
+  ],
+  "SSEN Scottish & Southern": [],
+  "Scottish Power Energy Networks": []
+}

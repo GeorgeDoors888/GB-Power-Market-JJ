@@ -1,0 +1,49 @@
+file_path,dno_name,mpan_code,year,band,min_rate,max_rate,mean_rate,median_rate,count
+"duos_expanded_data/northern_powergrid_2025_annex_1_lv,_hv_and_ums_charges.csv",Northern Powergrid,16,2025,RED,-3.915,15.82,2.6679062499999997,2.83,32
+"duos_expanded_data/sp_distribution_2021_annex_1_lv,_hv_and_ums_charges.csv",Unknown,,2021,RED,-6.441,22.728,2.8705263157894736,4.162,19
+"duos_expanded_data/sp_distribution_2024_annex_1_lv,_hv_and_ums_charges.csv",Unknown,,2024,RED,-7.403,23.145,4.8635,6.72,32
+"duos_expanded_data/uk_power_networks_eastern_2021_annex_1_lv,_hv_and_ums_charges.csv",UKPN Eastern,10,2021,RED,-9.262,40.302,3.9703684210526307,5.289,19
+"duos_expanded_data/uk_power_networks_london_2021_annex_1_lv,_hv_and_ums_charges.csv",UKPN London,11,2021,RED,-5.511,29.411,2.1815263157894735,2.57,19
+"duos_extracted_data/electricity_north_west_2021_annex_1_lv,_hv_and_ums_charges.csv",Unknown,,2021,RED,-6.774,17.522,2.4397368421052628,4.504,19
+"duos_extracted_data/electricity_north_west_2023_annex_1_lv,_hv_and_ums_charges.csv",Unknown,,2023,RED,-7.433,23.217,4.5156875,5.993,32
+duos_extracted_data/uk_power_networks_eastern_2017_annex_1_lv_and_hv_charges.csv,UKPN Eastern,10,2017,RED,-9.684,39.655,3.208407407407407,1.535,27
+duos_extracted_data/uk_power_networks_eastern_2018_annex_1_lv_and_hv_charges.csv,UKPN Eastern,10,2018,RED,-9.215,38.178,1.66669696969697,0.708,33
+duos_extracted_data/uk_power_networks_eastern_2019_annex_1_lv_and_hv_charges.csv,UKPN Eastern,10,2019,RED,-9.434,40.892,1.8118484848484853,0.752,33
+duos_extracted_data/uk_power_networks_eastern_2020_annex_1_lv_and_hv_charges.csv,UKPN Eastern,10,2020,RED,-9.667,40.982,1.847090909090909,0.747,33
+"duos_extracted_data/uk_power_networks_eastern_2021_annex_1_lv,_hv_and_ums_charges.csv",UKPN Eastern,10,2021,RED,-9.468,41.646,4.241999999999999,5.798,19
+"duos_extracted_data/uk_power_networks_eastern_2022_annex_1_lv,_hv_and_ums_charges.csv",UKPN Eastern,10,2022,RED,-9.287,40.226,6.331250000000001,6.755,32
+"duos_spm_data/sp_distribution_2021_annex_1_lv,_hv_and_ums_charges.csv",SP Manweb,13,2021,RED,-7.667,19.543,3.341315789473684,6.53,19
+"duos_spm_data/sp_distribution_2024_annex_1_lv,_hv_and_ums_charges.csv",SP Manweb,13,2024,RED,-7.403,23.145,4.8635,6.72,32
+"duos_spm_data/sp_distribution_2025_annex_1_lv,_hv_and_ums_charges.csv",SP Manweb,13,2025,RED,-10.032,29.056,6.59290625,8.679,32
+"duos_expanded_data/northern_powergrid_2025_annex_1_lv,_hv_and_ums_charges.csv",Northern Powergrid,16,2025,AMBER,-1.288,2.145,0.75534375,0.854,32
+"duos_expanded_data/sp_distribution_2021_annex_1_lv,_hv_and_ums_charges.csv",Unknown,,2021,AMBER,-0.631,2.342,0.6613684210526315,0.354,19
+"duos_expanded_data/sp_distribution_2024_annex_1_lv,_hv_and_ums_charges.csv",Unknown,,2024,AMBER,-2.118,5.814,1.2269375,1.473,32
+"duos_expanded_data/uk_power_networks_eastern_2021_annex_1_lv,_hv_and_ums_charges.csv",UKPN Eastern,10,2021,AMBER,-0.368,1.789,0.3616842105263158,0.176,19
+"duos_expanded_data/uk_power_networks_london_2021_annex_1_lv,_hv_and_ums_charges.csv",UKPN London,11,2021,AMBER,-0.767,1.944,0.03600000000000001,0.0,19
+"duos_extracted_data/electricity_north_west_2021_annex_1_lv,_hv_and_ums_charges.csv",Unknown,,2021,AMBER,-1.089,3.604,0.5612105263157896,0.787,19
+"duos_extracted_data/electricity_north_west_2023_annex_1_lv,_hv_and_ums_charges.csv",Unknown,,2023,AMBER,-1.546,4.926,0.87290625,1.052,32
+duos_extracted_data/uk_power_networks_eastern_2017_annex_1_lv_and_hv_charges.csv,UKPN Eastern,10,2017,AMBER,-0.09,0.653,0.03496296296296296,0.0,27
+duos_extracted_data/uk_power_networks_eastern_2018_annex_1_lv_and_hv_charges.csv,UKPN Eastern,10,2018,AMBER,-0.136,0.748,0.11558823529411766,0.139,17
+duos_extracted_data/uk_power_networks_eastern_2019_annex_1_lv_and_hv_charges.csv,UKPN Eastern,10,2019,AMBER,-0.206,0.944,0.13323529411764704,0.162,17
+duos_extracted_data/uk_power_networks_eastern_2020_annex_1_lv_and_hv_charges.csv,UKPN Eastern,10,2020,AMBER,-0.259,1.125,0.13123529411764703,0.142,17
+"duos_extracted_data/uk_power_networks_eastern_2021_annex_1_lv,_hv_and_ums_charges.csv",UKPN Eastern,10,2021,AMBER,-0.329,1.326,0.19605263157894734,0.185,19
+"duos_extracted_data/uk_power_networks_eastern_2022_annex_1_lv,_hv_and_ums_charges.csv",UKPN Eastern,10,2022,AMBER,-0.396,1.512,0.24768749999999995,0.243,32
+"duos_spm_data/sp_distribution_2021_annex_1_lv,_hv_and_ums_charges.csv",SP Manweb,13,2021,AMBER,-1.211,3.592,0.9503157894736842,0.899,19
+"duos_spm_data/sp_distribution_2024_annex_1_lv,_hv_and_ums_charges.csv",SP Manweb,13,2024,AMBER,-2.118,5.814,1.2269375,1.473,32
+"duos_spm_data/sp_distribution_2025_annex_1_lv,_hv_and_ums_charges.csv",SP Manweb,13,2025,AMBER,-2.667,6.091,1.5105625,1.681,32
+"duos_expanded_data/northern_powergrid_2025_annex_1_lv,_hv_and_ums_charges.csv",Northern Powergrid,16,2025,GREEN,-1.288,2.145,0.438796875,0.484,64
+"duos_expanded_data/sp_distribution_2021_annex_1_lv,_hv_and_ums_charges.csv",Unknown,,2021,GREEN,-0.631,2.342,0.5853421052631578,0.1805,38
+"duos_expanded_data/sp_distribution_2024_annex_1_lv,_hv_and_ums_charges.csv",Unknown,,2024,GREEN,-2.118,5.814,0.710609375,0.7865000000000001,64
+"duos_expanded_data/uk_power_networks_eastern_2021_annex_1_lv,_hv_and_ums_charges.csv",UKPN Eastern,10,2021,GREEN,-0.368,1.789,0.3232894736842105,0.10049999999999999,38
+"duos_expanded_data/uk_power_networks_london_2021_annex_1_lv,_hv_and_ums_charges.csv",UKPN London,11,2021,GREEN,-0.767,1.944,0.014605263157894743,0.0,38
+"duos_extracted_data/electricity_north_west_2021_annex_1_lv,_hv_and_ums_charges.csv",Unknown,,2021,GREEN,-1.089,3.604,0.45518421052631586,0.452,38
+"duos_extracted_data/electricity_north_west_2023_annex_1_lv,_hv_and_ums_charges.csv",Unknown,,2023,GREEN,-1.546,4.926,0.52653125,0.5755,64
+duos_extracted_data/uk_power_networks_eastern_2017_annex_1_lv_and_hv_charges.csv,UKPN Eastern,10,2017,GREEN,-0.09,0.653,0.028333333333333335,0.0,54
+duos_extracted_data/uk_power_networks_eastern_2018_annex_1_lv_and_hv_charges.csv,UKPN Eastern,10,2018,GREEN,-0.136,0.748,0.10571078431372549,0.095,29
+duos_extracted_data/uk_power_networks_eastern_2019_annex_1_lv_and_hv_charges.csv,UKPN Eastern,10,2019,GREEN,-0.206,0.944,0.1210343137254902,0.10625000000000001,29
+duos_extracted_data/uk_power_networks_eastern_2020_annex_1_lv_and_hv_charges.csv,UKPN Eastern,10,2020,GREEN,-0.259,1.125,0.11482598039215686,0.09,29
+"duos_extracted_data/uk_power_networks_eastern_2021_annex_1_lv,_hv_and_ums_charges.csv",UKPN Eastern,10,2021,GREEN,-0.329,1.326,0.15873684210526315,0.1065,38
+"duos_extracted_data/uk_power_networks_eastern_2022_annex_1_lv,_hv_and_ums_charges.csv",UKPN Eastern,10,2022,GREEN,-0.396,1.512,0.15896875,0.1445,64
+"duos_spm_data/sp_distribution_2021_annex_1_lv,_hv_and_ums_charges.csv",SP Manweb,13,2021,GREEN,-1.211,3.592,0.7934999999999999,0.5215,38
+"duos_spm_data/sp_distribution_2024_annex_1_lv,_hv_and_ums_charges.csv",SP Manweb,13,2024,GREEN,-2.118,5.814,0.710609375,0.7865000000000001,64
+"duos_spm_data/sp_distribution_2025_annex_1_lv,_hv_and_ums_charges.csv",SP Manweb,13,2025,GREEN,-2.667,6.091,0.87228125,0.911,64

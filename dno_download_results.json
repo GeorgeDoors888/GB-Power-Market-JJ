@@ -1,0 +1,246 @@
+{
+  "download_date": "2025-09-13T14:29:30.050726",
+  "dnos": {
+    "SEPD": {
+      "total_files": 6,
+      "downloaded_files": 5,
+      "failed_files": 1,
+      "file_details": [
+        {
+          "url": "https://www.ssen.co.uk/globalassets/library/charging-statements-sepd/202526/sepd---schedule-of-charges-and-other-tables---april-2025-v0.2.xlsx",
+          "filename": "sepd---schedule-of-charges-and-other-tables---april-2025-v0.2.xlsx",
+          "success": true,
+          "file_size": 249858
+        },
+        {
+          "url": "https://www.ssen.co.uk/globalassets/library/charging-statements-sepd/202526/sepd_cdcm_v10_20231106_25-26_final.xlsx",
+          "filename": "sepd_cdcm_v10_20231106_25-26_final.xlsx",
+          "success": true,
+          "file_size": 927114
+        },
+        {
+          "url": "https://www.ssen.co.uk/globalassets/library/charging-statements-sepd/202526/sepd_pcdm_v5_20231106_25-26_final.xlsx",
+          "filename": "sepd_pcdm_v5_20231106_25-26_final.xlsx",
+          "success": true,
+          "file_size": 308967
+        },
+        {
+          "url": "https://www.ssen.co.uk/globalassets/library/charging-statements-sepd/202627/sepd---schedule-of-charges-and-other-tables---april-2026-v1.0.xlsx",
+          "filename": null,
+          "success": false,
+          "file_size": null
+        },
+        {
+          "url": "https://www.ssen.co.uk/globalassets/library/charging-statements-sepd/202627/sepd_cdcm_v11_20241025_26-27_final.xlsx",
+          "filename": "sepd_cdcm_v11_20241025_26-27_final.xlsx",
+          "success": true,
+          "file_size": 954101
+        },
+        {
+          "url": "https://www.ssen.co.uk/globalassets/library/charging-statements-sepd/202627/sepd_pcdm_v5_20241025_26-27_final.xlsx",
+          "filename": "sepd_pcdm_v5_20241025_26-27_final.xlsx",
+          "success": true,
+          "file_size": 327431
+        }
+      ]
+    },
+    "SHEPD": {
+      "total_files": 6,
+      "downloaded_files": 6,
+      "failed_files": 0,
+      "file_details": [
+        {
+          "url": "https://www.ssen.co.uk/globalassets/library/charging-statements-shepd/202526/shepd---schedule-of-charges-and-other-tables---april-2025-v0.2.xlsx",
+          "filename": "shepd---schedule-of-charges-and-other-tables---april-2025-v0.2.xlsx",
+          "success": true,
+          "file_size": 239961
+        },
+        {
+          "url": "https://www.ssen.co.uk/globalassets/library/charging-statements-shepd/202526/shepd_cdcm_v10_20231106_25-26_final.xlsx",
+          "filename": "shepd_cdcm_v10_20231106_25-26_final.xlsx",
+          "success": true,
+          "file_size": 904581
+        },
+        {
+          "url": "https://www.ssen.co.uk/globalassets/library/charging-statements-shepd/202526/shepd_pcdm_v5_20231106_25-26_final.xlsx",
+          "filename": "shepd_pcdm_v5_20231106_25-26_final.xlsx",
+          "success": true,
+          "file_size": 309411
+        },
+        {
+          "url": "https://www.ssen.co.uk/globalassets/library/charging-statements-shepd/202627/shepd---schedule-of-charges-and-other-tables---april-2026-v1.0.xlsx",
+          "filename": "shepd---schedule-of-charges-and-other-tables---april-2026-v1.0.xlsx",
+          "success": true,
+          "file_size": 217529
+        },
+        {
+          "url": "https://www.ssen.co.uk/globalassets/library/charging-statements-shepd/202627/shepd_cdcm_v11_20241025_26-27_final.xlsx",
+          "filename": "shepd_cdcm_v11_20241025_26-27_final.xlsx",
+          "success": true,
+          "file_size": 941362
+        },
+        {
+          "url": "https://www.ssen.co.uk/globalassets/library/charging-statements-shepd/202627/shepd_pcdm_v5_20241025_26-27_final.xlsx",
+          "filename": "shepd_pcdm_v5_20241025_26-27_final.xlsx",
+          "success": true,
+          "file_size": 326049
+        }
+      ]
+    },
+    "SP_MANWEB": {
+      "total_files": 4,
+      "downloaded_files": 0,
+      "failed_files": 4,
+      "file_details": [
+        {
+          "url": "https://www.scottishpower.com/userfiles/file/SPM-Schedule-of-charges-and-other-tables-2025-V.0.7-Annex-6.xlsx",
+          "filename": null,
+          "success": false,
+          "file_size": null
+        },
+        {
+          "url": "https://www.scottishpower.com/userfiles/file/SPM_2025_26_CDCM_v10_20231106.xlsx",
+          "filename": null,
+          "success": false,
+          "file_size": null
+        },
+        {
+          "url": "https://www.scottishpower.com/userfiles/file/SPM-Schedule-of-charges-and-other-tables-2026-V0.1-Annex-6.xlsx",
+          "filename": null,
+          "success": false,
+          "file_size": null
+        },
+        {
+          "url": "https://www.scottishpower.com/userfiles/file/SPM%202026_27%20CDCM_v11_20241025_Published.xlsx",
+          "filename": null,
+          "success": false,
+          "file_size": null
+        }
+      ]
+    },
+    "NGED_EAST_MIDLANDS": {
+      "total_files": 4,
+      "downloaded_files": 0,
+      "failed_files": 4,
+      "file_details": [
+        {
+          "url": "https://www.nationalgrid.com/document/160206/download",
+          "filename": null,
+          "success": false,
+          "file_size": null
+        },
+        {
+          "url": "https://www.nationalgrid.com/document/160196/download",
+          "filename": null,
+          "success": false,
+          "file_size": null
+        },
+        {
+          "url": "https://www.nationalgrid.com/document/161711/download",
+          "filename": null,
+          "success": false,
+          "file_size": null
+        },
+        {
+          "url": "https://www.nationalgrid.com/document/161716/download",
+          "filename": null,
+          "success": false,
+          "file_size": null
+        }
+      ]
+    },
+    "NGED_WEST_MIDLANDS": {
+      "total_files": 4,
+      "downloaded_files": 0,
+      "failed_files": 4,
+      "file_details": [
+        {
+          "url": "https://www.nationalgrid.com/document/160211/download",
+          "filename": null,
+          "success": false,
+          "file_size": null
+        },
+        {
+          "url": "https://www.nationalgrid.com/document/160201/download",
+          "filename": null,
+          "success": false,
+          "file_size": null
+        },
+        {
+          "url": "https://www.nationalgrid.com/document/161726/download",
+          "filename": null,
+          "success": false,
+          "file_size": null
+        },
+        {
+          "url": "https://www.nationalgrid.com/document/161731/download",
+          "filename": null,
+          "success": false,
+          "file_size": null
+        }
+      ]
+    },
+    "NGED_SOUTH_WALES": {
+      "total_files": 4,
+      "downloaded_files": 0,
+      "failed_files": 4,
+      "file_details": [
+        {
+          "url": "https://www.nationalgrid.com/document/160216/download",
+          "filename": null,
+          "success": false,
+          "file_size": null
+        },
+        {
+          "url": "https://www.nationalgrid.com/document/160201/download",
+          "filename": null,
+          "success": false,
+          "file_size": null
+        },
+        {
+          "url": "https://www.nationalgrid.com/document/161741/download",
+          "filename": null,
+          "success": false,
+          "file_size": null
+        },
+        {
+          "url": "https://www.nationalgrid.com/document/161746/download",
+          "filename": null,
+          "success": false,
+          "file_size": null
+        }
+      ]
+    },
+    "NGED_SOUTH_WEST": {
+      "total_files": 4,
+      "downloaded_files": 0,
+      "failed_files": 4,
+      "file_details": [
+        {
+          "url": "https://www.nationalgrid.com/document/160221/download",
+          "filename": null,
+          "success": false,
+          "file_size": null
+        },
+        {
+          "url": "https://www.nationalgrid.com/document/160206/download",
+          "filename": null,
+          "success": false,
+          "file_size": null
+        },
+        {
+          "url": "https://www.nationalgrid.com/document/161756/download",
+          "filename": null,
+          "success": false,
+          "file_size": null
+        },
+        {
+          "url": "https://www.nationalgrid.com/document/161761/download",
+          "filename": null,
+          "success": false,
+          "file_size": null
+        }
+      ]
+    }
+  }
+}

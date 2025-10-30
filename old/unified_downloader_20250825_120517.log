@@ -1,0 +1,3 @@
+2025-08-25 12:05:17,073 - unified_downloader - INFO - ✅ Loaded Elexon API key from api.env file.
+2025-08-25 12:05:23,299 - unified_downloader - ERROR - ❌ Failed to connect to GCS: Your default credentials were not found. To set up Application Default Credentials, see https://cloud.google.com/docs/authentication/external/set-up-adc for more information.
+2025-08-25 12:05:23,300 - unified_downloader - CRITICAL - ❌ A fatal error occurred: Your default credentials were not found. To set up Application Default Credentials, see https://cloud.google.com/docs/authentication/external/set-up-adc for more information.

@@ -1,25 +1,40 @@
 {
   "base_url": "https://data.elexon.co.uk/bmrs/api/v1",
-  "auth": {"header": "apiKey", "value_env": "BMRS_API_KEY_1"},
+  "auth": {
+    "header": "apiKey",
+    "value_env": "BMRS_API_KEY_1"
+  },
   "datasets": {
     "NDF": {
       "route": "/datasets/NDF/stream",
-      "params": {"from": "{start_iso}", "to": "{end_iso}"},
+      "params": {
+        "from": "{start_iso}",
+        "to": "{end_iso}"
+      },
       "bq_table": "uk_energy_prod.ndf"
     },
     "DEMAND_OUTTURN": {
       "route": "/demand/outturn",
-      "params": {"from": "{start_date}", "to": "{end_date}"},
+      "params": {
+        "from": "{start_date}",
+        "to": "{end_date}"
+      },
       "bq_table": "uk_energy_prod.demand_outturn"
     },
     "FUELINST": {
       "route": "/datasets/FUELINST/stream",
-      "params": {"from": "{start_iso}", "to": "{end_iso}"},
+      "params": {
+        "from": "{start_iso}",
+        "to": "{end_iso}"
+      },
       "bq_table": "uk_energy_prod.fuelinst"
     },
     "FREQ": {
       "route": "/datasets/FREQ/stream",
-      "params": {"from": "{start_iso}", "to": "{end_iso}"},
+      "params": {
+        "from": "{start_iso}",
+        "to": "{end_iso}"
+      },
       "bq_table": "uk_energy_prod.system_frequency"
     }
   }

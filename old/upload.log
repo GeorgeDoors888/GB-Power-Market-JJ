@@ -1,0 +1,156 @@
+🚀 Starting DUoS data upload
+✅ Successfully authenticated with Google Sheets API
+📑 Found 25 sheets to process
+
+⏳ Processing sheet 1/25: DNO Reference
+Found 26 existing sheets
+Clearing existing sheet: DNO Reference
+📝 Uploaded rows 1 to 16
+✨ Sheet URL: https://docs.google.com/spreadsheets/d/1BuIYAOjMqoyhQE_f6p8zRwH5poQsuTaHDAYIjskZsTo
+
+⏳ Processing sheet 2/25: Summary
+Found 26 existing sheets
+Clearing existing sheet: Summary
+📝 Uploaded rows 1 to 18
+✨ Sheet URL: https://docs.google.com/spreadsheets/d/1BuIYAOjMqoyhQE_f6p8zRwH5poQsuTaHDAYIjskZsTo
+
+⏳ Processing sheet 3/25: Electricity North West
+Found 26 existing sheets
+Clearing existing sheet: Electricity North West
+📝 Uploaded rows 1 to 80
+✨ Sheet URL: https://docs.google.com/spreadsheets/d/1BuIYAOjMqoyhQE_f6p8zRwH5poQsuTaHDAYIjskZsTo
+
+⏳ Processing sheet 4/25: NGED-East Midlands
+Found 26 existing sheets
+Clearing existing sheet: NGED-East Midlands
+📝 Uploaded rows 1 to 100
+📝 Uploaded rows 101 to 167
+✨ Sheet URL: https://docs.google.com/spreadsheets/d/1BuIYAOjMqoyhQE_f6p8zRwH5poQsuTaHDAYIjskZsTo
+
+⏳ Processing sheet 5/25: NGED-South Wales
+Found 26 existing sheets
+Clearing existing sheet: NGED-South Wales
+📝 Uploaded rows 1 to 90
+✨ Sheet URL: https://docs.google.com/spreadsheets/d/1BuIYAOjMqoyhQE_f6p8zRwH5poQsuTaHDAYIjskZsTo
+
+⏳ Processing sheet 6/25: NGED-South West
+Found 26 existing sheets
+Clearing existing sheet: NGED-South West
+📝 Uploaded rows 1 to 88
+✨ Sheet URL: https://docs.google.com/spreadsheets/d/1BuIYAOjMqoyhQE_f6p8zRwH5poQsuTaHDAYIjskZsTo
+
+⏳ Processing sheet 7/25: NPg-North East
+Found 26 existing sheets
+Clearing existing sheet: NPg-North East
+📝 Uploaded rows 1 to 100
+📝 Uploaded rows 101 to 160
+✨ Sheet URL: https://docs.google.com/spreadsheets/d/1BuIYAOjMqoyhQE_f6p8zRwH5poQsuTaHDAYIjskZsTo
+
+⏳ Processing sheet 8/25: NPg-Yorkshire
+Found 26 existing sheets
+Clearing existing sheet: NPg-Yorkshire
+📝 Uploaded rows 1 to 100
+📝 Uploaded rows 101 to 155
+✨ Sheet URL: https://docs.google.com/spreadsheets/d/1BuIYAOjMqoyhQE_f6p8zRwH5poQsuTaHDAYIjskZsTo
+
+⏳ Processing sheet 9/25: SSE-SHEPD
+Found 26 existing sheets
+Clearing existing sheet: SSE-SHEPD
+📝 Uploaded rows 1 to 100
+📝 Uploaded rows 101 to 200
+📝 Uploaded rows 201 to 300
+📝 Uploaded rows 301 to 332
+✨ Sheet URL: https://docs.google.com/spreadsheets/d/1BuIYAOjMqoyhQE_f6p8zRwH5poQsuTaHDAYIjskZsTo
+
+⏳ Processing sheet 10/25: SSE-SEPD
+Found 26 existing sheets
+Clearing existing sheet: SSE-SEPD
+📝 Uploaded rows 1 to 100
+📝 Uploaded rows 101 to 200
+📝 Uploaded rows 201 to 300
+📝 Uploaded rows 301 to 400
+📝 Uploaded rows 401 to 500
+📝 Uploaded rows 501 to 600
+📝 Uploaded rows 601 to 700
+📝 Uploaded rows 701 to 752
+✨ Sheet URL: https://docs.google.com/spreadsheets/d/1BuIYAOjMqoyhQE_f6p8zRwH5poQsuTaHDAYIjskZsTo
+
+⏳ Processing sheet 11/25: Unknown
+Found 26 existing sheets
+Clearing existing sheet: Unknown
+📝 Uploaded rows 1 to 68
+✨ Sheet URL: https://docs.google.com/spreadsheets/d/1BuIYAOjMqoyhQE_f6p8zRwH5poQsuTaHDAYIjskZsTo
+
+⏳ Processing sheet 12/25: Year 2014
+Found 26 existing sheets
+Clearing existing sheet: Year 2014
+❌ Error creating sheet: <HttpError 429 when requesting https://sheets.googleapis.com/v4/spreadsheets/1BuIYAOjMqoyhQE_f6p8zRwH5poQsuTaHDAYIjskZsTo/values/Year%202014%21A1%3AZZ:clear?alt=json returned "Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:1090450657636'.". Details: "[{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'RATE_LIMIT_EXCEEDED', 'domain': 'googleapis.com', 'metadata': {'quota_metric': 'sheets.googleapis.com/write_requests', 'quota_unit': '1/min/{project}/{user}', 'quota_limit_value': '60', 'service': 'sheets.googleapis.com', 'quota_location': 'global', 'quota_limit': 'WriteRequestsPerMinutePerUser', 'consumer': 'projects/1090450657636'}}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Request a higher quota limit.', 'url': 'https://cloud.google.com/docs/quotas/help/request_increase'}]}]">
+
+⏳ Processing sheet 13/25: Year 2015
+Found 26 existing sheets
+Clearing existing sheet: Year 2015
+❌ Error creating sheet: <HttpError 429 when requesting https://sheets.googleapis.com/v4/spreadsheets/1BuIYAOjMqoyhQE_f6p8zRwH5poQsuTaHDAYIjskZsTo/values/Year%202015%21A1%3AZZ:clear?alt=json returned "Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:1090450657636'.". Details: "[{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'RATE_LIMIT_EXCEEDED', 'domain': 'googleapis.com', 'metadata': {'consumer': 'projects/1090450657636', 'quota_unit': '1/min/{project}/{user}', 'quota_limit_value': '60', 'service': 'sheets.googleapis.com', 'quota_location': 'global', 'quota_limit': 'WriteRequestsPerMinutePerUser', 'quota_metric': 'sheets.googleapis.com/write_requests'}}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Request a higher quota limit.', 'url': 'https://cloud.google.com/docs/quotas/help/request_increase'}]}]">
+
+⏳ Processing sheet 14/25: Year 2016
+Found 26 existing sheets
+Clearing existing sheet: Year 2016
+❌ Error creating sheet: <HttpError 429 when requesting https://sheets.googleapis.com/v4/spreadsheets/1BuIYAOjMqoyhQE_f6p8zRwH5poQsuTaHDAYIjskZsTo/values/Year%202016%21A1%3AZZ:clear?alt=json returned "Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:1090450657636'.". Details: "[{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'RATE_LIMIT_EXCEEDED', 'domain': 'googleapis.com', 'metadata': {'consumer': 'projects/1090450657636', 'quota_unit': '1/min/{project}/{user}', 'quota_limit_value': '60', 'service': 'sheets.googleapis.com', 'quota_location': 'global', 'quota_limit': 'WriteRequestsPerMinutePerUser', 'quota_metric': 'sheets.googleapis.com/write_requests'}}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Request a higher quota limit.', 'url': 'https://cloud.google.com/docs/quotas/help/request_increase'}]}]">
+
+⏳ Processing sheet 15/25: Year 2017
+Found 26 existing sheets
+Clearing existing sheet: Year 2017
+❌ Error creating sheet: <HttpError 429 when requesting https://sheets.googleapis.com/v4/spreadsheets/1BuIYAOjMqoyhQE_f6p8zRwH5poQsuTaHDAYIjskZsTo/values/Year%202017%21A1%3AZZ:clear?alt=json returned "Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:1090450657636'.". Details: "[{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'RATE_LIMIT_EXCEEDED', 'domain': 'googleapis.com', 'metadata': {'consumer': 'projects/1090450657636', 'quota_unit': '1/min/{project}/{user}', 'quota_limit_value': '60', 'service': 'sheets.googleapis.com', 'quota_location': 'global', 'quota_limit': 'WriteRequestsPerMinutePerUser', 'quota_metric': 'sheets.googleapis.com/write_requests'}}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Request a higher quota limit.', 'url': 'https://cloud.google.com/docs/quotas/help/request_increase'}]}]">
+
+⏳ Processing sheet 16/25: Year 2018
+Found 26 existing sheets
+Clearing existing sheet: Year 2018
+❌ Error creating sheet: <HttpError 429 when requesting https://sheets.googleapis.com/v4/spreadsheets/1BuIYAOjMqoyhQE_f6p8zRwH5poQsuTaHDAYIjskZsTo/values/Year%202018%21A1%3AZZ:clear?alt=json returned "Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:1090450657636'.". Details: "[{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'RATE_LIMIT_EXCEEDED', 'domain': 'googleapis.com', 'metadata': {'consumer': 'projects/1090450657636', 'quota_unit': '1/min/{project}/{user}', 'quota_limit_value': '60', 'service': 'sheets.googleapis.com', 'quota_location': 'global', 'quota_limit': 'WriteRequestsPerMinutePerUser', 'quota_metric': 'sheets.googleapis.com/write_requests'}}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Request a higher quota limit.', 'url': 'https://cloud.google.com/docs/quotas/help/request_increase'}]}]">
+
+⏳ Processing sheet 17/25: Year 2019
+Found 26 existing sheets
+Clearing existing sheet: Year 2019
+❌ Error creating sheet: <HttpError 429 when requesting https://sheets.googleapis.com/v4/spreadsheets/1BuIYAOjMqoyhQE_f6p8zRwH5poQsuTaHDAYIjskZsTo/values/Year%202019%21A1%3AZZ:clear?alt=json returned "Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:1090450657636'.". Details: "[{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'RATE_LIMIT_EXCEEDED', 'domain': 'googleapis.com', 'metadata': {'quota_location': 'global', 'quota_unit': '1/min/{project}/{user}', 'quota_limit_value': '60', 'consumer': 'projects/1090450657636', 'service': 'sheets.googleapis.com', 'quota_limit': 'WriteRequestsPerMinutePerUser', 'quota_metric': 'sheets.googleapis.com/write_requests'}}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Request a higher quota limit.', 'url': 'https://cloud.google.com/docs/quotas/help/request_increase'}]}]">
+
+⏳ Processing sheet 18/25: Year 2020
+Found 26 existing sheets
+Clearing existing sheet: Year 2020
+❌ Error creating sheet: <HttpError 429 when requesting https://sheets.googleapis.com/v4/spreadsheets/1BuIYAOjMqoyhQE_f6p8zRwH5poQsuTaHDAYIjskZsTo/values/Year%202020%21A1%3AZZ:clear?alt=json returned "Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:1090450657636'.". Details: "[{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'RATE_LIMIT_EXCEEDED', 'domain': 'googleapis.com', 'metadata': {'quota_location': 'global', 'quota_unit': '1/min/{project}/{user}', 'quota_limit_value': '60', 'consumer': 'projects/1090450657636', 'service': 'sheets.googleapis.com', 'quota_limit': 'WriteRequestsPerMinutePerUser', 'quota_metric': 'sheets.googleapis.com/write_requests'}}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Request a higher quota limit.', 'url': 'https://cloud.google.com/docs/quotas/help/request_increase'}]}]">
+
+⏳ Processing sheet 19/25: Year 2021
+Found 26 existing sheets
+Clearing existing sheet: Year 2021
+❌ Error creating sheet: <HttpError 429 when requesting https://sheets.googleapis.com/v4/spreadsheets/1BuIYAOjMqoyhQE_f6p8zRwH5poQsuTaHDAYIjskZsTo/values/Year%202021%21A1%3AZZ:clear?alt=json returned "Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:1090450657636'.". Details: "[{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'RATE_LIMIT_EXCEEDED', 'domain': 'googleapis.com', 'metadata': {'quota_location': 'global', 'quota_unit': '1/min/{project}/{user}', 'quota_limit_value': '60', 'consumer': 'projects/1090450657636', 'service': 'sheets.googleapis.com', 'quota_limit': 'WriteRequestsPerMinutePerUser', 'quota_metric': 'sheets.googleapis.com/write_requests'}}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Request a higher quota limit.', 'url': 'https://cloud.google.com/docs/quotas/help/request_increase'}]}]">
+
+⏳ Processing sheet 20/25: Year 2022
+Found 26 existing sheets
+Clearing existing sheet: Year 2022
+❌ Error creating sheet: <HttpError 429 when requesting https://sheets.googleapis.com/v4/spreadsheets/1BuIYAOjMqoyhQE_f6p8zRwH5poQsuTaHDAYIjskZsTo/values/Year%202022%21A1%3AZZ:clear?alt=json returned "Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:1090450657636'.". Details: "[{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'RATE_LIMIT_EXCEEDED', 'domain': 'googleapis.com', 'metadata': {'quota_location': 'global', 'quota_unit': '1/min/{project}/{user}', 'quota_limit_value': '60', 'consumer': 'projects/1090450657636', 'service': 'sheets.googleapis.com', 'quota_limit': 'WriteRequestsPerMinutePerUser', 'quota_metric': 'sheets.googleapis.com/write_requests'}}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Request a higher quota limit.', 'url': 'https://cloud.google.com/docs/quotas/help/request_increase'}]}]">
+
+⏳ Processing sheet 21/25: Year 2023
+Found 26 existing sheets
+Clearing existing sheet: Year 2023
+❌ Error creating sheet: <HttpError 429 when requesting https://sheets.googleapis.com/v4/spreadsheets/1BuIYAOjMqoyhQE_f6p8zRwH5poQsuTaHDAYIjskZsTo/values/Year%202023%21A1%3AZZ:clear?alt=json returned "Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:1090450657636'.". Details: "[{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'RATE_LIMIT_EXCEEDED', 'domain': 'googleapis.com', 'metadata': {'quota_location': 'global', 'quota_limit_value': '60', 'consumer': 'projects/1090450657636', 'quota_limit': 'WriteRequestsPerMinutePerUser', 'quota_unit': '1/min/{project}/{user}', 'service': 'sheets.googleapis.com', 'quota_metric': 'sheets.googleapis.com/write_requests'}}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Request a higher quota limit.', 'url': 'https://cloud.google.com/docs/quotas/help/request_increase'}]}]">
+
+⏳ Processing sheet 22/25: Year 2024
+Found 26 existing sheets
+Clearing existing sheet: Year 2024
+❌ Error creating sheet: <HttpError 429 when requesting https://sheets.googleapis.com/v4/spreadsheets/1BuIYAOjMqoyhQE_f6p8zRwH5poQsuTaHDAYIjskZsTo/values/Year%202024%21A1%3AZZ:clear?alt=json returned "Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:1090450657636'.". Details: "[{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'RATE_LIMIT_EXCEEDED', 'domain': 'googleapis.com', 'metadata': {'quota_location': 'global', 'quota_limit_value': '60', 'consumer': 'projects/1090450657636', 'quota_limit': 'WriteRequestsPerMinutePerUser', 'quota_unit': '1/min/{project}/{user}', 'service': 'sheets.googleapis.com', 'quota_metric': 'sheets.googleapis.com/write_requests'}}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Request a higher quota limit.', 'url': 'https://cloud.google.com/docs/quotas/help/request_increase'}]}]">
+
+⏳ Processing sheet 23/25: Year 2025
+Found 26 existing sheets
+Clearing existing sheet: Year 2025
+❌ Error creating sheet: <HttpError 429 when requesting https://sheets.googleapis.com/v4/spreadsheets/1BuIYAOjMqoyhQE_f6p8zRwH5poQsuTaHDAYIjskZsTo/values/Year%202025%21A1%3AZZ:clear?alt=json returned "Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:1090450657636'.". Details: "[{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'RATE_LIMIT_EXCEEDED', 'domain': 'googleapis.com', 'metadata': {'quota_location': 'global', 'quota_limit_value': '60', 'consumer': 'projects/1090450657636', 'quota_limit': 'WriteRequestsPerMinutePerUser', 'quota_unit': '1/min/{project}/{user}', 'service': 'sheets.googleapis.com', 'quota_metric': 'sheets.googleapis.com/write_requests'}}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Request a higher quota limit.', 'url': 'https://cloud.google.com/docs/quotas/help/request_increase'}]}]">
+
+⏳ Processing sheet 24/25: Year 2026
+Found 26 existing sheets
+Clearing existing sheet: Year 2026
+❌ Error creating sheet: <HttpError 429 when requesting https://sheets.googleapis.com/v4/spreadsheets/1BuIYAOjMqoyhQE_f6p8zRwH5poQsuTaHDAYIjskZsTo/values/Year%202026%21A1%3AZZ:clear?alt=json returned "Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:1090450657636'.". Details: "[{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'RATE_LIMIT_EXCEEDED', 'domain': 'googleapis.com', 'metadata': {'quota_location': 'global', 'quota_limit_value': '60', 'consumer': 'projects/1090450657636', 'quota_limit': 'WriteRequestsPerMinutePerUser', 'quota_unit': '1/min/{project}/{user}', 'service': 'sheets.googleapis.com', 'quota_metric': 'sheets.googleapis.com/write_requests'}}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Request a higher quota limit.', 'url': 'https://cloud.google.com/docs/quotas/help/request_increase'}]}]">
+
+⏳ Processing sheet 25/25: All Data
+Found 26 existing sheets
+Clearing existing sheet: All Data
+❌ Error creating sheet: <HttpError 429 when requesting https://sheets.googleapis.com/v4/spreadsheets/1BuIYAOjMqoyhQE_f6p8zRwH5poQsuTaHDAYIjskZsTo/values/All%20Data%21A1%3AZZ:clear?alt=json returned "Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:1090450657636'.". Details: "[{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'RATE_LIMIT_EXCEEDED', 'domain': 'googleapis.com', 'metadata': {'consumer': 'projects/1090450657636', 'service': 'sheets.googleapis.com', 'quota_unit': '1/min/{project}/{user}', 'quota_location': 'global', 'quota_limit_value': '60', 'quota_metric': 'sheets.googleapis.com/write_requests', 'quota_limit': 'WriteRequestsPerMinutePerUser'}}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Request a higher quota limit.', 'url': 'https://cloud.google.com/docs/quotas/help/request_increase'}]}]">
+
+✅ Upload Complete!
+
+Data uploaded to: https://docs.google.com/spreadsheets/d/1BuIYAOjMqoyhQE_f6p8zRwH5poQsuTaHDAYIjskZsTo

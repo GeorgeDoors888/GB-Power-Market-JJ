@@ -1,0 +1,37 @@
+[
+  {
+    "name": "dataset",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "publishTime",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "startTime",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "settlementDate",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "settlementPeriod",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "fuelType",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "generation",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  }
+]

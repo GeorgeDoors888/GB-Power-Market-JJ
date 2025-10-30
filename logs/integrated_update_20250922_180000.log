@@ -1,0 +1,265 @@
+==== Integrated ELEXON Data Update and Watermark Management ====
+Started: Mon Sep 22 18:00:00 BST 2025
+
+Running ELEXON data ingestion...
+2025-09-22 18:00:03,640 - WARNING - Including likely offline datasets (MILS, MELS).
+2025-09-22 18:00:03,724 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-09-22 18:00:04,292 - INFO - BigQuery dataset 'elexon_data_landing_zone' exists.
+All Datasets:   0%|          | 0/9 [00:00<?, ?it/s]Dataset: BOALF:   0%|          | 0/9 [00:00<?, ?it/s]
+Windows for BOALF:   0%|          | 0/1.0 [00:00<?, ?it/s][A
+Fetching BOALF from 2025-09-21 to 2025-09-22:   0%|          | 0/1.0 [00:00<?, ?it/s][A                                                     
+                                                                                     [ADataset: BOALF:   0%|          | 0/9 [00:00<?, ?it/s]
+Fetching BOALF from 2025-09-21 to 2025-09-22:   0%|          | 0/1.0 [00:00<?, ?it/s][A                                                     
+                                                                                     [ADataset: BOALF:   0%|          | 0/9 [00:01<?, ?it/s]
+Fetching BOALF from 2025-09-21 to 2025-09-22:   0%|          | 0/1.0 [00:01<?, ?it/s][A                                                     
+                                                                                     [ADataset: BOALF:   0%|          | 0/9 [00:01<?, ?it/s]
+Fetching BOALF from 2025-09-21 to 2025-09-22:   0%|          | 0/1.0 [00:01<?, ?it/s][A                                                     
+                                                                                     [ADataset: BOALF:   0%|          | 0/9 [00:01<?, ?it/s]
+Fetching BOALF from 2025-09-21 to 2025-09-22:   0%|          | 0/1.0 [00:01<?, ?it/s][A                                                     
+                                                                                     [ADataset: BOALF:   0%|          | 0/9 [00:01<?, ?it/s]
+Fetching BOALF from 2025-09-21 to 2025-09-22:   0%|          | 0/1.0 [00:01<?, ?it/s][A                                                     
+                                                                                     [ADataset: BOALF:   0%|          | 0/9 [00:01<?, ?it/s]
+Fetching BOALF from 2025-09-21 to 2025-09-22:   0%|          | 0/1.0 [00:01<?, ?it/s][A                                                     
+                                                                                     [ADataset: BOALF:   0%|          | 0/9 [00:01<?, ?it/s]
+Fetching BOALF from 2025-09-21 to 2025-09-22:   0%|          | 0/1.0 [00:01<?, ?it/s][A                                                     
+                                                                                     [ADataset: BOALF:   0%|          | 0/9 [00:01<?, ?it/s]
+Fetching BOALF from 2025-09-21 to 2025-09-22:   0%|          | 0/1.0 [00:01<?, ?it/s][A                                                     
+                                                                                     [ADataset: BOALF:   0%|          | 0/9 [00:01<?, ?it/s]
+Fetching BOALF from 2025-09-21 to 2025-09-22:   0%|          | 0/1.0 [00:01<?, ?it/s][A                                                     
+                                                                                     [ADataset: BOALF:   0%|          | 0/9 [00:01<?, ?it/s]
+Fetching BOALF from 2025-09-21 to 2025-09-22:   0%|          | 0/1.0 [00:01<?, ?it/s][A                                                     
+                                                                                     [ADataset: BOALF:   0%|          | 0/9 [00:01<?, ?it/s]
+Fetching BOALF from 2025-09-21 to 2025-09-22:   0%|          | 0/1.0 [00:01<?, ?it/s][A                                                     
+                                                                                     [ADataset: BOALF:   0%|          | 0/9 [00:01<?, ?it/s]
+Fetching BOALF from 2025-09-21 to 2025-09-22:   0%|          | 0/1.0 [00:01<?, ?it/s][A                                                     
+                                                                                     [ADataset: BOALF:   0%|          | 0/9 [00:01<?, ?it/s]
+Fetching BOALF from 2025-09-21 to 2025-09-22:   0%|          | 0/1.0 [00:01<?, ?it/s][A                                                     
+                                                                                     [ADataset: BOALF:   0%|          | 0/9 [00:01<?, ?it/s]
+Fetching BOALF from 2025-09-21 to 2025-09-22:   0%|          | 0/1.0 [00:01<?, ?it/s][A                                                     
+                                                                                     [ADataset: BOALF:   0%|          | 0/9 [00:01<?, ?it/s]
+Fetching BOALF from 2025-09-21 to 2025-09-22:   0%|          | 0/1.0 [00:01<?, ?it/s][A                                                     
+                                                                                     [ADataset: BOALF:   0%|          | 0/9 [00:01<?, ?it/s]
+Fetching BOALF from 2025-09-21 to 2025-09-22:   0%|          | 0/1.0 [00:01<?, ?it/s][A                                                     
+                                                                                     [ADataset: BOALF:   0%|          | 0/9 [00:01<?, ?it/s]
+Fetching BOALF from 2025-09-21 to 2025-09-22:   0%|          | 0/1.0 [00:01<?, ?it/s][A                                                     
+                                                                                     [ADataset: BOALF:   0%|          | 0/9 [00:01<?, ?it/s]
+Fetching BOALF from 2025-09-21 to 2025-09-22:   0%|          | 0/1.0 [00:01<?, ?it/s][A                                                     
+                                                                                     [ADataset: BOALF:   0%|          | 0/9 [00:01<?, ?it/s]
+Fetching BOALF from 2025-09-21 to 2025-09-22:   0%|          | 0/1.0 [00:01<?, ?it/s][A                                                     
+                                                                                     [ADataset: BOALF:   0%|          | 0/9 [00:01<?, ?it/s]
+Fetching BOALF from 2025-09-21 to 2025-09-22:   0%|          | 0/1.0 [00:01<?, ?it/s][A                                                     
+                                                                                     [ADataset: BOALF:   0%|          | 0/9 [00:01<?, ?it/s]
+Fetching BOALF from 2025-09-21 to 2025-09-22:   0%|          | 0/1.0 [00:01<?, ?it/s][A                                                     
+                                                                                     [ADataset: BOALF:   0%|          | 0/9 [00:01<?, ?it/s]
+Fetching BOALF from 2025-09-21 to 2025-09-22:   0%|          | 0/1.0 [00:01<?, ?it/s][A                                                     
+                                                                                     [ADataset: BOALF:   0%|          | 0/9 [00:01<?, ?it/s]
+Fetching BOALF from 2025-09-21 to 2025-09-22:   0%|          | 0/1.0 [00:01<?, ?it/s][A                                                     
+                                                                                     [ADataset: BOALF:   0%|          | 0/9 [00:01<?, ?it/s]
+Fetching BOALF from 2025-09-21 to 2025-09-22:   0%|          | 0/1.0 [00:01<?, ?it/s][A                                                     
+                                                                                     [ADataset: BOALF:   0%|          | 0/9 [00:01<?, ?it/s]
+Fetching BOALF from 2025-09-21 to 2025-09-22:   0%|          | 0/1.0 [00:01<?, ?it/s][A                                                     
+                                                                                     [ADataset: BOALF:   0%|          | 0/9 [00:01<?, ?it/s]
+Fetching BOALF from 2025-09-21 to 2025-09-22:   0%|          | 0/1.0 [00:01<?, ?it/s][A                                                     
+                                                                                     [ADataset: BOALF:   0%|          | 0/9 [00:03<?, ?it/s]
+Fetching BOALF from 2025-09-21 to 2025-09-22:   0%|          | 0/1.0 [00:03<?, ?it/s][A                                                     
+                                                                                     [ADataset: BOALF:   0%|          | 0/9 [00:03<?, ?it/s]
+Fetching BOALF from 2025-09-21 to 2025-09-22:   0%|          | 0/1.0 [00:03<?, ?it/s][A                                                     
+                                                                                     [ADataset: BOALF:   0%|          | 0/9 [00:06<?, ?it/s]
+Fetching BOALF from 2025-09-21 to 2025-09-22:   0%|          | 0/1.0 [00:06<?, ?it/s][A
+Fetching BOALF from 2025-09-21 to 2025-09-22: 100%|██████████| 1/1.0 [00:06<00:00,  6.66s/it][A
+                                                                                             [ADataset: BOALF:  11%|█         | 1/9 [00:06<00:53,  6.66s/it]Dataset: BOD:  11%|█         | 1/9 [00:06<00:53,  6.66s/it]  2025-09-22 18:00:04,294 - INFO - 🌐 Fetching BMRS dataset=BOALF from=2025-09-21 00:00:00+00:00 to=2025-09-22 00:00:00+00:00
+2025-09-22 18:00:05,515 - INFO - Converting column 'settlementDate' to pandas datetime (UTC)
+2025-09-22 18:00:05,540 - INFO - Converting column 'timeFrom' to pandas datetime (UTC)
+2025-09-22 18:00:05,565 - INFO - Converting column 'timeTo' to pandas datetime (UTC)
+2025-09-22 18:00:05,587 - INFO - Converting column 'acceptanceTime' to pandas datetime (UTC)
+2025-09-22 18:00:05,607 - INFO - --- Starting final sanitization for BQ load on DataFrame with 23 columns ---
+2025-09-22 18:00:05,609 - INFO -  -> Forced object column 'dataset' to string.
+2025-09-22 18:00:05,623 - INFO -  -> Converted datetime column 'settlementDate' to timezone-naive.
+2025-09-22 18:00:05,625 - INFO -  -> Converted integer column 'settlementPeriodFrom' to nullable Int64 based on schema.
+2025-09-22 18:00:05,626 - INFO -  -> Converted integer column 'settlementPeriodTo' to nullable Int64 based on schema.
+2025-09-22 18:00:05,640 - INFO -  -> Converted datetime column 'timeFrom' to timezone-naive.
+2025-09-22 18:00:05,653 - INFO -  -> Converted datetime column 'timeTo' to timezone-naive.
+2025-09-22 18:00:05,654 - INFO -  -> Converted integer column 'levelFrom' to nullable Int64 based on schema.
+2025-09-22 18:00:05,655 - INFO -  -> Converted integer column 'levelTo' to nullable Int64 based on schema.
+2025-09-22 18:00:05,656 - INFO -  -> Converted integer column 'acceptanceNumber' to nullable Int64 based on schema.
+2025-09-22 18:00:05,670 - INFO -  -> Converted datetime column 'acceptanceTime' to timezone-naive.
+2025-09-22 18:00:05,672 - INFO -  -> Forced object column 'amendmentFlag' to string.
+2025-09-22 18:00:05,677 - INFO -  -> Forced object column 'nationalGridBmUnit' to string.
+2025-09-22 18:00:05,687 - INFO -  -> Forced object column 'bmUnit' to string.
+2025-09-22 18:00:05,689 - INFO -  -> Forced object column '_dataset' to string.
+2025-09-22 18:00:05,691 - INFO -  -> Forced object column '_window_from_utc' to string.
+2025-09-22 18:00:05,693 - INFO -  -> Forced object column '_window_to_utc' to string.
+2025-09-22 18:00:05,696 - INFO -  -> Forced object column '_ingested_utc' to string.
+2025-09-22 18:00:05,698 - INFO -  -> Forced object column '_source_columns' to string.
+2025-09-22 18:00:05,705 - INFO -  -> Forced object column '_source_api' to string.
+2025-09-22 18:00:05,709 - INFO - --- Final sanitization complete ---
+2025-09-22 18:00:07,817 - INFO - Created hash keys for 23170 rows using 17 content columns
+2025-09-22 18:00:07,821 - INFO - Loaded corrected schema for BOALF
+2025-09-22 18:00:10,952 - INFO - ✅ Successfully loaded 23170 rows to jibber-jabber-knowledge.elexon_data_landing_zone.bmrs_boalf for window 2025-09-21
+
+Windows for BOD:   0%|          | 0/24.0 [00:00<?, ?it/s][A
+Fetching BOD from 2025-09-21 to 2025-09-21:   0%|          | 0/24.0 [00:00<?, ?it/s][A                                                           
+                                                                                    [ADataset: BOD:  11%|█         | 1/9 [00:06<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   0%|          | 0/24.0 [00:00<?, ?it/s][A                                                           
+                                                                                    [ADataset: BOD:  11%|█         | 1/9 [00:11<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   0%|          | 0/24.0 [00:04<?, ?it/s][A                                                           
+                                                                                    [ADataset: BOD:  11%|█         | 1/9 [00:11<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   0%|          | 0/24.0 [00:05<?, ?it/s][A                                                           
+                                                                                    [ADataset: BOD:  11%|█         | 1/9 [00:11<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   0%|          | 0/24.0 [00:05<?, ?it/s][A                                                           
+                                                                                    [ADataset: BOD:  11%|█         | 1/9 [00:11<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   0%|          | 0/24.0 [00:05<?, ?it/s][A                                                           
+                                                                                    [ADataset: BOD:  11%|█         | 1/9 [00:11<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   0%|          | 0/24.0 [00:05<?, ?it/s][A                                                           
+                                                                                    [ADataset: BOD:  11%|█         | 1/9 [00:11<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   0%|          | 0/24.0 [00:05<?, ?it/s][A                                                           
+                                                                                    [ADataset: BOD:  11%|█         | 1/9 [00:11<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   0%|          | 0/24.0 [00:05<?, ?it/s][A                                                           
+                                                                                    [ADataset: BOD:  11%|█         | 1/9 [00:11<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   0%|          | 0/24.0 [00:05<?, ?it/s][A                                                           
+                                                                                    [ADataset: BOD:  11%|█         | 1/9 [00:11<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   0%|          | 0/24.0 [00:05<?, ?it/s][A                                                           
+                                                                                    [ADataset: BOD:  11%|█         | 1/9 [00:11<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   0%|          | 0/24.0 [00:05<?, ?it/s][A                                                           
+                                                                                    [ADataset: BOD:  11%|█         | 1/9 [00:11<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   0%|          | 0/24.0 [00:05<?, ?it/s][A                                                           
+                                                                                    [ADataset: BOD:  11%|█         | 1/9 [00:11<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   0%|          | 0/24.0 [00:05<?, ?it/s][A                                                           
+                                                                                    [ADataset: BOD:  11%|█         | 1/9 [00:12<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   0%|          | 0/24.0 [00:05<?, ?it/s][A                                                           
+                                                                                    [ADataset: BOD:  11%|█         | 1/9 [00:12<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   0%|          | 0/24.0 [00:05<?, ?it/s][A                                                           
+                                                                                    [ADataset: BOD:  11%|█         | 1/9 [00:12<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   0%|          | 0/24.0 [00:05<?, ?it/s][A                                                           
+                                                                                    [ADataset: BOD:  11%|█         | 1/9 [00:12<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   0%|          | 0/24.0 [00:05<?, ?it/s][A                                                           
+                                                                                    [ADataset: BOD:  11%|█         | 1/9 [00:12<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   0%|          | 0/24.0 [00:05<?, ?it/s][A                                                           
+                                                                                    [ADataset: BOD:  11%|█         | 1/9 [00:12<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   0%|          | 0/24.0 [00:05<?, ?it/s][A                                                           
+                                                                                    [ADataset: BOD:  11%|█         | 1/9 [00:12<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   0%|          | 0/24.0 [00:05<?, ?it/s][A                                                           
+                                                                                    [ADataset: BOD:  11%|█         | 1/9 [00:12<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   0%|          | 0/24.0 [00:05<?, ?it/s][A                                                           
+                                                                                    [ADataset: BOD:  11%|█         | 1/9 [00:12<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   0%|          | 0/24.0 [00:05<?, ?it/s][A                                                           
+                                                                                    [ADataset: BOD:  11%|█         | 1/9 [00:12<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   0%|          | 0/24.0 [00:05<?, ?it/s][A                                                           
+                                                                                    [ADataset: BOD:  11%|█         | 1/9 [00:12<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   0%|          | 0/24.0 [00:05<?, ?it/s][A                                                           
+                                                                                    [ADataset: BOD:  11%|█         | 1/9 [00:24<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   0%|          | 0/24.0 [00:17<?, ?it/s][A                                                           
+                                                                                    [ADataset: BOD:  11%|█         | 1/9 [00:24<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   0%|          | 0/24.0 [00:17<?, ?it/s][A                                                           
+                                                                                    [ADataset: BOD:  11%|█         | 1/9 [00:34<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   0%|          | 0/24.0 [00:27<?, ?it/s][A
+Fetching BOD from 2025-09-21 to 2025-09-21:   4%|▍         | 1/24.0 [00:27<10:41, 27.91s/it][A
+Fetching BOD from 2025-09-21 to 2025-09-21:   4%|▍         | 1/24.0 [00:27<10:41, 27.91s/it][A                                                           
+                                                                                            [ADataset: BOD:  11%|█         | 1/9 [00:34<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   4%|▍         | 1/24.0 [00:27<10:41, 27.91s/it][A                                                           
+                                                                                            [ADataset: BOD:  11%|█         | 1/9 [00:47<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   4%|▍         | 1/24.0 [00:41<10:41, 27.91s/it][A                                                           
+                                                                                            [ADataset: BOD:  11%|█         | 1/9 [00:47<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   4%|▍         | 1/24.0 [00:41<10:41, 27.91s/it][A                                                           
+                                                                                            [ADataset: BOD:  11%|█         | 1/9 [00:47<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   4%|▍         | 1/24.0 [00:41<10:41, 27.91s/it][A                                                           
+                                                                                            [ADataset: BOD:  11%|█         | 1/9 [00:48<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   4%|▍         | 1/24.0 [00:41<10:41, 27.91s/it][A                                                           
+                                                                                            [ADataset: BOD:  11%|█         | 1/9 [00:48<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   4%|▍         | 1/24.0 [00:41<10:41, 27.91s/it][A                                                           
+                                                                                            [ADataset: BOD:  11%|█         | 1/9 [00:48<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   4%|▍         | 1/24.0 [00:41<10:41, 27.91s/it][A                                                           
+                                                                                            [ADataset: BOD:  11%|█         | 1/9 [00:48<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   4%|▍         | 1/24.0 [00:41<10:41, 27.91s/it][A                                                           
+                                                                                            [ADataset: BOD:  11%|█         | 1/9 [00:48<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   4%|▍         | 1/24.0 [00:41<10:41, 27.91s/it][A                                                           
+                                                                                            [ADataset: BOD:  11%|█         | 1/9 [00:48<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   4%|▍         | 1/24.0 [00:41<10:41, 27.91s/it][A                                                           
+                                                                                            [ADataset: BOD:  11%|█         | 1/9 [00:48<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   4%|▍         | 1/24.0 [00:41<10:41, 27.91s/it][A                                                           
+                                                                                            [ADataset: BOD:  11%|█         | 1/9 [00:48<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   4%|▍         | 1/24.0 [00:41<10:41, 27.91s/it][A                                                           
+                                                                                            [ADataset: BOD:  11%|█         | 1/9 [00:48<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   4%|▍         | 1/24.0 [00:41<10:41, 27.91s/it][A                                                           
+                                                                                            [ADataset: BOD:  11%|█         | 1/9 [00:48<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   4%|▍         | 1/24.0 [00:41<10:41, 27.91s/it][A                                                           
+                                                                                            [ADataset: BOD:  11%|█         | 1/9 [00:48<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   4%|▍         | 1/24.0 [00:41<10:41, 27.91s/it][A                                                           
+                                                                                            [ADataset: BOD:  11%|█         | 1/9 [00:48<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   4%|▍         | 1/24.0 [00:41<10:41, 27.91s/it][A                                                           
+                                                                                            [ADataset: BOD:  11%|█         | 1/9 [00:48<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   4%|▍         | 1/24.0 [00:41<10:41, 27.91s/it][A                                                           
+                                                                                            [ADataset: BOD:  11%|█         | 1/9 [00:48<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   4%|▍         | 1/24.0 [00:41<10:41, 27.91s/it][A                                                           
+                                                                                            [ADataset: BOD:  11%|█         | 1/9 [00:48<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   4%|▍         | 1/24.0 [00:41<10:41, 27.91s/it][A                                                           
+                                                                                            [ADataset: BOD:  11%|█         | 1/9 [00:48<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   4%|▍         | 1/24.0 [00:41<10:41, 27.91s/it][A                                                           
+                                                                                            [ADataset: BOD:  11%|█         | 1/9 [00:48<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   4%|▍         | 1/24.0 [00:41<10:41, 27.91s/it][A                                                           
+                                                                                            [ADataset: BOD:  11%|█         | 1/9 [00:48<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   4%|▍         | 1/24.0 [00:41<10:41, 27.91s/it][A                                                           
+                                                                                            [ADataset: BOD:  11%|█         | 1/9 [00:48<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   4%|▍         | 1/24.0 [00:41<10:41, 27.91s/it][A                                                           
+                                                                                            [ADataset: BOD:  11%|█         | 1/9 [00:48<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   4%|▍         | 1/24.0 [00:41<10:41, 27.91s/it][A                                                           
+                                                                                            [ADataset: BOD:  11%|█         | 1/9 [01:00<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   4%|▍         | 1/24.0 [00:53<10:41, 27.91s/it][A                                                           
+                                                                                            [ADataset: BOD:  11%|█         | 1/9 [01:00<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   4%|▍         | 1/24.0 [00:53<10:41, 27.91s/it][A                                                           
+                                                                                            [ADataset: BOD:  11%|█         | 1/9 [01:09<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   4%|▍         | 1/24.0 [01:02<10:41, 27.91s/it][A
+Fetching BOD from 2025-09-21 to 2025-09-21:   8%|▊         | 2/24.0 [01:02<11:45, 32.05s/it][A
+Fetching BOD from 2025-09-21 to 2025-09-21:   8%|▊         | 2/24.0 [01:02<11:45, 32.05s/it][A                                                           
+                                                                                            [ADataset: BOD:  11%|█         | 1/9 [01:09<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   8%|▊         | 2/24.0 [01:02<11:45, 32.05s/it][A                                                           
+                                                                                            [ADataset: BOD:  11%|█         | 1/9 [01:14<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   8%|▊         | 2/24.0 [01:07<11:45, 32.05s/it][A                                                           
+                                                                                            [ADataset: BOD:  11%|█         | 1/9 [01:14<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   8%|▊         | 2/24.0 [01:08<11:45, 32.05s/it][A                                                           
+                                                                                            [ADataset: BOD:  11%|█         | 1/9 [01:14<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   8%|▊         | 2/24.0 [01:08<11:45, 32.05s/it][A                                                           
+                                                                                            [ADataset: BOD:  11%|█         | 1/9 [01:14<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   8%|▊         | 2/24.0 [01:08<11:45, 32.05s/it][A                                                           
+                                                                                            [ADataset: BOD:  11%|█         | 1/9 [01:14<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   8%|▊         | 2/24.0 [01:08<11:45, 32.05s/it][A                                                           
+                                                                                            [ADataset: BOD:  11%|█         | 1/9 [01:14<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   8%|▊         | 2/24.0 [01:08<11:45, 32.05s/it][A                                                           
+                                                                                            [ADataset: BOD:  11%|█         | 1/9 [01:14<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   8%|▊         | 2/24.0 [01:08<11:45, 32.05s/it][A                                                           
+                                                                                            [ADataset: BOD:  11%|█         | 1/9 [01:15<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   8%|▊         | 2/24.0 [01:08<11:45, 32.05s/it][A                                                           
+                                                                                            [ADataset: BOD:  11%|█         | 1/9 [01:15<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   8%|▊         | 2/24.0 [01:08<11:45, 32.05s/it][A                                                           
+                                                                                            [ADataset: BOD:  11%|█         | 1/9 [01:15<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   8%|▊         | 2/24.0 [01:08<11:45, 32.05s/it][A                                                           
+                                                                                            [ADataset: BOD:  11%|█         | 1/9 [01:15<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   8%|▊         | 2/24.0 [01:08<11:45, 32.05s/it][A                                                           
+                                                                                            [ADataset: BOD:  11%|█         | 1/9 [01:15<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   8%|▊         | 2/24.0 [01:08<11:45, 32.05s/it][A                                                           
+                                                                                            [ADataset: BOD:  11%|█         | 1/9 [01:15<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   8%|▊         | 2/24.0 [01:08<11:45, 32.05s/it][A                                                           
+                                                                                            [ADataset: BOD:  11%|█         | 1/9 [01:15<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   8%|▊         | 2/24.0 [01:08<11:45, 32.05s/it][A                                                           
+                                                                                            [ADataset: BOD:  11%|█         | 1/9 [01:15<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   8%|▊         | 2/24.0 [01:08<11:45, 32.05s/it][A                                                           
+                                                                                            [ADataset: BOD:  11%|█         | 1/9 [01:15<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   8%|▊         | 2/24.0 [01:08<11:45, 32.05s/it][A                                                           
+                                                                                            [ADataset: BOD:  11%|█         | 1/9 [01:15<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   8%|▊         | 2/24.0 [01:08<11:45, 32.05s/it][A                                                           
+                                                                                            [ADataset: BOD:  11%|█         | 1/9 [01:15<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   8%|▊         | 2/24.0 [01:08<11:45, 32.05s/it][A                                                           
+                                                                                            [ADataset: BOD:  11%|█         | 1/9 [01:15<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   8%|▊         | 2/24.0 [01:08<11:45, 32.05s/it][A                                                           
+                                                                                            [ADataset: BOD:  11%|█         | 1/9 [01:15<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   8%|▊         | 2/24.0 [01:08<11:45, 32.05s/it][A                                                           
+                                                                                            [ADataset: BOD:  11%|█         | 1/9 [01:15<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   8%|▊         | 2/24.0 [01:08<11:45, 32.05s/it][A                                                           
+                                                                                            [ADataset: BOD:  11%|█         | 1/9 [01:15<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   8%|▊         | 2/24.0 [01:08<11:45, 32.05s/it][A                                                           
+                                                                                            [ADataset: BOD:  11%|█         | 1/9 [01:15<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   8%|▊         | 2/24.0 [01:08<11:45, 32.05s/it][A                                                           
+                                                                                            [ADataset: BOD:  11%|█         | 1/9 [01:27<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   8%|▊         | 2/24.0 [01:20<11:45, 32.05s/it][A                                                           
+                                                                                            [ADataset: BOD:  11%|█         | 1/9 [01:27<00:53,  6.66s/it]
+Fetching BOD from 2025-09-21 to 2025-09-21:   8%|▊         | 2/24.0 [01:20<11:45, 32.05s/it][A

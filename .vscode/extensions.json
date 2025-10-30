@@ -1,15 +1,105 @@
 {
+  // Essential extensions for agent mode - GitHub Copilot and Python only
   "recommendations": [
+    // GitHub Copilot for AI assistance
+    "github.copilot",
+    "github.copilot-chat",
+    
+    // Python development
     "ms-python.python",
-    "ms-python.vscode-pylance",
+    "ms-python.vscode-pylance"
+  ],
+  
+  // Prevent these common extensions from being auto-installed
+  "unwantedRecommendations": [
+    // Language servers that might not be needed (keeping Python allowed)
+    "ms-python.flake8",
+    "ms-python.pylint",
     "ms-python.black-formatter",
-    "ms-python.isort",
+    "ms-vscode.powershell",
+    "ms-dotnettools.csharp",
+    "ms-vscode.cpptools",
+    "ms-vscode.cpptools-extension-pack",
+    "golang.go",
+    "rust-lang.rust-analyzer",
+    "redhat.java",
+    "vscjava.vscode-java-pack",
+    "ms-vscode.vscode-typescript-next",
+    
+    // Heavy extensions that slow down VS Code
+    "ms-vscode.vscode-docker",
+    "ms-kubernetes-tools.vscode-kubernetes-tools",
+    "ms-azuretools.vscode-azureresourcegroups",
+    "ms-vscode-remote.remote-containers",
+    "ms-vscode-remote.remote-ssh",
+    "ms-vscode-remote.remote-wsl",
+    "ms-vscode.remote-explorer",
+    "ms-vscode.remote-repositories",
+    
+    // AI/Copilot extensions (GitHub Copilot allowed, others blocked)
+    "github.copilot-labs",
+    "tabnine.tabnine-vscode",
+    "visualstudioexptteam.vscodeintellicode",
+    
+    // Theme and UI extensions that use resources
+    "pkief.material-icon-theme",
+    "zhuangtongfa.material-theme",
+    "ms-vscode.theme-tomorrowkit",
+    "dracula-theme.theme-dracula",
+    "github.github-vscode-theme",
+    "monokai.theme-monokai-pro-vscode",
+    "equinusocio.vsc-material-theme",
+    
+    // Linting/formatting that might conflict or slow down
+    "esbenp.prettier-vscode",
+    "ms-vscode.vscode-eslint",
+    "bradlc.vscode-tailwindcss",
+    "stylelint.vscode-stylelint",
+    "dbaeumer.vscode-eslint",
+    "ms-vscode.vscode-json",
+    "redhat.vscode-yaml",
+    
+    // Database extensions
+    "ms-mssql.mssql",
+    "oracle.oracledevtools",
+    "mongodb.mongodb-vscode",
+    "cweijan.vscode-mysql-client2",
+    "ms-ossdata.vscode-postgresql",
+    
+    // Development tools that might be heavy
+    "ms-vscode.test-adapter-converter",
+    "hbenl.vscode-test-explorer",
+    "ms-playwright.playwright",
+    "ms-vscode.vscode-junit",
+    "formulahendry.code-runner",
+    "ms-vsliveshare.vsliveshare",
+    
+    // Framework-specific extensions (enable only when needed)
+    "ms-vscode.vscode-node-azure-pack",
+    "ms-azuretools.vscode-azurefunctions",
+    "amazonwebservices.aws-toolkit-vscode",
+    "googlecloudtools.cloudcode",
+    "hashicorp.terraform",
+    "ms-kubernetes-tools.vscode-aks-tools",
+    
+    // Git extensions that might slow down
+    "eamodio.gitlens",
+    "github.vscode-pull-request-github",
+    "github.vscode-github-actions",
+    "mhutchie.git-graph",
+    
+    // Jupyter and data science (heavy) - keeping Pylance allowed
     "ms-toolsai.jupyter",
-    "editorconfig.editorconfig",
-    "GitHub.copilot",
-    "GitHub.copilot-chat",
-    "yzhang.markdown-all-in-one",
-    "bierner.markdown-mermaid",
-    "openai.chatgpt"
+    "ms-toolsai.jupyter-keymap",
+    "ms-toolsai.jupyter-renderers",
+    
+    // Other potentially heavy extensions
+    "ms-vscode.hexeditor",
+    "ms-vscode.vscode-speech",
+    "ms-vscode.wordcount",
+    "streetsidesoftware.code-spell-checker",
+    "gruntfuggly.todo-tree",
+    "alefragnani.bookmarks",
+    "ms-vscode.references-view"
   ]
 }

@@ -1,0 +1,135 @@
+{
+  "extended_dno_info": {
+    "Northern Powergrid": {
+      "websites": [
+        "northernpowergrid.com",
+        "northernpowergrid.com/connections",
+        "northernpowergrid.com/about/regulatory-information"
+      ],
+      "mpan_ids": [
+        "20"
+      ],
+      "priority": "high"
+    },
+    "Electricity North West": {
+      "websites": [
+        "enwl.co.uk",
+        "enwl.co.uk/about-us/regulatory-information"
+      ],
+      "mpan_ids": [
+        "14"
+      ],
+      "priority": "high",
+      "status": "data_found"
+    },
+    "Western Power Distribution": {
+      "websites": [
+        "nationalgrid.co.uk/distribution",
+        "nationalgrideso.com/distribution"
+      ],
+      "mpan_ids": [
+        "21",
+        "22",
+        "23",
+        "24"
+      ],
+      "priority": "critical",
+      "note": "Now part of National Grid, largest coverage area"
+    },
+    "Scottish Power Energy Networks": {
+      "websites": [
+        "spenergynetworks.co.uk",
+        "scottishpower.com/distribution"
+      ],
+      "mpan_ids": [
+        "25",
+        "26"
+      ],
+      "priority": "high"
+    },
+    "SSEN Scottish & Southern": {
+      "websites": [
+        "ssen.co.uk",
+        "ssepd.co.uk",
+        "sse.com/distribution"
+      ],
+      "mpan_ids": [
+        "27",
+        "28"
+      ],
+      "priority": "high"
+    },
+    "UK Power Networks": {
+      "websites": [
+        "ukpowernetworks.co.uk"
+      ],
+      "mpan_ids": [
+        "10",
+        "11",
+        "12"
+      ],
+      "priority": "medium",
+      "note": "Already have comprehensive UKPN data in BigQuery"
+    },
+    "Cadent Gas": {
+      "websites": [
+        "cadentgas.com"
+      ],
+      "mpan_ids": [
+        "gas"
+      ],
+      "priority": "low",
+      "note": "Gas distribution, different from electricity DNOs"
+    }
+  },
+  "coverage_analysis": {
+    "current_coverage": {
+      "dnos_with_data": 3,
+      "total_uk_dnos": 14,
+      "coverage_percentage": 21.428571428571427,
+      "population_coverage": "London, South East, East England (UKPN areas)"
+    },
+    "missing_coverage": {
+      "high_priority_dnos": [
+        "Northern Powergrid",
+        "Scottish Power Energy Networks",
+        "SSEN Scottish & Southern"
+      ],
+      "critical_dnos": [
+        "Western Power Distribution"
+      ],
+      "regions_missing": [
+        "North East England (Northern Powergrid)",
+        "North West England (Electricity North West)",
+        "Midlands & South West (Western Power Distribution)",
+        "Scotland (Scottish Power, SSEN)",
+        "Wales (partial coverage missing)"
+      ]
+    },
+    "data_discovery_results": {
+      "electricity_north_west": {
+        "status": "SUCCESS",
+        "data_sources": 2,
+        "confidence": "high",
+        "regulatory_page_found": true,
+        "downloadable_files": 2
+      },
+      "western_power_distribution": {
+        "status": "REDIRECTED_TO_NATIONAL_GRID",
+        "note": "WPD acquired by National Grid in 2021, need to search National Grid distribution data"
+      },
+      "northern_powergrid": {
+        "status": "MAIN_SITE_ACCESSIBLE",
+        "note": "Website accessible but regulatory data paths need investigation"
+      }
+    }
+  },
+  "timestamp": "20250913_121708",
+  "next_actions": [
+    "Download ENW regulatory PDFs and extract DUoS data",
+    "Search National Grid for WPD distribution charges",
+    "Investigate Northern Powergrid deeper pages",
+    "Find Scottish Power and SSEN data sources",
+    "Create automated data extraction pipeline"
+  ]
+}

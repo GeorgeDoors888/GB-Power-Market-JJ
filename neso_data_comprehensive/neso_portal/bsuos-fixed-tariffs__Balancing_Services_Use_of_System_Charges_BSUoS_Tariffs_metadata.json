@@ -1,0 +1,11 @@
+{
+  "source": "NESO Data Portal",
+  "dataset_id": "bsuos-fixed-tariffs",
+  "dataset_title": "BSUoS Fixed Tariffs",
+  "resource_id": "4dfa533f-bec6-491b-a3f1-7ce92449bc9a",
+  "resource_name": " Balancing Services Use of System Charges (BSUoS) Tariffs",
+  "resource_format": "csv",
+  "last_modified": "2025-10-02T13:38:06.907895",
+  "size": null,
+  "description": "This dataset contains all the Balancing Services Use of System Charges (BSUoS) tariffs which are forecasted and set by the revenue team at National Grid ESO. These files will be updated on a six monthly basis (when tariffs are published), to receive automatic updates please register and subscribe to this dataset."
+}

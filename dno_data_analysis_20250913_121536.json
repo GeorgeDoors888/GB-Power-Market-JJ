@@ -1,0 +1,55 @@
+{
+  "collection_summary": {
+    "dnos_analyzed": 5,
+    "total_sources": 4,
+    "collection_time": "2025-09-13T12:15:36.020159"
+  },
+  "dno_analysis": {
+    "Northern Powergrid": {
+      "sources_checked": 0,
+      "successful_extractions": 0,
+      "total_data_score": 0,
+      "downloadable_files": 0,
+      "tables_found": 0
+    },
+    "Electricity North West": {
+      "sources_checked": 1,
+      "successful_extractions": 1,
+      "total_data_score": 34,
+      "downloadable_files": 2,
+      "tables_found": 0,
+      "best_source": {
+        "url": "https://enwl.co.uk/about-us/regulatory-information",
+        "score": 34,
+        "files": 2,
+        "tables": 0
+      }
+    },
+    "WPD Western Power": {
+      "sources_checked": 3,
+      "successful_extractions": 1,
+      "total_data_score": 0,
+      "downloadable_files": 0,
+      "tables_found": 0
+    },
+    "SSEN Scottish & Southern": {
+      "sources_checked": 0,
+      "successful_extractions": 0,
+      "total_data_score": 0,
+      "downloadable_files": 0,
+      "tables_found": 0
+    },
+    "Scottish Power Energy Networks": {
+      "sources_checked": 0,
+      "successful_extractions": 0,
+      "total_data_score": 0,
+      "downloadable_files": 0,
+      "tables_found": 0
+    }
+  },
+  "top_sources": [],
+  "recommendations": [
+    "High-priority DNOs for manual data collection: ['Electricity North West']",
+    "DNOs with downloadable data files: ['Electricity North West']"
+  ]
+}

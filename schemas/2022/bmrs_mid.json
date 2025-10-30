@@ -1,0 +1,37 @@
+[
+  {
+    "name": "dataset",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "startTime",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "dataProvider",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "settlementDate",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "settlementPeriod",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "price",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "volume",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  }
+]

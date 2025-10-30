@@ -1,0 +1,49 @@
+{
+  "https://www.enwl.co.uk/about-us/regulatory-information": {
+    "status": "accessible",
+    "data_links_found": 6,
+    "duos_relevance_score": 0,
+    "top_links": [
+      {
+        "url": "https://www.enwl.co.uk/future-energy/data-and-digitalisation/data-portal/",
+        "text": "Data portal",
+        "type": "page"
+      },
+      {
+        "url": "https://www.enwl.co.uk/future-energy/data-and-digitalisation/",
+        "text": "Data and Digitalisation",
+        "type": "page"
+      },
+      {
+        "url": "https://www.enwl.co.uk/future-energy/data-and-digitalisation/data-portal/",
+        "text": "Data portal",
+        "type": "page"
+      },
+      {
+        "url": "https://www.enwl.co.uk/about-us/regulatory-information/use-of-system-charges/",
+        "text": "Use of system charges",
+        "type": "page"
+      },
+      {
+        "url": "https://www.enwl.co.uk/globalassets/about-us/regulatory-information/documents/methodology-for-inv-projects/riio-ed2-methodology-for-identifying-worst-served-customer-network-investment-projects-may-20232.pdf",
+        "text": "Read more",
+        "type": "pdf"
+      }
+    ]
+  },
+  "https://www.enwl.co.uk/about-us/regulatory-information/use-of-system-charging": {
+    "status": "HTTP 404"
+  },
+  "https://www.enwl.co.uk/about-us/regulatory-information/charging-statements": {
+    "status": "HTTP 404"
+  },
+  "https://www.enwl.co.uk/globalassets/about-us/regulatory-information/": {
+    "status": "HTTP 404"
+  },
+  "https://www.enwl.co.uk/zero-carbon/data-and-transparency": {
+    "status": "HTTP 404"
+  },
+  "https://www.enwl.co.uk/connections-and-generation/network-charging": {
+    "status": "HTTP 404"
+  }
+}

@@ -1,0 +1,1093 @@
+2025-08-25 15:14:51,249 - gcs_to_bq_ingest - INFO - ✅ GCS and BigQuery clients initialized successfully.
+2025-08-25 15:14:52,475 - gcs_to_bq_ingest - INFO - Creating BQ Dataset: 'jibber-jabber-knowledge.bmrs_data'
+2025-08-25 15:14:53,058 - gcs_to_bq_ingest - INFO - 🚀 Found files in gs://jibber-jabber-knowledge-bmrs-data/elexon/. Starting ingestion...
+2025-08-25 15:14:53,876 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/FOU2T14D/2025/07/FOU2T14D_2025-07-01_2025-07-07.json for table 'FOU2T14D'
+2025-08-25 15:14:54,376 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/FOU2T14D/2025/07/FOU2T14D_2025-07-01_2025-07-07.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:14:54,388 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/FOU2T3YW/2025/07/FOU2T3YW_2025-07-01_2025-07-07.json for table 'FOU2T3YW'
+2025-08-25 15:14:55,229 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/FOU2T3YW/2025/07/FOU2T3YW_2025-07-01_2025-07-07.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:14:55,231 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/FREQ/2025/07/FREQ_2025-07-01_2025-07-07.json for table 'FREQ'
+2025-08-25 15:14:55,927 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/FREQ/2025/07/FREQ_2025-07-01_2025-07-07.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:14:55,928 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/FUELHH/2025/07/FUELHH_2025-07-01_2025-07-07.json for table 'FUELHH'
+2025-08-25 15:14:56,390 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/FUELHH/2025/07/FUELHH_2025-07-01_2025-07-07.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:14:56,392 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/FUELINST/2025/07/FUELINST_2025-07-01_2025-07-07.json for table 'FUELINST'
+2025-08-25 15:14:57,119 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/FUELINST/2025/07/FUELINST_2025-07-01_2025-07-07.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:14:57,120 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/IMBALNGC/2025/07/IMBALNGC_2025-07-01_2025-07-07.json for table 'IMBALNGC'
+2025-08-25 15:14:57,703 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/IMBALNGC/2025/07/IMBALNGC_2025-07-01_2025-07-07.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:14:57,704 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/INDDEM/2025/07/INDDEM_2025-07-01_2025-07-07.json for table 'INDDEM'
+2025-08-25 15:14:58,272 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/INDDEM/2025/07/INDDEM_2025-07-01_2025-07-07.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:14:58,273 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/INDGEN/2025/07/INDGEN_2025-07-01_2025-07-07.json for table 'INDGEN'
+2025-08-25 15:14:58,985 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/INDGEN/2025/07/INDGEN_2025-07-01_2025-07-07.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:14:58,987 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/INDO/2025/07/INDO_2025-07-01_2025-07-07.json for table 'INDO'
+2025-08-25 15:14:59,155 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/INDO/2025/07/INDO_2025-07-01_2025-07-07.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:14:59,156 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/ITSDO/2025/07/ITSDO_2025-07-01_2025-07-07.json for table 'ITSDO'
+2025-08-25 15:14:59,691 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/ITSDO/2025/07/ITSDO_2025-07-01_2025-07-07.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:14:59,694 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/MELNGC/2025/07/MELNGC_2025-07-01_2025-07-07.json for table 'MELNGC'
+2025-08-25 15:15:00,274 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/MELNGC/2025/07/MELNGC_2025-07-01_2025-07-07.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:00,276 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/MID/2025/07/MID_2025-07-01_2025-07-07.json for table 'MID'
+2025-08-25 15:15:00,640 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/MID/2025/07/MID_2025-07-01_2025-07-07.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:00,641 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/MNZT/2025/07/MNZT_2025-07-01_2025-07-07.json for table 'MNZT'
+2025-08-25 15:15:00,959 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/MNZT/2025/07/MNZT_2025-07-01_2025-07-07.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:00,960 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/MZT/2025/07/MZT_2025-07-01_2025-07-07.json for table 'MZT'
+2025-08-25 15:15:01,317 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/MZT/2025/07/MZT_2025-07-01_2025-07-07.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:01,332 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/NDF/2025/07/NDF_2025-07-01_2025-07-07.json for table 'NDF'
+2025-08-25 15:15:01,616 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/NDF/2025/07/NDF_2025-07-01_2025-07-07.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:01,617 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/NDFD/2025/07/NDFD_2025-07-01_2025-07-07.json for table 'NDFD'
+2025-08-25 15:15:02,087 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/NDFD/2025/07/NDFD_2025-07-01_2025-07-07.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:02,088 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/NDFW/2025/07/NDFW_2025-07-01_2025-07-07.json for table 'NDFW'
+2025-08-25 15:15:02,253 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/NDFW/2025/07/NDFW_2025-07-01_2025-07-07.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:02,253 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/NDZ/2025/07/NDZ_2025-07-01_2025-07-07.json for table 'NDZ'
+2025-08-25 15:15:02,804 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/NDZ/2025/07/NDZ_2025-07-01_2025-07-07.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:02,806 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/NETBSAD/2025/07/NETBSAD_2025-07-01_2025-07-07.json for table 'NETBSAD'
+2025-08-25 15:15:03,377 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/NETBSAD/2025/07/NETBSAD_2025-07-01_2025-07-07.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:03,378 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/NONBM/2025/07/NONBM_2025-07-01_2025-07-07.json for table 'NONBM'
+2025-08-25 15:15:03,666 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/NONBM/2025/07/NONBM_2025-07-01_2025-07-07.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:03,666 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/NOU2T14D/2025/07/NOU2T14D_2025-07-01_2025-07-07.json for table 'NOU2T14D'
+2025-08-25 15:15:04,009 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/NOU2T14D/2025/07/NOU2T14D_2025-07-01_2025-07-07.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:04,010 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/NOU2T3YW/2025/07/NOU2T3YW_2025-07-01_2025-07-07.json for table 'NOU2T3YW'
+2025-08-25 15:15:04,349 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/NOU2T3YW/2025/07/NOU2T3YW_2025-07-01_2025-07-07.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:04,350 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/NTB/2025/07/NTB_2025-07-01_2025-07-07.json for table 'NTB'
+2025-08-25 15:15:04,696 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/NTB/2025/07/NTB_2025-07-01_2025-07-07.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:04,697 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/NTO/2025/07/NTO_2025-07-01_2025-07-07.json for table 'NTO'
+2025-08-25 15:15:05,154 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/NTO/2025/07/NTO_2025-07-01_2025-07-07.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:05,154 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/OCNMF3Y/2025/07/OCNMF3Y_2025-07-01_2025-07-07.json for table 'OCNMF3Y'
+2025-08-25 15:15:05,377 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/OCNMF3Y/2025/07/OCNMF3Y_2025-07-01_2025-07-07.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:05,379 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/OCNMF3Y2/2025/07/OCNMF3Y2_2025-07-01_2025-07-07.json for table 'OCNMF3Y2'
+2025-08-25 15:15:05,822 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/OCNMF3Y2/2025/07/OCNMF3Y2_2025-07-01_2025-07-07.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:05,823 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/OCNMFD/2025/07/OCNMFD_2025-07-01_2025-07-07.json for table 'OCNMFD'
+2025-08-25 15:15:06,031 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/OCNMFD/2025/07/OCNMFD_2025-07-01_2025-07-07.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:06,031 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/OCNMFD2/2025/07/OCNMFD2_2025-07-01_2025-07-07.json for table 'OCNMFD2'
+2025-08-25 15:15:06,521 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/OCNMFD2/2025/07/OCNMFD2_2025-07-01_2025-07-07.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:06,521 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/RDRE/2025/07/RDRE_2025-07-01_2025-07-07.json for table 'RDRE'
+2025-08-25 15:15:06,735 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/RDRE/2025/07/RDRE_2025-07-01_2025-07-07.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:06,735 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/RURE/2025/07/RURE_2025-07-01_2025-07-07.json for table 'RURE'
+2025-08-25 15:15:07,426 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/RURE/2025/07/RURE_2025-07-01_2025-07-07.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:07,427 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/RURI/2025/07/RURI_2025-07-01_2025-07-07.json for table 'RURI'
+2025-08-25 15:15:07,639 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/RURI/2025/07/RURI_2025-07-01_2025-07-07.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:07,640 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/SEL/2025/07/SEL_2025-07-01_2025-07-07.json for table 'SEL'
+2025-08-25 15:15:08,374 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/SEL/2025/07/SEL_2025-07-01_2025-07-07.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:08,375 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/SIL/2025/07/SIL_2025-07-01_2025-07-07.json for table 'SIL'
+2025-08-25 15:15:08,596 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/SIL/2025/07/SIL_2025-07-01_2025-07-07.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:08,597 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/TEMP/2025/07/TEMP_2025-07-01_2025-07-07.json for table 'TEMP'
+2025-08-25 15:15:09,033 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/TEMP/2025/07/TEMP_2025-07-01_2025-07-07.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:09,034 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/TSDF/2025/07/TSDF_2025-07-01_2025-07-07.json for table 'TSDF'
+2025-08-25 15:15:09,675 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/TSDF/2025/07/TSDF_2025-07-01_2025-07-07.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:09,677 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/TSDFD/2025/07/TSDFD_2025-07-01_2025-07-07.json for table 'TSDFD'
+2025-08-25 15:15:09,838 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/TSDFD/2025/07/TSDFD_2025-07-01_2025-07-07.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:09,838 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/TSDFW/2025/07/TSDFW_2025-07-01_2025-07-07.json for table 'TSDFW'
+2025-08-25 15:15:10,331 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/TSDFW/2025/07/TSDFW_2025-07-01_2025-07-07.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:10,332 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/UOU2T14D/2025/07/UOU2T14D_2025-07-01_2025-07-07.json for table 'UOU2T14D'
+2025-08-25 15:15:11,158 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/UOU2T14D/2025/07/UOU2T14D_2025-07-01_2025-07-07.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:11,160 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/UOU2T3YW/2025/07/UOU2T3YW_2025-07-01_2025-07-07.json for table 'UOU2T3YW'
+2025-08-25 15:15:13,984 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/UOU2T3YW/2025/07/UOU2T3YW_2025-07-01_2025-07-07.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:13,994 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/WINDFOR/2025/07/WINDFOR_2025-07-01_2025-07-07.json for table 'WINDFOR'
+2025-08-25 15:15:14,211 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/WINDFOR/2025/07/WINDFOR_2025-07-01_2025-07-07.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:14,212 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/demand_outturn/recent_20250822231607.json for table 'demand_outturn'
+2025-08-25 15:15:15,137 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/demand_outturn/recent_20250822231607.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:15,137 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/demand_outturn/recent_20250822232650.json for table 'demand_outturn'
+2025-08-25 15:15:15,734 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/demand_outturn/recent_20250822232650.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:15,735 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/demand_outturn/recent_20250822233106.json for table 'demand_outturn'
+2025-08-25 15:15:16,409 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/demand_outturn/recent_20250822233106.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:16,414 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/demand_outturn/recent_20250823000135.json for table 'demand_outturn'
+2025-08-25 15:15:17,056 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/demand_outturn/recent_20250823000135.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:17,057 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/demand_outturn/recent_20250823001817.json for table 'demand_outturn'
+2025-08-25 15:15:17,774 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/demand_outturn/recent_20250823001817.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:17,775 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/demand_outturn/recent_20250823002057.json for table 'demand_outturn'
+2025-08-25 15:15:18,383 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/demand_outturn/recent_20250823002057.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:18,384 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/demand_outturn/recent_20250823003918.json for table 'demand_outturn'
+2025-08-25 15:15:18,990 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/demand_outturn/recent_20250823003918.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:18,991 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/demand_outturn/recent_20250823004002.json for table 'demand_outturn'
+2025-08-25 15:15:19,601 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/demand_outturn/recent_20250823004002.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:19,602 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/demand_outturn/recent_20250823004048.json for table 'demand_outturn'
+2025-08-25 15:15:20,214 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/demand_outturn/recent_20250823004048.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:20,216 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/demand_outturn/recent_20250823011048.json for table 'demand_outturn'
+2025-08-25 15:15:20,828 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/demand_outturn/recent_20250823011048.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:20,829 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/demand_outturn/recent_20250823014056.json for table 'demand_outturn'
+2025-08-25 15:15:21,404 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/demand_outturn/recent_20250823014056.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:21,405 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/demand_outturn/recent_20250823021058.json for table 'demand_outturn'
+2025-08-25 15:15:21,829 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/demand_outturn/recent_20250823021058.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:21,831 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/generation_outturn/recent_20250822231612.json for table 'generation_outturn'
+2025-08-25 15:15:22,107 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/generation_outturn/recent_20250822231612.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:22,109 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/generation_outturn/recent_20250822233110.json for table 'generation_outturn'
+2025-08-25 15:15:22,458 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/generation_outturn/recent_20250822233110.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:22,459 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/generation_outturn/recent_20250823000138.json for table 'generation_outturn'
+2025-08-25 15:15:22,677 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/generation_outturn/recent_20250823000138.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:22,679 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/generation_outturn/recent_20250823001818.json for table 'generation_outturn'
+2025-08-25 15:15:22,923 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/generation_outturn/recent_20250823001818.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:22,924 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/generation_outturn/recent_20250823002058.json for table 'generation_outturn'
+2025-08-25 15:15:23,178 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/generation_outturn/recent_20250823002058.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:23,202 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/generation_outturn/recent_20250823003920.json for table 'generation_outturn'
+2025-08-25 15:15:23,398 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/generation_outturn/recent_20250823003920.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:23,398 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/generation_outturn/recent_20250823004006.json for table 'generation_outturn'
+2025-08-25 15:15:23,589 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/generation_outturn/recent_20250823004006.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:23,590 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/generation_outturn/recent_20250823004050.json for table 'generation_outturn'
+2025-08-25 15:15:23,818 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/generation_outturn/recent_20250823004050.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:23,821 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/generation_outturn/recent_20250823011051.json for table 'generation_outturn'
+2025-08-25 15:15:24,037 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/generation_outturn/recent_20250823011051.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:24,038 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/generation_outturn/recent_20250823014058.json for table 'generation_outturn'
+2025-08-25 15:15:24,237 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/generation_outturn/recent_20250823014058.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:24,238 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/generation_outturn/recent_20250823021102.json for table 'generation_outturn'
+2025-08-25 15:15:24,510 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/generation_outturn/recent_20250823021102.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:24,521 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/rolling_demand/recent_20250823003923.json for table 'rolling_demand'
+2025-08-25 15:15:24,775 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/rolling_demand/recent_20250823003923.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:24,776 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/rolling_demand/recent_20250823004010.json for table 'rolling_demand'
+2025-08-25 15:15:24,997 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/rolling_demand/recent_20250823004010.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:24,998 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/rolling_demand/recent_20250823004055.json for table 'rolling_demand'
+2025-08-25 15:15:25,528 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/rolling_demand/recent_20250823004055.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:25,528 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/rolling_demand/recent_20250823004550.json for table 'rolling_demand'
+2025-08-25 15:15:25,833 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/rolling_demand/recent_20250823004550.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:25,834 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/rolling_demand/recent_20250823005054.json for table 'rolling_demand'
+2025-08-25 15:15:26,030 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/rolling_demand/recent_20250823005054.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:26,031 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/rolling_demand/recent_20250823005557.json for table 'rolling_demand'
+2025-08-25 15:15:26,247 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/rolling_demand/recent_20250823005557.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:26,251 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/rolling_demand/recent_20250823010058.json for table 'rolling_demand'
+2025-08-25 15:15:26,455 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/rolling_demand/recent_20250823010058.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:26,456 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/rolling_demand/recent_20250823010600.json for table 'rolling_demand'
+2025-08-25 15:15:26,667 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/rolling_demand/recent_20250823010600.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:26,667 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/rolling_demand/recent_20250823011102.json for table 'rolling_demand'
+2025-08-25 15:15:26,871 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/rolling_demand/recent_20250823011102.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:26,871 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/rolling_demand/recent_20250823011604.json for table 'rolling_demand'
+2025-08-25 15:15:27,066 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/rolling_demand/recent_20250823011604.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:27,069 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/rolling_demand/recent_20250823012106.json for table 'rolling_demand'
+2025-08-25 15:15:27,301 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/rolling_demand/recent_20250823012106.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:27,302 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/rolling_demand/recent_20250823012608.json for table 'rolling_demand'
+2025-08-25 15:15:27,542 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/rolling_demand/recent_20250823012608.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:27,543 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/rolling_demand/recent_20250823013111.json for table 'rolling_demand'
+2025-08-25 15:15:27,754 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/rolling_demand/recent_20250823013111.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:27,755 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/rolling_demand/recent_20250823013612.json for table 'rolling_demand'
+2025-08-25 15:15:27,941 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/rolling_demand/recent_20250823013612.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:27,942 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/rolling_demand/recent_20250823014114.json for table 'rolling_demand'
+2025-08-25 15:15:28,176 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/rolling_demand/recent_20250823014114.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:28,178 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/rolling_demand/recent_20250823014617.json for table 'rolling_demand'
+2025-08-25 15:15:28,699 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/rolling_demand/recent_20250823014617.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:28,700 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/rolling_demand/recent_20250823015120.json for table 'rolling_demand'
+2025-08-25 15:15:28,914 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/rolling_demand/recent_20250823015120.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:28,915 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/rolling_demand/recent_20250823015622.json for table 'rolling_demand'
+2025-08-25 15:15:29,397 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/rolling_demand/recent_20250823015622.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:29,399 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/rolling_demand/recent_20250823020125.json for table 'rolling_demand'
+2025-08-25 15:15:29,613 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/rolling_demand/recent_20250823020125.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:29,616 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/rolling_demand/recent_20250823020628.json for table 'rolling_demand'
+2025-08-25 15:15:29,840 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/rolling_demand/recent_20250823020628.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:29,841 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/rolling_demand/recent_20250823021130.json for table 'rolling_demand'
+2025-08-25 15:15:30,061 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/rolling_demand/recent_20250823021130.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:30,061 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/rolling_demand/recent_20250823021633.json for table 'rolling_demand'
+2025-08-25 15:15:30,256 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/rolling_demand/recent_20250823021633.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:30,256 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/rolling_demand/recent_20250823022135.json for table 'rolling_demand'
+2025-08-25 15:15:30,495 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/rolling_demand/recent_20250823022135.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:30,498 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/rolling_demand/recent_20250823022637.json for table 'rolling_demand'
+2025-08-25 15:15:30,695 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/rolling_demand/recent_20250823022637.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:30,696 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/rolling_demand/recent_20250823023139.json for table 'rolling_demand'
+2025-08-25 15:15:31,231 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/rolling_demand/recent_20250823023139.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:31,234 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/system_frequency/recent_20250823003922.json for table 'system_frequency'
+2025-08-25 15:15:31,931 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/system_frequency/recent_20250823003922.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:31,934 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/system_frequency/recent_20250823004009.json for table 'system_frequency'
+2025-08-25 15:15:32,647 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/system_frequency/recent_20250823004009.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:32,650 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/system_frequency/recent_20250823004053.json for table 'system_frequency'
+2025-08-25 15:15:33,312 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/system_frequency/recent_20250823004053.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:33,314 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/system_frequency/recent_20250823004548.json for table 'system_frequency'
+2025-08-25 15:15:33,966 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/system_frequency/recent_20250823004548.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:33,967 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/system_frequency/recent_20250823005051.json for table 'system_frequency'
+2025-08-25 15:15:34,639 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/system_frequency/recent_20250823005051.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:34,641 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/system_frequency/recent_20250823005554.json for table 'system_frequency'
+2025-08-25 15:15:35,314 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/system_frequency/recent_20250823005554.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:35,316 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/system_frequency/recent_20250823010056.json for table 'system_frequency'
+2025-08-25 15:15:35,975 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/system_frequency/recent_20250823010056.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:35,976 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/system_frequency/recent_20250823010558.json for table 'system_frequency'
+2025-08-25 15:15:36,615 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/system_frequency/recent_20250823010558.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:36,616 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/system_frequency/recent_20250823011100.json for table 'system_frequency'
+2025-08-25 15:15:37,235 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/system_frequency/recent_20250823011100.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:37,236 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/system_frequency/recent_20250823011602.json for table 'system_frequency'
+2025-08-25 15:15:37,938 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/system_frequency/recent_20250823011602.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:37,948 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/system_frequency/recent_20250823012104.json for table 'system_frequency'
+2025-08-25 15:15:38,577 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/system_frequency/recent_20250823012104.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:38,578 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/system_frequency/recent_20250823012606.json for table 'system_frequency'
+2025-08-25 15:15:39,330 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/system_frequency/recent_20250823012606.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:39,337 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/system_frequency/recent_20250823013108.json for table 'system_frequency'
+2025-08-25 15:15:40,073 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/system_frequency/recent_20250823013108.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:40,089 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/system_frequency/recent_20250823013610.json for table 'system_frequency'
+2025-08-25 15:15:40,769 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/system_frequency/recent_20250823013610.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:40,770 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/system_frequency/recent_20250823014111.json for table 'system_frequency'
+2025-08-25 15:15:41,437 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/system_frequency/recent_20250823014111.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:41,440 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/system_frequency/recent_20250823014614.json for table 'system_frequency'
+2025-08-25 15:15:42,064 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/system_frequency/recent_20250823014614.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:42,066 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/system_frequency/recent_20250823015117.json for table 'system_frequency'
+2025-08-25 15:15:42,713 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/system_frequency/recent_20250823015117.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:42,715 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/system_frequency/recent_20250823015620.json for table 'system_frequency'
+2025-08-25 15:15:43,355 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/system_frequency/recent_20250823015620.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:43,358 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/system_frequency/recent_20250823020123.json for table 'system_frequency'
+2025-08-25 15:15:44,013 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/system_frequency/recent_20250823020123.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:44,015 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/system_frequency/recent_20250823020625.json for table 'system_frequency'
+2025-08-25 15:15:44,663 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/system_frequency/recent_20250823020625.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:44,664 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/system_frequency/recent_20250823021128.json for table 'system_frequency'
+2025-08-25 15:15:45,301 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/system_frequency/recent_20250823021128.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:45,302 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/system_frequency/recent_20250823021630.json for table 'system_frequency'
+2025-08-25 15:15:45,951 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/system_frequency/recent_20250823021630.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:45,956 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/system_frequency/recent_20250823022132.json for table 'system_frequency'
+2025-08-25 15:15:46,588 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/system_frequency/recent_20250823022132.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:46,590 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/system_frequency/recent_20250823022634.json for table 'system_frequency'
+2025-08-25 15:15:47,232 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/system_frequency/recent_20250823022634.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:47,232 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/system_frequency/recent_20250823023137.json for table 'system_frequency'
+2025-08-25 15:15:47,911 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/system_frequency/recent_20250823023137.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:47,912 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/system_warnings/recent_20250822233112.json for table 'system_warnings'
+2025-08-25 15:15:48,131 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/system_warnings/recent_20250822233112.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:48,132 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/system_warnings/recent_20250823000140.json for table 'system_warnings'
+2025-08-25 15:15:48,690 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/system_warnings/recent_20250823000140.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:48,691 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/system_warnings/recent_20250823001819.json for table 'system_warnings'
+2025-08-25 15:15:48,881 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/system_warnings/recent_20250823001819.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:48,883 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/system_warnings/recent_20250823002059.json for table 'system_warnings'
+2025-08-25 15:15:49,350 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/system_warnings/recent_20250823002059.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:49,352 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/system_warnings/recent_20250823003921.json for table 'system_warnings'
+2025-08-25 15:15:49,539 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/system_warnings/recent_20250823003921.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:49,540 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/system_warnings/recent_20250823004008.json for table 'system_warnings'
+2025-08-25 15:15:50,018 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/system_warnings/recent_20250823004008.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:50,019 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/system_warnings/recent_20250823004052.json for table 'system_warnings'
+2025-08-25 15:15:50,192 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/system_warnings/recent_20250823004052.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:50,193 - gcs_to_bq_ingest - INFO - ⏳ Processing gs://jibber-jabber-knowledge-bmrs-data/elexon/system_warnings/recent_20250823014048.json for table 'system_warnings'
+2025-08-25 15:15:50,698 - gcs_to_bq_ingest - ERROR - ❌ An unexpected error occurred while processing elexon/system_warnings/recent_20250823014048.json: This method requires pyarrow to be installed
+Traceback (most recent call last):
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/gcs_to_bigquery_ingest.py", line 134, in process_blob
+    load_job = self.bq_client.load_table_from_dataframe(df, table_id, job_config=job_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 2831, in load_table_from_dataframe
+    raise ValueError("This method requires pyarrow to be installed")
+ValueError: This method requires pyarrow to be installed
+2025-08-25 15:15:50,701 - gcs_to_bq_ingest - INFO - 🎉 Ingestion run complete. Processed 121 JSON files.

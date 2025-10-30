@@ -1,0 +1,17 @@
+2025-09-03 10:16:32,470 [INFO] 📄 Logging to logs/mip_2025-08_to_09.log
+2025-09-03 10:16:32,597 [INFO] ✅ Initialized BigQuery Client for project: jibber-jabber-knowledge
+2025-09-03 10:16:33,097 [INFO] BigQuery dataset 'uk_energy_insights' exists.
+2025-09-03 10:16:33,097 [INFO] 📝 Planned datasets (1): MIP
+2025-09-03 10:16:33,097 [INFO] 🚀 Starting ingestion for 1 datasets...
+2025-09-03 10:16:33,098 [INFO] 🔄 Checking for existing windows for bmrs_mip
+2025-09-03 10:16:33,098 [INFO] 🔎 Querying existing windows for jibber-jabber-knowledge.uk_energy_insights.bmrs_mip between 2025-08-01 00:00:00+00:00 and 2025-09-04 00:00:00+00:00
+2025-09-03 10:16:33,339 [INFO] Table jibber-jabber-knowledge.uk_energy_insights.bmrs_mip does not exist, skipping window query.
+2025-09-03 10:16:33,340 [INFO] 🧮 Total windows to fetch for MIP: 5 (batch_size=90, flush_seconds=300)
+2025-09-03 10:16:33,340 [INFO] 🌐 Fetching BMRS dataset=MIP from=2025-08-28 00:00:00+00:00 to=2025-09-04 00:00:00+00:00
+2025-09-03 10:16:33,479 [INFO] 🌐 Fetching BMRS dataset=MIP from=2025-08-21 00:00:00+00:00 to=2025-08-28 00:00:00+00:00
+2025-09-03 10:16:33,600 [INFO] 🌐 Fetching BMRS dataset=MIP from=2025-08-14 00:00:00+00:00 to=2025-08-21 00:00:00+00:00
+2025-09-03 10:16:33,712 [INFO] 🌐 Fetching BMRS dataset=MIP from=2025-08-07 00:00:00+00:00 to=2025-08-14 00:00:00+00:00
+2025-09-03 10:16:33,813 [INFO] 🌐 Fetching BMRS dataset=MIP from=2025-08-01 00:00:00+00:00 to=2025-08-07 00:00:00+00:00
+2025-09-03 10:16:33,922 [INFO] 🏁 Finished ingest for MIP: status=OK, rows=0, note=
+2025-09-03 10:16:33,922 [INFO] 🎉 All datasets processed.
+2025-09-03 10:16:33,922 [INFO]    OK=1, PARTIAL=0, SKIP=0, ERR=0

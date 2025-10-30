@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>UK DNO Areas Map</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <style>
+    #map { 
+      height: 100%; 
+      width: 100%; 
+      border-radius: 8px;
+    }
+    html, body { 
+      margin: 0; 
+      height: 100%; 
+      font-family: Arial, sans-serif;
+    }
+    .info {
+      padding: 6px 8px;
+      font: 14px/16px Arial, Helvetica, sans-serif;
+      background: white;
+      background: rgba(255,255,255,0.8);
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      border-radius: 5px;
+    }
+    .info h4 {
+      margin: 0 0 5px;
+      color: #777;
+    }
+    .legend {
+      line-height: 18px;
+      color: #555;
+    }
+    .legend i {
+      width: 18px;
+      height: 18px;
+      float: left;
+      margin-right: 8px;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  <script>
+    // Data from Google Sheet
+    var sheetData = <?= JSON.stringify(data) ?>;
+    
+    // Initialize map centered on UK
+    var map = L.map('map').setView([54, -2], 6);
+
+    // Add OpenStreetMap base layer
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      maxZoom: 19
+    }).addTo(map);
+
+    // Helper function to get value for a DNO by ID
+    function getValueForDNO(dnoId) {
+      var row = sheetData.find(r => r.id == dnoId);
+      return row ? row.value : null;
+    }
+
+    // Helper function to get name for a DNO by ID
+    function getNameForDNO(dnoId) {
+      var row = sheetData.find(r => r.id == dnoId);
+      return row ? row.name : "Unknown DNO";
+    }
+
+    // Color scale for choropleth map
+    function getColor(value) {
+      return value > 100 ? '#08306b' :
+             value > 80  ? '#2171b5' :
+             value > 60  ? '#4292c6' :
+             value > 40  ? '#6baed6' :
+             value > 20  ? '#9ecae1' :
+                           '#deebf7';
+    }
+
+    // Style function for GeoJSON features
+    function style(feature) {
+      var val = getValueForDNO(feature.properties.DNO_ID);
+      return {
+        fillColor: val ? getColor(val) : "#eee",
+        weight: 2,
+        opacity: 1,
+        color: 'white',
+        dashArray: '3',
+        fillOpacity: 0.7
+      };
+    }
+
+    // Highlight feature on mouseover
+    function highlightFeature(e) {
+      var layer = e.target;
+
+      layer.setStyle({
+        weight: 5,
+        color: '#666',
+        dashArray: '',
+        fillOpacity: 0.7
+      });
+
+      if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+        layer.bringToFront();
+      }
+      
+      info.update(layer.feature.properties);
+    }
+
+    // Reset highlight on mouseout
+    function resetHighlight(e) {
+      geojson.resetStyle(e.target);
+      info.update();
+    }
+
+    // Zoom to feature on click
+    function zoomToFeature(e) {
+      map.fitBounds(e.target.getBounds());
+    }
+
+    // Set interaction listeners for each feature
+    function onEachFeature(feature, layer) {
+      layer.on({
+        mouseover: highlightFeature,
+        mouseout: resetHighlight,
+        click: zoomToFeature
+      });
+      
+      // Bind popup with DNO info
+      var val = getValueForDNO(feature.properties.DNO_ID);
+      var popupContent = "<b>" + feature.properties.DNO_NAME + "</b><br>" +
+                         "MPAN Code: " + feature.properties.DNO_ID + "<br>" + 
+                         "DNO Key: " + feature.properties.DNO_KEY + "<br>" +
+                         "GSP Group: " + feature.properties.GSP_GROUP + "<br>" +
+                         "Region: " + feature.properties.REGION + "<br>" +
+                         "<b>Value: £" + (val ? val.toFixed(2) : "N/A") + "/MWh</b>";
+      
+      layer.bindPopup(popupContent);
+    }
+
+    // Create info control
+    var info = L.control();
+
+    info.onAdd = function(map) {
+      this._div = L.DomUtil.create('div', 'info');
+      this.update();
+      return this._div;
+    };
+
+    info.update = function(props) {
+      var value = props ? getValueForDNO(props.DNO_ID) : null;
+      var valueDisplay = value ? "£" + value.toFixed(2) + "/MWh" : "No data";
+      
+      this._div.innerHTML = '<h4>UK DNO Map</h4>' +  
+        (props ? '<b>' + props.DNO_NAME + '</b><br />MPAN Code: ' + props.DNO_ID + 
+                '<br />Value: ' + valueDisplay
+              : 'Hover over a DNO area');
+    };
+
+    info.addTo(map);
+
+    // Create legend control
+    var legend = L.control({position: 'bottomright'});
+
+    legend.onAdd = function(map) {
+      var div = L.DomUtil.create('div', 'info legend');
+      var grades = [0, 20, 40, 60, 80, 100];
+      var labels = [];
+      var from, to;
+
+      for (var i = 0; i < grades.length; i++) {
+        from = grades[i];
+        to = grades[i + 1];
+
+        labels.push(
+          '<i style="background:' + getColor(from + 1) + '"></i> ' +
+          '£' + from + (to ? '&ndash;£' + to : '+') + '/MWh');
+      }
+
+      div.innerHTML = '<h4>DUoS Rates</h4>' + labels.join('<br>');
+      return div;
+    };
+
+    legend.addTo(map);
+
+    // Fetch GeoJSON from server
+    google.script.run.withSuccessHandler(function(geoJsonString) {
+      try {
+        var geoJsonData = JSON.parse(geoJsonString);
+        
+        // Add GeoJSON layer
+        geojson = L.geoJSON(geoJsonData, {
+          style: style,
+          onEachFeature: onEachFeature
+        }).addTo(map);
+        
+        // Fit map to bounds of all features
+        map.fitBounds(geojson.getBounds());
+      } catch (e) {
+        console.error("Error parsing GeoJSON:", e);
+        document.getElementById('map').innerHTML = 
+          '<div style="color:red;padding:20px;">Error loading map data. ' + 
+          'Please check the GeoJSON file.</div>';
+      }
+    }).getGeoJsonContent();
+  </script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+Project Plan: Elexon Data Ingestion & Analysis for BigQuery
+
+This document outlines the plan to ingest four years of historical Elexon data (2022-2025) into a BigQuery dataset, perform an initial analysis, and then execute a full backfill.
+
+---
+
+1. Setup & Configuration
+
+- BigQuery Environment:
+  - Create a new BigQuery dataset named `elexon_data_landing_zone` in the `europe-west2` region. This will serve as the primary destination for all ingested data.
+- Schema Correction:
+  - Action: Systematically review and update the local JSON schema files in the `schemas/` directory.
+  - Reference: Use the `schema_comparison_report.csv` as the source of truth to correct data types and ensure alignment with the live API. This is a critical step to prevent the original ingestion errors.
+- Script Configuration:
+  - Modify `ingest_elexon_fixed.py` to target the new `elexon_data_landing_zone` dataset and the `europe-west2` region.
+
+---
+
+2. Phase 1: Test Ingestion (1-Week Sample per Year)
+
+- Objective: To validate the end-to-end ingestion pipeline with a small, manageable data sample from each year, confirming that the schema fixes are effective.
+- Execution:
+  1. Enhance `ingest_elexon_fixed.py` to accept command-line arguments for `start-date` and `end-date`.
+  2. Run the script for the first week of June for each year, starting with the most recent:
+     - 2025: `2025-06-01` to `2025-06-08`
+     - 2024: `2024-06-01` to `2024-06-08`
+     - 2023: `2023-06-01` to `2023-06-08`
+     - 2022: `2022-06-01` to `2022-06-08`
+- Validation: After each run, perform spot-checks in the BigQuery UI to ensure tables are created with the correct schemas and contain data for the specified date range.
+
+---
+
+3. Phase 2: Initial Data Analysis & Profiling
+
+- Objective: To analyze the sample data, understand its structure and content, and produce a detailed report.
+- Execution:
+  1. Create a new script, `generate_data_profile.py`.
+  2. This script will connect to BigQuery and, for key datasets (e.g., `BOD`, `PN`, `FUELINST`, `MELS`), perform the following analysis:
+     - Data Volume: Calculate and report daily/weekly record counts.
+     - Key Fields Summary: For critical columns (`bmUnitID`, `quantity`, `price`, etc.), provide summary statistics (min, max, mean, count of nulls).
+     - Completeness Assessment: Identify and quantify missing data in important fields.
+     - Relationship Discovery: Identify common keys (like `bmUnitID` or `time_from`) that can be used to join different datasets.
+- Output:
+  - A comprehensive markdown report named `ELEXON_DATA_PROFILE.md` that details the findings, providing an initial overview of the data's value and characteristics.
+
+---
+
+4. Phase 3: Full Data Ingestion (Backfill)
+
+- Objective: To ingest the complete historical dataset from January 1, 2022, to the present.
+- Strategy: The ingestion will be performed in reverse chronological order (2025 first, then 2024, etc.). This prioritizes loading the most recent and often most relevant data first.
+- Execution:
+  - Run the `ingest_elexon_fixed.py` script for each full year:
+    - 2025: `2025-01-01` to `2025-12-31`
+    - 2024: `2024-01-01` to `2024-12-31`
+    - 2023: `2023-01-01` to `2023-12-31`
+    - 2022: `2022-01-01` to `2022-12-31`
+- Monitoring:
+  - Closely monitor the `automated_tracker.log` file for any errors during the long-running ingestion processes.
+  - Periodically run validation queries in BigQuery to check record counts and data integrity.
+
+---
+
+5. Phase 4: Final Validation & Documentation
+
+- Objective: To verify the completeness of the ingested data and update project documentation.
+- Execution:
+  1. Use the `check_data_completeness.py` script against the full date range to identify any gaps in the data.
+  2. Update `BIGQUERY_DATASET_INVENTORY.txt` to accurately reflect the tables and date ranges now available in `elexon_data_landing_zone`.
+  3. Update the main `README.md` file with information about the new dataset, including how to access it and a brief overview of its contents, referencing the `ELEXON_DATA_PROFILE.md` for more detail.
+
+---
+
+# Elexon Data Ingestion Status (as of 2025-09-22)
+
+This document summarizes the current status of the Elexon data ingestion pipeline.
+
+---
+
+### Fixed & Working
+- **`RDRI`**: The data type error has been resolved, and it now loads correctly.
+- **`QAS`**: The `400 Bad Request` error is fixed, and this dataset now ingests successfully.
+- **`PN` & `QPN`**: The initial schema mismatch errors for these datasets were resolved early on.
+
+### Newly Added
+- **`S0621`**: Support for this new dataset has been added. The script is ready to ingest the data as soon as it becomes available on the Elexon API.
+
+### Errors Pending
+- **`RURI`**: **(Top Priority)** Still failing with a `pyarrow` error related to converting `None` values in numeric columns. The next step is to fix the data sanitization logic for this.
+- **`SURPLUS_MARGIN` & `WIND_SOLAR_GEN`**: Both are still returning a `404 Not Found` error from the API. This suggests the data is not available at the endpoint we are using.
+
+### Warnings
+- **`NTB`, `NTO`, `RDRE`, `SIL`**: These datasets are still generating warnings because they are missing specific schema files. They are likely being loaded using BigQuery's schema auto-detection, which is less reliable. Schema files will be created for them after the `RURI` error is fixed.
+
+---

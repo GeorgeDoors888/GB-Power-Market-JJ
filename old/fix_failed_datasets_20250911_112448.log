@@ -1,0 +1,190 @@
+2025-09-11 11:24:48,494 [INFO] 🛠️ Fixing Failed BMRS Datasets
+2025-09-11 11:24:48,494 [INFO] ==================================================
+2025-09-11 11:24:48,494 [INFO] Datasets to retry: 30
+2025-09-11 11:24:48,494 [INFO] List: DISBSAD, FUELHH, FUELINST, IMBALNGC, INDDEM, INDGEN, INDO, ITSDO, MELNGC, MID, NETBSAD, NDF, NDFD, NDFW, NONBM, OCNMF3Y, OCNMF3Y2, OCNMFD, OCNMFD2, QAS, RDRE, RDRI, RURE, RURI, TEMP, TSDF, TSDFD, TSDFW, WINDFOR, MDV
+2025-09-11 11:24:48,494 [INFO] 
+📊 Progress: 1/30 - DISBSAD
+2025-09-11 11:24:48,494 [INFO] 🔄 Retrying dataset: DISBSAD
+2025-09-11 11:24:48,494 [INFO] Command: python ingest_elexon_fixed.py --start 2023-01-01 --end 2025-09-11 --only DISBSAD --include-offline --log-level INFO --overwrite
+2025-09-11 11:28:00,712 [INFO] ✅ DISBSAD: SUCCESS
+2025-09-11 11:28:00,714 [INFO] Running tally: 1/1 successful
+2025-09-11 11:28:00,714 [INFO] 
+📊 Progress: 2/30 - FUELHH
+2025-09-11 11:28:00,714 [INFO] 🔄 Retrying dataset: FUELHH
+2025-09-11 11:28:00,714 [INFO] Command: python ingest_elexon_fixed.py --start 2023-01-01 --end 2025-09-11 --only FUELHH --include-offline --log-level INFO --overwrite
+2025-09-11 11:30:54,276 [INFO] ✅ FUELHH: SUCCESS
+2025-09-11 11:30:54,276 [INFO] Running tally: 2/2 successful
+2025-09-11 11:30:54,277 [INFO] 
+📊 Progress: 3/30 - FUELINST
+2025-09-11 11:30:54,277 [INFO] 🔄 Retrying dataset: FUELINST
+2025-09-11 11:30:54,277 [INFO] Command: python ingest_elexon_fixed.py --start 2023-01-01 --end 2025-09-11 --only FUELINST --include-offline --log-level INFO --overwrite
+2025-09-11 11:35:12,021 [INFO] ✅ FUELINST: SUCCESS
+2025-09-11 11:35:12,022 [INFO] Running tally: 3/3 successful
+2025-09-11 11:35:12,022 [INFO] 
+📊 Progress: 4/30 - IMBALNGC
+2025-09-11 11:35:12,022 [INFO] 🔄 Retrying dataset: IMBALNGC
+2025-09-11 11:35:12,022 [INFO] Command: python ingest_elexon_fixed.py --start 2023-01-01 --end 2025-09-11 --only IMBALNGC --include-offline --log-level INFO --overwrite
+2025-09-11 11:35:47,394 [INFO] ✅ IMBALNGC: SUCCESS
+2025-09-11 11:35:47,395 [INFO] Running tally: 4/4 successful
+2025-09-11 11:35:47,395 [INFO] 
+📊 Progress: 5/30 - INDDEM
+2025-09-11 11:35:47,395 [INFO] 🔄 Retrying dataset: INDDEM
+2025-09-11 11:35:47,395 [INFO] Command: python ingest_elexon_fixed.py --start 2023-01-01 --end 2025-09-11 --only INDDEM --include-offline --log-level INFO --overwrite
+2025-09-11 11:36:15,799 [INFO] ✅ INDDEM: SUCCESS
+2025-09-11 11:36:15,799 [INFO] Running tally: 5/5 successful
+2025-09-11 11:36:15,799 [INFO] 
+📊 Progress: 6/30 - INDGEN
+2025-09-11 11:36:15,799 [INFO] 🔄 Retrying dataset: INDGEN
+2025-09-11 11:36:15,799 [INFO] Command: python ingest_elexon_fixed.py --start 2023-01-01 --end 2025-09-11 --only INDGEN --include-offline --log-level INFO --overwrite
+2025-09-11 11:36:55,738 [INFO] ✅ INDGEN: SUCCESS
+2025-09-11 11:36:55,738 [INFO] Running tally: 6/6 successful
+2025-09-11 11:36:55,738 [INFO] 
+📊 Progress: 7/30 - INDO
+2025-09-11 11:36:55,738 [INFO] 🔄 Retrying dataset: INDO
+2025-09-11 11:36:55,738 [INFO] Command: python ingest_elexon_fixed.py --start 2023-01-01 --end 2025-09-11 --only INDO --include-offline --log-level INFO --overwrite
+2025-09-11 11:37:18,652 [INFO] ✅ INDO: SUCCESS
+2025-09-11 11:37:18,652 [INFO] Running tally: 7/7 successful
+2025-09-11 11:37:18,652 [INFO] 
+📊 Progress: 8/30 - ITSDO
+2025-09-11 11:37:18,652 [INFO] 🔄 Retrying dataset: ITSDO
+2025-09-11 11:37:18,652 [INFO] Command: python ingest_elexon_fixed.py --start 2023-01-01 --end 2025-09-11 --only ITSDO --include-offline --log-level INFO --overwrite
+2025-09-11 11:37:40,966 [INFO] ✅ ITSDO: SUCCESS
+2025-09-11 11:37:40,966 [INFO] Running tally: 8/8 successful
+2025-09-11 11:37:40,966 [INFO] 
+📊 Progress: 9/30 - MELNGC
+2025-09-11 11:37:40,966 [INFO] 🔄 Retrying dataset: MELNGC
+2025-09-11 11:37:40,967 [INFO] Command: python ingest_elexon_fixed.py --start 2023-01-01 --end 2025-09-11 --only MELNGC --include-offline --log-level INFO --overwrite
+2025-09-11 11:38:10,013 [INFO] ✅ MELNGC: SUCCESS
+2025-09-11 11:38:10,014 [INFO] Running tally: 9/9 successful
+2025-09-11 11:38:10,014 [INFO] 
+📊 Progress: 10/30 - MID
+2025-09-11 11:38:10,014 [INFO] 🔄 Retrying dataset: MID
+2025-09-11 11:38:10,014 [INFO] Command: python ingest_elexon_fixed.py --start 2023-01-01 --end 2025-09-11 --only MID --include-offline --log-level INFO --overwrite
+2025-09-11 11:38:44,847 [INFO] ✅ MID: SUCCESS
+2025-09-11 11:38:44,847 [INFO] Running tally: 10/10 successful
+2025-09-11 11:38:44,847 [INFO] 
+📊 Progress: 11/30 - NETBSAD
+2025-09-11 11:38:44,847 [INFO] 🔄 Retrying dataset: NETBSAD
+2025-09-11 11:38:44,847 [INFO] Command: python ingest_elexon_fixed.py --start 2023-01-01 --end 2025-09-11 --only NETBSAD --include-offline --log-level INFO --overwrite
+2025-09-11 11:42:12,029 [INFO] ✅ NETBSAD: SUCCESS
+2025-09-11 11:42:12,031 [INFO] Running tally: 11/11 successful
+2025-09-11 11:42:12,031 [INFO] 
+📊 Progress: 12/30 - NDF
+2025-09-11 11:42:12,031 [INFO] 🔄 Retrying dataset: NDF
+2025-09-11 11:42:12,031 [INFO] Command: python ingest_elexon_fixed.py --start 2023-01-01 --end 2025-09-11 --only NDF --include-offline --log-level INFO --overwrite
+2025-09-11 11:42:33,536 [INFO] ✅ NDF: SUCCESS
+2025-09-11 11:42:33,537 [INFO] Running tally: 12/12 successful
+2025-09-11 11:42:33,537 [INFO] 
+📊 Progress: 13/30 - NDFD
+2025-09-11 11:42:33,537 [INFO] 🔄 Retrying dataset: NDFD
+2025-09-11 11:42:33,537 [INFO] Command: python ingest_elexon_fixed.py --start 2023-01-01 --end 2025-09-11 --only NDFD --include-offline --log-level INFO --overwrite
+2025-09-11 11:42:58,199 [INFO] ✅ NDFD: SUCCESS
+2025-09-11 11:42:58,200 [INFO] Running tally: 13/13 successful
+2025-09-11 11:42:58,200 [INFO] 
+📊 Progress: 14/30 - NDFW
+2025-09-11 11:42:58,200 [INFO] 🔄 Retrying dataset: NDFW
+2025-09-11 11:42:58,200 [INFO] Command: python ingest_elexon_fixed.py --start 2023-01-01 --end 2025-09-11 --only NDFW --include-offline --log-level INFO --overwrite
+2025-09-11 11:43:23,399 [INFO] ✅ NDFW: SUCCESS
+2025-09-11 11:43:23,399 [INFO] Running tally: 14/14 successful
+2025-09-11 11:43:23,399 [INFO] 
+📊 Progress: 15/30 - NONBM
+2025-09-11 11:43:23,400 [INFO] 🔄 Retrying dataset: NONBM
+2025-09-11 11:43:23,400 [INFO] Command: python ingest_elexon_fixed.py --start 2023-01-01 --end 2025-09-11 --only NONBM --include-offline --log-level INFO --overwrite
+2025-09-11 11:43:51,444 [INFO] ✅ NONBM: SUCCESS
+2025-09-11 11:43:51,445 [INFO] Running tally: 15/15 successful
+2025-09-11 11:43:51,445 [INFO] 
+📊 Progress: 16/30 - OCNMF3Y
+2025-09-11 11:43:51,445 [INFO] 🔄 Retrying dataset: OCNMF3Y
+2025-09-11 11:43:51,445 [INFO] Command: python ingest_elexon_fixed.py --start 2023-01-01 --end 2025-09-11 --only OCNMF3Y --include-offline --log-level INFO --overwrite
+2025-09-11 11:44:15,493 [INFO] ✅ OCNMF3Y: SUCCESS
+2025-09-11 11:44:15,493 [INFO] Running tally: 16/16 successful
+2025-09-11 11:44:15,493 [INFO] 
+📊 Progress: 17/30 - OCNMF3Y2
+2025-09-11 11:44:15,493 [INFO] 🔄 Retrying dataset: OCNMF3Y2
+2025-09-11 11:44:15,494 [INFO] Command: python ingest_elexon_fixed.py --start 2023-01-01 --end 2025-09-11 --only OCNMF3Y2 --include-offline --log-level INFO --overwrite
+2025-09-11 11:44:53,771 [INFO] ✅ OCNMF3Y2: SUCCESS
+2025-09-11 11:44:53,771 [INFO] Running tally: 17/17 successful
+2025-09-11 11:44:53,771 [INFO] 
+📊 Progress: 18/30 - OCNMFD
+2025-09-11 11:44:53,772 [INFO] 🔄 Retrying dataset: OCNMFD
+2025-09-11 11:44:53,772 [INFO] Command: python ingest_elexon_fixed.py --start 2023-01-01 --end 2025-09-11 --only OCNMFD --include-offline --log-level INFO --overwrite
+2025-09-11 11:45:14,932 [INFO] ✅ OCNMFD: SUCCESS
+2025-09-11 11:45:14,933 [INFO] Running tally: 18/18 successful
+2025-09-11 11:45:14,933 [INFO] 
+📊 Progress: 19/30 - OCNMFD2
+2025-09-11 11:45:14,933 [INFO] 🔄 Retrying dataset: OCNMFD2
+2025-09-11 11:45:14,933 [INFO] Command: python ingest_elexon_fixed.py --start 2023-01-01 --end 2025-09-11 --only OCNMFD2 --include-offline --log-level INFO --overwrite
+2025-09-11 11:46:07,668 [INFO] ✅ OCNMFD2: SUCCESS
+2025-09-11 11:46:07,668 [INFO] Running tally: 19/19 successful
+2025-09-11 11:46:07,668 [INFO] 
+📊 Progress: 20/30 - QAS
+2025-09-11 11:46:07,668 [INFO] 🔄 Retrying dataset: QAS
+2025-09-11 11:46:07,668 [INFO] Command: python ingest_elexon_fixed.py --start 2023-01-01 --end 2025-09-11 --only QAS --include-offline --log-level INFO --overwrite
+2025-09-11 11:50:15,435 [INFO] ✅ QAS: SUCCESS
+2025-09-11 11:50:15,435 [INFO] Running tally: 20/20 successful
+2025-09-11 11:50:15,435 [INFO] 
+📊 Progress: 21/30 - RDRE
+2025-09-11 11:50:15,435 [INFO] 🔄 Retrying dataset: RDRE
+2025-09-11 11:50:15,435 [INFO] Command: python ingest_elexon_fixed.py --start 2023-01-01 --end 2025-09-11 --only RDRE --include-offline --log-level INFO --overwrite
+2025-09-11 11:52:42,096 [INFO] ✅ RDRE: SUCCESS
+2025-09-11 11:52:42,097 [INFO] Running tally: 21/21 successful
+2025-09-11 11:52:42,097 [INFO] 
+📊 Progress: 22/30 - RDRI
+2025-09-11 11:52:42,097 [INFO] 🔄 Retrying dataset: RDRI
+2025-09-11 11:52:42,097 [INFO] Command: python ingest_elexon_fixed.py --start 2023-01-01 --end 2025-09-11 --only RDRI --include-offline --log-level INFO --overwrite
+2025-09-11 11:54:02,914 [INFO] ✅ RDRI: SUCCESS
+2025-09-11 11:54:02,914 [INFO] Running tally: 22/22 successful
+2025-09-11 11:54:02,914 [INFO] 
+📊 Progress: 23/30 - RURE
+2025-09-11 11:54:02,914 [INFO] 🔄 Retrying dataset: RURE
+2025-09-11 11:54:02,914 [INFO] Command: python ingest_elexon_fixed.py --start 2023-01-01 --end 2025-09-11 --only RURE --include-offline --log-level INFO --overwrite
+2025-09-11 11:58:04,540 [INFO] ✅ RURE: SUCCESS
+2025-09-11 11:58:04,542 [INFO] Running tally: 23/23 successful
+2025-09-11 11:58:04,542 [INFO] 
+📊 Progress: 24/30 - RURI
+2025-09-11 11:58:04,542 [INFO] 🔄 Retrying dataset: RURI
+2025-09-11 11:58:04,542 [INFO] Command: python ingest_elexon_fixed.py --start 2023-01-01 --end 2025-09-11 --only RURI --include-offline --log-level INFO --overwrite
+2025-09-11 11:59:49,897 [INFO] ✅ RURI: SUCCESS
+2025-09-11 11:59:49,898 [INFO] Running tally: 24/24 successful
+2025-09-11 11:59:49,898 [INFO] 
+📊 Progress: 25/30 - TEMP
+2025-09-11 11:59:49,898 [INFO] 🔄 Retrying dataset: TEMP
+2025-09-11 11:59:49,898 [INFO] Command: python ingest_elexon_fixed.py --start 2023-01-01 --end 2025-09-11 --only TEMP --include-offline --log-level INFO --overwrite
+2025-09-11 12:00:15,882 [INFO] ✅ TEMP: SUCCESS
+2025-09-11 12:00:15,882 [INFO] Running tally: 25/25 successful
+2025-09-11 12:00:15,882 [INFO] 
+📊 Progress: 26/30 - TSDF
+2025-09-11 12:00:15,882 [INFO] 🔄 Retrying dataset: TSDF
+2025-09-11 12:00:15,882 [INFO] Command: python ingest_elexon_fixed.py --start 2023-01-01 --end 2025-09-11 --only TSDF --include-offline --log-level INFO --overwrite
+2025-09-11 12:00:51,691 [INFO] ✅ TSDF: SUCCESS
+2025-09-11 12:00:51,691 [INFO] Running tally: 26/26 successful
+2025-09-11 12:00:51,691 [INFO] 
+📊 Progress: 27/30 - TSDFD
+2025-09-11 12:00:51,691 [INFO] 🔄 Retrying dataset: TSDFD
+2025-09-11 12:00:51,691 [INFO] Command: python ingest_elexon_fixed.py --start 2023-01-01 --end 2025-09-11 --only TSDFD --include-offline --log-level INFO --overwrite
+2025-09-11 12:01:15,208 [INFO] ✅ TSDFD: SUCCESS
+2025-09-11 12:01:15,208 [INFO] Running tally: 27/27 successful
+2025-09-11 12:01:15,208 [INFO] 
+📊 Progress: 28/30 - TSDFW
+2025-09-11 12:01:15,208 [INFO] 🔄 Retrying dataset: TSDFW
+2025-09-11 12:01:15,209 [INFO] Command: python ingest_elexon_fixed.py --start 2023-01-01 --end 2025-09-11 --only TSDFW --include-offline --log-level INFO --overwrite
+2025-09-11 12:01:44,238 [INFO] ✅ TSDFW: SUCCESS
+2025-09-11 12:01:44,241 [INFO] Running tally: 28/28 successful
+2025-09-11 12:01:44,241 [INFO] 
+📊 Progress: 29/30 - WINDFOR
+2025-09-11 12:01:44,243 [INFO] 🔄 Retrying dataset: WINDFOR
+2025-09-11 12:01:44,244 [INFO] Command: python ingest_elexon_fixed.py --start 2023-01-01 --end 2025-09-11 --only WINDFOR --include-offline --log-level INFO --overwrite
+2025-09-11 12:02:18,836 [INFO] ✅ WINDFOR: SUCCESS
+2025-09-11 12:02:18,836 [INFO] Running tally: 29/29 successful
+2025-09-11 12:02:18,837 [INFO] 
+📊 Progress: 30/30 - MDV
+2025-09-11 12:02:18,837 [INFO] 🔄 Retrying dataset: MDV
+2025-09-11 12:02:18,837 [INFO] Command: python ingest_elexon_fixed.py --start 2023-01-01 --end 2025-09-11 --only MDV --include-offline --log-level INFO --overwrite
+2025-09-11 12:02:38,790 [INFO] ✅ MDV: SUCCESS
+2025-09-11 12:02:38,791 [INFO] Running tally: 30/30 successful
+2025-09-11 12:02:38,791 [INFO] 
+🎯 FINAL RESULTS
+2025-09-11 12:02:38,791 [INFO] ==============================
+2025-09-11 12:02:38,791 [INFO] ✅ Successful: 30/30
+2025-09-11 12:02:38,791 [INFO] ❌ Still failing: 0
+2025-09-11 12:02:38,791 [INFO] 🎉 ALL DATASETS FIXED!

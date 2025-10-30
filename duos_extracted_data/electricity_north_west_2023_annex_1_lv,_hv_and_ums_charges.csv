@@ -1,0 +1,38 @@
+Tariff name,Open LLFCs,PCs,"Red/black unit charge
+p/kWh","Amber/yellow unit charge
+p/kWh","Green unit charge
+p/kWh",Fixed charge p/MPAN/day,Capacity charge p/kVA/day,"Exceeded capacity charge
+p/kVA/day","Reactive power charge
+p/kVArh",Closed LLFCs
+Domestic Aggregated with Residual,"011, 031, 041, 051, 061, 441, 451, 511, 531, 821, 851","0, 1, 2",10.266,2.136,0.19,14.89,,,,
+Domestic Aggregated (Related MPAN),"081, 581",2,10.266,2.136,0.19,,,,,
+Non-Domestic Aggregated No Residual,"314, 364","0, 3, 4, 5-8",10.43,2.17,0.193,5.63,,,,
+Non-Domestic Aggregated Band 1,"131, 161, 171, 191, 241, 242, 431, 432, 481, 482, 751, 752, 631, 661, 831, 861","0, 3, 4, 5-8",10.43,2.17,0.193,8.73,,,,
+Non-Domestic Aggregated Band 2,"4,34,32,33,144,154,164,174,184,182,183,194,374","0, 3, 4, 5-8",10.43,2.17,0.193,20.94,,,,
+Non-Domestic Aggregated Band 3,"14,44,42,43,204,214,224,234,344,342,343,264,414","0, 3, 4, 5-8",10.43,2.17,0.193,43.57,,,,
+Non-Domestic Aggregated Band 4,"24,54,52,53,274,284,294,304,354,352,353,324,424","0, 3, 4, 5-8",10.43,2.17,0.193,123.8,,,,
+Non-Domestic Aggregated (related MPAN),"091, 591",4,10.43,2.17,0.193,,,,,
+LV Site Specific No Residual,"461, 471,64,104",0,7.456,1.432,0.131,22.55,3.71,5.46,0.149,
+LV Site Specific Band 1,"801, 841",0,7.456,1.432,0.131,177.91,3.71,5.46,0.149,
+LV Site Specific Band 2,"74, 114",0,7.456,1.432,0.131,409.96,3.71,5.46,0.149,
+LV Site Specific Band 3,"84, 124",0,7.456,1.432,0.131,654.44,3.71,5.46,0.149,
+LV Site Specific Band 4,"94, 134",0,7.456,1.432,0.131,1349.19,3.71,5.46,0.149,
+LV Sub Site Specific No Residual,"462, 472,62,102",0,5.993,1.052,0.099,72.52,3.83,6.3,0.107,
+LV Sub Site Specific Band 1,"802, 842",0,5.993,1.052,0.099,227.89,3.83,6.3,0.107,
+LV Sub Site Specific Band 2,"72, 112",0,5.993,1.052,0.099,459.94,3.83,6.3,0.107,
+LV Sub Site Specific Band 3,"82, 122",0,5.993,1.052,0.099,704.41,3.83,6.3,0.107,
+LV Sub Site Specific Band 4,"92, 132",0,5.993,1.052,0.099,1399.17,3.83,6.3,0.107,
+HV Site Specific No Residual,"463, 473,63,103",0,4.248,0.632,0.063,159.34,3.76,6.53,0.064,
+HV Site Specific Band 1,"803, 843",0,4.248,0.632,0.063,1150.21,3.76,6.53,0.064,
+HV Site Specific Band 2,"73, 113",0,4.248,0.632,0.063,3398.23,3.76,6.53,0.064,
+HV Site Specific Band 3,"83, 123",0,4.248,0.632,0.063,6948.84,3.76,6.53,0.064,
+HV Site Specific Band 4,"93, 133",0,4.248,0.632,0.063,15992.62,3.76,6.53,0.064,
+Unmetered Supplies,"761, 771, 781, 791, 811","0, 1 or 8",23.217,4.926,3.658,,,,,
+LV Generation Aggregated,"901, 961",0,-7.433,-1.546,-0.138,0.0,,,,
+LV Sub Generation Aggregated,962,0,-6.187,-1.209,-0.11,0.0,,,,
+LV Generation Site Specific,"971, 981",0,-7.433,-1.546,-0.138,0.0,,,0.137,
+LV Generation Site Specific no RP charge,"934, 944",0,-7.433,-1.546,-0.138,0.0,,,,
+LV Sub Generation Site Specific,"972, 982",0,-6.187,-1.209,-0.11,0.0,,,0.115,
+LV Sub Generation Site Specific no RP charge,"932, 942",0,-6.187,-1.209,-0.11,0.0,,,,
+HV Generation Site Specific,"973, 983",0,-4.726,-0.8,-0.076,10.72,,,0.084,
+HV Generation Site Specific no RP charge,"933, 943",0,-4.726,-0.8,-0.076,10.72,,,,

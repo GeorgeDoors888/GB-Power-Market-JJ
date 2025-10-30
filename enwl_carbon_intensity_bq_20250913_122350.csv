@@ -1,0 +1,2 @@
+from,to,regionid,dnoregion,shortname,intensity_forecast,intensity_index,gen_biomass,gen_coal,gen_imports,gen_gas,gen_nuclear,gen_other,gen_hydro,gen_solar,gen_wind,mpan_id,data_source,collection_timestamp,dno_code
+2025-09-11 15:00:00,2025-09-11 15:30:00,3,Electricity North West,North West England,15,very low,1.6,0,2.2,3.3,26.4,0,0.0,3.7,62.8,14,carbon_intensity,2025-09-13 12:23:50.218251,ENWL

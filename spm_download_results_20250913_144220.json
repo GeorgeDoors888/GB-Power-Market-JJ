@@ -1,0 +1,56 @@
+{
+  "timestamp": "2025-09-13 14:41:55",
+  "total_files": 6,
+  "downloaded": 0,
+  "failed": 6,
+  "files": [
+    {
+      "url": "https://www.spenergynetworks.co.uk/userfiles/file/SPManweb_Use_of_System_Charging_Statement_April_2025.xlsx",
+      "filename": "SPManweb_Use_of_System_Charging_Statement_April_2025.xlsx",
+      "description": "SP Manweb Schedule of Charges 2025-26",
+      "output_path": "duos_spm_data/SPManweb_Use_of_System_Charging_Statement_April_2025.xlsx",
+      "status": "failed",
+      "error": "403 Client Error: Forbidden for url: https://www.spenergynetworks.co.uk/userfiles/file/SPManweb_Use_of_System_Charging_Statement_April_2025.xlsx"
+    },
+    {
+      "url": "https://www.spenergynetworks.co.uk/userfiles/file/SPM_2025_26_CDCM_v10_20231106.xlsx",
+      "filename": "SPM_2025_26_CDCM_v10_20231106.xlsx",
+      "description": "SP Manweb CDCM Model 2025-26",
+      "output_path": "duos_spm_data/SPM_2025_26_CDCM_v10_20231106.xlsx",
+      "status": "failed",
+      "error": "403 Client Error: Forbidden for url: https://www.spenergynetworks.co.uk/userfiles/file/SPM_2025_26_CDCM_v10_20231106.xlsx"
+    },
+    {
+      "url": "https://www.spenergynetworks.co.uk/userfiles/file/SPManweb_Use_of_System_Charging_Statement_April_2026.xlsx",
+      "filename": "SPManweb_Use_of_System_Charging_Statement_April_2026.xlsx",
+      "description": "SP Manweb Schedule of Charges 2026-27",
+      "output_path": "duos_spm_data/SPManweb_Use_of_System_Charging_Statement_April_2026.xlsx",
+      "status": "failed",
+      "error": "403 Client Error: Forbidden for url: https://www.spenergynetworks.co.uk/userfiles/file/SPManweb_Use_of_System_Charging_Statement_April_2026.xlsx"
+    },
+    {
+      "url": "https://www.spenergynetworks.co.uk/userfiles/file/SPM_2026_27_CDCM_v11_20241025_Published.xlsx",
+      "filename": "SPM_2026_27_CDCM_v11_20241025_Published.xlsx",
+      "description": "SP Manweb CDCM Model 2026-27",
+      "output_path": "duos_spm_data/SPM_2026_27_CDCM_v11_20241025_Published.xlsx",
+      "status": "failed",
+      "error": "403 Client Error: Forbidden for url: https://www.spenergynetworks.co.uk/userfiles/file/SPM_2026_27_CDCM_v11_20241025_Published.xlsx"
+    },
+    {
+      "url": "https://www.spenergynetworks.co.uk/userfiles/file/SP_Manweb_Use_of_System_Charging_Statement_April_2025.xlsx",
+      "filename": "SP_Manweb_Use_of_System_Charging_Statement_April_2025.xlsx",
+      "description": "SP Manweb Schedule of Charges 2025-26 (Alt)",
+      "output_path": "duos_spm_data/SP_Manweb_Use_of_System_Charging_Statement_April_2025.xlsx",
+      "status": "failed",
+      "error": "403 Client Error: Forbidden for url: https://www.spenergynetworks.co.uk/userfiles/file/SP_Manweb_Use_of_System_Charging_Statement_April_2025.xlsx"
+    },
+    {
+      "url": "https://www.spenergynetworks.co.uk/userfiles/file/SP_Manweb_Use_of_System_Charging_Statement_April_2026.xlsx",
+      "filename": "SP_Manweb_Use_of_System_Charging_Statement_April_2026.xlsx",
+      "description": "SP Manweb Schedule of Charges 2026-27 (Alt)",
+      "output_path": "duos_spm_data/SP_Manweb_Use_of_System_Charging_Statement_April_2026.xlsx",
+      "status": "failed",
+      "error": "403 Client Error: Forbidden for url: https://www.spenergynetworks.co.uk/userfiles/file/SP_Manweb_Use_of_System_Charging_Statement_April_2026.xlsx"
+    }
+  ]
+}

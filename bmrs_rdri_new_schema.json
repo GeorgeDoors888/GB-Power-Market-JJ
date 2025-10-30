@@ -1,0 +1,62 @@
+[
+  {
+    "mode": "NULLABLE",
+    "name": "elbow2",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "other_field",
+    "type": "FLOAT"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "_window_from_utc",
+    "type": "TIMESTAMP"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "dataset",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "settlementDate",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "settlementPeriod",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "time",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "rate1",
+    "type": "FLOAT"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "rate2",
+    "type": "FLOAT"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "elbow3",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "rate3",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "nationalGridBmUnit",
+    "type": "STRING"
+  }
+]

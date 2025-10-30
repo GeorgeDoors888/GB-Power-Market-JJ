@@ -1,0 +1,990 @@
+2025-09-11 11:10:40,180 INFO Output folder: /Users/georgemajor/jibber-jabber 24 august 2025 big bop/dno_data
+2025-09-11 11:10:40,181 INFO === Discovering on UKPN (https://ukpowernetworks.opendatasoft.com) ===
+2025-09-11 11:10:40,409 ERROR Search failed on UKPN term 'duos'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://ukpowernetworks.opendatasoft.com/api/v2/catalog/datasets?search=duos&rows=200
+2025-09-11 11:10:40,481 ERROR Search failed on UKPN term 'distribution use of system'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://ukpowernetworks.opendatasoft.com/api/v2/catalog/datasets?search=distribution+use+of+system&rows=200
+2025-09-11 11:10:40,543 ERROR Search failed on UKPN term 'annex'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://ukpowernetworks.opendatasoft.com/api/v2/catalog/datasets?search=annex&rows=200
+2025-09-11 11:10:40,693 ERROR Search failed on UKPN term 'cdcm'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://ukpowernetworks.opendatasoft.com/api/v2/catalog/datasets?search=cdcm&rows=200
+2025-09-11 11:10:40,789 ERROR Search failed on UKPN term 'pcdm'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://ukpowernetworks.opendatasoft.com/api/v2/catalog/datasets?search=pcdm&rows=200
+2025-09-11 11:10:40,913 ERROR Search failed on UKPN term 'dso'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://ukpowernetworks.opendatasoft.com/api/v2/catalog/datasets?search=dso&rows=200
+2025-09-11 11:10:41,090 ERROR Search failed on UKPN term 'flexibility'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://ukpowernetworks.opendatasoft.com/api/v2/catalog/datasets?search=flexibility&rows=200
+2025-09-11 11:10:41,169 ERROR Search failed on UKPN term 'flex'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://ukpowernetworks.opendatasoft.com/api/v2/catalog/datasets?search=flex&rows=200
+2025-09-11 11:10:41,256 ERROR Search failed on UKPN term 'headroom'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://ukpowernetworks.opendatasoft.com/api/v2/catalog/datasets?search=headroom&rows=200
+2025-09-11 11:10:41,360 ERROR Search failed on UKPN term 'capacity'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://ukpowernetworks.opendatasoft.com/api/v2/catalog/datasets?search=capacity&rows=200
+2025-09-11 11:10:41,545 ERROR Search failed on UKPN term 'dfes'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://ukpowernetworks.opendatasoft.com/api/v2/catalog/datasets?search=dfes&rows=200
+2025-09-11 11:10:41,648 ERROR Search failed on UKPN term 'outage'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://ukpowernetworks.opendatasoft.com/api/v2/catalog/datasets?search=outage&rows=200
+2025-09-11 11:10:41,753 ERROR Search failed on UKPN term 'fault'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://ukpowernetworks.opendatasoft.com/api/v2/catalog/datasets?search=fault&rows=200
+2025-09-11 11:10:41,836 ERROR Search failed on UKPN term 'incident'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://ukpowernetworks.opendatasoft.com/api/v2/catalog/datasets?search=incident&rows=200
+2025-09-11 11:10:41,951 ERROR Search failed on UKPN term 'asset'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://ukpowernetworks.opendatasoft.com/api/v2/catalog/datasets?search=asset&rows=200
+2025-09-11 11:10:42,088 ERROR Search failed on UKPN term 'substation'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://ukpowernetworks.opendatasoft.com/api/v2/catalog/datasets?search=substation&rows=200
+2025-09-11 11:10:42,244 ERROR Search failed on UKPN term 'bsp'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://ukpowernetworks.opendatasoft.com/api/v2/catalog/datasets?search=bsp&rows=200
+2025-09-11 11:10:42,381 ERROR Search failed on UKPN term 'gsp'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://ukpowernetworks.opendatasoft.com/api/v2/catalog/datasets?search=gsp&rows=200
+2025-09-11 11:10:42,486 ERROR Search failed on UKPN term 'primary'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://ukpowernetworks.opendatasoft.com/api/v2/catalog/datasets?search=primary&rows=200
+2025-09-11 11:10:42,595 ERROR Search failed on UKPN term 'demand'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://ukpowernetworks.opendatasoft.com/api/v2/catalog/datasets?search=demand&rows=200
+2025-09-11 11:10:42,697 ERROR Search failed on UKPN term 'generation'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://ukpowernetworks.opendatasoft.com/api/v2/catalog/datasets?search=generation&rows=200
+2025-09-11 11:10:42,722 ERROR Search failed on UKPN term 'embedded'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://ukpowernetworks.opendatasoft.com/api/v2/catalog/datasets?search=embedded&rows=200
+2025-09-11 11:10:42,745 ERROR Search failed on UKPN term 'ev'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://ukpowernetworks.opendatasoft.com/api/v2/catalog/datasets?search=ev&rows=200
+2025-09-11 11:10:42,767 ERROR Search failed on UKPN term 'connection'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://ukpowernetworks.opendatasoft.com/api/v2/catalog/datasets?search=connection&rows=200
+2025-09-11 11:10:42,768 INFO === Discovering on SPEN (https://spenergynetworks.opendatasoft.com) ===
+2025-09-11 11:10:42,954 ERROR Search failed on SPEN term 'duos'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://spenergynetworks.opendatasoft.com/api/v2/catalog/datasets?search=duos&rows=200
+2025-09-11 11:10:43,011 ERROR Search failed on SPEN term 'distribution use of system'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://spenergynetworks.opendatasoft.com/api/v2/catalog/datasets?search=distribution+use+of+system&rows=200
+2025-09-11 11:10:43,062 ERROR Search failed on SPEN term 'annex'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://spenergynetworks.opendatasoft.com/api/v2/catalog/datasets?search=annex&rows=200
+2025-09-11 11:10:43,105 ERROR Search failed on SPEN term 'cdcm'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://spenergynetworks.opendatasoft.com/api/v2/catalog/datasets?search=cdcm&rows=200
+2025-09-11 11:10:43,151 ERROR Search failed on SPEN term 'pcdm'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://spenergynetworks.opendatasoft.com/api/v2/catalog/datasets?search=pcdm&rows=200
+2025-09-11 11:10:43,201 ERROR Search failed on SPEN term 'dso'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://spenergynetworks.opendatasoft.com/api/v2/catalog/datasets?search=dso&rows=200
+2025-09-11 11:10:43,248 ERROR Search failed on SPEN term 'flexibility'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://spenergynetworks.opendatasoft.com/api/v2/catalog/datasets?search=flexibility&rows=200
+2025-09-11 11:10:43,293 ERROR Search failed on SPEN term 'flex'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://spenergynetworks.opendatasoft.com/api/v2/catalog/datasets?search=flex&rows=200
+2025-09-11 11:10:43,341 ERROR Search failed on SPEN term 'headroom'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://spenergynetworks.opendatasoft.com/api/v2/catalog/datasets?search=headroom&rows=200
+2025-09-11 11:10:43,385 ERROR Search failed on SPEN term 'capacity'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://spenergynetworks.opendatasoft.com/api/v2/catalog/datasets?search=capacity&rows=200
+2025-09-11 11:10:43,431 ERROR Search failed on SPEN term 'dfes'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://spenergynetworks.opendatasoft.com/api/v2/catalog/datasets?search=dfes&rows=200
+2025-09-11 11:10:43,475 ERROR Search failed on SPEN term 'outage'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://spenergynetworks.opendatasoft.com/api/v2/catalog/datasets?search=outage&rows=200
+2025-09-11 11:10:43,521 ERROR Search failed on SPEN term 'fault'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://spenergynetworks.opendatasoft.com/api/v2/catalog/datasets?search=fault&rows=200
+2025-09-11 11:10:43,565 ERROR Search failed on SPEN term 'incident'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://spenergynetworks.opendatasoft.com/api/v2/catalog/datasets?search=incident&rows=200
+2025-09-11 11:10:43,627 ERROR Search failed on SPEN term 'asset'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://spenergynetworks.opendatasoft.com/api/v2/catalog/datasets?search=asset&rows=200
+2025-09-11 11:10:43,687 ERROR Search failed on SPEN term 'substation'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://spenergynetworks.opendatasoft.com/api/v2/catalog/datasets?search=substation&rows=200
+2025-09-11 11:10:43,733 ERROR Search failed on SPEN term 'bsp'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://spenergynetworks.opendatasoft.com/api/v2/catalog/datasets?search=bsp&rows=200
+2025-09-11 11:10:43,780 ERROR Search failed on SPEN term 'gsp'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://spenergynetworks.opendatasoft.com/api/v2/catalog/datasets?search=gsp&rows=200
+2025-09-11 11:10:43,828 ERROR Search failed on SPEN term 'primary'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://spenergynetworks.opendatasoft.com/api/v2/catalog/datasets?search=primary&rows=200
+2025-09-11 11:10:43,908 ERROR Search failed on SPEN term 'demand'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://spenergynetworks.opendatasoft.com/api/v2/catalog/datasets?search=demand&rows=200
+2025-09-11 11:10:43,956 ERROR Search failed on SPEN term 'generation'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://spenergynetworks.opendatasoft.com/api/v2/catalog/datasets?search=generation&rows=200
+2025-09-11 11:10:43,976 ERROR Search failed on SPEN term 'embedded'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://spenergynetworks.opendatasoft.com/api/v2/catalog/datasets?search=embedded&rows=200
+2025-09-11 11:10:43,995 ERROR Search failed on SPEN term 'ev'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://spenergynetworks.opendatasoft.com/api/v2/catalog/datasets?search=ev&rows=200
+2025-09-11 11:10:44,012 ERROR Search failed on SPEN term 'connection'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://spenergynetworks.opendatasoft.com/api/v2/catalog/datasets?search=connection&rows=200
+2025-09-11 11:10:44,013 INFO === Discovering on NPg (https://northernpowergrid.opendatasoft.com) ===
+2025-09-11 11:10:44,259 ERROR Search failed on NPg term 'duos'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://northernpowergrid.opendatasoft.com/api/v2/catalog/datasets?search=duos&rows=200
+2025-09-11 11:10:44,396 ERROR Search failed on NPg term 'distribution use of system'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://northernpowergrid.opendatasoft.com/api/v2/catalog/datasets?search=distribution+use+of+system&rows=200
+2025-09-11 11:10:44,450 ERROR Search failed on NPg term 'annex'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://northernpowergrid.opendatasoft.com/api/v2/catalog/datasets?search=annex&rows=200
+2025-09-11 11:10:44,572 ERROR Search failed on NPg term 'cdcm'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://northernpowergrid.opendatasoft.com/api/v2/catalog/datasets?search=cdcm&rows=200
+2025-09-11 11:10:44,729 ERROR Search failed on NPg term 'pcdm'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://northernpowergrid.opendatasoft.com/api/v2/catalog/datasets?search=pcdm&rows=200
+2025-09-11 11:10:45,778 ERROR Search failed on NPg term 'dso'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://northernpowergrid.opendatasoft.com/api/v2/catalog/datasets?search=dso&rows=200
+2025-09-11 11:10:45,913 ERROR Search failed on NPg term 'flexibility'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://northernpowergrid.opendatasoft.com/api/v2/catalog/datasets?search=flexibility&rows=200
+2025-09-11 11:10:45,972 ERROR Search failed on NPg term 'flex'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://northernpowergrid.opendatasoft.com/api/v2/catalog/datasets?search=flex&rows=200
+2025-09-11 11:10:46,050 ERROR Search failed on NPg term 'headroom'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://northernpowergrid.opendatasoft.com/api/v2/catalog/datasets?search=headroom&rows=200
+2025-09-11 11:10:46,128 ERROR Search failed on NPg term 'capacity'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://northernpowergrid.opendatasoft.com/api/v2/catalog/datasets?search=capacity&rows=200
+2025-09-11 11:10:46,479 ERROR Search failed on NPg term 'dfes'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://northernpowergrid.opendatasoft.com/api/v2/catalog/datasets?search=dfes&rows=200
+2025-09-11 11:10:46,552 ERROR Search failed on NPg term 'outage'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://northernpowergrid.opendatasoft.com/api/v2/catalog/datasets?search=outage&rows=200
+2025-09-11 11:10:46,690 ERROR Search failed on NPg term 'fault'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://northernpowergrid.opendatasoft.com/api/v2/catalog/datasets?search=fault&rows=200
+2025-09-11 11:10:46,751 ERROR Search failed on NPg term 'incident'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://northernpowergrid.opendatasoft.com/api/v2/catalog/datasets?search=incident&rows=200
+2025-09-11 11:10:46,856 ERROR Search failed on NPg term 'asset'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://northernpowergrid.opendatasoft.com/api/v2/catalog/datasets?search=asset&rows=200
+2025-09-11 11:10:47,006 ERROR Search failed on NPg term 'substation'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://northernpowergrid.opendatasoft.com/api/v2/catalog/datasets?search=substation&rows=200
+2025-09-11 11:10:47,161 ERROR Search failed on NPg term 'bsp'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://northernpowergrid.opendatasoft.com/api/v2/catalog/datasets?search=bsp&rows=200
+2025-09-11 11:10:47,262 ERROR Search failed on NPg term 'gsp'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://northernpowergrid.opendatasoft.com/api/v2/catalog/datasets?search=gsp&rows=200
+2025-09-11 11:10:47,314 ERROR Search failed on NPg term 'primary'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://northernpowergrid.opendatasoft.com/api/v2/catalog/datasets?search=primary&rows=200
+2025-09-11 11:10:47,407 ERROR Search failed on NPg term 'demand'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://northernpowergrid.opendatasoft.com/api/v2/catalog/datasets?search=demand&rows=200
+2025-09-11 11:10:47,505 ERROR Search failed on NPg term 'generation'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://northernpowergrid.opendatasoft.com/api/v2/catalog/datasets?search=generation&rows=200
+2025-09-11 11:10:47,563 ERROR Search failed on NPg term 'embedded'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://northernpowergrid.opendatasoft.com/api/v2/catalog/datasets?search=embedded&rows=200
+2025-09-11 11:10:47,683 ERROR Search failed on NPg term 'ev'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://northernpowergrid.opendatasoft.com/api/v2/catalog/datasets?search=ev&rows=200
+2025-09-11 11:10:47,762 ERROR Search failed on NPg term 'connection'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://northernpowergrid.opendatasoft.com/api/v2/catalog/datasets?search=connection&rows=200
+2025-09-11 11:10:47,763 INFO === Discovering on ENWL (https://electricitynorthwest.opendatasoft.com) ===
+2025-09-11 11:10:48,562 ERROR Search failed on ENWL term 'duos'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://electricitynorthwest.opendatasoft.com/api/v2/catalog/datasets?search=duos&rows=200
+2025-09-11 11:10:48,642 ERROR Search failed on ENWL term 'distribution use of system'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://electricitynorthwest.opendatasoft.com/api/v2/catalog/datasets?search=distribution+use+of+system&rows=200
+2025-09-11 11:10:48,701 ERROR Search failed on ENWL term 'annex'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://electricitynorthwest.opendatasoft.com/api/v2/catalog/datasets?search=annex&rows=200
+2025-09-11 11:10:48,748 ERROR Search failed on ENWL term 'cdcm'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://electricitynorthwest.opendatasoft.com/api/v2/catalog/datasets?search=cdcm&rows=200
+2025-09-11 11:10:48,791 ERROR Search failed on ENWL term 'pcdm'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://electricitynorthwest.opendatasoft.com/api/v2/catalog/datasets?search=pcdm&rows=200
+2025-09-11 11:10:48,861 ERROR Search failed on ENWL term 'dso'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://electricitynorthwest.opendatasoft.com/api/v2/catalog/datasets?search=dso&rows=200
+2025-09-11 11:10:48,920 ERROR Search failed on ENWL term 'flexibility'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://electricitynorthwest.opendatasoft.com/api/v2/catalog/datasets?search=flexibility&rows=200
+2025-09-11 11:10:48,984 ERROR Search failed on ENWL term 'flex'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://electricitynorthwest.opendatasoft.com/api/v2/catalog/datasets?search=flex&rows=200
+2025-09-11 11:10:49,042 ERROR Search failed on ENWL term 'headroom'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://electricitynorthwest.opendatasoft.com/api/v2/catalog/datasets?search=headroom&rows=200
+2025-09-11 11:10:49,095 ERROR Search failed on ENWL term 'capacity'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://electricitynorthwest.opendatasoft.com/api/v2/catalog/datasets?search=capacity&rows=200
+2025-09-11 11:10:49,139 ERROR Search failed on ENWL term 'dfes'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://electricitynorthwest.opendatasoft.com/api/v2/catalog/datasets?search=dfes&rows=200
+2025-09-11 11:10:49,190 ERROR Search failed on ENWL term 'outage'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://electricitynorthwest.opendatasoft.com/api/v2/catalog/datasets?search=outage&rows=200
+2025-09-11 11:10:49,235 ERROR Search failed on ENWL term 'fault'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://electricitynorthwest.opendatasoft.com/api/v2/catalog/datasets?search=fault&rows=200
+2025-09-11 11:10:49,282 ERROR Search failed on ENWL term 'incident'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://electricitynorthwest.opendatasoft.com/api/v2/catalog/datasets?search=incident&rows=200
+2025-09-11 11:10:49,343 ERROR Search failed on ENWL term 'asset'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://electricitynorthwest.opendatasoft.com/api/v2/catalog/datasets?search=asset&rows=200
+2025-09-11 11:10:49,393 ERROR Search failed on ENWL term 'substation'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://electricitynorthwest.opendatasoft.com/api/v2/catalog/datasets?search=substation&rows=200
+2025-09-11 11:10:49,462 ERROR Search failed on ENWL term 'bsp'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://electricitynorthwest.opendatasoft.com/api/v2/catalog/datasets?search=bsp&rows=200
+2025-09-11 11:10:49,514 ERROR Search failed on ENWL term 'gsp'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://electricitynorthwest.opendatasoft.com/api/v2/catalog/datasets?search=gsp&rows=200
+2025-09-11 11:10:49,626 ERROR Search failed on ENWL term 'primary'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://electricitynorthwest.opendatasoft.com/api/v2/catalog/datasets?search=primary&rows=200
+2025-09-11 11:10:49,704 ERROR Search failed on ENWL term 'demand'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://electricitynorthwest.opendatasoft.com/api/v2/catalog/datasets?search=demand&rows=200
+2025-09-11 11:10:49,751 ERROR Search failed on ENWL term 'generation'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://electricitynorthwest.opendatasoft.com/api/v2/catalog/datasets?search=generation&rows=200
+2025-09-11 11:10:49,770 ERROR Search failed on ENWL term 'embedded'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://electricitynorthwest.opendatasoft.com/api/v2/catalog/datasets?search=embedded&rows=200
+2025-09-11 11:10:49,790 ERROR Search failed on ENWL term 'ev'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://electricitynorthwest.opendatasoft.com/api/v2/catalog/datasets?search=ev&rows=200
+2025-09-11 11:10:49,810 ERROR Search failed on ENWL term 'connection'
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 273, in run_opendatasoft
+    datasets = ods_search_datasets(base, term, rows=200)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/fetch_dno_open_data.py", line 136, in ods_search_datasets
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://electricitynorthwest.opendatasoft.com/api/v2/catalog/datasets?search=connection&rows=200
+2025-09-11 11:10:49,810 WARNING NGED_API_TOKEN not set; skipping NGED CKAN search for 'duos'
+2025-09-11 11:10:49,811 WARNING NGED_API_TOKEN not set; skipping NGED CKAN search for 'distribution use of system'
+2025-09-11 11:10:49,811 WARNING NGED_API_TOKEN not set; skipping NGED CKAN search for 'annex'
+2025-09-11 11:10:49,811 WARNING NGED_API_TOKEN not set; skipping NGED CKAN search for 'cdcm'
+2025-09-11 11:10:49,811 WARNING NGED_API_TOKEN not set; skipping NGED CKAN search for 'pcdm'
+2025-09-11 11:10:49,811 WARNING NGED_API_TOKEN not set; skipping NGED CKAN search for 'dso'
+2025-09-11 11:10:49,811 WARNING NGED_API_TOKEN not set; skipping NGED CKAN search for 'flexibility'
+2025-09-11 11:10:49,811 WARNING NGED_API_TOKEN not set; skipping NGED CKAN search for 'flex'
+2025-09-11 11:10:49,811 WARNING NGED_API_TOKEN not set; skipping NGED CKAN search for 'headroom'
+2025-09-11 11:10:49,811 WARNING NGED_API_TOKEN not set; skipping NGED CKAN search for 'capacity'
+2025-09-11 11:10:49,811 WARNING NGED_API_TOKEN not set; skipping NGED CKAN search for 'dfes'
+2025-09-11 11:10:49,811 WARNING NGED_API_TOKEN not set; skipping NGED CKAN search for 'outage'
+2025-09-11 11:10:49,811 WARNING NGED_API_TOKEN not set; skipping NGED CKAN search for 'fault'
+2025-09-11 11:10:49,811 WARNING NGED_API_TOKEN not set; skipping NGED CKAN search for 'incident'
+2025-09-11 11:10:49,811 WARNING NGED_API_TOKEN not set; skipping NGED CKAN search for 'asset'
+2025-09-11 11:10:49,811 WARNING NGED_API_TOKEN not set; skipping NGED CKAN search for 'substation'
+2025-09-11 11:10:49,811 WARNING NGED_API_TOKEN not set; skipping NGED CKAN search for 'bsp'
+2025-09-11 11:10:49,811 WARNING NGED_API_TOKEN not set; skipping NGED CKAN search for 'gsp'
+2025-09-11 11:10:49,811 WARNING NGED_API_TOKEN not set; skipping NGED CKAN search for 'primary'
+2025-09-11 11:10:49,811 WARNING NGED_API_TOKEN not set; skipping NGED CKAN search for 'demand'
+2025-09-11 11:10:49,811 WARNING NGED_API_TOKEN not set; skipping NGED CKAN search for 'generation'
+2025-09-11 11:10:49,811 WARNING NGED_API_TOKEN not set; skipping NGED CKAN search for 'embedded'
+2025-09-11 11:10:49,811 WARNING NGED_API_TOKEN not set; skipping NGED CKAN search for 'ev'
+2025-09-11 11:10:49,811 WARNING NGED_API_TOKEN not set; skipping NGED CKAN search for 'connection'
+2025-09-11 11:10:53,277 INFO Done. Parquet under /Users/georgemajor/jibber-jabber 24 august 2025 big bop/dno_data/parquet, SQLite at /Users/georgemajor/jibber-jabber 24 august 2025 big bop/dno_data/dno.sqlite

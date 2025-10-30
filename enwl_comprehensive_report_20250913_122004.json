@@ -1,0 +1,72 @@
+{
+  "collection_summary": {
+    "timestamp": "20250913_122004",
+    "enwl_mpan_id": "14",
+    "enwl_region": "North West England",
+    "sources_checked": 1,
+    "files_downloaded": 0,
+    "csv_files_analyzed": 0
+  },
+  "data_discovery": {
+    "regulatory_information": {
+      "url": "https://enwl.co.uk/about-us/regulatory-information",
+      "status": "accessible",
+      "files_found": 2,
+      "high_relevance_files": [],
+      "content_indicators": {
+        "duos_mentions": 0,
+        "charge_mentions": 8,
+        "csv_mentions": 4,
+        "regulatory_mentions": 10
+      },
+      "all_files": [
+        {
+          "url": "https://enwl.co.uk/globalassets/about-us/regulatory-information/documents/methodology-for-inv-projects/riio-ed2-methodology-for-identifying-worst-served-customer-network-investment-projects-may-20232.pdf",
+          "text": "Read more",
+          "type": "pdf",
+          "relevance_score": 3
+        },
+        {
+          "url": "https://enwl.co.uk/globalassets/about-us/regulatory-information/documents/ed2-wsc-stakeholder-report/riio-ed2-worst-served-customers-stakeholder-report-october-2024.pdf",
+          "text": "Read more",
+          "type": "pdf",
+          "relevance_score": 3
+        }
+      ]
+    }
+  },
+  "downloaded_files": [],
+  "csv_analysis": {},
+  "existing_data": {
+    "carbon_intensity_data": {
+      "file": "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/neso_data_comprehensive/carbon_intensity/regional_intensity.csv",
+      "enwl_records": 1,
+      "region_id": 3,
+      "sample_data": [
+        {
+          "from": "2025-09-11T15:00Z",
+          "to": "2025-09-11T15:30Z",
+          "regionid": 3,
+          "dnoregion": "Electricity North West",
+          "shortname": "North West England",
+          "intensity_forecast": 15,
+          "intensity_index": "very low",
+          "gen_biomass": 1.6,
+          "gen_coal": 0,
+          "gen_imports": 2.2,
+          "gen_gas": 3.3,
+          "gen_nuclear": 26.4,
+          "gen_other": 0,
+          "gen_hydro": 0.0,
+          "gen_solar": 3.7,
+          "gen_wind": 62.8
+        }
+      ]
+    },
+    "capacity_market_data": null,
+    "other_csv_files": []
+  },
+  "recommendations": [
+    "ENWL carbon intensity data already available - integrate with new DUoS data"
+  ]
+}

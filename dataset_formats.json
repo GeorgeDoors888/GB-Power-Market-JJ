@@ -1,0 +1,234 @@
+{
+  "B1720": [
+    "csv",
+    "xml"
+  ],
+  "B1730": [
+    "csv",
+    "xml"
+  ],
+  "B1740": [
+    "csv",
+    "xml"
+  ],
+  "B1750": [
+    "csv",
+    "xml"
+  ],
+  "B1760": [
+    "csv",
+    "xml"
+  ],
+  "B1770": [
+    "csv",
+    "xml"
+  ],
+  "B1780": [
+    "csv",
+    "xml"
+  ],
+  "B1790": [
+    "csv",
+    "xml"
+  ],
+  "B1810": [
+    "csv",
+    "xml"
+  ],
+  "B1820": [
+    "csv",
+    "xml"
+  ],
+  "B1830": [
+    "csv",
+    "xml"
+  ],
+  "B0610": [
+    "csv",
+    "xml"
+  ],
+  "B0620": [
+    "csv",
+    "xml"
+  ],
+  "B0630": [
+    "csv",
+    "xml"
+  ],
+  "B0640": [
+    "csv",
+    "xml"
+  ],
+  "B0650": [
+    "csv",
+    "xml"
+  ],
+  "B0810": [
+    "csv",
+    "xml"
+  ],
+  "B1410": [
+    "csv",
+    "xml"
+  ],
+  "B1420": [
+    "csv",
+    "xml"
+  ],
+  "B1430": [
+    "csv",
+    "xml"
+  ],
+  "B1440": [
+    "csv",
+    "xml"
+  ],
+  "B1610": [
+    "csv",
+    "xml"
+  ],
+  "B1620": [
+    "csv",
+    "xml"
+  ],
+  "B1630": [
+    "csv",
+    "xml"
+  ],
+  "B0910": [
+    "csv",
+    "xml"
+  ],
+  "B1320": [
+    "csv",
+    "xml"
+  ],
+  "B1330": [
+    "csv",
+    "xml"
+  ],
+  "B0710": [
+    "csv",
+    "xml"
+  ],
+  "B0720": [
+    "csv",
+    "xml"
+  ],
+  "B1010": [
+    "csv",
+    "xml"
+  ],
+  "B1020": [
+    "csv",
+    "xml"
+  ],
+  "B1030": [
+    "csv",
+    "xml"
+  ],
+  "B1510": [
+    "csv",
+    "xml"
+  ],
+  "B1520": [
+    "csv",
+    "xml"
+  ],
+  "B1530": [
+    "csv",
+    "xml"
+  ],
+  "B1540": [
+    "csv",
+    "xml"
+  ],
+  "MessageListRetrieval": [
+    "csv",
+    "xml"
+  ],
+  "MessageDetailRetrieval": [
+    "csv",
+    "xml."
+  ],
+  "TEMP": [
+    "csv",
+    "xml"
+  ],
+  "BOD": [
+    "csv",
+    "xml"
+  ],
+  "CDN": [
+    "csv",
+    "xml"
+  ],
+  "SYSWARN": [
+    "csv",
+    "xml"
+  ],
+  "DISBSAD": [
+    "csv",
+    "xml"
+  ],
+  "NETBSAD": [
+    "csv",
+    "xml"
+  ],
+  "FREQ": [
+    "csv",
+    "xml"
+  ],
+  "MID": [
+    "csv",
+    "xml"
+  ],
+  "DEVINDOD": [
+    "csv",
+    "xml"
+  ],
+  "NONBM": [
+    "csv",
+    "xml"
+  ],
+  "PHYBMDATA": [
+    "csv",
+    "xml"
+  ],
+  "FUELHH": [
+    "csv",
+    "xml"
+  ],
+  "MELIMBALNGC": [
+    "csv",
+    "xml"
+  ],
+  "FORDAYDEM": [
+    "csv",
+    "xml"
+  ],
+  "SYSDEM": [
+    "csv",
+    "xml"
+  ],
+  "WINDFORFUELHH": [
+    "csv",
+    "xml"
+  ],
+  "DETSYSPRICES": [
+    "csv",
+    "xml"
+  ],
+  "LOLPDRM": [
+    "csv",
+    "xml"
+  ],
+  "DERSYSDATA": [
+    "csv",
+    "xml"
+  ],
+  "ROLSYSDEM": [
+    "csv",
+    "xml"
+  ]
+}

@@ -1,0 +1,1695 @@
+2025-09-18 10:52:39,425 [INFO] 📄 Logging to test_q1_ingest.log
+2025-09-18 10:52:39,464 [INFO] ✅ Initialized BigQuery Client for project: jibber-jabber-knowledge
+2025-09-18 10:52:40,126 [INFO] BigQuery dataset 'uk_energy_insights' exists.
+2025-09-18 10:52:40,127 [INFO] 📝 Planned datasets (2): FREQ, FUELINST
+2025-09-18 10:52:40,127 [INFO] 🚀 Starting ingestion for 2 datasets...
+2025-09-18 10:52:40,129 [INFO] 🔄 Checking for existing windows for bmrs_freq
+2025-09-18 10:52:40,129 [INFO] 🔎 Querying existing windows for jibber-jabber-knowledge.uk_energy_insights.bmrs_freq between 2022-01-01 00:00:00+00:00 and 2022-04-01 00:00:00+00:00
+2025-09-18 10:52:41,644 [INFO] Found 30 existing windows for bmrs_freq
+2025-09-18 10:52:41,645 [INFO] 🔎 Querying existing windows for jibber-jabber-knowledge.uk_energy_insights.bmrs_freq between 2022-01-01 00:00:00+00:00 and 2022-04-01 00:00:00+00:00
+2025-09-18 10:52:42,849 [INFO] Found 30 existing windows for bmrs_freq
+2025-09-18 10:52:42,850 [INFO] Found 30 existing windows for FREQ. Skipping them and fetching 60 new windows.
+2025-09-18 10:52:42,851 [INFO] 🧮 Total windows to fetch for FREQ: 60 (batch_size=20, flush_seconds=300)
+2025-09-18 10:52:42,851 [INFO] 🌐 Fetching BMRS dataset=FREQ from=2022-03-31 00:00:00+00:00 to=2022-04-01 00:00:00+00:00
+2025-09-18 10:52:43,574 [INFO] Created hash keys for 5761 rows using 3 content columns
+2025-09-18 10:52:43,574 [INFO] Converting column 'dataset' to string
+2025-09-18 10:52:43,575 [INFO] Converting datetime column 'measurementTime' to pandas datetime
+2025-09-18 10:52:43,599 [INFO] Converting column '_dataset' to string
+2025-09-18 10:52:43,600 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:52:43,604 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:52:43,609 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:52:43,611 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:52:43,612 [INFO] Converting column '_source_api' to string
+2025-09-18 10:52:43,612 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:52:43,613 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:52:43,613 [INFO] 🌐 Fetching BMRS dataset=FREQ from=2022-03-30 00:00:00+00:00 to=2022-03-31 00:00:00+00:00
+2025-09-18 10:52:43,790 [INFO] Created hash keys for 5761 rows using 3 content columns
+2025-09-18 10:52:43,791 [INFO] Converting column 'dataset' to string
+2025-09-18 10:52:43,791 [INFO] Converting datetime column 'measurementTime' to pandas datetime
+2025-09-18 10:52:43,797 [INFO] Converting column '_dataset' to string
+2025-09-18 10:52:43,798 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:52:43,800 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:52:43,802 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:52:43,805 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:52:43,806 [INFO] Converting column '_source_api' to string
+2025-09-18 10:52:43,806 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:52:43,806 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:52:43,808 [INFO] 🌐 Fetching BMRS dataset=FREQ from=2022-03-29 00:00:00+00:00 to=2022-03-30 00:00:00+00:00
+2025-09-18 10:52:43,990 [INFO] Created hash keys for 5761 rows using 3 content columns
+2025-09-18 10:52:43,990 [INFO] Converting column 'dataset' to string
+2025-09-18 10:52:43,991 [INFO] Converting datetime column 'measurementTime' to pandas datetime
+2025-09-18 10:52:43,998 [INFO] Converting column '_dataset' to string
+2025-09-18 10:52:43,999 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:52:44,001 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:52:44,004 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:52:44,006 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:52:44,007 [INFO] Converting column '_source_api' to string
+2025-09-18 10:52:44,008 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:52:44,008 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:52:44,009 [INFO] 🌐 Fetching BMRS dataset=FREQ from=2022-03-28 00:00:00+00:00 to=2022-03-29 00:00:00+00:00
+2025-09-18 10:52:44,221 [INFO] Created hash keys for 5761 rows using 3 content columns
+2025-09-18 10:52:44,221 [INFO] Converting column 'dataset' to string
+2025-09-18 10:52:44,222 [INFO] Converting datetime column 'measurementTime' to pandas datetime
+2025-09-18 10:52:44,228 [INFO] Converting column '_dataset' to string
+2025-09-18 10:52:44,229 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:52:44,232 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:52:44,236 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:52:44,238 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:52:44,239 [INFO] Converting column '_source_api' to string
+2025-09-18 10:52:44,239 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:52:44,239 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:52:44,240 [INFO] 🌐 Fetching BMRS dataset=FREQ from=2022-03-27 00:00:00+00:00 to=2022-03-28 00:00:00+00:00
+2025-09-18 10:52:44,447 [INFO] Created hash keys for 5761 rows using 3 content columns
+2025-09-18 10:52:44,447 [INFO] Converting column 'dataset' to string
+2025-09-18 10:52:44,448 [INFO] Converting datetime column 'measurementTime' to pandas datetime
+2025-09-18 10:52:44,454 [INFO] Converting column '_dataset' to string
+2025-09-18 10:52:44,455 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:52:44,456 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:52:44,459 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:52:44,461 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:52:44,462 [INFO] Converting column '_source_api' to string
+2025-09-18 10:52:44,462 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:52:44,462 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:52:44,463 [INFO] 🌐 Fetching BMRS dataset=FREQ from=2022-03-26 00:00:00+00:00 to=2022-03-27 00:00:00+00:00
+2025-09-18 10:52:44,675 [INFO] Created hash keys for 5761 rows using 3 content columns
+2025-09-18 10:52:44,676 [INFO] Converting column 'dataset' to string
+2025-09-18 10:52:44,676 [INFO] Converting datetime column 'measurementTime' to pandas datetime
+2025-09-18 10:52:44,688 [INFO] Converting column '_dataset' to string
+2025-09-18 10:52:44,690 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:52:44,694 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:52:44,695 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:52:44,697 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:52:44,697 [INFO] Converting column '_source_api' to string
+2025-09-18 10:52:44,697 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:52:44,698 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:52:44,698 [INFO] 🌐 Fetching BMRS dataset=FREQ from=2022-03-25 00:00:00+00:00 to=2022-03-26 00:00:00+00:00
+2025-09-18 10:52:44,889 [INFO] Created hash keys for 5761 rows using 3 content columns
+2025-09-18 10:52:44,890 [INFO] Converting column 'dataset' to string
+2025-09-18 10:52:44,891 [INFO] Converting datetime column 'measurementTime' to pandas datetime
+2025-09-18 10:52:44,896 [INFO] Converting column '_dataset' to string
+2025-09-18 10:52:44,896 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:52:44,898 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:52:44,900 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:52:44,903 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:52:44,904 [INFO] Converting column '_source_api' to string
+2025-09-18 10:52:44,904 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:52:44,905 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:52:44,905 [INFO] 🌐 Fetching BMRS dataset=FREQ from=2022-03-24 00:00:00+00:00 to=2022-03-25 00:00:00+00:00
+2025-09-18 10:52:45,064 [INFO] Created hash keys for 5761 rows using 3 content columns
+2025-09-18 10:52:45,064 [INFO] Converting column 'dataset' to string
+2025-09-18 10:52:45,064 [INFO] Converting datetime column 'measurementTime' to pandas datetime
+2025-09-18 10:52:45,078 [INFO] Converting column '_dataset' to string
+2025-09-18 10:52:45,079 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:52:45,080 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:52:45,083 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:52:45,088 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:52:45,088 [INFO] Converting column '_source_api' to string
+2025-09-18 10:52:45,089 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:52:45,089 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:52:45,090 [INFO] 🌐 Fetching BMRS dataset=FREQ from=2022-03-23 00:00:00+00:00 to=2022-03-24 00:00:00+00:00
+2025-09-18 10:52:45,269 [INFO] Created hash keys for 5761 rows using 3 content columns
+2025-09-18 10:52:45,270 [INFO] Converting column 'dataset' to string
+2025-09-18 10:52:45,270 [INFO] Converting datetime column 'measurementTime' to pandas datetime
+2025-09-18 10:52:45,278 [INFO] Converting column '_dataset' to string
+2025-09-18 10:52:45,278 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:52:45,280 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:52:45,282 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:52:45,284 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:52:45,284 [INFO] Converting column '_source_api' to string
+2025-09-18 10:52:45,285 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:52:45,286 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:52:45,287 [INFO] 🌐 Fetching BMRS dataset=FREQ from=2022-03-22 00:00:00+00:00 to=2022-03-23 00:00:00+00:00
+2025-09-18 10:52:45,497 [INFO] Created hash keys for 5761 rows using 3 content columns
+2025-09-18 10:52:45,498 [INFO] Converting column 'dataset' to string
+2025-09-18 10:52:45,498 [INFO] Converting datetime column 'measurementTime' to pandas datetime
+2025-09-18 10:52:45,506 [INFO] Converting column '_dataset' to string
+2025-09-18 10:52:45,506 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:52:45,509 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:52:45,511 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:52:45,513 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:52:45,513 [INFO] Converting column '_source_api' to string
+2025-09-18 10:52:45,514 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:52:45,514 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:52:45,515 [INFO] 🌐 Fetching BMRS dataset=FREQ from=2022-03-21 00:00:00+00:00 to=2022-03-22 00:00:00+00:00
+2025-09-18 10:52:45,676 [INFO] Created hash keys for 5761 rows using 3 content columns
+2025-09-18 10:52:45,677 [INFO] Converting column 'dataset' to string
+2025-09-18 10:52:45,677 [INFO] Converting datetime column 'measurementTime' to pandas datetime
+2025-09-18 10:52:45,685 [INFO] Converting column '_dataset' to string
+2025-09-18 10:52:45,686 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:52:45,688 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:52:45,689 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:52:45,693 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:52:45,693 [INFO] Converting column '_source_api' to string
+2025-09-18 10:52:45,694 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:52:45,694 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:52:45,694 [INFO] 🌐 Fetching BMRS dataset=FREQ from=2022-03-20 00:00:00+00:00 to=2022-03-21 00:00:00+00:00
+2025-09-18 10:52:45,886 [INFO] Created hash keys for 5761 rows using 3 content columns
+2025-09-18 10:52:45,887 [INFO] Converting column 'dataset' to string
+2025-09-18 10:52:45,887 [INFO] Converting datetime column 'measurementTime' to pandas datetime
+2025-09-18 10:52:45,896 [INFO] Converting column '_dataset' to string
+2025-09-18 10:52:45,897 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:52:45,900 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:52:45,902 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:52:45,904 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:52:45,905 [INFO] Converting column '_source_api' to string
+2025-09-18 10:52:45,905 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:52:45,905 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:52:45,906 [INFO] 🌐 Fetching BMRS dataset=FREQ from=2022-03-19 00:00:00+00:00 to=2022-03-20 00:00:00+00:00
+2025-09-18 10:52:46,140 [INFO] Created hash keys for 5761 rows using 3 content columns
+2025-09-18 10:52:46,141 [INFO] Converting column 'dataset' to string
+2025-09-18 10:52:46,141 [INFO] Converting datetime column 'measurementTime' to pandas datetime
+2025-09-18 10:52:46,146 [INFO] Converting column '_dataset' to string
+2025-09-18 10:52:46,147 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:52:46,148 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:52:46,150 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:52:46,151 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:52:46,152 [INFO] Converting column '_source_api' to string
+2025-09-18 10:52:46,152 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:52:46,152 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:52:46,153 [INFO] 🌐 Fetching BMRS dataset=FREQ from=2022-03-18 00:00:00+00:00 to=2022-03-19 00:00:00+00:00
+2025-09-18 10:52:46,309 [INFO] Created hash keys for 5761 rows using 3 content columns
+2025-09-18 10:52:46,310 [INFO] Converting column 'dataset' to string
+2025-09-18 10:52:46,310 [INFO] Converting datetime column 'measurementTime' to pandas datetime
+2025-09-18 10:52:46,315 [INFO] Converting column '_dataset' to string
+2025-09-18 10:52:46,315 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:52:46,317 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:52:46,318 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:52:46,319 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:52:46,320 [INFO] Converting column '_source_api' to string
+2025-09-18 10:52:46,320 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:52:46,320 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:52:46,321 [INFO] 🌐 Fetching BMRS dataset=FREQ from=2022-03-17 00:00:00+00:00 to=2022-03-18 00:00:00+00:00
+2025-09-18 10:52:46,475 [INFO] Created hash keys for 5761 rows using 3 content columns
+2025-09-18 10:52:46,476 [INFO] Converting column 'dataset' to string
+2025-09-18 10:52:46,476 [INFO] Converting datetime column 'measurementTime' to pandas datetime
+2025-09-18 10:52:46,482 [INFO] Converting column '_dataset' to string
+2025-09-18 10:52:46,482 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:52:46,483 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:52:46,484 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:52:46,486 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:52:46,486 [INFO] Converting column '_source_api' to string
+2025-09-18 10:52:46,486 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:52:46,487 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:52:46,487 [INFO] 🌐 Fetching BMRS dataset=FREQ from=2022-03-16 00:00:00+00:00 to=2022-03-17 00:00:00+00:00
+2025-09-18 10:52:46,709 [INFO] Created hash keys for 5761 rows using 3 content columns
+2025-09-18 10:52:46,709 [INFO] Converting column 'dataset' to string
+2025-09-18 10:52:46,709 [INFO] Converting datetime column 'measurementTime' to pandas datetime
+2025-09-18 10:52:46,714 [INFO] Converting column '_dataset' to string
+2025-09-18 10:52:46,715 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:52:46,716 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:52:46,718 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:52:46,719 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:52:46,719 [INFO] Converting column '_source_api' to string
+2025-09-18 10:52:46,720 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:52:46,720 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:52:46,720 [INFO] 🌐 Fetching BMRS dataset=FREQ from=2022-03-15 00:00:00+00:00 to=2022-03-16 00:00:00+00:00
+2025-09-18 10:52:46,932 [INFO] Created hash keys for 5761 rows using 3 content columns
+2025-09-18 10:52:46,932 [INFO] Converting column 'dataset' to string
+2025-09-18 10:52:46,933 [INFO] Converting datetime column 'measurementTime' to pandas datetime
+2025-09-18 10:52:46,942 [INFO] Converting column '_dataset' to string
+2025-09-18 10:52:46,942 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:52:46,944 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:52:46,946 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:52:46,948 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:52:46,948 [INFO] Converting column '_source_api' to string
+2025-09-18 10:52:46,949 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:52:46,949 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:52:46,950 [INFO] 🌐 Fetching BMRS dataset=FREQ from=2022-03-14 00:00:00+00:00 to=2022-03-15 00:00:00+00:00
+2025-09-18 10:52:47,163 [INFO] Created hash keys for 5761 rows using 3 content columns
+2025-09-18 10:52:47,164 [INFO] Converting column 'dataset' to string
+2025-09-18 10:52:47,164 [INFO] Converting datetime column 'measurementTime' to pandas datetime
+2025-09-18 10:52:47,172 [INFO] Converting column '_dataset' to string
+2025-09-18 10:52:47,173 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:52:47,175 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:52:47,178 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:52:47,179 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:52:47,180 [INFO] Converting column '_source_api' to string
+2025-09-18 10:52:47,180 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:52:47,180 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:52:47,181 [INFO] 🌐 Fetching BMRS dataset=FREQ from=2022-03-13 00:00:00+00:00 to=2022-03-14 00:00:00+00:00
+2025-09-18 10:52:47,365 [INFO] Created hash keys for 5761 rows using 3 content columns
+2025-09-18 10:52:47,366 [INFO] Converting column 'dataset' to string
+2025-09-18 10:52:47,367 [INFO] Converting datetime column 'measurementTime' to pandas datetime
+2025-09-18 10:52:47,374 [INFO] Converting column '_dataset' to string
+2025-09-18 10:52:47,375 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:52:47,377 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:52:47,380 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:52:47,382 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:52:47,383 [INFO] Converting column '_source_api' to string
+2025-09-18 10:52:47,383 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:52:47,384 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:52:47,384 [INFO] 🌐 Fetching BMRS dataset=FREQ from=2022-03-12 00:00:00+00:00 to=2022-03-13 00:00:00+00:00
+2025-09-18 10:52:47,676 [INFO] Created hash keys for 5761 rows using 3 content columns
+2025-09-18 10:52:47,677 [INFO] Converting column 'dataset' to string
+2025-09-18 10:52:47,677 [INFO] Converting datetime column 'measurementTime' to pandas datetime
+2025-09-18 10:52:47,685 [INFO] Converting column '_dataset' to string
+2025-09-18 10:52:47,685 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:52:47,687 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:52:47,689 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:52:47,692 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:52:47,693 [INFO] Converting column '_source_api' to string
+2025-09-18 10:52:47,693 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:52:47,694 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:52:47,694 [INFO] 📦 Flushing batch for FREQ: 20 frames (size threshold reached (20 >= 20) or time threshold reached (4.8 >= 300))
+2025-09-18 10:52:47,803 [INFO] ⬆️ Loading 115220 rows to staging table jibber-jabber-knowledge.uk_energy_insights.bmrs_freq_staging_1758189167
+2025-09-18 10:52:58,827 [INFO] ✅ Successfully loaded 115220 rows to staging table jibber-jabber-knowledge.uk_energy_insights.bmrs_freq_staging_1758189167
+2025-09-18 10:52:59,594 [ERROR] ❌ Failed during staging table process: 400 Inserted row has wrong column count; Has 11, expected 7 at [3:13]; reason: invalidQuery, location: query, message: Inserted row has wrong column count; Has 11, expected 7 at [3:13]
+
+Location: US
+Job ID: a9b68387-0c50-4f27-8e1b-b1b8cde4cb18
+
+2025-09-18 10:52:59,819 [ERROR] ❌ FREQ: Staging table load failed. Will retry with direct load.
+2025-09-18 10:52:59,820 [INFO] ⬆️ Loading 115220 rows to jibber-jabber-knowledge.uk_energy_insights.bmrs_freq
+2025-09-18 10:53:00,141 [INFO] Found existing table jibber-jabber-knowledge.uk_energy_insights.bmrs_freq with 7 columns
+2025-09-18 10:53:00,188 [INFO] Filtered DataFrame from 11 to 7 columns
+2025-09-18 10:53:09,400 [INFO] ✅ Successfully loaded 115220 rows to jibber-jabber-knowledge.uk_energy_insights.bmrs_freq
+2025-09-18 10:53:11,582 [INFO] 🌐 Fetching BMRS dataset=FREQ from=2022-03-11 00:00:00+00:00 to=2022-03-12 00:00:00+00:00
+2025-09-18 10:53:11,905 [INFO] Created hash keys for 5761 rows using 3 content columns
+2025-09-18 10:53:11,906 [INFO] Converting column 'dataset' to string
+2025-09-18 10:53:11,907 [INFO] Converting datetime column 'measurementTime' to pandas datetime
+2025-09-18 10:53:11,930 [INFO] Converting column '_dataset' to string
+2025-09-18 10:53:11,931 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:53:11,934 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:53:11,936 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:53:11,939 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:53:11,939 [INFO] Converting column '_source_api' to string
+2025-09-18 10:53:11,939 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:53:11,939 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:53:11,940 [INFO] 🌐 Fetching BMRS dataset=FREQ from=2022-03-10 00:00:00+00:00 to=2022-03-11 00:00:00+00:00
+2025-09-18 10:53:12,153 [INFO] Created hash keys for 5761 rows using 3 content columns
+2025-09-18 10:53:12,159 [INFO] Converting column 'dataset' to string
+2025-09-18 10:53:12,161 [INFO] Converting datetime column 'measurementTime' to pandas datetime
+2025-09-18 10:53:12,177 [INFO] Converting column '_dataset' to string
+2025-09-18 10:53:12,178 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:53:12,183 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:53:12,187 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:53:12,192 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:53:12,193 [INFO] Converting column '_source_api' to string
+2025-09-18 10:53:12,194 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:53:12,194 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:53:12,195 [INFO] 🌐 Fetching BMRS dataset=FREQ from=2022-03-09 00:00:00+00:00 to=2022-03-10 00:00:00+00:00
+2025-09-18 10:53:12,401 [INFO] Created hash keys for 5761 rows using 3 content columns
+2025-09-18 10:53:12,401 [INFO] Converting column 'dataset' to string
+2025-09-18 10:53:12,402 [INFO] Converting datetime column 'measurementTime' to pandas datetime
+2025-09-18 10:53:12,411 [INFO] Converting column '_dataset' to string
+2025-09-18 10:53:12,412 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:53:12,413 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:53:12,414 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:53:12,415 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:53:12,415 [INFO] Converting column '_source_api' to string
+2025-09-18 10:53:12,416 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:53:12,416 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:53:12,416 [INFO] 🌐 Fetching BMRS dataset=FREQ from=2022-03-08 00:00:00+00:00 to=2022-03-09 00:00:00+00:00
+2025-09-18 10:53:12,561 [INFO] Created hash keys for 5761 rows using 3 content columns
+2025-09-18 10:53:12,562 [INFO] Converting column 'dataset' to string
+2025-09-18 10:53:12,562 [INFO] Converting datetime column 'measurementTime' to pandas datetime
+2025-09-18 10:53:12,567 [INFO] Converting column '_dataset' to string
+2025-09-18 10:53:12,567 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:53:12,568 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:53:12,569 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:53:12,571 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:53:12,571 [INFO] Converting column '_source_api' to string
+2025-09-18 10:53:12,572 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:53:12,572 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:53:12,573 [INFO] 🌐 Fetching BMRS dataset=FREQ from=2022-03-07 00:00:00+00:00 to=2022-03-08 00:00:00+00:00
+2025-09-18 10:53:12,762 [INFO] Created hash keys for 5761 rows using 3 content columns
+2025-09-18 10:53:12,762 [INFO] Converting column 'dataset' to string
+2025-09-18 10:53:12,762 [INFO] Converting datetime column 'measurementTime' to pandas datetime
+2025-09-18 10:53:12,767 [INFO] Converting column '_dataset' to string
+2025-09-18 10:53:12,768 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:53:12,769 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:53:12,770 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:53:12,771 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:53:12,772 [INFO] Converting column '_source_api' to string
+2025-09-18 10:53:12,773 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:53:12,773 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:53:12,774 [INFO] 🌐 Fetching BMRS dataset=FREQ from=2022-03-06 00:00:00+00:00 to=2022-03-07 00:00:00+00:00
+2025-09-18 10:53:12,950 [INFO] Created hash keys for 5761 rows using 3 content columns
+2025-09-18 10:53:12,950 [INFO] Converting column 'dataset' to string
+2025-09-18 10:53:12,951 [INFO] Converting datetime column 'measurementTime' to pandas datetime
+2025-09-18 10:53:12,956 [INFO] Converting column '_dataset' to string
+2025-09-18 10:53:12,957 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:53:12,958 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:53:12,959 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:53:12,960 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:53:12,961 [INFO] Converting column '_source_api' to string
+2025-09-18 10:53:12,961 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:53:12,961 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:53:12,962 [INFO] 🌐 Fetching BMRS dataset=FREQ from=2022-03-05 00:00:00+00:00 to=2022-03-06 00:00:00+00:00
+2025-09-18 10:53:13,144 [INFO] Created hash keys for 5761 rows using 3 content columns
+2025-09-18 10:53:13,144 [INFO] Converting column 'dataset' to string
+2025-09-18 10:53:13,144 [INFO] Converting datetime column 'measurementTime' to pandas datetime
+2025-09-18 10:53:13,149 [INFO] Converting column '_dataset' to string
+2025-09-18 10:53:13,149 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:53:13,151 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:53:13,152 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:53:13,153 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:53:13,153 [INFO] Converting column '_source_api' to string
+2025-09-18 10:53:13,154 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:53:13,154 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:53:13,154 [INFO] 🌐 Fetching BMRS dataset=FREQ from=2022-03-04 00:00:00+00:00 to=2022-03-05 00:00:00+00:00
+2025-09-18 10:53:13,337 [INFO] Created hash keys for 5761 rows using 3 content columns
+2025-09-18 10:53:13,337 [INFO] Converting column 'dataset' to string
+2025-09-18 10:53:13,338 [INFO] Converting datetime column 'measurementTime' to pandas datetime
+2025-09-18 10:53:13,343 [INFO] Converting column '_dataset' to string
+2025-09-18 10:53:13,344 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:53:13,345 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:53:13,346 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:53:13,347 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:53:13,348 [INFO] Converting column '_source_api' to string
+2025-09-18 10:53:13,349 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:53:13,349 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:53:13,350 [INFO] 🌐 Fetching BMRS dataset=FREQ from=2022-03-03 00:00:00+00:00 to=2022-03-04 00:00:00+00:00
+2025-09-18 10:53:13,500 [INFO] Created hash keys for 5761 rows using 3 content columns
+2025-09-18 10:53:13,500 [INFO] Converting column 'dataset' to string
+2025-09-18 10:53:13,500 [INFO] Converting datetime column 'measurementTime' to pandas datetime
+2025-09-18 10:53:13,505 [INFO] Converting column '_dataset' to string
+2025-09-18 10:53:13,505 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:53:13,506 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:53:13,507 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:53:13,508 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:53:13,509 [INFO] Converting column '_source_api' to string
+2025-09-18 10:53:13,509 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:53:13,509 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:53:13,509 [INFO] 🌐 Fetching BMRS dataset=FREQ from=2022-03-02 00:00:00+00:00 to=2022-03-03 00:00:00+00:00
+2025-09-18 10:53:13,641 [INFO] Created hash keys for 5761 rows using 3 content columns
+2025-09-18 10:53:13,641 [INFO] Converting column 'dataset' to string
+2025-09-18 10:53:13,641 [INFO] Converting datetime column 'measurementTime' to pandas datetime
+2025-09-18 10:53:13,645 [INFO] Converting column '_dataset' to string
+2025-09-18 10:53:13,646 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:53:13,647 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:53:13,648 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:53:13,649 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:53:13,649 [INFO] Converting column '_source_api' to string
+2025-09-18 10:53:13,649 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:53:13,649 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:53:13,650 [INFO] 🌐 Fetching BMRS dataset=FREQ from=2022-03-01 00:00:00+00:00 to=2022-03-02 00:00:00+00:00
+2025-09-18 10:53:13,781 [INFO] Created hash keys for 5761 rows using 3 content columns
+2025-09-18 10:53:13,781 [INFO] Converting column 'dataset' to string
+2025-09-18 10:53:13,781 [INFO] Converting datetime column 'measurementTime' to pandas datetime
+2025-09-18 10:53:13,785 [INFO] Converting column '_dataset' to string
+2025-09-18 10:53:13,785 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:53:13,786 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:53:13,787 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:53:13,788 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:53:13,788 [INFO] Converting column '_source_api' to string
+2025-09-18 10:53:13,788 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:53:13,788 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:53:13,789 [INFO] 🌐 Fetching BMRS dataset=FREQ from=2022-02-28 00:00:00+00:00 to=2022-03-01 00:00:00+00:00
+2025-09-18 10:53:13,948 [INFO] Created hash keys for 5761 rows using 3 content columns
+2025-09-18 10:53:13,949 [INFO] Converting column 'dataset' to string
+2025-09-18 10:53:13,949 [INFO] Converting datetime column 'measurementTime' to pandas datetime
+2025-09-18 10:53:13,953 [INFO] Converting column '_dataset' to string
+2025-09-18 10:53:13,953 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:53:13,954 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:53:13,956 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:53:13,957 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:53:13,957 [INFO] Converting column '_source_api' to string
+2025-09-18 10:53:13,957 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:53:13,957 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:53:13,958 [INFO] 🌐 Fetching BMRS dataset=FREQ from=2022-02-27 00:00:00+00:00 to=2022-02-28 00:00:00+00:00
+2025-09-18 10:53:14,096 [INFO] Created hash keys for 5761 rows using 3 content columns
+2025-09-18 10:53:14,096 [INFO] Converting column 'dataset' to string
+2025-09-18 10:53:14,096 [INFO] Converting datetime column 'measurementTime' to pandas datetime
+2025-09-18 10:53:14,100 [INFO] Converting column '_dataset' to string
+2025-09-18 10:53:14,100 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:53:14,101 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:53:14,102 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:53:14,103 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:53:14,103 [INFO] Converting column '_source_api' to string
+2025-09-18 10:53:14,103 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:53:14,103 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:53:14,104 [INFO] 🌐 Fetching BMRS dataset=FREQ from=2022-02-26 00:00:00+00:00 to=2022-02-27 00:00:00+00:00
+2025-09-18 10:53:14,239 [INFO] Created hash keys for 5761 rows using 3 content columns
+2025-09-18 10:53:14,240 [INFO] Converting column 'dataset' to string
+2025-09-18 10:53:14,240 [INFO] Converting datetime column 'measurementTime' to pandas datetime
+2025-09-18 10:53:14,244 [INFO] Converting column '_dataset' to string
+2025-09-18 10:53:14,245 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:53:14,246 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:53:14,247 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:53:14,248 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:53:14,248 [INFO] Converting column '_source_api' to string
+2025-09-18 10:53:14,249 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:53:14,249 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:53:14,249 [INFO] 🌐 Fetching BMRS dataset=FREQ from=2022-02-25 00:00:00+00:00 to=2022-02-26 00:00:00+00:00
+2025-09-18 10:53:14,383 [INFO] Created hash keys for 5761 rows using 3 content columns
+2025-09-18 10:53:14,383 [INFO] Converting column 'dataset' to string
+2025-09-18 10:53:14,384 [INFO] Converting datetime column 'measurementTime' to pandas datetime
+2025-09-18 10:53:14,388 [INFO] Converting column '_dataset' to string
+2025-09-18 10:53:14,388 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:53:14,390 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:53:14,390 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:53:14,391 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:53:14,392 [INFO] Converting column '_source_api' to string
+2025-09-18 10:53:14,392 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:53:14,392 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:53:14,392 [INFO] 🌐 Fetching BMRS dataset=FREQ from=2022-02-24 00:00:00+00:00 to=2022-02-25 00:00:00+00:00
+2025-09-18 10:53:14,552 [INFO] Created hash keys for 5761 rows using 3 content columns
+2025-09-18 10:53:14,552 [INFO] Converting column 'dataset' to string
+2025-09-18 10:53:14,552 [INFO] Converting datetime column 'measurementTime' to pandas datetime
+2025-09-18 10:53:14,556 [INFO] Converting column '_dataset' to string
+2025-09-18 10:53:14,556 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:53:14,557 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:53:14,558 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:53:14,560 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:53:14,560 [INFO] Converting column '_source_api' to string
+2025-09-18 10:53:14,561 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:53:14,561 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:53:14,561 [INFO] 🌐 Fetching BMRS dataset=FREQ from=2022-02-23 00:00:00+00:00 to=2022-02-24 00:00:00+00:00
+2025-09-18 10:53:14,730 [INFO] Created hash keys for 5761 rows using 3 content columns
+2025-09-18 10:53:14,730 [INFO] Converting column 'dataset' to string
+2025-09-18 10:53:14,731 [INFO] Converting datetime column 'measurementTime' to pandas datetime
+2025-09-18 10:53:14,735 [INFO] Converting column '_dataset' to string
+2025-09-18 10:53:14,735 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:53:14,737 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:53:14,738 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:53:14,740 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:53:14,740 [INFO] Converting column '_source_api' to string
+2025-09-18 10:53:14,741 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:53:14,741 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:53:14,741 [INFO] 🌐 Fetching BMRS dataset=FREQ from=2022-02-22 00:00:00+00:00 to=2022-02-23 00:00:00+00:00
+2025-09-18 10:53:14,903 [INFO] Created hash keys for 5761 rows using 3 content columns
+2025-09-18 10:53:14,904 [INFO] Converting column 'dataset' to string
+2025-09-18 10:53:14,904 [INFO] Converting datetime column 'measurementTime' to pandas datetime
+2025-09-18 10:53:14,908 [INFO] Converting column '_dataset' to string
+2025-09-18 10:53:14,908 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:53:14,909 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:53:14,910 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:53:14,911 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:53:14,911 [INFO] Converting column '_source_api' to string
+2025-09-18 10:53:14,911 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:53:14,912 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:53:14,912 [INFO] 🌐 Fetching BMRS dataset=FREQ from=2022-02-21 00:00:00+00:00 to=2022-02-22 00:00:00+00:00
+2025-09-18 10:53:15,077 [INFO] Created hash keys for 5761 rows using 3 content columns
+2025-09-18 10:53:15,077 [INFO] Converting column 'dataset' to string
+2025-09-18 10:53:15,077 [INFO] Converting datetime column 'measurementTime' to pandas datetime
+2025-09-18 10:53:15,082 [INFO] Converting column '_dataset' to string
+2025-09-18 10:53:15,082 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:53:15,083 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:53:15,084 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:53:15,085 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:53:15,085 [INFO] Converting column '_source_api' to string
+2025-09-18 10:53:15,085 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:53:15,085 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:53:15,086 [INFO] 🌐 Fetching BMRS dataset=FREQ from=2022-02-20 00:00:00+00:00 to=2022-02-21 00:00:00+00:00
+2025-09-18 10:53:15,212 [INFO] Created hash keys for 5761 rows using 3 content columns
+2025-09-18 10:53:15,212 [INFO] Converting column 'dataset' to string
+2025-09-18 10:53:15,212 [INFO] Converting datetime column 'measurementTime' to pandas datetime
+2025-09-18 10:53:15,216 [INFO] Converting column '_dataset' to string
+2025-09-18 10:53:15,216 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:53:15,218 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:53:15,219 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:53:15,220 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:53:15,220 [INFO] Converting column '_source_api' to string
+2025-09-18 10:53:15,220 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:53:15,221 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:53:15,221 [INFO] 📦 Flushing batch for FREQ: 20 frames (size threshold reached (20 >= 20) or time threshold reached (3.6 >= 300))
+2025-09-18 10:53:15,277 [INFO] ⬆️ Loading 115220 rows to staging table jibber-jabber-knowledge.uk_energy_insights.bmrs_freq_staging_1758189195
+2025-09-18 10:53:20,864 [INFO] ✅ Successfully loaded 115220 rows to staging table jibber-jabber-knowledge.uk_energy_insights.bmrs_freq_staging_1758189195
+2025-09-18 10:53:21,705 [ERROR] ❌ Failed during staging table process: 400 Inserted row has wrong column count; Has 11, expected 7 at [3:13]; reason: invalidQuery, location: query, message: Inserted row has wrong column count; Has 11, expected 7 at [3:13]
+
+Location: US
+Job ID: 76148307-3902-4c9f-824d-540a46cb53fa
+
+2025-09-18 10:53:21,907 [ERROR] ❌ FREQ: Staging table load failed. Will retry with direct load.
+2025-09-18 10:53:21,909 [INFO] ⬆️ Loading 115220 rows to jibber-jabber-knowledge.uk_energy_insights.bmrs_freq
+2025-09-18 10:53:22,179 [INFO] Found existing table jibber-jabber-knowledge.uk_energy_insights.bmrs_freq with 7 columns
+2025-09-18 10:53:22,224 [INFO] Filtered DataFrame from 11 to 7 columns
+2025-09-18 10:53:27,110 [INFO] ✅ Successfully loaded 115220 rows to jibber-jabber-knowledge.uk_energy_insights.bmrs_freq
+2025-09-18 10:53:29,171 [INFO] 🌐 Fetching BMRS dataset=FREQ from=2022-02-19 00:00:00+00:00 to=2022-02-20 00:00:00+00:00
+2025-09-18 10:53:29,440 [INFO] Created hash keys for 5761 rows using 3 content columns
+2025-09-18 10:53:29,441 [INFO] Converting column 'dataset' to string
+2025-09-18 10:53:29,443 [INFO] Converting datetime column 'measurementTime' to pandas datetime
+2025-09-18 10:53:29,450 [INFO] Converting column '_dataset' to string
+2025-09-18 10:53:29,450 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:53:29,452 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:53:29,453 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:53:29,458 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:53:29,458 [INFO] Converting column '_source_api' to string
+2025-09-18 10:53:29,459 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:53:29,459 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:53:29,460 [INFO] 🌐 Fetching BMRS dataset=FREQ from=2022-02-18 00:00:00+00:00 to=2022-02-19 00:00:00+00:00
+2025-09-18 10:53:29,621 [INFO] Created hash keys for 5761 rows using 3 content columns
+2025-09-18 10:53:29,622 [INFO] Converting column 'dataset' to string
+2025-09-18 10:53:29,622 [INFO] Converting datetime column 'measurementTime' to pandas datetime
+2025-09-18 10:53:29,627 [INFO] Converting column '_dataset' to string
+2025-09-18 10:53:29,628 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:53:29,630 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:53:29,631 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:53:29,633 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:53:29,634 [INFO] Converting column '_source_api' to string
+2025-09-18 10:53:29,634 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:53:29,634 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:53:29,635 [INFO] 🌐 Fetching BMRS dataset=FREQ from=2022-02-17 00:00:00+00:00 to=2022-02-18 00:00:00+00:00
+2025-09-18 10:53:29,783 [INFO] Created hash keys for 5761 rows using 3 content columns
+2025-09-18 10:53:29,783 [INFO] Converting column 'dataset' to string
+2025-09-18 10:53:29,783 [INFO] Converting datetime column 'measurementTime' to pandas datetime
+2025-09-18 10:53:29,788 [INFO] Converting column '_dataset' to string
+2025-09-18 10:53:29,789 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:53:29,790 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:53:29,791 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:53:29,792 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:53:29,792 [INFO] Converting column '_source_api' to string
+2025-09-18 10:53:29,793 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:53:29,793 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:53:29,793 [INFO] 🌐 Fetching BMRS dataset=FREQ from=2022-02-16 00:00:00+00:00 to=2022-02-17 00:00:00+00:00
+2025-09-18 10:53:29,950 [INFO] Created hash keys for 5761 rows using 3 content columns
+2025-09-18 10:53:29,951 [INFO] Converting column 'dataset' to string
+2025-09-18 10:53:29,951 [INFO] Converting datetime column 'measurementTime' to pandas datetime
+2025-09-18 10:53:29,956 [INFO] Converting column '_dataset' to string
+2025-09-18 10:53:29,957 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:53:29,959 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:53:29,960 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:53:29,961 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:53:29,961 [INFO] Converting column '_source_api' to string
+2025-09-18 10:53:29,962 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:53:29,962 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:53:29,963 [INFO] 🌐 Fetching BMRS dataset=FREQ from=2022-02-15 00:00:00+00:00 to=2022-02-16 00:00:00+00:00
+2025-09-18 10:53:30,104 [INFO] Created hash keys for 5761 rows using 3 content columns
+2025-09-18 10:53:30,104 [INFO] Converting column 'dataset' to string
+2025-09-18 10:53:30,105 [INFO] Converting datetime column 'measurementTime' to pandas datetime
+2025-09-18 10:53:30,110 [INFO] Converting column '_dataset' to string
+2025-09-18 10:53:30,110 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:53:30,112 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:53:30,113 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:53:30,114 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:53:30,114 [INFO] Converting column '_source_api' to string
+2025-09-18 10:53:30,114 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:53:30,115 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:53:30,115 [INFO] 🌐 Fetching BMRS dataset=FREQ from=2022-02-14 00:00:00+00:00 to=2022-02-15 00:00:00+00:00
+2025-09-18 10:53:30,268 [INFO] Created hash keys for 5761 rows using 3 content columns
+2025-09-18 10:53:30,268 [INFO] Converting column 'dataset' to string
+2025-09-18 10:53:30,269 [INFO] Converting datetime column 'measurementTime' to pandas datetime
+2025-09-18 10:53:30,274 [INFO] Converting column '_dataset' to string
+2025-09-18 10:53:30,275 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:53:30,276 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:53:30,277 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:53:30,279 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:53:30,279 [INFO] Converting column '_source_api' to string
+2025-09-18 10:53:30,279 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:53:30,280 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:53:30,280 [INFO] 🌐 Fetching BMRS dataset=FREQ from=2022-02-13 00:00:00+00:00 to=2022-02-14 00:00:00+00:00
+2025-09-18 10:53:30,465 [INFO] Created hash keys for 5761 rows using 3 content columns
+2025-09-18 10:53:30,465 [INFO] Converting column 'dataset' to string
+2025-09-18 10:53:30,466 [INFO] Converting datetime column 'measurementTime' to pandas datetime
+2025-09-18 10:53:30,475 [INFO] Converting column '_dataset' to string
+2025-09-18 10:53:30,475 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:53:30,480 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:53:30,486 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:53:30,488 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:53:30,489 [INFO] Converting column '_source_api' to string
+2025-09-18 10:53:30,490 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:53:30,491 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:53:30,491 [INFO] 🌐 Fetching BMRS dataset=FREQ from=2022-02-12 00:00:00+00:00 to=2022-02-13 00:00:00+00:00
+2025-09-18 10:53:30,712 [INFO] Created hash keys for 5761 rows using 3 content columns
+2025-09-18 10:53:30,712 [INFO] Converting column 'dataset' to string
+2025-09-18 10:53:30,713 [INFO] Converting datetime column 'measurementTime' to pandas datetime
+2025-09-18 10:53:30,718 [INFO] Converting column '_dataset' to string
+2025-09-18 10:53:30,718 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:53:30,723 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:53:30,726 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:53:30,728 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:53:30,728 [INFO] Converting column '_source_api' to string
+2025-09-18 10:53:30,729 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:53:30,730 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:53:30,730 [INFO] 🌐 Fetching BMRS dataset=FREQ from=2022-02-11 00:00:00+00:00 to=2022-02-12 00:00:00+00:00
+2025-09-18 10:53:30,876 [INFO] Created hash keys for 5761 rows using 3 content columns
+2025-09-18 10:53:30,876 [INFO] Converting column 'dataset' to string
+2025-09-18 10:53:30,876 [INFO] Converting datetime column 'measurementTime' to pandas datetime
+2025-09-18 10:53:30,881 [INFO] Converting column '_dataset' to string
+2025-09-18 10:53:30,881 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:53:30,883 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:53:30,884 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:53:30,886 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:53:30,886 [INFO] Converting column '_source_api' to string
+2025-09-18 10:53:30,886 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:53:30,887 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:53:30,888 [INFO] 🌐 Fetching BMRS dataset=FREQ from=2022-02-10 00:00:00+00:00 to=2022-02-11 00:00:00+00:00
+2025-09-18 10:53:31,036 [INFO] Created hash keys for 5761 rows using 3 content columns
+2025-09-18 10:53:31,037 [INFO] Converting column 'dataset' to string
+2025-09-18 10:53:31,037 [INFO] Converting datetime column 'measurementTime' to pandas datetime
+2025-09-18 10:53:31,043 [INFO] Converting column '_dataset' to string
+2025-09-18 10:53:31,043 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:53:31,044 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:53:31,045 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:53:31,046 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:53:31,046 [INFO] Converting column '_source_api' to string
+2025-09-18 10:53:31,047 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:53:31,047 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:53:31,047 [INFO] 🌐 Fetching BMRS dataset=FREQ from=2022-02-09 00:00:00+00:00 to=2022-02-10 00:00:00+00:00
+2025-09-18 10:53:31,271 [INFO] Created hash keys for 5761 rows using 3 content columns
+2025-09-18 10:53:31,272 [INFO] Converting column 'dataset' to string
+2025-09-18 10:53:31,272 [INFO] Converting datetime column 'measurementTime' to pandas datetime
+2025-09-18 10:53:31,296 [INFO] Converting column '_dataset' to string
+2025-09-18 10:53:31,298 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:53:31,300 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:53:31,301 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:53:31,303 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:53:31,303 [INFO] Converting column '_source_api' to string
+2025-09-18 10:53:31,305 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:53:31,306 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:53:31,306 [INFO] 🌐 Fetching BMRS dataset=FREQ from=2022-02-08 00:00:00+00:00 to=2022-02-09 00:00:00+00:00
+2025-09-18 10:53:31,569 [INFO] Created hash keys for 5761 rows using 3 content columns
+2025-09-18 10:53:31,570 [INFO] Converting column 'dataset' to string
+2025-09-18 10:53:31,571 [INFO] Converting datetime column 'measurementTime' to pandas datetime
+2025-09-18 10:53:31,578 [INFO] Converting column '_dataset' to string
+2025-09-18 10:53:31,580 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:53:31,582 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:53:31,584 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:53:31,587 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:53:31,588 [INFO] Converting column '_source_api' to string
+2025-09-18 10:53:31,589 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:53:31,590 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:53:31,591 [INFO] 🌐 Fetching BMRS dataset=FREQ from=2022-02-07 00:00:00+00:00 to=2022-02-08 00:00:00+00:00
+2025-09-18 10:53:31,866 [INFO] Created hash keys for 5761 rows using 3 content columns
+2025-09-18 10:53:31,868 [INFO] Converting column 'dataset' to string
+2025-09-18 10:53:31,869 [INFO] Converting datetime column 'measurementTime' to pandas datetime
+2025-09-18 10:53:31,886 [INFO] Converting column '_dataset' to string
+2025-09-18 10:53:31,888 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:53:31,892 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:53:31,896 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:53:31,899 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:53:31,900 [INFO] Converting column '_source_api' to string
+2025-09-18 10:53:31,900 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:53:31,901 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:53:31,901 [INFO] 🌐 Fetching BMRS dataset=FREQ from=2022-02-06 00:00:00+00:00 to=2022-02-07 00:00:00+00:00
+2025-09-18 10:53:32,157 [INFO] Created hash keys for 5761 rows using 3 content columns
+2025-09-18 10:53:32,158 [INFO] Converting column 'dataset' to string
+2025-09-18 10:53:32,158 [INFO] Converting datetime column 'measurementTime' to pandas datetime
+2025-09-18 10:53:32,166 [INFO] Converting column '_dataset' to string
+2025-09-18 10:53:32,166 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:53:32,168 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:53:32,169 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:53:32,173 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:53:32,173 [INFO] Converting column '_source_api' to string
+2025-09-18 10:53:32,173 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:53:32,174 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:53:32,174 [INFO] 🌐 Fetching BMRS dataset=FREQ from=2022-02-05 00:00:00+00:00 to=2022-02-06 00:00:00+00:00
+2025-09-18 10:53:32,386 [INFO] Created hash keys for 5761 rows using 3 content columns
+2025-09-18 10:53:32,388 [INFO] Converting column 'dataset' to string
+2025-09-18 10:53:32,388 [INFO] Converting datetime column 'measurementTime' to pandas datetime
+2025-09-18 10:53:32,395 [INFO] Converting column '_dataset' to string
+2025-09-18 10:53:32,396 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:53:32,398 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:53:32,399 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:53:32,404 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:53:32,407 [INFO] Converting column '_source_api' to string
+2025-09-18 10:53:32,408 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:53:32,409 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:53:32,410 [INFO] 🌐 Fetching BMRS dataset=FREQ from=2022-02-04 00:00:00+00:00 to=2022-02-05 00:00:00+00:00
+2025-09-18 10:53:32,629 [INFO] Created hash keys for 5761 rows using 3 content columns
+2025-09-18 10:53:32,629 [INFO] Converting column 'dataset' to string
+2025-09-18 10:53:32,630 [INFO] Converting datetime column 'measurementTime' to pandas datetime
+2025-09-18 10:53:32,639 [INFO] Converting column '_dataset' to string
+2025-09-18 10:53:32,640 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:53:32,642 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:53:32,645 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:53:32,647 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:53:32,648 [INFO] Converting column '_source_api' to string
+2025-09-18 10:53:32,648 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:53:32,648 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:53:32,649 [INFO] 🌐 Fetching BMRS dataset=FREQ from=2022-02-03 00:00:00+00:00 to=2022-02-04 00:00:00+00:00
+2025-09-18 10:53:32,906 [INFO] Created hash keys for 5761 rows using 3 content columns
+2025-09-18 10:53:32,909 [INFO] Converting column 'dataset' to string
+2025-09-18 10:53:32,912 [INFO] Converting datetime column 'measurementTime' to pandas datetime
+2025-09-18 10:53:32,923 [INFO] Converting column '_dataset' to string
+2025-09-18 10:53:32,923 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:53:32,927 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:53:32,932 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:53:32,935 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:53:32,936 [INFO] Converting column '_source_api' to string
+2025-09-18 10:53:32,936 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:53:32,937 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:53:32,938 [INFO] 🌐 Fetching BMRS dataset=FREQ from=2022-02-02 00:00:00+00:00 to=2022-02-03 00:00:00+00:00
+2025-09-18 10:53:33,184 [INFO] Created hash keys for 5761 rows using 3 content columns
+2025-09-18 10:53:33,185 [INFO] Converting column 'dataset' to string
+2025-09-18 10:53:33,185 [INFO] Converting datetime column 'measurementTime' to pandas datetime
+2025-09-18 10:53:33,198 [INFO] Converting column '_dataset' to string
+2025-09-18 10:53:33,199 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:53:33,202 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:53:33,207 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:53:33,210 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:53:33,210 [INFO] Converting column '_source_api' to string
+2025-09-18 10:53:33,211 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:53:33,212 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:53:33,214 [INFO] 🌐 Fetching BMRS dataset=FREQ from=2022-02-01 00:00:00+00:00 to=2022-02-02 00:00:00+00:00
+2025-09-18 10:53:33,493 [INFO] Created hash keys for 5761 rows using 3 content columns
+2025-09-18 10:53:33,494 [INFO] Converting column 'dataset' to string
+2025-09-18 10:53:33,495 [INFO] Converting datetime column 'measurementTime' to pandas datetime
+2025-09-18 10:53:33,516 [INFO] Converting column '_dataset' to string
+2025-09-18 10:53:33,517 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:53:33,524 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:53:33,528 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:53:33,534 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:53:33,535 [INFO] Converting column '_source_api' to string
+2025-09-18 10:53:33,536 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:53:33,537 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:53:33,539 [INFO] 🌐 Fetching BMRS dataset=FREQ from=2022-01-31 00:00:00+00:00 to=2022-02-01 00:00:00+00:00
+2025-09-18 10:53:33,868 [INFO] Created hash keys for 5761 rows using 3 content columns
+2025-09-18 10:53:33,871 [INFO] Converting column 'dataset' to string
+2025-09-18 10:53:33,872 [INFO] Converting datetime column 'measurementTime' to pandas datetime
+2025-09-18 10:53:33,885 [INFO] Converting column '_dataset' to string
+2025-09-18 10:53:33,886 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:53:33,891 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:53:33,893 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:53:33,900 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:53:33,902 [INFO] Converting column '_source_api' to string
+2025-09-18 10:53:33,903 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:53:33,904 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:53:33,907 [INFO] 📦 Flushing batch for FREQ: 20 frames (size threshold reached (20 >= 20) or time threshold reached (4.7 >= 300))
+2025-09-18 10:53:34,001 [INFO] ⬆️ Loading 115220 rows to staging table jibber-jabber-knowledge.uk_energy_insights.bmrs_freq_staging_1758189214
+2025-09-18 10:54:04,043 [INFO] ✅ Successfully loaded 115220 rows to staging table jibber-jabber-knowledge.uk_energy_insights.bmrs_freq_staging_1758189214
+2025-09-18 10:54:05,071 [ERROR] ❌ Failed during staging table process: 400 Inserted row has wrong column count; Has 11, expected 7 at [3:13]; reason: invalidQuery, location: query, message: Inserted row has wrong column count; Has 11, expected 7 at [3:13]
+
+Location: US
+Job ID: 29fd77a3-996f-4909-9b4e-bb931f18fb27
+
+2025-09-18 10:54:05,269 [ERROR] ❌ FREQ: Staging table load failed. Will retry with direct load.
+2025-09-18 10:54:05,270 [INFO] ⬆️ Loading 115220 rows to jibber-jabber-knowledge.uk_energy_insights.bmrs_freq
+2025-09-18 10:54:05,554 [INFO] Found existing table jibber-jabber-knowledge.uk_energy_insights.bmrs_freq with 7 columns
+2025-09-18 10:54:05,595 [INFO] Filtered DataFrame from 11 to 7 columns
+2025-09-18 10:54:10,824 [INFO] ✅ Successfully loaded 115220 rows to jibber-jabber-knowledge.uk_energy_insights.bmrs_freq
+2025-09-18 10:54:12,841 [INFO] 🔄 Checking for existing windows for bmrs_fuelinst
+2025-09-18 10:54:12,842 [INFO] 🔎 Querying existing windows for jibber-jabber-knowledge.uk_energy_insights.bmrs_fuelinst between 2022-01-01 00:00:00+00:00 and 2022-04-01 00:00:00+00:00
+2025-09-18 10:54:14,231 [INFO] Found 30 existing windows for bmrs_fuelinst
+2025-09-18 10:54:14,232 [INFO] 🔎 Querying existing windows for jibber-jabber-knowledge.uk_energy_insights.bmrs_fuelinst between 2022-01-01 00:00:00+00:00 and 2022-04-01 00:00:00+00:00
+2025-09-18 10:54:15,339 [INFO] Found 30 existing windows for bmrs_fuelinst
+2025-09-18 10:54:15,339 [INFO] Found 30 existing windows for FUELINST. Skipping them and fetching 60 new windows.
+2025-09-18 10:54:15,340 [INFO] 🧮 Total windows to fetch for FUELINST: 60 (batch_size=20, flush_seconds=300)
+2025-09-18 10:54:15,341 [INFO] 🌐 Fetching BMRS dataset=FUELINST from=2022-03-31 00:00:00+00:00 to=2022-04-01 00:00:00+00:00
+2025-09-18 10:54:15,624 [INFO] Created hash keys for 2600 rows using 7 content columns
+2025-09-18 10:54:15,624 [INFO] Converting column 'dataset' to string
+2025-09-18 10:54:15,624 [INFO] Converting datetime column 'publishTime' to pandas datetime
+2025-09-18 10:54:15,627 [INFO] Converting datetime column 'startTime' to pandas datetime
+2025-09-18 10:54:15,628 [INFO] Converting datetime column 'settlementDate' to pandas datetime
+2025-09-18 10:54:15,630 [INFO] Converting column 'fuelType' to string
+2025-09-18 10:54:15,630 [INFO] Converting column '_dataset' to string
+2025-09-18 10:54:15,630 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:54:15,631 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:54:15,632 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:54:15,632 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:54:15,633 [INFO] Converting column '_source_api' to string
+2025-09-18 10:54:15,633 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:54:15,633 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:54:15,633 [INFO] 🌐 Fetching BMRS dataset=FUELINST from=2022-03-30 00:00:00+00:00 to=2022-03-31 00:00:00+00:00
+2025-09-18 10:54:15,781 [INFO] Created hash keys for 2600 rows using 7 content columns
+2025-09-18 10:54:15,781 [INFO] Converting column 'dataset' to string
+2025-09-18 10:54:15,781 [INFO] Converting datetime column 'publishTime' to pandas datetime
+2025-09-18 10:54:15,783 [INFO] Converting datetime column 'startTime' to pandas datetime
+2025-09-18 10:54:15,783 [INFO] Converting datetime column 'settlementDate' to pandas datetime
+2025-09-18 10:54:15,784 [INFO] Converting column 'fuelType' to string
+2025-09-18 10:54:15,784 [INFO] Converting column '_dataset' to string
+2025-09-18 10:54:15,785 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:54:15,786 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:54:15,787 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:54:15,788 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:54:15,788 [INFO] Converting column '_source_api' to string
+2025-09-18 10:54:15,788 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:54:15,788 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:54:15,788 [INFO] 🌐 Fetching BMRS dataset=FUELINST from=2022-03-29 00:00:00+00:00 to=2022-03-30 00:00:00+00:00
+2025-09-18 10:54:15,898 [INFO] Created hash keys for 2600 rows using 7 content columns
+2025-09-18 10:54:15,898 [INFO] Converting column 'dataset' to string
+2025-09-18 10:54:15,898 [INFO] Converting datetime column 'publishTime' to pandas datetime
+2025-09-18 10:54:15,899 [INFO] Converting datetime column 'startTime' to pandas datetime
+2025-09-18 10:54:15,900 [INFO] Converting datetime column 'settlementDate' to pandas datetime
+2025-09-18 10:54:15,901 [INFO] Converting column 'fuelType' to string
+2025-09-18 10:54:15,901 [INFO] Converting column '_dataset' to string
+2025-09-18 10:54:15,901 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:54:15,902 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:54:15,903 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:54:15,904 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:54:15,904 [INFO] Converting column '_source_api' to string
+2025-09-18 10:54:15,904 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:54:15,904 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:54:15,905 [INFO] 🌐 Fetching BMRS dataset=FUELINST from=2022-03-28 00:00:00+00:00 to=2022-03-29 00:00:00+00:00
+2025-09-18 10:54:16,017 [INFO] Created hash keys for 2600 rows using 7 content columns
+2025-09-18 10:54:16,017 [INFO] Converting column 'dataset' to string
+2025-09-18 10:54:16,017 [INFO] Converting datetime column 'publishTime' to pandas datetime
+2025-09-18 10:54:16,018 [INFO] Converting datetime column 'startTime' to pandas datetime
+2025-09-18 10:54:16,020 [INFO] Converting datetime column 'settlementDate' to pandas datetime
+2025-09-18 10:54:16,020 [INFO] Converting column 'fuelType' to string
+2025-09-18 10:54:16,021 [INFO] Converting column '_dataset' to string
+2025-09-18 10:54:16,021 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:54:16,021 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:54:16,022 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:54:16,023 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:54:16,023 [INFO] Converting column '_source_api' to string
+2025-09-18 10:54:16,023 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:54:16,024 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:54:16,024 [INFO] 🌐 Fetching BMRS dataset=FUELINST from=2022-03-27 00:00:00+00:00 to=2022-03-28 00:00:00+00:00
+2025-09-18 10:54:16,170 [INFO] Created hash keys for 2600 rows using 7 content columns
+2025-09-18 10:54:16,170 [INFO] Converting column 'dataset' to string
+2025-09-18 10:54:16,170 [INFO] Converting datetime column 'publishTime' to pandas datetime
+2025-09-18 10:54:16,171 [INFO] Converting datetime column 'startTime' to pandas datetime
+2025-09-18 10:54:16,172 [INFO] Converting datetime column 'settlementDate' to pandas datetime
+2025-09-18 10:54:16,173 [INFO] Converting column 'fuelType' to string
+2025-09-18 10:54:16,173 [INFO] Converting column '_dataset' to string
+2025-09-18 10:54:16,173 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:54:16,174 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:54:16,175 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:54:16,176 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:54:16,176 [INFO] Converting column '_source_api' to string
+2025-09-18 10:54:16,176 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:54:16,176 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:54:16,177 [INFO] 🌐 Fetching BMRS dataset=FUELINST from=2022-03-26 00:00:00+00:00 to=2022-03-27 00:00:00+00:00
+2025-09-18 10:54:16,333 [INFO] Created hash keys for 2600 rows using 7 content columns
+2025-09-18 10:54:16,333 [INFO] Converting column 'dataset' to string
+2025-09-18 10:54:16,333 [INFO] Converting datetime column 'publishTime' to pandas datetime
+2025-09-18 10:54:16,335 [INFO] Converting datetime column 'startTime' to pandas datetime
+2025-09-18 10:54:16,336 [INFO] Converting datetime column 'settlementDate' to pandas datetime
+2025-09-18 10:54:16,337 [INFO] Converting column 'fuelType' to string
+2025-09-18 10:54:16,337 [INFO] Converting column '_dataset' to string
+2025-09-18 10:54:16,338 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:54:16,339 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:54:16,340 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:54:16,341 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:54:16,341 [INFO] Converting column '_source_api' to string
+2025-09-18 10:54:16,341 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:54:16,341 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:54:16,341 [INFO] 🌐 Fetching BMRS dataset=FUELINST from=2022-03-25 00:00:00+00:00 to=2022-03-26 00:00:00+00:00
+2025-09-18 10:54:16,459 [INFO] Created hash keys for 2600 rows using 7 content columns
+2025-09-18 10:54:16,459 [INFO] Converting column 'dataset' to string
+2025-09-18 10:54:16,459 [INFO] Converting datetime column 'publishTime' to pandas datetime
+2025-09-18 10:54:16,461 [INFO] Converting datetime column 'startTime' to pandas datetime
+2025-09-18 10:54:16,462 [INFO] Converting datetime column 'settlementDate' to pandas datetime
+2025-09-18 10:54:16,463 [INFO] Converting column 'fuelType' to string
+2025-09-18 10:54:16,464 [INFO] Converting column '_dataset' to string
+2025-09-18 10:54:16,465 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:54:16,466 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:54:16,470 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:54:16,472 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:54:16,473 [INFO] Converting column '_source_api' to string
+2025-09-18 10:54:16,473 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:54:16,474 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:54:16,475 [INFO] 🌐 Fetching BMRS dataset=FUELINST from=2022-03-24 00:00:00+00:00 to=2022-03-25 00:00:00+00:00
+2025-09-18 10:54:16,629 [INFO] Created hash keys for 2600 rows using 7 content columns
+2025-09-18 10:54:16,630 [INFO] Converting column 'dataset' to string
+2025-09-18 10:54:16,630 [INFO] Converting datetime column 'publishTime' to pandas datetime
+2025-09-18 10:54:16,631 [INFO] Converting datetime column 'startTime' to pandas datetime
+2025-09-18 10:54:16,632 [INFO] Converting datetime column 'settlementDate' to pandas datetime
+2025-09-18 10:54:16,633 [INFO] Converting column 'fuelType' to string
+2025-09-18 10:54:16,633 [INFO] Converting column '_dataset' to string
+2025-09-18 10:54:16,633 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:54:16,634 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:54:16,636 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:54:16,637 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:54:16,637 [INFO] Converting column '_source_api' to string
+2025-09-18 10:54:16,638 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:54:16,638 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:54:16,638 [INFO] 🌐 Fetching BMRS dataset=FUELINST from=2022-03-23 00:00:00+00:00 to=2022-03-24 00:00:00+00:00
+2025-09-18 10:54:16,783 [INFO] Created hash keys for 2600 rows using 7 content columns
+2025-09-18 10:54:16,783 [INFO] Converting column 'dataset' to string
+2025-09-18 10:54:16,784 [INFO] Converting datetime column 'publishTime' to pandas datetime
+2025-09-18 10:54:16,785 [INFO] Converting datetime column 'startTime' to pandas datetime
+2025-09-18 10:54:16,786 [INFO] Converting datetime column 'settlementDate' to pandas datetime
+2025-09-18 10:54:16,787 [INFO] Converting column 'fuelType' to string
+2025-09-18 10:54:16,787 [INFO] Converting column '_dataset' to string
+2025-09-18 10:54:16,787 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:54:16,788 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:54:16,789 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:54:16,790 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:54:16,790 [INFO] Converting column '_source_api' to string
+2025-09-18 10:54:16,791 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:54:16,791 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:54:16,791 [INFO] 🌐 Fetching BMRS dataset=FUELINST from=2022-03-22 00:00:00+00:00 to=2022-03-23 00:00:00+00:00
+2025-09-18 10:54:16,949 [INFO] Created hash keys for 2600 rows using 7 content columns
+2025-09-18 10:54:16,949 [INFO] Converting column 'dataset' to string
+2025-09-18 10:54:16,949 [INFO] Converting datetime column 'publishTime' to pandas datetime
+2025-09-18 10:54:16,951 [INFO] Converting datetime column 'startTime' to pandas datetime
+2025-09-18 10:54:16,952 [INFO] Converting datetime column 'settlementDate' to pandas datetime
+2025-09-18 10:54:16,953 [INFO] Converting column 'fuelType' to string
+2025-09-18 10:54:16,953 [INFO] Converting column '_dataset' to string
+2025-09-18 10:54:16,954 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:54:16,955 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:54:16,956 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:54:16,957 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:54:16,957 [INFO] Converting column '_source_api' to string
+2025-09-18 10:54:16,957 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:54:16,958 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:54:16,958 [INFO] 🌐 Fetching BMRS dataset=FUELINST from=2022-03-21 00:00:00+00:00 to=2022-03-22 00:00:00+00:00
+2025-09-18 10:54:17,077 [INFO] Created hash keys for 2600 rows using 7 content columns
+2025-09-18 10:54:17,078 [INFO] Converting column 'dataset' to string
+2025-09-18 10:54:17,078 [INFO] Converting datetime column 'publishTime' to pandas datetime
+2025-09-18 10:54:17,079 [INFO] Converting datetime column 'startTime' to pandas datetime
+2025-09-18 10:54:17,080 [INFO] Converting datetime column 'settlementDate' to pandas datetime
+2025-09-18 10:54:17,081 [INFO] Converting column 'fuelType' to string
+2025-09-18 10:54:17,081 [INFO] Converting column '_dataset' to string
+2025-09-18 10:54:17,081 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:54:17,082 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:54:17,084 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:54:17,085 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:54:17,085 [INFO] Converting column '_source_api' to string
+2025-09-18 10:54:17,085 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:54:17,086 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:54:17,086 [INFO] 🌐 Fetching BMRS dataset=FUELINST from=2022-03-20 00:00:00+00:00 to=2022-03-21 00:00:00+00:00
+2025-09-18 10:54:17,238 [INFO] Created hash keys for 2600 rows using 7 content columns
+2025-09-18 10:54:17,239 [INFO] Converting column 'dataset' to string
+2025-09-18 10:54:17,239 [INFO] Converting datetime column 'publishTime' to pandas datetime
+2025-09-18 10:54:17,240 [INFO] Converting datetime column 'startTime' to pandas datetime
+2025-09-18 10:54:17,241 [INFO] Converting datetime column 'settlementDate' to pandas datetime
+2025-09-18 10:54:17,242 [INFO] Converting column 'fuelType' to string
+2025-09-18 10:54:17,242 [INFO] Converting column '_dataset' to string
+2025-09-18 10:54:17,242 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:54:17,243 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:54:17,244 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:54:17,245 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:54:17,245 [INFO] Converting column '_source_api' to string
+2025-09-18 10:54:17,246 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:54:17,246 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:54:17,246 [INFO] 🌐 Fetching BMRS dataset=FUELINST from=2022-03-19 00:00:00+00:00 to=2022-03-20 00:00:00+00:00
+2025-09-18 10:54:17,372 [INFO] Created hash keys for 2600 rows using 7 content columns
+2025-09-18 10:54:17,372 [INFO] Converting column 'dataset' to string
+2025-09-18 10:54:17,372 [INFO] Converting datetime column 'publishTime' to pandas datetime
+2025-09-18 10:54:17,374 [INFO] Converting datetime column 'startTime' to pandas datetime
+2025-09-18 10:54:17,375 [INFO] Converting datetime column 'settlementDate' to pandas datetime
+2025-09-18 10:54:17,376 [INFO] Converting column 'fuelType' to string
+2025-09-18 10:54:17,376 [INFO] Converting column '_dataset' to string
+2025-09-18 10:54:17,376 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:54:17,377 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:54:17,378 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:54:17,379 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:54:17,379 [INFO] Converting column '_source_api' to string
+2025-09-18 10:54:17,379 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:54:17,380 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:54:17,380 [INFO] 🌐 Fetching BMRS dataset=FUELINST from=2022-03-18 00:00:00+00:00 to=2022-03-19 00:00:00+00:00
+2025-09-18 10:54:17,503 [INFO] Created hash keys for 2600 rows using 7 content columns
+2025-09-18 10:54:17,504 [INFO] Converting column 'dataset' to string
+2025-09-18 10:54:17,504 [INFO] Converting datetime column 'publishTime' to pandas datetime
+2025-09-18 10:54:17,505 [INFO] Converting datetime column 'startTime' to pandas datetime
+2025-09-18 10:54:17,506 [INFO] Converting datetime column 'settlementDate' to pandas datetime
+2025-09-18 10:54:17,507 [INFO] Converting column 'fuelType' to string
+2025-09-18 10:54:17,507 [INFO] Converting column '_dataset' to string
+2025-09-18 10:54:17,507 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:54:17,508 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:54:17,509 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:54:17,510 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:54:17,510 [INFO] Converting column '_source_api' to string
+2025-09-18 10:54:17,511 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:54:17,511 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:54:17,511 [INFO] 🌐 Fetching BMRS dataset=FUELINST from=2022-03-17 00:00:00+00:00 to=2022-03-18 00:00:00+00:00
+2025-09-18 10:54:17,640 [INFO] Created hash keys for 2600 rows using 7 content columns
+2025-09-18 10:54:17,640 [INFO] Converting column 'dataset' to string
+2025-09-18 10:54:17,640 [INFO] Converting datetime column 'publishTime' to pandas datetime
+2025-09-18 10:54:17,642 [INFO] Converting datetime column 'startTime' to pandas datetime
+2025-09-18 10:54:17,643 [INFO] Converting datetime column 'settlementDate' to pandas datetime
+2025-09-18 10:54:17,644 [INFO] Converting column 'fuelType' to string
+2025-09-18 10:54:17,644 [INFO] Converting column '_dataset' to string
+2025-09-18 10:54:17,644 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:54:17,645 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:54:17,646 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:54:17,647 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:54:17,647 [INFO] Converting column '_source_api' to string
+2025-09-18 10:54:17,647 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:54:17,647 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:54:17,648 [INFO] 🌐 Fetching BMRS dataset=FUELINST from=2022-03-16 00:00:00+00:00 to=2022-03-17 00:00:00+00:00
+2025-09-18 10:54:17,842 [INFO] Created hash keys for 2600 rows using 7 content columns
+2025-09-18 10:54:17,842 [INFO] Converting column 'dataset' to string
+2025-09-18 10:54:17,843 [INFO] Converting datetime column 'publishTime' to pandas datetime
+2025-09-18 10:54:17,845 [INFO] Converting datetime column 'startTime' to pandas datetime
+2025-09-18 10:54:17,847 [INFO] Converting datetime column 'settlementDate' to pandas datetime
+2025-09-18 10:54:17,854 [INFO] Converting column 'fuelType' to string
+2025-09-18 10:54:17,855 [INFO] Converting column '_dataset' to string
+2025-09-18 10:54:17,855 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:54:17,856 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:54:17,857 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:54:17,859 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:54:17,861 [INFO] Converting column '_source_api' to string
+2025-09-18 10:54:17,861 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:54:17,862 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:54:17,863 [INFO] 🌐 Fetching BMRS dataset=FUELINST from=2022-03-15 00:00:00+00:00 to=2022-03-16 00:00:00+00:00
+2025-09-18 10:54:18,033 [INFO] Created hash keys for 2600 rows using 7 content columns
+2025-09-18 10:54:18,033 [INFO] Converting column 'dataset' to string
+2025-09-18 10:54:18,033 [INFO] Converting datetime column 'publishTime' to pandas datetime
+2025-09-18 10:54:18,036 [INFO] Converting datetime column 'startTime' to pandas datetime
+2025-09-18 10:54:18,038 [INFO] Converting datetime column 'settlementDate' to pandas datetime
+2025-09-18 10:54:18,039 [INFO] Converting column 'fuelType' to string
+2025-09-18 10:54:18,039 [INFO] Converting column '_dataset' to string
+2025-09-18 10:54:18,040 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:54:18,041 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:54:18,042 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:54:18,043 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:54:18,044 [INFO] Converting column '_source_api' to string
+2025-09-18 10:54:18,045 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:54:18,046 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:54:18,047 [INFO] 🌐 Fetching BMRS dataset=FUELINST from=2022-03-14 00:00:00+00:00 to=2022-03-15 00:00:00+00:00
+2025-09-18 10:54:18,180 [INFO] Created hash keys for 2600 rows using 7 content columns
+2025-09-18 10:54:18,180 [INFO] Converting column 'dataset' to string
+2025-09-18 10:54:18,181 [INFO] Converting datetime column 'publishTime' to pandas datetime
+2025-09-18 10:54:18,182 [INFO] Converting datetime column 'startTime' to pandas datetime
+2025-09-18 10:54:18,183 [INFO] Converting datetime column 'settlementDate' to pandas datetime
+2025-09-18 10:54:18,184 [INFO] Converting column 'fuelType' to string
+2025-09-18 10:54:18,184 [INFO] Converting column '_dataset' to string
+2025-09-18 10:54:18,185 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:54:18,186 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:54:18,187 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:54:18,188 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:54:18,188 [INFO] Converting column '_source_api' to string
+2025-09-18 10:54:18,188 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:54:18,188 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:54:18,189 [INFO] 🌐 Fetching BMRS dataset=FUELINST from=2022-03-13 00:00:00+00:00 to=2022-03-14 00:00:00+00:00
+2025-09-18 10:54:18,331 [INFO] Created hash keys for 2600 rows using 7 content columns
+2025-09-18 10:54:18,332 [INFO] Converting column 'dataset' to string
+2025-09-18 10:54:18,332 [INFO] Converting datetime column 'publishTime' to pandas datetime
+2025-09-18 10:54:18,335 [INFO] Converting datetime column 'startTime' to pandas datetime
+2025-09-18 10:54:18,342 [INFO] Converting datetime column 'settlementDate' to pandas datetime
+2025-09-18 10:54:18,347 [INFO] Converting column 'fuelType' to string
+2025-09-18 10:54:18,347 [INFO] Converting column '_dataset' to string
+2025-09-18 10:54:18,347 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:54:18,349 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:54:18,351 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:54:18,354 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:54:18,354 [INFO] Converting column '_source_api' to string
+2025-09-18 10:54:18,355 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:54:18,356 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:54:18,357 [INFO] 🌐 Fetching BMRS dataset=FUELINST from=2022-03-12 00:00:00+00:00 to=2022-03-13 00:00:00+00:00
+2025-09-18 10:54:18,539 [INFO] Created hash keys for 2600 rows using 7 content columns
+2025-09-18 10:54:18,539 [INFO] Converting column 'dataset' to string
+2025-09-18 10:54:18,540 [INFO] Converting datetime column 'publishTime' to pandas datetime
+2025-09-18 10:54:18,541 [INFO] Converting datetime column 'startTime' to pandas datetime
+2025-09-18 10:54:18,542 [INFO] Converting datetime column 'settlementDate' to pandas datetime
+2025-09-18 10:54:18,543 [INFO] Converting column 'fuelType' to string
+2025-09-18 10:54:18,544 [INFO] Converting column '_dataset' to string
+2025-09-18 10:54:18,544 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:54:18,545 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:54:18,546 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:54:18,548 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:54:18,548 [INFO] Converting column '_source_api' to string
+2025-09-18 10:54:18,548 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:54:18,548 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:54:18,548 [INFO] 📦 Flushing batch for FUELINST: 20 frames (size threshold reached (20 >= 20) or time threshold reached (3.2 >= 300))
+2025-09-18 10:54:18,559 [INFO] ⬆️ Loading 52000 rows to staging table jibber-jabber-knowledge.uk_energy_insights.bmrs_fuelinst_staging_1758189258
+2025-09-18 10:54:22,049 [INFO] ✅ Successfully loaded 52000 rows to staging table jibber-jabber-knowledge.uk_energy_insights.bmrs_fuelinst_staging_1758189258
+2025-09-18 10:54:24,537 [INFO] ✅ Successfully merged data from jibber-jabber-knowledge.uk_energy_insights.bmrs_fuelinst_staging_1758189258 to jibber-jabber-knowledge.uk_energy_insights.bmrs_fuelinst
+2025-09-18 10:54:24,758 [INFO] 🧹 Cleaned up staging table jibber-jabber-knowledge.uk_energy_insights.bmrs_fuelinst_staging_1758189258
+2025-09-18 10:54:24,774 [INFO] 🌐 Fetching BMRS dataset=FUELINST from=2022-03-11 00:00:00+00:00 to=2022-03-12 00:00:00+00:00
+2025-09-18 10:54:24,961 [INFO] Created hash keys for 2600 rows using 7 content columns
+2025-09-18 10:54:24,961 [INFO] Converting column 'dataset' to string
+2025-09-18 10:54:24,962 [INFO] Converting datetime column 'publishTime' to pandas datetime
+2025-09-18 10:54:24,966 [INFO] Converting datetime column 'startTime' to pandas datetime
+2025-09-18 10:54:24,971 [INFO] Converting datetime column 'settlementDate' to pandas datetime
+2025-09-18 10:54:24,979 [INFO] Converting column 'fuelType' to string
+2025-09-18 10:54:24,980 [INFO] Converting column '_dataset' to string
+2025-09-18 10:54:24,980 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:54:24,983 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:54:24,989 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:54:24,996 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:54:24,997 [INFO] Converting column '_source_api' to string
+2025-09-18 10:54:24,998 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:54:24,998 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:54:25,015 [INFO] 🌐 Fetching BMRS dataset=FUELINST from=2022-03-10 00:00:00+00:00 to=2022-03-11 00:00:00+00:00
+2025-09-18 10:54:25,294 [INFO] Created hash keys for 2600 rows using 7 content columns
+2025-09-18 10:54:25,294 [INFO] Converting column 'dataset' to string
+2025-09-18 10:54:25,295 [INFO] Converting datetime column 'publishTime' to pandas datetime
+2025-09-18 10:54:25,296 [INFO] Converting datetime column 'startTime' to pandas datetime
+2025-09-18 10:54:25,297 [INFO] Converting datetime column 'settlementDate' to pandas datetime
+2025-09-18 10:54:25,298 [INFO] Converting column 'fuelType' to string
+2025-09-18 10:54:25,298 [INFO] Converting column '_dataset' to string
+2025-09-18 10:54:25,298 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:54:25,299 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:54:25,300 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:54:25,301 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:54:25,302 [INFO] Converting column '_source_api' to string
+2025-09-18 10:54:25,302 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:54:25,303 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:54:25,303 [INFO] 🌐 Fetching BMRS dataset=FUELINST from=2022-03-09 00:00:00+00:00 to=2022-03-10 00:00:00+00:00
+2025-09-18 10:54:25,415 [INFO] Created hash keys for 2600 rows using 7 content columns
+2025-09-18 10:54:25,415 [INFO] Converting column 'dataset' to string
+2025-09-18 10:54:25,415 [INFO] Converting datetime column 'publishTime' to pandas datetime
+2025-09-18 10:54:25,417 [INFO] Converting datetime column 'startTime' to pandas datetime
+2025-09-18 10:54:25,418 [INFO] Converting datetime column 'settlementDate' to pandas datetime
+2025-09-18 10:54:25,419 [INFO] Converting column 'fuelType' to string
+2025-09-18 10:54:25,420 [INFO] Converting column '_dataset' to string
+2025-09-18 10:54:25,420 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:54:25,421 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:54:25,422 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:54:25,423 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:54:25,423 [INFO] Converting column '_source_api' to string
+2025-09-18 10:54:25,424 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:54:25,424 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:54:25,424 [INFO] 🌐 Fetching BMRS dataset=FUELINST from=2022-03-08 00:00:00+00:00 to=2022-03-09 00:00:00+00:00
+2025-09-18 10:54:25,547 [INFO] Created hash keys for 2600 rows using 7 content columns
+2025-09-18 10:54:25,547 [INFO] Converting column 'dataset' to string
+2025-09-18 10:54:25,547 [INFO] Converting datetime column 'publishTime' to pandas datetime
+2025-09-18 10:54:25,548 [INFO] Converting datetime column 'startTime' to pandas datetime
+2025-09-18 10:54:25,549 [INFO] Converting datetime column 'settlementDate' to pandas datetime
+2025-09-18 10:54:25,550 [INFO] Converting column 'fuelType' to string
+2025-09-18 10:54:25,550 [INFO] Converting column '_dataset' to string
+2025-09-18 10:54:25,551 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:54:25,552 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:54:25,553 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:54:25,554 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:54:25,554 [INFO] Converting column '_source_api' to string
+2025-09-18 10:54:25,554 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:54:25,555 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:54:25,555 [INFO] 🌐 Fetching BMRS dataset=FUELINST from=2022-03-07 00:00:00+00:00 to=2022-03-08 00:00:00+00:00
+2025-09-18 10:54:25,707 [INFO] Created hash keys for 2600 rows using 7 content columns
+2025-09-18 10:54:25,707 [INFO] Converting column 'dataset' to string
+2025-09-18 10:54:25,707 [INFO] Converting datetime column 'publishTime' to pandas datetime
+2025-09-18 10:54:25,708 [INFO] Converting datetime column 'startTime' to pandas datetime
+2025-09-18 10:54:25,709 [INFO] Converting datetime column 'settlementDate' to pandas datetime
+2025-09-18 10:54:25,710 [INFO] Converting column 'fuelType' to string
+2025-09-18 10:54:25,710 [INFO] Converting column '_dataset' to string
+2025-09-18 10:54:25,710 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:54:25,711 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:54:25,712 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:54:25,712 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:54:25,712 [INFO] Converting column '_source_api' to string
+2025-09-18 10:54:25,713 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:54:25,713 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:54:25,713 [INFO] 🌐 Fetching BMRS dataset=FUELINST from=2022-03-06 00:00:00+00:00 to=2022-03-07 00:00:00+00:00
+2025-09-18 10:54:25,833 [INFO] Created hash keys for 2600 rows using 7 content columns
+2025-09-18 10:54:25,833 [INFO] Converting column 'dataset' to string
+2025-09-18 10:54:25,833 [INFO] Converting datetime column 'publishTime' to pandas datetime
+2025-09-18 10:54:25,834 [INFO] Converting datetime column 'startTime' to pandas datetime
+2025-09-18 10:54:25,836 [INFO] Converting datetime column 'settlementDate' to pandas datetime
+2025-09-18 10:54:25,836 [INFO] Converting column 'fuelType' to string
+2025-09-18 10:54:25,837 [INFO] Converting column '_dataset' to string
+2025-09-18 10:54:25,837 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:54:25,838 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:54:25,839 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:54:25,840 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:54:25,840 [INFO] Converting column '_source_api' to string
+2025-09-18 10:54:25,840 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:54:25,840 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:54:25,841 [INFO] 🌐 Fetching BMRS dataset=FUELINST from=2022-03-05 00:00:00+00:00 to=2022-03-06 00:00:00+00:00
+2025-09-18 10:54:26,089 [INFO] Created hash keys for 2600 rows using 7 content columns
+2025-09-18 10:54:26,090 [INFO] Converting column 'dataset' to string
+2025-09-18 10:54:26,090 [INFO] Converting datetime column 'publishTime' to pandas datetime
+2025-09-18 10:54:26,091 [INFO] Converting datetime column 'startTime' to pandas datetime
+2025-09-18 10:54:26,093 [INFO] Converting datetime column 'settlementDate' to pandas datetime
+2025-09-18 10:54:26,094 [INFO] Converting column 'fuelType' to string
+2025-09-18 10:54:26,094 [INFO] Converting column '_dataset' to string
+2025-09-18 10:54:26,094 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:54:26,095 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:54:26,097 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:54:26,098 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:54:26,098 [INFO] Converting column '_source_api' to string
+2025-09-18 10:54:26,098 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:54:26,098 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:54:26,099 [INFO] 🌐 Fetching BMRS dataset=FUELINST from=2022-03-04 00:00:00+00:00 to=2022-03-05 00:00:00+00:00
+2025-09-18 10:54:26,214 [INFO] Created hash keys for 2600 rows using 7 content columns
+2025-09-18 10:54:26,214 [INFO] Converting column 'dataset' to string
+2025-09-18 10:54:26,214 [INFO] Converting datetime column 'publishTime' to pandas datetime
+2025-09-18 10:54:26,216 [INFO] Converting datetime column 'startTime' to pandas datetime
+2025-09-18 10:54:26,217 [INFO] Converting datetime column 'settlementDate' to pandas datetime
+2025-09-18 10:54:26,218 [INFO] Converting column 'fuelType' to string
+2025-09-18 10:54:26,218 [INFO] Converting column '_dataset' to string
+2025-09-18 10:54:26,218 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:54:26,219 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:54:26,220 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:54:26,221 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:54:26,221 [INFO] Converting column '_source_api' to string
+2025-09-18 10:54:26,221 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:54:26,221 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:54:26,222 [INFO] 🌐 Fetching BMRS dataset=FUELINST from=2022-03-03 00:00:00+00:00 to=2022-03-04 00:00:00+00:00
+2025-09-18 10:54:26,334 [INFO] Created hash keys for 2600 rows using 7 content columns
+2025-09-18 10:54:26,335 [INFO] Converting column 'dataset' to string
+2025-09-18 10:54:26,335 [INFO] Converting datetime column 'publishTime' to pandas datetime
+2025-09-18 10:54:26,336 [INFO] Converting datetime column 'startTime' to pandas datetime
+2025-09-18 10:54:26,337 [INFO] Converting datetime column 'settlementDate' to pandas datetime
+2025-09-18 10:54:26,338 [INFO] Converting column 'fuelType' to string
+2025-09-18 10:54:26,338 [INFO] Converting column '_dataset' to string
+2025-09-18 10:54:26,338 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:54:26,339 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:54:26,340 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:54:26,341 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:54:26,341 [INFO] Converting column '_source_api' to string
+2025-09-18 10:54:26,341 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:54:26,341 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:54:26,342 [INFO] 🌐 Fetching BMRS dataset=FUELINST from=2022-03-02 00:00:00+00:00 to=2022-03-03 00:00:00+00:00
+2025-09-18 10:54:26,487 [INFO] Created hash keys for 2600 rows using 7 content columns
+2025-09-18 10:54:26,488 [INFO] Converting column 'dataset' to string
+2025-09-18 10:54:26,488 [INFO] Converting datetime column 'publishTime' to pandas datetime
+2025-09-18 10:54:26,489 [INFO] Converting datetime column 'startTime' to pandas datetime
+2025-09-18 10:54:26,490 [INFO] Converting datetime column 'settlementDate' to pandas datetime
+2025-09-18 10:54:26,491 [INFO] Converting column 'fuelType' to string
+2025-09-18 10:54:26,491 [INFO] Converting column '_dataset' to string
+2025-09-18 10:54:26,491 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:54:26,492 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:54:26,492 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:54:26,493 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:54:26,493 [INFO] Converting column '_source_api' to string
+2025-09-18 10:54:26,494 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:54:26,494 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:54:26,494 [INFO] 🌐 Fetching BMRS dataset=FUELINST from=2022-03-01 00:00:00+00:00 to=2022-03-02 00:00:00+00:00
+2025-09-18 10:54:26,606 [INFO] Created hash keys for 2600 rows using 7 content columns
+2025-09-18 10:54:26,606 [INFO] Converting column 'dataset' to string
+2025-09-18 10:54:26,606 [INFO] Converting datetime column 'publishTime' to pandas datetime
+2025-09-18 10:54:26,607 [INFO] Converting datetime column 'startTime' to pandas datetime
+2025-09-18 10:54:26,608 [INFO] Converting datetime column 'settlementDate' to pandas datetime
+2025-09-18 10:54:26,609 [INFO] Converting column 'fuelType' to string
+2025-09-18 10:54:26,609 [INFO] Converting column '_dataset' to string
+2025-09-18 10:54:26,609 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:54:26,610 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:54:26,611 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:54:26,612 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:54:26,612 [INFO] Converting column '_source_api' to string
+2025-09-18 10:54:26,612 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:54:26,612 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:54:26,612 [INFO] 🌐 Fetching BMRS dataset=FUELINST from=2022-02-28 00:00:00+00:00 to=2022-03-01 00:00:00+00:00
+2025-09-18 10:54:26,721 [INFO] Created hash keys for 2600 rows using 7 content columns
+2025-09-18 10:54:26,721 [INFO] Converting column 'dataset' to string
+2025-09-18 10:54:26,722 [INFO] Converting datetime column 'publishTime' to pandas datetime
+2025-09-18 10:54:26,723 [INFO] Converting datetime column 'startTime' to pandas datetime
+2025-09-18 10:54:26,724 [INFO] Converting datetime column 'settlementDate' to pandas datetime
+2025-09-18 10:54:26,724 [INFO] Converting column 'fuelType' to string
+2025-09-18 10:54:26,725 [INFO] Converting column '_dataset' to string
+2025-09-18 10:54:26,725 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:54:26,725 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:54:26,726 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:54:26,727 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:54:26,727 [INFO] Converting column '_source_api' to string
+2025-09-18 10:54:26,727 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:54:26,728 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:54:26,728 [INFO] 🌐 Fetching BMRS dataset=FUELINST from=2022-02-27 00:00:00+00:00 to=2022-02-28 00:00:00+00:00
+2025-09-18 10:54:26,835 [INFO] Created hash keys for 2600 rows using 7 content columns
+2025-09-18 10:54:26,835 [INFO] Converting column 'dataset' to string
+2025-09-18 10:54:26,835 [INFO] Converting datetime column 'publishTime' to pandas datetime
+2025-09-18 10:54:26,836 [INFO] Converting datetime column 'startTime' to pandas datetime
+2025-09-18 10:54:26,837 [INFO] Converting datetime column 'settlementDate' to pandas datetime
+2025-09-18 10:54:26,838 [INFO] Converting column 'fuelType' to string
+2025-09-18 10:54:26,838 [INFO] Converting column '_dataset' to string
+2025-09-18 10:54:26,838 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:54:26,839 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:54:26,840 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:54:26,841 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:54:26,841 [INFO] Converting column '_source_api' to string
+2025-09-18 10:54:26,841 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:54:26,842 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:54:26,842 [INFO] 🌐 Fetching BMRS dataset=FUELINST from=2022-02-26 00:00:00+00:00 to=2022-02-27 00:00:00+00:00
+2025-09-18 10:54:26,959 [INFO] Created hash keys for 2600 rows using 7 content columns
+2025-09-18 10:54:26,959 [INFO] Converting column 'dataset' to string
+2025-09-18 10:54:26,959 [INFO] Converting datetime column 'publishTime' to pandas datetime
+2025-09-18 10:54:26,960 [INFO] Converting datetime column 'startTime' to pandas datetime
+2025-09-18 10:54:26,961 [INFO] Converting datetime column 'settlementDate' to pandas datetime
+2025-09-18 10:54:26,962 [INFO] Converting column 'fuelType' to string
+2025-09-18 10:54:26,962 [INFO] Converting column '_dataset' to string
+2025-09-18 10:54:26,962 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:54:26,963 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:54:26,963 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:54:26,964 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:54:26,964 [INFO] Converting column '_source_api' to string
+2025-09-18 10:54:26,965 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:54:26,965 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:54:26,965 [INFO] 🌐 Fetching BMRS dataset=FUELINST from=2022-02-25 00:00:00+00:00 to=2022-02-26 00:00:00+00:00
+2025-09-18 10:54:27,112 [INFO] Created hash keys for 2600 rows using 7 content columns
+2025-09-18 10:54:27,112 [INFO] Converting column 'dataset' to string
+2025-09-18 10:54:27,112 [INFO] Converting datetime column 'publishTime' to pandas datetime
+2025-09-18 10:54:27,113 [INFO] Converting datetime column 'startTime' to pandas datetime
+2025-09-18 10:54:27,114 [INFO] Converting datetime column 'settlementDate' to pandas datetime
+2025-09-18 10:54:27,115 [INFO] Converting column 'fuelType' to string
+2025-09-18 10:54:27,115 [INFO] Converting column '_dataset' to string
+2025-09-18 10:54:27,115 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:54:27,116 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:54:27,116 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:54:27,117 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:54:27,118 [INFO] Converting column '_source_api' to string
+2025-09-18 10:54:27,118 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:54:27,118 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:54:27,119 [INFO] 🌐 Fetching BMRS dataset=FUELINST from=2022-02-24 00:00:00+00:00 to=2022-02-25 00:00:00+00:00
+2025-09-18 10:54:27,273 [INFO] Created hash keys for 2600 rows using 7 content columns
+2025-09-18 10:54:27,273 [INFO] Converting column 'dataset' to string
+2025-09-18 10:54:27,273 [INFO] Converting datetime column 'publishTime' to pandas datetime
+2025-09-18 10:54:27,274 [INFO] Converting datetime column 'startTime' to pandas datetime
+2025-09-18 10:54:27,275 [INFO] Converting datetime column 'settlementDate' to pandas datetime
+2025-09-18 10:54:27,276 [INFO] Converting column 'fuelType' to string
+2025-09-18 10:54:27,276 [INFO] Converting column '_dataset' to string
+2025-09-18 10:54:27,277 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:54:27,277 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:54:27,278 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:54:27,279 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:54:27,279 [INFO] Converting column '_source_api' to string
+2025-09-18 10:54:27,280 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:54:27,280 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:54:27,280 [INFO] 🌐 Fetching BMRS dataset=FUELINST from=2022-02-23 00:00:00+00:00 to=2022-02-24 00:00:00+00:00
+2025-09-18 10:54:27,404 [INFO] Created hash keys for 2600 rows using 7 content columns
+2025-09-18 10:54:27,405 [INFO] Converting column 'dataset' to string
+2025-09-18 10:54:27,405 [INFO] Converting datetime column 'publishTime' to pandas datetime
+2025-09-18 10:54:27,406 [INFO] Converting datetime column 'startTime' to pandas datetime
+2025-09-18 10:54:27,407 [INFO] Converting datetime column 'settlementDate' to pandas datetime
+2025-09-18 10:54:27,408 [INFO] Converting column 'fuelType' to string
+2025-09-18 10:54:27,408 [INFO] Converting column '_dataset' to string
+2025-09-18 10:54:27,408 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:54:27,409 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:54:27,410 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:54:27,410 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:54:27,411 [INFO] Converting column '_source_api' to string
+2025-09-18 10:54:27,411 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:54:27,411 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:54:27,411 [INFO] 🌐 Fetching BMRS dataset=FUELINST from=2022-02-22 00:00:00+00:00 to=2022-02-23 00:00:00+00:00
+2025-09-18 10:54:27,560 [INFO] Created hash keys for 2600 rows using 7 content columns
+2025-09-18 10:54:27,561 [INFO] Converting column 'dataset' to string
+2025-09-18 10:54:27,561 [INFO] Converting datetime column 'publishTime' to pandas datetime
+2025-09-18 10:54:27,562 [INFO] Converting datetime column 'startTime' to pandas datetime
+2025-09-18 10:54:27,563 [INFO] Converting datetime column 'settlementDate' to pandas datetime
+2025-09-18 10:54:27,563 [INFO] Converting column 'fuelType' to string
+2025-09-18 10:54:27,564 [INFO] Converting column '_dataset' to string
+2025-09-18 10:54:27,564 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:54:27,564 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:54:27,565 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:54:27,566 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:54:27,566 [INFO] Converting column '_source_api' to string
+2025-09-18 10:54:27,567 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:54:27,567 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:54:27,567 [INFO] 🌐 Fetching BMRS dataset=FUELINST from=2022-02-21 00:00:00+00:00 to=2022-02-22 00:00:00+00:00
+2025-09-18 10:54:27,680 [INFO] Created hash keys for 2600 rows using 7 content columns
+2025-09-18 10:54:27,681 [INFO] Converting column 'dataset' to string
+2025-09-18 10:54:27,681 [INFO] Converting datetime column 'publishTime' to pandas datetime
+2025-09-18 10:54:27,682 [INFO] Converting datetime column 'startTime' to pandas datetime
+2025-09-18 10:54:27,683 [INFO] Converting datetime column 'settlementDate' to pandas datetime
+2025-09-18 10:54:27,684 [INFO] Converting column 'fuelType' to string
+2025-09-18 10:54:27,684 [INFO] Converting column '_dataset' to string
+2025-09-18 10:54:27,684 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:54:27,685 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:54:27,686 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:54:27,687 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:54:27,687 [INFO] Converting column '_source_api' to string
+2025-09-18 10:54:27,687 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:54:27,688 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:54:27,688 [INFO] 🌐 Fetching BMRS dataset=FUELINST from=2022-02-20 00:00:00+00:00 to=2022-02-21 00:00:00+00:00
+2025-09-18 10:54:27,815 [INFO] Created hash keys for 2600 rows using 7 content columns
+2025-09-18 10:54:27,815 [INFO] Converting column 'dataset' to string
+2025-09-18 10:54:27,815 [INFO] Converting datetime column 'publishTime' to pandas datetime
+2025-09-18 10:54:27,816 [INFO] Converting datetime column 'startTime' to pandas datetime
+2025-09-18 10:54:27,817 [INFO] Converting datetime column 'settlementDate' to pandas datetime
+2025-09-18 10:54:27,819 [INFO] Converting column 'fuelType' to string
+2025-09-18 10:54:27,819 [INFO] Converting column '_dataset' to string
+2025-09-18 10:54:27,819 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:54:27,820 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:54:27,821 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:54:27,822 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:54:27,822 [INFO] Converting column '_source_api' to string
+2025-09-18 10:54:27,822 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:54:27,822 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:54:27,822 [INFO] 📦 Flushing batch for FUELINST: 20 frames (size threshold reached (20 >= 20) or time threshold reached (3.0 >= 300))
+2025-09-18 10:54:27,830 [INFO] ⬆️ Loading 52000 rows to staging table jibber-jabber-knowledge.uk_energy_insights.bmrs_fuelinst_staging_1758189267
+2025-09-18 10:54:30,823 [INFO] ✅ Successfully loaded 52000 rows to staging table jibber-jabber-knowledge.uk_energy_insights.bmrs_fuelinst_staging_1758189267
+2025-09-18 10:54:33,946 [INFO] ✅ Successfully merged data from jibber-jabber-knowledge.uk_energy_insights.bmrs_fuelinst_staging_1758189267 to jibber-jabber-knowledge.uk_energy_insights.bmrs_fuelinst
+2025-09-18 10:54:34,162 [INFO] 🧹 Cleaned up staging table jibber-jabber-knowledge.uk_energy_insights.bmrs_fuelinst_staging_1758189267
+2025-09-18 10:54:34,170 [INFO] 🌐 Fetching BMRS dataset=FUELINST from=2022-02-19 00:00:00+00:00 to=2022-02-20 00:00:00+00:00
+2025-09-18 10:54:34,325 [INFO] Created hash keys for 2600 rows using 7 content columns
+2025-09-18 10:54:34,326 [INFO] Converting column 'dataset' to string
+2025-09-18 10:54:34,327 [INFO] Converting datetime column 'publishTime' to pandas datetime
+2025-09-18 10:54:34,330 [INFO] Converting datetime column 'startTime' to pandas datetime
+2025-09-18 10:54:34,331 [INFO] Converting datetime column 'settlementDate' to pandas datetime
+2025-09-18 10:54:34,333 [INFO] Converting column 'fuelType' to string
+2025-09-18 10:54:34,333 [INFO] Converting column '_dataset' to string
+2025-09-18 10:54:34,333 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:54:34,336 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:54:34,337 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:54:34,339 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:54:34,339 [INFO] Converting column '_source_api' to string
+2025-09-18 10:54:34,339 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:54:34,340 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:54:34,340 [INFO] 🌐 Fetching BMRS dataset=FUELINST from=2022-02-18 00:00:00+00:00 to=2022-02-19 00:00:00+00:00
+2025-09-18 10:54:34,537 [INFO] Created hash keys for 2600 rows using 7 content columns
+2025-09-18 10:54:34,537 [INFO] Converting column 'dataset' to string
+2025-09-18 10:54:34,537 [INFO] Converting datetime column 'publishTime' to pandas datetime
+2025-09-18 10:54:34,538 [INFO] Converting datetime column 'startTime' to pandas datetime
+2025-09-18 10:54:34,539 [INFO] Converting datetime column 'settlementDate' to pandas datetime
+2025-09-18 10:54:34,540 [INFO] Converting column 'fuelType' to string
+2025-09-18 10:54:34,540 [INFO] Converting column '_dataset' to string
+2025-09-18 10:54:34,541 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:54:34,541 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:54:34,543 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:54:34,544 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:54:34,544 [INFO] Converting column '_source_api' to string
+2025-09-18 10:54:34,544 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:54:34,544 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:54:34,545 [INFO] 🌐 Fetching BMRS dataset=FUELINST from=2022-02-17 00:00:00+00:00 to=2022-02-18 00:00:00+00:00
+2025-09-18 10:54:34,671 [INFO] Created hash keys for 2600 rows using 7 content columns
+2025-09-18 10:54:34,672 [INFO] Converting column 'dataset' to string
+2025-09-18 10:54:34,672 [INFO] Converting datetime column 'publishTime' to pandas datetime
+2025-09-18 10:54:34,673 [INFO] Converting datetime column 'startTime' to pandas datetime
+2025-09-18 10:54:34,674 [INFO] Converting datetime column 'settlementDate' to pandas datetime
+2025-09-18 10:54:34,675 [INFO] Converting column 'fuelType' to string
+2025-09-18 10:54:34,675 [INFO] Converting column '_dataset' to string
+2025-09-18 10:54:34,675 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:54:34,676 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:54:34,680 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:54:34,680 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:54:34,681 [INFO] Converting column '_source_api' to string
+2025-09-18 10:54:34,681 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:54:34,681 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:54:34,681 [INFO] 🌐 Fetching BMRS dataset=FUELINST from=2022-02-16 00:00:00+00:00 to=2022-02-17 00:00:00+00:00
+2025-09-18 10:54:34,844 [INFO] Created hash keys for 2600 rows using 7 content columns
+2025-09-18 10:54:34,844 [INFO] Converting column 'dataset' to string
+2025-09-18 10:54:34,844 [INFO] Converting datetime column 'publishTime' to pandas datetime
+2025-09-18 10:54:34,846 [INFO] Converting datetime column 'startTime' to pandas datetime
+2025-09-18 10:54:34,847 [INFO] Converting datetime column 'settlementDate' to pandas datetime
+2025-09-18 10:54:34,848 [INFO] Converting column 'fuelType' to string
+2025-09-18 10:54:34,848 [INFO] Converting column '_dataset' to string
+2025-09-18 10:54:34,849 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:54:34,850 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:54:34,851 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:54:34,853 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:54:34,853 [INFO] Converting column '_source_api' to string
+2025-09-18 10:54:34,853 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:54:34,854 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:54:34,854 [INFO] 🌐 Fetching BMRS dataset=FUELINST from=2022-02-15 00:00:00+00:00 to=2022-02-16 00:00:00+00:00
+2025-09-18 10:54:34,975 [INFO] Created hash keys for 2600 rows using 7 content columns
+2025-09-18 10:54:34,975 [INFO] Converting column 'dataset' to string
+2025-09-18 10:54:34,976 [INFO] Converting datetime column 'publishTime' to pandas datetime
+2025-09-18 10:54:34,977 [INFO] Converting datetime column 'startTime' to pandas datetime
+2025-09-18 10:54:34,979 [INFO] Converting datetime column 'settlementDate' to pandas datetime
+2025-09-18 10:54:34,980 [INFO] Converting column 'fuelType' to string
+2025-09-18 10:54:34,980 [INFO] Converting column '_dataset' to string
+2025-09-18 10:54:34,981 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:54:34,982 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:54:34,983 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:54:34,984 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:54:34,984 [INFO] Converting column '_source_api' to string
+2025-09-18 10:54:34,985 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:54:34,985 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:54:34,986 [INFO] 🌐 Fetching BMRS dataset=FUELINST from=2022-02-14 00:00:00+00:00 to=2022-02-15 00:00:00+00:00
+2025-09-18 10:54:35,106 [INFO] Created hash keys for 2600 rows using 7 content columns
+2025-09-18 10:54:35,107 [INFO] Converting column 'dataset' to string
+2025-09-18 10:54:35,107 [INFO] Converting datetime column 'publishTime' to pandas datetime
+2025-09-18 10:54:35,108 [INFO] Converting datetime column 'startTime' to pandas datetime
+2025-09-18 10:54:35,109 [INFO] Converting datetime column 'settlementDate' to pandas datetime
+2025-09-18 10:54:35,110 [INFO] Converting column 'fuelType' to string
+2025-09-18 10:54:35,112 [INFO] Converting column '_dataset' to string
+2025-09-18 10:54:35,112 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:54:35,113 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:54:35,115 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:54:35,118 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:54:35,119 [INFO] Converting column '_source_api' to string
+2025-09-18 10:54:35,120 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:54:35,120 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:54:35,121 [INFO] 🌐 Fetching BMRS dataset=FUELINST from=2022-02-13 00:00:00+00:00 to=2022-02-14 00:00:00+00:00
+2025-09-18 10:54:35,308 [INFO] Created hash keys for 2600 rows using 7 content columns
+2025-09-18 10:54:35,308 [INFO] Converting column 'dataset' to string
+2025-09-18 10:54:35,309 [INFO] Converting datetime column 'publishTime' to pandas datetime
+2025-09-18 10:54:35,312 [INFO] Converting datetime column 'startTime' to pandas datetime
+2025-09-18 10:54:35,314 [INFO] Converting datetime column 'settlementDate' to pandas datetime
+2025-09-18 10:54:35,315 [INFO] Converting column 'fuelType' to string
+2025-09-18 10:54:35,315 [INFO] Converting column '_dataset' to string
+2025-09-18 10:54:35,315 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:54:35,316 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:54:35,319 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:54:35,321 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:54:35,321 [INFO] Converting column '_source_api' to string
+2025-09-18 10:54:35,321 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:54:35,322 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:54:35,322 [INFO] 🌐 Fetching BMRS dataset=FUELINST from=2022-02-12 00:00:00+00:00 to=2022-02-13 00:00:00+00:00
+2025-09-18 10:54:35,493 [INFO] Created hash keys for 2600 rows using 7 content columns
+2025-09-18 10:54:35,493 [INFO] Converting column 'dataset' to string
+2025-09-18 10:54:35,494 [INFO] Converting datetime column 'publishTime' to pandas datetime
+2025-09-18 10:54:35,496 [INFO] Converting datetime column 'startTime' to pandas datetime
+2025-09-18 10:54:35,498 [INFO] Converting datetime column 'settlementDate' to pandas datetime
+2025-09-18 10:54:35,499 [INFO] Converting column 'fuelType' to string
+2025-09-18 10:54:35,499 [INFO] Converting column '_dataset' to string
+2025-09-18 10:54:35,500 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:54:35,503 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:54:35,504 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:54:35,506 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:54:35,506 [INFO] Converting column '_source_api' to string
+2025-09-18 10:54:35,506 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:54:35,506 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:54:35,507 [INFO] 🌐 Fetching BMRS dataset=FUELINST from=2022-02-11 00:00:00+00:00 to=2022-02-12 00:00:00+00:00
+2025-09-18 10:54:35,678 [INFO] Created hash keys for 2600 rows using 7 content columns
+2025-09-18 10:54:35,679 [INFO] Converting column 'dataset' to string
+2025-09-18 10:54:35,679 [INFO] Converting datetime column 'publishTime' to pandas datetime
+2025-09-18 10:54:35,680 [INFO] Converting datetime column 'startTime' to pandas datetime
+2025-09-18 10:54:35,682 [INFO] Converting datetime column 'settlementDate' to pandas datetime
+2025-09-18 10:54:35,683 [INFO] Converting column 'fuelType' to string
+2025-09-18 10:54:35,683 [INFO] Converting column '_dataset' to string
+2025-09-18 10:54:35,683 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:54:35,686 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:54:35,687 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:54:35,689 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:54:35,689 [INFO] Converting column '_source_api' to string
+2025-09-18 10:54:35,689 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:54:35,690 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:54:35,690 [INFO] 🌐 Fetching BMRS dataset=FUELINST from=2022-02-10 00:00:00+00:00 to=2022-02-11 00:00:00+00:00
+2025-09-18 10:54:35,812 [INFO] Created hash keys for 2600 rows using 7 content columns
+2025-09-18 10:54:35,813 [INFO] Converting column 'dataset' to string
+2025-09-18 10:54:35,813 [INFO] Converting datetime column 'publishTime' to pandas datetime
+2025-09-18 10:54:35,814 [INFO] Converting datetime column 'startTime' to pandas datetime
+2025-09-18 10:54:35,816 [INFO] Converting datetime column 'settlementDate' to pandas datetime
+2025-09-18 10:54:35,817 [INFO] Converting column 'fuelType' to string
+2025-09-18 10:54:35,817 [INFO] Converting column '_dataset' to string
+2025-09-18 10:54:35,818 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:54:35,819 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:54:35,820 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:54:35,820 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:54:35,821 [INFO] Converting column '_source_api' to string
+2025-09-18 10:54:35,821 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:54:35,821 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:54:35,821 [INFO] 🌐 Fetching BMRS dataset=FUELINST from=2022-02-09 00:00:00+00:00 to=2022-02-10 00:00:00+00:00
+2025-09-18 10:54:35,943 [INFO] Created hash keys for 2600 rows using 7 content columns
+2025-09-18 10:54:35,943 [INFO] Converting column 'dataset' to string
+2025-09-18 10:54:35,944 [INFO] Converting datetime column 'publishTime' to pandas datetime
+2025-09-18 10:54:35,946 [INFO] Converting datetime column 'startTime' to pandas datetime
+2025-09-18 10:54:35,949 [INFO] Converting datetime column 'settlementDate' to pandas datetime
+2025-09-18 10:54:35,953 [INFO] Converting column 'fuelType' to string
+2025-09-18 10:54:35,953 [INFO] Converting column '_dataset' to string
+2025-09-18 10:54:35,954 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:54:35,956 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:54:35,956 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:54:35,957 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:54:35,958 [INFO] Converting column '_source_api' to string
+2025-09-18 10:54:35,958 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:54:35,958 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:54:35,958 [INFO] 🌐 Fetching BMRS dataset=FUELINST from=2022-02-08 00:00:00+00:00 to=2022-02-09 00:00:00+00:00
+2025-09-18 10:54:36,116 [INFO] Created hash keys for 2600 rows using 7 content columns
+2025-09-18 10:54:36,117 [INFO] Converting column 'dataset' to string
+2025-09-18 10:54:36,118 [INFO] Converting datetime column 'publishTime' to pandas datetime
+2025-09-18 10:54:36,120 [INFO] Converting datetime column 'startTime' to pandas datetime
+2025-09-18 10:54:36,122 [INFO] Converting datetime column 'settlementDate' to pandas datetime
+2025-09-18 10:54:36,128 [INFO] Converting column 'fuelType' to string
+2025-09-18 10:54:36,128 [INFO] Converting column '_dataset' to string
+2025-09-18 10:54:36,129 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:54:36,130 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:54:36,132 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:54:36,135 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:54:36,136 [INFO] Converting column '_source_api' to string
+2025-09-18 10:54:36,136 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:54:36,137 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:54:36,137 [INFO] 🌐 Fetching BMRS dataset=FUELINST from=2022-02-07 00:00:00+00:00 to=2022-02-08 00:00:00+00:00
+2025-09-18 10:54:36,296 [INFO] Created hash keys for 2600 rows using 7 content columns
+2025-09-18 10:54:36,297 [INFO] Converting column 'dataset' to string
+2025-09-18 10:54:36,297 [INFO] Converting datetime column 'publishTime' to pandas datetime
+2025-09-18 10:54:36,298 [INFO] Converting datetime column 'startTime' to pandas datetime
+2025-09-18 10:54:36,299 [INFO] Converting datetime column 'settlementDate' to pandas datetime
+2025-09-18 10:54:36,300 [INFO] Converting column 'fuelType' to string
+2025-09-18 10:54:36,300 [INFO] Converting column '_dataset' to string
+2025-09-18 10:54:36,301 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:54:36,302 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:54:36,303 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:54:36,304 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:54:36,304 [INFO] Converting column '_source_api' to string
+2025-09-18 10:54:36,304 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:54:36,304 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:54:36,305 [INFO] 🌐 Fetching BMRS dataset=FUELINST from=2022-02-06 00:00:00+00:00 to=2022-02-07 00:00:00+00:00
+2025-09-18 10:54:36,506 [INFO] Created hash keys for 2600 rows using 7 content columns
+2025-09-18 10:54:36,507 [INFO] Converting column 'dataset' to string
+2025-09-18 10:54:36,508 [INFO] Converting datetime column 'publishTime' to pandas datetime
+2025-09-18 10:54:36,518 [INFO] Converting datetime column 'startTime' to pandas datetime
+2025-09-18 10:54:36,523 [INFO] Converting datetime column 'settlementDate' to pandas datetime
+2025-09-18 10:54:36,527 [INFO] Converting column 'fuelType' to string
+2025-09-18 10:54:36,528 [INFO] Converting column '_dataset' to string
+2025-09-18 10:54:36,528 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:54:36,530 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:54:36,531 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:54:36,532 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:54:36,532 [INFO] Converting column '_source_api' to string
+2025-09-18 10:54:36,532 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:54:36,532 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:54:36,533 [INFO] 🌐 Fetching BMRS dataset=FUELINST from=2022-02-05 00:00:00+00:00 to=2022-02-06 00:00:00+00:00
+2025-09-18 10:54:36,668 [INFO] Created hash keys for 2600 rows using 7 content columns
+2025-09-18 10:54:36,668 [INFO] Converting column 'dataset' to string
+2025-09-18 10:54:36,669 [INFO] Converting datetime column 'publishTime' to pandas datetime
+2025-09-18 10:54:36,670 [INFO] Converting datetime column 'startTime' to pandas datetime
+2025-09-18 10:54:36,671 [INFO] Converting datetime column 'settlementDate' to pandas datetime
+2025-09-18 10:54:36,672 [INFO] Converting column 'fuelType' to string
+2025-09-18 10:54:36,672 [INFO] Converting column '_dataset' to string
+2025-09-18 10:54:36,672 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:54:36,673 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:54:36,674 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:54:36,675 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:54:36,675 [INFO] Converting column '_source_api' to string
+2025-09-18 10:54:36,675 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:54:36,676 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:54:36,676 [INFO] 🌐 Fetching BMRS dataset=FUELINST from=2022-02-04 00:00:00+00:00 to=2022-02-05 00:00:00+00:00
+2025-09-18 10:54:36,792 [INFO] Created hash keys for 2600 rows using 7 content columns
+2025-09-18 10:54:36,793 [INFO] Converting column 'dataset' to string
+2025-09-18 10:54:36,793 [INFO] Converting datetime column 'publishTime' to pandas datetime
+2025-09-18 10:54:36,794 [INFO] Converting datetime column 'startTime' to pandas datetime
+2025-09-18 10:54:36,795 [INFO] Converting datetime column 'settlementDate' to pandas datetime
+2025-09-18 10:54:36,796 [INFO] Converting column 'fuelType' to string
+2025-09-18 10:54:36,796 [INFO] Converting column '_dataset' to string
+2025-09-18 10:54:36,796 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:54:36,797 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:54:36,798 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:54:36,799 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:54:36,799 [INFO] Converting column '_source_api' to string
+2025-09-18 10:54:36,799 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:54:36,799 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:54:36,800 [INFO] 🌐 Fetching BMRS dataset=FUELINST from=2022-02-03 00:00:00+00:00 to=2022-02-04 00:00:00+00:00
+2025-09-18 10:54:36,956 [INFO] Created hash keys for 2600 rows using 7 content columns
+2025-09-18 10:54:36,956 [INFO] Converting column 'dataset' to string
+2025-09-18 10:54:36,956 [INFO] Converting datetime column 'publishTime' to pandas datetime
+2025-09-18 10:54:36,957 [INFO] Converting datetime column 'startTime' to pandas datetime
+2025-09-18 10:54:36,958 [INFO] Converting datetime column 'settlementDate' to pandas datetime
+2025-09-18 10:54:36,959 [INFO] Converting column 'fuelType' to string
+2025-09-18 10:54:36,959 [INFO] Converting column '_dataset' to string
+2025-09-18 10:54:36,959 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:54:36,960 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:54:36,961 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:54:36,962 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:54:36,962 [INFO] Converting column '_source_api' to string
+2025-09-18 10:54:36,962 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:54:36,963 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:54:36,963 [INFO] 🌐 Fetching BMRS dataset=FUELINST from=2022-02-02 00:00:00+00:00 to=2022-02-03 00:00:00+00:00
+2025-09-18 10:54:37,138 [INFO] Created hash keys for 2600 rows using 7 content columns
+2025-09-18 10:54:37,138 [INFO] Converting column 'dataset' to string
+2025-09-18 10:54:37,138 [INFO] Converting datetime column 'publishTime' to pandas datetime
+2025-09-18 10:54:37,139 [INFO] Converting datetime column 'startTime' to pandas datetime
+2025-09-18 10:54:37,140 [INFO] Converting datetime column 'settlementDate' to pandas datetime
+2025-09-18 10:54:37,141 [INFO] Converting column 'fuelType' to string
+2025-09-18 10:54:37,141 [INFO] Converting column '_dataset' to string
+2025-09-18 10:54:37,141 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:54:37,142 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:54:37,143 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:54:37,145 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:54:37,145 [INFO] Converting column '_source_api' to string
+2025-09-18 10:54:37,145 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:54:37,146 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:54:37,146 [INFO] 🌐 Fetching BMRS dataset=FUELINST from=2022-02-01 00:00:00+00:00 to=2022-02-02 00:00:00+00:00
+2025-09-18 10:54:37,269 [INFO] Created hash keys for 2600 rows using 7 content columns
+2025-09-18 10:54:37,269 [INFO] Converting column 'dataset' to string
+2025-09-18 10:54:37,269 [INFO] Converting datetime column 'publishTime' to pandas datetime
+2025-09-18 10:54:37,271 [INFO] Converting datetime column 'startTime' to pandas datetime
+2025-09-18 10:54:37,272 [INFO] Converting datetime column 'settlementDate' to pandas datetime
+2025-09-18 10:54:37,272 [INFO] Converting column 'fuelType' to string
+2025-09-18 10:54:37,273 [INFO] Converting column '_dataset' to string
+2025-09-18 10:54:37,273 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:54:37,273 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:54:37,274 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:54:37,275 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:54:37,275 [INFO] Converting column '_source_api' to string
+2025-09-18 10:54:37,275 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:54:37,276 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:54:37,276 [INFO] 🌐 Fetching BMRS dataset=FUELINST from=2022-01-31 00:00:00+00:00 to=2022-02-01 00:00:00+00:00
+2025-09-18 10:54:37,419 [INFO] Created hash keys for 2600 rows using 7 content columns
+2025-09-18 10:54:37,419 [INFO] Converting column 'dataset' to string
+2025-09-18 10:54:37,419 [INFO] Converting datetime column 'publishTime' to pandas datetime
+2025-09-18 10:54:37,420 [INFO] Converting datetime column 'startTime' to pandas datetime
+2025-09-18 10:54:37,421 [INFO] Converting datetime column 'settlementDate' to pandas datetime
+2025-09-18 10:54:37,422 [INFO] Converting column 'fuelType' to string
+2025-09-18 10:54:37,422 [INFO] Converting column '_dataset' to string
+2025-09-18 10:54:37,422 [INFO] Converting datetime column '_window_from_utc' to pandas datetime
+2025-09-18 10:54:37,423 [INFO] Converting datetime column '_window_to_utc' to pandas datetime
+2025-09-18 10:54:37,424 [INFO] Converting datetime column '_ingested_utc' to pandas datetime
+2025-09-18 10:54:37,425 [INFO] Converting column '_source_columns' to string
+2025-09-18 10:54:37,427 [INFO] Converting column '_source_api' to string
+2025-09-18 10:54:37,428 [INFO] Converting column '_hash_source_cols' to string
+2025-09-18 10:54:37,428 [INFO] Converting column '_hash_key' to string
+2025-09-18 10:54:37,428 [INFO] 📦 Flushing batch for FUELINST: 20 frames (size threshold reached (20 >= 20) or time threshold reached (3.3 >= 300))
+2025-09-18 10:54:37,439 [INFO] ⬆️ Loading 52000 rows to staging table jibber-jabber-knowledge.uk_energy_insights.bmrs_fuelinst_staging_1758189277
+2025-09-18 10:54:41,268 [INFO] ✅ Successfully loaded 52000 rows to staging table jibber-jabber-knowledge.uk_energy_insights.bmrs_fuelinst_staging_1758189277
+2025-09-18 10:54:43,735 [INFO] ✅ Successfully merged data from jibber-jabber-knowledge.uk_energy_insights.bmrs_fuelinst_staging_1758189277 to jibber-jabber-knowledge.uk_energy_insights.bmrs_fuelinst
+2025-09-18 10:54:44,011 [INFO] 🧹 Cleaned up staging table jibber-jabber-knowledge.uk_energy_insights.bmrs_fuelinst_staging_1758189277
+2025-09-18 10:54:44,030 [INFO] 🎉 All datasets processed.
+2025-09-18 10:54:44,030 [INFO]    OK=2, PARTIAL=0, SKIP=0, ERR=0

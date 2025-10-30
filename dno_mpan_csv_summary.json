@@ -1,0 +1,186 @@
+{
+  "timestamp": "2025-09-15T01:24:30",
+  "days_looked_back": 3,
+  "categories": {
+    "mpan_reference": {
+      "description": "MPAN reference and mapping files",
+      "files": [
+        {
+          "name": "example_mpan_data_enriched.csv",
+          "size_human": "2.9 KB",
+          "modified": "2025-09-15T01:18:30",
+          "columns": ["customer_id", "customer_name", "postcode", "MPAN", "mpan_core", "distributor_id", "mpan_valid", "DNO_Key", "DNO_Name", "Short_Code", "Market_Participant_ID", "GSP_Group_ID", "GSP_Group_Name"],
+          "purpose": "Demonstrates the mapping of MPANs to DNO information via the distributor_id"
+        },
+        {
+          "name": "example_mpan_data_with_duos.csv",
+          "size_human": "1.9 KB",
+          "columns": ["customer_id", "customer_name", "postcode", "MPAN", "mpan_core", "distributor_id", "mpan_valid", "DNO_Key", "DNO_Name", "Short_Code", "DUoS_Band", "DUoS_Rate"],
+          "purpose": "Links MPAN data with DUoS charges"
+        },
+        {
+          "name": "example_mpan_data.csv",
+          "size_human": "0.9 KB",
+          "columns": ["customer_id", "customer_name", "postcode", "MPAN"],
+          "purpose": "Basic MPAN customer data for testing and demonstration"
+        }
+      ]
+    },
+    "dno_reference": {
+      "description": "DNO reference tables",
+      "files": [
+        {
+          "name": "DNO_Reference.csv",
+          "size_human": "2.0 KB",
+          "columns": ["MPAN_Code", "DNO_Key", "DNO_Name", "Short_Code", "Market_Participant_ID", "GSP_Group_ID", "GSP_Group_Name"],
+          "purpose": "Master reference table for mapping MPAN distributor IDs to DNO information"
+        }
+      ]
+    },
+    "duos_summary": {
+      "description": "DUoS data summary files",
+      "files": [
+        {
+          "name": "DNO_DUoS_Summary.csv",
+          "size_human": "1.2 KB",
+          "modified": "2025-09-14T19:33:54",
+          "columns": ["DNO_Name", "Files_Count", "Years_Covered", "Band_Distribution"],
+          "purpose": "High-level overview of DUoS data availability by DNO"
+        },
+        {
+          "name": "DNO_DUoS_Band_Stats.csv",
+          "size_human": "5.5 KB",
+          "columns": ["dno_name", "dno_key", "mpan_code", "year", "band", "sheet_name", "time_period", "min_rate", "max_rate", "mean_rate", "median_rate", "count", "unit"],
+          "purpose": "Statistical analysis of DUoS bands and rates by DNO"
+        }
+      ]
+    },
+    "duos_data": {
+      "description": "Complete DUoS data files",
+      "files": [
+        {
+          "name": "DNO_DUoS_All_Data.csv",
+          "size_human": "479.9 KB",
+          "modified": "2025-09-14T19:33:54",
+          "columns": ["DNO_Name", "DNO_Key", "MPAN_Code", "Short_Code", "Year", "Band", "Time_Period", "Min_Rate_p_kWh", "Max_Rate_p_kWh", "Mean_Rate_p_kWh", "Median_Rate_p_kWh", "GSP_Group_ID", "GSP_Group_Name", "Count", "Unit", "File_Path"],
+          "purpose": "Complete consolidated DUoS data for analysis and reporting"
+        },
+        {
+          "name": "duos_all_bands_enhanced_v3.csv",
+          "size_human": "20.9 KB",
+          "purpose": "Enhanced DUoS band data with additional metadata"
+        },
+        {
+          "name": "duos_all_bands_combined.csv",
+          "size_human": "9.2 KB",
+          "purpose": "Combined DUoS band rates across different DNOs"
+        },
+        {
+          "name": "duos_time_band_rates.csv",
+          "size_human": "3.3 KB",
+          "purpose": "Time-specific DUoS band rates"
+        }
+      ]
+    },
+    "dno_specific": {
+      "description": "DNO-specific files",
+      "files": [
+        {
+          "name": "Electricity_North_West.csv",
+          "purpose": "DUoS rates for Electricity North West"
+        },
+        {
+          "name": "NGED-East_Midlands.csv",
+          "purpose": "DUoS rates for National Grid Electricity Distribution - East Midlands"
+        },
+        {
+          "name": "NGED-South_Wales.csv",
+          "purpose": "DUoS rates for National Grid Electricity Distribution - South Wales"
+        },
+        {
+          "name": "NGED-South_West.csv",
+          "purpose": "DUoS rates for National Grid Electricity Distribution - South West"
+        },
+        {
+          "name": "NPg-North_East.csv",
+          "purpose": "DUoS rates for Northern Powergrid - Northeast"
+        },
+        {
+          "name": "NPg-Yorkshire.csv",
+          "purpose": "DUoS rates for Northern Powergrid - Yorkshire"
+        },
+        {
+          "name": "SSE-SEPD.csv",
+          "purpose": "DUoS rates for Scottish and Southern Electricity Networks - Southern"
+        },
+        {
+          "name": "SSE-SHEPD.csv",
+          "purpose": "DUoS rates for Scottish and Southern Electricity Networks - Hydro"
+        }
+      ]
+    }
+  },
+  "key_files": [
+    "DNO_Reference.csv", 
+    "DNO_Reference_Complete.csv",
+    "DNO_DUoS_All_Data.csv", 
+    "example_mpan_data_enriched.csv",
+    "Organised_DNO_By_Date.csv",
+    "Organised_DNO_By_Date_Fixed.csv"
+  ],
+  "related_tools": [
+    "mpan_dno_mapper.py",
+    "create_duos_consolidated_spreadsheet.py",
+    "analyze_duos_by_distribution_id.py",
+    "organize_dno_by_date.py",
+    "map_mpan_to_dno.py",
+    "visualize_dno_rates.py"
+  ],
+  "analysis_outputs": {
+    "description": "Data analysis files generated from DNO DUoS data",
+    "files": [
+      {
+        "name": "Organised_DNO_By_Date.csv",
+        "purpose": "Consolidated and time-organized DUoS rates by DNO",
+        "columns": ["DNO_Key", "Date", "Min_Rate_p_kWh", "Max_Rate_p_kWh", "Mean_Rate_p_kWh", "Median_Rate_p_kWh", "Count", "DNO_Name"],
+        "row_count": 70
+      },
+      {
+        "name": "Organised_DNO_By_Date_Fixed.csv",
+        "purpose": "Improved organization with correct MPAN code to DNO mapping",
+        "columns": ["MPAN_Code", "DNO_Key", "DNO_Name", "Short_Code", "GSP_Group_ID", "Region", "Year", "Date", "Min_Rate_p_kWh", "Max_Rate_p_kWh", "Mean_Rate_p_kWh", "Median_Rate_p_kWh", "Count"],
+        "row_count": 70
+      },
+      {
+        "name": "DNO_Reference_Complete.csv",
+        "purpose": "Comprehensive mapping of MPAN codes to DNO information",
+        "columns": ["MPAN_Code", "DNO_Key", "DNO_Name", "Short_Code", "GSP_Group_ID", "Region"],
+        "row_count": 14
+      },
+      {
+        "name": "dno_analysis_plots/mean_rates_by_dno_over_time.png",
+        "purpose": "Visualization of mean DUoS rates trends by DNO over time"
+      },
+      {
+        "name": "dno_analysis_plots/min_max_rates_by_dno.png",
+        "purpose": "Visualization of minimum and maximum DUoS rates by DNO over time"
+      },
+      {
+        "name": "dno_analysis_plots/duos_rates_heatmap.png",
+        "purpose": "Heatmap showing mean DUoS rates by DNO and year"
+      },
+      {
+        "name": "dno_analysis_plots/median_rates_latest_year.png",
+        "purpose": "Comparison of median rates across DNOs in the latest year (2026)"
+      },
+      {
+        "name": "dno_analysis_plots/dno_rate_statistics.csv",
+        "purpose": "Summary statistics of DUoS rates by DNO"
+      },
+      {
+        "name": "DNO_MPAN_DUOS_ANALYSIS_REPORT.md",
+        "purpose": "Comprehensive report analyzing DNO DUoS rates and MPAN to DNO mapping"
+      }
+    ]
+  }
+}

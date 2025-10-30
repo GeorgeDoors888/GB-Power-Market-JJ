@@ -1,0 +1,22 @@
+[
+  {
+    "name": "dataset",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "measurementDate",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "publishTime",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "temperature",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  }
+]

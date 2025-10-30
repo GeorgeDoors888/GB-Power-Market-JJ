@@ -1,0 +1,276 @@
+# ---- Advanced validation helpers (paste into format_auditor.py) ----
+from datetime import date, datetime
+
+def _parse_date_maybe(s, dayfirst=True):
+    return pd.to_datetime(s, errors="coerce", dayfirst=dayfirst).dt.date
+
+def _resolve_date_bound(s):
+    if s is None:
+        return None
+    if isinstance(s, str) and s.lower() == "today":
+        return date.today()
+    try:
+        return datetime.strptime(s,
+"%Y-%m-%d").date()
+    except Exception:
+        return None
+
+def advanced_validate_dataframe(df: pd.DataFrame, cfg: Dict[str, Any
+], filename: str) -> pd.DataFrame: """
+    Returns a DataFrame of violations with columns:
+    file, rule, column, detail, row_index (optional), value (optional)
+    """
+    out = []
+    dayfirst = bool(cfg.get("dayfirst", True))
+
+    # ---- 1) expected columns
+    expected = cfg.get("expected_columns")
+    allow_extra = bool(cfg.get("allow_extra_columns", True))
+    if expected:
+        missing = [c for c in expected if c not in df.columns
+]
+        if missing:
+            out.append({
+  "file": filename,
+  "rule": "expected_columns",
+  "column": None,
+  "detail": f"Missing columns: {missing}"
+})
+        if not allow_extra:
+            extra = [c for c in df.columns if c not in expected
+]
+            if extra:
+                out.append({
+  "file": filename,
+  "rule": "expected_columns",
+  "column": None,
+  "detail": f"Unexpected columns: {extra}"
+})
+
+    # ---- 2) required non-null
+    req = cfg.get("required_non_null") or []
+    for col in req:
+        if col in df.columns:
+            idxs = df.index[df[col
+  ].isna() | (df[col
+  ].astype(str).str.strip() == "")
+]
+            for i in idxs[
+  : 1000
+]:  # cap output
+                out.append({
+  "file": filename,
+  "rule": "required_non_null",
+  "column": col,
+  "row_index": int(i),
+  "value": None,
+  "detail": "Null/blank not allowed"
+})
+
+    # ---- 3) column types
+    type_map = cfg.get("column_types") or {}
+    for col, t in type_map.items():
+        if col not in df.columns:
+            continue
+        s = df[col
+]
+        if t == "int":
+            bad = pd.to_numeric(s, errors="coerce").isna() & s.notna()
+        elif t == "float":
+            bad = pd.to_numeric(s, errors="coerce").isna() & s.notna()
+        elif t == "date":
+            bad = pd.to_datetime(s, errors="coerce", dayfirst=dayfirst).isna() & s.notna()
+        elif t == "text":
+            bad = pd.Series(False, index=s.index)
+        else:
+            bad = pd.Series(False, index=s.index)
+        for i in s[bad
+].index[
+  : 1000
+]:
+            out.append({
+  "file": filename,
+  "rule": "column_types",
+  "column": col,
+  "row_index": int(i),
+  "value": str(s.at[i
+  ]),
+  "detail": f"Cannot parse as {t}"
+})
+
+    # ---- 4) numeric ranges
+    ranges = cfg.get("numeric_ranges") or {}
+    for col, spec in ranges.items():
+        if col not in df.columns:
+            continue
+        s = pd.to_numeric(df[col
+], errors="coerce")
+        if "min" in spec:
+            bad = s < spec[
+  "min"
+]
+            for i in s[bad.fillna(False)
+].index[
+  : 1000
+]:
+                out.append({
+  "file": filename,
+  "rule": "min_range",
+  "column": col,
+  "row_index": int(i),
+  "value": float(s.at[i
+  ]),
+  "detail": f"value<{spec['min']}"
+})
+        if "max" in spec:
+            bad = s > spec[
+  "max"
+]
+            for i in s[bad.fillna(False)
+].index[
+  : 1000
+]:
+                out.append({
+  "file": filename,
+  "rule": "max_range",
+  "column": col,
+  "row_index": int(i),
+  "value": float(s.at[i
+  ]),
+  "detail": f"value>{spec['max']}"
+})
+
+    # ---- 5) allowed categorical values
+    allowed = cfg.get("allowed_values") or {}
+    for col, vals in allowed.items():
+        if col not in df.columns:
+            continue
+        s = df[col
+].astype("string")
+        bad = ~s.isin(vals) & s.notna()
+        for i in s[bad
+].index[
+  : 1000
+]:
+            out.append({
+  "file": filename,
+  "rule": "allowed_values",
+  "column": col,
+  "row_index": int(i),
+  "value": str(s.at[i
+  ]),
+  "detail": f"not in {vals[:10]}..."
+})
+
+    # ---- 6) regex patterns
+    patterns = cfg.get("regex_patterns") or {}
+    for col, pat in patterns.items():
+        if col not in df.columns:
+            continue
+        s = df[col
+].astype("string")
+        mask = ~(s.fillna("").str.match(pat))
+        for i in s[mask
+].index[
+  : 1000
+]:
+            out.append({
+  "file": filename,
+  "rule": "regex_patterns",
+  "column": col,
+  "row_index": int(i),
+  "value": str(s.at[i
+  ]),
+  "detail": f"does not match /{pat}/"
+})
+
+    # ---- 7) date window
+    dr = cfg.get("date_range") or {}
+    if dr:
+        dcols = [c for c in df.columns if c.lower() in ("settlementdate",
+  "settlement_date",
+  "date")
+]
+        if dcols:
+            dcol = dcols[
+  0
+]
+            dd = _parse_date_maybe(df[dcol
+], dayfirst)
+            dmin = _resolve_date_bound(dr.get("min"))
+            dmax = _resolve_date_bound(dr.get("max"))
+            if dmin:
+                bad = (dd < dmin)
+                for i in dd[bad.fillna(False)
+].index[
+  : 1000
+]:
+                    out.append({
+  "file": filename,
+  "rule": "date_min",
+  "column": dcol,
+  "row_index": int(i),
+  "value": str(dd.at[i
+  ]),
+  "detail": f"< {dmin.isoformat()}"
+})
+            if dmax:
+                bad = (dd > dmax)
+                for i in dd[bad.fillna(False)
+].index[
+  : 1000
+]:
+                    out.append({
+  "file": filename,
+  "rule": "date_max",
+  "column": dcol,
+  "row_index": int(i),
+  "value": str(dd.at[i
+  ]),
+  "detail": f"> {dmax.isoformat()}"
+})
+
+    # ---- 8) per-day half-hour coverage (Elexon/NESO)
+    expect_coverage = cfg.get("expected_periods_per_day")  # e.g.,
+48
+    period_cols = [c for c in df.columns if c.lower() in ("settlementperiod",
+  "settlement_period",
+  "period")
+]
+    date_cols = [c for c in df.columns if c.lower() in ("settlementdate",
+  "settlement_date",
+  "date")
+]
+    if expect_coverage and period_cols and date_cols:
+        pcol, dcol = period_cols[
+  0
+], date_cols[
+  0
+]
+        # best-effort parse
+        dd = _parse_date_maybe(df[dcol
+], dayfirst)
+        pp = pd.to_numeric(df[pcol
+], errors="coerce")
+        tmp = pd.DataFrame({
+  "_d": dd,
+  "_p": pp
+}).dropna()
+        counts = tmp.groupby("_d")[
+  "_p"
+].nunique()
+        # Flag days not in {
+  46, expected_coverage,
+  50
+}
+        for d, c in counts.items():
+            if c not in (46, expect_coverage,
+50):
+                out.append({
+  "file": filename,
+  "rule": "coverage",
+  "column": None,
+  "detail": f"{d}: {c} periods (expected {expect_coverage}, or 46/50 on clock-change days)"
+})
+
+    return pd.DataFrame(out)

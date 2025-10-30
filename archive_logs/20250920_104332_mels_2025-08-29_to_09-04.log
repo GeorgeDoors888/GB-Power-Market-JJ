@@ -1,0 +1,39 @@
+2025-09-03 10:16:35,019 [INFO] 📄 Logging to logs/mels_2025-08-29_to_09-04.log
+2025-09-03 10:16:35,124 [INFO] ✅ Initialized BigQuery Client for project: jibber-jabber-knowledge
+2025-09-03 10:16:35,673 [INFO] BigQuery dataset 'uk_energy_insights' exists.
+2025-09-03 10:16:35,673 [INFO] 📝 Planned datasets (1): MELS
+2025-09-03 10:16:35,673 [INFO] 🚀 Starting ingestion for 1 datasets...
+2025-09-03 10:16:35,674 [INFO] 🔄 Checking for existing windows for bmrs_mels
+2025-09-03 10:16:35,674 [INFO] 🔎 Querying existing windows for jibber-jabber-knowledge.uk_energy_insights.bmrs_mels between 2025-08-29 00:00:00+00:00 and 2025-09-04 00:00:00+00:00
+2025-09-03 10:16:37,283 [INFO] Found 0 existing windows for bmrs_mels
+2025-09-03 10:16:37,283 [INFO] 🧮 Total windows to fetch for MELS: 6 (batch_size=90, flush_seconds=300)
+2025-09-03 10:16:37,284 [INFO] 🌐 Fetching BMRS dataset=MELS from=2025-09-03 00:00:00+00:00 to=2025-09-04 00:00:00+00:00
+2025-09-03 10:16:38,356 [INFO] 🌐 Fetching BMRS dataset=MELS from=2025-09-02 00:00:00+00:00 to=2025-09-03 00:00:00+00:00
+2025-09-03 10:16:40,607 [INFO] 🌐 Fetching BMRS dataset=MELS from=2025-09-01 00:00:00+00:00 to=2025-09-02 00:00:00+00:00
+2025-09-03 10:16:43,289 [INFO] 🌐 Fetching BMRS dataset=MELS from=2025-08-31 00:00:00+00:00 to=2025-09-01 00:00:00+00:00
+2025-09-03 10:16:45,751 [INFO] 🌐 Fetching BMRS dataset=MELS from=2025-08-30 00:00:00+00:00 to=2025-08-31 00:00:00+00:00
+2025-09-03 10:16:47,955 [INFO] 🌐 Fetching BMRS dataset=MELS from=2025-08-29 00:00:00+00:00 to=2025-08-30 00:00:00+00:00
+2025-09-03 10:16:49,986 [INFO] 📦 Loading final batch (6 frames) to BQ for MELS
+2025-09-03 10:17:00,171 [INFO] Created hash keys for 653667 rows using 11 content columns
+2025-09-03 10:17:00,276 [INFO] Converting column 'dataset' to string
+2025-09-03 10:17:00,296 [INFO] Converting column 'settlementDate' to string
+2025-09-03 10:17:00,331 [INFO] Converting column 'timeFrom' to string
+2025-09-03 10:17:00,398 [INFO] Converting column 'timeTo' to string
+2025-09-03 10:17:00,470 [INFO] Converting column 'notificationTime' to string
+2025-09-03 10:17:00,512 [INFO] Converting column 'nationalGridBmUnit' to string
+2025-09-03 10:17:00,550 [INFO] Converting column 'bmUnit' to string
+2025-09-03 10:17:00,594 [INFO] Converting column '_dataset' to string
+2025-09-03 10:17:00,608 [INFO] Converting column '_window_from_utc' to string
+2025-09-03 10:17:00,623 [INFO] Converting column '_window_to_utc' to string
+2025-09-03 10:17:00,635 [INFO] Converting column '_ingested_utc' to string
+2025-09-03 10:17:00,645 [INFO] Converting column '_source_columns' to string
+2025-09-03 10:17:00,659 [INFO] Converting column '_source_api' to string
+2025-09-03 10:17:00,739 [INFO] Converting column '_hash_source_cols' to string
+2025-09-03 10:17:00,752 [INFO] Converting column '_hash_key' to string
+2025-09-03 10:17:00,878 [INFO] ⬆️ Loading 653667 rows to jibber-jabber-knowledge.uk_energy_insights.bmrs_mels
+2025-09-03 10:17:01,156 [INFO] Found existing table jibber-jabber-knowledge.uk_energy_insights.bmrs_mels with 19 columns
+2025-09-03 10:17:01,860 [INFO] Filtered DataFrame from 19 to 19 columns
+2025-09-03 10:17:24,412 [INFO] ✅ Successfully loaded 653667 rows to jibber-jabber-knowledge.uk_energy_insights.bmrs_mels
+2025-09-03 10:17:24,577 [INFO] 🏁 Finished ingest for MELS: status=OK, rows=653667, note=
+2025-09-03 10:17:24,578 [INFO] 🎉 All datasets processed.
+2025-09-03 10:17:24,578 [INFO]    OK=1, PARTIAL=0, SKIP=0, ERR=0

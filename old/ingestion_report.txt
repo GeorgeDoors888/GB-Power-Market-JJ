@@ -1,0 +1,107 @@
+==================================================
+Elexon BMRS BigQuery Ingestion Report
+==================================================
+Project: jibber-jabber-knowledge
+Dataset: uk_energy_prod
+Generated On (UTC): 2025-08-28T10:35:10.462209+00:00
+Reporting Period: 2016-01-01 to 2025-08-26
+--------------------------------------------------
+
+
+Table: bmrs_bod
+  - FAILED to retrieve stats: '>' not supported between instances of 'str' and 'datetime.datetime'
+
+Table: bmrs_disbsad
+  - FAILED to retrieve stats: '>' not supported between instances of 'str' and 'datetime.datetime'
+
+Table: bmrs_fou2t14d
+  - FAILED to retrieve stats: '>' not supported between instances of 'str' and 'datetime.datetime'
+
+Table: bmrs_fou2t3yw
+  - FAILED to retrieve stats: '>' not supported between instances of 'str' and 'datetime.datetime'
+
+Table: bmrs_freq
+  - FAILED to retrieve stats: '>' not supported between instances of 'str' and 'datetime.datetime'
+
+Table: bmrs_fuelhh
+  - FAILED to retrieve stats: '>' not supported between instances of 'str' and 'datetime.datetime'
+
+Table: bmrs_fuelinst
+  - FAILED to retrieve stats: '>' not supported between instances of 'str' and 'datetime.datetime'
+
+Table: bmrs_inddem
+  - FAILED to retrieve stats: '>' not supported between instances of 'str' and 'datetime.datetime'
+
+Table: bmrs_indgen
+  - FAILED to retrieve stats: '>' not supported between instances of 'str' and 'datetime.datetime'
+
+Table: bmrs_indo
+  - FAILED to retrieve stats: '>' not supported between instances of 'str' and 'datetime.datetime'
+
+Table: bmrs_itsdo
+  - FAILED to retrieve stats: '>' not supported between instances of 'str' and 'datetime.datetime'
+
+Table: bmrs_ndf
+  - FAILED to retrieve stats: '>' not supported between instances of 'str' and 'datetime.datetime'
+
+Table: bmrs_ndfd
+  - FAILED to retrieve stats: '>' not supported between instances of 'str' and 'datetime.datetime'
+
+Table: bmrs_ndfw
+  - FAILED to retrieve stats: '>' not supported between instances of 'str' and 'datetime.datetime'
+
+Table: bmrs_nonbm
+  - FAILED to retrieve stats: '>' not supported between instances of 'str' and 'datetime.datetime'
+
+Table: bmrs_nou2t14d
+  - FAILED to retrieve stats: '>' not supported between instances of 'str' and 'datetime.datetime'
+
+Table: bmrs_nou2t3yw
+  - FAILED to retrieve stats: '>' not supported between instances of 'str' and 'datetime.datetime'
+
+Table: bmrs_ocnmf3y
+  - FAILED to retrieve stats: '>' not supported between instances of 'str' and 'datetime.datetime'
+
+Table: bmrs_ocnmf3y2
+  - FAILED to retrieve stats: '>' not supported between instances of 'str' and 'datetime.datetime'
+
+Table: bmrs_ocnmfd
+  - FAILED to retrieve stats: '>' not supported between instances of 'str' and 'datetime.datetime'
+
+Table: bmrs_ocnmfd2
+  - FAILED to retrieve stats: '>' not supported between instances of 'str' and 'datetime.datetime'
+
+Table: bmrs_sel
+  - FAILED to retrieve stats: '>' not supported between instances of 'str' and 'datetime.datetime'
+
+Table: bmrs_sil
+  - FAILED to retrieve stats: '>' not supported between instances of 'str' and 'datetime.datetime'
+
+Table: bmrs_temp
+  - FAILED to retrieve stats: '>' not supported between instances of 'str' and 'datetime.datetime'
+
+Table: bmrs_tsdf
+  - FAILED to retrieve stats: '>' not supported between instances of 'str' and 'datetime.datetime'
+
+Table: bmrs_tsdfd
+  - FAILED to retrieve stats: '>' not supported between instances of 'str' and 'datetime.datetime'
+
+Table: bmrs_tsdfw
+  - FAILED to retrieve stats: '>' not supported between instances of 'str' and 'datetime.datetime'
+
+Table: bmrs_uou2t14d
+  - FAILED to retrieve stats: '>' not supported between instances of 'str' and 'datetime.datetime'
+
+Table: bmrs_uou2t3yw
+  - FAILED to retrieve stats: '>' not supported between instances of 'str' and 'datetime.datetime'
+
+Table: bmrs_windfor
+  - FAILED to retrieve stats: '>' not supported between instances of 'str' and 'datetime.datetime'
+
+--------------------------------------------------
+Overall Summary
+--------------------------------------------------
+Total Tables Analyzed: 30
+Total Rows Ingested: 745,793,960
+Total Size on BigQuery: 148.4044 GB
+==================================================

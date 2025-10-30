@@ -1,0 +1,22 @@
+[
+    {
+        "name": "dataset",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "forecastDate",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "publishTime",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "surplus",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    }
+]

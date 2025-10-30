@@ -1,0 +1,52 @@
+[
+  {
+    "name": "dataset",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "fuelType",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "publishTime",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "systemZone",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "calendarWeekNumber",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "year",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "outputUsable",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "biddingZone",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "interconnectorName",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "interconnector",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  }
+]

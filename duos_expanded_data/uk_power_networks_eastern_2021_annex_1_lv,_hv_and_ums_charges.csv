@@ -1,0 +1,25 @@
+Tariff name,Open LLFCs,PCs,"Red/black unit charge
+p/kWh","Amber/yellow unit charge
+p/kWh","Green unit charge
+p/kWh",Fixed charge p/MPAN/day,Capacity charge p/kVA/day,"Exceeded capacity charge
+p/kVA/day","Reactive power charge
+p/kVArh",Closed LLFCs
+Domestic Aggregated,"1, 100, 300","1, 2 or 0",16.865,1.208,0.665,3.99,,,,"101, 250, 301"
+Domestic Aggregated (related MPAN),"2, 251",2,16.865,1.208,0.665,,,,,"283, 296"
+Non-Domestic Aggregated,"120, 200, 201, 202, 203, 204, 320, 480",3-8 or 0,13.204,1.062,0.641,4.14,,,,"124, 270, 274, 324, 484"
+Non-Domestic Aggregated (related MPAN),287,4,13.204,1.062,0.641,,,,,297
+LV Site Specific,"71, 72, 73, 74, 550",0,9.09,0.881,0.61,11.31,3.68,7.12,0.276,
+LV Sub Site Specific,"81, 82, 83, 84, 756",0,5.848,0.735,0.585,8.39,5.7,7.43,0.161,
+HV Site Specific,"91, 92, 93, 94, 650",0,5.471,0.713,0.58,111.11,4.27,6.63,0.151,
+LV Site Specific Storage Import,"19, 70",0,8.531,0.321,0.05,11.31,3.68,7.12,0.276,
+LV Sub Site Specific Storage Import,"79, 80",0,5.289,0.176,0.025,8.39,5.7,7.43,0.161,
+HV Site Specific Storage Import,"89, 90",0,4.911,0.153,0.021,111.11,4.27,6.63,0.151,
+Unmetered Supplies,"350, 351, 352, 353, 354, 355, 356, 357, 358, 359, 360, 361, 362, 363, 364, 365, 366","1, 8 or 0",40.302,1.789,1.317,,,,,
+LV Generation Aggregated,932,8 or 0,-9.262,-0.368,-0.06,0.0,,,,"922, 933"
+LV Sub Generation Aggregated,,0,-8.273,-0.318,-0.051,0.0,,,,
+LV Generation Site Specific,"980, 982",0,-9.262,-0.368,-0.06,0.0,,,0.267,
+LV Generation Site Specific no RP charge,"981, 983",0,-9.262,-0.368,-0.06,0.0,,,,
+LV Sub Generation Site Specific,"984, 986",0,-8.273,-0.318,-0.051,0.0,,,0.243,
+LV Sub Generation Site Specific no RP charge,"985, 987",0,-8.273,-0.318,-0.051,0.0,,,,
+HV Generation Site Specific,"988, 990",0,-5.769,-0.189,-0.027,9.39,,,0.196,
+HV Generation Site Specific no RP charge,"989, 991",0,-5.769,-0.189,-0.027,9.39,,,,

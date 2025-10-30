@@ -1,0 +1,225 @@
+Elexon Data Analysis and Ingestion Report
+=====================================
+Date: September 6, 2025
+
+1. Current Data Status
+---------------------
+Dataset: uk_energy_insights
+Project: jibber-jabber-knowledge
+
+Currently Available Data:
+* Latest Data Point: August 30, 2025 00:50 UTC
+* Generation Mix:
+  - Wind: 6,407 MW (largest contributor)
+  - CCGT (Gas): 4,731 MW
+  - Nuclear: 3,602 MW
+  - Biomass: 2,409 MW
+* Interconnector Status:
+  - Major Imports: France (2,008 MW), North Sea Link (517 MW)
+  - Major Exports: East-West (-527 MW), GreenLink (-514 MW)
+* Notable Features:
+  - Zero coal generation
+  - High renewable penetration
+  - Active interconnector trading
+
+2. Data Ingestion Infrastructure
+------------------------------
+The project uses three main ingestion scripts:
+
+a) ingest_elexon_insights.py
+   - Primary ingestion script for 60+ datasets
+   - Auto-discovers available datasets
+   - Supports chunked ingestion
+   - Requires:
+     * elexonpy
+     * google-cloud-bigquery
+     * pandas
+     * requests
+
+b) ingest_elexon_fixed.py
+   - Enhanced version with better error handling
+   - Features:
+     * Schema change management
+     * Deduplication logic
+     * Metadata tracking
+     * Overwrite options
+
+c) ingest_elexon_all.py
+   - Comprehensive ingestion script
+   - Handles multiple data types
+
+3. Data Sources
+--------------
+Base URLs:
+- Insights API: https://data.elexon.co.uk/bmrs/api/v1
+- Datasets API: https://data.elexon.co.uk/bmrs/api/v1/datasets
+
+Authentication:
+- Requires Elexon API key
+- Set via environment variables:
+  * ELEXON_API_KEY
+  * Sent as both Ocp-Apim-Subscription-Key & X-Api-Key
+
+4. How to Get Current Data
+------------------------
+To update the data to current, run the following steps:
+
+1. Set up Environment:
+   ```bash
+   export GOOGLE_APPLICATION_CREDENTIALS="/path/to/jibber_jabber_key.json"
+   export ELEXON_API_KEY="your-key"
+   ```
+
+2. Full Historical Load:
+   ```bash
+   python ingest_elexon_insights.py --start 2016-01-01 --end 2025-09-06
+   ```
+
+3. Recent Data Only:
+   ```bash
+   python ingest_elexon_fixed.py --start 2025-08-01 --end 2025-09-06
+   ```
+
+4. Specific Datasets:
+   ```bash
+   python ingest_elexon_fixed.py --start 2025-08-01 --end 2025-09-06 --only BOD,BOAL,DISBSAD
+   ```
+
+5. Live Data Ingestion Process
+----------------------------
+The current setup supports:
+
+1. Batch Ingestion:
+   - Configurable chunk size (default: 7 days)
+   - Automatic retry on failures
+   - Schema evolution handling
+
+2. Parameters:
+   - start: Start date for data ingestion
+   - end: End date for data ingestion
+   - only: Specific datasets to ingest
+   - overwrite: Option to replace existing data
+   - log-level: Control logging detail
+
+3. Data Quality Checks:
+   - Schema validation
+   - Duplicate detection
+   - Data completeness checks
+
+6. Known Issues and Recommendations
+--------------------------------
+Current Issues:
+1. Duplicate Data:
+   - Multiple versions of same data points
+   - Takes up unnecessary storage
+   - May affect query performance
+
+2. Partial Data:
+   - Missing settlement periods
+   - Incomplete recent days
+
+Recommendations:
+1. Data Cleanup:
+   - Enable billing for BigQuery project
+   - Implement deduplication process
+   - Set up data quality monitoring
+
+2. Process Improvements:
+   - Implement real-time ingestion
+   - Add data validation steps
+   - Set up alerting for missing data
+
+3. Infrastructure:
+   - Set up scheduled jobs for regular updates
+   - Implement monitoring and logging
+   - Add error notification system
+
+7. Getting Complete Historical Data
+--------------------------------
+To get complete historical data:
+
+1. Clear existing data if needed:
+   ```sql
+   TRUNCATE TABLE `jibber-jabber-knowledge.uk_energy_insights.bmrs_fuelinst`
+   ```
+
+2. Run full historical load:
+   ```bash
+   python ingest_elexon_insights.py \
+     --start 2016-01-01 \
+     --end 2025-09-06 \
+     --log-level DEBUG \
+     --chunk 30d
+   ```
+
+3. Verify data completeness:
+   ```sql
+   SELECT
+       DATE(settlementDate) as date,
+       COUNT(DISTINCT settlementPeriod) as periods,
+       COUNT(DISTINCT fuelType) as fuel_types
+   FROM `jibber-jabber-knowledge.uk_energy_insights.bmrs_fuelinst`
+   GROUP BY date
+   ORDER BY date
+   ```
+
+8. Monitoring and Maintenance
+---------------------------
+Regular Tasks:
+1. Daily data validation
+2. Weekly completeness check
+3. Monthly storage optimization
+4. Quarterly schema review
+
+Alert Conditions:
+1. Missing settlement periods
+2. Delayed data ingestion
+3. Schema changes
+4. Storage thresholds
+
+9. Latest Data Analysis (as of August 30, 2025 00:50 UTC)
+--------------------------------------------
+1. Generation Mix Overview:
+   * Renewable Sources:
+     - Wind: 6,407 MW (highest contributor)
+     - Biomass: 2,409 MW
+     - Hydro: 204 MW
+   * Conventional Sources:
+     - CCGT (Gas): 4,731 MW
+     - Nuclear: 3,602 MW
+     - Coal/Oil/OCGT: 0 MW
+
+2. Interconnector Flows:
+   * Major Imports:
+     - France (INTFR): +2,008 MW
+     - North Sea Link (INTNEM): +517 MW
+     - Viking Link (INTVKL): +193 MW
+   * Major Exports:
+     - East-West (INTEW): -527 MW
+     - GreenLink (INTGRNL): -514 MW
+     - Ireland (INTIRL): -450 MW
+   * Inactive/Minimal:
+     - Netherlands (INTNED): 0 MW
+     - IFA2: -4 MW
+
+3. System Characteristics:
+   * High renewable penetration
+   * Zero coal generation
+   * Significant interconnector activity
+   * Strong nuclear baseload
+   * Gas providing flexible generation
+
+10. Next Steps
+-------------
+1. Enable BigQuery billing
+2. Set up automated ingestion
+3. Implement data quality checks
+4. Enhance real-time data monitoring
+5. Develop trend analysis capabilities
+4. Clean up existing duplicates
+5. Set up monitoring system
+
+For assistance, contact:
+- BigQuery Admin (for billing/permissions)
+- Data Engineering Team (for ingestion process)
+- Elexon Support (for API access)

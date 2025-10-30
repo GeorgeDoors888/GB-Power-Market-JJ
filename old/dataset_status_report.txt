@@ -1,0 +1,187 @@
+UK Energy Data - Dataset Status Report
+Generated on: 2025-09-22 11:17:18
+=======================================================
+
+Dataset: B1610 (Table: bmrs_b1610)
+  - Status: Table does not exist.
+
+Dataset: B1630 (Table: bmrs_b1630)
+  - Status: Table does not exist.
+
+Dataset: B1770 (Table: bmrs_b1770)
+  - Status: Table does not exist.
+
+Dataset: BOALF (Table: bmrs_boalf)
+  - Status: Last Updated: 2025-09-21 00:00:00 (using column 'settlementDate')
+
+Dataset: BOD (Table: bmrs_bod)
+  - Status: Last Updated: 2025-09-21 00:00:00 (using column 'settlementDate')
+
+Dataset: COSTS (Table: bmrs_costs)
+  - Status: Last Updated: 2025-09-21 00:00:00 (using column 'settlementDate')
+
+Dataset: DISBSAD (Table: bmrs_disbsad)
+  - Status: Last Updated: 2025-09-09 00:00:00 (using column 'settlementDate')
+
+Dataset: FOU2T14D (Table: bmrs_fou2t14d)
+  - Status: Last Updated: 2025-09-21 16:00:00 (using column 'publishTime')
+
+Dataset: FOU2T3YW (Table: bmrs_fou2t3yw)
+  - Status: Last Updated: 2025-09-21 16:00:00 (using column 'publishTime')
+
+Dataset: FREQ (Table: bmrs_freq)
+  - Status: Last Updated: 2025-09-21 00:00:00 (using column 'measurementTime')
+
+Dataset: FUELHH (Table: bmrs_fuelhh)
+  - Status: Last Updated: 2025-09-09 00:00:00 (using column 'settlementDate')
+
+Dataset: FUELINST (Table: bmrs_fuelinst)
+  - Status: Last Updated: 2025-09-21 00:00:00 (using column 'settlementDate')
+
+Dataset: IMBALNGC (Table: bmrs_imbalngc)
+  - Status: Last Updated: 2025-09-10 00:00:00 (using column 'settlementDate')
+
+Dataset: INDDEM (Table: bmrs_inddem)
+  - Status: Last Updated: 2025-09-10 00:00:00 (using column 'settlementDate')
+
+Dataset: INDGEN (Table: bmrs_indgen)
+  - Status: Last Updated: 2025-09-10 00:00:00 (using column 'settlementDate')
+
+Dataset: INDO (Table: bmrs_indo)
+  - Status: Last Updated: 2025-09-09 00:00:00 (using column 'settlementDate')
+
+Dataset: INTBPT (Table: bmrs_intbpt)
+  - Status: Table does not exist.
+
+Dataset: ITSDO (Table: bmrs_itsdo)
+  - Status: Last Updated: 2025-09-09 00:00:00 (using column 'settlementDate')
+
+Dataset: MDP (Table: bmrs_mdp)
+  - Status: Last Updated: 2025-09-18 00:00:00 (using column 'settlementDate')
+
+Dataset: MDV (Table: bmrs_mdv)
+  - Status: Last Updated: 2025-08-12 00:00:00 (using column 'settlementDate')
+
+Dataset: MELNGC (Table: bmrs_melngc)
+  - Status: Last Updated: 2025-09-10 00:00:00 (using column 'settlementDate')
+
+Dataset: MELS (Table: bmrs_mels)
+  - Status: Last Updated: 2025-09-21 00:00:00 (using column 'settlementDate')
+
+Dataset: MID (Table: bmrs_mid)
+  - Status: Last Updated: 2025-09-09 00:00:00 (using column 'settlementDate')
+
+Dataset: MILS (Table: bmrs_mils)
+  - Status: Last Updated: 2025-09-21 00:00:00 (using column 'settlementDate')
+
+Dataset: MIP (Table: bmrs_mip)
+  - Status: Table does not exist.
+
+Dataset: MNZT (Table: bmrs_mnzt)
+  - Status: Last Updated: 2025-09-21 00:00:00 (using column 'settlementDate')
+
+Dataset: MZT (Table: bmrs_mzt)
+  - Status: Last Updated: 2025-09-20 00:00:00 (using column 'settlementDate')
+
+Dataset: NDF (Table: bmrs_ndf)
+  - Status: Last Updated: 2025-09-10 00:00:00 (using column 'settlementDate')
+
+Dataset: NDFD (Table: bmrs_ndfd)
+  - Status: Table exists but is empty.
+
+Dataset: NDFW (Table: bmrs_ndfw)
+  - Status: Table exists but is empty.
+
+Dataset: NDZ (Table: bmrs_ndz)
+  - Status: Last Updated: 2025-09-21 00:00:00 (using column 'settlementDate')
+
+Dataset: NETBSAD (Table: bmrs_netbsad)
+  - Status: Last Updated: 2025-09-09 00:00:00 (using column 'settlementDate')
+
+Dataset: NONBM (Table: bmrs_nonbm)
+  - Status: Last Updated: 2025-09-09 00:00:00 (using column 'settlementDate')
+
+Dataset: NOU2T14D (Table: bmrs_nou2t14d)
+  - Status: Last Updated: 2025-09-21 16:00:00 (using column 'publishTime')
+
+Dataset: NOU2T3YW (Table: bmrs_nou2t3yw)
+  - Status: Last Updated: 2025-09-21 16:00:00 (using column 'publishTime')
+
+Dataset: NTB (Table: bmrs_ntb)
+  - Status: Last Updated: 2025-09-20 00:00:00 (using column 'settlementDate')
+
+Dataset: NTO (Table: bmrs_nto)
+  - Status: Last Updated: 2025-09-20 00:00:00 (using column 'settlementDate')
+
+Dataset: OCNMF3Y (Table: bmrs_ocnmf3y)
+  - Status: Table exists but is empty.
+
+Dataset: OCNMF3Y2 (Table: bmrs_ocnmf3y2)
+  - Status: Table exists but is empty.
+
+Dataset: OCNMFD (Table: bmrs_ocnmfd)
+  - Status: Table exists but is empty.
+
+Dataset: OCNMFD2 (Table: bmrs_ocnmfd2)
+  - Status: Table exists but is empty.
+
+Dataset: PN (Table: bmrs_pn)
+  - Status: Last Updated: 2025-09-21 00:00:00 (using column 'settlementDate')
+
+Dataset: QAS (Table: bmrs_qas)
+  - Status: Last Updated: 2025-09-07 00:00:00 (using column 'settlementDate')
+
+Dataset: QPN (Table: bmrs_qpn)
+  - Status: Last Updated: 2025-09-21 00:00:00 (using column 'settlementDate')
+
+Dataset: RDRE (Table: bmrs_rdre)
+  - Status: Last Updated: 2025-09-09 00:00:00 (using column 'settlementDate')
+
+Dataset: RDRI (Table: bmrs_rdri)
+  - Status: Last Updated: 2025-07-09 00:00:00 (using column 'settlementDate')
+
+Dataset: RURE (Table: bmrs_rure)
+  - Status: Last Updated: 2025-09-09 00:00:00 (using column 'settlementDate')
+
+Dataset: RURI (Table: bmrs_ruri)
+  - Status: Last Updated: 2025-09-09 00:00:00 (using column 'settlementDate')
+
+Dataset: SEL (Table: bmrs_sel)
+  - Status: Last Updated: 2025-09-21 00:00:00 (using column 'settlementDate')
+
+Dataset: SIL (Table: bmrs_sil)
+  - Status: Last Updated: 2025-09-21 00:00:00 (using column 'settlementDate')
+
+Dataset: TEMP (Table: bmrs_temp)
+  - Status: Table exists but is empty.
+
+Dataset: TSDF (Table: bmrs_tsdf)
+  - Status: Last Updated: 2025-09-10 00:00:00 (using column 'settlementDate')
+  - Details: Publication Schedule: Day-and-day-ahead TSDF forecast (TSDF)
+  - This is the forecast for the current day and next day, usually in half-hourly (settlement) periods.
+  - Updated every 30 minutes, and within 15 minutes after the end of each relevant settlement (half-hour) period.
+  - Also the forecast is available from 9:00AM for the next day’s TSDF.
+
+Dataset: TSDFD (Table: bmrs_tsdfd)
+  - Status: Table exists but is empty.
+  - Details: Publication Schedule: 2-14 days ahead TSDF forecast (TSDFD)
+  - Forecast for demand over the 2 to 14 days ahead period.
+  - Published daily. (Exact time not always explicitly given in public sources, but frequently available and updated via the API.)
+
+Dataset: TSDFW (Table: bmrs_tsdfw)
+  - Status: Table exists but is empty.
+  - Details: Publication Schedule: 2-52 weeks ahead TSDF forecast
+  - Longer-term weekly average demand forecast out to about a year ahead.
+  - Available from 4pm each Thursday.
+
+Dataset: UOU2T14D (Table: bmrs_uou2t14d)
+  - Status: Last Updated: 2025-09-21 16:00:00 (using column 'publishTime')
+
+Dataset: UOU2T3YW (Table: bmrs_uou2t3yw)
+  - Status: Last Updated: 2025-09-21 16:00:00 (using column 'publishTime')
+
+Dataset: WIND (Table: bmrs_wind)
+  - Status: Table does not exist.
+
+Dataset: WINDFOR (Table: bmrs_windfor)
+  - Status: Table exists but is empty.

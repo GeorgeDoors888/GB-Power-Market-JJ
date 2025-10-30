@@ -1,0 +1,45 @@
+DUoS ENHANCED DATA ANALYSIS REPORT V2
+===================================
+
+Analysis Date: 2025-09-14 17:48:55
+
+SUMMARY STATISTICS
+-----------------
+
+Total files processed: 13
+Total rate entries found: 69
+
+DNO COVERAGE
+-----------
+
+SSEN Southern: 36 entries
+National Grid East Midlands: 12 entries
+National Grid South Wales: 6 entries
+National Grid South West: 6 entries
+SSEN Hydro: 6 entries
+Electricity North West: 3 entries
+
+YEAR COVERAGE
+------------
+
+2019: 12 entries
+2020: 57 entries
+
+BAND RATES SUMMARY
+-----------------
+
+DNO RATE COMPARISON
+------------------
+
+SSEN Southern:
+
+National Grid East Midlands:
+
+National Grid South Wales:
+
+National Grid South West:
+
+Electricity North West:
+
+SSEN Hydro:
+

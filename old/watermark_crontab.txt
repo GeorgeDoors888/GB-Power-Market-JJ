@@ -1,0 +1,22 @@
+# Crontab Configuration for Watermark Management
+# To install: crontab watermark_crontab.txt
+
+# Environment setup
+SHELL=/bin/bash
+PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+HOME=/Users/georgemajor
+
+# Log directory
+LOGDIR=/Users/georgemajor/jibber-jabber\ 24\ august\ 2025\ big\ bop/logs
+
+# Ensure log directory exists
+0 0 * * * mkdir -p "$LOGDIR"
+
+# Daily watermark file cleanup (runs at 2:00 AM)
+0 2 * * * /Users/georgemajor/jibber-jabber\ 24\ august\ 2025\ big\ bop/manage_watermarks.sh > "$LOGDIR/watermarks_cleanup_$(date +\%Y\%m\%d).log" 2>&1
+
+# Weekly data freshness analysis (runs every Monday at 8:00 AM)
+0 8 * * 1 cd /Users/georgemajor/jibber-jabber\ 24\ august\ 2025\ big\ bop && python analyze_watermarks.py > "$LOGDIR/watermark_analysis_$(date +\%Y\%m\%d).log" 2>&1
+
+# Monthly comprehensive report (runs on the 1st of each month at 9:00 AM)
+0 9 1 * * cd /Users/georgemajor/jibber-jabber\ 24\ august\ 2025\ big\ bop && python analyze_watermarks.py --output "watermark_analysis_monthly_$(date +\%Y\%m).md" > "$LOGDIR/watermark_monthly_report_$(date +\%Y\%m).log" 2>&1

@@ -1,0 +1,1492 @@
+{
+  "14_days_ahead_operational_metered_wind_forecasts": {
+    "table": "14_days_ahead_operational_metered_wind_forecasts",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-01 11:55:28.318000+00:00",
+    "last_modified_time": "2025-09-01 20:15:36.645000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  },
+  "14_days_ahead_wind_forecasts": {
+    "table": "14_days_ahead_wind_forecasts",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-01 11:55:58.351000+00:00",
+    "last_modified_time": "2025-09-01 20:16:06.666000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  },
+  "1_day_ahead_demand_forecast": {
+    "table": "1_day_ahead_demand_forecast",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-01 11:56:28.335000+00:00",
+    "last_modified_time": "2025-09-01 20:16:37.765000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  },
+  "24_months_ahead_constraint_cost_forecast": {
+    "table": "24_months_ahead_constraint_cost_forecast",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-01 12:01:28.464000+00:00",
+    "last_modified_time": "2025-09-01 20:21:06.673000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  },
+  "24_months_ahead_constraint_limits": {
+    "table": "24_months_ahead_constraint_limits",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-01 12:02:29.729000+00:00",
+    "last_modified_time": "2025-09-01 20:21:36.225000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  },
+  "2_14_days_ahead_national_demand_forecast": {
+    "table": "2_14_days_ahead_national_demand_forecast",
+    "row_count": 7073,
+    "size_bytes": 2396541,
+    "creation_time": "2025-09-01 11:56:58.341000+00:00",
+    "last_modified_time": "2025-09-01 18:58:12.430000+00:00",
+    "max__ingested_utc": "2025-09-01T18:58:02.534776+00:00",
+    "min__window_from_utc": "2024-07-01 00:00:00+00:00",
+    "max__window_to_utc": "2024-08-01 00:00:00+00:00"
+  },
+  "2_day_ahead_demand_forecast": {
+    "table": "2_day_ahead_demand_forecast",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-01 12:02:30.853000+00:00",
+    "last_modified_time": "2025-09-01 20:22:06.873000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  },
+  "7_day_ahead_national_forecast": {
+    "table": "7_day_ahead_national_forecast",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-01 12:02:58.583000+00:00",
+    "last_modified_time": "2025-09-01 20:22:36.592000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  },
+  "aahedc_tariffs": {
+    "table": "aahedc_tariffs",
+    "row_count": 1,
+    "size_bytes": 271,
+    "creation_time": "2025-09-01 12:07:28.457000+00:00",
+    "last_modified_time": "2025-09-01 19:08:40.271000+00:00",
+    "max__ingested_utc": "2025-09-01T19:08:32.391895+00:00",
+    "min__window_from_utc": "2024-07-01 00:00:00+00:00",
+    "max__window_to_utc": "2024-08-01 00:00:00+00:00"
+  },
+  "aggregated_bsad": {
+    "table": "aggregated_bsad",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-01 12:07:58.528000+00:00",
+    "last_modified_time": "2025-09-01 20:27:41.506000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  },
+  "ancillary_services_important_industry_notifications": {
+    "table": "ancillary_services_important_industry_notifications",
+    "row_count": 2,
+    "size_bytes": 2219,
+    "creation_time": "2025-09-01 12:58:20.059000+00:00",
+    "last_modified_time": "2025-09-01 19:09:38.786000+00:00",
+    "max__ingested_utc": "2025-09-01T19:09:31.761556+00:00",
+    "min__window_from_utc": "2024-07-01 00:00:00+00:00",
+    "max__window_to_utc": "2024-08-01 00:00:00+00:00"
+  },
+  "balancing_reserve_auction_requirement_forecast": {
+    "table": "balancing_reserve_auction_requirement_forecast",
+    "row_count": 1488,
+    "size_bytes": 584564,
+    "creation_time": "2025-09-01 12:58:50.056000+00:00",
+    "last_modified_time": "2025-09-01 19:10:07.664000+00:00",
+    "max__ingested_utc": "2025-09-01T19:10:02.065522+00:00",
+    "min__window_from_utc": "2024-07-01 00:00:00+00:00",
+    "max__window_to_utc": "2024-08-01 00:00:00+00:00"
+  },
+  "balancing_services_adjustment_data_forward_contracts": {
+    "table": "balancing_services_adjustment_data_forward_contracts",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-01 13:03:20.197000+00:00",
+    "last_modified_time": "2025-09-01 20:31:12.037000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  },
+  "balancing_services_contract_enactment": {
+    "table": "balancing_services_contract_enactment",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-01 13:04:20.252000+00:00",
+    "last_modified_time": "2025-09-01 20:32:18.847000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  },
+  "balancing_services_use_of_system_bsuos_daily_forecast": {
+    "table": "balancing_services_use_of_system_bsuos_daily_forecast",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-01 13:03:50.222000+00:00",
+    "last_modified_time": "2025-09-01 20:32:37.204000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  },
+  "bmrs_boalf": {
+    "table": "bmrs_boalf",
+    "row_count": 3702236,
+    "size_bytes": 924920846,
+    "creation_time": "2025-08-29 07:46:41.003000+00:00",
+    "last_modified_time": "2025-08-29 11:25:54.508000+00:00",
+    "max__ingested_utc": "2025-08-29T11:25:44.662338+00:00",
+    "min__window_from_utc": "2025-01-01T00:00:00+00:00",
+    "max__window_to_utc": "2025-08-28T00:00:00+00:00"
+  },
+  "bmrs_bod": {
+    "table": "bmrs_bod",
+    "row_count": 572659776,
+    "size_bytes": 128433069313,
+    "creation_time": "2025-08-29 12:59:05.148000+00:00",
+    "last_modified_time": "2025-08-30 10:53:24.675000+00:00",
+    "max__ingested_utc": "2025-08-30T10:53:15.311246+00:00",
+    "min__window_from_utc": "2020-08-29T00:00:00+00:00",
+    "max__window_to_utc": "2025-08-29T00:00:00+00:00"
+  },
+  "bmrs_disbsad": {
+    "table": "bmrs_disbsad",
+    "row_count": 1457416,
+    "size_bytes": 151692910,
+    "creation_time": "2025-08-29 07:46:55.667000+00:00",
+    "last_modified_time": "2025-08-30 00:34:50.117000+00:00",
+    "max__ingested_utc": "2025-08-30T00:34:46.957262+00:00",
+    "min__window_from_utc": "2020-08-29T00:00:00+00:00",
+    "max__window_to_utc": "2025-08-29T00:00:00+00:00"
+  },
+  "bmrs_fou2t14d": {
+    "table": "bmrs_fou2t14d",
+    "row_count": 116584,
+    "size_bytes": 23293400,
+    "creation_time": "2025-08-29 07:44:36.600000+00:00",
+    "last_modified_time": "2025-08-30 00:35:27.028000+00:00",
+    "max__ingested_utc": "2025-08-30T00:35:24.018128+00:00",
+    "min__window_from_utc": "2020-08-29T00:00:00+00:00",
+    "max__window_to_utc": "2025-08-29T00:00:00+00:00"
+  },
+  "bmrs_fou2t3yw": {
+    "table": "bmrs_fou2t3yw",
+    "row_count": 1655090,
+    "size_bytes": 312742260,
+    "creation_time": "2025-08-29 07:44:41+00:00",
+    "last_modified_time": "2025-08-30 00:37:15.200000+00:00",
+    "max__ingested_utc": "2025-08-30T00:37:11.808597+00:00",
+    "min__window_from_utc": "2020-08-29T00:00:00+00:00",
+    "max__window_to_utc": "2025-08-29T00:00:00+00:00"
+  },
+  "bmrs_freq": {
+    "table": "bmrs_freq",
+    "row_count": 19143803,
+    "size_bytes": 2488694390,
+    "creation_time": "2025-08-29 07:43:53.297000+00:00",
+    "last_modified_time": "2025-08-30 00:45:10.460000+00:00",
+    "max__ingested_utc": "2025-08-30T00:45:06.070472+00:00",
+    "min__window_from_utc": "2020-08-29T00:00:00+00:00",
+    "max__window_to_utc": "2025-08-29T00:00:00+00:00"
+  },
+  "bmrs_fuelhh": {
+    "table": "bmrs_fuelhh",
+    "row_count": 299540,
+    "size_bytes": 54920659,
+    "creation_time": "2025-08-29 07:44:02.165000+00:00",
+    "last_modified_time": "2025-08-30 00:50:28.021000+00:00",
+    "max__ingested_utc": "2025-08-30T00:50:23.259203+00:00",
+    "min__window_from_utc": "2020-08-29T00:00:00+00:00",
+    "max__window_to_utc": "2025-08-29T00:00:00+00:00"
+  },
+  "bmrs_fuelinst": {
+    "table": "bmrs_fuelinst",
+    "row_count": 2408640,
+    "size_bytes": 451258704,
+    "creation_time": "2025-08-28 23:01:16.669000+00:00",
+    "last_modified_time": "2025-08-30 00:56:33.699000+00:00",
+    "max__ingested_utc": "2025-08-30T00:56:30.573159+00:00",
+    "min__window_from_utc": "2016-01-01T00:00:00+00:00",
+    "max__window_to_utc": "2025-08-29T00:00:00+00:00"
+  },
+  "bmrs_imbalngc": {
+    "table": "bmrs_imbalngc",
+    "row_count": 561924,
+    "size_bytes": 103612542,
+    "creation_time": "2025-08-29 08:20:03.786000+00:00",
+    "last_modified_time": "2025-08-30 00:58:01.278000+00:00",
+    "max__ingested_utc": "2025-08-30T00:57:58.180265+00:00",
+    "min__window_from_utc": "2020-08-29T00:00:00+00:00",
+    "max__window_to_utc": "2025-08-29T00:00:00+00:00"
+  },
+  "bmrs_inddem": {
+    "table": "bmrs_inddem",
+    "row_count": 533574,
+    "size_bytes": 96250821,
+    "creation_time": "2025-08-29 07:44:10.037000+00:00",
+    "last_modified_time": "2025-08-30 00:58:58.526000+00:00",
+    "max__ingested_utc": "2025-08-30T00:58:55.264816+00:00",
+    "min__window_from_utc": "2020-08-29T00:00:00+00:00",
+    "max__window_to_utc": "2025-08-29T00:00:00+00:00"
+  },
+  "bmrs_indgen": {
+    "table": "bmrs_indgen",
+    "row_count": 562734,
+    "size_bytes": 101510961,
+    "creation_time": "2025-08-29 07:44:05.947000+00:00",
+    "last_modified_time": "2025-08-30 01:00:14.544000+00:00",
+    "max__ingested_utc": "2025-08-30T01:00:07.849271+00:00",
+    "min__window_from_utc": "2020-08-29T00:00:00+00:00",
+    "max__window_to_utc": "2025-08-29T00:00:00+00:00"
+  },
+  "bmrs_indo": {
+    "table": "bmrs_indo",
+    "row_count": 562,
+    "size_bytes": 96664,
+    "creation_time": "2025-08-29 07:44:28.989000+00:00",
+    "last_modified_time": "2025-08-30 01:01:10.818000+00:00",
+    "max__ingested_utc": "2025-08-30T01:01:07.995567+00:00",
+    "min__window_from_utc": "2020-08-29T00:00:00+00:00",
+    "max__window_to_utc": "2025-08-29T00:00:00+00:00"
+  },
+  "bmrs_itsdo": {
+    "table": "bmrs_itsdo",
+    "row_count": 562,
+    "size_bytes": 97788,
+    "creation_time": "2025-08-29 07:44:25.833000+00:00",
+    "last_modified_time": "2025-08-30 01:02:02.626000+00:00",
+    "max__ingested_utc": "2025-08-30T01:01:59.818064+00:00",
+    "min__window_from_utc": "2020-08-29T00:00:00+00:00",
+    "max__window_to_utc": "2025-08-29T00:00:00+00:00"
+  },
+  "bmrs_mdp": {
+    "table": "bmrs_mdp",
+    "row_count": 823,
+    "size_bytes": 140559,
+    "creation_time": "2025-08-29 08:30:36.586000+00:00",
+    "last_modified_time": "2025-08-30 01:05:04.733000+00:00",
+    "max__ingested_utc": "2025-08-30T01:05:01.676334+00:00",
+    "min__window_from_utc": "2020-08-29T00:00:00+00:00",
+    "max__window_to_utc": "2025-08-15T00:00:00+00:00"
+  },
+  "bmrs_mdv": {
+    "table": "bmrs_mdv",
+    "row_count": 825,
+    "size_bytes": 140895,
+    "creation_time": "2025-08-29 08:30:40.731000+00:00",
+    "last_modified_time": "2025-08-30 01:05:59.402000+00:00",
+    "max__ingested_utc": "2025-08-30T01:05:56.113347+00:00",
+    "min__window_from_utc": "2020-08-29T00:00:00+00:00",
+    "max__window_to_utc": "2025-08-15T00:00:00+00:00"
+  },
+  "bmrs_melngc": {
+    "table": "bmrs_melngc",
+    "row_count": 561924,
+    "size_bytes": 101364846,
+    "creation_time": "2025-08-29 08:20:24.470000+00:00",
+    "last_modified_time": "2025-08-30 01:03:07.042000+00:00",
+    "max__ingested_utc": "2025-08-30T01:03:03.405861+00:00",
+    "min__window_from_utc": "2020-08-29T00:00:00+00:00",
+    "max__window_to_utc": "2025-08-29T00:00:00+00:00"
+  },
+  "bmrs_mels": {
+    "table": "bmrs_mels",
+    "row_count": 772539,
+    "size_bytes": 477932346,
+    "creation_time": "2025-08-30 11:38:26.682000+00:00",
+    "last_modified_time": "2025-09-03 09:17:23.965000+00:00",
+    "max__ingested_utc": "2025-09-03T09:16:49.985011+00:00",
+    "min__window_from_utc": "2025-08-28T00:00:00+00:00",
+    "max__window_to_utc": "2025-09-04T00:00:00+00:00"
+  },
+  "bmrs_mid": {
+    "table": "bmrs_mid",
+    "row_count": 370801,
+    "size_bytes": 61367340,
+    "creation_time": "2025-08-29 08:30:28.498000+00:00",
+    "last_modified_time": "2025-08-30 01:04:16.260000+00:00",
+    "max__ingested_utc": "2025-08-30T01:04:13.086719+00:00",
+    "min__window_from_utc": "2020-08-29T00:00:00+00:00",
+    "max__window_to_utc": "2025-08-29T00:00:00+00:00"
+  },
+  "bmrs_mils": {
+    "table": "bmrs_mils",
+    "row_count": 5001668,
+    "size_bytes": 3094263005,
+    "creation_time": "2025-08-30 11:38:17.077000+00:00",
+    "last_modified_time": "2025-08-30 12:13:41.344000+00:00",
+    "max__ingested_utc": "2025-08-30T12:09:05.310967+00:00",
+    "min__window_from_utc": "2025-07-16T00:00:00+00:00",
+    "max__window_to_utc": "2025-08-30T00:00:00+00:00"
+  },
+  "bmrs_mnzt": {
+    "table": "bmrs_mnzt",
+    "row_count": 140619,
+    "size_bytes": 23719301,
+    "creation_time": "2025-08-29 08:30:44.753000+00:00",
+    "last_modified_time": "2025-08-30 01:07:07.386000+00:00",
+    "max__ingested_utc": "2025-08-30T01:07:04.196540+00:00",
+    "min__window_from_utc": "2020-08-29T00:00:00+00:00",
+    "max__window_to_utc": "2025-08-29T00:00:00+00:00"
+  },
+  "bmrs_mzt": {
+    "table": "bmrs_mzt",
+    "row_count": 94441,
+    "size_bytes": 15723266,
+    "creation_time": "2025-08-29 08:30:48.319000+00:00",
+    "last_modified_time": "2025-08-30 01:08:08.290000+00:00",
+    "max__ingested_utc": "2025-08-30T01:08:04.547579+00:00",
+    "min__window_from_utc": "2020-08-29T00:00:00+00:00",
+    "max__window_to_utc": "2025-08-29T00:00:00+00:00"
+  },
+  "bmrs_ndf": {
+    "table": "bmrs_ndf",
+    "row_count": 17169,
+    "size_bytes": 2970237,
+    "creation_time": "2025-08-29 07:44:14.120000+00:00",
+    "last_modified_time": "2025-08-30 01:16:18.484000+00:00",
+    "max__ingested_utc": "2025-08-30T01:16:15.533858+00:00",
+    "min__window_from_utc": "2020-08-29T00:00:00+00:00",
+    "max__window_to_utc": "2025-08-29T00:00:00+00:00"
+  },
+  "bmrs_ndfd": {
+    "table": "bmrs_ndfd",
+    "row_count": 4576,
+    "size_bytes": 649792,
+    "creation_time": "2025-08-29 07:44:18.536000+00:00",
+    "last_modified_time": "2025-08-30 01:17:22.123000+00:00",
+    "max__ingested_utc": "2025-08-30T01:17:19.345607+00:00",
+    "min__window_from_utc": "2020-08-29T00:00:00+00:00",
+    "max__window_to_utc": "2025-08-29T00:00:00+00:00"
+  },
+  "bmrs_ndfw": {
+    "table": "bmrs_ndfw",
+    "row_count": 28662,
+    "size_bytes": 4184652,
+    "creation_time": "2025-08-29 07:44:21.896000+00:00",
+    "last_modified_time": "2025-08-30 01:18:18.874000+00:00",
+    "max__ingested_utc": "2025-08-30T01:18:15.713046+00:00",
+    "min__window_from_utc": "2020-08-29T00:00:00+00:00",
+    "max__window_to_utc": "2025-08-29T00:00:00+00:00"
+  },
+  "bmrs_ndz": {
+    "table": "bmrs_ndz",
+    "row_count": 156864,
+    "size_bytes": 26135602,
+    "creation_time": "2025-08-29 08:31:01.750000+00:00",
+    "last_modified_time": "2025-08-30 01:23:59.978000+00:00",
+    "max__ingested_utc": "2025-08-30T01:23:57.186440+00:00",
+    "min__window_from_utc": "2020-08-29T00:00:00+00:00",
+    "max__window_to_utc": "2025-08-29T00:00:00+00:00"
+  },
+  "bmrs_netbsad": {
+    "table": "bmrs_netbsad",
+    "row_count": 167237,
+    "size_bytes": 31775030,
+    "creation_time": "2025-08-29 08:28:29.676000+00:00",
+    "last_modified_time": "2025-08-30 01:17:03.712000+00:00",
+    "max__ingested_utc": "2025-08-30T01:17:00.956212+00:00",
+    "min__window_from_utc": "2020-08-29T00:00:00+00:00",
+    "max__window_to_utc": "2025-08-29T00:00:00+00:00"
+  },
+  "bmrs_nonbm": {
+    "table": "bmrs_nonbm",
+    "row_count": 185406,
+    "size_bytes": 32260644,
+    "creation_time": "2025-08-29 07:44:32.968000+00:00",
+    "last_modified_time": "2025-08-30 01:19:21.914000+00:00",
+    "max__ingested_utc": "2025-08-30T01:19:18.643958+00:00",
+    "min__window_from_utc": "2020-08-29T00:00:00+00:00",
+    "max__window_to_utc": "2025-08-29T00:00:00+00:00"
+  },
+  "bmrs_nou2t14d": {
+    "table": "bmrs_nou2t14d",
+    "row_count": 7306,
+    "size_bytes": 1246206,
+    "creation_time": "2025-08-29 07:45:26.854000+00:00",
+    "last_modified_time": "2025-08-30 01:20:38.440000+00:00",
+    "max__ingested_utc": "2025-08-30T01:20:35.506689+00:00",
+    "min__window_from_utc": "2020-08-29T00:00:00+00:00",
+    "max__window_to_utc": "2025-08-29T00:00:00+00:00"
+  },
+  "bmrs_nou2t3yw": {
+    "table": "bmrs_nou2t3yw",
+    "row_count": 73160,
+    "size_bytes": 11668400,
+    "creation_time": "2025-08-29 07:45:30.159000+00:00",
+    "last_modified_time": "2025-08-30 01:21:15.824000+00:00",
+    "max__ingested_utc": "2025-08-30T01:21:13.036607+00:00",
+    "min__window_from_utc": "2020-08-29T00:00:00+00:00",
+    "max__window_to_utc": "2025-08-29T00:00:00+00:00"
+  },
+  "bmrs_ntb": {
+    "table": "bmrs_ntb",
+    "row_count": 43432,
+    "size_bytes": 7231060,
+    "creation_time": "2025-08-29 08:30:52.507000+00:00",
+    "last_modified_time": "2025-08-30 01:22:07.245000+00:00",
+    "max__ingested_utc": "2025-08-30T01:22:04.341078+00:00",
+    "min__window_from_utc": "2020-08-29T00:00:00+00:00",
+    "max__window_to_utc": "2025-08-29T00:00:00+00:00"
+  },
+  "bmrs_nto": {
+    "table": "bmrs_nto",
+    "row_count": 43438,
+    "size_bytes": 7232036,
+    "creation_time": "2025-08-29 08:30:57.592000+00:00",
+    "last_modified_time": "2025-08-30 01:23:04.726000+00:00",
+    "max__ingested_utc": "2025-08-30T01:23:02.125390+00:00",
+    "min__window_from_utc": "2020-08-29T00:00:00+00:00",
+    "max__window_to_utc": "2025-08-29T00:00:00+00:00"
+  },
+  "bmrs_ocnmf3y": {
+    "table": "bmrs_ocnmf3y",
+    "row_count": 87110,
+    "size_bytes": 13240720,
+    "creation_time": "2025-08-29 07:44:44.122000+00:00",
+    "last_modified_time": "2025-08-30 01:24:56.876000+00:00",
+    "max__ingested_utc": "2025-08-30T01:24:54.114217+00:00",
+    "min__window_from_utc": "2020-08-29T00:00:00+00:00",
+    "max__window_to_utc": "2025-08-29T00:00:00+00:00"
+  },
+  "bmrs_ocnmf3y2": {
+    "table": "bmrs_ocnmf3y2",
+    "row_count": 46655,
+    "size_bytes": 7184870,
+    "creation_time": "2025-08-29 07:45:11.369000+00:00",
+    "last_modified_time": "2025-08-29 20:48:56.873000+00:00",
+    "max__ingested_utc": "2025-08-29T20:48:54.285646+00:00",
+    "min__window_from_utc": "2020-08-29T00:00:00+00:00",
+    "max__window_to_utc": "2025-08-29T00:00:00+00:00"
+  },
+  "bmrs_ocnmfd": {
+    "table": "bmrs_ocnmfd",
+    "row_count": 7306,
+    "size_bytes": 1066676,
+    "creation_time": "2025-08-29 07:45:15.769000+00:00",
+    "last_modified_time": "2025-08-30 01:25:50.267000+00:00",
+    "max__ingested_utc": "2025-08-30T01:25:47.525417+00:00",
+    "min__window_from_utc": "2020-08-29T00:00:00+00:00",
+    "max__window_to_utc": "2025-08-29T00:00:00+00:00"
+  },
+  "bmrs_ocnmfd2": {
+    "table": "bmrs_ocnmfd2",
+    "row_count": 7306,
+    "size_bytes": 1081288,
+    "creation_time": "2025-08-29 07:45:20.970000+00:00",
+    "last_modified_time": "2025-08-30 01:26:41.347000+00:00",
+    "max__ingested_utc": "2025-08-30T01:26:38.391382+00:00",
+    "min__window_from_utc": "2020-08-29T00:00:00+00:00",
+    "max__window_to_utc": "2025-08-29T00:00:00+00:00"
+  },
+  "bmrs_qas": {
+    "table": "bmrs_qas",
+    "row_count": 7702009,
+    "size_bytes": 1135273709,
+    "creation_time": "2025-08-29 08:28:50.743000+00:00",
+    "last_modified_time": "2025-08-30 01:36:49.520000+00:00",
+    "max__ingested_utc": "2025-08-30T01:36:46.494294+00:00",
+    "min__window_from_utc": "2020-08-29T00:00:00+00:00",
+    "max__window_to_utc": "2025-08-28T00:00:00+00:00"
+  },
+  "bmrs_rdre": {
+    "table": "bmrs_rdre",
+    "row_count": 39909,
+    "size_bytes": 7571422,
+    "creation_time": "2025-08-29 08:28:59.856000+00:00",
+    "last_modified_time": "2025-08-30 01:45:39.849000+00:00",
+    "max__ingested_utc": "2025-08-30T01:45:36.964973+00:00",
+    "min__window_from_utc": "2020-08-29T00:00:00+00:00",
+    "max__window_to_utc": "2025-08-29T00:00:00+00:00"
+  },
+  "bmrs_rdri": {
+    "table": "bmrs_rdri",
+    "row_count": 52,
+    "size_bytes": 9187,
+    "creation_time": "2025-08-29 14:34:26.886000+00:00",
+    "last_modified_time": "2025-08-29 14:34:26.886000+00:00",
+    "max__ingested_utc": "2025-08-29T14:34:24.646475+00:00",
+    "min__window_from_utc": "2025-01-09T00:00:00+00:00",
+    "max__window_to_utc": "2025-07-10T00:00:00+00:00"
+  },
+  "bmrs_rdri_new": {
+    "table": "bmrs_rdri_new",
+    "row_count": 725,
+    "size_bytes": 123101,
+    "creation_time": "2025-08-29 14:40:17.235000+00:00",
+    "last_modified_time": "2025-08-30 10:33:38.184000+00:00",
+    "max__ingested_utc": "2025-08-30T10:33:34.864045+00:00",
+    "min__window_from_utc": "2020-09-02 00:00:00+00:00",
+    "max__window_to_utc": "2025-08-29T00:00:00+00:00"
+  },
+  "bmrs_rure": {
+    "table": "bmrs_rure",
+    "row_count": 256661,
+    "size_bytes": 50966375,
+    "creation_time": "2025-08-29 08:29:27.263000+00:00",
+    "last_modified_time": "2025-08-30 01:53:32.212000+00:00",
+    "max__ingested_utc": "2025-08-30T01:53:29.733250+00:00",
+    "min__window_from_utc": "2020-08-29T00:00:00+00:00",
+    "max__window_to_utc": "2025-08-29T00:00:00+00:00"
+  },
+  "bmrs_ruri": {
+    "table": "bmrs_ruri",
+    "row_count": 3232,
+    "size_bytes": 601321,
+    "creation_time": "2025-08-29 08:29:37.693000+00:00",
+    "last_modified_time": "2025-08-30 01:57:57.940000+00:00",
+    "max__ingested_utc": "2025-08-30T01:57:54.618586+00:00",
+    "min__window_from_utc": "2020-09-02T00:00:00+00:00",
+    "max__window_to_utc": "2025-08-29T00:00:00+00:00"
+  },
+  "bmrs_sel": {
+    "table": "bmrs_sel",
+    "row_count": 292089,
+    "size_bytes": 49236877,
+    "creation_time": "2025-08-29 07:45:50.615000+00:00",
+    "last_modified_time": "2025-08-30 01:59:07.335000+00:00",
+    "max__ingested_utc": "2025-08-30T01:59:02.949631+00:00",
+    "min__window_from_utc": "2020-08-29T00:00:00+00:00",
+    "max__window_to_utc": "2025-08-29T00:00:00+00:00"
+  },
+  "bmrs_sil": {
+    "table": "bmrs_sil",
+    "row_count": 53429,
+    "size_bytes": 9186704,
+    "creation_time": "2025-08-29 07:45:54.968000+00:00",
+    "last_modified_time": "2025-08-30 01:59:59.063000+00:00",
+    "max__ingested_utc": "2025-08-30T01:59:54.473275+00:00",
+    "min__window_from_utc": "2020-08-29T00:00:00+00:00",
+    "max__window_to_utc": "2025-08-29T00:00:00+00:00"
+  },
+  "bmrs_temp": {
+    "table": "bmrs_temp",
+    "row_count": 17422,
+    "size_bytes": 2473924,
+    "creation_time": "2025-08-29 07:45:59.490000+00:00",
+    "last_modified_time": "2025-08-30 02:00:54.803000+00:00",
+    "max__ingested_utc": "2025-08-30T02:00:52.025990+00:00",
+    "min__window_from_utc": "2020-08-29T00:00:00+00:00",
+    "max__window_to_utc": "2025-08-29T00:00:00+00:00"
+  },
+  "bmrs_temp_temp_1756487043": {
+    "table": "bmrs_temp_temp_1756487043",
+    "row_count": 32,
+    "size_bytes": 26762,
+    "creation_time": "2025-08-29 17:04:07.037000+00:00",
+    "last_modified_time": "2025-08-29 17:04:07.037000+00:00",
+    "max__ingested_utc": "2025-08-29T17:04:03.842879+00:00",
+    "min__window_from_utc": "2025-08-28T00:00:00+00:00",
+    "max__window_to_utc": "2025-08-29T00:00:00+00:00"
+  },
+  "bmrs_tsdf": {
+    "table": "bmrs_tsdf",
+    "row_count": 544464,
+    "size_bytes": 96037400,
+    "creation_time": "2025-08-29 07:45:39.758000+00:00",
+    "last_modified_time": "2025-08-30 02:01:58.618000+00:00",
+    "max__ingested_utc": "2025-08-30T02:01:55.599093+00:00",
+    "min__window_from_utc": "2020-08-29T00:00:00+00:00",
+    "max__window_to_utc": "2025-08-29T00:00:00+00:00"
+  },
+  "bmrs_tsdf_temp_1756487050": {
+    "table": "bmrs_tsdf_temp_1756487050",
+    "row_count": 1260,
+    "size_bytes": 1312630,
+    "creation_time": "2025-08-29 17:04:13.430000+00:00",
+    "last_modified_time": "2025-08-29 17:04:13.430000+00:00",
+    "max__ingested_utc": "2025-08-29T17:04:10.173611+00:00",
+    "min__window_from_utc": "2025-08-28T00:00:00+00:00",
+    "max__window_to_utc": "2025-08-29T00:00:00+00:00"
+  },
+  "bmrs_tsdfd": {
+    "table": "bmrs_tsdfd",
+    "row_count": 3913,
+    "size_bytes": 563472,
+    "creation_time": "2025-08-29 07:45:43.446000+00:00",
+    "last_modified_time": "2025-08-29 20:50:02.271000+00:00",
+    "max__ingested_utc": "2025-08-29T20:49:58.981564+00:00",
+    "min__window_from_utc": "2020-08-29T00:00:00+00:00",
+    "max__window_to_utc": "2025-08-29T00:00:00+00:00"
+  },
+  "bmrs_tsdfd_temp_1756487057": {
+    "table": "bmrs_tsdfd_temp_1756487057",
+    "row_count": 13,
+    "size_bytes": 10532,
+    "creation_time": "2025-08-29 17:04:20.196000+00:00",
+    "last_modified_time": "2025-08-29 17:04:20.196000+00:00",
+    "max__ingested_utc": "2025-08-29T17:04:17.529942+00:00",
+    "min__window_from_utc": "2025-08-28T00:00:00+00:00",
+    "max__window_to_utc": "2025-08-29T00:00:00+00:00"
+  },
+  "bmrs_tsdfw": {
+    "table": "bmrs_tsdfw",
+    "row_count": 28662,
+    "size_bytes": 4241976,
+    "creation_time": "2025-08-29 07:45:46.685000+00:00",
+    "last_modified_time": "2025-08-30 02:02:54.430000+00:00",
+    "max__ingested_utc": "2025-08-30T02:02:51.976342+00:00",
+    "min__window_from_utc": "2020-08-29T00:00:00+00:00",
+    "max__window_to_utc": "2025-08-29T00:00:00+00:00"
+  },
+  "bmrs_uou2t14d": {
+    "table": "bmrs_uou2t14d",
+    "row_count": 20454109,
+    "size_bytes": 3591632915,
+    "creation_time": "2025-08-29 07:45:34.493000+00:00",
+    "last_modified_time": "2025-08-30 02:12:51.377000+00:00",
+    "max__ingested_utc": "2025-08-30T02:12:45.840625+00:00",
+    "min__window_from_utc": "2020-08-29T00:00:00+00:00",
+    "max__window_to_utc": "2025-08-29T00:00:00+00:00"
+  },
+  "bmrs_uou2t3yw": {
+    "table": "bmrs_uou2t3yw",
+    "row_count": 243875915,
+    "size_bytes": 43798819185,
+    "creation_time": "2025-08-29 08:13:02.321000+00:00",
+    "last_modified_time": "2025-08-30 03:32:58.847000+00:00",
+    "max__ingested_utc": "2025-08-30T03:32:03.109166+00:00",
+    "min__window_from_utc": "2020-08-29T00:00:00+00:00",
+    "max__window_to_utc": "2025-08-29T00:00:00+00:00"
+  },
+  "bmrs_windfor": {
+    "table": "bmrs_windfor",
+    "row_count": 21973,
+    "size_bytes": 3471734,
+    "creation_time": "2025-08-29 07:46:03.382000+00:00",
+    "last_modified_time": "2025-08-29 20:51:13.471000+00:00",
+    "max__ingested_utc": "2025-08-29T20:51:10.877150+00:00",
+    "min__window_from_utc": "2020-08-29T00:00:00+00:00",
+    "max__window_to_utc": "2025-08-29T00:00:00+00:00"
+  },
+  "brit_ned": {
+    "table": "brit_ned",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-02 12:14:36.333000+00:00",
+    "last_modified_time": "2025-09-02 17:14:13.915000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  },
+  "bsuos_fixed_tariffs": {
+    "table": "bsuos_fixed_tariffs",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-01 13:06:50.120000+00:00",
+    "last_modified_time": "2025-09-01 20:35:36.445000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  },
+  "bsuos_monthly_forecast": {
+    "table": "bsuos_monthly_forecast",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-01 13:33:52.480000+00:00",
+    "last_modified_time": "2025-09-01 20:37:06.534000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  },
+  "capacity_market_register": {
+    "table": "capacity_market_register",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-02 12:15:06.211000+00:00",
+    "last_modified_time": "2025-09-02 17:15:16.271000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  },
+  "carbon_intensity_of_balancing_actions": {
+    "table": "carbon_intensity_of_balancing_actions",
+    "row_count": 1488,
+    "size_bytes": 424719,
+    "creation_time": "2025-09-01 13:34:52.388000+00:00",
+    "last_modified_time": "2025-09-01 19:21:39.315000+00:00",
+    "max__ingested_utc": "2025-09-01T19:21:32.463972+00:00",
+    "min__window_from_utc": "2024-07-01 00:00:00+00:00",
+    "max__window_to_utc": "2024-08-01 00:00:00+00:00"
+  },
+  "constraint_breakdown": {
+    "table": "constraint_breakdown",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-01 13:36:22.499000+00:00",
+    "last_modified_time": "2025-09-01 20:40:06.471000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  },
+  "constraint_management_intertrip_service_information_cmis": {
+    "table": "constraint_management_intertrip_service_information_cmis",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-01 13:37:22.492000+00:00",
+    "last_modified_time": "2025-09-01 20:41:39.333000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  },
+  "contract_transfer_of_obligation": {
+    "table": "contract_transfer_of_obligation",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-01 13:40:22.564000+00:00",
+    "last_modified_time": "2025-09-01 20:42:36.721000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  },
+  "country_carbon_intensity_forecast": {
+    "table": "country_carbon_intensity_forecast",
+    "row_count": 1488,
+    "size_bytes": 393861,
+    "creation_time": "2025-09-01 13:40:52.580000+00:00",
+    "last_modified_time": "2025-09-01 19:27:39.380000+00:00",
+    "max__ingested_utc": "2025-09-01T19:27:32.286543+00:00",
+    "min__window_from_utc": "2024-07-01 00:00:00+00:00",
+    "max__window_to_utc": "2024-08-01 00:00:00+00:00"
+  },
+  "current_balancing_services_use_of_system_bsuos_data": {
+    "table": "current_balancing_services_use_of_system_bsuos_data",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-01 13:41:52.526000+00:00",
+    "last_modified_time": "2025-09-01 20:46:29.665000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  },
+  "daily_balancing_costs_balancing_services_use_of_system": {
+    "table": "daily_balancing_costs_balancing_services_use_of_system",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-01 13:43:22.563000+00:00",
+    "last_modified_time": "2025-09-01 20:47:06.595000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  },
+  "daily_balancing_volume_balancing_services_use_of_system": {
+    "table": "daily_balancing_volume_balancing_services_use_of_system",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-01 13:46:22.503000+00:00",
+    "last_modified_time": "2025-09-01 20:47:36.576000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  },
+  "daily_demand_update": {
+    "table": "daily_demand_update",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-01 13:46:52.558000+00:00",
+    "last_modified_time": "2025-09-01 20:48:36.383000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  },
+  "daily_opmr": {
+    "table": "daily_opmr",
+    "row_count": 390,
+    "size_bytes": 152646,
+    "creation_time": "2025-09-01 13:47:53.919000+00:00",
+    "last_modified_time": "2025-09-01 19:35:09.262000+00:00",
+    "max__ingested_utc": "2025-09-01T19:35:02.397298+00:00",
+    "min__window_from_utc": "2024-07-01 00:00:00+00:00",
+    "max__window_to_utc": "2024-08-01 00:00:00+00:00"
+  },
+  "daily_wind_availability": {
+    "table": "daily_wind_availability",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-01 13:49:22.525000+00:00",
+    "last_modified_time": "2025-09-01 20:53:07.312000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  },
+  "data_portal_planned_changes_known_issues": {
+    "table": "data_portal_planned_changes_known_issues",
+    "row_count": 1,
+    "size_bytes": 2522,
+    "creation_time": "2025-09-01 13:52:22.608000+00:00",
+    "last_modified_time": "2025-09-01 19:38:39.395000+00:00",
+    "max__ingested_utc": "2025-09-01T19:38:32.299671+00:00",
+    "min__window_from_utc": "2024-07-01 00:00:00+00:00",
+    "max__window_to_utc": "2024-08-01 00:00:00+00:00"
+  },
+  "day_ahead_constraint_flows_and_limits": {
+    "table": "day_ahead_constraint_flows_and_limits",
+    "row_count": 15706,
+    "size_bytes": 4304766,
+    "creation_time": "2025-09-01 13:52:52.569000+00:00",
+    "last_modified_time": "2025-09-01 19:39:49.429000+00:00",
+    "max__ingested_utc": "2025-09-01T19:39:43.047323+00:00",
+    "min__window_from_utc": "2024-07-01 00:00:00+00:00",
+    "max__window_to_utc": "2024-08-01 00:00:00+00:00"
+  },
+  "day_ahead_half_hourly_demand_forecast_performance": {
+    "table": "day_ahead_half_hourly_demand_forecast_performance",
+    "row_count": 1488,
+    "size_bytes": 614330,
+    "creation_time": "2025-09-01 13:53:52.640000+00:00",
+    "last_modified_time": "2025-09-01 19:41:09.833000+00:00",
+    "max__ingested_utc": "2025-09-01T19:41:02.585161+00:00",
+    "min__window_from_utc": "2024-07-01 00:00:00+00:00",
+    "max__window_to_utc": "2024-08-01 00:00:00+00:00"
+  },
+  "day_ahead_wind_forecast": {
+    "table": "day_ahead_wind_forecast",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-01 13:55:22.654000+00:00",
+    "last_modified_time": "2025-09-01 19:42:04.604000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  },
+  "demand_flexibility": {
+    "table": "demand_flexibility",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-01 13:58:22.608000+00:00",
+    "last_modified_time": "2025-09-01 19:44:34.722000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  },
+  "demand_flexibility_service": {
+    "table": "demand_flexibility_service",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-01 13:58:52.654000+00:00",
+    "last_modified_time": "2025-09-01 19:45:34.630000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  },
+  "demand_flexibility_service_live_events": {
+    "table": "demand_flexibility_service_live_events",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-01 13:59:52.708000+00:00",
+    "last_modified_time": "2025-09-01 20:47:06.801000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  },
+  "demand_flexibility_service_test_events": {
+    "table": "demand_flexibility_service_test_events",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-01 14:01:30.498000+00:00",
+    "last_modified_time": "2025-09-01 20:48:05.837000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  },
+  "demand_profile_dates": {
+    "table": "demand_profile_dates",
+    "row_count": 31,
+    "size_bytes": 6300,
+    "creation_time": "2025-09-01 14:09:22.771000+00:00",
+    "last_modified_time": "2025-09-01 19:50:37.931000+00:00",
+    "max__ingested_utc": "2025-09-01T19:50:32.473795+00:00",
+    "min__window_from_utc": "2024-07-01 00:00:00+00:00",
+    "max__window_to_utc": "2024-08-01 00:00:00+00:00"
+  },
+  "disaggregated_bsad": {
+    "table": "disaggregated_bsad",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-01 14:07:23.181000+00:00",
+    "last_modified_time": "2025-09-01 19:51:34.950000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  },
+  "dispatch_transparency": {
+    "table": "dispatch_transparency",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-01 14:12:22.904000+00:00",
+    "last_modified_time": "2025-09-01 19:56:37.870000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  },
+  "dynamic_containment_4_day_forecast": {
+    "table": "dynamic_containment_4_day_forecast",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-01 14:15:32.695000+00:00",
+    "last_modified_time": "2025-09-01 19:57:41.313000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  },
+  "dynamic_containment_data": {
+    "table": "dynamic_containment_data",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-01 14:18:22.916000+00:00",
+    "last_modified_time": "2025-09-01 20:02:35.215000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  },
+  "dynamic_moderation_requirements": {
+    "table": "dynamic_moderation_requirements",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-01 14:22:05.302000+00:00",
+    "last_modified_time": "2025-09-01 20:03:35.134000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  },
+  "dynamic_regulation_requirements": {
+    "table": "dynamic_regulation_requirements",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-01 14:24:22.911000+00:00",
+    "last_modified_time": "2025-09-01 20:08:35.279000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  },
+  "eac_auction_results": {
+    "table": "eac_auction_results",
+    "row_count": 34011,
+    "size_bytes": 16861906,
+    "creation_time": "2025-09-01 14:28:09.929000+00:00",
+    "last_modified_time": "2025-09-01 20:09:48.253000+00:00",
+    "max__ingested_utc": "2025-09-01T20:09:36.763756+00:00",
+    "min__window_from_utc": "2024-07-01 00:00:00+00:00",
+    "max__window_to_utc": "2024-08-01 00:00:00+00:00"
+  },
+  "eac_br_auction_results": {
+    "table": "eac_br_auction_results",
+    "row_count": 33131,
+    "size_bytes": 18380774,
+    "creation_time": "2025-09-01 14:30:32.156000+00:00",
+    "last_modified_time": "2025-09-01 20:14:45.274000+00:00",
+    "max__ingested_utc": "2025-09-01T20:14:35.343101+00:00",
+    "min__window_from_utc": "2024-07-01 00:00:00+00:00",
+    "max__window_to_utc": "2024-08-01 00:00:00+00:00"
+  },
+  "eac_br_mock_auction_results": {
+    "table": "eac_br_mock_auction_results",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-01 14:33:23.088000+00:00",
+    "last_modified_time": "2025-09-01 20:15:35.286000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  },
+  "eac_mock_auction_results": {
+    "table": "eac_mock_auction_results",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-01 14:39:23.097000+00:00",
+    "last_modified_time": "2025-09-01 20:20:35.469000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  },
+  "eleclink": {
+    "table": "eleclink",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-01 14:41:35.397000+00:00",
+    "last_modified_time": "2025-09-01 20:21:35.326000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  },
+  "embedded_register": {
+    "table": "embedded_register",
+    "row_count": 4,
+    "size_bytes": 2231,
+    "creation_time": "2025-09-01 14:46:23.137000+00:00",
+    "last_modified_time": "2025-09-01 20:26:43.195000+00:00",
+    "max__ingested_utc": "2025-09-01T20:26:33.755725+00:00",
+    "min__window_from_utc": "2024-07-01 00:00:00+00:00",
+    "max__window_to_utc": "2024-08-01 00:00:00+00:00"
+  },
+  "embedded_wind_and_solar_forecasts": {
+    "table": "embedded_wind_and_solar_forecasts",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-01 14:46:53.109000+00:00",
+    "last_modified_time": "2025-09-01 20:27:35.242000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  },
+  "fes_electricity_demand_summary_data_table_ed1": {
+    "table": "fes_electricity_demand_summary_data_table_ed1",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-02 11:44:58.803000+00:00",
+    "last_modified_time": "2025-09-02 17:12:21.103000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  },
+  "fes_european_electricity_supply_data_table_es2": {
+    "table": "fes_european_electricity_supply_data_table_es2",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-02 11:44:57.925000+00:00",
+    "last_modified_time": "2025-09-02 17:12:28.761000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  },
+  "fes_flexibility_data_table_data_table_flx1": {
+    "table": "fes_flexibility_data_table_data_table_flx1",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-02 11:45:06.560000+00:00",
+    "last_modified_time": "2025-09-02 17:12:30.126000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  },
+  "fes_natural_gas_demand_definitions_ed4": {
+    "table": "fes_natural_gas_demand_definitions_ed4",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-02 11:45:09.232000+00:00",
+    "last_modified_time": "2025-09-02 17:12:38.713000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  },
+  "fes_natural_gas_residential_and_non_domestic_i_c_heat_demand_summary_data_table_ed3": {
+    "table": "fes_natural_gas_residential_and_non_domestic_i_c_heat_demand_summary_data_table_ed3",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-02 11:45:09.447000+00:00",
+    "last_modified_time": "2025-09-02 17:12:39.848000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  },
+  "fes_road_transport_notes_data_table_ed6": {
+    "table": "fes_road_transport_notes_data_table_ed6",
+    "row_count": 27,
+    "size_bytes": 12294,
+    "creation_time": "2025-09-02 13:45:23.051000+00:00",
+    "last_modified_time": "2025-09-02 17:12:48.485000+00:00",
+    "max__ingested_utc": "2025-09-02T17:12:41.643650+00:00",
+    "min__window_from_utc": "2024-07-01 00:00:00+00:00",
+    "max__window_to_utc": "2024-08-01 00:00:00+00:00"
+  },
+  "fes_road_transport_summary_data_table_ed5": {
+    "table": "fes_road_transport_summary_data_table_ed5",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-02 11:45:19.106000+00:00",
+    "last_modified_time": "2025-09-02 17:12:50.637000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  },
+  "fes_whole_system_gas_supply_data_table_ws1": {
+    "table": "fes_whole_system_gas_supply_data_table_ws1",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-02 11:45:19.617000+00:00",
+    "last_modified_time": "2025-09-02 17:12:58.128000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  },
+  "fes_whole_system_gas_supply_emissions_data_table_ws2": {
+    "table": "fes_whole_system_gas_supply_emissions_data_table_ws2",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-02 11:45:20.675000+00:00",
+    "last_modified_time": "2025-09-02 17:12:59.124000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  },
+  "firm_frequency_response_post_tender_reports": {
+    "table": "firm_frequency_response_post_tender_reports",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-01 15:02:53.431000+00:00",
+    "last_modified_time": "2025-09-01 20:41:36.189000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  },
+  "future_energy_scenario_electricity_supply_data_table_es1": {
+    "table": "future_energy_scenario_electricity_supply_data_table_es1",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-02 14:21:50.872000+00:00",
+    "last_modified_time": "2025-09-02 17:13:48.999000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  },
+  "future_energy_scenario_fes_building_block_data": {
+    "table": "future_energy_scenario_fes_building_block_data",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-02 11:45:30.706000+00:00",
+    "last_modified_time": "2025-09-02 17:13:10.858000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  },
+  "gb_system_inertia_bid_and_offer_costs": {
+    "table": "gb_system_inertia_bid_and_offer_costs",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-01 15:07:53.335000+00:00",
+    "last_modified_time": "2025-09-01 20:46:35.733000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  },
+  "gis_boundaries_for_gb_dno_license_areas": {
+    "table": "gis_boundaries_for_gb_dno_license_areas",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-01 15:05:27.057000+00:00",
+    "last_modified_time": "2025-09-01 20:41:44.549000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  },
+  "gis_boundaries_for_gb_generation_charging_zones": {
+    "table": "gis_boundaries_for_gb_generation_charging_zones",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-01 15:05:27.530000+00:00",
+    "last_modified_time": "2025-09-01 20:41:50.945000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  },
+  "gis_boundaries_for_gb_grid_supply_points": {
+    "table": "gis_boundaries_for_gb_grid_supply_points",
+    "row_count": 329,
+    "size_bytes": 2499300,
+    "creation_time": "2025-09-02 13:46:02.588000+00:00",
+    "last_modified_time": "2025-09-02 17:13:21.397000+00:00",
+    "max__ingested_utc": "2025-09-02T17:13:13.726618+00:00",
+    "min__window_from_utc": "2024-07-01 00:00:00+00:00",
+    "max__window_to_utc": "2024-08-01 00:00:00+00:00"
+  },
+  "historic_demand_data": {
+    "table": "historic_demand_data",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-01 15:10:12.061000+00:00",
+    "last_modified_time": "2025-09-01 20:49:35.773000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  },
+  "historic_generation_mix": {
+    "table": "historic_generation_mix",
+    "row_count": 1488,
+    "size_bytes": 1176905,
+    "creation_time": "2025-09-01 15:10:54.884000+00:00",
+    "last_modified_time": "2025-09-01 20:52:46.578000+00:00",
+    "max__ingested_utc": "2025-09-01T20:52:34.057639+00:00",
+    "min__window_from_utc": "2024-07-01 00:00:00+00:00",
+    "max__window_to_utc": "2024-08-01 00:00:00+00:00"
+  },
+  "historic_gtma_grid_trade_master_agreement_trades_data": {
+    "table": "historic_gtma_grid_trade_master_agreement_trades_data",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-02 10:06:22.185000+00:00",
+    "last_modified_time": "2025-09-02 17:18:44.803000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  },
+  "ifa": {
+    "table": "ifa",
+    "row_count": 264,
+    "size_bytes": 61080,
+    "creation_time": "2025-09-02 10:06:52.014000+00:00",
+    "last_modified_time": "2025-09-02 10:09:07.549000+00:00",
+    "max__ingested_utc": "2025-09-02T10:08:51.691873+00:00",
+    "min__window_from_utc": "2024-07-01 00:00:00+00:00",
+    "max__window_to_utc": "2024-08-01 00:00:00+00:00"
+  },
+  "ifa2": {
+    "table": "ifa2",
+    "row_count": 96,
+    "size_bytes": 22072,
+    "creation_time": "2025-09-02 10:07:21.958000+00:00",
+    "last_modified_time": "2025-09-02 10:09:28.065000+00:00",
+    "max__ingested_utc": "2025-09-02T10:09:21.722879+00:00",
+    "min__window_from_utc": "2024-07-01 00:00:00+00:00",
+    "max__window_to_utc": "2024-08-01 00:00:00+00:00"
+  },
+  "index_linked_contract_volume": {
+    "table": "index_linked_contract_volume",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-02 12:53:10.843000+00:00",
+    "last_modified_time": "2025-09-02 17:20:21.875000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  },
+  "ins_balancing_acceptances": {
+    "table": "ins_balancing_acceptances",
+    "row_count": 2898732,
+    "size_bytes": 603637067,
+    "creation_time": "2025-08-28 22:17:33.899000+00:00",
+    "last_modified_time": "2025-08-29 07:29:41.527000+00:00",
+    "max__ingested_utc": "2025-08-29 07:29:39.088487+00:00",
+    "min__window_from_utc": "2016-09-09 00:00:00+00:00",
+    "max__window_to_utc": "2025-08-26 00:00:00+00:00"
+  },
+  "ins_balancing_bid_offers": {
+    "table": "ins_balancing_bid_offers",
+    "row_count": 150,
+    "size_bytes": 27750,
+    "creation_time": "2025-08-28 22:21:14.087000+00:00",
+    "last_modified_time": "2025-08-28 22:21:14.087000+00:00",
+    "max__ingested_utc": "2025-08-28 22:21:11.125357+00:00",
+    "min__window_from_utc": "2025-06-01 00:00:00+00:00",
+    "max__window_to_utc": "2025-06-02 00:00:00+00:00"
+  },
+  "ins_reference_bmunits": {
+    "table": "ins_reference_bmunits",
+    "row_count": 2664,
+    "size_bytes": 521114,
+    "creation_time": "2025-08-28 22:17:02.458000+00:00",
+    "last_modified_time": "2025-08-28 22:17:02.458000+00:00",
+    "max__ingested_utc": "2025-08-28 22:16:59.128787+00:00",
+    "min__window_from_utc": "2025-06-01 00:00:00+00:00",
+    "max__window_to_utc": "2025-06-02 00:00:00+00:00"
+  },
+  "ins_unnamed": {
+    "table": "ins_unnamed",
+    "row_count": 1261,
+    "size_bytes": 192299,
+    "creation_time": "2025-08-28 18:17:56.558000+00:00",
+    "last_modified_time": "2025-08-28 18:17:56.558000+00:00",
+    "max__ingested_utc": "2025-08-28 18:17:53.538823+00:00",
+    "min__window_from_utc": "2025-06-01 00:00:00+00:00",
+    "max__window_to_utc": "2025-07-01 00:00:00+00:00"
+  },
+  "interconnector_register": {
+    "table": "interconnector_register",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-01 15:15:53.539000+00:00",
+    "last_modified_time": "2025-09-01 20:56:05.731000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  },
+  "interconnector_requirement_and_auction_summary_data": {
+    "table": "interconnector_requirement_and_auction_summary_data",
+    "row_count": 244,
+    "size_bytes": 155725,
+    "creation_time": "2025-09-01 15:16:30.484000+00:00",
+    "last_modified_time": "2025-09-01 20:57:17.198000+00:00",
+    "max__ingested_utc": "2025-09-01T20:57:05.518466+00:00",
+    "min__window_from_utc": "2024-07-01 00:00:00+00:00",
+    "max__window_to_utc": "2024-08-01 00:00:00+00:00"
+  },
+  "levelised_cost_of_green_hydrogen": {
+    "table": "levelised_cost_of_green_hydrogen",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-02 12:21:43.154000+00:00",
+    "last_modified_time": "2025-09-02 17:21:22.420000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  },
+  "long_term_2_52_weeks_ahead_national_demand_forecast": {
+    "table": "long_term_2_52_weeks_ahead_national_demand_forecast",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-01 15:19:23.450000+00:00",
+    "last_modified_time": "2025-09-01 15:21:26.795000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  },
+  "long_term_forecasts_for_dc_dm_dr_requirements": {
+    "table": "long_term_forecasts_for_dc_dm_dr_requirements",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-01 15:20:53.450000+00:00",
+    "last_modified_time": "2025-09-01 15:23:47.572000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  },
+  "monthly_operational_metered_wind_output": {
+    "table": "monthly_operational_metered_wind_output",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-01 15:24:23.564000+00:00",
+    "last_modified_time": "2025-09-01 15:26:25.677000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  },
+  "national_carbon_intensity_forecast": {
+    "table": "national_carbon_intensity_forecast",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-01 15:22:23.514000+00:00",
+    "last_modified_time": "2025-09-01 15:22:23.565000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  },
+  "negative_reserve_active_power_margin_nrapm_forecast": {
+    "table": "negative_reserve_active_power_margin_nrapm_forecast",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-01 15:27:37.876000+00:00",
+    "last_modified_time": "2025-09-01 15:29:27.368000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  },
+  "nemolink": {
+    "table": "nemolink",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-01 15:28:16.193000+00:00",
+    "last_modified_time": "2025-09-01 15:30:18.714000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  },
+  "non_bm_ancillary_service_data_obp_system": {
+    "table": "non_bm_ancillary_service_data_obp_system",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-01 15:27:23.554000+00:00",
+    "last_modified_time": "2025-09-01 15:28:55.883000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  },
+  "non_bm_ancillary_service_dispatch_platform_asdp_window_prices": {
+    "table": "non_bm_ancillary_service_dispatch_platform_asdp_window_prices",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-01 15:34:54.090000+00:00",
+    "last_modified_time": "2025-09-01 15:36:46.250000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  },
+  "nsl": {
+    "table": "nsl",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-01 15:34:22.896000+00:00",
+    "last_modified_time": "2025-09-01 15:35:25.945000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  },
+  "optional_downward_flexibility_management_odfm_market_information": {
+    "table": "optional_downward_flexibility_management_odfm_market_information",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-01 15:38:03.523000+00:00",
+    "last_modified_time": "2025-09-01 15:39:47.990000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  },
+  "phase_2_ffr_auction_results_summary": {
+    "table": "phase_2_ffr_auction_results_summary",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-01 15:35:53.742000+00:00",
+    "last_modified_time": "2025-09-01 15:39:00.665000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  },
+  "quick_reserve_auction_requirement_forecast": {
+    "table": "quick_reserve_auction_requirement_forecast",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-01 15:41:53.719000+00:00",
+    "last_modified_time": "2025-09-01 15:41:53.771000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  },
+  "regional_carbon_intensity_forecast": {
+    "table": "regional_carbon_intensity_forecast",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-01 15:41:24.342000+00:00",
+    "last_modified_time": "2025-09-01 15:41:24.399000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  },
+  "school_holiday_percentages": {
+    "table": "school_holiday_percentages",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-01 15:42:23.775000+00:00",
+    "last_modified_time": "2025-09-01 15:42:23.836000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  },
+  "weekly_wind_availability": {
+    "table": "weekly_wind_availability",
+    "row_count": 0,
+    "size_bytes": 0,
+    "creation_time": "2025-09-01 23:56:59.855000+00:00",
+    "last_modified_time": "2025-09-02 17:12:19.786000+00:00",
+    "max__ingested_utc": null,
+    "min__window_from_utc": null,
+    "max__window_to_utc": null
+  }
+}

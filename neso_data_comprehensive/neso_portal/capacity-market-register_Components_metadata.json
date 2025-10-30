@@ -1,0 +1,11 @@
+{
+  "source": "NESO Data Portal",
+  "dataset_id": "capacity-market-register",
+  "dataset_title": "Capacity Market Register",
+  "resource_id": "790f5fa0-f8eb-4d82-b98d-0d34d3e404e8",
+  "resource_name": "Components",
+  "resource_format": "csv",
+  "last_modified": "2025-10-29T13:08:47.958208",
+  "size": null,
+  "description": "The EMR Delivery Body (DB) has an obligation to create and maintain Capacity Market Registers (CMR) for all capacity market auctions.\r\nEach CMR holds a record of all applications made to the Delivery Body ahead of the relevant Capacity Auction as well as details of those who were successful in obtaining a Capacity Agreement and any enduring obligations."
+}

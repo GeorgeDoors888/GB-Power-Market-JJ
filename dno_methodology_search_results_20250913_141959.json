@@ -1,0 +1,313 @@
+{
+  "search_date": "2025-09-13T14:19:59.277918",
+  "dno_results": [
+    {
+      "dno": "Scottish and Southern Energy Power Distribution (SEPD)",
+      "mpan": 20,
+      "region": "Southern England",
+      "site": "https://www.ssen.co.uk/about-ssen/library/charging-statements-and-information/southern-electric-power-distribution/",
+      "searches": [
+        {
+          "term": "SEPD DUoS charges schedule",
+          "total_results": 0,
+          "relevant_results": 0,
+          "download_links": [],
+          "raw_results": {
+            "error": "400 Client Error: Bad Request for url: https://www.googleapis.com/customsearch/v1?key=AIzaSyDcHN_xwNbw6V0tklBKY8J_YpPKdcUTZYQ&q=site%3Ahttps%3A%2F%2Fwww.ssen.co.uk%2Fabout-ssen%2Flibrary%2Fcharging-statements-and-information%2Fsouthern-electric-power-distribution%2F+SEPD+DUoS+charges+schedule"
+          }
+        },
+        {
+          "term": "Southern Electric Power Distribution charging methodology",
+          "total_results": 0,
+          "relevant_results": 0,
+          "download_links": [],
+          "raw_results": {
+            "error": "400 Client Error: Bad Request for url: https://www.googleapis.com/customsearch/v1?key=AIzaSyDcHN_xwNbw6V0tklBKY8J_YpPKdcUTZYQ&q=site%3Ahttps%3A%2F%2Fwww.ssen.co.uk%2Fabout-ssen%2Flibrary%2Fcharging-statements-and-information%2Fsouthern-electric-power-distribution%2F+Southern+Electric+Power+Distribution+charging+methodology"
+          }
+        },
+        {
+          "term": "SEPD Schedule of Charges Excel",
+          "total_results": 0,
+          "relevant_results": 0,
+          "download_links": [],
+          "raw_results": {
+            "error": "400 Client Error: Bad Request for url: https://www.googleapis.com/customsearch/v1?key=AIzaSyDcHN_xwNbw6V0tklBKY8J_YpPKdcUTZYQ&q=site%3Ahttps%3A%2F%2Fwww.ssen.co.uk%2Fabout-ssen%2Flibrary%2Fcharging-statements-and-information%2Fsouthern-electric-power-distribution%2F+SEPD+Schedule+of+Charges+Excel"
+          }
+        },
+        {
+          "term": "Southern Electric Power Distribution CDCM model",
+          "total_results": 0,
+          "relevant_results": 0,
+          "download_links": [],
+          "raw_results": {
+            "error": "400 Client Error: Bad Request for url: https://www.googleapis.com/customsearch/v1?key=AIzaSyDcHN_xwNbw6V0tklBKY8J_YpPKdcUTZYQ&q=site%3Ahttps%3A%2F%2Fwww.ssen.co.uk%2Fabout-ssen%2Flibrary%2Fcharging-statements-and-information%2Fsouthern-electric-power-distribution%2F+Southern+Electric+Power+Distribution+CDCM+model"
+          }
+        }
+      ]
+    },
+    {
+      "dno": "Scottish Hydro Electric Power Distribution (SHEPD)",
+      "mpan": 17,
+      "region": "North Scotland",
+      "site": "https://www.ssen.co.uk/about-ssen/library/charging-statements-and-information/scottish-hydro-electric-power-distribution/",
+      "searches": [
+        {
+          "term": "SHEPD DUoS charges schedule",
+          "total_results": 0,
+          "relevant_results": 0,
+          "download_links": [],
+          "raw_results": {
+            "error": "400 Client Error: Bad Request for url: https://www.googleapis.com/customsearch/v1?key=AIzaSyDcHN_xwNbw6V0tklBKY8J_YpPKdcUTZYQ&q=site%3Ahttps%3A%2F%2Fwww.ssen.co.uk%2Fabout-ssen%2Flibrary%2Fcharging-statements-and-information%2Fscottish-hydro-electric-power-distribution%2F+SHEPD+DUoS+charges+schedule"
+          }
+        },
+        {
+          "term": "Scottish Hydro Electric Power Distribution charging methodology",
+          "total_results": 0,
+          "relevant_results": 0,
+          "download_links": [],
+          "raw_results": {
+            "error": "400 Client Error: Bad Request for url: https://www.googleapis.com/customsearch/v1?key=AIzaSyDcHN_xwNbw6V0tklBKY8J_YpPKdcUTZYQ&q=site%3Ahttps%3A%2F%2Fwww.ssen.co.uk%2Fabout-ssen%2Flibrary%2Fcharging-statements-and-information%2Fscottish-hydro-electric-power-distribution%2F+Scottish+Hydro+Electric+Power+Distribution+charging+methodology"
+          }
+        },
+        {
+          "term": "SHEPD Schedule of Charges Excel",
+          "total_results": 0,
+          "relevant_results": 0,
+          "download_links": [],
+          "raw_results": {
+            "error": "400 Client Error: Bad Request for url: https://www.googleapis.com/customsearch/v1?key=AIzaSyDcHN_xwNbw6V0tklBKY8J_YpPKdcUTZYQ&q=site%3Ahttps%3A%2F%2Fwww.ssen.co.uk%2Fabout-ssen%2Flibrary%2Fcharging-statements-and-information%2Fscottish-hydro-electric-power-distribution%2F+SHEPD+Schedule+of+Charges+Excel"
+          }
+        },
+        {
+          "term": "Scottish Hydro Electric Power Distribution CDCM model",
+          "total_results": 0,
+          "relevant_results": 0,
+          "download_links": [],
+          "raw_results": {
+            "error": "400 Client Error: Bad Request for url: https://www.googleapis.com/customsearch/v1?key=AIzaSyDcHN_xwNbw6V0tklBKY8J_YpPKdcUTZYQ&q=site%3Ahttps%3A%2F%2Fwww.ssen.co.uk%2Fabout-ssen%2Flibrary%2Fcharging-statements-and-information%2Fscottish-hydro-electric-power-distribution%2F+Scottish+Hydro+Electric+Power+Distribution+CDCM+model"
+          }
+        }
+      ]
+    },
+    {
+      "dno": "SP Manweb (SPM)",
+      "mpan": 13,
+      "region": "Wales & Merseyside",
+      "site": "https://www.scottishpower.com/pages/connections_use_of_system_and_metering_services.aspx",
+      "searches": [
+        {
+          "term": "SP Manweb DUoS charges schedule",
+          "total_results": 0,
+          "relevant_results": 0,
+          "download_links": [],
+          "raw_results": {
+            "error": "400 Client Error: Bad Request for url: https://www.googleapis.com/customsearch/v1?key=AIzaSyDcHN_xwNbw6V0tklBKY8J_YpPKdcUTZYQ&q=site%3Ahttps%3A%2F%2Fwww.scottishpower.com%2Fpages%2Fconnections_use_of_system_and_metering_services.aspx+SP+Manweb+DUoS+charges+schedule"
+          }
+        },
+        {
+          "term": "SPM Schedule of Charges Excel",
+          "total_results": 0,
+          "relevant_results": 0,
+          "download_links": [],
+          "raw_results": {
+            "error": "400 Client Error: Bad Request for url: https://www.googleapis.com/customsearch/v1?key=AIzaSyDcHN_xwNbw6V0tklBKY8J_YpPKdcUTZYQ&q=site%3Ahttps%3A%2F%2Fwww.scottishpower.com%2Fpages%2Fconnections_use_of_system_and_metering_services.aspx+SPM+Schedule+of+Charges+Excel"
+          }
+        },
+        {
+          "term": "SP Manweb charging methodology",
+          "total_results": 0,
+          "relevant_results": 0,
+          "download_links": [],
+          "raw_results": {
+            "error": "400 Client Error: Bad Request for url: https://www.googleapis.com/customsearch/v1?key=AIzaSyDcHN_xwNbw6V0tklBKY8J_YpPKdcUTZYQ&q=site%3Ahttps%3A%2F%2Fwww.scottishpower.com%2Fpages%2Fconnections_use_of_system_and_metering_services.aspx+SP+Manweb+charging+methodology"
+          }
+        },
+        {
+          "term": "SP Manweb CDCM model",
+          "total_results": 0,
+          "relevant_results": 0,
+          "download_links": [],
+          "raw_results": {
+            "error": "400 Client Error: Bad Request for url: https://www.googleapis.com/customsearch/v1?key=AIzaSyDcHN_xwNbw6V0tklBKY8J_YpPKdcUTZYQ&q=site%3Ahttps%3A%2F%2Fwww.scottishpower.com%2Fpages%2Fconnections_use_of_system_and_metering_services.aspx+SP+Manweb+CDCM+model"
+          }
+        }
+      ]
+    },
+    {
+      "dno": "National Grid Electricity Distribution (East Midlands)",
+      "mpan": 11,
+      "region": "East Midlands",
+      "site": "https://www.nationalgrid.com/electricity-distribution/",
+      "searches": [
+        {
+          "term": "National Grid Electricity Distribution East Midlands DUoS charges",
+          "total_results": 0,
+          "relevant_results": 0,
+          "download_links": [],
+          "raw_results": {
+            "error": "400 Client Error: Bad Request for url: https://www.googleapis.com/customsearch/v1?key=AIzaSyDcHN_xwNbw6V0tklBKY8J_YpPKdcUTZYQ&q=site%3Ahttps%3A%2F%2Fwww.nationalgrid.com%2Felectricity-distribution%2F+National+Grid+Electricity+Distribution+East+Midlands+DUoS+charges"
+          }
+        },
+        {
+          "term": "NGED East Midlands Schedule of Charges",
+          "total_results": 0,
+          "relevant_results": 0,
+          "download_links": [],
+          "raw_results": {
+            "error": "400 Client Error: Bad Request for url: https://www.googleapis.com/customsearch/v1?key=AIzaSyDcHN_xwNbw6V0tklBKY8J_YpPKdcUTZYQ&q=site%3Ahttps%3A%2F%2Fwww.nationalgrid.com%2Felectricity-distribution%2F+NGED+East+Midlands+Schedule+of+Charges"
+          }
+        },
+        {
+          "term": "NGED East Midlands CDCM model",
+          "total_results": 0,
+          "relevant_results": 0,
+          "download_links": [],
+          "raw_results": {
+            "error": "400 Client Error: Bad Request for url: https://www.googleapis.com/customsearch/v1?key=AIzaSyDcHN_xwNbw6V0tklBKY8J_YpPKdcUTZYQ&q=site%3Ahttps%3A%2F%2Fwww.nationalgrid.com%2Felectricity-distribution%2F+NGED+East+Midlands+CDCM+model"
+          }
+        },
+        {
+          "term": "Western Power Distribution East Midlands charging methodology",
+          "total_results": 0,
+          "relevant_results": 0,
+          "download_links": [],
+          "raw_results": {
+            "error": "400 Client Error: Bad Request for url: https://www.googleapis.com/customsearch/v1?key=AIzaSyDcHN_xwNbw6V0tklBKY8J_YpPKdcUTZYQ&q=site%3Ahttps%3A%2F%2Fwww.nationalgrid.com%2Felectricity-distribution%2F+Western+Power+Distribution+East+Midlands+charging+methodology"
+          }
+        }
+      ]
+    },
+    {
+      "dno": "National Grid Electricity Distribution (West Midlands)",
+      "mpan": 14,
+      "region": "West Midlands",
+      "site": "https://www.nationalgrid.com/electricity-distribution/",
+      "searches": [
+        {
+          "term": "National Grid Electricity Distribution West Midlands DUoS charges",
+          "total_results": 0,
+          "relevant_results": 0,
+          "download_links": [],
+          "raw_results": {
+            "error": "400 Client Error: Bad Request for url: https://www.googleapis.com/customsearch/v1?key=AIzaSyDcHN_xwNbw6V0tklBKY8J_YpPKdcUTZYQ&q=site%3Ahttps%3A%2F%2Fwww.nationalgrid.com%2Felectricity-distribution%2F+National+Grid+Electricity+Distribution+West+Midlands+DUoS+charges"
+          }
+        },
+        {
+          "term": "NGED West Midlands Schedule of Charges",
+          "total_results": 0,
+          "relevant_results": 0,
+          "download_links": [],
+          "raw_results": {
+            "error": "400 Client Error: Bad Request for url: https://www.googleapis.com/customsearch/v1?key=AIzaSyDcHN_xwNbw6V0tklBKY8J_YpPKdcUTZYQ&q=site%3Ahttps%3A%2F%2Fwww.nationalgrid.com%2Felectricity-distribution%2F+NGED+West+Midlands+Schedule+of+Charges"
+          }
+        },
+        {
+          "term": "NGED West Midlands CDCM model",
+          "total_results": 0,
+          "relevant_results": 0,
+          "download_links": [],
+          "raw_results": {
+            "error": "400 Client Error: Bad Request for url: https://www.googleapis.com/customsearch/v1?key=AIzaSyDcHN_xwNbw6V0tklBKY8J_YpPKdcUTZYQ&q=site%3Ahttps%3A%2F%2Fwww.nationalgrid.com%2Felectricity-distribution%2F+NGED+West+Midlands+CDCM+model"
+          }
+        },
+        {
+          "term": "Western Power Distribution West Midlands charging methodology",
+          "total_results": 0,
+          "relevant_results": 0,
+          "download_links": [],
+          "raw_results": {
+            "error": "400 Client Error: Bad Request for url: https://www.googleapis.com/customsearch/v1?key=AIzaSyDcHN_xwNbw6V0tklBKY8J_YpPKdcUTZYQ&q=site%3Ahttps%3A%2F%2Fwww.nationalgrid.com%2Felectricity-distribution%2F+Western+Power+Distribution+West+Midlands+charging+methodology"
+          }
+        }
+      ]
+    },
+    {
+      "dno": "National Grid Electricity Distribution (South Wales)",
+      "mpan": 21,
+      "region": "South Wales",
+      "site": "https://www.nationalgrid.com/electricity-distribution/",
+      "searches": [
+        {
+          "term": "National Grid Electricity Distribution South Wales DUoS charges",
+          "total_results": 0,
+          "relevant_results": 0,
+          "download_links": [],
+          "raw_results": {
+            "error": "400 Client Error: Bad Request for url: https://www.googleapis.com/customsearch/v1?key=AIzaSyDcHN_xwNbw6V0tklBKY8J_YpPKdcUTZYQ&q=site%3Ahttps%3A%2F%2Fwww.nationalgrid.com%2Felectricity-distribution%2F+National+Grid+Electricity+Distribution+South+Wales+DUoS+charges"
+          }
+        },
+        {
+          "term": "NGED South Wales Schedule of Charges",
+          "total_results": 0,
+          "relevant_results": 0,
+          "download_links": [],
+          "raw_results": {
+            "error": "400 Client Error: Bad Request for url: https://www.googleapis.com/customsearch/v1?key=AIzaSyDcHN_xwNbw6V0tklBKY8J_YpPKdcUTZYQ&q=site%3Ahttps%3A%2F%2Fwww.nationalgrid.com%2Felectricity-distribution%2F+NGED+South+Wales+Schedule+of+Charges"
+          }
+        },
+        {
+          "term": "NGED South Wales CDCM model",
+          "total_results": 0,
+          "relevant_results": 0,
+          "download_links": [],
+          "raw_results": {
+            "error": "400 Client Error: Bad Request for url: https://www.googleapis.com/customsearch/v1?key=AIzaSyDcHN_xwNbw6V0tklBKY8J_YpPKdcUTZYQ&q=site%3Ahttps%3A%2F%2Fwww.nationalgrid.com%2Felectricity-distribution%2F+NGED+South+Wales+CDCM+model"
+          }
+        },
+        {
+          "term": "Western Power Distribution South Wales charging methodology",
+          "total_results": 0,
+          "relevant_results": 0,
+          "download_links": [],
+          "raw_results": {
+            "error": "400 Client Error: Bad Request for url: https://www.googleapis.com/customsearch/v1?key=AIzaSyDcHN_xwNbw6V0tklBKY8J_YpPKdcUTZYQ&q=site%3Ahttps%3A%2F%2Fwww.nationalgrid.com%2Felectricity-distribution%2F+Western+Power+Distribution+South+Wales+charging+methodology"
+          }
+        }
+      ]
+    },
+    {
+      "dno": "National Grid Electricity Distribution (South West)",
+      "mpan": 22,
+      "region": "South West England",
+      "site": "https://www.nationalgrid.com/electricity-distribution/",
+      "searches": [
+        {
+          "term": "National Grid Electricity Distribution South West DUoS charges",
+          "total_results": 0,
+          "relevant_results": 0,
+          "download_links": [],
+          "raw_results": {
+            "error": "400 Client Error: Bad Request for url: https://www.googleapis.com/customsearch/v1?key=AIzaSyDcHN_xwNbw6V0tklBKY8J_YpPKdcUTZYQ&q=site%3Ahttps%3A%2F%2Fwww.nationalgrid.com%2Felectricity-distribution%2F+National+Grid+Electricity+Distribution+South+West+DUoS+charges"
+          }
+        },
+        {
+          "term": "NGED South West Schedule of Charges",
+          "total_results": 0,
+          "relevant_results": 0,
+          "download_links": [],
+          "raw_results": {
+            "error": "400 Client Error: Bad Request for url: https://www.googleapis.com/customsearch/v1?key=AIzaSyDcHN_xwNbw6V0tklBKY8J_YpPKdcUTZYQ&q=site%3Ahttps%3A%2F%2Fwww.nationalgrid.com%2Felectricity-distribution%2F+NGED+South+West+Schedule+of+Charges"
+          }
+        },
+        {
+          "term": "NGED South West CDCM model",
+          "total_results": 0,
+          "relevant_results": 0,
+          "download_links": [],
+          "raw_results": {
+            "error": "400 Client Error: Bad Request for url: https://www.googleapis.com/customsearch/v1?key=AIzaSyDcHN_xwNbw6V0tklBKY8J_YpPKdcUTZYQ&q=site%3Ahttps%3A%2F%2Fwww.nationalgrid.com%2Felectricity-distribution%2F+NGED+South+West+CDCM+model"
+          }
+        },
+        {
+          "term": "Western Power Distribution South West charging methodology",
+          "total_results": 0,
+          "relevant_results": 0,
+          "download_links": [],
+          "raw_results": {
+            "error": "400 Client Error: Bad Request for url: https://www.googleapis.com/customsearch/v1?key=AIzaSyDcHN_xwNbw6V0tklBKY8J_YpPKdcUTZYQ&q=site%3Ahttps%3A%2F%2Fwww.nationalgrid.com%2Felectricity-distribution%2F+Western+Power+Distribution+South+West+charging+methodology"
+          }
+        }
+      ]
+    }
+  ]
+}

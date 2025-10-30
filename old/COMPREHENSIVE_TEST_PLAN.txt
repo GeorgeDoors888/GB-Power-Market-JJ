@@ -1,0 +1,41 @@
+# Comprehensive Test Plan for Elexon Data Ingestion
+
+**Objective:** To validate the end-to-end data ingestion pipeline for all 56 supported Elexon datasets, ensuring data is fetched, processed, and loaded into BigQuery without errors.
+
+**Test Period:** 2025-09-20 to 2025-09-21
+
+**Scope:** All 56 datasets defined in the `CHUNK_RULES` dictionary in `ingest_elexon_fixed.py`.
+
+---
+
+## Execution Steps
+
+1.  **Schema Generation:**
+    *   Identify all datasets that are currently missing a corrected schema file in the `schemas/corrected/` directory.
+    *   For each missing schema, perform a dry run to fetch a small sample of data.
+    *   Generate a `bmrs_<dataset_name>.json` schema file based on the fetched data, ensuring correct data types (DATETIME, INTEGER, FLOAT, etc.).
+
+2.  **Comprehensive Ingestion Test:**
+    *   Execute the `ingest_elexon_fixed.py` script for all 56 datasets for the specified test period.
+    *   The script will be run without the `--only` flag to include all datasets.
+    *   The log level will be set to `INFO` to capture key events and any potential errors.
+
+3.  **Monitoring and Logging:**
+    *   All output from the test run will be logged to a file named `comprehensive_test_run.log`.
+    *   The log will be monitored for any errors, including API connection issues, data processing failures, and BigQuery loading errors.
+
+---
+
+## Final Report
+
+Upon completion of the test, a final report named `COMPREHENSIVE_TEST_REPORT.txt` will be generated. This report will contain the following sections:
+
+*   **Overall Summary:** A high-level overview of the test results, including the total number of successful and failed datasets.
+*   **Dataset Status Breakdown:** A detailed, dataset-by-dataset status list. Each entry will indicate:
+    *   **Dataset Name:** The name of the dataset (e.g., `BOD`, `RURI`).
+    *   **Status:** `SUCCESS` or `FAILURE`.
+    *   **Records Ingested:** The number of records successfully loaded into BigQuery.
+    *   **Notes:** Any relevant information, including the specific error message if the ingestion failed.
+*   **Action Plan for Failures:** For any datasets that failed, a clear plan will be outlined to investigate and resolve the issue.
+
+This structured approach will provide a complete and clear picture of the pipeline's health and ensure all remaining issues are systematically addressed.

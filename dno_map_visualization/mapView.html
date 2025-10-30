@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>DNO Areas Map</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <style>
+    #map { height: 100%; width: 100%; }
+    html, body { margin: 0; height: 100%; }
+    .info {
+      padding: 6px 8px;
+      font: 14px/16px Arial, Helvetica, sans-serif;
+      background: white;
+      background: rgba(255,255,255,0.8);
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      border-radius: 5px;
+    }
+    .info h4 {
+      margin: 0 0 5px;
+      color: #777;
+    }
+    .legend {
+      line-height: 18px;
+      color: #555;
+    }
+    .legend i {
+      width: 18px;
+      height: 18px;
+      float: left;
+      margin-right: 8px;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  <script>
+    // Data from Google Sheets
+    var sheetData = <?= JSON.stringify(data) ?>;
+    
+    // Initialize map centered on UK
+    var map = L.map('map').setView([54, -2], 6);
+
+    // Add OpenStreetMap base layer
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // Function to get value for a DNO from the sheet data
+    function getValueForDNO(dnoId) {
+      var row = sheetData.find(r => r.id == dnoId);
+      return row ? row.value : null;
+    }
+
+    // Function to get DNO name from the sheet data
+    function getNameForDNO(dnoId) {
+      var row = sheetData.find(r => r.id == dnoId);
+      return row ? row.name : "Unknown DNO";
+    }
+
+    // Color scale for the map
+    function getColor(value) {
+      return value > 20000 ? '#08306b' :
+             value > 16000 ? '#08519c' :
+             value > 12000 ? '#2171b5' :
+             value > 8000  ? '#4292c6' :
+             value > 4000  ? '#6baed6' :
+             value > 2000  ? '#9ecae1' :
+             value > 1000  ? '#c6dbef' :
+                             '#eff3ff';
+    }
+
+    // Style function for GeoJSON features
+    function style(feature) {
+      var val = getValueForDNO(feature.properties.DNO_ID);
+      return {
+        fillColor: val ? getColor(val) : "#eee",
+        weight: 2,
+        opacity: 1,
+        color: 'white',
+        dashArray: '3',
+        fillOpacity: 0.7
+      };
+    }
+
+    // Highlight feature on mouseover
+    function highlightFeature(e) {
+      var layer = e.target;
+
+      layer.setStyle({
+        weight: 5,
+        color: '#666',
+        dashArray: '',
+        fillOpacity: 0.7
+      });
+
+      if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+        layer.bringToFront();
+      }
+      
+      info.update(layer.feature.properties);
+    }
+
+    // Reset highlight on mouseout
+    function resetHighlight(e) {
+      geojsonLayer.resetStyle(e.target);
+      info.update();
+    }
+
+    // Zoom to feature on click
+    function zoomToFeature(e) {
+      map.fitBounds(e.target.getBounds());
+    }
+
+    // Set interactions for each feature
+    function onEachFeature(feature, layer) {
+      layer.on({
+        mouseover: highlightFeature,
+        mouseout: resetHighlight,
+        click: zoomToFeature
+      });
+      
+      var val = getValueForDNO(feature.properties.DNO_ID);
+      var name = getNameForDNO(feature.properties.DNO_ID);
+      layer.bindPopup("<b>" + name + "</b><br>Value: " + (val ? val.toLocaleString() : "No data"));
+    }
+
+    // Create info control
+    var info = L.control();
+
+    info.onAdd = function (map) {
+      this._div = L.DomUtil.create('div', 'info');
+      this.update();
+      return this._div;
+    };
+
+    info.update = function (props) {
+      var val = props ? getValueForDNO(props.DNO_ID) : null;
+      var name = props ? getNameForDNO(props.DNO_ID) : null;
+      
+      this._div.innerHTML = '<h4>UK DNO Distribution</h4>' +  
+        (props ? '<b>' + name + '</b><br />Value: ' + (val ? val.toLocaleString() : 'No data') : 'Hover over a DNO area');
+    };
+
+    info.addTo(map);
+
+    // Create legend control
+    var legend = L.control({position: 'bottomright'});
+
+    legend.onAdd = function (map) {
+      var div = L.DomUtil.create('div', 'info legend');
+      var grades = [0, 1000, 2000, 4000, 8000, 12000, 16000, 20000];
+      var labels = [];
+
+      // Loop through intervals and generate colored squares
+      for (var i = 0; i < grades.length; i++) {
+        div.innerHTML +=
+          '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' +
+          grades[i].toLocaleString() + (grades[i + 1] ? '&ndash;' + grades[i + 1].toLocaleString() + '<br>' : '+');
+      }
+
+      return div;
+    };
+
+    legend.addTo(map);
+
+    // Declare geojsonLayer globally so we can access it for resetting styles
+    var geojsonLayer;
+
+    // Fetch GeoJSON served from Apps Script
+    fetch("<?= ScriptApp.getService().getUrl() ?>")
+      .then(res => res.json())
+      .then(data => {
+        geojsonLayer = L.geoJSON(data, {
+          style: style,
+          onEachFeature: onEachFeature
+        }).addTo(map);
+      })
+      .catch(error => {
+        console.error("Error loading GeoJSON:", error);
+        document.getElementById('map').innerHTML = 
+          '<div style="text-align:center;padding:20px;"><h3>Error loading map data</h3>' + 
+          '<p>Please ensure the GeoJSON file is properly set up in Google Drive and the file ID is correctly specified in the Apps Script.</p></div>';
+      });
+  </script>
+</body>
+</html>

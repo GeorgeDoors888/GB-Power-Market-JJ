@@ -1,0 +1,26 @@
+Connecting to BigQuery...
+Analyzing data from: 2025-09-02 UTC onwards.
+Fetching and calculating balancing prices from BigQuery...
+Analyzing price data...
+
+--- Price Relationship Analysis (Last 7 Days) ---
+
+Average Wholesale Price: £32.40/MWh
+Average System Buy Price:  £161.89/MWh
+Average System Sell Price: £nan/MWh
+
+--------------------------------------------------
+
+🔍 Deep Dive: Highest System Buy Price Event
+
+On 2025-09-07, Period 29, the System Buy Price spiked to £1643.71/MWh.
+This was significantly higher than the wholesale price of £0.00/MWh.
+This indicates the grid was 'short' on supply and had to pay a premium for last-minute power.
+
+--------------------------------------------------
+
+🔍 Deep Dive: Lowest System Sell Price Event
+
+On 2025-09-02, Period 37, the System Sell Price dropped to £0.00/MWh.
+This was significantly lower than the wholesale price of £107.06/MWh.
+This indicates the grid was 'long' (in surplus) and had to pay some generators to reduce their output.

@@ -1,0 +1,52 @@
+{
+  "bmrs_fou2t14d": {
+    "table": "bmrs_fou2t14d",
+    "row_count": 118066,
+    "size_bytes": 9851263,
+    "creation_time": "2025-09-09 22:36:33.439000+00:00",
+    "last_modified_time": "2025-09-21 10:42:03.743000+00:00",
+    "max__ingested_utc": "2025-09-21 10:41:59.605519+00:00",
+    "min__window_from_utc": "2025-09-14 00:00:00+00:00",
+    "max__window_to_utc": "2025-09-21 00:00:00+00:00"
+  },
+  "bmrs_fou2t3yw": {
+    "table": "bmrs_fou2t3yw",
+    "row_count": 1672760,
+    "size_bytes": 128467112,
+    "creation_time": "2025-09-09 22:36:42.117000+00:00",
+    "last_modified_time": "2025-09-21 10:42:11.180000+00:00",
+    "max__ingested_utc": "2025-09-21 10:42:07.925365+00:00",
+    "min__window_from_utc": "2025-09-14 00:00:00+00:00",
+    "max__window_to_utc": "2025-09-21 00:00:00+00:00"
+  },
+  "bmrs_uou2t14d": {
+    "table": "bmrs_uou2t14d",
+    "row_count": 20568522,
+    "size_bytes": 1185467101,
+    "creation_time": "2025-09-09 22:42:22.295000+00:00",
+    "last_modified_time": "2025-09-21 10:49:27.078000+00:00",
+    "max__ingested_utc": "2025-09-21 10:49:23.945394+00:00",
+    "min__window_from_utc": "2025-09-14 00:00:00+00:00",
+    "max__window_to_utc": "2025-09-21 00:00:00+00:00"
+  },
+  "bmrs_uou2t3yw": {
+    "table": "bmrs_uou2t3yw",
+    "row_count": 245240070,
+    "size_bytes": 16136625135,
+    "creation_time": "2025-09-09 22:42:47.189000+00:00",
+    "last_modified_time": "2025-09-21 10:50:06.151000+00:00",
+    "max__ingested_utc": "2025-09-21 10:49:49.631883+00:00",
+    "min__window_from_utc": "2025-09-14 00:00:00+00:00",
+    "max__window_to_utc": "2025-09-21 00:00:00+00:00"
+  },
+  "bmrs_windfor": {
+    "table": "bmrs_windfor",
+    "row_count": 51684,
+    "size_bytes": 1727910,
+    "creation_time": "2025-09-09 22:42:55.644000+00:00",
+    "last_modified_time": "2025-09-21 10:49:33.388000+00:00",
+    "max__ingested_utc": "2025-09-21 10:49:30.332707+00:00",
+    "min__window_from_utc": "2022-01-01 00:00:00+00:00",
+    "max__window_to_utc": "2025-12-31 00:00:00+00:00"
+  }
+}

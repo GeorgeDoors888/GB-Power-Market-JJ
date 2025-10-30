@@ -1,0 +1,158 @@
+{
+  "collection_time": "2025-09-11T13:49:28.018227",
+  "total_datasets": 8,
+  "successful_downloads": 8,
+  "failed_downloads": 0,
+  "dataset_results": [
+    {
+      "dataset_id": "ltds-table-1-circuit-data",
+      "dataset_name": "LTDS Circuit Data",
+      "files_created": [
+        "ltds-table-1-circuit-data_20250911_134929.csv",
+        "ltds-table-1-circuit-data_metadata_20250911_134929.json"
+      ],
+      "success": true,
+      "error": null,
+      "file_sizes": {
+        "csv": 746897,
+        "json": 5347
+      },
+      "record_counts": {
+        "csv": 0,
+        "json": 4990
+      }
+    },
+    {
+      "dataset_id": "ltds-table-4a-3ph-fault-level",
+      "dataset_name": "LTDS Fault Levels",
+      "files_created": [
+        "ltds-table-4a-3ph-fault-level_20250911_134932.csv",
+        "ltds-table-4a-3ph-fault-level_metadata_20250911_134933.json"
+      ],
+      "success": true,
+      "error": null,
+      "file_sizes": {
+        "csv": 244299,
+        "json": 4715
+      },
+      "record_counts": {
+        "csv": 0,
+        "json": 2026
+      }
+    },
+    {
+      "dataset_id": "ukpn-secondary-site-transformers",
+      "dataset_name": "Secondary Transformers",
+      "files_created": [
+        "ukpn-secondary-site-transformers_20250911_134944.csv",
+        "ukpn-secondary-site-transformers_metadata_20250911_134944.json"
+      ],
+      "success": true,
+      "error": null,
+      "file_sizes": {
+        "csv": 11450035,
+        "json": 3986
+      },
+      "record_counts": {
+        "csv": 0,
+        "json": 74719
+      }
+    },
+    {
+      "dataset_id": "ukpn-33kv-circuit-operational-data-monthly",
+      "dataset_name": "33kV Circuit Data",
+      "files_created": [
+        "ukpn-33kv-circuit-operational-data-monthly_20250911_135011.csv",
+        "ukpn-33kv-circuit-operational-data-monthly_metadata_20250911_135012.json"
+      ],
+      "success": true,
+      "error": null,
+      "file_sizes": {
+        "csv": 12653644,
+        "json": 8564
+      },
+      "record_counts": {
+        "csv": 0,
+        "json": 73315
+      }
+    },
+    {
+      "dataset_id": "ukpn-primary-transformer-power-flow-historic-monthly",
+      "dataset_name": "Primary Transformer Flows",
+      "files_created": [
+        "ukpn-primary-transformer-power-flow-historic-monthly_20250911_135031.csv",
+        "ukpn-primary-transformer-power-flow-historic-monthly_metadata_20250911_135031.json"
+      ],
+      "success": true,
+      "error": null,
+      "file_sizes": {
+        "csv": 15020167,
+        "json": 8711
+      },
+      "record_counts": {
+        "csv": 0,
+        "json": 82739
+      }
+    },
+    {
+      "dataset_id": "ltds-table-7-operational-restrictions",
+      "dataset_name": "LTDS Operational Restrictions",
+      "files_created": [
+        "ltds-table-7-operational-restrictions_20250911_135034.csv",
+        "ltds-table-7-operational-restrictions_metadata_20250911_135034.json"
+      ],
+      "success": true,
+      "error": null,
+      "file_sizes": {
+        "csv": 10155,
+        "json": 2468
+      },
+      "record_counts": {
+        "csv": 0,
+        "json": 93
+      }
+    },
+    {
+      "dataset_id": "ukpn-network-losses",
+      "dataset_name": "Network Losses",
+      "files_created": [
+        "ukpn-network-losses_20250911_135036.csv",
+        "ukpn-network-losses_metadata_20250911_135036.json"
+      ],
+      "success": true,
+      "error": null,
+      "file_sizes": {
+        "csv": 15761,
+        "json": 9199
+      },
+      "record_counts": {
+        "csv": 0,
+        "json": 36
+      }
+    },
+    {
+      "dataset_id": "ukpn-low-carbon-technologies-lsoa",
+      "dataset_name": "Low Carbon Technologies",
+      "files_created": [
+        "ukpn-low-carbon-technologies-lsoa_20250911_135144.csv",
+        "ukpn-low-carbon-technologies-lsoa_metadata_20250911_135145.json"
+      ],
+      "success": true,
+      "error": null,
+      "file_sizes": {
+        "csv": 254336032,
+        "json": 52110
+      },
+      "record_counts": {
+        "csv": 0,
+        "json": 34845
+      }
+    }
+  ],
+  "summary": {
+    "files_created": 16,
+    "total_size_bytes": 294572090,
+    "total_records": 272763,
+    "success_rate": "100.0%"
+  }
+}

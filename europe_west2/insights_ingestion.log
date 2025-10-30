@@ -1,0 +1,9 @@
+2025-09-10 01:08:05,399 [INFO] ✅ Initialized BigQuery Client for project: jibber-jabber-knowledge
+2025-09-10 01:08:05,928 [INFO] BigQuery dataset 'uk_energy_prod' exists.
+2025-09-10 01:31:24,077 - INFO - Logging configured.
+2025-09-10 01:31:24,077 - INFO - Raw data will be saved in: /Users/georgemajor/jibber-jabber 24 august 2025 big bop/europe_west2/raw_data
+2025-09-10 01:31:24,077 - INFO - Starting ingestion process for dates: 2022-01-01 to 2025-09-10
+2025-09-10 01:31:24,078 - INFO - API key configured for client.
+2025-09-10 01:31:24,091 - INFO - Elexonpy client and API instance initialized successfully.
+2025-09-10 01:31:24,092 - ERROR - No date-range compatible dataset methods were found. Cannot download data.
+2025-09-10 01:31:24,095 - INFO - --- Ingestion process complete ---

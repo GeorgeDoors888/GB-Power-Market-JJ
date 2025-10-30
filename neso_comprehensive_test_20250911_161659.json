@@ -1,0 +1,143 @@
+{
+  "Carbon Intensity": [
+    {
+      "endpoint": "/intensity",
+      "url": "https://api.carbonintensity.org.uk/intensity",
+      "status": 200,
+      "success": true,
+      "content_type": "application/json",
+      "size": 184
+    },
+    {
+      "endpoint": "/generation",
+      "url": "https://api.carbonintensity.org.uk/generation",
+      "status": 200,
+      "success": true,
+      "content_type": "application/json",
+      "size": 330
+    },
+    {
+      "endpoint": "/regional",
+      "url": "https://api.carbonintensity.org.uk/regional",
+      "status": 200,
+      "success": true,
+      "content_type": "application/json",
+      "size": 6959
+    },
+    {
+      "endpoint": "/intensity/factors",
+      "url": "https://api.carbonintensity.org.uk/intensity/factors",
+      "status": 200,
+      "success": true,
+      "content_type": "application/json",
+      "size": 339
+    }
+  ],
+  "NESO Data Portal": [
+    {
+      "endpoint": "/api/3/action/organization_list",
+      "url": "https://api.neso.energy/api/3/action/organization_list",
+      "status": 200,
+      "success": true,
+      "content_type": "application/json;charset=utf-8",
+      "size": 390
+    },
+    {
+      "endpoint": "/api/3/action/package_list",
+      "url": "https://api.neso.energy/api/3/action/package_list",
+      "status": 200,
+      "success": true,
+      "content_type": "application/json;charset=utf-8",
+      "size": 4638
+    },
+    {
+      "endpoint": "/api/3/action/tag_list",
+      "url": "https://api.neso.energy/api/3/action/tag_list",
+      "status": 200,
+      "success": true,
+      "content_type": "application/json;charset=utf-8",
+      "size": 4635
+    },
+    {
+      "endpoint": "/api/3/action/package_search?q=BSUOS",
+      "url": "https://api.neso.energy/api/3/action/package_search?q=BSUOS",
+      "status": 200,
+      "success": true,
+      "content_type": "application/json;charset=utf-8",
+      "size": 164491
+    }
+  ],
+  "Demand Flexibility Service": [
+    {
+      "endpoint": "/",
+      "url": "https://api-prod-uk-01.nationalgrid.com/eso-dfs-meterdata-eapi/",
+      "status": 401,
+      "success": false,
+      "content_type": "application/json",
+      "size": 52
+    }
+  ],
+  "Enduring Auction Capability": [
+    {
+      "endpoint": "/",
+      "url": "https://eac.neso.production.n-side.com/market-participant/api/graphql/",
+      "status": 405,
+      "success": false,
+      "content_type": "",
+      "size": 0
+    }
+  ],
+  "Single Markets Platform": [
+    {
+      "endpoint": "/",
+      "url": "https://portal.nationalenergyso.com/smp/services/oauth2/token/",
+      "status": 404,
+      "success": false,
+      "content_type": "text/html;charset=UTF-8",
+      "size": 5264
+    }
+  ],
+  "BSAD (extranet)": [],
+  "Wider Access API": [
+    {
+      "endpoint": "/health",
+      "url": "https://prod-wa.nationalenergyso.com/neso/v1/health",
+      "status": 401,
+      "success": false,
+      "content_type": "application/json",
+      "size": 45
+    },
+    {
+      "endpoint": "/normalization",
+      "url": "https://prod-wa.nationalenergyso.com/neso/v1/normalization",
+      "status": 401,
+      "success": false,
+      "content_type": "application/json",
+      "size": 45
+    },
+    {
+      "endpoint": "/submission",
+      "url": "https://prod-wa.nationalenergyso.com/neso/v1/submission",
+      "status": 401,
+      "success": false,
+      "content_type": "application/json",
+      "size": 45
+    },
+    {
+      "endpoint": "/redeclaration",
+      "url": "https://prod-wa.nationalenergyso.com/neso/v1/redeclaration",
+      "status": 401,
+      "success": false,
+      "content_type": "application/json",
+      "size": 45
+    },
+    {
+      "endpoint": "/instructionresp",
+      "url": "https://prod-wa.nationalenergyso.com/neso/v1/instructionresp",
+      "status": 401,
+      "success": false,
+      "content_type": "application/json",
+      "size": 45
+    }
+  ]
+}

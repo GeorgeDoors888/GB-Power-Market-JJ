@@ -1,0 +1,42 @@
+[
+    {
+        "name": "recordType",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "settlementDate",
+        "type": "DATE",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "settlementPeriod",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "settlementRunType",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "exemptGspGroupId",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "exemptImportVolume",
+        "type": "FLOAT",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "exemptExportVolume",
+        "type": "FLOAT",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "activeFlag",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    }
+]

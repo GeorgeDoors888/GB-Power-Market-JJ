@@ -1,0 +1,11 @@
+# ELEXON IRIS data collection setup - Sun Sep 21 01:26:03 BST 2025
+# Data is downloaded continuously by the IRIS client
+# and processed every 5 minutes
+
+# ELEXON IRIS data processing - Every 5 minutes
+*/5 * * * * cd "/Users/georgemajor/jibber-jabber 24 august 2025 big bop" && bash update_elexon_data.sh
+
+# ELEXON IRIS cleanup - Every hour
+0 * * * * cd /Users/georgemajor/jibber-jabber 24 august 2025 big bop/elexon_iris && ./cleanup_processed_files.sh >> logs/cleanup_20250921.log 2>&1
+
+# Weekly log cleanup

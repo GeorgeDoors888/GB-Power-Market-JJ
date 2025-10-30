@@ -1,0 +1,81 @@
+DUoS ENHANCED DATA ANALYSIS REPORT
+=================================
+
+Analysis Date: 2025-09-14 17:16:03
+
+SUMMARY STATISTICS
+-----------------
+
+Total files processed: 13
+Total rate entries found: 69
+
+DNO COVERAGE
+-----------
+
+SSEN Southern: 36 entries
+National Grid East Midlands: 12 entries
+National Grid South Wales: 6 entries
+National Grid South West: 6 entries
+SSEN Hydro: 6 entries
+Electricity North West: 3 entries
+
+YEAR COVERAGE
+------------
+
+2019: 12 entries
+2020: 57 entries
+
+BAND RATES SUMMARY
+-----------------
+
+RED Band:
+  Minimum rate: nan p/kWh
+  Maximum rate: nan p/kWh
+  Average mean rate: nan p/kWh
+  Average median rate: 0.0000 p/kWh
+
+AMBER Band:
+  Minimum rate: nan p/kWh
+  Maximum rate: nan p/kWh
+  Average mean rate: nan p/kWh
+  Average median rate: nan p/kWh
+
+GREEN Band:
+  Minimum rate: nan p/kWh
+  Maximum rate: nan p/kWh
+  Average mean rate: nan p/kWh
+  Average median rate: nan p/kWh
+
+DNO RATE COMPARISON
+------------------
+
+SSEN Southern:
+  RED Band: nan p/kWh (avg)
+  AMBER Band: nan p/kWh (avg)
+  GREEN Band: nan p/kWh (avg)
+
+National Grid East Midlands:
+  RED Band: nan p/kWh (avg)
+  AMBER Band: nan p/kWh (avg)
+  GREEN Band: nan p/kWh (avg)
+
+National Grid South Wales:
+  RED Band: nan p/kWh (avg)
+  AMBER Band: nan p/kWh (avg)
+  GREEN Band: nan p/kWh (avg)
+
+National Grid South West:
+  RED Band: nan p/kWh (avg)
+  AMBER Band: nan p/kWh (avg)
+  GREEN Band: nan p/kWh (avg)
+
+Electricity North West:
+  RED Band: nan p/kWh (avg)
+  AMBER Band: nan p/kWh (avg)
+  GREEN Band: nan p/kWh (avg)
+
+SSEN Hydro:
+  RED Band: nan p/kWh (avg)
+  AMBER Band: nan p/kWh (avg)
+  GREEN Band: nan p/kWh (avg)
+

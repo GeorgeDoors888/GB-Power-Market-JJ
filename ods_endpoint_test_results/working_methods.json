@@ -1,0 +1,15 @@
+{
+  "UKPN": {
+    "ukpn-network-losses": [
+      "v2.0_exports"
+    ]
+  },
+  "SPEN": {
+    "flex_dispatch": [
+      "v2.0_exports"
+    ],
+    "smart-meter-penetration-by-transformer-level": [
+      "v2.0_exports"
+    ]
+  }
+}

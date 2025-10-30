@@ -1,0 +1,62 @@
+[
+  {
+    "name": "dataset",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "settlementDate",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "settlementPeriod",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "cost",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "volume",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "soFlag",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "storFlag",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "partyId",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "assetId",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "isTendered",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "service",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  }
+]

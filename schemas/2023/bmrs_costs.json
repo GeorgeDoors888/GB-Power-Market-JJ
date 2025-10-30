@@ -1,0 +1,112 @@
+[
+  {
+    "name": "settlementDate",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "settlementPeriod",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "startTime",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "createdDateTime",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "systemSellPrice",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "systemBuyPrice",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "bsadDefaulted",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "priceDerivationCode",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "reserveScarcityPrice",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "netImbalanceVolume",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "sellPriceAdjustment",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "buyPriceAdjustment",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "replacementPrice",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "replacementPriceReferenceVolume",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "totalAcceptedOfferVolume",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "totalAcceptedBidVolume",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "totalAdjustmentSellVolume",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "totalAdjustmentBuyVolume",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "totalSystemTaggedAcceptedOfferVolume",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "totalSystemTaggedAcceptedBidVolume",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "totalSystemTaggedAdjustmentSellVolume",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "totalSystemTaggedAdjustmentBuyVolume",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  }
+]

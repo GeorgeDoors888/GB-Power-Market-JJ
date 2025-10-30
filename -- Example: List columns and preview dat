@@ -1,0 +1,7 @@
+-- Example: List columns and preview data for a table in uk_energy_insights
+SELECT
+  settlementPeriodTo AS settlementPeriod,
+  *
+FROM
+  `uk_energy_insights.<YOUR_TABLE_NAME>`
+LIMIT 10;

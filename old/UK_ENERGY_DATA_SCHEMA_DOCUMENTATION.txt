@@ -1,0 +1,358 @@
+# UK Energy Insights Database Schema Documentation
+
+## Document Purpose
+This document provides comprehensive information about the UK energy data tables in the BigQuery dataset, including their schemas, purposes, data types, and relationships. It is intended to serve as a reference for analysts, data scientists, and developers working with the UK energy market data.
+
+## Database Overview
+
+**Project**: jibber-jabber-knowledge
+**Dataset**: uk_energy_insights
+**Location**: US
+**Last Updated**: September 21, 2025
+**Total Tables**: 119 BMRS tables (including backups and versioned tables)
+**Total Data Volume**: 2.63+ billion rows across 465.61 GB
+**Ingestion Period**: January 2022 - September 2025
+
+## Primary Data Sources
+
+The dataset primarily contains data from:
+
+1. **BMRS (Balancing Mechanism Reporting Service)** - The primary source for UK electricity market data, provided by Elexon.
+2. **Interconnector Data** - Information about power flows between the UK and neighboring countries.
+3. **National Grid ESO** - Operational data from the electricity system operator.
+4. **Distribution Network Operators (DNOs)** - Data from regional electricity distribution companies.
+
+## Common Schema Elements
+
+Most BMRS tables include these standard fields:
+
+- **_dataset**: Source dataset identifier (e.g., 'COSTS', 'BOD')
+- **_window_from_utc** / **_window_to_utc**: Data window timestamps
+- **_ingested_utc**: Ingestion timestamp for provenance
+- **_source_api**: Source API identifier ('BMRS')
+- **_source_columns**: Original column names for schema tracking
+- **_hash_source_cols**: Source data hash for content verification
+- **_hash_key**: Unique hash key for deduplication
+
+## Major Data Tables
+
+### 1. Generation Data Tables
+
+#### 1.1 bmrs_fuelinst
+**Purpose**: Provides real-time generation by fuel type (coal, gas, nuclear, wind, etc.)
+**Update Frequency**: Every 15 minutes (via automated cron job)
+**Last Updated**: September 21, 2025 (Today)
+**Row Count**: 89,180
+**Size**: 30.4 MB
+
+**Schema**:
+- **dataset**: String - Dataset identifier
+- **publishTime**: String - Time when data was published
+- **startTime**: String - Start time of the measurement
+- **settlementDate**: String - The settlement date
+- **settlementPeriod**: Integer - The settlement period (1-48)
+- **fuelType**: String - Type of fuel (e.g., CCGT, OCGT, COAL, NUCLEAR, WIND, PS, NPSHYD, INTFR, INTIRL, INTNED, INTEW, OTHER)
+- **generation**: Integer - Generation in MW
+
+**Business Use**: Real-time monitoring of electricity generation mix, analysis of fuel type contribution to overall power supply, trend analysis, carbon intensity calculations.
+
+#### 1.2 bmrs_fuelhh
+**Purpose**: Half-hourly generation by fuel type
+**Update Frequency**: Every 15 minutes (via automated cron job)
+**Last Updated**: September 21, 2025 (Today)
+**Row Count**: 1.4M
+**Size**: 0.05 GB
+
+**Schema**: Similar to bmrs_fuelinst but with half-hourly aggregation
+
+**Business Use**: Historical analysis of generation patterns, daily and seasonal trends in fuel mix.
+
+#### 1.3 bmrs_windfor
+**Purpose**: Wind generation forecasts
+**Update Frequency**: Daily
+**Last Updated**: September 21, 2025 (Today)
+**Row Count**: 51,684
+**Size**: 1.73 MB
+
+**Schema**:
+- **publishTime**: String - Time when forecast was published
+- **forecastDate**: String - Date for which the forecast applies
+- **forecastTime**: String - Time for which the forecast applies
+- **generation**: Integer - Forecasted wind generation in MW
+
+**Business Use**: Wind generation planning, grid balancing decisions, renewable energy forecasting.
+
+#### 1.4 bmrs_uou2t3yw (Generation Unit Outage Data 3-Year Window)
+**Purpose**: Contains 2-3 year ahead generation unit outage data
+**Update Frequency**: Weekly
+**Last Updated**: September 21, 2025 (Today)
+**Row Count**: 245.2M
+**Size**: 16.1 GB
+
+**Schema**:
+- **publishingPeriodCommencingTime**: String - Start of publishing period
+- **publishingPeriodEndingTime**: String - End of publishing period
+- **bsuParticipantId**: String - BSU Participant ID
+- **bmUnitId**: String - BM Unit ID
+- **registeredCapacity**: Float - Registered capacity in MW
+- **nominalOutput**: Float - Nominal output in MW
+- **outageProfile**: Float - Outage profile in MW
+- **reason**: String - Reason for outage
+
+**Business Use**: Long-term energy planning, market analysis, capacity forecasting.
+
+#### 1.5 bmrs_uou2t14d (Generation Unit Outage Data 14-Day Window)
+**Purpose**: Contains 2-14 day ahead generation unit outage data
+**Update Frequency**: Daily
+**Last Updated**: September 21, 2025 (Today)
+**Row Count**: 20.6M
+**Size**: 1.2 GB
+
+**Schema**: Similar to bmrs_uou2t3yw but with 14-day window
+
+**Business Use**: Short-term energy planning, maintenance scheduling, capacity forecasting.
+
+### 2. Balancing Mechanism Data Tables
+
+#### 2.1 bmrs_bod (Bid-Offer Data)
+**Purpose**: Core balancing mechanism data showing bids and offers
+**Update Frequency**: Every 15 minutes (via automated cron job)
+**Last Updated**: September 21, 2025 (Today)
+**Row Count**: 869.9M
+**Size**: 82.9 GB
+
+**Schema**:
+- **timeSeriesID**: String - Time series identifier
+- **settlementDate**: String - Settlement date
+- **settlementPeriod**: Integer - Settlement period (1-48)
+- **bmUnitID**: String - BM Unit ID
+- **bidOfferNumber**: Integer - Bid/offer number
+- **bidOfferPair**: Float - Bid/offer pair
+- **bidOfferType**: String - Bid or Offer
+- **levelFrom**: Float - Level from
+- **levelTo**: Float - Level to
+- **price**: Float - Price in £/MWh
+
+**Business Use**: Balancing mechanism analysis, price formation understanding, trading strategy development.
+
+#### 2.2 bmrs_boalf (Bid-Offer Acceptance/Loss Factor)
+**Purpose**: Acceptance processing for balancing actions
+**Update Frequency**: Every 15 minutes (via automated cron job)
+**Last Updated**: September 21, 2025 (Today)
+**Row Count**: 9.8M
+**Size**: 1.0 GB
+
+**Schema**:
+- **acceptanceNumber**: String - Unique acceptance number
+- **acceptanceTime**: String - Time of acceptance
+- **bmUnitID**: String - BM Unit ID
+- **settlementPeriod**: Integer - Settlement period
+- **acceptanceVolume**: Float - Accepted volume in MWh
+- **acceptancePrice**: Float - Acceptance price in £/MWh
+
+**Business Use**: Settlement calculations, balancing mechanism analysis.
+
+### 3. System Operation Data Tables
+
+#### 3.1 bmrs_freq (System Frequency)
+**Purpose**: Grid stability monitoring data
+**Update Frequency**: Every 15 minutes (via automated cron job)
+**Last Updated**: Today (September 21, 2025)
+**Row Count**: 27.6M
+**Size**: 0.8 GB
+
+**Schema**:
+- **timeSeriesID**: String - Time series identifier
+- **spotTime**: String - Time of measurement
+- **frequency**: Float - System frequency in Hz
+
+**Business Use**: Grid stability analysis, frequency response assessment, operational performance monitoring.
+
+#### 3.2 bmrs_mels (Meter Energy/Loss Settlement)
+**Purpose**: Energy accounting
+**Update Frequency**: Every 15 minutes (via automated cron job)
+**Last Updated**: September 21, 2025 (Today)
+**Row Count**: 97.2M
+**Size**: 47.1 GB
+
+**Schema**:
+- **settlementDate**: String - Settlement date
+- **settlementPeriod**: Integer - Settlement period
+- **bmUnitID**: String - BM Unit ID
+- **meterValue**: Float - Metered value in MWh
+- **meterType**: String - Type of meter
+
+**Business Use**: Settlement calculations, energy accounting, imbalance determination.
+
+#### 3.3 bmrs_mils (Meter Incremental/Loss Settlement)
+**Purpose**: Energy metering
+**Update Frequency**: Every 15 minutes (via automated cron job)
+**Last Updated**: September 21, 2025 (Today)
+**Row Count**: 95.2M
+**Size**: 46.0 GB
+
+**Schema**: Similar to bmrs_mels but with incremental data
+
+**Business Use**: Settlement calculations, energy accounting, imbalance determination.
+
+### 4. Interconnector Data Tables
+
+#### 4.1 brit_ned (Britain-Netherlands Interconnector)
+**Purpose**: Data for the Britain-Netherlands interconnector
+**Update Frequency**: Every 15 minutes (via automated cron job)
+**Last Updated**: September 21, 2025 (Today)
+**Row Count**: Variable
+**Size**: Variable
+
+**Schema**:
+- **publishTime**: String - Time of publication
+- **settlementDate**: String - Settlement date
+- **settlementPeriod**: Integer - Settlement period
+- **flow**: Float - Power flow in MW (positive = import to GB, negative = export from GB)
+- **capacity**: Float - Maximum capacity in MW
+
+**Business Use**: Cross-border electricity flow analysis, market coupling assessment, import/export balance.
+
+#### 4.2 ifa (France-England Interconnector)
+**Purpose**: Data for the France-England interconnector
+**Update Frequency**: Every 15 minutes (via automated cron job)
+**Last Updated**: September 21, 2025 (Today)
+**Row Count**: 264
+**Size**: Variable
+
+**Schema**: Similar to brit_ned
+
+**Business Use**: Similar to brit_ned
+
+#### 4.3 ifa2 (Second France-England Interconnector)
+**Purpose**: Data for the second France-England interconnector
+**Update Frequency**: Every 15 minutes (via automated cron job)
+**Last Updated**: September 21, 2025 (Today)
+**Row Count**: 96
+**Size**: Variable
+
+**Schema**: Similar to brit_ned
+
+**Business Use**: Similar to brit_ned
+
+### 5. Market Data Tables
+
+#### 5.1 bmrs_mid (Market Index Data)
+**Purpose**: Market index pricing information
+**Update Frequency**: Every 15 minutes (via automated cron job)
+**Last Updated**: September 21, 2025 (Today)
+**Row Count**: 370,801
+**Size**: 61.4 MB
+
+**Schema**:
+- **settlementDate**: String - Settlement date
+- **settlementPeriod**: Integer - Settlement period
+- **marketIndexPrice**: Float - Market index price in £/MWh
+- **marketIndexVolume**: Float - Market index volume in MWh
+
+**Business Use**: Market monitoring, price analysis, settlement calculations.
+
+#### 5.2 bmrs_costs (System Costs Data)
+**Purpose**: System buy/sell prices, imbalance volumes
+**Update Frequency**: Every 15 minutes (via automated cron job)
+**Last Updated**: September 21, 2025 (Today)
+**Row Count**: 130,242
+**Size**: 175.42 MB
+
+**Schema**:
+- **settlementDate**: String - Settlement date
+- **settlementPeriod**: Integer - Settlement period
+- **systemSellPrice**: Float - System sell price in £/MWh
+- **systemBuyPrice**: Float - System buy price in £/MWh
+- **netImbalanceVolume**: Float - Net imbalance volume in MWh
+- **totalAcceptedOfferVolume**: Float - Total accepted offer volume in MWh
+
+**Business Use**: Energy trading, cost analysis, market settlement.
+
+## Data Relationships and Usage
+
+### Key Relationships Between Tables
+
+1. **Generation and Outages**:
+   - bmrs_fuelinst provides real-time generation by fuel type
+   - bmrs_uou2t3yw and bmrs_uou2t14d provide outage information that affects available generation
+
+2. **Balancing Mechanism Flow**:
+   - bmrs_bod contains the bids and offers
+   - bmrs_boalf shows which bids/offers were accepted
+   - bmrs_costs shows the resulting system prices
+
+3. **Settlement Chain**:
+   - bmrs_pn shows planned generation
+   - bmrs_mels and bmrs_mils show metered output
+   - bmrs_costs shows resulting system prices
+
+### Common Analysis Scenarios
+
+1. **Real-time Generation Mix Analysis**:
+   - Primary table: bmrs_fuelinst
+   - Purpose: Monitor current electricity generation by fuel type
+   - Typical queries: Percentage of renewable generation, total generation capacity
+
+2. **Balancing Market Analysis**:
+   - Primary tables: bmrs_bod, bmrs_boalf
+   - Purpose: Analyze price formation in the balancing mechanism
+   - Typical queries: Price spreads, accepted volumes, regional variations
+
+3. **Interconnector Flow Analysis**:
+   - Primary tables: brit_ned, ifa, ifa2
+   - Purpose: Analyze power flows between GB and neighboring countries
+   - Typical queries: Net import/export position, correlation with prices
+
+4. **Generation Outage Impact Assessment**:
+   - Primary tables: bmrs_uou2t3yw, bmrs_uou2t14d, bmrs_fuelinst
+   - Purpose: Assess impact of planned outages on generation capacity
+   - Typical queries: Capacity reduction due to outages, replacement generation sources
+
+## Data Freshness and Update Frequency
+
+| Table Category | Update Frequency | Typical Lag | Most Recent Update |
+|----------------|------------------|-------------|-------------------|
+| Real-time generation (fuelinst) | Every 15 minutes | Minutes | Today (Sept 21, 2025) |
+| System frequency (freq) | Every 15 minutes | Minutes | Today (Sept 21, 2025) |
+| Balancing data (bod, boalf) | Every 15 minutes | Minutes | Today (Sept 21, 2025) |
+| Physical notifications (pn, qpn) | Every 15 minutes | Minutes | Today (Sept 21, 2025) |
+| Settlement data (mels, mils) | Every 15 minutes | Minutes | Today (Sept 21, 2025) |
+| Outage data (uou2t3yw, uou2t14d) | Every 15 minutes | Minutes | Today (Sept 21, 2025) |
+| Generation forecasts (windfor) | Daily | Hours | Today (Sept 21, 2025) |
+| Interconnector data | Every 15 minutes | Minutes | Today (Sept 21, 2025) |
+
+## Known Limitations and Data Quality Issues
+
+1. **Missing Data Periods**: Some tables may have gaps during API outages or maintenance windows.
+
+2. **Schema Evolution**: Older data may have slightly different schema versions than newer data.
+
+3. **Data Volume Challenges**: Very large tables like bmrs_bod (861.9M rows) may require optimized query strategies.
+
+4. **STOR Data Gap**: Short-Term Operating Reserves data is currently not available and requires integration from NESO Portal.
+
+## Data Access and Permissions
+
+Access to the dataset is controlled via Google Cloud IAM. Users need the following permissions:
+
+- **bigquery.datasets.get** - To view the dataset
+- **bigquery.tables.get** - To view table metadata
+- **bigquery.tables.getData** - To query tables
+- **bigquery.jobs.create** - To run queries
+
+Contact the data team for access requests.
+
+## Documentation Resources
+
+- [BMRS API Documentation](https://data.elexon.co.uk/bmrs/api/v1)
+- [Elexon Data Portal](https://www.elexonportal.co.uk/)
+- [National Grid ESO Data Portal](https://data.nationalgrideso.com/)
+
+## Support
+
+For questions about this dataset, please contact the data engineering team.
+
+---
+
+Document generated: September 21, 2025

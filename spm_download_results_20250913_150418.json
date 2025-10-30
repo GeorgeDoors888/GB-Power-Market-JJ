@@ -1,0 +1,56 @@
+{
+  "timestamp": "2025-09-13 15:03:53",
+  "total_files": 6,
+  "downloaded": 0,
+  "failed": 6,
+  "files": [
+    {
+      "url": "https://www.scottishpower.com/userfiles/file/LC14-Statement-2026_SPM_v01.pdf",
+      "filename": "SPM_LC14_Charging_Statement_2026.pdf",
+      "description": "SPM LC14 Charging Statement \u2013 April 2026",
+      "output_path": "duos_spm_data/SPM_LC14_Charging_Statement_2026.pdf",
+      "status": "failed",
+      "error": "403 Client Error: Forbidden for url: https://www.scottishpower.com/userfiles/file/LC14-Statement-2026_SPM_v01.pdf"
+    },
+    {
+      "url": "https://www.scottishpower.com/userfiles/file/SPM-Schedule-of-charges-and-other-tables-2026-V0.1-Annex-6.xlsx",
+      "filename": "SPM-Schedule-of-charges-and-other-tables-2026-V0.1-Annex-6.xlsx",
+      "description": "SPM Schedule of Charges and Other Tables - April 2026",
+      "output_path": "duos_spm_data/SPM-Schedule-of-charges-and-other-tables-2026-V0.1-Annex-6.xlsx",
+      "status": "failed",
+      "error": "403 Client Error: Forbidden for url: https://www.scottishpower.com/userfiles/file/SPM-Schedule-of-charges-and-other-tables-2026-V0.1-Annex-6.xlsx"
+    },
+    {
+      "url": "https://www.scottishpower.com/userfiles/file/SPM%202026_27%20CDCM_v11_20241025_Published.xlsx",
+      "filename": "SPM_2026_27_CDCM_v11_20241025_Published.xlsx",
+      "description": "SPM CDCM Model - April 2026",
+      "output_path": "duos_spm_data/SPM_2026_27_CDCM_v11_20241025_Published.xlsx",
+      "status": "failed",
+      "error": "403 Client Error: Forbidden for url: https://www.scottishpower.com/userfiles/file/SPM%202026_27%20CDCM_v11_20241025_Published.xlsx"
+    },
+    {
+      "url": "https://www.scottishpower.com/userfiles/file/SPM_LC14_Statement_2025_V05.pdf",
+      "filename": "SPM_LC14_Statement_2025_V05.pdf",
+      "description": "SPM LC14 Charging Statement \u2013 April 2025",
+      "output_path": "duos_spm_data/SPM_LC14_Statement_2025_V05.pdf",
+      "status": "failed",
+      "error": "403 Client Error: Forbidden for url: https://www.scottishpower.com/userfiles/file/SPM_LC14_Statement_2025_V05.pdf"
+    },
+    {
+      "url": "https://www.scottishpower.com/userfiles/file/SPM-Schedule-of-charges-and-other-tables-2025-V.0.7-Annex-6.xlsx",
+      "filename": "SPM-Schedule-of-charges-and-other-tables-2025-V.0.7-Annex-6.xlsx",
+      "description": "SPM Schedule of Charges and Other Tables - April 2025",
+      "output_path": "duos_spm_data/SPM-Schedule-of-charges-and-other-tables-2025-V.0.7-Annex-6.xlsx",
+      "status": "failed",
+      "error": "403 Client Error: Forbidden for url: https://www.scottishpower.com/userfiles/file/SPM-Schedule-of-charges-and-other-tables-2025-V.0.7-Annex-6.xlsx"
+    },
+    {
+      "url": "https://www.scottishpower.com/userfiles/file/SPM_2025_26_CDCM_v10_20231106.xlsx",
+      "filename": "SPM_2025_26_CDCM_v10_20231106.xlsx",
+      "description": "SPM CDCM Model - April 2025",
+      "output_path": "duos_spm_data/SPM_2025_26_CDCM_v10_20231106.xlsx",
+      "status": "failed",
+      "error": "403 Client Error: Forbidden for url: https://www.scottishpower.com/userfiles/file/SPM_2025_26_CDCM_v10_20231106.xlsx"
+    }
+  ]
+}

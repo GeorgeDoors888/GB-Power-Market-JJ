@@ -1,0 +1,3638 @@
+defaults:
+  project: jibber-jabber-knowledge
+  dataset: uk_energy_insights
+base_urls:
+  insights: https://data.elexon.co.uk/insights/api/v1
+  bmrs: https://data.elexon.co.uk/bmrs/api/v1
+groups:
+  bmrs_datasets:
+    dynamic_data_per_bmu_sel,_sil,_mzt,_mnzt,_mdv,_mdp,_ntb,_nto,_ndz:
+      path: /balancing/dynamic
+      base: bmrs
+      table_name: bmrs_dynamic_data_per_bmu_sel,_sil,_mzt,_mnzt,_mdv,_mdp,_ntb,_nto,_ndz
+      params:
+        bmUnit: 2__HFLEX001
+        snapshotAt: 2022-08-23T00:00Z
+        until: 2022-08-24T00:00Z
+        snapshotAtSettlementPeriod: 2
+        untilSettlementPeriod: 2
+        dataset:
+        - SEL
+        - MNZT
+        - MDP
+      date_params: []
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    market_wide_dynamic_data_sel,_sil,_mzt,_mnzt,_mdv,_mdp,_ntb,_nto,_ndz:
+      path: /balancing/dynamic/all
+      base: bmrs
+      table_name: bmrs_market_wide_dynamic_data_sel,_sil,_mzt,_mnzt,_mdv,_mdp,_ntb,_nto,_ndz
+      params:
+        settlementPeriod: 3
+        bmUnit:
+        - 2__HFLEX001
+        - HUMR-1
+        dataset:
+        - SEL
+        - MNZT
+        - MDP
+      date_params:
+      - settlementDate
+      param_columns:
+      - format
+      primary_date_param: settlementDate
+      response_format: csv
+    rate_data_per_bmu_rdre,_rure,_rdri,_ruri:
+      path: /balancing/dynamic/rates
+      base: bmrs
+      table_name: bmrs_rate_data_per_bmu_rdre,_rure,_rdri,_ruri
+      params:
+        bmUnit: DRAXX-1
+        snapshotAt: 2022-09-01T00:00Z
+        until: 2022-09-30T00:00Z
+        snapshotAtSettlementPeriod: 2
+        untilSettlementPeriod: 2
+        dataset:
+        - RURE
+        - RDRE
+        - RDRI
+      date_params: []
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    market_wide_rate_data_rdre,_rure,_rdri,_ruri:
+      path: /balancing/dynamic/rates/all
+      base: bmrs
+      table_name: bmrs_market_wide_rate_data_rdre,_rure,_rdri,_ruri
+      params:
+        settlementPeriod: 2
+        bmUnit:
+        - 2__HFLEX001
+        - HUMR-1
+        dataset:
+        - RURE
+        - RDRE
+        - RDRI
+      date_params:
+      - settlementDate
+      param_columns:
+      - format
+      primary_date_param: settlementDate
+      response_format: csv
+    physical_data_per_bmu_pn,_qpn,_mils,_mels:
+      path: /balancing/physical
+      base: bmrs
+      table_name: bmrs_physical_data_per_bmu_pn,_qpn,_mils,_mels
+      params:
+        bmUnit: 2__HFLEX001
+        dataset:
+        - PN
+        - MILS
+      date_params:
+      - from
+      - to
+      - settlementPeriodFrom
+      - settlementPeriodTo
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    market_wide_physical_data_pn,_qpn,_mils,_mels:
+      path: /balancing/physical/all
+      base: bmrs
+      table_name: bmrs_market_wide_physical_data_pn,_qpn,_mils,_mels
+      params:
+        dataset: PN
+        settlementPeriod: 3
+        bmUnit:
+        - 2__HFLEX001
+        - HUMR-1
+      date_params:
+      - settlementDate
+      param_columns:
+      - format
+      primary_date_param: settlementDate
+      response_format: csv
+    disaggregated_balancing_services_adjustment_time_series_disbsad:
+      path: /balancing/nonbm/disbsad/summary
+      base: bmrs
+      table_name: bmrs_disaggregated_balancing_services_adjustment_time_series_disbsad
+      params: {}
+      date_params:
+      - from
+      - to
+      - settlementPeriodFrom
+      - settlementPeriodTo
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    disaggregated_balancing_services_adjustment_per_settlement_period_disbsad:
+      path: /balancing/nonbm/disbsad/details
+      base: bmrs
+      table_name: bmrs_disaggregated_balancing_services_adjustment_per_settlement_period_disbsad
+      params:
+        settlementPeriod: 3
+      date_params:
+      - settlementDate
+      param_columns:
+      - format
+      primary_date_param: settlementDate
+      response_format: csv
+    net_balancing_services_adjustment_time_series_netbsad:
+      path: /balancing/nonbm/netbsad
+      base: bmrs
+      table_name: bmrs_net_balancing_services_adjustment_time_series_netbsad
+      params:
+        includeZero: false
+      date_params:
+      - from
+      - to
+      - settlementPeriodFrom
+      - settlementPeriodTo
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    net_balancing_services_adjustment_events_netbsad:
+      path: /balancing/nonbm/netbsad/events
+      base: bmrs
+      table_name: bmrs_net_balancing_services_adjustment_events_netbsad
+      params:
+        count: 3
+      date_params: []
+      param_columns:
+      - before
+      - settlementPeriodBefore
+      - format
+      primary_date_param: from
+      response_format: csv
+    bid_offer_data_per_bmu_bod:
+      path: /balancing/bid-offer
+      base: bmrs
+      table_name: bmrs_bid_offer_data_per_bmu_bod
+      params:
+        bmUnit: 2__HFLEX001
+      date_params:
+      - from
+      - to
+      - settlementPeriodFrom
+      - settlementPeriodTo
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    market_wide_bid_offer_data_bod:
+      path: /balancing/bid-offer/all
+      base: bmrs
+      table_name: bmrs_market_wide_bid_offer_data_bod
+      params:
+        settlementPeriod: 1
+        bmUnit:
+        - 2__HFLEX001
+        - HUMR-1
+      date_params:
+      - settlementDate
+      param_columns:
+      - format
+      primary_date_param: settlementDate
+      response_format: csv
+    bid_offer_acceptances_per_bmu_boalf:
+      path: /balancing/acceptances
+      base: bmrs
+      table_name: bmrs_bid_offer_acceptances_per_bmu_boalf
+      params:
+        bmUnit: T_MILWW-1
+      date_params:
+      - from
+      - to
+      - settlementPeriodFrom
+      - settlementPeriodTo
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    market_wide_bid_offer_acceptances_boalf:
+      path: /balancing/acceptances/all
+      base: bmrs
+      table_name: bmrs_market_wide_bid_offer_acceptances_boalf
+      params:
+        settlementPeriod: 39
+        bmUnit:
+        - T_DINO-2
+        - HUMR-1
+      date_params:
+      - settlementDate
+      param_columns:
+      - format
+      primary_date_param: settlementDate
+      response_format: csv
+    latest_market_wide_bid_offer_acceptances_boalf:
+      path: /balancing/acceptances/all/latest
+      base: bmrs
+      table_name: bmrs_latest_market_wide_bid_offer_acceptances_boalf
+      params: {}
+      date_params: []
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    bid__offer_acceptances_by_acceptance_id:
+      path: /balancing/acceptances/{acceptanceNumber}
+      base: bmrs
+      table_name: bmrs_bid__offer_acceptances_by_acceptance_id
+      params:
+        acceptanceNumber: 4162
+      date_params: []
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    non_bm_stor_nonbm:
+      path: /datasets/NONBM
+      base: bmrs
+      table_name: bmrs_non_bm_stor_nonbm
+      params: {}
+      date_params:
+      - from
+      - to
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    non_bm_stor_nonbm_stream:
+      path: /datasets/NONBM/stream
+      base: bmrs
+      table_name: bmrs_non_bm_stor_nonbm_stream
+      params: {}
+      date_params:
+      - from
+      - to
+      param_columns: []
+      primary_date_param: from
+      response_format: csv
+    physical__notifications_pn:
+      path: /datasets/PN
+      base: bmrs
+      table_name: bmrs_physical__notifications_pn
+      params:
+        settlementPeriod: 5
+        bmUnit:
+        - T_ABRBO-1
+      date_params:
+      - settlementDate
+      param_columns:
+      - format
+      primary_date_param: settlementDate
+      response_format: csv
+    physical__notifications_pn_stream:
+      path: /datasets/PN/stream
+      base: bmrs
+      table_name: bmrs_physical__notifications_pn_stream
+      params:
+        bmUnit:
+        - T_ABRBO-1
+      date_params:
+      - from
+      - to
+      - settlementPeriodFrom
+      - settlementPeriodTo
+      param_columns: []
+      primary_date_param: from
+      response_format: csv
+    quiescent__physical__notifications_qpn:
+      path: /datasets/QPN
+      base: bmrs
+      table_name: bmrs_quiescent__physical__notifications_qpn
+      params:
+        settlementPeriod: 5
+        bmUnit:
+        - T_ABRBO-1
+      date_params:
+      - settlementDate
+      param_columns:
+      - format
+      primary_date_param: settlementDate
+      response_format: csv
+    quiescent__physical__notifications_qpn_stream:
+      path: /datasets/QPN/stream
+      base: bmrs
+      table_name: bmrs_quiescent__physical__notifications_qpn_stream
+      params:
+        bmUnit:
+        - T_ABRBO-1
+      date_params:
+      - from
+      - to
+      - settlementPeriodFrom
+      - settlementPeriodTo
+      param_columns: []
+      primary_date_param: from
+      response_format: csv
+    maximum__export__limit_mels:
+      path: /datasets/MELS
+      base: bmrs
+      table_name: bmrs_maximum__export__limit_mels
+      params:
+        bmUnit:
+        - T_DRAXX-1
+      date_params:
+      - from
+      - to
+      - settlementPeriodFrom
+      - settlementPeriodTo
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    maximum__export__limit_mels_stream:
+      path: /datasets/MELS/stream
+      base: bmrs
+      table_name: bmrs_maximum__export__limit_mels_stream
+      params:
+        bmUnit:
+        - T_DRAXX-1
+      date_params:
+      - from
+      - to
+      - settlementPeriodFrom
+      - settlementPeriodTo
+      param_columns: []
+      primary_date_param: from
+      response_format: csv
+    maximum__import__limit_mils:
+      path: /datasets/MILS
+      base: bmrs
+      table_name: bmrs_maximum__import__limit_mils
+      params:
+        bmUnit:
+        - T_DRAXX-1
+      date_params:
+      - from
+      - to
+      - settlementPeriodFrom
+      - settlementPeriodTo
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    maximum__import__limit_mils_stream:
+      path: /datasets/MILS/stream
+      base: bmrs
+      table_name: bmrs_maximum__import__limit_mils_stream
+      params:
+        bmUnit:
+        - T_DRAXX-1
+      date_params:
+      - from
+      - to
+      - settlementPeriodFrom
+      - settlementPeriodTo
+      param_columns: []
+      primary_date_param: from
+      response_format: csv
+    balancing__services__volume_qas:
+      path: /datasets/QAS
+      base: bmrs
+      table_name: bmrs_balancing__services__volume_qas
+      params:
+        bmUnit:
+        - T_CNQPS-1
+      date_params:
+      - from
+      - to
+      - settlementPeriodFrom
+      - settlementPeriodTo
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    balancing__services__volume_qas_stream:
+      path: /datasets/QAS/stream
+      base: bmrs
+      table_name: bmrs_balancing__services__volume_qas_stream
+      params:
+        bmUnit:
+        - T_CNQPS-1
+      date_params:
+      - from
+      - to
+      - settlementPeriodFrom
+      - settlementPeriodTo
+      param_columns: []
+      primary_date_param: from
+      response_format: csv
+    net__balancing__services__adjustment__data_netbsad:
+      path: /datasets/NETBSAD/stream
+      base: bmrs
+      table_name: bmrs_net__balancing__services__adjustment__data_netbsad
+      params: {}
+      date_params:
+      - from
+      - to
+      - settlementPeriodFrom
+      - settlementPeriodTo
+      param_columns: []
+      primary_date_param: from
+      response_format: csv
+    disaggregated__balancing__services__adjustment__data_disbsad:
+      path: /datasets/DISBSAD
+      base: bmrs
+      table_name: bmrs_disaggregated__balancing__services__adjustment__data_disbsad
+      params: {}
+      date_params:
+      - from
+      - to
+      - settlementPeriodFrom
+      - settlementPeriodTo
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    disaggregated__balancing__services__adjustment__data_disbsad_stream:
+      path: /datasets/DISBSAD/stream
+      base: bmrs
+      table_name: bmrs_disaggregated__balancing__services__adjustment__data_disbsad_stream
+      params: {}
+      date_params:
+      - from
+      - to
+      - settlementPeriodFrom
+      - settlementPeriodTo
+      param_columns: []
+      primary_date_param: from
+      response_format: csv
+    bid__offer__data_bod:
+      path: /datasets/BOD
+      base: bmrs
+      table_name: bmrs_bid__offer__data_bod
+      params:
+        bmUnit:
+        - 2__HFLEX001
+      date_params:
+      - from
+      - to
+      - settlementPeriodFrom
+      - settlementPeriodTo
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    bid__offer__data_bod_stream:
+      path: /datasets/BOD/stream
+      base: bmrs
+      table_name: bmrs_bid__offer__data_bod_stream
+      params:
+        bmUnit:
+        - 2__HFLEX001
+      date_params:
+      - from
+      - to
+      - settlementPeriodFrom
+      - settlementPeriodTo
+      param_columns: []
+      primary_date_param: from
+      response_format: csv
+    bid__offer__acceptance__level__flagged_boalf:
+      path: /datasets/BOALF
+      base: bmrs
+      table_name: bmrs_bid__offer__acceptance__level__flagged_boalf
+      params:
+        bmUnit:
+        - T_WBURB-3
+      date_params:
+      - from
+      - to
+      - settlementPeriodFrom
+      - settlementPeriodTo
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    bid__offer__acceptance__level__flagged_boalf_stream:
+      path: /datasets/BOALF/stream
+      base: bmrs
+      table_name: bmrs_bid__offer__acceptance__level__flagged_boalf_stream
+      params:
+        bmUnit:
+        - T_WBURB-3
+      date_params:
+      - from
+      - to
+      - settlementPeriodFrom
+      - settlementPeriodTo
+      param_columns: []
+      primary_date_param: from
+      response_format: csv
+    market__index__data_mid:
+      path: /datasets/MID
+      base: bmrs
+      table_name: bmrs_market__index__data_mid
+      params:
+        dataProviders:
+        - N2EXMIDP
+      date_params:
+      - from
+      - to
+      - settlementPeriodFrom
+      - settlementPeriodTo
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    market__index__data_mid_stream:
+      path: /datasets/MID/stream
+      base: bmrs
+      table_name: bmrs_market__index__data_mid_stream
+      params:
+        dataProviders:
+        - N2EXMIDP
+      date_params:
+      - from
+      - to
+      - settlementPeriodFrom
+      - settlementPeriodTo
+      param_columns: []
+      primary_date_param: from
+      response_format: csv
+    half_hourly_generation_outturn_by_fuel_type_fuelhh:
+      path: /datasets/FUELHH
+      base: bmrs
+      table_name: bmrs_half_hourly_generation_outturn_by_fuel_type_fuelhh
+      params:
+        publishDateTimeFrom: '2022-06-25T00:00:00Z'
+        publishDateTimeTo: '2022-06-26T00:00:00Z'
+        settlementDateFrom: '2022-09-20'
+        settlementDateTo: '2022-09-21'
+        settlementPeriod:
+        - 3
+        - 4
+        fuelType:
+        - NUCLEAR
+      date_params: []
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    half_hourly_generation_outturn_by_fuel_type_fuelhh_stream:
+      path: /datasets/FUELHH/stream
+      base: bmrs
+      table_name: bmrs_half_hourly_generation_outturn_by_fuel_type_fuelhh_stream
+      params:
+        publishDateTimeFrom: '2022-06-25T00:00:00Z'
+        publishDateTimeTo: '2022-06-26T00:00:00Z'
+        settlementDateFrom: '2022-09-20'
+        settlementDateTo: '2022-09-21'
+        settlementPeriod:
+        - 3
+        - 4
+        fuelType:
+        - NUCLEAR
+      date_params: []
+      param_columns: []
+      primary_date_param: from
+      response_format: csv
+    instantaneous_generation_outturn_by_fuel_type_fuelinst:
+      path: /datasets/FUELINST
+      base: bmrs
+      table_name: bmrs_instantaneous_generation_outturn_by_fuel_type_fuelinst
+      params:
+        publishDateTimeFrom: '2022-06-20T00:00:00Z'
+        publishDateTimeTo: '2022-06-26T00:00:00Z'
+        settlementDateFrom: '2022-09-20'
+        settlementDateTo: '2022-09-21'
+        settlementPeriod:
+        - 3
+        - 4
+        fuelType:
+        - NUCLEAR
+      date_params: []
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    instantaneous_generation_outturn_by_fuel_type_fuelinst_stream:
+      path: /datasets/FUELINST/stream
+      base: bmrs
+      table_name: bmrs_instantaneous_generation_outturn_by_fuel_type_fuelinst_stream
+      params:
+        publishDateTimeFrom: '2022-06-20T00:00:00Z'
+        publishDateTimeTo: '2022-06-26T00:00:00Z'
+        settlementDateFrom: '2022-09-20'
+        settlementDateTo: '2022-09-21'
+        settlementPeriod:
+        - 3
+        - 4
+        fuelType:
+        - NUCLEAR
+      date_params: []
+      param_columns: []
+      primary_date_param: from
+      response_format: csv
+    2_to_14_days_ahead_generation_availability_aggregated_by__balancing__mechanism__units_uou2_t14_d:
+      path: /datasets/UOU2T14D
+      base: bmrs
+      table_name: bmrs_2_to_14_days_ahead_generation_availability_aggregated_by__balancing__mechanism__units_uou2_t14_d
+      params:
+        fuelType:
+        - WIND
+        bmUnit:
+        - WTMSO-1
+      date_params: []
+      param_columns:
+      - publishDateTimeFrom
+      - publishDateTimeTo
+      - format
+      primary_date_param: from
+      response_format: csv
+    2_to_14_days_ahead_generation_availability_aggregated_by__balancing__mechanism__units_uou2_t14_d_stream:
+      path: /datasets/UOU2T14D/stream
+      base: bmrs
+      table_name: bmrs_2_to_14_days_ahead_generation_availability_aggregated_by__balancing__mechanism__units_uou2_t14_d_stream
+      params:
+        fuelType:
+        - WIND
+        bmUnit:
+        - WTMSO-1
+      date_params: []
+      param_columns:
+      - publishDateTimeFrom
+      - publishDateTimeTo
+      primary_date_param: from
+      response_format: csv
+    2_to_156_weeks_ahead_generation_availability_aggregated_by__balancing__mechanism__units_uou2_t3_yw:
+      path: /datasets/UOU2T3YW
+      base: bmrs
+      table_name: bmrs_2_to_156_weeks_ahead_generation_availability_aggregated_by__balancing__mechanism__units_uou2_t3_yw
+      params:
+        fuelType:
+        - CCGT
+        bmUnit:
+        - T_CARR-1
+      date_params: []
+      param_columns:
+      - publishDateTimeFrom
+      - publishDateTimeTo
+      - format
+      primary_date_param: from
+      response_format: csv
+    2_to_156_weeks_ahead_generation_availability_aggregated_by__balancing__mechanism__units_uou2_t3_yw_stream:
+      path: /datasets/UOU2T3YW/stream
+      base: bmrs
+      table_name: bmrs_2_to_156_weeks_ahead_generation_availability_aggregated_by__balancing__mechanism__units_uou2_t3_yw_stream
+      params:
+        fuelType:
+        - CCGT
+        bmUnit:
+        - T_CARR-1
+      date_params: []
+      param_columns:
+      - publishDateTimeFrom
+      - publishDateTimeTo
+      primary_date_param: from
+      response_format: csv
+    2_to_14_days_ahead_generation_availability_aggregated_by_fuel_type_fou2_t14_d:
+      path: /datasets/FOU2T14D
+      base: bmrs
+      table_name: bmrs_2_to_14_days_ahead_generation_availability_aggregated_by_fuel_type_fou2_t14_d
+      params:
+        publishDate: '2022-09-20'
+      date_params: []
+      param_columns:
+      - fuelType
+      - publishDateTimeFrom
+      - publishDateTimeTo
+      - biddingZone
+      - interconnector
+      - format
+      primary_date_param: from
+      response_format: csv
+    2_to_156_weeks_ahead_generation_availability_aggregated_by_fuel_type_fou2_t3_yw:
+      path: /datasets/FOU2T3YW
+      base: bmrs
+      table_name: bmrs_2_to_156_weeks_ahead_generation_availability_aggregated_by_fuel_type_fou2_t3_yw
+      params:
+        publishDate: '2022-09-20'
+      date_params: []
+      param_columns:
+      - fuelType
+      - publishDateTimeFrom
+      - publishDateTimeTo
+      - week
+      - year
+      - biddingZone
+      - interconnector
+      - format
+      primary_date_param: from
+      response_format: csv
+    2_to_14_days_ahead_generation_availability_aggregated_data_nou2_t14_d:
+      path: /datasets/NOU2T14D
+      base: bmrs
+      table_name: bmrs_2_to_14_days_ahead_generation_availability_aggregated_data_nou2_t14_d
+      params:
+        publishDate: '2022-09-20'
+      date_params: []
+      param_columns:
+      - publishDateTimeFrom
+      - publishDateTimeTo
+      - format
+      primary_date_param: from
+      response_format: csv
+    2_to_156_weeks_ahead_generation_availability_aggregated_data_nou2_t3_yw:
+      path: /datasets/NOU2T3YW
+      base: bmrs
+      table_name: bmrs_2_to_156_weeks_ahead_generation_availability_aggregated_data_nou2_t3_yw
+      params:
+        publishDate: '2022-09-20'
+      date_params: []
+      param_columns:
+      - publishDateTimeFrom
+      - publishDateTimeTo
+      - week
+      - year
+      - format
+      primary_date_param: from
+      response_format: csv
+    temperature_data_temp:
+      path: /temperature
+      base: bmrs
+      table_name: bmrs_temperature_data_temp
+      params: {}
+      date_params:
+      - from
+      - to
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    day_and_day_ahead_indicated_generation_indgen:
+      path: /datasets/INDGEN
+      base: bmrs
+      table_name: bmrs_day_and_day_ahead_indicated_generation_indgen
+      params: {}
+      date_params: []
+      param_columns:
+      - boundary
+      - publishDateTimeFrom
+      - publishDateTimeTo
+      - format
+      primary_date_param: from
+      response_format: csv
+    day_and_day_ahead_indicated_generation_indgen_stream:
+      path: /datasets/INDGEN/stream
+      base: bmrs
+      table_name: bmrs_day_and_day_ahead_indicated_generation_indgen_stream
+      params: {}
+      date_params: []
+      param_columns:
+      - boundary
+      - publishDateTimeFrom
+      - publishDateTimeTo
+      primary_date_param: from
+      response_format: csv
+    day_and_day_ahead_indicated_demand_inddem:
+      path: /datasets/INDDEM
+      base: bmrs
+      table_name: bmrs_day_and_day_ahead_indicated_demand_inddem
+      params: {}
+      date_params: []
+      param_columns:
+      - boundary
+      - publishDateTimeFrom
+      - publishDateTimeTo
+      - format
+      primary_date_param: from
+      response_format: csv
+    day_and_day_ahead_indicated_demand_inddem_stream:
+      path: /datasets/INDDEM/stream
+      base: bmrs
+      table_name: bmrs_day_and_day_ahead_indicated_demand_inddem_stream
+      params: {}
+      date_params: []
+      param_columns:
+      - boundary
+      - publishDateTimeFrom
+      - publishDateTimeTo
+      primary_date_param: from
+      response_format: csv
+    day_and_day_ahead_indicated_margin_melngc:
+      path: /datasets/MELNGC
+      base: bmrs
+      table_name: bmrs_day_and_day_ahead_indicated_margin_melngc
+      params: {}
+      date_params: []
+      param_columns:
+      - boundary
+      - publishDateTimeFrom
+      - publishDateTimeTo
+      - format
+      primary_date_param: from
+      response_format: csv
+    day_and_day_ahead_indicated_margin_melngc_stream:
+      path: /datasets/MELNGC/stream
+      base: bmrs
+      table_name: bmrs_day_and_day_ahead_indicated_margin_melngc_stream
+      params: {}
+      date_params: []
+      param_columns:
+      - boundary
+      - publishDateTimeFrom
+      - publishDateTimeTo
+      primary_date_param: from
+      response_format: csv
+    day_and_day_ahead_indicated_imbalance_imbalngc:
+      path: /datasets/IMBALNGC
+      base: bmrs
+      table_name: bmrs_day_and_day_ahead_indicated_imbalance_imbalngc
+      params: {}
+      date_params: []
+      param_columns:
+      - boundary
+      - publishDateTimeFrom
+      - publishDateTimeTo
+      - format
+      primary_date_param: from
+      response_format: csv
+    day_and_day_ahead_indicated_imbalance_imbalngc_stream:
+      path: /datasets/IMBALNGC/stream
+      base: bmrs
+      table_name: bmrs_day_and_day_ahead_indicated_imbalance_imbalngc_stream
+      params: {}
+      date_params: []
+      param_columns:
+      - boundary
+      - publishDateTimeFrom
+      - publishDateTimeTo
+      primary_date_param: from
+      response_format: csv
+    day_and_day_ahead__national__demand_forecast_ndf:
+      path: /datasets/NDF
+      base: bmrs
+      table_name: bmrs_day_and_day_ahead__national__demand_forecast_ndf
+      params: {}
+      date_params: []
+      param_columns:
+      - publishDateTimeFrom
+      - publishDateTimeTo
+      - format
+      primary_date_param: from
+      response_format: csv
+    day_and_day_ahead__national__demand_forecast_ndf_stream:
+      path: /datasets/NDF/stream
+      base: bmrs
+      table_name: bmrs_day_and_day_ahead__national__demand_forecast_ndf_stream
+      params: {}
+      date_params: []
+      param_columns:
+      - publishDateTimeFrom
+      - publishDateTimeTo
+      primary_date_param: from
+      response_format: csv
+    day_and_day_ahead__transmission__system__demand_forecast_tsdf:
+      path: /datasets/TSDF
+      base: bmrs
+      table_name: bmrs_day_and_day_ahead__transmission__system__demand_forecast_tsdf
+      params: {}
+      date_params: []
+      param_columns:
+      - boundary
+      - publishDateTimeFrom
+      - publishDateTimeTo
+      - format
+      primary_date_param: from
+      response_format: csv
+    day_and_day_ahead__transmission__system__demand_forecast_tsdf_stream:
+      path: /datasets/TSDF/stream
+      base: bmrs
+      table_name: bmrs_day_and_day_ahead__transmission__system__demand_forecast_tsdf_stream
+      params: {}
+      date_params: []
+      param_columns:
+      - boundary
+      - publishDateTimeFrom
+      - publishDateTimeTo
+      primary_date_param: from
+      response_format: csv
+    wind_generation_forecast_windfor:
+      path: /datasets/WINDFOR
+      base: bmrs
+      table_name: bmrs_wind_generation_forecast_windfor
+      params: {}
+      date_params: []
+      param_columns:
+      - publishDateTimeFrom
+      - publishDateTimeTo
+      - format
+      primary_date_param: from
+      response_format: csv
+    wind_generation_forecast_windfor_stream:
+      path: /datasets/WINDFOR/stream
+      base: bmrs
+      table_name: bmrs_wind_generation_forecast_windfor_stream
+      params: {}
+      date_params: []
+      param_columns:
+      - publishDateTimeFrom
+      - publishDateTimeTo
+      primary_date_param: from
+      response_format: csv
+    initial__national__demand_outturn_indo:
+      path: /demand/outturn
+      base: bmrs
+      table_name: bmrs_initial__national__demand_outturn_indo
+      params:
+        settlementDateFrom: '2022-09-20'
+        settlementDateTo: '2022-09-21'
+        settlementPeriod: 1
+      date_params: []
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    initial__national__demand_outturn_daily_indod:
+      path: /datasets/INDOD
+      base: bmrs
+      table_name: bmrs_initial__national__demand_outturn_daily_indod
+      params:
+        publishDateTimeFrom: '2023-08-26T01:00:00Z'
+        publishDateTimeTo: '2023-08-27T01:00:00Z'
+      date_params: []
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    initial__national__demand_outturn_daily_indod_stream:
+      path: /datasets/INDOD/stream
+      base: bmrs
+      table_name: bmrs_initial__national__demand_outturn_daily_indod_stream
+      params:
+        publishDateTimeFrom: '2023-08-26T01:00:00Z'
+        publishDateTimeTo: '2023-08-27T01:00:00Z'
+      date_params: []
+      param_columns: []
+      primary_date_param: from
+      response_format: csv
+    initial__transmission__system__demand_outturn_itsdo:
+      path: /datasets/ITSDO
+      base: bmrs
+      table_name: bmrs_initial__transmission__system__demand_outturn_itsdo
+      params: {}
+      date_params: []
+      param_columns:
+      - publishDateTimeFrom
+      - publishDateTimeTo
+      - format
+      primary_date_param: from
+      response_format: csv
+    2_14_days_ahead__national__demand_and_surplus_forecast_ndfd:
+      path: /datasets/NDFD
+      base: bmrs
+      table_name: bmrs_2_14_days_ahead__national__demand_and_surplus_forecast_ndfd
+      params: {}
+      date_params: []
+      param_columns:
+      - publishDateTimeFrom
+      - publishDateTimeTo
+      - format
+      primary_date_param: from
+      response_format: csv
+    2_14_days_ahead__national__demand_and_surplus_forecast_ndfd_stream:
+      path: /datasets/NDFD/stream
+      base: bmrs
+      table_name: bmrs_2_14_days_ahead__national__demand_and_surplus_forecast_ndfd_stream
+      params: {}
+      date_params: []
+      param_columns:
+      - publishDateTimeFrom
+      - publishDateTimeTo
+      primary_date_param: from
+      response_format: csv
+    2_14_days_ahead__transmission__system__demand_and_surplus_forecast_tsdfd:
+      path: /datasets/TSDFD
+      base: bmrs
+      table_name: bmrs_2_14_days_ahead__transmission__system__demand_and_surplus_forecast_tsdfd
+      params: {}
+      date_params: []
+      param_columns:
+      - publishDateTimeFrom
+      - publishDateTimeTo
+      - format
+      primary_date_param: from
+      response_format: csv
+    2_14_days_ahead__transmission__system__demand_and_surplus_forecast_tsdfd_stream:
+      path: /datasets/TSDFD/stream
+      base: bmrs
+      table_name: bmrs_2_14_days_ahead__transmission__system__demand_and_surplus_forecast_tsdfd_stream
+      params: {}
+      date_params: []
+      param_columns:
+      - publishDateTimeFrom
+      - publishDateTimeTo
+      primary_date_param: from
+      response_format: csv
+    2_52_weeks_ahead__national__demand_and_surplus_forecast_ndfw:
+      path: /datasets/NDFW
+      base: bmrs
+      table_name: bmrs_2_52_weeks_ahead__national__demand_and_surplus_forecast_ndfw
+      params: {}
+      date_params: []
+      param_columns:
+      - publishDateTimeFrom
+      - publishDateTimeTo
+      - format
+      primary_date_param: from
+      response_format: csv
+    2_52_weeks_ahead__national__demand_and_surplus_forecast_ndfw_stream:
+      path: /datasets/NDFW/stream
+      base: bmrs
+      table_name: bmrs_2_52_weeks_ahead__national__demand_and_surplus_forecast_ndfw_stream
+      params: {}
+      date_params: []
+      param_columns:
+      - publishDateTimeFrom
+      - publishDateTimeTo
+      primary_date_param: from
+      response_format: csv
+    2_52_weeks_ahead__transmission__system__demand_and_surplus_forecast_tsdfw:
+      path: /datasets/TSDFW
+      base: bmrs
+      table_name: bmrs_2_52_weeks_ahead__transmission__system__demand_and_surplus_forecast_tsdfw
+      params: {}
+      date_params: []
+      param_columns:
+      - publishDateTimeFrom
+      - publishDateTimeTo
+      - format
+      primary_date_param: from
+      response_format: csv
+    2_52_weeks_ahead__transmission__system__demand_and_surplus_forecast_tsdfw_stream:
+      path: /datasets/TSDFW/stream
+      base: bmrs
+      table_name: bmrs_2_52_weeks_ahead__transmission__system__demand_and_surplus_forecast_tsdfw_stream
+      params: {}
+      date_params: []
+      param_columns:
+      - publishDateTimeFrom
+      - publishDateTimeTo
+      primary_date_param: from
+      response_format: csv
+    system_frequency_freq:
+      path: /system/frequency
+      base: bmrs
+      table_name: bmrs_system_frequency_freq
+      params: {}
+      date_params:
+      - from
+      - to
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    system_frequency_freq_stream:
+      path: /system/frequency/stream
+      base: bmrs
+      table_name: bmrs_system_frequency_freq_stream
+      params: {}
+      date_params:
+      - from
+      - to
+      param_columns: []
+      primary_date_param: from
+      response_format: csv
+    2_14_days_ahead_demand_surplus_forecast_ocnmfd:
+      path: /datasets/OCNMFD
+      base: bmrs
+      table_name: bmrs_2_14_days_ahead_demand_surplus_forecast_ocnmfd
+      params: {}
+      date_params: []
+      param_columns:
+      - publishDateTimeFrom
+      - publishDateTimeTo
+      - format
+      primary_date_param: from
+      response_format: csv
+    2_14_days_ahead_demand_surplus_forecast_ocnmfd_stream:
+      path: /datasets/OCNMFD/stream
+      base: bmrs
+      table_name: bmrs_2_14_days_ahead_demand_surplus_forecast_ocnmfd_stream
+      params: {}
+      date_params: []
+      param_columns:
+      - publishDateTimeFrom
+      - publishDateTimeTo
+      primary_date_param: from
+      response_format: csv
+    2_14_days_ahead_demand_margin_forecast_ocnmfd2:
+      path: /datasets/OCNMFD2
+      base: bmrs
+      table_name: bmrs_2_14_days_ahead_demand_margin_forecast_ocnmfd2
+      params: {}
+      date_params: []
+      param_columns:
+      - publishDateTimeFrom
+      - publishDateTimeTo
+      - format
+      primary_date_param: from
+      response_format: csv
+    2_14_days_ahead_demand_margin_forecast_ocnmfd2_stream:
+      path: /datasets/OCNMFD2/stream
+      base: bmrs
+      table_name: bmrs_2_14_days_ahead_demand_margin_forecast_ocnmfd2_stream
+      params: {}
+      date_params: []
+      param_columns:
+      - publishDateTimeFrom
+      - publishDateTimeTo
+      primary_date_param: from
+      response_format: csv
+    2_156_weeks_ahead_demand_surplus_forecast_ocnmf3_y:
+      path: /datasets/OCNMF3Y
+      base: bmrs
+      table_name: bmrs_2_156_weeks_ahead_demand_surplus_forecast_ocnmf3_y
+      params: {}
+      date_params: []
+      param_columns:
+      - publishDateTimeFrom
+      - publishDateTimeTo
+      - format
+      primary_date_param: from
+      response_format: csv
+    2_156_weeks_ahead_demand_surplus_forecast_ocnmf3_y_stream:
+      path: /datasets/OCNMF3Y/stream
+      base: bmrs
+      table_name: bmrs_2_156_weeks_ahead_demand_surplus_forecast_ocnmf3_y_stream
+      params: {}
+      date_params: []
+      param_columns:
+      - publishDateTimeFrom
+      - publishDateTimeTo
+      primary_date_param: from
+      response_format: csv
+    2_156_weeks_ahead_demand_margin_forecast_ocnmf3_y2:
+      path: /datasets/OCNMF3Y2
+      base: bmrs
+      table_name: bmrs_2_156_weeks_ahead_demand_margin_forecast_ocnmf3_y2
+      params: {}
+      date_params: []
+      param_columns:
+      - publishDateTimeFrom
+      - publishDateTimeTo
+      - format
+      primary_date_param: from
+      response_format: csv
+    2_156_weeks_ahead_demand_margin_forecast_ocnmf3_y2_stream:
+      path: /datasets/OCNMF3Y2/stream
+      base: bmrs
+      table_name: bmrs_2_156_weeks_ahead_demand_margin_forecast_ocnmf3_y2_stream
+      params: {}
+      date_params: []
+      param_columns:
+      - publishDateTimeFrom
+      - publishDateTimeTo
+      primary_date_param: from
+      response_format: csv
+    returns_the_time_when_each_dataset_was_last_updated:
+      path: /datasets/metadata/latest
+      base: bmrs
+      table_name: bmrs_returns_the_time_when_each_dataset_was_last_updated
+      params: {}
+      date_params: []
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    loss_of_load_probability_and_de_rated_margin_lolpdrm:
+      path: /datasets/LOLPDRM/stream
+      base: bmrs
+      table_name: bmrs_loss_of_load_probability_and_de_rated_margin_lolpdrm
+      params:
+        publishDateTimeFrom: 2023-03-06T07:00Z
+        publishDateTimeTo: 2023-03-06T12:00Z
+      date_params: []
+      param_columns: []
+      primary_date_param: from
+      response_format: csv
+    credit_default_notices_cdn:
+      path: /datasets/CDN
+      base: bmrs
+      table_name: bmrs_credit_default_notices_cdn
+      params:
+        publishDateTimeFrom: '2022-06-25T00:00:00Z'
+        publishDateTimeTo: '2022-06-26T00:00:00Z'
+        bscPartyId: INVE
+      date_params: []
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    credit_default_notices_cdn_stream:
+      path: /datasets/CDN/stream
+      base: bmrs
+      table_name: bmrs_credit_default_notices_cdn_stream
+      params:
+        publishDateTimeFrom: '2022-06-25T00:00:00Z'
+        publishDateTimeTo: '2022-06-26T00:00:00Z'
+        bscPartyId: INVE
+      date_params: []
+      param_columns: []
+      primary_date_param: from
+      response_format: csv
+    system_warnings_syswarn:
+      path: /system/warnings
+      base: bmrs
+      table_name: bmrs_system_warnings_syswarn
+      params:
+        warningType: IT SYSTEMS OUTAGE
+        publishDateTimeFrom: 2023/06/01 07:00
+        publishDateTimeTo: 2023/06/30 10:00
+      date_params: []
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    system_warnings_syswarn_stream:
+      path: /datasets/SYSWARN/stream
+      base: bmrs
+      table_name: bmrs_system_warnings_syswarn_stream
+      params:
+        publishDateTimeFrom: 2023/06/01 07:00
+        publishDateTimeTo: 2023/06/30 10:00
+      date_params: []
+      param_columns: []
+      primary_date_param: from
+      response_format: csv
+    demand_control_instructions_dci:
+      path: /system/demand-control-instructions
+      base: bmrs
+      table_name: bmrs_demand_control_instructions_dci
+      params: {}
+      date_params:
+      - from
+      - to
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    demand_control_instructions_dci_stream:
+      path: /datasets/DCI/stream
+      base: bmrs
+      table_name: bmrs_demand_control_instructions_dci_stream
+      params:
+        publishDateTimeFrom: 2021-04-30T00:00Z
+        publishDateTimeTo: 2021-05-30T20:00Z
+      date_params: []
+      param_columns: []
+      primary_date_param: from
+      response_format: csv
+    so_so_prices_soso:
+      path: /soso/prices
+      base: bmrs
+      table_name: bmrs_so_so_prices_soso
+      params: {}
+      date_params:
+      - from
+      - to
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    so_so_prices_soso_stream:
+      path: /datasets/SOSO/stream
+      base: bmrs
+      table_name: bmrs_so_so_prices_soso_stream
+      params:
+        publishDateTimeFrom: '2023-09-26T07:00:00Z'
+        publishDateTimeTo: '2023-09-27T07:00:00Z'
+      date_params: []
+      param_columns: []
+      primary_date_param: from
+      response_format: csv
+    trading_unit_data_s0491_tudm:
+      path: /datasets/TUDM
+      base: bmrs
+      table_name: bmrs_trading_unit_data_s0491_tudm
+      params:
+        settlementPeriod: 10
+        tradingUnitName:
+        - DEFAULT__A
+        tradingUnitType: Base
+      date_params:
+      - settlementDate
+      param_columns:
+      - format
+      primary_date_param: settlementDate
+      response_format: csv
+    trading_unit_data_s0491_tudm_stream:
+      path: /datasets/TUDM/stream
+      base: bmrs
+      table_name: bmrs_trading_unit_data_s0491_tudm_stream
+      params:
+        settlementDateFrom: '2023-10-05'
+        settlementDateTo: '2023-10-05'
+        tradingUnitName:
+        - DEFAULT__A
+        tradingUnitType: Base
+      date_params:
+      - settlementPeriodFrom
+      - settlementPeriodTo
+      param_columns: []
+      primary_date_param: from
+      response_format: csv
+    restoration__region__demand__forecast_rzdf:
+      path: /datasets/RZDF
+      base: bmrs
+      table_name: bmrs_restoration__region__demand__forecast_rzdf
+      params:
+        submissionDateTimeFrom: '2025-06-25 00:00:00Z'
+        submissionDateTimeTo: '2025-07-05 00:00:00Z'
+      date_params: []
+      param_columns:
+      - region
+      - gspGroupId
+      - format
+      primary_date_param: from
+      response_format: csv
+    restoration__region__demand__forecast_rzdf_stream:
+      path: /datasets/RZDF/stream
+      base: bmrs
+      table_name: bmrs_restoration__region__demand__forecast_rzdf_stream
+      params:
+        submissionDateTimeFrom: '2025-06-25 00:00:00Z'
+        submissionDateTimeTo: '2025-07-05 00:00:00Z'
+      date_params: []
+      param_columns:
+      - region
+      - gspGroupId
+      primary_date_param: from
+      response_format: csv
+    restoration__region__demand__restored_rzdr:
+      path: /datasets/RZDR
+      base: bmrs
+      table_name: bmrs_restoration__region__demand__restored_rzdr
+      params:
+        submissionDateTimeFrom: '2025-06-25 00:00:00Z'
+        submissionDateTimeTo: '2025-07-05 00:00:00Z'
+      date_params: []
+      param_columns:
+      - region
+      - gspGroupId
+      - format
+      primary_date_param: from
+      response_format: csv
+    restoration__region__demand__restored_rzdr__stream:
+      path: /datasets/RZDR/stream
+      base: bmrs
+      table_name: bmrs_restoration__region__demand__restored_rzdr__stream
+      params:
+        submissionDateTimeFrom: '2025-06-25 00:00:00Z'
+        submissionDateTimeTo: '2025-07-05 00:00:00Z'
+      date_params: []
+      param_columns:
+      - region
+      - gspGroupId
+      primary_date_param: from
+      response_format: csv
+    stable__import__limit_sil:
+      path: /datasets/SIL
+      base: bmrs
+      table_name: bmrs_stable__import__limit_sil
+      params:
+        bmUnit:
+        - T_KILLPG-1
+      date_params:
+      - from
+      - to
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    stable__import__limit_sil_stream:
+      path: /datasets/SIL/stream
+      base: bmrs
+      table_name: bmrs_stable__import__limit_sil_stream
+      params:
+        bmUnit:
+        - T_KILLPG-1
+      date_params:
+      - from
+      - to
+      param_columns: []
+      primary_date_param: from
+      response_format: csv
+    stable__export__limit_sel:
+      path: /datasets/SEL
+      base: bmrs
+      table_name: bmrs_stable__export__limit_sel
+      params:
+        bmUnit:
+        - T_KILLPG-1
+      date_params:
+      - from
+      - to
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    stable__export__limit_sel_stream:
+      path: /datasets/SEL/stream
+      base: bmrs
+      table_name: bmrs_stable__export__limit_sel_stream
+      params:
+        bmUnit:
+        - T_KILLPG-1
+      date_params:
+      - from
+      - to
+      param_columns: []
+      primary_date_param: from
+      response_format: csv
+    minimum__zero__time_mzt:
+      path: /datasets/MZT
+      base: bmrs
+      table_name: bmrs_minimum__zero__time_mzt
+      params:
+        bmUnit:
+        - T_FOYE-1
+      date_params:
+      - from
+      - to
+      - settlementPeriodFrom
+      - settlementPeriodTo
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    minimum__zero__time_mzt_stream:
+      path: /datasets/MZT/stream
+      base: bmrs
+      table_name: bmrs_minimum__zero__time_mzt_stream
+      params:
+        bmUnit:
+        - T_FOYE-1
+      date_params:
+      - from
+      - to
+      - settlementPeriodFrom
+      - settlementPeriodTo
+      param_columns: []
+      primary_date_param: from
+      response_format: csv
+    minimum__non__zero__time_mnzt:
+      path: /datasets/MNZT
+      base: bmrs
+      table_name: bmrs_minimum__non__zero__time_mnzt
+      params:
+        bmUnit:
+        - T_FOYE-1
+      date_params:
+      - from
+      - to
+      - settlementPeriodFrom
+      - settlementPeriodTo
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    minimum__non__zero__time_mnzt_stream:
+      path: /datasets/MNZT/stream
+      base: bmrs
+      table_name: bmrs_minimum__non__zero__time_mnzt_stream
+      params:
+        bmUnit:
+        - T_FOYE-1
+      date_params:
+      - from
+      - to
+      - settlementPeriodFrom
+      - settlementPeriodTo
+      param_columns: []
+      primary_date_param: from
+      response_format: csv
+    maximum__delivery__volume_mdv:
+      path: /datasets/MDV
+      base: bmrs
+      table_name: bmrs_maximum__delivery__volume_mdv
+      params:
+        bmUnit:
+        - T_FOYE-1
+      date_params:
+      - from
+      - to
+      - settlementPeriodFrom
+      - settlementPeriodTo
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    maximum__delivery__volume_mdv_stream:
+      path: /datasets/MDV/stream
+      base: bmrs
+      table_name: bmrs_maximum__delivery__volume_mdv_stream
+      params:
+        bmUnit:
+        - T_FOYE-1
+      date_params:
+      - from
+      - to
+      - settlementPeriodFrom
+      - settlementPeriodTo
+      param_columns: []
+      primary_date_param: from
+      response_format: csv
+    maximum__delivery__period_mdp:
+      path: /datasets/MDP
+      base: bmrs
+      table_name: bmrs_maximum__delivery__period_mdp
+      params:
+        bmUnit:
+        - T_FOYE-1
+      date_params:
+      - from
+      - to
+      - settlementPeriodFrom
+      - settlementPeriodTo
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    maximum__delivery__period_mdp_stream:
+      path: /datasets/MDP/stream
+      base: bmrs
+      table_name: bmrs_maximum__delivery__period_mdp_stream
+      params:
+        bmUnit:
+        - T_FOYE-1
+      date_params:
+      - from
+      - to
+      - settlementPeriodFrom
+      - settlementPeriodTo
+      param_columns: []
+      primary_date_param: from
+      response_format: csv
+    notice_to__deliver__bids_ntb:
+      path: /datasets/NTB
+      base: bmrs
+      table_name: bmrs_notice_to__deliver__bids_ntb
+      params:
+        bmUnit:
+        - T_FOYE-1
+      date_params:
+      - from
+      - to
+      - settlementPeriodFrom
+      - settlementPeriodTo
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    notice_to__deliver__bids_ntb_stream:
+      path: /datasets/NTB/stream
+      base: bmrs
+      table_name: bmrs_notice_to__deliver__bids_ntb_stream
+      params:
+        bmUnit:
+        - T_FOYE-1
+      date_params:
+      - from
+      - to
+      - settlementPeriodFrom
+      - settlementPeriodTo
+      param_columns: []
+      primary_date_param: from
+      response_format: csv
+    notice_to__deliver__offers_nto:
+      path: /datasets/NTO
+      base: bmrs
+      table_name: bmrs_notice_to__deliver__offers_nto
+      params:
+        bmUnit:
+        - T_FOYE-1
+      date_params:
+      - from
+      - to
+      - settlementPeriodFrom
+      - settlementPeriodTo
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    notice_to__deliver__offers_nto_stream:
+      path: /datasets/NTO/stream
+      base: bmrs
+      table_name: bmrs_notice_to__deliver__offers_nto_stream
+      params:
+        bmUnit:
+        - T_FOYE-1
+      date_params:
+      - from
+      - to
+      - settlementPeriodFrom
+      - settlementPeriodTo
+      param_columns: []
+      primary_date_param: from
+      response_format: csv
+    notice_to__deviate_from__zero_ndz:
+      path: /datasets/NDZ
+      base: bmrs
+      table_name: bmrs_notice_to__deviate_from__zero_ndz
+      params:
+        bmUnit:
+        - T_FOYE-1
+      date_params:
+      - from
+      - to
+      - settlementPeriodFrom
+      - settlementPeriodTo
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    notice_to__deviate_from__zero_ndz_stream:
+      path: /datasets/NDZ/stream
+      base: bmrs
+      table_name: bmrs_notice_to__deviate_from__zero_ndz_stream
+      params:
+        bmUnit:
+        - T_FOYE-1
+      date_params:
+      - from
+      - to
+      - settlementPeriodFrom
+      - settlementPeriodTo
+      param_columns: []
+      primary_date_param: from
+      response_format: csv
+    run__up__rate__export_rure:
+      path: /datasets/RURE
+      base: bmrs
+      table_name: bmrs_run__up__rate__export_rure
+      params:
+        bmUnit:
+        - T_FOYE-1
+      date_params:
+      - from
+      - to
+      - settlementPeriodFrom
+      - settlementPeriodTo
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    run__up__rate__export_rure_stream:
+      path: /datasets/RURE/stream
+      base: bmrs
+      table_name: bmrs_run__up__rate__export_rure_stream
+      params:
+        bmUnit:
+        - T_FOYE-1
+      date_params:
+      - from
+      - to
+      - settlementPeriodFrom
+      - settlementPeriodTo
+      param_columns: []
+      primary_date_param: from
+      response_format: csv
+    run__down__rate__export_rdre:
+      path: /datasets/RDRE
+      base: bmrs
+      table_name: bmrs_run__down__rate__export_rdre
+      params:
+        bmUnit:
+        - T_FOYE-1
+      date_params:
+      - from
+      - to
+      - settlementPeriodFrom
+      - settlementPeriodTo
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    run__down__rate__export_rdre_stream:
+      path: /datasets/RDRE/stream
+      base: bmrs
+      table_name: bmrs_run__down__rate__export_rdre_stream
+      params:
+        bmUnit:
+        - T_FOYE-1
+      date_params:
+      - from
+      - to
+      - settlementPeriodFrom
+      - settlementPeriodTo
+      param_columns: []
+      primary_date_param: from
+      response_format: csv
+    run__up__rate__import_ruri:
+      path: /datasets/RURI
+      base: bmrs
+      table_name: bmrs_run__up__rate__import_ruri
+      params:
+        bmUnit:
+        - T_FOYE-1
+      date_params:
+      - from
+      - to
+      - settlementPeriodFrom
+      - settlementPeriodTo
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    run__up__rate__import_ruri_stream:
+      path: /datasets/RURI/stream
+      base: bmrs
+      table_name: bmrs_run__up__rate__import_ruri_stream
+      params:
+        bmUnit:
+        - T_FOYE-1
+      date_params:
+      - from
+      - to
+      - settlementPeriodFrom
+      - settlementPeriodTo
+      param_columns: []
+      primary_date_param: from
+      response_format: csv
+    run__down__rate__import_rdri:
+      path: /datasets/RDRI
+      base: bmrs
+      table_name: bmrs_run__down__rate__import_rdri
+      params:
+        bmUnit:
+        - T_FOYE-1
+      date_params:
+      - from
+      - to
+      - settlementPeriodFrom
+      - settlementPeriodTo
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    run__down__rate__import_rdri_stream:
+      path: /datasets/RDRI/stream
+      base: bmrs
+      table_name: bmrs_run__down__rate__import_rdri_stream
+      params:
+        bmUnit:
+        - T_FOYE-1
+      date_params:
+      - from
+      - to
+      - settlementPeriodFrom
+      - settlementPeriodTo
+      param_columns: []
+      primary_date_param: from
+      response_format: csv
+    the__regulation_on__wholesale__energy__markets__integrity_and__transparency_remit:
+      path: /datasets/REMIT
+      base: bmrs
+      table_name: bmrs_the__regulation_on__wholesale__energy__markets__integrity_and__transparency_remit
+      params:
+        publishDateTimeFrom: 2023/04/13 07:00
+        publishDateTimeTo: 2023/04/13 10:00
+      date_params: []
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    the__regulation_on__wholesale__energy__markets__integrity_and__transparency_remit_stream:
+      path: /datasets/REMIT/stream
+      base: bmrs
+      table_name: bmrs_the__regulation_on__wholesale__energy__markets__integrity_and__transparency_remit_stream
+      params:
+        publishDateTimeFrom: 2023/04/13 07:00
+        publishDateTimeTo: 2023/04/13 10:00
+      date_params: []
+      param_columns: []
+      primary_date_param: from
+      response_format: csv
+    actual__or__estimated__wind__and__solar__power__generation_agws_/_b1630:
+      path: /datasets/AGWS
+      base: bmrs
+      table_name: bmrs_actual__or__estimated__wind__and__solar__power__generation_agws_/_b1630
+      params:
+        publishDateTimeFrom: '2023-07-27T10:00:00Z'
+        publishDateTimeTo: '2023-07-28T10:00:00Z'
+      date_params: []
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    actual__or__estimated__wind__and__solar__power__generation_agws_/_b1630_stream:
+      path: /datasets/AGWS/stream
+      base: bmrs
+      table_name: bmrs_actual__or__estimated__wind__and__solar__power__generation_agws_/_b1630_stream
+      params:
+        publishDateTimeFrom: '2023-07-27T10:00:00Z'
+        publishDateTimeTo: '2023-07-28T10:00:00Z'
+      date_params: []
+      param_columns: []
+      primary_date_param: from
+      response_format: csv
+    day__ahead__generation__for__wind__and__solar_dgws_/_b1440:
+      path: /datasets/DGWS
+      base: bmrs
+      table_name: bmrs_day__ahead__generation__for__wind__and__solar_dgws_/_b1440
+      params:
+        publishDateTimeFrom: 2023/07/18 07:00
+        publishDateTimeTo: 2023/07/21 10:00
+      date_params: []
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    day__ahead__generation__for__wind__and__solar_dgws_/_b1440_stream:
+      path: /datasets/DGWS/stream
+      base: bmrs
+      table_name: bmrs_day__ahead__generation__for__wind__and__solar_dgws_/_b1440_stream
+      params:
+        publishDateTimeFrom: 2023/07/18 07:00
+        publishDateTimeTo: 2023/07/21 10:00
+      date_params: []
+      param_columns: []
+      primary_date_param: from
+      response_format: csv
+    actual__aggregated__generation__per__type_agpt_/_b1620:
+      path: /datasets/AGPT
+      base: bmrs
+      table_name: bmrs_actual__aggregated__generation__per__type_agpt_/_b1620
+      params:
+        publishDateTimeFrom: 2023-07-18 18:00
+        publishDateTimeTo: 2023-07-21 09:00
+      date_params: []
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    actual__aggregated__generation__per__type_agpt_/_b1620_stream:
+      path: /datasets/AGPT/stream
+      base: bmrs
+      table_name: bmrs_actual__aggregated__generation__per__type_agpt_/_b1620_stream
+      params:
+        publishDateTimeFrom: 2023-07-18 18:00
+        publishDateTimeTo: 2023-07-21 09:00
+      date_params: []
+      param_columns: []
+      primary_date_param: from
+      response_format: csv
+    actual__generation__output__per__generation__unit_b1610:
+      path: /datasets/B1610
+      base: bmrs
+      table_name: bmrs_actual__generation__output__per__generation__unit_b1610
+      params:
+        settlementPeriod: 10
+        bmUnit:
+        - T_CNQPS-1
+      date_params:
+      - settlementDate
+      param_columns:
+      - format
+      primary_date_param: settlementDate
+      response_format: csv
+    actual__generation__output__per__generation__unit_b1610_stream:
+      path: /datasets/B1610/stream
+      base: bmrs
+      table_name: bmrs_actual__generation__output__per__generation__unit_b1610_stream
+      params:
+        bmUnit:
+        - T_CNQPS-1
+      date_params:
+      - from
+      - to
+      - settlementPeriodFrom
+      - settlementPeriodTo
+      param_columns: []
+      primary_date_param: from
+      response_format: csv
+    installed__generation__capacity__aggregated_igca_/_b1410:
+      path: /datasets/IGCA
+      base: bmrs
+      table_name: bmrs_installed__generation__capacity__aggregated_igca_/_b1410
+      params:
+        publishDateTimeFrom: '2022-04-20T00:00:00Z'
+        publishDateTimeTo: '2022-04-27T00:00:00Z'
+      date_params: []
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    installed__generation__capacity__aggregated_igca_/_b1410_stream:
+      path: /datasets/IGCA/stream
+      base: bmrs
+      table_name: bmrs_installed__generation__capacity__aggregated_igca_/_b1410_stream
+      params:
+        publishDateTimeFrom: '2022-04-20T00:00:00Z'
+        publishDateTimeTo: '2022-04-27T00:00:00Z'
+      date_params: []
+      param_columns: []
+      primary_date_param: from
+      response_format: csv
+    installed__generation__capacity_per__unit_igcpu_/_b1420:
+      path: /datasets/IGCPU
+      base: bmrs
+      table_name: bmrs_installed__generation__capacity_per__unit_igcpu_/_b1420
+      params:
+        publishDateTimeFrom: '2023-01-01T00:00:00Z'
+        publishDateTimeTo: '2024-01-02T00:00:00Z'
+      date_params: []
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    installed__generation__capacity_per__unit_igcpu_/_b1420_stream:
+      path: /datasets/IGCPU/stream
+      base: bmrs
+      table_name: bmrs_installed__generation__capacity_per__unit_igcpu_/_b1420_stream
+      params:
+        publishDateTimeFrom: '2023-01-01T00:00:00Z'
+        publishDateTimeTo: '2024-01-02T00:00:00Z'
+      date_params: []
+      param_columns: []
+      primary_date_param: from
+      response_format: csv
+    actual__total__load__per__bidding__zone_atl_/_b0610:
+      path: /datasets/ATL
+      base: bmrs
+      table_name: bmrs_actual__total__load__per__bidding__zone_atl_/_b0610
+      params:
+        publishDateTimeFrom: '2023-07-18T07:00:00Z'
+        publishDateTimeTo: '2023-07-21T10:00:00Z'
+      date_params: []
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    actual__total__load__per__bidding__zone_atl_/_b0610_stream:
+      path: /datasets/ATL/stream
+      base: bmrs
+      table_name: bmrs_actual__total__load__per__bidding__zone_atl_/_b0610_stream
+      params:
+        publishDateTimeFrom: '2023-07-18T07:00:00Z'
+        publishDateTimeTo: '2023-07-21T10:00:00Z'
+      date_params: []
+      param_columns: []
+      primary_date_param: from
+      response_format: csv
+    day__ahead__total__load__forecast__per__bidding__zone_datl_/_b0620:
+      path: /datasets/DATL
+      base: bmrs
+      table_name: bmrs_day__ahead__total__load__forecast__per__bidding__zone_datl_/_b0620
+      params:
+        publishDateTimeFrom: 2023/07/18 07:00
+        publishDateTimeTo: 2023/07/21 10:00
+      date_params: []
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    day__ahead__total__load__forecast__per__bidding__zone_datl_/_b0620_stream:
+      path: /datasets/DATL/stream
+      base: bmrs
+      table_name: bmrs_day__ahead__total__load__forecast__per__bidding__zone_datl_/_b0620_stream
+      params:
+        publishDateTimeFrom: 2023/07/18 07:00
+        publishDateTimeTo: 2023/07/21 10:00
+      date_params: []
+      param_columns: []
+      primary_date_param: from
+      response_format: csv
+    week__ahead__total__load__forecast__per__bidding__zone_watl_/_b0630:
+      path: /datasets/WATL
+      base: bmrs
+      table_name: bmrs_week__ahead__total__load__forecast__per__bidding__zone_watl_/_b0630
+      params:
+        publishDateTimeFrom: 2022-06-25T00:00Z
+        publishDateTimeTo: 2022-07-25T00:00Z
+      date_params: []
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    week__ahead__total__load__forecast__per__bidding__zone_watl_/_b0630_stream:
+      path: /datasets/WATL/stream
+      base: bmrs
+      table_name: bmrs_week__ahead__total__load__forecast__per__bidding__zone_watl_/_b0630_stream
+      params:
+        publishDateTimeFrom: 2022-06-25T00:00Z
+        publishDateTimeTo: 2022-07-25T00:00Z
+      date_params: []
+      param_columns: []
+      primary_date_param: from
+      response_format: csv
+    day__ahead__aggregated__generation_dag_/_b1430:
+      path: /datasets/DAG
+      base: bmrs
+      table_name: bmrs_day__ahead__aggregated__generation_dag_/_b1430
+      params:
+        publishDateTimeFrom: 2023-07-18 18:00
+        publishDateTimeTo: 2023-07-21 09:00
+      date_params: []
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    day__ahead__aggregated__generation_dag_/_b1430_stream:
+      path: /datasets/DAG/stream
+      base: bmrs
+      table_name: bmrs_day__ahead__aggregated__generation_dag_/_b1430_stream
+      params:
+        publishDateTimeFrom: 2023-07-18 18:00
+        publishDateTimeTo: 2023-07-21 09:00
+      date_params: []
+      param_columns: []
+      primary_date_param: from
+      response_format: csv
+    month__ahead__total__load__forecast__per__bidding__zone_matl_/_b0640:
+      path: /datasets/MATL
+      base: bmrs
+      table_name: bmrs_month__ahead__total__load__forecast__per__bidding__zone_matl_/_b0640
+      params:
+        publishDateTimeFrom: 2022-06-25T00:00Z
+        publishDateTimeTo: 2022-07-25T00:00Z
+      date_params: []
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    month__ahead__total__load__forecast__per__bidding__zone_matl_/_b0640_stream:
+      path: /datasets/MATL/stream
+      base: bmrs
+      table_name: bmrs_month__ahead__total__load__forecast__per__bidding__zone_matl_/_b0640_stream
+      params:
+        publishDateTimeFrom: 2022-06-25T00:00Z
+        publishDateTimeTo: 2022-07-25T00:00Z
+      date_params: []
+      param_columns: []
+      primary_date_param: from
+      response_format: csv
+    year__ahead__total__load__forecast__per__bidding__zone_yatl_/_b0650:
+      path: /datasets/YATL
+      base: bmrs
+      table_name: bmrs_year__ahead__total__load__forecast__per__bidding__zone_yatl_/_b0650
+      params:
+        publishDateTimeFrom: 2022-06-25T00:00Z
+        publishDateTimeTo: 2022-07-25T00:00Z
+      date_params: []
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    year__ahead__total__load__forecast__per__bidding__zone_yatl_/_b0650_stream:
+      path: /datasets/YATL/stream
+      base: bmrs
+      table_name: bmrs_year__ahead__total__load__forecast__per__bidding__zone_yatl_/_b0650_stream
+      params:
+        publishDateTimeFrom: 2022-06-25T00:00Z
+        publishDateTimeTo: 2022-07-25T00:00Z
+      date_params: []
+      param_columns: []
+      primary_date_param: from
+      response_format: csv
+    cost_of__congestion__management_ccm_/_b1330:
+      path: /datasets/CCM
+      base: bmrs
+      table_name: bmrs_cost_of__congestion__management_ccm_/_b1330
+      params:
+        publishDateTimeFrom: 2022-06-25T00:00Z
+        publishDateTimeTo: 2022-07-25T00:00Z
+      date_params: []
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    cost_of__congestion__management_ccm_/_b1330_stream:
+      path: /datasets/CCM/stream
+      base: bmrs
+      table_name: bmrs_cost_of__congestion__management_ccm_/_b1330_stream
+      params:
+        publishDateTimeFrom: 2022-06-25T00:00Z
+        publishDateTimeTo: 2022-07-25T00:00Z
+      date_params: []
+      param_columns: []
+      primary_date_param: from
+      response_format: csv
+    year__ahead__forecast__margin_yafm_/_b0810:
+      path: /datasets/YAFM
+      base: bmrs
+      table_name: bmrs_year__ahead__forecast__margin_yafm_/_b0810
+      params:
+        publishDateTimeFrom: 2021-06-01T00:00Z
+        publishDateTimeTo: 2022-07-25T00:00Z
+      date_params: []
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    year__ahead__forecast__margin_yafm_/_b0810_stream:
+      path: /datasets/YAFM/stream
+      base: bmrs
+      table_name: bmrs_year__ahead__forecast__margin_yafm_/_b0810_stream
+      params:
+        publishDateTimeFrom: 2021-06-01T00:00Z
+        publishDateTimeTo: 2022-07-25T00:00Z
+      date_params: []
+      param_columns: []
+      primary_date_param: from
+      response_format: csv
+    amount__of__balancing__reserves__under__contract_abuc_/_b1720:
+      path: /datasets/ABUC
+      base: bmrs
+      table_name: bmrs_amount__of__balancing__reserves__under__contract_abuc_/_b1720
+      params:
+        publishDateTimeFrom: '2023-08-22T01:00:00Z'
+        publishDateTimeTo: '2023-08-23T01:00:00Z'
+      date_params: []
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    amount__of__balancing__reserves__under__contract_abuc_/_b1720_stream:
+      path: /datasets/ABUC/stream
+      base: bmrs
+      table_name: bmrs_amount__of__balancing__reserves__under__contract_abuc_/_b1720_stream
+      params:
+        publishDateTimeFrom: '2023-08-22T01:00:00Z'
+        publishDateTimeTo: '2023-08-23T01:00:00Z'
+      date_params: []
+      param_columns: []
+      primary_date_param: from
+      response_format: csv
+    prices__of__procured__balancing__reserves_ppbr_/_b1730:
+      path: /datasets/PPBR
+      base: bmrs
+      table_name: bmrs_prices__of__procured__balancing__reserves_ppbr_/_b1730
+      params:
+        publishDateTimeFrom: '2023-09-12T01:00:00Z'
+        publishDateTimeTo: '2023-09-17T01:00:00Z'
+      date_params: []
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    prices__of__procured__balancing__reserves_ppbr_/_b1730_stream:
+      path: /datasets/PPBR/stream
+      base: bmrs
+      table_name: bmrs_prices__of__procured__balancing__reserves_ppbr_/_b1730_stream
+      params:
+        publishDateTimeFrom: '2023-09-12T01:00:00Z'
+        publishDateTimeTo: '2023-09-17T01:00:00Z'
+      date_params: []
+      param_columns: []
+      primary_date_param: from
+      response_format: csv
+    financial__expenses_and__income_for__balancing_feib_/_b1790:
+      path: /datasets/FEIB
+      base: bmrs
+      table_name: bmrs_financial__expenses_and__income_for__balancing_feib_/_b1790
+      params:
+        publishDateTimeFrom: 2023-10-12 01:00Z
+        publishDateTimeTo: 2023-11-12 01:00Z
+      date_params: []
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    financial__expenses_and__income_for__balancing_feib_/_b1790_stream:
+      path: /datasets/FEIB/stream
+      base: bmrs
+      table_name: bmrs_financial__expenses_and__income_for__balancing_feib_/_b1790_stream
+      params:
+        publishDateTimeFrom: 2023-10-12 01:00Z
+        publishDateTimeTo: 2023-11-12 01:00Z
+      date_params: []
+      param_columns: []
+      primary_date_param: from
+      response_format: csv
+    accepted__offered__balancing__energy_aobe:
+      path: /datasets/AOBE
+      base: bmrs
+      table_name: bmrs_accepted__offered__balancing__energy_aobe
+      params:
+        publishDateTimeFrom: '2023-11-06T00:00:00Z'
+        publishDateTimeTo: '2023-11-13T00:00:00Z'
+      date_params: []
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    accepted__offered__balancing__energy_aobe_stream:
+      path: /datasets/AOBE/stream
+      base: bmrs
+      table_name: bmrs_accepted__offered__balancing__energy_aobe_stream
+      params:
+        publishDateTimeFrom: '2023-11-06T00:00:00Z'
+        publishDateTimeTo: '2023-11-13T00:00:00Z'
+      date_params: []
+      param_columns: []
+      primary_date_param: from
+      response_format: csv
+    balancing__energy__bids_beb:
+      path: /datasets/BEB
+      base: bmrs
+      table_name: bmrs_balancing__energy__bids_beb
+      params:
+        publishDateTimeFrom: '2023-10-30T14:00:00Z'
+        publishDateTimeTo: '2023-10-30T15:00:00Z'
+      date_params: []
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    balancing__energy__bids_beb_stream:
+      path: /datasets/BEB/stream
+      base: bmrs
+      table_name: bmrs_balancing__energy__bids_beb_stream
+      params:
+        publishDateTimeFrom: '2023-10-30T14:00:00Z'
+        publishDateTimeTo: '2023-10-30T15:00:00Z'
+      date_params: []
+      param_columns: []
+      primary_date_param: from
+      response_format: csv
+    current__balancing__state_cbs:
+      path: /datasets/CBS
+      base: bmrs
+      table_name: bmrs_current__balancing__state_cbs
+      params:
+        publishDateTimeFrom: '2023-09-11T14:00:07.00Z'
+        publishDateTimeTo: '2023-09-11T14:31:07.00Z'
+      date_params: []
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    current__balancing__state_cbs_stream:
+      path: /datasets/CBS/stream
+      base: bmrs
+      table_name: bmrs_current__balancing__state_cbs_stream
+      params:
+        publishDateTimeFrom: '2023-09-11T14:00:07.00Z'
+        publishDateTimeTo: '2023-09-11T14:31:07.00Z'
+      date_params: []
+      param_columns: []
+      primary_date_param: from
+      response_format: csv
+    procured__balancing__capacity_pbc:
+      path: /datasets/PBC
+      base: bmrs
+      table_name: bmrs_procured__balancing__capacity_pbc
+      params:
+        publishDateTimeFrom: '2024-02-09T14:00:00Z'
+        publishDateTimeTo: '2024-02-10T14:00:00Z'
+      date_params: []
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    procured__balancing__capacity_pbc_stream:
+      path: /datasets/PBC/stream
+      base: bmrs
+      table_name: bmrs_procured__balancing__capacity_pbc_stream
+      params:
+        publishDateTimeFrom: '2024-02-09T14:00:00Z'
+        publishDateTimeTo: '2024-02-10T14:00:00Z'
+      date_params: []
+      param_columns: []
+      primary_date_param: from
+      response_format: csv
+    '[deprecated]__credit_default_notices_cdn':
+      path: /CDN
+      base: bmrs
+      table_name: bmrs_[deprecated]__credit_default_notices_cdn
+      params: {}
+      date_params: []
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    restoration__zone__demand__restored__submissions_rzdr:
+      path: /demand/by-restoration-zone/restored/submissions
+      base: bmrs
+      table_name: bmrs_restoration__zone__demand__restored__submissions_rzdr
+      params:
+        count: 3
+      date_params: []
+      param_columns:
+      - before
+      - region
+      - gspGroupId
+      - format
+      primary_date_param: from
+      response_format: csv
+    initial__national__demand_outturn_indo_stream:
+      path: /demand/outturn/stream
+      base: bmrs
+      table_name: bmrs_initial__national__demand_outturn_indo_stream
+      params:
+        settlementDateFrom: '2022-09-20'
+        settlementDateTo: '2022-09-21'
+        settlementPeriod: 1
+      date_params: []
+      param_columns: []
+      primary_date_param: from
+      response_format: csv
+    initial__national__demand_outturn_per_day_indod:
+      path: /demand/outturn/daily
+      base: bmrs
+      table_name: bmrs_initial__national__demand_outturn_per_day_indod
+      params:
+        settlementDateFrom: '2023-08-26'
+        settlementDateTo: '2023-08-27'
+      date_params: []
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    initial__national__demand_outturn_per_day_indod_stream:
+      path: /demand/outturn/daily/stream
+      base: bmrs
+      table_name: bmrs_initial__national__demand_outturn_per_day_indod_stream
+      params:
+        settlementDateFrom: '2023-08-26'
+        settlementDateTo: '2023-08-27'
+      date_params: []
+      param_columns: []
+      primary_date_param: from
+      response_format: csv
+    system_demand_summary_fuelinst:
+      path: /demand/outturn/summary
+      base: bmrs
+      table_name: bmrs_system_demand_summary_fuelinst
+      params: {}
+      date_params:
+      - from
+      - to
+      param_columns:
+      - resolution
+      - format
+      primary_date_param: from
+      response_format: csv
+    peak_demand_per_day_itsdo:
+      path: /demand/peak
+      base: bmrs
+      table_name: bmrs_peak_demand_per_day_itsdo
+      params: {}
+      date_params:
+      - from
+      - to
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    indicative_peak_demand_per_day_s0142,_itsdo,_fuelhh:
+      path: /demand/peak/indicative
+      base: bmrs
+      table_name: bmrs_indicative_peak_demand_per_day_s0142,_itsdo,_fuelhh
+      params:
+        data: operational
+      date_params:
+      - from
+      - to
+      param_columns:
+      - triadSeasonStartYear
+      - format
+      primary_date_param: from
+      response_format: csv
+    settlement_data_demand_peaks_for_a__triad_season_s0142:
+      path: /demand/peak/indicative/settlement/{triadSeason}
+      base: bmrs
+      table_name: bmrs_settlement_data_demand_peaks_for_a__triad_season_s0142
+      params:
+        triadSeason: 2021
+      date_params: []
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    operational_data_demand_peaks_for_a__triad_season_itsdo,_fuelhh:
+      path: /demand/peak/indicative/operational/{triadSeason}
+      base: bmrs
+      table_name: bmrs_operational_data_demand_peaks_for_a__triad_season_itsdo,_fuelhh
+      params:
+        triadSeason: 2021
+      date_params: []
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    triad_demand_peaks_s0142,_itsdo,_fuelhh:
+      path: /demand/peak/triad
+      base: bmrs
+      table_name: bmrs_triad_demand_peaks_s0142,_itsdo,_fuelhh
+      params:
+        data: operational
+        triadSeasonStartYear: 2021
+      date_params: []
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    this_endpoint_is_obsolete,_and_this_location_may_be_removed_with_no_further_notice._:
+      path: /generation/outturn/FUELINSTHHCUR
+      base: bmrs
+      table_name: bmrs_this_endpoint_is_obsolete,_and_this_location_may_be_removed_with_no_further_notice._
+      params: {}
+      date_params: []
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    actual_total_load_atl/b0610:
+      path: /demand/actual/total
+      base: bmrs
+      table_name: bmrs_actual_total_load_atl/b0610
+      params: {}
+      date_params:
+      - from
+      - to
+      - settlementPeriodFrom
+      - settlementPeriodTo
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    day_ahead_demand_forecast_ndf,_tsdf:
+      path: /forecast/demand/day-ahead
+      base: bmrs
+      table_name: bmrs_day_ahead_demand_forecast_ndf,_tsdf
+      params: {}
+      date_params: []
+      param_columns:
+      - boundary
+      - format
+      primary_date_param: from
+      response_format: csv
+    fourteen_day_demand_forecast_ndfd,_tsdfd:
+      path: /forecast/demand/daily
+      base: bmrs
+      table_name: bmrs_fourteen_day_demand_forecast_ndfd,_tsdfd
+      params: {}
+      date_params: []
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    one_year_demand_forecast_ndfw,_tsdfw:
+      path: /forecast/demand/weekly
+      base: bmrs
+      table_name: bmrs_one_year_demand_forecast_ndfw,_tsdfw
+      params: {}
+      date_params: []
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    history_of_the_day_ahead_demand_forecast_ndf,_tsdf:
+      path: /forecast/demand/day-ahead/history
+      base: bmrs
+      table_name: bmrs_history_of_the_day_ahead_demand_forecast_ndf,_tsdf
+      params: {}
+      date_params: []
+      param_columns:
+      - publishTime
+      - boundary
+      - format
+      primary_date_param: from
+      response_format: csv
+    history_of_the_fourteen_day_demand_forecast_ndfd,_tsdfd:
+      path: /forecast/demand/daily/history
+      base: bmrs
+      table_name: bmrs_history_of_the_fourteen_day_demand_forecast_ndfd,_tsdfd
+      params: {}
+      date_params: []
+      param_columns:
+      - publishTime
+      - format
+      primary_date_param: from
+      response_format: csv
+    history_of_the_one_year_demand_forecast_ndfw,_tsdfw:
+      path: /forecast/demand/weekly/history
+      base: bmrs
+      table_name: bmrs_history_of_the_one_year_demand_forecast_ndfw,_tsdfw
+      params: {}
+      date_params: []
+      param_columns:
+      - publishTime
+      - format
+      primary_date_param: from
+      response_format: csv
+    evolution_of_the_day_ahead_demand_forecast_over_time_ndf,_tsdf:
+      path: /forecast/demand/day-ahead/evolution
+      base: bmrs
+      table_name: bmrs_evolution_of_the_day_ahead_demand_forecast_over_time_ndf,_tsdf
+      params:
+        settlementPeriod: 1
+      date_params:
+      - settlementDate
+      param_columns:
+      - boundary
+      - format
+      primary_date_param: settlementDate
+      response_format: csv
+    evolution_of_the_fourteen_day_demand_forecast_over_time_ndfd,_tsdfd:
+      path: /forecast/demand/daily/evolution
+      base: bmrs
+      table_name: bmrs_evolution_of_the_fourteen_day_demand_forecast_over_time_ndfd,_tsdfd
+      params:
+        forecastDate: '2022-09-20'
+      date_params: []
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    evolution_of_the_one_year_demand_forecast_over_time__ndfw,_tsdfw:
+      path: /forecast/demand/weekly/evolution
+      base: bmrs
+      table_name: bmrs_evolution_of_the_one_year_demand_forecast_over_time__ndfw,_tsdfw
+      params: {}
+      date_params: []
+      param_columns:
+      - forecastYear
+      - forecastWeek
+      - format
+      primary_date_param: from
+      response_format: csv
+    historic_view_of_the_latest_forecasted_demand_ndf,_tsdf:
+      path: /forecast/demand/day-ahead/latest
+      base: bmrs
+      table_name: bmrs_historic_view_of_the_latest_forecasted_demand_ndf,_tsdf
+      params: {}
+      date_params:
+      - from
+      - to
+      param_columns:
+      - boundary
+      - format
+      primary_date_param: from
+      response_format: csv
+    historic_view_of_the_latest_forecasted_demand_ndf,_tsdf_stream:
+      path: /forecast/demand/day-ahead/latest/stream
+      base: bmrs
+      table_name: bmrs_historic_view_of_the_latest_forecasted_demand_ndf,_tsdf_stream
+      params: {}
+      date_params:
+      - from
+      - to
+      param_columns:
+      - boundary
+      primary_date_param: from
+      response_format: csv
+    historic_view_of_the_earliest_forecasted_demand_ndf,_tsdf:
+      path: /forecast/demand/day-ahead/earliest
+      base: bmrs
+      table_name: bmrs_historic_view_of_the_earliest_forecasted_demand_ndf,_tsdf
+      params: {}
+      date_params:
+      - from
+      - to
+      param_columns:
+      - boundary
+      - format
+      primary_date_param: from
+      response_format: csv
+    historic_view_of_the_earliest_forecasted_demand_ndf,_tsdf_stream:
+      path: /forecast/demand/day-ahead/earliest/stream
+      base: bmrs
+      table_name: bmrs_historic_view_of_the_earliest_forecasted_demand_ndf,_tsdf_stream
+      params: {}
+      date_params:
+      - from
+      - to
+      param_columns:
+      - boundary
+      primary_date_param: from
+      response_format: csv
+    peak_forecasted_demand_per_day_tsdf:
+      path: /forecast/demand/day-ahead/peak
+      base: bmrs
+      table_name: bmrs_peak_forecasted_demand_per_day_tsdf
+      params: {}
+      date_params:
+      - from
+      - to
+      param_columns:
+      - boundary
+      - format
+      primary_date_param: from
+      response_format: csv
+    day_ahead_total_load_forecast_datl/b0620:
+      path: /forecast/demand/total/day-ahead
+      base: bmrs
+      table_name: bmrs_day_ahead_total_load_forecast_datl/b0620
+      params: {}
+      date_params:
+      - from
+      - to
+      - settlementPeriodFrom
+      - settlementPeriodTo
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    week_ahead_total_load_forecast_watl/b0630:
+      path: /forecast/demand/total/week-ahead
+      base: bmrs
+      table_name: bmrs_week_ahead_total_load_forecast_watl/b0630
+      params: {}
+      date_params:
+      - from
+      - to
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    latest_week_ahead_total_load_forecast_watl/b0630:
+      path: /forecast/demand/total/week-ahead/latest
+      base: bmrs
+      table_name: bmrs_latest_week_ahead_total_load_forecast_watl/b0630
+      params: {}
+      date_params: []
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    historic_actual_generation_automatically_down_sampled_agpt/b1620:
+      path: /generation/actual/per-type
+      base: bmrs
+      table_name: bmrs_historic_actual_generation_automatically_down_sampled_agpt/b1620
+      params: {}
+      date_params:
+      - from
+      - to
+      - settlementPeriodFrom
+      - settlementPeriodTo
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    current_snapshot_of_actual_generation_by_fuel_type_categories_agpt/b1620:
+      path: /generation/actual/per-type/day-total
+      base: bmrs
+      table_name: bmrs_current_snapshot_of_actual_generation_by_fuel_type_categories_agpt/b1620
+      params: {}
+      date_params: []
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    historic_actual_or_estimated_wind_and_solar_power_generation_agws/b1630:
+      path: /generation/actual/per-type/wind-and-solar
+      base: bmrs
+      table_name: bmrs_historic_actual_or_estimated_wind_and_solar_power_generation_agws/b1630
+      params: {}
+      date_params:
+      - from
+      - to
+      - settlementPeriodFrom
+      - settlementPeriodTo
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    historic_half_hourly_interconnector_flows_fuelinst:
+      path: /generation/outturn/interconnectors
+      base: bmrs
+      table_name: bmrs_historic_half_hourly_interconnector_flows_fuelinst
+      params:
+        settlementDateFrom: '2022-09-20'
+        settlementDateTo: '2022-09-21'
+      date_params: []
+      param_columns:
+      - publishDateTimeFrom
+      - publishDateTimeTo
+      - settlementPeriod
+      - interconnectorName
+      - format
+      primary_date_param: from
+      response_format: csv
+    current_snapshot_of_generation_by_fuel_type_categories_fuelinst,_fuelhh:
+      path: /generation/outturn/current
+      base: bmrs
+      table_name: bmrs_current_snapshot_of_generation_by_fuel_type_categories_fuelinst,_fuelhh
+      params: {}
+      date_params: []
+      param_columns:
+      - fuelType
+      - format
+      primary_date_param: from
+      response_format: csv
+    historic_generation_automatically_down_sampled_fuelinst:
+      path: /generation/outturn/summary
+      base: bmrs
+      table_name: bmrs_historic_generation_automatically_down_sampled_fuelinst
+      params: {}
+      date_params: []
+      param_columns:
+      - startTime
+      - endTime
+      - includeNegativeGeneration
+      - format
+      primary_date_param: from
+      response_format: csv
+    fourteen_day_generation_capacity_forecast_fou2_t14_d:
+      path: /forecast/availability/daily
+      base: bmrs
+      table_name: bmrs_fourteen_day_generation_capacity_forecast_fou2_t14_d
+      params:
+        level: fuelType
+        fuelType:
+        - CCGT
+      date_params: []
+      param_columns:
+      - bmUnit
+      - format
+      primary_date_param: from
+      response_format: csv
+    three_year_generation_capacity_forecast_fou2_t3_yw:
+      path: /forecast/availability/weekly
+      base: bmrs
+      table_name: bmrs_three_year_generation_capacity_forecast_fou2_t3_yw
+      params:
+        level: fuelType
+        fuelType:
+        - CCGT
+      date_params: []
+      param_columns:
+      - bmUnit
+      - format
+      primary_date_param: from
+      response_format: csv
+    history_of_the_fourteen_day_generation_capacity_forecast_fou2_t14_d:
+      path: /forecast/availability/daily/history
+      base: bmrs
+      table_name: bmrs_history_of_the_fourteen_day_generation_capacity_forecast_fou2_t14_d
+      params:
+        publishTime: '2024-06-07T15:00:00Z'
+        level: fuelType
+        fuelType:
+        - CCGT
+      date_params: []
+      param_columns:
+      - bmUnit
+      - format
+      primary_date_param: from
+      response_format: csv
+    history_of_the_three_year_generation_capacity_forecast_fou2_t3_yw:
+      path: /forecast/availability/weekly/history
+      base: bmrs
+      table_name: bmrs_history_of_the_three_year_generation_capacity_forecast_fou2_t3_yw
+      params:
+        publishTime: '2024-06-07T15:00:00Z'
+        level: fuelType
+        fuelType:
+        - CCGT
+      date_params: []
+      param_columns:
+      - bmUnit
+      - format
+      primary_date_param: from
+      response_format: csv
+    evolution_of_the_fourteen_day_generation_capacity_forecast_over_time_fou2_t14_d:
+      path: /forecast/availability/daily/evolution
+      base: bmrs
+      table_name: bmrs_evolution_of_the_fourteen_day_generation_capacity_forecast_over_time_fou2_t14_d
+      params:
+        forecastDate: '2022-09-20'
+        level: fuelType
+        fuelType:
+        - CCGT
+      date_params: []
+      param_columns:
+      - bmUnit
+      - format
+      primary_date_param: from
+      response_format: csv
+    evolution_of_the_three_year_generation_capacity_forecast_over_time_fou2_t3_yw:
+      path: /forecast/availability/weekly/evolution
+      base: bmrs
+      table_name: bmrs_evolution_of_the_three_year_generation_capacity_forecast_over_time_fou2_t3_yw
+      params:
+        year: 2024
+        week: 17
+        level: fuelType
+        fuelType:
+        - CCGT
+      date_params: []
+      param_columns:
+      - bmUnit
+      - format
+      primary_date_param: from
+      response_format: csv
+    day_ahead_aggregated_generation_dag/b1430:
+      path: /forecast/generation/day-ahead
+      base: bmrs
+      table_name: bmrs_day_ahead_aggregated_generation_dag/b1430
+      params: {}
+      date_params:
+      - from
+      - to
+      - settlementPeriodFrom
+      - settlementPeriodTo
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    day_ahead_generation_forecast_for_wind_and_solar_dgws/b1440:
+      path: /forecast/generation/wind-and-solar/day-ahead
+      base: bmrs
+      table_name: bmrs_day_ahead_generation_forecast_for_wind_and_solar_dgws/b1440
+      params: {}
+      date_params:
+      - from
+      - to
+      - settlementPeriodFrom
+      - settlementPeriodTo
+      param_columns:
+      - processType
+      - format
+      primary_date_param: from
+      response_format: csv
+    current_wind_generation_forecast_windfor:
+      path: /forecast/generation/wind
+      base: bmrs
+      table_name: bmrs_current_wind_generation_forecast_windfor
+      params: {}
+      date_params: []
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    history_of_the_wind_generation_forecast_windfor:
+      path: /forecast/generation/wind/history
+      base: bmrs
+      table_name: bmrs_history_of_the_wind_generation_forecast_windfor
+      params: {}
+      date_params: []
+      param_columns:
+      - publishTime
+      - format
+      primary_date_param: from
+      response_format: csv
+    evolution_of_the_wind_generation_forecast_over_time_windfor:
+      path: /forecast/generation/wind/evolution
+      base: bmrs
+      table_name: bmrs_evolution_of_the_wind_generation_forecast_over_time_windfor
+      params: {}
+      date_params: []
+      param_columns:
+      - startTime
+      - format
+      primary_date_param: from
+      response_format: csv
+    historic_view_of_the_latest_forecasted_wind_generation_windfor:
+      path: /forecast/generation/wind/latest
+      base: bmrs
+      table_name: bmrs_historic_view_of_the_latest_forecasted_wind_generation_windfor
+      params: {}
+      date_params:
+      - from
+      - to
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    historic_view_of_the_latest_forecasted_wind_generation_windfor_stream:
+      path: /forecast/generation/wind/latest/stream
+      base: bmrs
+      table_name: bmrs_historic_view_of_the_latest_forecasted_wind_generation_windfor_stream
+      params: {}
+      date_params:
+      - from
+      - to
+      param_columns: []
+      primary_date_param: from
+      response_format: csv
+    historic_view_of_the_earliest_forecasted_wind_generation_windfor:
+      path: /forecast/generation/wind/earliest
+      base: bmrs
+      table_name: bmrs_historic_view_of_the_earliest_forecasted_wind_generation_windfor
+      params: {}
+      date_params:
+      - from
+      - to
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    historic_view_of_the_earliest_forecasted_wind_generation_windfor_stream:
+      path: /forecast/generation/wind/earliest/stream
+      base: bmrs
+      table_name: bmrs_historic_view_of_the_earliest_forecasted_wind_generation_windfor_stream
+      params: {}
+      date_params:
+      - from
+      - to
+      param_columns: []
+      primary_date_param: from
+      response_format: csv
+    peak_wind_generation_forecast_for_each_day_windfor:
+      path: /forecast/generation/wind/peak
+      base: bmrs
+      table_name: bmrs_peak_wind_generation_forecast_for_each_day_windfor
+      params: {}
+      date_params:
+      - from
+      - to
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    health_check:
+      path: /health
+      base: bmrs
+      table_name: bmrs_health_check
+      params: {}
+      date_params: []
+      param_columns: []
+      primary_date_param: from
+      response_format: csv
+    latest_indicated_day_ahead_forecast_inddem,_indgen,_imbalngc,_melngc:
+      path: /forecast/indicated/day-ahead
+      base: bmrs
+      table_name: bmrs_latest_indicated_day_ahead_forecast_inddem,_indgen,_imbalngc,_melngc
+      params: {}
+      date_params: []
+      param_columns:
+      - boundary
+      - format
+      primary_date_param: from
+      response_format: csv
+    historical_indicated_day_ahead_forecast_inddem,_indgen,_imbalngc,_melngc:
+      path: /forecast/indicated/day-ahead/history
+      base: bmrs
+      table_name: bmrs_historical_indicated_day_ahead_forecast_inddem,_indgen,_imbalngc,_melngc
+      params: {}
+      date_params: []
+      param_columns:
+      - publishTime
+      - boundary
+      - format
+      primary_date_param: from
+      response_format: csv
+    evolution_indicated_day_ahead_forecast_inddem,_indgen,_imbalngc,_melngc:
+      path: /forecast/indicated/day-ahead/evolution
+      base: bmrs
+      table_name: bmrs_evolution_indicated_day_ahead_forecast_inddem,_indgen,_imbalngc,_melngc
+      params:
+        settlementPeriod: 1
+      date_params:
+      - settlementDate
+      param_columns:
+      - boundary
+      - format
+      primary_date_param: settlementDate
+      response_format: csv
+    settlement_messages_by_settlement_date_smsg:
+      path: /balancing/settlement/messages/{settlementDate}
+      base: bmrs
+      table_name: bmrs_settlement_messages_by_settlement_date_smsg
+      params: {}
+      date_params:
+      - settlementDate
+      param_columns:
+      - format
+      primary_date_param: settlementDate
+      response_format: csv
+    settlement_messages_by_settlement_date_and_period_smsg:
+      path: /balancing/settlement/messages/{settlementDate}/{settlementPeriod}
+      base: bmrs
+      table_name: bmrs_settlement_messages_by_settlement_date_and_period_smsg
+      params:
+        settlementPeriod: 3
+      date_params:
+      - settlementDate
+      param_columns:
+      - format
+      primary_date_param: settlementDate
+      response_format: csv
+    settlement_bid_offer_stacks_by_settlement_period_ispstack:
+      path: /balancing/settlement/stack/all/{bidOffer}/{settlementDate}/{settlementPeriod}
+      base: bmrs
+      table_name: bmrs_settlement_bid_offer_stacks_by_settlement_period_ispstack
+      params:
+        bidOffer: bid
+        settlementPeriod: 1
+      date_params:
+      - settlementDate
+      param_columns:
+      - format
+      primary_date_param: settlementDate
+      response_format: csv
+    settlement_calculation_summary_ispstack,_disebsp,_mid,_netbsad:
+      path: /balancing/settlement/summary/{settlementDate}/{settlementPeriod}
+      base: bmrs
+      table_name: bmrs_settlement_calculation_summary_ispstack,_disebsp,_mid,_netbsad
+      params:
+        settlementPeriod: 1
+      date_params:
+      - settlementDate
+      param_columns:
+      - format
+      primary_date_param: settlementDate
+      response_format: csv
+    default_notices_cdn:
+      path: /balancing/settlement/default-notices
+      base: bmrs
+      table_name: bmrs_default_notices_cdn
+      params: {}
+      date_params: []
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    settlement_system_prices_by_settlement_date_disebsp:
+      path: /balancing/settlement/system-prices/{settlementDate}
+      base: bmrs
+      table_name: bmrs_settlement_system_prices_by_settlement_date_disebsp
+      params: {}
+      date_params:
+      - settlementDate
+      param_columns:
+      - format
+      primary_date_param: settlementDate
+      response_format: csv
+    settlement_system_prices_by_settlement_date_and_period_disebsp:
+      path: /balancing/settlement/system-prices/{settlementDate}/{settlementPeriod}
+      base: bmrs
+      table_name: bmrs_settlement_system_prices_by_settlement_date_and_period_disebsp
+      params:
+        settlementPeriod: 1
+      date_params:
+      - settlementDate
+      param_columns:
+      - format
+      primary_date_param: settlementDate
+      response_format: csv
+    acceptance_volumes_by_settlement_date_boav:
+      path: /balancing/settlement/acceptance/volumes/all/{bidOffer}/{settlementDate}
+      base: bmrs
+      table_name: bmrs_acceptance_volumes_by_settlement_date_boav
+      params:
+        bidOffer: bid
+        bmUnit:
+        - DALSW-1
+      date_params:
+      - settlementDate
+      param_columns:
+      - format
+      primary_date_param: settlementDate
+      response_format: csv
+    acceptance_volumes_by_settlement_period_boav:
+      path: /balancing/settlement/acceptance/volumes/all/{bidOffer}/{settlementDate}/{settlementPeriod}
+      base: bmrs
+      table_name: bmrs_acceptance_volumes_by_settlement_period_boav
+      params:
+        settlementPeriod: 48
+        bidOffer: bid
+        bmUnit:
+        - DALSW-1
+      date_params:
+      - settlementDate
+      param_columns:
+      - format
+      primary_date_param: settlementDate
+      response_format: csv
+    indicative_volumes_by_settlement_date_disptav:
+      path: /balancing/settlement/indicative/volumes/all/{bidOffer}/{settlementDate}
+      base: bmrs
+      table_name: bmrs_indicative_volumes_by_settlement_date_disptav
+      params:
+        bidOffer: bid
+        bmUnit:
+        - 2__CMRCY001
+      date_params:
+      - settlementDate
+      param_columns:
+      - format
+      primary_date_param: settlementDate
+      response_format: csv
+    indicative_volumes_by_settlement_period_disptav:
+      path: /balancing/settlement/indicative/volumes/all/{bidOffer}/{settlementDate}/{settlementPeriod}
+      base: bmrs
+      table_name: bmrs_indicative_volumes_by_settlement_period_disptav
+      params:
+        settlementPeriod: 2
+        bidOffer: bid
+        bmUnit:
+        - 2__CMRCY001
+      date_params:
+      - settlementDate
+      param_columns:
+      - format
+      primary_date_param: settlementDate
+      response_format: csv
+    indicative_period_bmu_cashflows_by_settlement_date_ebocf:
+      path: /balancing/settlement/indicative/cashflows/all/{bidOffer}/{settlementDate}
+      base: bmrs
+      table_name: bmrs_indicative_period_bmu_cashflows_by_settlement_date_ebocf
+      params:
+        bidOffer: bid
+        bmUnit:
+        - T_DINO-2
+      date_params:
+      - settlementDate
+      param_columns:
+      - format
+      primary_date_param: settlementDate
+      response_format: csv
+    indicative_period_bmu_cashflows_by_settlement_period_ebocf:
+      path: /balancing/settlement/indicative/cashflows/all/{bidOffer}/{settlementDate}/{settlementPeriod}
+      base: bmrs
+      table_name: bmrs_indicative_period_bmu_cashflows_by_settlement_period_ebocf
+      params:
+        settlementPeriod: 9
+        bidOffer: bid
+        bmUnit:
+        - T_DINO-2
+      date_params:
+      - settlementDate
+      param_columns:
+      - format
+      primary_date_param: settlementDate
+      response_format: csv
+    historic_acceptances_by_settlement_period_ispstack,_boalf,_bod:
+      path: /balancing/settlement/acceptances/all/{settlementDate}/{settlementPeriod}
+      base: bmrs
+      table_name: bmrs_historic_acceptances_by_settlement_period_ispstack,_boalf,_bod
+      params:
+        settlementPeriod: 1
+      date_params:
+      - settlementDate
+      param_columns:
+      - format
+      primary_date_param: settlementDate
+      response_format: csv
+    market_depth_by_settlement_date_imbalngc,_bod,_disebsp,_disptav:
+      path: /balancing/settlement/market-depth/{settlementDate}
+      base: bmrs
+      table_name: bmrs_market_depth_by_settlement_date_imbalngc,_bod,_disebsp,_disptav
+      params: {}
+      date_params:
+      - settlementDate
+      param_columns:
+      - format
+      primary_date_param: settlementDate
+      response_format: csv
+    market_depth_by_settlement_period_imbalngc,_bod,_disebsp,_disptav:
+      path: /balancing/settlement/market-depth/{settlementDate}/{settlementPeriod}
+      base: bmrs
+      table_name: bmrs_market_depth_by_settlement_period_imbalngc,_bod,_disebsp,_disptav
+      params:
+        settlementPeriod: 1
+      date_params:
+      - settlementDate
+      param_columns:
+      - format
+      primary_date_param: settlementDate
+      response_format: csv
+    ? this_endpoint_is_obsolete,_and_this_location_may_be_removed_with_no_further_notice.__use_/remit/*_or_/datasets/remit_endpoints_instead.
+    : path: /interop/MessageDetailRetrieval
+      base: bmrs
+      table_name: bmrs_this_endpoint_is_obsolete,_and_this_location_may_be_removed_with_no_further_notice.__use_/remit/*_or_/datasets/remit_endpoints_instead.
+      params:
+        messageId: 2023060105000001-ELXP-RMT-20230601
+      date_params: []
+      param_columns: []
+      primary_date_param: from
+      response_format: csv
+    loss_of_load_probability_and_de_rated_margin_forecast_lolpdrm:
+      path: /forecast/system/loss-of-load
+      base: bmrs
+      table_name: bmrs_loss_of_load_probability_and_de_rated_margin_forecast_lolpdrm
+      params: {}
+      date_params:
+      - from
+      - to
+      - settlementPeriodFrom
+      - settlementPeriodTo
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    daily_margin_forecast_ocnmfd2:
+      path: /forecast/margin/daily
+      base: bmrs
+      table_name: bmrs_daily_margin_forecast_ocnmfd2
+      params: {}
+      date_params: []
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    historical_daily_margin_forecast_ocnmfd2:
+      path: /forecast/margin/daily/history
+      base: bmrs
+      table_name: bmrs_historical_daily_margin_forecast_ocnmfd2
+      params: {}
+      date_params: []
+      param_columns:
+      - publishTime
+      - format
+      primary_date_param: from
+      response_format: csv
+    evolution_daily_margin_forecast_ocnmfd2:
+      path: /forecast/margin/daily/evolution
+      base: bmrs
+      table_name: bmrs_evolution_daily_margin_forecast_ocnmfd2
+      params:
+        forecastDate: '2022-09-20'
+      date_params: []
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    weekly_margin_forecast_ocnmfw2,_ocnmf3_y2:
+      path: /forecast/margin/weekly
+      base: bmrs
+      table_name: bmrs_weekly_margin_forecast_ocnmfw2,_ocnmf3_y2
+      params: {}
+      date_params: []
+      param_columns:
+      - range
+      - format
+      primary_date_param: from
+      response_format: csv
+    historical_weekly_margin_forecast_ocnmfw2,_ocnmf3_y2:
+      path: /forecast/margin/weekly/history
+      base: bmrs
+      table_name: bmrs_historical_weekly_margin_forecast_ocnmfw2,_ocnmf3_y2
+      params: {}
+      date_params: []
+      param_columns:
+      - publishTime
+      - range
+      - format
+      primary_date_param: from
+      response_format: csv
+    evolution_daily_margin_forecast_ocnmfw2,_ocnmf3_y2:
+      path: /forecast/margin/weekly/evolution
+      base: bmrs
+      table_name: bmrs_evolution_daily_margin_forecast_ocnmfw2,_ocnmf3_y2
+      params: {}
+      date_params: []
+      param_columns:
+      - year
+      - week
+      - range
+      - format
+      primary_date_param: from
+      response_format: csv
+    market__index__data_mid_price_time_series:
+      path: /balancing/pricing/market-index
+      base: bmrs
+      table_name: bmrs_market__index__data_mid_price_time_series
+      params:
+        dataProviders:
+        - N2EXMIDP
+      date_params:
+      - from
+      - to
+      - settlementPeriodFrom
+      - settlementPeriodTo
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    non_bm_stor_time_series_nonbm:
+      path: /balancing/nonbm/stor
+      base: bmrs
+      table_name: bmrs_non_bm_stor_time_series_nonbm
+      params:
+        includeZero: false
+      date_params:
+      - from
+      - to
+      - settlementPeriodFrom
+      - settlementPeriodTo
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    non_bm_stor_events_nonbm:
+      path: /balancing/nonbm/stor/events
+      base: bmrs
+      table_name: bmrs_non_bm_stor_events_nonbm
+      params:
+        count: 3
+      date_params: []
+      param_columns:
+      - before
+      - settlementPeriodBefore
+      - format
+      primary_date_param: from
+      response_format: csv
+    balancing_services_volume_qas:
+      path: /balancing/nonbm/volumes
+      base: bmrs
+      table_name: bmrs_balancing_services_volume_qas
+      params:
+        bmUnit:
+        - T_CNQPS-1
+      date_params:
+      - from
+      - to
+      - settlementPeriodFrom
+      - settlementPeriodTo
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    fuel_types:
+      path: /reference/fueltypes/all
+      base: bmrs
+      table_name: bmrs_fuel_types
+      params: {}
+      date_params: []
+      param_columns: []
+      primary_date_param: from
+      response_format: csv
+    participants:
+      path: /reference/remit/participants/all
+      base: bmrs
+      table_name: bmrs_participants
+      params: {}
+      date_params: []
+      param_columns: []
+      primary_date_param: from
+      response_format: csv
+    assets:
+      path: /reference/remit/assets/all
+      base: bmrs
+      table_name: bmrs_assets
+      params: {}
+      date_params: []
+      param_columns: []
+      primary_date_param: from
+      response_format: csv
+    remit_fuel_types:
+      path: /reference/remit/fueltypes/all
+      base: bmrs
+      table_name: bmrs_remit_fuel_types
+      params: {}
+      date_params: []
+      param_columns: []
+      primary_date_param: from
+      response_format: csv
+    bm__units:
+      path: /reference/bmunits/all
+      base: bmrs
+      table_name: bmrs_bm__units
+      params: {}
+      date_params: []
+      param_columns: []
+      primary_date_param: from
+      response_format: csv
+    interconnectors:
+      path: /reference/interconnectors/all
+      base: bmrs
+      table_name: bmrs_interconnectors
+      params: {}
+      date_params: []
+      param_columns: []
+      primary_date_param: from
+      response_format: csv
+    bulk_fetch_message_details_by_i_ds:
+      path: /remit
+      base: bmrs
+      table_name: bmrs_bulk_fetch_message_details_by_i_ds
+      params:
+        messageId:
+        - 1
+        - 2
+        - 3
+        - 4
+      date_params: []
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    fetch_message_details_by_id:
+      path: /remit/{messageId}
+      base: bmrs
+      table_name: bmrs_fetch_message_details_by_id
+      params: {}
+      date_params: []
+      param_columns:
+      - messageId
+      - format
+      primary_date_param: from
+      response_format: csv
+    fetch_message_details_by_m_rid:
+      path: /remit/search
+      base: bmrs
+      table_name: bmrs_fetch_message_details_by_m_rid
+      params:
+        mrid: 48X000000000080X-NGET-RMT-00014669
+      date_params: []
+      param_columns:
+      - revisionNumber
+      - format
+      primary_date_param: from
+      response_format: csv
+    list_all_message_revisions:
+      path: /remit/revisions
+      base: bmrs
+      table_name: bmrs_list_all_message_revisions
+      params:
+        mrid: 48X000000000080X-NGET-RMT-00014669
+        messageId: 1
+      date_params: []
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    list_messages_by_publish_time:
+      path: /remit/list/by-publish
+      base: bmrs
+      table_name: bmrs_list_messages_by_publish_time
+      params:
+        participantId: EECL
+        assetId: T_RATSGT-2
+        messageType: UnavailabilitiesOfElectricityFacilities
+        unavailabilityType: Planned
+        eventType:
+        - Production Unavailability
+        - Transmission unavailability
+        fuelType:
+        - Fossil Hard coal
+        - Biomass
+        latestRevisionOnly: true
+        profileOnly: false
+      date_params:
+      - from
+      - to
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    list_messages_by_publish_time_stream:
+      path: /remit/list/by-publish/stream
+      base: bmrs
+      table_name: bmrs_list_messages_by_publish_time_stream
+      params:
+        participantId: EECL
+        assetId: T_RATSGT-2
+        messageType: UnavailabilitiesOfElectricityFacilities
+        unavailabilityType: Planned
+        eventType:
+        - Production Unavailability
+        - Transmission unavailability
+        fuelType:
+        - Fossil Hard coal
+        - Biomass
+        latestRevisionOnly: true
+        profileOnly: false
+      date_params:
+      - from
+      - to
+      param_columns: []
+      primary_date_param: from
+      response_format: csv
+    list_messages_by_event_time:
+      path: /remit/list/by-event
+      base: bmrs
+      table_name: bmrs_list_messages_by_event_time
+      params:
+        participantId: EECL
+        assetId: T_RATSGT-2
+        messageType: UnavailabilitiesOfElectricityFacilities
+        unavailabilityType: Planned
+        eventType:
+        - Production Unavailability
+        - Transmission unavailability
+        fuelType:
+        - Fossil Hard coal
+        - Biomass
+        latestRevisionOnly: true
+        profileOnly: false
+      date_params:
+      - from
+      - to
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    list_messages_by_event_time_stream:
+      path: /remit/list/by-event/stream
+      base: bmrs
+      table_name: bmrs_list_messages_by_event_time_stream
+      params:
+        participantId: EECL
+        assetId: T_RATSGT-2
+        messageType: UnavailabilitiesOfElectricityFacilities
+        unavailabilityType: Planned
+        eventType:
+        - Production Unavailability
+        - Transmission unavailability
+        fuelType:
+        - Fossil Hard coal
+        - Biomass
+        latestRevisionOnly: true
+        profileOnly: false
+      date_params:
+      - from
+      - to
+      param_columns: []
+      primary_date_param: from
+      response_format: csv
+    total_generation_outturn_fuelinst:
+      path: /generation/outturn
+      base: bmrs
+      table_name: bmrs_total_generation_outturn_fuelinst
+      params: {}
+      date_params:
+      - from
+      - to
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    total__exempt__supply__volume_s0621:
+      path: /saa/datasets/total-exempt-volume/{settlementDate}
+      base: bmrs
+      table_name: bmrs_total__exempt__supply__volume_s0621
+      params:
+        settlementRunType:
+        - II
+        - SF
+      date_params:
+      - settlementDate
+      param_columns:
+      - format
+      primary_date_param: settlementDate
+      response_format: csv
+    daily_surplus_forecast_ocnmfd:
+      path: /forecast/surplus/daily
+      base: bmrs
+      table_name: bmrs_daily_surplus_forecast_ocnmfd
+      params: {}
+      date_params: []
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    historical_daily_surplus_forecast_ocnmfd:
+      path: /forecast/surplus/daily/history
+      base: bmrs
+      table_name: bmrs_historical_daily_surplus_forecast_ocnmfd
+      params: {}
+      date_params: []
+      param_columns:
+      - publishTime
+      - format
+      primary_date_param: from
+      response_format: csv
+    evolution_daily_surplus_forecast_ocnmfd:
+      path: /forecast/surplus/daily/evolution
+      base: bmrs
+      table_name: bmrs_evolution_daily_surplus_forecast_ocnmfd
+      params:
+        forecastDate: '2022-09-20'
+      date_params: []
+      param_columns:
+      - format
+      primary_date_param: from
+      response_format: csv
+    weekly_surplus_forecast_ocnmfw,_ocnmf3_y:
+      path: /forecast/surplus/weekly
+      base: bmrs
+      table_name: bmrs_weekly_surplus_forecast_ocnmfw,_ocnmf3_y
+      params: {}
+      date_params: []
+      param_columns:
+      - range
+      - format
+      primary_date_param: from
+      response_format: csv
+    historical_weekly_surplus_forecast_ocnmfw,_ocnmf3_y:
+      path: /forecast/surplus/weekly/history
+      base: bmrs
+      table_name: bmrs_historical_weekly_surplus_forecast_ocnmfw,_ocnmf3_y
+      params: {}
+      date_params: []
+      param_columns:
+      - publishTime
+      - range
+      - format
+      primary_date_param: from
+      response_format: csv
+    evolution_weekly_surplus_forecast_ocnmfw,_ocnmf3_y:
+      path: /forecast/surplus/weekly/evolution
+      base: bmrs
+      table_name: bmrs_evolution_weekly_surplus_forecast_ocnmfw,_ocnmf3_y
+      params: {}
+      date_params: []
+      param_columns:
+      - year
+      - week
+      - range
+      - format
+      primary_date_param: from
+      response_format: csv

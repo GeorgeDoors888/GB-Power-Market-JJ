@@ -1,0 +1,125 @@
+DUoS COMBINED RED, AMBER, GREEN BAND ANALYSIS
+==================================================
+
+Analysis Date: 2025-09-14 15:22:42
+
+OVERALL SUMMARY
+------------------------------
+Total entries: 48
+DNOs represented: 5
+MPAN codes: 4
+Years covered: 2017 to 2025
+Red entries: 16
+Amber entries: 16
+Green entries: 16
+Overall rate range: -10.0320 to 41.6460 p/kWh
+Overall mean rate: 1.5116 p/kWh
+
+BAND STATISTICS
+------------------------------
+RED band:
+  Range: -10.0320 to 41.6460 p/kWh
+  Mean: 3.5884 p/kWh
+  Median: 4.8965 p/kWh
+  Count: 432
+
+AMBER band:
+  Range: -2.6670 to 6.0910 p/kWh
+  Mean: 0.5639 p/kWh
+  Median: 0.2985 p/kWh
+  Count: 384
+
+GREEN band:
+  Range: -2.6670 to 6.0910 p/kWh
+  Mean: 0.3824 p/kWh
+  Median: 0.1625 p/kWh
+  Count: 753
+
+DNO STATISTICS
+------------------------------
+Northern Powergrid:
+  Range: -3.9150 to 15.8200 p/kWh
+  Mean: 1.2873 p/kWh
+  Years: 2025 to 2025 (1 years)
+  Entries: 3
+
+SP Manweb:
+  Range: -10.0320 to 29.0560 p/kWh
+  Mean: 2.3180 p/kWh
+  Years: 2021 to 2025 (3 years)
+  Entries: 9
+
+UKPN Eastern:
+  Range: -9.6840 to 41.6460 p/kWh
+  Mean: 1.2052 p/kWh
+  Years: 2017 to 2022 (6 years)
+  Entries: 21
+
+UKPN London:
+  Range: -5.5110 to 29.4110 p/kWh
+  Mean: 0.7440 p/kWh
+  Years: 2021 to 2021 (1 years)
+  Entries: 3
+
+Unknown:
+  Range: -7.4330 to 23.2170 p/kWh
+  Mean: 1.6908 p/kWh
+  Years: 2021 to 2024 (3 years)
+  Entries: 12
+
+YEAR STATISTICS
+------------------------------
+2017:
+  Range: -9.6840 to 39.6550 p/kWh
+  Mean: 1.0906 p/kWh
+  DNOs: 1
+  Entries: 3
+
+2018:
+  Range: -9.2150 to 38.1780 p/kWh
+  Mean: 0.6293 p/kWh
+  DNOs: 1
+  Entries: 3
+
+2019:
+  Range: -9.4340 to 40.8920 p/kWh
+  Mean: 0.6887 p/kWh
+  DNOs: 1
+  Entries: 3
+
+2020:
+  Range: -9.6670 to 40.9820 p/kWh
+  Mean: 0.6977 p/kWh
+  DNOs: 1
+  Entries: 3
+
+2021:
+  Range: -9.4680 to 41.6460 p/kWh
+  Mean: 1.3413 p/kWh
+  DNOs: 4
+  Entries: 18
+
+2022:
+  Range: -9.2870 to 40.2260 p/kWh
+  Mean: 2.2460 p/kWh
+  DNOs: 1
+  Entries: 3
+
+2023:
+  Range: -7.4330 to 23.2170 p/kWh
+  Mean: 1.9717 p/kWh
+  DNOs: 1
+  Entries: 3
+
+2024:
+  Range: -7.4030 to 23.1450 p/kWh
+  Mean: 2.2670 p/kWh
+  DNOs: 2
+  Entries: 6
+
+2025:
+  Range: -10.0320 to 29.0560 p/kWh
+  Mean: 2.1396 p/kWh
+  DNOs: 2
+  Entries: 6
+

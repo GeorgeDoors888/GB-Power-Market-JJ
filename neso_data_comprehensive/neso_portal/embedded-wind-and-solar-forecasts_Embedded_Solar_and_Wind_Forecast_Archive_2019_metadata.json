@@ -1,0 +1,11 @@
+{
+  "source": "NESO Data Portal",
+  "dataset_id": "embedded-wind-and-solar-forecasts",
+  "dataset_title": "Embedded Wind and Solar Forecasts",
+  "resource_id": "bc4d1093-ecf2-46d8-b207-7a0e3e8fb957",
+  "resource_name": "Embedded Solar and Wind Forecast Archive 2019",
+  "resource_format": "csv",
+  "last_modified": "2025-05-23T09:32:48.819542",
+  "size": null,
+  "description": "National Energy System Operator (NESO) publishes at a half-hourly resolution the embedded (refer to embedded document for definition) wind and solar forecast from within day up to 14 days ahead. This forecast gets updated on an hourly basis. <br/><br/>"
+}

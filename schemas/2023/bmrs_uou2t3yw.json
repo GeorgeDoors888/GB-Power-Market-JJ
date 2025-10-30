@@ -1,0 +1,42 @@
+[
+  {
+    "name": "dataset",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "fuelType",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "nationalGridBmUnit",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "bmUnit",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "publishTime",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "week",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "year",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "outputUsable",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  }
+]

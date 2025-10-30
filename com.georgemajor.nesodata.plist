@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.georgemajor.nesodata</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/bin/bash</string>
+        <string>/Users/georgemajor/jibber-jabber 24 august 2025 big bop/neso_data_comprehensive/run_neso_collection.sh</string>
+    </array>
+    <key>StartCalendarInterval</key>
+    <array>
+        <dict>
+            <key>Minute</key>
+            <integer>0</integer>
+        </dict>
+        <dict>
+            <key>Minute</key>
+            <integer>15</integer>
+        </dict>
+        <dict>
+            <key>Minute</key>
+            <integer>30</integer>
+        </dict>
+        <dict>
+            <key>Minute</key>
+            <integer>45</integer>
+        </dict>
+    </array>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>StandardOutPath</key>
+    <string>/Users/georgemajor/jibber-jabber 24 august 2025 big bop/neso_data_comprehensive/logs/launchd_stdout.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/georgemajor/jibber-jabber 24 august 2025 big bop/neso_data_comprehensive/logs/launchd_stderr.log</string>
+    <key>UserName</key>
+    <string>georgemajor</string>
+</dict>
+</plist>

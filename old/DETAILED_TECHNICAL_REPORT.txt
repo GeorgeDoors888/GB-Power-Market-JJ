@@ -1,0 +1,384 @@
+Detailed Elexon Data and Infrastructure Report
+=========================================
+Date: September 6, 2025
+
+1. Infrastructure Overview
+------------------------
+
+A. System Architecture
+---------------------
+1. Data Flow:
+   Source → API → Python Scripts → Google Cloud Storage → BigQuery
+
+2. Components:
+   a) Data Source: Elexon BMRS API
+      - Base URLs:
+        * Insights API: https://data.elexon.co.uk/bmrs/api/v1
+        * Datasets API: https://data.elexon.co.uk/bmrs/api/v1/datasets
+      - Authentication via API key
+      - Rate limits and quotas apply
+
+   b) Ingestion Scripts:
+      - ingest_elexon_insights.py (Primary)
+      - ingest_elexon_fixed.py (Enhanced)
+      - ingest_elexon_all.py (Comprehensive)
+
+   c) Storage:
+      - Project: jibber-jabber-knowledge
+      - Dataset: uk_energy_insights
+      - Location: US
+
+3. Dependencies:
+   - Python Libraries:
+     * elexonpy
+     * google-cloud-bigquery
+     * pandas
+     * requests
+   - Service Account:
+     * Name: jibber-jabber-knowledge@appspot.gserviceaccount.com
+     * Permissions: BigQuery Data Viewer
+
+B. Data Processing Pipeline
+--------------------------
+1. Data Acquisition:
+   - REST API calls to Elexon
+   - Chunked downloads (default 7 days)
+   - Parallel processing capabilities
+   - Auto-retry on failures
+
+2. Data Transformation:
+   - Schema validation and mapping
+   - Data type conversion
+   - Timestamp normalization
+   - Missing value handling
+
+3. Data Loading:
+   - Streaming inserts to BigQuery
+   - Batch loading for historical data
+   - Schema evolution handling
+   - Duplicate detection
+
+2. Current Data Analysis
+----------------------
+
+A. Data Coverage
+---------------
+1. Temporal Coverage:
+   Date Range: August 28-30, 2025
+
+   Detailed Coverage:
+   * August 28, 2025:
+     - Complete day
+     - 48 settlement periods
+     - 960 unique data points
+     - 345,600 total records
+     - 344,640 duplicates
+
+   * August 29, 2025:
+     - Partial day
+     - 25 settlement periods
+     - 500 unique data points
+     - 671,840 total records
+     - 671,340 duplicates
+
+   * August 30, 2025:
+     - Partial day
+     - 4 settlement periods
+     - 80 unique data points
+     - 1,391,200 total records
+     - 1,391,120 duplicates
+
+2. Settlement Periods:
+   - Full day = 48 periods
+   - Each period = 30 minutes
+   - Period 1: 00:00-00:30
+   - Period 48: 23:30-00:00
+
+B. Data Quality Issues
+---------------------
+1. Duplication:
+   - Multiple versions per data point
+   - Up to 18,864 duplicates per point
+   - Different generation values in duplicates
+   - All versions ingested within milliseconds
+
+2. Completeness:
+   - Missing periods in recent days
+   - Partial data for Aug 29-30
+   - Potential gaps in historical data
+
+3. Consistency:
+   - Value variations across versions
+   - Schema evolution over time
+   - Timestamp format variations
+
+3. Detailed Technical Implementation
+---------------------------------
+
+A. Ingestion Script Components
+-----------------------------
+1. Core Functions:
+   ```python
+   def ingest_dataset(
+       dataset_name: str,
+       start_date: datetime,
+       end_date: datetime,
+       chunk_size: str = "7d",
+       retry_count: int = 3
+   ) -> Dict[str, Any]:
+       """
+       Ingest data from Elexon API with retry logic
+       """
+   ```
+
+2. Error Handling:
+   - Retry mechanism for API failures
+   - Schema mismatch handling
+   - Duplicate record detection
+   - Network timeout management
+
+3. Performance Optimization:
+   - Chunked downloads
+   - Parallel processing
+   - Batch loading
+   - Connection pooling
+
+B. BigQuery Implementation
+-------------------------
+1. Table Structure:
+   ```sql
+   CREATE TABLE `uk_energy_insights.bmrs_fuelinst` (
+       settlementDate STRING,
+       settlementPeriod INTEGER,
+       fuelType STRING,
+       generation INTEGER,
+       _ingested_utc TIMESTAMP
+   )
+   ```
+
+2. Partitioning Strategy:
+   - Partitioned by settlementDate
+   - Clustering on fuelType
+   - Daily partition expiration
+
+3. Access Control:
+   - Service account authentication
+   - Role-based access control
+   - Audit logging enabled
+
+4. Operational Procedures
+-----------------------
+
+A. Daily Operations
+------------------
+1. Data Ingestion:
+   ```bash
+   # Daily update
+   python ingest_elexon_fixed.py \
+     --start $(date -d "yesterday" +%Y-%m-%d) \
+     --end $(date +%Y-%m-%d) \
+     --log-level DEBUG
+   ```
+
+2. Data Validation:
+   ```sql
+   -- Check for missing periods
+   SELECT
+       settlementDate,
+       COUNT(DISTINCT settlementPeriod) as periods
+   FROM `uk_energy_insights.bmrs_fuelinst`
+   WHERE DATE(settlementDate) = CURRENT_DATE()
+   GROUP BY settlementDate
+   HAVING periods < 48
+   ```
+
+3. Monitoring:
+   - API response times
+   - Ingestion latency
+   - Error rates
+   - Storage usage
+
+B. Maintenance Tasks
+-------------------
+1. Weekly:
+   - Data completeness check
+   - Performance optimization
+   - Error log review
+   - Storage cleanup
+
+2. Monthly:
+   - Full data validation
+   - Schema review
+   - Cost optimization
+   - Performance tuning
+
+3. Quarterly:
+   - Historical data audit
+   - Process optimization
+   - Documentation update
+   - Security review
+
+5. Recovery Procedures
+--------------------
+
+A. Data Recovery
+---------------
+1. Missing Data:
+   ```bash
+   # Reingest specific date range
+   python ingest_elexon_fixed.py \
+     --start 2025-08-28 \
+     --end 2025-08-30 \
+     --overwrite
+   ```
+
+2. Corrupt Data:
+   ```sql
+   -- Identify corrupt records
+   SELECT *
+   FROM `uk_energy_insights.bmrs_fuelinst`
+   WHERE generation < 0
+   OR settlementPeriod > 48
+   ```
+
+B. System Recovery
+-----------------
+1. API Issues:
+   - Fallback to backup endpoints
+   - Implement exponential backoff
+   - Alert monitoring team
+
+2. Storage Issues:
+   - Switch to backup project
+   - Implement data recovery
+   - Validate restored data
+
+6. Monitoring and Alerting
+------------------------
+
+A. Key Metrics
+-------------
+1. Data Quality:
+   - Completeness (%)
+   - Accuracy (%)
+   - Timeliness (minutes)
+   - Duplication rate (%)
+
+2. System Health:
+   - API latency
+   - Processing time
+   - Error rate
+   - Storage usage
+
+B. Alert Thresholds
+------------------
+1. Critical Alerts:
+   - Missing data > 1 hour
+   - Error rate > 5%
+   - Processing delay > 30 min
+   - Storage > 90%
+
+2. Warning Alerts:
+   - Missing data > 15 min
+   - Error rate > 2%
+   - Processing delay > 15 min
+   - Storage > 80%
+
+7. Cost Management
+----------------
+
+A. Storage Optimization
+----------------------
+1. Current Status:
+   - Total rows: 2,408,640
+   - Unique rows: 1,540
+   - Potential savings: 99.9%
+
+2. Cost Reduction:
+   - Implement deduplication
+   - Optimize partitioning
+   - Set data retention
+   - Compress historical data
+
+B. Processing Optimization
+-------------------------
+1. Query Optimization:
+   - Use clustered columns
+   - Implement caching
+   - Optimize joins
+   - Use materialized views
+
+2. Resource Management:
+   - Scale based on load
+   - Implement quotas
+   - Monitor usage
+   - Optimize batch size
+
+8. Security and Compliance
+------------------------
+
+A. Authentication
+----------------
+1. API Access:
+   - API key management
+   - Key rotation policy
+   - Access monitoring
+   - Usage auditing
+
+2. BigQuery Access:
+   - Service account
+   - IAM roles
+   - Access logs
+   - Security policies
+
+B. Data Protection
+-----------------
+1. In Transit:
+   - HTTPS/TLS
+   - API authentication
+   - Secure connections
+   - Network policies
+
+2. At Rest:
+   - Encryption
+   - Access control
+   - Audit logging
+   - Backup policy
+
+9. Future Improvements
+--------------------
+
+A. Technical Enhancements
+------------------------
+1. Real-time Processing:
+   - Stream processing
+   - Real-time validation
+   - Immediate alerts
+   - Live dashboard
+
+2. Infrastructure:
+   - Container deployment
+   - Auto-scaling
+   - High availability
+   - Disaster recovery
+
+B. Process Improvements
+----------------------
+1. Data Quality:
+   - Automated validation
+   - Quality scoring
+   - Anomaly detection
+   - Version control
+
+2. Monitoring:
+   - Real-time dashboards
+   - Predictive alerts
+   - Trend analysis
+   - Cost optimization
+
+10. Contact Information
+---------------------
+- BigQuery Admin: [Contact Details]
+- Data Engineering Team: [Contact Details]
+- Elexon Support: [Contact Details]
+- Security Team: [Contact Details]

@@ -1,0 +1,41 @@
+Tariff name,Open LLFCs,PCs,"Unit charge 1 (NHH)
+or red/black charge (HH)
+p/kWh","Unit charge 2 (NHH)
+or amber/yellow charge (HH)
+p/kWh","Green charge(HH)
+p/kWh",Fixed charge p/MPAN/day,Capacity charge p/kVA/day,"Exceeded capacity charge
+p/kVA/day","Reactive power charge
+p/kVArh",Closed LLFCs
+Domestic Unrestricted,3,1,2.121,,,[4.79]  4.87,,,,40
+Domestic Two Rate,7,2,2.613,0.193,,[4.79]  4.87,,,,"11, 25, 43, 46, 58"
+Domestic Off Peak (related MPAN),22,2,0.248,,,,,,,"29, 55, 61"
+Small Non Domestic Unrestricted,201,3,1.663,,,4.79,,,,"237, 238, 239"
+Small Non Domestic Two Rate,205,4,1.919,0.176,,4.79,,,,"15, 49, 242, 247, 248"
+Small Non Domestic Off Peak (related MPAN),64,4,0.319,,,,,,,33
+LV Medium Non-Domestic,254,5-8,2.054,0.165,,38.48,,,,250
+LV Sub Medium Non-Domestic,,5-8,1.135,0.134,,8.08,,,,
+HV Medium Non-Domestic,,5-8,0.752,0.114,,97.09,,,,
+LV Network Domestic,1,0,14.625,0.422,0.16,[4.79]  4.87,,,,
+LV Network Non-Domestic Non-CT,200,0,12.726,0.38,0.152,4.99,,,,
+LV HH Metered,86,0,9.75,0.286,0.136,12.05,3.4,7.26,0.307,
+LV Sub HH Metered,80,0,7.004,0.195,0.12,8.08,4.94,6.53,0.2,
+HV HH Metered,84,0,5.711,0.162,0.114,97.09,4.08,5.79,0.161,
+NHH UMS category A,"100, 110, 150, 160",8,2.033,,,,,,,
+NHH UMS category B,"102, 112, 152, 162",1,2.896,,,,,,,
+NHH UMS category C,"103, 113, 153, 163",1,4.782,,,,,,,
+NHH UMS category D,"101, 111, 151, 161",1,1.462,,,,,,,
+LV UMS (Pseudo HH Metered),350,0,40.892,0.944,0.778,,,,,
+LV Generation NHH or Aggregate HH,912,8 or 0,-0.942,,,0,,,,"905, 913"
+LV Sub Generation NHH,,8,-0.838,,,0,,,,
+LV Generation Intermittent,980,0,-0.942,,,0,,,0.304,
+LV Generation Intermittent no RP charge,981,0,-0.942,,,0,,,,
+LV Generation Non-Intermittent,982,0,-9.434,-0.206,-0.035,0,,,0.304,
+LV Generation Non-Intermittent no RP charge,983,0,-9.434,-0.206,-0.035,0,,,,
+LV Sub Generation Intermittent,984,0,-0.838,,,0,,,0.272,
+LV Sub Generation Intermittent no RP charge,985,0,-0.838,,,0,,,,
+LV Sub Generation Non-Intermittent,986,0,-8.468,-0.168,-0.029,0,,,0.272,
+LV Sub Generation Non-Intermittent no RP charge,987,0,-8.468,-0.168,-0.029,0,,,,
+HV Generation Intermittent,988,0,-0.6,,,8.5,,,0.221,
+HV Generation Intermittent no RP charge,989,0,-0.6,,,8.5,,,,
+HV Generation Non-Intermittent,990,0,-6.285,-0.079,-0.013,8.5,,,0.221,
+HV Generation Non-Intermittent no RP charge,991,0,-6.285,-0.079,-0.013,8.5,,,,

@@ -1,0 +1,10 @@
+{
+  "collection_timestamp": "2025-10-29 23:16:39.390318",
+  "duration_minutes": 1.4373092166666666,
+  "datasets_attempted": 17,
+  "datasets_successful": 11,
+  "success_rate": 64.70588235294117,
+  "total_records": 191605,
+  "total_size_mb": 4.030518531799316,
+  "datasets_collected": 165
+}

@@ -1,0 +1,24 @@
+2025-09-18 12:01:02,799 [INFO] 📄 Logging to 2022_q1_freq_fuelinst.log
+2025-09-18 12:01:02,839 [INFO] ✅ Initialized BigQuery Client for project: jibber-jabber-knowledge
+2025-09-18 12:01:03,294 [INFO] BigQuery dataset 'uk_energy_insights' exists.
+2025-09-18 12:01:04,246 [INFO] 📝 Planned datasets (2): FREQ, FUELINST
+2025-09-18 12:01:04,247 [INFO] 🚀 Starting ingestion for 2 datasets...
+2025-09-18 12:01:04,248 [INFO] 🔄 Checking for existing windows for bmrs_freq
+2025-09-18 12:01:04,248 [INFO] 🔎 Querying existing windows for jibber-jabber-knowledge.uk_energy_insights.bmrs_freq between 2022-01-01 00:00:00+00:00 and 2022-04-01 00:00:00+00:00
+2025-09-18 12:01:05,832 [INFO] Found 90 existing windows for bmrs_freq
+2025-09-18 12:01:05,832 [INFO] 🔎 Querying existing windows for jibber-jabber-knowledge.uk_energy_insights.bmrs_freq between 2022-01-01 00:00:00+00:00 and 2022-04-01 00:00:00+00:00
+2025-09-18 12:01:07,035 [INFO] Found 90 existing windows for bmrs_freq
+2025-09-18 12:01:07,035 [INFO] Found 90 existing windows for FREQ. Skipping them and fetching 0 new windows.
+2025-09-18 12:01:07,035 [INFO] 🧮 Total windows to fetch for FREQ: 0 (batch_size=20, flush_seconds=300)
+2025-09-18 12:01:07,036 [INFO] ✅ No new windows to fetch for FREQ. Skipping.
+2025-09-18 12:01:07,036 [INFO] 🔄 Checking for existing windows for bmrs_fuelinst
+2025-09-18 12:01:07,036 [INFO] 🔎 Querying existing windows for jibber-jabber-knowledge.uk_energy_insights.bmrs_fuelinst between 2022-01-01 00:00:00+00:00 and 2022-04-01 00:00:00+00:00
+2025-09-18 12:01:08,649 [INFO] Found 90 existing windows for bmrs_fuelinst
+2025-09-18 12:01:08,649 [INFO] 🔎 Querying existing windows for jibber-jabber-knowledge.uk_energy_insights.bmrs_fuelinst between 2022-01-01 00:00:00+00:00 and 2022-04-01 00:00:00+00:00
+2025-09-18 12:01:09,824 [INFO] Found 90 existing windows for bmrs_fuelinst
+2025-09-18 12:01:09,825 [INFO] Found 90 existing windows for FUELINST. Skipping them and fetching 0 new windows.
+2025-09-18 12:01:09,825 [INFO] 🧮 Total windows to fetch for FUELINST: 0 (batch_size=20, flush_seconds=300)
+2025-09-18 12:01:09,825 [INFO] ✅ No new windows to fetch for FUELINST. Skipping.
+2025-09-18 12:01:09,826 [INFO] 🎉 All datasets processed.
+2025-09-18 12:01:09,826 [INFO]    OK=0, PARTIAL=0, SKIP=2, ERR=0
+2025-09-18 12:01:09,826 [INFO]    SKIPPED: FREQ, FUELINST

@@ -1,0 +1,24 @@
+2025-08-26 23:17:39,415 [INFO] ✅ Initialized BigQuery Client for project: jibber-jabber-knowledge
+2025-08-26 23:17:39,843 [INFO] BigQuery dataset 'uk_energy_prod' exists.
+2025-08-26 23:17:39,969 [WARNING] ⚠️ Failed to fetch metadata: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/insights/api/datasets. Falling back to static list.
+2025-08-26 23:17:39,971 [INFO] 🚀 Starting ingestion for 11 datasets...
+2025-08-26 23:17:40,027 [ERROR] ❌ Failed FUELINST: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/insights/api/datasets/FUELINST/data?start=2015-01-01&end=2025-08-26
+2025-08-26 23:17:40,032 [ERROR] ❌ Failed WINDFOR: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/insights/api/datasets/WINDFOR/data?start=2015-01-01&end=2025-08-26
+2025-08-26 23:17:40,034 [ERROR] ❌ Failed DEMAND: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/insights/api/datasets/DEMAND/data?start=2015-01-01&end=2025-08-26
+2025-08-26 23:17:40,035 [ERROR] ❌ Failed BOD: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/insights/api/datasets/BOD/data?start=2015-01-01&end=2025-08-26
+2025-08-26 23:17:40,035 [ERROR] ❌ Failed BOAL: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/insights/api/datasets/BOAL/data?start=2015-01-01&end=2025-08-26
+2025-08-26 23:17:40,037 [ERROR] ❌ Failed FREQ: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/insights/api/datasets/FREQ/data?start=2015-01-01&end=2025-08-26
+2025-08-26 23:17:40,319 [ERROR] ⚠️ Unexpected error in DEMAND: 409 POST https://bigquery.googleapis.com/bigquery/v2/projects/jibber-jabber-knowledge/datasets/uk_energy_prod/tables?prettyPrint=false: Already Exists: Table jibber-jabber-knowledge:uk_energy_prod.ingestion_progress
+2025-08-26 23:17:40,334 [ERROR] ⚠️ Unexpected error in BOAL: 409 POST https://bigquery.googleapis.com/bigquery/v2/projects/jibber-jabber-knowledge/datasets/uk_energy_prod/tables?prettyPrint=false: Already Exists: Table jibber-jabber-knowledge:uk_energy_prod.ingestion_progress
+2025-08-26 23:17:40,337 [ERROR] ⚠️ Unexpected error in FREQ: 409 POST https://bigquery.googleapis.com/bigquery/v2/projects/jibber-jabber-knowledge/datasets/uk_energy_prod/tables?prettyPrint=false: Already Exists: Table jibber-jabber-knowledge:uk_energy_prod.ingestion_progress
+2025-08-26 23:17:40,337 [ERROR] ⚠️ Unexpected error in WINDFOR: 409 POST https://bigquery.googleapis.com/bigquery/v2/projects/jibber-jabber-knowledge/datasets/uk_energy_prod/tables?prettyPrint=false: Already Exists: Table jibber-jabber-knowledge:uk_energy_prod.ingestion_progress
+2025-08-26 23:17:40,353 [ERROR] ⚠️ Unexpected error in BOD: 409 POST https://bigquery.googleapis.com/bigquery/v2/projects/jibber-jabber-knowledge/datasets/uk_energy_prod/tables?prettyPrint=false: Already Exists: Table jibber-jabber-knowledge:uk_energy_prod.ingestion_progress
+2025-08-26 23:17:40,375 [ERROR] ❌ Failed GENERATION: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/insights/api/datasets/GENERATION/data?start=2015-01-01&end=2025-08-26
+2025-08-26 23:17:40,388 [ERROR] ❌ Failed EMISSIONS: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/insights/api/datasets/EMISSIONS/data?start=2015-01-01&end=2025-08-26
+2025-08-26 23:17:40,397 [ERROR] ❌ Failed INTERCONNECTORS: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/insights/api/datasets/INTERCONNECTORS/data?start=2015-01-01&end=2025-08-26
+2025-08-26 23:17:40,405 [ERROR] ❌ Failed SOLAR: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/insights/api/datasets/SOLAR/data?start=2015-01-01&end=2025-08-26
+2025-08-26 23:17:40,405 [ERROR] ❌ Failed NETIMPORTS: 404 Client Error: Resource Not Found for url: https://data.elexon.co.uk/insights/api/datasets/NETIMPORTS/data?start=2015-01-01&end=2025-08-26
+2025-08-26 23:17:40,746 [ERROR] ⚠️ Unexpected error in NETIMPORTS: Extra data: line 1 column 26 (char 25)
+2025-08-26 23:17:40,746 [ERROR] ⚠️ Unexpected error in SOLAR: Extra data: line 1 column 26 (char 25)
+2025-08-26 23:17:40,819 [ERROR] ⚠️ Unexpected error in INTERCONNECTORS: Extra data: line 1 column 26 (char 25)
+2025-08-26 23:17:40,819 [INFO] 🎉  All datasets processed successfully.

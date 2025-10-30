@@ -12,7 +12,7 @@ INCLUDE_EXT = {
    ".py",".md",".rst",".txt",".toml",".yaml",".yml",".json",".ini",".cfg",
    ".sh",".ps1",".sql",".html",".css",".js",".ts"
 }
-SKIP_DIRS = {".git", ".venv", "node_modules", "dist", "build", "__pycache__", ".mypy_cache", ".ruff_cache"}
+SKIP_DIRS = {".git", ".venv", "node_modules", "dist", "build", "__pycache__", ".mypy_cache", ".ruff_cache", "old_project"}
 
 schema = Schema(path=ID(stored=True, unique=True), content=TEXT(stored=True, analyzer=StemmingAnalyzer()))
 INDEX_DIR.mkdir(parents=True, exist_ok=True)

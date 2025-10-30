@@ -1,0 +1,17 @@
+[
+  {
+    "name": "dataset",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "measurementTime",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "frequency",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  }
+]

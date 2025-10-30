@@ -1,0 +1,35 @@
+{
+  "start_time": "2025-09-11T23:24:47.958620",
+  "dnos_processed": {
+    "UKPN": {
+      "datasets_found": 0,
+      "datasets_processed": 0,
+      "completion_time": "2025-09-11T23:25:14.968748"
+    },
+    "SPEN": {
+      "datasets_found": 0,
+      "datasets_processed": 0,
+      "completion_time": "2025-09-11T23:25:33.278155"
+    },
+    "NPG": {
+      "datasets_found": 0,
+      "datasets_processed": 0,
+      "completion_time": "2025-09-11T23:25:53.025680"
+    },
+    "ENWL": {
+      "datasets_found": 0,
+      "datasets_processed": 0,
+      "completion_time": "2025-09-11T23:26:11.498744"
+    },
+    "SSEN": {
+      "datasets_processed": 0,
+      "completion_time": "2025-09-11T23:28:00.183957"
+    }
+  },
+  "total_datasets": 0,
+  "successful_downloads": 0,
+  "failed_downloads": 0,
+  "total_rows": 0,
+  "end_time": "2025-09-11T23:28:00.185189",
+  "duration_minutes": 3.2037761500000004
+}

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+      <meta charset="utf-8" />
+      <title>UK DNO Map</title>
+      <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+      <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+      <style>
+        #map { height: 100%; width: 100%; }
+        html, body { margin: 0; height: 100%; }
+        .info {
+          padding: 6px 8px;
+          font: 14px/16px Arial, Helvetica, sans-serif;
+          background: white;
+          background: rgba(255,255,255,0.8);
+          box-shadow: 0 0 15px rgba(0,0,0,0.2);
+          border-radius: 5px;
+        }
+        .info h4 {
+          margin: 0 0 5px;
+          color: #777;
+        }
+        .legend {
+          line-height: 18px;
+          color: #555;
+        }
+        .legend i {
+          width: 18px;
+          height: 18px;
+          float: left;
+          margin-right: 8px;
+          opacity: 0.7;
+        }
+      </style>
+    </head>
+    <body>
+      <div id="map"></div>
+      <script>
+        // Data passed from the Apps Script
+        var dnoData = <?= JSON.stringify(data) ?>;
+        
+        // Get GeoJSON data directly from the embedded constant in Code.gs
+        var geojsonData = <?= JSON.stringify(GEOJSON_DATA) ?>;
+        
+        // Create a lookup object for DNO data
+        var dnoLookup = {};
+        dnoData.forEach(function(row) {
+          dnoLookup[row.id] = {
+            name: row.name,
+            value: row.value
+          };
+        });
+        
+        // Initialize map centered on Great Britain
+        var map = L.map('map').setView([54.5, -2.5], 6);
+    
+        // Add OpenStreetMap base layer
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          maxZoom: 19,
+          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+    
+        // Color scale for the map
+        function getColor(value) {
+          return value > 16000 ? '#800026' :
+                 value > 14000 ? '#BD0026' :
+                 value > 13000 ? '#E31A1C' :
+                 value > 12000 ? '#FC4E2A' :
+                 value > 11000 ? '#FD8D3C' :
+                 value > 10000 ? '#FEB24C' :
+                 value > 9000 ? '#FED976' :
+                               '#FFEDA0';
+        }
+    
+        // Style function for GeoJSON features
+        function style(feature) {
+          // Check different possible ID field names
+          var dnoId = feature.properties.id || 
+                     feature.properties.dno_id || 
+                     feature.properties.DNO_ID || 
+                     feature.properties.ID;
+                     
+          var dno = dnoLookup[dnoId];
+          var value = dno ? Number(dno.value) : 0;
+    
+          return {
+            fillColor: getColor(value),
+            weight: 2,
+            opacity: 1,
+            color: 'white',
+            dashArray: '3',
+            fillOpacity: 0.7
+          };
+        }
+    
+        // Highlight feature on mouseover
+        function highlightFeature(e) {
+          var layer = e.target;
+    
+          layer.setStyle({
+            weight: 5,
+            color: '#666',
+            dashArray: '',
+            fillOpacity: 0.7
+          });
+    
+          layer.bringToFront();
+          info.update(layer.feature.properties);
+        }
+    
+        // Reset highlight on mouseout
+        function resetHighlight(e) {
+          geojsonLayer.resetStyle(e.target);
+          info.update();
+        }
+    
+        // Zoom to feature on click
+        function zoomToFeature(e) {
+          map.fitBounds(e.target.getBounds());
+        }
+    
+        // Set interactions for each feature
+        function onEachFeature(feature, layer) {
+          layer.on({
+            mouseover: highlightFeature,
+            mouseout: resetHighlight,
+            click: zoomToFeature
+          });
+        }
+    
+        // Create info control
+        var info = L.control();
+    
+        info.onAdd = function (map) {
+          this._div = L.DomUtil.create('div', 'info');
+          this.update();
+          return this._div;
+        };
+    
+        info.update = function (props) {
+          // Check different possible ID field names
+          var dnoId = props ? (props.id || props.dno_id || props.DNO_ID || props.ID) : null;
+          var dno = dnoId ? dnoLookup[dnoId] : null;
+          
+          this._div.innerHTML = '<h4>UK DNO Areas</h4>' +  
+            (props ?
+              '<b>' + (dno ? dno.name : props.name || 'Unknown') + '</b><br />' +
+              'Value: ' + (dno ? dno.value : 'N/A')
+              : 'Hover over a DNO area');
+        };
+    
+        info.addTo(map);
+    
+        // Create legend control
+        var legend = L.control({position: 'bottomright'});
+    
+        legend.onAdd = function (map) {
+          var div = L.DomUtil.create('div', 'info legend');
+          var grades = [0, 9000, 10000, 11000, 12000, 13000, 14000, 16000];
+          
+          div.innerHTML += '<h4>Value</h4>';
+          
+          for (var i = 0; i < grades.length; i++) {
+            div.innerHTML +=
+              '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' +
+              grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
+          }
+    
+          return div;
+        };
+    
+        legend.addTo(map);
+    
+        // Display the GeoJSON data directly (no fetch needed)
+        try {
+          var geojsonLayer = L.geoJSON(geojsonData, {
+            style: style,
+            onEachFeature: onEachFeature
+          }).addTo(map);
+          
+          // Fit map to GeoJSON bounds to ensure it shows Great Britain
+          map.fitBounds(geojsonLayer.getBounds());
+        } catch (error) {
+          console.error("Error loading GeoJSON data:", error);
+          document.getElementById('map').innerHTML = 
+            '<div style="text-align:center;padding:20px;"><h3>Error loading map data</h3>' + 
+            '<p>There was a problem processing the DNO GeoJSON data.</p></div>';
+        }
+      </script>
+    </body>
+    </html>
+    

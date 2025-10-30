@@ -1,0 +1,1 @@
+*/15 * * * * /bin/bash "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/run_ingestion.sh"

@@ -1,0 +1,19 @@
+from,to,regionid,dnoregion,shortname,intensity_forecast,intensity_index,gen_biomass,gen_coal,gen_imports,gen_gas,gen_nuclear,gen_other,gen_hydro,gen_solar,gen_wind
+2025-10-29T22:30Z,2025-10-29T23:00Z,1,Scottish Hydro Electric Power Distribution,North Scotland,0,very low,0.0,0,0.0,0.0,0.0,0,0.0,0,100.0
+2025-10-29T22:30Z,2025-10-29T23:00Z,2,SP Distribution,South Scotland,3,very low,2.1,0,1.6,0.0,45.7,0,0.0,0,50.6
+2025-10-29T22:30Z,2025-10-29T23:00Z,3,Electricity North West,North West England,34,low,8.4,0,13.2,6.0,42.9,0,0.0,0,29.5
+2025-10-29T22:30Z,2025-10-29T23:00Z,4,NPG North East,North East England,26,very low,19.9,0,74.0,0.0,0.2,0,0.0,0,5.9
+2025-10-29T22:30Z,2025-10-29T23:00Z,5,NPG Yorkshire,Yorkshire,127,moderate,50.8,0,3.1,16.8,0.0,0,0.0,0,29.3
+2025-10-29T22:30Z,2025-10-29T23:00Z,6,SP Manweb,North Wales & Merseyside,14,very low,2.1,0,3.0,2.9,16.1,0,0.0,0,76.0
+2025-10-29T22:30Z,2025-10-29T23:00Z,7,WPD South Wales,South Wales,143,moderate,5.4,0,3.9,34.3,6.0,0,0.0,0,50.4
+2025-10-29T22:30Z,2025-10-29T23:00Z,8,WPD West Midlands,West Midlands,81,low,11.2,0,8.1,16.4,19.2,0,0.0,0,45.1
+2025-10-29T22:30Z,2025-10-29T23:00Z,9,WPD East Midlands,East Midlands,149,moderate,25.9,0,2.7,29.1,2.9,0,0.0,0,39.4
+2025-10-29T22:30Z,2025-10-29T23:00Z,10,UKPN East,East England,38,low,0.0,0,8.2,2.5,24.9,0,0.0,0,64.5
+2025-10-29T22:30Z,2025-10-29T23:00Z,11,WPD South West,South West England,318,very high,0.3,0,1.7,80.2,0.1,0,0.0,0,17.7
+2025-10-29T22:30Z,2025-10-29T23:00Z,12,SSE South,South England,230,high,4.3,0,22.8,52.1,1.2,0,0.1,0,19.4
+2025-10-29T22:30Z,2025-10-29T23:00Z,13,UKPN London,London,77,low,0.0,0,38.7,9.7,9.6,0,0.2,0,41.8
+2025-10-29T22:30Z,2025-10-29T23:00Z,14,UKPN South East,South East England,102,moderate,0.0,0,57.8,14.2,0.0,0,0.3,0,27.7
+2025-10-29T22:30Z,2025-10-29T23:00Z,15,England,England,106,moderate,13.1,0,17.2,19.4,12.4,0,0.1,0,37.9
+2025-10-29T22:30Z,2025-10-29T23:00Z,16,Scotland,Scotland,4,very low,1.1,0,0.0,0.8,35.3,0,0.0,0,62.8
+2025-10-29T22:30Z,2025-10-29T23:00Z,17,Wales,Wales,121,moderate,0.1,0,0.0,30.8,2.5,0,0.0,0,66.6
+2025-10-29T22:30Z,2025-10-29T23:00Z,18,GB,GB,97,low,11.0,0,14.3,18.4,13.9,0,0.0,0,42.3

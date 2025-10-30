@@ -1,0 +1,54 @@
+{
+  "dno": "NGED",
+  "full_name": "National Grid Electricity Distribution",
+  "areas": [
+    "WMID",
+    "EMID",
+    "SWALES",
+    "SWEST"
+  ],
+  "collection_timestamp": "2025-09-11T23:14:33.762531",
+  "discovered_sources": {
+    "open_data": {
+      "status": "accessible",
+      "data_links": [
+        {
+          "url": "/dataset/",
+          "text": "Datasets",
+          "type": "data_source"
+        },
+        {
+          "url": "/group/",
+          "text": "Data Groups",
+          "type": "data_source"
+        },
+        {
+          "url": "/dataset/",
+          "text": "90Datasets",
+          "type": "data_source"
+        },
+        {
+          "url": "/group/",
+          "text": "6Data Groups",
+          "type": "data_source"
+        },
+        {
+          "url": "/dataset/flexdgrid-fault-level-monitor-data",
+          "text": "FlexDGrid Fault Level Monitor Data",
+          "type": "data_source"
+        },
+        {
+          "url": "/dataset/aggregated-smart-meter-data-lv-feeder",
+          "text": "Aggregated Smart Meter Data - LV Feeder",
+          "type": "data_source"
+        },
+        {
+          "url": "/dataset/aggregated-smart-meter-data-secondary-substation",
+          "text": "Aggregated Smart Meter Data - Secondary Substation",
+          "type": "data_source"
+        }
+      ]
+    }
+  },
+  "status": "framework_ready"
+}

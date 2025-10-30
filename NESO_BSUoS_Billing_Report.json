@@ -1,0 +1,39 @@
+{
+    "report_title": "Detailed Report on BSUoS Billing System under NESO",
+    "generated_on": "2025-09-15T22:19:51.708588",
+    "author": "UpowerEnergy Research",
+    "sections": [
+        {
+            "title": "1. Overview of BSUoS Billing System",
+            "content": "The Balancing Services Use of System (BSUoS) charges are levied to recover the costs incurred by the National Energy System Operator (NESO) in balancing the electricity system. These costs include actions taken to manage system frequency, voltage control, reserve services, constraint management, and other network balancing activities. NESO publishes both actual (outturn) and forecast BSUoS tariffs."
+        },
+        {
+            "title": "2. Billing Methodology and Systems",
+            "content": "Since April 2023 (following CMP361 and CMP308), BSUoS has transitioned to a fixed-rate billing system for Final Demand users. The tariffs are set on a six-monthly basis, with adjustments for under/over recovery through the Reconciliation Final (RF) and further reconciliation processes.\n\nNESO uses the Balancing Services Billing (BSB) system, a proprietary billing platform integrated with the central settlement systems managed by Elexon. Billing runs are completed using half-hourly metered data aggregated for each settlement period."
+        },
+        {
+            "title": "3. Participants and Settlement Routes",
+            "content": "BSUoS is payable by: \n- Suppliers (for demand users)\n- Transmission-connected generators (CVAs only)\n\nFor Final Demand users, the charges are billed to the licensed electricity supplier responsible for the Meter Point Administration Number (MPAN). Suppliers include BSUoS in their end-user bills.\n\nFor embedded generation or exemptible supply, charges may be reduced or zero-rated depending on their classification under SVA (Supplier Volume Allocation) versus CVA (Central Volume Allocation)."
+        },
+        {
+            "title": "4. Timing of BSUoS Billing",
+            "content": "BSUoS invoices are typically produced daily with initial Settlement Final (SF) values. Reconciliations follow this schedule:\n- SF (Settlement Final): ~5 working days after delivery\n- RF (Reconciliation Final): ~16 months later\n- DF (Disputes Final): Up to 28 months if disputes are raised\nThe daily invoices are consolidated into monthly billing reports and payment schedules by NESO."
+        },
+        {
+            "title": "5. Supplier Billing Interaction",
+            "content": "Suppliers receive direct BSUoS invoices from NESO for all Final Demand consumption they serve. This amount is based on aggregated settlement data per MPAN. Suppliers are responsible for allocating BSUoS costs to their customers, typically by incorporating it into their unit rates or standing charges.\n\nSuppliers may also apply risk premiums to reflect volatility, especially in months prior to fixed-tariff implementation."
+        },
+        {
+            "title": "6. System and Process Oversight",
+            "content": "NESO\u2019s BSUoS billing process is overseen by the Energy Balancing Settlement Committee (EBSC) and subject to auditing under Balancing and Settlement Code (BSC) procedures. Data is validated against Elexon\u2019s central settlement system (SAA/I014 files).\n\nTransparency of charges is ensured via daily and monthly reporting published on NESO\u2019s data portal."
+        },
+        {
+            "title": "7. Regulatory Framework and Codes",
+            "content": "The BSUoS billing system operates under the governance of:\n- The Connection and Use of System Code (CUSC)\n- The BSC (administered by Elexon)\n- Applicable CUSC Modifications (CMP281, CMP361, CMP308, CMP415, CMP343, CMP250, etc.)"
+        },
+        {
+            "title": "8. Recent Reforms Impacting Billing",
+            "content": "Key changes affecting BSUoS billing:\n- CMP308 (2020): Targeted Charging Review implementation\n- CMP361 (2022): Full move to demand-only, fixed BSUoS\n- CMP415 (2023): Changes to tariff periods and reconciliation\n\nThese reforms simplified forecasting, reduced volatility for suppliers, and eliminated embedded benefit distortions."
+        }
+    ]
+}

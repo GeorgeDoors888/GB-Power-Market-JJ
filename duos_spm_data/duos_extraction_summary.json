@@ -1,0 +1,933 @@
+{
+  "extraction_date": "2025-09-13T13:00:01.132540",
+  "total_files_processed": 3,
+  "total_sheets_extracted": 9,
+  "dnos_covered": 1,
+  "uk_coverage_percent": 7.142857142857142,
+  "covered_mpan_codes": [
+    25
+  ],
+  "dno_breakdown": {
+    "SP Distribution": {
+      "mpan_code": 25,
+      "years": [
+        2024,
+        2025,
+        2021
+      ],
+      "sheets_extracted": 9,
+      "total_rate_columns": 63
+    }
+  },
+  "detailed_extractions": [
+    {
+      "file_path": "SP_Manweb_Schedule_of_charges_and_other_tables_2021_V.0.1_DCP268_341_Annex_1_5_6_7_V6.xlsx",
+      "dno_name": "SP Distribution",
+      "mpan_code": 25,
+      "year": 2021,
+      "sheet_name": "Annex 1 LV, HV and UMS charges",
+      "skip_rows": 11,
+      "columns": [
+        "Tariff name",
+        "Open LLFCs",
+        "PCs",
+        "Red/black unit charge\np/kWh",
+        "Amber/yellow unit charge\np/kWh",
+        "Green unit charge\np/kWh",
+        "Fixed charge p/MPAN/day",
+        "Capacity charge p/kVA/day",
+        "Exceeded capacity charge\np/kVA/day",
+        "Reactive power charge\np/kVArh",
+        "Closed LLFCs"
+      ],
+      "rate_columns": [
+        "Red/black unit charge\np/kWh",
+        "Amber/yellow unit charge\np/kWh",
+        "Green unit charge\np/kWh",
+        "Fixed charge p/MPAN/day",
+        "Capacity charge p/kVA/day",
+        "Exceeded capacity charge\np/kVA/day",
+        "Reactive power charge\np/kVArh"
+      ],
+      "data_rows": 19,
+      "data_cols": 11,
+      "extracted_at": "2025-09-13T12:59:58.762721",
+      "sample_rates": {
+        "Red/black unit charge\np/kWh": {
+          "min": -7.667,
+          "max": 19.543,
+          "mean": 3.341315789473684,
+          "count": 19,
+          "sample_values": [
+            11.481,
+            11.481,
+            13.929,
+            13.929,
+            10.541
+          ]
+        },
+        "Amber/yellow unit charge\np/kWh": {
+          "min": -1.211,
+          "max": 3.592,
+          "mean": 0.9503157894736842,
+          "count": 19,
+          "sample_values": [
+            2.962,
+            2.962,
+            3.349,
+            3.349,
+            2.74
+          ]
+        },
+        "Green unit charge\np/kWh": {
+          "min": -0.151,
+          "max": 1.851,
+          "mean": 0.6366842105263156,
+          "count": 19,
+          "sample_values": [
+            1.563,
+            1.563,
+            1.612,
+            1.612,
+            1.549
+          ]
+        },
+        "Fixed charge p/MPAN/day": {
+          "min": 3.49,
+          "max": 89.17,
+          "mean": 36.21300000000001,
+          "count": 10,
+          "sample_values": [
+            3.49,
+            4.4,
+            16.89,
+            6.13,
+            89.17
+          ]
+        },
+        "Capacity charge p/kVA/day": {
+          "min": 2.48,
+          "max": 5.02,
+          "mean": 3.806666666666667,
+          "count": 6,
+          "sample_values": [
+            2.48,
+            5.02,
+            3.92,
+            2.48,
+            5.02
+          ]
+        }
+      },
+      "csv_export": "duos_spm_data/sp_distribution_2021_annex_1_lv,_hv_and_ums_charges.csv"
+    },
+    {
+      "file_path": "SP_Manweb_Schedule_of_charges_and_other_tables_2021_V.0.1_DCP268_341_Annex_1_5_6_7_V6.xlsx",
+      "dno_name": "SP Distribution",
+      "mpan_code": 25,
+      "year": 2021,
+      "sheet_name": "Annex 1 LV, HV and UMS charges",
+      "skip_rows": 11,
+      "columns": [
+        "Tariff name",
+        "Open LLFCs",
+        "PCs",
+        "Red/black unit charge\np/kWh",
+        "Amber/yellow unit charge\np/kWh",
+        "Green unit charge\np/kWh",
+        "Fixed charge p/MPAN/day",
+        "Capacity charge p/kVA/day",
+        "Exceeded capacity charge\np/kVA/day",
+        "Reactive power charge\np/kVArh",
+        "Closed LLFCs"
+      ],
+      "rate_columns": [
+        "Red/black unit charge\np/kWh",
+        "Amber/yellow unit charge\np/kWh",
+        "Green unit charge\np/kWh",
+        "Fixed charge p/MPAN/day",
+        "Capacity charge p/kVA/day",
+        "Exceeded capacity charge\np/kVA/day",
+        "Reactive power charge\np/kVArh"
+      ],
+      "data_rows": 19,
+      "data_cols": 11,
+      "extracted_at": "2025-09-13T12:59:59.031559",
+      "sample_rates": {
+        "Red/black unit charge\np/kWh": {
+          "min": -7.667,
+          "max": 19.543,
+          "mean": 3.341315789473684,
+          "count": 19,
+          "sample_values": [
+            11.481,
+            11.481,
+            13.929,
+            13.929,
+            10.541
+          ]
+        },
+        "Amber/yellow unit charge\np/kWh": {
+          "min": -1.211,
+          "max": 3.592,
+          "mean": 0.9503157894736842,
+          "count": 19,
+          "sample_values": [
+            2.962,
+            2.962,
+            3.349,
+            3.349,
+            2.74
+          ]
+        },
+        "Green unit charge\np/kWh": {
+          "min": -0.151,
+          "max": 1.851,
+          "mean": 0.6366842105263156,
+          "count": 19,
+          "sample_values": [
+            1.563,
+            1.563,
+            1.612,
+            1.612,
+            1.549
+          ]
+        },
+        "Fixed charge p/MPAN/day": {
+          "min": 3.49,
+          "max": 89.17,
+          "mean": 36.21300000000001,
+          "count": 10,
+          "sample_values": [
+            3.49,
+            4.4,
+            16.89,
+            6.13,
+            89.17
+          ]
+        },
+        "Capacity charge p/kVA/day": {
+          "min": 2.48,
+          "max": 5.02,
+          "mean": 3.806666666666667,
+          "count": 6,
+          "sample_values": [
+            2.48,
+            5.02,
+            3.92,
+            2.48,
+            5.02
+          ]
+        }
+      },
+      "csv_export": "duos_spm_data/sp_distribution_2021_annex_1_lv,_hv_and_ums_charges.csv"
+    },
+    {
+      "file_path": "SP_Manweb_Schedule_of_charges_and_other_tables_2021_V.0.1_DCP268_341_Annex_1_5_6_7_V6.xlsx",
+      "dno_name": "SP Distribution",
+      "mpan_code": 25,
+      "year": 2021,
+      "sheet_name": "Annex 1 LV, HV and UMS charges",
+      "skip_rows": 11,
+      "columns": [
+        "Tariff name",
+        "Open LLFCs",
+        "PCs",
+        "Red/black unit charge\np/kWh",
+        "Amber/yellow unit charge\np/kWh",
+        "Green unit charge\np/kWh",
+        "Fixed charge p/MPAN/day",
+        "Capacity charge p/kVA/day",
+        "Exceeded capacity charge\np/kVA/day",
+        "Reactive power charge\np/kVArh",
+        "Closed LLFCs"
+      ],
+      "rate_columns": [
+        "Red/black unit charge\np/kWh",
+        "Amber/yellow unit charge\np/kWh",
+        "Green unit charge\np/kWh",
+        "Fixed charge p/MPAN/day",
+        "Capacity charge p/kVA/day",
+        "Exceeded capacity charge\np/kVA/day",
+        "Reactive power charge\np/kVArh"
+      ],
+      "data_rows": 19,
+      "data_cols": 11,
+      "extracted_at": "2025-09-13T12:59:59.468414",
+      "sample_rates": {
+        "Red/black unit charge\np/kWh": {
+          "min": -7.667,
+          "max": 19.543,
+          "mean": 3.341315789473684,
+          "count": 19,
+          "sample_values": [
+            11.481,
+            11.481,
+            13.929,
+            13.929,
+            10.541
+          ]
+        },
+        "Amber/yellow unit charge\np/kWh": {
+          "min": -1.211,
+          "max": 3.592,
+          "mean": 0.9503157894736842,
+          "count": 19,
+          "sample_values": [
+            2.962,
+            2.962,
+            3.349,
+            3.349,
+            2.74
+          ]
+        },
+        "Green unit charge\np/kWh": {
+          "min": -0.151,
+          "max": 1.851,
+          "mean": 0.6366842105263156,
+          "count": 19,
+          "sample_values": [
+            1.563,
+            1.563,
+            1.612,
+            1.612,
+            1.549
+          ]
+        },
+        "Fixed charge p/MPAN/day": {
+          "min": 3.49,
+          "max": 89.17,
+          "mean": 36.21300000000001,
+          "count": 10,
+          "sample_values": [
+            3.49,
+            4.4,
+            16.89,
+            6.13,
+            89.17
+          ]
+        },
+        "Capacity charge p/kVA/day": {
+          "min": 2.48,
+          "max": 5.02,
+          "mean": 3.806666666666667,
+          "count": 6,
+          "sample_values": [
+            2.48,
+            5.02,
+            3.92,
+            2.48,
+            5.02
+          ]
+        }
+      },
+      "csv_export": "duos_spm_data/sp_distribution_2021_annex_1_lv,_hv_and_ums_charges.csv"
+    },
+    {
+      "file_path": "SPM-Schedule-of-charges-and-other-tables-2024-V.0.8-Annex-6.xlsx",
+      "dno_name": "SP Distribution",
+      "mpan_code": 25,
+      "year": 2024,
+      "sheet_name": "Annex 1 LV, HV and UMS charges",
+      "skip_rows": 11,
+      "columns": [
+        "Tariff name",
+        "Open LLFCs",
+        "PCs",
+        "Red/black unit charge\np/kWh",
+        "Amber/yellow unit charge\np/kWh",
+        "Green unit charge\np/kWh",
+        "Fixed charge p/MPAN/day",
+        "Capacity charge p/kVA/day",
+        "Exceeded capacity charge\np/kVA/day",
+        "Reactive power charge\np/kVArh",
+        "Closed LLFCs"
+      ],
+      "rate_columns": [
+        "Red/black unit charge\np/kWh",
+        "Amber/yellow unit charge\np/kWh",
+        "Green unit charge\np/kWh",
+        "Fixed charge p/MPAN/day",
+        "Capacity charge p/kVA/day",
+        "Exceeded capacity charge\np/kVA/day",
+        "Reactive power charge\np/kVArh"
+      ],
+      "data_rows": 32,
+      "data_cols": 11,
+      "extracted_at": "2025-09-13T12:59:59.754241",
+      "sample_rates": {
+        "Red/black unit charge\np/kWh": {
+          "min": -7.403,
+          "max": 23.145,
+          "mean": 4.8635,
+          "count": 32,
+          "sample_values": [
+            9.771,
+            9.771,
+            10.875,
+            10.875,
+            10.875
+          ]
+        },
+        "Amber/yellow unit charge\np/kWh": {
+          "min": -2.118,
+          "max": 5.814,
+          "mean": 1.2269375,
+          "count": 32,
+          "sample_values": [
+            2.796,
+            2.796,
+            3.112,
+            3.112,
+            3.112
+          ]
+        },
+        "Green unit charge\np/kWh": {
+          "min": -0.197,
+          "max": 3.477,
+          "mean": 0.19428125,
+          "count": 32,
+          "sample_values": [
+            0.26,
+            0.26,
+            0.289,
+            0.289,
+            0.289
+          ]
+        },
+        "Fixed charge p/MPAN/day": {
+          "min": 0.0,
+          "max": 51303.46,
+          "mean": 3974.9786206896542,
+          "count": 29,
+          "sample_values": [
+            28.68,
+            6.34,
+            33.38,
+            70.18,
+            142.05
+          ]
+        },
+        "Capacity charge p/kVA/day": {
+          "min": 3.61,
+          "max": 7.11,
+          "mean": 5.48,
+          "count": 15,
+          "sample_values": [
+            3.61,
+            3.61,
+            3.61,
+            3.61,
+            3.61
+          ]
+        }
+      },
+      "csv_export": "duos_spm_data/sp_distribution_2024_annex_1_lv,_hv_and_ums_charges.csv"
+    },
+    {
+      "file_path": "SPM-Schedule-of-charges-and-other-tables-2024-V.0.8-Annex-6.xlsx",
+      "dno_name": "SP Distribution",
+      "mpan_code": 25,
+      "year": 2024,
+      "sheet_name": "Annex 1 LV, HV and UMS charges",
+      "skip_rows": 11,
+      "columns": [
+        "Tariff name",
+        "Open LLFCs",
+        "PCs",
+        "Red/black unit charge\np/kWh",
+        "Amber/yellow unit charge\np/kWh",
+        "Green unit charge\np/kWh",
+        "Fixed charge p/MPAN/day",
+        "Capacity charge p/kVA/day",
+        "Exceeded capacity charge\np/kVA/day",
+        "Reactive power charge\np/kVArh",
+        "Closed LLFCs"
+      ],
+      "rate_columns": [
+        "Red/black unit charge\np/kWh",
+        "Amber/yellow unit charge\np/kWh",
+        "Green unit charge\np/kWh",
+        "Fixed charge p/MPAN/day",
+        "Capacity charge p/kVA/day",
+        "Exceeded capacity charge\np/kVA/day",
+        "Reactive power charge\np/kVArh"
+      ],
+      "data_rows": 32,
+      "data_cols": 11,
+      "extracted_at": "2025-09-13T12:59:59.985870",
+      "sample_rates": {
+        "Red/black unit charge\np/kWh": {
+          "min": -7.403,
+          "max": 23.145,
+          "mean": 4.8635,
+          "count": 32,
+          "sample_values": [
+            9.771,
+            9.771,
+            10.875,
+            10.875,
+            10.875
+          ]
+        },
+        "Amber/yellow unit charge\np/kWh": {
+          "min": -2.118,
+          "max": 5.814,
+          "mean": 1.2269375,
+          "count": 32,
+          "sample_values": [
+            2.796,
+            2.796,
+            3.112,
+            3.112,
+            3.112
+          ]
+        },
+        "Green unit charge\np/kWh": {
+          "min": -0.197,
+          "max": 3.477,
+          "mean": 0.19428125,
+          "count": 32,
+          "sample_values": [
+            0.26,
+            0.26,
+            0.289,
+            0.289,
+            0.289
+          ]
+        },
+        "Fixed charge p/MPAN/day": {
+          "min": 0.0,
+          "max": 51303.46,
+          "mean": 3974.9786206896542,
+          "count": 29,
+          "sample_values": [
+            28.68,
+            6.34,
+            33.38,
+            70.18,
+            142.05
+          ]
+        },
+        "Capacity charge p/kVA/day": {
+          "min": 3.61,
+          "max": 7.11,
+          "mean": 5.48,
+          "count": 15,
+          "sample_values": [
+            3.61,
+            3.61,
+            3.61,
+            3.61,
+            3.61
+          ]
+        }
+      },
+      "csv_export": "duos_spm_data/sp_distribution_2024_annex_1_lv,_hv_and_ums_charges.csv"
+    },
+    {
+      "file_path": "SPM-Schedule-of-charges-and-other-tables-2024-V.0.8-Annex-6.xlsx",
+      "dno_name": "SP Distribution",
+      "mpan_code": 25,
+      "year": 2024,
+      "sheet_name": "Annex 1 LV, HV and UMS charges",
+      "skip_rows": 11,
+      "columns": [
+        "Tariff name",
+        "Open LLFCs",
+        "PCs",
+        "Red/black unit charge\np/kWh",
+        "Amber/yellow unit charge\np/kWh",
+        "Green unit charge\np/kWh",
+        "Fixed charge p/MPAN/day",
+        "Capacity charge p/kVA/day",
+        "Exceeded capacity charge\np/kVA/day",
+        "Reactive power charge\np/kVArh",
+        "Closed LLFCs"
+      ],
+      "rate_columns": [
+        "Red/black unit charge\np/kWh",
+        "Amber/yellow unit charge\np/kWh",
+        "Green unit charge\np/kWh",
+        "Fixed charge p/MPAN/day",
+        "Capacity charge p/kVA/day",
+        "Exceeded capacity charge\np/kVA/day",
+        "Reactive power charge\np/kVArh"
+      ],
+      "data_rows": 32,
+      "data_cols": 11,
+      "extracted_at": "2025-09-13T13:00:00.282035",
+      "sample_rates": {
+        "Red/black unit charge\np/kWh": {
+          "min": -7.403,
+          "max": 23.145,
+          "mean": 4.8635,
+          "count": 32,
+          "sample_values": [
+            9.771,
+            9.771,
+            10.875,
+            10.875,
+            10.875
+          ]
+        },
+        "Amber/yellow unit charge\np/kWh": {
+          "min": -2.118,
+          "max": 5.814,
+          "mean": 1.2269375,
+          "count": 32,
+          "sample_values": [
+            2.796,
+            2.796,
+            3.112,
+            3.112,
+            3.112
+          ]
+        },
+        "Green unit charge\np/kWh": {
+          "min": -0.197,
+          "max": 3.477,
+          "mean": 0.19428125,
+          "count": 32,
+          "sample_values": [
+            0.26,
+            0.26,
+            0.289,
+            0.289,
+            0.289
+          ]
+        },
+        "Fixed charge p/MPAN/day": {
+          "min": 0.0,
+          "max": 51303.46,
+          "mean": 3974.9786206896542,
+          "count": 29,
+          "sample_values": [
+            28.68,
+            6.34,
+            33.38,
+            70.18,
+            142.05
+          ]
+        },
+        "Capacity charge p/kVA/day": {
+          "min": 3.61,
+          "max": 7.11,
+          "mean": 5.48,
+          "count": 15,
+          "sample_values": [
+            3.61,
+            3.61,
+            3.61,
+            3.61,
+            3.61
+          ]
+        }
+      },
+      "csv_export": "duos_spm_data/sp_distribution_2024_annex_1_lv,_hv_and_ums_charges.csv"
+    },
+    {
+      "file_path": "SPM-Schedule-of-charges-and-other-tables-2025-V.0.7-Annex-6.xlsx",
+      "dno_name": "SP Distribution",
+      "mpan_code": 25,
+      "year": 2025,
+      "sheet_name": "Annex 1 LV, HV and UMS charges",
+      "skip_rows": 11,
+      "columns": [
+        "Tariff name",
+        "Open LLFCs",
+        "PCs",
+        "Red/black unit charge\np/kWh",
+        "Amber/yellow unit charge\np/kWh",
+        "Green unit charge\np/kWh",
+        "Fixed charge p/MPAN/day",
+        "Capacity charge p/kVA/day",
+        "Exceeded capacity charge\np/kVA/day",
+        "Reactive power charge\np/kVArh",
+        "Closed LLFCs"
+      ],
+      "rate_columns": [
+        "Red/black unit charge\np/kWh",
+        "Amber/yellow unit charge\np/kWh",
+        "Green unit charge\np/kWh",
+        "Fixed charge p/MPAN/day",
+        "Capacity charge p/kVA/day",
+        "Exceeded capacity charge\np/kVA/day",
+        "Reactive power charge\np/kVArh"
+      ],
+      "data_rows": 32,
+      "data_cols": 11,
+      "extracted_at": "2025-09-13T13:00:00.602095",
+      "sample_rates": {
+        "Red/black unit charge\np/kWh": {
+          "min": -10.032,
+          "max": 29.056,
+          "mean": 6.59290625,
+          "count": 32,
+          "sample_values": [
+            13.575,
+            13.575,
+            15.333,
+            15.333,
+            15.333
+          ]
+        },
+        "Amber/yellow unit charge\np/kWh": {
+          "min": -2.667,
+          "max": 6.091,
+          "mean": 1.5105625,
+          "count": 32,
+          "sample_values": [
+            3.608,
+            3.608,
+            4.076,
+            4.076,
+            4.076
+          ]
+        },
+        "Green unit charge\np/kWh": {
+          "min": -0.297,
+          "max": 3.249,
+          "mean": 0.234,
+          "count": 32,
+          "sample_values": [
+            0.402,
+            0.402,
+            0.454,
+            0.454,
+            0.454
+          ]
+        },
+        "Fixed charge p/MPAN/day": {
+          "min": 0.0,
+          "max": 42295.18,
+          "mean": 3349.9006896551723,
+          "count": 29,
+          "sample_values": [
+            26.88,
+            7.67,
+            32.54,
+            60.04,
+            119.95
+          ]
+        },
+        "Capacity charge p/kVA/day": {
+          "min": 6.88,
+          "max": 10.88,
+          "mean": 9.293333333333333,
+          "count": 15,
+          "sample_values": [
+            6.88,
+            6.88,
+            6.88,
+            6.88,
+            6.88
+          ]
+        }
+      },
+      "csv_export": "duos_spm_data/sp_distribution_2025_annex_1_lv,_hv_and_ums_charges.csv"
+    },
+    {
+      "file_path": "SPM-Schedule-of-charges-and-other-tables-2025-V.0.7-Annex-6.xlsx",
+      "dno_name": "SP Distribution",
+      "mpan_code": 25,
+      "year": 2025,
+      "sheet_name": "Annex 1 LV, HV and UMS charges",
+      "skip_rows": 11,
+      "columns": [
+        "Tariff name",
+        "Open LLFCs",
+        "PCs",
+        "Red/black unit charge\np/kWh",
+        "Amber/yellow unit charge\np/kWh",
+        "Green unit charge\np/kWh",
+        "Fixed charge p/MPAN/day",
+        "Capacity charge p/kVA/day",
+        "Exceeded capacity charge\np/kVA/day",
+        "Reactive power charge\np/kVArh",
+        "Closed LLFCs"
+      ],
+      "rate_columns": [
+        "Red/black unit charge\np/kWh",
+        "Amber/yellow unit charge\np/kWh",
+        "Green unit charge\np/kWh",
+        "Fixed charge p/MPAN/day",
+        "Capacity charge p/kVA/day",
+        "Exceeded capacity charge\np/kVA/day",
+        "Reactive power charge\np/kVArh"
+      ],
+      "data_rows": 32,
+      "data_cols": 11,
+      "extracted_at": "2025-09-13T13:00:00.872752",
+      "sample_rates": {
+        "Red/black unit charge\np/kWh": {
+          "min": -10.032,
+          "max": 29.056,
+          "mean": 6.59290625,
+          "count": 32,
+          "sample_values": [
+            13.575,
+            13.575,
+            15.333,
+            15.333,
+            15.333
+          ]
+        },
+        "Amber/yellow unit charge\np/kWh": {
+          "min": -2.667,
+          "max": 6.091,
+          "mean": 1.5105625,
+          "count": 32,
+          "sample_values": [
+            3.608,
+            3.608,
+            4.076,
+            4.076,
+            4.076
+          ]
+        },
+        "Green unit charge\np/kWh": {
+          "min": -0.297,
+          "max": 3.249,
+          "mean": 0.234,
+          "count": 32,
+          "sample_values": [
+            0.402,
+            0.402,
+            0.454,
+            0.454,
+            0.454
+          ]
+        },
+        "Fixed charge p/MPAN/day": {
+          "min": 0.0,
+          "max": 42295.18,
+          "mean": 3349.9006896551723,
+          "count": 29,
+          "sample_values": [
+            26.88,
+            7.67,
+            32.54,
+            60.04,
+            119.95
+          ]
+        },
+        "Capacity charge p/kVA/day": {
+          "min": 6.88,
+          "max": 10.88,
+          "mean": 9.293333333333333,
+          "count": 15,
+          "sample_values": [
+            6.88,
+            6.88,
+            6.88,
+            6.88,
+            6.88
+          ]
+        }
+      },
+      "csv_export": "duos_spm_data/sp_distribution_2025_annex_1_lv,_hv_and_ums_charges.csv"
+    },
+    {
+      "file_path": "SPM-Schedule-of-charges-and-other-tables-2025-V.0.7-Annex-6.xlsx",
+      "dno_name": "SP Distribution",
+      "mpan_code": 25,
+      "year": 2025,
+      "sheet_name": "Annex 1 LV, HV and UMS charges",
+      "skip_rows": 11,
+      "columns": [
+        "Tariff name",
+        "Open LLFCs",
+        "PCs",
+        "Red/black unit charge\np/kWh",
+        "Amber/yellow unit charge\np/kWh",
+        "Green unit charge\np/kWh",
+        "Fixed charge p/MPAN/day",
+        "Capacity charge p/kVA/day",
+        "Exceeded capacity charge\np/kVA/day",
+        "Reactive power charge\np/kVArh",
+        "Closed LLFCs"
+      ],
+      "rate_columns": [
+        "Red/black unit charge\np/kWh",
+        "Amber/yellow unit charge\np/kWh",
+        "Green unit charge\np/kWh",
+        "Fixed charge p/MPAN/day",
+        "Capacity charge p/kVA/day",
+        "Exceeded capacity charge\np/kVA/day",
+        "Reactive power charge\np/kVArh"
+      ],
+      "data_rows": 32,
+      "data_cols": 11,
+      "extracted_at": "2025-09-13T13:00:01.129907",
+      "sample_rates": {
+        "Red/black unit charge\np/kWh": {
+          "min": -10.032,
+          "max": 29.056,
+          "mean": 6.59290625,
+          "count": 32,
+          "sample_values": [
+            13.575,
+            13.575,
+            15.333,
+            15.333,
+            15.333
+          ]
+        },
+        "Amber/yellow unit charge\np/kWh": {
+          "min": -2.667,
+          "max": 6.091,
+          "mean": 1.5105625,
+          "count": 32,
+          "sample_values": [
+            3.608,
+            3.608,
+            4.076,
+            4.076,
+            4.076
+          ]
+        },
+        "Green unit charge\np/kWh": {
+          "min": -0.297,
+          "max": 3.249,
+          "mean": 0.234,
+          "count": 32,
+          "sample_values": [
+            0.402,
+            0.402,
+            0.454,
+            0.454,
+            0.454
+          ]
+        },
+        "Fixed charge p/MPAN/day": {
+          "min": 0.0,
+          "max": 42295.18,
+          "mean": 3349.9006896551723,
+          "count": 29,
+          "sample_values": [
+            26.88,
+            7.67,
+            32.54,
+            60.04,
+            119.95
+          ]
+        },
+        "Capacity charge p/kVA/day": {
+          "min": 6.88,
+          "max": 10.88,
+          "mean": 9.293333333333333,
+          "count": 15,
+          "sample_values": [
+            6.88,
+            6.88,
+            6.88,
+            6.88,
+            6.88
+          ]
+        }
+      },
+      "csv_export": "duos_spm_data/sp_distribution_2025_annex_1_lv,_hv_and_ums_charges.csv"
+    }
+  ]
+}

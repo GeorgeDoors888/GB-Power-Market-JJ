@@ -1,0 +1,348 @@
+================================================================================
+UK ENERGY DATA USAGE GUIDE
+================================================================================
+Generated: 2025-09-08
+Author: Data Quality Audit System
+Project: jibber-jabber 24 august 2025 big bop
+
+================================================================================
+🚨 CRITICAL DATA QUALITY ISSUES DISCOVERED & SOLUTIONS
+================================================================================
+
+### MAJOR ISSUE #1: DUPLICATE PUBLICATION MULTIPLICATION
+Problem: Multiple publications of the same data being summed instead of using latest
+Impact: Generation data inflated from realistic ~21 GW to impossible ~129 GW
+Solution: ALWAYS use ROW_NUMBER() window functions to get latest publication only
+
+CORRECT QUERY PATTERN:
+```sql
+WITH latest_data AS (
+  SELECT *,
+    ROW_NUMBER() OVER (
+      PARTITION BY [key_fields]
+      ORDER BY publishTime DESC
+    ) as rn
+  FROM `jibber-jabber-knowledge.uk_energy_insights.[table]`
+  WHERE settlementDate = "2025-09-08"
+)
+SELECT * FROM latest_data WHERE rn = 1
+```
+
+### MAJOR ISSUE #2: DATA SOURCE CONFUSION
+Problem: Using INDDEM (bidding zone data) instead of INDO (actual demand)
+Impact: Wrong demand figures and boundary confusion
+Solution: Use correct data sources for each purpose
+
+================================================================================
+📊 DATASET ARCHITECTURE
+================================================================================
+
+### PRIMARY DATASETS:
+1. uk_energy_insights    - Real-time BMRS data (current pipeline)
+2. uk_energy_prod       - Historical processed data (legacy/archive)
+
+### CRITICAL DATA LOCATION MAPPING:
+- Generation Data:      uk_energy_insights.bmrs_fuelinst
+- Transmission Demand:  uk_energy_insights.bmrs_tsdf
+- Initial Demand:       uk_energy_insights.bmrs_indo
+- Bidding Zone Data:    uk_energy_insights.bmrs_inddem
+- Historic Total Demand: uk_energy_prod.elexon_demand_outturn
+
+================================================================================
+🔍 KEY TABLE REFERENCE & USAGE
+================================================================================
+
+### GENERATION DATA: bmrs_fuelinst
+Purpose: UK electricity generation by fuel type
+Critical Fields:
+  - fuelType: NUCLEAR, WIND, CCGT, etc. + INT* for interconnectors
+  - generation: Power output in MW
+  - publishTime: CRITICAL for deduplication
+  - settlementPeriod: 1-48 (30-min intervals)
+
+⚠️  DEDUPLICATION REQUIRED: Multiple publications exist per settlement period
+✅  Correct Usage:
+```sql
+WITH latest_generation AS (
+  SELECT fuelType, generation, settlementPeriod, publishTime,
+    ROW_NUMBER() OVER (
+      PARTITION BY fuelType, settlementPeriod
+      ORDER BY publishTime DESC
+    ) as rn
+  FROM `jibber-jabber-knowledge.uk_energy_insights.bmrs_fuelinst`
+  WHERE settlementDate = "2025-09-08"
+)
+SELECT fuelType, SUM(generation)/1000 as generation_gw
+FROM latest_generation
+WHERE rn = 1
+GROUP BY fuelType
+```
+
+Expected Results (2025-09-08):
+  - Total Generation: ~21-25 GW (NOT 129 GW!)
+  - Nuclear: ~3-8 GW (UK has ~8 GW capacity max)
+  - Wind: ~5-15 GW depending on weather
+  - CCGT: ~3-10 GW baseload
+
+### DEMAND DATA: bmrs_tsdf (Demand Outturn Equivalent)
+Purpose: Transmission System Demand Forecast = Official demand outturn
+Critical Fields:
+  - boundary: 'N' for National, 'B1'-'B17' for regions
+  - demand: Transmission demand in MW
+  - publishTime: For deduplication
+
+✅  Correct Usage:
+```sql
+WITH latest_demand AS (
+  SELECT boundary, demand, settlementPeriod, publishTime,
+    ROW_NUMBER() OVER (
+      PARTITION BY boundary, settlementPeriod
+      ORDER BY publishTime DESC
+    ) as rn
+  FROM `jibber-jabber-knowledge.uk_energy_insights.bmrs_tsdf`
+  WHERE settlementDate = "2025-09-08" AND boundary = 'N'
+)
+SELECT demand/1000 as national_demand_gw
+FROM latest_demand
+WHERE rn = 1
+ORDER BY settlementPeriod DESC
+LIMIT 1
+```
+
+Expected Results: ~22-35 GW depending on time of day
+
+### HISTORIC TOTAL DEMAND: elexon_demand_outturn
+Location: uk_energy_prod.elexon_demand_outturn
+Purpose: Historical total demand including embedded generation
+Critical Fields:
+  - nationalDemand: Transmission-level demand
+  - embeddedWind: Distributed wind generation
+  - embeddedSolar: Rooftop/small solar generation
+  - totalDemand = nationalDemand + embeddedWind + embeddedSolar
+
+✅  Usage for Total UK Demand:
+```sql
+SELECT
+  settlementDate,
+  settlementPeriod,
+  nationalDemand/1000 as transmission_gw,
+  embeddedWind/1000 as embedded_wind_gw,
+  embeddedSolar/1000 as embedded_solar_gw,
+  (nationalDemand + embeddedWind + embeddedSolar)/1000 AS total_demand_gw
+FROM `jibber-jabber-knowledge.uk_energy_prod.elexon_demand_outturn`
+WHERE settlementDate BETWEEN '2024-09-01' AND '2024-09-08'
+ORDER BY settlementDate, settlementPeriod;
+```
+
+================================================================================
+⚠️  COMMON PITFALLS & HOW TO AVOID
+================================================================================
+
+### 1. WRONG DATA SOURCE SELECTION
+❌  DON'T USE: bmrs_inddem for actual demand (this is bidding zone data)
+✅  DO USE: bmrs_tsdf for transmission demand, bmrs_indo for initial demand
+
+### 2. MISSING DEDUPLICATION
+❌  DON'T: SELECT SUM(generation) FROM bmrs_fuelinst (includes all publications)
+✅  DO: Use ROW_NUMBER() window function to get latest publication only
+
+### 3. DATASET CONFUSION
+❌  DON'T: Look for elexon_demand_outturn in uk_energy_insights
+✅  DO: Use uk_energy_prod.elexon_demand_outturn for historical data
+
+### 4. UNREALISTIC VALIDATION IGNORED
+❌  DON'T: Accept 129 GW generation (impossible for UK)
+✅  DO: Validate results against known UK energy capacity (~80 GW total)
+
+### 5. BOUNDARY FIELD MISUSE
+❌  DON'T: Sum all boundary zones (causes double-counting)
+✅  DO: Use boundary='N' for national totals only
+
+================================================================================
+🎯 ENERGY BALANCE VALIDATION
+================================================================================
+
+### REALISTIC UK ENERGY FIGURES (2025):
+Generation Capacity:
+  - Nuclear: ~8 GW max (7 stations operational)
+  - Wind: ~30 GW installed (variable output 0-25 GW)
+  - Gas (CCGT): ~40 GW (flexible baseload)
+  - Total Generation Capacity: ~80 GW
+
+Typical Daily Demand:
+  - Minimum (overnight): ~20-25 GW
+  - Maximum (evening peak): ~45-50 GW
+  - Average: ~30-35 GW
+
+Interconnectors:
+  - Total capacity: ~9 GW import/export
+  - Typical imports: 3-8 GW from EU
+  - IRL (Ireland): Can export ~0.5-1 GW to Ireland
+
+### ENERGY BALANCE CHECK:
+Generation + Net Imports ≈ Demand
+21.45 GW + 5.97 GW ≈ 27.42 GW ✓ (transmission level)
+Add ~8-10 GW embedded generation → ~35 GW total demand ✓
+
+================================================================================
+🔧 OPERATIONAL BEST PRACTICES
+================================================================================
+
+### 1. ALWAYS DEDUPLICATE
+Every BMRS table has multiple publications - use latest publishTime only
+
+### 2. VALIDATE RESULTS
+- Nuclear: Max 8 GW (physical limit)
+- Total generation: 15-50 GW range
+- Demand: 20-50 GW range
+- Flag anything outside these ranges
+
+### 3. USE PROPER AGGREGATION
+- Settlement periods: 1-48 per day
+- Latest publication per (settlementPeriod + key fields)
+- Sum by fuelType for generation, use boundary='N' for national demand
+
+### 4. MONITOR DATA FRESHNESS
+- Current data: _ingested_utc within last 4 hours
+- Settlement data: Available T+1 (next day) typically
+- Use MAX(settlementDate) to check latest available
+
+### 5. HANDLE MISSING DATA
+- Some tables may be empty on weekends/holidays
+- Interconnector data can have negative values (exports)
+- Embedded generation can be zero during night hours
+
+================================================================================
+📋 QUICK REFERENCE QUERIES
+================================================================================
+
+### Current UK Generation (Latest Period):
+```sql
+WITH latest_gen AS (
+  SELECT fuelType, generation, settlementPeriod,
+    ROW_NUMBER() OVER (PARTITION BY fuelType, settlementPeriod ORDER BY publishTime DESC) as rn
+  FROM `jibber-jabber-knowledge.uk_energy_insights.bmrs_fuelinst`
+  WHERE settlementDate = CURRENT_DATE()
+)
+SELECT fuelType, SUM(generation)/1000 as gw
+FROM latest_gen WHERE rn = 1
+AND settlementPeriod = (SELECT MAX(settlementPeriod) FROM latest_gen)
+GROUP BY fuelType ORDER BY gw DESC;
+```
+
+### Current UK Transmission Demand:
+```sql
+WITH latest_demand AS (
+  SELECT demand, settlementPeriod,
+    ROW_NUMBER() OVER (PARTITION BY settlementPeriod ORDER BY publishTime DESC) as rn
+  FROM `jibber-jabber-knowledge.uk_energy_insights.bmrs_tsdf`
+  WHERE settlementDate = CURRENT_DATE() AND boundary = 'N'
+)
+SELECT demand/1000 as transmission_demand_gw
+FROM latest_demand WHERE rn = 1
+ORDER BY settlementPeriod DESC LIMIT 1;
+```
+
+### Energy Balance Check:
+```sql
+-- Combine generation + demand for current day
+WITH latest_gen AS (
+  SELECT SUM(generation)/1000 as total_gen_gw
+  FROM (
+    SELECT generation,
+      ROW_NUMBER() OVER (PARTITION BY fuelType, settlementPeriod ORDER BY publishTime DESC) as rn
+    FROM `jibber-jabber-knowledge.uk_energy_insights.bmrs_fuelinst`
+    WHERE settlementDate = CURRENT_DATE() AND settlementPeriod = 48
+  ) WHERE rn = 1
+),
+latest_demand AS (
+  SELECT demand/1000 as total_demand_gw
+  FROM (
+    SELECT demand,
+      ROW_NUMBER() OVER (ORDER BY publishTime DESC) as rn
+    FROM `jibber-jabber-knowledge.uk_energy_insights.bmrs_tsdf`
+    WHERE settlementDate = CURRENT_DATE() AND boundary = 'N' AND settlementPeriod = 48
+  ) WHERE rn = 1
+)
+SELECT
+  total_gen_gw,
+  total_demand_gw,
+  total_demand_gw - total_gen_gw as net_imports_needed_gw
+FROM latest_gen CROSS JOIN latest_demand;
+```
+
+================================================================================
+🔍 DATA QUALITY MONITORING
+================================================================================
+
+### Red Flags to Monitor:
+1. Generation > 60 GW (impossible for UK)
+2. Nuclear > 8 GW (exceeds capacity)
+3. Negative total demand (data error)
+4. Zero generation across all fuel types (missing data)
+5. Missing data for current day (ingestion failure)
+
+### Automated Checks:
+```sql
+-- Daily data quality check
+SELECT
+  'Generation Check' as test,
+  CASE
+    WHEN total_gen > 60 THEN 'FAIL - Too High'
+    WHEN total_gen < 10 THEN 'FAIL - Too Low'
+    ELSE 'PASS'
+  END as result,
+  total_gen as value_gw
+FROM (
+  SELECT SUM(generation)/1000 as total_gen
+  FROM (
+    SELECT generation,
+      ROW_NUMBER() OVER (PARTITION BY fuelType ORDER BY publishTime DESC) as rn
+    FROM `jibber-jabber-knowledge.uk_energy_insights.bmrs_fuelinst`
+    WHERE settlementDate = CURRENT_DATE() AND settlementPeriod = 48
+  ) WHERE rn = 1
+);
+```
+
+================================================================================
+🚀 CORRECTED PIPELINE STATUS
+================================================================================
+
+✅ ISSUES RESOLVED:
+- Data multiplication error fixed (129 GW → 21 GW)
+- Proper deduplication methodology implemented
+- Correct data source mapping established
+- INDDEM vs INDO confusion resolved
+- Ingestion frequency updated to 15 minutes
+- Comprehensive demand data located across datasets
+
+⚠️  REMAINING WORK:
+- macOS cron daemon needs restart for automation
+- Monitor data quality checks implementation
+- Embedded generation integration for complete demand picture
+
+================================================================================
+📞 SUPPORT & TROUBLESHOOTING
+================================================================================
+
+### Common Error Messages:
+1. "Table not found" → Check dataset (uk_energy_insights vs uk_energy_prod)
+2. "Column not found" → Verify table schema with INFORMATION_SCHEMA
+3. "Query timeout" → Add LIMIT clause for large date ranges
+4. "Unrealistic results" → Check deduplication logic
+
+### Performance Tips:
+- Always filter by settlementDate first
+- Use LIMIT for exploratory queries
+- Partition queries by date ranges for large datasets
+- Use latest publishTime only to reduce data volume
+
+### Contact:
+- Data Pipeline: ingest_elexon_fixed.py
+- Cron Jobs: run_ingestion.sh (15-minute frequency)
+- BigQuery Project: jibber-jabber-knowledge
+- Key Datasets: uk_energy_insights (current), uk_energy_prod (historical)
+
+================================================================================
+END OF GUIDE
+================================================================================

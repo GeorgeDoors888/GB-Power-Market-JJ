@@ -1,0 +1,67 @@
+{
+  "Northern Powergrid": [
+    {
+      "url": "https://northernpowergrid.com",
+      "status": "accessible",
+      "type": "main_website",
+      "mpan_ids": [
+        "20"
+      ]
+    }
+  ],
+  "Electricity North West": [
+    {
+      "url": "https://enwl.co.uk/about-us/regulatory-information",
+      "status": "accessible",
+      "type": "potential_data_page"
+    },
+    {
+      "url": "https://enwl.co.uk",
+      "status": "accessible",
+      "type": "main_website",
+      "mpan_ids": [
+        "14"
+      ]
+    }
+  ],
+  "WPD Western Power": [
+    {
+      "url": "https://westernpower.co.uk/connections/charges",
+      "status": "accessible",
+      "type": "potential_data_page"
+    },
+    {
+      "url": "https://westernpower.co.uk/regulatory-information",
+      "status": "accessible",
+      "type": "potential_data_page"
+    },
+    {
+      "url": "https://westernpower.co.uk/duos-charges",
+      "status": "accessible",
+      "type": "potential_data_page"
+    },
+    {
+      "url": "https://westernpower.co.uk",
+      "status": "accessible",
+      "type": "main_website",
+      "mpan_ids": [
+        "21",
+        "22",
+        "23",
+        "24"
+      ]
+    }
+  ],
+  "SSEN Scottish & Southern": [
+    {
+      "url": "https://ssen.co.uk",
+      "status": "accessible",
+      "type": "main_website",
+      "mpan_ids": [
+        "27",
+        "28"
+      ]
+    }
+  ],
+  "Scottish Power Energy Networks": []
+}

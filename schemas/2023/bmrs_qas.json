@@ -1,0 +1,32 @@
+[
+  {
+    "name": "dataset",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "settlementDate",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "settlementPeriod",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "bmUnitApplicableBalancingServicesVolume",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "nationalGridBmUnit",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "bmUnit",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  }
+]

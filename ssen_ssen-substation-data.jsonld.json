@@ -1,0 +1,212 @@
+{
+  "@context": {
+    "adms": "http://www.w3.org/ns/adms#",
+    "brick": "https://brickschema.org/schema/Brick#",
+    "csvw": "http://www.w3.org/ns/csvw#",
+    "dc": "http://purl.org/dc/elements/1.1/",
+    "dcam": "http://purl.org/dc/dcam/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "dcatap": "http://data.europa.eu/r5r/",
+    "dcmitype": "http://purl.org/dc/dcmitype/",
+    "dct": "http://purl.org/dc/terms/",
+    "doap": "http://usefulinc.com/ns/doap#",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "gsp": "http://www.opengis.net/ont/geosparql#",
+    "ib1": "http://registry.ib1.org/ns/1.0/#",
+    "locn": "http://www.w3.org/ns/locn#",
+    "odrl": "http://www.w3.org/ns/odrl/2/",
+    "org": "http://www.w3.org/ns/org#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "prof": "http://www.w3.org/ns/dx/prof/",
+    "prov": "http://www.w3.org/ns/prov#",
+    "qb": "http://purl.org/linked-data/cube#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "https://schema.org/",
+    "schema1": "http://schema.org/",
+    "sh": "http://www.w3.org/ns/shacl#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "sosa": "http://www.w3.org/ns/sosa/",
+    "spdx": "http://spdx.org/rdf/terms#",
+    "ssn": "http://www.w3.org/ns/ssn/",
+    "time": "http://www.w3.org/2006/time#",
+    "time1": "http://www.w3.org/2006/time",
+    "vann": "http://purl.org/vocab/vann/",
+    "vcard": "http://www.w3.org/2006/vcard/ns#",
+    "void": "http://rdfs.org/ns/void#",
+    "wgs": "https://www.w3.org/2003/01/geo/wgs84_pos#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://data.ssen.co.uk/dataset/8a8a9428-5364-4c1f-b284-e85a7db007a6/resource/182a9900-95bf-45b8-993b-2d7473ca237e",
+      "@type": "dcat:Distribution",
+      "dcat:accessURL": {
+        "@id": "https://data-api.ssen.co.uk/dataset/8a8a9428-5364-4c1f-b284-e85a7db007a6/resource/182a9900-95bf-45b8-993b-2d7473ca237e/download/ssen-substation-csv.csv"
+      },
+      "dcat:byteSize": {
+        "@type": "xsd:decimal",
+        "@value": "16823632.0"
+      },
+      "dcat:mediaType": "text/csv",
+      "dct:SizeOrDuration": 16.823632,
+      "dct:description": "Substation identification and location with coordinates for both north and south.",
+      "dct:format": "CSV",
+      "dct:issued": {
+        "@type": "xsd:dateTime",
+        "@value": "2023-10-06T08:12:14.794778"
+      },
+      "dct:language": "EN",
+      "dct:license": {
+        "@id": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "dct:modified": {
+        "@type": "xsd:dateTime",
+        "@value": "2025-04-04T23:21:34.801878"
+      },
+      "dct:source": {
+        "@id": "https://data.ssen.co.uk/@ssen-distribution/distribution_line_substation"
+      },
+      "dct:title": "SSEN Substation Data",
+      "spdx:checksum": {
+        "@id": "_:N7fd7115de6384b6a84a584549ef83613"
+      }
+    },
+    {
+      "@id": "_:N7fd7115de6384b6a84a584549ef83613",
+      "@type": "spdx:Checksum",
+      "spdx:checksumValue": {
+        "@type": "xsd:hexBinary",
+        "@value": "3b5235911ba60d021adc2e6fa1d14ea8"
+      }
+    },
+    {
+      "@id": "https://data.ssen.co.uk/dataset/8a8a9428-5364-4c1f-b284-e85a7db007a6/resource/a58ae92d-b1b9-40db-bff2-f46a7190ef43",
+      "@type": "dcat:Distribution",
+      "dcat:accessURL": {
+        "@id": "https://data-api.ssen.co.uk/dataset/dd71975c-61f4-4a21-b995-9ceb1e91b361/resource/8f532a42-f082-4577-bb9d-6fefcb4b4bfc/download/distribution-line-substation-external-data-triage-form-artefact-pdf.pdf"
+      },
+      "dct:description": "Record of the SSEN Open Data Triage for the underlying Shapefile data, that has provided the source for this Substation data.",
+      "dct:format": "PDF",
+      "dct:issued": {
+        "@type": "xsd:dateTime",
+        "@value": "2023-10-17T10:07:09.207729"
+      },
+      "dct:language": "EN",
+      "dct:license": {
+        "@id": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "dct:modified": {
+        "@type": "xsd:dateTime",
+        "@value": "2025-04-04T23:21:34.802008"
+      },
+      "dct:source": {
+        "@id": "https://data.ssen.co.uk/@ssen-distribution/distribution_line_substation"
+      },
+      "dct:title": "SSEN Data Triage Record for Shapefile Data"
+    },
+    {
+      "@id": "https://data.ssen.co.uk/dataset/8a8a9428-5364-4c1f-b284-e85a7db007a6/resource/2f8c6190-f531-449c-bee0-fd980890fcb2",
+      "@type": "dcat:Distribution",
+      "dcat:accessURL": {
+        "@id": "https://data-api.ssen.co.uk/dataset/8a8a9428-5364-4c1f-b284-e85a7db007a6/resource/2f8c6190-f531-449c-bee0-fd980890fcb2/download/methodology-statement-ssen-substation-data.pdf"
+      },
+      "dcat:byteSize": {
+        "@type": "xsd:decimal",
+        "@value": "50256.0"
+      },
+      "dcat:mediaType": "application/pdf",
+      "dct:SizeOrDuration": 0.050256,
+      "dct:description": "A brief outline of the methodology used to develop the SSEN Substation Data. ",
+      "dct:format": "PDF",
+      "dct:issued": {
+        "@type": "xsd:dateTime",
+        "@value": "2025-03-25T10:54:17.644499"
+      },
+      "dct:language": "EN",
+      "dct:license": {
+        "@id": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "dct:modified": {
+        "@type": "xsd:dateTime",
+        "@value": "2025-04-04T23:21:34.802096"
+      },
+      "dct:source": {
+        "@id": "https://data.ssen.co.uk/@ssen-distribution/distribution_line_substation"
+      },
+      "dct:title": "Methodology Statement - SSEN Substation Data"
+    },
+    {
+      "@id": "https://data.ssen.co.uk/organization/6c20e020-2612-4132-818c-aaa1f28329c5",
+      "@type": "foaf:Organization",
+      "foaf:name": "SSEN Distribution"
+    },
+    {
+      "@id": "https://data.ssen.co.uk/dataset/8a8a9428-5364-4c1f-b284-e85a7db007a6",
+      "@type": "dcat:Dataset",
+      "dcat:contactPoint": {
+        "@id": "_:Nab6c3793208842ac890afc2db6600c00"
+      },
+      "dcat:distribution": [
+        {
+          "@id": "https://data.ssen.co.uk/dataset/8a8a9428-5364-4c1f-b284-e85a7db007a6/resource/a58ae92d-b1b9-40db-bff2-f46a7190ef43"
+        },
+        {
+          "@id": "https://data.ssen.co.uk/dataset/8a8a9428-5364-4c1f-b284-e85a7db007a6/resource/182a9900-95bf-45b8-993b-2d7473ca237e"
+        },
+        {
+          "@id": "https://data.ssen.co.uk/dataset/8a8a9428-5364-4c1f-b284-e85a7db007a6/resource/2f8c6190-f531-449c-bee0-fd980890fcb2"
+        }
+      ],
+      "dcat:keyword": "Asset Core Data",
+      "dcat:landingPage": {
+        "@id": "https://data.ssen.co.uk/@ssen-distribution/ssen-substation-data"
+      },
+      "dct:accessRights": "Creative Commons Attribution 4.0",
+      "dct:coverage": "[{\"location_name\": \"SEPD and SHEPD\", \"name\": \"SEPD and SHEPD Licence Areas\", \"type\": \"spatial\"}]",
+      "dct:creator": "SSEN Distribution",
+      "dct:date": "2023-10-05",
+      "dct:description": "Details of SSEN Substations, their type and identification and location coordinates for both SEPD and SHEPD licence areas. Derived from the Shapefile data and presented separately here for convenience.",
+      "dct:format": "CSV",
+      "dct:identifier": {
+        "@id": "https://data.ssen.co.uk/dataset/8a8a9428-5364-4c1f-b284-e85a7db007a6"
+      },
+      "dct:issued": {
+        "@type": "xsd:dateTime",
+        "@value": "2023-10-06T08:10:40.804190"
+      },
+      "dct:language": "EN",
+      "dct:modified": {
+        "@type": "xsd:dateTime",
+        "@value": "2025-06-27T23:04:51.370071"
+      },
+      "dct:publisher": [
+        "SSEN Distribution",
+        {
+          "@id": "https://data.ssen.co.uk/organization/6c20e020-2612-4132-818c-aaa1f28329c5"
+        }
+      ],
+      "dct:source": [
+        {
+          "@id": "https://data.ssen.co.uk/@ssen-distribution/distribution_line_substation"
+        },
+        "https://data.ssen.co.uk/@ssen-distribution/distribution_line_substation"
+      ],
+      "dct:subject": "Asset Core Data",
+      "dct:temporal": "2023-10-05",
+      "dct:title": "SSEN Substation Data",
+      "dct:type": "Asset Management",
+      "ib1:datasetAssurance": "IcebreakerOne.DatasetLevel1",
+      "ib1:sensitivityClass": "IB1-O",
+      "ib1:trustFramework": "http://open-energy.registry.ib1.org"
+    },
+    {
+      "@id": "_:Nab6c3793208842ac890afc2db6600c00",
+      "@type": "vcard:Organization",
+      "vcard:fn": "SSEN Asset Data",
+      "vcard:hasEmail": {
+        "@id": "mailto:Asset.Data@sse.com"
+      }
+    }
+  ]
+}

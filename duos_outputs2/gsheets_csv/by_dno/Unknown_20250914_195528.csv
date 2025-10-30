@@ -1,0 +1,67 @@
+file_path,dno_name,mpan_code,year,band,sheet_name,time_period,min_rate,max_rate,mean_rate,median_rate,count,unit
+dno_data_enhanced/arp-model-2020-21.xlsx,Unknown,,2020,RED,ARP_Peaking probabilities,16:00-19:00 (weekdays) (default),0.1031107426604144,0.8968892573395856,0.5088867915695631,0.6362278989432473,12,p/kWh
+dno_data_enhanced/arp-model-2020-21.xlsx,Unknown,,2020,AMBER,ARP_Peaking probabilities,"07:00-16:00, 19:00-23:00 (weekdays) (default)",0.0003252766742631,0.8598050348554828,0.3970830308511849,0.2736158036399433,16,p/kWh
+dno_data_enhanced/arp-model-2020-21.xlsx,Unknown,,2020,GREEN,ARP_Peaking probabilities,"23:00-07:00 (all days), all day (weekends) (default)",0.0003252766742631,0.8598050348554828,0.3970830308511849,0.2736158036399433,16,p/kWh
+dno_data_enhanced/arp-model-2020-21.xlsx,Unknown,,2020,RED,ARP_Inputs by network level,16:00-19:00 (weekdays) (default),0.0025650962408412,1.089,0.3888448017741733,0.3393962715835692,65,p/kWh
+dno_data_enhanced/arp-model-2020-21.xlsx,Unknown,,2020,AMBER,ARP_Inputs by network level,"07:00-16:00, 19:00-23:00 (weekdays) (default)",0.012370413198693,1.087,0.3905360138835375,0.2314265488720173,65,p/kWh
+dno_data_enhanced/arp-model-2020-21.xlsx,Unknown,,2020,GREEN,ARP_Inputs by network level,"23:00-07:00 (all days), all day (weekends) (default)",0.012370413198693,1.079,0.3958946713491406,0.2766040985502548,65,p/kWh
+dno_data_enhanced/arp-model-2020-21.xlsx,Unknown,,2020,RED,Inputs by customer type,16:00-19:00 (weekdays) (default),0.5809417086976026,0.5809417086976026,0.5809417086976026,0.5809417086976026,1,p/kWh
+dno_data_enhanced/arp-model-2020-21.xlsx,Unknown,,2020,GREEN,Inputs by customer type,"23:00-07:00 (all days), all day (weekends) (default)",0.1303605823800672,0.1303605823800672,0.1303605823800672,0.1303605823800672,1,p/kWh
+dno_data_enhanced/arp-model-2020-21.xlsx,Unknown,,2020,RED,Inputs by network level,16:00-19:00 (weekdays) (default),0.0274510568002066,1.0,0.4639703200412597,0.5266603747086892,6,p/kWh
+dno_data_enhanced/arp-model-2020-21.xlsx,Unknown,,2020,AMBER,Inputs by network level,"07:00-16:00, 19:00-23:00 (weekdays) (default)",0.012370413198693,1.016,0.2628561934760397,0.0653357134386065,11,p/kWh
+dno_data_enhanced/arp-model-2020-21.xlsx,Unknown,,2020,GREEN,Inputs by network level,"23:00-07:00 (all days), all day (weekends) (default)",0.0145613513925249,1.021,0.2918843978164618,0.2297104887386627,10,p/kWh
+dno_data_enhanced/arp-model-2020-21.xlsx,Unknown,,2020,RED,Load & loss characteristics,16:00-19:00 (weekdays) (default),1.031,1.089,1.0721666666666667,1.089,6,p/kWh
+dno_data_enhanced/arp-model-2020-21.xlsx,Unknown,,2020,GREEN,Load & loss characteristics,"23:00-07:00 (all days), all day (weekends) (default)",1.089,1.089,1.089,1.089,2,p/kWh
+dno_data_enhanced/arp-model-2020-21.xlsx,Unknown,,2020,RED,Customer contributions,16:00-19:00 (weekdays) (default),0.012370413198693,0.0345307447997926,0.0171618362475793,0.012370413198693,37,p/kWh
+dno_data_enhanced/arp-model-2020-21.xlsx,Unknown,,2020,AMBER,Customer contributions,"07:00-16:00, 19:00-23:00 (weekdays) (default)",0.0244009259838578,0.0663810136980219,0.0334777017058392,0.0244009259838578,37,p/kWh
+dno_data_enhanced/arp-model-2020-21.xlsx,Unknown,,2020,GREEN,Customer contributions,"23:00-07:00 (all days), all day (weekends) (default)",0.343799317773253,0.383232676781521,0.351466915358194,0.343799317773253,36,p/kWh
+dno_data_enhanced/arp-model-2020-21.xlsx,Unknown,,2020,RED,Pseudo-load coefficients,16:00-19:00 (weekdays) (default),0.1303605823800672,1.4019694293302525,0.7661650058551597,1.4019694293302525,2,p/kWh
+dno_data_enhanced/arp-model-2020-21.xlsx,Unknown,,2020,GREEN,Pseudo-load coefficients,"23:00-07:00 (all days), all day (weekends) (default)",1.422008026558353,1.422008026558353,1.422008026558353,1.422008026558353,1,p/kWh
+dno_data_enhanced/arp-model-2020-21.xlsx,Unknown,,2020,RED,Revenue matching,16:00-19:00 (weekdays) (default),0.3366702521442199,0.3366702521442199,0.3366702521442199,0.3366702521442199,1,p/kWh
+dno_data_enhanced/Charging-Statement-Supporting-Tables-S-West-v5-2020.xlsx,Unknown,,2020,RED,PC 1&2 supported (Sch1),16:00-19:00 (weekdays) (default),10.0,40.0,29.310344827586206,30.0,29,p/kWh
+dno_data_enhanced/Charging-Statement-Supporting-Tables-S-West-v5-2020.xlsx,Unknown,,2020,AMBER,PC 1&2 supported (Sch1),"07:00-16:00, 19:00-23:00 (weekdays) (default)",1.0,2.0,1.95,2.0,40,p/kWh
+dno_data_enhanced/Charging-Statement-Supporting-Tables-S-West-v5-2020.xlsx,Unknown,,2020,GREEN,PC 1&2 supported (Sch1),"23:00-07:00 (all days), all day (weekends) (default)",10.0,30.0,29.0,30.0,40,p/kWh
+dno_data_enhanced/Charging-Statement-Supporting-Tables-S-West-v5-2020.xlsx,Unknown,,2020,RED,PC 1&2 unsupported (Sch 2),16:00-19:00 (weekdays) (default),10.0,30.0,22.22222222222222,30.0,9,p/kWh
+dno_data_enhanced/Charging-Statement-Supporting-Tables-S-West-v5-2020.xlsx,Unknown,,2020,AMBER,PC 1&2 unsupported (Sch 2),"07:00-16:00, 19:00-23:00 (weekdays) (default)",1.0,2.0,1.5555555555555556,2.0,9,p/kWh
+dno_data_enhanced/Charging-Statement-Supporting-Tables-S-West-v5-2020.xlsx,Unknown,,2020,GREEN,PC 1&2 unsupported (Sch 2),"23:00-07:00 (all days), all day (weekends) (default)",10.0,30.0,21.11111111111111,30.0,9,p/kWh
+dno_data_enhanced/Charging-Statement-Supporting-Tables-S-West-v5-2020.xlsx,Unknown,,2020,RED,Generation HH,16:00-19:00 (weekdays) (default),1.0,1.0,1.0,1.0,5,p/kWh
+dno_data_enhanced/Charging-Statement-Supporting-Tables-S-West-v5-2020.xlsx,Unknown,,2020,RED,Preserved Tariffs Supported,16:00-19:00 (weekdays) (default),2.0,4.0,2.740740740740741,2.0,27,p/kWh
+dno_data_enhanced/Charging-Statement-Supporting-Tables-S-West-v5-2020.xlsx,Unknown,,2020,GREEN,Preserved Tariffs Supported,"23:00-07:00 (all days), all day (weekends) (default)",2.0,4.0,2.740740740740741,2.0,27,p/kWh
+dno_data_enhanced/Charging-Statement-Supporting-Tables-S-West-v5-2020.xlsx,Unknown,,2020,RED,Preserved Tariffs Unsupported,16:00-19:00 (weekdays) (default),2.0,4.0,2.9285714285714284,2.0,56,p/kWh
+dno_data_enhanced/Charging-Statement-Supporting-Tables-S-West-v5-2020.xlsx,Unknown,,2020,GREEN,Preserved Tariffs Unsupported,"23:00-07:00 (all days), all day (weekends) (default)",2.0,4.0,2.9285714285714284,2.0,56,p/kWh
+dno_data_enhanced/EDCM-LRIC_v10_20221027.xlsx,Unknown,,2022,RED,Fixed inputs,16:00-19:00 (weekdays) (default),3.0,3.0,3.0,3.0,1,p/kWh
+dno_data_enhanced/EDCM-LRIC_v10_20221027.xlsx,Unknown,,2022,RED,Residual charge,16:00-19:00 (weekdays) (default),1.0,1.0,1.0,1.0,9,p/kWh
+dno_data_enhanced/EDCM-LRIC_v10_20221027.xlsx,Unknown,,2022,AMBER,Residual charge,"07:00-16:00, 19:00-23:00 (weekdays) (default)",1.0,2.0,1.5555555555555556,2.0,9,p/kWh
+dno_data_enhanced/EDCM-LRIC_v10_20221027.xlsx,Unknown,,2022,GREEN,Residual charge,"23:00-07:00 (all days), all day (weekends) (default)",1.0,3.0,2.111111111111111,2.0,9,p/kWh
+dno_data_enhanced/EDCM-LRIC_v11_20231106.xlsx,Unknown,,2023,RED,Fixed inputs,16:00-19:00 (weekdays) (default),3.0,3.0,3.0,3.0,1,p/kWh
+dno_data_enhanced/EDCM-LRIC_v11_20231106.xlsx,Unknown,,2023,RED,Residual charge,16:00-19:00 (weekdays) (default),1.0,1.0,1.0,1.0,9,p/kWh
+dno_data_enhanced/EDCM-LRIC_v11_20231106.xlsx,Unknown,,2023,AMBER,Residual charge,"07:00-16:00, 19:00-23:00 (weekdays) (default)",1.0,2.0,1.5555555555555556,2.0,9,p/kWh
+dno_data_enhanced/EDCM-LRIC_v11_20231106.xlsx,Unknown,,2023,GREEN,Residual charge,"23:00-07:00 (all days), all day (weekends) (default)",1.0,3.0,2.111111111111111,2.0,9,p/kWh
+dno_data_enhanced/cdcm-model-2020-21.xlsx,Unknown,,2020,RED,Inputs by customer type,16:00-19:00 (weekdays) (default),0.5809417086976026,0.5809417086976026,0.5809417086976026,0.5809417086976026,1,p/kWh
+dno_data_enhanced/cdcm-model-2020-21.xlsx,Unknown,,2020,GREEN,Inputs by customer type,"23:00-07:00 (all days), all day (weekends) (default)",0.1303605823800672,0.1303605823800672,0.1303605823800672,0.1303605823800672,1,p/kWh
+dno_data_enhanced/cdcm-model-2020-21.xlsx,Unknown,,2020,RED,Inputs by network level,16:00-19:00 (weekdays) (default),0.0274510568002066,1.0,0.4639703200412597,0.5266603747086892,6,p/kWh
+dno_data_enhanced/cdcm-model-2020-21.xlsx,Unknown,,2020,AMBER,Inputs by network level,"07:00-16:00, 19:00-23:00 (weekdays) (default)",0.012370413198693,1.016,0.2628561934760397,0.0653357134386065,11,p/kWh
+dno_data_enhanced/cdcm-model-2020-21.xlsx,Unknown,,2020,GREEN,Inputs by network level,"23:00-07:00 (all days), all day (weekends) (default)",0.0145613513925249,1.021,0.2918843978164618,0.2297104887386627,10,p/kWh
+dno_data_enhanced/cdcm-model-2020-21.xlsx,Unknown,,2020,RED,Load & loss characteristics,16:00-19:00 (weekdays) (default),1.031,1.089,1.0721666666666667,1.089,6,p/kWh
+dno_data_enhanced/cdcm-model-2020-21.xlsx,Unknown,,2020,GREEN,Load & loss characteristics,"23:00-07:00 (all days), all day (weekends) (default)",1.089,1.089,1.089,1.089,2,p/kWh
+dno_data_enhanced/cdcm-model-2020-21.xlsx,Unknown,,2020,RED,Customer contributions,16:00-19:00 (weekdays) (default),0.012370413198693,0.0345307447997926,0.0171618362475793,0.012370413198693,37,p/kWh
+dno_data_enhanced/cdcm-model-2020-21.xlsx,Unknown,,2020,AMBER,Customer contributions,"07:00-16:00, 19:00-23:00 (weekdays) (default)",0.0244009259838578,0.0663810136980219,0.0334777017058392,0.0244009259838578,37,p/kWh
+dno_data_enhanced/cdcm-model-2020-21.xlsx,Unknown,,2020,GREEN,Customer contributions,"23:00-07:00 (all days), all day (weekends) (default)",0.343799317773253,0.383232676781521,0.351466915358194,0.343799317773253,36,p/kWh
+dno_data_enhanced/cdcm-model-2020-21.xlsx,Unknown,,2020,RED,Pseudo-load coefficients,16:00-19:00 (weekdays) (default),0.1303605823800672,1.4019694293302525,0.7661650058551597,1.4019694293302525,2,p/kWh
+dno_data_enhanced/cdcm-model-2020-21.xlsx,Unknown,,2020,GREEN,Pseudo-load coefficients,"23:00-07:00 (all days), all day (weekends) (default)",1.422008026558353,1.422008026558353,1.422008026558353,1.422008026558353,1,p/kWh
+dno_data_enhanced/cdcm-model-2020-21.xlsx,Unknown,,2020,RED,Revenue matching,16:00-19:00 (weekdays) (default),0.3366702521442199,0.3366702521442199,0.3366702521442199,0.3366702521442199,1,p/kWh
+dno_data_enhanced/pcdm-model-2020-21.xlsx,Unknown,,2020,RED,Fixed inputs,16:00-19:00 (weekdays) (default),1.0,1.0,1.0,1.0,7,p/kWh
+dno_data_enhanced/pcdm-model-2020-21.xlsx,Unknown,,2020,AMBER,Fixed inputs,"07:00-16:00, 19:00-23:00 (weekdays) (default)",1.0,1.0,1.0,1.0,6,p/kWh
+dno_data_enhanced/pcdm-model-2020-21.xlsx,Unknown,,2020,GREEN,Fixed inputs,"23:00-07:00 (all days), all day (weekends) (default)",1.0,1.0,1.0,1.0,5,p/kWh
+dno_data_enhanced/pcdm-model-2020-21.xlsx,Unknown,,2020,RED,MEAV,16:00-19:00 (weekdays) (default),0.8590457621819516,0.8590457621819516,0.8590457621819516,0.8590457621819516,1,p/kWh
+dno_data_enhanced/pcdm-model-2020-21.xlsx,Unknown,,2020,RED,Capitalised,16:00-19:00 (weekdays) (default),0.8590457621819516,0.8590457621819516,0.8590457621819516,0.8590457621819516,1,p/kWh
+dno_data_enhanced/pcdm-model-2020-21.xlsx,Unknown,,2020,RED,Rev allocation,16:00-19:00 (weekdays) (default),0.0333060210236283,1.0,0.3293211157633569,0.2297369975979471,32,p/kWh
+dno_data_enhanced/pcdm-model-2020-21.xlsx,Unknown,,2020,AMBER,Rev allocation,"07:00-16:00, 19:00-23:00 (weekdays) (default)",0.220367703538239,1.0,0.4513704906175796,0.2699366542009346,11,p/kWh
+dno_data_enhanced/pcdm-model-2020-21.xlsx,Unknown,,2020,GREEN,Rev allocation,"23:00-07:00 (all days), all day (weekends) (default)",0.1631417305532813,1.0,0.5314631394977257,0.412519973730922,12,p/kWh
+dno_data_enhanced/pcdm-model-2020-21.xlsx,Unknown,,2020,RED,EDCM discounts,16:00-19:00 (weekdays) (default),0.0131924474180949,1.0,0.347547057599561,0.1208410084037978,14,p/kWh
+dno_data_enhanced/pcdm-model-2020-21.xlsx,Unknown,,2020,AMBER,EDCM discounts,"07:00-16:00, 19:00-23:00 (weekdays) (default)",0.6669795982883451,1.0,0.8768363336015458,0.9614953320173256,24,p/kWh
+dno_data_enhanced/pcdm-model-2020-21.xlsx,Unknown,,2020,GREEN,EDCM discounts,"23:00-07:00 (all days), all day (weekends) (default)",0.3059961490477728,1.0,0.7300898199066495,0.6985184543637448,23,p/kWh
+dno_data_enhanced/EDCM-LRIC Charging Model - 2026-27 Release For Charge Setting (Blank).xlsx,Unknown,,2026,RED,Fixed inputs,16:00-19:00 (weekdays) (default),3.0,3.0,3.0,3.0,1,p/kWh
+dno_data_enhanced/EDCM-LRIC Charging Model - 2026-27 Release For Charge Setting (Blank).xlsx,Unknown,,2026,RED,Residual charge,16:00-19:00 (weekdays) (default),1.0,1.0,1.0,1.0,9,p/kWh
+dno_data_enhanced/EDCM-LRIC Charging Model - 2026-27 Release For Charge Setting (Blank).xlsx,Unknown,,2026,AMBER,Residual charge,"07:00-16:00, 19:00-23:00 (weekdays) (default)",1.0,2.0,1.5555555555555556,2.0,9,p/kWh
+dno_data_enhanced/EDCM-LRIC Charging Model - 2026-27 Release For Charge Setting (Blank).xlsx,Unknown,,2026,GREEN,Residual charge,"23:00-07:00 (all days), all day (weekends) (default)",1.0,3.0,2.111111111111111,2.0,9,p/kWh

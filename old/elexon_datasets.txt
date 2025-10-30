@@ -1,0 +1,261 @@
+Actual or estimated wind and solar power generation
+Actual or estimated net wind and solar power generation (MW) in each bidding zone per Settlement Period.
+What you need to know while using this data
+*
+The information shall be published no later than one hour after the end of each Settlement Period and be updated on the basis of measured values as soon as they become available.
+NESO identified an issue affecting the accuracy of data published between 28 March 2024 and 20 November 2024. The data for these dates will be corrected and republished.
+
+Interconnector flows
+The Interconnector flows report is derived from the Generation by Fuel Type data and shows both interconnector imports and exports; the data is updated every five minutes.
+
+Interconnector flows
+The Interconnector flows report is derived from the Generation by Fuel Type data and shows both interconnector imports and exports; the data is updated every five minutes.
+
+Generation forecast for wind & solar
+A forecast of wind and solar power generation (MW) per bidding zone, per Settlement Period of the following day.
+What you need to know while using this data
+*
+The information shall be published no later than 18:00 Brussels time, one day before actual delivery takes place. The information shall be regularly updated and published during intra-day trading with at least one update to be published at 8:00 Brussels time on the day of actual delivery.
+forecast/generation/wind/peak
+
+Actual aggregated generation per type
+Actual aggregated net generation output (MW) per Settlement Period and per production type.
+What you need to know while using this data
+*
+The information shall be published no later than one hour after the operational period. Small scale generation might be estimated.
+generation/actual/per-type/day-total
+
+Actual or estimated wind and solar power generation
+Actual or estimated net wind and solar power generation (MW) in each bidding zone per Settlement Period.
+What you need to know while using this data
+*
+The information shall be published no later than one hour after the end of each Settlement Period and be updated on the basis of measured values as soon as they become available.
+NESO identified an issue affecting the accuracy of data published between 28 March 2024 and 20 November 2024. The data for these dates will be corrected and republished.
+
+generation/actual/per-type/wind-and-solar
+
+Day-ahead aggregated generation
+An estimate of the total net scheduled generation (MW) per bidding zone, per Settlement Period of the following day.
+What you need to know while using this data
+*
+The information shall be published no later than 18:00 Brussels time, one day before actual delivery takes place.
+forecast/generation/day-ahead
+
+Rolling system demand
+NESO provides an estimate of the Transmission System Demand (or Rolling System Demand) using operational meters and this is derived from the total of all Fuel Type categories from the Generation by Fuel Type report.
+What you need to know while using this data
+*
+This includes all demand met from the Transmission system including power station auxiliary demand, pumping demand and interconnector exports demand. The data is provided as 5 minute average MW values, half hourly averages in MW and daily MWh totals. As this section is concerned with the breakdown by fuel type of total positive generation to meet all Transmission System Demand, any fuel type categories with negative values will be capped to zero.
+demand/outturn/summary
+
+Surplus forecast and margin
+National Energy System Operator derives the National Surplus Forecast and Generating Plant Operating Margin reports and presents both reports as daily MW values from 2 days to 14 days ahead and weekly MW values for the 2 weeks to 156 weeks ahead.
+What you need to know while using this data
+*
+NESO creates a forward view of generation availability (also referred to as Output Usable data under the Grid Code) for generation and interconnector capacity, accounting for planned outages; this generation availability is reported as generation forecasts. While publishing the generation availability, NESO also assess this against the actual GB electricity system requirements and provides the Generating Plant Operating Margin, which is the additional generation or reserve, on top of the total Demand Forecast in order to meet the actual demand in real time.
+NESO also reports National Surplus Forecast which is derived from the difference of the total aggregate generation availability from the GB electricity system requirements (sum of Generating Plant Operating Margin and Demand Forecast).
+The Surplus Forecast and Margin data can be downloaded as 2-14 days, 2-52 weeks or 2-156 weeks head. The 2-52 weeks is a subset of the 2-156 weeks data. Further detail on the naming for each data types for each time resolution is shown in the data export window tooltip.
+/forecast/margin/daily.
+/forecast/surplus/daily
+
+Demand outturn
+The Initial Demand Outturn measures the half-hour average MW demand metered by the Transmission Company based on its operational metering. The data is updated every 30 minutes and within 15 minutes of the end of the effective Settlement Period. The data is represented with:
+Initial Demand Outturn (INDO) which takes into account transmission losses but does not include station transformer load, pumped storage demand or interconnector demand
+Initial Transmission System Demand Outturn (ITSDO) which takes into account transmission losses, station transformer load, pumped storage demand and interconnector demand
+/demand/outturn
+
+Daily energy transmitted (INDOD)
+NESO provides the Initial National Demand Out-Turn Daily (INDOD) data, which is presented on a graph covering a rolling 3-month period.
+What you need to know while using this data
+*
+The Initial National Demand Out-Turn Daily (INDOD) is a metric representing the total daily demand in megawatts (MWh) on the electricity grid. It's calculated by summing the INDO values for each Settlement Day, with the result divided by two to convert it to MWh. While it's not formally defined in the Grid Code, it is submitted to Insights by the System Operator.
+The Initial National Demand Out-Turn (INDO) is the average megawatt value of demand for each Settlement Period. It includes transmission losses but excludes factors like station transformer load, pumped storage demand, and interconnector demand. The INDO data is made available by the System Operator within 15 minutes after each Settlement Period, based on their operational metering. The composition of INDO matches that of the National Demand Forecast (NDF), making them comparable figures. Like INDOD, INDO is submitted to Insights by the System Operator, although it's not formally defined in the Grid Code
+demand/outturn/daily
+Demand forecast
+National Energy System Operator (NESO) provides demand forecast data as National Demand Forecast and Transmission System Demand Forecast in three different timeframe and resolution timescales as day and day ahead (reported for each Settlement Period), 2 to 14 days ahead (reported daily) and 2 to 52 weeks ahead (reported weekly). Additionally the Demand Outturn, i.e. the historical demand, is also included on this chart.
+What you need to know while using this data
+*
+The Initial National Demand Outturn (INDO) and Initial Transmission System Demand Outturn (ITSDO) values are also included to provide a direct representation of forecast vs actual outturn. You can turn these on by clicking "Filter" in the top left corner of the graph.
+The Day Ahead Demand Forecast page provides a forward view of demand as NDF and TSDF based on operational metering data. The same calculation logic for INDO applies to NDF with reference to which variable are taken into consideration in the aggregation (e.g. interconnector demand), making the data comparable; as does ITSDO to TSDF.
+For this page, only TSDF data is reported both at National or Boundary Zones, while other data (NDF, INDO and ITSDO) is only reported at National level.
+To learn more about zones and boundaries visit the NESO website, download the table for mapping BM Units to zones or view the GB transmission system boundary zone map.
+Indicative peak demand
+The Triad indicative demand peaks are the three settlement periods of highest transmission system demand (adjusted to exclude demand from interconnectors) within a financial year (specifically in the Triad season November to February inclusive). These three half hour settlement periods of peak system demand must be separated from each other by at least ten clear days.
+The indicative Triad Demand Peak information using Operational Metering is derived from Initial Transmission System Demand Outturn (ITSDO) which is calculated from generation volumes, and losses are implicitly included within the calculations. The Triad Demand Peak information from Settlement Metering is calculated using demand data from metering system in the Settlement Reports (SAA-I014) which would exclude Transmission Losses. This results in a lower demand volume when comparing with Triad data using Operational Metering.
+What you need to know while using this data
+*
+The dates are purely indicative, being based on peak demands calculated using operational metering data, and so the final triad dates may well be different from these dates. When available, the final definitive triad dates (as calculated in accordance with chapter 4 of the Statement of Use of System Charging Methodology) based on the latest available settlement metering data are published on the National Energy System Operator website, normally at the end of March each year for the preceding Nov-Feb winter triad period.
+demand/peak/indicative/settlement/{triadSeason}
+View in API documentation
+GET
+/demand/peak/triad
+View in API documentation
+The API endpoints used for the tile on this page are:
+GET
+/demand/peak/triad
+Total Load: actual and day-ahead forecast
+Actual total load per bidding zone per Settlement Period, the total load being defined as equal to the sum of power generated by plants on both Transmission System Operators/Distribution System Operators networks, from which is deduced:
+The balance (export-import) of exchanges on interconnections between neighbouring bidding zones.
+The power absorbed by energy storage resources.
+Transmission System Operators shall calculate and submit a day-ahead forecast of the total load per zone.
+What you need to know while using this data
+*
+For their control areas, Transmission System Operators shall calculate and submit the total load per Settlement Period to the ENTSO for Electricity for each bidding zone. It shall be published no later than one hour after the operating period. The information shall be published at the latest H+1 after the end of the operating period.
+A day-ahead forecast of the total load per Settlement Period per bidding zone at the latest two hours before the gate closure time of the day-ahead market in the bidding zone or at D-1, 12:00 in local time zone of the bidding zone at the latest when gate closure time does not apply. The day-ahead forecast has to be updated, if there are major changes. A major change represents a change of at least 10% of the total load forecast in one Settlement Period. The primary owners of the data are Transmission System Operators and Distribution System Operators; The forecast of load:
+is given for information purposes only.
+is drawn up, among other things, on the basis of meteorological data ahead of time. It is therefore likely to change in shape and level.
+Note: The day-ahead forecast is calculated (estimated) on the historic load profile on similar days, taking into account the variables that affect electricity demand, such as weather conditions, climate and socioeconomic factors.
+forecast/demand/total/day-ahead
+View in API documentation
+GET
+/demand/actual/total
+Total load: week-ahead forecast
+Transmission System Operators shall calculate and submit a week-ahead forecast of the total load for every day of the following week, which shall for each day include a maximum and a minimum load value for each bidding zone.
+Month and Year ahead submitted forecasts are available via the API documentation.
+What you need to know while using this data
+*
+The information shall be published each Friday no later than two hours before the gate closure of the day-ahead market in the bidding zone and be updated when significant changes occur.
+A week starts on Monday 00:00 hrs and ends on Sunday at 24:00 hrs (in accordance with ISO 8601). Week-ahead estimated loads shall be updated, if there are major changes. A major change represents a change of at least 10% of the total load forecast per Settlement Period. The primary owners of the data are Transmission System Operators and Distribution System Operators.
+Nevertheless, the forecast of load of the following week is given:
+For information purposes only.
+It is drawn up, among other things, on the basis of weather forecast ahead of time.
+It is therefore likely to change considerably in shape and level.
+Note: The week-ahead forecast is calculated (estimated) on the historic load profile on similar days, taking into account the variables that affect electricity demand, such as weather conditions, climate and socioeconomic factors.
+Note 2: Higher resolution is allowed. Highest resolution is MTU. In that case, the maximum and minimum load values for each day will be published.
+Indicated forecasts
+National Energy System Operator provides a forward view of several auxiliary data to provide additional context to generation and demand data; these are currently reported as Indicated Margin (MELNGC), Indicated Imbalance (IMBALNGC), Indicated Generation (INDGEN), and Indicated Demand (INDDEM) for current day and forecast up to a day ahead.
+The National Demand Forecast (NDF) is also presented here as it is a related dataset.
+What you need to know while using this data
+*
+Market participants, primarily generation units, submit to NESO a forward view of their maximum capacity values where they will be generating over a period of time i.e. a MW profile over time; this is referred to as the Maximum Export Limit (MEL). The participants will also submit Physical Notification (PNs) over that same period; which represents what the participants expect to be exporting or importing over a period of time.
+INDGEN: Indicated Generation (INDGEN) is the output from the aggregation of the PNs for all units which will be exporting energy for the forecast period.
+INDDEM: The Indicated Demand (INDDEM) is the sum of all the PNs for units which are forecasted to be importing energy.
+IMBALNGC: Indicated Imbalance (IMBALNGC) is the output from the difference of INDGEN and NDF; the closer to zero means the more balanced the system will be, for that forecasted period.
+MELNGC: NESO aggregates the MEL for all participants and subtracts this from the National Demand Forecast (NDF) and reports this as the Indicated Margin (MELNGC); the higher the MELNGC, the greater spare capacity for that forecasted period on the system.
+Restoration region demand forecast
+Each day at 09:00, 11:45 and 17:00 London time, National Energy System Operator (NESO) creates a forecast peak value for the day-ahead demand effective for the Settlement date and Restoration region. The 60% and 100% is currently based on the preceding winter demand peak. At a later date, NESO will use seasonal, monthly and daily snapshots to dynamically derive the values.
+What you need to know while using this data
+*
+There are 7 regions, these are used to plan and monitor the restoration of power in the event of a major outage.
+South East
+South West
+Midlands
+North East
+North West
+North Scotland
+South Scotland
+The published values for each restoration region are based on segments of National Demand and exclude demand supplied by embedded generation which do not provide operational metering data to NESO; as a result the underlying demand will be higher.
+Note: GSP Group ID will be included when provided by NESO.
+Restoration region demand restored
+During a system restoration event National Energy System Operator (NESO) provides hourly updates to enable tracking of restoration progress in a specific restoration region.
+
+60% of demand in each restoration region must be restored within 24 hours.
+100% of national demand must be restored within 5 days.
+What you need to know while using this data
+*
+There are 7 regions, these are used to plan and monitor the restoration of power in the event of a major outage.
+South East
+South West
+Midlands
+North East
+North West
+North Scotland
+South Scotland
+Note: GSP Group ID will be included when provided by NESO.
+Restoration region demand restored
+During a system restoration event National Energy System Operator (NESO) provides hourly updates to enable tracking of restoration progress in a specific restoration region.
+
+60% of demand in each restoration region must be restored within 24 hours.
+100% of national demand must be restored within 5 days.
+What you need to know while using this data
+*
+There are 7 regions, these are used to plan and monitor the restoration of power in the event of a major outage.
+South East
+South West
+Midlands
+North East
+North West
+North Scotland
+South Scotland
+Note: GSP Group ID will be included when provided by NESO.
+Short-term operating reserves
+STOR (Short Term Operating Reserve) is a service outside of the Balancing Mechanism by which National Energy System Operator can issue instructions for reserve power. STOR providers (Non-BM STOR units) will meet this requirement by either increasing generation or reducing demand. This is to manage instances where actual demand exceeds forecast demand including unavailability of power plants due to unplanned outages.
+These instructions are shown on the graph below as a series of half hourly MWh values shown against start time in UTC. The graph can show either up to a maximum of 1 week of data or 24 hours at a time up to the most recently completed period of today.
+What you need to know while using this data
+*
+NESO procures sources of extra power ahead of time with STOR providers through STOR contracts. The need for STOR will vary on the time of year, the time of week, and time of day; to reflect this, each year NESO publishes theSTOR Availability Window ahead of time starting from April.
+The data is updated following the end of each Settlement Period as the latest figure is received from NESO.
+Short-term operating reserves
+STOR (Short Term Operating Reserve) is a service outside of the Balancing Mechanism by which National Energy System Operator can issue instructions for reserve power. STOR providers (Non-BM STOR units) will meet this requirement by either increasing generation or reducing demand. This is to manage instances where actual demand exceeds forecast demand including unavailability of power plants due to unplanned outages.
+These instructions are shown on the graph below as a series of half hourly MWh values shown against start time in UTC. The graph can show either up to a maximum of 1 week of data or 24 hours at a time up to the most recently completed period of today.
+What you need to know while using this data
+*
+NESO procures sources of extra power ahead of time with STOR providers through STOR contracts. The need for STOR will vary on the time of year, the time of week, and time of day; to reflect this, each year NESO publishes theSTOR Availability Window ahead of time starting from April.
+The data is updated following the end of each Settlement Period as the latest figure is received from NESO.
+Balancing Mechanism data by BMU view
+This page can be used to view Physical, Dynamic, Bid Offer and Balancing Services Volume data for a specific BM Unit. Use the controls below to select a BM Unit and a date range for which to view the data.
+balancing/acceptances
+View in API documentation
+GET
+/balancing/physical
+View in API documentation
+GET
+/balancing/dynamic
+balancing/dynamic
+View in API documentation
+GET
+/balancing/dynamic/rates
+balancing/dynamic
+balancing/physical
+View in API documentation
+GET
+/balancing/bid-offer balancing/physical
+balancing/nonbm/volumes
+Balancing Mechanism data by market view
+This page can be used to view BM Unit data at Market level. Use the controls below to select a date and time period to view Physical, Dynamic, Bid Offer and Balancing Services Volume data. Additional filters are available to refine your view.
+Adjustment data (NETBSAD)
+National Energy System Operator provides a set of adjustment buy/sell price values for each Settlement Period, shown in £/MWh.
+What you need to know while using this data
+*
+This page displays the latest NETBSAD data received by the BMRA which may differ from those displayed in the System Prices web page. The NETBSAD values displayed in the System Prices web page are the actual values used in the calculation of those prices and may have been superseded by later values received by the BMRA.
+Adjustment actions (DISBSAD)
+National Energy System Operator provides a set of adjustment actions, price and volume values for each Settlement Period.
+Adjustment prices are shown in £/MWh.
+Adjustment volumes are shown in MWh.
+The names used as the Asset Ids are provided in this reference document.
+What you need to know while using this data
+*
+Disaggregated BSAD consists of a number of Balancing Services Adjustment Action items.
+When moving over the graph a modal will appear providing details relating to a specfic settlement period and the table below provides additional information.
+Some Balancing Services Adjustment Actions have no defined cost and therefore the Adjustment Cost field will be blank.
+The SO-Flag indicates whether or not the Action was potentially taken for reasons other than balancing the short-term energy imbalance of the Transmission System.
+The STOR-Flag indicates whether or not the Action was provided by a STOR provider.
+Market index prices
+Market Index Price data is received from each of the appointed Market Index Data Providers (MIDPs) and reflects the price of wholesale electricity in Great Britain for the relevant period in the short term markets. Market Index Prices are a key component in the calculation of System Buy Price and System Sell Price for each Settlement Period.
+What you need to know while using this data
+*
+The graph's default view is the last 24 hours and you are able to change to a week view or a custom date range.
+The graph shows the Market Index Prices in £/MWh with a line each for price reported by APX and N2EX. The corresponding Market Volume Data in MWh is available in the tooltip when hovering over the graph.
+Derived data
+The Derived data page displays an estimate of the Bid and Offer volumes accepted for each Bid-Offer pair by the System Operator for a single BM Unit. The data is provided at both a per-acceptance and period total level. At acceptance level, an indication of the acceptance duration is given ('S' for short and 'L' for long). At period level the Settlement Period cash flow for the BM Unit is provided.
+What you need to know while using this data
+*
+The Accepted Bid-Offer Volume is the quantity of Bid or Offer from Bid-Offer Pair accepted as a result of Bid-Offer Acceptance.
+Detailed system prices
+The indicative price calculation is published 15 minutes after the effective Settlement Period based on parameters available at the time the calculations were run. It shows a detailed breakdown of the indicative System Price calculations Stack either as Buy or Sell Stacks listing all accepted actions included in the System Price calculations.
+This includes the System operators actions (Bid-Offer Acceptance Volumes and Balancing Service Adjustment Actions) showing the initial data along with details of how the indicative price calculation processing affects each item's volume and price.
+What you need to know while using this data
+*
+The calculations are refreshed at D+1, i.e. the following day, to account for late actions or changes made by the System Operator showing a more accurate view of the price calculations.
+System sell and buy prices
+The indicative price calculation is published 15 minutes after the effective Settlement Period based on parameters available at the time the calculations were run.
+System Buy/Sell Prices is displaying the indicative £/MWh for a settlement period. It is derived from Bid-Offer Acceptances, BSAD and Market Index Data.
+Net Imbalance Volume is the net imbalance volume (in MWh) of the total system for a given Settlement Period. It is derived by netting Buy and Sell Actions in the Balancing Mechanism. Where the NIV is positive, the system is short and would normally result in the SO accepting Offers to increase generation/decrease consumption.
+What you need to know while using this data
+*
+The calculations are refreshed at D+1, i.e. the following day, to account for late actions or changes made by the System Operator showing a more accurate view of the price calculations.
+
+
+
+
+

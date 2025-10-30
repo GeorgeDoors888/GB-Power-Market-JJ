@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.georgemajor.energy-system-startup</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/bin/zsh</string>
+        <string>-c</string>
+        <string>cd /Users/georgemajor/jibber-jabber\ 24\ august\ 2025\ big\ bop && source .venv/bin/activate && python energy_system_startup.py</string>
+    </array>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>KeepAlive</key>
+    <false/>
+    <key>StandardOutPath</key>
+    <string>/Users/georgemajor/jibber-jabber 24 august 2025 big bop/launchagent.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/georgemajor/jibber-jabber 24 august 2025 big bop/launchagent_error.log</string>
+</dict>
+</plist>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base target="_top">
+  <title>UK DNO Map</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" 
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" 
+        crossorigin=""/>
+  
+  <!-- Leaflet JavaScript -->
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" 
+          integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" 
+          crossorigin=""></script>
+  
+  <!-- Additional plugins for choropleth map -->
+  <script src="https://unpkg.com/leaflet-choropleth@1.1.4/dist/leaflet-choropleth.js"></script>
+  
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    html, body, #map {
+      height: 100%;
+      width: 100%;
+    }
+    .info {
+      padding: 6px 8px;
+      font: 14px/16px Arial, Helvetica, sans-serif;
+      background: white;
+      background: rgba(255,255,255,0.8);
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      border-radius: 5px;
+    }
+    .info h4 {
+      margin: 0 0 5px;
+      color: #777;
+    }
+    .legend {
+      line-height: 18px;
+      color: #555;
+    }
+    .legend i {
+      width: 18px;
+      height: 18px;
+      float: left;
+      margin-right: 8px;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  
+  <script>
+    // Initialize the map centered on the UK
+    var map = L.map('map').setView([54.5, -4], 6);
+    
+    // Add the OpenStreetMap tiles
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap contributors</a>'
+    }).addTo(map);
+    
+    // Get the data passed from the server
+    var dnoData = <?!= JSON.stringify(data) ?>;
+    
+    // Create a mapping from ID to value for easier lookup
+    var dnoValues = {};
+    dnoData.forEach(function(dno) {
+      dnoValues[dno.id] = dno.value;
+    });
+    
+    // Define color function for choropleth
+    function getColor(d) {
+      return d > 14000 ? '#800026' :
+             d > 12000 ? '#BD0026' :
+             d > 10000 ? '#E31A1C' :
+             d > 9000 ? '#FC4E2A' :
+             d > 8000 ? '#FD8D3C' :
+             d > 7000 ? '#FEB24C' :
+             d > 6000 ? '#FED976' :
+                        '#FFEDA0';
+    }
+    
+    // Define style function for GeoJSON
+    function style(feature) {
+      return {
+        fillColor: getColor(dnoValues[feature.properties.dno_id] || 0),
+        weight: 2,
+        opacity: 1,
+        color: 'white',
+        dashArray: '3',
+        fillOpacity: 0.7
+      };
+    }
+    
+    // Control that shows info on hover
+    var info = L.control();
+    
+    info.onAdd = function(map) {
+      this._div = L.DomUtil.create('div', 'info');
+      this.update();
+      return this._div;
+    };
+    
+    info.update = function(props) {
+      var content = '<h4>UK DNO Areas</h4>';
+      if (props) {
+        var value = dnoValues[props.dno_id] || 'No data';
+        content += '<b>' + props.dno_name + '</b><br />' + 
+                   'ID: ' + props.dno_id + '<br />' +
+                   'Value: ' + value;
+      } else {
+        content += 'Hover over a DNO area';
+      }
+      this._div.innerHTML = content;
+    };
+    
+    info.addTo(map);
+    
+    // Add interaction on hover
+    function highlightFeature(e) {
+      var layer = e.target;
+      
+      layer.setStyle({
+        weight: 5,
+        color: '#666',
+        dashArray: '',
+        fillOpacity: 0.7
+      });
+      
+      if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+        layer.bringToFront();
+      }
+      
+      info.update(layer.feature.properties);
+    }
+    
+    function resetHighlight(e) {
+      geojsonLayer.resetStyle(e.target);
+      info.update();
+    }
+    
+    function zoomToFeature(e) {
+      map.fitBounds(e.target.getBounds());
+    }
+    
+    function onEachFeature(feature, layer) {
+      layer.on({
+        mouseover: highlightFeature,
+        mouseout: resetHighlight,
+        click: zoomToFeature
+      });
+    }
+    
+    // Initialize with empty GeoJSON
+    var geojsonData = {
+      "type": "FeatureCollection",
+      "features": []
+    };
+    
+    // Create the GeoJSON layer
+    var geojsonLayer = L.geoJSON(geojsonData, {
+      style: style,
+      onEachFeature: onEachFeature
+    }).addTo(map);
+    
+    // Load GeoJSON data
+    google.script.run.withSuccessHandler(function(geoData) {
+      if (geoData && !geoData.error) {
+        try {
+          // Parse the JSON if it's a string
+          var parsedData = typeof geoData === 'string' ? JSON.parse(geoData) : geoData;
+          
+          // Clear existing layers and add the new data
+          geojsonLayer.clearLayers();
+          geojsonLayer.addData(parsedData);
+          
+          // Fit the map to the bounds of the GeoJSON data
+          if (parsedData.features && parsedData.features.length > 0) {
+            map.fitBounds(geojsonLayer.getBounds());
+          }
+        } catch (e) {
+          console.error("Error parsing GeoJSON data:", e);
+        }
+      } else {
+        console.error("Failed to load GeoJSON data:", geoData ? geoData.error : "Unknown error");
+      }
+    }).doGet();
+    
+    // Add legend
+    var legend = L.control({position: 'bottomright'});
+    
+    legend.onAdd = function(map) {
+      var div = L.DomUtil.create('div', 'info legend'),
+          grades = [0, 6000, 7000, 8000, 9000, 10000, 12000, 14000],
+          labels = [];
+          
+      // Loop through our intervals and generate a label with a colored square for each interval
+      for (var i = 0; i < grades.length; i++) {
+        div.innerHTML +=
+          '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' +
+          grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
+      }
+      
+      return div;
+    };
+    
+    legend.addTo(map);
+  </script>
+</body>
+</html>

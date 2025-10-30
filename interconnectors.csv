@@ -1,0 +1,10 @@
+interconnector_id,name,description,country_1,country_2
+IFA,France-England Interconnector,Main interconnector between France and England,France,UK
+IFA2,France-England Interconnector 2,Second interconnector between France and England,France,UK
+NEMO,NEMO Link,Interconnector between UK and Belgium,Belgium,UK
+NSL,North Sea Link,Interconnector between UK and Norway,Norway,UK
+EWIC,East-West Interconnector,Interconnector between UK and Ireland,Ireland,UK
+Moyle,Moyle Interconnector,Interconnector between UK and Northern Ireland,Northern Ireland,UK
+BritNed,BritNed,Interconnector between UK and Netherlands,Netherlands,UK
+ElecLink,ElecLink,Interconnector between UK and France (Channel Tunnel),France,UK
+VIKING,Viking Link,Interconnector between UK and Denmark,Denmark,UK

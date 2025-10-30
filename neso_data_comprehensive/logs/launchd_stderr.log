@@ -1,0 +1,2 @@
+/Users/georgemajor/jibber-jabber 24 august 2025 big bop/neso_data_comprehensive/run_neso_collection.sh: line 17:  2987 Terminated: 15          python collect_neso_comprehensive.py >> neso_data_comprehensive/logs/neso_collection_$(date +%Y%m%d).log 2>&1
+/Users/georgemajor/jibber-jabber 24 august 2025 big bop/neso_data_comprehensive/run_neso_collection.sh: line 17: 98779 Killed: 9               python collect_neso_comprehensive.py >> neso_data_comprehensive/logs/neso_collection_$(date +%Y%m%d).log 2>&1

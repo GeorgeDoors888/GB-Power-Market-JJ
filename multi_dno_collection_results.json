@@ -1,0 +1,126 @@
+{
+  "collection_timestamp": "2025-09-11T23:15:06.805438",
+  "dnos_collected": [
+    {
+      "dno": "ENWL",
+      "full_name": "Electricity North West",
+      "areas": [
+        "ENWL"
+      ],
+      "collection_timestamp": "2025-09-11T23:15:06.805461",
+      "accessibility_test": {
+        "charges": {
+          "url": "https://www.enwl.co.uk/get-connected/charges-and-agreements/",
+          "status_code": 404,
+          "accessible": false,
+          "content_length": 0
+        },
+        "regulatory": {
+          "url": "https://www.enwl.co.uk/about-us/regulatory-and-governance/",
+          "status_code": 404,
+          "accessible": false,
+          "content_length": 0
+        },
+        "innovation": {
+          "url": "https://www.enwl.co.uk/innovation/",
+          "status_code": 200,
+          "accessible": true,
+          "content_length": 156378
+        }
+      },
+      "expected_data_types": [
+        "duos_charges",
+        "network_capacity",
+        "connection_data",
+        "performance_statistics"
+      ],
+      "status": "accessibility_tested"
+    },
+    {
+      "dno": "NPG",
+      "full_name": "Northern Powergrid",
+      "areas": [
+        "NEEB",
+        "YOREB"
+      ],
+      "collection_timestamp": "2025-09-11T23:15:07.088665",
+      "accessibility_test": {
+        "charges": {
+          "url": "https://www.northernpowergrid.com/charges-and-agreements",
+          "status_code": 404,
+          "accessible": false,
+          "content_length": 0
+        },
+        "network": {
+          "url": "https://www.northernpowergrid.com/network-information",
+          "status_code": 404,
+          "accessible": false,
+          "content_length": 0
+        },
+        "smart_grid": {
+          "url": "https://www.northernpowergrid.com/smart-grid",
+          "status_code": 404,
+          "accessible": false,
+          "content_length": 0
+        }
+      },
+      "expected_data_types": [
+        "duos_charges",
+        "network_capacity",
+        "connection_data",
+        "performance_statistics"
+      ],
+      "status": "accessibility_tested"
+    },
+    {
+      "dno": "SPD",
+      "full_name": "SP Distribution",
+      "areas": [
+        "SPDS",
+        "SPMW"
+      ],
+      "collection_timestamp": "2025-09-11T23:15:08.759020",
+      "accessibility_test": {
+        "charges": {
+          "url": "https://www.spenergynetworks.co.uk/pages/charges_and_agreements.aspx",
+          "status_code": 200,
+          "accessible": true,
+          "content_length": 34227
+        },
+        "network": {
+          "url": "https://www.spenergynetworks.co.uk/pages/distribution_network_data.aspx",
+          "status_code": 200,
+          "accessible": true,
+          "content_length": 34227
+        },
+        "connections": {
+          "url": "https://www.spenergynetworks.co.uk/pages/network_information.aspx",
+          "status_code": 200,
+          "accessible": true,
+          "content_length": 34227
+        }
+      },
+      "expected_data_types": [
+        "duos_charges",
+        "network_capacity",
+        "connection_data",
+        "performance_statistics"
+      ],
+      "status": "accessibility_tested"
+    }
+  ],
+  "summary": {
+    "ENWL": {
+      "accessible_urls": "1/3",
+      "status": "ready_for_data_extraction"
+    },
+    "NPG": {
+      "accessible_urls": "0/3",
+      "status": "access_issues"
+    },
+    "SPD": {
+      "accessible_urls": "3/3",
+      "status": "ready_for_data_extraction"
+    }
+  }
+}

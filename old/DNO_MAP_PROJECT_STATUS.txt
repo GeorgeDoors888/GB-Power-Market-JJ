@@ -1,0 +1,85 @@
+DNO MAP PROJECT STATUS
+=====================
+Date: 15 September 2025
+
+CURRENT SETUP
+------------
+1. Virtual Environment
+   - Name: gsheets_env
+   - Location: /Users/georgemajor/jibber-jabber 24 august 2025 big bop/gsheets_env
+   - Activation Command: source gsheets_env/bin/activate
+
+2. Google API Integration
+   - Successfully authenticated
+   - Client ID: 1090450657636-a11fs62o3aqk2bu621lalnl9mmavkh0l.apps.googleusercontent.com
+   - Authentication stored in: token.pickle
+
+3. Project Resources
+   - Google Sheet URL: https://docs.google.com/spreadsheets/d/1qa8bGjPgp2s1Cij3RMp-hw7pxlb7fJrlH9lCASYbOCk
+   - Apps Script Editor URL: https://script.google.com/d/1X2Dselo2vhuIYTa6DC3aX6Fgw8CslfnaH5wpTiPhkFCjqouAJgBpLxAC/edit
+   - GeoJSON File: system_regulatory/gis/merged_geojson.geojson
+   - GeoJSON Size: 7514431 characters
+
+KNOWN ISSUES
+-----------
+1. JavaScript Data Processing Error
+   - Error: dnoData.forEach is not a function
+   - Location: Client-side map rendering code
+   - Impact: Map fails to display DNO data correctly
+   - Status: Pending fix
+
+HOW TO RESUME WORK
+-----------------
+1. Navigate to Project Directory:
+   cd "/Users/georgemajor/jibber-jabber 24 august 2025 big bop"
+
+2. Activate Virtual Environment:
+   source gsheets_env/bin/activate
+
+3. Run the Script (if needed):
+   "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/gsheets_env/bin/python" dno_map_oauth_setup_fixed.py
+
+NEXT STEPS
+----------
+1. Fix JavaScript forEach Error
+   - Review data format being passed to the client
+   - Update the data processing in the Apps Script
+   - Test data structure in the browser console
+
+2. Map Visualization
+   - Verify UK-specific map focus
+   - Test DNO area highlighting
+   - Validate data display in info panels
+
+3. Data Validation
+   - Verify DNO data in spreadsheet
+   - Check GeoJSON processing
+   - Validate feature properties
+
+4. Additional Features
+   - Consider adding search functionality
+   - Add data filtering options
+   - Implement additional map controls
+
+REQUIRED PACKAGES
+----------------
+- google-api-python-client
+- google-auth-httplib2
+- google-auth-oauthlib
+
+PROJECT FILES
+------------
+1. Main Script: dno_map_oauth_setup_fixed.py
+2. OAuth Credentials: client_secrets.json
+3. Token Storage: token.pickle
+4. Spreadsheet ID Storage: spreadsheet_id.txt
+5. Script ID Storage: script_id.txt
+
+NOTES
+-----
+- The virtual environment must be activated before running any scripts
+- Google Sheet authorization may need to be renewed periodically
+- GeoJSON data is embedded directly in the Apps Script
+- Map is configured to focus specifically on UK coordinates
+
+Last Updated: 15 September 2025

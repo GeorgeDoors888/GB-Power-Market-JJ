@@ -1,0 +1,2163 @@
+{
+  "extraction_date": "2025-09-13T12:32:38.288110",
+  "total_files_processed": 10,
+  "total_sheets_extracted": 24,
+  "dnos_covered": 2,
+  "uk_coverage_percent": 14.285714285714285,
+  "covered_mpan_codes": [
+    10,
+    14
+  ],
+  "dno_breakdown": {
+    "UK Power Networks Eastern": {
+      "mpan_code": 10,
+      "years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "sheets_extracted": 14,
+      "total_rate_columns": 98
+    },
+    "Electricity North West": {
+      "mpan_code": 14,
+      "years": [
+        null,
+        2018,
+        2021,
+        2023
+      ],
+      "sheets_extracted": 10,
+      "total_rate_columns": 46
+    }
+  },
+  "detailed_extractions": [
+    {
+      "file_path": "eastern-power-networks-schedule-of-charges-and-other-tables-2019-v2-2.xlsx",
+      "dno_name": "UK Power Networks Eastern",
+      "mpan_code": 10,
+      "year": 2019,
+      "sheet_name": "Annex 1 LV and HV charges",
+      "skip_rows": 10,
+      "columns": [
+        "Tariff name",
+        "Open LLFCs",
+        "PCs",
+        "Unit charge 1 (NHH)\nor red/black charge (HH)\np/kWh",
+        "Unit charge 2 (NHH)\nor amber/yellow charge (HH)\np/kWh",
+        "Green charge(HH)\np/kWh",
+        "Fixed charge p/MPAN/day",
+        "Capacity charge p/kVA/day",
+        "Exceeded capacity charge\np/kVA/day",
+        "Reactive power charge\np/kVArh",
+        "Closed LLFCs"
+      ],
+      "rate_columns": [
+        "Unit charge 1 (NHH)\nor red/black charge (HH)\np/kWh",
+        "Unit charge 2 (NHH)\nor amber/yellow charge (HH)\np/kWh",
+        "Green charge(HH)\np/kWh",
+        "Fixed charge p/MPAN/day",
+        "Capacity charge p/kVA/day",
+        "Exceeded capacity charge\np/kVA/day",
+        "Reactive power charge\np/kVArh"
+      ],
+      "data_rows": 33,
+      "data_cols": 11,
+      "extracted_at": "2025-09-13T12:32:32.082315",
+      "sample_rates": {
+        "Unit charge 1 (NHH)\nor red/black charge (HH)\np/kWh": {
+          "min": -9.434,
+          "max": 40.892,
+          "mean": 1.8118484848484853,
+          "count": 33,
+          "sample_values": [
+            2.121,
+            2.613,
+            0.248,
+            1.663,
+            1.919
+          ]
+        },
+        "Unit charge 2 (NHH)\nor amber/yellow charge (HH)\np/kWh": {
+          "min": -0.206,
+          "max": 0.944,
+          "mean": 0.13323529411764704,
+          "count": 17,
+          "sample_values": [
+            0.193,
+            0.176,
+            0.165,
+            0.134,
+            0.114
+          ]
+        },
+        "Green charge(HH)\np/kWh": {
+          "min": -0.035,
+          "max": 0.778,
+          "mean": 0.10883333333333338,
+          "count": 12,
+          "sample_values": [
+            0.16,
+            0.152,
+            0.136,
+            0.12,
+            0.114
+          ]
+        },
+        "Fixed charge p/MPAN/day": {
+          "min": 0.0,
+          "max": 97.09,
+          "mean": 13.453913043478263,
+          "count": 23,
+          "sample_values": [
+            4.79,
+            4.79,
+            38.48,
+            8.08,
+            97.09
+          ]
+        },
+        "Capacity charge p/kVA/day": {
+          "min": 3.4,
+          "max": 4.94,
+          "mean": 4.14,
+          "count": 3,
+          "sample_values": [
+            3.4,
+            4.94,
+            4.08
+          ]
+        }
+      },
+      "csv_export": "duos_extracted_data/uk_power_networks_eastern_2019_annex_1_lv_and_hv_charges.csv"
+    },
+    {
+      "file_path": "eastern-power-networks-schedule-of-charges-and-other-tables-2019-v2-2.xlsx",
+      "dno_name": "UK Power Networks Eastern",
+      "mpan_code": 10,
+      "year": 2019,
+      "sheet_name": "Annex 1 LV and HV charges",
+      "skip_rows": 10,
+      "columns": [
+        "Tariff name",
+        "Open LLFCs",
+        "PCs",
+        "Unit charge 1 (NHH)\nor red/black charge (HH)\np/kWh",
+        "Unit charge 2 (NHH)\nor amber/yellow charge (HH)\np/kWh",
+        "Green charge(HH)\np/kWh",
+        "Fixed charge p/MPAN/day",
+        "Capacity charge p/kVA/day",
+        "Exceeded capacity charge\np/kVA/day",
+        "Reactive power charge\np/kVArh",
+        "Closed LLFCs"
+      ],
+      "rate_columns": [
+        "Unit charge 1 (NHH)\nor red/black charge (HH)\np/kWh",
+        "Unit charge 2 (NHH)\nor amber/yellow charge (HH)\np/kWh",
+        "Green charge(HH)\np/kWh",
+        "Fixed charge p/MPAN/day",
+        "Capacity charge p/kVA/day",
+        "Exceeded capacity charge\np/kVA/day",
+        "Reactive power charge\np/kVArh"
+      ],
+      "data_rows": 33,
+      "data_cols": 11,
+      "extracted_at": "2025-09-13T12:32:32.325567",
+      "sample_rates": {
+        "Unit charge 1 (NHH)\nor red/black charge (HH)\np/kWh": {
+          "min": -9.434,
+          "max": 40.892,
+          "mean": 1.8118484848484853,
+          "count": 33,
+          "sample_values": [
+            2.121,
+            2.613,
+            0.248,
+            1.663,
+            1.919
+          ]
+        },
+        "Unit charge 2 (NHH)\nor amber/yellow charge (HH)\np/kWh": {
+          "min": -0.206,
+          "max": 0.944,
+          "mean": 0.13323529411764704,
+          "count": 17,
+          "sample_values": [
+            0.193,
+            0.176,
+            0.165,
+            0.134,
+            0.114
+          ]
+        },
+        "Green charge(HH)\np/kWh": {
+          "min": -0.035,
+          "max": 0.778,
+          "mean": 0.10883333333333338,
+          "count": 12,
+          "sample_values": [
+            0.16,
+            0.152,
+            0.136,
+            0.12,
+            0.114
+          ]
+        },
+        "Fixed charge p/MPAN/day": {
+          "min": 0.0,
+          "max": 97.09,
+          "mean": 13.453913043478263,
+          "count": 23,
+          "sample_values": [
+            4.79,
+            4.79,
+            38.48,
+            8.08,
+            97.09
+          ]
+        },
+        "Capacity charge p/kVA/day": {
+          "min": 3.4,
+          "max": 4.94,
+          "mean": 4.14,
+          "count": 3,
+          "sample_values": [
+            3.4,
+            4.94,
+            4.08
+          ]
+        }
+      },
+      "csv_export": "duos_extracted_data/uk_power_networks_eastern_2019_annex_1_lv_and_hv_charges.csv"
+    },
+    {
+      "file_path": "eastern-power-networks-schedule-of-charges-and-other-tables-2018-v3-6.xlsx",
+      "dno_name": "UK Power Networks Eastern",
+      "mpan_code": 10,
+      "year": 2018,
+      "sheet_name": "Annex 1 LV and HV charges",
+      "skip_rows": 10,
+      "columns": [
+        "Tariff name",
+        "Open LLFCs",
+        "PCs",
+        "Unit charge 1 (NHH)\nor red/black charge (HH)\np/kWh",
+        "Unit charge 2 (NHH)\nor amber/yellow charge (HH)\np/kWh",
+        "Green charge(HH)\np/kWh",
+        "Fixed charge p/MPAN/day",
+        "Capacity charge p/kVA/day",
+        "Exceeded capacity charge\np/kVA/day",
+        "Reactive power charge\np/kVArh",
+        "Closed LLFCs"
+      ],
+      "rate_columns": [
+        "Unit charge 1 (NHH)\nor red/black charge (HH)\np/kWh",
+        "Unit charge 2 (NHH)\nor amber/yellow charge (HH)\np/kWh",
+        "Green charge(HH)\np/kWh",
+        "Fixed charge p/MPAN/day",
+        "Capacity charge p/kVA/day",
+        "Exceeded capacity charge\np/kVA/day",
+        "Reactive power charge\np/kVArh"
+      ],
+      "data_rows": 33,
+      "data_cols": 11,
+      "extracted_at": "2025-09-13T12:32:32.577223",
+      "sample_rates": {
+        "Unit charge 1 (NHH)\nor red/black charge (HH)\np/kWh": {
+          "min": -9.215,
+          "max": 38.178,
+          "mean": 1.66669696969697,
+          "count": 33,
+          "sample_values": [
+            1.991,
+            2.421,
+            0.215,
+            1.499,
+            1.795
+          ]
+        },
+        "Unit charge 2 (NHH)\nor amber/yellow charge (HH)\np/kWh": {
+          "min": -0.136,
+          "max": 0.748,
+          "mean": 0.11558823529411763,
+          "count": 17,
+          "sample_values": [
+            0.157,
+            0.151,
+            0.139,
+            0.124,
+            0.111
+          ]
+        },
+        "Green charge(HH)\np/kWh": {
+          "min": -0.023,
+          "max": 0.625,
+          "mean": 0.09583333333333337,
+          "count": 12,
+          "sample_values": [
+            0.14,
+            0.135,
+            0.126,
+            0.115,
+            0.111
+          ]
+        },
+        "Fixed charge p/MPAN/day": {
+          "min": 0.0,
+          "max": 93.92,
+          "mean": 19.50217391304348,
+          "count": 23,
+          "sample_values": [
+            4.67,
+            4.67,
+            34.74,
+            9.34,
+            93.92
+          ]
+        },
+        "Capacity charge p/kVA/day": {
+          "min": 3.06,
+          "max": 4.6,
+          "mean": 3.8066666666666666,
+          "count": 3,
+          "sample_values": [
+            3.06,
+            4.6,
+            3.76
+          ]
+        }
+      },
+      "csv_export": "duos_extracted_data/uk_power_networks_eastern_2018_annex_1_lv_and_hv_charges.csv"
+    },
+    {
+      "file_path": "eastern-power-networks-schedule-of-charges-and-other-tables-2018-v3-6.xlsx",
+      "dno_name": "UK Power Networks Eastern",
+      "mpan_code": 10,
+      "year": 2018,
+      "sheet_name": "Annex 1 LV and HV charges",
+      "skip_rows": 10,
+      "columns": [
+        "Tariff name",
+        "Open LLFCs",
+        "PCs",
+        "Unit charge 1 (NHH)\nor red/black charge (HH)\np/kWh",
+        "Unit charge 2 (NHH)\nor amber/yellow charge (HH)\np/kWh",
+        "Green charge(HH)\np/kWh",
+        "Fixed charge p/MPAN/day",
+        "Capacity charge p/kVA/day",
+        "Exceeded capacity charge\np/kVA/day",
+        "Reactive power charge\np/kVArh",
+        "Closed LLFCs"
+      ],
+      "rate_columns": [
+        "Unit charge 1 (NHH)\nor red/black charge (HH)\np/kWh",
+        "Unit charge 2 (NHH)\nor amber/yellow charge (HH)\np/kWh",
+        "Green charge(HH)\np/kWh",
+        "Fixed charge p/MPAN/day",
+        "Capacity charge p/kVA/day",
+        "Exceeded capacity charge\np/kVA/day",
+        "Reactive power charge\np/kVArh"
+      ],
+      "data_rows": 33,
+      "data_cols": 11,
+      "extracted_at": "2025-09-13T12:32:32.816377",
+      "sample_rates": {
+        "Unit charge 1 (NHH)\nor red/black charge (HH)\np/kWh": {
+          "min": -9.215,
+          "max": 38.178,
+          "mean": 1.66669696969697,
+          "count": 33,
+          "sample_values": [
+            1.991,
+            2.421,
+            0.215,
+            1.499,
+            1.795
+          ]
+        },
+        "Unit charge 2 (NHH)\nor amber/yellow charge (HH)\np/kWh": {
+          "min": -0.136,
+          "max": 0.748,
+          "mean": 0.11558823529411763,
+          "count": 17,
+          "sample_values": [
+            0.157,
+            0.151,
+            0.139,
+            0.124,
+            0.111
+          ]
+        },
+        "Green charge(HH)\np/kWh": {
+          "min": -0.023,
+          "max": 0.625,
+          "mean": 0.09583333333333337,
+          "count": 12,
+          "sample_values": [
+            0.14,
+            0.135,
+            0.126,
+            0.115,
+            0.111
+          ]
+        },
+        "Fixed charge p/MPAN/day": {
+          "min": 0.0,
+          "max": 93.92,
+          "mean": 19.50217391304348,
+          "count": 23,
+          "sample_values": [
+            4.67,
+            4.67,
+            34.74,
+            9.34,
+            93.92
+          ]
+        },
+        "Capacity charge p/kVA/day": {
+          "min": 3.06,
+          "max": 4.6,
+          "mean": 3.8066666666666666,
+          "count": 3,
+          "sample_values": [
+            3.06,
+            4.6,
+            3.76
+          ]
+        }
+      },
+      "csv_export": "duos_extracted_data/uk_power_networks_eastern_2018_annex_1_lv_and_hv_charges.csv"
+    },
+    {
+      "file_path": "eastern-power-networks-schedule-of-charges-and-other-tables-2021-v1-5.xlsx",
+      "dno_name": "UK Power Networks Eastern",
+      "mpan_code": 10,
+      "year": 2021,
+      "sheet_name": "Annex 1 LV, HV and UMS charges",
+      "skip_rows": 10,
+      "columns": [
+        "Tariff name",
+        "Open LLFCs",
+        "PCs",
+        "Red/black unit charge\np/kWh",
+        "Amber/yellow unit charge\np/kWh",
+        "Green unit charge\np/kWh",
+        "Fixed charge p/MPAN/day",
+        "Capacity charge p/kVA/day",
+        "Exceeded capacity charge\np/kVA/day",
+        "Reactive power charge\np/kVArh",
+        "Closed LLFCs"
+      ],
+      "rate_columns": [
+        "Red/black unit charge\np/kWh",
+        "Amber/yellow unit charge\np/kWh",
+        "Green unit charge\np/kWh",
+        "Fixed charge p/MPAN/day",
+        "Capacity charge p/kVA/day",
+        "Exceeded capacity charge\np/kVA/day",
+        "Reactive power charge\np/kVArh"
+      ],
+      "data_rows": 19,
+      "data_cols": 11,
+      "extracted_at": "2025-09-13T12:32:33.082194",
+      "sample_rates": {
+        "Red/black unit charge\np/kWh": {
+          "min": -9.468,
+          "max": 41.646,
+          "mean": 4.241999999999999,
+          "count": 19,
+          "sample_values": [
+            15.577,
+            15.577,
+            14.585,
+            14.585,
+            9.86
+          ]
+        },
+        "Amber/yellow unit charge\np/kWh": {
+          "min": -0.329,
+          "max": 1.326,
+          "mean": 0.19605263157894734,
+          "count": 19,
+          "sample_values": [
+            0.71,
+            0.71,
+            0.676,
+            0.676,
+            0.485
+          ]
+        },
+        "Green unit charge\np/kWh": {
+          "min": -0.052,
+          "max": 0.894,
+          "mean": 0.12142105263157897,
+          "count": 19,
+          "sample_values": [
+            0.261,
+            0.261,
+            0.255,
+            0.255,
+            0.224
+          ]
+        },
+        "Fixed charge p/MPAN/day": {
+          "min": 0.0,
+          "max": 106.15,
+          "mean": 17.2375,
+          "count": 16,
+          "sample_values": [
+            3.97,
+            4.11,
+            10.77,
+            7.97,
+            106.15
+          ]
+        },
+        "Capacity charge p/kVA/day": {
+          "min": 3.49,
+          "max": 4.85,
+          "mean": 4.116666666666666,
+          "count": 6,
+          "sample_values": [
+            3.49,
+            4.85,
+            4.01,
+            3.49,
+            4.85
+          ]
+        }
+      },
+      "csv_export": "duos_extracted_data/uk_power_networks_eastern_2021_annex_1_lv,_hv_and_ums_charges.csv"
+    },
+    {
+      "file_path": "eastern-power-networks-schedule-of-charges-and-other-tables-2021-v1-5.xlsx",
+      "dno_name": "UK Power Networks Eastern",
+      "mpan_code": 10,
+      "year": 2021,
+      "sheet_name": "Annex 1 LV, HV and UMS charges",
+      "skip_rows": 10,
+      "columns": [
+        "Tariff name",
+        "Open LLFCs",
+        "PCs",
+        "Red/black unit charge\np/kWh",
+        "Amber/yellow unit charge\np/kWh",
+        "Green unit charge\np/kWh",
+        "Fixed charge p/MPAN/day",
+        "Capacity charge p/kVA/day",
+        "Exceeded capacity charge\np/kVA/day",
+        "Reactive power charge\np/kVArh",
+        "Closed LLFCs"
+      ],
+      "rate_columns": [
+        "Red/black unit charge\np/kWh",
+        "Amber/yellow unit charge\np/kWh",
+        "Green unit charge\np/kWh",
+        "Fixed charge p/MPAN/day",
+        "Capacity charge p/kVA/day",
+        "Exceeded capacity charge\np/kVA/day",
+        "Reactive power charge\np/kVArh"
+      ],
+      "data_rows": 19,
+      "data_cols": 11,
+      "extracted_at": "2025-09-13T12:32:33.332799",
+      "sample_rates": {
+        "Red/black unit charge\np/kWh": {
+          "min": -9.468,
+          "max": 41.646,
+          "mean": 4.241999999999999,
+          "count": 19,
+          "sample_values": [
+            15.577,
+            15.577,
+            14.585,
+            14.585,
+            9.86
+          ]
+        },
+        "Amber/yellow unit charge\np/kWh": {
+          "min": -0.329,
+          "max": 1.326,
+          "mean": 0.19605263157894734,
+          "count": 19,
+          "sample_values": [
+            0.71,
+            0.71,
+            0.676,
+            0.676,
+            0.485
+          ]
+        },
+        "Green unit charge\np/kWh": {
+          "min": -0.052,
+          "max": 0.894,
+          "mean": 0.12142105263157897,
+          "count": 19,
+          "sample_values": [
+            0.261,
+            0.261,
+            0.255,
+            0.255,
+            0.224
+          ]
+        },
+        "Fixed charge p/MPAN/day": {
+          "min": 0.0,
+          "max": 106.15,
+          "mean": 17.2375,
+          "count": 16,
+          "sample_values": [
+            3.97,
+            4.11,
+            10.77,
+            7.97,
+            106.15
+          ]
+        },
+        "Capacity charge p/kVA/day": {
+          "min": 3.49,
+          "max": 4.85,
+          "mean": 4.116666666666666,
+          "count": 6,
+          "sample_values": [
+            3.49,
+            4.85,
+            4.01,
+            3.49,
+            4.85
+          ]
+        }
+      },
+      "csv_export": "duos_extracted_data/uk_power_networks_eastern_2021_annex_1_lv,_hv_and_ums_charges.csv"
+    },
+    {
+      "file_path": "eastern-power-networks-schedule-of-charges-and-other-tables-2021-v1-5.xlsx",
+      "dno_name": "UK Power Networks Eastern",
+      "mpan_code": 10,
+      "year": 2021,
+      "sheet_name": "Annex 1 LV, HV and UMS charges",
+      "skip_rows": 10,
+      "columns": [
+        "Tariff name",
+        "Open LLFCs",
+        "PCs",
+        "Red/black unit charge\np/kWh",
+        "Amber/yellow unit charge\np/kWh",
+        "Green unit charge\np/kWh",
+        "Fixed charge p/MPAN/day",
+        "Capacity charge p/kVA/day",
+        "Exceeded capacity charge\np/kVA/day",
+        "Reactive power charge\np/kVArh",
+        "Closed LLFCs"
+      ],
+      "rate_columns": [
+        "Red/black unit charge\np/kWh",
+        "Amber/yellow unit charge\np/kWh",
+        "Green unit charge\np/kWh",
+        "Fixed charge p/MPAN/day",
+        "Capacity charge p/kVA/day",
+        "Exceeded capacity charge\np/kVA/day",
+        "Reactive power charge\np/kVArh"
+      ],
+      "data_rows": 19,
+      "data_cols": 11,
+      "extracted_at": "2025-09-13T12:32:33.565464",
+      "sample_rates": {
+        "Red/black unit charge\np/kWh": {
+          "min": -9.468,
+          "max": 41.646,
+          "mean": 4.241999999999999,
+          "count": 19,
+          "sample_values": [
+            15.577,
+            15.577,
+            14.585,
+            14.585,
+            9.86
+          ]
+        },
+        "Amber/yellow unit charge\np/kWh": {
+          "min": -0.329,
+          "max": 1.326,
+          "mean": 0.19605263157894734,
+          "count": 19,
+          "sample_values": [
+            0.71,
+            0.71,
+            0.676,
+            0.676,
+            0.485
+          ]
+        },
+        "Green unit charge\np/kWh": {
+          "min": -0.052,
+          "max": 0.894,
+          "mean": 0.12142105263157897,
+          "count": 19,
+          "sample_values": [
+            0.261,
+            0.261,
+            0.255,
+            0.255,
+            0.224
+          ]
+        },
+        "Fixed charge p/MPAN/day": {
+          "min": 0.0,
+          "max": 106.15,
+          "mean": 17.2375,
+          "count": 16,
+          "sample_values": [
+            3.97,
+            4.11,
+            10.77,
+            7.97,
+            106.15
+          ]
+        },
+        "Capacity charge p/kVA/day": {
+          "min": 3.49,
+          "max": 4.85,
+          "mean": 4.116666666666666,
+          "count": 6,
+          "sample_values": [
+            3.49,
+            4.85,
+            4.01,
+            3.49,
+            4.85
+          ]
+        }
+      },
+      "csv_export": "duos_extracted_data/uk_power_networks_eastern_2021_annex_1_lv,_hv_and_ums_charges.csv"
+    },
+    {
+      "file_path": "eastern-power-networks-schedule-of-charges-and-other-tables-2020-v3-3.xlsx",
+      "dno_name": "UK Power Networks Eastern",
+      "mpan_code": 10,
+      "year": 2020,
+      "sheet_name": "Annex 1 LV and HV charges",
+      "skip_rows": 10,
+      "columns": [
+        "Tariff name",
+        "Open LLFCs",
+        "PCs",
+        "Unit charge 1 (NHH)\nor red/black charge (HH)\np/kWh",
+        "Unit charge 2 (NHH)\nor amber/yellow charge (HH)\np/kWh",
+        "Green charge(HH)\np/kWh",
+        "Fixed charge p/MPAN/day",
+        "Capacity charge p/kVA/day",
+        "Exceeded capacity charge\np/kVA/day",
+        "Reactive power charge\np/kVArh",
+        "Closed LLFCs"
+      ],
+      "rate_columns": [
+        "Unit charge 1 (NHH)\nor red/black charge (HH)\np/kWh",
+        "Unit charge 2 (NHH)\nor amber/yellow charge (HH)\np/kWh",
+        "Green charge(HH)\np/kWh",
+        "Fixed charge p/MPAN/day",
+        "Capacity charge p/kVA/day",
+        "Exceeded capacity charge\np/kVA/day",
+        "Reactive power charge\np/kVArh"
+      ],
+      "data_rows": 33,
+      "data_cols": 11,
+      "extracted_at": "2025-09-13T12:32:33.842582",
+      "sample_rates": {
+        "Unit charge 1 (NHH)\nor red/black charge (HH)\np/kWh": {
+          "min": -9.667,
+          "max": 40.982,
+          "mean": 1.847090909090909,
+          "count": 33,
+          "sample_values": [
+            2.194,
+            2.829,
+            0.242,
+            1.69,
+            2.052
+          ]
+        },
+        "Unit charge 2 (NHH)\nor amber/yellow charge (HH)\np/kWh": {
+          "min": -0.259,
+          "max": 1.125,
+          "mean": 0.13123529411764706,
+          "count": 17,
+          "sample_values": [
+            0.18,
+            0.16,
+            0.142,
+            0.108,
+            0.09
+          ]
+        },
+        "Green charge(HH)\np/kWh": {
+          "min": -0.036,
+          "max": 0.781,
+          "mean": 0.0984166666666667,
+          "count": 12,
+          "sample_values": [
+            0.135,
+            0.127,
+            0.11,
+            0.096,
+            0.09
+          ]
+        },
+        "Fixed charge p/MPAN/day": {
+          "min": 0.0,
+          "max": 102.89,
+          "mean": 13.490384615384615,
+          "count": 26,
+          "sample_values": [
+            4.84,
+            4.84,
+            4.84,
+            4.84,
+            51.55
+          ]
+        },
+        "Capacity charge p/kVA/day": {
+          "min": 3.64,
+          "max": 5.18,
+          "mean": 4.366666666666667,
+          "count": 3,
+          "sample_values": [
+            3.64,
+            5.18,
+            4.28
+          ]
+        }
+      },
+      "csv_export": "duos_extracted_data/uk_power_networks_eastern_2020_annex_1_lv_and_hv_charges.csv"
+    },
+    {
+      "file_path": "eastern-power-networks-schedule-of-charges-and-other-tables-2020-v3-3.xlsx",
+      "dno_name": "UK Power Networks Eastern",
+      "mpan_code": 10,
+      "year": 2020,
+      "sheet_name": "Annex 1 LV and HV charges",
+      "skip_rows": 10,
+      "columns": [
+        "Tariff name",
+        "Open LLFCs",
+        "PCs",
+        "Unit charge 1 (NHH)\nor red/black charge (HH)\np/kWh",
+        "Unit charge 2 (NHH)\nor amber/yellow charge (HH)\np/kWh",
+        "Green charge(HH)\np/kWh",
+        "Fixed charge p/MPAN/day",
+        "Capacity charge p/kVA/day",
+        "Exceeded capacity charge\np/kVA/day",
+        "Reactive power charge\np/kVArh",
+        "Closed LLFCs"
+      ],
+      "rate_columns": [
+        "Unit charge 1 (NHH)\nor red/black charge (HH)\np/kWh",
+        "Unit charge 2 (NHH)\nor amber/yellow charge (HH)\np/kWh",
+        "Green charge(HH)\np/kWh",
+        "Fixed charge p/MPAN/day",
+        "Capacity charge p/kVA/day",
+        "Exceeded capacity charge\np/kVA/day",
+        "Reactive power charge\np/kVArh"
+      ],
+      "data_rows": 33,
+      "data_cols": 11,
+      "extracted_at": "2025-09-13T12:32:34.064008",
+      "sample_rates": {
+        "Unit charge 1 (NHH)\nor red/black charge (HH)\np/kWh": {
+          "min": -9.667,
+          "max": 40.982,
+          "mean": 1.847090909090909,
+          "count": 33,
+          "sample_values": [
+            2.194,
+            2.829,
+            0.242,
+            1.69,
+            2.052
+          ]
+        },
+        "Unit charge 2 (NHH)\nor amber/yellow charge (HH)\np/kWh": {
+          "min": -0.259,
+          "max": 1.125,
+          "mean": 0.13123529411764706,
+          "count": 17,
+          "sample_values": [
+            0.18,
+            0.16,
+            0.142,
+            0.108,
+            0.09
+          ]
+        },
+        "Green charge(HH)\np/kWh": {
+          "min": -0.036,
+          "max": 0.781,
+          "mean": 0.0984166666666667,
+          "count": 12,
+          "sample_values": [
+            0.135,
+            0.127,
+            0.11,
+            0.096,
+            0.09
+          ]
+        },
+        "Fixed charge p/MPAN/day": {
+          "min": 0.0,
+          "max": 102.89,
+          "mean": 13.490384615384615,
+          "count": 26,
+          "sample_values": [
+            4.84,
+            4.84,
+            4.84,
+            4.84,
+            51.55
+          ]
+        },
+        "Capacity charge p/kVA/day": {
+          "min": 3.64,
+          "max": 5.18,
+          "mean": 4.366666666666667,
+          "count": 3,
+          "sample_values": [
+            3.64,
+            5.18,
+            4.28
+          ]
+        }
+      },
+      "csv_export": "duos_extracted_data/uk_power_networks_eastern_2020_annex_1_lv_and_hv_charges.csv"
+    },
+    {
+      "file_path": "eastern-power-networks-schedule-of-charges-and-other-tables-2017-v3-4.xlsx",
+      "dno_name": "UK Power Networks Eastern",
+      "mpan_code": 10,
+      "year": 2017,
+      "sheet_name": "Annex 1 LV and HV charges",
+      "skip_rows": 12,
+      "columns": [
+        "Tariff name",
+        "Open LLFCs",
+        "PCs",
+        "Unit charge 1 (NHH)\nor red/black charge (HH)\np/kWh",
+        "Unit charge 2 (NHH)\nor amber/yellow charge (HH)\np/kWh",
+        "Green charge(HH)\np/kWh",
+        "Fixed charge p/MPAN/day",
+        "Capacity charge p/kVA/day",
+        "Reactive power charge\np/kVArh",
+        "Exceeded capacity charge\np/kVA/day",
+        "Closed LLFCs"
+      ],
+      "rate_columns": [
+        "Unit charge 1 (NHH)\nor red/black charge (HH)\np/kWh",
+        "Unit charge 2 (NHH)\nor amber/yellow charge (HH)\np/kWh",
+        "Green charge(HH)\np/kWh",
+        "Fixed charge p/MPAN/day",
+        "Capacity charge p/kVA/day",
+        "Reactive power charge\np/kVArh",
+        "Exceeded capacity charge\np/kVA/day"
+      ],
+      "data_rows": 27,
+      "data_cols": 11,
+      "extracted_at": "2025-09-13T12:32:34.378104",
+      "sample_rates": {
+        "Unit charge 1 (NHH)\nor red/black charge (HH)\np/kWh": {
+          "min": -9.684,
+          "max": 39.655,
+          "mean": 3.208407407407407,
+          "count": 27,
+          "sample_values": [
+            1.998,
+            2.396,
+            0.092,
+            1.535,
+            1.838
+          ]
+        },
+        "Unit charge 2 (NHH)\nor amber/yellow charge (HH)\np/kWh": {
+          "min": -0.09,
+          "max": 0.653,
+          "mean": 0.03496296296296296,
+          "count": 27,
+          "sample_values": [
+            0.0,
+            0.03,
+            0.0,
+            0.0,
+            0.03
+          ]
+        },
+        "Green charge(HH)\np/kWh": {
+          "min": -0.016,
+          "max": 0.552,
+          "mean": 0.021703703703703708,
+          "count": 27,
+          "sample_values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Fixed charge p/MPAN/day": {
+          "min": 0.0,
+          "max": 102.52,
+          "mean": 14.838888888888889,
+          "count": 27,
+          "sample_values": [
+            4.69,
+            4.69,
+            0.0,
+            5.05,
+            5.05
+          ]
+        },
+        "Capacity charge p/kVA/day": {
+          "min": 0.0,
+          "max": 4.67,
+          "mean": 0.43296296296296294,
+          "count": 27,
+          "sample_values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "csv_export": "duos_extracted_data/uk_power_networks_eastern_2017_annex_1_lv_and_hv_charges.csv"
+    },
+    {
+      "file_path": "eastern-power-networks-schedule-of-charges-and-other-tables-2017-v3-4.xlsx",
+      "dno_name": "UK Power Networks Eastern",
+      "mpan_code": 10,
+      "year": 2017,
+      "sheet_name": "Annex 1 LV and HV charges",
+      "skip_rows": 12,
+      "columns": [
+        "Tariff name",
+        "Open LLFCs",
+        "PCs",
+        "Unit charge 1 (NHH)\nor red/black charge (HH)\np/kWh",
+        "Unit charge 2 (NHH)\nor amber/yellow charge (HH)\np/kWh",
+        "Green charge(HH)\np/kWh",
+        "Fixed charge p/MPAN/day",
+        "Capacity charge p/kVA/day",
+        "Reactive power charge\np/kVArh",
+        "Exceeded capacity charge\np/kVA/day",
+        "Closed LLFCs"
+      ],
+      "rate_columns": [
+        "Unit charge 1 (NHH)\nor red/black charge (HH)\np/kWh",
+        "Unit charge 2 (NHH)\nor amber/yellow charge (HH)\np/kWh",
+        "Green charge(HH)\np/kWh",
+        "Fixed charge p/MPAN/day",
+        "Capacity charge p/kVA/day",
+        "Reactive power charge\np/kVArh",
+        "Exceeded capacity charge\np/kVA/day"
+      ],
+      "data_rows": 27,
+      "data_cols": 11,
+      "extracted_at": "2025-09-13T12:32:34.662711",
+      "sample_rates": {
+        "Unit charge 1 (NHH)\nor red/black charge (HH)\np/kWh": {
+          "min": -9.684,
+          "max": 39.655,
+          "mean": 3.208407407407407,
+          "count": 27,
+          "sample_values": [
+            1.998,
+            2.396,
+            0.092,
+            1.535,
+            1.838
+          ]
+        },
+        "Unit charge 2 (NHH)\nor amber/yellow charge (HH)\np/kWh": {
+          "min": -0.09,
+          "max": 0.653,
+          "mean": 0.03496296296296296,
+          "count": 27,
+          "sample_values": [
+            0.0,
+            0.03,
+            0.0,
+            0.0,
+            0.03
+          ]
+        },
+        "Green charge(HH)\np/kWh": {
+          "min": -0.016,
+          "max": 0.552,
+          "mean": 0.021703703703703708,
+          "count": 27,
+          "sample_values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Fixed charge p/MPAN/day": {
+          "min": 0.0,
+          "max": 102.52,
+          "mean": 14.838888888888889,
+          "count": 27,
+          "sample_values": [
+            4.69,
+            4.69,
+            0.0,
+            5.05,
+            5.05
+          ]
+        },
+        "Capacity charge p/kVA/day": {
+          "min": 0.0,
+          "max": 4.67,
+          "mean": 0.43296296296296294,
+          "count": 27,
+          "sample_values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "csv_export": "duos_extracted_data/uk_power_networks_eastern_2017_annex_1_lv_and_hv_charges.csv"
+    },
+    {
+      "file_path": "enwl---schedule-of-charges-and-other-tables--2023-final-v2.xlsx",
+      "dno_name": "Electricity North West",
+      "mpan_code": 14,
+      "year": 2023,
+      "sheet_name": "Annex 1 LV, HV and UMS charges",
+      "skip_rows": 12,
+      "columns": [
+        "Tariff name",
+        "Open LLFCs",
+        "PCs",
+        "Red/black unit charge\np/kWh",
+        "Amber/yellow unit charge\np/kWh",
+        "Green unit charge\np/kWh",
+        "Fixed charge p/MPAN/day",
+        "Capacity charge p/kVA/day",
+        "Exceeded capacity charge\np/kVA/day",
+        "Reactive power charge\np/kVArh",
+        "Closed LLFCs"
+      ],
+      "rate_columns": [
+        "Red/black unit charge\np/kWh",
+        "Amber/yellow unit charge\np/kWh",
+        "Green unit charge\np/kWh",
+        "Fixed charge p/MPAN/day",
+        "Capacity charge p/kVA/day",
+        "Exceeded capacity charge\np/kVA/day",
+        "Reactive power charge\np/kVArh"
+      ],
+      "data_rows": 32,
+      "data_cols": 11,
+      "extracted_at": "2025-09-13T12:32:35.052399",
+      "sample_rates": {
+        "Red/black unit charge\np/kWh": {
+          "min": -7.433,
+          "max": 23.217,
+          "mean": 4.5156875,
+          "count": 32,
+          "sample_values": [
+            10.266,
+            10.266,
+            10.43,
+            10.43,
+            10.43
+          ]
+        },
+        "Amber/yellow unit charge\np/kWh": {
+          "min": -1.546,
+          "max": 4.926,
+          "mean": 0.87290625,
+          "count": 32,
+          "sample_values": [
+            2.136,
+            2.136,
+            2.17,
+            2.17,
+            2.17
+          ]
+        },
+        "Green unit charge\np/kWh": {
+          "min": -0.138,
+          "max": 3.658,
+          "mean": 0.18015625000000002,
+          "count": 32,
+          "sample_values": [
+            0.19,
+            0.19,
+            0.193,
+            0.193,
+            0.193
+          ]
+        },
+        "Fixed charge p/MPAN/day": {
+          "min": 0.0,
+          "max": 15992.62,
+          "mean": 1150.5593103448277,
+          "count": 29,
+          "sample_values": [
+            14.89,
+            5.63,
+            8.73,
+            20.94,
+            43.57
+          ]
+        },
+        "Capacity charge p/kVA/day": {
+          "min": 3.71,
+          "max": 3.83,
+          "mean": 3.7666666666666657,
+          "count": 15,
+          "sample_values": [
+            3.71,
+            3.71,
+            3.71,
+            3.71,
+            3.71
+          ]
+        }
+      },
+      "csv_export": "duos_extracted_data/electricity_north_west_2023_annex_1_lv,_hv_and_ums_charges.csv"
+    },
+    {
+      "file_path": "enwl---schedule-of-charges-and-other-tables--2023-final-v2.xlsx",
+      "dno_name": "Electricity North West",
+      "mpan_code": 14,
+      "year": 2023,
+      "sheet_name": "Annex 1 LV, HV and UMS charges",
+      "skip_rows": 12,
+      "columns": [
+        "Tariff name",
+        "Open LLFCs",
+        "PCs",
+        "Red/black unit charge\np/kWh",
+        "Amber/yellow unit charge\np/kWh",
+        "Green unit charge\np/kWh",
+        "Fixed charge p/MPAN/day",
+        "Capacity charge p/kVA/day",
+        "Exceeded capacity charge\np/kVA/day",
+        "Reactive power charge\np/kVArh",
+        "Closed LLFCs"
+      ],
+      "rate_columns": [
+        "Red/black unit charge\np/kWh",
+        "Amber/yellow unit charge\np/kWh",
+        "Green unit charge\np/kWh",
+        "Fixed charge p/MPAN/day",
+        "Capacity charge p/kVA/day",
+        "Exceeded capacity charge\np/kVA/day",
+        "Reactive power charge\np/kVArh"
+      ],
+      "data_rows": 32,
+      "data_cols": 11,
+      "extracted_at": "2025-09-13T12:32:35.381724",
+      "sample_rates": {
+        "Red/black unit charge\np/kWh": {
+          "min": -7.433,
+          "max": 23.217,
+          "mean": 4.5156875,
+          "count": 32,
+          "sample_values": [
+            10.266,
+            10.266,
+            10.43,
+            10.43,
+            10.43
+          ]
+        },
+        "Amber/yellow unit charge\np/kWh": {
+          "min": -1.546,
+          "max": 4.926,
+          "mean": 0.87290625,
+          "count": 32,
+          "sample_values": [
+            2.136,
+            2.136,
+            2.17,
+            2.17,
+            2.17
+          ]
+        },
+        "Green unit charge\np/kWh": {
+          "min": -0.138,
+          "max": 3.658,
+          "mean": 0.18015625000000002,
+          "count": 32,
+          "sample_values": [
+            0.19,
+            0.19,
+            0.193,
+            0.193,
+            0.193
+          ]
+        },
+        "Fixed charge p/MPAN/day": {
+          "min": 0.0,
+          "max": 15992.62,
+          "mean": 1150.5593103448277,
+          "count": 29,
+          "sample_values": [
+            14.89,
+            5.63,
+            8.73,
+            20.94,
+            43.57
+          ]
+        },
+        "Capacity charge p/kVA/day": {
+          "min": 3.71,
+          "max": 3.83,
+          "mean": 3.7666666666666657,
+          "count": 15,
+          "sample_values": [
+            3.71,
+            3.71,
+            3.71,
+            3.71,
+            3.71
+          ]
+        }
+      },
+      "csv_export": "duos_extracted_data/electricity_north_west_2023_annex_1_lv,_hv_and_ums_charges.csv"
+    },
+    {
+      "file_path": "enwl---schedule-of-charges-and-other-tables--2023-final-v2.xlsx",
+      "dno_name": "Electricity North West",
+      "mpan_code": 14,
+      "year": 2023,
+      "sheet_name": "Annex 1 LV, HV and UMS charges",
+      "skip_rows": 12,
+      "columns": [
+        "Tariff name",
+        "Open LLFCs",
+        "PCs",
+        "Red/black unit charge\np/kWh",
+        "Amber/yellow unit charge\np/kWh",
+        "Green unit charge\np/kWh",
+        "Fixed charge p/MPAN/day",
+        "Capacity charge p/kVA/day",
+        "Exceeded capacity charge\np/kVA/day",
+        "Reactive power charge\np/kVArh",
+        "Closed LLFCs"
+      ],
+      "rate_columns": [
+        "Red/black unit charge\np/kWh",
+        "Amber/yellow unit charge\np/kWh",
+        "Green unit charge\np/kWh",
+        "Fixed charge p/MPAN/day",
+        "Capacity charge p/kVA/day",
+        "Exceeded capacity charge\np/kVA/day",
+        "Reactive power charge\np/kVArh"
+      ],
+      "data_rows": 32,
+      "data_cols": 11,
+      "extracted_at": "2025-09-13T12:32:35.735003",
+      "sample_rates": {
+        "Red/black unit charge\np/kWh": {
+          "min": -7.433,
+          "max": 23.217,
+          "mean": 4.5156875,
+          "count": 32,
+          "sample_values": [
+            10.266,
+            10.266,
+            10.43,
+            10.43,
+            10.43
+          ]
+        },
+        "Amber/yellow unit charge\np/kWh": {
+          "min": -1.546,
+          "max": 4.926,
+          "mean": 0.87290625,
+          "count": 32,
+          "sample_values": [
+            2.136,
+            2.136,
+            2.17,
+            2.17,
+            2.17
+          ]
+        },
+        "Green unit charge\np/kWh": {
+          "min": -0.138,
+          "max": 3.658,
+          "mean": 0.18015625000000002,
+          "count": 32,
+          "sample_values": [
+            0.19,
+            0.19,
+            0.193,
+            0.193,
+            0.193
+          ]
+        },
+        "Fixed charge p/MPAN/day": {
+          "min": 0.0,
+          "max": 15992.62,
+          "mean": 1150.5593103448277,
+          "count": 29,
+          "sample_values": [
+            14.89,
+            5.63,
+            8.73,
+            20.94,
+            43.57
+          ]
+        },
+        "Capacity charge p/kVA/day": {
+          "min": 3.71,
+          "max": 3.83,
+          "mean": 3.7666666666666657,
+          "count": 15,
+          "sample_values": [
+            3.71,
+            3.71,
+            3.71,
+            3.71,
+            3.71
+          ]
+        }
+      },
+      "csv_export": "duos_extracted_data/electricity_north_west_2023_annex_1_lv,_hv_and_ums_charges.csv"
+    },
+    {
+      "file_path": "enwl-schedule_of_charges-2021-final-v6-llfs.xlsx",
+      "dno_name": "Electricity North West",
+      "mpan_code": 14,
+      "year": 2021,
+      "sheet_name": "Annex 1 LV, HV and UMS charges",
+      "skip_rows": 12,
+      "columns": [
+        "Tariff name",
+        "Open LLFCs",
+        "PCs",
+        "Red/black unit charge\np/kWh",
+        "Amber/yellow unit charge\np/kWh",
+        "Green unit charge\np/kWh",
+        "Fixed charge p/MPAN/day",
+        "Capacity charge p/kVA/day",
+        "Exceeded capacity charge\np/kVA/day",
+        "Reactive power charge\np/kVArh",
+        "Closed LLFCs"
+      ],
+      "rate_columns": [
+        "Red/black unit charge\np/kWh",
+        "Amber/yellow unit charge\np/kWh",
+        "Green unit charge\np/kWh",
+        "Fixed charge p/MPAN/day",
+        "Capacity charge p/kVA/day",
+        "Exceeded capacity charge\np/kVA/day",
+        "Reactive power charge\np/kVArh"
+      ],
+      "data_rows": 19,
+      "data_cols": 11,
+      "extracted_at": "2025-09-13T12:32:36.111317",
+      "sample_rates": {
+        "Red/black unit charge\np/kWh": {
+          "min": -6.774,
+          "max": 17.522,
+          "mean": 2.4397368421052628,
+          "count": 19,
+          "sample_values": [
+            9.18,
+            9.18,
+            10.249,
+            10.249,
+            7.765
+          ]
+        },
+        "Amber/yellow unit charge\np/kWh": {
+          "min": -1.089,
+          "max": 3.604,
+          "mean": 0.5612105263157896,
+          "count": 19,
+          "sample_values": [
+            1.881,
+            1.881,
+            2.052,
+            2.052,
+            1.565
+          ]
+        },
+        "Green unit charge\np/kWh": {
+          "min": -0.159,
+          "max": 2.714,
+          "mean": 0.34915789473684217,
+          "count": 19,
+          "sample_values": [
+            0.686,
+            0.686,
+            0.711,
+            0.711,
+            0.642
+          ]
+        },
+        "Fixed charge p/MPAN/day": {
+          "min": 0.0,
+          "max": 120.65,
+          "mean": 25.639375,
+          "count": 16,
+          "sample_values": [
+            4.31,
+            4.3,
+            17.11,
+            54.94,
+            120.65
+          ]
+        },
+        "Capacity charge p/kVA/day": {
+          "min": 3.19,
+          "max": 3.34,
+          "mean": 3.2633333333333336,
+          "count": 6,
+          "sample_values": [
+            3.26,
+            3.34,
+            3.19,
+            3.26,
+            3.34
+          ]
+        }
+      },
+      "csv_export": "duos_extracted_data/electricity_north_west_2021_annex_1_lv,_hv_and_ums_charges.csv"
+    },
+    {
+      "file_path": "enwl-schedule_of_charges-2021-final-v6-llfs.xlsx",
+      "dno_name": "Electricity North West",
+      "mpan_code": 14,
+      "year": 2021,
+      "sheet_name": "Annex 1 LV, HV and UMS charges",
+      "skip_rows": 12,
+      "columns": [
+        "Tariff name",
+        "Open LLFCs",
+        "PCs",
+        "Red/black unit charge\np/kWh",
+        "Amber/yellow unit charge\np/kWh",
+        "Green unit charge\np/kWh",
+        "Fixed charge p/MPAN/day",
+        "Capacity charge p/kVA/day",
+        "Exceeded capacity charge\np/kVA/day",
+        "Reactive power charge\np/kVArh",
+        "Closed LLFCs"
+      ],
+      "rate_columns": [
+        "Red/black unit charge\np/kWh",
+        "Amber/yellow unit charge\np/kWh",
+        "Green unit charge\np/kWh",
+        "Fixed charge p/MPAN/day",
+        "Capacity charge p/kVA/day",
+        "Exceeded capacity charge\np/kVA/day",
+        "Reactive power charge\np/kVArh"
+      ],
+      "data_rows": 19,
+      "data_cols": 11,
+      "extracted_at": "2025-09-13T12:32:36.422462",
+      "sample_rates": {
+        "Red/black unit charge\np/kWh": {
+          "min": -6.774,
+          "max": 17.522,
+          "mean": 2.4397368421052628,
+          "count": 19,
+          "sample_values": [
+            9.18,
+            9.18,
+            10.249,
+            10.249,
+            7.765
+          ]
+        },
+        "Amber/yellow unit charge\np/kWh": {
+          "min": -1.089,
+          "max": 3.604,
+          "mean": 0.5612105263157896,
+          "count": 19,
+          "sample_values": [
+            1.881,
+            1.881,
+            2.052,
+            2.052,
+            1.565
+          ]
+        },
+        "Green unit charge\np/kWh": {
+          "min": -0.159,
+          "max": 2.714,
+          "mean": 0.34915789473684217,
+          "count": 19,
+          "sample_values": [
+            0.686,
+            0.686,
+            0.711,
+            0.711,
+            0.642
+          ]
+        },
+        "Fixed charge p/MPAN/day": {
+          "min": 0.0,
+          "max": 120.65,
+          "mean": 25.639375,
+          "count": 16,
+          "sample_values": [
+            4.31,
+            4.3,
+            17.11,
+            54.94,
+            120.65
+          ]
+        },
+        "Capacity charge p/kVA/day": {
+          "min": 3.19,
+          "max": 3.34,
+          "mean": 3.2633333333333336,
+          "count": 6,
+          "sample_values": [
+            3.26,
+            3.34,
+            3.19,
+            3.26,
+            3.34
+          ]
+        }
+      },
+      "csv_export": "duos_extracted_data/electricity_north_west_2021_annex_1_lv,_hv_and_ums_charges.csv"
+    },
+    {
+      "file_path": "enwl-schedule_of_charges-2021-final-v6-llfs.xlsx",
+      "dno_name": "Electricity North West",
+      "mpan_code": 14,
+      "year": 2021,
+      "sheet_name": "Annex 1 LV, HV and UMS charges",
+      "skip_rows": 12,
+      "columns": [
+        "Tariff name",
+        "Open LLFCs",
+        "PCs",
+        "Red/black unit charge\np/kWh",
+        "Amber/yellow unit charge\np/kWh",
+        "Green unit charge\np/kWh",
+        "Fixed charge p/MPAN/day",
+        "Capacity charge p/kVA/day",
+        "Exceeded capacity charge\np/kVA/day",
+        "Reactive power charge\np/kVArh",
+        "Closed LLFCs"
+      ],
+      "rate_columns": [
+        "Red/black unit charge\np/kWh",
+        "Amber/yellow unit charge\np/kWh",
+        "Green unit charge\np/kWh",
+        "Fixed charge p/MPAN/day",
+        "Capacity charge p/kVA/day",
+        "Exceeded capacity charge\np/kVA/day",
+        "Reactive power charge\np/kVArh"
+      ],
+      "data_rows": 19,
+      "data_cols": 11,
+      "extracted_at": "2025-09-13T12:32:36.757061",
+      "sample_rates": {
+        "Red/black unit charge\np/kWh": {
+          "min": -6.774,
+          "max": 17.522,
+          "mean": 2.4397368421052628,
+          "count": 19,
+          "sample_values": [
+            9.18,
+            9.18,
+            10.249,
+            10.249,
+            7.765
+          ]
+        },
+        "Amber/yellow unit charge\np/kWh": {
+          "min": -1.089,
+          "max": 3.604,
+          "mean": 0.5612105263157896,
+          "count": 19,
+          "sample_values": [
+            1.881,
+            1.881,
+            2.052,
+            2.052,
+            1.565
+          ]
+        },
+        "Green unit charge\np/kWh": {
+          "min": -0.159,
+          "max": 2.714,
+          "mean": 0.34915789473684217,
+          "count": 19,
+          "sample_values": [
+            0.686,
+            0.686,
+            0.711,
+            0.711,
+            0.642
+          ]
+        },
+        "Fixed charge p/MPAN/day": {
+          "min": 0.0,
+          "max": 120.65,
+          "mean": 25.639375,
+          "count": 16,
+          "sample_values": [
+            4.31,
+            4.3,
+            17.11,
+            54.94,
+            120.65
+          ]
+        },
+        "Capacity charge p/kVA/day": {
+          "min": 3.19,
+          "max": 3.34,
+          "mean": 3.2633333333333336,
+          "count": 6,
+          "sample_values": [
+            3.26,
+            3.34,
+            3.19,
+            3.26,
+            3.34
+          ]
+        }
+      },
+      "csv_export": "duos_extracted_data/electricity_north_west_2021_annex_1_lv,_hv_and_ums_charges.csv"
+    },
+    {
+      "file_path": "enwl-schedule-of-charges-and-other-table--april-2018.xlsx",
+      "dno_name": "Electricity North West",
+      "mpan_code": 14,
+      "year": 2018,
+      "sheet_name": "Annex 1 LV and HV charges",
+      "skip_rows": 8,
+      "columns": [
+        "* Domestic Unrestricted, Domestic Two Rate and LV Network Domestic Fixed Charges have been increased since the original publication to recover an amount equal to a Supplier of Last Resort Payment Claim.",
+        "Unnamed: 1",
+        "Unnamed: 2",
+        "Unnamed: 3",
+        "Unnamed: 4",
+        "Unnamed: 5",
+        "Notes",
+        "Unnamed: 7",
+        "All the above times are in UK Clock time",
+        "Unnamed: 9",
+        "Unnamed: 10"
+      ],
+      "rate_columns": [
+        "* Domestic Unrestricted, Domestic Two Rate and LV Network Domestic Fixed Charges have been increased since the original publication to recover an amount equal to a Supplier of Last Resort Payment Claim."
+      ],
+      "data_rows": 37,
+      "data_cols": 11,
+      "extracted_at": "2025-09-13T12:32:37.012765",
+      "sample_rates": {},
+      "csv_export": "duos_extracted_data/electricity_north_west_2018_annex_1_lv_and_hv_charges.csv"
+    },
+    {
+      "file_path": "enwl-schedule-of-charges-and-other-table--april-2018.xlsx",
+      "dno_name": "Electricity North West",
+      "mpan_code": 14,
+      "year": 2018,
+      "sheet_name": "Annex 1 LV and HV charges",
+      "skip_rows": 8,
+      "columns": [
+        "* Domestic Unrestricted, Domestic Two Rate and LV Network Domestic Fixed Charges have been increased since the original publication to recover an amount equal to a Supplier of Last Resort Payment Claim.",
+        "Unnamed: 1",
+        "Unnamed: 2",
+        "Unnamed: 3",
+        "Unnamed: 4",
+        "Unnamed: 5",
+        "Notes",
+        "Unnamed: 7",
+        "All the above times are in UK Clock time",
+        "Unnamed: 9",
+        "Unnamed: 10"
+      ],
+      "rate_columns": [
+        "* Domestic Unrestricted, Domestic Two Rate and LV Network Domestic Fixed Charges have been increased since the original publication to recover an amount equal to a Supplier of Last Resort Payment Claim."
+      ],
+      "data_rows": 37,
+      "data_cols": 11,
+      "extracted_at": "2025-09-13T12:32:37.147071",
+      "sample_rates": {},
+      "csv_export": "duos_extracted_data/electricity_north_west_2018_annex_1_lv_and_hv_charges.csv"
+    },
+    {
+      "file_path": "enwl---schedule-of-charges-and-other-tables---with-llfs-v7.xlsx",
+      "dno_name": "Electricity North West",
+      "mpan_code": 14,
+      "year": null,
+      "sheet_name": "Annex 1 LV and HV charges",
+      "skip_rows": 8,
+      "columns": [
+        "* Domestic Unrestricted, Domestic Two Rate and LV Network Domestic Fixed Charges have been increased since the original publication to recover an amount equal to a Supplier of Last Resort Payment Claim.",
+        "Unnamed: 1",
+        "Unnamed: 2",
+        "Unnamed: 3",
+        "Unnamed: 4",
+        "Unnamed: 5",
+        "Notes",
+        "Unnamed: 7",
+        "All the above times are in UK Clock time",
+        "Unnamed: 9",
+        "Unnamed: 10"
+      ],
+      "rate_columns": [
+        "* Domestic Unrestricted, Domestic Two Rate and LV Network Domestic Fixed Charges have been increased since the original publication to recover an amount equal to a Supplier of Last Resort Payment Claim."
+      ],
+      "data_rows": 37,
+      "data_cols": 11,
+      "extracted_at": "2025-09-13T12:32:37.351775",
+      "sample_rates": {},
+      "csv_export": "duos_extracted_data/electricity_north_west_None_annex_1_lv_and_hv_charges.csv"
+    },
+    {
+      "file_path": "enwl---schedule-of-charges-and-other-tables---with-llfs-v7.xlsx",
+      "dno_name": "Electricity North West",
+      "mpan_code": 14,
+      "year": null,
+      "sheet_name": "Annex 1 LV and HV charges",
+      "skip_rows": 8,
+      "columns": [
+        "* Domestic Unrestricted, Domestic Two Rate and LV Network Domestic Fixed Charges have been increased since the original publication to recover an amount equal to a Supplier of Last Resort Payment Claim.",
+        "Unnamed: 1",
+        "Unnamed: 2",
+        "Unnamed: 3",
+        "Unnamed: 4",
+        "Unnamed: 5",
+        "Notes",
+        "Unnamed: 7",
+        "All the above times are in UK Clock time",
+        "Unnamed: 9",
+        "Unnamed: 10"
+      ],
+      "rate_columns": [
+        "* Domestic Unrestricted, Domestic Two Rate and LV Network Domestic Fixed Charges have been increased since the original publication to recover an amount equal to a Supplier of Last Resort Payment Claim."
+      ],
+      "data_rows": 37,
+      "data_cols": 11,
+      "extracted_at": "2025-09-13T12:32:37.494275",
+      "sample_rates": {},
+      "csv_export": "duos_extracted_data/electricity_north_west_None_annex_1_lv_and_hv_charges.csv"
+    },
+    {
+      "file_path": "eastern-power-networks-schedule-of-charges-and-other-tables-2022-v18.xlsx",
+      "dno_name": "UK Power Networks Eastern",
+      "mpan_code": 10,
+      "year": 2022,
+      "sheet_name": "Annex 1 LV, HV and UMS charges",
+      "skip_rows": 10,
+      "columns": [
+        "Tariff name",
+        "Open LLFCs",
+        "PCs",
+        "Red/black unit charge\np/kWh",
+        "Amber/yellow unit charge\np/kWh",
+        "Green unit charge\np/kWh",
+        "Fixed charge p/MPAN/day",
+        "Capacity charge p/kVA/day",
+        "Exceeded capacity charge\np/kVA/day",
+        "Reactive power charge\np/kVArh",
+        "Closed LLFCs"
+      ],
+      "rate_columns": [
+        "Red/black unit charge\np/kWh",
+        "Amber/yellow unit charge\np/kWh",
+        "Green unit charge\np/kWh",
+        "Fixed charge p/MPAN/day",
+        "Capacity charge p/kVA/day",
+        "Exceeded capacity charge\np/kVA/day",
+        "Reactive power charge\np/kVArh"
+      ],
+      "data_rows": 32,
+      "data_cols": 11,
+      "extracted_at": "2025-09-13T12:32:37.780180",
+      "sample_rates": {
+        "Red/black unit charge\np/kWh": {
+          "min": -9.287,
+          "max": 40.226,
+          "mean": 6.331250000000001,
+          "count": 32,
+          "sample_values": [
+            15.429,
+            15.429,
+            14.288,
+            14.288,
+            14.288
+          ]
+        },
+        "Amber/yellow unit charge\np/kWh": {
+          "min": -0.396,
+          "max": 1.512,
+          "mean": 0.24768749999999995,
+          "count": 32,
+          "sample_values": [
+            0.657,
+            0.657,
+            0.608,
+            0.608,
+            0.608
+          ]
+        },
+        "Green unit charge\np/kWh": {
+          "min": -0.073,
+          "max": 1.041,
+          "mean": 0.07025,
+          "count": 32,
+          "sample_values": [
+            0.122,
+            0.122,
+            0.113,
+            0.113,
+            0.113
+          ]
+        },
+        "Fixed charge p/MPAN/day": {
+          "min": 0.0,
+          "max": 6770.43,
+          "mean": 477.88620689655176,
+          "count": 29,
+          "sample_values": [
+            16.23,
+            4.2,
+            5.33,
+            10.51,
+            19.94
+          ]
+        },
+        "Capacity charge p/kVA/day": {
+          "min": 3.65,
+          "max": 5.02,
+          "mean": 4.286666666666665,
+          "count": 15,
+          "sample_values": [
+            3.65,
+            3.65,
+            3.65,
+            3.65,
+            3.65
+          ]
+        }
+      },
+      "csv_export": "duos_extracted_data/uk_power_networks_eastern_2022_annex_1_lv,_hv_and_ums_charges.csv"
+    },
+    {
+      "file_path": "eastern-power-networks-schedule-of-charges-and-other-tables-2022-v18.xlsx",
+      "dno_name": "UK Power Networks Eastern",
+      "mpan_code": 10,
+      "year": 2022,
+      "sheet_name": "Annex 1 LV, HV and UMS charges",
+      "skip_rows": 10,
+      "columns": [
+        "Tariff name",
+        "Open LLFCs",
+        "PCs",
+        "Red/black unit charge\np/kWh",
+        "Amber/yellow unit charge\np/kWh",
+        "Green unit charge\np/kWh",
+        "Fixed charge p/MPAN/day",
+        "Capacity charge p/kVA/day",
+        "Exceeded capacity charge\np/kVA/day",
+        "Reactive power charge\np/kVArh",
+        "Closed LLFCs"
+      ],
+      "rate_columns": [
+        "Red/black unit charge\np/kWh",
+        "Amber/yellow unit charge\np/kWh",
+        "Green unit charge\np/kWh",
+        "Fixed charge p/MPAN/day",
+        "Capacity charge p/kVA/day",
+        "Exceeded capacity charge\np/kVA/day",
+        "Reactive power charge\np/kVArh"
+      ],
+      "data_rows": 32,
+      "data_cols": 11,
+      "extracted_at": "2025-09-13T12:32:38.045056",
+      "sample_rates": {
+        "Red/black unit charge\np/kWh": {
+          "min": -9.287,
+          "max": 40.226,
+          "mean": 6.331250000000001,
+          "count": 32,
+          "sample_values": [
+            15.429,
+            15.429,
+            14.288,
+            14.288,
+            14.288
+          ]
+        },
+        "Amber/yellow unit charge\np/kWh": {
+          "min": -0.396,
+          "max": 1.512,
+          "mean": 0.24768749999999995,
+          "count": 32,
+          "sample_values": [
+            0.657,
+            0.657,
+            0.608,
+            0.608,
+            0.608
+          ]
+        },
+        "Green unit charge\np/kWh": {
+          "min": -0.073,
+          "max": 1.041,
+          "mean": 0.07025,
+          "count": 32,
+          "sample_values": [
+            0.122,
+            0.122,
+            0.113,
+            0.113,
+            0.113
+          ]
+        },
+        "Fixed charge p/MPAN/day": {
+          "min": 0.0,
+          "max": 6770.43,
+          "mean": 477.88620689655176,
+          "count": 29,
+          "sample_values": [
+            16.23,
+            4.2,
+            5.33,
+            10.51,
+            19.94
+          ]
+        },
+        "Capacity charge p/kVA/day": {
+          "min": 3.65,
+          "max": 5.02,
+          "mean": 4.286666666666665,
+          "count": 15,
+          "sample_values": [
+            3.65,
+            3.65,
+            3.65,
+            3.65,
+            3.65
+          ]
+        }
+      },
+      "csv_export": "duos_extracted_data/uk_power_networks_eastern_2022_annex_1_lv,_hv_and_ums_charges.csv"
+    },
+    {
+      "file_path": "eastern-power-networks-schedule-of-charges-and-other-tables-2022-v18.xlsx",
+      "dno_name": "UK Power Networks Eastern",
+      "mpan_code": 10,
+      "year": 2022,
+      "sheet_name": "Annex 1 LV, HV and UMS charges",
+      "skip_rows": 10,
+      "columns": [
+        "Tariff name",
+        "Open LLFCs",
+        "PCs",
+        "Red/black unit charge\np/kWh",
+        "Amber/yellow unit charge\np/kWh",
+        "Green unit charge\np/kWh",
+        "Fixed charge p/MPAN/day",
+        "Capacity charge p/kVA/day",
+        "Exceeded capacity charge\np/kVA/day",
+        "Reactive power charge\np/kVArh",
+        "Closed LLFCs"
+      ],
+      "rate_columns": [
+        "Red/black unit charge\np/kWh",
+        "Amber/yellow unit charge\np/kWh",
+        "Green unit charge\np/kWh",
+        "Fixed charge p/MPAN/day",
+        "Capacity charge p/kVA/day",
+        "Exceeded capacity charge\np/kVA/day",
+        "Reactive power charge\np/kVArh"
+      ],
+      "data_rows": 32,
+      "data_cols": 11,
+      "extracted_at": "2025-09-13T12:32:38.286753",
+      "sample_rates": {
+        "Red/black unit charge\np/kWh": {
+          "min": -9.287,
+          "max": 40.226,
+          "mean": 6.331250000000001,
+          "count": 32,
+          "sample_values": [
+            15.429,
+            15.429,
+            14.288,
+            14.288,
+            14.288
+          ]
+        },
+        "Amber/yellow unit charge\np/kWh": {
+          "min": -0.396,
+          "max": 1.512,
+          "mean": 0.24768749999999995,
+          "count": 32,
+          "sample_values": [
+            0.657,
+            0.657,
+            0.608,
+            0.608,
+            0.608
+          ]
+        },
+        "Green unit charge\np/kWh": {
+          "min": -0.073,
+          "max": 1.041,
+          "mean": 0.07025,
+          "count": 32,
+          "sample_values": [
+            0.122,
+            0.122,
+            0.113,
+            0.113,
+            0.113
+          ]
+        },
+        "Fixed charge p/MPAN/day": {
+          "min": 0.0,
+          "max": 6770.43,
+          "mean": 477.88620689655176,
+          "count": 29,
+          "sample_values": [
+            16.23,
+            4.2,
+            5.33,
+            10.51,
+            19.94
+          ]
+        },
+        "Capacity charge p/kVA/day": {
+          "min": 3.65,
+          "max": 5.02,
+          "mean": 4.286666666666665,
+          "count": 15,
+          "sample_values": [
+            3.65,
+            3.65,
+            3.65,
+            3.65,
+            3.65
+          ]
+        }
+      },
+      "csv_export": "duos_extracted_data/uk_power_networks_eastern_2022_annex_1_lv,_hv_and_ums_charges.csv"
+    }
+  ]
+}

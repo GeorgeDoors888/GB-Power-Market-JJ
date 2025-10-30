@@ -1,0 +1,9 @@
+2025-09-20 13:54:13,913 - INFO - 🔍 Checking data freshness without modifying your sheets...
+2025-09-20 13:54:15,996 - INFO - Created new DataTracking worksheet
+2025-09-20 13:54:15,996 - INFO - Google Sheets connection established
+2025-09-20 13:54:18,697 - INFO - Latest data in bmrs_bod: 2025-09-19 23:00:00+00:00
+2025-09-20 13:54:19,939 - INFO - Latest data in bmrs_freq: 2025-12-30 00:00:00+00:00
+2025-09-20 13:54:21,003 - INFO - Latest data in bmrs_fuelinst: 2025-12-30 00:00:00+00:00
+2025-09-20 13:54:21,004 - INFO - Last Elexon data: 2025-09-19 23:00:00+00:00 (834.4 minutes ago)
+2025-09-20 13:54:21,004 - INFO - 📊 Data is getting stale, update recommended
+2025-09-20 13:54:21,427 - INFO - Added tracking data at row 2

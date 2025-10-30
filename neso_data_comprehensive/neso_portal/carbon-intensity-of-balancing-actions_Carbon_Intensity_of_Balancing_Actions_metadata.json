@@ -1,0 +1,11 @@
+{
+  "source": "NESO Data Portal",
+  "dataset_id": "carbon-intensity-of-balancing-actions",
+  "dataset_title": "Carbon Intensity of Balancing Actions",
+  "resource_id": "0b7edf10-4328-4b85-a0af-e6daa6bb8428",
+  "resource_name": "Carbon Intensity of Balancing Actions",
+  "resource_format": "csv",
+  "last_modified": "2025-10-29T10:45:12.508674",
+  "size": null,
+  "description": "The carbon intensity of balancing actions measures the difference between the carbon intensity of the combined Final Physical Notice (FPN) of machines in the Balancing Mechanism (BM) and the equivalent profile with balancing actions applied.<br/>"
+}

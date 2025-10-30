@@ -1,0 +1,15 @@
+[2025-09-20 12:25:00] Acquired update lock (PID: 86576)
+[2025-09-20 12:25:00] Running pre-flight checks...
+[2025-09-20 12:25:04] ✅ Pre-flight checks passed
+[2025-09-20 12:25:04] Starting 15-minute energy data update cycle
+[2025-09-20 12:25:04] High priority update scheduled (every 15 min)
+[2025-09-20 12:25:04] Starting high priority BMRS updates...
+2025-09-20 12:25:05,458 - HIGH_PRIORITY - INFO - Starting high-priority updates for 6 datasets
+2025-09-20 12:25:05,459 - HIGH_PRIORITY - INFO - Starting update for dataset: FREQ
+2025-09-20 12:25:06,839 - HIGH_PRIORITY - WARNING - Dataset FREQ appears up to date, skipping
+2025-09-20 12:25:06,839 - HIGH_PRIORITY - INFO - Starting update for dataset: FUELINST
+2025-09-20 12:25:07,812 - HIGH_PRIORITY - WARNING - Dataset FUELINST appears up to date, skipping
+2025-09-20 12:25:07,812 - HIGH_PRIORITY - INFO - Starting update for dataset: BOD
+2025-09-20 12:25:08,731 - HIGH_PRIORITY - INFO - Updating BOD from 2025-09-19 to 2025-09-20
+2025-09-20 12:25:28,848 - HIGH_PRIORITY - INFO - Starting update for dataset: BOALF
+2025-09-20 12:25:29,794 - HIGH_PRIORITY - INFO - Updating BOALF from 2022-12-31 to 2025-09-20

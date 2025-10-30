@@ -1,0 +1,11 @@
+{
+  "source": "NESO Data Portal",
+  "dataset_id": "2-day-ahead-demand-forecast",
+  "dataset_title": "2 Day Ahead Demand Forecast",
+  "resource_id": "cda26f27-4bb6-4632-9fb5-2d029ca605e1",
+  "resource_name": "2 Day Ahead Demand Forecast",
+  "resource_format": "csv",
+  "last_modified": "2025-10-29T16:15:17.863047",
+  "size": null,
+  "description": "This dataset contains national electricity demand forecast for 2 days ahead as well as all historic 2 day ahead demand forecasts. The forecast assists the industry to make efficient decisions in balancing their supply and demand positions.                                                          <br/><br/>"
+}

@@ -1,0 +1,14 @@
+Publication,Fixed Tariff Title,Published Date,Fixed Tariff Start Date,Fixed Tariff End Date,Fixed Tariff £/MWh
+Final,Fixed Tariff 1,2023-01-31,2023-04-01,2023-09-30,13.41
+Final,Fixed Tariff 2,2023-01-31,2023-10-01,2024-03-31,14.03
+Final,Fixed Tariff 3,2023-06-30,2024-04-01,2024-09-30,7.63
+Draft,Fixed Tariff 4,2023-06-30,2024-10-01,2025-03-31,7.6
+Final,Fixed Tariff 4,2023-12-22,2024-10-01,2025-03-31,12.17
+Draft,Fixed Tariff 5,2023-12-22,2025-04-01,2025-09-30,12.48
+Final,Fixed Tariff 5,2024-06-28,2025-04-01,2025-09-30,10.74
+Draft,Fixed Tariff 6,2024-06-28,2025-10-01,2026-03-31,11.99
+Final,Fixed Tariff 6,2024-12-20,2025-10-01,2026-03-31,15.69
+Initial Forecast,Fixed Tariff 7,2025-06-27,2026-04-01,2026-09-30,14.55
+Initial Forecast,Fixed Tariff 8,2025-06-27,2026-10-01,2027-03-31,11.03
+Draft,Fixed Tariff 7,2025-10-02,2026-04-01,2026-09-30,14.21
+Draft,Fixed Tariff 8,2025-10-02,2026-10-01,2027-03-31,11.93

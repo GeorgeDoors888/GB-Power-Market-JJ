@@ -1,0 +1,21 @@
+customer_id,customer_name,postcode,MPAN,mpan_core,distributor_id,mpan_valid,DNO_Key,DNO_Name,Short_Code,Market_Participant_ID,GSP_Group_ID,GSP_Group_Name
+100001,Smith Enterprises,SW1A 1AA,1000000000005,1000000000005,10,False,UKPN-EPN,UK Power Networks (Eastern),EPN,EELC,A,Eastern
+100002,Johnson Ltd,M1 1AA,1200000000003,1200000000003,12,False,UKPN-LPN,UK Power Networks (London),LPN,LOND,C,London
+100003,Williams & Co,B1 1AA,1600000000008,1600000000008,16,False,ENWL,Electricity North West,ENWL,NORW,G,North West
+100004,Jones Services,EH1 1AA,1700000000006,1700000000006,17,False,SSE-SHEPD,Scottish Hydro Electric Power Distribution (SHEPD),SHEPD,HYDE,P,North Scotland
+100005,Brown Associates,G1 1AA,1700000000006,1700000000006,17,False,SSE-SHEPD,Scottish Hydro Electric Power Distribution (SHEPD),SHEPD,HYDE,P,North Scotland
+100006,Davis Manufacturing,NE1 1AA,1500000000000,1500000000000,15,False,NPg-NE,Northern Powergrid (North East),NE,NEEB,F,North East
+100007,Miller Energy,LS1 1AA,2300000000007,2300000000007,23,False,NPg-Y,Northern Powergrid (Yorkshire),Y,YELG,M,Yorkshire
+100008,Wilson Power,CF1 1AA,2100000000002,2100000000002,21,False,NGED-SWales,National Grid Electricity Distribution – South Wales (SWALES),SWALES,SWAE,K,South Wales
+100009,Moore Electricity,SA1 1AA,2100000000002,2100000000002,21,False,NGED-SWales,National Grid Electricity Distribution – South Wales (SWALES),SWALES,SWAE,K,South Wales
+100010,Taylor Utilities,BS1 1AA,2200000000001,2200000000001,22,False,NGED-SW,National Grid Electricity Distribution – South West (SWEST),SWEST,SWEB,L,South Western
+100011,Anderson Group,PL1 1AA,2200000000001,2200000000001,22,False,NGED-SW,National Grid Electricity Distribution – South West (SWEST),SWEST,SWEB,L,South Western
+100012,Thomas Corp,L1 1AA,1300000000004,1300000000004,13,False,SP-Manweb,SP Energy Networks (SPM),SPM,MANW,D,Merseyside & North Wales
+100013,Jackson Power,CH1 1AA,1300000000004,1300000000004,13,False,SP-Manweb,SP Energy Networks (SPM),SPM,MANW,D,Merseyside & North Wales
+100014,White Energy,BN1 1AA,2000000000009,2000000000009,20,False,SSE-SEPD,Southern Electric Power Distribution (SEPD),SEPD,SOUT,H,Southern
+100015,Harris Utilities,SO1 1AA,2000000000009,2000000000009,20,False,SSE-SEPD,Southern Electric Power Distribution (SEPD),SEPD,SOUT,H,Southern
+100016,Martin Enterprises,S1234 5AA,1900000000007,1900000000007,19,False,UKPN-SPN,UK Power Networks (South Eastern),SPN,SEEB,J,South Eastern
+100017,Thompson Ltd,OX1 1AA,1000000000005,1000000000005,10,False,UKPN-EPN,UK Power Networks (Eastern),EPN,EELC,A,Eastern
+100018,Garcia Energy,S-00 100 1200 0000 0000 3,1200000000003,1200000000003,12,False,UKPN-LPN,UK Power Networks (London),LPN,LOND,C,London
+100019,Martinez Power,S 00 123 4567 9012 3,1234567890123,1234567890123,12,False,UKPN-LPN,UK Power Networks (London),LPN,LOND,C,London
+100020,Robinson Utilities,16-00000-00008,1600000000008,1600000000008,16,False,ENWL,Electricity North West,ENWL,NORW,G,North West

@@ -1,0 +1,158 @@
+## DUoS DATA ANALYSIS SUMMARY - 14 SEPTEMBER 2025
+===========================================================
+
+# 1. DATA COLLECTION STATUS
+
+## Excel Files Processed:
+- 17 Excel files were analyzed in today's DUoS time band analysis:
+  - 14 SP Manweb (MPAN 13) files spanning years 2020-2026
+  - 2 SSEN Hydro (MPAN 17) files for years 2025-2026
+  - 1 SSEN Southern (MPAN 20) file for year 2025
+
+## File Details:
+- SP Manweb Files:
+  - CDCM_v3_SPD_2020_21.xlsx
+  - CDCM_v3_SPM_2020_21.xlsx
+  - CDCM_v6_2021-22-Pre-Release_20200130_SPM_DCP341.xlsx
+  - CDCM_v6_2021-22-Pre-Release_2020_130_SPD_DCP341.xlsx
+  - SPD 2024_25 CDCM_v9_20221027_published.xlsx
+  - SPD CDCM_v7_2022-23_Pre-Release_20201106 SoLR.xlsx
+  - SPD CDCM_v8_20211122_2023_24_Published_SoLR.xlsx
+  - SPD-2026_27CDCM_v11_20241025.xlsx
+  - SPD_2025_26_CDCM_v10_20231106-2.xlsx
+  - SPM 2024_25 CDCM_v9_20221027_published.xlsx
+  - SPM 2026_27 CDCM_v11_20241025_Published.xlsx
+  - SPM CDCM_v7_2022-23_Pre-Release_20201106 SoLR.xlsx
+  - SPM CDCM_v8_20211122_2023_24_Published SoLR.xlsx
+  - SPM_2025_26_CDCM_v10_20231106.xlsx
+
+- SSEN Files:
+  - sepd---schedule-of-charges-and-other-tables---april-2025-v0.2.xlsx (SSEN Southern)
+  - shepd---schedule-of-charges-and-other-tables---april-2025-v0.2.xlsx (SSEN Hydro)
+  - shepd---schedule-of-charges-and-other-tables---april-2026-v1.0.xlsx (SSEN Hydro)
+
+## DNO Coverage:
+- SP Manweb (MPAN 13): Time period definitions found but no rate data successfully extracted
+- SSEN Hydro (MPAN 17): Complete data extracted for 2025-2026
+- SSEN Southern (MPAN 20): Complete data extracted for 2025
+
+# 2. KEY FINDINGS FROM ANALYSIS
+
+## Time Period Patterns:
+- RED bands typically occur during weekday peak hours (16:00-19:00)
+- AMBER bands typically cover business hours and early evening (07:00-16:00 and 19:00-22:00)
+- GREEN bands cover overnight hours (23:00-07:00) and most weekend hours
+
+## Rate Analysis from SSEN Files:
+- RED band rates: Range from -8.40 to 32.20 p/kWh (avg ~4.0 p/kWh)
+- AMBER band rates: Range from -2.93 to 8.97 p/kWh (avg ~1.0 p/kWh)
+- GREEN band rates: Range from -0.63 to 6.85 p/kWh (avg ~0.3 p/kWh)
+
+## Comprehensive Data (including manual table input):
+- RED band rates across all DNOs: 10.98 to 13.99 p/kWh (avg: 11.94 p/kWh)
+- AMBER band rates across all DNOs: 0.93 to 1.10 p/kWh (avg: 1.01 p/kWh)
+- GREEN band rates across all DNOs: 0.16 to 0.25 p/kWh (avg: 0.19 p/kWh)
+
+## Price Differentials:
+- RED is 11.8x more expensive than AMBER
+- AMBER is 5.3x more expensive than GREEN
+- RED is 62.9x more expensive than GREEN
+
+## Regional Variations:
+- UK Power Networks has lowest RED band rates (10.98 p/kWh)
+- National Grid East Midlands has highest RED band rate (13.99 p/kWh)
+- SSEN regions have higher GREEN band rates compared to other DNOs
+- London uniquely has two RED bands (11:00-14:00 and 16:00-19:00)
+
+# 3. TECHNICAL ACCOMPLISHMENTS TODAY
+
+## Scripts Developed:
+1. **duos_time_band_analyzer.py** - Extracts time periods and rates from DNO Excel files
+   - Successfully analyzed 17 Excel files
+   - Extracted time band definitions and rate data where available
+   - Generated visualizations and comprehensive report
+
+2. **duos_comprehensive_analysis.py** - Combines extracted data with complete table
+   - Merged our automated extraction with the comprehensive DNO table
+   - Performed statistical analysis across all DNOs
+   - Created visualizations for comparative analysis
+   - Generated detailed report with time band definitions
+
+## Analysis Outputs:
+1. **Time Band Report**: duos_time_band_analysis/duos_time_band_report.txt
+   - Details of time periods for RED, AMBER, GREEN bands per DNO
+   - Rate ranges and sample values per DNO and year
+   - Summary table of all analyzed data
+
+2. **Comprehensive Analysis**: duos_comprehensive_analysis/duos_comprehensive_report.md
+   - Complete breakdown of all 14 DNOs
+   - Rate comparison tables
+   - Detailed time band definitions
+   - Key insights and recommendations
+
+3. **Executive Summary**: DUOS_RATES_AND_TIMEBAND_EXECUTIVE_SUMMARY.md
+   - Strategic overview of findings
+   - Operational recommendations
+   - Load shifting opportunities
+
+4. **Data Files**:
+   - duos_time_band_analysis/duos_time_band_rates.csv
+   - duos_time_band_analysis/duos_time_band_data.json
+
+5. **Visualizations**:
+   - Rate comparison across DNOs
+   - Standing and capacity charges
+   - Band rate distributions
+
+# 4. TECHNICAL CHALLENGES ADDRESSED
+
+## Data Extraction Challenges:
+- SP Manweb files had inconsistent formatting that hindered rate extraction
+- Time period definitions were often buried in non-standard locations in Excel files
+- Some files had missing or incomplete data
+- Excel header parsing issues required workarounds
+
+## Script Improvements:
+- Fixed visualization error related to year data type handling
+- Enhanced pattern recognition for time period extraction
+- Added comprehensive reporting capabilities
+- Implemented combined analysis from multiple data sources
+
+# 5. GAPS AND FUTURE WORK
+
+## Data Gaps:
+- Missing rate data for SP Manweb despite having the files
+- Missing data for 4 DNOs: National Grid (West Midlands), Northern Powergrid (Yorkshire), and both SP Energy Networks regions
+- Limited year coverage for some DNOs (particularly SSEN)
+
+## Suggested Next Steps:
+1. Develop specialized parser for SP Manweb rate sheets
+2. Collect data for missing DNOs
+3. Expand year coverage for comprehensive trend analysis
+4. Create day profile visualization showing band hours across 24-hour period
+5. Implement load shifting calculator to quantify potential savings
+6. Analyze historical trends in band definitions and rates
+
+# 6. SUMMARY STATISTICS
+
+## Files and DNOs:
+- 17 Excel files analyzed
+- 3 DNOs with time period definitions
+- 2 DNOs with complete rate data
+- 14 DNOs in comprehensive analysis (including manual data)
+
+## Rate Ranges:
+| Band  | Min (p/kWh) | Max (p/kWh) | Avg (p/kWh) |
+|-------|-------------|-------------|-------------|
+| RED   | 10.98       | 13.99       | 11.94       |
+| AMBER | 0.93        | 1.10        | 1.01        |
+| GREEN | 0.16        | 0.25        | 0.19        |
+
+## Standing and Capacity Charges:
+| Charge Type      | Min (p) | Max (p) | Avg (p) |
+|------------------|---------|---------|---------|
+| Standing (daily) | 59.45   | 67.10   | 63.64   |
+| Capacity (kVA)   | 21.90   | 24.20   | 23.10   |
+
+---
+Analysis completed on: 14 September 2025

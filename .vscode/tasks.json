@@ -1,49 +1,68 @@
 {
-  "version": "2.0.0",
-  "tasks": [
-    {
-      "label": "Docs: Serve (MkDocs)",
-      "type": "shell",
-      "command": "'/workspaces/jibber-jabber 24 august 2025 big bop/.venv/bin/mkdocs' serve -a 127.0.0.1:8000",
-      "group": "build"
-    },
-    {
-      "label": "AI Memory: Reindex",
-      "type": "shell",
-      "command": "'/workspaces/jibber-jabber 24 august 2025 big bop/.venv/bin/python' tools/ai_memory/index_repo.py",
-      "group": "build"
-    },
-    {
-      "label": "AI Memory: Search (prompt)",
-      "type": "shell",
-      "command": "'/workspaces/jibber-jabber 24 august 2025 big bop/.venv/bin/python' tools/ai_memory/search_memory.py '{input:query}' -k 10",
-      "group": "test"
-    },
-    {
-      "label": "Lint",
-      "type": "shell",
-      "command": "'/workspaces/jibber-jabber 24 august 2025 big bop/.venv/bin/python' -m flake8 .",
-      "group": "test"
-    },
-    {
-      "label": "Format",
-      "type": "shell",
-      "command": "'/workspaces/jibber-jabber 24 august 2025 big bop/.venv/bin/python' -m black . && '/workspaces/jibber-jabber 24 august 2025 big bop/.venv/bin/python' -m isort . --profile black",
-      "group": "build"
-    },
-    {
-      "label": "Run tests",
-      "type": "shell",
-      "command": "'/workspaces/jibber-jabber 24 august 2025 big bop/.venv/bin/python' -m pytest -q",
-      "group": "test"
-    }
-  ],
-  "inputs": [
-    {
-      "id": "query",
-      "type": "promptString",
-      "description": "What are you looking for?",
-      "default": "authentication"
-    }
-  ]
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Docs: Serve (MkDocs)",
+			"type": "shell",
+			"command": "'/workspaces/jibber-jabber 24 august 2025 big bop/.venv/bin/mkdocs' serve -a 127.0.0.1:8000",
+			"group": "build"
+		},
+		{
+			"label": "AI Memory: Reindex",
+			"type": "shell",
+			"command": "'/workspaces/jibber-jabber 24 august 2025 big bop/.venv/bin/python' tools/ai_memory/index_repo.py",
+			"group": "build"
+		},
+		{
+			"label": "AI Memory: Search (prompt)",
+			"type": "shell",
+			"command": "'/workspaces/jibber-jabber 24 august 2025 big bop/.venv/bin/python' tools/ai_memory/search_memory.py '{input:query}' -k 10",
+			"group": "test"
+		},
+		{
+			"label": "Lint",
+			"type": "shell",
+			"command": "'/workspaces/jibber-jabber 24 august 2025 big bop/.venv/bin/python' -m flake8 .",
+			"group": "test"
+		},
+		{
+			"label": "Format",
+			"type": "shell",
+			"command": "'/workspaces/jibber-jabber 24 august 2025 big bop/.venv/bin/python' -m black . && '/workspaces/jibber-jabber 24 august 2025 big bop/.venv/bin/python' -m isort . --profile black",
+			"group": "build"
+		},
+		{
+			"label": "Run tests",
+			"type": "shell",
+			"command": "'/workspaces/jibber-jabber 24 august 2025 big bop/.venv/bin/python' -m pytest -q",
+			"group": "test"
+		},
+		{
+			"label": "Probe MILS/MELS one-day with API key",
+			"type": "shell",
+			"command": "'/workspaces/jibber-jabber 24 august 2025 big bop/.venv/bin/python' ingest_elexon_fixed.py --start 2025-08-28 --end 2025-08-29 --only MILS,MELS --include-offline --bm-units 2__AANGE001,2__ALOND000 --log-level DEBUG",
+			"group": "test"
+		},
+		{
+			"label": "Regenerate BigQuery Inventory",
+			"type": "shell",
+			"command": "'/workspaces/jibber-jabber 24 august 2025 big bop/.venv/bin/python' tools/bq_write_inventory.py --project jibber-jabber-knowledge --dataset uk_energy_insights --out BIGQUERY_DATASET_INVENTORY.txt",
+			"args": [],
+			"isBackground": false,
+			"group": "build"
+		},
+		{
+			"label": "Watermarks: High-Freq",
+			"type": "shell",
+			"command": "'/workspaces/jibber-jabber 24 august 2025 big bop/.venv/bin/python' tools/bq_watermarks.py --project jibber-jabber-knowledge --dataset uk_energy_insights --tables bmrs_bod,bmrs_boalf,bmrs_mip,bmrs_mels,bmrs_mils,bmrs_freq,bmrs_fuelinst,bmrs_pn,bmrs_qpn --out watermarks_high_freq.json"
+		}
+	],
+	"inputs": [
+		{
+			"id": "query",
+			"type": "promptString",
+			"description": "What are you looking for?",
+			"default": "authentication"
+		}
+	]
 }

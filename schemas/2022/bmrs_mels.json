@@ -1,0 +1,57 @@
+[
+  {
+    "name": "dataset",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "settlementDate",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "settlementPeriod",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "timeFrom",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "timeTo",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "levelFrom",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "levelTo",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "notificationTime",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "notificationSequence",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "nationalGridBmUnit",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "bmUnit",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  }
+]

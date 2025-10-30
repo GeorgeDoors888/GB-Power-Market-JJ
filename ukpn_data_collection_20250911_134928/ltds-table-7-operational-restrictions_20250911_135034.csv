@@ -1,0 +1,94 @@
+﻿id;licencearea;gridsupplypoint;substation;sitefunctionallocation;fault_level_operational_restrictions
+11;South Eastern Power Networks (SPN);Beddington;Caterham 11kV;SPN-S000000008346;2-Way Bar Split
+48;South Eastern Power Networks (SPN);Kingsnorth;Medway Grid 33kV;SPN-S000000009133;2-Way Bar Split
+60;South Eastern Power Networks (SPN);Northfleet;Tonbridge East 6.6kV;SPN-S000000008503;2-Way Bar Split
+61;South Eastern Power Networks (SPN);Northfleet;Tunbridge Wells Grid 11kV;SPN-S000000009351;T3 on hot stand-by
+66;South Eastern Power Networks (SPN);West Weybridge;Guildford 'B' 11kV;SPN-S000000008621;HV Interconnection open between [Guildford 'B' 11kV] - [Guildford 'A' 11kV]
+78;Eastern Power Networks (EPN);Mill Hill;Colindale Grid 11kV;EPN-S0000000F8073;2-Way Bar Split
+92;Eastern Power Networks (EPN);Walpole;Walsoken Grid 33kV;EPN-S0000000D6077;Make duty 100%, reduce fault level before closing onto potential fault
+13;South Eastern Power Networks (SPN);Beddington;Croydon Grid 33kV;SPN-S000000008608;Managed switching and Controlled Access
+18;South Eastern Power Networks (SPN);Beddington;Sutton A 11kV;SPN-S000000008347;HV circuit on hot stand-by
+25;South Eastern Power Networks (SPN);Bolney;Hangleton 11kV;SPN-S000000008413;2-Way Bar Split
+33;South Eastern Power Networks (SPN);Canterbury;Canterbury Town 11kV;SPN-S000000008410;2-Way Bar Split
+38;South Eastern Power Networks (SPN);Richborough;Ramsgate 11kV;SPN-S000000008463;2-Way Bar Split
+63;South Eastern Power Networks (SPN);Northfleet;Tunbridge Wells Town 6.6kV;SPN-S000000009251;Controlled Access
+75;Eastern Power Networks (EPN);Brimsdown/Rye House;The Cross 33/11KV;EPN-S0000000H7080;FL exceeded if run solid, Bar normally Split 2-way due to GSP Parallel
+6;London Power Networks (LPN);Brimsdown / Rye House;The Cross 33/11KV;EPN-S0000000H7080;FL exceeded if run solid, Bar normally Split 2-way due to GSP Parallel
+10;South Eastern Power Networks (SPN);Beddington;Bensham Grove 6.6kV;SPN-S000000008358;2-Way Bar Split
+31;South Eastern Power Networks (SPN);Bolney;Worthing Town 11kV;SPN-S000000008354;2-Way Bar Split
+44;South Eastern Power Networks (SPN);Kemsley;Minster 6.6kV;SPN-S000000008436;2-Way Bar Split
+49;South Eastern Power Networks (SPN);Kingsnorth;Rainham Mark 11kV;SPN-S000000008525;2-Way Bar Split
+52;South Eastern Power Networks (SPN);Laleham;Twickenham 11kV;SPN-S000000008352;2-Way Bar Split
+70;Eastern Power Networks (EPN);Bramford;EPN 0238;;UKPN received customer enquiry to disconnect site, no further FL action required
+76;Eastern Power Networks (EPN);Eaton Socon;Little Barford 33kV;EPN-S0000000D4055;2-way bar split
+80;Eastern Power Networks (EPN);Norwich;Trowse Grid 132kV;EPN-S0000000C5084;2-Way Bar Split
+16;South Eastern Power Networks (SPN);Beddington;Selhurst 6.6kV;SPN-S000000008652;2-Way Bar Split
+20;South Eastern Power Networks (SPN);Bolney;Brighton Local 33kV;SPN-S000000009907;Controlled Access
+29;South Eastern Power Networks (SPN);Bolney;Southwick 11kV;SPN-S000000008490;2-Way Bar Split
+35;South Eastern Power Networks (SPN);Canterbury;Maidstone Grid South 11kV;SPN-S000000009533;HV Interconnection open between [Maidstone Grid South 11kV] - [Maidstone Grid North 11kV]
+42;South Eastern Power Networks (SPN);Chessington;Kingston 11kV;SPN-S000000008325;2-Way Bar Split
+45;South Eastern Power Networks (SPN);Kemsley;Sittingbourne Grid 33kV;SPN-S000000009144;GT3 on hot stand-by
+71;Eastern Power Networks (EPN);Brimsdown;Brimsdown Grid 132kV;EPN-S0000000C7084;SGT4 on hot standby
+84;Eastern Power Networks (EPN);Sundon;Chaul End Primary 11kV;EPN-S0000000H8072;2-Way Bar Split
+9;South Eastern Power Networks (SPN);Beddington;Addington Local 11kV;SPN-S000000008301;2-Way Bar Split
+17;South Eastern Power Networks (SPN);Beddington;Spurgeons Bridge 6.6kV;SPN-S000000008372;2-Way Bar Split
+21;South Eastern Power Networks (SPN);Bolney;Brighton Town 11kV;SPN-S000000008307;2-Way Bar Split
+27;South Eastern Power Networks (SPN);Bolney;Moulsecoomb Grid 33kV;SPN-S000000009934;Controlled Access
+50;South Eastern Power Networks (SPN);Kingsnorth;Strood 11kV;SPN-S000000009948;2-Way Bar Split
+65;South Eastern Power Networks (SPN);West Weybridge;Byfleet 11kV;SPN-S000000009309;2-Way Bar Split
+79;Eastern Power Networks (EPN);Mill Hill;Mill Hill 132kV;EPN-S0000000C8079;2-Way Bar Split
+82;Eastern Power Networks (EPN);Rayleigh;Southend Grid 11kV;EPN-S0000000F7057;2-Way Bar Split
+4;London Power Networks (LPN);Brimsdown;Brimsdown South 132/11KV;;2-way Bar Split
+43;South Eastern Power Networks (SPN);Hurst;Orpington 11kV;SPN-S000000008367;2-Way Bar Split
+69;Eastern Power Networks (EPN);Bramford;Bramford Grid 132kV;EPN-S0000000C1068;2-Way Bar Split
+77;Eastern Power Networks (EPN);Elstree;Stanmore Grid 11kV;EPN-S0000000F8081;2-Way Bar Split
+90;Eastern Power Networks (EPN);Walpole;Peterborough East Grid 11kV;EPN-S0000000F6057;4-Way Bar Split
+8;South Eastern Power Networks (SPN);Beddington;Addington Grid 33kV;SPN-S000000009101;GT3 on cold stand-by
+40;South Eastern Power Networks (SPN);Chessington;Chessington Grid 33kV;SPN-S000000009912;Controlled Access
+59;South Eastern Power Networks (SPN);Northfleet;South Orpington 11kV;SPN-S000000008489;2-Way Bar Split
+64;South Eastern Power Networks (SPN);Sellindge;Ashford Grid 33kV;SPN-S000000009902;Controlled Access
+67;South Eastern Power Networks (SPN);West Weybridge;West Weybridge 11kV;SPN-S000000009353;GT2 on hot stand-by
+5;London Power Networks (LPN);Brimsdown / Hendon;Rowley Lane 33/11KV;EPN-S0000000H8160;FL Exceeded if run solid, T3 normally on hot stand-by due to GSP Parallel
+7;London Power Networks (LPN);New Cross 66kV;Verney Rd 11kV;LPN-S000000000988;2-Way Bar Split
+28;South Eastern Power Networks (SPN);Bolney;Portslade 11kV;SPN-S000000008545;T3 on hot stand-by
+41;South Eastern Power Networks (SPN);Chessington;Ewell 11kV;SPN-S000000008400;2-Way Bar Split
+51;South Eastern Power Networks (SPN);Laleham;Richmond 11kV;SPN-S000000008466;2-Way Bar Split
+55;South Eastern Power Networks (SPN);Ninfield;Little Common 11kV;SPN-S000000008429;2-Way Bar Split
+73;Eastern Power Networks (EPN);Brimsdown;Brimsdown South 132/11KV;EPN-S0000000F7026;2-way Bar Split
+74;Eastern Power Networks (EPN);Brimsdown / Hendon;Rowley Lane 33/11KV;EPN-S0000000H8160;FL Exceeded if run solid, T3 normally on hot stand-by due to GSP Parallel
+91;Eastern Power Networks (EPN);Walpole;Peterborough North Grid 11kV;EPN-S0000000F6037;4-Way Bar Split
+93;Eastern Power Networks (EPN);Watford South;Holywell Grid 11kV;EPN-S0000000F8095;4-Way Bar Split
+12;South Eastern Power Networks (SPN);Beddington;Croydon Grid 11kV;SPN-S000000009913;2-Way Bar Split
+22;South Eastern Power Networks (SPN);Bolney;Crawley Ind East 11kV;SPN-S000000008383;T2 on hot stand-by
+23;South Eastern Power Networks (SPN);Bolney;Crawley Town 11kV;SPN-S000000008385;T2 on hot stand-by
+26;South Eastern Power Networks (SPN);Bolney;Horsham Grid 11kV;SPN-S000000009324;GT1A on hot stand-by
+32;South Eastern Power Networks (SPN);Richborough;Betteshanger Grid 33kV;SPN-S000000009104;Controlled Access
+37;South Eastern Power Networks (SPN);Richborough;Margate 11kV;SPN-S000000008655;2-Way Bar Split
+53;South Eastern Power Networks (SPN);Littlebrook;Littlebrook Park 11 kV;SPN-S000000009377;2-Way Bar Split
+56;South Eastern Power Networks (SPN);Ninfield;Newhaven Town 11kV;SPN-S000000008335;T1 on hot stand-by
+72;Eastern Power Networks (EPN);Brimsdown;The Cross 33/11KV;EPN-S0000000H7080;FL exceeded if run solid, Bar normally Split 2-way due to GSP Parallel
+86;Eastern Power Networks (EPN);Tottenham;Tottenham 132kV;EPN-S0000000F7021;2-Way Bar Split
+1;London Power Networks (LPN);Beddington 132kV Hurst 132kV;Eltham Grid 11kV;LPN-S000000000728;2-Way Bar Split
+34;South Eastern Power Networks (SPN);Canterbury;Maidstone Grid North 11kV;SPN-S000000009532;HV Interconnection open between [Maidstone Grid North 11kV] - [Maidstone Grid South 11kV]
+39;South Eastern Power Networks (SPN);Richborough;St Peters 11kV;SPN-S000000008478;2-Way Bar Split
+62;South Eastern Power Networks (SPN);Northfleet;Tunbridge Wells Town 11kV;SPN-S000000007371;2-Way Bar Split
+85;Eastern Power Networks (EPN);Sundon;Sundon Grid 132/33KV;EPN-S0000000D8086;Make duty exceeded, reduce fault level before closing onto potential fault
+36;South Eastern Power Networks (SPN);Sellindge;Morehall 11kV;SPN-S000000009320;2-Way Bar Split
+47;South Eastern Power Networks (SPN);Kingsnorth;Chatham West 11kV;SPN-S000000008508;2-Way Bar Split
+68;South Eastern Power Networks (SPN);West Weybridge;SPN 0098;;2-Way Bar Split
+2;London Power Networks (LPN);Brimsdown;Brimsdown Grid 132kV;LPN-S000000003506;SGT4 on hot standby
+3;London Power Networks (LPN);Brimsdown;The Cross;;2-Way Bar Split
+14;South Eastern Power Networks (SPN);Beddington;Norbury 6.6kV;SPN-S000000008441;2-Way Bar Split
+15;South Eastern Power Networks (SPN);Beddington;Purley Grid 33kV;SPN-S000000009141;Controlled Access
+19;South Eastern Power Networks (SPN);Bolney;Angmering 11kV;SPN-S000000008305;2-Way Bar Split
+24;South Eastern Power Networks (SPN);Bolney;Gatwick Airport AF 11kV;SPN-S000000008532;T1 on hot stand-by
+30;South Eastern Power Networks (SPN);Bolney;Worthing Grid B 33kV;SPN-S000000009155;2-Way Bar Split
+46;South Eastern Power Networks (SPN);Kemsley;Sittingbourne West 11kV;SPN-S000000008444;2-Way Bar Split
+54;South Eastern Power Networks (SPN);Ninfield;Hastings Local 11kV;SPN-S000000009523;2-Way Bar Split
+57;South Eastern Power Networks (SPN);Northfleet;Aylesford 6.6kV;SPN-S000000008312;T1 on hot stand-by
+58;South Eastern Power Networks (SPN);Northfleet;East Grinstead 11kV;SPN-S000000008396;2-Way Bar Split
+81;Eastern Power Networks (EPN);Pelham;Pelham 132kV;EPN-S0000000C7070;2-Way Bar Split
+83;Eastern Power Networks (EPN);Rye House;Harlow West Grid 11kV;EPN-S0000000H7148;HV Interconnection open between the 2x 11kV local primaries.
+87;Eastern Power Networks (EPN);Tottenham;Hornsey Grid 11kV;EPN-S0000000F7098;2-Way Bar Split
+88;Eastern Power Networks (EPN);Tottenham;Palmers Grn Grid 11kV;EPN-S0000000F7030;4-Way Bar Split
+89;Eastern Power Networks (EPN);Tottenham;Tottenham Grid 11kV;EPN-S0000000F7021;2-Way Bar Split

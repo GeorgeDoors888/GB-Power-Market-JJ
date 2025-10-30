@@ -1,0 +1,54 @@
+dataset_code,description
+METADATA,Latest publish times for each dataset
+BOAL,Bid Offer Acceptance Level
+BOD,Bid Offer Data
+DISBSAD,Balancing Services Adjustment Data
+FOU2T14D,2 to 14 Days Ahead Generation (aggregated by Fuel Type)
+FOU2T3YW,2 to 156 Weeks Ahead Generation (Raw) (aggregated by Fuel Type)
+FOUT2T14D,2 to 14 Days Ahead Generation (Raw) (aggregated by Fuel Type)
+FREQ,System Frequency
+FUELHH,Half‑hourly generation outturn by fuel type
+FUELINST,Instantaneous generation outturn by fuel type
+IMBALNGC,Day and Day‑Ahead Indicated Imbalance
+INDDEM,Day and Day‑Ahead Indicated Demand
+INDGEN,Day and Day‑Ahead Indicated Generation
+INDO,Initial Demand Outturn
+ITSDO,Initial Transmission System Demand Outturn
+MELNGC,Day and Day‑Ahead Indicated Margin
+MID,Market Index Data
+MILS,Maximum Import Limit
+MELS,Maximum Export Limit
+MDP,Market Delivery Period
+MDV,Market Data Volume
+MNZT,Minimum Non‑Zero Time
+MZT,Minimum Zero Time
+NETBSAD,Net Balancing Services Adjustment Data
+NDF,National Day and Day‑Ahead National Demand Forecast
+NDFD,Demand & Surplus Forecast Data (2‑14 days ahead)
+NDFW,Demand & Surplus Forecast Data (2‑52 weeks ahead)
+NONBM,Non‑BM STOR
+NOU2T14D,2 to 14 Days Ahead Generation (aggregated data)
+NOU2T3YW,2 to 156 Weeks Ahead Generation (aggregated data)
+NTB,Notice to Deliver Bids
+NTO,Notice to Deliver Offers
+NDZ,Notice to Deviate from Zero
+OCNMF3Y,Forecast Data (2‑14 days ahead)
+OCNMF3Y2,Surplus Demand & Surplus Forecast Data (2‑14 days ahead)
+OCNMFD,Forecast Data (2‑156 weeks ahead)
+OCNMFD2,Surplus Demand & Surplus Forecast Data (2‑156 weeks ahead)
+PN,Physical Notifications
+QAS,Balancing Services Volume
+QPN,Quiescent Physical Notification
+RDRE,Run Down Rate Export
+RDRI,Run Down Rate Import
+RURE,Run Up Rate Export
+RURI,Run up Rate Import
+SEL,Stable Export Limit
+SIL,Stable Import Limit
+TEMP,Temperature Data
+TSDF,Day and Day‑Ahead Transmission System Demand & Surplus Forecast (2‑14 days ahead)
+TSDFD,Transmission System Demand & Surplus Forecast (2‑52 Weeks ahead)
+TSDFW,Transmission System 2‑14 Days Ahead Generation (aggregated by BM Units)
+UOU2T14D,2 to 14 Days Ahead Generation (aggregated by Balancing Mechanism Units)
+UOU2T3YW,2 to 156 Weeks Ahead Generation (aggregated by BM Units)
+WINDFOR,Wind Generation Forecast

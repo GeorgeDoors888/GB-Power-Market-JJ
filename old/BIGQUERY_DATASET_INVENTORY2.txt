@@ -1,0 +1,544 @@
+BigQuery Dataset Inventory
+===========================
+
+Project: jibber-jabber-knowledge
+Dataset: uk_energy_insights
+Location: US
+Description: -
+Labels: -
+
+Tables
+------
+
+- Table: bmrs_boalf
+  Full ID: jibber-jabber-knowledge.uk_energy_insights.bmrs_boalf
+  Type: TABLE
+  Rows: 3702236
+  Size: 882.1 MB
+  Created: 2025-08-29T07:46:41Z
+  Modified: 2025-08-29T11:25:54Z
+  Expires: -
+
+- Table: bmrs_bod
+  Full ID: jibber-jabber-knowledge.uk_energy_insights.bmrs_bod
+  Type: TABLE
+  Rows: 572659776
+  Size: 119.6 GB
+  Created: 2025-08-29T12:59:05Z
+  Modified: 2025-08-30T10:53:24Z
+  Expires: -
+
+- Table: bmrs_disbsad
+  Full ID: jibber-jabber-knowledge.uk_energy_insights.bmrs_disbsad
+  Type: TABLE
+  Rows: 1457416
+  Size: 144.7 MB
+  Created: 2025-08-29T07:46:55Z
+  Modified: 2025-08-30T00:34:50Z
+  Expires: -
+
+- Table: bmrs_fou2t14d
+  Full ID: jibber-jabber-knowledge.uk_energy_insights.bmrs_fou2t14d
+  Type: TABLE
+  Rows: 116584
+  Size: 22.2 MB
+  Created: 2025-08-29T07:44:36Z
+  Modified: 2025-08-30T00:35:27Z
+  Expires: -
+
+- Table: bmrs_fou2t3yw
+  Full ID: jibber-jabber-knowledge.uk_energy_insights.bmrs_fou2t3yw
+  Type: TABLE
+  Rows: 1655090
+  Size: 298.3 MB
+  Created: 2025-08-29T07:44:41Z
+  Modified: 2025-08-30T00:37:15Z
+  Expires: -
+
+- Table: bmrs_freq
+  Full ID: jibber-jabber-knowledge.uk_energy_insights.bmrs_freq
+  Type: TABLE
+  Rows: 19143803
+  Size: 2.3 GB
+  Created: 2025-08-29T07:43:53Z
+  Modified: 2025-08-30T00:45:10Z
+  Expires: -
+
+- Table: bmrs_fuelhh
+  Full ID: jibber-jabber-knowledge.uk_energy_insights.bmrs_fuelhh
+  Type: TABLE
+  Rows: 299540
+  Size: 52.4 MB
+  Created: 2025-08-29T07:44:02Z
+  Modified: 2025-08-30T00:50:28Z
+  Expires: -
+
+- Table: bmrs_fuelinst
+  Full ID: jibber-jabber-knowledge.uk_energy_insights.bmrs_fuelinst
+  Type: TABLE
+  Rows: 2408640
+  Size: 430.4 MB
+  Created: 2025-08-28T23:01:16Z
+  Modified: 2025-08-30T00:56:33Z
+  Expires: -
+
+- Table: bmrs_imbalngc
+  Full ID: jibber-jabber-knowledge.uk_energy_insights.bmrs_imbalngc
+  Type: TABLE
+  Rows: 561924
+  Size: 98.8 MB
+  Created: 2025-08-29T08:20:03Z
+  Modified: 2025-08-30T00:58:01Z
+  Expires: -
+
+- Table: bmrs_inddem
+  Full ID: jibber-jabber-knowledge.uk_energy_insights.bmrs_inddem
+  Type: TABLE
+  Rows: 533574
+  Size: 91.8 MB
+  Created: 2025-08-29T07:44:10Z
+  Modified: 2025-08-30T00:58:58Z
+  Expires: -
+
+- Table: bmrs_indgen
+  Full ID: jibber-jabber-knowledge.uk_energy_insights.bmrs_indgen
+  Type: TABLE
+  Rows: 562734
+  Size: 96.8 MB
+  Created: 2025-08-29T07:44:05Z
+  Modified: 2025-08-30T01:00:14Z
+  Expires: -
+
+- Table: bmrs_indo
+  Full ID: jibber-jabber-knowledge.uk_energy_insights.bmrs_indo
+  Type: TABLE
+  Rows: 562
+  Size: 94.4 KB
+  Created: 2025-08-29T07:44:28Z
+  Modified: 2025-08-30T01:01:10Z
+  Expires: -
+
+- Table: bmrs_itsdo
+  Full ID: jibber-jabber-knowledge.uk_energy_insights.bmrs_itsdo
+  Type: TABLE
+  Rows: 562
+  Size: 95.5 KB
+  Created: 2025-08-29T07:44:25Z
+  Modified: 2025-08-30T01:02:02Z
+  Expires: -
+
+- Table: bmrs_mdp
+  Full ID: jibber-jabber-knowledge.uk_energy_insights.bmrs_mdp
+  Type: TABLE
+  Rows: 823
+  Size: 137.3 KB
+  Created: 2025-08-29T08:30:36Z
+  Modified: 2025-08-30T01:05:04Z
+  Expires: -
+
+- Table: bmrs_mdv
+  Full ID: jibber-jabber-knowledge.uk_energy_insights.bmrs_mdv
+  Type: TABLE
+  Rows: 825
+  Size: 137.6 KB
+  Created: 2025-08-29T08:30:40Z
+  Modified: 2025-08-30T01:05:59Z
+  Expires: -
+
+- Table: bmrs_melngc
+  Full ID: jibber-jabber-knowledge.uk_energy_insights.bmrs_melngc
+  Type: TABLE
+  Rows: 561924
+  Size: 96.7 MB
+  Created: 2025-08-29T08:20:24Z
+  Modified: 2025-08-30T01:03:07Z
+  Expires: -
+
+- Table: bmrs_mels
+  Full ID: jibber-jabber-knowledge.uk_energy_insights.bmrs_mels
+  Type: TABLE
+  Rows: 118872
+  Size: 70.1 MB
+  Created: 2025-08-30T11:38:26Z
+  Modified: 2025-08-30T11:38:26Z
+  Expires: -
+
+- Table: bmrs_mid
+  Full ID: jibber-jabber-knowledge.uk_energy_insights.bmrs_mid
+  Type: TABLE
+  Rows: 370801
+  Size: 58.5 MB
+  Created: 2025-08-29T08:30:28Z
+  Modified: 2025-08-30T01:04:16Z
+  Expires: -
+
+- Table: bmrs_mils
+  Full ID: jibber-jabber-knowledge.uk_energy_insights.bmrs_mils
+  Type: TABLE
+  Rows: 5001668
+  Size: 2.9 GB
+  Created: 2025-08-30T11:38:17Z
+  Modified: 2025-08-30T12:13:41Z
+  Expires: -
+
+- Table: bmrs_mnzt
+  Full ID: jibber-jabber-knowledge.uk_energy_insights.bmrs_mnzt
+  Type: TABLE
+  Rows: 140619
+  Size: 22.6 MB
+  Created: 2025-08-29T08:30:44Z
+  Modified: 2025-08-30T01:07:07Z
+  Expires: -
+
+- Table: bmrs_mzt
+  Full ID: jibber-jabber-knowledge.uk_energy_insights.bmrs_mzt
+  Type: TABLE
+  Rows: 94441
+  Size: 15.0 MB
+  Created: 2025-08-29T08:30:48Z
+  Modified: 2025-08-30T01:08:08Z
+  Expires: -
+
+- Table: bmrs_ndf
+  Full ID: jibber-jabber-knowledge.uk_energy_insights.bmrs_ndf
+  Type: TABLE
+  Rows: 17169
+  Size: 2.8 MB
+  Created: 2025-08-29T07:44:14Z
+  Modified: 2025-08-30T01:16:18Z
+  Expires: -
+
+- Table: bmrs_ndfd
+  Full ID: jibber-jabber-knowledge.uk_energy_insights.bmrs_ndfd
+  Type: TABLE
+  Rows: 4576
+  Size: 634.6 KB
+  Created: 2025-08-29T07:44:18Z
+  Modified: 2025-08-30T01:17:22Z
+  Expires: -
+
+- Table: bmrs_ndfw
+  Full ID: jibber-jabber-knowledge.uk_energy_insights.bmrs_ndfw
+  Type: TABLE
+  Rows: 28662
+  Size: 4.0 MB
+  Created: 2025-08-29T07:44:21Z
+  Modified: 2025-08-30T01:18:18Z
+  Expires: -
+
+- Table: bmrs_ndz
+  Full ID: jibber-jabber-knowledge.uk_energy_insights.bmrs_ndz
+  Type: TABLE
+  Rows: 156864
+  Size: 24.9 MB
+  Created: 2025-08-29T08:31:01Z
+  Modified: 2025-08-30T01:23:59Z
+  Expires: -
+
+- Table: bmrs_netbsad
+  Full ID: jibber-jabber-knowledge.uk_energy_insights.bmrs_netbsad
+  Type: TABLE
+  Rows: 167237
+  Size: 30.3 MB
+  Created: 2025-08-29T08:28:29Z
+  Modified: 2025-08-30T01:17:03Z
+  Expires: -
+
+- Table: bmrs_nonbm
+  Full ID: jibber-jabber-knowledge.uk_energy_insights.bmrs_nonbm
+  Type: TABLE
+  Rows: 185406
+  Size: 30.8 MB
+  Created: 2025-08-29T07:44:32Z
+  Modified: 2025-08-30T01:19:21Z
+  Expires: -
+
+- Table: bmrs_nou2t14d
+  Full ID: jibber-jabber-knowledge.uk_energy_insights.bmrs_nou2t14d
+  Type: TABLE
+  Rows: 7306
+  Size: 1.2 MB
+  Created: 2025-08-29T07:45:26Z
+  Modified: 2025-08-30T01:20:38Z
+  Expires: -
+
+- Table: bmrs_nou2t3yw
+  Full ID: jibber-jabber-knowledge.uk_energy_insights.bmrs_nou2t3yw
+  Type: TABLE
+  Rows: 73160
+  Size: 11.1 MB
+  Created: 2025-08-29T07:45:30Z
+  Modified: 2025-08-30T01:21:15Z
+  Expires: -
+
+- Table: bmrs_ntb
+  Full ID: jibber-jabber-knowledge.uk_energy_insights.bmrs_ntb
+  Type: TABLE
+  Rows: 43432
+  Size: 6.9 MB
+  Created: 2025-08-29T08:30:52Z
+  Modified: 2025-08-30T01:22:07Z
+  Expires: -
+
+- Table: bmrs_nto
+  Full ID: jibber-jabber-knowledge.uk_energy_insights.bmrs_nto
+  Type: TABLE
+  Rows: 43438
+  Size: 6.9 MB
+  Created: 2025-08-29T08:30:57Z
+  Modified: 2025-08-30T01:23:04Z
+  Expires: -
+
+- Table: bmrs_ocnmf3y
+  Full ID: jibber-jabber-knowledge.uk_energy_insights.bmrs_ocnmf3y
+  Type: TABLE
+  Rows: 87110
+  Size: 12.6 MB
+  Created: 2025-08-29T07:44:44Z
+  Modified: 2025-08-30T01:24:56Z
+  Expires: -
+
+- Table: bmrs_ocnmf3y2
+  Full ID: jibber-jabber-knowledge.uk_energy_insights.bmrs_ocnmf3y2
+  Type: TABLE
+  Rows: 46655
+  Size: 6.9 MB
+  Created: 2025-08-29T07:45:11Z
+  Modified: 2025-08-29T20:48:56Z
+  Expires: -
+
+- Table: bmrs_ocnmfd
+  Full ID: jibber-jabber-knowledge.uk_energy_insights.bmrs_ocnmfd
+  Type: TABLE
+  Rows: 7306
+  Size: 1.0 MB
+  Created: 2025-08-29T07:45:15Z
+  Modified: 2025-08-30T01:25:50Z
+  Expires: -
+
+- Table: bmrs_ocnmfd2
+  Full ID: jibber-jabber-knowledge.uk_energy_insights.bmrs_ocnmfd2
+  Type: TABLE
+  Rows: 7306
+  Size: 1.0 MB
+  Created: 2025-08-29T07:45:20Z
+  Modified: 2025-08-30T01:26:41Z
+  Expires: -
+
+- Table: bmrs_qas
+  Full ID: jibber-jabber-knowledge.uk_energy_insights.bmrs_qas
+  Type: TABLE
+  Rows: 7702009
+  Size: 1.1 GB
+  Created: 2025-08-29T08:28:50Z
+  Modified: 2025-08-30T01:36:49Z
+  Expires: -
+
+- Table: bmrs_rdre
+  Full ID: jibber-jabber-knowledge.uk_energy_insights.bmrs_rdre
+  Type: TABLE
+  Rows: 39909
+  Size: 7.2 MB
+  Created: 2025-08-29T08:28:59Z
+  Modified: 2025-08-30T01:45:39Z
+  Expires: -
+
+- Table: bmrs_rdri
+  Full ID: jibber-jabber-knowledge.uk_energy_insights.bmrs_rdri
+  Type: TABLE
+  Rows: 52
+  Size: 9.0 KB
+  Created: 2025-08-29T14:34:26Z
+  Modified: 2025-08-29T14:34:26Z
+  Expires: -
+
+- Table: bmrs_rdri_new
+  Full ID: jibber-jabber-knowledge.uk_energy_insights.bmrs_rdri_new
+  Type: TABLE
+  Rows: 725
+  Size: 120.2 KB
+  Created: 2025-08-29T14:40:17Z
+  Modified: 2025-08-30T10:33:38Z
+  Expires: -
+
+- Table: bmrs_rure
+  Full ID: jibber-jabber-knowledge.uk_energy_insights.bmrs_rure
+  Type: TABLE
+  Rows: 256661
+  Size: 48.6 MB
+  Created: 2025-08-29T08:29:27Z
+  Modified: 2025-08-30T01:53:32Z
+  Expires: -
+
+- Table: bmrs_ruri
+  Full ID: jibber-jabber-knowledge.uk_energy_insights.bmrs_ruri
+  Type: TABLE
+  Rows: 3232
+  Size: 587.2 KB
+  Created: 2025-08-29T08:29:37Z
+  Modified: 2025-08-30T01:57:57Z
+  Expires: -
+
+- Table: bmrs_sel
+  Full ID: jibber-jabber-knowledge.uk_energy_insights.bmrs_sel
+  Type: TABLE
+  Rows: 292089
+  Size: 47.0 MB
+  Created: 2025-08-29T07:45:50Z
+  Modified: 2025-08-30T01:59:07Z
+  Expires: -
+
+- Table: bmrs_sil
+  Full ID: jibber-jabber-knowledge.uk_energy_insights.bmrs_sil
+  Type: TABLE
+  Rows: 53429
+  Size: 8.8 MB
+  Created: 2025-08-29T07:45:54Z
+  Modified: 2025-08-30T01:59:59Z
+  Expires: -
+
+- Table: bmrs_temp
+  Full ID: jibber-jabber-knowledge.uk_energy_insights.bmrs_temp
+  Type: TABLE
+  Rows: 17422
+  Size: 2.4 MB
+  Created: 2025-08-29T07:45:59Z
+  Modified: 2025-08-30T02:00:54Z
+  Expires: -
+
+- Table: bmrs_temp_temp_1756487043
+  Full ID: jibber-jabber-knowledge.uk_energy_insights.bmrs_temp_temp_1756487043
+  Type: TABLE
+  Rows: 32
+  Size: 26.1 KB
+  Created: 2025-08-29T17:04:07Z
+  Modified: 2025-08-29T17:04:07Z
+  Expires: -
+
+- Table: bmrs_tsdf
+  Full ID: jibber-jabber-knowledge.uk_energy_insights.bmrs_tsdf
+  Type: TABLE
+  Rows: 544464
+  Size: 91.6 MB
+  Created: 2025-08-29T07:45:39Z
+  Modified: 2025-08-30T02:01:58Z
+  Expires: -
+
+- Table: bmrs_tsdf_temp_1756487050
+  Full ID: jibber-jabber-knowledge.uk_energy_insights.bmrs_tsdf_temp_1756487050
+  Type: TABLE
+  Rows: 1260
+  Size: 1.3 MB
+  Created: 2025-08-29T17:04:13Z
+  Modified: 2025-08-29T17:04:13Z
+  Expires: -
+
+- Table: bmrs_tsdfd
+  Full ID: jibber-jabber-knowledge.uk_energy_insights.bmrs_tsdfd
+  Type: TABLE
+  Rows: 3913
+  Size: 550.3 KB
+  Created: 2025-08-29T07:45:43Z
+  Modified: 2025-08-29T20:50:02Z
+  Expires: -
+
+- Table: bmrs_tsdfd_temp_1756487057
+  Full ID: jibber-jabber-knowledge.uk_energy_insights.bmrs_tsdfd_temp_1756487057
+  Type: TABLE
+  Rows: 13
+  Size: 10.3 KB
+  Created: 2025-08-29T17:04:20Z
+  Modified: 2025-08-29T17:04:20Z
+  Expires: -
+
+- Table: bmrs_tsdfw
+  Full ID: jibber-jabber-knowledge.uk_energy_insights.bmrs_tsdfw
+  Type: TABLE
+  Rows: 28662
+  Size: 4.0 MB
+  Created: 2025-08-29T07:45:46Z
+  Modified: 2025-08-30T02:02:54Z
+  Expires: -
+
+- Table: bmrs_uou2t14d
+  Full ID: jibber-jabber-knowledge.uk_energy_insights.bmrs_uou2t14d
+  Type: TABLE
+  Rows: 20454109
+  Size: 3.3 GB
+  Created: 2025-08-29T07:45:34Z
+  Modified: 2025-08-30T02:12:51Z
+  Expires: -
+
+- Table: bmrs_uou2t3yw
+  Full ID: jibber-jabber-knowledge.uk_energy_insights.bmrs_uou2t3yw
+  Type: TABLE
+  Rows: 243875915
+  Size: 40.8 GB
+  Created: 2025-08-29T08:13:02Z
+  Modified: 2025-08-30T03:32:58Z
+  Expires: -
+
+- Table: bmrs_windfor
+  Full ID: jibber-jabber-knowledge.uk_energy_insights.bmrs_windfor
+  Type: TABLE
+  Rows: 21973
+  Size: 3.3 MB
+  Created: 2025-08-29T07:46:03Z
+  Modified: 2025-08-29T20:51:13Z
+  Expires: -
+
+- Table: ins_balancing_acceptances
+  Full ID: jibber-jabber-knowledge.uk_energy_insights.ins_balancing_acceptances
+  Type: TABLE
+  Rows: 2898732
+  Size: 575.7 MB
+  Created: 2025-08-28T22:17:33Z
+  Modified: 2025-08-29T07:29:41Z
+  Expires: -
+
+- Table: ins_balancing_bid_offers
+  Full ID: jibber-jabber-knowledge.uk_energy_insights.ins_balancing_bid_offers
+  Type: TABLE
+  Rows: 150
+  Size: 27.1 KB
+  Created: 2025-08-28T22:21:14Z
+  Modified: 2025-08-28T22:21:14Z
+  Expires: -
+
+- Table: ins_reference_bmunits
+  Full ID: jibber-jabber-knowledge.uk_energy_insights.ins_reference_bmunits
+  Type: TABLE
+  Rows: 2664
+  Size: 508.9 KB
+  Created: 2025-08-28T22:17:02Z
+  Modified: 2025-08-28T22:17:02Z
+  Expires: -
+
+- Table: ins_unnamed
+  Full ID: jibber-jabber-knowledge.uk_energy_insights.ins_unnamed
+  Type: TABLE
+  Rows: 1261
+  Size: 187.8 KB
+  Created: 2025-08-28T18:17:56Z
+  Modified: 2025-08-28T18:17:56Z
+  Expires: -
+
+How to access
+-------------
+- Web Console: https://console.cloud.google.com/bigquery?project=jibber-jabber-knowledge
+- Python (google-cloud-bigquery):
+    from google.cloud import bigquery
+    client = bigquery.Client(project="jibber-jabber-knowledge")
+    table = client.get_table("jibber-jabber-knowledge.uk_energy_insights.<table_name>")
+    rows = client.list_rows(table, max_results=10)
+    for r in rows: print(dict(r))
+- bq CLI:
+    bq show --schema --format=prettyjson jibber-jabber-knowledge:uk_energy_insights.<table_name>
+    bq head --max_rows 10 jibber-jabber-knowledge:uk_energy_insights.<table_name>
+
+Example query
+-------------
+    SELECT *
+    FROM `jibber-jabber-knowledge.uk_energy_insights`.`<table_name>`
+    ORDER BY _ingested_utc DESC
+    LIMIT 100;

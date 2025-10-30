@@ -1,0 +1,170 @@
+{
+  "overall": {
+    "total_entries": 48,
+    "dnos_represented": 5,
+    "mpan_codes_represented": 4,
+    "years_covered": 9,
+    "min_year": 2017,
+    "max_year": 2025,
+    "red_entries": 16,
+    "amber_entries": 16,
+    "green_entries": 16,
+    "overall_min_rate": -10.032,
+    "overall_max_rate": 41.646,
+    "overall_mean_rate": 1.5115553125457415,
+    "timestamp": "2025-09-14T15:22:42.926820"
+  },
+  "by_band": {
+    "min_rate": {
+      "AMBER": -2.667,
+      "GREEN": -2.667,
+      "RED": -10.032
+    },
+    "max_rate": {
+      "AMBER": 6.091,
+      "GREEN": 6.091,
+      "RED": 41.646
+    },
+    "mean_rate": {
+      "AMBER": 0.5638767728399839,
+      "GREEN": 0.38239744884384674,
+      "RED": 3.5883917159533936
+    },
+    "median_rate": {
+      "AMBER": 0.2985,
+      "GREEN": 0.16249999999999998,
+      "RED": 4.8965
+    },
+    "count": {
+      "AMBER": 384,
+      "GREEN": 753,
+      "RED": 432
+    }
+  },
+  "by_dno": [
+    {
+      "dno_name": "Northern Powergrid",
+      "min_rate": -3.915,
+      "max_rate": 15.82,
+      "mean_rate": 1.2873489583333333,
+      "min_year": 2025,
+      "max_year": 2025,
+      "years_covered": 1,
+      "entries": 3
+    },
+    {
+      "dno_name": "SP Manweb",
+      "min_rate": -10.032,
+      "max_rate": 29.056,
+      "mean_rate": 2.3179920504385962,
+      "min_year": 2021,
+      "max_year": 2025,
+      "years_covered": 3,
+      "entries": 9
+    },
+    {
+      "dno_name": "UKPN Eastern",
+      "min_rate": -9.684,
+      "max_rate": 41.646,
+      "mean_rate": 1.2051908475356297,
+      "min_year": 2017,
+      "max_year": 2022,
+      "years_covered": 6,
+      "entries": 21
+    },
+    {
+      "dno_name": "UKPN London",
+      "min_rate": -5.511,
+      "max_rate": 29.411,
+      "mean_rate": 0.7440438596491227,
+      "min_year": 2021,
+      "max_year": 2021,
+      "years_covered": 1,
+      "entries": 3
+    },
+    {
+      "dno_name": "Unknown",
+      "min_rate": -7.433,
+      "max_rate": 23.217,
+      "mean_rate": 1.6907950246710526,
+      "min_year": 2021,
+      "max_year": 2024,
+      "years_covered": 3,
+      "entries": 12
+    }
+  ],
+  "by_year": [
+    {
+      "year": 2017,
+      "min_rate": -9.684,
+      "max_rate": 39.655,
+      "mean_rate": 1.0905679012345677,
+      "dnos_represented": 1,
+      "entries": 3
+    },
+    {
+      "year": 2018,
+      "min_rate": -9.215,
+      "max_rate": 38.178,
+      "mean_rate": 0.6293319964349378,
+      "dnos_represented": 1,
+      "entries": 3
+    },
+    {
+      "year": 2019,
+      "min_rate": -9.434,
+      "max_rate": 40.892,
+      "mean_rate": 0.6887060308972076,
+      "dnos_represented": 1,
+      "entries": 3
+    },
+    {
+      "year": 2020,
+      "min_rate": -9.667,
+      "max_rate": 40.982,
+      "mean_rate": 0.697717394533571,
+      "dnos_represented": 1,
+      "entries": 3
+    },
+    {
+      "year": 2021,
+      "min_rate": -9.468,
+      "max_rate": 41.646,
+      "mean_rate": 1.3412646198830407,
+      "dnos_represented": 4,
+      "entries": 18
+    },
+    {
+      "year": 2022,
+      "min_rate": -9.287,
+      "max_rate": 40.226,
+      "mean_rate": 2.2459687500000003,
+      "dnos_represented": 1,
+      "entries": 3
+    },
+    {
+      "year": 2023,
+      "min_rate": -7.433,
+      "max_rate": 23.217,
+      "mean_rate": 1.9717083333333336,
+      "dnos_represented": 1,
+      "entries": 3
+    },
+    {
+      "year": 2024,
+      "min_rate": -7.403,
+      "max_rate": 23.145,
+      "mean_rate": 2.267015625,
+      "dnos_represented": 2,
+      "entries": 6
+    },
+    {
+      "year": 2025,
+      "min_rate": -10.032,
+      "max_rate": 29.056,
+      "mean_rate": 2.1396328125,
+      "dnos_represented": 2,
+      "entries": 6
+    }
+  ]
+}

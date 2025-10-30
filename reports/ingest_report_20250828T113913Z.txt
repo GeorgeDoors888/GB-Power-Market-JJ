@@ -1,0 +1,124 @@
+==================================================
+Elexon Ingestion Run Report
+==================================================
+Project: jibber-jabber-knowledge
+Dataset: uk_energy_prod
+Period : 2016-01-01 to 2025-08-26
+Datasets: BOAL,BOALF,NETBSAD,BOD,DISBSAD
+UTC Started: 2025-08-28T11:39:13:z
+--------------------------------------------------
+
+== Dataset: BOAL ==
+-- 2016-01-01 → 2017-01-01
+   -> (no status line found, exit=1)
+-- 2017-01-01 → 2018-01-01
+   -> (no status line found, exit=1)
+-- 2018-01-01 → 2019-01-01
+   -> (no status line found, exit=1)
+-- 2019-01-01 → 2020-01-01
+   -> (no status line found, exit=1)
+-- 2020-01-01 → 2021-01-01
+   -> (no status line found, exit=1)
+-- 2021-01-01 → 2022-01-01
+   -> (no status line found, exit=1)
+-- 2022-01-01 → 2023-01-01
+   -> (no status line found, exit=1)
+-- 2023-01-01 → 2024-01-01
+   -> (no status line found, exit=1)
+-- 2024-01-01 → 2025-01-01
+   -> (no status line found, exit=1)
+-- 2025-01-01 → 2025-08-26
+   -> (no status line found, exit=1)
+
+== Dataset: BOALF ==
+-- 2016-01-01 → 2017-01-01
+   -> (no status line found, exit=1)
+-- 2017-01-01 → 2018-01-01
+   -> (no status line found, exit=1)
+-- 2018-01-01 → 2019-01-01
+   -> (no status line found, exit=1)
+-- 2019-01-01 → 2020-01-01
+   -> (no status line found, exit=1)
+-- 2020-01-01 → 2021-01-01
+   -> (no status line found, exit=1)
+-- 2021-01-01 → 2022-01-01
+   -> (no status line found, exit=1)
+-- 2022-01-01 → 2023-01-01
+   -> (no status line found, exit=1)
+-- 2023-01-01 → 2024-01-01
+   -> (no status line found, exit=1)
+-- 2024-01-01 → 2025-01-01
+   -> (no status line found, exit=1)
+-- 2025-01-01 → 2025-08-26
+   -> (no status line found, exit=1)
+
+== Dataset: NETBSAD ==
+-- 2016-01-01 → 2017-01-01
+   -> (no status line found, exit=1)
+-- 2017-01-01 → 2018-01-01
+   -> (no status line found, exit=1)
+-- 2018-01-01 → 2019-01-01
+   -> (no status line found, exit=1)
+-- 2019-01-01 → 2020-01-01
+   -> (no status line found, exit=1)
+-- 2020-01-01 → 2021-01-01
+   -> (no status line found, exit=1)
+-- 2021-01-01 → 2022-01-01
+   -> (no status line found, exit=1)
+-- 2022-01-01 → 2023-01-01
+   -> (no status line found, exit=1)
+-- 2023-01-01 → 2024-01-01
+   -> (no status line found, exit=1)
+-- 2024-01-01 → 2025-01-01
+   -> (no status line found, exit=1)
+-- 2025-01-01 → 2025-08-26
+   -> (no status line found, exit=1)
+
+== Dataset: BOD ==
+-- 2016-01-01 → 2017-01-01
+   -> (no status line found, exit=1)
+-- 2017-01-01 → 2018-01-01
+   -> (no status line found, exit=1)
+-- 2018-01-01 → 2019-01-01
+   -> (no status line found, exit=1)
+-- 2019-01-01 → 2020-01-01
+   -> (no status line found, exit=1)
+-- 2020-01-01 → 2021-01-01
+   -> (no status line found, exit=1)
+-- 2021-01-01 → 2022-01-01
+   -> (no status line found, exit=1)
+-- 2022-01-01 → 2023-01-01
+   -> (no status line found, exit=1)
+-- 2023-01-01 → 2024-01-01
+   -> (no status line found, exit=1)
+-- 2024-01-01 → 2025-01-01
+   -> (no status line found, exit=1)
+-- 2025-01-01 → 2025-08-26
+   -> (no status line found, exit=1)
+
+== Dataset: DISBSAD ==
+-- 2016-01-01 → 2017-01-01
+   -> (no status line found, exit=1)
+-- 2017-01-01 → 2018-01-01
+   -> (no status line found, exit=1)
+-- 2018-01-01 → 2019-01-01
+   -> (no status line found, exit=1)
+-- 2019-01-01 → 2020-01-01
+   -> (no status line found, exit=1)
+-- 2020-01-01 → 2021-01-01
+   -> (no status line found, exit=1)
+-- 2021-01-01 → 2022-01-01
+   -> (no status line found, exit=1)
+-- 2022-01-01 → 2023-01-01
+   -> (no status line found, exit=1)
+-- 2023-01-01 → 2024-01-01
+   -> (no status line found, exit=1)
+-- 2024-01-01 → 2025-01-01
+   -> (no status line found, exit=1)
+-- 2025-01-01 → 2025-08-26
+   -> (no status line found, exit=1)
+--------------------------------------------------
+UTC Finished: 2025-08-28T11:39:14:z
+Report saved: /Users/georgemajor/jibber-jabber 24 august 2025 big bop/reports/ingest_report_20250828T113913Z.txt
+Logs in: /Users/georgemajor/jibber-jabber 24 august 2025 big bop/logs/
+==================================================

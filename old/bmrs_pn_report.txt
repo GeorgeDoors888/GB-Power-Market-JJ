@@ -1,0 +1,30 @@
+# BigQuery Table Report: bmrs_pn
+
+## Data Completeness
+- **Available Years**: 2023, 2024, 2025
+- **Missing Year**: 2022
+
+## Schema Details
+| Field Name           | Type      | Description                          |
+|----------------------|-----------|--------------------------------------|
+| dataset              | STRING    | Dataset name                        |
+| settlementDate       | TIMESTAMP | Date of settlement                  |
+| settlementPeriod     | INTEGER   | Settlement period                   |
+| timeFrom             | TIMESTAMP | Start time of the period            |
+| timeTo               | TIMESTAMP | End time of the period              |
+| levelFrom            | INTEGER   | Level at the start of the period    |
+| levelTo              | INTEGER   | Level at the end of the period      |
+| nationalGridBmUnit   | STRING    | National Grid BM Unit identifier    |
+| bmUnit               | STRING    | BM Unit identifier                  |
+| _dataset             | STRING    | Internal dataset identifier         |
+| _window_from_utc     | TIMESTAMP | Window start time in UTC            |
+| _window_to_utc       | TIMESTAMP | Window end time in UTC              |
+| _ingested_utc        | TIMESTAMP | Ingestion timestamp in UTC          |
+| _source_columns      | STRING    | Source columns                      |
+| _source_api          | STRING    | Source API                          |
+| _hash_source_cols    | STRING    | Hash of source columns              |
+| _hash_key            | STRING    | Hash key                            |
+
+## Notes
+- The table contains detailed information about settlement periods and BM Unit generation data.
+- Data for 2022 is missing and should be ingested to ensure completeness.

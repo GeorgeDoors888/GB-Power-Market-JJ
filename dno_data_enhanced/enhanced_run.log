@@ -1,0 +1,104 @@
+2025-09-11 11:12:22,038 INFO 🚀 Starting Enhanced DNO Data Collection
+2025-09-11 11:12:22,038 INFO ============================================================
+2025-09-11 11:12:22,038 INFO 🔍 Attempting direct UKPN dataset access...
+2025-09-11 11:12:22,354 INFO ✅ Found 10 UKPN datasets
+2025-09-11 11:12:22,354 INFO 📥 Attempting download: ukpn-rota-load-disconnection
+2025-09-11 11:12:22,585 WARNING Request failed for https://ukpowernetworks.opendatasoft.com/api/explore/v2.1/catalog/datasets/ukpn-rota-load-disconnection/exports/csv: 403 Client Error: Forbidden for url: https://ukpowernetworks.opendatasoft.com/api/explore/v2.1/catalog/datasets/ukpn-rota-load-disconnection/exports/csv
+2025-09-11 11:12:23,091 INFO 📥 Attempting download: ukpn-noise-contours
+2025-09-11 11:12:23,350 WARNING Request failed for https://ukpowernetworks.opendatasoft.com/api/explore/v2.1/catalog/datasets/ukpn-noise-contours/exports/csv: 403 Client Error: Forbidden for url: https://ukpowernetworks.opendatasoft.com/api/explore/v2.1/catalog/datasets/ukpn-noise-contours/exports/csv
+2025-09-11 11:12:23,855 INFO 📥 Attempting download: ukpn-licence-area-33kv-underground-cables
+2025-09-11 11:12:24,085 WARNING Request failed for https://ukpowernetworks.opendatasoft.com/api/explore/v2.1/catalog/datasets/ukpn-licence-area-33kv-underground-cables/exports/csv: 403 Client Error: Forbidden for url: https://ukpowernetworks.opendatasoft.com/api/explore/v2.1/catalog/datasets/ukpn-licence-area-33kv-underground-cables/exports/csv
+2025-09-11 11:12:24,590 INFO 📥 Attempting download: ltds-table-4a-3ph-fault-level
+2025-09-11 11:12:24,810 WARNING Request failed for https://ukpowernetworks.opendatasoft.com/api/explore/v2.1/catalog/datasets/ltds-table-4a-3ph-fault-level/exports/csv: 403 Client Error: Forbidden for url: https://ukpowernetworks.opendatasoft.com/api/explore/v2.1/catalog/datasets/ltds-table-4a-3ph-fault-level/exports/csv
+2025-09-11 11:12:25,313 INFO 📥 Attempting download: ukpn-lpn-area-operational-boundaries
+2025-09-11 11:12:26,990 ERROR Failed to process ukpn-lpn-area-operational-boundaries: Error tokenizing data. C error: Expected 3826 fields in line 3, saw 5362
+
+2025-09-11 11:12:27,495 INFO 📥 Attempting download: ukpn-secondary-site-transformers
+2025-09-11 11:12:27,625 WARNING Request failed for https://ukpowernetworks.opendatasoft.com/api/explore/v2.1/catalog/datasets/ukpn-secondary-site-transformers/exports/csv: 403 Client Error: Forbidden for url: https://ukpowernetworks.opendatasoft.com/api/explore/v2.1/catalog/datasets/ukpn-secondary-site-transformers/exports/csv
+2025-09-11 11:12:28,130 INFO 📥 Attempting download: ukpn-33kv-circuit-operational-data-monthly
+2025-09-11 11:12:28,872 WARNING Request failed for https://ukpowernetworks.opendatasoft.com/api/explore/v2.1/catalog/datasets/ukpn-33kv-circuit-operational-data-monthly/exports/csv: 403 Client Error: Forbidden for url: https://ukpowernetworks.opendatasoft.com/api/explore/v2.1/catalog/datasets/ukpn-33kv-circuit-operational-data-monthly/exports/csv
+2025-09-11 11:12:29,375 INFO 📥 Attempting download: ukpn-primary-transformer-power-flow-historic-monthly
+2025-09-11 11:12:29,650 WARNING Request failed for https://ukpowernetworks.opendatasoft.com/api/explore/v2.1/catalog/datasets/ukpn-primary-transformer-power-flow-historic-monthly/exports/csv: 403 Client Error: Forbidden for url: https://ukpowernetworks.opendatasoft.com/api/explore/v2.1/catalog/datasets/ukpn-primary-transformer-power-flow-historic-monthly/exports/csv
+2025-09-11 11:12:30,155 INFO 📥 Attempting download: ltds-table-7-operational-restrictions
+2025-09-11 11:12:30,267 WARNING Request failed for https://ukpowernetworks.opendatasoft.com/api/explore/v2.1/catalog/datasets/ltds-table-7-operational-restrictions/exports/csv: 403 Client Error: Forbidden for url: https://ukpowernetworks.opendatasoft.com/api/explore/v2.1/catalog/datasets/ltds-table-7-operational-restrictions/exports/csv
+2025-09-11 11:12:30,772 INFO 📥 Attempting download: ukpn-network-losses
+2025-09-11 11:12:31,000 WARNING Request failed for https://ukpowernetworks.opendatasoft.com/api/explore/v2.1/catalog/datasets/ukpn-network-losses/exports/csv: 403 Client Error: Forbidden for url: https://ukpowernetworks.opendatasoft.com/api/explore/v2.1/catalog/datasets/ukpn-network-losses/exports/csv
+2025-09-11 11:12:31,506 INFO 🔍 Trying alternative data discovery methods...
+2025-09-11 11:12:31,744 WARNING Direct link failed https://ukpowernetworks.opendatasoft.com/api/explore/v2.1/catalog/datasets/ukpn-electricity-consumption-postcode/exports/csv: HTTP Error 404: Not Found
+2025-09-11 11:12:31,913 WARNING Direct link failed https://ukpowernetworks.opendatasoft.com/api/explore/v2.1/catalog/datasets/power-cut-data/exports/csv: HTTP Error 404: Not Found
+2025-09-11 11:12:31,913 WARNING No datasets were successfully collected
+2025-09-11 11:12:31,913 INFO ✅ DNO data collection completed!
+2025-09-11 11:12:31,914 INFO 📝 Created BigQuery integration script: /Users/georgemajor/jibber-jabber 24 august 2025 big bop/dno_data_enhanced/load_to_bigquery.py
+2025-09-11 12:40:39,081 INFO 🚀 Starting Enhanced DNO Data Collection
+2025-09-11 12:40:39,081 INFO ============================================================
+2025-09-11 12:40:39,081 INFO 🔍 Attempting direct UKPN dataset access...
+2025-09-11 12:40:40,133 INFO ✅ Found 10 UKPN datasets
+2025-09-11 12:40:40,133 INFO 📥 Attempting download: ukpn-rota-load-disconnection
+2025-09-11 12:40:40,311 WARNING Request failed for https://ukpowernetworks.opendatasoft.com/api/explore/v2.1/catalog/datasets/ukpn-rota-load-disconnection/exports/csv: 403 Client Error: Forbidden for url: https://ukpowernetworks.opendatasoft.com/api/explore/v2.1/catalog/datasets/ukpn-rota-load-disconnection/exports/csv
+2025-09-11 12:40:40,818 INFO 📥 Attempting download: ukpn-noise-contours
+2025-09-11 12:40:41,020 WARNING Request failed for https://ukpowernetworks.opendatasoft.com/api/explore/v2.1/catalog/datasets/ukpn-noise-contours/exports/csv: 403 Client Error: Forbidden for url: https://ukpowernetworks.opendatasoft.com/api/explore/v2.1/catalog/datasets/ukpn-noise-contours/exports/csv
+2025-09-11 12:40:41,523 INFO 📥 Attempting download: ltds-table-4a-3ph-fault-level
+2025-09-11 12:40:41,669 WARNING Request failed for https://ukpowernetworks.opendatasoft.com/api/explore/v2.1/catalog/datasets/ltds-table-4a-3ph-fault-level/exports/csv: 403 Client Error: Forbidden for url: https://ukpowernetworks.opendatasoft.com/api/explore/v2.1/catalog/datasets/ltds-table-4a-3ph-fault-level/exports/csv
+2025-09-11 12:40:42,174 INFO 📥 Attempting download: ukpn-secondary-site-transformers
+2025-09-11 12:40:42,405 WARNING Request failed for https://ukpowernetworks.opendatasoft.com/api/explore/v2.1/catalog/datasets/ukpn-secondary-site-transformers/exports/csv: 403 Client Error: Forbidden for url: https://ukpowernetworks.opendatasoft.com/api/explore/v2.1/catalog/datasets/ukpn-secondary-site-transformers/exports/csv
+2025-09-11 12:40:42,906 INFO 📥 Attempting download: ukpn-33kv-circuit-operational-data-monthly
+2025-09-11 12:40:43,136 WARNING Request failed for https://ukpowernetworks.opendatasoft.com/api/explore/v2.1/catalog/datasets/ukpn-33kv-circuit-operational-data-monthly/exports/csv: 403 Client Error: Forbidden for url: https://ukpowernetworks.opendatasoft.com/api/explore/v2.1/catalog/datasets/ukpn-33kv-circuit-operational-data-monthly/exports/csv
+2025-09-11 12:40:43,639 INFO 📥 Attempting download: ukpn-primary-transformer-power-flow-historic-monthly
+2025-09-11 12:40:43,747 WARNING Request failed for https://ukpowernetworks.opendatasoft.com/api/explore/v2.1/catalog/datasets/ukpn-primary-transformer-power-flow-historic-monthly/exports/csv: 403 Client Error: Forbidden for url: https://ukpowernetworks.opendatasoft.com/api/explore/v2.1/catalog/datasets/ukpn-primary-transformer-power-flow-historic-monthly/exports/csv
+2025-09-11 12:40:44,252 INFO 📥 Attempting download: ltds-table-7-operational-restrictions
+2025-09-11 12:40:44,445 WARNING Request failed for https://ukpowernetworks.opendatasoft.com/api/explore/v2.1/catalog/datasets/ltds-table-7-operational-restrictions/exports/csv: 403 Client Error: Forbidden for url: https://ukpowernetworks.opendatasoft.com/api/explore/v2.1/catalog/datasets/ltds-table-7-operational-restrictions/exports/csv
+2025-09-11 12:40:44,949 INFO 📥 Attempting download: ukpn-network-losses
+2025-09-11 12:40:45,299 WARNING Request failed for https://ukpowernetworks.opendatasoft.com/api/explore/v2.1/catalog/datasets/ukpn-network-losses/exports/csv: 403 Client Error: Forbidden for url: https://ukpowernetworks.opendatasoft.com/api/explore/v2.1/catalog/datasets/ukpn-network-losses/exports/csv
+2025-09-11 12:40:45,802 INFO 📥 Attempting download: ltds-table-1-circuit-data
+2025-09-11 12:40:45,981 WARNING Request failed for https://ukpowernetworks.opendatasoft.com/api/explore/v2.1/catalog/datasets/ltds-table-1-circuit-data/exports/csv: 403 Client Error: Forbidden for url: https://ukpowernetworks.opendatasoft.com/api/explore/v2.1/catalog/datasets/ltds-table-1-circuit-data/exports/csv
+2025-09-11 12:40:46,486 INFO 📥 Attempting download: ukpn-optimise-prime
+2025-09-11 12:40:47,234 WARNING Empty dataset: ukpn-optimise-prime
+2025-09-11 12:40:47,738 INFO 🔍 Trying alternative data discovery methods...
+2025-09-11 12:40:47,891 WARNING Direct link failed https://ukpowernetworks.opendatasoft.com/api/explore/v2.1/catalog/datasets/ukpn-electricity-consumption-postcode/exports/csv: HTTP Error 404: Not Found
+2025-09-11 12:40:48,067 WARNING Direct link failed https://ukpowernetworks.opendatasoft.com/api/explore/v2.1/catalog/datasets/power-cut-data/exports/csv: HTTP Error 404: Not Found
+2025-09-11 12:40:48,068 WARNING No datasets were successfully collected
+2025-09-11 12:40:48,068 INFO ✅ DNO data collection completed!
+2025-09-11 12:40:48,069 INFO 📝 Created BigQuery integration script: /Users/georgemajor/jibber-jabber 24 august 2025 big bop/dno_data_enhanced/load_to_bigquery.py
+2025-09-11 16:41:54,693 INFO 🚀 Starting Enhanced DNO Data Collection
+2025-09-11 16:41:54,693 INFO ============================================================
+2025-09-11 16:41:54,693 INFO 🔍 Attempting direct UKPN dataset access...
+2025-09-11 16:41:55,315 INFO ✅ Found 10 UKPN datasets
+2025-09-11 16:41:55,315 INFO 📥 Attempting download: ukpn-rota-load-disconnection
+2025-09-11 16:41:55,489 WARNING Request failed for https://ukpowernetworks.opendatasoft.com/api/explore/v2.1/catalog/datasets/ukpn-rota-load-disconnection/exports/csv: 403 Client Error: Forbidden for url: https://ukpowernetworks.opendatasoft.com/api/explore/v2.1/catalog/datasets/ukpn-rota-load-disconnection/exports/csv
+2025-09-11 16:41:55,994 INFO 📥 Attempting download: ukpn-noise-contours
+2025-09-11 16:41:56,112 WARNING Request failed for https://ukpowernetworks.opendatasoft.com/api/explore/v2.1/catalog/datasets/ukpn-noise-contours/exports/csv: 403 Client Error: Forbidden for url: https://ukpowernetworks.opendatasoft.com/api/explore/v2.1/catalog/datasets/ukpn-noise-contours/exports/csv
+2025-09-11 16:41:56,616 INFO 📥 Attempting download: ltds-table-2b-transformer-data-3w
+2025-09-11 16:41:56,934 WARNING Request failed for https://ukpowernetworks.opendatasoft.com/api/explore/v2.1/catalog/datasets/ltds-table-2b-transformer-data-3w/exports/csv: 403 Client Error: Forbidden for url: https://ukpowernetworks.opendatasoft.com/api/explore/v2.1/catalog/datasets/ltds-table-2b-transformer-data-3w/exports/csv
+2025-09-11 16:41:57,447 INFO 📥 Attempting download: ukpn-standard-profiles-electricity-demand
+2025-09-11 16:42:10,846 INFO ✅ Successfully stored 17520 rows for ukpn-standard-profiles-electricity-demand
+2025-09-11 16:42:11,353 INFO 📥 Attempting download: ltds-table-7-operational-restrictions
+2025-09-11 16:42:11,545 WARNING Request failed for https://ukpowernetworks.opendatasoft.com/api/explore/v2.1/catalog/datasets/ltds-table-7-operational-restrictions/exports/csv: 403 Client Error: Forbidden for url: https://ukpowernetworks.opendatasoft.com/api/explore/v2.1/catalog/datasets/ltds-table-7-operational-restrictions/exports/csv
+2025-09-11 16:42:12,050 INFO 📥 Attempting download: ukpn-33kv-circuit-operational-data-monthly
+2025-09-11 16:42:12,246 WARNING Request failed for https://ukpowernetworks.opendatasoft.com/api/explore/v2.1/catalog/datasets/ukpn-33kv-circuit-operational-data-monthly/exports/csv: 403 Client Error: Forbidden for url: https://ukpowernetworks.opendatasoft.com/api/explore/v2.1/catalog/datasets/ukpn-33kv-circuit-operational-data-monthly/exports/csv
+2025-09-11 16:42:12,751 INFO 📥 Attempting download: ukpn-licence-area-132kv-underground-cables
+2025-09-11 16:42:12,889 WARNING Request failed for https://ukpowernetworks.opendatasoft.com/api/explore/v2.1/catalog/datasets/ukpn-licence-area-132kv-underground-cables/exports/csv: 403 Client Error: Forbidden for url: https://ukpowernetworks.opendatasoft.com/api/explore/v2.1/catalog/datasets/ukpn-licence-area-132kv-underground-cables/exports/csv
+2025-09-11 16:42:13,395 INFO 📥 Attempting download: ukpn-licence-area-33kv-underground-cables
+2025-09-11 16:42:13,527 WARNING Request failed for https://ukpowernetworks.opendatasoft.com/api/explore/v2.1/catalog/datasets/ukpn-licence-area-33kv-underground-cables/exports/csv: 403 Client Error: Forbidden for url: https://ukpowernetworks.opendatasoft.com/api/explore/v2.1/catalog/datasets/ukpn-licence-area-33kv-underground-cables/exports/csv
+2025-09-11 16:42:14,028 INFO 📥 Attempting download: ukpn-distribution-use-of-system-charges-annex-2
+2025-09-11 16:42:15,884 INFO ✅ Successfully stored 1325 rows for ukpn-distribution-use-of-system-charges-annex-2
+2025-09-11 16:42:16,390 INFO 📥 Attempting download: ukpn-primary-transformers
+2025-09-11 16:42:16,504 WARNING Request failed for https://ukpowernetworks.opendatasoft.com/api/explore/v2.1/catalog/datasets/ukpn-primary-transformers/exports/csv: 403 Client Error: Forbidden for url: https://ukpowernetworks.opendatasoft.com/api/explore/v2.1/catalog/datasets/ukpn-primary-transformers/exports/csv
+2025-09-11 16:42:17,009 INFO 🔍 Trying alternative data discovery methods...
+2025-09-11 16:42:17,155 WARNING Direct link failed https://ukpowernetworks.opendatasoft.com/api/explore/v2.1/catalog/datasets/ukpn-electricity-consumption-postcode/exports/csv: HTTP Error 404: Not Found
+2025-09-11 16:42:17,347 WARNING Direct link failed https://ukpowernetworks.opendatasoft.com/api/explore/v2.1/catalog/datasets/power-cut-data/exports/csv: HTTP Error 404: Not Found
+2025-09-11 16:42:17,356 INFO 📊 COLLECTION SUMMARY
+2025-09-11 16:42:17,356 INFO ==================================================
+2025-09-11 16:42:17,356 INFO Total datasets collected: 2
+2025-09-11 16:42:17,356 INFO Total rows across all datasets: 18,845
+2025-09-11 16:42:17,357 INFO DNOs covered: UKPN
+2025-09-11 16:42:17,361 INFO 
+🏆 Largest datasets:
+2025-09-11 16:42:17,361 INFO   • ukpn-standard-profiles-electricity-demand (UKPN): 17,520 rows
+2025-09-11 16:42:17,361 INFO   • ukpn-distribution-use-of-system-charges-annex-2 (UKPN): 1,325 rows
+2025-09-11 16:42:17,361 INFO 
+💾 Data stored in:
+2025-09-11 16:42:17,361 INFO   • Parquet files: /Users/georgemajor/jibber-jabber 24 august 2025 big bop/dno_data_enhanced/parquet/
+2025-09-11 16:42:17,361 INFO   • SQLite database: /Users/georgemajor/jibber-jabber 24 august 2025 big bop/dno_data_enhanced/dno_enhanced.sqlite
+2025-09-11 16:42:17,361 INFO   • Summary report: /Users/georgemajor/jibber-jabber 24 august 2025 big bop/dno_data_enhanced/collection_summary.parquet
+2025-09-11 16:42:17,361 INFO ✅ DNO data collection completed!
+2025-09-11 16:42:17,361 INFO 📝 Created BigQuery integration script: /Users/georgemajor/jibber-jabber 24 august 2025 big bop/dno_data_enhanced/load_to_bigquery.py

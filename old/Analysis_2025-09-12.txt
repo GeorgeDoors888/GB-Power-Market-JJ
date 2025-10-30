@@ -1,0 +1,27 @@
+**Analysis Summary - September 12, 2025**
+
+**Objective:**
+The primary goal of today's analysis was to understand the bidding behavior of the Balancing Mechanism Unit (BMU) `T_HUMR-1`, specifically to investigate why no "accepted" bid or offer data exists for it in the available datasets (`bmrs_boalf`, `bmrs_b1770`).
+
+**Hypothesis:**
+The working hypothesis is that `T_HUMR-1` may be submitting bids to reduce its power generation (i.e., negative bid prices) during periods of high renewable energy output (wind and solar), but these bids are not being accepted by the system operator.
+
+**Methodology & Key Findings:**
+
+1.  **Data Source Identification:**
+    *   **Submitted Bids:** The `bmrs_bod` table was used to analyze the *submitted* bids from `T_HUMR-1`.
+    *   **Grid Generation Data:** The `neso_generation_historic` table was identified as the source for national grid generation data, which includes breakdowns by fuel type like "WIND" and "SOLAR".
+
+2.  **Query Formulation:**
+    *   A complex SQL query was constructed to join the `bmrs_bod` and `neso_generation_historic` tables.
+    *   The query aims to correlate the hourly bidding activity of `T_HUMR-1` (specifically, bids to turn off) with the total hourly generation from wind and solar power across Great Britain.
+
+3.  **Execution & Challenges:**
+    *   The execution of the BigQuery command (`bq query`) repeatedly failed.
+    *   **Root Cause:** The errors (`IndentationError`, `NameError`, `SyntaxError: unmatched ')'`) indicated that the shell command was being incorrectly passed into a Python interpreter session instead of being executed directly in the system's shell (zsh). The Python interpreter cannot parse SQL or `bq` commands, leading to the errors.
+
+**Current Status & Next Steps:**
+
+*   The analysis is currently paused pending the correct execution of the SQL query.
+*   The immediate next step is to run the formulated `bq` command in the proper shell environment to retrieve the data.
+*   Once the data is successfully extracted into the `T_HUMR-1_bids_vs_renewables.csv` file, the results will be analyzed to confirm or refute the hypothesis.

@@ -1,0 +1,11 @@
+{
+  "source": "NESO Data Portal",
+  "dataset_id": "bsuos-monthly-forecast",
+  "dataset_title": "Monthly Balancing Services Use of System (BSUoS) Forecast Data",
+  "resource_id": "bfa78e9a-5eee-4db3-83c0-66e504d875d9",
+  "resource_name": "Monthly BSUoS Actual Summary April 2021",
+  "resource_format": "csv",
+  "last_modified": "2021-04-20T14:39:40.189492",
+  "size": null,
+  "description": "The Balancing Services Use of System (BSUoS) costs are reported on a monthly basis with a forecast for the next month and a rolling 24 month period. Here you can find the data for the 24 month ahead forecast. <br/><br/>\r\n\r\n**Disclaimer**: This forecast is published without prejudice and whilst every effort has been made to ensure the accuracy based on the assumptions and models used, it is subject to several estimations and forecasts and may not bear relation to either the indicative or actual tariffs Electricity system Operator will publish at a later date.\r\n<br/>"
+}

@@ -1,0 +1,27 @@
+[
+  {
+    "name": "dataset",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "publishTime",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "year",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "week",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "demand",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  }
+]

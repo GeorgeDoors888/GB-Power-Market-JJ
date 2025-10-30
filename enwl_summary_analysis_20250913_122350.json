@@ -1,0 +1,33 @@
+{
+  "enwl_profile": {
+    "dno_name": "Electricity North West",
+    "mpan_id": "14",
+    "region": "North West England",
+    "region_id": 3,
+    "website": "https://www.enwl.co.uk",
+    "data_collection_date": "2025-09-13T12:23:50.215824"
+  },
+  "data_availability": {
+    "carbon_intensity": {
+      "records": 1,
+      "date_range": "2025-09-11 15:00:00+00:00 to 2025-09-11 15:30:00+00:00",
+      "avg_intensity": 15.0
+    },
+    "capacity_market": {
+      "total_registrations": 6,
+      "estimated_capacity_mw": 612.4340000000001,
+      "asset_types": []
+    }
+  },
+  "key_metrics": {},
+  "generation_assets": [],
+  "carbon_profile": {
+    "avg_carbon_intensity": 15.0,
+    "renewable_percentage": 66.5
+  },
+  "key_insights": [
+    "Low carbon intensity region (15.0)",
+    "Renewable generation: 66.5%",
+    "6 capacity market registrations found"
+  ]
+}

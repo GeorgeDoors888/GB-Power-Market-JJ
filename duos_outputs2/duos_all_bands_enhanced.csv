@@ -1,0 +1,70 @@
+file_path,dno_name,mpan_code,year,band,sheet_name,min_rate,max_rate,mean_rate,median_rate,count
+dno_data_enhanced/sepd-schedule-of-charges-and-other-tables-april-2020_v1.2.xlsx,SSEN Southern,20,2020,RED,Annex 1 LV and HV charges,,,,,22
+dno_data_enhanced/sepd-schedule-of-charges-and-other-tables-april-2020_v1.2.xlsx,SSEN Southern,20,2020,AMBER,Annex 1 LV and HV charges,,,,,7
+dno_data_enhanced/sepd-schedule-of-charges-and-other-tables-april-2020_v1.2.xlsx,SSEN Southern,20,2020,GREEN,Annex 1 LV and HV charges,,,,,10
+dno_data_enhanced/EMEB - Schedule of charges and other tables - 2019 V.0.2 SOLR.xlsx,National Grid East Midlands,12,2019,RED,Annex 1 LV and HV charges,,,,,22
+dno_data_enhanced/EMEB - Schedule of charges and other tables - 2019 V.0.2 SOLR.xlsx,National Grid East Midlands,12,2019,AMBER,Annex 1 LV and HV charges,,,,,7
+dno_data_enhanced/EMEB - Schedule of charges and other tables - 2019 V.0.2 SOLR.xlsx,National Grid East Midlands,12,2019,GREEN,Annex 1 LV and HV charges,,,,,7
+dno_data_enhanced/SWAE - Schedule of charges and other tables - 2019 V.0.1 SOLR.xlsx,National Grid South Wales,21,2019,RED,Annex 1 LV and HV charges,,,,0.0,24
+dno_data_enhanced/SWAE - Schedule of charges and other tables - 2019 V.0.1 SOLR.xlsx,National Grid South Wales,21,2019,AMBER,Annex 1 LV and HV charges,,,,,6
+dno_data_enhanced/SWAE - Schedule of charges and other tables - 2019 V.0.1 SOLR.xlsx,National Grid South Wales,21,2019,GREEN,Annex 1 LV and HV charges,,,,,7
+dno_data_enhanced/SWEB - Schedule of charges and other tables - 2019 V.0.1 SOLR.xlsx,National Grid South West,22,2019,RED,Annex 1 LV and HV charges,,,,0.0,24
+dno_data_enhanced/SWEB - Schedule of charges and other tables - 2019 V.0.1 SOLR.xlsx,National Grid South West,22,2019,AMBER,Annex 1 LV and HV charges,,,,,6
+dno_data_enhanced/SWEB - Schedule of charges and other tables - 2019 V.0.1 SOLR.xlsx,National Grid South West,22,2019,GREEN,Annex 1 LV and HV charges,,,,,7
+dno_data_enhanced/EMEB-Schedule of charges and other tables-2020 v2.xlsx,National Grid East Midlands,12,2020,RED,Annex 1 LV and HV charges,,,,,22
+dno_data_enhanced/EMEB-Schedule of charges and other tables-2020 v2.xlsx,National Grid East Midlands,12,2020,AMBER,Annex 1 LV and HV charges,,,,,7
+dno_data_enhanced/EMEB-Schedule of charges and other tables-2020 v2.xlsx,National Grid East Midlands,12,2020,GREEN,Annex 1 LV and HV charges,,,,,7
+dno_data_enhanced/SWAE-Schedule of charges and other tables-2020 v2.xlsx,National Grid South Wales,21,2020,RED,Annex 1 LV and HV charges,,,,0.0,24
+dno_data_enhanced/SWAE-Schedule of charges and other tables-2020 v2.xlsx,National Grid South Wales,21,2020,AMBER,Annex 1 LV and HV charges,,,,,6
+dno_data_enhanced/SWAE-Schedule of charges and other tables-2020 v2.xlsx,National Grid South Wales,21,2020,GREEN,Annex 1 LV and HV charges,,,,,7
+dno_data_enhanced/enwl---schedule-of-charges-and-other-tables---2020-final-v3.xlsx,Electricity North West,16,2020,RED,Annex 1 LV and HV charges,,,,,21
+dno_data_enhanced/enwl---schedule-of-charges-and-other-tables---2020-final-v3.xlsx,Electricity North West,16,2020,AMBER,Annex 1 LV and HV charges,,,,,6
+dno_data_enhanced/enwl---schedule-of-charges-and-other-tables---2020-final-v3.xlsx,Electricity North West,16,2020,GREEN,Annex 1 LV and HV charges,,,,,7
+dno_data_enhanced/shepd-schedule-of-charges-and-other-tables-embedded-networks-april-2020_v1.1.xlsx,SSEN Hydro,17,2020,RED,Annex 1 LV and HV charges_N,,,,,17
+dno_data_enhanced/shepd-schedule-of-charges-and-other-tables-embedded-networks-april-2020_v1.1.xlsx,SSEN Hydro,17,2020,AMBER,Annex 1 LV and HV charges_N,,,,,6
+dno_data_enhanced/shepd-schedule-of-charges-and-other-tables-embedded-networks-april-2020_v1.1.xlsx,SSEN Hydro,17,2020,GREEN,Annex 1 LV and HV charges_N,,,,,7
+dno_data_enhanced/sepd-schedule-of-charges-and-other-tables-embedded-networks-april-2020_v1.1.xlsx,SSEN Southern,20,2020,RED,Annex 1 LV and HV charges_A,,,,0.0,22
+dno_data_enhanced/sepd-schedule-of-charges-and-other-tables-embedded-networks-april-2020_v1.1.xlsx,SSEN Southern,20,2020,AMBER,Annex 1 LV and HV charges_A,,,,,7
+dno_data_enhanced/sepd-schedule-of-charges-and-other-tables-embedded-networks-april-2020_v1.1.xlsx,SSEN Southern,20,2020,GREEN,Annex 1 LV and HV charges_A,,,,,7
+dno_data_enhanced/sepd-schedule-of-charges-and-other-tables-embedded-networks-april-2020_v1.1.xlsx,SSEN Southern,20,2020,RED,Annex 1 LV and HV charges_B,,,,0.0,22
+dno_data_enhanced/sepd-schedule-of-charges-and-other-tables-embedded-networks-april-2020_v1.1.xlsx,SSEN Southern,20,2020,AMBER,Annex 1 LV and HV charges_B,,,,,7
+dno_data_enhanced/sepd-schedule-of-charges-and-other-tables-embedded-networks-april-2020_v1.1.xlsx,SSEN Southern,20,2020,GREEN,Annex 1 LV and HV charges_B,,,,,7
+dno_data_enhanced/sepd-schedule-of-charges-and-other-tables-embedded-networks-april-2020_v1.1.xlsx,SSEN Southern,20,2020,RED,Annex 1 LV and HV charges_C,,,,,21
+dno_data_enhanced/sepd-schedule-of-charges-and-other-tables-embedded-networks-april-2020_v1.1.xlsx,SSEN Southern,20,2020,AMBER,Annex 1 LV and HV charges_C,,,,,7
+dno_data_enhanced/sepd-schedule-of-charges-and-other-tables-embedded-networks-april-2020_v1.1.xlsx,SSEN Southern,20,2020,GREEN,Annex 1 LV and HV charges_C,,,,,7
+dno_data_enhanced/sepd-schedule-of-charges-and-other-tables-embedded-networks-april-2020_v1.1.xlsx,SSEN Southern,20,2020,RED,Annex 1 LV and HV charges_D,,,,0.0,23
+dno_data_enhanced/sepd-schedule-of-charges-and-other-tables-embedded-networks-april-2020_v1.1.xlsx,SSEN Southern,20,2020,AMBER,Annex 1 LV and HV charges_D,,,,,6
+dno_data_enhanced/sepd-schedule-of-charges-and-other-tables-embedded-networks-april-2020_v1.1.xlsx,SSEN Southern,20,2020,GREEN,Annex 1 LV and HV charges_D,,,,,7
+dno_data_enhanced/sepd-schedule-of-charges-and-other-tables-embedded-networks-april-2020_v1.1.xlsx,SSEN Southern,20,2020,RED,Annex 1 LV and HV charges_E,,,,0.0,24
+dno_data_enhanced/sepd-schedule-of-charges-and-other-tables-embedded-networks-april-2020_v1.1.xlsx,SSEN Southern,20,2020,AMBER,Annex 1 LV and HV charges_E,,,,,7
+dno_data_enhanced/sepd-schedule-of-charges-and-other-tables-embedded-networks-april-2020_v1.1.xlsx,SSEN Southern,20,2020,GREEN,Annex 1 LV and HV charges_E,,,,,7
+dno_data_enhanced/sepd-schedule-of-charges-and-other-tables-embedded-networks-april-2020_v1.1.xlsx,SSEN Southern,20,2020,RED,Annex 1 LV and HV charges_F,,,,,21
+dno_data_enhanced/sepd-schedule-of-charges-and-other-tables-embedded-networks-april-2020_v1.1.xlsx,SSEN Southern,20,2020,AMBER,Annex 1 LV and HV charges_F,,,,,7
+dno_data_enhanced/sepd-schedule-of-charges-and-other-tables-embedded-networks-april-2020_v1.1.xlsx,SSEN Southern,20,2020,GREEN,Annex 1 LV and HV charges_F,,,,,7
+dno_data_enhanced/sepd-schedule-of-charges-and-other-tables-embedded-networks-april-2020_v1.1.xlsx,SSEN Southern,20,2020,RED,Annex 1 LV and HV charges_G,,,,,21
+dno_data_enhanced/sepd-schedule-of-charges-and-other-tables-embedded-networks-april-2020_v1.1.xlsx,SSEN Southern,20,2020,AMBER,Annex 1 LV and HV charges_G,,,,,6
+dno_data_enhanced/sepd-schedule-of-charges-and-other-tables-embedded-networks-april-2020_v1.1.xlsx,SSEN Southern,20,2020,GREEN,Annex 1 LV and HV charges_G,,,,,7
+dno_data_enhanced/sepd-schedule-of-charges-and-other-tables-embedded-networks-april-2020_v1.1.xlsx,SSEN Southern,20,2020,RED,Annex 1 LV and HV charges_J,,,,0.0,24
+dno_data_enhanced/sepd-schedule-of-charges-and-other-tables-embedded-networks-april-2020_v1.1.xlsx,SSEN Southern,20,2020,AMBER,Annex 1 LV and HV charges_J,,,,,7
+dno_data_enhanced/sepd-schedule-of-charges-and-other-tables-embedded-networks-april-2020_v1.1.xlsx,SSEN Southern,20,2020,GREEN,Annex 1 LV and HV charges_J,,,,,7
+dno_data_enhanced/sepd-schedule-of-charges-and-other-tables-embedded-networks-april-2020_v1.1.xlsx,SSEN Southern,20,2020,RED,Annex 1 LV and HV charges_K,,,,0.0,22
+dno_data_enhanced/sepd-schedule-of-charges-and-other-tables-embedded-networks-april-2020_v1.1.xlsx,SSEN Southern,20,2020,AMBER,Annex 1 LV and HV charges_K,,,,,6
+dno_data_enhanced/sepd-schedule-of-charges-and-other-tables-embedded-networks-april-2020_v1.1.xlsx,SSEN Southern,20,2020,GREEN,Annex 1 LV and HV charges_K,,,,,7
+dno_data_enhanced/sepd-schedule-of-charges-and-other-tables-embedded-networks-april-2020_v1.1.xlsx,SSEN Southern,20,2020,RED,Annex 1 LV and HV charges_L,,,,0.0,23
+dno_data_enhanced/sepd-schedule-of-charges-and-other-tables-embedded-networks-april-2020_v1.1.xlsx,SSEN Southern,20,2020,AMBER,Annex 1 LV and HV charges_L,,,,,6
+dno_data_enhanced/sepd-schedule-of-charges-and-other-tables-embedded-networks-april-2020_v1.1.xlsx,SSEN Southern,20,2020,GREEN,Annex 1 LV and HV charges_L,,,,,7
+dno_data_enhanced/sepd-schedule-of-charges-and-other-tables-embedded-networks-april-2020_v1.1.xlsx,SSEN Southern,20,2020,RED,Annex 1 LV and HV charges_M,,,,0.0,23
+dno_data_enhanced/sepd-schedule-of-charges-and-other-tables-embedded-networks-april-2020_v1.1.xlsx,SSEN Southern,20,2020,AMBER,Annex 1 LV and HV charges_M,,,,,7
+dno_data_enhanced/sepd-schedule-of-charges-and-other-tables-embedded-networks-april-2020_v1.1.xlsx,SSEN Southern,20,2020,GREEN,Annex 1 LV and HV charges_M,,,,,7
+dno_data_enhanced/shepd-schedule-of-charges-and-other-tables-april-2020_v1.2.xlsx,SSEN Hydro,17,2020,RED,Annex 1 LV and HV charges,,,,0.0,25
+dno_data_enhanced/shepd-schedule-of-charges-and-other-tables-april-2020_v1.2.xlsx,SSEN Hydro,17,2020,AMBER,Annex 1 LV and HV charges,,,,,7
+dno_data_enhanced/shepd-schedule-of-charges-and-other-tables-april-2020_v1.2.xlsx,SSEN Hydro,17,2020,GREEN,Annex 1 LV and HV charges,,,,,10
+dno_data_enhanced/MIDE - Schedule of charges and other tables - 2019 V.0.2 SOLR.xlsx,National Grid East Midlands,12,2019,RED,Annex 1 LV and HV charges,,,,,22
+dno_data_enhanced/MIDE - Schedule of charges and other tables - 2019 V.0.2 SOLR.xlsx,National Grid East Midlands,12,2019,AMBER,Annex 1 LV and HV charges,,,,,7
+dno_data_enhanced/MIDE - Schedule of charges and other tables - 2019 V.0.2 SOLR.xlsx,National Grid East Midlands,12,2019,GREEN,Annex 1 LV and HV charges,,,,,7
+dno_data_enhanced/MIDE-Schedule of charges and other tables-2020 v2.xlsx,National Grid East Midlands,12,2020,RED,Annex 1 LV and HV charges,,,,,22
+dno_data_enhanced/MIDE-Schedule of charges and other tables-2020 v2.xlsx,National Grid East Midlands,12,2020,AMBER,Annex 1 LV and HV charges,,,,,7
+dno_data_enhanced/MIDE-Schedule of charges and other tables-2020 v2.xlsx,National Grid East Midlands,12,2020,GREEN,Annex 1 LV and HV charges,,,,,7
+dno_data_enhanced/SWEB-Schedule of charges and other tables-2020 v2.xlsx,National Grid South West,22,2020,RED,Annex 1 LV and HV charges,,,,0.0,24
+dno_data_enhanced/SWEB-Schedule of charges and other tables-2020 v2.xlsx,National Grid South West,22,2020,AMBER,Annex 1 LV and HV charges,,,,,6
+dno_data_enhanced/SWEB-Schedule of charges and other tables-2020 v2.xlsx,National Grid South West,22,2020,GREEN,Annex 1 LV and HV charges,,,,,7

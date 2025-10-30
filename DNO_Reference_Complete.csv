@@ -1,0 +1,15 @@
+MPAN_Code,DNO_Key,DNO_Name,Short_Code,GSP_Group_ID,Region
+10,UKPN-E,UKPN – Eastern Power Networks,Eastern,A,East Anglia
+11,NGED-EM,NGED – East Midlands,EastMidlands,B,"Nottingham, Leicester"
+12,UKPN-L,UKPN – London Power Networks,London,C,Greater London
+13,SP-MW,SPEN – Manweb (Merseyside/N Wales),Manweb,D,"Liverpool, North Wales"
+14,NGED-M,NGED – Midlands,Midlands,E,"Birmingham, Coventry"
+15,NPg-NE,NPg – North East,NorthEast,F,"Newcastle, Durham"
+16,ENWL,Electricity North West,NorthWest,G,"Manchester, Cumbria"
+17,UKPN-SE,UKPN – South Eastern,SouthEastern,H,"Kent, Sussex"
+18,SSE-S,SSEN – Southern (SEPD),Southern,J,"Hampshire, Surrey, Berks"
+19,NGED-SW,NGED – South Wales,SouthWales,K,"Cardiff, Swansea"
+20,NGED-SW,NGED – South West,SouthWest,L,"Cornwall, Devon, Somerset"
+21,NPg-Y,NPg – Yorkshire,Yorkshire,M,"Leeds, Sheffield"
+22,SSE-H,SSEN – Hydro (SHEPD),Hydro,N,North Scotland (Highlands)
+23,SP-S,SPEN – Scottish Power (SPD),SPDistribution,P,Central & Southern Scotland

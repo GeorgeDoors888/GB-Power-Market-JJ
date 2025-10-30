@@ -1,0 +1,12 @@
+Dataset: BOD
+Timestamp: 20250829_134855
+Original Exception: Error converting Pandas column with name: "_window_from_utc" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+
+--- Analysis for column: _window_from_utc ---
+Column Dtype: object
+
+Value types in this column:
+_window_from_utc
+<class 'str'>    295030
+
+No non-scalar values detected in this column.

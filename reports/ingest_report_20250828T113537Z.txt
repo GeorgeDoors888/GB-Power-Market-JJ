@@ -1,0 +1,9 @@
+==================================================
+Elexon Ingestion Run Report
+==================================================
+Project: jibber-jabber-knowledge
+Dataset: uk_energy_prod
+Period : 2016-01-01 to 2025-08-26
+Datasets: BOAL,BOALF,NETBSAD,BOD,DISBSAD
+UTC Started: 2025-08-28T11:35:37:z
+--------------------------------------------------

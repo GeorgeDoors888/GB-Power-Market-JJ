@@ -1,0 +1,26 @@
+# Ofgem API Requirements
+# Core dependencies for Ofgem data collection
+
+# Web scraping and HTTP requests
+requests>=2.31.0
+beautifulsoup4>=4.12.0
+lxml>=4.9.0
+
+# Data processing
+pandas>=2.0.0
+numpy>=1.24.0
+
+# Google Cloud integration (optional)
+google-cloud-bigquery>=3.11.0
+google-cloud-storage>=2.10.0
+google-auth>=2.17.0
+google-oauth2-tool>=0.0.3
+
+# Environment and configuration
+python-dotenv>=1.0.0
+
+# Existing dependencies (should already be installed)
+# These are likely already in your environment from BMRS work
+# google-api-python-client>=2.88.0
+# google-auth-httplib2>=0.1.0
+# google-auth-oauthlib>=1.0.0

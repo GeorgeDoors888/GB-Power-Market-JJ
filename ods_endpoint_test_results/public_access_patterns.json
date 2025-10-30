@@ -1,0 +1,20 @@
+{
+  "UKPN": {
+    "catalog_accessible": false
+  },
+  "SPEN": {
+    "catalog_accessible": true,
+    "total_datasets": 5,
+    "public_datasets": 0,
+    "has_public_data": false
+  },
+  "NPG": {
+    "catalog_accessible": false
+  },
+  "ENWL": {
+    "catalog_accessible": true,
+    "total_datasets": 5,
+    "public_datasets": 0,
+    "has_public_data": false
+  }
+}

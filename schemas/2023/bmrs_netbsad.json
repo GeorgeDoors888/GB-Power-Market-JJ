@@ -1,0 +1,57 @@
+[
+  {
+    "name": "dataset",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "settlementDate",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "settlementPeriod",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "netBuyPriceCostAdjustmentEnergy",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "netBuyPriceVolumeAdjustmentEnergy",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "netBuyPriceVolumeAdjustmentSystem",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "buyPricePriceAdjustment",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "netSellPriceCostAdjustmentEnergy",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "netSellPriceVolumeAdjustmentEnergy",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "netSellPriceVolumeAdjustmentSystem",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "sellPricePriceAdjustment",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  }
+]

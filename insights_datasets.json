@@ -1,0 +1,180 @@
+{
+  "datasets": {
+    "Generation": [
+      {
+        "code": "B1600",
+        "name": "Generation by Fuel Type",
+        "endpoint": "https://data.elexon.co.uk/bmrs/api/v1/datasets/B1600"
+      },
+      {
+        "code": "B1610",
+        "name": "Actual Generation",
+        "endpoint": "https://data.elexon.co.uk/bmrs/api/v1/datasets/B1610"
+      },
+      {
+        "code": "B1615",
+        "name": "Generation by Fuel Type",
+        "endpoint": "https://data.elexon.co.uk/bmrs/api/v1/datasets/B1615"
+      },
+      {
+        "code": "B1620",
+        "name": "Generation Forecast",
+        "endpoint": "https://data.elexon.co.uk/bmrs/api/v1/datasets/B1620"
+      },
+      {
+        "code": "B1625",
+        "name": "Wind Forecast",
+        "endpoint": "https://data.elexon.co.uk/bmrs/api/v1/datasets/B1625"
+      },
+      {
+        "code": "B1626",
+        "name": "Solar Forecast",
+        "endpoint": "https://data.elexon.co.uk/bmrs/api/v1/datasets/B1626"
+      },
+      {
+        "code": "B1627",
+        "name": "Generation by BM Unit",
+        "endpoint": "https://data.elexon.co.uk/bmrs/api/v1/datasets/B1627"
+      },
+      {
+        "code": "B1630",
+        "name": "Generation by BM Unit Fuel Type",
+        "endpoint": "https://data.elexon.co.uk/bmrs/api/v1/datasets/B1630"
+      }
+    ],
+    "Demand": [
+      {
+        "code": "B0600",
+        "name": "Demand by Grid Supply Point",
+        "endpoint": "https://data.elexon.co.uk/bmrs/api/v1/datasets/B0600"
+      },
+      {
+        "code": "B0610",
+        "name": "Actual Demand",
+        "endpoint": "https://data.elexon.co.uk/bmrs/api/v1/datasets/B0610"
+      },
+      {
+        "code": "B0620",
+        "name": "System Demand Forecast",
+        "endpoint": "https://data.elexon.co.uk/bmrs/api/v1/datasets/B0620"
+      },
+      {
+        "code": "B0625",
+        "name": "REMIT Messages",
+        "endpoint": "https://data.elexon.co.uk/bmrs/api/v1/datasets/B0625"
+      }
+    ],
+    "Dispatch": [
+      {
+        "code": "B1700",
+        "name": "Dispatch by BM Unit",
+        "endpoint": "https://data.elexon.co.uk/bmrs/api/v1/datasets/B1700"
+      },
+      {
+        "code": "B1710",
+        "name": "Dispatch by BM Unit Fuel Type",
+        "endpoint": "https://data.elexon.co.uk/bmrs/api/v1/datasets/B1710"
+      },
+      {
+        "code": "B1720",
+        "name": "Dispatch Instructions",
+        "endpoint": "https://data.elexon.co.uk/bmrs/api/v1/datasets/B1720"
+      },
+      {
+        "code": "B1730",
+        "name": "Dispatch Forecasts",
+        "endpoint": "https://data.elexon.co.uk/bmrs/api/v1/datasets/B1730"
+      },
+      {
+        "code": "B1740",
+        "name": "Balancing Forecasts",
+        "endpoint": "https://data.elexon.co.uk/bmrs/api/v1/datasets/B1740"
+      }
+    ],
+    "Balancing": [
+      {
+        "code": "B1750",
+        "name": "Balancing Services",
+        "endpoint": "https://data.elexon.co.uk/bmrs/api/v1/datasets/B1750"
+      },
+      {
+        "code": "B1760",
+        "name": "Balancing Actions",
+        "endpoint": "https://data.elexon.co.uk/bmrs/api/v1/datasets/B1760"
+      },
+      {
+        "code": "B1770",
+        "name": "Accepted Balancing Actions",
+        "endpoint": "https://data.elexon.co.uk/bmrs/api/v1/datasets/B1770"
+      }
+    ],
+    "Prices": [
+      {
+        "code": "B1780",
+        "name": "Imbalance Prices",
+        "endpoint": "https://data.elexon.co.uk/bmrs/api/v1/datasets/B1780"
+      },
+      {
+        "code": "B1790",
+        "name": "Market Index Prices",
+        "endpoint": "https://data.elexon.co.uk/bmrs/api/v1/datasets/B1790"
+      },
+      {
+        "code": "B1800",
+        "name": "Day Ahead Prices",
+        "endpoint": "https://data.elexon.co.uk/bmrs/api/v1/datasets/B1800"
+      }
+    ],
+    "Settlement": [
+      {
+        "code": "B1900",
+        "name": "Settlement Period Data",
+        "endpoint": "https://data.elexon.co.uk/bmrs/api/v1/datasets/B1900"
+      },
+      {
+        "code": "B1910",
+        "name": "Settlement Prices",
+        "endpoint": "https://data.elexon.co.uk/bmrs/api/v1/datasets/B1910"
+      }
+    ],
+    "Forecasts": [
+      {
+        "code": "B1625",
+        "name": "Wind Forecast",
+        "endpoint": "https://data.elexon.co.uk/bmrs/api/v1/datasets/B1625"
+      },
+      {
+        "code": "B1626",
+        "name": "Solar Forecast",
+        "endpoint": "https://data.elexon.co.uk/bmrs/api/v1/datasets/B1626"
+      },
+      {
+        "code": "B1730",
+        "name": "Dispatch Forecasts",
+        "endpoint": "https://data.elexon.co.uk/bmrs/api/v1/datasets/B1730"
+      },
+      {
+        "code": "B1740",
+        "name": "Balancing Forecasts",
+        "endpoint": "https://data.elexon.co.uk/bmrs/api/v1/datasets/B1740"
+      }
+    ],
+    "Other": [
+      {
+        "code": "B2000",
+        "name": "System Prices",
+        "endpoint": "https://data.elexon.co.uk/bmrs/api/v1/datasets/B2000"
+      },
+      {
+        "code": "B2100",
+        "name": "Transmission Data",
+        "endpoint": "https://data.elexon.co.uk/bmrs/api/v1/datasets/B2100"
+      },
+      {
+        "code": "B2200",
+        "name": "System Warnings",
+        "endpoint": "https://data.elexon.co.uk/bmrs/api/v1/datasets/B2200"
+      }
+    ]
+  }
+}

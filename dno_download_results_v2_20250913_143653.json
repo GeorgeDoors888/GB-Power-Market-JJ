@@ -1,0 +1,281 @@
+{
+  "timestamp": "2025-09-13 14:35:15",
+  "dnos": {
+    "SEPD": {
+      "output_dir": "duos_ssen_data/sepd",
+      "total_files": 5,
+      "downloaded": 5,
+      "failed": 0,
+      "files": [
+        {
+          "url": "https://www.ssen.co.uk/globalassets/library/charging-statements-sepd/202526/sepd---schedule-of-charges-and-other-tables---april-2025-v0.2.xlsx",
+          "filename": "sepd---schedule-of-charges-and-other-tables---april-2025-v0.2.xlsx",
+          "output_path": "duos_ssen_data/sepd/sepd---schedule-of-charges-and-other-tables---april-2025-v0.2.xlsx",
+          "status": "success",
+          "size_kb": 244.001953125
+        },
+        {
+          "url": "https://www.ssen.co.uk/globalassets/library/charging-statements-sepd/202526/sepd_cdcm_v10_20231106_25-26_final.xlsx",
+          "filename": "sepd_cdcm_v10_20231106_25-26_final.xlsx",
+          "output_path": "duos_ssen_data/sepd/sepd_cdcm_v10_20231106_25-26_final.xlsx",
+          "status": "success",
+          "size_kb": 905.384765625
+        },
+        {
+          "url": "https://www.ssen.co.uk/globalassets/library/charging-statements-sepd/202526/sepd_pcdm_v5_20231106_25-26_final.xlsx",
+          "filename": "sepd_pcdm_v5_20231106_25-26_final.xlsx",
+          "output_path": "duos_ssen_data/sepd/sepd_pcdm_v5_20231106_25-26_final.xlsx",
+          "status": "success",
+          "size_kb": 301.7255859375
+        },
+        {
+          "url": "https://www.ssen.co.uk/globalassets/library/charging-statements-sepd/202627/sepd_cdcm_v11_20241025_26-27_final.xlsx",
+          "filename": "sepd_cdcm_v11_20241025_26-27_final.xlsx",
+          "output_path": "duos_ssen_data/sepd/sepd_cdcm_v11_20241025_26-27_final.xlsx",
+          "status": "success",
+          "size_kb": 931.7392578125
+        },
+        {
+          "url": "https://www.ssen.co.uk/globalassets/library/charging-statements-sepd/202627/sepd_pcdm_v5_20241025_26-27_final.xlsx",
+          "filename": "sepd_pcdm_v5_20241025_26-27_final.xlsx",
+          "output_path": "duos_ssen_data/sepd/sepd_pcdm_v5_20241025_26-27_final.xlsx",
+          "status": "success",
+          "size_kb": 319.7568359375
+        }
+      ]
+    },
+    "SHEPD": {
+      "output_dir": "duos_ssen_data/shepd",
+      "total_files": 6,
+      "downloaded": 6,
+      "failed": 0,
+      "files": [
+        {
+          "url": "https://www.ssen.co.uk/globalassets/library/charging-statements-shepd/202526/shepd---schedule-of-charges-and-other-tables---april-2025-v0.2.xlsx",
+          "filename": "shepd---schedule-of-charges-and-other-tables---april-2025-v0.2.xlsx",
+          "output_path": "duos_ssen_data/shepd/shepd---schedule-of-charges-and-other-tables---april-2025-v0.2.xlsx",
+          "status": "success",
+          "size_kb": 234.3369140625
+        },
+        {
+          "url": "https://www.ssen.co.uk/globalassets/library/charging-statements-shepd/202526/shepd_cdcm_v10_20231106_25-26_final.xlsx",
+          "filename": "shepd_cdcm_v10_20231106_25-26_final.xlsx",
+          "output_path": "duos_ssen_data/shepd/shepd_cdcm_v10_20231106_25-26_final.xlsx",
+          "status": "success",
+          "size_kb": 883.3798828125
+        },
+        {
+          "url": "https://www.ssen.co.uk/globalassets/library/charging-statements-shepd/202526/shepd_pcdm_v5_20231106_25-26_final.xlsx",
+          "filename": "shepd_pcdm_v5_20231106_25-26_final.xlsx",
+          "output_path": "duos_ssen_data/shepd/shepd_pcdm_v5_20231106_25-26_final.xlsx",
+          "status": "success",
+          "size_kb": 302.1591796875
+        },
+        {
+          "url": "https://www.ssen.co.uk/globalassets/library/charging-statements-shepd/202627/shepd---schedule-of-charges-and-other-tables---april-2026-v1.0.xlsx",
+          "filename": "shepd---schedule-of-charges-and-other-tables---april-2026-v1.0.xlsx",
+          "output_path": "duos_ssen_data/shepd/shepd---schedule-of-charges-and-other-tables---april-2026-v1.0.xlsx",
+          "status": "success",
+          "size_kb": 212.4306640625
+        },
+        {
+          "url": "https://www.ssen.co.uk/globalassets/library/charging-statements-shepd/202627/shepd_cdcm_v11_20241025_26-27_final.xlsx",
+          "filename": "shepd_cdcm_v11_20241025_26-27_final.xlsx",
+          "output_path": "duos_ssen_data/shepd/shepd_cdcm_v11_20241025_26-27_final.xlsx",
+          "status": "success",
+          "size_kb": 919.298828125
+        },
+        {
+          "url": "https://www.ssen.co.uk/globalassets/library/charging-statements-shepd/202627/shepd_pcdm_v5_20241025_26-27_final.xlsx",
+          "filename": "shepd_pcdm_v5_20241025_26-27_final.xlsx",
+          "output_path": "duos_ssen_data/shepd/shepd_pcdm_v5_20241025_26-27_final.xlsx",
+          "status": "success",
+          "size_kb": 318.4072265625
+        }
+      ]
+    },
+    "SP_MANWEB": {
+      "output_dir": "duos_spm_data",
+      "total_files": 4,
+      "downloaded": 0,
+      "failed": 4,
+      "files": [
+        {
+          "url": "https://www.spenergynetworks.co.uk/userfiles/file/SP_Manweb_Use_of_System_Charging_Statement_April_2025.xlsx",
+          "filename": "SP_Manweb_Use_of_System_Charging_Statement_April_2025.xlsx",
+          "output_path": "duos_spm_data/SP_Manweb_Use_of_System_Charging_Statement_April_2025.xlsx",
+          "status": "failed",
+          "error": "403 Client Error: Forbidden for url: https://www.spenergynetworks.co.uk/userfiles/file/SP_Manweb_Use_of_System_Charging_Statement_April_2025.xlsx"
+        },
+        {
+          "url": "https://www.spenergynetworks.co.uk/userfiles/file/SPM_2025_26_CDCM_v10_20231106.xlsx",
+          "filename": "SPM_2025_26_CDCM_v10_20231106.xlsx",
+          "output_path": "duos_spm_data/SPM_2025_26_CDCM_v10_20231106.xlsx",
+          "status": "failed",
+          "error": "403 Client Error: Forbidden for url: https://www.spenergynetworks.co.uk/userfiles/file/SPM_2025_26_CDCM_v10_20231106.xlsx"
+        },
+        {
+          "url": "https://www.spenergynetworks.co.uk/userfiles/file/SP_Manweb_Use_of_System_Charging_Statement_April_2026.xlsx",
+          "filename": "SP_Manweb_Use_of_System_Charging_Statement_April_2026.xlsx",
+          "output_path": "duos_spm_data/SP_Manweb_Use_of_System_Charging_Statement_April_2026.xlsx",
+          "status": "failed",
+          "error": "403 Client Error: Forbidden for url: https://www.spenergynetworks.co.uk/userfiles/file/SP_Manweb_Use_of_System_Charging_Statement_April_2026.xlsx"
+        },
+        {
+          "url": "https://www.spenergynetworks.co.uk/userfiles/file/SPM_2026_27_CDCM_v11_20241025_Published.xlsx",
+          "filename": "SPM_2026_27_CDCM_v11_20241025_Published.xlsx",
+          "output_path": "duos_spm_data/SPM_2026_27_CDCM_v11_20241025_Published.xlsx",
+          "status": "failed",
+          "error": "403 Client Error: Forbidden for url: https://www.spenergynetworks.co.uk/userfiles/file/SPM_2026_27_CDCM_v11_20241025_Published.xlsx"
+        }
+      ]
+    },
+    "NGED_EAST_MIDLANDS": {
+      "output_dir": "duos_nged_data/east_midlands",
+      "total_files": 4,
+      "downloaded": 0,
+      "failed": 4,
+      "files": [
+        {
+          "url": "https://www.nationalgrid.com/electricity-distribution/document/161401/download",
+          "filename": "nged_east_midlands_schedule_of_charges_2025.xlsx",
+          "output_path": "duos_nged_data/east_midlands/nged_east_midlands_schedule_of_charges_2025.xlsx",
+          "status": "failed",
+          "error": "404 Client Error: Not Found for url: https://www.nationalgrid.com/electricity-distribution/document/161401/download"
+        },
+        {
+          "url": "https://www.nationalgrid.com/electricity-distribution/document/161411/download",
+          "filename": "nged_east_midlands_cdcm_model_2025.xlsx",
+          "output_path": "duos_nged_data/east_midlands/nged_east_midlands_cdcm_model_2025.xlsx",
+          "status": "failed",
+          "error": "404 Client Error: Not Found for url: https://www.nationalgrid.com/electricity-distribution/document/161411/download"
+        },
+        {
+          "url": "https://www.nationalgrid.com/electricity-distribution/document/161421/download",
+          "filename": "nged_east_midlands_schedule_of_charges_2026.xlsx",
+          "output_path": "duos_nged_data/east_midlands/nged_east_midlands_schedule_of_charges_2026.xlsx",
+          "status": "failed",
+          "error": "404 Client Error: Not Found for url: https://www.nationalgrid.com/electricity-distribution/document/161421/download"
+        },
+        {
+          "url": "https://www.nationalgrid.com/electricity-distribution/document/161431/download",
+          "filename": "nged_east_midlands_cdcm_model_2026.xlsx",
+          "output_path": "duos_nged_data/east_midlands/nged_east_midlands_cdcm_model_2026.xlsx",
+          "status": "failed",
+          "error": "404 Client Error: Not Found for url: https://www.nationalgrid.com/electricity-distribution/document/161431/download"
+        }
+      ]
+    },
+    "NGED_WEST_MIDLANDS": {
+      "output_dir": "duos_nged_data/west_midlands",
+      "total_files": 4,
+      "downloaded": 0,
+      "failed": 4,
+      "files": [
+        {
+          "url": "https://www.nationalgrid.com/electricity-distribution/document/161501/download",
+          "filename": "nged_west_midlands_schedule_of_charges_2025.xlsx",
+          "output_path": "duos_nged_data/west_midlands/nged_west_midlands_schedule_of_charges_2025.xlsx",
+          "status": "failed",
+          "error": "404 Client Error: Not Found for url: https://www.nationalgrid.com/electricity-distribution/document/161501/download"
+        },
+        {
+          "url": "https://www.nationalgrid.com/electricity-distribution/document/161511/download",
+          "filename": "nged_west_midlands_cdcm_model_2025.xlsx",
+          "output_path": "duos_nged_data/west_midlands/nged_west_midlands_cdcm_model_2025.xlsx",
+          "status": "failed",
+          "error": "404 Client Error: Not Found for url: https://www.nationalgrid.com/electricity-distribution/document/161511/download"
+        },
+        {
+          "url": "https://www.nationalgrid.com/electricity-distribution/document/161521/download",
+          "filename": "nged_west_midlands_schedule_of_charges_2026.xlsx",
+          "output_path": "duos_nged_data/west_midlands/nged_west_midlands_schedule_of_charges_2026.xlsx",
+          "status": "failed",
+          "error": "404 Client Error: Not Found for url: https://www.nationalgrid.com/electricity-distribution/document/161521/download"
+        },
+        {
+          "url": "https://www.nationalgrid.com/electricity-distribution/document/161531/download",
+          "filename": "nged_west_midlands_cdcm_model_2026.xlsx",
+          "output_path": "duos_nged_data/west_midlands/nged_west_midlands_cdcm_model_2026.xlsx",
+          "status": "failed",
+          "error": "404 Client Error: Not Found for url: https://www.nationalgrid.com/electricity-distribution/document/161531/download"
+        }
+      ]
+    },
+    "NGED_SOUTH_WALES": {
+      "output_dir": "duos_nged_data/south_wales",
+      "total_files": 4,
+      "downloaded": 0,
+      "failed": 4,
+      "files": [
+        {
+          "url": "https://www.nationalgrid.com/electricity-distribution/document/161601/download",
+          "filename": "nged_south_wales_schedule_of_charges_2025.xlsx",
+          "output_path": "duos_nged_data/south_wales/nged_south_wales_schedule_of_charges_2025.xlsx",
+          "status": "failed",
+          "error": "404 Client Error: Not Found for url: https://www.nationalgrid.com/electricity-distribution/document/161601/download"
+        },
+        {
+          "url": "https://www.nationalgrid.com/electricity-distribution/document/161611/download",
+          "filename": "nged_south_wales_cdcm_model_2025.xlsx",
+          "output_path": "duos_nged_data/south_wales/nged_south_wales_cdcm_model_2025.xlsx",
+          "status": "failed",
+          "error": "404 Client Error: Not Found for url: https://www.nationalgrid.com/electricity-distribution/document/161611/download"
+        },
+        {
+          "url": "https://www.nationalgrid.com/electricity-distribution/document/161621/download",
+          "filename": "nged_south_wales_schedule_of_charges_2026.xlsx",
+          "output_path": "duos_nged_data/south_wales/nged_south_wales_schedule_of_charges_2026.xlsx",
+          "status": "failed",
+          "error": "404 Client Error: Not Found for url: https://www.nationalgrid.com/electricity-distribution/document/161621/download"
+        },
+        {
+          "url": "https://www.nationalgrid.com/electricity-distribution/document/161631/download",
+          "filename": "nged_south_wales_cdcm_model_2026.xlsx",
+          "output_path": "duos_nged_data/south_wales/nged_south_wales_cdcm_model_2026.xlsx",
+          "status": "failed",
+          "error": "404 Client Error: Not Found for url: https://www.nationalgrid.com/electricity-distribution/document/161631/download"
+        }
+      ]
+    },
+    "NGED_SOUTH_WEST": {
+      "output_dir": "duos_nged_data/south_west",
+      "total_files": 4,
+      "downloaded": 0,
+      "failed": 4,
+      "files": [
+        {
+          "url": "https://www.nationalgrid.com/electricity-distribution/document/161701/download",
+          "filename": "nged_south_west_schedule_of_charges_2025.xlsx",
+          "output_path": "duos_nged_data/south_west/nged_south_west_schedule_of_charges_2025.xlsx",
+          "status": "failed",
+          "error": "404 Client Error: Not Found for url: https://www.nationalgrid.com/electricity-distribution/document/161701/download"
+        },
+        {
+          "url": "https://www.nationalgrid.com/electricity-distribution/document/161711/download",
+          "filename": "nged_south_west_cdcm_model_2025.xlsx",
+          "output_path": "duos_nged_data/south_west/nged_south_west_cdcm_model_2025.xlsx",
+          "status": "failed",
+          "error": "404 Client Error: Not Found for url: https://www.nationalgrid.com/electricity-distribution/document/161711/download"
+        },
+        {
+          "url": "https://www.nationalgrid.com/electricity-distribution/document/161721/download",
+          "filename": "nged_south_west_schedule_of_charges_2026.xlsx",
+          "output_path": "duos_nged_data/south_west/nged_south_west_schedule_of_charges_2026.xlsx",
+          "status": "failed",
+          "error": "404 Client Error: Not Found for url: https://www.nationalgrid.com/electricity-distribution/document/161721/download"
+        },
+        {
+          "url": "https://www.nationalgrid.com/electricity-distribution/document/161731/download",
+          "filename": "nged_south_west_cdcm_model_2026.xlsx",
+          "output_path": "duos_nged_data/south_west/nged_south_west_cdcm_model_2026.xlsx",
+          "status": "failed",
+          "error": "404 Client Error: Not Found for url: https://www.nationalgrid.com/electricity-distribution/document/161731/download"
+        }
+      ]
+    }
+  },
+  "total_files": 31,
+  "downloaded": 11,
+  "failed": 20
+}

@@ -1,0 +1,25 @@
+Tariff name,Open LLFCs,PCs,"Red/black unit charge
+p/kWh","Amber/yellow unit charge
+p/kWh","Green unit charge
+p/kWh",Fixed charge p/MPAN/day,Capacity charge p/kVA/day,"Exceeded capacity charge
+p/kVA/day","Reactive power charge
+p/kVArh",Closed LLFCs
+Domestic Aggregated,"011, 031, 041, 051, 061, 441, 451, 511, 531, 821, 851","0, 1, 2 or 5-8",9.18,1.881,0.686,4.31,,,,
+Domestic Aggregated (related MPAN),"081, 581",2,9.18,1.881,0.686,,,,,
+Non-Domestic Aggregated,"131,144,204,274, 161,154,214,284, 171,164,224,294, 191,174,234,304, 241,184,344,354, 242,182,342,352, 431,34,44,54, 432,32,42,52, 481, 482, 751, 752, 631,4,14,24, 661, 831, 861,194,264,324,483,183,343,353,753,33,43,53,314,364,374,414,424","0, 3, 4 or 5-8",10.249,2.052,0.711,4.3,,,,
+Non-Domestic Aggregated (related MPAN),"091, 591",4,10.249,2.052,0.711,,,,,
+LV Site Specific,"64,801,74,84,94,104,841,114,124,134",0,7.765,1.565,0.642,17.11,3.26,4.91,0.214,
+LV Sub Site Specific,"62,802,72,82,92, 102,842,112,122,132",0,6.253,1.269,0.6,54.94,3.34,5.76,0.167,
+HV Site Specific,"63,803,73,83,93, 103,843,113,123,133",0,4.504,0.948,0.554,120.65,3.19,5.87,0.112,
+LV Site Specific Storage Import,"461, 471",0,7.283,1.083,0.159,17.11,3.26,4.91,0.214,
+LV Sub Site Specific Storage Import,"462, 472",0,5.771,0.787,0.117,54.94,3.34,5.76,0.167,
+HV Site Specific Storage Import,"463, 473",0,4.022,0.465,0.071,120.65,3.19,5.87,0.112,
+Unmetered Supplies,"761, 771, 781, 791, 811","0, 1 or 8",17.522,3.604,2.714,,,,,
+LV Generation Aggregated,"901, 961",0 or 8,-6.774,-1.089,-0.159,0.0,,,,
+LV Sub Generation Aggregated,962,0 or 8,-5.599,-0.847,-0.124,0.0,,,,
+LV Generation Site Specific,"971, 981",0,-6.774,-1.089,-0.159,0.0,,,0.163,
+LV Generation Site Specific no RP charge,"934, 944",0,-6.774,-1.089,-0.159,0.0,,,,
+LV Sub Generation Site Specific,"972, 982",0,-5.599,-0.847,-0.124,0.0,,,0.142,
+LV Sub Generation Site Specific no RP charge,"932, 942",0,-5.599,-0.847,-0.124,0.0,,,,
+HV Generation Site Specific,"973, 983",0,-4.252,-0.558,-0.084,8.11,,,0.117,
+HV Generation Site Specific no RP charge,"933, 943",0,-4.252,-0.558,-0.084,8.11,,,,

@@ -1,18 +1,170 @@
 {
-  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
-  "python.analysis.typeCheckingMode": "basic",
-  "editor.formatOnSave": true,
-  "editor.codeActionsOnSave": {
-    "source.organizeImports": "explicit"
+  // Performance optimizations - Aggressively disable extensions
+  "extensions.autoUpdate": false,
+  "extensions.autoCheckUpdates": false,
+  "extensions.ignoreRecommendations": true,
+  "extensions.closeExtensionDetailsOnViewChange": true,
+  "extensions.webWorker": false,
+  
+  // Disable built-in extensions for maximum performance
+  "html.suggest.html5": false,
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
+  "javascript.validate.enable": false,
+  "typescript.validate.enable": false,
+  
+  // Disable automatic extension activation for better performance
+  "workbench.startupEditor": "none",
+  "workbench.iconTheme": null,
+  "workbench.colorTheme": "Default Dark+",
+  "git.autoRepositoryDetection": false,
+  "git.enableSmartCommit": false,
+  "git.autofetch": false,
+  "git.decorations.enabled": false,
+  
+  // Disable resource-heavy language features
+  "python.defaultInterpreterPath": "",
+  "python.languageServer": "None",
+  "jupyter.askForKernelRestart": false,
+  "remote.SSH.connectTimeout": 5,
+  
+  // File watching optimizations
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/**": true,
+    "**/tmp/**": true,
+    "**/dist/**": true,
+    "**/build/**": true,
+    "**/.next/**": true,
+    "**/.nuxt/**": true,
+    "**/coverage/**": true
   },
-  "python.formatting.provider": "black",
-  "isort.args": [
-    "--profile",
-    "black"
-  ],
-  "workbench.startupEditor": "readme",
-  "chat.promptFiles": true,
-  "chat.promptFilesLocations": {
-    ".github/prompts": true
-  }
+  
+  // Search and indexing optimizations
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/*.code-search": true,
+    "**/dist/**": true,
+    "**/build/**": true,
+    "**/.git": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true
+  },
+  
+  // TypeScript/JavaScript performance
+  "typescript.preferences.includePackageJsonAutoImports": "off",
+  "typescript.disableAutomaticTypeAcquisition": true,
+  "typescript.suggest.autoImports": false,
+  "javascript.suggest.autoImports": false,
+  
+  // Editor performance
+  "editor.semanticHighlighting.enabled": false,
+  "editor.hover.delay": 1000,
+  "editor.quickSuggestions": {
+    "other": false,
+    "comments": false,
+    "strings": false
+  },
+  
+  // Disable telemetry and unnecessary features
+  "telemetry.telemetryLevel": "off",
+  "workbench.enableExperiments": false,
+  "workbench.settings.enableNaturalLanguageSearch": false,
+  
+  // Memory management
+  "typescript.preferences.maxTsServerMemory": 2048,
+  "files.hotExit": "off",
+  
+  // Additional performance optimizations
+  "editor.minimap.enabled": false,
+  "editor.codeLens": false,
+  "editor.lightbulb.enabled": "off",
+  "editor.parameterHints.enabled": false,
+  "editor.acceptSuggestionOnEnter": "off",
+  "editor.tabCompletion": "off",
+  "editor.wordBasedSuggestions": "off",
+  "editor.occurrencesHighlight": "off",
+  "editor.selectionHighlight": false,
+  "editor.renderLineHighlight": "none",
+  "editor.renderWhitespace": "none",
+  "editor.glyphMargin": false,
+  "editor.folding": false,
+  "editor.scrollBeyondLastLine": false,
+  
+  // Breadcrumbs and outline
+  "breadcrumbs.enabled": false,
+  "outline.showVariables": false,
+  "outline.showFunctions": false,
+  "outline.showClasses": false,
+  "outline.showMethods": false,
+  
+  // Problems and diagnostics
+  "problems.decorations.enabled": false,
+  "problems.showCurrentInStatus": false,
+  
+  // SCM (Source Control) optimizations
+  "scm.diffDecorations": "none",
+  "scm.alwaysShowProviders": false,
+  
+  // Window and UI optimizations
+  "window.titleBarStyle": "native",
+  "window.menuBarVisibility": "hidden",
+  "workbench.statusBar.visible": false,
+  "workbench.tips.enabled": false,
+  
+  // Terminal optimizations - CRITICAL FOR STABILITY
+  "terminal.integrated.allowChords": false,
+  "terminal.integrated.allowMnemonics": false,
+  "terminal.integrated.enableVisualBell": false,
+  "accessibility.signals.terminalBell": { "sound": "off" },
+  "terminal.integrated.gpuAcceleration": "off",
+  "terminal.integrated.scrollback": 100000,
+  "terminal.integrated.fastScrollSensitivity": 5,
+  "terminal.integrated.smoothScrolling": false,
+  "terminal.integrated.focusAfterRun": "none",
+  "terminal.integrated.maxInstanceCount": 10,
+  "terminal.external.osxExec": "iTerm.app",
+  "terminal.integrated.persistentSessionReviveProcess": "never",
+  "terminal.integrated.enablePersistentSessions": false,
+  
+  // Update and security
+  "update.mode": "none",
+  "update.enableWindowsBackgroundUpdates": false,
+  "security.workspace.trust.enabled": false,
+  "security.workspace.trust.untrustedFiles": "open",
+  
+  // Language-specific optimizations (consolidated)
+  "emmet.showExpandedAbbreviation": "never",
+  "emmet.showSuggestionsAsSnippets": false,
+  "css.suggest.insertMode": "replace",
+  "json.suggest.statusBar": false,
+  
+  // NPM and package management
+  "npm.fetchOnlinePackageInfo": false,
+  "npm.autoDetect": "off",
+  "npm.enableRunFromFolder": false,
+  
+  // Additional file exclusions
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/.pytest_cache": true,
+    "**/.coverage": true,
+    "**/coverage": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/.vscode/launch.json": false,
+    "**/.vscode/tasks.json": false,
+    "**/.vscode/settings.json": false
+  },
+  
+  // Zen mode optimizations
+  "zenMode.hideActivityBar": true,
+  "zenMode.hideStatusBar": true,
+  "zenMode.hideLineNumbers": true,
+  "zenMode.centerLayout": false,
+  "workbench.activityBar.location": "hidden",
+  "zenMode.showTabs": "single"
 }

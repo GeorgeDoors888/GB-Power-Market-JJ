@@ -1,0 +1,60 @@
+2025-09-21 17:39:33,681 - INFO - Using Google Sheets DataTracker
+2025-09-21 17:39:33,688 - INFO - Starting continuous update mode, running every 15 minutes
+2025-09-21 17:39:33,688 - INFO - 🚀 Starting update at 2025-09-21 17:39:33 UTC
+2025-09-21 17:39:33,691 - WARNING - No service account credentials found. Using default ADC.
+2025-09-21 17:39:35,923 - ERROR - Failed to setup Google Sheets: 
+2025-09-21 17:39:35,923 - WARNING - Failed to initialize Google Sheets DataTracker: 
+2025-09-21 17:39:35,937 - INFO - Using Local File DataTracker as fallback
+2025-09-21 17:39:35,939 - INFO - Updating high-priority Elexon data...
+2025-09-21 17:39:35,939 - INFO - Running command: python /Users/georgemajor/jibber-jabber 24 august 2025 big bop/ingest_elexon_fixed.py --start 2025-09-21 16:19:35 --end 2025-09-21 16:34:35 --only FREQ,FUELINST,BOD,BOALF,COSTS,DISBSAD --dry-run --log-level INFO --use-staging-table --monitor-progress
+2025-09-21 17:40:13,206 - INFO - Elexon update completed in 37.3 seconds
+2025-09-21 17:40:13,206 - INFO - Updating standard-priority Elexon data...
+2025-09-21 17:40:13,206 - INFO - Running command: python /Users/georgemajor/jibber-jabber 24 august 2025 big bop/ingest_elexon_fixed.py --start 2025-09-21 16:20:13 --end 2025-09-21 16:35:13 --only MELS,MILS,QAS,NETBSAD,PN,QPN --dry-run --log-level INFO --use-staging-table --monitor-progress
+2025-09-21 17:40:32,828 - INFO - Elexon update completed in 19.6 seconds
+2025-09-21 17:40:32,829 - INFO - Updating REMIT data...
+2025-09-21 17:40:32,829 - INFO - Running command: python /Users/georgemajor/jibber-jabber 24 august 2025 big bop/ingest_remit.py --check-only
+2025-09-21 17:40:36,318 - INFO - REMIT update completed in 3.5 seconds
+2025-09-21 17:40:36,320 - INFO - Updating NESO data...
+2025-09-21 17:40:36,321 - WARNING - No service account credentials found. Using default ADC.
+2025-09-21 17:40:37,564 - ERROR - Failed to setup Google Sheets: 
+2025-09-21 17:40:37,564 - INFO - Falling back to direct NESO script execution
+2025-09-21 17:40:37,564 - INFO - Running command: /Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/bin/python /Users/georgemajor/jibber-jabber 24 august 2025 big bop/neso_data_updater.py --direct-run --dry-run
+2025-09-21 17:40:40,019 - ERROR - NESO direct update failed: 2025-09-21 17:40:38,454 - WARNING - No service account credentials found. Using default ADC.
+2025-09-21 17:40:39,822 - ERROR - Failed to setup Google Sheets: 
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/gspread/client.py", line 168, in open_by_key
+    spreadsheet = Spreadsheet(self.http_client, {"id": key})
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/gspread/spreadsheet.py", line 29, in __init__
+    metadata = self.fetch_sheet_metadata()
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/gspread/spreadsheet.py", line 230, in fetch_sheet_metadata
+    return self.client.fetch_sheet_metadata(self.id, params=params)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/gspread/http_client.py", line 305, in fetch_sheet_metadata
+    r = self.request("get", url, params=params)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/gspread/http_client.py", line 128, in request
+    raise APIError(response)
+gspread.exceptions.APIError: APIError: [403]: Request had insufficient authentication scopes.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/neso_data_updater.py", line 216, in <module>
+    main()
+    ~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/neso_data_updater.py", line 208, in main
+    updater = NESODataUpdater()
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/neso_data_updater.py", line 24, in __init__
+    self.tracker = DataTracker()
+                   ~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/automated_data_tracker.py", line 39, in __init__
+    self.setup_google_sheets()
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/automated_data_tracker.py", line 87, in setup_google_sheets
+    self.sheet = self.gc.open_by_key(SPREADSHEET_ID).worksheet(WORKSHEET_NAME)
+                 ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/gspread/client.py", line 173, in open_by_key
+    raise PermissionError from ex
+PermissionError
+
+2025-09-21 17:40:40,022 - INFO - ✅ Update completed in 66.3 seconds
+2025-09-21 17:40:40,025 - INFO - Next update scheduled for 17:55:40

@@ -1,0 +1,117 @@
+{
+  "dno": "SSEN",
+  "full_name": "Scottish & Southern Electricity Networks",
+  "areas": [
+    "SSES",
+    "SHEPD"
+  ],
+  "collection_timestamp": "2025-09-11T23:13:05.746558",
+  "discovered_sources": {
+    "data_portal": {
+      "status": "accessible",
+      "data_links": [
+        {
+          "url": "/usecases/datauser.md",
+          "text": "ResearcherI want to conduct research into the network to improve our knowledge, develop new products or help understand my usage.",
+          "type": "data_file"
+        },
+        {
+          "url": "/@ssen-distribution/ssen-substation-data",
+          "text": "SSEN Substation DataDetails of SSEN Substations, their type and identification and location coordinates for both SEPD and SHEPD licence areas. Derived from the Shapefile data and presented separately here for convenience.",
+          "type": "data_file"
+        },
+        {
+          "url": "https://data.ssen.co.uk/@ssen-distribution/ssen-distribution-data-roadmap",
+          "text": "SSEN Distribution Data Roadmap",
+          "type": "data_file"
+        },
+        {
+          "url": "https://ckan-prod.sse.datopian.com/catalog.jsonld",
+          "text": "JSON-LD",
+          "type": "data_file"
+        }
+      ]
+    }
+  },
+  "duos_charges": [
+    {
+      "areas": [
+        "SSES",
+        "SHEPD"
+      ],
+      "tariff_types": [
+        "Low Voltage",
+        "High Voltage",
+        "Extra High Voltage"
+      ],
+      "charge_categories": [
+        "Capacity",
+        "Fixed",
+        "Unit Rate"
+      ],
+      "collection_timestamp": "2025-09-11T23:13:07.495300",
+      "data_source": "SSEN charges portal",
+      "status": "manual_collection_required",
+      "note": "Direct charge data not found in catalog - requires manual extraction"
+    }
+  ],
+  "network_data": [
+    {
+      "data_type": "substation_data",
+      "download_url": "https://ckan-prod.sse.datopian.com/dataset/ssen-substation-data.jsonld",
+      "description": "JSON-LD",
+      "areas": [
+        "SSES",
+        "SHEPD"
+      ],
+      "collection_timestamp": "2025-09-11T23:13:08.013748",
+      "source": "SSEN substation portal"
+    },
+    {
+      "data_type": "substation_data",
+      "download_url": "https://ckan-prod.sse.datopian.com/catalog.jsonld",
+      "description": "JSON-LD",
+      "areas": [
+        "SSES",
+        "SHEPD"
+      ],
+      "collection_timestamp": "2025-09-11T23:13:08.013762",
+      "source": "SSEN substation portal"
+    }
+  ],
+  "generation_data": {
+    "areas": [
+      "SSES",
+      "SHEPD"
+    ],
+    "generation_types": [
+      "Solar",
+      "Wind",
+      "Storage",
+      "Other"
+    ],
+    "connection_types": [
+      "G98",
+      "G99"
+    ],
+    "queue_status": [
+      "Connected",
+      "In Progress",
+      "Waiting"
+    ],
+    "collection_timestamp": "2025-09-11T23:13:08.014033",
+    "data_source": "SSEN generation portal",
+    "status": "template_structure"
+  },
+  "collection_summary": {
+    "total_data_types": 3,
+    "successful_collections": 3,
+    "status": "collection_framework_ready",
+    "next_steps": [
+      "Implement actual data extraction from discovered sources",
+      "Parse CSV/Excel files found in data portal",
+      "Map data to BigQuery schema",
+      "Test data upload pipeline"
+    ]
+  }
+}

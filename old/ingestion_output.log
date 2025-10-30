@@ -1,0 +1,67 @@
+Script starting...
+Starting test ingestion...
+2025-09-18 16:23:06,622 [INFO] 
+================================================================================
+Testing period: 2022-06-01 to 2022-06-08
+================================================================================
+2025-09-18 16:23:06,622 [WARNING] GOOGLE_APPLICATION_CREDENTIALS environment variable not set
+2025-09-18 16:23:06,622 [INFO] Running command with Python: /Users/georgemajor/jibber-jabber 24 august 2025 big bop/venv/bin/python3
+2025-09-18 16:23:06,622 [INFO] Command args: /Users/georgemajor/jibber-jabber 24 august 2025 big bop/ingest_elexon_fixed.py --start 2022-06-01 --end 2022-06-08 --only BOD,FREQ,FUELINST,MID --use-staging-table --monitor-progress --data-dir /Users/georgemajor/jibber-jabber 24 august 2025 big bop/test_data --log-level INFO --sandbox-mode=false
+2025-09-18 16:23:07,686 [ERROR] Command failed with code 2
+2025-09-18 16:23:07,686 [ERROR] Output: 
+2025-09-18 16:23:07,686 [ERROR] Stderr: usage: ingest_elexon_fixed.py [-h] --start START --end END [--only ONLY]
+                              [--project PROJECT] [--dataset DATASET]
+                              [--log-level {DEBUG,INFO,WARNING,ERROR}]
+                              [--log-file LOG_FILE] [--overwrite]
+                              [--skip-existing] [--include-offline]
+                              [--bm-units BM_UNITS] [--batch-size BATCH_SIZE]
+                              [--flush-seconds FLUSH_SECONDS]
+                              [--bq-load-timeout BQ_LOAD_TIMEOUT]
+                              [--use-staging-table] [--data-dir DATA_DIR]
+                              [--dry-run] [--monitor-progress]
+ingest_elexon_fixed.py: error: unrecognized arguments: --sandbox-mode=false
+
+2025-09-18 16:23:07,686 [ERROR] Test failed for period 2022-06-01 to 2022-06-08
+2025-09-18 16:28:07,698 [INFO] 
+================================================================================
+Testing period: 2023-06-01 to 2023-06-08
+================================================================================
+2025-09-18 16:28:07,700 [INFO] Running command with Python: /Users/georgemajor/jibber-jabber 24 august 2025 big bop/venv/bin/python3
+2025-09-18 16:28:07,700 [INFO] Command args: /Users/georgemajor/jibber-jabber 24 august 2025 big bop/ingest_elexon_fixed.py --start 2023-06-01 --end 2023-06-08 --only BOD,FREQ,FUELINST,MID --use-staging-table --monitor-progress --data-dir /Users/georgemajor/jibber-jabber 24 august 2025 big bop/test_data --log-level INFO --sandbox-mode=false
+2025-09-18 16:28:08,968 [ERROR] Command failed with code 2
+2025-09-18 16:28:08,969 [ERROR] Output: 
+2025-09-18 16:28:08,969 [ERROR] Stderr: usage: ingest_elexon_fixed.py [-h] --start START --end END [--only ONLY]
+                              [--project PROJECT] [--dataset DATASET]
+                              [--log-level {DEBUG,INFO,WARNING,ERROR}]
+                              [--log-file LOG_FILE] [--overwrite]
+                              [--skip-existing] [--include-offline]
+                              [--bm-units BM_UNITS] [--batch-size BATCH_SIZE]
+                              [--flush-seconds FLUSH_SECONDS]
+                              [--bq-load-timeout BQ_LOAD_TIMEOUT]
+                              [--use-staging-table] [--data-dir DATA_DIR]
+                              [--dry-run] [--monitor-progress]
+ingest_elexon_fixed.py: error: unrecognized arguments: --sandbox-mode=false
+
+2025-09-18 16:28:08,969 [ERROR] Test failed for period 2023-06-01 to 2023-06-08
+2025-09-18 16:33:08,982 [INFO] 
+================================================================================
+Testing period: 2024-06-01 to 2024-06-08
+================================================================================
+2025-09-18 16:33:08,983 [INFO] Running command with Python: /Users/georgemajor/jibber-jabber 24 august 2025 big bop/venv/bin/python3
+2025-09-18 16:33:08,983 [INFO] Command args: /Users/georgemajor/jibber-jabber 24 august 2025 big bop/ingest_elexon_fixed.py --start 2024-06-01 --end 2024-06-08 --only BOD,FREQ,FUELINST,MID --use-staging-table --monitor-progress --data-dir /Users/georgemajor/jibber-jabber 24 august 2025 big bop/test_data --log-level INFO --sandbox-mode=false
+2025-09-18 16:33:10,334 [ERROR] Command failed with code 2
+2025-09-18 16:33:10,334 [ERROR] Output: 
+2025-09-18 16:33:10,334 [ERROR] Stderr: usage: ingest_elexon_fixed.py [-h] --start START --end END [--only ONLY]
+                              [--project PROJECT] [--dataset DATASET]
+                              [--log-level {DEBUG,INFO,WARNING,ERROR}]
+                              [--log-file LOG_FILE] [--overwrite]
+                              [--skip-existing] [--include-offline]
+                              [--bm-units BM_UNITS] [--batch-size BATCH_SIZE]
+                              [--flush-seconds FLUSH_SECONDS]
+                              [--bq-load-timeout BQ_LOAD_TIMEOUT]
+                              [--use-staging-table] [--data-dir DATA_DIR]
+                              [--dry-run] [--monitor-progress]
+ingest_elexon_fixed.py: error: unrecognized arguments: --sandbox-mode=false
+
+2025-09-18 16:33:10,334 [ERROR] Test failed for period 2024-06-01 to 2024-06-08
+Script finished.

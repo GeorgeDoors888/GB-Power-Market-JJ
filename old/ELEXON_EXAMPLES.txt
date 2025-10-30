@@ -1,0 +1,557 @@
+Elexon Data Query Examples and Use Cases
+====================================
+Date: September 6, 2025
+
+1. Basic Queries
+--------------
+
+A. Get Latest Generation Data
+---------------------------
+```sql
+WITH LatestVersions AS (
+    SELECT
+        settlementDate,
+        settlementPeriod,
+        fuelType,
+        generation,
+        ROW_NUMBER() OVER (
+            PARTITION BY settlementDate, settlementPeriod, fuelType
+            ORDER BY _ingested_utc DESC
+        ) as rn
+    FROM `jibber-jabber-knowledge.uk_energy_insights.bmrs_fuelinst`
+    WHERE DATE(settlementDate) = CURRENT_DATE()
+)
+SELECT
+    settlementDate,
+    settlementPeriod,
+    fuelType,
+    generation
+FROM LatestVersions
+WHERE rn = 1
+ORDER BY settlementPeriod;
+```
+
+B. Daily Generation Summary
+-------------------------
+```sql
+WITH LatestVersions AS (
+    SELECT
+        settlementDate,
+        settlementPeriod,
+        fuelType,
+        generation,
+        ROW_NUMBER() OVER (
+            PARTITION BY settlementDate, settlementPeriod, fuelType
+            ORDER BY _ingested_utc DESC
+        ) as rn
+    FROM `jibber-jabber-knowledge.uk_energy_insights.bmrs_fuelinst`
+)
+SELECT
+    DATE(settlementDate) as date,
+    fuelType,
+    SUM(CASE WHEN rn = 1 THEN generation ELSE 0 END) as total_generation,
+    COUNT(DISTINCT CASE WHEN rn = 1 THEN settlementPeriod END) as periods_reported
+FROM LatestVersions
+GROUP BY date, fuelType
+ORDER BY date DESC, total_generation DESC;
+```
+
+2. Advanced Analysis
+------------------
+
+A. Generation Mix Analysis
+-------------------------
+```sql
+WITH LatestVersions AS (
+    SELECT
+        settlementDate,
+        settlementPeriod,
+        fuelType,
+        generation,
+        ROW_NUMBER() OVER (
+            PARTITION BY settlementDate, settlementPeriod, fuelType
+            ORDER BY _ingested_utc DESC
+        ) as rn
+    FROM `jibber-jabber-knowledge.uk_energy_insights.bmrs_fuelinst`
+    WHERE DATE(settlementDate) = CURRENT_DATE()
+)
+SELECT
+    settlementPeriod,
+    fuelType,
+    generation,
+    ROUND(100.0 * generation / SUM(generation) OVER (PARTITION BY settlementPeriod), 2) as percentage_of_total
+FROM LatestVersions
+WHERE rn = 1
+ORDER BY settlementPeriod, percentage_of_total DESC;
+```
+
+B. Peak Generation Analysis
+-------------------------
+```sql
+WITH LatestVersions AS (
+    SELECT
+        settlementDate,
+        settlementPeriod,
+        fuelType,
+        generation,
+        ROW_NUMBER() OVER (
+            PARTITION BY settlementDate, settlementPeriod, fuelType
+            ORDER BY _ingested_utc DESC
+        ) as rn
+    FROM `jibber-jabber-knowledge.uk_energy_insights.bmrs_fuelinst`
+)
+SELECT
+    DATE(settlementDate) as date,
+    settlementPeriod,
+    SUM(CASE WHEN rn = 1 THEN generation ELSE 0 END) as total_generation,
+    STRING_AGG(DISTINCT CASE
+        WHEN rn = 1 THEN
+            CONCAT(fuelType, ': ', CAST(generation as STRING))
+        END, ', ') as generation_mix
+FROM LatestVersions
+GROUP BY date, settlementPeriod
+ORDER BY total_generation DESC
+LIMIT 10;
+```
+
+3. Data Quality Checks
+--------------------
+
+A. Missing Periods Check
+-----------------------
+```sql
+WITH ExpectedPeriods AS (
+    SELECT period
+    FROM UNNEST(GENERATE_ARRAY(1, 48)) as period
+),
+ActualPeriods AS (
+    SELECT DISTINCT settlementPeriod as period
+    FROM `jibber-jabber-knowledge.uk_energy_insights.bmrs_fuelinst`
+    WHERE DATE(settlementDate) = CURRENT_DATE()
+)
+SELECT
+    e.period as missing_period
+FROM ExpectedPeriods e
+LEFT JOIN ActualPeriods a
+    ON e.period = a.period
+WHERE a.period IS NULL
+ORDER BY e.period;
+```
+
+B. Duplicate Detection
+--------------------
+```sql
+SELECT
+    settlementDate,
+    settlementPeriod,
+    fuelType,
+    COUNT(*) as versions,
+    STRING_AGG(CONCAT(
+        'Generation: ', CAST(generation as STRING),
+        ' (', CAST(_ingested_utc as STRING), ')'
+    ), '\n') as all_versions
+FROM `jibber-jabber-knowledge.uk_energy_insights.bmrs_fuelinst`
+GROUP BY settlementDate, settlementPeriod, fuelType
+HAVING COUNT(*) > 1
+ORDER BY COUNT(*) DESC
+LIMIT 10;
+```
+
+4. Python Examples
+----------------
+
+A. Data Ingestion
+----------------
+```python
+from google.cloud import bigquery
+from google.oauth2 import service_account
+import pandas as pd
+from datetime import datetime, timedelta
+
+def ingest_latest_data():
+    # Create credentials
+    credentials = service_account.Credentials.from_service_account_file(
+        'jibber_jabber_key.json',
+        scopes=["https://www.googleapis.com/auth/bigquery"]
+    )
+
+    # Create client
+    client = bigquery.Client(
+        credentials=credentials,
+        project="jibber-jabber-knowledge"
+    )
+
+    # Get yesterday's date
+    yesterday = datetime.now().date() - timedelta(days=1)
+
+    # Ingest data
+    os.system(f"""
+    python ingest_elexon_fixed.py \
+        --start {yesterday.strftime('%Y-%m-%d')} \
+        --end {datetime.now().date().strftime('%Y-%m-%d')} \
+        --log-level DEBUG
+    """)
+
+if __name__ == "__main__":
+    ingest_latest_data()
+```
+
+B. Data Analysis
+---------------
+```python
+import pandas as pd
+from google.cloud import bigquery
+from google.oauth2 import service_account
+
+def analyze_generation_mix():
+    # Create credentials
+    credentials = service_account.Credentials.from_service_account_file(
+        'jibber_jabber_key.json',
+        scopes=["https://www.googleapis.com/auth/bigquery"]
+    )
+
+    # Create client
+    client = bigquery.Client(
+        credentials=credentials,
+        project="jibber-jabber-knowledge"
+    )
+
+    # Query latest data
+    query = """
+    WITH LatestVersions AS (
+        SELECT
+            settlementDate,
+            settlementPeriod,
+            fuelType,
+            generation,
+            ROW_NUMBER() OVER (
+                PARTITION BY settlementDate, settlementPeriod, fuelType
+                ORDER BY _ingested_utc DESC
+            ) as rn
+        FROM `jibber-jabber-knowledge.uk_energy_insights.bmrs_fuelinst`
+        WHERE DATE(settlementDate) = CURRENT_DATE()
+    )
+    SELECT
+        settlementPeriod,
+        fuelType,
+        generation
+    FROM LatestVersions
+    WHERE rn = 1
+    ORDER BY settlementPeriod, fuelType
+    """
+
+    # Convert to pandas DataFrame
+    df = client.query(query).to_dataframe()
+
+    # Pivot table for analysis
+    pivot_df = df.pivot(
+        index='settlementPeriod',
+        columns='fuelType',
+        values='generation'
+    ).fillna(0)
+
+    # Calculate percentages
+    total_generation = pivot_df.sum(axis=1)
+    percentage_df = pivot_df.div(total_generation, axis=0) * 100
+
+    return percentage_df
+
+if __name__ == "__main__":
+    mix_analysis = analyze_generation_mix()
+    print(mix_analysis.describe())
+```
+
+5. Data Visualization
+-------------------
+
+A. Daily Generation Profile
+--------------------------
+```python
+import plotly.graph_objects as go
+from google.cloud import bigquery
+from google.oauth2 import service_account
+
+def plot_daily_generation():
+    # [Previous credential setup code]
+
+    query = """
+    WITH LatestVersions AS (
+        SELECT
+            settlementDate,
+            settlementPeriod,
+            fuelType,
+            generation,
+            ROW_NUMBER() OVER (
+                PARTITION BY settlementDate, settlementPeriod, fuelType
+                ORDER BY _ingested_utc DESC
+            ) as rn
+        FROM `jibber-jabber-knowledge.uk_energy_insights.bmrs_fuelinst`
+        WHERE DATE(settlementDate) = CURRENT_DATE()
+        AND rn = 1
+    )
+    SELECT
+        settlementPeriod,
+        fuelType,
+        generation
+    FROM LatestVersions
+    ORDER BY settlementPeriod, fuelType
+    """
+
+    df = client.query(query).to_dataframe()
+
+    # Create stacked area chart
+    fig = go.Figure()
+
+    for fuel_type in df['fuelType'].unique():
+        fuel_data = df[df['fuelType'] == fuel_type]
+        fig.add_trace(go.Scatter(
+            x=fuel_data['settlementPeriod'],
+            y=fuel_data['generation'],
+            name=fuel_type,
+            stackgroup='one'
+        ))
+
+    fig.update_layout(
+        title='Daily Generation Mix by Settlement Period',
+        xaxis_title='Settlement Period',
+        yaxis_title='Generation (MW)',
+        showlegend=True
+    )
+
+    return fig
+
+if __name__ == "__main__":
+    fig = plot_daily_generation()
+    fig.show()
+```
+
+6. Automation Examples
+--------------------
+
+A. Scheduled Data Ingestion
+--------------------------
+```bash
+#!/bin/bash
+
+# crontab entry for hourly updates
+# 0 * * * * /path/to/update_data.sh
+
+export GOOGLE_APPLICATION_CREDENTIALS="/path/to/jibber_jabber_key.json"
+export ELEXON_API_KEY="your-key"
+
+# Get current date
+current_date=$(date +%Y-%m-%d)
+
+# Run ingestion
+python ingest_elexon_fixed.py \
+    --start ${current_date} \
+    --end ${current_date} \
+    --log-level INFO \
+    >> /path/to/logs/ingestion_$(date +%Y%m%d).log 2>&1
+```
+
+B. Data Quality Monitor
+---------------------
+```python
+#!/usr/bin/env python3
+
+import smtplib
+from email.mime.text import MIMEText
+from google.cloud import bigquery
+from google.oauth2 import service_account
+
+def check_data_quality():
+    # [Previous credential setup code]
+
+    # Check for missing periods
+    query = """
+    WITH ExpectedPeriods AS (
+        SELECT period
+        FROM UNNEST(GENERATE_ARRAY(1, 48)) as period
+    ),
+    ActualPeriods AS (
+        SELECT DISTINCT settlementPeriod as period
+        FROM `jibber-jabber-knowledge.uk_energy_insights.bmrs_fuelinst`
+        WHERE DATE(settlementDate) = CURRENT_DATE()
+    )
+    SELECT COUNT(*) as missing_count
+    FROM ExpectedPeriods e
+    LEFT JOIN ActualPeriods a
+        ON e.period = a.period
+    WHERE a.period IS NULL
+    """
+
+    results = client.query(query).result()
+    missing_count = list(results)[0].missing_count
+
+    if missing_count > 0:
+        send_alert(f"Missing {missing_count} settlement periods today!")
+
+def send_alert(message):
+    # Configure email settings
+    sender = "alerts@your-domain.com"
+    recipients = ["team@your-domain.com"]
+
+    msg = MIMEText(message)
+    msg['Subject'] = "Data Quality Alert"
+    msg['From'] = sender
+    msg['To'] = ", ".join(recipients)
+
+    # Send email
+    with smtplib.SMTP('smtp.your-domain.com') as server:
+        server.send_message(msg)
+
+if __name__ == "__main__":
+    check_data_quality()
+```
+
+7. Testing Examples
+-----------------
+
+A. Data Validation Test
+----------------------
+```python
+import unittest
+from google.cloud import bigquery
+from google.oauth2 import service_account
+
+class TestDataQuality(unittest.TestCase):
+
+    @classmethod
+    def setUpClass(cls):
+        # [Previous credential setup code]
+        pass
+
+    def test_no_negative_generation(self):
+        query = """
+        SELECT COUNT(*) as negative_count
+        FROM `jibber-jabber-knowledge.uk_energy_insights.bmrs_fuelinst`
+        WHERE generation < 0
+        """
+        results = self.client.query(query).result()
+        negative_count = list(results)[0].negative_count
+        self.assertEqual(negative_count, 0, "Found negative generation values")
+
+    def test_settlement_period_range(self):
+        query = """
+        SELECT COUNT(*) as invalid_count
+        FROM `jibber-jabber-knowledge.uk_energy_insights.bmrs_fuelinst`
+        WHERE settlementPeriod < 1 OR settlementPeriod > 48
+        """
+        results = self.client.query(query).result()
+        invalid_count = list(results)[0].invalid_count
+        self.assertEqual(invalid_count, 0, "Found invalid settlement periods")
+
+if __name__ == '__main__':
+    unittest.main()
+```
+
+8. Performance Optimization Examples
+--------------------------------
+
+A. Optimized Query Template
+--------------------------
+```python
+def get_optimized_query(start_date, end_date, fuel_types=None):
+    base_query = """
+    WITH LatestVersions AS (
+        SELECT
+            settlementDate,
+            settlementPeriod,
+            fuelType,
+            generation,
+            ROW_NUMBER() OVER (
+                PARTITION BY settlementDate, settlementPeriod, fuelType
+                ORDER BY _ingested_utc DESC
+            ) as rn
+        FROM `jibber-jabber-knowledge.uk_energy_insights.bmrs_fuelinst`
+        WHERE DATE(settlementDate) BETWEEN @start_date AND @end_date
+        {fuel_type_filter}
+    )
+    SELECT
+        settlementDate,
+        settlementPeriod,
+        fuelType,
+        generation
+    FROM LatestVersions
+    WHERE rn = 1
+    """
+
+    fuel_type_filter = ""
+    if fuel_types:
+        fuel_type_filter = f"AND fuelType IN UNNEST(@fuel_types)"
+
+    query = base_query.format(fuel_type_filter=fuel_type_filter)
+
+    query_params = [
+        bigquery.ScalarQueryParameter("start_date", "DATE", start_date),
+        bigquery.ScalarQueryParameter("end_date", "DATE", end_date),
+    ]
+
+    if fuel_types:
+        query_params.append(
+            bigquery.ArrayQueryParameter("fuel_types", "STRING", fuel_types)
+        )
+
+    job_config = bigquery.QueryJobConfig(
+        query_parameters=query_params
+    )
+
+    return query, job_config
+```
+
+9. Error Handling Examples
+------------------------
+
+A. Robust Data Ingestion
+-----------------------
+```python
+import logging
+import time
+from typing import Optional, Dict, Any
+from datetime import datetime, timedelta
+
+class ElexonIngestError(Exception):
+    pass
+
+def ingest_with_retry(
+    start_date: datetime,
+    end_date: datetime,
+    max_retries: int = 3,
+    retry_delay: int = 60
+) -> Optional[Dict[str, Any]]:
+    """
+    Ingest data with retry logic and error handling
+    """
+    retry_count = 0
+    last_error = None
+
+    while retry_count < max_retries:
+        try:
+            result = ingest_data(start_date, end_date)
+            validate_ingested_data(start_date, end_date)
+            return result
+
+        except Exception as e:
+            last_error = e
+            retry_count += 1
+            logging.error(f"Ingestion attempt {retry_count} failed: {str(e)}")
+
+            if retry_count < max_retries:
+                time.sleep(retry_delay)
+                continue
+
+    raise ElexonIngestError(f"All retries failed. Last error: {str(last_error)}")
+
+def validate_ingested_data(
+    start_date: datetime,
+    end_date: datetime
+) -> None:
+    """
+    Validate ingested data for completeness and quality
+    """
+    # [Implementation details]
+    pass
+```
+
+These examples demonstrate common use cases and best practices for working with the Elexon data.

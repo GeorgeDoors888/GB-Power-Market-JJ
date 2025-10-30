@@ -1,0 +1,85 @@
+{
+  "total_count": 93,
+  "results": [
+    {
+      "id": 16,
+      "licencearea": "South Eastern Power Networks (SPN)",
+      "gridsupplypoint": "Beddington",
+      "substation": "Selhurst 6.6kV",
+      "sitefunctionallocation": "SPN-S000000008652",
+      "fault_level_operational_restrictions": "2-Way Bar Split"
+    },
+    {
+      "id": 20,
+      "licencearea": "South Eastern Power Networks (SPN)",
+      "gridsupplypoint": "Bolney",
+      "substation": "Brighton Local 33kV",
+      "sitefunctionallocation": "SPN-S000000009907",
+      "fault_level_operational_restrictions": "Controlled Access"
+    },
+    {
+      "id": 29,
+      "licencearea": "South Eastern Power Networks (SPN)",
+      "gridsupplypoint": "Bolney",
+      "substation": "Southwick 11kV",
+      "sitefunctionallocation": "SPN-S000000008490",
+      "fault_level_operational_restrictions": "2-Way Bar Split"
+    },
+    {
+      "id": 35,
+      "licencearea": "South Eastern Power Networks (SPN)",
+      "gridsupplypoint": "Canterbury",
+      "substation": "Maidstone Grid South 11kV",
+      "sitefunctionallocation": "SPN-S000000009533",
+      "fault_level_operational_restrictions": "HV Interconnection open between [Maidstone Grid South 11kV] - [Maidstone Grid North 11kV]"
+    },
+    {
+      "id": 42,
+      "licencearea": "South Eastern Power Networks (SPN)",
+      "gridsupplypoint": "Chessington",
+      "substation": "Kingston 11kV",
+      "sitefunctionallocation": "SPN-S000000008325",
+      "fault_level_operational_restrictions": "2-Way Bar Split"
+    },
+    {
+      "id": 45,
+      "licencearea": "South Eastern Power Networks (SPN)",
+      "gridsupplypoint": "Kemsley",
+      "substation": "Sittingbourne Grid 33kV",
+      "sitefunctionallocation": "SPN-S000000009144",
+      "fault_level_operational_restrictions": "GT3 on hot stand-by"
+    },
+    {
+      "id": 71,
+      "licencearea": "Eastern Power Networks (EPN)",
+      "gridsupplypoint": "Brimsdown",
+      "substation": "Brimsdown Grid 132kV",
+      "sitefunctionallocation": "EPN-S0000000C7084",
+      "fault_level_operational_restrictions": "SGT4 on hot standby"
+    },
+    {
+      "id": 84,
+      "licencearea": "Eastern Power Networks (EPN)",
+      "gridsupplypoint": "Sundon",
+      "substation": "Chaul End Primary 11kV",
+      "sitefunctionallocation": "EPN-S0000000H8072",
+      "fault_level_operational_restrictions": "2-Way Bar Split"
+    },
+    {
+      "id": 4,
+      "licencearea": "London Power Networks (LPN)",
+      "gridsupplypoint": "Brimsdown",
+      "substation": "Brimsdown South 132/11KV",
+      "sitefunctionallocation": null,
+      "fault_level_operational_restrictions": "2-way Bar Split"
+    },
+    {
+      "id": 43,
+      "licencearea": "South Eastern Power Networks (SPN)",
+      "gridsupplypoint": "Hurst",
+      "substation": "Orpington 11kV",
+      "sitefunctionallocation": "SPN-S000000008367",
+      "fault_level_operational_restrictions": "2-Way Bar Split"
+    }
+  ]
+}

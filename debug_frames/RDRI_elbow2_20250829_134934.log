@@ -1,0 +1,12 @@
+Dataset: RDRI
+Timestamp: 20250829_134934
+Original Exception: Error converting Pandas column with name: "elbow2" and datatype: "float64" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+
+--- Analysis for column: elbow2 ---
+Column Dtype: float64
+
+Value types in this column:
+elbow2
+<class 'float'>    52
+
+No non-scalar values detected in this column.

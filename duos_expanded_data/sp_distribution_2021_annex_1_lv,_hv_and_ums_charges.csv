@@ -1,0 +1,25 @@
+Tariff name,Open LLFCs,PCs,"Red/black unit charge
+p/kWh","Amber/yellow unit charge
+p/kWh","Green unit charge
+p/kWh",Fixed charge p/MPAN/day,Capacity charge p/kVA/day,"Exceeded capacity charge
+p/kVA/day","Reactive power charge
+p/kVArh",Closed LLFCs
+Domestic Aggregated,"100, 101, 110, 111, 114, 115, 118, 119, 120, 121, 160, 161, 162, 163, 180","0, 1 or 2",10.155,2.03,1.17,4.76,,,,
+Domestic Aggregated (related MPAN),"112, 113, 116, 117, 132, 133, 136, 137, 164, 165, 166",2,10.155,2.03,1.17,,,,,"130, 134, 135"
+Non-Domestic Aggregated,"201, 204, 221, 224, 260, 280, D00, D01, D02, D03, D04, F00, F01, F02, F03, F04","0, 3, 4 or 5-8",11.609,2.173,1.174,6.04,,,,"200, 202, 203, 205, 220, 222, 400, 401, 402, 404"
+Non-Domestic Aggregated (related MPAN),"225, 240, 241, 301, 302",4,11.609,2.173,1.174,,,,,"223, 242, 243, 244, 245, 246"
+LV Site Specific,"500, 504, G00, G01, G02, G03, G04, H00, H01, H02, H03, H04",0,8.181,1.813,1.163,23.42,2.5,3.69,0.235,
+LV Sub Site Specific,"506, 507, K00, K01, K02, K03, K04, L00, L01, L02, L03, L04",0,5.309,1.501,1.154,8.39,4.51,5.14,0.137,
+HV Site Specific,"501, 505, M00, M01, M02, M03, M04, N00, N01, N02, N03, N04",0,4.301,1.4,1.151,124.35,4.96,6.12,0.102,
+LV Site Specific Storage Import,502,0,7.034,0.666,0.016,23.42,2.5,3.69,0.235,
+LV Sub Site Specific Storage Import,508,0,4.162,0.354,0.007,8.39,4.51,5.14,0.137,
+HV Site Specific Storage Import,503,0,3.153,0.253,0.004,124.35,4.96,6.12,0.102,
+Unmetered Supplies,"900, 901, 902, 903, 910","0, 1 or 8",22.728,2.342,1.596,,,,,"904, 905, 906, 907, 908, 909"
+LV Generation Aggregated,"781, 782, 783, 784, 785",0,-6.441,-0.631,-0.016,,,,,
+LV Sub Generation Aggregated,602,0,-5.689,-0.548,-0.014,,,,,
+LV Generation Site Specific,"603, 604, 607, 608",0,-6.441,-0.631,-0.016,,,,0.203,
+LV Generation Site Specific no RP charge,"794, 795",0,-6.441,-0.631,-0.016,,,,,
+LV Sub Generation Site Specific,"609, 610",0,-5.689,-0.548,-0.014,,,,0.182,
+LV Sub Generation Site Specific no RP charge,"796, 797",0,-5.689,-0.548,-0.014,,,,,
+HV Generation Site Specific,"605, 606, 611, 612",0,-3.733,-0.316,-0.006,90.67,,,0.156,
+HV Generation Site Specific no RP charge,"798, 799",0,-3.733,-0.316,-0.006,90.67,,,,

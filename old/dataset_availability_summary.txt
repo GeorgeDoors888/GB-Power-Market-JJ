@@ -1,0 +1,94 @@
+Dataset Availability Summary (Based on a 1-hour sample from June 1st each year)
+================================================================================
+
+Unavailable Datasets for 2022:
+-----------------------------
+- B1610
+- B1630
+- B1770
+- DEMAND_FORECAST
+- INTBPT
+- INTERCONNECTOR_FLOWS
+- MARKET_INDEX_PRICES
+- MDP
+- MDV
+- MIP
+- MNZT
+- MZT
+- NDZ
+- NTB
+- NTO
+- RDRE
+- RDRI
+- RURI
+- SIL
+- STOR
+- SURPLUS_MARGIN
+- WIND
+- WIND_SOLAR_GEN
+
+Unavailable Datasets for 2023:
+-----------------------------
+- B1610
+- B1630
+- B1770
+- DEMAND_FORECAST
+- INTBPT
+- INTERCONNECTOR_FLOWS
+- MARKET_INDEX_PRICES
+- MDP
+- MDV
+- MIP
+- MNZT
+- NDZ
+- RDRI
+- RURI
+- SIL
+- STOR
+- SURPLUS_MARGIN
+- WIND
+- WIND_SOLAR_GEN
+
+Unavailable Datasets for 2024:
+-----------------------------
+- B1610
+- B1630
+- B1770
+- DEMAND_FORECAST
+- INTBPT
+- INTERCONNECTOR_FLOWS
+- MARKET_INDEX_PRICES
+- MDP
+- MDV
+- MIP
+- RDRE
+- RDRI
+- RURI
+- SIL
+- STOR
+- SURPLUS_MARGIN
+- WIND
+- WIND_SOLAR_GEN
+
+Unavailable Datasets for 2025:
+-----------------------------
+- B1610
+- B1630
+- B1770
+- DEMAND_FORECAST
+- INTBPT
+- INTERCONNECTOR_FLOWS
+- MARKET_INDEX_PRICES
+- MDP
+- MDV
+- MIP
+- MNZT
+- NTB
+- NTO
+- RDRE
+- RDRI
+- RURI
+- STOR
+- SURPLUS_MARGIN
+- WIND
+- WIND_SOLAR_GEN

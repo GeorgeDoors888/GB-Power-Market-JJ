@@ -1,0 +1,10 @@
+DNO_Name,Files_Count,Years_Covered,Band_Distribution
+Electricity North West,7,"2018, 2020, 2021, 2022, 2023, 2025, 2026","RED: 31, AMBER: 15, GREEN: 32"
+National Grid Electricity Distribution – East Midlands (EMID),28,"2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026","RED: 79, AMBER: 6, GREEN: 80"
+National Grid Electricity Distribution – South Wales (SWALES),14,"2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026","RED: 52, AMBER: 0, GREEN: 36"
+National Grid Electricity Distribution – South West (SWEST),14,"2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026","RED: 52, AMBER: 0, GREEN: 34"
+Northern Powergrid (North East),14,"2023, 2024, 2025, 2026","RED: 70, AMBER: 38, GREEN: 50"
+Northern Powergrid (Yorkshire),15,"2017, 2019, 2023, 2024, 2025, 2026","RED: 69, AMBER: 31, GREEN: 53"
+Scottish Hydro Electric Power Distribution (SHEPD),33,"2020, 2021, 2022, 2023, 2024, 2025, 2026","RED: 145, AMBER: 58, GREEN: 127"
+Southern Electric Power Distribution (SEPD),27,"2020, 2021, 2022, 2023, 2024, 2025, 2026","RED: 336, AMBER: 100, GREEN: 314"
+Unknown,7,"2020, 2022, 2023, 2026","RED: 30, AMBER: 14, GREEN: 22"

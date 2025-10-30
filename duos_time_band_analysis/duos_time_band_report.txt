@@ -1,0 +1,109 @@
+DUoS TIME BAND ANALYSIS BY DNO
+==================================================
+
+Analysis Date: 2025-09-14 15:34:01
+
+This report provides a detailed breakdown of Distribution Use of System (DUoS) charges
+for each Distribution Network Operator (DNO), showing the time periods for Red, Amber
+and Green bands and the corresponding rates in p/kWh.
+
+
+SP Manweb (MPAN 13)
+--------------------------------------------------
+
+TIME PERIOD DEFINITIONS:
+  RED: equal to 100 fixed inputs powerfactor power factor, equal to 0.95 fixed inputs ten equal to 10 fixed inputs thousand equal to 1,000 fixed inputs million equal to 1,000,000 fixed inputs end of sheet
+  AMBER: Typically weekdays 07:00-16:00 and 19:00-23:00 (shoulder hours)
+  GREEN: Typically weekdays 23:00-07:00 and all weekend (off-peak hours)
+
+RATES BY YEAR:
+
+  2020:
+    RED: No data available
+    AMBER: No data available
+    GREEN: No data available
+
+  2021:
+    RED: No data available
+    AMBER: No data available
+    GREEN: No data available
+
+  2022:
+    RED: No data available
+    AMBER: No data available
+    GREEN: No data available
+
+  2024:
+    RED: No data available
+    AMBER: No data available
+    GREEN: No data available
+
+  2025:
+    RED: No data available
+    AMBER: No data available
+    GREEN: No data available
+
+  2026:
+    RED: No data available
+    AMBER: No data available
+    GREEN: No data available
+
+SSEN Hydro (MPAN 17)
+--------------------------------------------------
+
+TIME PERIOD DEFINITIONS:
+  RED: properties time periods
+  AMBER: Typically weekdays 07:00-16:00 and 19:00-23:00 (shoulder hours)
+  GREEN: band black time band yellow time band
+
+RATES BY YEAR:
+
+  2025:
+    RED: -7.9340 to 27.0110 p/kWh (avg: 4.4741)
+      Sample values: ['11.5520', '11.5520', '12.8980', '12.8980', '12.8980']
+    AMBER: -2.8360 to 7.5690 p/kWh (avg: 1.4623)
+      Sample values: ['4.1290', '4.1290', '4.6100', '4.6100', '4.6100']
+    GREEN: -0.5750 to 5.4110 p/kWh (avg: 0.4628)
+      Sample values: ['0.8360', '0.8360', '0.9340', '0.9340', '0.9340']
+
+  2026:
+    RED: -8.3970 to 27.6630 p/kWh (avg: 4.4674)
+      Sample values: ['11.4470', '11.4470', '13.8420', '13.8420', '13.8420']
+    AMBER: -2.9290 to 8.9700 p/kWh (avg: 1.3508)
+      Sample values: ['3.9930', '3.9930', '4.8290', '4.8290', '4.8290']
+    GREEN: -0.6290 to 6.8460 p/kWh (avg: 0.4062)
+      Sample values: ['0.8570', '0.8570', '1.0370', '1.0370', '1.0370']
+
+SSEN Southern (MPAN 20)
+--------------------------------------------------
+
+TIME PERIOD DEFINITIONS:
+  RED: properties time periods
+  AMBER: Typically weekdays 07:00-16:00 and 19:00-23:00 (shoulder hours)
+  GREEN: band black time band yellow time band
+
+RATES BY YEAR:
+
+  2025:
+    RED: -7.5350 to 32.2000 p/kWh (avg: 3.8296)
+      Sample values: ['12.2270', '12.2270', '11.8270', '11.8270', '11.7790']
+    AMBER: -1.0120 to 4.6420 p/kWh (avg: 0.4392)
+      Sample values: ['1.6420', '1.6420', '1.5890', '1.5890', '1.5410']
+    GREEN: -0.0520 to 2.9300 p/kWh (avg: 0.1017)
+      Sample values: ['0.0840', '0.0840', '0.0820', '0.0820', '0.0340']
+
+
+SUMMARY TABLE
+--------------------------------------------------
+
+DNO                     | MPAN | Year | Red Rate      | Amber Rate    | Green Rate
+------------------------------------------------------------------------------------------
+SP Manweb            | 13   | 2020 | N/A           | N/A           | N/A          
+SP Manweb            | 13   | 2021 | N/A           | N/A           | N/A          
+SP Manweb            | 13   | 2022 | N/A           | N/A           | N/A          
+SP Manweb            | 13   | 2024 | N/A           | N/A           | N/A          
+SP Manweb            | 13   | 2025 | N/A           | N/A           | N/A          
+SP Manweb            | 13   | 2026 | N/A           | N/A           | N/A          
+SSEN Hydro           | 17   | 2025 | -7.9340-27.0110 | -2.8360-7.5690 | -0.5750-5.4110
+SSEN Hydro           | 17   | 2026 | -8.3970-27.6630 | -2.9290-8.9700 | -0.6290-6.8460
+SSEN Southern        | 20   | 2025 | -7.5350-32.2000 | -1.0120-4.6420 | -0.0520-2.9300

@@ -1,0 +1,724 @@
+# 📊 COMPREHENSIVE ELEXON BMRS DATA INVENTORY
+# Generated: September 21, 2025
+
+## PROJECT INFORMATION
+- Project: jibber-jabber-knowledge
+- Dataset: uk_energy_insights
+- Location: US
+- Total Tables: 119 (including backups and versioned tables)
+- Total Data Volume: 2.63+ billion rows across 465.61 GB
+- Ingestion Period: January 2022 - September 2025
+
+## TABLE INVENTORY
+
+This document provides a comprehensive inventory of all tables in the Elexon BMRS dataset, including schema information, metadata, and key statistics.
+
+---
+
+### 1. bmrs_bod (Bid-Offer Data)
+
+#### Description
+Contains all bids and offers submitted by power stations for balancing the grid. This is the largest and most critical dataset for wholesale market analysis.
+
+#### Table Information
+- Full ID: jibber-jabber-knowledge.uk_energy_insights.bmrs_bod
+- Row Count: 862,894,170 rows
+- Size: 82.06 GB
+- Creation Time: 2025-09-09 22:36:13 UTC
+- Last Modified: 2025-09-21 09:41:57 UTC
+- Data Coverage: 2022-01-01 to 2025-09-21
+
+#### Schema
+```
+[
+  {"mode": "NULLABLE", "name": "dataset", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "settlementDate", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "settlementPeriod", "type": "INTEGER"},
+  {"mode": "NULLABLE", "name": "timeFrom", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "timeTo", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "levelFrom", "type": "INTEGER"},
+  {"mode": "NULLABLE", "name": "levelTo", "type": "INTEGER"},
+  {"mode": "NULLABLE", "name": "bidOfferDataId", "type": "INTEGER"},
+  {"mode": "NULLABLE", "name": "nationalGridBmUnit", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "bmUnit", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "bidOfferNumber", "type": "INTEGER"},
+  {"mode": "NULLABLE", "name": "bidOfferPair", "type": "INTEGER"},
+  {"mode": "NULLABLE", "name": "bidOfferType", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "cashFlow", "type": "FLOAT"},
+  {"mode": "NULLABLE", "name": "pricePerMwh", "type": "FLOAT"},
+  {"mode": "NULLABLE", "name": "priceDerived", "type": "BOOLEAN"},
+  {"mode": "NULLABLE", "name": "_dataset", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "_window_from_utc", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "_window_to_utc", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "_ingested_utc", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "_source_api", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "_source_columns", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "_hash_source_cols", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "_hash_key", "type": "STRING"}
+]
+```
+
+#### Business Value
+- Primary wholesale trading data showing generator pricing strategies
+- Critical for balancing mechanism analysis
+- Essential for energy pricing and market studies
+- Core dataset for trading strategy development
+
+---
+
+### 2. bmrs_boalf (Bid-Offer Acceptance Level Final)
+
+#### Description
+Records which bids and offers were accepted by the system operator for balancing the grid. Shows actual balancing actions taken.
+
+#### Table Information
+- Full ID: jibber-jabber-knowledge.uk_energy_insights.bmrs_boalf
+- Row Count: 9,336,530 rows
+- Size: 995.21 MB
+- Creation Time: 2025-09-09 22:35:32 UTC
+- Last Modified: 2025-09-21 09:42:08 UTC
+- Data Coverage: 2022-01-01 to 2025-09-21
+
+#### Schema
+```
+[
+  {"mode": "NULLABLE", "name": "dataset", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "settlementDate", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "settlementPeriod", "type": "INTEGER"},
+  {"mode": "NULLABLE", "name": "timeFrom", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "timeTo", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "acceptanceNumber", "type": "INTEGER"},
+  {"mode": "NULLABLE", "name": "nationalGridBmUnit", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "bmUnit", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "bidOfferAcceptanceLevel", "type": "FLOAT"},
+  {"mode": "NULLABLE", "name": "bidOfferAcceptanceTime", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "soFlag", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "storFlag", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "_dataset", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "_window_from_utc", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "_window_to_utc", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "_ingested_utc", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "_source_api", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "_source_columns", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "_hash_source_cols", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "_hash_key", "type": "STRING"}
+]
+```
+
+#### Business Value
+- Shows which generators were actually called upon and at what price
+- Critical for settlement processes
+- Essential for analyzing system operator behavior
+- Key for understanding balancing costs
+
+---
+
+### 3. bmrs_freq (System Frequency)
+
+#### Description
+Real-time electricity grid frequency measurements. Target is 50Hz; deviations indicate system stress or surplus.
+
+#### Table Information
+- Full ID: jibber-jabber-knowledge.uk_energy_insights.bmrs_freq
+- Row Count: 19,230,211 rows
+- Size: 384.20 MB
+- Creation Time: 2025-09-09 22:36:51 UTC
+- Last Modified: 2025-09-21 09:40:12 UTC
+- Data Coverage: 2025-09-14 to 2025-09-21
+
+#### Schema
+```
+[
+  {"mode": "NULLABLE", "name": "dataset", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "measurementTime", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "frequency", "type": "FLOAT"},
+  {"mode": "NULLABLE", "name": "_dataset", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "_window_from_utc", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "_window_to_utc", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "_ingested_utc", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "_source_api", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "_source_columns", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "_hash_source_cols", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "_hash_key", "type": "STRING"}
+]
+```
+
+#### Business Value
+- Critical indicator of supply-demand balance
+- Essential for grid stability analysis
+- Used for frequency response service validation
+- Indicator of system stress events
+
+---
+
+### 4. bmrs_fuelinst (Fuel Instructions)
+
+#### Description
+Real-time generation dispatch and fuel type levels. Shows immediate generation mix across different fuel types.
+
+#### Table Information
+- Full ID: jibber-jabber-knowledge.uk_energy_insights.bmrs_fuelinst
+- Row Count: 6,760 rows
+- Size: 2.30 MB
+- Creation Time: 2025-09-16 22:01:41 UTC
+- Last Modified: 2025-09-21 09:40:19 UTC
+- Data Coverage: 2025-09-14 to 2025-09-21
+
+#### Schema
+```
+[
+  {"mode": "NULLABLE", "name": "dataset", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "publishTime", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "startTime", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "settlementDate", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "settlementPeriod", "type": "INTEGER"},
+  {"mode": "NULLABLE", "name": "fuelType", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "generation", "type": "FLOAT"},
+  {"mode": "NULLABLE", "name": "_dataset", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "_window_from_utc", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "_window_to_utc", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "_ingested_utc", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "_source_api", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "_source_columns", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "_hash_source_cols", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "_hash_key", "type": "STRING"}
+]
+```
+
+#### Business Value
+- Shows renewable vs fossil fuel generation mix
+- Critical for carbon intensity analysis
+- Essential for understanding grid dispatch decisions
+- Key for energy transition monitoring
+
+---
+
+### 5. bmrs_mels (Market Energy Level)
+
+#### Description
+Energy market index prices and volumes. Used for energy pricing and settlement.
+
+#### Table Information
+- Full ID: jibber-jabber-knowledge.uk_energy_insights.bmrs_mels
+- Row Count: 98,322,951 rows
+- Size: 49.97 GB
+- Creation Time: 2025-09-09 22:38:28 UTC
+- Last Modified: 2025-09-21 09:40:44 UTC
+- Data Coverage: 2023-01-01 to 2025-09-21
+
+#### Schema
+```
+[
+  {"mode": "NULLABLE", "name": "dataset", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "settlementDate", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "settlementPeriod", "type": "INTEGER"},
+  {"mode": "NULLABLE", "name": "timeFrom", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "timeTo", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "levelFrom", "type": "FLOAT"},
+  {"mode": "NULLABLE", "name": "levelTo", "type": "FLOAT"},
+  {"mode": "NULLABLE", "name": "nationalGridBmUnit", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "bmUnit", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "notificationTime", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "_dataset", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "_window_from_utc", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "_window_to_utc", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "_ingested_utc", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "_source_api", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "_source_columns", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "_hash_source_cols", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "_hash_key", "type": "STRING"}
+]
+```
+
+#### Business Value
+- Used for energy pricing and settlement
+- Essential for market analysis
+- Key for understanding energy flows
+- Critical for energy accounting
+
+---
+
+### 6. bmrs_mils (Market Index Level Settlement)
+
+#### Description
+Settlement period market index pricing for imbalance calculations. Primary pricing reference for imbalance charges.
+
+#### Table Information
+- Full ID: jibber-jabber-knowledge.uk_energy_insights.bmrs_mils
+- Row Count: 96,248,667 rows
+- Size: 48.71 GB
+- Creation Time: 2025-09-09 22:39:07 UTC
+- Last Modified: 2025-09-21 09:41:06 UTC
+- Data Coverage: 2023-01-01 to 2025-09-21
+
+#### Schema
+```
+[
+  {"mode": "NULLABLE", "name": "dataset", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "settlementDate", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "settlementPeriod", "type": "INTEGER"},
+  {"mode": "NULLABLE", "name": "timeFrom", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "timeTo", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "levelFrom", "type": "INTEGER"},
+  {"mode": "NULLABLE", "name": "levelTo", "type": "INTEGER"},
+  {"mode": "NULLABLE", "name": "nationalGridBmUnit", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "bmUnit", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "notificationTime", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "_dataset", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "_window_from_utc", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "_window_to_utc", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "_ingested_utc", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "_source_api", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "_source_columns", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "_hash_source_cols", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "_hash_key", "type": "STRING"}
+]
+```
+
+#### Business Value
+- Primary pricing reference for imbalance charges
+- Essential for settlement processes
+- Key for trading strategy development
+- Critical for market analysis
+
+---
+
+### 7. bmrs_pn (Physical Notifications)
+
+#### Description
+Generation scheduling declarations from power stations. Indicates planned generation levels.
+
+#### Table Information
+- Full ID: jibber-jabber-knowledge.uk_energy_insights.bmrs_pn
+- Row Count: 131,137,416 rows
+- Size: 52.52 GB
+- Creation Time: 2025-09-12 11:44:27 UTC
+- Last Modified: 2025-09-20 23:31:04 UTC
+- Data Coverage: 2022-01-01 to 2025-09-21
+
+#### Schema
+```
+[
+  {"mode": "NULLABLE", "name": "dataset", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "settlementDate", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "settlementPeriod", "type": "INTEGER"},
+  {"mode": "NULLABLE", "name": "timeFrom", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "timeTo", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "levelFrom", "type": "FLOAT"},
+  {"mode": "NULLABLE", "name": "levelTo", "type": "FLOAT"},
+  {"mode": "NULLABLE", "name": "nationalGridBmUnit", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "bmUnit", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "notificationTime", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "_dataset", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "_window_from_utc", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "_window_to_utc", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "_ingested_utc", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "_source_api", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "_source_columns", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "_hash_source_cols", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "_hash_key", "type": "STRING"}
+]
+```
+
+#### Business Value
+- Essential for market forecasting
+- Critical for system operator planning
+- Key for balancing mechanism analysis
+- Important for generator behavior analysis
+
+---
+
+### 8. bmrs_qpn (Quiescent Physical Notifications)
+
+#### Description
+Updated generation scheduling data. More accurate than initial PN data.
+
+#### Table Information
+- Full ID: jibber-jabber-knowledge.uk_energy_insights.bmrs_qpn
+- Row Count: 116,095,169 rows
+- Size: 46.74 GB
+- Creation Time: 2025-09-12 11:44:47 UTC
+- Last Modified: 2025-09-20 23:32:18 UTC
+- Data Coverage: 2022-01-01 to 2025-09-21
+
+#### Schema
+```
+[
+  {"mode": "NULLABLE", "name": "dataset", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "settlementDate", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "settlementPeriod", "type": "INTEGER"},
+  {"mode": "NULLABLE", "name": "timeFrom", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "timeTo", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "levelFrom", "type": "FLOAT"},
+  {"mode": "NULLABLE", "name": "levelTo", "type": "FLOAT"},
+  {"mode": "NULLABLE", "name": "nationalGridBmUnit", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "bmUnit", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "notificationTime", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "_dataset", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "_window_from_utc", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "_window_to_utc", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "_ingested_utc", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "_source_api", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "_source_columns", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "_hash_source_cols", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "_hash_key", "type": "STRING"}
+]
+```
+
+#### Business Value
+- Used for operational planning
+- More accurate than PN data
+- Important for real-time balancing
+- Essential for generator behavior analysis
+
+---
+
+### 9. bmrs_uou2t3yw (Unit Output 2-52 weeks)
+
+#### Description
+Long-term power station output forecasts. Covers 2-52 weeks ahead for capacity planning.
+
+#### Table Information
+- Full ID: jibber-jabber-knowledge.uk_energy_insights.bmrs_uou2t3yw
+- Row Count: ~349,200,000 rows (estimated)
+- Size: ~25.1 GB
+- Data Coverage: 2022-01-01 to 2025-09-21
+
+#### Schema
+```
+[
+  {"mode": "NULLABLE", "name": "dataset", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "publishTime", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "startTime", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "settlementDate", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "settlementPeriod", "type": "INTEGER"},
+  {"mode": "NULLABLE", "name": "bmUnit", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "outputUsable", "type": "FLOAT"},
+  {"mode": "NULLABLE", "name": "_dataset", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "_window_from_utc", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "_window_to_utc", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "_ingested_utc", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "_source_api", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "_source_columns", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "_hash_source_cols", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "_hash_key", "type": "STRING"}
+]
+```
+
+#### Business Value
+- Essential for long-term capacity planning
+- Critical for maintenance scheduling
+- Key for energy security analysis
+- Important for investment decisions
+
+---
+
+### 10. bmrs_uou2t14d (Unit Output 2-14 days)
+
+#### Description
+Medium-term power station output forecasts. Covers 2-14 days ahead for operational planning.
+
+#### Table Information
+- Full ID: jibber-jabber-knowledge.uk_energy_insights.bmrs_uou2t14d
+- Row Count: ~29,300,000 rows (estimated)
+- Size: ~1.9 GB
+- Data Coverage: 2022-01-01 to 2025-09-21
+
+#### Schema
+```
+[
+  {"mode": "NULLABLE", "name": "dataset", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "publishTime", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "startTime", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "settlementDate", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "settlementPeriod", "type": "INTEGER"},
+  {"mode": "NULLABLE", "name": "bmUnit", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "outputUsable", "type": "FLOAT"},
+  {"mode": "NULLABLE", "name": "_dataset", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "_window_from_utc", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "_window_to_utc", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "_ingested_utc", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "_source_api", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "_source_columns", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "_hash_source_cols", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "_hash_key", "type": "STRING"}
+]
+```
+
+#### Business Value
+- Used for operational planning
+- Essential for short-term trading
+- Important for system operator planning
+- Key for forecasting system conditions
+
+---
+
+### 11. bmrs_disbsad (Disaggregated Balancing Services)
+
+#### Description
+Detailed breakdown of balancing services costs. Shows granular balancing cost analysis.
+
+#### Table Information
+- Full ID: jibber-jabber-knowledge.uk_energy_insights.bmrs_disbsad
+- Row Count: ~1,800,000 rows (estimated)
+- Size: ~0.6 GB
+- Data Coverage: 2022-01-01 to 2025-09-21
+
+#### Schema
+```
+[
+  {"mode": "NULLABLE", "name": "dataset", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "settlementDate", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "settlementPeriod", "type": "INTEGER"},
+  {"mode": "NULLABLE", "name": "costType", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "cashflow", "type": "FLOAT"},
+  {"mode": "NULLABLE", "name": "volume", "type": "FLOAT"},
+  {"mode": "NULLABLE", "name": "_dataset", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "_window_from_utc", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "_window_to_utc", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "_ingested_utc", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "_source_api", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "_source_columns", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "_hash_source_cols", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "_hash_key", "type": "STRING"}
+]
+```
+
+#### Business Value
+- Detailed balancing cost analysis
+- Important for understanding market operations
+- Essential for cost allocation
+- Key for regulatory monitoring
+
+---
+
+### 12. bmrs_costs (System Costs)
+
+#### Description
+System buy/sell prices and imbalance volumes. Essential for energy trading and market settlement.
+
+#### Table Information
+- Full ID: jibber-jabber-knowledge.uk_energy_insights.bmrs_costs
+- Row Count: 130,242 rows
+- Size: 175.42 MB
+- Data Coverage: 2022-01-01 to 2025-09-21
+
+#### Schema
+```
+[
+  {"mode": "NULLABLE", "name": "dataset", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "settlementDate", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "settlementPeriod", "type": "INTEGER"},
+  {"mode": "NULLABLE", "name": "systemSellPrice", "type": "FLOAT"},
+  {"mode": "NULLABLE", "name": "systemBuyPrice", "type": "FLOAT"},
+  {"mode": "NULLABLE", "name": "netImbalanceVolume", "type": "FLOAT"},
+  {"mode": "NULLABLE", "name": "totalAcceptedOfferVolume", "type": "FLOAT"},
+  {"mode": "NULLABLE", "name": "totalAcceptedBidVolume", "type": "FLOAT"},
+  {"mode": "NULLABLE", "name": "_dataset", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "_window_from_utc", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "_window_to_utc", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "_ingested_utc", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "_source_api", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "_source_columns", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "_hash_source_cols", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "_hash_key", "type": "STRING"}
+]
+```
+
+#### Business Value
+- Essential for energy trading
+- Critical for cost analysis
+- Key for market settlement
+- Important for price forecasting
+
+---
+
+### 13. bmrs_netbsad (Net Balancing Services Adjustment)
+
+#### Description
+Net balancing services costs and adjustments. Provides daily balancing cost summaries.
+
+#### Table Information
+- Full ID: jibber-jabber-knowledge.uk_energy_insights.bmrs_netbsad
+- Row Count: 234,028 rows
+- Size: 27.96 MB
+- Data Coverage: 2022-01-01 to 2025-09-21
+
+#### Schema
+```
+[
+  {"mode": "NULLABLE", "name": "dataset", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "settlementDate", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "settlementPeriod", "type": "INTEGER"},
+  {"mode": "NULLABLE", "name": "netAdjustmentVolume", "type": "FLOAT"},
+  {"mode": "NULLABLE", "name": "balancingServicesCost", "type": "FLOAT"},
+  {"mode": "NULLABLE", "name": "_dataset", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "_window_from_utc", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "_window_to_utc", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "_ingested_utc", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "_source_api", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "_source_columns", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "_hash_source_cols", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "_hash_key", "type": "STRING"}
+]
+```
+
+#### Business Value
+- Critical for understanding grid balancing costs
+- Important for cost allocation
+- Key for regulatory monitoring
+- Essential for market analysis
+
+---
+
+### 14. bmrs_ndf (National Demand Forecast)
+
+#### Description
+National electricity demand forecasts published day-ahead. Essential for demand planning and energy trading.
+
+#### Table Information
+- Full ID: jibber-jabber-knowledge.uk_energy_insights.bmrs_ndf
+- Row Count: 47,296 rows
+- Size: 1.57 MB
+- Data Coverage: 2022-01-01 to 2025-09-21
+
+#### Schema
+```
+[
+  {"mode": "NULLABLE", "name": "dataset", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "publishTime", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "startTime", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "settlementDate", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "settlementPeriod", "type": "INTEGER"},
+  {"mode": "NULLABLE", "name": "demand", "type": "FLOAT"},
+  {"mode": "NULLABLE", "name": "_dataset", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "_window_from_utc", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "_window_to_utc", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "_ingested_utc", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "_source_api", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "_source_columns", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "_hash_source_cols", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "_hash_key", "type": "STRING"}
+]
+```
+
+#### Business Value
+- Essential for demand planning
+- Key for energy trading
+- Critical for system operator planning
+- Important for price forecasting
+
+---
+
+### 15. bmrs_tsdf (Transmission System Demand Forecast)
+
+#### Description
+Transmission-level demand forecasts with higher granularity. Critical for grid planning and transmission optimization.
+
+#### Table Information
+- Full ID: jibber-jabber-knowledge.uk_energy_insights.bmrs_tsdf
+- Row Count: 1,047,546 rows
+- Size: 39.59 MB
+- Data Coverage: 2022-01-01 to 2025-09-21
+
+#### Schema
+```
+[
+  {"mode": "NULLABLE", "name": "dataset", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "publishTime", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "startTime", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "settlementDate", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "settlementPeriod", "type": "INTEGER"},
+  {"mode": "NULLABLE", "name": "demandType", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "demand", "type": "FLOAT"},
+  {"mode": "NULLABLE", "name": "_dataset", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "_window_from_utc", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "_window_to_utc", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "_ingested_utc", "type": "TIMESTAMP"},
+  {"mode": "NULLABLE", "name": "_source_api", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "_source_columns", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "_hash_source_cols", "type": "STRING"},
+  {"mode": "NULLABLE", "name": "_hash_key", "type": "STRING"}
+]
+```
+
+#### Business Value
+- Critical for grid planning
+- Essential for transmission optimization
+- Key for regional demand analysis
+- Important for congestion management
+
+---
+
+## METADATA FIELDS COMMON TO ALL TABLES
+
+All tables in the dataset include consistent metadata fields for tracking data provenance and enabling effective analysis:
+
+- **`_dataset`**: Source dataset identifier (e.g., 'BOD', 'FREQ')
+- **`_window_from_utc`**: Start timestamp of the data extraction window
+- **`_window_to_utc`**: End timestamp of the data extraction window
+- **`_ingested_utc`**: Timestamp when the data was ingested into BigQuery
+- **`_source_api`**: Source API identifier ('BMRS')
+- **`_source_columns`**: Original column names from the source API
+- **`_hash_source_cols`**: List of columns used to generate the hash key
+- **`_hash_key`**: Unique hash key for deduplication
+
+## DATA ACCESS PATTERNS
+
+### Query Patterns
+
+The most common query patterns for this dataset are:
+
+1. **Time Series Analysis**: Querying specific metrics over time periods
+   ```sql
+   SELECT settlementDate, settlementPeriod, AVG(frequency) as avg_frequency
+   FROM `jibber-jabber-knowledge.uk_energy_insights.bmrs_freq`
+   WHERE _window_from_utc BETWEEN '2025-09-01' AND '2025-09-21'
+   GROUP BY settlementDate, settlementPeriod
+   ORDER BY settlementDate, settlementPeriod
+   ```
+
+2. **Market Pricing Analysis**: Analyzing price trends and patterns
+   ```sql
+   SELECT settlementDate, AVG(systemBuyPrice) as avg_buy, AVG(systemSellPrice) as avg_sell
+   FROM `jibber-jabber-knowledge.uk_energy_insights.bmrs_costs`
+   WHERE settlementDate BETWEEN '2025-08-01' AND '2025-09-21'
+   GROUP BY settlementDate
+   ORDER BY settlementDate
+   ```
+
+3. **Generator Behavior Analysis**: Examining individual unit behaviors
+   ```sql
+   SELECT bmUnit, AVG(levelFrom) as avg_level
+   FROM `jibber-jabber-knowledge.uk_energy_insights.bmrs_pn`
+   WHERE settlementDate = '2025-09-20'
+   GROUP BY bmUnit
+   ORDER BY avg_level DESC
+   LIMIT 20
+   ```
+
+4. **Fuel Mix Analysis**: Tracking generation by fuel type
+   ```sql
+   SELECT settlementDate, fuelType, SUM(generation) as total_gen
+   FROM `jibber-jabber-knowledge.uk_energy_insights.bmrs_fuelinst`
+   WHERE settlementDate BETWEEN '2025-09-14' AND '2025-09-21'
+   GROUP BY settlementDate, fuelType
+   ORDER BY settlementDate, total_gen DESC
+   ```
+
+## SCHEDULED UPDATES
+
+The dataset is updated via the following schedule:
+
+- **High-Frequency Tables** (FREQ, FUELINST): Every 15 minutes
+- **Settlement-Critical Tables** (BOD, BOALF, MILS, MELS): Hourly
+- **Daily Forecasts** (NDF, TSDF): Every 6 hours
+- **Long-term Forecasts** (UOU2T3YW, UOU2T14D): Daily
+
+All updates are orchestrated through the `ingest_elexon_fixed.py` script with the appropriate time windows.
+
+## CONCLUSION
+
+This document provides a comprehensive inventory of the Elexon BMRS dataset in the jibber-jabber-knowledge.uk_energy_insights BigQuery dataset. The data represents the complete UK electricity wholesale market and transmission system - providing a detailed view of Britain's £40+ billion annual electricity market.
+
+The dataset includes schema information, table statistics, business value, and common query patterns to facilitate effective analysis and decision-making based on this critical energy market data.

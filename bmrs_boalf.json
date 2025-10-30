@@ -1,0 +1,107 @@
+[
+  {
+    "mode": "NULLABLE",
+    "name": "dataset",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "settlementDate",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "settlementPeriodFrom",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "settlementPeriodTo",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "timeFrom",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "timeTo",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "levelFrom",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "levelTo",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "acceptanceNumber",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "acceptanceTime",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "deemedBoFlag",
+    "type": "BOOLEAN"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "soFlag",
+    "type": "BOOLEAN"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "amendmentFlag",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "storFlag",
+    "type": "BOOLEAN"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "rrFlag",
+    "type": "BOOLEAN"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "nationalGridBmUnit",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "bmUnit",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "_dataset",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "_window_from_utc",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "_window_to_utc",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "_ingested_utc",
+    "type": "STRING"
+  }
+]

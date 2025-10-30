@@ -1,0 +1,15 @@
+MPAN_Code,DNO_Key,DNO_Name,Short_Code,Market_Participant_ID,GSP_Group_ID,GSP_Group_Name
+12,UKPN-LPN,UK Power Networks (London),LPN,LOND,C,London
+10,UKPN-EPN,UK Power Networks (Eastern),EPN,EELC,A,Eastern
+19,UKPN-SPN,UK Power Networks (South Eastern),SPN,SEEB,J,South Eastern
+16,ENWL,Electricity North West,ENWL,NORW,G,North West
+15,NPg-NE,Northern Powergrid (North East),NE,NEEB,F,North East
+23,NPg-Y,Northern Powergrid (Yorkshire),Y,YELG,M,Yorkshire
+18,SP-Distribution,SP Energy Networks (SPD),SPD,SPOW,N,South Scotland
+13,SP-Manweb,SP Energy Networks (SPM),SPM,MANW,D,Merseyside & North Wales
+17,SSE-SHEPD,Scottish Hydro Electric Power Distribution (SHEPD),SHEPD,HYDE,P,North Scotland
+20,SSE-SEPD,Southern Electric Power Distribution (SEPD),SEPD,SOUT,H,Southern
+14,NGED-WM,National Grid Electricity Distribution – West Midlands (WMID),WMID,MIDE,E,West Midlands
+11,NGED-EM,National Grid Electricity Distribution – East Midlands (EMID),EMID,EMEB,B,East Midlands
+22,NGED-SW,National Grid Electricity Distribution – South West (SWEST),SWEST,SWEB,L,South Western
+21,NGED-SWales,National Grid Electricity Distribution – South Wales (SWALES),SWALES,SWAE,K,South Wales

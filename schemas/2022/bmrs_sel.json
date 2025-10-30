@@ -1,0 +1,37 @@
+[
+  {
+    "name": "dataset",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "settlementDate",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "settlementPeriod",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "time",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "level",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "nationalGridBmUnit",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "bmUnit",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  }
+]

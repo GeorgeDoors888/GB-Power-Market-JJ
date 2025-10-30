@@ -1,13 +1,13 @@
 {
-    "type": "service_account",
-    "project_id": "jibber-jabber-knowledge",
-    "private_key_id": "fa1d0ef983613896d781bdf7ce536781389b2dc7",
-    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQChhyOW6WjOOGSf\nnRzHOjewUjRRCu8HngAkt4TY0mdLMJrccDTrPoQ2DvTw1P6BbG2kJSg5f0ztSRyM\ne+7yA3fvq6HzaGJjSVPDFArLsTjpTFcqMr52R/1XMtljg76Vm6eOL+ZNVvSgoifd\n92oD1s4CJFi8Rw1xJ15uI/8Ead7sMp2YoRHjGhaRq6kpNUXWjjbc3menxPLqQn0I\nyItI4HQDNqHzVNbjZG59+X/Hh2l3Vr1IQuy4y/UimFD+OQnhmJmzw4mf5PNm6lVd\nd/sDMMqZA1Xg8ICYXc5e768lxXI3I0Fxh7003wBN1nmkOB4JlYGnYpfdXScuIgll\nbHLzmHsbAgMBAAECggEAAroM9WuOnl9Aq5pztZVGWA6l3XG0I/Uchtd7lvbDpvb0\nwPXlSXdZCgSUnqAp2mDMilx/jQDuI9n7xmStMvQGCUtkxNQlR7chgoXgbMcwG8LI\nfJOLYuRyOA+esIRf1Oy3a7oOnDhJ5uWgi1RgO3Jb20Nmer8u+z2xOrtsKanpM87c\nDD+Q/WFupT/x+jl2NTd0HNBkT4S8wqZVpcMmRJQIby0c2OZmDLcxiVS+Fg6MjWNp\nxhqXJKs7i056Kvq5c0zdmcPDdpRH8i1qwFgG/w++wHRdfdV+ADXvjeG4jwDpIIOv\nFRewlifwiy/H4eWeYyDqsqMpS7q+wZXnA5lrDa0aQQKBgQDbU8Tf5XkQN7Ekay22\nulsfwihIHLEz52tN9VG24JhSHOsDj587sST81TabU0Ip0wTb5pwQLOB82DWZp3rp\nWJQjfqQvwKBiCYTGE7S5vDsKZDS/R67vBhLBSrEuTdfX/+gDeshgvZ8UyVJTR3I8\nIgcQ9WzJ+gk+80j3DTfXC93juwKBgQC8iUm+iXK9YaHXdx778LLSPbCKd+/4Ovhv\nnOH1Z9OVZPko1oBlo/X00OHhQtYdfK6h3A13ca9pgsOPlma2768F1cfUvZ7YOEoe\nCXxyT/eRaxSi5MWUQz91Z0BUZvnWDHeTPv7WcliEcMXF3jz8MBEkNOKdKoLEmHzW\nc5B53khgIQKBgHY51pMWQEcErkFCYPbxx3L8FvigNskSwt3YEj8xHAqPOgPGZIAp\nwhVj3TanD7A55pGe4ps5hZzmcyYriG7GZ7wmZNy0yf9uwBqBvtar52t3jpNZUavY\nqz10RMQABAyUDn3prp+vN1ReHTl09tgBQ6vZj9XkKR28yKUbg/EwnWBHAoGALcXL\nAJZQJAhbCXujKxmB4KcXgFakDQkMHdThyvm9Fa0hDLgfDg4jfZ9k55KZdyk5IJTT\nNCeGpcAYiHjEUS+Zt3nyfQTYVrg7zlURQJOHkGeF6BJQobE969v4c0VY7I20Tixi\nJGA4e1cBvQs6lSN6Veb9CZkzjFVVIZ+G+P9tZOECgYEAsHDCBxks+Be7FB2Qrku6\nAAR85j2/04rclR1JBnKE0WA1NInAcVhJlCdY2RlPZ7mGPpUMr/QWJMDQmi1y/AfE\nVqv6nsNtjMELJisNfm3negjr1nF/5LBiMKpquTyhg5lLVyL4eXWdP/u8ySvMVWN+\n+BC5B9X/JwaTXUZhvayjaU0=\n-----END PRIVATE KEY-----\n",
-    "client_email": "jibber-jabber-knowledge@appspot.gserviceaccount.com",
-    "client_id": "108583076839984080568",
-    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-    "token_uri": "https://oauth2.googleapis.com/token",
-    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/jibber-jabber-knowledge%40appspot.gserviceaccount.com",
-    "universe_domain": "googleapis.com"
+  "type": "service_account",
+  "project_id": "jibber-jabber-knowledge",
+  "private_key_id": "fa1d0ef983613896d781bdf7ce536781389b2dc7",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQChhyOW6WjOOGSf\nnRzHOjewUjRRCu8HngAkt4TY0mdLMJrccDTrPoQ2DvTw1P6BbG2kJSg5f0ztSRyM\ne+7yA3fvq6HzaGJjSVPDFArLsTjpTFcqMr52R/1XMtljg76Vm6eOL+ZNVvSgoifd\n92oD1s4CJFi8Rw1xJ15uI/8Ead7sMp2YoRHjGhaRq6kpNUXWjjbc3menxPLqQn0I\nyItI4HQDNqHzVNbjZG59+X/Hh2l3Vr1IQuy4y/UimFD+OQnhmJmzw4mf5PNm6lVd\nd/sDMMqZA1Xg8ICYXc5e768lxXI3I0Fxh7003wBN1nmkOB4JlYGnYpfdXScuIgll\nbHLzmHsbAgMBAAECggEAAroM9WuOnl9Aq5pztZVGWA6l3XG0I/Uchtd7lvbDpvb0\nwPXlSXdZCgSUnqAp2mDMilx/jQDuI9n7xmStMvQGCUtkxNQlR7chgoXgbMcwG8LI\nfJOLYuRyOA+esIRf1Oy3a7oOnDhJ5uWgi1RgO3Jb20Nmer8u+z2xOrtsKanpM87c\nDD+Q/WFupT/x+jl2NTd0HNBkT4S8wqZVpcMmRJQIby0c2OZmDLcxiVS+Fg6MjWNp\nxhqXJKs7i056Kvq5c0zdmcPDdpRH8i1qwFgG/w++wHRdfdV+ADXvjeG4jwDpIIOv\nFRewlifwiy/H4eWeYyDqsqMpS7q+wZXnA5lrDa0aQQKBgQDbU8Tf5XkQN7Ekay22\nulsfwihIHLEz52tN9VG24JhSHOsDj587sST81TabU0Ip0wTb5pwQLOB82DWZp3rp\nWJQjfqQvwKBiCYTGE7S5vDsKZDS/R67vBhLBSrEuTdfX/+gDeshgvZ8UyVJTR3I8\nIgcQ9WzJ+gk+80j3DTfXC93juwKBgQC8iUm+iXK9YaHXdx778LLSPbCKd+/4Ovhv\nnOH1Z9OVZPko1oBlo/X00OHhQtYdfK6h3A13ca9pgsOPlma2768F1cfUvZ7YOEoe\nCXxyT/eRaxSi5MWUQz91Z0BUZvnWDHeTPv7WcliEcMXF3jz8MBEkNOKdKoLEmHzW\nc5B53khgIQKBgHY51pMWQEcErkFCYPbxx3L8FvigNskSwt3YEj8xHAqPOgPGZIAp\nwhVj3TanD7A55pGe4ps5hZzmcyYriG7GZ7wmZNy0yf9uwBqBvtar52t3jpNZUavY\nqz10RMQABAyUDn3prp+vN1ReHTl09tgBQ6vZj9XkKR28yKUbg/EwnWBHAoGALcXL\nAJZQJAhbCXujKxmB4KcXgFakDQkMHdThyvm9Fa0hDLgfDg4jfZ9k55KZdyk5IJTT\nNCeGpcAYiHjEUS+Zt3nyfQTYVrg7zlURQJOHkGeF6BJQobE969v4c0VY7I20Tixi\nJGA4e1cBvQs6lSN6Veb9CZkzjFVVIZ+G+P9tZOECgYEAsHDCBxks+Be7FB2Qrku6\nAAR85j2/04rclR1JBnKE0WA1NInAcVhJlCdY2RlPZ7mGPpUMr/QWJMDQmi1y/AfE\nVqv6nsNtjMELJisNfm3negjr1nF/5LBiMKpquTyhg5lLVyL4eXWdP/u8ySvMVWN+\n+BC5B9X/JwaTXUZhvayjaU0=\n-----END PRIVATE KEY-----\n",
+  "client_email": "jibber-jabber-knowledge@appspot.gserviceaccount.com",
+  "client_id": "108583076839984080568",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/jibber-jabber-knowledge%40appspot.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
 }

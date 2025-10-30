@@ -1,0 +1,32 @@
+[
+  {
+    "name": "settlementDate",
+    "type": "DATE",
+    "description": "The date of the settlement period."
+  },
+  {
+    "name": "settlementPeriod",
+    "type": "INTEGER",
+    "description": "The half-hourly settlement period number."
+  },
+  {
+    "name": "zoneID",
+    "type": "STRING",
+    "description": "Identifier for the demand zone."
+  },
+  {
+    "name": "netDemandMW",
+    "type": "FLOAT",
+    "description": "Net demand in megawatts for the zone and period."
+  },
+  {
+    "name": "timeFrom",
+    "type": "TIMESTAMP",
+    "description": "Start time of the period."
+  },
+  {
+    "name": "timeTo",
+    "type": "TIMESTAMP",
+    "description": "End time of the period."
+  }
+]

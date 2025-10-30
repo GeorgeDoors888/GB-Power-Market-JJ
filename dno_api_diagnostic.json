@@ -1,0 +1,159 @@
+{
+  "timestamp": "2025-09-11T23:32:30.708329",
+  "opendatasoft_tests": {
+    "UKPN": {
+      "domain": "https://ukpowernetworks.opendatasoft.com",
+      "tests": {
+        "/api/v2/catalog/datasets": {
+          "status": 200,
+          "working": true,
+          "dataset_count": 1
+        },
+        "/api/catalog/v2/datasets": {
+          "status": 404,
+          "working": false
+        },
+        "/api/datasets": {
+          "status": 404,
+          "working": false
+        },
+        "/api/v1/catalog/datasets": {
+          "status": 404,
+          "working": false
+        },
+        "/explore/api/catalog/v2/datasets": {
+          "status": 404,
+          "working": false
+        },
+        "/api/explore/v2.1/catalog/datasets": {
+          "status": 200,
+          "working": true,
+          "dataset_count": 0
+        }
+      },
+      "base_status": 200
+    },
+    "SPEN": {
+      "domain": "https://spenergynetworks.opendatasoft.com",
+      "tests": {
+        "/api/v2/catalog/datasets": {
+          "status": 200,
+          "working": true,
+          "dataset_count": 1
+        },
+        "/api/catalog/v2/datasets": {
+          "status": 404,
+          "working": false
+        },
+        "/api/datasets": {
+          "status": 404,
+          "working": false
+        },
+        "/api/v1/catalog/datasets": {
+          "status": 404,
+          "working": false
+        },
+        "/explore/api/catalog/v2/datasets": {
+          "status": 404,
+          "working": false
+        },
+        "/api/explore/v2.1/catalog/datasets": {
+          "status": 200,
+          "working": true,
+          "dataset_count": 0
+        }
+      },
+      "base_status": 200
+    },
+    "NPG": {
+      "domain": "https://northernpowergrid.opendatasoft.com",
+      "tests": {
+        "/api/v2/catalog/datasets": {
+          "status": 200,
+          "working": true,
+          "dataset_count": 1
+        },
+        "/api/catalog/v2/datasets": {
+          "status": 404,
+          "working": false
+        },
+        "/api/datasets": {
+          "status": 404,
+          "working": false
+        },
+        "/api/v1/catalog/datasets": {
+          "status": 404,
+          "working": false
+        },
+        "/explore/api/catalog/v2/datasets": {
+          "status": 404,
+          "working": false
+        },
+        "/api/explore/v2.1/catalog/datasets": {
+          "status": 200,
+          "working": true,
+          "dataset_count": 0
+        }
+      },
+      "base_status": 200
+    },
+    "ENWL": {
+      "domain": "https://electricitynorthwest.opendatasoft.com",
+      "tests": {
+        "/api/v2/catalog/datasets": {
+          "status": 200,
+          "working": true,
+          "dataset_count": 1
+        },
+        "/api/catalog/v2/datasets": {
+          "status": 404,
+          "working": false
+        },
+        "/api/datasets": {
+          "status": 404,
+          "working": false
+        },
+        "/api/v1/catalog/datasets": {
+          "status": 404,
+          "working": false
+        },
+        "/explore/api/catalog/v2/datasets": {
+          "status": 404,
+          "working": false
+        },
+        "/api/explore/v2.1/catalog/datasets": {
+          "status": 200,
+          "working": true,
+          "dataset_count": 0
+        }
+      },
+      "base_status": 200
+    }
+  },
+  "alternative_sources": {
+    "SSEN_catalog": {
+      "url": "https://ckan-prod.sse.datopian.com/catalog.jsonld",
+      "status": 200,
+      "content_length": 800187,
+      "working": true
+    },
+    "SSEN_portal": {
+      "url": "https://data.ssen.co.uk",
+      "status": 200,
+      "content_length": 431548,
+      "working": true
+    },
+    "NGED_portal": {
+      "url": "https://connecteddata.westernpower.co.uk",
+      "status": 200,
+      "content_length": 24883,
+      "working": true
+    },
+    "SPD_charges": {
+      "url": "https://www.spenergynetworks.co.uk/pages/charges_and_agreements.aspx",
+      "status": 200,
+      "content_length": 34227,
+      "working": true
+    }
+  }
+}

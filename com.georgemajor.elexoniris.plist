@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.georgemajor.elexoniris</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/bin/bash</string>
+        <string>/Users/georgemajor/jibber-jabber 24 august 2025 big bop/elexon_iris/start_iris_service.sh</string>
+    </array>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>KeepAlive</key>
+    <false/>
+    <key>StandardOutPath</key>
+    <string>/Users/georgemajor/jibber-jabber 24 august 2025 big bop/elexon_iris/logs/launchd_stdout.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/georgemajor/jibber-jabber 24 august 2025 big bop/elexon_iris/logs/launchd_stderr.log</string>
+    <key>UserName</key>
+    <string>georgemajor</string>
+</dict>
+</plist>

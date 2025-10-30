@@ -1,0 +1,57 @@
+[
+  {
+    "mode": "NULLABLE",
+    "name": "dataset",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "imbalance",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "publishTime",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "startTime",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "settlementDate",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "settlementPeriod",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "boundary",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "_dataset",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "_window_from_utc",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "_window_to_utc",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "_ingested_utc",
+    "type": "STRING"
+  }
+]

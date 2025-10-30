@@ -1,0 +1,223 @@
+2025-09-20 13:39:36,168 - WARNING - No service account credentials found. Using default ADC.
+2025-09-20 13:39:37,287 - ERROR - Failed to setup Google Sheets: 
+2025-09-20 13:39:46,959 - WARNING - No service account credentials found. Using default ADC.
+2025-09-20 13:39:47,951 - ERROR - Failed to setup Google Sheets: 
+2025-09-20 13:40:10,187 - WARNING - No service account credentials found. Using default ADC.
+2025-09-20 13:40:12,066 - INFO - Google Sheets connection established
+2025-09-20 13:40:17,978 - WARNING - No service account credentials found. Using default ADC.
+2025-09-20 13:40:19,169 - INFO - Google Sheets connection established
+2025-09-20 13:40:21,006 - INFO - Sheet headers initialized
+2025-09-20 13:40:21,231 - WARNING - Could not update existing row, appending new: the header row in the worksheet contains duplicates: ['']To manually set the header row, use the `expected_headers` parameter of `get_all_records()`
+2025-09-20 13:40:21,713 - WARNING - Could not update existing row, appending new: the header row in the worksheet contains duplicates: ['']To manually set the header row, use the `expected_headers` parameter of `get_all_records()`
+2025-09-20 13:40:27,359 - INFO - 🚀 Starting automated data tracking update...
+2025-09-20 13:40:27,360 - WARNING - No service account credentials found. Using default ADC.
+2025-09-20 13:40:28,440 - INFO - Google Sheets connection established
+2025-09-20 13:40:29,460 - INFO - Sheet headers initialized
+2025-09-20 13:40:29,699 - ERROR - Error reading from Google Sheets: the header row in the worksheet contains duplicates: ['']To manually set the header row, use the `expected_headers` parameter of `get_all_records()`
+2025-09-20 13:40:29,700 - INFO - Last Elexon update: 2025-09-20 08:40:29.699807+00:00 (240.0 minutes ago)
+2025-09-20 13:40:29,700 - INFO - 📊 Starting incremental Elexon update...
+2025-09-20 13:40:29,700 - INFO - Incremental range: 2025-09-20 to 2025-09-20
+2025-09-20 13:40:29,939 - WARNING - Could not update existing row, appending new: the header row in the worksheet contains duplicates: ['']To manually set the header row, use the `expected_headers` parameter of `get_all_records()`
+2025-09-20 13:40:36,804 - INFO - 🚀 Starting automated data tracking update...
+2025-09-20 13:40:36,804 - WARNING - No service account credentials found. Using default ADC.
+2025-09-20 13:40:37,832 - INFO - Google Sheets connection established
+2025-09-20 13:40:38,836 - INFO - Sheet headers initialized
+2025-09-20 13:40:39,062 - ERROR - Error reading from Google Sheets: the header row in the worksheet contains duplicates: ['']To manually set the header row, use the `expected_headers` parameter of `get_all_records()`
+2025-09-20 13:40:39,062 - INFO - Last Elexon update: 2025-09-20 08:40:39.062787+00:00 (240.0 minutes ago)
+2025-09-20 13:40:39,063 - INFO - 📊 Starting incremental Elexon update...
+2025-09-20 13:40:39,063 - INFO - Incremental range: 2025-09-20 to 2025-09-20
+2025-09-20 13:40:39,310 - WARNING - Could not update existing row, appending new: the header row in the worksheet contains duplicates: ['']To manually set the header row, use the `expected_headers` parameter of `get_all_records()`
+2025-09-20 13:41:58,152 - WARNING - No service account credentials found. Using default ADC.
+2025-09-20 13:41:59,704 - INFO - Google Sheets connection established
+2025-09-20 13:42:00,518 - ERROR - Error reading from Google Sheets: the header row in the worksheet contains duplicates: ['']To manually set the header row, use the `expected_headers` parameter of `get_all_records()`
+2025-09-20 13:49:34,230 - INFO - 🚀 Starting automated data tracking update...
+2025-09-20 13:49:34,231 - WARNING - No service account credentials found. Using default ADC.
+2025-09-20 13:49:35,798 - INFO - Google Sheets connection established
+2025-09-20 13:49:36,909 - INFO - Sheet headers initialized
+2025-09-20 13:49:37,126 - ERROR - Error reading from Google Sheets: the given 'expected_headers' contains unknown headers: {'Status', 'Last_Update', 'Tracked_At', 'Notes', 'Dataset'}
+2025-09-20 13:49:37,127 - INFO - Last Elexon update: 2025-09-20 08:49:37.127028+00:00 (240.0 minutes ago)
+2025-09-20 13:49:37,127 - INFO - 📊 Starting incremental Elexon update...
+2025-09-20 13:49:37,127 - INFO - Incremental range: 2025-09-20 to 2025-09-20
+2025-09-20 13:49:37,395 - WARNING - Could not update existing row, appending new: the header row in the worksheet contains duplicates: ['']To manually set the header row, use the `expected_headers` parameter of `get_all_records()`
+2025-09-20 13:50:07,257 - INFO - 🚀 Starting automated data tracking update...
+2025-09-20 13:50:07,257 - WARNING - No service account credentials found. Using default ADC.
+2025-09-20 13:50:08,404 - INFO - Google Sheets connection established
+2025-09-20 13:50:09,428 - INFO - Sheet headers initialized
+2025-09-20 13:50:09,632 - ERROR - Error reading from Google Sheets: the given 'expected_headers' contains unknown headers: {'Last_Update', 'Notes', 'Tracked_At', 'Dataset', 'Status'}
+2025-09-20 13:50:09,632 - INFO - Last Elexon update: 2025-09-20 08:50:09.632812+00:00 (240.0 minutes ago)
+2025-09-20 13:50:09,632 - INFO - 📊 Starting incremental Elexon update...
+2025-09-20 13:50:09,633 - INFO - Incremental range: 2025-09-20 to 2025-09-20
+2025-09-20 13:50:10,086 - INFO - Added new row for ELEXON_ALL
+2025-09-20 13:50:18,534 - WARNING - No service account credentials found. Using default ADC.
+2025-09-20 13:50:19,755 - INFO - Google Sheets connection established
+2025-09-20 13:50:20,760 - ERROR - Error reading from Google Sheets: the given 'expected_headers' contains unknown headers: {'Status', 'Notes', 'Last_Update', 'Tracked_At', 'Dataset'}
+2025-09-20 13:50:52,905 - WARNING - No service account credentials found. Using default ADC.
+2025-09-20 13:50:54,625 - INFO - Google Sheets connection established
+2025-09-20 13:50:55,787 - ERROR - Error reading from Google Sheets: the given 'expected_headers' contains unknown headers: {'Status', 'Notes', 'Last_Update', 'Tracked_At', 'Dataset'}
+2025-09-20 13:51:27,647 - WARNING - No service account credentials found. Using default ADC.
+2025-09-20 13:51:28,992 - INFO - Google Sheets connection established
+2025-09-20 13:51:29,732 - ERROR - Error reading from Google Sheets: the given 'expected_headers' contains unknown headers: {'Status', 'Notes', 'Last_Update', 'Tracked_At', 'Dataset'}
+2025-09-20 13:52:01,449 - WARNING - No service account credentials found. Using default ADC.
+2025-09-20 13:52:02,835 - INFO - Google Sheets connection established
+2025-09-20 13:52:03,597 - ERROR - Error reading from Google Sheets: the given 'expected_headers' contains unknown headers: {'Status', 'Notes', 'Last_Update', 'Tracked_At', 'Dataset'}
+2025-09-21 15:58:07,359 - INFO - 🚀 Starting 15-minute update at 2025-09-21 15:58:07 UTC
+2025-09-21 15:58:07,365 - WARNING - No service account credentials found. Using default ADC.
+2025-09-21 15:58:12,453 - ERROR - Failed to setup Google Sheets: 
+2025-09-21 17:00:30,911 - INFO - Starting continuous update mode, running every 15 minutes
+2025-09-21 17:00:30,911 - INFO - 🚀 Starting update at 2025-09-21 17:00:30 UTC
+2025-09-21 17:00:30,943 - WARNING - No service account credentials found. Using default ADC.
+2025-09-21 17:00:37,684 - ERROR - Failed to setup Google Sheets: 
+2025-09-21 17:00:37,684 - ERROR - Error in continuous mode: 
+2025-09-21 17:00:51,598 - INFO - Starting continuous update mode, running every 15 minutes
+2025-09-21 17:00:51,598 - INFO - 🚀 Starting update at 2025-09-21 17:00:51 UTC
+2025-09-21 17:00:51,599 - WARNING - No service account credentials found. Using default ADC.
+2025-09-21 17:00:52,897 - ERROR - Failed to setup Google Sheets: 
+2025-09-21 17:00:52,897 - ERROR - Error in continuous mode: 
+2025-09-21 17:02:16,439 - INFO - Using Google Sheets DataTracker
+2025-09-21 17:02:16,441 - INFO - 🚀 Starting update at 2025-09-21 17:02:16 UTC
+2025-09-21 17:02:16,442 - WARNING - No service account credentials found. Using default ADC.
+2025-09-21 17:02:17,694 - ERROR - Failed to setup Google Sheets: 
+2025-09-21 17:03:04,090 - INFO - Using Google Sheets DataTracker
+2025-09-21 17:03:04,091 - INFO - 🚀 Starting update at 2025-09-21 17:03:04 UTC
+2025-09-21 17:03:04,093 - WARNING - No service account credentials found. Using default ADC.
+2025-09-21 17:03:06,380 - ERROR - Failed to setup Google Sheets: 
+2025-09-21 17:03:06,380 - WARNING - Failed to initialize Google Sheets DataTracker: 
+2025-09-21 17:03:06,383 - INFO - Using Local File DataTracker as fallback
+2025-09-21 17:03:06,385 - INFO - Updating high-priority Elexon data...
+2025-09-21 17:03:06,385 - INFO - Running command: python /Users/georgemajor/jibber-jabber 24 august 2025 big bop/ingest_elexon_fixed.py --start 2025-09-21 15:43:06 --end 2025-09-21 15:58:06 --only FREQ,FUELINST,BOD,BOALF,COSTS,DISBSAD --dry-run --log-level INFO --use-staging-table --monitor-progress
+2025-09-21 17:03:37,410 - INFO - Elexon update completed in 31.0 seconds
+2025-09-21 17:03:37,411 - INFO - Updating standard-priority Elexon data...
+2025-09-21 17:03:37,411 - INFO - Running command: python /Users/georgemajor/jibber-jabber 24 august 2025 big bop/ingest_elexon_fixed.py --start 2025-09-21 15:43:37 --end 2025-09-21 15:58:37 --only MELS,MILS,QAS,NETBSAD,PN,QPN --dry-run --log-level INFO --use-staging-table --monitor-progress
+2025-09-21 17:03:54,518 - INFO - Elexon update completed in 17.1 seconds
+2025-09-21 17:03:54,519 - INFO - Updating REMIT data...
+2025-09-21 17:03:54,519 - INFO - Running command: python /Users/georgemajor/jibber-jabber 24 august 2025 big bop/ingest_remit.py --check-only
+2025-09-21 17:03:58,058 - INFO - REMIT update completed in 3.5 seconds
+2025-09-21 17:03:58,058 - INFO - Updating NESO data...
+2025-09-21 17:03:58,061 - WARNING - No service account credentials found. Using default ADC.
+2025-09-21 17:03:58,851 - ERROR - Failed to setup Google Sheets: 
+2025-09-21 17:03:58,852 - ERROR - Error in NESO update: 
+2025-09-21 17:03:58,853 - INFO - ✅ Update completed in 54.8 seconds
+2025-09-21 17:04:36,148 - INFO - Using Google Sheets DataTracker
+2025-09-21 17:04:36,150 - INFO - Starting continuous update mode, running every 15 minutes
+2025-09-21 17:04:36,150 - INFO - 🚀 Starting update at 2025-09-21 17:04:36 UTC
+2025-09-21 17:04:36,151 - WARNING - No service account credentials found. Using default ADC.
+2025-09-21 17:04:38,037 - ERROR - Failed to setup Google Sheets: 
+2025-09-21 17:04:38,038 - WARNING - Failed to initialize Google Sheets DataTracker: 
+2025-09-21 17:04:38,041 - INFO - Using Local File DataTracker as fallback
+2025-09-21 17:04:38,045 - INFO - Updating high-priority Elexon data...
+2025-09-21 17:04:38,045 - INFO - Running command: python /Users/georgemajor/jibber-jabber 24 august 2025 big bop/ingest_elexon_fixed.py --start 2025-09-21 15:44:38 --end 2025-09-21 15:59:38 --only FREQ,FUELINST,BOD,BOALF,COSTS,DISBSAD --dry-run --log-level INFO --use-staging-table --monitor-progress
+2025-09-21 17:05:08,825 - INFO - Elexon update completed in 30.8 seconds
+2025-09-21 17:05:08,826 - INFO - Updating standard-priority Elexon data...
+2025-09-21 17:05:08,826 - INFO - Running command: python /Users/georgemajor/jibber-jabber 24 august 2025 big bop/ingest_elexon_fixed.py --start 2025-09-21 15:45:08 --end 2025-09-21 16:00:08 --only MELS,MILS,QAS,NETBSAD,PN,QPN --dry-run --log-level INFO --use-staging-table --monitor-progress
+2025-09-21 17:05:44,676 - INFO - Elexon update completed in 35.8 seconds
+2025-09-21 17:05:44,677 - INFO - Updating REMIT data...
+2025-09-21 17:05:44,677 - INFO - Running command: python /Users/georgemajor/jibber-jabber 24 august 2025 big bop/ingest_remit.py --check-only
+2025-09-21 17:05:48,882 - INFO - REMIT update completed in 4.2 seconds
+2025-09-21 17:05:48,882 - INFO - Updating NESO data...
+2025-09-21 17:05:48,885 - WARNING - No service account credentials found. Using default ADC.
+2025-09-21 17:05:50,270 - ERROR - Failed to setup Google Sheets: 
+2025-09-21 17:05:50,271 - INFO - Falling back to direct NESO script execution
+2025-09-21 17:05:50,271 - INFO - Running command: /Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/bin/python /Users/georgemajor/jibber-jabber 24 august 2025 big bop/neso_data_updater.py --direct-run --dry-run
+2025-09-21 17:05:51,114 - WARNING - No service account credentials found. Using default ADC.
+2025-09-21 17:05:52,415 - ERROR - Failed to setup Google Sheets: 
+2025-09-21 17:05:52,553 - ERROR - NESO direct update failed: 2025-09-21 17:05:51,114 - WARNING - No service account credentials found. Using default ADC.
+2025-09-21 17:05:52,415 - ERROR - Failed to setup Google Sheets: 
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/gspread/client.py", line 168, in open_by_key
+    spreadsheet = Spreadsheet(self.http_client, {"id": key})
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/gspread/spreadsheet.py", line 29, in __init__
+    metadata = self.fetch_sheet_metadata()
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/gspread/spreadsheet.py", line 230, in fetch_sheet_metadata
+    return self.client.fetch_sheet_metadata(self.id, params=params)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/gspread/http_client.py", line 305, in fetch_sheet_metadata
+    r = self.request("get", url, params=params)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/gspread/http_client.py", line 128, in request
+    raise APIError(response)
+gspread.exceptions.APIError: APIError: [403]: Request had insufficient authentication scopes.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/neso_data_updater.py", line 216, in <module>
+    main()
+    ~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/neso_data_updater.py", line 208, in main
+    updater = NESODataUpdater()
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/neso_data_updater.py", line 24, in __init__
+    self.tracker = DataTracker()
+                   ~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/automated_data_tracker.py", line 39, in __init__
+    self.setup_google_sheets()
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/automated_data_tracker.py", line 87, in setup_google_sheets
+    self.sheet = self.gc.open_by_key(SPREADSHEET_ID).worksheet(WORKSHEET_NAME)
+                 ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/gspread/client.py", line 173, in open_by_key
+    raise PermissionError from ex
+PermissionError
+
+2025-09-21 17:05:52,556 - INFO - ✅ Update completed in 76.4 seconds
+2025-09-21 17:05:52,557 - INFO - Next update scheduled for 17:20:52
+2025-09-21 17:39:33,681 - INFO - Using Google Sheets DataTracker
+2025-09-21 17:39:33,688 - INFO - Starting continuous update mode, running every 15 minutes
+2025-09-21 17:39:33,688 - INFO - 🚀 Starting update at 2025-09-21 17:39:33 UTC
+2025-09-21 17:39:33,691 - WARNING - No service account credentials found. Using default ADC.
+2025-09-21 17:39:35,923 - ERROR - Failed to setup Google Sheets: 
+2025-09-21 17:39:35,923 - WARNING - Failed to initialize Google Sheets DataTracker: 
+2025-09-21 17:39:35,937 - INFO - Using Local File DataTracker as fallback
+2025-09-21 17:39:35,939 - INFO - Updating high-priority Elexon data...
+2025-09-21 17:39:35,939 - INFO - Running command: python /Users/georgemajor/jibber-jabber 24 august 2025 big bop/ingest_elexon_fixed.py --start 2025-09-21 16:19:35 --end 2025-09-21 16:34:35 --only FREQ,FUELINST,BOD,BOALF,COSTS,DISBSAD --dry-run --log-level INFO --use-staging-table --monitor-progress
+2025-09-21 17:40:13,206 - INFO - Elexon update completed in 37.3 seconds
+2025-09-21 17:40:13,206 - INFO - Updating standard-priority Elexon data...
+2025-09-21 17:40:13,206 - INFO - Running command: python /Users/georgemajor/jibber-jabber 24 august 2025 big bop/ingest_elexon_fixed.py --start 2025-09-21 16:20:13 --end 2025-09-21 16:35:13 --only MELS,MILS,QAS,NETBSAD,PN,QPN --dry-run --log-level INFO --use-staging-table --monitor-progress
+2025-09-21 17:40:32,828 - INFO - Elexon update completed in 19.6 seconds
+2025-09-21 17:40:32,829 - INFO - Updating REMIT data...
+2025-09-21 17:40:32,829 - INFO - Running command: python /Users/georgemajor/jibber-jabber 24 august 2025 big bop/ingest_remit.py --check-only
+2025-09-21 17:40:36,318 - INFO - REMIT update completed in 3.5 seconds
+2025-09-21 17:40:36,320 - INFO - Updating NESO data...
+2025-09-21 17:40:36,321 - WARNING - No service account credentials found. Using default ADC.
+2025-09-21 17:40:37,564 - ERROR - Failed to setup Google Sheets: 
+2025-09-21 17:40:37,564 - INFO - Falling back to direct NESO script execution
+2025-09-21 17:40:37,564 - INFO - Running command: /Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/bin/python /Users/georgemajor/jibber-jabber 24 august 2025 big bop/neso_data_updater.py --direct-run --dry-run
+2025-09-21 17:40:38,454 - WARNING - No service account credentials found. Using default ADC.
+2025-09-21 17:40:39,822 - ERROR - Failed to setup Google Sheets: 
+2025-09-21 17:40:40,019 - ERROR - NESO direct update failed: 2025-09-21 17:40:38,454 - WARNING - No service account credentials found. Using default ADC.
+2025-09-21 17:40:39,822 - ERROR - Failed to setup Google Sheets: 
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/gspread/client.py", line 168, in open_by_key
+    spreadsheet = Spreadsheet(self.http_client, {"id": key})
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/gspread/spreadsheet.py", line 29, in __init__
+    metadata = self.fetch_sheet_metadata()
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/gspread/spreadsheet.py", line 230, in fetch_sheet_metadata
+    return self.client.fetch_sheet_metadata(self.id, params=params)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/gspread/http_client.py", line 305, in fetch_sheet_metadata
+    r = self.request("get", url, params=params)
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/gspread/http_client.py", line 128, in request
+    raise APIError(response)
+gspread.exceptions.APIError: APIError: [403]: Request had insufficient authentication scopes.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/neso_data_updater.py", line 216, in <module>
+    main()
+    ~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/neso_data_updater.py", line 208, in main
+    updater = NESODataUpdater()
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/neso_data_updater.py", line 24, in __init__
+    self.tracker = DataTracker()
+                   ~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/automated_data_tracker.py", line 39, in __init__
+    self.setup_google_sheets()
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/automated_data_tracker.py", line 87, in setup_google_sheets
+    self.sheet = self.gc.open_by_key(SPREADSHEET_ID).worksheet(WORKSHEET_NAME)
+                 ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/.venv/lib/python3.13/site-packages/gspread/client.py", line 173, in open_by_key
+    raise PermissionError from ex
+PermissionError
+
+2025-09-21 17:40:40,022 - INFO - ✅ Update completed in 66.3 seconds
+2025-09-21 17:40:40,025 - INFO - Next update scheduled for 17:55:40

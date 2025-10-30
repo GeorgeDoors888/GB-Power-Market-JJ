@@ -1,0 +1,27 @@
+# Integrated ELEXON Data Collection and Watermark Management
+# Last updated: September 21, 2025
+SHELL=/bin/bash
+PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+HOME=/Users/georgemajor
+
+# ELEXON IRIS data collection setup
+# Data is downloaded continuously by the IRIS client
+# and processed regularly
+
+# Run on system startup
+@reboot cd "/Users/georgemajor/jibber-jabber 24 august 2025 big bop" && bash integrated_update.sh
+
+# Run every 15 minutes for high-frequency data
+*/15 * * * * cd "/Users/georgemajor/jibber-jabber 24 august 2025 big bop" && bash integrated_update.sh
+
+# ELEXON IRIS cleanup - Every hour
+0 * * * * cd "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/elexon_iris" && ./cleanup_processed_files.sh >> logs/cleanup_$(date +\%Y\%m\%d).log 2>&1
+
+# Weekly full data refresh - Run every Sunday at 2:00 AM
+0 2 * * 0 cd "/Users/georgemajor/jibber-jabber 24 august 2025 big bop" && python ingest_elexon_fixed.py --start $(date -v-7d +\%Y-\%m-\%d) --end $(date +\%Y-\%m-\%d) --include-offline --log-level INFO >> elexon_weekly_update.log 2>&1
+
+# Monthly comprehensive watermark analysis - Run on the 1st of each month at 3:00 AM
+0 3 1 * * cd "/Users/georgemajor/jibber-jabber 24 august 2025 big bop" && python analyze_watermarks.py --output "watermark_analysis_monthly_$(date +\%Y\%m).md" >> "logs/watermark_monthly_$(date +\%Y\%m).log" 2>&1
+
+# Ensure log directories exist
+0 0 * * * mkdir -p "/Users/georgemajor/jibber-jabber 24 august 2025 big bop/logs"

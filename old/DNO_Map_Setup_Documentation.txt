@@ -1,0 +1,195 @@
+### Documentation: Setting Up and Using the UK DNO Map Visualization
+
+---
+
+#### **Overview**
+This document outlines the steps taken to set up the UK Distribution Network Operator (DNO) map visualization in Google Sheets. The process includes preparing GeoJSON data, integrating it with Google Sheets, and configuring Google Apps Script to render the map.
+
+---
+
+### **Latest Recommended Approach: Embedded GeoJSON**
+
+#### **Why Embed GeoJSON Directly in Apps Script?**
+- **No Storage Requirements**: Eliminates the need to store GeoJSON in Google Drive
+- **No Permission Issues**: Avoids the need for Drive file access permissions
+- **Simplified Architecture**: No dependencies on external files
+- **Better Performance**: Loads faster since no external file fetch is required
+- **Works with Service Accounts**: Compatible with the limitations of service accounts like `jibber-jabber-knowledge@appspot.gserviceaccount.com`
+
+#### **Implementation**
+- **Script**: `embedded_geojson_dno_map.py`
+- **Purpose**: Creates a Google Sheet with DNO data and an Apps Script project with embedded GeoJSON
+- **Key Features**:
+  - Embeds the GeoJSON directly as a JavaScript object in the Apps Script code
+  - Updates the Google Sheet with DNO data
+  - Creates an interactive map that reads values from the sheet
+  - Provides automatic and manual setup options
+
+#### **Result**
+This approach creates exactly what we need:
+- In Google Sheets, you'll see a new menu **Energy Maps → Show DNO Map**
+- Clicking it opens an interactive UK map with DNO boundaries
+- Polygons are shaded by values in your DNO_Data tab
+- Clicking a region shows the DNO name + value
+
+---
+
+### **Original Approaches (For Reference)**
+
+#### **1. GeoJSON File Preparation**
+- **File**: `/Users/georgemajor/jibber-jabber 24 august 2025 big bop/system_regulatory/gis/merged_geojson.geojson`
+- **Purpose**: This file contains the GeoJSON data representing DNO license areas.
+- **Action**: The file was generated and saved locally using the `compare_geojson_features.py` script.
+
+---
+
+#### **2. Python Script for Google Sheets Integration**
+- **Script**: `setup_google_sheets.py`
+- **Purpose**: Automates the process of uploading the GeoJSON file to Google Drive, updating the Google Sheet with DNO data, and configuring the Apps Script project.
+- **Key Features**:
+  - Uploads the GeoJSON file to Google Drive.
+  - Updates the Google Sheet with DNO data.
+  - Configures the Apps Script project with the GeoJSON file ID.
+- **Challenges**:
+  - The script encountered a `403: Storage quota exceeded` error during the file upload step, despite sufficient storage space in the user's Google Drive.
+  - Logging was added to verify the active account and storage quota details.
+
+---
+
+#### **3. Google Drive File ID**
+- **Purpose**: The GeoJSON file ID is required to configure the Apps Script project.
+- **Steps**:
+  1. Upload the GeoJSON file manually to Google Drive.
+  2. Extract the file ID from the Google Drive link (the part between `/d/` and `/edit`).
+
+---
+
+#### **4. Google Apps Script Configuration**
+- **Purpose**: Render the DNO map in Google Sheets using the GeoJSON data.
+- **Steps**:
+  1. Open the Google Sheet and access the Apps Script editor (`Extensions > Apps Script`).
+  2. Replace the default `Code.gs` file with the following code:
+     ```javascript
+     function onOpen() {
+       const ui = SpreadsheetApp.getUi();
+       ui.createMenu('Energy Maps')
+         .addItem('Show DNO Map', 'showDNOMap')
+         .addToUi();
+     }
+
+     function showDNOMap() {
+       const html = HtmlService.createHtmlOutputFromFile('mapView')
+         .setWidth(800)
+         .setHeight(600);
+       SpreadsheetApp.getUi().showModalDialog(html, 'DNO Map');
+     }
+     ```
+  3. Create a new HTML file (`mapView.html`) with the following code:
+     ```html
+     <!DOCTYPE html>
+     <html>
+       <head>
+         <title>DNO Map</title>
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" />
+         <style>
+           #map {
+             height: 100%;
+             width: 100%;
+           }
+         </style>
+       </head>
+       <body>
+         <div id="map"></div>
+         <script>
+           const GEOJSON_FILE_ID = '<?= PropertiesService.getScriptProperties().getProperty("GEOJSON_FILE_ID") ?>';
+
+           // Initialize the map
+           const map = L.map('map').setView([54.5, -2.5], 6); // Centered on the UK
+           L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+             maxZoom: 19,
+             attribution: '© OpenStreetMap contributors'
+           }).addTo(map);
+
+           // Fetch and display the GeoJSON data
+           fetch(`https://www.googleapis.com/drive/v3/files/${GEOJSON_FILE_ID}?alt=media`, {
+             headers: {
+               Authorization: `Bearer ${ScriptApp.getOAuthToken()}`
+             }
+           })
+             .then(response => response.json())
+             .then(data => {
+               L.geoJSON(data, {
+                 style: feature => ({
+                   color: '#3388ff',
+                   weight: 2,
+                   opacity: 1,
+                   fillOpacity: 0.5
+                 }),
+                 onEachFeature: (feature, layer) => {
+                   layer.bindPopup(`<strong>${feature.properties.name}</strong>`);
+                 }
+               }).addTo(map);
+             })
+             .catch(error => console.error('Error loading GeoJSON:', error));
+         </script>
+       </body>
+     </html>
+     ```
+
+---
+
+#### **5. Testing the Map**
+- **Steps**:
+  1. Open the Google Sheet.
+  2. Refresh the page if needed.
+  3. Look for a new menu called `Energy Maps`.
+  4. Click on `Energy Maps > Show DNO Map` to display the map.
+
+---
+
+### **Challenges Encountered and Solutions**
+1. **Google Drive Upload Issue**:
+   - Original Challenge: The Python script failed to upload the GeoJSON file due to a `403: Storage quota exceeded` error.
+   - Original Resolution: The file was uploaded manually to Google Drive.
+   - **New Solution**: Embed the GeoJSON directly in the Apps Script code to avoid Drive storage requirements altogether.
+
+2. **GeoJSON File ID**:
+   - Original Challenge: The file ID was not generated automatically due to the upload failure.
+   - Original Resolution: The file ID was extracted manually from the Google Drive link.
+   - **New Solution**: No file ID is needed when the GeoJSON is embedded directly in the code.
+
+3. **Apps Script Configuration**:
+   - Original Challenge: The Apps Script project required manual setup to include the GeoJSON file ID and render the map.
+   - **New Solution**: The `embedded_geojson_dno_map.py` script automates this process while providing fallback to manual setup if needed.
+
+4. **Service Account Limitations**:
+   - Challenge: The service account `jibber-jabber-knowledge@appspot.gserviceaccount.com` had limited access to the Apps Script API.
+   - Resolution: The embedded GeoJSON approach works within these limitations by removing dependencies on external file storage.
+
+---
+
+### **Next Steps**
+1. **Run the New Embedded GeoJSON Script**:
+   - Execute `embedded_geojson_dno_map.py` to set up the map with embedded GeoJSON.
+   - This script handles both the DNO data in the sheet and the GeoJSON embedding in Apps Script.
+
+2. **Verify the Map Functionality**:
+   - Ensure the map renders correctly in the Google Sheet.
+   - Test the interactivity (e.g., zoom, hover, and click features).
+   - Verify that polygon colors reflect the values in the DNO_Data tab.
+
+3. **Update DNO Data as Needed**:
+   - The script includes sample DNO data that you can update with actual values.
+   - You can edit the DNO_Data sheet directly in Google Sheets, or update the script to pull data from other sources.
+
+4. **Consider Adding More Features**:
+   - Additional data layers
+   - Time-series data visualization
+   - More detailed tooltips when hovering over regions
+   - Custom color schemes based on data ranges
+
+---
+
+This documentation has been updated to reflect the embedded GeoJSON approach, which eliminates the need for separate file storage and works within the constraints of service account permissions.
+

@@ -1,0 +1,44 @@
+# Project Summary - Elexon Data Ingestion
+
+**Date:** 28 August 2025
+
+## 1. Overall Goal
+
+The primary objective of this project is to reliably and automatically ingest energy data from the Elexon APIs (both the modern "Insights" API and the legacy "BMRS" API) into a Google BigQuery dataset for analysis.
+
+## 2. Project Components
+
+Here are the key scripts and files we have developed and are using:
+
+*   **`ingest_insights_endpoints.py`**: This is the main workhorse script responsible for fetching data from the Elexon APIs and loading it into BigQuery. It is designed to be driven by a YAML configuration file.
+
+*   **`build_insights_config_from_metadata.py`**: To avoid manual configuration, we created this script to automatically generate the ingestion configuration. It reads the official `api_metadata.json` file and produces a complete YAML file (`insights_endpoints.generated.yml`) with all available endpoints correctly categorized.
+
+*   **`insights_endpoints.generated.yml`**: This is the master configuration file that is automatically generated. It contains all the necessary details for each API endpoint, including its path, parameters, and which data group it belongs to (`insights_datasets` or `bmrs_datasets`).
+
+*   **`check_bq_data_health.py`**: A utility script to connect to BigQuery and generate a report on the completeness of the data for a given month. This is our primary tool for verifying that the ingestion was successful.
+
+*   **`api_metadata.json`**: The source-of-truth file provided by Elexon, containing the OpenAPI specifications for their APIs.
+
+## 3. Current Status & Progress
+
+We have made significant progress, but are currently blocked on a critical issue.
+
+### What is Working:
+
+*   **Configuration Generation:** The `build_insights_config_from_metadata.py` script is **working perfectly**. It successfully processes the `api_metadata.json` file and generates a complete and accurate `insights_endpoints.generated.yml` file containing all 295 endpoints, correctly divided into `insights_datasets` and `bmrs_datasets` groups.
+*   **Data Health Check:** The `check_bq_data_health.py` script is **working correctly**. It can successfully connect to BigQuery and report on the data that is present.
+*   **Legacy Data Ingestion:** We have successfully ingested a large amount of data from the `bmrs_datasets` group.
+
+### The Core Problem:
+
+*   **Ingestion Script Bug:** The main `ingest_insights_endpoints.py` script has a persistent bug. **It is failing to correctly filter the endpoints based on the `--groups` command-line argument.**
+*   When we run the command to ingest the `insights_datasets` group, the script incorrectly filters the list of endpoints and ends up with an empty list, causing it to finish instantly without downloading any data.
+*   We have tried rewriting the core logic of this script multiple times, but the error remains. This is the **single blocking issue** preventing us from completing our goal.
+
+## 4. Next Steps
+
+1.  **Fix the Ingestion Script:** The absolute and only priority is to debug and fix the filtering logic in `ingest_insights_endpoints.py`. I will be adding targeted debugging statements to the script to trace the execution and see exactly why the list of endpoints is empty.
+2.  **Verify the Fix:** Before running a full ingestion, I will first run the script in a "dry run" mode or with enough logging to prove that it has correctly selected the ~56 endpoints from the `insights_datasets` group.
+3.  **Run the Ingestion:** Once the fix is verified, I will execute the ingestion for the `insights_datasets` group for the entire month of June 2025.
+4.  **Final Verification:** After the ingestion completes, I will use the `check_bq_data_health.py` script to provide you with a final, detailed report from BigQuery confirming that all datasets have been loaded completely.

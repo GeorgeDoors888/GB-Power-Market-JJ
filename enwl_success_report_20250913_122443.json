@@ -1,0 +1,67 @@
+{
+  "dno_profile": {
+    "name": "Electricity North West (ENWL)",
+    "mpan_id": "14",
+    "region": "North West England",
+    "coverage_status": "DATA_COLLECTED",
+    "priority": "HIGH_VALUE_TARGET"
+  },
+  "data_sources_discovered": {
+    "carbon_intensity_data": {
+      "records": 1,
+      "data_quality": "high",
+      "contains": [
+        "carbon_intensity",
+        "generation_mix",
+        "renewable_percentage"
+      ],
+      "insights": "Low carbon region (15.0 intensity), 66.5% renewable"
+    },
+    "capacity_market_data": {
+      "cmu_registrations": 6,
+      "components": 4,
+      "data_quality": "high",
+      "contains": [
+        "generation_assets",
+        "storage_facilities",
+        "network_infrastructure"
+      ],
+      "insights": "Storage facilities in Penwortham area, battery and gas generation"
+    },
+    "regulatory_information": {
+      "website_accessible": true,
+      "regulatory_page_found": true,
+      "duos_content_score": 72,
+      "status": "monitoring_for_updates"
+    }
+  },
+  "integration_results": {
+    "bigquery_ready_files": 2,
+    "total_records_processed": 11,
+    "data_exports_created": [
+      "carbon_intensity",
+      "capacity_market",
+      "summary_analysis"
+    ],
+    "integration_status": "complete"
+  },
+  "coverage_impact": {
+    "before_enwl": {
+      "dnos_with_data": 3,
+      "total_uk_dnos": 14,
+      "coverage_percentage": 21.4
+    },
+    "after_enwl": {
+      "dnos_with_data": 4,
+      "total_uk_dnos": 14,
+      "coverage_percentage": 28.6,
+      "improvement": "+7.2 percentage points"
+    }
+  },
+  "next_targets": [
+    "Northern Powergrid (MPAN 20) - website accessible, need deeper search",
+    "Western Power Distribution (MPAN 21-24) - now National Grid, promising leads",
+    "Scottish Power Energy Networks (MPAN 25-26) - high priority",
+    "SSEN Scottish & Southern (MPAN 27-28) - high priority"
+  ]
+}
