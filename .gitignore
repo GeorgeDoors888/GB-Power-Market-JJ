@@ -9,3 +9,6 @@ tools/ai_memory/indexdir/
 context/
 .DS_Store
 **/.DS_Store
+credentials.json
+oauth_credentials.json
+token.json
