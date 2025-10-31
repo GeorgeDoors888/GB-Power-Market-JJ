@@ -1,0 +1,22 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+node_modules/
+dist/
+build/
+tools/ai_memory/indexdir/
+context/
+.DS_Store
+**/.DS_Store
+credentials.json
+oauth_credentials.json
+token.json
+
+# IRIS credentials - NEVER commit!
+iris_settings.json
+iris_data/
+settings.json
+
+# Gemini API key - NEVER commit!
+gemini_api_key.txt
