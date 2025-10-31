@@ -1,0 +1,121 @@
+{
+  "total_rows": 1009,
+  "total_cols": 27,
+  "structure": [
+    {
+      "row": 1,
+      "first_cell": "\ud83c\uddec\ud83c\udde7 UK POWER MARKET DASHBOARD",
+      "num_filled": 1
+    },
+    {
+      "row": 2,
+      "first_cell": "\u23f0 Last Updated: 2025-10-30 14:10:00 | Settlement Period 29",
+      "num_filled": 1
+    },
+    {
+      "row": 4,
+      "first_cell": "\ud83d\udcca SYSTEM METRICS",
+      "num_filled": 1
+    },
+    {
+      "row": 5,
+      "first_cell": "Total Generation: 27.8 GW",
+      "num_filled": 4
+    },
+    {
+      "row": 7,
+      "first_cell": "\u26a1 GENERATION BY FUEL TYPE",
+      "num_filled": 2
+    },
+    {
+      "row": 8,
+      "first_cell": "\ud83d\udd25 Gas (CCGT)",
+      "num_filled": 5
+    },
+    {
+      "row": 9,
+      "first_cell": "\u269b\ufe0f Nuclear",
+      "num_filled": 5
+    },
+    {
+      "row": 10,
+      "first_cell": "\ud83d\udca8 Wind",
+      "num_filled": 4
+    },
+    {
+      "row": 11,
+      "first_cell": "\ud83c\udf3f Biomass",
+      "num_filled": 4
+    },
+    {
+      "row": 12,
+      "first_cell": "\ud83d\udca7 Hydro (Run-of-River)",
+      "num_filled": 4
+    },
+    {
+      "row": 13,
+      "first_cell": "\ufffd Pumped Storage",
+      "num_filled": 4
+    },
+    {
+      "row": 14,
+      "first_cell": "\u26ab Coal",
+      "num_filled": 4
+    },
+    {
+      "row": 15,
+      "first_cell": "\ud83d\udd25 Gas Peaking (OCGT)",
+      "num_filled": 4
+    },
+    {
+      "row": 16,
+      "first_cell": "\ud83d\udee2\ufe0f Oil",
+      "num_filled": 4
+    },
+    {
+      "row": 29,
+      "first_cell": "\ud83d\udd34 POWER STATION OUTAGES & MARKET IMPACT",
+      "num_filled": 1
+    },
+    {
+      "row": 30,
+      "first_cell": "Active Outages: 4 of 5 events",
+      "num_filled": 4
+    },
+    {
+      "row": 32,
+      "first_cell": "",
+      "num_filled": 1
+    },
+    {
+      "row": 33,
+      "first_cell": "Event",
+      "num_filled": 7
+    },
+    {
+      "row": 34,
+      "first_cell": "Drax Unit 1",
+      "num_filled": 7
+    },
+    {
+      "row": 35,
+      "first_cell": "Pembroke CCGT Unit 4",
+      "num_filled": 7
+    },
+    {
+      "row": 36,
+      "first_cell": "Sizewell B",
+      "num_filled": 1
+    },
+    {
+      "row": 37,
+      "first_cell": "London Array Wind Farm",
+      "num_filled": 7
+    },
+    {
+      "row": 39,
+      "first_cell": "",
+      "num_filled": 1
+    }
+  ]
+}

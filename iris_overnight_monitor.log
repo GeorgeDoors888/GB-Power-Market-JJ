@@ -1,0 +1,6592 @@
+========================================
+🌙 IRIS Overnight Monitoring Started
+Started: Thu Oct 30 18:21:05 GMT 2025
+Check Interval: 300s (5 minutes)
+Will run until manually stopped (Ctrl+C)
+========================================
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #1 - 2025-10-30 18:21:05
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+✅ IRIS Client (PID: 81929) - Running
+✅ IRIS Processor (PID: 596) - Running
+
+📁 File Backlog:
+   Files pending: 47689
+
+⏱️  Data Lag:
+   Latest data: 2 minutes ago
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 3.2%, Memory 1.0%
+   Disk usage: 85%
+
+⚠️  Status: WARNING - Issues detected
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #2 - 2025-10-30 18:26:09
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+✅ IRIS Client (PID: 81929) - Running
+✅ IRIS Processor (PID: 596) - Running
+
+📁 File Backlog:
+   Files pending: 61775
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 2 minutes ago
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 50
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.1%, Memory 1.0%
+   Disk usage: 85%
+
+⚠️  Status: WARNING - Issues detected
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #3 - 2025-10-30 18:31:13
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+✅ IRIS Client (PID: 81929) - Running
+✅ IRIS Processor (PID: 596) - Running
+
+📁 File Backlog:
+   Files pending: 72726
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 0 minutes ago
+
+📈 Record Counts:
+   BOD: 232476 records
+   MELS: 53605 records
+   BOALF: 27671 records
+   FREQ: 7840 records
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 44
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.3%, Memory 0.3%
+   Disk usage: 86%
+
+⚠️  Status: WARNING - Issues detected
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #4 - 2025-10-30 18:36:26
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+✅ IRIS Client (PID: 81929) - Running
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 86078
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 1 minutes ago
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 0
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 85%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #5 - 2025-10-30 18:41:30
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+✅ IRIS Client (PID: 81929) - Running
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 86262
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 6 minutes ago
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 0
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 85%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #6 - 2025-10-30 18:46:35
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+✅ IRIS Client (PID: 81929) - Running
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 86436
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 11 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+📈 Record Counts:
+   BOD: 298872 records
+   MELS: 53605 records
+   BOALF: 31387 records
+   FREQ: 7840 records
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 2
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 85%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #7 - 2025-10-30 18:51:41
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+✅ IRIS Client (PID: 81929) - Running
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 86675
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 16 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 2
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 86%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #8 - 2025-10-30 18:56:45
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+✅ IRIS Client (PID: 81929) - Running
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 85751
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 2 minutes ago
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 4
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 86%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #9 - 2025-10-30 19:01:49
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+✅ IRIS Client (PID: 81929) - Running
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 86023
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 7 minutes ago
+
+📈 Record Counts:
+   BOD: 298872 records
+   MELS: 53605 records
+   BOALF: 33258 records
+   FREQ: 10064 records
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 4
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 86%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #10 - 2025-10-30 19:06:54
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+✅ IRIS Client (PID: 81929) - Running
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 86367
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 12 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 6
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 86%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #11 - 2025-10-30 19:11:59
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+✅ IRIS Client (PID: 81929) - Running
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 86651
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 17 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 6
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 87%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #12 - 2025-10-30 19:17:04
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+✅ IRIS Client (PID: 81929) - Running
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 85724
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 2 minutes ago
+
+📈 Record Counts:
+   BOD: 298872 records
+   MELS: 58926 records
+   BOALF: 33803 records
+   FREQ: 12616 records
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 8
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 85%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #13 - 2025-10-30 19:22:11
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+✅ IRIS Client (PID: 81929) - Running
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 85959
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 7 minutes ago
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 8
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 85%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #14 - 2025-10-30 19:27:14
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+✅ IRIS Client (PID: 81929) - Running
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 86070
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 12 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 10
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 85%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #15 - 2025-10-30 19:32:18
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+✅ IRIS Client (PID: 81929) - Running
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 86314
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 17 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+📈 Record Counts:
+   BOD: 298872 records
+   MELS: 58926 records
+   BOALF: 33803 records
+   FREQ: 12616 records
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 10
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 87%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #16 - 2025-10-30 19:37:23
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+✅ IRIS Client (PID: 81929) - Running
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 84752
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 2 minutes ago
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 12
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 86%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #17 - 2025-10-30 19:42:28
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+✅ IRIS Client (PID: 81929) - Running
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 84974
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 7 minutes ago
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 12
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 85%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #18 - 2025-10-30 19:47:32
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+✅ IRIS Client (PID: 81929) - Running
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 85054
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 12 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+📈 Record Counts:
+   BOD: 298872 records
+   MELS: 72046 records
+   BOALF: 34042 records
+   FREQ: 12696 records
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 14
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 85%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #19 - 2025-10-30 19:52:38
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+✅ IRIS Client (PID: 81929) - Running
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 85280
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 18 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 14
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 86%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #20 - 2025-10-30 19:57:41
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+✅ IRIS Client (PID: 81929) - Running
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 83769
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 3 minutes ago
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 16
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 86%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #21 - 2025-10-30 20:02:45
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+✅ IRIS Client (PID: 81929) - Running
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 84039
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 8 minutes ago
+
+📈 Record Counts:
+   BOD: 298872 records
+   MELS: 82900 records
+   BOALF: 34215 records
+   FREQ: 12776 records
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 16
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 86%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #22 - 2025-10-30 20:07:51
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+✅ IRIS Client (PID: 81929) - Running
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 84279
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 13 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 18
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 86%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #23 - 2025-10-30 20:12:54
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+✅ IRIS Client (PID: 81929) - Running
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 84446
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 18 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 18
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 86%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #24 - 2025-10-30 20:17:58
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+✅ IRIS Client (PID: 81929) - Running
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 82662
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 3 minutes ago
+
+📈 Record Counts:
+   BOD: 298872 records
+   MELS: 93872 records
+   BOALF: 34658 records
+   FREQ: 12856 records
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 20
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 85%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #25 - 2025-10-30 20:23:04
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+✅ IRIS Client (PID: 81929) - Running
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 82821
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 9 minutes ago
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 20
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 85%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #26 - 2025-10-30 20:28:08
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+✅ IRIS Client (PID: 81929) - Running
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 82910
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 14 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 22
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 86%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #27 - 2025-10-30 20:33:11
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+✅ IRIS Client (PID: 81929) - Running
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 83296
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 19 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+📈 Record Counts:
+   BOD: 298872 records
+   MELS: 93872 records
+   BOALF: 34658 records
+   FREQ: 12856 records
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 22
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 86%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #28 - 2025-10-30 20:38:17
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+✅ IRIS Client (PID: 81929) - Running
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 81732
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 4 minutes ago
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 20
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 86%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #29 - 2025-10-30 20:43:21
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+✅ IRIS Client (PID: 81929) - Running
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 81934
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 9 minutes ago
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 20
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 86%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #30 - 2025-10-30 20:48:24
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+✅ IRIS Client (PID: 81929) - Running
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 82192
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 14 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+📈 Record Counts:
+   BOD: 298872 records
+   MELS: 104682 records
+   BOALF: 35002 records
+   FREQ: 12928 records
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 22
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 87%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #31 - 2025-10-30 20:53:30
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+✅ IRIS Client (PID: 81929) - Running
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 82538
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 19 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 24
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 87%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #32 - 2025-10-30 20:58:33
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+✅ IRIS Client (PID: 81929) - Running
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 80884
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 4 minutes ago
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 20
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 86%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #33 - 2025-10-30 21:03:37
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+✅ IRIS Client (PID: 81929) - Running
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 81192
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 9 minutes ago
+
+📈 Record Counts:
+   BOD: 298872 records
+   MELS: 115553 records
+   BOALF: 35648 records
+   FREQ: 13008 records
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 22
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 86%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #34 - 2025-10-30 21:08:43
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+✅ IRIS Client (PID: 81929) - Running
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 81296
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 15 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 22
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 86%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #35 - 2025-10-30 21:13:46
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+✅ IRIS Client (PID: 81929) - Running
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 79846
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 0 minutes ago
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 20
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 86%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #36 - 2025-10-30 21:18:50
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+✅ IRIS Client (PID: 81929) - Running
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 79936
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 5 minutes ago
+
+📈 Record Counts:
+   BOD: 298872 records
+   MELS: 126232 records
+   BOALF: 35945 records
+   FREQ: 13088 records
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 20
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 85%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #37 - 2025-10-30 21:23:55
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+✅ IRIS Client (PID: 81929) - Running
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 80112
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 10 minutes ago
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 22
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 86%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #38 - 2025-10-30 21:28:59
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+✅ IRIS Client (PID: 81929) - Running
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 80183
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 15 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 22
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 86%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #39 - 2025-10-30 21:34:02
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+✅ IRIS Client (PID: 81929) - Running
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 80443
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 20 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+📈 Record Counts:
+   BOD: 298872 records
+   MELS: 126232 records
+   BOALF: 35945 records
+   FREQ: 13168 records
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 24
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 87%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #40 - 2025-10-30 21:39:09
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+✅ IRIS Client (PID: 81929) - Running
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 80538
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 25 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 24
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 86%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #41 - 2025-10-30 21:44:11
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+✅ IRIS Client (PID: 81929) - Running
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 80641
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 1 minutes ago
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 22
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 86%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #42 - 2025-10-30 21:49:15
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+✅ IRIS Client (PID: 81929) - Running
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 80710
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 6 minutes ago
+
+📈 Record Counts:
+   BOD: 298872 records
+   MELS: 126232 records
+   BOALF: 36274 records
+   FREQ: 13168 records
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 22
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 86%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #43 - 2025-10-30 21:54:21
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+✅ IRIS Client (PID: 81929) - Running
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 81030
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 11 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 24
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 86%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #44 - 2025-10-30 21:59:24
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+✅ IRIS Client (PID: 81929) - Running
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 81113
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 16 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 24
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 86%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #45 - 2025-10-30 22:04:28
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+✅ IRIS Client (PID: 81929) - Running
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 79728
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 2 minutes ago
+
+📈 Record Counts:
+   BOD: 298872 records
+   MELS: 148604 records
+   BOALF: 36514 records
+   FREQ: 13288 records
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 22
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 86%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #46 - 2025-10-30 22:09:34
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+✅ IRIS Client (PID: 81929) - Running
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 79960
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 7 minutes ago
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 22
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 86%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #47 - 2025-10-30 22:14:38
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+✅ IRIS Client (PID: 81929) - Running
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 80219
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 13 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 24
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 86%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #48 - 2025-10-30 22:19:42
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+✅ IRIS Client (PID: 81929) - Running
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 80321
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 18 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+📈 Record Counts:
+   BOD: 298872 records
+   MELS: 148604 records
+   BOALF: 36514 records
+   FREQ: 13288 records
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 24
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 87%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #49 - 2025-10-30 22:24:49
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+✅ IRIS Client (PID: 81929) - Running
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78777
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 3 minutes ago
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 22
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 87%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #50 - 2025-10-30 22:29:53
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+✅ IRIS Client (PID: 81929) - Running
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78955
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 8 minutes ago
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 22
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 86%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #51 - 2025-10-30 22:34:57
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+✅ IRIS Client (PID: 81929) - Running
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 79228
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 13 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+📈 Record Counts:
+   BOD: 298872 records
+   MELS: 164113 records
+   BOALF: 36798 records
+   FREQ: 13360 records
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 24
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 87%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #52 - 2025-10-30 22:40:03
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+✅ IRIS Client (PID: 81929) - Running
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 79412
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 18 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 24
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #53 - 2025-10-30 22:45:07
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+✅ IRIS Client (PID: 81929) - Running
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 77939
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 4 minutes ago
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 37
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 86%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #54 - 2025-10-30 22:50:13
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 9 minutes ago
+
+📈 Record Counts:
+   BOD: 298872 records
+   MELS: 179602 records
+   BOALF: 37120 records
+   FREQ: 13440 records
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 83
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 86%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #55 - 2025-10-30 22:55:21
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 14 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 86%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #56 - 2025-10-30 23:00:25
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 19 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 86%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #57 - 2025-10-30 23:05:30
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 24 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+📈 Record Counts:
+   BOD: 298872 records
+   MELS: 179602 records
+   BOALF: 37120 records
+   FREQ: 13440 records
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 86%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #58 - 2025-10-30 23:10:37
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 30 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 86%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #59 - 2025-10-30 23:15:42
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 35 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 86%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #60 - 2025-10-30 23:20:47
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 40 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+📈 Record Counts:
+   BOD: 298872 records
+   MELS: 179602 records
+   BOALF: 37120 records
+   FREQ: 13440 records
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 86%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #61 - 2025-10-30 23:25:56
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 45 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 86%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #62 - 2025-10-30 23:31:01
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 50 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 86%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #63 - 2025-10-30 23:36:06
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 55 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+📈 Record Counts:
+   BOD: 298872 records
+   MELS: 179602 records
+   BOALF: 37120 records
+   FREQ: 13440 records
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 87%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #64 - 2025-10-30 23:41:14
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 60 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 87%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #65 - 2025-10-30 23:46:19
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 65 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 86%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #66 - 2025-10-30 23:51:24
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 70 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+📈 Record Counts:
+   BOD: 298872 records
+   MELS: 179602 records
+   BOALF: 37120 records
+   FREQ: 13440 records
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 87%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #67 - 2025-10-30 23:56:31
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 75 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 86%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #68 - 2025-10-31 00:01:37
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 81 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 86%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #69 - 2025-10-31 00:06:42
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 86 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+📈 Record Counts:
+   BOD: 298872 records
+   MELS: 179602 records
+   BOALF: 37120 records
+   FREQ: 13440 records
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 87%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #70 - 2025-10-31 00:11:50
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 91 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 87%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #71 - 2025-10-31 00:16:56
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 96 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 87%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #72 - 2025-10-31 00:22:00
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 101 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+📈 Record Counts:
+   BOD: 298872 records
+   MELS: 179602 records
+   BOALF: 37120 records
+   FREQ: 13440 records
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 87%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #73 - 2025-10-31 00:27:07
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 106 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 87%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #74 - 2025-10-31 00:32:12
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 111 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #75 - 2025-10-31 00:37:17
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 116 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+📈 Record Counts:
+   BOD: 298872 records
+   MELS: 179602 records
+   BOALF: 37120 records
+   FREQ: 13440 records
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 87%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #76 - 2025-10-31 00:42:24
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 121 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 87%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #77 - 2025-10-31 00:47:28
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 126 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 87%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #78 - 2025-10-31 00:52:32
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 131 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+📈 Record Counts:
+   BOD: 298872 records
+   MELS: 179602 records
+   BOALF: 37120 records
+   FREQ: 13440 records
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 87%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #79 - 2025-10-31 00:57:39
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 137 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 87%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #80 - 2025-10-31 01:02:43
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 142 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 87%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #81 - 2025-10-31 01:07:48
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 147 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+📈 Record Counts:
+   BOD: 298872 records
+   MELS: 179602 records
+   BOALF: 37120 records
+   FREQ: 13440 records
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 87%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #82 - 2025-10-31 01:12:55
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 152 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 87%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #83 - 2025-10-31 01:17:59
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 157 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 87%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #84 - 2025-10-31 01:23:04
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 162 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+📈 Record Counts:
+   BOD: 298872 records
+   MELS: 179602 records
+   BOALF: 37120 records
+   FREQ: 13440 records
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 87%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #85 - 2025-10-31 01:28:11
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 167 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 87%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #86 - 2025-10-31 01:33:15
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 172 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #87 - 2025-10-31 01:38:19
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 177 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+📈 Record Counts:
+   BOD: 298872 records
+   MELS: 179602 records
+   BOALF: 37120 records
+   FREQ: 13440 records
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #88 - 2025-10-31 01:43:24
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 182 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #89 - 2025-10-31 01:48:27
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 187 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 87%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #90 - 2025-10-31 01:53:31
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 192 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+📈 Record Counts:
+   BOD: 298872 records
+   MELS: 179602 records
+   BOALF: 37120 records
+   FREQ: 13440 records
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 87%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #91 - 2025-10-31 01:58:36
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 198 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 87%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #92 - 2025-10-31 02:03:39
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 203 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 87%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #93 - 2025-10-31 02:08:43
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 208 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+📈 Record Counts:
+   BOD: 298872 records
+   MELS: 179602 records
+   BOALF: 37120 records
+   FREQ: 13440 records
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 87%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #94 - 2025-10-31 02:13:50
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 213 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 87%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #95 - 2025-10-31 02:18:55
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 218 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 87%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #96 - 2025-10-31 02:23:59
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 223 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+📈 Record Counts:
+   BOD: 298872 records
+   MELS: 179602 records
+   BOALF: 37120 records
+   FREQ: 13440 records
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 87%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #97 - 2025-10-31 02:29:06
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 228 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 87%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #98 - 2025-10-31 02:34:11
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 233 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #99 - 2025-10-31 02:39:15
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 238 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+📈 Record Counts:
+   BOD: 298872 records
+   MELS: 179602 records
+   BOALF: 37120 records
+   FREQ: 13440 records
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #100 - 2025-10-31 02:44:22
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 243 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #101 - 2025-10-31 02:49:25
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 248 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #102 - 2025-10-31 02:54:29
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 253 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+📈 Record Counts:
+   BOD: 298872 records
+   MELS: 179602 records
+   BOALF: 37120 records
+   FREQ: 13440 records
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #103 - 2025-10-31 02:59:35
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 259 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 87%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #104 - 2025-10-31 03:04:40
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 264 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 87%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #105 - 2025-10-31 03:09:44
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 269 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+📈 Record Counts:
+   BOD: 298872 records
+   MELS: 179602 records
+   BOALF: 37120 records
+   FREQ: 13440 records
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 87%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #106 - 2025-10-31 03:14:51
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 274 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 87%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #107 - 2025-10-31 03:19:55
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 279 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 87%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #108 - 2025-10-31 03:24:59
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 284 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+📈 Record Counts:
+   BOD: 298872 records
+   MELS: 179602 records
+   BOALF: 37120 records
+   FREQ: 13440 records
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 87%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #109 - 2025-10-31 03:30:06
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 289 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 87%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #110 - 2025-10-31 03:35:10
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 294 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #111 - 2025-10-31 03:40:14
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 299 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+📈 Record Counts:
+   BOD: 298872 records
+   MELS: 179602 records
+   BOALF: 37120 records
+   FREQ: 13440 records
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #112 - 2025-10-31 03:45:21
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 304 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #113 - 2025-10-31 03:50:25
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 309 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #114 - 2025-10-31 03:55:30
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 314 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+📈 Record Counts:
+   BOD: 298872 records
+   MELS: 179602 records
+   BOALF: 37120 records
+   FREQ: 13440 records
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #115 - 2025-10-31 04:00:35
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 320 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #116 - 2025-10-31 04:05:40
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 325 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #117 - 2025-10-31 04:10:43
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 330 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+📈 Record Counts:
+   BOD: 298872 records
+   MELS: 179602 records
+   BOALF: 37120 records
+   FREQ: 13440 records
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #118 - 2025-10-31 04:15:50
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 335 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 87%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #119 - 2025-10-31 04:20:53
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 340 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 87%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #120 - 2025-10-31 04:25:57
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 345 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+📈 Record Counts:
+   BOD: 298872 records
+   MELS: 179602 records
+   BOALF: 37120 records
+   FREQ: 13440 records
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 87%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #121 - 2025-10-31 04:31:03
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 350 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 87%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #122 - 2025-10-31 04:36:07
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 355 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #123 - 2025-10-31 04:41:11
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 360 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+📈 Record Counts:
+   BOD: 298872 records
+   MELS: 179602 records
+   BOALF: 37120 records
+   FREQ: 13440 records
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #124 - 2025-10-31 04:46:17
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 365 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #125 - 2025-10-31 04:51:20
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 370 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #126 - 2025-10-31 04:56:25
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 375 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+📈 Record Counts:
+   BOD: 298872 records
+   MELS: 179602 records
+   BOALF: 37120 records
+   FREQ: 13440 records
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #127 - 2025-10-31 05:01:30
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 380 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #128 - 2025-10-31 05:06:34
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 386 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #129 - 2025-10-31 05:11:38
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 391 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+📈 Record Counts:
+   BOD: 298872 records
+   MELS: 179602 records
+   BOALF: 37120 records
+   FREQ: 13440 records
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #130 - 2025-10-31 05:16:45
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 396 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #131 - 2025-10-31 05:21:48
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 401 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #132 - 2025-10-31 05:26:52
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 406 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+📈 Record Counts:
+   BOD: 298872 records
+   MELS: 179602 records
+   BOALF: 37120 records
+   FREQ: 13440 records
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #133 - 2025-10-31 05:31:59
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 411 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #134 - 2025-10-31 05:37:03
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 416 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #135 - 2025-10-31 05:42:06
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 421 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+📈 Record Counts:
+   BOD: 298872 records
+   MELS: 179602 records
+   BOALF: 37120 records
+   FREQ: 13440 records
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #136 - 2025-10-31 05:47:11
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 426 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #137 - 2025-10-31 05:52:14
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 431 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #138 - 2025-10-31 05:57:18
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 436 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+📈 Record Counts:
+   BOD: 298872 records
+   MELS: 179602 records
+   BOALF: 37120 records
+   FREQ: 13440 records
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #139 - 2025-10-31 06:02:24
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 441 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #140 - 2025-10-31 06:07:27
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 446 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #141 - 2025-10-31 06:12:32
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 451 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+📈 Record Counts:
+   BOD: 298872 records
+   MELS: 179602 records
+   BOALF: 37120 records
+   FREQ: 13440 records
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #142 - 2025-10-31 06:17:38
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 457 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #143 - 2025-10-31 06:22:41
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 462 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #144 - 2025-10-31 06:27:44
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 467 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+📈 Record Counts:
+   BOD: 298872 records
+   MELS: 179602 records
+   BOALF: 37120 records
+   FREQ: 13440 records
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #145 - 2025-10-31 06:32:49
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 472 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #146 - 2025-10-31 06:37:54
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 477 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #147 - 2025-10-31 06:42:58
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 482 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+📈 Record Counts:
+   BOD: 298872 records
+   MELS: 179602 records
+   BOALF: 37120 records
+   FREQ: 13440 records
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #148 - 2025-10-31 06:48:04
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 487 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #149 - 2025-10-31 06:53:09
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 492 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 87%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #150 - 2025-10-31 06:58:13
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 497 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+📈 Record Counts:
+   BOD: 298872 records
+   MELS: 179602 records
+   BOALF: 37120 records
+   FREQ: 13440 records
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 87%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #151 - 2025-10-31 07:03:19
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 502 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 87%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #152 - 2025-10-31 07:08:24
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 507 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 87%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #153 - 2025-10-31 07:13:28
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 512 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+📈 Record Counts:
+   BOD: 298872 records
+   MELS: 179602 records
+   BOALF: 37120 records
+   FREQ: 13440 records
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 87%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #154 - 2025-10-31 07:18:35
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 518 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 87%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #155 - 2025-10-31 07:23:39
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 523 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #156 - 2025-10-31 07:28:45
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 528 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+📈 Record Counts:
+   BOD: 298872 records
+   MELS: 179602 records
+   BOALF: 37120 records
+   FREQ: 13440 records
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #157 - 2025-10-31 07:33:51
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 533 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #158 - 2025-10-31 07:38:56
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 538 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #159 - 2025-10-31 07:44:00
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 543 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+📈 Record Counts:
+   BOD: 298872 records
+   MELS: 179602 records
+   BOALF: 37120 records
+   FREQ: 13440 records
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #160 - 2025-10-31 07:49:06
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 548 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #161 - 2025-10-31 07:54:11
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 553 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #162 - 2025-10-31 07:59:16
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 558 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+📈 Record Counts:
+   BOD: 298872 records
+   MELS: 179602 records
+   BOALF: 37120 records
+   FREQ: 13440 records
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #163 - 2025-10-31 08:04:23
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 563 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #164 - 2025-10-31 08:09:27
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 568 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 87%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #165 - 2025-10-31 08:14:32
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 573 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+📈 Record Counts:
+   BOD: 298872 records
+   MELS: 179602 records
+   BOALF: 37120 records
+   FREQ: 13440 records
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 87%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #166 - 2025-10-31 08:19:39
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 579 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 87%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #167 - 2025-10-31 08:24:44
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 584 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 87%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #168 - 2025-10-31 08:29:48
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 589 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+📈 Record Counts:
+   BOD: 298872 records
+   MELS: 179602 records
+   BOALF: 37120 records
+   FREQ: 13440 records
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 87%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #169 - 2025-10-31 08:34:55
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 594 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #170 - 2025-10-31 08:40:00
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 599 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #171 - 2025-10-31 08:45:04
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 604 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+📈 Record Counts:
+   BOD: 298872 records
+   MELS: 179602 records
+   BOALF: 37120 records
+   FREQ: 13440 records
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #172 - 2025-10-31 08:50:11
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 609 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #173 - 2025-10-31 08:55:15
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 614 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #174 - 2025-10-31 09:00:19
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 619 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+📈 Record Counts:
+   BOD: 298872 records
+   MELS: 179602 records
+   BOALF: 37120 records
+   FREQ: 13440 records
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #175 - 2025-10-31 09:05:26
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 624 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #176 - 2025-10-31 09:10:30
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 629 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #177 - 2025-10-31 09:15:34
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 635 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+📈 Record Counts:
+   BOD: 298872 records
+   MELS: 179602 records
+   BOALF: 37120 records
+   FREQ: 13440 records
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #178 - 2025-10-31 09:20:41
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 640 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #179 - 2025-10-31 09:25:44
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 645 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #180 - 2025-10-31 09:30:49
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 650 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+📈 Record Counts:
+   BOD: 298872 records
+   MELS: 179602 records
+   BOALF: 37120 records
+   FREQ: 13440 records
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #181 - 2025-10-31 09:35:55
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 655 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #182 - 2025-10-31 09:40:59
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 660 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #183 - 2025-10-31 09:46:04
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 665 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+📈 Record Counts:
+   BOD: 298872 records
+   MELS: 179602 records
+   BOALF: 37120 records
+   FREQ: 13440 records
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #184 - 2025-10-31 09:51:10
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 670 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #185 - 2025-10-31 09:56:13
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 675 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #186 - 2025-10-31 10:01:16
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 680 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+📈 Record Counts:
+   BOD: 298872 records
+   MELS: 179602 records
+   BOALF: 37120 records
+   FREQ: 13440 records
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #187 - 2025-10-31 10:06:23
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 685 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 87%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #188 - 2025-10-31 10:11:28
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 690 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 87%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #189 - 2025-10-31 10:16:33
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 695 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+📈 Record Counts:
+   BOD: 298872 records
+   MELS: 179602 records
+   BOALF: 37120 records
+   FREQ: 13440 records
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 87%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #190 - 2025-10-31 10:21:39
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 701 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 87%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #191 - 2025-10-31 10:26:44
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 706 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 87%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #192 - 2025-10-31 10:31:48
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 711 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+📈 Record Counts:
+   BOD: 298872 records
+   MELS: 179602 records
+   BOALF: 37120 records
+   FREQ: 13440 records
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #193 - 2025-10-31 10:36:55
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 716 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #194 - 2025-10-31 10:42:00
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 721 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #195 - 2025-10-31 10:47:05
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 726 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+📈 Record Counts:
+   BOD: 298872 records
+   MELS: 179602 records
+   BOALF: 37120 records
+   FREQ: 13440 records
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 87%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #196 - 2025-10-31 10:52:12
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 731 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 87%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #197 - 2025-10-31 10:57:16
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 736 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 87%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #198 - 2025-10-31 11:02:23
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 741 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+📈 Record Counts:
+   BOD: 298872 records
+   MELS: 179602 records
+   BOALF: 37120 records
+   FREQ: 13440 records
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 87%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #199 - 2025-10-31 11:07:29
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 746 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #200 - 2025-10-31 11:12:34
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 752 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #201 - 2025-10-31 11:17:39
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 757 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+📈 Record Counts:
+   BOD: 298872 records
+   MELS: 179602 records
+   BOALF: 37120 records
+   FREQ: 13440 records
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #202 - 2025-10-31 11:22:46
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 762 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #203 - 2025-10-31 11:27:52
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 767 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #204 - 2025-10-31 11:32:56
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 772 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+📈 Record Counts:
+   BOD: 298872 records
+   MELS: 179602 records
+   BOALF: 37120 records
+   FREQ: 13440 records
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 89%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #205 - 2025-10-31 11:38:03
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 777 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #206 - 2025-10-31 11:43:08
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 782 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #207 - 2025-10-31 11:48:13
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 787 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+📈 Record Counts:
+   BOD: 298872 records
+   MELS: 179602 records
+   BOALF: 37120 records
+   FREQ: 13440 records
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 87%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #208 - 2025-10-31 11:53:20
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 792 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 Check #209 - 2025-10-31 11:58:25
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 Process Status:
+❌ IRIS Client (PID: 81929) - STOPPED
+❌ IRIS Processor (PID: 596) - STOPPED
+🚨 CRITICAL: IRIS Client stopped!
+🚨 CRITICAL: IRIS Processor stopped!
+
+📁 File Backlog:
+   Files pending: 78071
+⚠️  WARNING: File backlog exceeds 50000
+
+⏱️  Data Lag:
+   Latest data: 797 minutes ago
+⚠️  WARNING: Data lag exceeds 10 minutes!
+
+🐛 Recent Errors (last 100 log lines):
+   Error count: 100
+⚠️  WARNING: High error count in recent logs!
+
+💻 System Resources:
+   Processor: CPU 0.0%, Memory 0.0%
+   Disk usage: 88%
+
+❌ Status: CRITICAL - Service(s) down
+
+Next check in 5 minutes...
+

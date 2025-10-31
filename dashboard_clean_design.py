@@ -217,7 +217,7 @@ def calculate_system_metrics(data):
     }
 
 def create_clean_dashboard(sheet_id, gen_data, metrics, timestamp, settlement_info, remit_df, price_impacts):
-    """Create clean, professional dashboard layout"""
+    """Create clean, professional dashboard layout - FIXED ROW POSITIONS"""
     
     gc = get_sheets_client()
     spreadsheet = gc.open_by_key(sheet_id)
@@ -226,42 +226,47 @@ def create_clean_dashboard(sheet_id, gen_data, metrics, timestamp, settlement_in
     fuel_data = metrics['fuel_data']
     interconnector_data = metrics['interconnector_data']
     
-    # Clear entire sheet first
-    print("🧹 Clearing sheet...")
-    sheet.clear()
+    # NOTE: DO NOT clear entire sheet - only update data cells to preserve formatting
+    print("📝 Updating data cells (preserving formatting)...")
     
-    # Build complete sheet data as a 2D array
-    sheet_data = []
+    # Build batch updates for specific cell ranges
+    batch_updates = []
     
     # ROW 1: Main Title
-    sheet_data.append(['🇬🇧 UK POWER MARKET DASHBOARD', '', '', '', '', '', '', ''])
+    batch_updates.append({
+        'range': 'A1',
+        'values': [['🇬🇧 UK POWER MARKET DASHBOARD']]
+    })
     
     # ROW 2: Timestamp
-    sheet_data.append([f"⏰ Last Updated: {timestamp.strftime('%Y-%m-%d %H:%M:%S')} | Settlement Period {settlement_info.get('period', 'N/A')}", '', '', '', '', '', '', ''])
-    
-    # ROW 3: Empty
-    sheet_data.append(['', '', '', '', '', '', '', ''])
+    batch_updates.append({
+        'range': 'A2',
+        'values': [[f"⏰ Last Updated: {timestamp.strftime('%Y-%m-%d %H:%M:%S')} | Settlement Period {settlement_info.get('period', 'N/A')}"]]
+    })
     
     # ROW 4: System Metrics Header
-    sheet_data.append(['📊 SYSTEM METRICS', '', '', '', '', '', '', ''])
+    batch_updates.append({
+        'range': 'A4',
+        'values': [['📊 SYSTEM METRICS']]
+    })
     
     # ROW 5: System Metrics Values
-    sheet_data.append([
-        f"Total Generation: {metrics['total_generation']:.1f} GW",
-        f"Total Supply: {metrics['total_supply']:.1f} GW",
-        f"Renewables: {metrics['renewables_pct']:.1f}%",
-        '',
-        f"Market Price (EPEX): £76.33/MWh",
-        '',
-        '',
-        ''
-    ])
-    
-    # ROW 6: Empty
-    sheet_data.append(['', '', '', '', '', '', '', ''])
+    batch_updates.append({
+        'range': 'A5:E5',
+        'values': [[
+            f"Total Generation: {metrics['total_generation']:.1f} GW",
+            f"Total Supply: {metrics['total_supply']:.1f} GW",
+            f"Renewables: {metrics['renewables_pct']:.1f}%",
+            '',
+            f"Market Price (EPEX): £76.33/MWh"
+        ]]
+    })
     
     # ROW 7: Generation Header
-    sheet_data.append(['⚡ GENERATION BY FUEL TYPE', '', '', '🔌 INTERCONNECTORS', '', '', '', ''])
+    batch_updates.append({
+        'range': 'A7:D7',
+        'values': [['⚡ GENERATION BY FUEL TYPE', '', '', '🔌 INTERCONNECTORS']]
+    })
     
     # ROWS 8-17: Fuel Types and Interconnectors side by side (expanded)
     fuels = [
@@ -290,28 +295,27 @@ def create_clean_dashboard(sheet_id, gen_data, metrics, timestamp, settlement_in
         ('🇮🇪 Greenlink (Ireland)', interconnector_data.get('Greenlink (Ireland)', 0)),
     ]
     
+    # Update fuel type and interconnector values in rows 8-17
     for i in range(10):
         fuel_name, fuel_val = fuels[i]
         inter_name, inter_val = interconnectors[i]
+        row_num = 8 + i
         
-        sheet_data.append([
-            fuel_name,
-            f"{fuel_val:.1f} GW",
-            '',
-            inter_name if inter_name else '',
-            f"{inter_val:.1f} GW" if inter_name else '',
-            '',
-            '',
-            ''
-        ])
+        # Update fuel type columns (A-B)
+        batch_updates.append({
+            'range': f'A{row_num}:B{row_num}',
+            'values': [[fuel_name, f"{fuel_val:.1f} GW"]]
+        })
+        
+        # Update interconnector columns (D-E)
+        batch_updates.append({
+            'range': f'D{row_num}:E{row_num}',
+            'values': [[inter_name, f"{inter_val:.1f} GW"]]
+        })
     
-    # ROW 18: Empty
-    sheet_data.append(['', '', '', '', '', '', '', ''])
+    # Note: Rows 18-28 are BUFFER ZONE - don't touch them to preserve user's layout!
     
-    # ROW 19: Empty
-    sheet_data.append(['', '', '', '', '', '', '', ''])
-    
-    # REMIT SECTION
+    # ========== REMIT SECTION (FIXED AT ROW 29) ==========
     if not remit_df.empty:
         active_df = remit_df[remit_df['eventStatus'] == 'Active'].copy()
         total_unavailable = active_df['unavailableCapacity'].sum() if not active_df.empty else 0
@@ -326,77 +330,97 @@ def create_clean_dashboard(sheet_id, gen_data, metrics, timestamp, settlement_in
         price_delta = current_price - baseline_price
         price_pct_change = (price_delta / baseline_price * 100)
         
-        # ROW 20: REMIT Header (moved down due to expanded generation section)
-        sheet_data.append(['🔴 POWER STATION OUTAGES & MARKET IMPACT', '', '', '', '', '', '', ''])
+        # ROW 29: REMIT Header (USER'S FIXED POSITION)
+        batch_updates.append({
+            'range': 'A29',
+            'values': [['🔴 POWER STATION OUTAGES & MARKET IMPACT']]
+        })
         
-        # ROW 21: Summary with visual indicators
+        # ROW 30: Summary with visual indicators
         unavail_bar = create_bar_chart(unavail_pct, width=15)
-        sheet_data.append([
-            f"Active Outages: {num_active} of {num_total} events",
-            f"Unavailable: {total_unavailable:.0f} MW / {total_normal:.0f} MW",
-            unavail_bar,
-            '',
-            f"Price Impact: +£{price_delta:.2f}/MWh ({price_pct_change:+.1f}%)",
-            '',
-            '',
-            ''
-        ])
+        batch_updates.append({
+            'range': 'A30:E30',
+            'values': [[
+                f"Active Outages: {num_active} of {num_total} events",
+                f"Unavailable: {total_unavailable:.0f} MW / {total_normal:.0f} MW",
+                unavail_bar,
+                '',
+                f"Price Impact: +£{price_delta:.2f}/MWh ({price_pct_change:+.1f}%)"
+            ]]
+        })
         
-        # ROW 22: Empty
-        sheet_data.append(['', '', '', '', '', '', '', ''])
+        # ROW 32: Price Analysis Header (skip row 31 for spacing)
+        batch_updates.append({
+            'range': 'A32',
+            'values': [['💷 PRICE IMPACT ANALYSIS']]
+        })
         
-        # ROW 23: Price Analysis Header
-        sheet_data.append(['💷 PRICE IMPACT ANALYSIS', '', '', '', '', '', '', ''])
+        # ROW 33: Price table header (USER'S FIXED POSITION)
+        batch_updates.append({
+            'range': 'A33:G33',
+            'values': [[
+                'Event',
+                'Announcement Time',
+                'Unavail MW',
+                'Est. Impact (£/MWh)',
+                'Pre-Announcement',
+                'Current Price',
+                'Δ Price'
+            ]]
+        })
         
-        # ROW 24: Price table header
-        sheet_data.append([
-            'Event',
-            'Announcement Time',
-            'Unavail MW',
-            'Est. Impact (£/MWh)',
-            'Pre-Announcement',
-            'Current Price',
-            'Δ Price',
-            ''
-        ])
-        
-        # ROWS 25+: Price impacts
+        # ROWS 34+: Price impacts (dynamic rows starting from row 34)
         if price_impacts:
+            price_rows = []
             for impact in price_impacts:
                 delta = impact['currentPrice'] - impact['priceBeforeAnnouncement']
-                sheet_data.append([
+                price_rows.append([
                     impact['assetName'][:25],
                     impact['announcementTime'].strftime('%Y-%m-%d %H:%M'),
                     f"{impact['unavailableMW']:.0f}",
                     f"+£{impact['estimatedImpact']:.2f}",
                     f"£{impact['priceBeforeAnnouncement']:.2f}",
                     f"£{impact['currentPrice']:.2f}",
-                    f"+£{delta:.2f}",
-                    ''
+                    f"+£{delta:.2f}"
                 ])
+            
+            # Write all price impact rows at once
+            if price_rows:
+                end_row = 33 + len(price_rows)
+                batch_updates.append({
+                    'range': f'A34:G{end_row}',
+                    'values': price_rows
+                })
+                next_section_row = end_row + 2  # Skip one blank row
+            else:
+                next_section_row = 35
+        else:
+            next_section_row = 35
         
-        # Empty row
-        sheet_data.append(['', '', '', '', '', '', '', ''])
+        # Outages Table Header (dynamic position after price impacts)
+        batch_updates.append({
+            'range': f'A{next_section_row}',
+            'values': [['📊 ALL STATION OUTAGES']]
+        })
         
-        # ROW: Outages Table Header
-        sheet_data.append(['📊 ALL STATION OUTAGES', '', '', '', '', '', '', ''])
+        # Table Header (2 rows down)
+        table_header_row = next_section_row + 2
+        batch_updates.append({
+            'range': f'A{table_header_row}:H{table_header_row}',  # Fixed: 8 columns (A-H)
+            'values': [[
+                'Status',
+                'Power Station',
+                'Unit',
+                'Fuel',
+                'Normal (MW)',
+                'Unavail (MW)',
+                '% Unavailable',
+                'Cause'
+            ]]
+        })
         
-        # Empty row
-        sheet_data.append(['', '', '', '', '', '', '', ''])
-        
-        # Table Header
-        sheet_data.append([
-            'Status',
-            'Power Station',
-            'Unit',
-            'Fuel',
-            'Normal (MW)',
-            'Unavail (MW)',
-            '% Unavailable',
-            'Cause'
-        ])
-        
-        # Outage Data - ALL events
+        # Outage Data - ALL events (dynamic rows starting after header)
+        outage_rows = []
         for idx, row in remit_df.iterrows():
             unavail_pct_station = (row['unavailableCapacity'] / row['normalCapacity'] * 100) if row['normalCapacity'] > 0 else 0
             status_emoji = '🔴' if row['eventStatus'] == 'Active' else '🟢'
@@ -405,7 +429,7 @@ def create_clean_dashboard(sheet_id, gen_data, metrics, timestamp, settlement_in
             # Create mini bar chart for this station
             station_bar = create_bar_chart(unavail_pct_station, width=10)
             
-            sheet_data.append([
+            outage_rows.append([
                 f"{status_emoji} {row['eventStatus']}",
                 row['assetName'][:25],
                 row['affectedUnit'][:12] if pd.notna(row['affectedUnit']) else '',
@@ -415,14 +439,29 @@ def create_clean_dashboard(sheet_id, gen_data, metrics, timestamp, settlement_in
                 station_bar,
                 cause_short
             ])
+        
+        # Write all outage rows at once
+        if outage_rows:
+            outage_start_row = table_header_row + 1
+            outage_end_row = outage_start_row + len(outage_rows) - 1
+            batch_updates.append({
+                'range': f'A{outage_start_row}:H{outage_end_row}',
+                'values': outage_rows
+            })
     else:
-        # No outages
-        sheet_data.append(['🔴 POWER STATION OUTAGES & MARKET IMPACT', '', '', '', '', '', '', ''])
-        sheet_data.append(['✅ No outages recorded at this time', '', '', '', '', '', '', ''])
+        # No outages - write to fixed position (row 29)
+        batch_updates.append({
+            'range': 'A29',
+            'values': [['🔴 POWER STATION OUTAGES & MARKET IMPACT']]
+        })
+        batch_updates.append({
+            'range': 'A30',
+            'values': [['✅ No outages recorded at this time']]
+        })
     
-    # Update entire sheet at once
-    print(f"📝 Writing {len(sheet_data)} rows to sheet...")
-    sheet.update(values=sheet_data, range_name='A1')
+    # Apply all batch updates at once (PRESERVES USER'S FORMATTING!)
+    print(f"📝 Applying {len(batch_updates)} cell updates (preserving formatting)...")
+    sheet.batch_update(batch_updates)
     
     # Apply formatting
     print("🎨 Applying formatting...")
@@ -559,6 +598,108 @@ def create_clean_dashboard(sheet_id, gen_data, metrics, timestamp, settlement_in
     
     return True
 
+def update_graph_data(sheet):
+    """Update the graph data area (A18:H28) with settlement period data"""
+    try:
+        from datetime import timedelta
+        
+        print("📈 Updating graph data (A18:H28)...")
+        
+        client = bigquery.Client(project=PROJECT_ID)
+        today = datetime.now().date()
+        
+        # Fetch today's settlement data
+        query = f"""
+        WITH generation_data AS (
+            SELECT
+                settlementDate,
+                settlementPeriod,
+                SUM(generation) as total_generation
+            FROM `{PROJECT_ID}.{DATASET_ID}.bmrs_fuelinst`
+            WHERE DATE(settlementDate) = '{today}'
+            GROUP BY settlementDate, settlementPeriod
+        ),
+        price_data AS (
+            SELECT
+                settlementDate,
+                settlementPeriod,
+                AVG(price) as system_sell_price
+            FROM `{PROJECT_ID}.{DATASET_ID}.bmrs_mid`
+            WHERE DATE(settlementDate) = '{today}'
+            GROUP BY settlementDate, settlementPeriod
+        ),
+        freq_data AS (
+            SELECT
+                CAST(measurementTime AS DATE) as measurementDate,
+                CAST(FLOOR((EXTRACT(HOUR FROM CAST(measurementTime AS TIMESTAMP)) * 60 + 
+                       EXTRACT(MINUTE FROM CAST(measurementTime AS TIMESTAMP))) / 30) + 1 AS INT64) as settlementPeriod,
+                AVG(frequency) as avg_frequency
+            FROM `{PROJECT_ID}.{DATASET_ID}.bmrs_freq`
+            WHERE CAST(measurementTime AS DATE) = '{today}'
+            GROUP BY measurementDate, settlementPeriod
+        )
+        SELECT
+            g.settlementPeriod,
+            COALESCE(g.total_generation, 0) / 1000 as generation_gw,
+            COALESCE(f.avg_frequency, 50.0) as frequency,
+            COALESCE(p.system_sell_price, 0) as price
+        FROM generation_data g
+        LEFT JOIN price_data p USING (settlementDate, settlementPeriod)
+        LEFT JOIN freq_data f ON g.settlementDate = f.measurementDate AND g.settlementPeriod = f.settlementPeriod
+        WHERE g.settlementPeriod BETWEEN 1 AND 48
+        ORDER BY g.settlementPeriod
+        """
+        
+        df = client.query(query).to_dataframe()
+        
+        if df.empty:
+            print("⚠️  No data for today, using yesterday...")
+            yesterday = today - timedelta(days=1)
+            query = query.replace(f"'{today}'", f"'{yesterday}'")
+            df = client.query(query).to_dataframe()
+        
+        # Create table data for A18:H28
+        table_data = [['📈 Settlement Period Data', '', '', '', '', '', '', '']]
+        table_data.append(['SP', 'Gen (GW)', 'Freq (Hz)', 'Price (£/MWh)', '', '', '', ''])
+        
+        # Show first 4 SPs
+        for i in range(min(4, len(df))):
+            row = df.iloc[i]
+            table_data.append([
+                f"SP{int(row['settlementPeriod']):02d}",
+                f"{row['generation_gw']:.1f}",
+                f"{row['frequency']:.2f}",
+                f"£{row['price']:.2f}",
+                '', '', '', ''
+            ])
+        
+        # Current SP indicator
+        current_sp = int(datetime.now().hour * 2 + datetime.now().minute / 30) + 1
+        table_data.append([f"→ Current: SP{current_sp:02d}", '', '', '', '', '', '', ''])
+        
+        # Last 4 SPs
+        for i in range(max(0, len(df)-4), len(df)):
+            row = df.iloc[i]
+            table_data.append([
+                f"SP{int(row['settlementPeriod']):02d}",
+                f"{row['generation_gw']:.1f}",
+                f"{row['frequency']:.2f}",
+                f"£{row['price']:.2f}",
+                '', '', '', ''
+            ])
+        
+        # Pad to 11 rows
+        while len(table_data) < 11:
+            table_data.append(['', '', '', '', '', '', '', ''])
+        
+        # Update the sheet
+        sheet.update(values=table_data[:11], range_name='A18:H28')
+        print(f"✅ Graph data updated ({len(df)} SPs, Avg: {df['generation_gw'].mean():.1f} GW)\n")
+        
+    except Exception as e:
+        print(f"⚠️  Could not update graph data: {e}\n")
+
+
 def main():
     """Main execution"""
     print("=" * 80)
@@ -608,6 +749,16 @@ def main():
         remit_df,
         price_impacts
     )
+    
+    # Update graph data in buffer zone (A18:H28)
+    if success:
+        try:
+            gc = get_sheets_client()
+            spreadsheet = gc.open_by_key(DASHBOARD_SHEET_ID)
+            sheet = spreadsheet.worksheet(SHEET_NAME)
+            update_graph_data(sheet)
+        except Exception as e:
+            print(f"⚠️  Graph data update failed: {e}\n")
     
     if success:
         print("\n" + "=" * 80)

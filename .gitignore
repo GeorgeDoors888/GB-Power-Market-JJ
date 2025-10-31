@@ -12,3 +12,8 @@ context/
 credentials.json
 oauth_credentials.json
 token.json
+
+# IRIS credentials - NEVER commit!
+iris_settings.json
+iris_data/
+settings.json

@@ -1,0 +1,321 @@
+2025-10-30 21:17:17,605 - ERROR - ❌ Service account file not found: service.json
+2025-10-30 21:17:48,271 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-10-30 21:17:48,273 - INFO - ✅ Dashboard initialized
+2025-10-30 21:17:48,273 - INFO - ============================================================
+2025-10-30 21:17:48,273 - INFO - 🚀 Starting Dashboard Update
+2025-10-30 21:17:48,273 - INFO - ============================================================
+2025-10-30 22:40:28,015 - INFO - 📋 Loaded OAuth token from token.pickle
+2025-10-30 22:40:28,710 - INFO - 🔄 Refreshed OAuth token
+2025-10-30 22:40:28,714 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-10-30 22:40:28,718 - INFO - ✅ Dashboard initialized (OAuth for Sheets, Service Account for BigQuery)
+2025-10-30 22:40:28,719 - INFO - ============================================================
+2025-10-30 22:40:28,719 - INFO - 🚀 Starting Dashboard Update
+2025-10-30 22:40:28,719 - INFO - ============================================================
+2025-10-30 22:40:30,528 - INFO - 📊 Connected to GB Energy Dashboard
+2025-10-30 22:40:30,528 - INFO -    URL: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8
+2025-10-30 22:40:30,528 - INFO - 📊 Updating System Prices...
+2025-10-30 22:40:30,937 - ERROR - ❌ BigQuery query failed: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 23c33234-9acd-497f-94cc-5f5852c332c7
+
+2025-10-30 22:40:30,938 - WARNING - ⚠️ No system prices data
+2025-10-30 22:40:30,938 - INFO - ⚡ Updating Grid Frequency...
+2025-10-30 22:40:31,244 - ERROR - ❌ BigQuery query failed: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 433ff614-3c8f-4cdd-9b50-ecb6ab04c3a8
+
+2025-10-30 22:40:31,244 - WARNING - ⚠️ No frequency data
+2025-10-30 22:40:31,244 - INFO - 🔥 Updating Fuel Generation...
+2025-10-30 22:40:31,490 - ERROR - ❌ BigQuery query failed: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 22fb3401-f7ef-4ae0-9359-0a864bd76594
+
+2025-10-30 22:40:31,490 - WARNING - ⚠️ No fuel generation data
+2025-10-30 22:40:31,490 - INFO - 📋 Updating Recent Activity...
+2025-10-30 22:40:31,665 - ERROR - ❌ BigQuery query failed: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 10f33593-ea19-436b-8b02-5c8b4e5e53c9
+
+2025-10-30 22:40:31,665 - INFO - ============================================================
+2025-10-30 22:40:31,665 - INFO - ✅ Dashboard updated in 2.9s
+2025-10-30 22:40:31,665 - INFO - 📊 View at: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8
+2025-10-30 22:40:31,665 - INFO - ============================================================
+2025-10-30 22:40:48,511 - INFO - 📋 Loaded OAuth token from token.pickle
+2025-10-30 22:40:48,512 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-10-30 22:40:48,514 - INFO - ✅ Dashboard initialized (OAuth for Sheets, Service Account for BigQuery)
+2025-10-30 22:40:48,514 - INFO - ============================================================
+2025-10-30 22:40:48,514 - INFO - 🚀 Starting Dashboard Update
+2025-10-30 22:40:48,514 - INFO - ============================================================
+2025-10-30 22:40:49,388 - INFO - 📊 Connected to GB Energy Dashboard
+2025-10-30 22:40:49,389 - INFO -    URL: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8
+2025-10-30 22:40:49,389 - INFO - 📊 Updating System Prices...
+2025-10-30 22:40:50,294 - ERROR - ❌ BigQuery query failed: 404 Not found: Table jibber-jabber-knowledge:uk_energy_insights.bmrs_mid_iris was not found in location US; reason: notFound, message: Not found: Table jibber-jabber-knowledge:uk_energy_insights.bmrs_mid_iris was not found in location US
+
+Location: US
+Job ID: f7bb8993-6a27-49b2-af01-07e0e943a259
+
+2025-10-30 22:40:50,295 - WARNING - ⚠️ No system prices data
+2025-10-30 22:40:50,295 - INFO - ⚡ Updating Grid Frequency...
+2025-10-30 22:40:50,703 - ERROR - ❌ BigQuery query failed: 404 Not found: Table jibber-jabber-knowledge:uk_energy_insights.bmrs_freq_iris was not found in location US; reason: notFound, message: Not found: Table jibber-jabber-knowledge:uk_energy_insights.bmrs_freq_iris was not found in location US
+
+Location: US
+Job ID: a270e7dd-815c-404a-a088-90034aeaf377
+
+2025-10-30 22:40:50,703 - WARNING - ⚠️ No frequency data
+2025-10-30 22:40:50,703 - INFO - 🔥 Updating Fuel Generation...
+2025-10-30 22:40:51,032 - ERROR - ❌ BigQuery query failed: 404 Not found: Table jibber-jabber-knowledge:uk_energy_insights.bmrs_fuelinst_iris was not found in location US; reason: notFound, message: Not found: Table jibber-jabber-knowledge:uk_energy_insights.bmrs_fuelinst_iris was not found in location US
+
+Location: US
+Job ID: 86a7e8a3-b76b-4d17-93a6-dbc38bc9c96d
+
+2025-10-30 22:40:51,032 - WARNING - ⚠️ No fuel generation data
+2025-10-30 22:40:51,032 - INFO - 📋 Updating Recent Activity...
+2025-10-30 22:40:51,516 - ERROR - ❌ BigQuery query failed: 404 Not found: Table jibber-jabber-knowledge:uk_energy_insights.bmrs_boalf_iris was not found in location US; reason: notFound, message: Not found: Table jibber-jabber-knowledge:uk_energy_insights.bmrs_boalf_iris was not found in location US
+
+Location: US
+Job ID: 78a8840b-eaff-48e4-a5dd-1bb304430e07
+
+2025-10-30 22:40:51,517 - INFO - ============================================================
+2025-10-30 22:40:51,517 - INFO - ✅ Dashboard updated in 3.0s
+2025-10-30 22:40:51,517 - INFO - 📊 View at: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8
+2025-10-30 22:40:51,517 - INFO - ============================================================
+2025-10-30 22:51:11,065 - INFO - 📋 Loaded OAuth token from token.pickle
+2025-10-30 22:51:11,067 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-10-30 22:51:11,068 - INFO - ✅ Dashboard initialized (OAuth for Sheets, Service Account for BigQuery)
+2025-10-30 22:51:11,068 - INFO - ============================================================
+2025-10-30 22:51:11,068 - INFO - 🚀 Starting Dashboard Update
+2025-10-30 22:51:11,069 - INFO - ============================================================
+2025-10-30 22:51:12,487 - INFO - 📊 Connected to GB Energy Dashboard
+2025-10-30 22:51:12,488 - INFO -    URL: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8
+2025-10-30 22:51:12,488 - INFO - 📊 Updating System Prices...
+2025-10-30 22:51:12,993 - ERROR - ❌ BigQuery query failed: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: bab86096-c6c0-492d-80fb-8b67e5562320
+
+2025-10-30 22:51:12,993 - WARNING - ⚠️ No system prices data
+2025-10-30 22:51:12,993 - INFO - ⚡ Updating Grid Frequency...
+2025-10-30 22:51:13,301 - ERROR - ❌ BigQuery query failed: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: ce1cab89-c13e-496e-8362-d8fd3062429b
+
+2025-10-30 22:51:13,301 - WARNING - ⚠️ No frequency data
+2025-10-30 22:51:13,301 - INFO - 🔥 Updating Fuel Generation...
+2025-10-30 22:51:13,579 - ERROR - ❌ BigQuery query failed: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 3c0cf6a4-5e3d-4116-9dac-65e7d67f86ed
+
+2025-10-30 22:51:13,579 - WARNING - ⚠️ No fuel generation data
+2025-10-30 22:51:13,579 - INFO - 📋 Updating Recent Activity...
+2025-10-30 22:51:13,717 - ERROR - ❌ BigQuery query failed: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: f7df3cf9-977f-489b-b688-a18f27595fb6
+
+2025-10-30 22:51:13,717 - INFO - ============================================================
+2025-10-30 22:51:13,718 - INFO - ✅ Dashboard updated in 2.6s
+2025-10-30 22:51:13,718 - INFO - 📊 View at: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8
+2025-10-30 22:51:13,718 - INFO - ============================================================
+2025-10-30 22:51:18,194 - INFO - 📋 Loaded OAuth token from token.pickle
+2025-10-30 22:51:18,196 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-10-30 22:51:18,197 - INFO - ✅ Dashboard initialized (OAuth for Sheets, Service Account for BigQuery)
+2025-10-30 22:51:18,197 - INFO - ============================================================
+2025-10-30 22:51:18,197 - INFO - 🚀 Starting Dashboard Update
+2025-10-30 22:51:18,197 - INFO - ============================================================
+2025-10-30 22:51:18,982 - INFO - 📊 Connected to GB Energy Dashboard
+2025-10-30 22:51:18,982 - INFO -    URL: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8
+2025-10-30 22:51:18,982 - INFO - 📊 Updating System Prices...
+2025-10-30 22:51:19,311 - ERROR - ❌ BigQuery query failed: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 70c91bc5-d222-4fd5-8c03-caefe28b7b7f
+
+2025-10-30 22:51:19,311 - WARNING - ⚠️ No system prices data
+2025-10-30 22:51:19,311 - INFO - ⚡ Updating Grid Frequency...
+2025-10-30 22:51:19,649 - ERROR - ❌ BigQuery query failed: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 716ca424-120c-4db8-91db-80c75eb857d7
+
+2025-10-30 22:51:19,650 - WARNING - ⚠️ No frequency data
+2025-10-30 22:51:19,650 - INFO - 🔥 Updating Fuel Generation...
+2025-10-30 22:51:19,956 - ERROR - ❌ BigQuery query failed: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: e39abb31-cb23-4e69-9466-8a707ab67f75
+
+2025-10-30 22:51:19,956 - WARNING - ⚠️ No fuel generation data
+2025-10-30 22:51:19,956 - INFO - 📋 Updating Recent Activity...
+2025-10-30 22:51:20,143 - ERROR - ❌ BigQuery query failed: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 4eccec3c-b55f-4218-8671-59ddbc253dff
+
+2025-10-30 22:51:20,143 - INFO - ============================================================
+2025-10-30 22:51:20,143 - INFO - ✅ Dashboard updated in 1.9s
+2025-10-30 22:51:20,143 - INFO - 📊 View at: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8
+2025-10-30 22:51:20,143 - INFO - ============================================================
+2025-10-30 22:52:11,298 - INFO - 📋 Loaded OAuth token from token.pickle
+2025-10-30 22:52:11,299 - WARNING - ⚠️ Token missing BigQuery scope - will request new token
+2025-10-30 22:58:07,656 - INFO - 📋 Loaded OAuth token from token.pickle
+2025-10-30 22:58:07,656 - WARNING - ⚠️ Token missing BigQuery scope - will request new token
+2025-10-30 22:58:26,105 - INFO - "GET /?state=JEozoRhQTB0Y4JTcnVc5eOqB16qHzw&code=4/0Ab32j91p2GcUTlg2-ZOHVEroI38H_ZhsreBYApkI-nfaVqCfCqMvzlyJPZpjvSRRWhyjDQ&scope=https://www.googleapis.com/auth/spreadsheets%20https://www.googleapis.com/auth/drive%20https://www.googleapis.com/auth/bigquery HTTP/1.1" 200 65
+2025-10-30 22:58:26,266 - INFO - ✅ Got new OAuth token via browser (with BigQuery scope)
+2025-10-30 22:58:26,271 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-10-30 22:58:26,275 - INFO - ✅ Dashboard initialized (Service Account for BigQuery, OAuth for Sheets)
+2025-10-30 22:58:26,275 - INFO - ============================================================
+2025-10-30 22:58:26,275 - INFO - 🚀 Starting Dashboard Update
+2025-10-30 22:58:26,275 - INFO - ============================================================
+2025-10-30 22:58:27,789 - INFO - 📊 Connected to GB Energy Dashboard
+2025-10-30 22:58:27,789 - INFO -    URL: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8
+2025-10-30 22:58:27,789 - INFO - 📊 Updating System Prices...
+2025-10-30 22:58:28,367 - ERROR - ❌ BigQuery query failed: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: cac0d19e-c707-4491-b964-2171c4b805d8
+
+2025-10-30 22:58:28,367 - WARNING - ⚠️ No system prices data
+2025-10-30 22:58:28,367 - INFO - ⚡ Updating Grid Frequency...
+2025-10-30 22:58:28,575 - ERROR - ❌ BigQuery query failed: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 8afaac78-3882-48de-ad0f-3d67e323203b
+
+2025-10-30 22:58:28,575 - WARNING - ⚠️ No frequency data
+2025-10-30 22:58:28,575 - INFO - 🔥 Updating Fuel Generation...
+2025-10-30 22:58:28,772 - ERROR - ❌ BigQuery query failed: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 34348b8c-21aa-4c1b-bad0-6ed52d0f9dcf
+
+2025-10-30 22:58:28,772 - WARNING - ⚠️ No fuel generation data
+2025-10-30 22:58:28,772 - INFO - 📋 Updating Recent Activity...
+2025-10-30 22:58:28,935 - ERROR - ❌ BigQuery query failed: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 2896a3f7-668d-4ac0-8d9b-6dec9c445aea
+
+2025-10-30 22:58:28,935 - INFO - ============================================================
+2025-10-30 22:58:28,935 - INFO - ✅ Dashboard updated in 2.7s
+2025-10-30 22:58:28,935 - INFO - 📊 View at: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8
+2025-10-30 22:58:28,935 - INFO - ============================================================
+2025-10-30 23:01:56,826 - INFO - 📋 Loaded OAuth token from token.pickle
+2025-10-30 23:01:56,827 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-10-30 23:01:56,829 - INFO - ✅ Dashboard initialized (OAuth for both BigQuery and Sheets - Smart Grid account)
+2025-10-30 23:01:56,829 - INFO - ============================================================
+2025-10-30 23:01:56,829 - INFO - 🚀 Starting Dashboard Update
+2025-10-30 23:01:56,829 - INFO - ============================================================
+2025-10-30 23:01:57,816 - INFO - 📊 Connected to GB Energy Dashboard
+2025-10-30 23:01:57,816 - INFO -    URL: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8
+2025-10-30 23:01:57,816 - INFO - 📊 Updating System Prices...
+2025-10-30 23:01:58,173 - ERROR - ❌ BigQuery query failed: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 6463eef6-962d-443a-b6a4-5b10e1ec4c62
+
+2025-10-30 23:01:58,173 - WARNING - ⚠️ No system prices data
+2025-10-30 23:01:58,173 - INFO - ⚡ Updating Grid Frequency...
+2025-10-30 23:01:58,385 - ERROR - ❌ BigQuery query failed: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: b180a595-09f9-489f-a2f9-7bd744adc837
+
+2025-10-30 23:01:58,385 - WARNING - ⚠️ No frequency data
+2025-10-30 23:01:58,385 - INFO - 🔥 Updating Fuel Generation...
+2025-10-30 23:01:58,737 - ERROR - ❌ BigQuery query failed: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: c868b4e8-0ead-44c6-a6d6-a63ed95cb1e1
+
+2025-10-30 23:01:58,737 - WARNING - ⚠️ No fuel generation data
+2025-10-30 23:01:58,737 - INFO - 📋 Updating Recent Activity...
+2025-10-30 23:01:58,962 - ERROR - ❌ BigQuery query failed: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 75515832-74ce-4dac-b64e-e06cd5a571c1
+
+2025-10-30 23:01:58,962 - INFO - ============================================================
+2025-10-30 23:01:58,962 - INFO - ✅ Dashboard updated in 2.1s
+2025-10-30 23:01:58,962 - INFO - 📊 View at: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8
+2025-10-30 23:01:58,962 - INFO - ============================================================
+2025-10-30 23:07:15,657 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-10-30 23:07:15,658 - INFO - 📋 Loaded OAuth token from token.pickle
+2025-10-30 23:07:15,659 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-10-30 23:07:15,661 - INFO - ✅ Dashboard initialized (Application Default Credentials for BigQuery, OAuth for Sheets)
+2025-10-30 23:07:15,661 - INFO - ============================================================
+2025-10-30 23:07:15,661 - INFO - 🚀 Starting Dashboard Update
+2025-10-30 23:07:15,661 - INFO - ============================================================
+2025-10-30 23:07:16,795 - INFO - 📊 Connected to GB Energy Dashboard
+2025-10-30 23:07:16,795 - INFO -    URL: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8
+2025-10-30 23:07:16,795 - INFO - 📊 Updating System Prices...
+2025-10-30 23:07:17,384 - ERROR - ❌ BigQuery query failed: 400 Unrecognized name: settlement_date; Did you mean settlementDate? at [9:15]; reason: invalidQuery, location: query, message: Unrecognized name: settlement_date; Did you mean settlementDate? at [9:15]
+
+Location: US
+Job ID: b1b19f6a-7a43-431e-ac6c-6661f099755d
+
+2025-10-30 23:07:17,385 - WARNING - ⚠️ No system prices data
+2025-10-30 23:07:17,385 - INFO - ⚡ Updating Grid Frequency...
+2025-10-30 23:07:17,883 - ERROR - ❌ BigQuery query failed: 400 No matching signature for operator >= for argument types: DATETIME, TIMESTAMP
+  Signature: T1 >= T1
+    Unable to find common supertype for templated argument <T1>
+      Input types for <T1>: {TIMESTAMP, DATETIME} at [6:15]; reason: invalidQuery, location: query, message: No matching signature for operator >= for argument types: DATETIME, TIMESTAMP
+  Signature: T1 >= T1
+    Unable to find common supertype for templated argument <T1>
+      Input types for <T1>: {TIMESTAMP, DATETIME} at [6:15]
+
+Location: US
+Job ID: f6866a4f-f3e3-48e7-b723-00589cdfffa3
+
+2025-10-30 23:07:17,883 - WARNING - ⚠️ No frequency data
+2025-10-30 23:07:17,884 - INFO - 🔥 Updating Fuel Generation...
+2025-10-30 23:07:18,288 - ERROR - ❌ BigQuery query failed: 400 No matching signature for operator >= for argument types: DATETIME, TIMESTAMP
+  Signature: T1 >= T1
+    Unable to find common supertype for templated argument <T1>
+      Input types for <T1>: {TIMESTAMP, DATETIME} at [8:15]; reason: invalidQuery, location: query, message: No matching signature for operator >= for argument types: DATETIME, TIMESTAMP
+  Signature: T1 >= T1
+    Unable to find common supertype for templated argument <T1>
+      Input types for <T1>: {TIMESTAMP, DATETIME} at [8:15]
+
+Location: US
+Job ID: d86e9ff5-46cc-4cf9-98f9-851f0cfe402b
+
+2025-10-30 23:07:18,288 - WARNING - ⚠️ No fuel generation data
+2025-10-30 23:07:18,288 - INFO - 📋 Updating Recent Activity...
+2025-10-30 23:07:19,457 - INFO - ✅ Query returned 4 rows
+2025-10-30 23:07:22,279 - INFO - ✅ Updated sheet 'Recent Activity' with 4 rows
+2025-10-30 23:07:22,280 - INFO - ============================================================
+2025-10-30 23:07:22,280 - INFO - ✅ Dashboard updated in 6.6s
+2025-10-30 23:07:22,280 - INFO - 📊 View at: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8
+2025-10-30 23:07:22,280 - INFO - ============================================================
+2025-10-30 23:10:46,328 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-10-30 23:10:46,329 - INFO - 📋 Loaded OAuth token from token.pickle
+2025-10-30 23:10:46,330 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-10-30 23:10:46,332 - INFO - ✅ Dashboard initialized (Application Default Credentials for BigQuery, OAuth for Sheets)
+2025-10-30 23:10:46,332 - INFO - ============================================================
+2025-10-30 23:10:46,332 - INFO - 🚀 Starting Dashboard Update
+2025-10-30 23:10:46,332 - INFO - ============================================================
+2025-10-30 23:10:47,284 - INFO - 📊 Connected to GB Energy Dashboard
+2025-10-30 23:10:47,285 - INFO -    URL: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8
+2025-10-30 23:10:47,285 - INFO - 📊 Updating System Prices...
+2025-10-30 23:10:48,456 - INFO - ✅ Query returned 0 rows
+2025-10-30 23:10:48,456 - WARNING - ⚠️ No system prices data
+2025-10-30 23:10:48,456 - INFO - ⚡ Updating Grid Frequency...
+2025-10-30 23:10:49,467 - INFO - ✅ Query returned 36 rows
+2025-10-30 23:10:52,349 - INFO - ✅ Updated sheet 'Grid Frequency' with 36 rows
+2025-10-30 23:10:53,477 - ERROR - ❌ Failed to create chart on 'Grid Frequency': 'Worksheet' object has no attribute 'get_all_charts'
+2025-10-30 23:10:53,478 - INFO - 🔥 Updating Fuel Generation...
+2025-10-30 23:10:54,532 - INFO - ✅ Query returned 0 rows
+2025-10-30 23:10:54,532 - WARNING - ⚠️ No fuel generation data
+2025-10-30 23:10:54,532 - INFO - 📋 Updating Recent Activity...
+2025-10-30 23:10:55,728 - INFO - ✅ Query returned 4 rows
+2025-10-30 23:10:58,082 - INFO - ✅ Updated sheet 'Recent Activity' with 4 rows
+2025-10-30 23:10:58,083 - INFO - ============================================================
+2025-10-30 23:10:58,083 - INFO - ✅ Dashboard updated in 11.8s
+2025-10-30 23:10:58,083 - INFO - 📊 View at: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8
+2025-10-30 23:10:58,083 - INFO - ============================================================

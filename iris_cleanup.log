@@ -1,0 +1,205 @@
+🗑️  IRIS JSON Files Cleanup Script
+===================================
+Started: Thu Oct 30 18:32:35 GMT 2025
+
+🔍 DRY RUN MODE - No files will be deleted
+
+📊 Current Status:
+
+Total: 77212 files, 1.6G
+
+Top 15 datasets by size:
+❌ 617M - UOU2T3YW (47 files)
+✅ 238M - MILS (44260 files)
+✅ 156M - MELS (26314 files)
+❌ 94M - DISPTAV (0 files)
+❌ 72M - BOAV (0 files)
+❌ 53M - UOU2T14D (47 files)
+❌ 53M - PN (94 files)
+❌ 47M - QPN (94 files)
+✅ 45M - BEB (188 files)
+❌ 29M - ISPSTACK (0 files)
+❌ 21M - EBOCF (0 files)
+❌ 19M - IMBALNGC (91 files)
+❌ 19M - FOU2T3YW (48 files)
+❌ 18M - TSDF (93 files)
+❌ 18M - MELNGC (91 files)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+❌ Invalid mode: --dry-run
+
+Usage: ./iris_cleanup_files.sh [--all|--unwanted|--dry-run]
+
+Modes:
+  --unwanted  : Delete only large unwanted datasets (default)
+  --all       : Delete ALL datasets (requires confirmation)
+  --dry-run   : Show what would be deleted without deleting
+
+Examples:
+  ./iris_cleanup_files.sh                    # Delete unwanted datasets
+  ./iris_cleanup_files.sh --dry-run          # Preview what would be deleted
+  ./iris_cleanup_files.sh --unwanted         # Delete unwanted datasets
+  ./iris_cleanup_files.sh --all              # Delete ALL datasets (with confirmation)
+🗑️  IRIS JSON Files Cleanup Script
+===================================
+Started: Thu Oct 30 18:34:13 GMT 2025
+
+🔍 DRY RUN MODE - No files will be deleted
+
+📊 Current Status:
+
+Total: 82189 files, 1.6G
+
+Top 15 datasets by size:
+❌ 656M - UOU2T3YW (50 files)
+✅ 247M - MILS (45681 files)
+✅ 169M - MELS (28829 files)
+❌ 97M - DISPTAV (0 files)
+❌ 74M - BOAV (0 files)
+❌ 55M - UOU2T14D (49 files)
+❌ 55M - PN (98 files)
+❌ 49M - QPN (98 files)
+✅ 47M - BEB (196 files)
+❌ 30M - ISPSTACK (0 files)
+❌ 21M - EBOCF (0 files)
+❌ 20M - TSDF (98 files)
+❌ 20M - MELNGC (96 files)
+❌ 20M - INDGEN (96 files)
+❌ 20M - INDDEM (96 files)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎯 Mode: Delete unwanted datasets only
+
+Deleting large datasets we don't have BigQuery tables for:
+
+  🔍 Would delete: UOU2T3YW (50 files, 656M)
+  🔍 Would delete: UOU2T14D (49 files, 55M)
+  🔍 Would delete: DISPTAV (0 files, 97M)
+  🔍 Would delete: BOAV (0 files, 74M)
+  🔍 Would delete: ISPSTACK (0 files, 30M)
+  🔍 Would delete: PN (98 files, 55M)
+  🔍 Would delete: QPN (98 files, 49M)
+  🔍 Would delete: NETBSAD (201 files, 884K)
+  🔍 Would delete: INDGEN (97 files, 20M)
+  🔍 Would delete: INDDEM (97 files, 20M)
+  ⏭️  LOLPDRM - Not found, skipping
+  🔍 Would delete: TSDF (98 files, 20M)
+  🔍 Would delete: ITSDO (98 files, 392K)
+  🔍 Would delete: MELNGC (96 files, 20M)
+  ⏭️  MILNGC - Not found, skipping
+  🔍 Would delete: SEL (250 files, 1.0M)
+  🔍 Would delete: SIL (555 files, 2.2M)
+  🔍 Would delete: NONBM (98 files, 392K)
+  🔍 Would delete: DISBSAD (201 files, 1.2M)
+  ⏭️  DETSYSPRICES - Not found, skipping
+  ⏭️  CDN - Not found, skipping
+  ⏭️  SYSWARN - Not found, skipping
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ Cleanup complete!
+Finished: Thu Oct 30 18:34:15 GMT 2025
+
+Log saved to: iris_cleanup.log
+🗑️  IRIS JSON Files Cleanup Script
+===================================
+Started: Thu Oct 30 18:34:26 GMT 2025
+
+📊 Current Status:
+
+Total: 82912 files, 1.6G
+
+Top 15 datasets by size:
+❌ 656M - UOU2T3YW (50 files)
+✅ 248M - MILS (45961 files)
+✅ 171M - MELS (29134 files)
+❌ 97M - DISPTAV (0 files)
+❌ 75M - BOAV (0 files)
+❌ 55M - UOU2T14D (49 files)
+❌ 55M - PN (99 files)
+❌ 50M - QPN (99 files)
+✅ 47M - BEB (198 files)
+❌ 30M - ISPSTACK (0 files)
+❌ 22M - EBOCF (0 files)
+❌ 20M - TSDF (99 files)
+❌ 20M - MELNGC (97 files)
+❌ 20M - INDGEN (98 files)
+❌ 20M - INDDEM (98 files)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎯 Mode: Delete unwanted datasets only
+
+Deleting large datasets we don't have BigQuery tables for:
+
+  🗑️  Deleting: UOU2T3YW (50 files, 656M)
+    ✅ Deleted
+  🗑️  Deleting: UOU2T14D (49 files, 55M)
+    ✅ Deleted
+  🗑️  Deleting: DISPTAV (0 files, 97M)
+    ✅ Deleted
+  🗑️  Deleting: BOAV (0 files, 75M)
+    ✅ Deleted
+  🗑️  Deleting: ISPSTACK (0 files, 30M)
+    ✅ Deleted
+  🗑️  Deleting: PN (99 files, 55M)
+    ✅ Deleted
+  🗑️  Deleting: QPN (99 files, 50M)
+    ✅ Deleted
+  🗑️  Deleting: NETBSAD (203 files, 892K)
+    ✅ Deleted
+  🗑️  Deleting: INDGEN (98 files, 20M)
+    ✅ Deleted
+  🗑️  Deleting: INDDEM (98 files, 20M)
+    ✅ Deleted
+  ⏭️  LOLPDRM - Not found, skipping
+  🗑️  Deleting: TSDF (99 files, 20M)
+    ✅ Deleted
+  🗑️  Deleting: ITSDO (99 files, 396K)
+    ✅ Deleted
+  🗑️  Deleting: MELNGC (97 files, 20M)
+    ✅ Deleted
+  ⏭️  MILNGC - Not found, skipping
+  🗑️  Deleting: SEL (251 files, 1.0M)
+    ✅ Deleted
+  🗑️  Deleting: SIL (565 files, 2.2M)
+    ✅ Deleted
+  🗑️  Deleting: NONBM (99 files, 396K)
+    ✅ Deleted
+  🗑️  Deleting: DISBSAD (203 files, 1.2M)
+    ✅ Deleted
+  ⏭️  DETSYSPRICES - Not found, skipping
+  ⏭️  CDN - Not found, skipping
+  ⏭️  SYSWARN - Not found, skipping
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📊 After Cleanup:
+
+📊 Current Status:
+
+Total: 81067 files, 579M
+
+Top 15 datasets by size:
+✅ 249M - MILS (46034 files)
+✅ 171M - MELS (29265 files)
+✅ 47M - BEB (198 files)
+❌ 22M - EBOCF (0 files)
+❌ 20M - IMBALNGC (98 files)
+❌ 19M - FOU2T3YW (50 files)
+✅ 11M - BOD (12 files)
+✅ 5.0M - BOALF (1284 files)
+✅ 4.2M - FUELINST (596 files)
+❌ 3.3M - QAS (5 files)
+❌ 2.3M - SOSO (147 files)
+❌ 2.3M - CBS (297 files)
+✅ 2.0M - FREQ (510 files)
+❌ 1.7M - LOLPDM (99 files)
+❌ 1.7M - FOU2T14D (49 files)
+
+✅ Cleanup complete!
+Finished: Thu Oct 30 18:34:32 GMT 2025
+
+Log saved to: iris_cleanup.log

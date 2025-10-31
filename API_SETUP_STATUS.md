@@ -120,18 +120,28 @@ python load_tariffs_to_bigquery.py
 
 ---
 
-## 🔧 APIs Enabled in Google Cloud Projects
+## � Repository Location
+**Current:** `~/repo/GB Power Market JJ`  
+**Previous:** `~/GB Power Market JJ`  
+**Changed:** October 30, 2025  
+**Git Status:** ✅ Fully functional
+
+## 🗂️ Google Cloud Projects
 
 ### jibber-jabber-knowledge (Service Account Project)
 - ✅ BigQuery API
 - ✅ Cloud Storage API
 - Service Account can create jobs in this project
+- **Service Account:** jibber-jabber-knowledge@appspot.gserviceaccount.com
+- **Credentials File:** jibber_jabber_key.json
 
-### inner-cinema-476211-u9 (Grid Smart - Data Project)
+### inner-cinema-476211-u9 (Smart Grid - IRIS Data Project)
 - ✅ BigQuery API
 - ✅ BigQuery Data Transfer API
 - ✅ Cloud Storage API
-- ⚠️ Service account needs IAM permissions
+- ✅ **Access Method:** Application Default Credentials (ADC)
+- **Dataset:** uk_energy_prod (contains IRIS tables)
+- **Tables:** bmrs_mid_iris, bmrs_freq_iris, bmrs_fuelinst_iris, bmrs_boalf_iris, bmrs_bod_iris, etc.
 
 ### george@upowerenergy.uk (User Account)
 - ✅ Google Sheets API

@@ -3129,3 +3129,1497 @@ Job ID: 73981170-70b1-4e6c-8842-e823351726bc
 2025-10-30 15:45:13,989 - INFO - ✅ Real-time update completed successfully
 2025-10-30 15:45:13,990 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 15:45:13,627 - INFO - ✅ Ingestion run completed.']
 2025-10-30 15:45:13,990 - INFO - ✅ Update cycle completed successfully
+2025-10-30 15:50:01,944 - INFO - ================================================================================
+2025-10-30 15:50:01,945 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 15:50:01,946 - INFO - ================================================================================
+2025-10-30 15:50:02,605 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 9812a299-b22f-4385-a4b4-ac1b3d166ca1
+
+2025-10-30 15:50:03,134 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 1f30c2e4-7a87-4ef1-8caa-002653583f1a
+
+2025-10-30 15:50:03,134 - INFO - 🔄 Fetching data from 2025-10-30 15:35 to 2025-10-30 15:50 UTC
+2025-10-30 15:50:03,134 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 15:50:08,529 - INFO - ✅ Real-time update completed successfully
+2025-10-30 15:50:08,530 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 15:50:08,264 - INFO - ✅ Ingestion run completed.']
+2025-10-30 15:50:08,530 - INFO - ✅ Update cycle completed successfully
+2025-10-30 15:55:01,403 - INFO - ================================================================================
+2025-10-30 15:55:01,405 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 15:55:01,405 - INFO - ================================================================================
+2025-10-30 15:55:02,072 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 0316260f-558c-4de8-9edf-90e4d0eb2bc3
+
+2025-10-30 15:55:02,571 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 354dcb42-ce87-4b0c-bc90-3cb29e5c216d
+
+2025-10-30 15:55:02,571 - INFO - 🔄 Fetching data from 2025-10-30 15:40 to 2025-10-30 15:55 UTC
+2025-10-30 15:55:02,571 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 15:55:07,849 - INFO - ✅ Real-time update completed successfully
+2025-10-30 15:55:07,850 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 15:55:07,601 - INFO - ✅ Ingestion run completed.']
+2025-10-30 15:55:07,850 - INFO - ✅ Update cycle completed successfully
+2025-10-30 16:00:02,170 - INFO - ================================================================================
+2025-10-30 16:00:02,170 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 16:00:02,170 - INFO - ================================================================================
+2025-10-30 16:00:02,720 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 09d421d3-d5cb-494b-b14d-a5cdb5468a62
+
+2025-10-30 16:00:03,273 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 1dede13b-81e3-46c8-893b-abfd9c229dab
+
+2025-10-30 16:00:03,273 - INFO - 🔄 Fetching data from 2025-10-30 15:45 to 2025-10-30 16:00 UTC
+2025-10-30 16:00:03,273 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 16:00:08,598 - INFO - ✅ Real-time update completed successfully
+2025-10-30 16:00:08,599 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 16:00:08,357 - INFO - ✅ Ingestion run completed.']
+2025-10-30 16:00:08,599 - INFO - ✅ Update cycle completed successfully
+2025-10-30 16:05:01,739 - INFO - ================================================================================
+2025-10-30 16:05:01,740 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 16:05:01,740 - INFO - ================================================================================
+2025-10-30 16:05:02,448 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: bc9cec7f-398b-40a3-94e5-baefe35a2aef
+
+2025-10-30 16:05:03,063 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 867192d3-2e83-42c8-8be3-8e3edcc3afa4
+
+2025-10-30 16:05:03,063 - INFO - 🔄 Fetching data from 2025-10-30 15:50 to 2025-10-30 16:05 UTC
+2025-10-30 16:05:03,063 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 16:05:08,512 - INFO - ✅ Real-time update completed successfully
+2025-10-30 16:05:08,512 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 16:05:08,182 - INFO - ✅ Ingestion run completed.']
+2025-10-30 16:05:08,513 - INFO - ✅ Update cycle completed successfully
+2025-10-30 16:10:02,360 - INFO - ================================================================================
+2025-10-30 16:10:02,361 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 16:10:02,361 - INFO - ================================================================================
+2025-10-30 16:10:02,857 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 2dc23380-2a23-47eb-af24-37d0004bfc80
+
+2025-10-30 16:10:03,386 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 399c8ba4-deb1-47d7-8d95-93f5a5902876
+
+2025-10-30 16:10:03,387 - INFO - 🔄 Fetching data from 2025-10-30 15:55 to 2025-10-30 16:10 UTC
+2025-10-30 16:10:03,387 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 16:10:08,560 - INFO - ✅ Real-time update completed successfully
+2025-10-30 16:10:08,561 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 16:10:08,307 - INFO - ✅ Ingestion run completed.']
+2025-10-30 16:10:08,561 - INFO - ✅ Update cycle completed successfully
+2025-10-30 16:15:01,955 - INFO - ================================================================================
+2025-10-30 16:15:01,956 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 16:15:01,956 - INFO - ================================================================================
+2025-10-30 16:15:02,499 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: b3a8d5a5-ad8a-497b-9816-fd5ee025f526
+
+2025-10-30 16:15:03,215 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: d8173851-5776-4f67-a37d-d4fcdae6d0c0
+
+2025-10-30 16:15:03,216 - INFO - 🔄 Fetching data from 2025-10-30 16:00 to 2025-10-30 16:15 UTC
+2025-10-30 16:15:03,216 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 16:15:08,860 - INFO - ✅ Real-time update completed successfully
+2025-10-30 16:15:08,861 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 16:15:08,551 - INFO - ✅ Ingestion run completed.']
+2025-10-30 16:15:08,861 - INFO - ✅ Update cycle completed successfully
+2025-10-30 16:20:01,694 - INFO - ================================================================================
+2025-10-30 16:20:01,695 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 16:20:01,695 - INFO - ================================================================================
+2025-10-30 16:20:02,388 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: c111dcf6-9349-4e93-9bee-7806545b0a68
+
+2025-10-30 16:20:02,910 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 216d1dac-af07-4abb-8a1b-390e6e5e01ea
+
+2025-10-30 16:20:02,910 - INFO - 🔄 Fetching data from 2025-10-30 16:05 to 2025-10-30 16:20 UTC
+2025-10-30 16:20:02,910 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 16:20:07,875 - INFO - ✅ Real-time update completed successfully
+2025-10-30 16:20:07,876 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 16:20:07,646 - INFO - ✅ Ingestion run completed.']
+2025-10-30 16:20:07,876 - INFO - ✅ Update cycle completed successfully
+2025-10-30 16:25:01,703 - INFO - ================================================================================
+2025-10-30 16:25:01,705 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 16:25:01,705 - INFO - ================================================================================
+2025-10-30 16:25:02,350 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 66ace5aa-1a30-402b-a1cf-736ea6310c64
+
+2025-10-30 16:25:02,862 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 820b1827-1038-43bf-a3cf-dc04765f17dc
+
+2025-10-30 16:25:02,863 - INFO - 🔄 Fetching data from 2025-10-30 16:10 to 2025-10-30 16:25 UTC
+2025-10-30 16:25:02,863 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 16:25:07,905 - INFO - ✅ Real-time update completed successfully
+2025-10-30 16:25:07,905 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 16:25:07,645 - INFO - ✅ Ingestion run completed.']
+2025-10-30 16:25:07,906 - INFO - ✅ Update cycle completed successfully
+2025-10-30 16:30:01,897 - INFO - ================================================================================
+2025-10-30 16:30:01,898 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 16:30:01,898 - INFO - ================================================================================
+2025-10-30 16:30:02,745 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 5b9e1c24-8be2-4b66-a03f-6595ec84ba81
+
+2025-10-30 16:30:03,268 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 4a6cdb08-f79f-4d29-ad39-784f06bbd1d6
+
+2025-10-30 16:30:03,269 - INFO - 🔄 Fetching data from 2025-10-30 16:15 to 2025-10-30 16:30 UTC
+2025-10-30 16:30:03,269 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 16:30:08,703 - INFO - ✅ Real-time update completed successfully
+2025-10-30 16:30:08,703 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 16:30:08,449 - INFO - ✅ Ingestion run completed.']
+2025-10-30 16:30:08,704 - INFO - ✅ Update cycle completed successfully
+2025-10-30 16:35:01,313 - INFO - ================================================================================
+2025-10-30 16:35:01,314 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 16:35:01,314 - INFO - ================================================================================
+2025-10-30 16:35:02,122 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 436cfc7c-9b65-40f5-877a-615ae81e8f88
+
+2025-10-30 16:35:03,244 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 088d5bf1-912d-4bd4-8f8a-9b190d62e1f7
+
+2025-10-30 16:35:03,244 - INFO - 🔄 Fetching data from 2025-10-30 16:20 to 2025-10-30 16:35 UTC
+2025-10-30 16:35:03,244 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 16:35:08,442 - INFO - ✅ Real-time update completed successfully
+2025-10-30 16:35:08,442 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 16:35:08,160 - INFO - ✅ Ingestion run completed.']
+2025-10-30 16:35:08,443 - INFO - ✅ Update cycle completed successfully
+2025-10-30 16:40:03,100 - INFO - ================================================================================
+2025-10-30 16:40:03,104 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 16:40:03,104 - INFO - ================================================================================
+2025-10-30 16:40:03,786 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: d47e6f7d-6ed1-48d1-8715-2479ac0ea195
+
+2025-10-30 16:40:04,399 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: c5f68465-ee19-46af-a521-c2224d1f4f6c
+
+2025-10-30 16:40:04,400 - INFO - 🔄 Fetching data from 2025-10-30 16:25 to 2025-10-30 16:40 UTC
+2025-10-30 16:40:04,400 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 16:40:09,948 - INFO - ✅ Real-time update completed successfully
+2025-10-30 16:40:09,949 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 16:40:09,693 - INFO - ✅ Ingestion run completed.']
+2025-10-30 16:40:09,949 - INFO - ✅ Update cycle completed successfully
+2025-10-30 16:45:02,019 - INFO - ================================================================================
+2025-10-30 16:45:02,020 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 16:45:02,021 - INFO - ================================================================================
+2025-10-30 16:45:02,627 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 3b28a79b-12f9-4b7d-a9e7-afe2ded821f4
+
+2025-10-30 16:45:03,218 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: ef823af8-3342-4131-9bcd-37cfc239bf73
+
+2025-10-30 16:45:03,219 - INFO - 🔄 Fetching data from 2025-10-30 16:30 to 2025-10-30 16:45 UTC
+2025-10-30 16:45:03,219 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 16:45:09,844 - INFO - ✅ Real-time update completed successfully
+2025-10-30 16:45:09,845 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 16:45:09,515 - INFO - ✅ Ingestion run completed.']
+2025-10-30 16:45:09,845 - INFO - ✅ Update cycle completed successfully
+2025-10-30 16:50:01,500 - INFO - ================================================================================
+2025-10-30 16:50:01,501 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 16:50:01,501 - INFO - ================================================================================
+2025-10-30 16:50:02,219 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: bd94b64a-355a-47e8-bcc8-82d38dbebab6
+
+2025-10-30 16:50:02,911 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 2147a3f7-c0b7-46f3-aa00-cccbeba633ea
+
+2025-10-30 16:50:02,911 - INFO - 🔄 Fetching data from 2025-10-30 16:35 to 2025-10-30 16:50 UTC
+2025-10-30 16:50:02,911 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 16:50:07,763 - INFO - ✅ Real-time update completed successfully
+2025-10-30 16:50:07,764 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 16:50:07,541 - INFO - ✅ Ingestion run completed.']
+2025-10-30 16:50:07,764 - INFO - ✅ Update cycle completed successfully
+2025-10-30 16:55:01,624 - INFO - ================================================================================
+2025-10-30 16:55:01,625 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 16:55:01,625 - INFO - ================================================================================
+2025-10-30 16:55:02,373 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 43749fbd-033e-40e0-a0ac-2453f1d12b38
+
+2025-10-30 16:55:02,973 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 2a5bcf3c-ac97-427c-bf54-63e58a315b4c
+
+2025-10-30 16:55:02,973 - INFO - 🔄 Fetching data from 2025-10-30 16:40 to 2025-10-30 16:55 UTC
+2025-10-30 16:55:02,974 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 16:55:07,957 - INFO - ✅ Real-time update completed successfully
+2025-10-30 16:55:07,958 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 16:55:07,687 - INFO - ✅ Ingestion run completed.']
+2025-10-30 16:55:07,958 - INFO - ✅ Update cycle completed successfully
+2025-10-30 17:00:02,141 - INFO - ================================================================================
+2025-10-30 17:00:02,142 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 17:00:02,142 - INFO - ================================================================================
+2025-10-30 17:00:02,877 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: bdc123d7-3b18-4b07-969f-fa02b7c17493
+
+2025-10-30 17:00:03,576 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 6d2a88ba-3d75-4c4a-9320-7f7398df33f3
+
+2025-10-30 17:00:03,576 - INFO - 🔄 Fetching data from 2025-10-30 16:45 to 2025-10-30 17:00 UTC
+2025-10-30 17:00:03,577 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 17:00:09,180 - INFO - ✅ Real-time update completed successfully
+2025-10-30 17:00:09,181 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 17:00:08,926 - INFO - ✅ Ingestion run completed.']
+2025-10-30 17:00:09,182 - INFO - ✅ Update cycle completed successfully
+2025-10-30 17:05:02,044 - INFO - ================================================================================
+2025-10-30 17:05:02,045 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 17:05:02,045 - INFO - ================================================================================
+2025-10-30 17:05:02,767 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: be34a05e-80e2-44b9-9320-7938d72f82f8
+
+2025-10-30 17:05:03,452 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: cd3b76ac-f8d1-478b-ad45-01da854db4c1
+
+2025-10-30 17:05:03,452 - INFO - 🔄 Fetching data from 2025-10-30 16:50 to 2025-10-30 17:05 UTC
+2025-10-30 17:05:03,452 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 17:05:08,685 - INFO - ✅ Real-time update completed successfully
+2025-10-30 17:05:08,686 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 17:05:08,438 - INFO - ✅ Ingestion run completed.']
+2025-10-30 17:05:08,686 - INFO - ✅ Update cycle completed successfully
+2025-10-30 17:10:01,289 - INFO - ================================================================================
+2025-10-30 17:10:01,290 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 17:10:01,290 - INFO - ================================================================================
+2025-10-30 17:10:02,158 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: be01fd47-3368-4bce-904d-5d7e92e1a221
+
+2025-10-30 17:10:02,852 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: fc0c9705-5107-442d-b49b-ec700640f281
+
+2025-10-30 17:10:02,852 - INFO - 🔄 Fetching data from 2025-10-30 16:55 to 2025-10-30 17:10 UTC
+2025-10-30 17:10:02,852 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 17:10:08,192 - INFO - ✅ Real-time update completed successfully
+2025-10-30 17:10:08,194 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 17:10:07,938 - INFO - ✅ Ingestion run completed.']
+2025-10-30 17:10:08,194 - INFO - ✅ Update cycle completed successfully
+2025-10-30 17:15:02,536 - INFO - ================================================================================
+2025-10-30 17:15:02,537 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 17:15:02,537 - INFO - ================================================================================
+2025-10-30 17:15:03,167 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: cb9f5ba9-7ea7-44c7-87dc-266c7fc039fd
+
+2025-10-30 17:15:03,769 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 7b825c50-5a2a-4282-aac1-6d7afae35d52
+
+2025-10-30 17:15:03,769 - INFO - 🔄 Fetching data from 2025-10-30 17:00 to 2025-10-30 17:15 UTC
+2025-10-30 17:15:03,769 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 17:15:09,286 - INFO - ✅ Real-time update completed successfully
+2025-10-30 17:15:09,290 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 17:15:09,009 - INFO - ✅ Ingestion run completed.']
+2025-10-30 17:15:09,290 - INFO - ✅ Update cycle completed successfully
+2025-10-30 17:20:02,095 - INFO - ================================================================================
+2025-10-30 17:20:02,100 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 17:20:02,104 - INFO - ================================================================================
+2025-10-30 17:20:02,768 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 0d3c0e66-6b8b-4130-b587-71b58a7f3f0e
+
+2025-10-30 17:20:03,472 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: fbbe450a-d318-401c-a0fb-29ded440ecb9
+
+2025-10-30 17:20:03,472 - INFO - 🔄 Fetching data from 2025-10-30 17:05 to 2025-10-30 17:20 UTC
+2025-10-30 17:20:03,472 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 17:20:08,322 - INFO - ✅ Real-time update completed successfully
+2025-10-30 17:20:08,322 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 17:20:08,100 - INFO - ✅ Ingestion run completed.']
+2025-10-30 17:20:08,322 - INFO - ✅ Update cycle completed successfully
+2025-10-30 17:25:01,847 - INFO - ================================================================================
+2025-10-30 17:25:01,849 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 17:25:01,849 - INFO - ================================================================================
+2025-10-30 17:25:02,665 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 0d7441ca-c0a0-4aea-9834-99ed3be0621d
+
+2025-10-30 17:25:03,365 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: d53cf83d-69f2-4f36-a834-345550da4670
+
+2025-10-30 17:25:03,365 - INFO - 🔄 Fetching data from 2025-10-30 17:10 to 2025-10-30 17:25 UTC
+2025-10-30 17:25:03,365 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 17:25:08,974 - INFO - ✅ Real-time update completed successfully
+2025-10-30 17:25:08,975 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 17:25:08,697 - INFO - ✅ Ingestion run completed.']
+2025-10-30 17:25:08,975 - INFO - ✅ Update cycle completed successfully
+2025-10-30 17:30:17,690 - INFO - ================================================================================
+2025-10-30 17:30:17,691 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 17:30:17,691 - INFO - ================================================================================
+2025-10-30 17:30:18,570 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 5ad72e98-71e6-4909-a2aa-f68112c90e6c
+
+2025-10-30 17:30:19,287 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: d5e02758-2ad7-4f29-9ea4-b474338b3739
+
+2025-10-30 17:30:19,287 - INFO - 🔄 Fetching data from 2025-10-30 17:15 to 2025-10-30 17:30 UTC
+2025-10-30 17:30:19,287 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 17:30:25,749 - INFO - ✅ Real-time update completed successfully
+2025-10-30 17:30:25,751 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 17:30:25,474 - INFO - ✅ Ingestion run completed.']
+2025-10-30 17:30:25,751 - INFO - ✅ Update cycle completed successfully
+2025-10-30 17:35:02,132 - INFO - ================================================================================
+2025-10-30 17:35:02,136 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 17:35:02,136 - INFO - ================================================================================
+2025-10-30 17:35:03,874 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: aabe6b34-b5be-4d4c-9e92-5b7c4c165ca7
+
+2025-10-30 17:35:04,506 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: d1945443-0504-4d13-bb76-ed5c208c8682
+
+2025-10-30 17:35:04,507 - INFO - 🔄 Fetching data from 2025-10-30 17:20 to 2025-10-30 17:35 UTC
+2025-10-30 17:35:04,507 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 17:35:11,621 - INFO - ✅ Real-time update completed successfully
+2025-10-30 17:35:11,653 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 17:35:11,147 - INFO - ✅ Ingestion run completed.']
+2025-10-30 17:35:11,653 - INFO - ✅ Update cycle completed successfully
+2025-10-30 17:40:03,790 - INFO - ================================================================================
+2025-10-30 17:40:03,791 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 17:40:03,791 - INFO - ================================================================================
+2025-10-30 17:40:04,768 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: ccae9bc7-654c-4a91-a81e-1f95aabacfb7
+
+2025-10-30 17:40:05,471 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: cfb96664-ab34-4076-b4fe-d80f4eb971df
+
+2025-10-30 17:40:05,472 - INFO - 🔄 Fetching data from 2025-10-30 17:25 to 2025-10-30 17:40 UTC
+2025-10-30 17:40:05,472 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 17:40:11,819 - INFO - ✅ Real-time update completed successfully
+2025-10-30 17:40:11,821 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 17:40:11,536 - INFO - ✅ Ingestion run completed.']
+2025-10-30 17:40:11,821 - INFO - ✅ Update cycle completed successfully
+2025-10-30 17:45:02,908 - INFO - ================================================================================
+2025-10-30 17:45:02,919 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 17:45:02,921 - INFO - ================================================================================
+2025-10-30 17:45:03,969 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: c292407c-3ded-4f94-afa2-3603194367c0
+
+2025-10-30 17:45:04,755 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: ae13689e-fb93-4726-b62c-ac3e15790ccc
+
+2025-10-30 17:45:04,756 - INFO - 🔄 Fetching data from 2025-10-30 17:30 to 2025-10-30 17:45 UTC
+2025-10-30 17:45:04,756 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 17:45:11,092 - INFO - ✅ Real-time update completed successfully
+2025-10-30 17:45:11,093 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 17:45:10,824 - INFO - ✅ Ingestion run completed.']
+2025-10-30 17:45:11,093 - INFO - ✅ Update cycle completed successfully
+2025-10-30 17:50:01,744 - INFO - ================================================================================
+2025-10-30 17:50:01,746 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 17:50:01,746 - INFO - ================================================================================
+2025-10-30 17:50:02,554 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 8a85d872-d013-416f-90f5-5b22ff38d493
+
+2025-10-30 17:50:03,248 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 0ec7c112-dd8d-4974-a63f-e50a40286c34
+
+2025-10-30 17:50:03,248 - INFO - 🔄 Fetching data from 2025-10-30 17:35 to 2025-10-30 17:50 UTC
+2025-10-30 17:50:03,248 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 17:50:08,223 - INFO - ✅ Real-time update completed successfully
+2025-10-30 17:50:08,223 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 17:50:08,007 - INFO - ✅ Ingestion run completed.']
+2025-10-30 17:50:08,223 - INFO - ✅ Update cycle completed successfully
+2025-10-30 17:55:01,986 - INFO - ================================================================================
+2025-10-30 17:55:01,987 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 17:55:01,987 - INFO - ================================================================================
+2025-10-30 17:55:02,646 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 21d5167a-1d07-41e1-a235-82aa3513d111
+
+2025-10-30 17:55:03,345 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: d6797b8f-45ca-47da-96de-0a71508b7524
+
+2025-10-30 17:55:03,346 - INFO - 🔄 Fetching data from 2025-10-30 17:40 to 2025-10-30 17:55 UTC
+2025-10-30 17:55:03,346 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 17:55:08,309 - INFO - ✅ Real-time update completed successfully
+2025-10-30 17:55:08,310 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 17:55:08,051 - INFO - ✅ Ingestion run completed.']
+2025-10-30 17:55:08,310 - INFO - ✅ Update cycle completed successfully
+2025-10-30 18:00:02,305 - INFO - ================================================================================
+2025-10-30 18:00:02,306 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 18:00:02,306 - INFO - ================================================================================
+2025-10-30 18:00:03,148 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 1784518a-d404-4e4c-834f-8f063831ec69
+
+2025-10-30 18:00:04,151 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 04377503-5c36-4ad3-b62b-8e8e58abaf31
+
+2025-10-30 18:00:04,152 - INFO - 🔄 Fetching data from 2025-10-30 17:45 to 2025-10-30 18:00 UTC
+2025-10-30 18:00:04,152 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 18:00:09,900 - INFO - ✅ Real-time update completed successfully
+2025-10-30 18:00:09,901 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 18:00:09,641 - INFO - ✅ Ingestion run completed.']
+2025-10-30 18:00:09,901 - INFO - ✅ Update cycle completed successfully
+2025-10-30 18:05:01,520 - INFO - ================================================================================
+2025-10-30 18:05:01,521 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 18:05:01,521 - INFO - ================================================================================
+2025-10-30 18:05:02,251 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 7d112888-6c54-439c-b8db-c4ea4418da18
+
+2025-10-30 18:05:02,951 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 4213a965-2d6b-4eb7-8290-7de15270aa33
+
+2025-10-30 18:05:02,951 - INFO - 🔄 Fetching data from 2025-10-30 17:50 to 2025-10-30 18:05 UTC
+2025-10-30 18:05:02,952 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 18:05:07,848 - INFO - ✅ Real-time update completed successfully
+2025-10-30 18:05:07,848 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 18:05:07,572 - INFO - ✅ Ingestion run completed.']
+2025-10-30 18:05:07,848 - INFO - ✅ Update cycle completed successfully
+2025-10-30 18:10:01,575 - INFO - ================================================================================
+2025-10-30 18:10:01,576 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 18:10:01,576 - INFO - ================================================================================
+2025-10-30 18:10:02,342 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 18f49c5f-8638-4eac-b763-2098b13c9a35
+
+2025-10-30 18:10:03,050 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 9c5796ac-83a8-4e17-a4ba-36d4752f8049
+
+2025-10-30 18:10:03,050 - INFO - 🔄 Fetching data from 2025-10-30 17:55 to 2025-10-30 18:10 UTC
+2025-10-30 18:10:03,050 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 18:10:07,777 - INFO - ✅ Real-time update completed successfully
+2025-10-30 18:10:07,778 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 18:10:07,526 - INFO - ✅ Ingestion run completed.']
+2025-10-30 18:10:07,778 - INFO - ✅ Update cycle completed successfully
+2025-10-30 18:15:02,134 - INFO - ================================================================================
+2025-10-30 18:15:02,135 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 18:15:02,135 - INFO - ================================================================================
+2025-10-30 18:15:03,043 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: fad05969-5408-4b35-959e-6a10b0e833a9
+
+2025-10-30 18:15:03,738 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 578b5373-d662-43ae-9466-527294b25735
+
+2025-10-30 18:15:03,739 - INFO - 🔄 Fetching data from 2025-10-30 18:00 to 2025-10-30 18:15 UTC
+2025-10-30 18:15:03,739 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 18:15:11,043 - INFO - ✅ Real-time update completed successfully
+2025-10-30 18:15:11,045 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 18:15:10,805 - INFO - ✅ Ingestion run completed.']
+2025-10-30 18:15:11,045 - INFO - ✅ Update cycle completed successfully
+2025-10-30 18:20:01,763 - INFO - ================================================================================
+2025-10-30 18:20:01,764 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 18:20:01,764 - INFO - ================================================================================
+2025-10-30 18:20:02,429 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: e6a82b3e-fc00-47c2-ac21-dc042727d70d
+
+2025-10-30 18:20:03,132 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: a92405fe-0a22-43f4-bef8-b5a3026fcff3
+
+2025-10-30 18:20:03,132 - INFO - 🔄 Fetching data from 2025-10-30 18:05 to 2025-10-30 18:20 UTC
+2025-10-30 18:20:03,133 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 18:20:08,740 - INFO - ✅ Real-time update completed successfully
+2025-10-30 18:20:08,741 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 18:20:08,506 - INFO - ✅ Ingestion run completed.']
+2025-10-30 18:20:08,741 - INFO - ✅ Update cycle completed successfully
+2025-10-30 18:25:01,321 - INFO - ================================================================================
+2025-10-30 18:25:01,322 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 18:25:01,322 - INFO - ================================================================================
+2025-10-30 18:25:02,025 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 78b0ae9e-ab8b-428d-b1b6-66c46a0a7b38
+
+2025-10-30 18:25:02,725 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 3ec8b148-747d-4d89-9ce4-ff04e9b9374d
+
+2025-10-30 18:25:02,725 - INFO - 🔄 Fetching data from 2025-10-30 18:10 to 2025-10-30 18:25 UTC
+2025-10-30 18:25:02,725 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 18:25:07,771 - INFO - ✅ Real-time update completed successfully
+2025-10-30 18:25:07,771 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 18:25:07,540 - INFO - ✅ Ingestion run completed.']
+2025-10-30 18:25:07,772 - INFO - ✅ Update cycle completed successfully
+2025-10-30 18:30:05,155 - INFO - ================================================================================
+2025-10-30 18:30:05,157 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 18:30:05,157 - INFO - ================================================================================
+2025-10-30 18:30:06,228 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 362838fb-fb9b-4292-a3db-0fa0d2928926
+
+2025-10-30 18:30:07,025 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 0a72a123-5394-4ba3-9f49-5c0db5b20bd3
+
+2025-10-30 18:30:07,026 - INFO - 🔄 Fetching data from 2025-10-30 18:15 to 2025-10-30 18:30 UTC
+2025-10-30 18:30:07,026 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 18:30:16,690 - INFO - ✅ Real-time update completed successfully
+2025-10-30 18:30:16,723 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 18:30:16,298 - INFO - ✅ Ingestion run completed.']
+2025-10-30 18:30:16,723 - INFO - ✅ Update cycle completed successfully
+2025-10-30 18:35:02,185 - INFO - ================================================================================
+2025-10-30 18:35:02,268 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 18:35:02,268 - INFO - ================================================================================
+2025-10-30 18:35:03,525 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 8dfa4d5f-31df-47f0-b6ba-9b3906d3f5a9
+
+2025-10-30 18:35:04,226 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: d20e15fd-5328-4799-ae25-d35128e269c2
+
+2025-10-30 18:35:04,226 - INFO - 🔄 Fetching data from 2025-10-30 18:20 to 2025-10-30 18:35 UTC
+2025-10-30 18:35:04,226 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 18:35:11,287 - INFO - ✅ Real-time update completed successfully
+2025-10-30 18:35:11,289 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 18:35:10,987 - INFO - ✅ Ingestion run completed.']
+2025-10-30 18:35:11,289 - INFO - ✅ Update cycle completed successfully
+2025-10-30 18:40:02,970 - INFO - ================================================================================
+2025-10-30 18:40:02,972 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 18:40:02,972 - INFO - ================================================================================
+2025-10-30 18:40:03,899 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 1df394a3-e56c-4dee-ab32-48d6b518109d
+
+2025-10-30 18:40:04,721 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 670f262b-8033-4458-b6bf-57dec8d97deb
+
+2025-10-30 18:40:04,721 - INFO - 🔄 Fetching data from 2025-10-30 18:25 to 2025-10-30 18:40 UTC
+2025-10-30 18:40:04,721 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 18:40:10,709 - INFO - ✅ Real-time update completed successfully
+2025-10-30 18:40:10,710 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 18:40:10,354 - INFO - ✅ Ingestion run completed.']
+2025-10-30 18:40:10,711 - INFO - ✅ Update cycle completed successfully
+2025-10-30 18:45:01,981 - INFO - ================================================================================
+2025-10-30 18:45:01,982 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 18:45:01,983 - INFO - ================================================================================
+2025-10-30 18:45:02,911 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 9ca5264e-1add-4de7-b6c4-e356a2835260
+
+2025-10-30 18:45:03,629 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: d9367672-dcfe-419b-ba15-0fd5f8ef2729
+
+2025-10-30 18:45:03,629 - INFO - 🔄 Fetching data from 2025-10-30 18:30 to 2025-10-30 18:45 UTC
+2025-10-30 18:45:03,629 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 18:45:09,270 - INFO - ✅ Real-time update completed successfully
+2025-10-30 18:45:09,271 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 18:45:08,913 - INFO - ✅ Ingestion run completed.']
+2025-10-30 18:45:09,271 - INFO - ✅ Update cycle completed successfully
+2025-10-30 18:50:02,812 - INFO - ================================================================================
+2025-10-30 18:50:02,814 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 18:50:02,814 - INFO - ================================================================================
+2025-10-30 18:50:03,769 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 6461432a-30ee-409e-9411-a8eb7b2e3061
+
+2025-10-30 18:50:04,633 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 24d94a9e-7bc1-4971-bf42-1813cb5103da
+
+2025-10-30 18:50:04,633 - INFO - 🔄 Fetching data from 2025-10-30 18:35 to 2025-10-30 18:50 UTC
+2025-10-30 18:50:04,633 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 18:50:10,401 - INFO - ✅ Real-time update completed successfully
+2025-10-30 18:50:10,402 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 18:50:10,065 - INFO - ✅ Ingestion run completed.']
+2025-10-30 18:50:10,402 - INFO - ✅ Update cycle completed successfully
+2025-10-30 18:55:01,407 - INFO - ================================================================================
+2025-10-30 18:55:01,408 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 18:55:01,408 - INFO - ================================================================================
+2025-10-30 18:55:02,251 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: e9c760d2-9f83-4934-b5ed-7b462db42ac0
+
+2025-10-30 18:55:02,944 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: ae3a7343-4a4b-43cb-b59f-2b4f77b949f4
+
+2025-10-30 18:55:02,944 - INFO - 🔄 Fetching data from 2025-10-30 18:40 to 2025-10-30 18:55 UTC
+2025-10-30 18:55:02,945 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 18:55:08,582 - INFO - ✅ Real-time update completed successfully
+2025-10-30 18:55:08,583 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 18:55:08,257 - INFO - ✅ Ingestion run completed.']
+2025-10-30 18:55:08,583 - INFO - ✅ Update cycle completed successfully
+2025-10-30 19:00:02,450 - INFO - ================================================================================
+2025-10-30 19:00:02,453 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 19:00:02,454 - INFO - ================================================================================
+2025-10-30 19:00:03,354 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: a4467bc4-8403-453b-89bd-c7697de3851f
+
+2025-10-30 19:00:04,068 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: ed1c7c50-3d58-4336-9ab7-f5e00db6decb
+
+2025-10-30 19:00:04,069 - INFO - 🔄 Fetching data from 2025-10-30 18:45 to 2025-10-30 19:00 UTC
+2025-10-30 19:00:04,069 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 19:00:10,444 - INFO - ✅ Real-time update completed successfully
+2025-10-30 19:00:10,445 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 19:00:10,112 - INFO - ✅ Ingestion run completed.']
+2025-10-30 19:00:10,445 - INFO - ✅ Update cycle completed successfully
+2025-10-30 19:05:01,824 - INFO - ================================================================================
+2025-10-30 19:05:01,825 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 19:05:01,825 - INFO - ================================================================================
+2025-10-30 19:05:02,577 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: fe0f429e-a464-46e8-acaf-a5eab78b9b8f
+
+2025-10-30 19:05:03,288 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 1b9ea45e-bd0a-4359-8c11-48fb9e14d9a2
+
+2025-10-30 19:05:03,289 - INFO - 🔄 Fetching data from 2025-10-30 18:50 to 2025-10-30 19:05 UTC
+2025-10-30 19:05:03,289 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 19:05:09,168 - INFO - ✅ Real-time update completed successfully
+2025-10-30 19:05:09,169 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 19:05:08,823 - INFO - ✅ Ingestion run completed.']
+2025-10-30 19:05:09,169 - INFO - ✅ Update cycle completed successfully
+2025-10-30 19:10:02,508 - INFO - ================================================================================
+2025-10-30 19:10:02,509 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 19:10:02,509 - INFO - ================================================================================
+2025-10-30 19:10:03,250 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: abcd982a-ef4e-47d2-bf5d-b9df19694b96
+
+2025-10-30 19:10:03,860 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 99b27627-2ed1-483a-9e65-14301b482883
+
+2025-10-30 19:10:03,860 - INFO - 🔄 Fetching data from 2025-10-30 18:55 to 2025-10-30 19:10 UTC
+2025-10-30 19:10:03,860 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 19:10:09,521 - INFO - ✅ Real-time update completed successfully
+2025-10-30 19:10:09,521 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 19:10:09,169 - INFO - ✅ Ingestion run completed.']
+2025-10-30 19:10:09,521 - INFO - ✅ Update cycle completed successfully
+2025-10-30 19:15:01,758 - INFO - ================================================================================
+2025-10-30 19:15:01,784 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 19:15:01,784 - INFO - ================================================================================
+2025-10-30 19:15:02,569 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: b7bf7c49-8dc6-448b-b6c2-fc403b164c88
+
+2025-10-30 19:15:03,385 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: be94c65c-4cb0-410a-a858-f1d8a84024bf
+
+2025-10-30 19:15:03,385 - INFO - 🔄 Fetching data from 2025-10-30 19:00 to 2025-10-30 19:15 UTC
+2025-10-30 19:15:03,385 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 19:15:09,254 - INFO - ✅ Real-time update completed successfully
+2025-10-30 19:15:09,263 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 19:15:08,915 - INFO - ✅ Ingestion run completed.']
+2025-10-30 19:15:09,263 - INFO - ✅ Update cycle completed successfully
+2025-10-30 19:20:03,209 - INFO - ================================================================================
+2025-10-30 19:20:03,209 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 19:20:03,209 - INFO - ================================================================================
+2025-10-30 19:20:04,878 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 488fa125-8159-404f-8e8c-1928ec74a94c
+
+2025-10-30 19:20:05,578 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 17897426-2ed7-415c-afbc-780e6f916331
+
+2025-10-30 19:20:05,578 - INFO - 🔄 Fetching data from 2025-10-30 19:05 to 2025-10-30 19:20 UTC
+2025-10-30 19:20:05,578 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 19:20:11,342 - INFO - ✅ Real-time update completed successfully
+2025-10-30 19:20:11,343 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 19:20:11,002 - INFO - ✅ Ingestion run completed.']
+2025-10-30 19:20:11,343 - INFO - ✅ Update cycle completed successfully
+2025-10-30 19:25:01,386 - INFO - ================================================================================
+2025-10-30 19:25:01,388 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 19:25:01,388 - INFO - ================================================================================
+2025-10-30 19:25:02,130 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 9d9ab6f0-338b-430d-a534-233945541031
+
+2025-10-30 19:25:02,798 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 6f63969b-65b1-4e94-bad5-b54b48989e7e
+
+2025-10-30 19:25:02,799 - INFO - 🔄 Fetching data from 2025-10-30 19:10 to 2025-10-30 19:25 UTC
+2025-10-30 19:25:02,799 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 19:25:08,102 - INFO - ✅ Real-time update completed successfully
+2025-10-30 19:25:08,103 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 19:25:07,768 - INFO - ✅ Ingestion run completed.']
+2025-10-30 19:25:08,103 - INFO - ✅ Update cycle completed successfully
+2025-10-30 19:30:02,623 - INFO - ================================================================================
+2025-10-30 19:30:02,624 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 19:30:02,624 - INFO - ================================================================================
+2025-10-30 19:30:03,485 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 6c2a4c93-85a9-472e-93fe-71bc6dde67ef
+
+2025-10-30 19:30:04,325 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 7df3c922-a71c-49fc-a00e-c4b814e753fb
+
+2025-10-30 19:30:04,326 - INFO - 🔄 Fetching data from 2025-10-30 19:15 to 2025-10-30 19:30 UTC
+2025-10-30 19:30:04,326 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 19:30:10,320 - INFO - ✅ Real-time update completed successfully
+2025-10-30 19:30:10,321 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 19:30:09,979 - INFO - ✅ Ingestion run completed.']
+2025-10-30 19:30:10,321 - INFO - ✅ Update cycle completed successfully
+2025-10-30 19:35:02,242 - INFO - ================================================================================
+2025-10-30 19:35:02,244 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 19:35:02,244 - INFO - ================================================================================
+2025-10-30 19:35:03,106 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 18b722bf-b340-4251-adbe-ea40e49f2db5
+
+2025-10-30 19:35:03,920 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: fc8795c9-2150-41fc-ad93-8ff16e327b10
+
+2025-10-30 19:35:03,920 - INFO - 🔄 Fetching data from 2025-10-30 19:20 to 2025-10-30 19:35 UTC
+2025-10-30 19:35:03,920 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 19:35:09,268 - INFO - ✅ Real-time update completed successfully
+2025-10-30 19:35:09,269 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 19:35:09,048 - INFO - ✅ Ingestion run completed.']
+2025-10-30 19:35:09,269 - INFO - ✅ Update cycle completed successfully
+2025-10-30 19:40:02,100 - INFO - ================================================================================
+2025-10-30 19:40:02,102 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 19:40:02,102 - INFO - ================================================================================
+2025-10-30 19:40:02,914 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 58d18733-e789-4407-97a8-aee7f6e498cd
+
+2025-10-30 19:40:03,754 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: c85f1cd0-05fa-49c1-8d6b-7adf0c7efdc6
+
+2025-10-30 19:40:03,755 - INFO - 🔄 Fetching data from 2025-10-30 19:25 to 2025-10-30 19:40 UTC
+2025-10-30 19:40:03,755 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 19:40:09,547 - INFO - ✅ Real-time update completed successfully
+2025-10-30 19:40:09,551 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 19:40:09,310 - INFO - ✅ Ingestion run completed.']
+2025-10-30 19:40:09,551 - INFO - ✅ Update cycle completed successfully
+2025-10-30 19:45:02,870 - INFO - ================================================================================
+2025-10-30 19:45:02,871 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 19:45:02,872 - INFO - ================================================================================
+2025-10-30 19:45:04,076 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 70979d83-774d-4c84-a5e3-1fafa7500c70
+
+2025-10-30 19:45:06,858 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 1677d60f-8c15-425f-9b87-5bbb603638d2
+
+2025-10-30 19:45:06,859 - INFO - 🔄 Fetching data from 2025-10-30 19:30 to 2025-10-30 19:45 UTC
+2025-10-30 19:45:06,859 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 19:45:13,020 - INFO - ✅ Real-time update completed successfully
+2025-10-30 19:45:13,021 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 19:45:12,729 - INFO - ✅ Ingestion run completed.']
+2025-10-30 19:45:13,022 - INFO - ✅ Update cycle completed successfully
+2025-10-30 19:50:02,137 - INFO - ================================================================================
+2025-10-30 19:50:02,139 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 19:50:02,139 - INFO - ================================================================================
+2025-10-30 19:50:02,982 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 1aaa866c-8d26-4dc7-af6e-f7005ef1d58e
+
+2025-10-30 19:50:04,025 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 2e2a255a-ea7e-416c-94ce-dfe3accf2be6
+
+2025-10-30 19:50:04,025 - INFO - 🔄 Fetching data from 2025-10-30 19:35 to 2025-10-30 19:50 UTC
+2025-10-30 19:50:04,025 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 19:50:10,523 - INFO - ✅ Real-time update completed successfully
+2025-10-30 19:50:10,525 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 19:50:10,179 - INFO - ✅ Ingestion run completed.']
+2025-10-30 19:50:10,525 - INFO - ✅ Update cycle completed successfully
+2025-10-30 19:55:02,172 - INFO - ================================================================================
+2025-10-30 19:55:02,174 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 19:55:02,174 - INFO - ================================================================================
+2025-10-30 19:55:02,868 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: eb0973f0-f1b1-4342-8a23-cce14a252f41
+
+2025-10-30 19:55:03,652 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: b0684bd0-47cb-4b4c-ba8e-abe52a941a24
+
+2025-10-30 19:55:03,652 - INFO - 🔄 Fetching data from 2025-10-30 19:40 to 2025-10-30 19:55 UTC
+2025-10-30 19:55:03,653 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 19:55:08,997 - INFO - ✅ Real-time update completed successfully
+2025-10-30 19:55:08,999 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 19:55:08,700 - INFO - ✅ Ingestion run completed.']
+2025-10-30 19:55:08,999 - INFO - ✅ Update cycle completed successfully
+2025-10-30 20:00:02,364 - INFO - ================================================================================
+2025-10-30 20:00:02,365 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 20:00:02,365 - INFO - ================================================================================
+2025-10-30 20:00:03,478 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: ad91a116-1c5b-4efd-b643-9cd8d9262ca9
+
+2025-10-30 20:00:04,198 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 3f9ace35-af30-4c81-ac53-3d486341f0da
+
+2025-10-30 20:00:04,199 - INFO - 🔄 Fetching data from 2025-10-30 19:45 to 2025-10-30 20:00 UTC
+2025-10-30 20:00:04,199 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 20:00:09,769 - INFO - ✅ Real-time update completed successfully
+2025-10-30 20:00:09,770 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 20:00:09,452 - INFO - ✅ Ingestion run completed.']
+2025-10-30 20:00:09,770 - INFO - ✅ Update cycle completed successfully
+2025-10-30 20:05:01,476 - INFO - ================================================================================
+2025-10-30 20:05:01,478 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 20:05:01,478 - INFO - ================================================================================
+2025-10-30 20:05:02,181 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 89fb879a-e47c-426a-9528-6b63962ce917
+
+2025-10-30 20:05:02,901 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 94cbbc9f-c6b8-42c2-93b4-be50c8ca6b16
+
+2025-10-30 20:05:02,902 - INFO - 🔄 Fetching data from 2025-10-30 19:50 to 2025-10-30 20:05 UTC
+2025-10-30 20:05:02,902 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 20:05:08,169 - INFO - ✅ Real-time update completed successfully
+2025-10-30 20:05:08,169 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 20:05:07,803 - INFO - ✅ Ingestion run completed.']
+2025-10-30 20:05:08,169 - INFO - ✅ Update cycle completed successfully
+2025-10-30 20:10:02,100 - INFO - ================================================================================
+2025-10-30 20:10:02,101 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 20:10:02,101 - INFO - ================================================================================
+2025-10-30 20:10:02,932 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 1f85ec66-50ee-479c-9435-31d9f9d3b687
+
+2025-10-30 20:10:03,554 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 96266bbe-b644-4ae1-9ad4-585d8071b367
+
+2025-10-30 20:10:03,554 - INFO - 🔄 Fetching data from 2025-10-30 19:55 to 2025-10-30 20:10 UTC
+2025-10-30 20:10:03,554 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 20:10:08,594 - INFO - ✅ Real-time update completed successfully
+2025-10-30 20:10:08,595 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 20:10:08,361 - INFO - ✅ Ingestion run completed.']
+2025-10-30 20:10:08,595 - INFO - ✅ Update cycle completed successfully
+2025-10-30 20:15:02,150 - INFO - ================================================================================
+2025-10-30 20:15:02,151 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 20:15:02,151 - INFO - ================================================================================
+2025-10-30 20:15:02,959 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 4fb465d1-813b-4275-8625-fdf118f48fa5
+
+2025-10-30 20:15:03,674 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 1ae11d15-495b-43fc-9365-60bba473f418
+
+2025-10-30 20:15:03,675 - INFO - 🔄 Fetching data from 2025-10-30 20:00 to 2025-10-30 20:15 UTC
+2025-10-30 20:15:03,675 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 20:15:09,297 - INFO - ✅ Real-time update completed successfully
+2025-10-30 20:15:09,298 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 20:15:08,952 - INFO - ✅ Ingestion run completed.']
+2025-10-30 20:15:09,298 - INFO - ✅ Update cycle completed successfully
+2025-10-30 20:20:01,785 - INFO - ================================================================================
+2025-10-30 20:20:01,786 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 20:20:01,786 - INFO - ================================================================================
+2025-10-30 20:20:02,550 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 12fc0be4-7477-4898-a36a-a2e9e2aa39da
+
+2025-10-30 20:20:03,297 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: db8d859b-6f38-43d4-832f-46e012ccc5eb
+
+2025-10-30 20:20:03,297 - INFO - 🔄 Fetching data from 2025-10-30 20:05 to 2025-10-30 20:20 UTC
+2025-10-30 20:20:03,297 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 20:20:08,517 - INFO - ✅ Real-time update completed successfully
+2025-10-30 20:20:08,518 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 20:20:08,238 - INFO - ✅ Ingestion run completed.']
+2025-10-30 20:20:08,518 - INFO - ✅ Update cycle completed successfully
+2025-10-30 20:25:01,291 - INFO - ================================================================================
+2025-10-30 20:25:01,293 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 20:25:01,293 - INFO - ================================================================================
+2025-10-30 20:25:02,051 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: d42ac43c-b954-457b-a15a-bc416e17bb4f
+
+2025-10-30 20:25:02,925 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 778697ae-1e7c-4fea-9ce6-83e8ba25adfa
+
+2025-10-30 20:25:02,925 - INFO - 🔄 Fetching data from 2025-10-30 20:10 to 2025-10-30 20:25 UTC
+2025-10-30 20:25:02,926 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 20:25:08,100 - INFO - ✅ Real-time update completed successfully
+2025-10-30 20:25:08,100 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 20:25:07,741 - INFO - ✅ Ingestion run completed.']
+2025-10-30 20:25:08,101 - INFO - ✅ Update cycle completed successfully
+2025-10-30 20:30:02,778 - INFO - ================================================================================
+2025-10-30 20:30:02,780 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 20:30:02,780 - INFO - ================================================================================
+2025-10-30 20:30:03,567 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 087f0182-9d18-4c3c-b443-7cb355086d71
+
+2025-10-30 20:30:04,284 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: fa81eb91-e164-43c5-93af-8caf7aa6d3ea
+
+2025-10-30 20:30:04,284 - INFO - 🔄 Fetching data from 2025-10-30 20:15 to 2025-10-30 20:30 UTC
+2025-10-30 20:30:04,284 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 20:30:09,679 - INFO - ✅ Real-time update completed successfully
+2025-10-30 20:30:09,681 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 20:30:09,341 - INFO - ✅ Ingestion run completed.']
+2025-10-30 20:30:09,681 - INFO - ✅ Update cycle completed successfully
+2025-10-30 20:35:01,837 - INFO - ================================================================================
+2025-10-30 20:35:01,839 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 20:35:01,839 - INFO - ================================================================================
+2025-10-30 20:35:02,542 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: e5f11b27-e816-4dc1-88f8-d297c07bb330
+
+2025-10-30 20:35:03,296 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: b1c3aa37-fa6b-4043-802b-cb1d6e5fa5ec
+
+2025-10-30 20:35:03,297 - INFO - 🔄 Fetching data from 2025-10-30 20:20 to 2025-10-30 20:35 UTC
+2025-10-30 20:35:03,297 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 20:35:08,257 - INFO - ✅ Real-time update completed successfully
+2025-10-30 20:35:08,257 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 20:35:08,012 - INFO - ✅ Ingestion run completed.']
+2025-10-30 20:35:08,257 - INFO - ✅ Update cycle completed successfully
+2025-10-30 20:40:02,305 - INFO - ================================================================================
+2025-10-30 20:40:02,306 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 20:40:02,306 - INFO - ================================================================================
+2025-10-30 20:40:03,127 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 309b912a-5bc4-4645-b2d2-a2dc6e5452bc
+
+2025-10-30 20:40:03,742 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 0d65a6b8-6f15-4ebb-a41d-65ba07212295
+
+2025-10-30 20:40:03,743 - INFO - 🔄 Fetching data from 2025-10-30 20:25 to 2025-10-30 20:40 UTC
+2025-10-30 20:40:03,743 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 20:40:08,838 - INFO - ✅ Real-time update completed successfully
+2025-10-30 20:40:08,838 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 20:40:08,457 - INFO - ✅ Ingestion run completed.']
+2025-10-30 20:40:08,838 - INFO - ✅ Update cycle completed successfully
+2025-10-30 20:45:02,472 - INFO - ================================================================================
+2025-10-30 20:45:02,472 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 20:45:02,472 - INFO - ================================================================================
+2025-10-30 20:45:03,265 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: b09d0976-9dd4-450a-a269-1e19bd5b1d71
+
+2025-10-30 20:45:03,983 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 9a44a8b3-3372-47b2-8d65-a41206215e6b
+
+2025-10-30 20:45:03,984 - INFO - 🔄 Fetching data from 2025-10-30 20:30 to 2025-10-30 20:45 UTC
+2025-10-30 20:45:03,984 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 20:45:09,320 - INFO - ✅ Real-time update completed successfully
+2025-10-30 20:45:09,323 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 20:45:08,900 - INFO - ✅ Ingestion run completed.']
+2025-10-30 20:45:09,327 - INFO - ✅ Update cycle completed successfully
+2025-10-30 20:50:02,237 - INFO - ================================================================================
+2025-10-30 20:50:02,238 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 20:50:02,238 - INFO - ================================================================================
+2025-10-30 20:50:03,507 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: fcdae274-84ba-4f02-a802-0165e33bf1de
+
+2025-10-30 20:50:04,240 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 036fca62-1bf1-44f9-96d9-8ccac9f20810
+
+2025-10-30 20:50:04,241 - INFO - 🔄 Fetching data from 2025-10-30 20:35 to 2025-10-30 20:50 UTC
+2025-10-30 20:50:04,241 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 20:50:09,497 - INFO - ✅ Real-time update completed successfully
+2025-10-30 20:50:09,498 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 20:50:09,141 - INFO - ✅ Ingestion run completed.']
+2025-10-30 20:50:09,498 - INFO - ✅ Update cycle completed successfully
+2025-10-30 20:55:01,495 - INFO - ================================================================================
+2025-10-30 20:55:01,497 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 20:55:01,497 - INFO - ================================================================================
+2025-10-30 20:55:02,241 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 6b1dd5ee-ec34-492d-b2f3-d8f871bff4b0
+
+2025-10-30 20:55:03,026 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: ecedd35e-8642-441e-8559-60bf833e5cef
+
+2025-10-30 20:55:03,026 - INFO - 🔄 Fetching data from 2025-10-30 20:40 to 2025-10-30 20:55 UTC
+2025-10-30 20:55:03,026 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 20:55:08,329 - INFO - ✅ Real-time update completed successfully
+2025-10-30 20:55:08,329 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 20:55:07,955 - INFO - ✅ Ingestion run completed.']
+2025-10-30 20:55:08,329 - INFO - ✅ Update cycle completed successfully
+2025-10-30 21:00:02,559 - INFO - ================================================================================
+2025-10-30 21:00:02,564 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 21:00:02,564 - INFO - ================================================================================
+2025-10-30 21:00:03,265 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 98c84c3e-6f56-4ef6-b0d7-104c3f8c4336
+
+2025-10-30 21:00:03,980 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 21c85fe6-e2c2-471c-a659-b3604763df9b
+
+2025-10-30 21:00:03,981 - INFO - 🔄 Fetching data from 2025-10-30 20:45 to 2025-10-30 21:00 UTC
+2025-10-30 21:00:03,981 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 21:00:09,812 - INFO - ✅ Real-time update completed successfully
+2025-10-30 21:00:09,813 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 21:00:09,415 - INFO - ✅ Ingestion run completed.']
+2025-10-30 21:00:09,813 - INFO - ✅ Update cycle completed successfully
+2025-10-30 21:05:01,733 - INFO - ================================================================================
+2025-10-30 21:05:01,735 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 21:05:01,735 - INFO - ================================================================================
+2025-10-30 21:05:02,517 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: d018f6a0-cbb4-474d-afd1-0bcbb0ea356b
+
+2025-10-30 21:05:03,292 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 049a258d-7782-43bf-acda-b0efd8ec69ef
+
+2025-10-30 21:05:03,293 - INFO - 🔄 Fetching data from 2025-10-30 20:50 to 2025-10-30 21:05 UTC
+2025-10-30 21:05:03,293 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 21:05:08,880 - INFO - ✅ Real-time update completed successfully
+2025-10-30 21:05:08,881 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 21:05:08,668 - INFO - ✅ Ingestion run completed.']
+2025-10-30 21:05:08,881 - INFO - ✅ Update cycle completed successfully
+2025-10-30 21:10:02,422 - INFO - ================================================================================
+2025-10-30 21:10:02,422 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 21:10:02,422 - INFO - ================================================================================
+2025-10-30 21:10:03,176 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: ee6ed945-8c18-4524-ae46-ae4fef960452
+
+2025-10-30 21:10:03,986 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: a65ecd4e-1740-4113-8f2d-d551ff67dba1
+
+2025-10-30 21:10:03,987 - INFO - 🔄 Fetching data from 2025-10-30 20:55 to 2025-10-30 21:10 UTC
+2025-10-30 21:10:03,987 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 21:10:10,278 - INFO - ✅ Real-time update completed successfully
+2025-10-30 21:10:10,280 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 21:10:09,930 - INFO - ✅ Ingestion run completed.']
+2025-10-30 21:10:10,280 - INFO - ✅ Update cycle completed successfully
+2025-10-30 21:15:02,752 - INFO - ================================================================================
+2025-10-30 21:15:02,769 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 21:15:02,769 - INFO - ================================================================================
+2025-10-30 21:15:03,883 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: bf73e5dd-3c4a-45d2-9191-74804960ba5d
+
+2025-10-30 21:15:04,859 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 90144466-3dd8-45cd-8f68-b00fda34518b
+
+2025-10-30 21:15:04,860 - INFO - 🔄 Fetching data from 2025-10-30 21:00 to 2025-10-30 21:15 UTC
+2025-10-30 21:15:04,860 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 21:15:10,138 - INFO - ✅ Real-time update completed successfully
+2025-10-30 21:15:10,139 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 21:15:09,911 - INFO - ✅ Ingestion run completed.']
+2025-10-30 21:15:10,139 - INFO - ✅ Update cycle completed successfully
+2025-10-30 21:20:02,373 - INFO - ================================================================================
+2025-10-30 21:20:02,374 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 21:20:02,375 - INFO - ================================================================================
+2025-10-30 21:20:03,143 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 503ac7b1-a7fc-4adc-9532-72030f254d89
+
+2025-10-30 21:20:03,962 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 24a408e8-03bb-4ab3-8cf6-937b8a111d0c
+
+2025-10-30 21:20:03,963 - INFO - 🔄 Fetching data from 2025-10-30 21:05 to 2025-10-30 21:20 UTC
+2025-10-30 21:20:03,963 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 21:20:09,777 - INFO - ✅ Real-time update completed successfully
+2025-10-30 21:20:09,778 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 21:20:09,428 - INFO - ✅ Ingestion run completed.']
+2025-10-30 21:20:09,778 - INFO - ✅ Update cycle completed successfully
+2025-10-30 21:25:01,792 - INFO - ================================================================================
+2025-10-30 21:25:01,793 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 21:25:01,793 - INFO - ================================================================================
+2025-10-30 21:25:02,489 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 4f310067-3c12-48b3-91df-16f90227f016
+
+2025-10-30 21:25:03,190 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 15d99b33-f0fc-499e-abaa-e3cbce0fc8dc
+
+2025-10-30 21:25:03,190 - INFO - 🔄 Fetching data from 2025-10-30 21:10 to 2025-10-30 21:25 UTC
+2025-10-30 21:25:03,190 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 21:25:08,633 - INFO - ✅ Real-time update completed successfully
+2025-10-30 21:25:08,634 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 21:25:08,264 - INFO - ✅ Ingestion run completed.']
+2025-10-30 21:25:08,634 - INFO - ✅ Update cycle completed successfully
+2025-10-30 21:30:02,719 - INFO - ================================================================================
+2025-10-30 21:30:02,720 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 21:30:02,720 - INFO - ================================================================================
+2025-10-30 21:30:03,433 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: a74407f3-066c-43b8-8dae-e24dec2f53c3
+
+2025-10-30 21:30:04,194 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: c9be2d91-9d27-447e-8922-493aabaffb7d
+
+2025-10-30 21:30:04,195 - INFO - 🔄 Fetching data from 2025-10-30 21:15 to 2025-10-30 21:30 UTC
+2025-10-30 21:30:04,195 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 21:30:09,779 - INFO - ✅ Real-time update completed successfully
+2025-10-30 21:30:09,780 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 21:30:09,426 - INFO - ✅ Ingestion run completed.']
+2025-10-30 21:30:09,780 - INFO - ✅ Update cycle completed successfully
+2025-10-30 21:35:01,627 - INFO - ================================================================================
+2025-10-30 21:35:01,629 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 21:35:01,629 - INFO - ================================================================================
+2025-10-30 21:35:02,336 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: a3484ef5-d125-4d01-955d-63dc6f39c396
+
+2025-10-30 21:35:03,055 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: a1ceefbd-3eb1-4729-ac06-818ef6614391
+
+2025-10-30 21:35:03,056 - INFO - 🔄 Fetching data from 2025-10-30 21:20 to 2025-10-30 21:35 UTC
+2025-10-30 21:35:03,056 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 21:35:08,444 - INFO - ✅ Real-time update completed successfully
+2025-10-30 21:35:08,445 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 21:35:08,078 - INFO - ✅ Ingestion run completed.']
+2025-10-30 21:35:08,445 - INFO - ✅ Update cycle completed successfully
+2025-10-30 21:40:01,462 - INFO - ================================================================================
+2025-10-30 21:40:01,463 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 21:40:01,463 - INFO - ================================================================================
+2025-10-30 21:40:02,328 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: f16a9400-45d0-48e3-8fa4-3c3b07a3d6ea
+
+2025-10-30 21:40:03,245 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: be45f7c9-efb2-4f74-8e2a-781a557d4cad
+
+2025-10-30 21:40:03,246 - INFO - 🔄 Fetching data from 2025-10-30 21:25 to 2025-10-30 21:40 UTC
+2025-10-30 21:40:03,246 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 21:40:09,509 - INFO - ✅ Real-time update completed successfully
+2025-10-30 21:40:09,510 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 21:40:09,139 - INFO - ✅ Ingestion run completed.']
+2025-10-30 21:40:09,510 - INFO - ✅ Update cycle completed successfully
+2025-10-30 21:45:01,632 - INFO - ================================================================================
+2025-10-30 21:45:01,634 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 21:45:01,634 - INFO - ================================================================================
+2025-10-30 21:45:02,258 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: f192a2ac-1fbd-46a9-9138-cdcbedd6ccf1
+
+2025-10-30 21:45:02,945 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 55010e37-74bf-46c7-ab10-07e422f857bd
+
+2025-10-30 21:45:02,945 - INFO - 🔄 Fetching data from 2025-10-30 21:30 to 2025-10-30 21:45 UTC
+2025-10-30 21:45:02,946 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 21:45:08,245 - INFO - ✅ Real-time update completed successfully
+2025-10-30 21:45:08,246 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 21:45:07,899 - INFO - ✅ Ingestion run completed.']
+2025-10-30 21:45:08,246 - INFO - ✅ Update cycle completed successfully
+2025-10-30 21:50:02,280 - INFO - ================================================================================
+2025-10-30 21:50:02,282 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 21:50:02,282 - INFO - ================================================================================
+2025-10-30 21:50:02,955 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 5d7a9709-5083-40dc-b432-3a11eef7e5c8
+
+2025-10-30 21:50:03,933 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: b57c2de0-596a-4e39-8afd-3fb659d130c7
+
+2025-10-30 21:50:03,933 - INFO - 🔄 Fetching data from 2025-10-30 21:35 to 2025-10-30 21:50 UTC
+2025-10-30 21:50:03,934 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 21:50:09,306 - INFO - ✅ Real-time update completed successfully
+2025-10-30 21:50:09,307 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 21:50:08,955 - INFO - ✅ Ingestion run completed.']
+2025-10-30 21:50:09,308 - INFO - ✅ Update cycle completed successfully
+2025-10-30 21:55:01,365 - INFO - ================================================================================
+2025-10-30 21:55:01,366 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 21:55:01,366 - INFO - ================================================================================
+2025-10-30 21:55:02,223 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 14632cc8-0e70-4ddf-9a0f-e03fe5c67eb1
+
+2025-10-30 21:55:02,843 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 61333a46-0001-401e-8955-aa7e67f9b6e7
+
+2025-10-30 21:55:02,843 - INFO - 🔄 Fetching data from 2025-10-30 21:40 to 2025-10-30 21:55 UTC
+2025-10-30 21:55:02,843 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 21:55:07,973 - INFO - ✅ Real-time update completed successfully
+2025-10-30 21:55:07,974 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 21:55:07,756 - INFO - ✅ Ingestion run completed.']
+2025-10-30 21:55:07,974 - INFO - ✅ Update cycle completed successfully
+2025-10-30 22:00:02,735 - INFO - ================================================================================
+2025-10-30 22:00:02,736 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 22:00:02,736 - INFO - ================================================================================
+2025-10-30 22:00:03,487 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 98ac410a-d7db-43ba-baf4-8502afd8e716
+
+2025-10-30 22:00:04,203 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 8c5e4865-2515-4110-b0fe-16dc9386690a
+
+2025-10-30 22:00:04,204 - INFO - 🔄 Fetching data from 2025-10-30 21:45 to 2025-10-30 22:00 UTC
+2025-10-30 22:00:04,204 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 22:00:09,370 - INFO - ✅ Real-time update completed successfully
+2025-10-30 22:00:09,371 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 22:00:09,127 - INFO - ✅ Ingestion run completed.']
+2025-10-30 22:00:09,371 - INFO - ✅ Update cycle completed successfully
+2025-10-30 22:05:02,147 - INFO - ================================================================================
+2025-10-30 22:05:02,148 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 22:05:02,148 - INFO - ================================================================================
+2025-10-30 22:05:02,905 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 94b5dc9a-2d5c-4dcf-8480-b495f0b15191
+
+2025-10-30 22:05:03,539 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 16bc0f19-a69d-4634-aa06-22298f3d81fa
+
+2025-10-30 22:05:03,539 - INFO - 🔄 Fetching data from 2025-10-30 21:50 to 2025-10-30 22:05 UTC
+2025-10-30 22:05:03,539 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 22:05:08,991 - INFO - ✅ Real-time update completed successfully
+2025-10-30 22:05:08,992 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 22:05:08,621 - INFO - ✅ Ingestion run completed.']
+2025-10-30 22:05:08,992 - INFO - ✅ Update cycle completed successfully
+2025-10-30 22:10:02,658 - INFO - ================================================================================
+2025-10-30 22:10:02,659 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 22:10:02,659 - INFO - ================================================================================
+2025-10-30 22:10:03,483 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 6020eb33-0d02-48ec-a1fe-becd991b89d8
+
+2025-10-30 22:10:04,133 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 3d5e9426-a8ae-4cc2-8ebb-2540f0c6df13
+
+2025-10-30 22:10:04,133 - INFO - 🔄 Fetching data from 2025-10-30 21:55 to 2025-10-30 22:10 UTC
+2025-10-30 22:10:04,133 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 22:10:09,886 - INFO - ✅ Real-time update completed successfully
+2025-10-30 22:10:09,887 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 22:10:09,559 - INFO - ✅ Ingestion run completed.']
+2025-10-30 22:10:09,887 - INFO - ✅ Update cycle completed successfully
+2025-10-30 22:15:02,362 - INFO - ================================================================================
+2025-10-30 22:15:02,363 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 22:15:02,363 - INFO - ================================================================================
+2025-10-30 22:15:03,279 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: fb5dafc3-4ca8-4e48-a9fe-a517d3e78021
+
+2025-10-30 22:15:03,938 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 46195b40-81c6-44d2-87c1-483b10875136
+
+2025-10-30 22:15:03,938 - INFO - 🔄 Fetching data from 2025-10-30 22:00 to 2025-10-30 22:15 UTC
+2025-10-30 22:15:03,939 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 22:15:09,737 - INFO - ✅ Real-time update completed successfully
+2025-10-30 22:15:09,738 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 22:15:09,470 - INFO - ✅ Ingestion run completed.']
+2025-10-30 22:15:09,738 - INFO - ✅ Update cycle completed successfully
+2025-10-30 22:20:01,913 - INFO - ================================================================================
+2025-10-30 22:20:01,915 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 22:20:01,915 - INFO - ================================================================================
+2025-10-30 22:20:02,841 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 7ef9bb2b-5dc7-4fb7-9fba-1e3cef165bc1
+
+2025-10-30 22:20:03,660 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 0804796a-1ac1-4ce5-ae60-b8e0aea2db5e
+
+2025-10-30 22:20:03,661 - INFO - 🔄 Fetching data from 2025-10-30 22:05 to 2025-10-30 22:20 UTC
+2025-10-30 22:20:03,661 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 22:20:09,273 - INFO - ✅ Real-time update completed successfully
+2025-10-30 22:20:09,274 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 22:20:08,886 - INFO - ✅ Ingestion run completed.']
+2025-10-30 22:20:09,274 - INFO - ✅ Update cycle completed successfully
+2025-10-30 22:25:02,189 - INFO - ================================================================================
+2025-10-30 22:25:02,192 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 22:25:02,192 - INFO - ================================================================================
+2025-10-30 22:25:02,879 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: bfc4ad3d-bf3f-4a75-8ca5-57d51e96ad7b
+
+2025-10-30 22:25:03,584 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 36e02e83-32a2-4170-8003-9ba465c20581
+
+2025-10-30 22:25:03,584 - INFO - 🔄 Fetching data from 2025-10-30 22:10 to 2025-10-30 22:25 UTC
+2025-10-30 22:25:03,585 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 22:25:09,655 - INFO - ✅ Real-time update completed successfully
+2025-10-30 22:25:09,657 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 22:25:09,294 - INFO - ✅ Ingestion run completed.']
+2025-10-30 22:25:09,657 - INFO - ✅ Update cycle completed successfully
+2025-10-30 22:30:02,241 - INFO - ================================================================================
+2025-10-30 22:30:02,243 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 22:30:02,297 - INFO - ================================================================================
+2025-10-30 22:30:03,131 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: ddd515c6-214b-41fb-8fea-06ceb34a4c5a
+
+2025-10-30 22:30:03,982 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 87148db7-d62b-4aa9-a2b7-6e1b5ad00d3e
+
+2025-10-30 22:30:03,982 - INFO - 🔄 Fetching data from 2025-10-30 22:15 to 2025-10-30 22:30 UTC
+2025-10-30 22:30:03,982 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 22:30:12,628 - INFO - ✅ Real-time update completed successfully
+2025-10-30 22:30:12,630 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 22:30:11,483 - INFO - ✅ Ingestion run completed.']
+2025-10-30 22:30:12,630 - INFO - ✅ Update cycle completed successfully
+2025-10-30 22:35:02,126 - INFO - ================================================================================
+2025-10-30 22:35:02,132 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 22:35:02,132 - INFO - ================================================================================
+2025-10-30 22:35:02,950 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 24723c54-4033-4d6a-948c-eee9b41a91f2
+
+2025-10-30 22:35:03,572 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: 9c3aa030-6306-4301-a24f-07245f5b7579
+
+2025-10-30 22:35:03,573 - INFO - 🔄 Fetching data from 2025-10-30 22:20 to 2025-10-30 22:35 UTC
+2025-10-30 22:35:03,573 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 22:35:08,603 - INFO - ✅ Real-time update completed successfully
+2025-10-30 22:35:08,604 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 22:35:08,318 - INFO - ✅ Ingestion run completed.']
+2025-10-30 22:35:08,604 - INFO - ✅ Update cycle completed successfully
+2025-10-30 22:40:03,031 - INFO - ================================================================================
+2025-10-30 22:40:03,032 - INFO - 🔄 REAL-TIME POWER DATA UPDATER (FUELINST + WIND_SOLAR_GEN + MID)
+2025-10-30 22:40:03,032 - INFO - ================================================================================
+2025-10-30 22:40:03,771 - ERROR - ❌ Error checking data freshness: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: c556eed6-05b3-4756-8e35-36d2ba5f8045
+
+2025-10-30 22:40:04,478 - WARNING - ⚠️  Could not check MID data: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/inner-cinema-476211-u9/jobs?prettyPrint=false: Access Denied: Project inner-cinema-476211-u9: User does not have bigquery.jobs.create permission in project inner-cinema-476211-u9.
+
+Location: None
+Job ID: e1bcd11a-a6ae-43aa-9112-36caa8ec32f8
+
+2025-10-30 22:40:04,479 - INFO - 🔄 Fetching data from 2025-10-30 22:25 to 2025-10-30 22:40 UTC
+2025-10-30 22:40:04,479 - INFO -    Date range: 2025-10-30 to 2025-10-31
+2025-10-30 22:40:11,591 - INFO - ✅ Real-time update completed successfully
+2025-10-30 22:40:11,592 - INFO -    Output: ['           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', '  File "/Users/georgemajor/GB Power Market JJ/.venv/lib/python3.11/site-packages/google/api_core/future/polling.py", line 261, in result', '    raise self._exception', 'google.api_core.exceptions.Forbidden: 403 Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.; reason: billingNotEnabled, message: Billing has not been enabled for this project. Enable billing at https://console.cloud.google.com/billing. Datasets must have a default expiration time and default partition expiration time of less than 60 days while in sandbox mode.', '2025-10-30 22:40:11,282 - INFO - ✅ Ingestion run completed.']
+2025-10-30 22:40:11,593 - INFO - ✅ Update cycle completed successfully
