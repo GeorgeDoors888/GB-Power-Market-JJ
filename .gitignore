@@ -17,3 +17,18 @@ token.json
 iris_settings.json
 iris_data/
 settings.json
+
+# Credentials and Secrets
+token.json
+token.pickle
+token.pickle.backup
+client_secret*.json
+*credentials*.json
+*secret*.json
+*key*.json
+*.pem
+*.p12
+
+# Large files
+*.log
+google-cloud-sdk/
