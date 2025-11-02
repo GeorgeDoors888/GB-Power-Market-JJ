@@ -30,6 +30,20 @@ vendor/
 .env.local
 .env.*.local
 
+# Python virtual environments
+venv/
+env/
+ENV/
+.venv/
+
+# Google Cloud credentials
+*.json
+!package.json
+!tsconfig.json
+
+# Generated summaries
+REPO_SUMMARY.md
+
 # Build outputs
 dist/
 build/
