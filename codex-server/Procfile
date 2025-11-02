@@ -1,1 +1,1 @@
-web: cd codex-server && python codex_server.py
+web: python codex_server.py
