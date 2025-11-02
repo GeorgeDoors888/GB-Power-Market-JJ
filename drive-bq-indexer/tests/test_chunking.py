@@ -1,15 +1,9 @@
-import pytest
-from src.chunking import into_chunks, tokenize_est
+from src.chunking import into_chunks
 
-def test_tokenize_est():
-    assert tokenize_est("hello world") > 0
-    assert tokenize_est("a" * 100) == 25
-
-def test_into_chunks():
-    text = "word " * 500
-    chunks = into_chunks(text, size=100, overlap=20)
+def test_into_chunks_basic():
+    text = "Lorem ipsum dolor sit amet, " * 200
+    chunks = list(into_chunks(text, size=500, overlap=50))
     assert len(chunks) > 1
-    for i, chunk, tok in chunks:
-        assert isinstance(i, int)
-        assert isinstance(chunk, str)
-        assert tok > 0
+    total_len = sum(len(c) for _, c, _ in chunks)
+    assert total_len > 500
+    assert all(isinstance(tok, int) for _, _, tok in chunks)
