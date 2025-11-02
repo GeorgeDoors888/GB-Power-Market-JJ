@@ -36,7 +36,7 @@
       }
     },
     "codespaces": {
-      "idleTimeout": "30m"
+      "idleTimeout": "10m"
     }
   },
   
