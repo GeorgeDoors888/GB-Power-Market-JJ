@@ -1,5 +1,6 @@
 from __future__ import annotations
-import os, yaml
+import os
+import yaml
 from dotenv import load_dotenv
 
 load_dotenv()

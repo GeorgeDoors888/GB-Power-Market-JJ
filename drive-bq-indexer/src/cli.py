@@ -1,5 +1,8 @@
 from __future__ import annotations
-import os, json, argparse, logging
+import os
+import json
+import argparse
+import logging
 from tqdm import tqdm
 from .logger import setup_logging
 from .config import load_settings

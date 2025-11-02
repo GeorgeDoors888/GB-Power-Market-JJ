@@ -1,4 +1,8 @@
-import logging, io, tempfile, os, subprocess
+import logging
+import io
+import tempfile
+import os
+import subprocess
 from PIL import Image
 import pytesseract
 

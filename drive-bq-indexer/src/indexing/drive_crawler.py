@@ -1,5 +1,6 @@
 from __future__ import annotations
-import logging, time
+import logging
+import time
 from typing import Iterator
 from ..auth.google_auth import drive_client
 

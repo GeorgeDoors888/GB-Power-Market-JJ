@@ -1,5 +1,6 @@
 from __future__ import annotations
-import io, logging
+import io
+import logging
 from pdfminer.high_level import extract_text
 from googleapiclient.http import MediaIoBaseDownload
 from ..auth.google_auth import drive_client
