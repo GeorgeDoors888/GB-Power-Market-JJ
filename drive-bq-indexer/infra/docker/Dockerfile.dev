@@ -1,0 +1,5 @@
+FROM mcr.microsoft.com/devcontainers/python:3.11
+RUN sudo apt-get update && sudo apt-get install -y tesseract-ocr poppler-utils && sudo rm -rf /var/lib/apt/lists/*
+WORKDIR /workspaces/app
+COPY requirements.txt .
+RUN pip install -r requirements.txt

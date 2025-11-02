@@ -1,0 +1,29 @@
+region: europe-west2
+project: ${GCP_PROJECT}
+dataset: ${BQ_DATASET}
+drive:
+  query: ${DRIVE_CRAWL_Q}
+  supported_mime_types:
+    - application/pdf
+    - application/vnd.openxmlformats-officedocument.wordprocessingml.document
+    - application/vnd.openxmlformats-officedocument.presentationml.presentation
+  include_folders: []       # allowlist; empty = all
+  exclude_folders: []
+extract:
+  ocr_mode: ${OCR_MODE}     # auto|force|off
+  tesseract_langs: ${TESSERACT_LANGS}
+chunk:
+  size: ${CHUNK_SIZE}
+  overlap: ${CHUNK_OVERLAP}
+embeddings:
+  provider: ${EMBED_PROVIDER}   # vertex|sentence
+  vertex:
+    location: ${VERTEX_LOCATION}
+    model: ${VERTEX_EMBED_MODEL}
+quality:
+  min_avg_chars_per_chunk: 800
+  max_ocr_rate: 0.6
+  reindex_on_tune: true
+api:
+  host: ${API_HOST}
+  port: ${API_PORT}

@@ -1,0 +1,16 @@
+[Unit]
+Description=Drive→BigQuery Indexer API
+After=docker.service
+Requires=docker.service
+
+[Service]
+EnvironmentFile=/opt/driveindexer/.env
+ExecStart=/usr/bin/docker run --rm --name driveindexer \
+  --env-file /opt/driveindexer/.env \
+  -v /opt/driveindexer/secrets:/secrets \
+  -p 8080:8080 driveindexer:latest
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
