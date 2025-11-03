@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html><head><title>GSP Flow Map - GB Grid Supply Points</title>
+<style>
+body{margin:0;font-family:Arial;background:#1a1a1a;color:#fff}
+#map{height:100vh;width:100%}
+.info{position:absolute;top:20px;left:20px;background:rgba(0,0,0,0.9);padding:20px;border-radius:10px;border:2px solid #4CAF50;max-width:400px;z-index:1000}
+h2{margin:0 0 15px 0;color:#4CAF50}
+.stat{padding:10px;margin:5px 0;border-radius:5px}
+.exp{background:rgba(0,188,212,0.3);border-left:4px solid #00bcd4}
+.imp{background:rgba(255,152,0,0.3);border-left:4px solid #ff9800}
+.legend{position:absolute;bottom:30px;right:20px;background:rgba(0,0,0,0.9);padding:15px;border-radius:10px;border:2px solid #4CAF50;z-index:1000}
+.legend-item{display:flex;align-items:center;margin:8px 0}
+.circle{width:20px;height:20px;border-radius:50%;margin-right:10px;border:2px solid #fff}
+</style>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head><body>
+<div id="map"></div>
+<div class="info">
+<h2>⚡ GB Grid Supply Points</h2>
+<p style="font-size:12px;color:#aaa;margin:5px 0">2025-10-30 00:00:00, SP48 (23.5h - 24.0h)</p>
+<p style="font-size:13px">Total GSP Areas: <strong>18</strong></p>
+<div class="stat exp">
+<strong>🟦 Exporting: 12 areas</strong><br>
+<small>Total: +3,652,510 MW</small><br>
+<small style="color:#aaa">Generation exceeds local demand</small>
+</div>
+<div class="stat imp">
+<strong>🟧 Importing: 6 areas</strong><br>
+<small>Total: -274,876 MW</small><br>
+<small style="color:#aaa">Demand exceeds local generation</small>
+</div>
+</div>
+<div class="legend">
+<div style="font-weight:bold;margin-bottom:10px">Legend</div>
+<div class="legend-item"><div class="circle" style="background:rgba(0,188,212,0.7)"></div><span>Net Exporter</span></div>
+<div class="legend-item"><div class="circle" style="background:rgba(255,152,0,0.7)"></div><span>Net Importer</span></div>
+<div style="font-size:11px;color:#aaa;margin-top:10px">Circle size = flow magnitude</div>
+</div>
+<script>
+const data=[{"gsp": "B16", "name": "Pembroke", "lat": 51.675, "lng": -4.9392, "gen": 780351, "dem": -137719, "net": 642632, "status": "EXPORTING"}, {"gsp": "B8", "name": "Sundon", "lat": 51.9476, "lng": -0.4682, "gen": 856079, "dem": -226576, "net": 629503, "status": "EXPORTING"}, {"gsp": "B11", "name": "Melksham", "lat": 51.3687, "lng": -2.1413, "gen": 743624, "dem": -132769, "net": 610855, "status": "EXPORTING"}, {"gsp": "B9", "name": "Pelham", "lat": 51.7422, "lng": -0.0475, "gen": 892806, "dem": -290000, "net": 602806, "status": "EXPORTING"}, {"gsp": "N", "name": "National Grid", "lat": 54.5, "lng": -3.5, "gen": 1240772, "dem": -730454, "net": 510318, "status": "EXPORTING"}, {"gsp": "B7", "name": "Hurst", "lat": 51.4459, "lng": -0.4815, "gen": 316548, "dem": -81425, "net": 235123, "status": "EXPORTING"}, {"gsp": "B6", "name": "Willesden", "lat": 51.5489, "lng": -0.2356, "gen": 255209, "dem": -56302, "net": 198907, "status": "EXPORTING"}, {"gsp": "B4", "name": "Brixton", "lat": 51.4615, "lng": -0.1125, "gen": 87617, "dem": -15250, "net": 72367, "status": "EXPORTING"}, {"gsp": "B5", "name": "City Road", "lat": 51.5319, "lng": -0.0966, "gen": 89630, "dem": -26973, "net": 62657, "status": "EXPORTING"}, {"gsp": "B2", "name": "Ealing", "lat": 51.5154, "lng": -0.2994, "gen": 47958, "dem": -8967, "net": 38991, "status": "EXPORTING"}, {"gsp": "B15", "name": "Landulph", "lat": 50.4464, "lng": -4.2124, "gen": 35444, "dem": -9760, "net": 25684, "status": "EXPORTING"}, {"gsp": "B1", "name": "Barking", "lat": 51.5362, "lng": 0.081, "gen": 26693, "dem": -4026, "net": 22667, "status": "EXPORTING"}, {"gsp": "B3", "name": "Wimbledon", "lat": 51.4214, "lng": -0.2072, "gen": 5368, "dem": -5856, "net": -488, "status": "IMPORTING"}, {"gsp": "B13", "name": "Bristol", "lat": 51.4545, "lng": -2.5879, "gen": 0, "dem": -28270, "net": -28270, "status": "IMPORTING"}, {"gsp": "B12", "name": "Exeter", "lat": 50.7184, "lng": -3.5339, "gen": 73529, "dem": -121774, "net": -48245, "status": "IMPORTING"}, {"gsp": "B10", "name": "Bramley", "lat": 51.3244, "lng": -0.9947, "gen": 18263, "dem": -67267, "net": -49004, "status": "IMPORTING"}, {"gsp": "B17", "name": "Swansea North", "lat": 51.6563, "lng": -3.9436, "gen": 0, "dem": -58431, "net": -58431, "status": "IMPORTING"}, {"gsp": "B14", "name": "Indian Queens", "lat": 50.4019, "lng": -4.9378, "gen": 793, "dem": -91231, "net": -90438, "status": "IMPORTING"}];
+
+// Initialize map
+const map = L.map('map', {
+  center: [54, -2.5],
+  zoom: 6,
+  zoomControl: true
+});
+
+// Dark tiles
+L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+  attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+  maxZoom: 19
+}).addTo(map);
+
+// Calculate max absolute flow for sizing
+const maxFlow = Math.max(...data.map(d => Math.abs(d.net)));
+
+// Add markers
+data.forEach(gsp => {
+  const isExporter = gsp.status === 'EXPORTING';
+  const color = isExporter ? '#00bcd4' : '#ff9800';
+  const radius = 10 + (Math.abs(gsp.net) / maxFlow) * 30;
+  
+  const circle = L.circleMarker([gsp.lat, gsp.lng], {
+    radius: radius,
+    fillColor: color,
+    fillOpacity: 0.7,
+    color: '#fff',
+    weight: 2
+  }).addTo(map);
+  
+  const popupContent = `
+    <div style="color:#000;font-family:Arial;min-width:200px">
+      <h3 style="margin:0 0 10px 0;color:${color}">${gsp.gsp} - ${gsp.name}</h3>
+      <table style="width:100%;font-size:12px">
+        <tr><td>Generation:</td><td style="text-align:right"><strong>${gsp.gen.toLocaleString()} MW</strong></td></tr>
+        <tr><td>Demand:</td><td style="text-align:right"><strong>${gsp.dem.toLocaleString()} MW</strong></td></tr>
+        <tr><td colspan="2" style="padding-top:5px;border-top:1px solid #ccc"></td></tr>
+        <tr><td><strong>Net Flow:</strong></td><td style="text-align:right;color:${color}"><strong>${gsp.net > 0 ? '+' : ''}${gsp.net.toLocaleString()} MW</strong></td></tr>
+        <tr><td colspan="2" style="padding-top:5px"><span style="background:${color};color:#fff;padding:2px 8px;border-radius:3px;font-size:11px">${gsp.status}</span></td></tr>
+      </table>
+    </div>
+  `;
+  
+  circle.bindPopup(popupContent);
+});
+
+console.log('✅ GSP Flow Map loaded successfully');
+console.log(`📊 Exporters: 12, Importers: 6`);
+</script>
+</body></html>

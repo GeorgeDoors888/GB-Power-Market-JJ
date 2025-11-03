@@ -1,0 +1,24 @@
+GB Power Map - AlmaLinux Quick Start
+=====================================
+
+Server: almalinux-1cpu-2gb-uk-lon1
+IP: 94.237.55.234
+
+Quick Deployment:
+-----------------
+
+1. Upload this package to server:
+   scp -r gb_power_map_deployment root@94.237.55.234:/root/
+
+2. SSH into server:
+   ssh root@94.237.55.234
+
+3. Run deployment:
+   cd /root/gb_power_map_deployment
+   sudo ./setup_nginx_web_server.sh
+   sudo ./setup_cron_job.sh
+
+4. Access map:
+   http://94.237.55.234/gb_power_complete_map.html
+
+See README.md for full documentation.

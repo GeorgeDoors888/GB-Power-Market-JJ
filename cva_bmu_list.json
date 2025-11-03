@@ -1,0 +1,2347 @@
+[
+  {
+    "ngc_bmu_id": "ABRBO-1",
+    "bmu_id": "T_ABRBO-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "ABRTW-1",
+    "bmu_id": "E_ABRTW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "ACHLW-1",
+    "bmu_id": "C__PSMAR001",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "ACHRW-1",
+    "bmu_id": "T_ACHRW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "ACHYW-1",
+    "bmu_id": null,
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "AFTOW-1",
+    "bmu_id": "T_AFTOW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "AG-HEL0CP",
+    "bmu_id": "V__PHABI004",
+    "fuel_type": "OTHER"
+  },
+  {
+    "ngc_bmu_id": "AG-HEL0DN",
+    "bmu_id": "V__NHABI005",
+    "fuel_type": "OTHER"
+  },
+  {
+    "ngc_bmu_id": "AG-HEL0EP",
+    "bmu_id": "V__PHABI006",
+    "fuel_type": "OTHER"
+  },
+  {
+    "ngc_bmu_id": "AG-NFLX01",
+    "bmu_id": "2__NFLEX001",
+    "fuel_type": "OTHER"
+  },
+  {
+    "ngc_bmu_id": "AG-NFLX09",
+    "bmu_id": "2__NFLEX009",
+    "fuel_type": "OTHER"
+  },
+  {
+    "ngc_bmu_id": "AG-PEDF01",
+    "bmu_id": "2__PLOND001",
+    "fuel_type": "OTHER"
+  },
+  {
+    "ngc_bmu_id": "AG-PFLX01",
+    "bmu_id": "2__PFLEX001",
+    "fuel_type": "OTHER"
+  },
+  {
+    "ngc_bmu_id": "AG-PFLX02",
+    "bmu_id": "2__PFLEX002",
+    "fuel_type": "OTHER"
+  },
+  {
+    "ngc_bmu_id": "AIRSW-1",
+    "bmu_id": "E_AIRSW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "AKGLW-1",
+    "bmu_id": null,
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "AKGLW-2",
+    "bmu_id": "T_AKGLW-2",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "AKGLW-3",
+    "bmu_id": "T_AKGLW-3",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "ANSUW-1",
+    "bmu_id": "T_ANSUW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "ARBRB-1",
+    "bmu_id": "E_ARBRB-1",
+    "fuel_type": "OTHER"
+  },
+  {
+    "ngc_bmu_id": "ARCHW-1",
+    "bmu_id": "T_ARCHW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "ASHWW-1",
+    "bmu_id": "E_ASHWW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "ASLVW-1",
+    "bmu_id": "E_ASLVW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "BABAW-1",
+    "bmu_id": "E_BABAW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "BDCHW-1",
+    "bmu_id": "T_BDCHW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "BEATO-1",
+    "bmu_id": "T_BEATO-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "BEATO-2",
+    "bmu_id": "T_BEATO-2",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "BEATO-3",
+    "bmu_id": "T_BEATO-3",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "BEATO-4",
+    "bmu_id": "T_BEATO-4",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "BEINW-1",
+    "bmu_id": "T_BEINW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "BENBW-1",
+    "bmu_id": "T_BENBW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "BENBW-2",
+    "bmu_id": null,
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "BENBW-3",
+    "bmu_id": null,
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "BETHW-1",
+    "bmu_id": "E_BETHW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "BGLAW-1",
+    "bmu_id": null,
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "BHLAW-1",
+    "bmu_id": "T_BHLAW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "BLARW-1",
+    "bmu_id": "E_BLARW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "BLHLB-1",
+    "bmu_id": "T_BLHLB-1",
+    "fuel_type": "OTHER"
+  },
+  {
+    "ngc_bmu_id": "BLHLB-2",
+    "bmu_id": "T_BLHLB-2",
+    "fuel_type": "OTHER"
+  },
+  {
+    "ngc_bmu_id": "BLHLB-3",
+    "bmu_id": "T_BLHLB-3",
+    "fuel_type": "OTHER"
+  },
+  {
+    "ngc_bmu_id": "BLHLB-4",
+    "bmu_id": "T_BLHLB-4",
+    "fuel_type": "OTHER"
+  },
+  {
+    "ngc_bmu_id": "BLKWW-1",
+    "bmu_id": "T_BLKWW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "BLLA-1",
+    "bmu_id": "T_BLLA-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "BLLA-2",
+    "bmu_id": "T_BLLA-2",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "BNAKW-1",
+    "bmu_id": null,
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "BNWKW-1",
+    "bmu_id": "E_BNWKW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "BOULW-1",
+    "bmu_id": null,
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "BOWLW-1",
+    "bmu_id": "T_BOWLW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "BOYNW-1",
+    "bmu_id": null,
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "BRBEO-1",
+    "bmu_id": "T_BRBEO-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "BRCHS-1",
+    "bmu_id": "T_BRCHS-1",
+    "fuel_type": "OTHER"
+  },
+  {
+    "ngc_bmu_id": "BRDUW-1",
+    "bmu_id": "E_BRDUW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "BROCW-1",
+    "bmu_id": "T_BROCW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "BROXB-1",
+    "bmu_id": "E_BROXB-1",
+    "fuel_type": "OTHER"
+  },
+  {
+    "ngc_bmu_id": "BRYBW-1",
+    "bmu_id": "E_BRYBW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "BTUIW-1",
+    "bmu_id": null,
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "BTUIW-2",
+    "bmu_id": "E_BTUIW-2",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "BTUIW-3",
+    "bmu_id": "E_BTUIW-3",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "BURBW-1",
+    "bmu_id": "E_BURBO",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "BURWB-1",
+    "bmu_id": "E_BURWB-1",
+    "fuel_type": "OTHER"
+  },
+  {
+    "ngc_bmu_id": "BURWS-1",
+    "bmu_id": "T_BURWS-1",
+    "fuel_type": "OTHER"
+  },
+  {
+    "ngc_bmu_id": "CAIRW-2",
+    "bmu_id": "2__PSTAT001",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "CARR-1",
+    "bmu_id": "T_CARR-1",
+    "fuel_type": "CCGT"
+  },
+  {
+    "ngc_bmu_id": "CARR-2",
+    "bmu_id": "T_CARR-2",
+    "fuel_type": "CCGT"
+  },
+  {
+    "ngc_bmu_id": "CAS-BEU01",
+    "bmu_id": "M_CAS-BEU01",
+    "fuel_type": "NPSHYD"
+  },
+  {
+    "ngc_bmu_id": "CAS-CLU01",
+    "bmu_id": "M_CAS-CLU01",
+    "fuel_type": "NPSHYD"
+  },
+  {
+    "ngc_bmu_id": "CAS-CON01",
+    "bmu_id": "M_CAS-CON01",
+    "fuel_type": "NPSHYD"
+  },
+  {
+    "ngc_bmu_id": "CAS-GAR01",
+    "bmu_id": "M_CAS-GAR01",
+    "fuel_type": "NPSHYD"
+  },
+  {
+    "ngc_bmu_id": "CAS-KIL01",
+    "bmu_id": "M_CAS-KIL01",
+    "fuel_type": "NPSHYD"
+  },
+  {
+    "ngc_bmu_id": "CAS-MOR01",
+    "bmu_id": "M_CAS-MOR01",
+    "fuel_type": "NPSHYD"
+  },
+  {
+    "ngc_bmu_id": "CATHB-1",
+    "bmu_id": "E_CATHB-1",
+    "fuel_type": "OTHER"
+  },
+  {
+    "ngc_bmu_id": "CAUSW-1",
+    "bmu_id": "2__PSMAE001",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "CDCL-1",
+    "bmu_id": "T_CDCL-1",
+    "fuel_type": "CCGT"
+  },
+  {
+    "ngc_bmu_id": "CDWTW-1",
+    "bmu_id": null,
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "CGTHW-1",
+    "bmu_id": "T_CGTHW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "CLAC-1",
+    "bmu_id": "E_CLAC-1",
+    "fuel_type": "NPSHYD"
+  },
+  {
+    "ngc_bmu_id": "CLDCW-1",
+    "bmu_id": "T_CLDCW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "CLDNW-1",
+    "bmu_id": "T_CLDNW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "CLDRW-1",
+    "bmu_id": "E_CLDRW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "CLDSW-1",
+    "bmu_id": "T_CLDSW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "CLFLW-1",
+    "bmu_id": "E_CLFLW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "CLVHS-1",
+    "bmu_id": "T_CLVHS-1",
+    "fuel_type": "OTHER"
+  },
+  {
+    "ngc_bmu_id": "CLVHS-2",
+    "bmu_id": "T_CLVHS-2",
+    "fuel_type": "OTHER"
+  },
+  {
+    "ngc_bmu_id": "CMSTW-1",
+    "bmu_id": "2__PEDGE003",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "CMSTW-2",
+    "bmu_id": null,
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "CNCLW-1",
+    "bmu_id": "E_CNCLW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "CNQPS-1",
+    "bmu_id": "T_CNQPS-1",
+    "fuel_type": "CCGT"
+  },
+  {
+    "ngc_bmu_id": "CNQPS-2",
+    "bmu_id": "T_CNQPS-2",
+    "fuel_type": "CCGT"
+  },
+  {
+    "ngc_bmu_id": "CNQPS-3",
+    "bmu_id": "T_CNQPS-3",
+    "fuel_type": "CCGT"
+  },
+  {
+    "ngc_bmu_id": "CNQPS-4",
+    "bmu_id": "T_CNQPS-4",
+    "fuel_type": "CCGT"
+  },
+  {
+    "ngc_bmu_id": "CORB-1",
+    "bmu_id": "E_CORB-1",
+    "fuel_type": "CCGT"
+  },
+  {
+    "ngc_bmu_id": "CORY-1",
+    "bmu_id": null,
+    "fuel_type": "CCGT"
+  },
+  {
+    "ngc_bmu_id": "COSO-1",
+    "bmu_id": "T_COSO-1",
+    "fuel_type": "CCGT"
+  },
+  {
+    "ngc_bmu_id": "COUWW-1",
+    "bmu_id": "T_COUWW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "COVNB-1",
+    "bmu_id": "T_COVNB-1",
+    "fuel_type": "OTHER"
+  },
+  {
+    "ngc_bmu_id": "COWE1",
+    "bmu_id": "E_COWE1",
+    "fuel_type": "OCGT"
+  },
+  {
+    "ngc_bmu_id": "COWE2",
+    "bmu_id": "E_COWE2",
+    "fuel_type": "OCGT"
+  },
+  {
+    "ngc_bmu_id": "CRDEW-1",
+    "bmu_id": "T_CRDEW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "CRDEW-2",
+    "bmu_id": "T_CRDEW-2",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "CREAW-1",
+    "bmu_id": "T_CREAW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "CRGHW-1",
+    "bmu_id": "T_CRGHW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "CRGTW-1",
+    "bmu_id": "E_CRGTW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "CRMHW-1",
+    "bmu_id": null,
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "CRMLW-1",
+    "bmu_id": "T_CRMLW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "CRMNW-1",
+    "bmu_id": null,
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "CRUA-1",
+    "bmu_id": "T_CRUA-1",
+    "fuel_type": "PS"
+  },
+  {
+    "ngc_bmu_id": "CRUA-2",
+    "bmu_id": "T_CRUA-2",
+    "fuel_type": "PS"
+  },
+  {
+    "ngc_bmu_id": "CRUA-3",
+    "bmu_id": "T_CRUA-3",
+    "fuel_type": "PS"
+  },
+  {
+    "ngc_bmu_id": "CRUA-4",
+    "bmu_id": "T_CRUA-4",
+    "fuel_type": "PS"
+  },
+  {
+    "ngc_bmu_id": "CRYRW-1",
+    "bmu_id": null,
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "CRYRW-2",
+    "bmu_id": "T_CRYRW-2",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "CRYRW-3",
+    "bmu_id": "T_CRYRW-3",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "CUMHW-1",
+    "bmu_id": "T_CUMHW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "CUPAB-1",
+    "bmu_id": "E_CUPAB-1",
+    "fuel_type": "OTHER"
+  },
+  {
+    "ngc_bmu_id": "DALQW-1",
+    "bmu_id": "T_DALQW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "DALSW-1",
+    "bmu_id": "E_DALSW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "DAMC-1",
+    "bmu_id": "T_DAMC-1",
+    "fuel_type": "CCGT"
+  },
+  {
+    "ngc_bmu_id": "DBAWO-1",
+    "bmu_id": "T_DBAWO-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "DBAWO-2",
+    "bmu_id": "T_DBAWO-2",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "DBAWO-3",
+    "bmu_id": "T_DBAWO-3",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "DBAWO-4",
+    "bmu_id": "T_DBAWO-4",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "DBAWO-5",
+    "bmu_id": "T_DBAWO-5",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "DDGNO-1",
+    "bmu_id": "T_DDGNO-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "DDGNO-2",
+    "bmu_id": "T_DDGNO-2",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "DDGNO-3",
+    "bmu_id": "T_DDGNO-3",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "DDGNO-4",
+    "bmu_id": "T_DDGNO-4",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "DEUCW-1",
+    "bmu_id": null,
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "DIDC01G",
+    "bmu_id": "E_DIDC1G",
+    "fuel_type": "OCGT"
+  },
+  {
+    "ngc_bmu_id": "DIDC02G",
+    "bmu_id": "E_DIDC2G",
+    "fuel_type": "OCGT"
+  },
+  {
+    "ngc_bmu_id": "DIDC03G",
+    "bmu_id": "E_DIDC3G",
+    "fuel_type": "OCGT"
+  },
+  {
+    "ngc_bmu_id": "DIDC04G",
+    "bmu_id": "E_DIDC4G",
+    "fuel_type": "OCGT"
+  },
+  {
+    "ngc_bmu_id": "DIDCB5",
+    "bmu_id": "T_DIDCB5",
+    "fuel_type": "CCGT"
+  },
+  {
+    "ngc_bmu_id": "DIDCB6",
+    "bmu_id": "T_DIDCB6",
+    "fuel_type": "CCGT"
+  },
+  {
+    "ngc_bmu_id": "DINO-1",
+    "bmu_id": "T_DINO-1",
+    "fuel_type": "PS"
+  },
+  {
+    "ngc_bmu_id": "DINO-2",
+    "bmu_id": "T_DINO-2",
+    "fuel_type": "PS"
+  },
+  {
+    "ngc_bmu_id": "DINO-3",
+    "bmu_id": "T_DINO-3",
+    "fuel_type": "PS"
+  },
+  {
+    "ngc_bmu_id": "DINO-4",
+    "bmu_id": "T_DINO-4",
+    "fuel_type": "PS"
+  },
+  {
+    "ngc_bmu_id": "DINO-5",
+    "bmu_id": "T_DINO-5",
+    "fuel_type": "PS"
+  },
+  {
+    "ngc_bmu_id": "DINO-6",
+    "bmu_id": "T_DINO-6",
+    "fuel_type": "PS"
+  },
+  {
+    "ngc_bmu_id": "DNBAR-1",
+    "bmu_id": "2__NSMAE001",
+    "fuel_type": "BIOMASS"
+  },
+  {
+    "ngc_bmu_id": "DNLWW-1",
+    "bmu_id": "T_DNLWW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "DOLLB-1",
+    "bmu_id": "E_DOLLB-1",
+    "fuel_type": "OTHER"
+  },
+  {
+    "ngc_bmu_id": "DOREW-1",
+    "bmu_id": "T_DOREW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "DOREW-2",
+    "bmu_id": "T_DOREW-2",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "DOUGW-1",
+    "bmu_id": "T_DOUGW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "DOWL-1",
+    "bmu_id": "E_DOWL-1",
+    "fuel_type": "OTHER"
+  },
+  {
+    "ngc_bmu_id": "DRAXX-1",
+    "bmu_id": "T_DRAXX-1",
+    "fuel_type": "BIOMASS"
+  },
+  {
+    "ngc_bmu_id": "DRAXX-10G",
+    "bmu_id": "T_DRAXX-10G",
+    "fuel_type": "OCGT"
+  },
+  {
+    "ngc_bmu_id": "DRAXX-12G",
+    "bmu_id": "T_DRAXX-12G",
+    "fuel_type": "OCGT"
+  },
+  {
+    "ngc_bmu_id": "DRAXX-2",
+    "bmu_id": "T_DRAXX-2",
+    "fuel_type": "BIOMASS"
+  },
+  {
+    "ngc_bmu_id": "DRAXX-3",
+    "bmu_id": "T_DRAXX-3",
+    "fuel_type": "BIOMASS"
+  },
+  {
+    "ngc_bmu_id": "DRAXX-4",
+    "bmu_id": "T_DRAXX-4",
+    "fuel_type": "BIOMASS"
+  },
+  {
+    "ngc_bmu_id": "DRAXX-5",
+    "bmu_id": "T_DRAXX-5",
+    "fuel_type": "COAL"
+  },
+  {
+    "ngc_bmu_id": "DRAXX-6",
+    "bmu_id": "T_DRAXX-6",
+    "fuel_type": "COAL"
+  },
+  {
+    "ngc_bmu_id": "DRAXX-9G",
+    "bmu_id": "T_DRAXX-9G",
+    "fuel_type": "OCGT"
+  },
+  {
+    "ngc_bmu_id": "DRDGW-1",
+    "bmu_id": null,
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "DRSLW-1",
+    "bmu_id": "T_DRSLW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "DUMMW-1",
+    "bmu_id": null,
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "DUNGW-1",
+    "bmu_id": "T_DUNGW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "DYCEB-1",
+    "bmu_id": null,
+    "fuel_type": "OTHER"
+  },
+  {
+    "ngc_bmu_id": "EAAO-1",
+    "bmu_id": "T_EAAO-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "EAAO-2",
+    "bmu_id": "T_EAAO-2",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "EARBW-1",
+    "bmu_id": null,
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "EDINW-1",
+    "bmu_id": "T_EDINW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "EDTRW-1",
+    "bmu_id": null,
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "EECL-1",
+    "bmu_id": "T_EECL-1",
+    "fuel_type": "CCGT"
+  },
+  {
+    "ngc_bmu_id": "ENDRB-1",
+    "bmu_id": "T_ENDRB-1",
+    "fuel_type": "OTHER"
+  },
+  {
+    "ngc_bmu_id": "ERRO-1",
+    "bmu_id": "T_ERRO-1",
+    "fuel_type": "NPSHYD"
+  },
+  {
+    "ngc_bmu_id": "ERRO-2",
+    "bmu_id": "T_ERRO-2",
+    "fuel_type": "NPSHYD"
+  },
+  {
+    "ngc_bmu_id": "ERRO-3",
+    "bmu_id": "T_ERRO-3",
+    "fuel_type": "NPSHYD"
+  },
+  {
+    "ngc_bmu_id": "EWHLW-1",
+    "bmu_id": "T_EWHLW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "FAARW-1",
+    "bmu_id": "T_FARR-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "FAARW-2",
+    "bmu_id": "T_FARR-2",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "FALGW-1",
+    "bmu_id": "T_FALGW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "FASN-1",
+    "bmu_id": "T_FASN-1",
+    "fuel_type": "NPSHYD"
+  },
+  {
+    "ngc_bmu_id": "FASN-4",
+    "bmu_id": "E_FASN-4",
+    "fuel_type": "NPSHYD"
+  },
+  {
+    "ngc_bmu_id": "FASN2",
+    "bmu_id": "T_FASN-2",
+    "fuel_type": "NPSHYD"
+  },
+  {
+    "ngc_bmu_id": "FASN3",
+    "bmu_id": "E_FASN-3",
+    "fuel_type": "NPSHYD"
+  },
+  {
+    "ngc_bmu_id": "FAWN-1",
+    "bmu_id": "E_FAWN-1",
+    "fuel_type": "CCGT"
+  },
+  {
+    "ngc_bmu_id": "FELL-1",
+    "bmu_id": "E_FELL-1",
+    "fuel_type": "CCGT"
+  },
+  {
+    "ngc_bmu_id": "FFES-1",
+    "bmu_id": "T_FFES-1",
+    "fuel_type": "PS"
+  },
+  {
+    "ngc_bmu_id": "FFES-2",
+    "bmu_id": "T_FFES-2",
+    "fuel_type": "PS"
+  },
+  {
+    "ngc_bmu_id": "FFES-3",
+    "bmu_id": "T_FFES-3",
+    "fuel_type": "PS"
+  },
+  {
+    "ngc_bmu_id": "FFES-4",
+    "bmu_id": "T_FFES-4",
+    "fuel_type": "PS"
+  },
+  {
+    "ngc_bmu_id": "FINL-1",
+    "bmu_id": "T_FINL-1",
+    "fuel_type": "NPSHYD"
+  },
+  {
+    "ngc_bmu_id": "FOYE-1",
+    "bmu_id": "T_FOYE-1",
+    "fuel_type": "PS"
+  },
+  {
+    "ngc_bmu_id": "FOYE-2",
+    "bmu_id": "T_FOYE-2",
+    "fuel_type": "PS"
+  },
+  {
+    "ngc_bmu_id": "FRBRW-1",
+    "bmu_id": null,
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "FSDLW-1",
+    "bmu_id": "T_FSDLW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "GAOFO-1",
+    "bmu_id": "T_GANW-11",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "GAOFO-2",
+    "bmu_id": "T_GANW-22",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "GAOFO-3",
+    "bmu_id": "T_GANW-13",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "GAOFO-4",
+    "bmu_id": "T_GANW-24",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "GDSTW-1",
+    "bmu_id": "E_GDSTW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "GLCHW-1",
+    "bmu_id": "E_GLCHW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "GLNDO-1",
+    "bmu_id": "T_GLNDO-1",
+    "fuel_type": "NPSHYD"
+  },
+  {
+    "ngc_bmu_id": "GLNKW-1",
+    "bmu_id": "T_GLNKW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "GLOFW-1",
+    "bmu_id": "E_GLOFW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "GLWSW-1",
+    "bmu_id": "T_GLWSW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "GNAPW-1",
+    "bmu_id": "T_GNAPW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "GNFSW-1",
+    "bmu_id": "T_GNFSW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "GNFSW-2",
+    "bmu_id": "T_GNFSW-2",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "GORDW-1",
+    "bmu_id": "T_GORDW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "GORDW-2",
+    "bmu_id": "T_GORDW-2",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "GRAI-6",
+    "bmu_id": "T_GRAI-6",
+    "fuel_type": "CCGT"
+  },
+  {
+    "ngc_bmu_id": "GRAI-7",
+    "bmu_id": "T_GRAI-7",
+    "fuel_type": "CCGT"
+  },
+  {
+    "ngc_bmu_id": "GRAI-8",
+    "bmu_id": "T_GRAI-8",
+    "fuel_type": "CCGT"
+  },
+  {
+    "ngc_bmu_id": "GRAI1G",
+    "bmu_id": "T_GRAI1G",
+    "fuel_type": "OCGT"
+  },
+  {
+    "ngc_bmu_id": "GRAI4G",
+    "bmu_id": "T_GRAI4G",
+    "fuel_type": "OCGT"
+  },
+  {
+    "ngc_bmu_id": "GRGBW-1",
+    "bmu_id": "T_GRGBW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "GRGBW-2",
+    "bmu_id": "T_GRGBW-2",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "GRGBW-3",
+    "bmu_id": "T_GRGBW-3",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "GRGRW-1",
+    "bmu_id": "E_GRGRW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "GRIFW-1",
+    "bmu_id": "T_GRIFW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "GRIFW-2",
+    "bmu_id": "T_GRIFW-2",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "GRMO-1",
+    "bmu_id": "T_GRMO-1",
+    "fuel_type": "CCGT"
+  },
+  {
+    "ngc_bmu_id": "GRUB-1",
+    "bmu_id": null,
+    "fuel_type": "NPSHYD"
+  },
+  {
+    "ngc_bmu_id": "GRUB-2",
+    "bmu_id": null,
+    "fuel_type": "NPSHYD"
+  },
+  {
+    "ngc_bmu_id": "GYAR-1",
+    "bmu_id": "E_GYAR-1",
+    "fuel_type": "CCGT"
+  },
+  {
+    "ngc_bmu_id": "GYMRO-15",
+    "bmu_id": "T_GYMR-15",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "GYMRO-17",
+    "bmu_id": "T_GYMR-17",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "GYMRO-26",
+    "bmu_id": "T_GYMR-26",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "GYMRO-28",
+    "bmu_id": "T_GYMR-28",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "HADHW-1",
+    "bmu_id": "T_HADHW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "HAHAW-1",
+    "bmu_id": "T_HAHAW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "HALSW-1",
+    "bmu_id": "T_HALSW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "HAWFW-1",
+    "bmu_id": null,
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "HBHDW-1",
+    "bmu_id": "E_HBHDW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "HEYM11",
+    "bmu_id": "T_HEYM11",
+    "fuel_type": "NUCLEAR"
+  },
+  {
+    "ngc_bmu_id": "HEYM12",
+    "bmu_id": "T_HEYM12",
+    "fuel_type": "NUCLEAR"
+  },
+  {
+    "ngc_bmu_id": "HEYM27",
+    "bmu_id": "T_HEYM27",
+    "fuel_type": "NUCLEAR"
+  },
+  {
+    "ngc_bmu_id": "HEYM28",
+    "bmu_id": "T_HEYM28",
+    "fuel_type": "NUCLEAR"
+  },
+  {
+    "ngc_bmu_id": "HIRWN-1",
+    "bmu_id": "T_HIRWN-1",
+    "fuel_type": "OCGT"
+  },
+  {
+    "ngc_bmu_id": "HLGLW-1",
+    "bmu_id": "E_HLGLW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "HLTWW-1",
+    "bmu_id": "E_HLTWW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "HMGTO-1",
+    "bmu_id": "T_HMGTO-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "HMGTO-2",
+    "bmu_id": "T_HMGTO-2",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "HOWAO-1",
+    "bmu_id": "T_HOWAO-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "HOWAO-2",
+    "bmu_id": "T_HOWAO-2",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "HOWAO-3",
+    "bmu_id": "T_HOWAO-3",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "HOWBO-1",
+    "bmu_id": "T_HOWBO-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "HOWBO-2",
+    "bmu_id": "T_HOWBO-2",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "HOWBO-3",
+    "bmu_id": "T_HOWBO-3",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "HRHLW-1",
+    "bmu_id": "E_HRHLW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "HRSTW-1",
+    "bmu_id": "T_HRSTW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "HRTL-1",
+    "bmu_id": "T_HRTL-1",
+    "fuel_type": "NUCLEAR"
+  },
+  {
+    "ngc_bmu_id": "HRTL-2",
+    "bmu_id": "T_HRTL-2",
+    "fuel_type": "NUCLEAR"
+  },
+  {
+    "ngc_bmu_id": "HUMR-1",
+    "bmu_id": "T_HUMR-1",
+    "fuel_type": "CCGT"
+  },
+  {
+    "ngc_bmu_id": "HYWDW-1",
+    "bmu_id": "E_HYWDW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "IBG-BRTN1",
+    "bmu_id": "I_IBG-BRTN1",
+    "fuel_type": "INTNED"
+  },
+  {
+    "ngc_bmu_id": "IEG-ELEC1",
+    "bmu_id": "I_IEG-ELEC1",
+    "fuel_type": "INTELEC"
+  },
+  {
+    "ngc_bmu_id": "IEG-EWIC1",
+    "bmu_id": "I_IEG-EWIC1",
+    "fuel_type": "INTEW"
+  },
+  {
+    "ngc_bmu_id": "IEG-FRAN1",
+    "bmu_id": "I_IEG-FRAN1",
+    "fuel_type": "INTFR"
+  },
+  {
+    "ngc_bmu_id": "IEG-GRN1",
+    "bmu_id": "I_IEG-GRN1",
+    "fuel_type": "INTGRNL"
+  },
+  {
+    "ngc_bmu_id": "IEG-IFA2",
+    "bmu_id": "I_IEG-IFA2",
+    "fuel_type": "INTIFA2"
+  },
+  {
+    "ngc_bmu_id": "IEG-MOYL1",
+    "bmu_id": "I_IEG-MOYL1",
+    "fuel_type": "INTIRL"
+  },
+  {
+    "ngc_bmu_id": "IEG-NSL1",
+    "bmu_id": "I_IEG-NSL1",
+    "fuel_type": "INTNSL"
+  },
+  {
+    "ngc_bmu_id": "IEG-VKL1",
+    "bmu_id": "I_IEG-VKL1",
+    "fuel_type": "INTVKL"
+  },
+  {
+    "ngc_bmu_id": "INAW-1",
+    "bmu_id": null,
+    "fuel_type": "NPSHYD"
+  },
+  {
+    "ngc_bmu_id": "INDQ-1",
+    "bmu_id": "T_INDQ-1",
+    "fuel_type": "OCGT"
+  },
+  {
+    "ngc_bmu_id": "ING-NEMO1",
+    "bmu_id": "I_ING-NEMO1",
+    "fuel_type": "INTNEM"
+  },
+  {
+    "ngc_bmu_id": "JAMBB-1",
+    "bmu_id": "E_JAMBB-1",
+    "fuel_type": "OTHER"
+  },
+  {
+    "ngc_bmu_id": "JAMBB-2",
+    "bmu_id": "E_JAMBB-2",
+    "fuel_type": "OTHER"
+  },
+  {
+    "ngc_bmu_id": "JGPR-1",
+    "bmu_id": "T_JGPR-1",
+    "fuel_type": "BIOMASS"
+  },
+  {
+    "ngc_bmu_id": "KEAD-1",
+    "bmu_id": "T_KEAD-1",
+    "fuel_type": "CCGT"
+  },
+  {
+    "ngc_bmu_id": "KEAD-2",
+    "bmu_id": "T_KEAD-2",
+    "fuel_type": "CCGT"
+  },
+  {
+    "ngc_bmu_id": "KEADGT-3",
+    "bmu_id": "T_KEADGT-3",
+    "fuel_type": "OCGT"
+  },
+  {
+    "ngc_bmu_id": "KENNW-1",
+    "bmu_id": "T_KENNW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "KILBW-1",
+    "bmu_id": "T_KILBW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "KILLPG-1",
+    "bmu_id": "T_KILLPG-1",
+    "fuel_type": "CCGT"
+  },
+  {
+    "ngc_bmu_id": "KILLPG-2",
+    "bmu_id": "T_KILLPG-2",
+    "fuel_type": "CCGT"
+  },
+  {
+    "ngc_bmu_id": "KILNS-1",
+    "bmu_id": null,
+    "fuel_type": "CCGT"
+  },
+  {
+    "ngc_bmu_id": "KINCW-1",
+    "bmu_id": "E_KINCW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "KLDMW-1",
+    "bmu_id": null,
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "KLGLW-1",
+    "bmu_id": "T_KLGLW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "KLYN-A-1",
+    "bmu_id": "E_KLYN-A-1",
+    "fuel_type": "CCGT"
+  },
+  {
+    "ngc_bmu_id": "KPMRW-1",
+    "bmu_id": "T_KPMRW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "KTHLW-1",
+    "bmu_id": "T_KTHLW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "KYPEW-1",
+    "bmu_id": "T_KYPEW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "LAGA-1",
+    "bmu_id": "T_LAGA-1",
+    "fuel_type": "CCGT"
+  },
+  {
+    "ngc_bmu_id": "LARKB-1",
+    "bmu_id": "T_LARKB-1",
+    "fuel_type": "OTHER"
+  },
+  {
+    "ngc_bmu_id": "LARKS-1",
+    "bmu_id": "T_LARKS-1",
+    "fuel_type": "OTHER"
+  },
+  {
+    "ngc_bmu_id": "LARYO-1",
+    "bmu_id": "T_LARYW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "LARYO-2",
+    "bmu_id": "T_LARYW-2",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "LARYO-3",
+    "bmu_id": "T_LARYW-3",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "LARYO-4",
+    "bmu_id": "T_LARYW-4",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "LBAR-1",
+    "bmu_id": "T_LBAR-1",
+    "fuel_type": "CCGT"
+  },
+  {
+    "ngc_bmu_id": "LBAR-1G",
+    "bmu_id": "T_LBAR-1G",
+    "fuel_type": "OCGT"
+  },
+  {
+    "ngc_bmu_id": "LCLTW-1",
+    "bmu_id": "T_LCLTW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "LCSMH-1",
+    "bmu_id": "2__PMARB001",
+    "fuel_type": "NPSHYD"
+  },
+  {
+    "ngc_bmu_id": "LGPKW-1",
+    "bmu_id": null,
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "LIMKW-1",
+    "bmu_id": "T_LIMKW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "LITRB-1",
+    "bmu_id": "E_LITRB-1",
+    "fuel_type": "OTHER"
+  },
+  {
+    "ngc_bmu_id": "LKSDB-1",
+    "bmu_id": "T_LKSDB-1",
+    "fuel_type": "OTHER"
+  },
+  {
+    "ngc_bmu_id": "LNCSO-1",
+    "bmu_id": "T_LNCSW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "LNCSO-2",
+    "bmu_id": "T_LNCSW-2",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "LNMTH-1",
+    "bmu_id": "E_LYNE1",
+    "fuel_type": "BIOMASS"
+  },
+  {
+    "ngc_bmu_id": "LNMTH-2",
+    "bmu_id": "E_LYNE2",
+    "fuel_type": "BIOMASS"
+  },
+  {
+    "ngc_bmu_id": "LNMTH-3",
+    "bmu_id": "E_LYNE3",
+    "fuel_type": "BIOMASS"
+  },
+  {
+    "ngc_bmu_id": "LRDSC-1",
+    "bmu_id": "T_LRDSC-1",
+    "fuel_type": "OTHER"
+  },
+  {
+    "ngc_bmu_id": "LRDSC-2",
+    "bmu_id": "T_LRDSC-2",
+    "fuel_type": "OTHER"
+  },
+  {
+    "ngc_bmu_id": "MARK-1",
+    "bmu_id": "E_MARK-1",
+    "fuel_type": "BIOMASS"
+  },
+  {
+    "ngc_bmu_id": "MDHLW-1",
+    "bmu_id": "2__PSTAT002",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "MEDP-1",
+    "bmu_id": "T_MEDP-1",
+    "fuel_type": "CCGT"
+  },
+  {
+    "ngc_bmu_id": "MIDMW-1",
+    "bmu_id": "T_MIDMW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "MILWW-1",
+    "bmu_id": "T_MILWW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "MINSW-1",
+    "bmu_id": "E_MINSW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "MKHLW-1",
+    "bmu_id": "T_MKHLW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "MOWEO-1",
+    "bmu_id": "T_MOWEO-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "MOWEO-2",
+    "bmu_id": "T_MOWEO-2",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "MOWEO-3",
+    "bmu_id": "T_MOWEO-3",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "MOWWO-1",
+    "bmu_id": "T_MOWWO-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "MOWWO-2",
+    "bmu_id": "T_MOWWO-2",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "MOWWO-3",
+    "bmu_id": "T_MOWWO-3",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "MOWWO-4",
+    "bmu_id": "T_MOWWO-4",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "MOYEW-1",
+    "bmu_id": "E_MOYEW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "MRWD-1",
+    "bmu_id": "T_MRWD-1",
+    "fuel_type": "CCGT"
+  },
+  {
+    "ngc_bmu_id": "MYGPW-1",
+    "bmu_id": "T_MYGPW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "NANT-1",
+    "bmu_id": "T_NANT-1",
+    "fuel_type": "NPSHYD"
+  },
+  {
+    "ngc_bmu_id": "NLSTB-1",
+    "bmu_id": "T_NLSTB-1",
+    "fuel_type": "OTHER"
+  },
+  {
+    "ngc_bmu_id": "NNGAO-1",
+    "bmu_id": "T_NNGAO-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "NNGAO-2",
+    "bmu_id": "T_NNGAO-2",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "NNPW01",
+    "bmu_id": "2__NNATP001",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "NOKYW-1",
+    "bmu_id": "T_NOKYW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "NOKYW-2",
+    "bmu_id": "T_NOKYW-2",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "NOVAW-1",
+    "bmu_id": null,
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "NOVAW-2",
+    "bmu_id": null,
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "NSQYT-1",
+    "bmu_id": null,
+    "fuel_type": "OTHER"
+  },
+  {
+    "ngc_bmu_id": "OMNDO-1",
+    "bmu_id": "T_OMNDW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "OVRHB-1",
+    "bmu_id": null,
+    "fuel_type": "OTHER"
+  },
+  {
+    "ngc_bmu_id": "PAUHW-1",
+    "bmu_id": "2__PENEC002",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "PEHE-1",
+    "bmu_id": "T_PEHE-1",
+    "fuel_type": "CCGT"
+  },
+  {
+    "ngc_bmu_id": "PEMB-11",
+    "bmu_id": "T_PEMB-11",
+    "fuel_type": "CCGT"
+  },
+  {
+    "ngc_bmu_id": "PEMB-21",
+    "bmu_id": "T_PEMB-21",
+    "fuel_type": "CCGT"
+  },
+  {
+    "ngc_bmu_id": "PEMB-31",
+    "bmu_id": "T_PEMB-31",
+    "fuel_type": "CCGT"
+  },
+  {
+    "ngc_bmu_id": "PEMB-41",
+    "bmu_id": "T_PEMB-41",
+    "fuel_type": "CCGT"
+  },
+  {
+    "ngc_bmu_id": "PEMB-51",
+    "bmu_id": "T_PEMB-51",
+    "fuel_type": "CCGT"
+  },
+  {
+    "ngc_bmu_id": "PETEM1",
+    "bmu_id": "E_PETEM1",
+    "fuel_type": "CCGT"
+  },
+  {
+    "ngc_bmu_id": "PGBIW-1",
+    "bmu_id": "T_PGBIW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "PIBUW-1",
+    "bmu_id": "E_PIBUW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "PINFB-1",
+    "bmu_id": "T_PINFB-1",
+    "fuel_type": "OTHER"
+  },
+  {
+    "ngc_bmu_id": "PINFB-2",
+    "bmu_id": "T_PINFB-2",
+    "fuel_type": "OTHER"
+  },
+  {
+    "ngc_bmu_id": "PINFB-3",
+    "bmu_id": "T_PINFB-3",
+    "fuel_type": "OTHER"
+  },
+  {
+    "ngc_bmu_id": "PINFB-4",
+    "bmu_id": "T_PINFB-4",
+    "fuel_type": "OTHER"
+  },
+  {
+    "ngc_bmu_id": "PLYRK-1",
+    "bmu_id": "E_PLYRK-1",
+    "fuel_type": "OTHER"
+  },
+  {
+    "ngc_bmu_id": "PNYCW-1",
+    "bmu_id": "T_PNYCW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "PTLDW-1",
+    "bmu_id": null,
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "RANN-1",
+    "bmu_id": null,
+    "fuel_type": "NPSHYD"
+  },
+  {
+    "ngc_bmu_id": "RANN-2",
+    "bmu_id": null,
+    "fuel_type": "NPSHYD"
+  },
+  {
+    "ngc_bmu_id": "RANN-3",
+    "bmu_id": null,
+    "fuel_type": "NPSHYD"
+  },
+  {
+    "ngc_bmu_id": "RATSGT-2",
+    "bmu_id": "T_RATSGT-2",
+    "fuel_type": "OCGT"
+  },
+  {
+    "ngc_bmu_id": "RATSGT-4",
+    "bmu_id": "T_RATSGT-4",
+    "fuel_type": "OCGT"
+  },
+  {
+    "ngc_bmu_id": "RCBKO-1",
+    "bmu_id": "T_RCBKO-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "RCBKO-2",
+    "bmu_id": "T_RCBKO-2",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "RICHB-1",
+    "bmu_id": "T_RICHB-1",
+    "fuel_type": "OTHER"
+  },
+  {
+    "ngc_bmu_id": "RICHB-2",
+    "bmu_id": "T_RICHB-2",
+    "fuel_type": "OTHER"
+  },
+  {
+    "ngc_bmu_id": "RIVEN-1",
+    "bmu_id": null,
+    "fuel_type": "OTHER"
+  },
+  {
+    "ngc_bmu_id": "RMPNO-1",
+    "bmu_id": "T_RMPNO-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "RMPNO-2",
+    "bmu_id": "T_RMPNO-2",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "ROARB-1",
+    "bmu_id": "E_ROARB-1",
+    "fuel_type": "OTHER"
+  },
+  {
+    "ngc_bmu_id": "ROCK-1",
+    "bmu_id": "T_ROCK-1",
+    "fuel_type": "CCGT"
+  },
+  {
+    "ngc_bmu_id": "ROTHW-1",
+    "bmu_id": "2__PENEC001",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "RREW-1",
+    "bmu_id": "T_RREW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "RRWW-1",
+    "bmu_id": "T_RRWW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "RSHLW-1",
+    "bmu_id": "2__PEDGE004",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "RYHPS-1",
+    "bmu_id": "T_RYHPS-1",
+    "fuel_type": "CCGT"
+  },
+  {
+    "ngc_bmu_id": "SAKNW-1",
+    "bmu_id": "T_SAKNW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "SANQW-1",
+    "bmu_id": "T_SANQW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "SCCL-1",
+    "bmu_id": "T_SCCL-1",
+    "fuel_type": "CCGT"
+  },
+  {
+    "ngc_bmu_id": "SCCL-2",
+    "bmu_id": "T_SCCL-2",
+    "fuel_type": "CCGT"
+  },
+  {
+    "ngc_bmu_id": "SCCL-3",
+    "bmu_id": "T_SCCL-3",
+    "fuel_type": "CCGT"
+  },
+  {
+    "ngc_bmu_id": "SEAB-1",
+    "bmu_id": "T_SEAB-1",
+    "fuel_type": "CCGT"
+  },
+  {
+    "ngc_bmu_id": "SEAB-2",
+    "bmu_id": "T_SEAB-2",
+    "fuel_type": "CCGT"
+  },
+  {
+    "ngc_bmu_id": "SEEL-1",
+    "bmu_id": "T_SEEL-1",
+    "fuel_type": "OCGT"
+  },
+  {
+    "ngc_bmu_id": "SFIL-1",
+    "bmu_id": null,
+    "fuel_type": "NPSHYD"
+  },
+  {
+    "ngc_bmu_id": "SGRWO-1",
+    "bmu_id": "T_SGRWO-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "SGRWO-2",
+    "bmu_id": "T_SGRWO-2",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "SGRWO-3",
+    "bmu_id": "T_SGRWO-3",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "SGRWO-4",
+    "bmu_id": "T_SGRWO-4",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "SGRWO-5",
+    "bmu_id": "T_SGRWO-5",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "SGRWO-6",
+    "bmu_id": "T_SGRWO-6",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "SHBA-1",
+    "bmu_id": "T_SHBA-1",
+    "fuel_type": "CCGT"
+  },
+  {
+    "ngc_bmu_id": "SHBA-2",
+    "bmu_id": "T_SHBA-2",
+    "fuel_type": "CCGT"
+  },
+  {
+    "ngc_bmu_id": "SHILB-1",
+    "bmu_id": "E_SHILB-1",
+    "fuel_type": "OTHER"
+  },
+  {
+    "ngc_bmu_id": "SHIN-1",
+    "bmu_id": null,
+    "fuel_type": "NPSHYD"
+  },
+  {
+    "ngc_bmu_id": "SHIN-2",
+    "bmu_id": null,
+    "fuel_type": "NPSHYD"
+  },
+  {
+    "ngc_bmu_id": "SHOS-1",
+    "bmu_id": "E_SHOS-1",
+    "fuel_type": "CCGT"
+  },
+  {
+    "ngc_bmu_id": "SHRSO-1",
+    "bmu_id": "T_SHRSW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "SHRSO-2",
+    "bmu_id": "T_SHRSW-2",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "SIMEC-1",
+    "bmu_id": null,
+    "fuel_type": "BIOMASS"
+  },
+  {
+    "ngc_bmu_id": "SIZB-1",
+    "bmu_id": "T_SIZB-1",
+    "fuel_type": "NUCLEAR"
+  },
+  {
+    "ngc_bmu_id": "SIZB-2",
+    "bmu_id": "T_SIZB-2",
+    "fuel_type": "NUCLEAR"
+  },
+  {
+    "ngc_bmu_id": "SLOY-1",
+    "bmu_id": "M_SLOY-1",
+    "fuel_type": "NPSHYD"
+  },
+  {
+    "ngc_bmu_id": "SLOY-2",
+    "bmu_id": "T_SLOY-2",
+    "fuel_type": "NPSHYD"
+  },
+  {
+    "ngc_bmu_id": "SLOY-3",
+    "bmu_id": "T_SLOY-3",
+    "fuel_type": "NPSHYD"
+  },
+  {
+    "ngc_bmu_id": "SLOY-4",
+    "bmu_id": "M_SLOY-4",
+    "fuel_type": "NPSHYD"
+  },
+  {
+    "ngc_bmu_id": "SOFOW-11",
+    "bmu_id": null,
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "SOFOW-12",
+    "bmu_id": null,
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "SOFOW-21",
+    "bmu_id": null,
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "SOFOW-22",
+    "bmu_id": null,
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "SOKYW-1",
+    "bmu_id": "T_SOKYW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "SPEY-1",
+    "bmu_id": null,
+    "fuel_type": "BIOMASS"
+  },
+  {
+    "ngc_bmu_id": "SPLN-1",
+    "bmu_id": "T_SPLN-1",
+    "fuel_type": "CCGT"
+  },
+  {
+    "ngc_bmu_id": "STAY-1",
+    "bmu_id": "T_STAY-1",
+    "fuel_type": "CCGT"
+  },
+  {
+    "ngc_bmu_id": "STAY-2",
+    "bmu_id": "T_STAY-2",
+    "fuel_type": "CCGT"
+  },
+  {
+    "ngc_bmu_id": "STAY-3",
+    "bmu_id": "T_STAY-3",
+    "fuel_type": "CCGT"
+  },
+  {
+    "ngc_bmu_id": "STAY-4",
+    "bmu_id": "T_STAY-4",
+    "fuel_type": "CCGT"
+  },
+  {
+    "ngc_bmu_id": "STCR-1",
+    "bmu_id": null,
+    "fuel_type": "BIOMASS"
+  },
+  {
+    "ngc_bmu_id": "STLGW-1",
+    "bmu_id": "T_STLGW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "STLGW-2",
+    "bmu_id": "T_STLGW-2",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "STLGW-3",
+    "bmu_id": "T_STLGW-3",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "STPSW-1",
+    "bmu_id": null,
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "STRNW-1",
+    "bmu_id": "T_STRNW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "SUTB-1",
+    "bmu_id": "T_SUTB-1",
+    "fuel_type": "CCGT"
+  },
+  {
+    "ngc_bmu_id": "SUTBS-1",
+    "bmu_id": "T_SUTBS-1",
+    "fuel_type": "OTHER"
+  },
+  {
+    "ngc_bmu_id": "SVRP-10",
+    "bmu_id": "T_SVRP-10",
+    "fuel_type": "CCGT"
+  },
+  {
+    "ngc_bmu_id": "SVRP-20",
+    "bmu_id": "T_SVRP-20",
+    "fuel_type": "CCGT"
+  },
+  {
+    "ngc_bmu_id": "SWBKW-1",
+    "bmu_id": "E_SWBKW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "TACHW-1",
+    "bmu_id": "2__PSMAE003",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "TANGW-1",
+    "bmu_id": null,
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "TAYL2G",
+    "bmu_id": "E_TAYL2G",
+    "fuel_type": "OCGT"
+  },
+  {
+    "ngc_bmu_id": "TAYL3G",
+    "bmu_id": "E_TAYL3G",
+    "fuel_type": "OCGT"
+  },
+  {
+    "ngc_bmu_id": "TDBNW-1",
+    "bmu_id": "T_TDBNW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "TDRVE-1",
+    "bmu_id": "E_TDRVE-1",
+    "fuel_type": "OTHER"
+  },
+  {
+    "ngc_bmu_id": "THNTO-1",
+    "bmu_id": "T_THNTO-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "THNTO-2",
+    "bmu_id": "T_THNTO-2",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "TKNEW-1",
+    "bmu_id": "T_TKNEW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "TKNWW-1",
+    "bmu_id": "T_TKNWW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "TLYMW-1",
+    "bmu_id": "E_TLYMW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "TMNCW-1",
+    "bmu_id": "C__PSTAT011",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "TMWLW-1",
+    "bmu_id": null,
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "TONG-1",
+    "bmu_id": null,
+    "fuel_type": "NPSHYD"
+  },
+  {
+    "ngc_bmu_id": "TONG-2",
+    "bmu_id": null,
+    "fuel_type": "NPSHYD"
+  },
+  {
+    "ngc_bmu_id": "TONG-3",
+    "bmu_id": null,
+    "fuel_type": "NPSHYD"
+  },
+  {
+    "ngc_bmu_id": "TORN-1",
+    "bmu_id": "T_TORN-1",
+    "fuel_type": "NUCLEAR"
+  },
+  {
+    "ngc_bmu_id": "TORN-2",
+    "bmu_id": "T_TORN-2",
+    "fuel_type": "NUCLEAR"
+  },
+  {
+    "ngc_bmu_id": "TRLGW-1",
+    "bmu_id": "T_TRLGW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "TSREP-1",
+    "bmu_id": "T_TSREP-1",
+    "fuel_type": "BIOMASS"
+  },
+  {
+    "ngc_bmu_id": "TULWW-1",
+    "bmu_id": "E_TULWW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "TULWW-2",
+    "bmu_id": "E_TULWW-2",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "TUMB-1",
+    "bmu_id": null,
+    "fuel_type": "NPSHYD"
+  },
+  {
+    "ngc_bmu_id": "TUMB-2",
+    "bmu_id": null,
+    "fuel_type": "NPSHYD"
+  },
+  {
+    "ngc_bmu_id": "TWSHW-1",
+    "bmu_id": "T_TWSHW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "VKNGW-1",
+    "bmu_id": "T_VKNGW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "VKNGW-2",
+    "bmu_id": "T_VKNGW-2",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "VKNGW-3",
+    "bmu_id": "T_VKNGW-3",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "VKNGW-4",
+    "bmu_id": "T_VKNGW-4",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "WBUGT-4",
+    "bmu_id": "T_WBUGT-4",
+    "fuel_type": "OCGT"
+  },
+  {
+    "ngc_bmu_id": "WBURB-1",
+    "bmu_id": "T_WBURB-1",
+    "fuel_type": "CCGT"
+  },
+  {
+    "ngc_bmu_id": "WBURB-2",
+    "bmu_id": "T_WBURB-2",
+    "fuel_type": "CCGT"
+  },
+  {
+    "ngc_bmu_id": "WBURB-3",
+    "bmu_id": "T_WBURB-3",
+    "fuel_type": "CCGT"
+  },
+  {
+    "ngc_bmu_id": "WBURB-41",
+    "bmu_id": "T_WBURB-41",
+    "fuel_type": "OTHER"
+  },
+  {
+    "ngc_bmu_id": "WBURB-43",
+    "bmu_id": "T_WBURB-43",
+    "fuel_type": "OTHER"
+  },
+  {
+    "ngc_bmu_id": "WDNSO-1",
+    "bmu_id": "T_WDNSO-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "WDNSO-2",
+    "bmu_id": "T_WDNSO-2",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "WDRGW-1",
+    "bmu_id": "T_WDRGW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "WHIHW-1",
+    "bmu_id": "T_WHIHW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "WHILW-1",
+    "bmu_id": "T_WHILW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "WHILW-2",
+    "bmu_id": "T_WHILW-2",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "WILCT-1",
+    "bmu_id": "T_WILCT-1",
+    "fuel_type": "BIOMASS"
+  },
+  {
+    "ngc_bmu_id": "WINN-1",
+    "bmu_id": null,
+    "fuel_type": "CCGT"
+  },
+  {
+    "ngc_bmu_id": "WISHB-1",
+    "bmu_id": "T_WISHB-1",
+    "fuel_type": "OTHER"
+  },
+  {
+    "ngc_bmu_id": "WISTW-2",
+    "bmu_id": "T_WISTW-2",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "WLNYO-2",
+    "bmu_id": "T_WLNYO-2",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "WLNYO-3",
+    "bmu_id": "T_WLNYO-3",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "WLNYO-4",
+    "bmu_id": "T_WLNYO-4",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "WLNYW-1",
+    "bmu_id": "T_WLNYW-1",
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "WTGRW-1",
+    "bmu_id": null,
+    "fuel_type": "WIND"
+  },
+  {
+    "ngc_bmu_id": "WTMSO-1",
+    "bmu_id": "T_WTMSO-1",
+    "fuel_type": "WIND"
+  }
+]

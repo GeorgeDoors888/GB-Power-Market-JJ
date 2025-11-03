@@ -1,0 +1,4546 @@
+[
+  {
+    "lng": -0.957706064788173,
+    "lat": 51.8442826619673,
+    "name": "First Name ",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.1,
+    "lat": 51.9243906208515,
+    "name": "SHANKS WASTE MANAGEMENT LIMITED",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.3,
+    "lat": 52.1665228353772,
+    "name": "A I A MANAGEMENT LTD",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.42817984844144,
+    "lat": 52.1304668612308,
+    "name": "Harlaxton Engineering Services Ltd",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.273982875086522,
+    "lat": 51.4731838900738,
+    "name": "HOBACK SOLAR LIMITED",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.6,
+    "lat": 51.8656038860735,
+    "name": "Power Control Solutions",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.08787688044365,
+    "lat": 52.6997064296491,
+    "name": "21C Eco Energy",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.775620975668561,
+    "lat": 52.7449315280504,
+    "name": "Esco NRG Ltd C/o RenEnergy Ltd",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.364365271325054,
+    "lat": 51.9672282554545,
+    "name": "Countryside Renewables Ltd",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.732861673988025,
+    "lat": 52.6289345901298,
+    "name": "Solar Century Holdings Ltd",
+    "type": "Wind",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.10783025370301,
+    "lat": 52.6917652923763,
+    "name": "DNO Consulting Limited",
+    "type": "Wind",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.714390424423896,
+    "lat": 51.8220883432208,
+    "name": "The Natural Power Consultants Ltd",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.28661347852014,
+    "lat": 52.0102193888997,
+    "name": "The Natural Power Consultants Ltd",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.17619318090012,
+    "lat": 52.9023259293245,
+    "name": "DNO Consulting Limited",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.05,
+    "lat": 51.5655175200052,
+    "name": "Solar Century",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.69727953119872,
+    "lat": 52.6605716428966,
+    "name": "Solarcentury Holdings Limited",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.0377687381469841,
+    "lat": 52.5234396935858,
+    "name": "FAIRWIND SOLAR",
+    "type": "Wind",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.547797509804243,
+    "lat": 52.5432297861595,
+    "name": "UK Power Solutions Ltd",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.206186781730378,
+    "lat": 52.5752571194583,
+    "name": "EcoGen Limited",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.42187543375782,
+    "lat": 52.2711626382763,
+    "name": "Solar Inc Ltd",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.00110262390807,
+    "lat": 52.4227743179574,
+    "name": "Viridor Waste Management Ltd",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.592529551825607,
+    "lat": 51.9081870559664,
+    "name": "Prosolia",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.1310024470274,
+    "lat": 51.9316003698976,
+    "name": "Energy and System Technical Ltd",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.09298574889096,
+    "lat": 51.8272865543982,
+    "name": "Harlaxton Engineering Services Ltd",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.168657892725251,
+    "lat": 52.36245537529,
+    "name": "Lightsource Renewable Energy Ltd",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.636480271232931,
+    "lat": 52.6594452598212,
+    "name": "ESCO NRG Limited",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.1,
+    "lat": 52.4431396823295,
+    "name": "Abbey Properties Cambridge Ltd",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.05,
+    "lat": 52.199368399062,
+    "name": "Hayward United Farm",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": 1.12680853194009,
+    "name": "Good Energy Generation Ltd",
+    "type": "Wind",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.15580048850318,
+    "lat": 52.2652024032272,
+    "name": "Inazin Power Ltd",
+    "type": "Wind",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.0,
+    "lat": 52.5291221943165,
+    "name": "Eye Airfield Wind Direct Ltd",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.2,
+    "lat": 52.3552022438111,
+    "name": "Npower Renewables",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.0377156676764346,
+    "lat": 51.9087860327754,
+    "name": "Abbey Properties (Cambs) Ltd",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.06,
+    "lat": 52.3195258395991,
+    "name": "Esco NRG Ltd",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.195172769285051,
+    "lat": 52.7191199841505,
+    "name": "Push Energy (Grid) Ltd",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.0629773833671825,
+    "lat": 51.825092338815,
+    "name": "Savills",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.30507663398601,
+    "lat": 52.3133086761686,
+    "name": "DNO Consulting Limited",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.330303531677241,
+    "lat": 52.2368153911312,
+    "name": "Forenergy",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.1,
+    "lat": 52.3291312768149,
+    "name": "S.E. Solar (2) Limited",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.0313971766133919,
+    "lat": 52.6637129367961,
+    "name": "AEE Renewables UK 9 Ltd",
+    "type": "Wind",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.528105487296392,
+    "lat": 52.8747350219754,
+    "name": "Wilburton Solar Two Limited",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.00406699179923,
+    "lat": 51.8630502196552,
+    "name": "Wryde Croft Wind Farm Limited",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 2.0,
+    "lat": 51.7476046962141,
+    "name": "Livetag Ltd",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.1,
+    "lat": 51.6228135259163,
+    "name": "Elgar Byrne Capital Limited",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.05,
+    "lat": 52.6177937779154,
+    "name": "Belectric Solar Ltd",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.0236704210245393,
+    "lat": 52.4247941265028,
+    "name": "MS Power Projects",
+    "type": "Wind",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.2,
+    "lat": 52.0480951515854,
+    "name": "Anglian Water Service Limited",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.0,
+    "lat": 52.1743303368306,
+    "name": "Hallmark Power Ltd",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.0,
+    "lat": 51.924774525191,
+    "name": "Savills",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.14,
+    "lat": 51.8475706696663,
+    "name": "The Solar Building Company Ltd",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.41,
+    "lat": 51.6190822805728,
+    "name": "Lightsource Renewable Energy Ltd",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.224988317648258,
+    "lat": 51.7070928208036,
+    "name": "RENEWABLE ENERGY CONNECTIONS LTD",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.09416827846024,
+    "lat": 52.880409535499,
+    "name": "GEW2 Ltd",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.120128950821253,
+    "lat": 51.773361917225,
+    "name": "Oamec Consulting Ltd",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.0,
+    "lat": 51.9412372173459,
+    "name": "Alan Bartlett & Sons Ltd",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.0,
+    "lat": 52.7576476137413,
+    "name": "Eco-Kinetics",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.0850646964803958,
+    "lat": 52.4301472142012,
+    "name": "ESM Power Ltd",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.202473908904812,
+    "lat": 51.7072990181356,
+    "name": "Triodos Renewables",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.181161868674088,
+    "lat": 51.5221155426403,
+    "name": "UK Sustainable Energy Limited",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.735304447620806,
+    "lat": 51.8290645070403,
+    "name": "Solarcentury Holdings Limited",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.31725640692638,
+    "lat": 51.5251710099385,
+    "name": "Haymaker Energy Ltd",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.0615099191751238,
+    "lat": 51.8662107540462,
+    "name": "Lightsource Renewable Energy Ltd",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 50.0,
+    "lng": 0.0,
+    "name": "REG Ockendon Solar Ltd",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.0,
+    "lat": 51.6254019262225,
+    "name": "Chaldean Estate Ltd",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.904339810799886,
+    "lat": 51.9015306305228,
+    "name": "Raybridge Corporation",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.734,
+    "lat": 52.5195503404409,
+    "name": "Colchester Borough",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.0,
+    "lat": 51.5223664634003,
+    "name": "60 Victoria Embankment",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.627613060389848,
+    "lat": 52.2566919471889,
+    "name": "MCCAIN FOODS (G.B.) LIMITED",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 2.0,
+    "lat": 51.8399721061007,
+    "name": "REG RAMSEY LTD",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.0701809003351538,
+    "lat": 52.1975689765787,
+    "name": "Adgen Energy Ltd",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.0497795240332517,
+    "lat": 51.9457640602526,
+    "name": "Can't find ",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.963464570285517,
+    "lat": 51.8526954182382,
+    "name": "Aggregated Micro Power Holdings",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.2,
+    "lat": 52.3304404734264,
+    "name": "Aggregated Micro Power Holdings plc",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.0,
+    "lat": 59.0,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.0,
+    "lat": 51.7465074676878,
+    "name": "Might be backup power for Fujitsu",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.475,
+    "lat": 52.3543895231933,
+    "name": "Ryan ",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.6,
+    "lat": 51.7465074676878,
+    "name": "1050001791569",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.259981115734126,
+    "lat": 51.6961823436106,
+    "name": "Growers glasshous will have to write",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.392838677898125,
+    "lat": 51.5608039359007,
+    "name": "AGR Renewables Limited",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.2224574862863,
+    "lat": 52.3356577354128,
+    "name": "Sent a email to a clocal business ",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.204278358955492,
+    "lat": 51.9279717081113,
+    "name": "NESS POINT LTD",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.876016027925104,
+    "lat": 51.8801025249297,
+    "name": "Renewable company doesn't appear to be any PPA",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.0,
+    "lat": 61.0,
+    "name": "Riza",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.446331926595967,
+    "lat": 52.5513057440901,
+    "name": "NON-FOSSIL PURCHASING AGENCY LIMITED",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.0178784956584467,
+    "lat": 52.430065672324,
+    "name": "NORTH PICKENHAM WINDFARM LLP",
+    "type": "Wind",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 60.0,
+    "lng": 0.605879625186295,
+    "name": "LONDON WASTE LTD",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.203865590036443,
+    "lat": 52.5768043395782,
+    "name": "FENLAND WINDFARMS LIMITED",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.251132763761177,
+    "lat": 51.7703484637814,
+    "name": "OST Energy Limited",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.672927730595125,
+    "lat": 51.7315854058886,
+    "name": "Anesco",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.24478206294772,
+    "lat": 51.734537360084,
+    "name": "Savills",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.5,
+    "lng": -0.891533747235234,
+    "name": "RNA Energy Limited",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 50.0,
+    "lng": 0.34626561215696,
+    "name": "Aton Energy ESS 1 Ltd",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.0323617704276503,
+    "lat": 51.4678084722371,
+    "name": "Anesco",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.257841402702002,
+    "lat": 51.7778594093801,
+    "name": "Port of Tillbury London Ltd",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.357292196835422,
+    "lat": 51.9675499641284,
+    "name": "Tilbury Green Power Ltd",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.35586618887413,
+    "lat": 52.6002037072308,
+    "name": "Astra Ventures Ltd",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.250191508721633,
+    "lat": 52.275612483797,
+    "name": "REG Ockendon Solar Ltd",
+    "type": "Wind",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.1,
+    "lat": 51.6522880621586,
+    "name": "Tci Renewables Limited",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.999,
+    "lng": 0.554421282280428,
+    "name": "BSR Applications Limited",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.05,
+    "lat": 51.9548319616013,
+    "name": "Low Carbon Limited",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.0,
+    "lat": 51.5854715462153,
+    "name": "Park Farm Dunton",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.4,
+    "lat": 51.5907620266729,
+    "name": "Clearaway Recycling Limited",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.625360034096958,
+    "lat": 52.0927798540344,
+    "name": "PPS Ltd",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.6,
+    "lat": 52.6289462015871,
+    "name": "GTC the Electricity Network Co Ltd",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.85955831368958,
+    "lat": 51.6766717114109,
+    "name": "Suncredit Solutions",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.034039437614529,
+    "lat": 52.0524077776983,
+    "name": "Gridserve",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.128037205613197,
+    "lat": 52.5964617540936,
+    "name": "BSR Applications",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.649967861048468,
+    "lat": 51.7057731191455,
+    "name": "SCOTTISHPOWER Renewables",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.05,
+    "lat": 52.2483023600909,
+    "name": "Low Carbon",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.715022515280885,
+    "lat": 52.2921501330751,
+    "name": "BSR Applications Ltd",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.122,
+    "lat": 52.5499070275413,
+    "name": "Pathfinder Clean Energy (PACE)",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.644801147869627,
+    "lat": 51.8408697552419,
+    "name": "Bouygues E & S FM UK Limited",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.1,
+    "lat": 51.8458562112571,
+    "name": "Innova Renewable",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.533963297969186,
+    "lat": 52.8780899233313,
+    "name": "Foresight Group LLP",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.11646817778908,
+    "lat": 51.9350689491325,
+    "name": "Regener8 Power Ltd",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": -0.46931182654072,
+    "name": "Low Carbon Solar Investment Company",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 2.0,
+    "lat": 51.4710250687381,
+    "name": "Amber Energy",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.25167534974757,
+    "lat": 52.6876697512055,
+    "name": "DNOC",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.99,
+    "lng": -0.0156229162341717,
+    "name": "Roadnight Taylor",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.484034914334611,
+    "lat": 51.9770542652368,
+    "name": "Pathfinder Clean Energy (PACE)",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.0516081892670921,
+    "lat": 51.599916196311,
+    "name": "Solar Century Holdings Ltd",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.1,
+    "lat": 52.6476174791495,
+    "name": "Anesco",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.12,
+    "lat": 52.5203830724735,
+    "name": "SSE",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.5,
+    "lng": 0.314426270483986,
+    "name": "Vattenfall Networks",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.82,
+    "lat": 51.9365405036988,
+    "name": "Wessex Solar Energy",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.323765301824714,
+    "lat": 52.2671844620186,
+    "name": "Anesco Limited",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.999,
+    "lat": 51.5127315535601,
+    "name": "AMERESCO",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": 0.187379248658983,
+    "name": "Weirdrove",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.0,
+    "lat": 51.8388543081294,
+    "name": "Anglo Renewables",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.0,
+    "lat": 52.3543895231933,
+    "name": "Renewables",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.1,
+    "lat": 52.4114650088853,
+    "name": "Evans Energy",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.81516083063085,
+    "lat": 51.7843003636362,
+    "name": "RNA Energy Limited",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.0,
+    "lat": 52.3539562343933,
+    "name": "Anesco",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.37480846951334,
+    "lat": 51.8465038575982,
+    "name": "Anesco",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 50.526,
+    "lng": 0.2,
+    "name": "Pathfinder Clean Energy",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.15,
+    "lat": 51.9902335257041,
+    "name": "Infraland",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.893603448528491,
+    "lat": 51.6995646092961,
+    "name": "Infraland",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.0,
+    "lat": 51.8140715258763,
+    "name": "Long Meadow Solar Farm Limited",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.0,
+    "lat": 52.6448821503851,
+    "name": "Stark Energy",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.0,
+    "lat": 51.7715056888413,
+    "name": "Stark Energy Limited",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 50.0,
+    "lng": 0.687665651705224,
+    "name": "CX Group",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.0,
+    "lat": 51.8662909811624,
+    "name": "Low Carbon UK",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.1,
+    "lat": 52.706058690006,
+    "name": "Low Carbon Solar Park 25 Ltd",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.0,
+    "lat": 52.2170204976356,
+    "name": "Biogas Technology",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": 0.499,
+    "name": "Renewable Connections",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": 0.668374130869201,
+    "name": "CX Group",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": 0.00191235852756151,
+    "name": "Innova Renewables",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.1,
+    "lat": 51.9273590528664,
+    "name": "Renewable Energy Systems",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.8,
+    "lng": 0.593035062117662,
+    "name": "PACE SUNSHINE ENERGY LTD",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.819380125941859,
+    "lat": 51.8728043752782,
+    "name": "RNA-Energy Ltd",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.0,
+    "lat": 52.6033548891816,
+    "name": "Aura Power",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.0,
+    "lat": 52.2156306274939,
+    "name": "Data not available",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.15,
+    "lat": 51.6204775969733,
+    "name": "INFINIS",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.0,
+    "lat": 52.2058750390358,
+    "name": "RNA Energy",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": 0.1,
+    "name": "Green Switch Capital Limited",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.1,
+    "lat": 51.6595872912722,
+    "name": "Road Night Taylor",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.1,
+    "lat": 51.7231930103897,
+    "name": "Green Switch Capital Limited",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.0,
+    "lat": 52.672178889881,
+    "name": "Photon Energy",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": 0.25,
+    "name": "Road Night Taylor",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": 0.75,
+    "name": "Dowing",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.1,
+    "lat": 51.7384529908615,
+    "name": "Novated to Conrad Energy (Developments) II Limited",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.7,
+    "lat": 52.6664613961886,
+    "name": "Bluestone Energy Limited",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.5,
+    "lng": -0.35484829575719,
+    "name": "Path Finder CE",
+    "type": "Solar PV",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.23025427783057,
+    "lat": 52.5895525132458,
+    "name": "Mott Mac",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 2.0,
+    "lat": 52.4916676178352,
+    "name": "Infinis",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 50.0,
+    "lng": 2.0,
+    "name": "Industria Resources",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.321785282302551,
+    "lat": 51.5150091702824,
+    "name": "Green Switch Capital Limited",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.0,
+    "lat": 51.5037395804935,
+    "name": "Data not available",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.2,
+    "lat": 52.5959126582783,
+    "name": "Infinis Solar Ltd",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.04,
+    "lat": 51.6653978278739,
+    "name": "Biogas Technology Ltd",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.185042668438081,
+    "lat": 52.2657724671462,
+    "name": "IB Vogt UK Ltd",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.821133170895735,
+    "lat": 51.8360341462833,
+    "name": "The Farm Energy Company Ltd",
+    "type": "Wind",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.3,
+    "lat": 52.8267094719239,
+    "name": "Arnold White Group",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.2,
+    "lat": 52.3109154887329,
+    "name": "Certus Utility Consulting Ltd",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.66413819118519,
+    "lat": 52.554071869546,
+    "name": "Green Switch Capital Ltd",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.18,
+    "lat": 52.7717705849105,
+    "name": "Severn Trent Green Power",
+    "type": "Wind",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.15516281378299,
+    "lat": 52.320435687207,
+    "name": "AGR Group",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.16,
+    "lat": 51.5963140941004,
+    "name": "Stark Energy Limited",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.1,
+    "lat": 52.1807299356213,
+    "name": "DNO Consulting Ltd",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": 0.143215867135325,
+    "name": "Ig Renewables Ltd",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.99,
+    "lng": 0.0,
+    "name": "EDF Energy Renewables Limited",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 50.0,
+    "lng": 1.18746695331671,
+    "name": "IB Vogt UK Ltd",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.2,
+    "lat": 51.6184403676612,
+    "name": "Stark Energy Limited",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 50.0,
+    "lng": -0.0131091163195803,
+    "name": "QC Otranto Limited",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.17281201323008,
+    "lat": 51.4908721365095,
+    "name": "Thames Water Utilities Limited",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.01586249957824,
+    "lat": 52.1710517106395,
+    "name": "AMK",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.14,
+    "lat": 51.4909842408467,
+    "name": "WSP",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.647360378973974,
+    "lat": 51.8067907862005,
+    "name": "AMP Clean Energy",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.842054356543918,
+    "lat": 51.8221883944445,
+    "name": "AMP Energy Services",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.07,
+    "lat": 51.8729771823758,
+    "name": "AMP Energy Services",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.5,
+    "lat": 51.578307402085,
+    "name": "THAMES MARINE SERVICE LIMITED",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.0662170708006535,
+    "lat": 51.7691906549192,
+    "name": "AMP Energy Services",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.391908440694352,
+    "lat": 51.6274437984908,
+    "name": "AMP Energy Services",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 2.0,
+    "lat": 52.1015687059126,
+    "name": "AMP Energy Services",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 2.0,
+    "lat": 51.5542924976901,
+    "name": "BELLS POWER SOLUTIONS",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.001,
+    "lat": 51.5159673806871,
+    "name": "IMPACT POWER LIMITED",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.0,
+    "lat": 51.5077549358812,
+    "name": "Cant find ",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.0,
+    "lat": 51.4957269912066,
+    "name": "SYZYGY RENEWABLES LTD",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.17485601586476,
+    "lat": 51.4988443377729,
+    "name": "Crossness Sewage Treatment Works",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.892566223331651,
+    "lat": 52.732423322629,
+    "name": "Anglian Water",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.2,
+    "lat": 52.3240978673183,
+    "name": "Anglian Water",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.508362841109026,
+    "lat": 51.5397652126637,
+    "name": "Anglian Water",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.0830317288879995,
+    "lat": 51.5343310591905,
+    "name": "Riverside Resource Recovery Limited",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.174071865125001,
+    "lat": 51.4864464175609,
+    "name": "Bluestone Energy Limited",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 2.0,
+    "lat": 51.4290820160079,
+    "name": "Data not available",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.891448167922131,
+    "lat": 51.1291992829576,
+    "name": "Data not available",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.143347667251836,
+    "lat": 51.2452412483165,
+    "name": "Data not available",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.141,
+    "lat": 52.6015296735664,
+    "name": "1014569486620",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.27876225912817,
+    "lat": 52.0403621703892,
+    "name": "ANGLIAN WATER SERVICES",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.2,
+    "lat": 51.5223399230271,
+    "name": "ANGLIAN WATER SERVICES",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.678752782492007,
+    "lat": 51.4480206335655,
+    "name": "Data not available",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.0879852823781997,
+    "lat": 51.3559502369988,
+    "name": "Data not available",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.159967316124997,
+    "lat": 51.3887223494772,
+    "name": "Data not available",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.26020453817683,
+    "lat": 51.4400230426923,
+    "name": "Data not available",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.09496697393922,
+    "lat": 51.3528833739766,
+    "name": "Data not available",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.3,
+    "lat": 50.9307811572467,
+    "name": "Data not available",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 50.0,
+    "lng": 0.414823754007693,
+    "name": "Data not available",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 50.9,
+    "lng": -0.540067482026636,
+    "name": "Data not available",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.235813697492212,
+    "lat": 51.4680006605995,
+    "name": "Data not available",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.5,
+    "lat": 51.5697561767421,
+    "name": "Anglian Water Services Ltd",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.75,
+    "lat": 51.5881535057707,
+    "name": "ANGLIAN WATER SERVICES LTD",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.34617128252715,
+    "lat": 51.2865226569877,
+    "name": "Data not available",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.0,
+    "lat": 51.3904242913802,
+    "name": "Data not available",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.10456657566922,
+    "lat": 52.0963492428489,
+    "name": "Anglian Water Services Ltd",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.09527613439875,
+    "lat": 51.3538466132068,
+    "name": "Data not available",
+    "type": "Wind",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.049,
+    "lat": 50.9630058179529,
+    "name": "Data not available",
+    "type": "Wind",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.751261181283115,
+    "lat": 51.3621935852515,
+    "name": "Data not available",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.359355121476421,
+    "lat": 50.8288396434163,
+    "name": "Data not available",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.02,
+    "lat": 52.855901676776,
+    "name": "ANGLIAN WATER SERVICES LTD",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.5,
+    "lat": 51.3461413383276,
+    "name": "Large glass house only contact ",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.31713596444605,
+    "lat": 50.889716131915,
+    "name": "Large power station now owned by VPI",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.0,
+    "lat": 52.4161772616878,
+    "name": "Can't find ",
+    "type": "Wind",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.613522736980548,
+    "lat": 51.4638924285304,
+    "name": "Data not available",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.199385722287297,
+    "lat": 51.2971553332348,
+    "name": "Data not available",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.19459959881934,
+    "lat": 51.3461413383276,
+    "name": "Data not available",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.0947139405294368,
+    "lat": 51.3226166946001,
+    "name": "Data not available",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.461872876917175,
+    "lat": 51.3148357109007,
+    "name": "Data not available",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.226770480489826,
+    "lat": 50.9714937369044,
+    "name": "Water Works ",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.166613956668468,
+    "lat": 50.9702051856551,
+    "name": "Data not available",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.51889814303442,
+    "lat": 52.5790347690509,
+    "name": "Contact CBRE appears to tbe the parks",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.34617128252715,
+    "lat": 51.2865226569877,
+    "name": "1997000000166",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.454637961273463,
+    "lat": 51.3709542660812,
+    "name": "1997000000101",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.5,
+    "lng": -0.548720979133166,
+    "name": "Data not available",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.0759827251393119,
+    "lat": 50.9715677492836,
+    "name": "Data not available",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.115809639531428,
+    "lat": 50.8934990179818,
+    "name": "Data not available",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.85814984870953,
+    "lat": 51.1506065403151,
+    "name": "Data not available",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.31632609499249,
+    "lat": 51.4508522023005,
+    "name": "Data not available",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.16,
+    "lat": 50.9770509345758,
+    "name": "Data not available",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.44945573524338,
+    "lat": 50.8865230559173,
+    "name": "Data not available",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.745022088481806,
+    "lat": 51.3671697636855,
+    "name": "Data not available",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.25,
+    "lat": 50.8301115813601,
+    "name": "Data not available",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.27192504445317,
+    "lat": 51.1621975237874,
+    "name": "Data not available",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.16,
+    "lat": 51.4199916377711,
+    "name": "Data not available",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": 0.117470384996143,
+    "name": "Data not available",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.179524460822792,
+    "lat": 51.1352417157902,
+    "name": "Data not available",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 50.92,
+    "lng": 0.964,
+    "name": "Data not available",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.692308377359032,
+    "lat": 51.3432107908354,
+    "name": "Data not available",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": 0.1,
+    "name": "Data not available",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.2852551422547,
+    "lat": 51.3556486155005,
+    "name": "Data not available",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": 0.3,
+    "name": "Data not available",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.34869713719805,
+    "lat": 51.3101795069974,
+    "name": "Data not available",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": 0.5,
+    "name": "Data not available",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.2,
+    "lat": 51.319297303701,
+    "name": "Data not available",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.352761290699665,
+    "lat": 50.9487065543287,
+    "name": "Data not available",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": 0.2,
+    "name": "Data not available",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.09844930367771,
+    "lat": 52.1039481491474,
+    "name": "Data not available",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.243510211705378,
+    "lat": 51.770693401011,
+    "name": "REN POWER INVESTMENTS UK LIMITED",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.025,
+    "lat": 52.5207430206513,
+    "name": "AEE Renewables plc",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.12575890068678,
+    "lat": 52.3660218218867,
+    "name": "Solar Power Generation Ltd",
+    "type": "Wind",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.389100856289588,
+    "lat": 52.7709742910551,
+    "name": "Prosolia UK Ltd",
+    "type": "Wind",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.350853704488774,
+    "lat": 52.4592219077133,
+    "name": "LUMICITY 1 LIMITED",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.05,
+    "lat": 52.856558549845,
+    "name": "Sun & Alternative Technology Ltd",
+    "type": "Wind",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.111669749612972,
+    "lat": 51.6964416314282,
+    "name": "Push Energy",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.868207724725238,
+    "lat": 51.6567372851448,
+    "name": "Push Energy Ltd",
+    "type": "Wind",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.199894843549983,
+    "lat": 51.9817576671552,
+    "name": "MIDDLEWICK WIND FARM LTD",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.491173996397314,
+    "lat": 52.1954552244391,
+    "name": "Lark Energy Ltd",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.068,
+    "lat": 51.9522471441131,
+    "name": "Mosscliff Environmental Limited",
+    "type": "Wind",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.00976269540928373,
+    "lat": 51.7613391000051,
+    "name": "Waterloo Solar Park Ltd",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.1,
+    "lat": 52.0647769613557,
+    "name": "Solar Inc Ltd",
+    "type": "Wind",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.0470888300828964,
+    "lat": 51.5783669647528,
+    "name": "Maybe back up",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.5,
+    "lat": 52.307699678741,
+    "name": "G2 Energy",
+    "type": "Wind",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.0,
+    "lat": 51.577504956928,
+    "name": "York Green Renewables Ltd",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.3374910858328,
+    "lat": 52.0318760798367,
+    "name": "Genatec Ltd",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.0,
+    "lat": 51.6061146729154,
+    "name": "Redacted",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.175745817462133,
+    "lat": 51.4267290486196,
+    "name": "Battersea Main Energy Centre",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.17599271056651,
+    "lat": 52.7001646101386,
+    "name": "Grupotec Solar UK 3 Ltd",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.095,
+    "lat": 51.6153896178975,
+    "name": "Abbey Group Ltd",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.166926776494753,
+    "lat": 51.4931165422943,
+    "name": "Water Works ",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.016,
+    "lat": 52.0329334686746,
+    "name": "Global Heat Source",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 2.0,
+    "lat": 52.6015296735664,
+    "name": "WHITTLESEY LTD",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.512945728234627,
+    "lat": 50.8501135760766,
+    "name": "Landfill",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.65442866281207,
+    "lat": 52.7100228924767,
+    "name": "Landfill",
+    "type": "Wind",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.5,
+    "lat": 52.6471103973818,
+    "name": "ECOTECH WIND PARK LTD",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.2,
+    "lat": 52.8777536529738,
+    "name": "ANGLIAN WATER SERVICES LTD",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.56,
+    "lat": 51.7080536313633,
+    "name": "Landfill",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.286701455266147,
+    "lat": 50.8980507742908,
+    "name": "Landfill",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.66949216466649,
+    "lat": 52.707758193591,
+    "name": "AASHMAN POWER LTD",
+    "type": "Wind",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.8,
+    "lat": 51.5150091702824,
+    "name": "THE FARM ENERGY PARTNERSHIP",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.153690265141906,
+    "lat": 52.5818094252536,
+    "name": "GLASS MOOR WINDFARM",
+    "type": "Wind",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.723398289819346,
+    "lat": 52.4468745270603,
+    "name": "SCOTTISHPOWER STRATEGIC TRANSACTIONS",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.132555031758593,
+    "lat": 52.3985846264914,
+    "name": "SCROBY SANDS GENERATION",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.0219550879912207,
+    "lat": 52.5360518409568,
+    "name": "WADLOW ENERGY LIMITED",
+    "type": "Wind",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.153690265141906,
+    "lat": 52.5818094252536,
+    "name": "WADLOW ENERGY LIMITED",
+    "type": "Wind",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.0252950714048235,
+    "lat": 52.5086382812422,
+    "name": "REG BURNTHOUSE LTD",
+    "type": "Wind",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.201236473620055,
+    "lat": 52.5761350603915,
+    "name": "CO-OPERATIVE GROUP LIMITED",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.17939869762038,
+    "lat": 51.8258798015729,
+    "name": "RANSON MOOR WINDFARM",
+    "type": "Wind",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.440523227159434,
+    "lat": 51.7714849115649,
+    "name": "NATIONAL GRID ELECTRICITY TRANSMISSION PLC",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 50.0,
+    "lng": -0.103639055072669,
+    "name": "Stratera Energy Ltd",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.9,
+    "lat": 51.158359072959,
+    "name": "Landfill",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.0,
+    "lat": 51.886450275694,
+    "name": "CLP Envirogas Ltd",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.5,
+    "lng": 0.722773939541687,
+    "name": "Sweco UK Ltd",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.483268942694677,
+    "lat": 51.9876633380831,
+    "name": "Red Triangle Energy Ltd",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.2,
+    "lat": 51.7465074676878,
+    "name": "Anesco Ltd",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.0,
+    "lat": 52.0705148160138,
+    "name": "MJS Grid Services Ltd",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.5,
+    "lng": 0.356023510607946,
+    "name": "Sweco UK Ltd",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 50.0,
+    "lng": -0.0404198539533117,
+    "name": "Connect2Grid",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.187,
+    "lat": 51.5068602626685,
+    "name": "Look up later ",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.1,
+    "lat": 51.7672358114983,
+    "name": "The Abbey Group Cambridgeshire Ltd",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.2,
+    "lat": 52.6033548891816,
+    "name": "Lightsource Renewable Energy Ltd",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 2.0,
+    "lat": 52.2569502839238,
+    "name": "Leanne",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.0,
+    "lat": 52.0100666903064,
+    "name": "Pretoria Energy Company Ltd",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.640210088462461,
+    "lat": 51.8078149787702,
+    "name": "Belectric Solar Ltd",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.431390353864537,
+    "lat": 52.0735944864202,
+    "name": "MJS Grid Services Ltd",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": 0.0,
+    "name": "MJS Grid Services Ltd",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.515359545640524,
+    "lat": 51.7113864471861,
+    "name": "Low Carbon Alliance",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.3,
+    "lat": 51.5818858936375,
+    "name": "Conrad Energy (Developments) Ltd",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.1,
+    "lat": 51.937492573221,
+    "name": "PACE Pathfinder Clean Energy",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.1,
+    "lat": 52.0733227623993,
+    "name": "RNA Energy Limited",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.0299792889834682,
+    "lat": 52.2610119830899,
+    "name": "Infraland",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.572807472691426,
+    "lat": 51.5986699297524,
+    "name": "DB Symmetry Ltd",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.5159481935438,
+    "lat": 52.452141045374,
+    "name": "HVSS",
+    "type": "Wind",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 2.0,
+    "lat": 51.475371809397,
+    "name": "Utility Connections",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": 0.437597997221989,
+    "name": "Renewable Connections Developments Ltd",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.0,
+    "lat": 52.7216631532733,
+    "name": "Conrad Energy",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 50.0,
+    "lng": 0.2,
+    "name": "Intelligent Alternatives Limited",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 50.0,
+    "lng": 0.0,
+    "name": "TAG UK",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.0112405625969,
+    "lat": 51.9205979887972,
+    "name": "Infraland",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.999,
+    "lng": 0.449008340360516,
+    "name": "C X-Group",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.35586618887413,
+    "lat": 52.6002037072308,
+    "name": "RNA-Energy Ltd",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.220144915947233,
+    "lat": 52.7201295103614,
+    "name": "Infraland Ltd",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.98,
+    "lat": 51.9513005977536,
+    "name": "Blue Stone Felstead 1 Ltd",
+    "type": "Wind",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.9,
+    "lat": 51.8711742055611,
+    "name": "Certus Utility",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 55.0,
+    "lng": 0.198376305303469,
+    "name": "Fichtner Consulting Engineers Ltd",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.198641266449664,
+    "lat": 52.720368441733,
+    "name": "The Abbey Group Cambridgeshire Ltd",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.1,
+    "lat": 51.4706261896177,
+    "name": "Low Carbon",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.2,
+    "lat": 52.7199482187752,
+    "name": "Anglian Water Services Ltd",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.18383280802891,
+    "lat": 52.6512822341811,
+    "name": "Data not available",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.18383280802891,
+    "lat": 52.6512822341811,
+    "name": "Data not available",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 50.0,
+    "lng": 0.475,
+    "name": "Greenfield Energy Ltd",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.299228610172882,
+    "lat": 51.5333318061546,
+    "name": "Cragside Energy Ltd",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": 0.908298214297911,
+    "name": "Sky UK Development Limited",
+    "type": "Wind",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.5,
+    "lat": 52.2792457297738,
+    "name": "Blenheim Renewables Limited",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.6,
+    "lat": 52.5026836015244,
+    "name": "OPD Energy",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.559892248565995,
+    "lat": 52.5026836015244,
+    "name": "Infraland",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.16,
+    "lat": 51.9445532556099,
+    "name": "Stark Energy",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.6,
+    "lat": 52.5664580386872,
+    "name": "OPD Energy",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.312096160978859,
+    "lat": 52.274175690397,
+    "name": "OPD Energy",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.569425843922723,
+    "lat": 51.5999041785639,
+    "name": "Electric Land",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.501570979218969,
+    "lat": 51.9271061041233,
+    "name": "GRENERGY RENEWABLES UK LIMITED",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.221077768681199,
+    "lat": 51.735565687352,
+    "name": "BSR Applications Ltd",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.20626680997642,
+    "lat": 52.6284720755926,
+    "name": "BSR Applications Limited",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.99,
+    "lng": -0.30182768052821,
+    "name": "Tyler Hill Renewables Ltd",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.393631352029182,
+    "lat": 51.5552929494353,
+    "name": "Kier Property Management Company Ltd",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.0,
+    "lat": 52.5823368250833,
+    "name": "Grupotec Renewables Ltd",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.29981667769826,
+    "lat": 52.5998913456834,
+    "name": "IGP International Prospecting Ltd",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.357292196835422,
+    "lat": 51.9675499641284,
+    "name": "MESPIL Solar ENERGY LIMITED",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.09183145052421,
+    "lat": 52.084929353605,
+    "name": "Cubico UK Development Ltd",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.879791327427358,
+    "lat": 51.7508472269656,
+    "name": "Gridsource Limited",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.3,
+    "lat": 52.2542940928507,
+    "name": "IG RENEWABLE ENERGY UK LTD",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.2,
+    "lat": 52.1665469104369,
+    "name": "IG Renewables Ltd",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.0,
+    "lat": 52.5700969351457,
+    "name": "Padero Solaer",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.0131091163195803,
+    "lat": 51.4605773580529,
+    "name": "BSR Applications Limited",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 2.0,
+    "lat": 51.4110023841218,
+    "name": "Data not available",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.4,
+    "lat": 51.4543312011086,
+    "name": "Walworth Garage",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.7,
+    "lat": 51.512720053459,
+    "name": "Sainsburys Distribution Depot",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.138384193401002,
+    "lat": 51.4972369180922,
+    "name": "Jonathan ",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.5,
+    "lat": 51.5185956729543,
+    "name": "Sweco UK Ltd",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 2.0,
+    "lat": 51.4856378605776,
+    "name": "BELLS POWER SOLUTIONS",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.20030920686222,
+    "lat": 52.7006792726214,
+    "name": "Ian ",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.0,
+    "lat": 51.5077549358812,
+    "name": "Powerplan Ltd",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.6,
+    "lat": 51.4910752355057,
+    "name": "British American Tobacco",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 52.0,
+    "lng": 0.218994266894553,
+    "name": "Cory Riverside Energy",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.2852551422547,
+    "lat": 51.3556486155005,
+    "name": "LONDON LOW CARBON ENERGY CENTRE",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.143347667251836,
+    "lat": 51.2452412483165,
+    "name": "Data not available",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.129633086099427,
+    "lat": 51.3818572420957,
+    "name": "Data not available",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.2,
+    "lat": 50.8854612875529,
+    "name": "Data not available",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.518190688342757,
+    "lat": 51.3499172059294,
+    "name": "Data not available",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.12706807694528,
+    "lat": 51.3273129248668,
+    "name": "Data not available",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.463229963323454,
+    "lat": 51.3307887039417,
+    "name": "Data not available",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.13253532735138,
+    "lat": 51.3783424279648,
+    "name": "Data not available",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.749207852174833,
+    "lat": 51.4365134962449,
+    "name": "Data not available",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.31316327039127,
+    "lat": 51.1210159850465,
+    "name": "Data not available",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.37488741662256,
+    "lat": 52.7740471616555,
+    "name": "BRITISH SUGAR",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.29264877098368,
+    "lat": 51.3629876146874,
+    "name": "Data not available",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.978813953711646,
+    "lat": 51.3258374659659,
+    "name": "Data not available",
+    "type": "Fossil fuel",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 58.0,
+    "lng": 1.12860140039169,
+    "name": "British Sugar",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.5,
+    "lng": -0.143347667251836,
+    "name": "Data not available",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 54.0,
+    "lng": -0.0402961882689559,
+    "name": "BRITISH SUGAR PLC",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.2,
+    "lat": 51.4631371472689,
+    "name": "Data not available",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.759400745308075,
+    "lat": 51.3668677834186,
+    "name": "Data not available",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.34617128252715,
+    "lat": 51.2865226569877,
+    "name": "Data not available",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.0,
+    "lng": 0.933821737205951,
+    "name": "Data not available",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.226770480489826,
+    "lat": 50.9714937369044,
+    "name": "Data not available",
+    "type": "Storage",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.95,
+    "lat": 51.8442826619673,
+    "name": "Data not available",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.0610263227114793,
+    "lat": 52.5683713606357,
+    "name": "AMEYCESPA (EAST) LTD",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.33,
+    "lat": 52.6003547006552,
+    "name": "Freedom Group",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.143841829867551,
+    "lat": 52.003690776984,
+    "name": "Solar Inc Ltd",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.09,
+    "lat": 52.0555047530037,
+    "name": "Solar Power Generation Ltd",
+    "type": "Wind",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.363387043887577,
+    "lat": 51.4513066077186,
+    "name": "Co-Operative Group Plc",
+    "type": "Wind",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.53096255531267,
+    "lat": 52.3634398769553,
+    "name": "Belectric Solar Ltd",
+    "type": "Wind",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.297744228379356,
+    "lat": 52.3436158589611,
+    "name": "TH Companies",
+    "type": "Wind",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.913167578584311,
+    "lat": 51.723245721289,
+    "name": "RES",
+    "type": "Wind",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.10751924841018,
+    "lat": 51.8043639536725,
+    "name": "EW Pepper Ltd",
+    "type": "Wind",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.05,
+    "lat": 52.4981820262169,
+    "name": "Inazin Power Ltd",
+    "type": "Wind",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.15,
+    "lat": 52.4807895743132,
+    "name": "Npower Renewables",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.847292803778427,
+    "lat": 51.8477483769952,
+    "name": "Solar Inc Ltd",
+    "type": "Wind",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.471318006117182,
+    "lat": 52.1033180589355,
+    "name": "Farm Wind Ltd",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.56519554927145,
+    "lat": 52.8708910797047,
+    "name": "Lightsource Renewable Energy Ltd",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.0,
+    "lat": 52.4610033666658,
+    "name": "Alan Bartlett & Sons Ltd",
+    "type": "Wind",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.0,
+    "lat": 51.6342535524824,
+    "name": "Anglian Water Services Ltd",
+    "type": "Wind",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.726938113432402,
+    "lat": 52.2543034111467,
+    "name": "Island Green Power",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.0170605647312939,
+    "lat": 51.7748644598419,
+    "name": "Solarcentury Holdings Limited",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.263310640994853,
+    "lat": 52.3307068466821,
+    "name": "CAMGRAIN",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.232463227969062,
+    "lat": 51.504063543895,
+    "name": "Solar Inc Ltd",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.0,
+    "lat": 51.2934279348589,
+    "name": "Data not available",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 50.658,
+    "lng": 0.306592503814244,
+    "name": "CEMG EXPORT PORTFOLIO",
+    "type": "Wind",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.1335135922108,
+    "lat": 52.5736328860478,
+    "name": "JACKS LANE ENERGY LIMITED",
+    "type": "Wind",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.5,
+    "lng": 0.709627366135915,
+    "name": "Rethink Energy Ltd",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.0,
+    "lat": 52.4808542221166,
+    "name": "Anglian Water Services Ltd",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.280173531264773,
+    "lat": 52.2743086894324,
+    "name": "Green Frog",
+    "type": "Wind",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.525323656667058,
+    "lat": 52.0733096701771,
+    "name": "KENTISH SOLAR FARM",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.0,
+    "lat": 51.951309415611,
+    "name": "Centrica",
+    "type": "Wind",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 50.0,
+    "lng": 0.5,
+    "name": "Aton Energy Development Limited",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.505372323681761,
+    "lat": 51.5123634176671,
+    "name": "Eclipse Power",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.206763294480742,
+    "lat": 52.5777653384213,
+    "name": "Intelligent Alternatives",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 50.0,
+    "lng": 0.5,
+    "name": "EXAGEN",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.8,
+    "lat": 52.2916858574405,
+    "name": "Sky UK Development Ltd",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.25,
+    "lat": 52.74295102135,
+    "name": "Blenheim Renewables Limited",
+    "type": "Wind",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.0,
+    "lat": 51.5272718653198,
+    "name": "Syzygy Consulting",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.319738791864878,
+    "lat": 51.0996063175678,
+    "name": "Data not available",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.286701455266147,
+    "lat": 50.8980507742908,
+    "name": "Data not available",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.31976799397637,
+    "lat": 51.0995887514585,
+    "name": "Data not available",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.863091399301146,
+    "lat": 51.3930425207582,
+    "name": "Data not available",
+    "type": "Wind",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.49326057031533,
+    "lat": 51.2926406932017,
+    "name": "Data not available",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.2,
+    "lat": 51.4513705459477,
+    "name": "1900020430212",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.0,
+    "lat": 53.0,
+    "name": "BESS",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.512945728234627,
+    "lat": 50.8501135760766,
+    "name": "Data not available",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.271368612868618,
+    "lat": 50.8239573709265,
+    "name": "Data not available",
+    "type": "Wind",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.319738791864878,
+    "lat": 51.0996063175678,
+    "name": "Data not available",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.11626863828653,
+    "lat": 52.1071026150137,
+    "name": "CORY ENVIRONMENTAL LTD",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.249077645304771,
+    "lat": 51.4513705459477,
+    "name": "Data not available",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.0,
+    "lat": 52.0,
+    "name": "data not available",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.0,
+    "lat": 50.52631579,
+    "name": "data not available",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": 0.475,
+    "name": "1170001675196",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.696538887573304,
+    "lat": 52.652517947835,
+    "name": "ENERGY 10",
+    "type": "Wind",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 57.07,
+    "lng": 0.0,
+    "name": "1170001991736",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.306592503814244,
+    "lat": 52.1556765846792,
+    "name": "ENERGY POWER RESOURCES LTD",
+    "type": "Wind",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.0,
+    "lat": 52.881801678008,
+    "name": "EPR EYE POWER STATION",
+    "type": "Wind",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 2.0,
+    "lat": 52.3229427431025,
+    "name": "ESSEX & SUFFOLK WATER PLC",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.4,
+    "lat": 51.618706330421,
+    "name": "FUTURE BIO FUELS",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.46,
+    "lat": 50.9168116900122,
+    "name": "Data not available",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.12215561985728,
+    "lat": 52.4615288629933,
+    "name": "GLAXO SMITH KLINE",
+    "type": "Wind",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.0,
+    "lat": 56.0,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.0,
+    "lat": 55.0,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.683497290185015,
+    "lat": 52.6568606886908,
+    "name": "Abbey View Producers",
+    "type": "Wind",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 57.4,
+    "lng": 0.475,
+    "name": "2100041422668",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 53.895,
+    "lng": 0.0788499999999999,
+    "name": "2100041612468",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.35015239040666,
+    "lat": 51.3090764222896,
+    "name": "Data not available",
+    "type": "Wind",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.0,
+    "lat": 51.4911869013834,
+    "name": "INFINIS",
+    "type": "Biogas",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.0180375753982001,
+    "lat": 52.4297985969062,
+    "name": "INFINIS LIMITED",
+    "type": "Wind",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 2.0,
+    "lat": 50.019,
+    "name": "2200042538720",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.175511201428117,
+    "lat": 52.5594677203567,
+    "name": "INFINIS LTD",
+    "type": "Wind",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 57.6,
+    "lng": 0.475,
+    "name": "2200043470729",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.99,
+    "lng": 0.001,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": 1.0,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": 0.3,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.99,
+    "lng": 0.5,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.99,
+    "lng": 0.5,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": 0.025,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 59.92,
+    "lng": 0.25,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": 0.25,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": 0.4,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": 0.0,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": 0.1,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": 0.1,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": 0.001,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.99,
+    "lng": 0.001,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.99,
+    "lng": 0.5,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 60.0,
+    "lng": 0.352,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.99,
+    "lng": 0.3,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": 0.25,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": 0.5,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": 0.35,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.95,
+    "lng": 0.526,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 52.631,
+    "lng": 0.499,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": 0.25,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": 0.15,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": 0.1,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 50.0,
+    "lng": 0.1,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.4,
+    "lat": 49.9,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": 0.35,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": 0.001,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.95,
+    "lng": 0.5,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": 0.8,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": 0.4,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": 0.2,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.4,
+    "lat": 49.9,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": 0.499,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": 0.5,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": 0.3,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.999,
+    "lng": 0.1,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": 0.2,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": 0.25,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.49,
+    "lng": 0.2,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": 0.2,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": 0.5,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": 0.2,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 51.55789,
+    "lng": 0.5,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": 0.0,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.92,
+    "lng": 0.3,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": 0.2,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.5,
+    "lng": 0.12,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": 0.35,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": 0.25,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.99,
+    "lng": 0.6,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": 0.2,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": 0.6,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": 0.75,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": 0.25,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": 1.0,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.5,
+    "lng": 0.5,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": 0.352,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": 0.09,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": 0.8,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": 0.8,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": 0.6,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.5,
+    "lng": 0.0,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": 0.35,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": 0.0,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.99,
+    "lng": 0.499,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": 0.2,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": 0.2,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": 0.6,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": 0.5,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.99,
+    "lng": 0.25,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": 0.25,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 55.2,
+    "lng": 0.0,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": 0.2,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": 0.1,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.0499,
+    "lat": 49.9,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": 0.1,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 52.8,
+    "lng": 0.5,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.4,
+    "lat": 60.8,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.9,
+    "lng": 0.0,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.4,
+    "lat": 49.9,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lat": 49.999,
+    "lng": 0.75,
+    "name": "data not applicable",
+    "type": "Unknown",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.1,
+    "lat": 52.5736757131996,
+    "name": "NATIONAL GRID GAS PLC",
+    "type": "Wind",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.14408688605513,
+    "lat": 51.790925157012,
+    "name": "NG Bailey",
+    "type": "Wind",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.8,
+    "lat": 52.4797470626083,
+    "name": "NM RENEWABLE ENERGY",
+    "type": "Wind",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.171801253980993,
+    "lat": 52.5564434461282,
+    "name": "NON FOSSIL PURCHASING AGENCY",
+    "type": "Wind",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.73095837704539,
+    "lat": 52.5916044490958,
+    "name": "NON FOSSIL PURCHASING AGENCY",
+    "type": "Wind",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.185,
+    "lat": 52.6277121965232,
+    "name": "OCCUPIER UNKNOWN",
+    "type": "Wind",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 0.747527194031526,
+    "lat": 51.4380009324031,
+    "name": "Data not available",
+    "type": "Wind",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.15227660549401,
+    "lat": 52.7715745360746,
+    "name": "RWE KL Limited",
+    "type": "Wind",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 1.09527613439875,
+    "lat": 51.3538466132068,
+    "name": "Data not available",
+    "type": "Wind",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.00523690194418717,
+    "lat": 52.5210255112729,
+    "name": "Twinwoods Heat & Power Limited",
+    "type": "Wind",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": 2.0,
+    "lat": 51.3949573661076,
+    "name": "Data not available",
+    "type": "Wind",
+    "capacity": 0,
+    "status": "Unknown"
+  },
+  {
+    "lng": -0.105485002634972,
+    "lat": 52.5035217275117,
+    "name": "VIRIDOR WASTE MANAGEMENT LIMITED",
+    "type": "Wind",
+    "capacity": 0,
+    "status": "Unknown"
+  }
+]

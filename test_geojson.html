@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DNO GeoJSON Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .status { padding: 10px; margin: 10px 0; border-radius: 5px; }
+        .success { background: #d4edda; color: #155724; }
+        .error { background: #f8d7da; color: #721c24; }
+        .info { background: #d1ecf1; color: #0c5460; }
+        pre { background: #f4f4f4; padding: 10px; overflow: auto; max-height: 400px; }
+    </style>
+</head>
+<body>
+    <h1>🗺️ DNO GeoJSON Diagnostic Test</h1>
+    <div id="status"></div>
+    <div id="results"></div>
+
+    <script>
+        const statusDiv = document.getElementById('status');
+        const resultsDiv = document.getElementById('results');
+
+        statusDiv.innerHTML = '<div class="status info">⏳ Loading dno_regions.geojson...</div>';
+
+        fetch('dno_regions.geojson')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                statusDiv.innerHTML = '<div class="status success">✅ Successfully loaded GeoJSON!</div>';
+                
+                let html = '<h2>GeoJSON Analysis</h2>';
+                html += `<p><strong>Total Features:</strong> ${data.features.length}</p>`;
+                
+                html += '<h3>DNO License Areas:</h3>';
+                html += '<table border="1" cellpadding="5" style="border-collapse: collapse; width: 100%;">';
+                html += '<tr><th>GSP</th><th>MPAN</th><th>Code</th><th>Area</th><th>DNO Name</th><th>Geometry Type</th><th>Coord Count</th></tr>';
+                
+                data.features.forEach(f => {
+                    const props = f.properties;
+                    const geomType = f.geometry.type;
+                    let coordCount = 0;
+                    
+                    if (geomType === 'Polygon') {
+                        coordCount = f.geometry.coordinates[0].length;
+                    } else if (geomType === 'MultiPolygon') {
+                        f.geometry.coordinates.forEach(poly => {
+                            coordCount += poly[0].length;
+                        });
+                    }
+                    
+                    html += '<tr>';
+                    html += `<td>${props.gsp_group}</td>`;
+                    html += `<td>${props.mpan_id}</td>`;
+                    html += `<td>${props.dno_code}</td>`;
+                    html += `<td>${props.area}</td>`;
+                    html += `<td>${props.dno_name}</td>`;
+                    html += `<td>${geomType}</td>`;
+                    html += `<td style="text-align: right;">${coordCount.toLocaleString()}</td>`;
+                    html += '</tr>';
+                });
+                
+                html += '</table>';
+                
+                html += '<h3>First Feature (Sample):</h3>';
+                html += '<pre>' + JSON.stringify(data.features[0], null, 2).substring(0, 2000) + '...</pre>';
+                
+                html += '<h3>Geometry Check:</h3>';
+                const firstCoord = data.features[0].geometry.coordinates[0][0][0];
+                html += `<p><strong>First coordinate:</strong> [${firstCoord[0]}, ${firstCoord[1]}]</p>`;
+                
+                if (Math.abs(firstCoord[0]) > 180 || Math.abs(firstCoord[1]) > 90) {
+                    html += '<div class="status error">❌ ERROR: Coordinates are NOT in lat/long format!</div>';
+                    html += `<p>X: ${firstCoord[0]} (should be -180 to 180)</p>`;
+                    html += `<p>Y: ${firstCoord[1]} (should be -90 to 90)</p>`;
+                } else {
+                    html += '<div class="status success">✅ Coordinates are in valid lat/long (WGS84) format</div>';
+                    html += `<p>Longitude: ${firstCoord[0]}</p>`;
+                    html += `<p>Latitude: ${firstCoord[1]}</p>`;
+                }
+                
+                resultsDiv.innerHTML = html;
+            })
+            .catch(error => {
+                statusDiv.innerHTML = `<div class="status error">❌ Error loading GeoJSON: ${error.message}</div>`;
+                console.error('Error:', error);
+            });
+    </script>
+</body>
+</html>

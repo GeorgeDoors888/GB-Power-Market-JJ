@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>GSP Flow Map - Accurate BMRS Data</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background: #1a1a1a; color: #fff; }
+        #map { height: 100vh; width: 100%; }
+        .info {
+            position: absolute; top: 20px; left: 20px;
+            background: rgba(0,0,0,0.95); padding: 20px;
+            border-radius: 10px; border: 2px solid #4CAF50;
+            max-width: 400px; z-index: 1000;
+        }
+        h2 { margin: 0 0 15px 0; color: #4CAF50; }
+        .stat { padding: 10px; margin: 5px 0; border-radius: 5px; }
+        .exp { background: rgba(0,188,212,0.3); border-left: 4px solid #00bcd4; }
+        .imp { background: rgba(255,152,0,0.3); border-left: 4px solid #ff9800; }
+        .legend {
+            position: absolute; bottom: 30px; right: 20px;
+            background: rgba(0,0,0,0.95); padding: 15px;
+            border-radius: 10px; border: 2px solid #4CAF50; z-index: 1000;
+        }
+        .legend-item { display: flex; align-items: center; margin: 8px 0; }
+        .circle { width: 20px; height: 20px; border-radius: 50%; margin-right: 10px; border: 2px solid #fff; }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    
+    <div class="info">
+        <h2>⚡ GB Grid Supply Points</h2>
+        <p style="font-size:12px;color:#aaa;margin:5px 0">2025-10-30, SP10</p>
+        <p style="font-size:13px">Total GSP Areas: <strong>18</strong></p>
+        <div class="stat exp">
+            <strong>🟦 Net Exporters: 12 areas</strong><br>
+            <small style="color:#aaa">Generation exceeds demand in area</small>
+        </div>
+        <div class="stat imp">
+            <strong>🟧 Net Importers: 6 areas</strong><br>
+            <small style="color:#aaa">Demand exceeds local generation</small>
+        </div>
+        <p style="font-size:11px;color:#888;margin-top:10px">
+            ℹ️ Data from BMRS (Balancing Mechanism Reporting Service)<br>
+            Shows grid supply point level aggregation, not individual generators
+        </p>
+    </div>
+    
+    <div class="legend">
+        <div style="font-weight:bold;margin-bottom:10px">Legend</div>
+        <div class="legend-item">
+            <div class="circle" style="background:rgba(0,188,212,0.7)"></div>
+            <span>Net Exporter</span>
+        </div>
+        <div class="legend-item">
+            <div class="circle" style="background:rgba(255,152,0,0.7)"></div>
+            <span>Net Importer</span>
+        </div>
+        <div style="font-size:11px;color:#aaa;margin-top:10px">Circle size = flow magnitude</div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        const gspData = [{"gsp": "B16", "name": "Pembroke (West Wales)", "lat": 51.675, "lng": -4.9392, "gen": 765971, "dem": -139131, "net": 626840, "status": "EXPORTING"}, {"gsp": "B8", "name": "Sundon (East Midlands)", "lat": 51.9476, "lng": -0.4682, "gen": 840444, "dem": -228424, "net": 612020, "status": "EXPORTING"}, {"gsp": "B11", "name": "Melksham (South West)", "lat": 51.3687, "lng": -2.1413, "gen": 732261, "dem": -134120, "net": 598141, "status": "EXPORTING"}, {"gsp": "B9", "name": "Pelham (East Anglia)", "lat": 51.7422, "lng": -0.0475, "gen": 874154, "dem": -292476, "net": 581678, "status": "EXPORTING"}, {"gsp": "N", "name": "National Grid", "lat": 54.5, "lng": -3.5, "gen": 1226896, "dem": -737914, "net": 488982, "status": "EXPORTING"}, {"gsp": "B7", "name": "Hurst (South East)", "lat": 51.4459, "lng": -0.4815, "gen": 308633, "dem": -82096, "net": 226537, "status": "EXPORTING"}, {"gsp": "B6", "name": "Willesden (London NW)", "lat": 51.5489, "lng": -0.2356, "gen": 247346, "dem": -56607, "net": 190739, "status": "EXPORTING"}, {"gsp": "B4", "name": "Brixton (London Central)", "lat": 51.4615, "lng": -0.1125, "gen": 81749, "dem": -15415, "net": 66334, "status": "EXPORTING"}, {"gsp": "B5", "name": "City Road (London North)", "lat": 51.5319, "lng": -0.0966, "gen": 83640, "dem": -27138, "net": 56502, "status": "EXPORTING"}, {"gsp": "B2", "name": "Ealing (London West)", "lat": 51.5154, "lng": -0.2994, "gen": 45796, "dem": -9080, "net": 36716, "status": "EXPORTING"}, {"gsp": "B15", "name": "Landulph (Plymouth)", "lat": 50.4464, "lng": -4.2124, "gen": 46259, "dem": -10379, "net": 35880, "status": "EXPORTING"}, {"gsp": "B1", "name": "Barking (London East)", "lat": 51.5362, "lng": 0.081, "gen": 24780, "dem": -4087, "net": 20693, "status": "EXPORTING"}, {"gsp": "B3", "name": "Wimbledon (London South)", "lat": 51.4214, "lng": -0.2072, "gen": 5167, "dem": -5917, "net": -750, "status": "IMPORTING"}, {"gsp": "B13", "name": "Bristol (Severnside)", "lat": 51.4545, "lng": -2.5879, "gen": 0, "dem": -28505, "net": -28505, "status": "IMPORTING"}, {"gsp": "B12", "name": "Exeter (Devon)", "lat": 50.7184, "lng": -3.5339, "gen": 71932, "dem": -123116, "net": -51184, "status": "IMPORTING"}, {"gsp": "B10", "name": "Bramley (South Central)", "lat": 51.3244, "lng": -0.9947, "gen": 16849, "dem": -68112, "net": -51263, "status": "IMPORTING"}, {"gsp": "B17", "name": "Swansea North (South Wales)", "lat": 51.6563, "lng": -3.9436, "gen": 0, "dem": -58989, "net": -58989, "status": "IMPORTING"}, {"gsp": "B14", "name": "Indian Queens (Cornwall)", "lat": 50.4019, "lng": -4.9378, "gen": 793, "dem": -93784, "net": -92991, "status": "IMPORTING"}];
+        
+        const map = L.map('map').setView([54, -2.5], 6);
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; OpenStreetMap &copy; CartoDB',
+            maxZoom: 19
+        }).addTo(map);
+
+        gspData.forEach(gsp => {
+            const isExporting = gsp.status === 'EXPORTING';
+            const circleSize = Math.min(Math.max(Math.abs(gsp.net) / 30000, 5), 25);
+            
+            const circle = L.circleMarker([gsp.lat, gsp.lng], {
+                radius: circleSize,
+                fillColor: isExporting ? '#00bcd4' : '#ff9800',
+                color: '#ffffff',
+                weight: 2,
+                opacity: 1,
+                fillOpacity: 0.8
+            }).addTo(map);
+
+            const popupContent = `
+                <div style="color:#000;padding:12px;min-width:280px;font-family:Arial">
+                    <h3 style="margin:0 0 10px 0;color:${isExporting?'#00bcd4':'#ff9800'};border-bottom:2px solid ${isExporting?'#00bcd4':'#ff9800'};padding-bottom:8px">
+                        GSP ${gsp.gsp}: ${gsp.name}
+                    </h3>
+                    <div style="background:${isExporting?'#e0f7fa':'#fff3e0'};padding:12px;border-radius:5px;text-align:center;margin:10px 0">
+                        <div style="font-size:18px;font-weight:bold;color:${isExporting?'#00bcd4':'#ff9800'}">
+                            ${isExporting?'🟦 NET EXPORTER':'🟧 NET IMPORTER'}
+                        </div>
+                        <div style="font-size:16px;font-weight:bold;margin-top:8px">
+                            ${isExporting?'+':''}${gsp.net.toLocaleString()} MW
+                        </div>
+                    </div>
+                    <table style="width:100%;border-collapse:collapse">
+                        <tr style="border-bottom:1px solid #ddd">
+                            <td style="padding:8px">⚡ Total Generation</td>
+                            <td style="text-align:right;padding:8px;font-weight:bold">${gsp.gen.toLocaleString()} MW</td>
+                        </tr>
+                        <tr style="border-bottom:1px solid #ddd">
+                            <td style="padding:8px">💡 Total Demand</td>
+                            <td style="text-align:right;padding:8px;font-weight:bold">${Math.abs(gsp.dem).toLocaleString()} MW</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:8px"><strong>📊 Net Flow</strong></td>
+                            <td style="text-align:right;padding:8px;font-weight:bold;color:${isExporting?'#00bcd4':'#ff9800'}">
+                                ${isExporting?'+':''}${gsp.net.toLocaleString()} MW
+                            </td>
+                        </tr>
+                    </table>
+                    <div style="margin-top:10px;padding-top:10px;border-top:1px solid #ddd;font-size:11px;color:#666">
+                        ${isExporting ? 'Area generates more than it consumes - exports surplus to grid' : 'Area consumes more than it generates - imports from grid'}
+                    </div>
+                </div>
+            `;
+
+            circle.bindPopup(popupContent, { maxWidth: 350 });
+        });
+
+        console.log(`✅ Loaded ${gspData.length} GSP areas`);
+    </script>
+</body>
+</html>

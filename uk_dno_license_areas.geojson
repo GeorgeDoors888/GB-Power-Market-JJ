@@ -1,0 +1,537 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "dno_name": "Eastern Power Networks (EPN)",
+        "company": "UK Power Networks",
+        "license": "EPN",
+        "region": "Eastern England",
+        "customers": 3800000,
+        "area_sqkm": 29000
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1.75,
+              52.8
+            ],
+            [
+              -0.5,
+              52.8
+            ],
+            [
+              -0.5,
+              51.5
+            ],
+            [
+              1.75,
+              51.5
+            ],
+            [
+              1.75,
+              52.8
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "dno_name": "London Power Networks (LPN)",
+        "company": "UK Power Networks",
+        "license": "LPN",
+        "region": "Greater London",
+        "customers": 5000000,
+        "area_sqkm": 1600
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.33,
+              51.69
+            ],
+            [
+              -0.51,
+              51.69
+            ],
+            [
+              -0.51,
+              51.28
+            ],
+            [
+              0.33,
+              51.28
+            ],
+            [
+              0.33,
+              51.69
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "dno_name": "South Eastern Power Networks (SPN)",
+        "company": "UK Power Networks",
+        "license": "SPN",
+        "region": "South East England",
+        "customers": 2700000,
+        "area_sqkm": 20800
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1.45,
+              51.5
+            ],
+            [
+              -0.75,
+              51.5
+            ],
+            [
+              -0.75,
+              50.75
+            ],
+            [
+              1.45,
+              50.75
+            ],
+            [
+              1.45,
+              51.5
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "dno_name": "Southern Electric Power Distribution (SEPD)",
+        "company": "Scottish and Southern Electricity Networks",
+        "license": "SEPD",
+        "region": "Southern England",
+        "customers": 2900000,
+        "area_sqkm": 27000
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.5,
+              51.8
+            ],
+            [
+              -2.8,
+              51.8
+            ],
+            [
+              -2.8,
+              50.3
+            ],
+            [
+              -0.5,
+              50.3
+            ],
+            [
+              -0.5,
+              51.8
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "dno_name": "Scottish Hydro Electric Power Distribution (SHEPD)",
+        "company": "Scottish and Southern Electricity Networks",
+        "license": "SHEPD",
+        "region": "Northern Scotland",
+        "customers": 780000,
+        "area_sqkm": 100000
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -1.2,
+              60.8
+            ],
+            [
+              -7.5,
+              60.8
+            ],
+            [
+              -7.5,
+              56.0
+            ],
+            [
+              -2.0,
+              56.0
+            ],
+            [
+              -1.2,
+              60.8
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "dno_name": "Western Power Distribution - South West",
+        "company": "National Grid",
+        "license": "SWEB",
+        "region": "South West England",
+        "customers": 1700000,
+        "area_sqkm": 21000
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -2.5,
+              51.8
+            ],
+            [
+              -5.8,
+              51.8
+            ],
+            [
+              -5.8,
+              49.9
+            ],
+            [
+              -2.5,
+              49.9
+            ],
+            [
+              -2.5,
+              51.8
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "dno_name": "Western Power Distribution - South Wales",
+        "company": "National Grid",
+        "license": "SWALEC",
+        "region": "South Wales",
+        "customers": 1400000,
+        "area_sqkm": 21000
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -2.6,
+              52.5
+            ],
+            [
+              -5.3,
+              52.5
+            ],
+            [
+              -5.3,
+              51.3
+            ],
+            [
+              -2.6,
+              51.3
+            ],
+            [
+              -2.6,
+              52.5
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "dno_name": "Western Power Distribution - West Midlands",
+        "company": "National Grid",
+        "license": "WMID",
+        "region": "West Midlands",
+        "customers": 2400000,
+        "area_sqkm": 13000
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -1.5,
+              53.5
+            ],
+            [
+              -3.2,
+              53.5
+            ],
+            [
+              -3.2,
+              51.8
+            ],
+            [
+              -1.5,
+              51.8
+            ],
+            [
+              -1.5,
+              53.5
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "dno_name": "Western Power Distribution - East Midlands",
+        "company": "National Grid",
+        "license": "EMID",
+        "region": "East Midlands",
+        "customers": 2300000,
+        "area_sqkm": 15600
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.5,
+              53.5
+            ],
+            [
+              -1.8,
+              53.5
+            ],
+            [
+              -1.8,
+              52.0
+            ],
+            [
+              -0.5,
+              52.0
+            ],
+            [
+              -0.5,
+              53.5
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "dno_name": "Electricity North West (ENWL)",
+        "company": "Electricity North West",
+        "license": "ENWL",
+        "region": "North West England",
+        "customers": 2400000,
+        "area_sqkm": 13000
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -2.2,
+              54.8
+            ],
+            [
+              -3.5,
+              54.8
+            ],
+            [
+              -3.5,
+              53.0
+            ],
+            [
+              -2.2,
+              53.0
+            ],
+            [
+              -2.2,
+              54.8
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "dno_name": "Northern Powergrid - North East",
+        "company": "Northern Powergrid",
+        "license": "NPGN",
+        "region": "North East England",
+        "customers": 1500000,
+        "area_sqkm": 11000
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -1.2,
+              55.8
+            ],
+            [
+              -2.5,
+              55.8
+            ],
+            [
+              -2.5,
+              54.3
+            ],
+            [
+              -1.2,
+              54.3
+            ],
+            [
+              -1.2,
+              55.8
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "dno_name": "Northern Powergrid - Yorkshire",
+        "company": "Northern Powergrid",
+        "license": "NPGY",
+        "region": "Yorkshire",
+        "customers": 2700000,
+        "area_sqkm": 19000
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.3,
+              54.5
+            ],
+            [
+              -2.5,
+              54.5
+            ],
+            [
+              -2.5,
+              53.3
+            ],
+            [
+              -0.3,
+              53.3
+            ],
+            [
+              -0.3,
+              54.5
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "dno_name": "SP Distribution (SPD)",
+        "company": "SP Energy Networks",
+        "license": "SPD",
+        "region": "Central & South Scotland",
+        "customers": 2000000,
+        "area_sqkm": 25000
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -2.0,
+              57.0
+            ],
+            [
+              -5.5,
+              57.0
+            ],
+            [
+              -5.5,
+              54.8
+            ],
+            [
+              -2.0,
+              54.8
+            ],
+            [
+              -2.0,
+              57.0
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "dno_name": "SP Manweb",
+        "company": "SP Energy Networks",
+        "license": "MANWEB",
+        "region": "Merseyside, Cheshire & North Wales",
+        "customers": 1400000,
+        "area_sqkm": 12800
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -2.8,
+              53.5
+            ],
+            [
+              -4.8,
+              53.5
+            ],
+            [
+              -4.8,
+              52.0
+            ],
+            [
+              -2.8,
+              52.0
+            ],
+            [
+              -2.8,
+              53.5
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

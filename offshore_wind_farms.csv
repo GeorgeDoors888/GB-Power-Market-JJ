@@ -1,0 +1,36 @@
+name,status,capacity_mw,latitude,longitude,country,source,gsp_zone,gsp_region,distance_to_gsp_km
+Barrow,Operational,90,53.98333,-3.28333,England,Wikipedia UK offshore list,NWA1,North Wales,65.1
+Beatrice (extension),Operational,588,58.10556,-3.09306,Scotland,Wikipedia UK offshore list,SCO2,Scotland North,13
+Burbo Bank,Operational,90,53.48333,-3.18333,England,Wikipedia UK offshore list,NWA1,North Wales,9.3
+Burbo Bank Extension,Operational,258,53.48333,-3.18333,England,Wikipedia UK offshore list,NWA1,North Wales,9.3
+Dudgeon,Operational,402,53.25,1.38333,England,Wikipedia UK offshore list,EEA1,East Anglia,87.3
+East Anglia One,Operational,714,52.23444,2.48833,England,Wikipedia UK offshore list,EEA1,East Anglia,105.3
+European Offshore Wind,Operational,93,57.21667,-1.98333,Scotland,Wikipedia UK offshore list,SCO2,Scotland North,106.1
+Greater Gabbard,Operational,504,51.93333,1.88333,England,Wikipedia UK offshore list,EEA1,East Anglia,87.1
+Gunfleet Sands,Operational,172,51.71667,1.21389,England,Wikipedia UK offshore list,EEA1,East Anglia,88.3
+Gwynt y Mor,Operational,576,53.45,-3.58333,Wales,Wikipedia UK offshore list,NWA1,North Wales,26
+Hornsea One,Operational,1218,53.885,1.79111,England,Wikipedia UK offshore list,YEA1,Yorkshire East,150.6
+Hornsea Two,Operational,1386,53.885,1.79111,England,Wikipedia UK offshore list,YEA1,Yorkshire East,150.6
+Humber Gateway,Operational,219,53.64389,0.29306,England,Wikipedia UK offshore list,YEA1,Yorkshire East,55
+Hywind Scotland,Operational,30,57.48333,-1.35,Scotland,Wikipedia UK offshore list,SCO2,Scotland North,113.5
+Kentish Flats,Operational,140,51.46,1.09,England,Wikipedia UK offshore list,EEA1,East Anglia,115.8
+London Array,Operational,630,51.64389,1.55361,England,Wikipedia UK offshore list,EEA1,East Anglia,102.4
+Lynn and Inner Dowsing,Operational,194,53.1275,0.43611,England,Wikipedia UK offshore list,EEA1,East Anglia,79.4
+Moray East,Operational,950,58.1,-2.8,Scotland,Wikipedia UK offshore list,SCO2,Scotland North,16.2
+Moray West,Operational,882,58.1,-3.1,Scotland,Wikipedia UK offshore list,SCO2,Scotland North,12.6
+Neart Na Gaoithe,Operational,450,56.26778,-2.32083,Scotland,Wikipedia UK offshore list,SCO1,Scotland Central,62.1
+North Hoyle,Operational,60,53.43333,-3.4,Wales,Wikipedia UK offshore list,NWA1,North Wales,13.8
+Ormonde,Operational,150,54.1,-3.4,England,Wikipedia UK offshore list,NWA1,North Wales,78.9
+Race Bank,Operational,580,53.275,0.84167,England,Wikipedia UK offshore list,EEA1,East Anglia,86.8
+Rampion,Operational,400,50.66667,-0.26667,England,Wikipedia UK offshore list,SSE1,South East,15.6
+Rhyl Flats,Operational,90,53.36667,-3.65,Wales,Wikipedia UK offshore list,NWA1,North Wales,30.1
+Robin Rigg,Operational,180,54.75,-3.71667,Scotland,Wikipedia UK offshore list,SCO1,Scotland Central,142.8
+Scroby Sands,Operational,60,52.63333,1.78333,England,Wikipedia UK offshore list,EEA1,East Anglia,55
+Sheringham Shoal,Operational,317,53.11667,1.13333,England,Wikipedia UK offshore list,EEA1,East Anglia,69.2
+Teesside (Redcar),Operational,62,54.64722,-1.09444,England,Wikipedia UK offshore list,YEA1,Yorkshire East,101.8
+Thanet,Operational,300,51.43333,1.63333,England,Wikipedia UK offshore list,EEA1,East Anglia,126.3
+Triton Knoll,Operational,857,53.5,0.8,England,Wikipedia UK offshore list,YEA1,Yorkshire East,91.9
+Walney,Operational,367,54.05,-3.51667,England,Wikipedia UK offshore list,NWA1,North Wales,75.2
+Walney Extension,Operational,659,54.08806,-3.73806,England,Wikipedia UK offshore list,NWA1,North Wales,84.3
+Westermost Rough,Operational,210,53.805,0.14889,England,Wikipedia UK offshore list,YEA1,Yorkshire East,42.6
+West of Duddon Sands,Operational,389,53.98333,-3.46667,England,Wikipedia UK offshore list,NWA1,North Wales,67.2

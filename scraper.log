@@ -1,0 +1,182 @@
+🔋 Scraping CVA Plants from electricityproduction.uk
+================================================================================
+📂 Found existing data file, loading...
+   ✅ Loaded 1500 existing plants
+
+📋 Step 1: Collecting plant IDs from all pages...
+   Page 1/14: Found 0 new plants
+   Page 2/14: Found 0 new plants
+   Page 3/14: Found 0 new plants
+   Page 4/14: Found 0 new plants
+   Page 5/14: Found 0 new plants
+   Page 6/14: Found 0 new plants
+   Page 7/14: Found 0 new plants
+   Page 8/14: Found 72 new plants
+   Page 9/14: Found 265 new plants
+   Page 10/14: Found 454 new plants
+   Page 11/14: Found 654 new plants
+   Page 12/14: Found 854 new plants
+   Page 13/14: Found 1054 new plants
+   Page 14/14: Found 1205 new plants
+
+✅ Found 1205 new plants to scrape (plus 1500 already done)
+   Total will be: 2705 plants
+
+⚡ Step 2: Scraping individual plant details...
+   This will take approximately 14.1 minutes
+   Progress will be saved every 50 plants
+
+   Progress: 10/1205 (0.8%) | Rate: 1.3 plants/sec | ETA: 15.6 min | Errors: 0
+   Progress: 20/1205 (1.7%) | Rate: 1.3 plants/sec | ETA: 15.8 min | Errors: 0
+   Progress: 30/1205 (2.5%) | Rate: 1.2 plants/sec | ETA: 16.0 min | Errors: 0
+   Progress: 40/1205 (3.3%) | Rate: 1.1 plants/sec | ETA: 18.3 min | Errors: 0
+   Progress: 50/1205 (4.1%) | Rate: 1.1 plants/sec | ETA: 17.4 min | Errors: 0
+   💾 Checkpoint saved (1550 plants)
+   Progress: 60/1205 (5.0%) | Rate: 1.0 plants/sec | ETA: 18.4 min | Errors: 0
+   Progress: 70/1205 (5.8%) | Rate: 1.1 plants/sec | ETA: 17.7 min | Errors: 0
+   Progress: 80/1205 (6.6%) | Rate: 1.1 plants/sec | ETA: 17.1 min | Errors: 0
+   Progress: 90/1205 (7.5%) | Rate: 1.1 plants/sec | ETA: 16.6 min | Errors: 0
+   Progress: 100/1205 (8.3%) | Rate: 1.1 plants/sec | ETA: 16.2 min | Errors: 0
+   💾 Checkpoint saved (1600 plants)
+   Progress: 110/1205 (9.1%) | Rate: 1.1 plants/sec | ETA: 16.7 min | Errors: 0
+   Progress: 120/1205 (10.0%) | Rate: 1.1 plants/sec | ETA: 16.4 min | Errors: 0
+   Progress: 130/1205 (10.8%) | Rate: 1.1 plants/sec | ETA: 16.1 min | Errors: 0
+   Progress: 140/1205 (11.6%) | Rate: 1.1 plants/sec | ETA: 15.8 min | Errors: 0
+   Progress: 150/1205 (12.4%) | Rate: 1.1 plants/sec | ETA: 15.5 min | Errors: 0
+   💾 Checkpoint saved (1650 plants)
+   Progress: 160/1205 (13.3%) | Rate: 1.1 plants/sec | ETA: 15.3 min | Errors: 0
+   Progress: 170/1205 (14.1%) | Rate: 1.1 plants/sec | ETA: 15.1 min | Errors: 0
+   Progress: 180/1205 (14.9%) | Rate: 1.2 plants/sec | ETA: 14.8 min | Errors: 0
+   Progress: 190/1205 (15.8%) | Rate: 1.1 plants/sec | ETA: 14.7 min | Errors: 0
+   Progress: 200/1205 (16.6%) | Rate: 1.1 plants/sec | ETA: 14.6 min | Errors: 0
+   💾 Checkpoint saved (1700 plants)
+   Progress: 210/1205 (17.4%) | Rate: 1.1 plants/sec | ETA: 14.4 min | Errors: 0
+   Progress: 220/1205 (18.3%) | Rate: 1.2 plants/sec | ETA: 14.2 min | Errors: 0
+   Progress: 230/1205 (19.1%) | Rate: 1.2 plants/sec | ETA: 14.1 min | Errors: 0
+   Progress: 240/1205 (19.9%) | Rate: 1.2 plants/sec | ETA: 14.0 min | Errors: 0
+   Progress: 250/1205 (20.7%) | Rate: 1.2 plants/sec | ETA: 13.8 min | Errors: 0
+   💾 Checkpoint saved (1750 plants)
+   Progress: 260/1205 (21.6%) | Rate: 1.1 plants/sec | ETA: 13.8 min | Errors: 0
+   Progress: 270/1205 (22.4%) | Rate: 1.1 plants/sec | ETA: 13.6 min | Errors: 0
+   Progress: 280/1205 (23.2%) | Rate: 1.1 plants/sec | ETA: 13.5 min | Errors: 0
+   Progress: 290/1205 (24.1%) | Rate: 1.1 plants/sec | ETA: 13.3 min | Errors: 0
+   Progress: 300/1205 (24.9%) | Rate: 1.1 plants/sec | ETA: 13.2 min | Errors: 0
+   💾 Checkpoint saved (1800 plants)
+   Progress: 310/1205 (25.7%) | Rate: 1.1 plants/sec | ETA: 13.0 min | Errors: 0
+   Progress: 320/1205 (26.6%) | Rate: 1.1 plants/sec | ETA: 12.9 min | Errors: 0
+   Progress: 330/1205 (27.4%) | Rate: 1.1 plants/sec | ETA: 12.8 min | Errors: 0
+   Progress: 340/1205 (28.2%) | Rate: 1.1 plants/sec | ETA: 12.6 min | Errors: 0
+   Progress: 350/1205 (29.0%) | Rate: 1.1 plants/sec | ETA: 12.4 min | Errors: 0
+   💾 Checkpoint saved (1850 plants)
+   Progress: 360/1205 (29.9%) | Rate: 1.1 plants/sec | ETA: 12.3 min | Errors: 0
+   Progress: 370/1205 (30.7%) | Rate: 1.2 plants/sec | ETA: 12.1 min | Errors: 0
+   Progress: 380/1205 (31.5%) | Rate: 1.1 plants/sec | ETA: 12.0 min | Errors: 0
+   Progress: 390/1205 (32.4%) | Rate: 1.2 plants/sec | ETA: 11.8 min | Errors: 0
+   Progress: 400/1205 (33.2%) | Rate: 1.2 plants/sec | ETA: 11.7 min | Errors: 0
+   💾 Checkpoint saved (1900 plants)
+   Progress: 410/1205 (34.0%) | Rate: 1.2 plants/sec | ETA: 11.5 min | Errors: 0
+   Progress: 420/1205 (34.9%) | Rate: 1.2 plants/sec | ETA: 11.3 min | Errors: 0
+   Progress: 430/1205 (35.7%) | Rate: 1.2 plants/sec | ETA: 11.2 min | Errors: 0
+   Progress: 440/1205 (36.5%) | Rate: 1.2 plants/sec | ETA: 11.0 min | Errors: 0
+   Progress: 450/1205 (37.3%) | Rate: 1.2 plants/sec | ETA: 10.9 min | Errors: 0
+   💾 Checkpoint saved (1950 plants)
+   Progress: 460/1205 (38.2%) | Rate: 1.2 plants/sec | ETA: 10.7 min | Errors: 0
+   Progress: 470/1205 (39.0%) | Rate: 1.2 plants/sec | ETA: 10.6 min | Errors: 0
+   Progress: 480/1205 (39.8%) | Rate: 1.2 plants/sec | ETA: 10.4 min | Errors: 0
+   Progress: 490/1205 (40.7%) | Rate: 1.2 plants/sec | ETA: 10.2 min | Errors: 0
+   Progress: 500/1205 (41.5%) | Rate: 1.2 plants/sec | ETA: 10.1 min | Errors: 0
+   💾 Checkpoint saved (2000 plants)
+   Progress: 510/1205 (42.3%) | Rate: 1.2 plants/sec | ETA: 9.9 min | Errors: 0
+   Progress: 520/1205 (43.2%) | Rate: 1.2 plants/sec | ETA: 9.8 min | Errors: 0
+   Progress: 530/1205 (44.0%) | Rate: 1.2 plants/sec | ETA: 9.6 min | Errors: 0
+   Progress: 540/1205 (44.8%) | Rate: 1.2 plants/sec | ETA: 9.5 min | Errors: 0
+   Progress: 550/1205 (45.6%) | Rate: 1.2 plants/sec | ETA: 9.3 min | Errors: 0
+   💾 Checkpoint saved (2050 plants)
+   Progress: 560/1205 (46.5%) | Rate: 1.2 plants/sec | ETA: 9.2 min | Errors: 0
+   Progress: 570/1205 (47.3%) | Rate: 1.2 plants/sec | ETA: 9.0 min | Errors: 0
+   Progress: 580/1205 (48.1%) | Rate: 1.2 plants/sec | ETA: 8.9 min | Errors: 0
+   Progress: 590/1205 (49.0%) | Rate: 1.2 plants/sec | ETA: 8.8 min | Errors: 0
+   Progress: 600/1205 (49.8%) | Rate: 1.2 plants/sec | ETA: 8.6 min | Errors: 0
+   💾 Checkpoint saved (2100 plants)
+   Progress: 610/1205 (50.6%) | Rate: 1.2 plants/sec | ETA: 8.5 min | Errors: 0
+   Progress: 620/1205 (51.5%) | Rate: 1.2 plants/sec | ETA: 8.3 min | Errors: 0
+   Progress: 630/1205 (52.3%) | Rate: 1.2 plants/sec | ETA: 8.2 min | Errors: 0
+   Progress: 640/1205 (53.1%) | Rate: 1.2 plants/sec | ETA: 8.0 min | Errors: 0
+   Progress: 650/1205 (53.9%) | Rate: 1.2 plants/sec | ETA: 7.9 min | Errors: 0
+   💾 Checkpoint saved (2150 plants)
+   Progress: 660/1205 (54.8%) | Rate: 1.2 plants/sec | ETA: 7.7 min | Errors: 0
+   Progress: 670/1205 (55.6%) | Rate: 1.2 plants/sec | ETA: 7.6 min | Errors: 0
+   Progress: 680/1205 (56.4%) | Rate: 1.2 plants/sec | ETA: 7.4 min | Errors: 0
+   Progress: 690/1205 (57.3%) | Rate: 1.2 plants/sec | ETA: 7.3 min | Errors: 0
+   Progress: 700/1205 (58.1%) | Rate: 1.2 plants/sec | ETA: 7.1 min | Errors: 0
+   💾 Checkpoint saved (2200 plants)
+   Progress: 710/1205 (58.9%) | Rate: 1.2 plants/sec | ETA: 7.0 min | Errors: 0
+   Progress: 720/1205 (59.8%) | Rate: 1.2 plants/sec | ETA: 6.8 min | Errors: 0
+   Progress: 730/1205 (60.6%) | Rate: 1.2 plants/sec | ETA: 6.7 min | Errors: 0
+   Progress: 740/1205 (61.4%) | Rate: 1.2 plants/sec | ETA: 6.5 min | Errors: 0
+   Progress: 750/1205 (62.2%) | Rate: 1.2 plants/sec | ETA: 6.4 min | Errors: 0
+   💾 Checkpoint saved (2250 plants)
+   Progress: 760/1205 (63.1%) | Rate: 1.2 plants/sec | ETA: 6.2 min | Errors: 0
+   Progress: 770/1205 (63.9%) | Rate: 1.2 plants/sec | ETA: 6.1 min | Errors: 0
+   Progress: 780/1205 (64.7%) | Rate: 1.2 plants/sec | ETA: 6.0 min | Errors: 0
+   Progress: 790/1205 (65.6%) | Rate: 1.2 plants/sec | ETA: 5.8 min | Errors: 0
+   Progress: 800/1205 (66.4%) | Rate: 1.2 plants/sec | ETA: 5.7 min | Errors: 0
+   💾 Checkpoint saved (2300 plants)
+   Progress: 810/1205 (67.2%) | Rate: 1.2 plants/sec | ETA: 5.5 min | Errors: 0
+   Progress: 820/1205 (68.0%) | Rate: 1.2 plants/sec | ETA: 5.4 min | Errors: 0
+   Progress: 830/1205 (68.9%) | Rate: 1.2 plants/sec | ETA: 5.2 min | Errors: 0
+   Progress: 840/1205 (69.7%) | Rate: 1.2 plants/sec | ETA: 5.1 min | Errors: 0
+   Progress: 850/1205 (70.5%) | Rate: 1.2 plants/sec | ETA: 5.0 min | Errors: 0
+   💾 Checkpoint saved (2350 plants)
+   Progress: 860/1205 (71.4%) | Rate: 1.2 plants/sec | ETA: 4.8 min | Errors: 0
+   Progress: 870/1205 (72.2%) | Rate: 1.2 plants/sec | ETA: 4.7 min | Errors: 0
+   Progress: 880/1205 (73.0%) | Rate: 1.2 plants/sec | ETA: 4.5 min | Errors: 0
+   Progress: 890/1205 (73.9%) | Rate: 1.2 plants/sec | ETA: 4.4 min | Errors: 0
+   Progress: 900/1205 (74.7%) | Rate: 1.2 plants/sec | ETA: 4.3 min | Errors: 0
+   💾 Checkpoint saved (2400 plants)
+   Progress: 910/1205 (75.5%) | Rate: 1.2 plants/sec | ETA: 4.1 min | Errors: 0
+   Progress: 920/1205 (76.3%) | Rate: 1.2 plants/sec | ETA: 4.0 min | Errors: 0
+   Progress: 930/1205 (77.2%) | Rate: 1.2 plants/sec | ETA: 3.8 min | Errors: 0
+   Progress: 940/1205 (78.0%) | Rate: 1.2 plants/sec | ETA: 3.7 min | Errors: 0
+   Progress: 950/1205 (78.8%) | Rate: 1.2 plants/sec | ETA: 3.6 min | Errors: 0
+   💾 Checkpoint saved (2450 plants)
+   Progress: 960/1205 (79.7%) | Rate: 1.2 plants/sec | ETA: 3.4 min | Errors: 0
+   Progress: 970/1205 (80.5%) | Rate: 1.2 plants/sec | ETA: 3.3 min | Errors: 0
+   Progress: 980/1205 (81.3%) | Rate: 1.2 plants/sec | ETA: 3.1 min | Errors: 0
+   Progress: 990/1205 (82.2%) | Rate: 1.2 plants/sec | ETA: 3.0 min | Errors: 0
+   Progress: 1000/1205 (83.0%) | Rate: 1.2 plants/sec | ETA: 2.9 min | Errors: 0
+   💾 Checkpoint saved (2500 plants)
+   Progress: 1010/1205 (83.8%) | Rate: 1.2 plants/sec | ETA: 2.7 min | Errors: 0
+   Progress: 1020/1205 (84.6%) | Rate: 1.2 plants/sec | ETA: 2.6 min | Errors: 0
+   Progress: 1030/1205 (85.5%) | Rate: 1.2 plants/sec | ETA: 2.4 min | Errors: 0
+   Progress: 1040/1205 (86.3%) | Rate: 1.2 plants/sec | ETA: 2.3 min | Errors: 0
+   Progress: 1050/1205 (87.1%) | Rate: 1.2 plants/sec | ETA: 2.2 min | Errors: 0
+   💾 Checkpoint saved (2550 plants)
+   Progress: 1060/1205 (88.0%) | Rate: 1.2 plants/sec | ETA: 2.0 min | Errors: 0
+   Progress: 1070/1205 (88.8%) | Rate: 1.2 plants/sec | ETA: 1.9 min | Errors: 0
+   Progress: 1080/1205 (89.6%) | Rate: 1.2 plants/sec | ETA: 1.7 min | Errors: 0
+   Progress: 1090/1205 (90.5%) | Rate: 1.2 plants/sec | ETA: 1.6 min | Errors: 0
+   Progress: 1100/1205 (91.3%) | Rate: 1.2 plants/sec | ETA: 1.5 min | Errors: 0
+   💾 Checkpoint saved (2600 plants)
+   Progress: 1110/1205 (92.1%) | Rate: 1.2 plants/sec | ETA: 1.3 min | Errors: 0
+   Progress: 1120/1205 (92.9%) | Rate: 1.2 plants/sec | ETA: 1.2 min | Errors: 0
+   Progress: 1130/1205 (93.8%) | Rate: 1.2 plants/sec | ETA: 1.0 min | Errors: 0
+   Progress: 1140/1205 (94.6%) | Rate: 1.2 plants/sec | ETA: 0.9 min | Errors: 0
+   Progress: 1150/1205 (95.4%) | Rate: 1.2 plants/sec | ETA: 0.8 min | Errors: 0
+   💾 Checkpoint saved (2650 plants)
+   Progress: 1160/1205 (96.3%) | Rate: 1.2 plants/sec | ETA: 0.6 min | Errors: 0
+   Progress: 1170/1205 (97.1%) | Rate: 1.2 plants/sec | ETA: 0.5 min | Errors: 0
+   Progress: 1180/1205 (97.9%) | Rate: 1.2 plants/sec | ETA: 0.3 min | Errors: 0
+   Progress: 1190/1205 (98.8%) | Rate: 1.2 plants/sec | ETA: 0.2 min | Errors: 0
+   Progress: 1200/1205 (99.6%) | Rate: 1.2 plants/sec | ETA: 0.1 min | Errors: 0
+   💾 Checkpoint saved (2700 plants)
+
+✅ Scraping complete!
+   Total plants: 2705
+   Errors: 0
+   Time taken: 16.6 minutes
+   Saved to: cva_plants_data.json
+
+📊 Data Quality:
+   Plants with coordinates: 1581 (58.4%)
+   Plants with capacity: 0 (0.0%)
