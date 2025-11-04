@@ -36,3 +36,5 @@ credentials.json
 PROJECT_CREDENTIALS_CONFIG.json
 **/*credentials*.json
 /Users/georgemajor/GB Power Market JJ && ls -1 *.json 2>/dev/null | grep -i credentialtemplate*.json
+token.pickle
+*.pickle
