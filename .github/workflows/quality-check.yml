@@ -1,0 +1,26 @@
+name: Nightly Quality Check
+
+on:
+  schedule:
+    - cron: "0 2 * * *"  # 2 AM UTC daily
+  workflow_dispatch:
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: pip install -r drive-bq-indexer/requirements.txt
+      - name: Run quality check
+        env:
+          GCP_PROJECT: ${{ secrets.GCP_PROJECT }}
+          BQ_DATASET: ${{ secrets.BQ_DATASET }}
+          GOOGLE_APPLICATION_CREDENTIALS: /tmp/sa.json
+        run: |
+          echo "${{ secrets.PROD_SA_JSON }}" | base64 --decode > /tmp/sa.json
+          cd drive-bq-indexer
+          python -m src.cli quality-check --auto-tune

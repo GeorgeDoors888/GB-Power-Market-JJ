@@ -1,0 +1,28 @@
+documents:
+  - { name: doc_id, field_type: STRING, mode: REQUIRED }
+  - { name: drive_id, field_type: STRING }
+  - { name: name, field_type: STRING }
+  - { name: path, field_type: STRING }
+  - { name: mime_type, field_type: STRING }
+  - { name: sha1, field_type: STRING }
+  - { name: size_bytes, field_type: INT64 }
+  - { name: created, field_type: TIMESTAMP }
+  - { name: updated, field_type: TIMESTAMP }
+  - { name: web_view_link, field_type: STRING }
+  - { name: owners, field_type: STRING }
+
+chunks:
+  - { name: doc_id, field_type: STRING, mode: REQUIRED }
+  - { name: chunk_id, field_type: STRING, mode: REQUIRED }
+  - { name: page_from, field_type: INT64 }
+  - { name: page_to, field_type: INT64 }
+  - { name: n_chars, field_type: INT64 }
+  - { name: n_tokens_est, field_type: INT64 }
+  - { name: text, field_type: STRING }
+
+chunk_embeddings:
+  - { name: doc_id, field_type: STRING, mode: REQUIRED }
+  - { name: chunk_id, field_type: STRING, mode: REQUIRED }
+  - { name: provider, field_type: STRING }
+  - { name: embed_dim, field_type: INT64 }
+  - { name: vector, field_type: FLOAT64, mode: REPEATED }

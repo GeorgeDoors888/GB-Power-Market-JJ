@@ -1,0 +1,35 @@
+name: Deploy to UpCloud
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.UPCLOUD_SSH_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H ${{ secrets.UPCLOUD_HOST }} >> ~/.ssh/known_hosts
+      - name: Deploy container
+        env:
+          HOST: ${{ secrets.UPCLOUD_HOST }}
+          USER: ${{ secrets.UPCLOUD_USER }}
+        run: |
+          scp -r drive-bq-indexer ${USER}@${HOST}:/opt/driveindexer-temp
+          ssh ${USER}@${HOST} <<'EOF'
+            set -e
+            cd /opt/driveindexer-temp
+            echo "${{ secrets.PROD_ENV_FILE }}" | base64 --decode > .env
+            mkdir -p secrets && echo "${{ secrets.PROD_SA_JSON }}" | base64 --decode > secrets/sa.json
+            docker build -f infra/docker/Dockerfile.runtime -t driveindexer:latest .
+            docker stop driveindexer || true
+            docker rm driveindexer || true
+            docker run -d --name driveindexer --restart=always \
+              --env-file .env -v $(pwd)/secrets:/secrets -p 8080:8080 driveindexer:latest
+          EOF

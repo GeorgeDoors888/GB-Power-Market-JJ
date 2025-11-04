@@ -1,0 +1,41 @@
+#!/usr/bin/env python3
+"""
+Quick script to export BigQuery data to CSV locally.
+Run this on your Mac to download the data and upload to your personal Drive.
+"""
+
+# Just query BigQuery and save to CSV, you can then upload manually to Drive
+print("Run this command to export to CSV:")
+print("")
+print('ssh root@94.237.55.15 "docker exec driveindexer python3 -c \\"')
+print("from google.cloud import bigquery")
+print("from google.oauth2 import service_account")
+print("import csv")
+print("import sys")
+print("")
+print("creds = service_account.Credentials.from_service_account_file('/secrets/sa.json')")
+print("client = bigquery.Client(project='inner-cinema-476211-u9', credentials=creds)")
+print("")  
+print("query = '''")
+print("SELECT")
+print("  drive_id as file_id,")
+print("  name,")
+print("  mime_type,")
+print("  size_bytes,")
+print("  created,")
+print("  updated,")
+print("  web_view_link,")
+print("  owners")
+print("FROM inner-cinema-476211-u9.uk_energy_insights.documents")
+print("ORDER BY updated DESC")
+print("'''")
+print("")
+print("writer = csv.writer(sys.stdout)")
+print("writer.writerow(['file_id', 'name', 'mime_type', 'size_bytes', 'created', 'updated', 'web_view_link', 'owners'])")
+print("")
+print("for row in client.query(query).result():")
+print("    writer.writerow([row.file_id, row.name, row.mime_type, row.size_bytes, str(row.created), str(row.updated), row.web_view_link, row.owners])")
+print('\\"" > drive_metadata.csv')
+print("")
+print("Then download with:")
+print("# Download the CSV")
