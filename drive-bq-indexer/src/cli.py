@@ -21,6 +21,10 @@ SUPPORTED = {
     "application/pdf": "pdf",
     "application/vnd.openxmlformats-officedocument.wordprocessingml.document": "docx",
     "application/vnd.openxmlformats-officedocument.presentationml.presentation": "pptx",
+    "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet": "xlsx",
+    "application/vnd.google-apps.document": "gdoc",
+    "application/vnd.google-apps.spreadsheet": "gsheet",
+    "application/vnd.google-apps.presentation": "gslides",
 }
 
 def cmd_index_drive(args):
@@ -52,43 +56,83 @@ def cmd_index_drive(args):
 def _download_drive_file(file_id: str) -> bytes:
     return download_pdf(file_id)
 
-def cmd_extract(args):
-    cfg = load_settings()
-    ensure_tables(cfg["dataset"])
-    client = bq_client()
-    sql = f"""
-      SELECT doc_id, name, mime_type FROM `{client.project}.{cfg['dataset']}.documents`
-      WHERE mime_type IN (
-        'application/pdf',
-        'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-        'application/vnd.openxmlformats-officedocument.presentationml.presentation'
-      )
-    """
-    docs = list(client.query(sql).result())
-    chunk_rows = []
-    for r in tqdm(docs):
-        b = _download_drive_file(r.doc_id)
-        if r.mime_type == "application/pdf":
+def _process_one_doc(doc_row, cfg):
+    """Process a single document with error handling"""
+    try:
+        b = _download_drive_file(doc_row.doc_id)
+        if doc_row.mime_type == "application/pdf":
             text, _ = extract_pdf_text(b, cfg["extract"]["ocr_mode"])
-        elif r.mime_type.endswith(".wordprocessingml.document"):
+        elif doc_row.mime_type.endswith(".wordprocessingml.document"):
             text = extract_docx_text(b)
-        elif r.mime_type.endswith(".presentationml.presentation"):
+        elif doc_row.mime_type.endswith(".presentationml.presentation"):
             text = extract_pptx_text(b)
         else:
-            continue
-        for i, chunk, tok in into_chunks(text, cfg["chunk"]["size"], cfg["chunk"]["overlap"]):
-            chunk_rows.append({
-                "doc_id": r.doc_id,
-                "chunk_id": f"{r.doc_id}:{i}",
+            return []
+        
+        chunk_size = int(cfg["chunk"]["size"])
+        chunk_overlap = int(cfg["chunk"]["overlap"])
+        chunks = []
+        for i, chunk, tok in into_chunks(text, chunk_size, chunk_overlap):
+            chunks.append({
+                "doc_id": doc_row.doc_id,
+                "chunk_id": f"{doc_row.doc_id}:{i}",
                 "page_from": None,
                 "page_to": None,
                 "n_chars": len(chunk),
                 "n_tokens_est": tok,
                 "text": chunk,
             })
+        return chunks
+    except Exception as e:
+        log.warning(f"Failed to process {doc_row.doc_id} ({doc_row.name}): {e}")
+        return []
+
+def cmd_extract(args):
+    from concurrent.futures import ThreadPoolExecutor, as_completed
+    cfg = load_settings()
+    ensure_tables(cfg["dataset"])
+    client = bq_client()
+    
+    # Skip already processed documents
+    print("🔍 Checking for already processed documents...")
+    sql_processed = f"""
+      SELECT DISTINCT doc_id FROM `{client.project}.{cfg['dataset']}.chunks`
+    """
+    try:
+        processed_ids = {r.doc_id for r in client.query(sql_processed).result()}
+        print(f"✅ Found {len(processed_ids):,} already processed documents")
+    except:
+        processed_ids = set()
+        print("⚠️  Chunks table empty, processing all documents")
+    
+    sql = f"""
+      SELECT doc_id, name, mime_type FROM `{client.project}.{cfg['dataset']}.documents_clean`
+      WHERE mime_type IN (
+        'application/pdf',
+        'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+        'application/vnd.openxmlformats-officedocument.presentationml.presentation'
+      )
+    """
+    all_docs = list(client.query(sql).result())
+    docs = [d for d in all_docs if d.doc_id not in processed_ids]
+    print(f"📄 Processing {len(docs):,} documents ({len(all_docs)-len(docs):,} already done)")
+    
+    # Use threading for I/O-bound parallel processing
+    max_workers = int(os.environ.get("EXTRACT_WORKERS", "10"))
+    print(f"⚡ Using {max_workers} concurrent workers")
+    
+    chunk_rows = []
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        future_to_doc = {executor.submit(_process_one_doc, doc, cfg): doc for doc in docs}
+        
+        for future in tqdm(as_completed(future_to_doc), total=len(docs)):
+            chunks = future.result()
+            chunk_rows.extend(chunks)
+            
             if len(chunk_rows) >= 500:
                 load_rows(cfg["dataset"], "chunks", chunk_rows)
                 chunk_rows = []
+    
     if chunk_rows:
         load_rows(cfg["dataset"], "chunks", chunk_rows)
 
