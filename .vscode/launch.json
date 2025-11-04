@@ -1,0 +1,98 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run Live Dashboard",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/create_live_dashboard.py",
+      "console": "integratedTerminal",
+      "env": {
+        "GOOGLE_APPLICATION_CREDENTIALS": "${workspaceFolder}/smart_grid_credentials.json"
+      }
+    },
+    {
+      "name": "Check BigQuery Data Freshness",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/check_comprehensive_data.py",
+      "console": "integratedTerminal",
+      "env": {
+        "GOOGLE_APPLICATION_CREDENTIALS": "${workspaceFolder}/smart_grid_credentials.json"
+      }
+    },
+    {
+      "name": "Ask Gemini Analysis",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/ask_gemini_analysis.py",
+      "console": "integratedTerminal",
+      "args": [
+        "What is the current system demand?"
+      ],
+      "env": {
+        "GOOGLE_APPLICATION_CREDENTIALS": "${workspaceFolder}/smart_grid_credentials.json"
+      }
+    },
+    {
+      "name": "Create GB Power Map",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/create_complete_gb_power_map.py",
+      "console": "integratedTerminal",
+      "env": {
+        "GOOGLE_APPLICATION_CREDENTIALS": "${workspaceFolder}/smart_grid_credentials.json"
+      }
+    },
+    {
+      "name": "Analyze Generator Sizes",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/analyze_generator_sizes.py",
+      "console": "integratedTerminal",
+      "env": {
+        "GOOGLE_APPLICATION_CREDENTIALS": "${workspaceFolder}/smart_grid_credentials.json"
+      }
+    },
+    {
+      "name": "Drive Indexer - Index Sheets",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/drive_indexer_cli.py",
+      "console": "integratedTerminal",
+      "args": [
+        "index"
+      ],
+      "env": {
+        "GOOGLE_APPLICATION_CREDENTIALS": "${workspaceFolder}/smart_grid_credentials.json"
+      }
+    },
+    {
+      "name": "Drive Indexer - Build Embeddings",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/drive_indexer_cli.py",
+      "console": "integratedTerminal",
+      "args": [
+        "build-embeddings"
+      ],
+      "env": {
+        "GOOGLE_APPLICATION_CREDENTIALS": "${workspaceFolder}/smart_grid_credentials.json"
+      }
+    },
+    {
+      "name": "Drive Indexer - Search",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/drive_indexer_cli.py",
+      "console": "integratedTerminal",
+      "args": [
+        "search",
+        "settlement period definition"
+      ],
+      "env": {
+        "GOOGLE_APPLICATION_CREDENTIALS": "${workspaceFolder}/smart_grid_credentials.json"
+      }
+    }
+  ]
+}
