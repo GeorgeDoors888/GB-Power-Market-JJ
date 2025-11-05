@@ -1,8 +1,33 @@
 # GB Power Market JJ (Jibber Jabber)
 
-**Repository**: https://github.com/GeorgeDoors888/jibber-jabber-24-august-2025-big-bop  
+[![Deploy](https://github.com/GeorgeDoors888/overarch-jibber-jabber/actions/workflows/deploy.yml/badge.svg)](https://github.com/GeorgeDoors888/overarch-jibber-jabber/actions/workflows/deploy.yml)
+[![CI](https://github.com/GeorgeDoors888/overarch-jibber-jabber/actions/workflows/ci.yml/badge.svg)](https://github.com/GeorgeDoors888/overarch-jibber-jabber/actions/workflows/ci.yml)
+
+**Repository**: https://github.com/GeorgeDoors888/overarch-jibber-jabber  
 **Local Path**: `~/GB Power Market JJ`  
 **Purpose**: GB power market data pipeline, analysis, and dashboard system
+
+---
+
+## 🔗 Quick Links
+
+### 🌐 Live Services
+- 📊 [Google Sheets Dashboard](https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/) - Analysis BI Enhanced
+- 🔍 [Search API Health](http://94.237.55.15:8080/health) - FastAPI status check
+- 🗺️ [Generator Map](http://94.237.55.15/gb_power_comprehensive_map.html) - GB power stations
+- ⚡ [IRIS Pipeline Status](http://94.237.55.234) - Real-time data streaming
+
+### 📖 Documentation
+- 🏗️ [Architecture Overview](UNIFIED_ARCHITECTURE_HISTORICAL_AND_REALTIME.md) - Complete system design
+- ⚙️ [Deployment Guide](DEPLOYMENT_COMPLETE.md) - Setup & deployment
+- 🔌 [API Documentation](drive-bq-indexer/API.md) - FastAPI endpoints
+- ⚠️ [Data Reference](STOP_DATA_ARCHITECTURE_REFERENCE.md) - **READ BEFORE QUERYING**
+- 📋 [Architecture Cross-Check](ARCHITECTURE_CROSSCHECK.md) - Implementation verification
+
+### 🛠️ Development
+- 🚀 [GitHub Actions](https://github.com/GeorgeDoors888/overarch-jibber-jabber/actions) - CI/CD workflows
+- 🐛 [Issue Resolution](RECURRING_ISSUE_SOLUTION.md) - Common problems
+- 📚 [Full Documentation Index](DOCUMENTATION_INDEX.md) - All 22 documentation files
 
 ---
 
