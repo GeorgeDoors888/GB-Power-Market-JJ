@@ -38,3 +38,10 @@ PROJECT_CREDENTIALS_CONFIG.json
 /Users/georgemajor/GB Power Market JJ && ls -1 *.json 2>/dev/null | grep -i credentialtemplate*.json
 token.pickle
 *.pickle
+
+# Exported documentation (generate locally, don't commit)
+API_OVERVIEW.pdf
+API_OVERVIEW_*.pdf
+API_OVERVIEW.html
+API_OVERVIEW.docx
+API_OVERVIEW.txt
