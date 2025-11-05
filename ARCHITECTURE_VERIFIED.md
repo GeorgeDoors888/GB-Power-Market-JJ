@@ -35,6 +35,8 @@ flowchart TD
 Google Drive → Extraction → Chunking → Embeddings (Vertex AI) → BigQuery → FastAPI Search
 ```
 
+> **📊 Full BigQuery Data Repository Details:** See [drive-bq-indexer/API.md](drive-bq-indexer/API.md) for comprehensive documentation of datasets (uk_energy_insights + uk_energy_prod), query examples, statistics, and AI platform integration.
+
 ### Status: ✅ INFRASTRUCTURE READY, ⏳ AWAITING EXECUTION
 
 | Step | Status | Details |
@@ -86,6 +88,8 @@ Google Drive → Extraction → Chunking → Embeddings (Vertex AI) → BigQuery
 - Dataset: uk_energy_insights
 - Location: europe-west2
 - Service Account: all-jibber@inner-cinema-476211-u9.iam.gserviceaccount.com
+
+> **📚 See [drive-bq-indexer/API.md](drive-bq-indexer/API.md) for full BigQuery integration details, query examples, and data repository documentation.**
 
 **✅ Tables**
 1. `documents` - 306,413 rows (with duplicates)

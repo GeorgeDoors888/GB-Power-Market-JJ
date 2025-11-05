@@ -34,6 +34,7 @@
 - **[PROJECT_CONFIGURATION.md](#project-configuration)** - BigQuery settings, schemas, templates
 - **[SCHEMA_FIX_SUMMARY.md](#schema-fix-summary)** - Schema troubleshooting
 - **[CODE_REVIEW_SUMMARY.md](#code-review-summary)** - All analysis functions documented
+- **[drive-bq-indexer/API.md](drive-bq-indexer/API.md)** - 🔌 FastAPI endpoints & BigQuery repository details
 
 ### For Analysis
 - **[QUICK_START_ANALYSIS.md](#quick-start-analysis)** - ⚡ Instant analysis commands
@@ -157,7 +158,7 @@ Master architecture document describing the Two-Pipeline design (Historical + Re
 
 **When to Use**: Understanding system design, planning new features, architectural decisions
 
-**Related**: [ENHANCED_BI_ANALYSIS_README.md](#enhanced-bi-analysis-readme), [PROJECT_CONFIGURATION.md](#project-configuration)
+**Related**: [ENHANCED_BI_ANALYSIS_README.md](#enhanced-bi-analysis-readme), [PROJECT_CONFIGURATION.md](#project-configuration), **[drive-bq-indexer/API.md](drive-bq-indexer/API.md)** - BigQuery data repository & API integration details
 
 ---
 
@@ -931,6 +932,43 @@ Guide for setting up Gemini AI analysis features (if implemented).
 | Google Sheet Dashboard | https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/ |
 | GitHub Repository | https://github.com/GeorgeDoors888/jibber-jabber-24-august-2025-big-bop |
 | BigQuery Console | https://console.cloud.google.com/bigquery?project=inner-cinema-476211-u9 |
+| FastAPI Search Service | http://94.237.55.15:8080 |
+| FastAPI Health Check | http://94.237.55.15:8080/health |
+
+---
+
+## 🔌 API & Integration Documentation
+
+### drive-bq-indexer/API.md
+**Category**: 🔌 API & Data Integration  
+**Status**: ✅ Production  
+**Date**: November 5, 2025  
+**Size**: 702 lines
+
+**Summary**:  
+Comprehensive documentation for the FastAPI search service and BigQuery data repository. Covers all endpoints, query capabilities, data architecture, and ChatGPT integration.
+
+**Key Content**:
+- **FastAPI Endpoints**: `/health` (health check), `/search` (semantic search)
+- **BigQuery Datasets**: 
+  - `uk_energy_insights` - 153K documents, embeddings, semantic search
+  - `uk_energy_prod` - 391M+ rows, 200+ tables, 3.8 years of GB power market data
+- **Query Examples**: 5 categories (Operational Performance, Market Analytics, Real-Time Monitoring, Historical Trends, Document Intelligence)
+- **Statistics & Metrics**: Data volume, coverage, storage costs
+- **Data Architecture**: ChatGPT ↔ BigQuery integration flow
+- **Major Tables Documented**: bmrs_bod (391M rows), bmrs_fuelinst (5.7M), bmrs_mid, IRIS real-time tables
+- **Deployment**: Docker, GitHub Actions, environment configuration
+- **Testing**: Health checks, search tests, error handling
+- **Troubleshooting**: API issues, search problems, common errors
+
+**When to Use**: 
+- Setting up API access
+- Understanding BigQuery data structure
+- Writing queries for energy market data
+- Integrating with ChatGPT/AI platform
+- Troubleshooting search functionality
+
+**Related**: [ARCHITECTURE_VERIFIED.md](#architecture-verified), [UNIFIED_ARCHITECTURE_HISTORICAL_AND_REALTIME.md](#unified-architecture)
 
 ---
 
