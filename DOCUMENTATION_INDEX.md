@@ -27,8 +27,9 @@
 
 ### For New Users
 1. **[README.md](#readme)** - Project overview and quick start
-2. **[PROJECT_CONFIGURATION.md](#project-configuration)** - Essential configuration reference
-3. **[UNIFIED_ARCHITECTURE_HISTORICAL_AND_REALTIME.md](#unified-architecture)** - System architecture
+2. **[PROJECT_IDS.md](#project-ids)** - ⚠️ **CRITICAL:** Google Cloud project IDs (BigQuery vs Sheets)
+3. **[PROJECT_CONFIGURATION.md](#project-configuration)** - Essential configuration reference
+4. **[UNIFIED_ARCHITECTURE_HISTORICAL_AND_REALTIME.md](#unified-architecture)** - System architecture
 
 ### For Development
 - **[PROJECT_CONFIGURATION.md](#project-configuration)** - BigQuery settings, schemas, templates
@@ -133,7 +134,39 @@ Comprehensive configuration reference containing ALL critical settings. Created 
 
 **When to Use**: Before creating any new script, troubleshooting configuration errors
 
-**Related**: [README.md](#readme), [DOCUMENTATION_IMPROVEMENT_SUMMARY.md](#documentation-improvement-summary)
+**Related**: [README.md](#readme), [PROJECT_IDS.md](#project-ids), [DOCUMENTATION_IMPROVEMENT_SUMMARY.md](#documentation-improvement-summary)
+
+---
+
+### PROJECT_IDS.md {#project-ids}
+**Category**: ⚠️ **CRITICAL REFERENCE**  
+**Status**: ✅ Active - Canonical Source  
+**Date**: November 5, 2025  
+**Size**: 200+ lines
+
+**Summary**:  
+**THE DEFINITIVE GUIDE** to Google Cloud project IDs. Created to permanently solve confusion between `inner-cinema-476211-u9` (BigQuery) and `jibber-jabber-knowledge` (Sheets/Apps Script).
+
+**Key Content**:
+- Two separate projects clearly defined
+- Decision guide: "When should I use X?"
+- Common mistakes with ❌/✅ examples
+- Service accounts summary table
+- Configuration file examples
+- Quick links to both project consoles
+
+**Critical Rules**:
+- **BigQuery operations:** ALWAYS use `inner-cinema-476211-u9`
+- **Apps Script/Sheets:** ALWAYS use `jibber-jabber-knowledge`
+- **Never mix these up!**
+
+**Service Accounts**:
+- `all-jibber@inner-cinema-476211-u9.iam.gserviceaccount.com` - BigQuery access
+- `jibber-jabber-knowledge@appspot.gserviceaccount.com` - Sheets/Drive access
+
+**When to Use**: Before enabling APIs, setting up service accounts, configuring Apps Script, or any time you're unsure which project to use
+
+**Related**: [PROJECT_CONFIGURATION.md](#project-configuration), [ENABLE_APPS_SCRIPT_API.md](#enable-apps-script-api), [APPS_SCRIPT_API_GUIDE.md](#apps-script-api-guide)
 
 ---
 

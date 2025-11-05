@@ -10,7 +10,7 @@ import time
 
 # Configuration
 SHEET_ID = "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8"
-SA_PATH = "secrets/sa.json"  # Update path as needed
+SA_PATH = "smart_grid_credentials.json"  # Service account credentials
 SCOPES = [
     "https://www.googleapis.com/auth/script.projects",
     "https://www.googleapis.com/auth/spreadsheets",
@@ -234,7 +234,7 @@ def check_apps_script_api_enabled():
             print("⚠️  Apps Script API is not enabled!")
             print("\nTo enable:")
             print("1. Go to: https://console.cloud.google.com/apis/library/script.googleapis.com")
-            print("2. Select project: inner-cinema-476211-u9")
+            print("2. Select project: jibber-jabber-knowledge")
             print("3. Click 'ENABLE'")
             print("4. Wait 1-2 minutes, then try again")
             return False

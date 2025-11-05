@@ -3,6 +3,8 @@
 **Date:** November 5, 2025  
 **Purpose:** Verify service account access to Google Sheets from multiple angles
 
+**⚠️ CRITICAL:** This uses project `jibber-jabber-knowledge` (NOT `inner-cinema-476211-u9`). See [PROJECT_IDS.md](PROJECT_IDS.md).
+
 ---
 
 ## 🎯 Overview

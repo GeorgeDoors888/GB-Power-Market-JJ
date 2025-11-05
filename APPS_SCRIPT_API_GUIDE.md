@@ -19,16 +19,16 @@
 
 4. **Copy the Script ID** (looks like: `AKfycbx...`)
 
-### Step 2: Enable Apps Script API
+**Step 1: Enable Apps Script API**
 
-1. **Go to Google Cloud Console:**
+1. Visit:
    ```
-   https://console.cloud.google.com/apis/library/script.googleapis.com?project=inner-cinema-476211-u9
+   https://console.cloud.google.com/apis/library/script.googleapis.com?project=jibber-jabber-knowledge
    ```
 
-2. **Click "ENABLE"**
+2. Click **"ENABLE"**
 
-3. **Wait 1-2 minutes** for API to activate
+3. Wait 30 seconds for propagation
 
 ### Step 3: Run the Tests
 
@@ -106,7 +106,7 @@ The verification script (`verify_sheets_access.gs`) must be in your Apps Script 
 ### 2. Apps Script API Enabled
 
 - Go to: https://console.cloud.google.com/apis/library/script.googleapis.com
-- Project: `inner-cinema-476211-u9`
+- Project: `jibber-jabber-knowledge`
 - Status: **ENABLED** ✅
 
 ### 3. Service Account Permissions
@@ -123,7 +123,7 @@ Your service account needs:
 
 **Solution:**
 ```
-1. Go to: https://console.cloud.google.com/apis/library/script.googleapis.com?project=inner-cinema-476211-u9
+1. Go to: https://console.cloud.google.com/apis/library/script.googleapis.com?project=jibber-jabber-knowledge
 2. Click ENABLE
 3. Wait 1-2 minutes
 4. Try again
@@ -148,7 +148,9 @@ Your service account needs:
 ```
 1. Extensions → Apps Script → Project Settings
 2. Scroll to "Google Cloud Platform (GCP) Project"
-3. Change project → Enter: inner-cinema-476211-u9
+2. Go to project settings (gear icon ⚙️)
+
+3. Change project → Enter: jibber-jabber-knowledge
 4. Save
 ```
 
