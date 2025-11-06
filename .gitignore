@@ -46,3 +46,11 @@ API_OVERVIEW.html
 API_OVERVIEW.docx
 API_OVERVIEW.txt
 github-deploy-key.json
+
+# Logs
+*.log
+server.log
+codex-server/*.log
+
+# Service Account Keys (SENSITIVE)
+*service_account*.json
