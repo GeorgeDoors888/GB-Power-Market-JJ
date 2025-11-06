@@ -301,7 +301,7 @@ async def query_bigquery(request: BigQueryRequest):
     Example:
     ```
     {
-        "sql": "SELECT * FROM `inner-cinema-476211-u9.uk_energy_prod.bmrs_fuelinst_iris` LIMIT 10",
+        "sql": "SELECT * FROM `jibber-jabber-knowledge.dataset_name.table_name` LIMIT 10",
         "timeout": 60,
         "max_results": 1000
     }
@@ -335,7 +335,7 @@ import os
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = '{service_account_path}'
 
 try:
-    client = bigquery.Client(project='inner-cinema-476211-u9')
+    client = bigquery.Client(project='jibber-jabber-knowledge')
     
     query = '''
 {request.sql}
