@@ -130,14 +130,24 @@ def process_document(doc_row, cfg, dataset):
         return {"status": "error", "doc_id": doc_id, "error": error_msg}
 
 def get_documents_to_process(client, dataset, batch_size):
-    """Get next batch of unprocessed documents - processes ALL documents in order"""
+    """Get next batch of unprocessed documents - uses BigQuery to filter processed docs"""
     
-    # Get already processed
-    sql_processed = f"SELECT DISTINCT doc_id FROM `{client.project}.{dataset}.chunks`"
-    processed_ids = {r.doc_id for r in client.query(sql_processed).result()}
-    log_progress(f"✅ Already processed: {len(processed_ids):,} documents")
+    # Get count of ALL documents first (lightweight query)
+    count_sql = f"""
+      SELECT COUNT(*) as total
+      FROM `{client.project}.{dataset}.documents_clean`
+      WHERE mime_type IN (
+        'application/pdf',
+        'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+        'application/vnd.openxmlformats-officedocument.presentationml.presentation'
+      )
+    """
+    total_docs = list(client.query(count_sql).result())[0].total
     
-    # Get ALL documents (not just 10K random sample!)
+    # Get ONLY the next batch we need (not all 140K docs!)
+    # Query for more than batch_size to account for already-processed docs
+    fetch_size = batch_size * 3  # Fetch 3x batch size to handle processed docs
+    
     sql = f"""
       SELECT doc_id, name, mime_type 
       FROM `{client.project}.{dataset}.documents_clean`
@@ -146,19 +156,39 @@ def get_documents_to_process(client, dataset, batch_size):
         'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
         'application/vnd.openxmlformats-officedocument.presentationml.presentation'
       )
+      AND doc_id NOT IN (
+        SELECT DISTINCT doc_id FROM `{client.project}.{dataset}.chunks`
+      )
       ORDER BY doc_id
+      LIMIT {fetch_size}
     """
     
-    log_progress(f"📊 Fetching all documents from documents_clean...")
-    all_docs = list(client.query(sql).result())
-    log_progress(f"📊 Total documents in database: {len(all_docs):,}")
+    log_progress(f"📊 Fetching next {fetch_size} unprocessed documents...")
+    batch_docs = list(client.query(sql).result())
     
-    # Filter to unprocessed only
-    docs_to_process = [d for d in all_docs if d.doc_id not in processed_ids and d.doc_id not in SKIP_FILES]
-    log_progress(f"📊 Documents remaining to process: {len(docs_to_process):,}")
+    # Filter out skip list
+    docs_to_process = [d for d in batch_docs if d.doc_id not in SKIP_FILES]
     
-    # Return next batch
-    return docs_to_process[:batch_size], len(docs_to_process), len(all_docs)
+    # Get remaining count
+    remaining_sql = f"""
+      SELECT COUNT(*) as remaining
+      FROM `{client.project}.{dataset}.documents_clean`
+      WHERE mime_type IN (
+        'application/pdf',
+        'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+        'application/vnd.openxmlformats-officedocument.presentationml.presentation'
+      )
+      AND doc_id NOT IN (
+        SELECT DISTINCT doc_id FROM `{client.project}.{dataset}.chunks`
+      )
+    """
+    remaining = list(client.query(remaining_sql).result())[0].remaining
+    
+    log_progress(f"📊 Total documents in database: {total_docs:,}")
+    log_progress(f"📊 Documents remaining to process: {remaining:,}")
+    
+    # Return next batch (up to batch_size)
+    return docs_to_process[:batch_size], remaining, total_docs
 
 def process_batch(cfg, dataset, client, batch_num):
     """Process one batch of documents"""
