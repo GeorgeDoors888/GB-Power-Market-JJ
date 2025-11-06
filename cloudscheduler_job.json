@@ -1,0 +1,25 @@
+{
+  "name": "projects/inner-cinema-476211-u9/locations/europe-west2/jobs/arbitrage-refresh",
+  "description": "Nightly refresh for GB Battery Arbitrage & Regional Value analysis",
+  "schedule": "0 4 * * *",
+  "timeZone": "Europe/London",
+  "httpTarget": {
+    "uri": "https://REPLACE_WITH_CLOUD_RUN_URL",
+    "httpMethod": "GET",
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "oidcToken": {
+      "serviceAccountEmail": "arbitrage-bq-sa@inner-cinema-476211-u9.iam.gserviceaccount.com",
+      "audience": "https://REPLACE_WITH_CLOUD_RUN_URL"
+    }
+  },
+  "retryConfig": {
+    "retryCount": 3,
+    "maxRetryDuration": "600s",
+    "minBackoffDuration": "10s",
+    "maxBackoffDuration": "60s",
+    "maxDoublings": 3
+  },
+  "attemptDeadline": "900s"
+}

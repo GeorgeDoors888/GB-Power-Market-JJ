@@ -12,14 +12,15 @@
 
 ## 🎯 Quick Navigation
 
-### 🚀 Latest Updates (31 Oct 2025)
-0. **[STOP_DATA_ARCHITECTURE_REFERENCE.md](#stop-architecture)** - ⚠️ **READ FIRST** to stop repeating data issues
-1. **[GOOGLE_DOCS_REPORT_SUMMARY.md](#google-docs-report)** - 📄 **22-Month Analysis Report** (NEW!)
-2. **[SESSION_SUMMARY_31_OCT_2025.md](#session-summary)** - 📋 Complete session summary
-3. **[ENHANCED_ANALYSIS_RESULTS.md](#enhanced-analysis-results)** - ⭐ 22-month analysis results
-4. **[CLOCK_CHANGE_ANALYSIS_NOTE.md](#clock-change-note)** - ⚠️ Settlement Period 50 correction
-5. **[PRICE_DEMAND_CORRELATION_FIX.md](#price-demand-fix)** - Date type mismatch solution
-6. **Enhanced Scripts** - `enhanced_statistical_analysis.py`, `check_table_coverage.sh`, `generate_google_docs_report_simple.py`
+### 🚀 Latest Updates (6 Nov 2025)
+0. **[AUTO_REFRESH_COMPLETE.md](#auto-refresh-complete)** - 🔄 **Self-refreshing BigQuery pipeline** (NEW!)
+1. **[GITHUB_ACTIONS_SETUP.md](#github-actions-setup)** - 🤖 **GitHub Actions auto-deploy guide** (NEW!)
+2. **[STOP_DATA_ARCHITECTURE_REFERENCE.md](#stop-architecture)** - ⚠️ **READ FIRST** to stop repeating data issues
+3. **[GOOGLE_DOCS_REPORT_SUMMARY.md](#google-docs-report)** - 📄 **22-Month Analysis Report**
+4. **[SESSION_SUMMARY_31_OCT_2025.md](#session-summary)** - 📋 Complete session summary
+5. **[ENHANCED_ANALYSIS_RESULTS.md](#enhanced-analysis-results)** - ⭐ 22-month analysis results
+6. **[CLOCK_CHANGE_ANALYSIS_NOTE.md](#clock-change-note)** - ⚠️ Settlement Period 50 correction
+7. **Enhanced Scripts** - `enhanced_statistical_analysis.py`, `check_table_coverage.sh`, `generate_google_docs_report_simple.py`
 
 ### 🆕 START HERE: Analysis Ready!
 1. **[QUICK_START_ANALYSIS.md](#quick-start-analysis)** - ⚡ Copy-paste commands to run analysis NOW
@@ -32,6 +33,8 @@
 4. **[UNIFIED_ARCHITECTURE_HISTORICAL_AND_REALTIME.md](#unified-architecture)** - System architecture
 
 ### For Development
+- **[AUTO_REFRESH_COMPLETE.md](#auto-refresh-complete)** - 🔄 Self-refreshing BigQuery analysis (NEW!)
+- **[GITHUB_ACTIONS_SETUP.md](#github-actions-setup)** - GitHub Actions deployment guide (NEW!)
 - **[PROJECT_CONFIGURATION.md](#project-configuration)** - BigQuery settings, schemas, templates
 - **[SCHEMA_FIX_SUMMARY.md](#schema-fix-summary)** - Schema troubleshooting
 - **[CODE_REVIEW_SUMMARY.md](#code-review-summary)** - All analysis functions documented
@@ -135,6 +138,66 @@ Comprehensive configuration reference containing ALL critical settings. Created 
 **When to Use**: Before creating any new script, troubleshooting configuration errors
 
 **Related**: [README.md](#readme), [PROJECT_IDS.md](#project-ids), [DOCUMENTATION_IMPROVEMENT_SUMMARY.md](#documentation-improvement-summary)
+
+---
+
+### AUTO_REFRESH_COMPLETE.md {#auto-refresh-complete}
+**Category**: 🔄 **Self-Refreshing Pipeline**  
+**Status**: ✅ Active - Production Ready  
+**Date**: November 6, 2025  
+**Size**: 350+ lines
+
+**Summary**:  
+Complete guide to making your BigQuery analysis "always live" through GitHub Actions, Cloud Run, and Cloud Scheduler. Runs automatically daily at 04:00 London time with zero manual intervention.
+
+**Key Content**:
+- 5-step quick start (create service accounts → deploy → done)
+- Auto-authentication explanation (no JSON keys stored)
+- Mobile triggering methods (GitHub app, Cloud Console app, iOS Shortcut)
+- Monitoring & debugging commands
+- Cost breakdown (~£1-3/month)
+- Extension options (Drive, Sheets, email reports)
+
+**Services Used**:
+- Cloud Run: Hosts containerized Python + BigQuery client
+- Cloud Scheduler: Daily 04:00 trigger with retry logic
+- Workload Identity Federation: Secure GitHub → GCP auth
+- BigQuery: Queries via Application Default Credentials (auto)
+
+**When to Use**: Want to deploy analysis that runs automatically, need always-fresh data, working on mobile
+
+**Related**: [GITHUB_ACTIONS_SETUP.md](#github-actions-setup), [API.md](drive-bq-indexer/API.md), [PROJECT_IDS.md](#project-ids)
+
+---
+
+### GITHUB_ACTIONS_SETUP.md {#github-actions-setup}
+**Category**: 🤖 **CI/CD & Automation**  
+**Status**: ✅ Active - Step-by-Step Guide  
+**Date**: November 6, 2025  
+**Size**: 450+ lines
+
+**Summary**:  
+Detailed technical guide for configuring GitHub Actions to build, deploy, and schedule your BigQuery analysis pipeline. Includes all gcloud commands, secret configuration, and troubleshooting.
+
+**Key Content**:
+- Workload Identity Federation setup (OIDC tokens)
+- Service account creation & IAM permissions
+- GitHub Secrets configuration (6 required secrets)
+- Dockerfile and requirements.txt templates
+- Cloud Run deployment parameters
+- Cloud Scheduler JSON configuration
+- Monitoring & logging commands
+- Common error resolutions
+
+**Files Created by Workflow**:
+- `.github/workflows/deploy-cloudrun.yml` (GitHub Actions YAML)
+- `cloudscheduler_job.json` (Scheduler configuration)
+- `Dockerfile` (Container definition)
+- `requirements.txt` (Python dependencies - already exists)
+
+**When to Use**: Setting up automated deployment, troubleshooting GitHub Actions failures, understanding auth flow
+
+**Related**: [AUTO_REFRESH_COMPLETE.md](#auto-refresh-complete), [PROJECT_CONFIGURATION.md](#project-configuration)
 
 ---
 
