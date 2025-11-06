@@ -5,6 +5,7 @@ Continuous extraction - FIXED VERSION
 - Better performance monitoring
 - Memory leak prevention with periodic restarts
 - Real-time progress tracking
+- LIMITED QUEUE to prevent memory explosion (max 12 docs in memory at once)
 """
 import sys
 sys.path.insert(0, "/app")
@@ -14,7 +15,7 @@ load_dotenv("/app/.env")
 import os
 import time
 import psutil
-from concurrent.futures import ThreadPoolExecutor, as_completed
+from concurrent.futures import ThreadPoolExecutor, as_completed, wait, FIRST_COMPLETED
 from tqdm import tqdm
 from datetime import datetime
 
@@ -176,29 +177,56 @@ def process_batch(cfg, dataset, client, batch_num):
     log_progress(f"⏳ Remaining: {remaining:,} documents")
     log_progress(f"{'='*70}\n")
     
-    # Process with workers
+    # Process with workers - LIMITED QUEUE to prevent memory explosion
     stats = {"success": 0, "error": 0, "empty": 0, "skipped": 0, "total_chunks": 0}
     start_time = time.time()
     batch_start = time.time()
     
+    # Process in small chunks to limit memory usage
+    # Only keep MAX_WORKERS * 2 documents in queue at once
+    MAX_QUEUE_SIZE = MAX_WORKERS * 2
+    
     with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
-        futures = {executor.submit(process_document, doc, cfg, dataset): doc for doc in docs}
-        
         with tqdm(total=len(docs), desc=f"Batch {batch_num}", unit="doc") as pbar:
-            for future in as_completed(futures):
-                result = future.result()
+            futures = {}
+            doc_iter = iter(docs)
+            
+            # Initially fill the queue
+            for _ in range(min(MAX_QUEUE_SIZE, len(docs))):
+                try:
+                    doc = next(doc_iter)
+                    future = executor.submit(process_document, doc, cfg, dataset)
+                    futures[future] = doc
+                except StopIteration:
+                    break
+            
+            # Process and refill queue as tasks complete
+            while futures:
+                done, _ = wait(futures.keys(), return_when=FIRST_COMPLETED)
                 
-                if result["status"] == "success":
-                    stats["success"] += 1
-                    stats["total_chunks"] += result.get("chunks", 0)
-                elif result["status"] == "error":
-                    stats["error"] += 1
-                elif result["status"] == "empty":
-                    stats["empty"] += 1
-                elif result["status"] == "skipped":
-                    stats["skipped"] += 1
-                
-                pbar.update(1)
+                for future in done:
+                    result = future.result()
+                    
+                    if result["status"] == "success":
+                        stats["success"] += 1
+                        stats["total_chunks"] += result.get("chunks", 0)
+                    elif result["status"] == "error":
+                        stats["error"] += 1
+                    elif result["status"] == "empty":
+                        stats["empty"] += 1
+                    elif result["status"] == "skipped":
+                        stats["skipped"] += 1
+                    
+                    pbar.update(1)
+                    del futures[future]
+                    
+                    # Add new task to queue if available
+                    try:
+                        doc = next(doc_iter)
+                        new_future = executor.submit(process_document, doc, cfg, dataset)
+                        futures[new_future] = doc
+                    except StopIteration:
+                        pass
                 
                 # Update progress every 50 docs
                 if (stats["success"] + stats["error"]) % 50 == 0:
