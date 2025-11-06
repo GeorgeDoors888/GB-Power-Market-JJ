@@ -310,17 +310,26 @@ async def query_bigquery(request: BigQueryRequest):
     logger.info(f"Received BigQuery request: {request.sql[:100]}...")
     start_time = datetime.now()
     
-    # Check if service account exists
+    # Check for credentials - either from file or base64 environment variable
     service_account_path = os.environ.get(
         'GOOGLE_APPLICATION_CREDENTIALS',
         '/workspace/gridsmart_service_account.json'
     )
     
-    if not os.path.exists(service_account_path):
+    # If base64 credentials exist, decode and write to temp file
+    credentials_base64 = os.environ.get('GOOGLE_CREDENTIALS_BASE64')
+    if credentials_base64:
+        import base64
+        with tempfile.NamedTemporaryFile(mode='w', suffix='.json', delete=False) as f:
+            credentials_json = base64.b64decode(credentials_base64).decode('utf-8')
+            f.write(credentials_json)
+            service_account_path = f.name
+        logger.info(f"Using base64-encoded credentials from environment")
+    elif not os.path.exists(service_account_path):
         logger.error(f"Service account not found at {service_account_path}")
         return BigQueryResponse(
             success=False,
-            error=f"Service account not found. Please upload gridsmart_service_account.json to /workspace/",
+            error=f"Service account not found. Please set GOOGLE_CREDENTIALS_BASE64 or upload gridsmart_service_account.json to /workspace/",
             execution_time=0,
             timestamp=datetime.now().isoformat()
         )
