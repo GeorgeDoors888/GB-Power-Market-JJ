@@ -11,9 +11,10 @@ import subprocess
 import tempfile
 import os
 import sys
-from typing import Optional, List
+from typing import Optional, List, Dict, Any
 from datetime import datetime
 import logging
+import json
 
 # Setup logging
 logging.basicConfig(
@@ -60,6 +61,19 @@ class HealthResponse(BaseModel):
     status: str
     version: str
     languages: List[str]
+    timestamp: str
+
+class BigQueryRequest(BaseModel):
+    sql: str
+    timeout: int = 60
+    max_results: int = 1000
+
+class BigQueryResponse(BaseModel):
+    success: bool
+    data: Optional[List[Dict[str, Any]]] = None
+    row_count: Optional[int] = None
+    error: Optional[str] = None
+    execution_time: float
     timestamp: str
 
 # Security: Forbidden patterns
@@ -274,6 +288,159 @@ async def get_supported_languages():
             }
         ]
     }
+
+@app.post("/query_bigquery", response_model=BigQueryResponse)
+async def query_bigquery(request: BigQueryRequest):
+    """
+    Execute BigQuery SQL query and return results
+    
+    Requires:
+    - Service account JSON at /workspace/gridsmart_service_account.json
+    - google-cloud-bigquery package installed
+    
+    Example:
+    ```
+    {
+        "sql": "SELECT * FROM `inner-cinema-476211-u9.uk_energy_prod.bmrs_fuelinst_iris` LIMIT 10",
+        "timeout": 60,
+        "max_results": 1000
+    }
+    ```
+    """
+    logger.info(f"Received BigQuery request: {request.sql[:100]}...")
+    start_time = datetime.now()
+    
+    # Check if service account exists
+    service_account_path = os.environ.get(
+        'GOOGLE_APPLICATION_CREDENTIALS',
+        '/workspace/gridsmart_service_account.json'
+    )
+    
+    if not os.path.exists(service_account_path):
+        logger.error(f"Service account not found at {service_account_path}")
+        return BigQueryResponse(
+            success=False,
+            error=f"Service account not found. Please upload gridsmart_service_account.json to /workspace/",
+            execution_time=0,
+            timestamp=datetime.now().isoformat()
+        )
+    
+    # Create Python script to execute BigQuery query
+    query_script = f"""
+import json
+import sys
+from google.cloud import bigquery
+import os
+
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = '{service_account_path}'
+
+try:
+    client = bigquery.Client(project='inner-cinema-476211-u9')
+    
+    query = '''
+{request.sql}
+'''
+    
+    query_job = client.query(query)
+    results = query_job.result(timeout={request.timeout})
+    
+    rows = []
+    for i, row in enumerate(results):
+        if i >= {request.max_results}:
+            break
+        rows.append(dict(row))
+    
+    output = {{
+        'success': True,
+        'row_count': len(rows),
+        'data': rows
+    }}
+    
+    print(json.dumps(output, default=str))
+    
+except Exception as e:
+    output = {{
+        'success': False,
+        'error': str(e)
+    }}
+    print(json.dumps(output, default=str))
+    sys.exit(1)
+"""
+    
+    # Execute the query script
+    with tempfile.NamedTemporaryFile(mode='w', suffix='.py', delete=False) as f:
+        f.write(query_script)
+        temp_file = f.name
+    
+    try:
+        result = subprocess.run(
+            [sys.executable, temp_file],
+            capture_output=True,
+            text=True,
+            timeout=request.timeout + 10
+        )
+        
+        execution_time = (datetime.now() - start_time).total_seconds()
+        
+        if result.returncode != 0:
+            logger.error(f"BigQuery query failed: {result.stderr}")
+            return BigQueryResponse(
+                success=False,
+                error=result.stderr or "Query execution failed",
+                execution_time=execution_time,
+                timestamp=datetime.now().isoformat()
+            )
+        
+        # Parse the JSON output
+        query_result = json.loads(result.stdout)
+        
+        if query_result.get('success'):
+            logger.info(f"BigQuery query successful: {query_result.get('row_count')} rows")
+            return BigQueryResponse(
+                success=True,
+                data=query_result.get('data'),
+                row_count=query_result.get('row_count'),
+                execution_time=execution_time,
+                timestamp=datetime.now().isoformat()
+            )
+        else:
+            logger.error(f"BigQuery query error: {query_result.get('error')}")
+            return BigQueryResponse(
+                success=False,
+                error=query_result.get('error'),
+                execution_time=execution_time,
+                timestamp=datetime.now().isoformat()
+            )
+            
+    except subprocess.TimeoutExpired:
+        logger.error(f"BigQuery query timed out after {request.timeout}s")
+        return BigQueryResponse(
+            success=False,
+            error=f"Query timed out after {request.timeout} seconds",
+            execution_time=request.timeout,
+            timestamp=datetime.now().isoformat()
+        )
+    except json.JSONDecodeError as e:
+        logger.error(f"Failed to parse query result: {e}")
+        return BigQueryResponse(
+            success=False,
+            error=f"Failed to parse query result: {str(e)}",
+            execution_time=(datetime.now() - start_time).total_seconds(),
+            timestamp=datetime.now().isoformat()
+        )
+    except Exception as e:
+        logger.error(f"BigQuery query error: {e}")
+        return BigQueryResponse(
+            success=False,
+            error=str(e),
+            execution_time=(datetime.now() - start_time).total_seconds(),
+            timestamp=datetime.now().isoformat()
+        )
+    finally:
+        try:
+            os.unlink(temp_file)
+        except:
+            pass
 
 if __name__ == "__main__":
     import uvicorn
