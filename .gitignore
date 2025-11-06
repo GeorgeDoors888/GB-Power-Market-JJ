@@ -54,3 +54,16 @@ codex-server/*.log
 
 # Service Account Keys (SENSITIVE)
 *service_account*.json
+.env.ai-gateway
+api_gateway.log
+/tmp/ai-gateway-audit.log
+
+# Large data folders
+iris_windows_deployment/
+.venv/
+deploy_package/
+tools/
+
+# Large data files
+*.tar.gz
+*-bq-key.json

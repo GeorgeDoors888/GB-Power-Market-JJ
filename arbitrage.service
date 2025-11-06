@@ -1,0 +1,11 @@
+[Unit]
+Description=GB Arbitrage Daily Run
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=/opt/arbitrage
+Environment=GOOGLE_APPLICATION_CREDENTIALS=/opt/arbitrage/service-account.json
+ExecStart=/bin/bash -c 'exec /usr/bin/python3 /opt/arbitrage/battery_arbitrage.py >> /opt/arbitrage/logs/arbitrage.log 2>&1'
+User=root

@@ -1,0 +1,8 @@
+/opt/arbitrage/logs/*.log {
+  weekly
+  rotate 8
+  compress
+  missingok
+  notifempty
+  copytruncate
+}

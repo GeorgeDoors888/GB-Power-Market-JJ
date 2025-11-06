@@ -1,0 +1,108 @@
+
+================================================================================
+🔋 GB BATTERY & VLP IDENTIFICATION REPORT
+================================================================================
+
+📅 Report Date: 2025-11-06 15:04:08
+📂 Data Sources: 
+   - BOD Table: inner-cinema-476211-u9.uk_energy_prod.bmrs_bod
+   - Generator Register: generators_list.csv
+
+--------------------------------------------------------------------------------
+📊 GENERATOR REGISTER ANALYSIS
+--------------------------------------------------------------------------------
+Total generators in register: 421
+Battery storage sites identified: 421
+
+Battery Technology Breakdown:
+   Stored Energy (all stored energy irrespective of the original energy source): 270
+   BATTERY STORAGE: 45
+   Solar: 35
+   STORED ENERGY (ALL STORED ENERGY IRRESPECTVE OF THE ORIGINAL ENERGY SOURCE): 22
+   Stored Energy: 20
+   BATTERY: 6
+   data not available: 5
+   SOLAR: 4
+   OTHER : 4
+   Fossil - Gas: 2
+
+--------------------------------------------------------------------------------
+📊 BMU BEHAVIOR ANALYSIS
+--------------------------------------------------------------------------------
+Total active BMUs analyzed: 100
+BMUs with battery-like behavior: 0
+  - Bidirectional trading (bid + offer)
+  - Variable output (flexible MW levels)
+  - Highly active (>300 days/year)
+
+Potential VLP BMUs identified: 28
+  - Aggregator codes (2__ prefix)
+  - High frequency trading
+  - Large record volumes
+
+
+--------------------------------------------------------------------------------
+🔍 VLP CANDIDATES
+--------------------------------------------------------------------------------
+   T_HUMR-1
+      Total records: 260,736
+      Active days: 357
+      Avg level change: 0.0 MW
+   E_RHEI-1
+      Total records: 195,458
+      Active days: 357
+      Avg level change: 0.0 MW
+   E_LITRB-1
+      Total records: 173,597
+      Active days: 357
+      Avg level change: 0.0 MW
+   E_TOLLB-1
+      Total records: 171,902
+      Active days: 357
+      Avg level change: 0.0 MW
+   2__PLOND001
+      Total records: 144,647
+      Active days: 357
+      Avg level change: 0.0 MW
+   2__DUKPR001
+      Total records: 135,880
+      Active days: 357
+      Avg level change: 0.0 MW
+   2__GLOND001
+      Total records: 131,368
+      Active days: 357
+      Avg level change: 0.0 MW
+   2__GLOND002
+      Total records: 131,306
+      Active days: 357
+      Avg level change: 0.0 MW
+   2__GSMAE003
+      Total records: 130,368
+      Active days: 357
+      Avg level change: 0.0 MW
+   2__ASTAT005
+      Total records: 130,368
+      Active days: 357
+      Avg level change: 0.0 MW
+
+================================================================================
+💡 KEY INSIGHTS
+================================================================================
+
+BATTERY IDENTIFICATION:
+• Generator register shows 421 battery storage sites
+• Behavioral analysis found 0 BMUs with battery-like patterns
+• Direct generator-to-BMU mapping requires additional reference data
+
+VLP IDENTIFICATION:
+• 28 BMUs show VLP characteristics
+• BMUs starting with "2__" are often aggregators/VLPs
+• High trading frequency indicates professional optimization
+
+NEXT STEPS:
+1. Obtain NESO's BMU-to-Generator mapping table
+2. Cross-reference generator register with BMU behavioral data
+3. Verify VLP status with REMIT participant data
+4. Analyze revenue and market impact of identified batteries/VLPs
+
+================================================================================

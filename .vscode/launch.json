@@ -93,6 +93,31 @@
       "env": {
         "GOOGLE_APPLICATION_CREDENTIALS": "${workspaceFolder}/smart_grid_credentials.json"
       }
+    },
+    {
+      "name": "Refresh Live Dashboard (today)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/tools/refresh_live_dashboard.py",
+      "console": "integratedTerminal",
+      "envFile": "${workspaceFolder}/.env"
+    },
+    {
+      "name": "Refresh Live Dashboard (custom date)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/tools/refresh_live_dashboard.py",
+      "console": "integratedTerminal",
+      "args": ["--date", "${input:customDate}"],
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ],
+  "inputs": [
+    {
+      "id": "customDate",
+      "type": "promptString",
+      "description": "Enter date (YYYY-MM-DD)",
+      "default": "2025-11-06"
     }
   ]
 }
