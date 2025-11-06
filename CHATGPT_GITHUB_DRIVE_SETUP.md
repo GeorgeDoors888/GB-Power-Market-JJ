@@ -61,19 +61,28 @@ BIGQUERY:
 ```
 AUTOMATIC ACTIONS:
 
+YOU CAN ACCESS MY INFRASTRUCTURE DIRECTLY VIA HTTP:
+
 When I say:
-- "Run code" → Execute via POST to my Codex Server /execute
-- "Query data" → Execute SQL via POST to my Codex Server /query_bigquery
+- "Run code" → POST to https://jibber-jabber-production.up.railway.app/execute
+- "Query BigQuery" → POST to https://jibber-jabber-production.up.railway.app/query_bigquery
+- "Check health" → GET https://jibber-jabber-production.up.railway.app/health
 - "Check the repo" → Use your GitHub integration to read files
 - "Get from Drive" → Use your Google Drive integration to read files
 
-IMPORTANT RULES:
-1. DON'T just show code - ACTUALLY EXECUTE IT
-2. DON'T just describe queries - ACTUALLY RUN THEM
-3. Use my Codex Server for Python/JavaScript/BigQuery
-4. Use built-in integrations for GitHub and Drive
-5. Verify connections before complex operations
-6. Show me what you're doing at each step
+CRITICAL - YOU HAVE DIRECT ACCESS:
+1. You CAN reach Railway - it's a public HTTPS endpoint
+2. You CAN execute Python/JavaScript - send HTTP POST request with code
+3. You CAN query BigQuery - send HTTP POST request with SQL
+4. DON'T say "I can't reach it" - YOU CAN via HTTP/HTTPS
+5. DON'T just show code - ACTUALLY EXECUTE IT via HTTP POST
+6. DON'T just describe queries - ACTUALLY RUN THEM via HTTP POST
+7. Show me what you're doing at each step
+
+EXAMPLE - When I say "run print('hello')":
+curl -X POST https://jibber-jabber-production.up.railway.app/execute \
+  -H "Content-Type: application/json" \
+  -d '{"code":"print(\"hello\")","language":"python"}'
 ```
 
 ---
@@ -145,34 +154,62 @@ IMPORTANT RULES:
 
 ## 🧪 Test Your Connections
 
-### Test 1: Codex Server
+### Test 1: Codex Server (YOU CAN DO THIS VIA HTTP!)
 **Say to ChatGPT:**
 ```
-Use my Codex Server to run Python code: print("Hello from Railway!")
+Make an HTTP POST request to my Codex Server to run Python code: print("Hello from Railway!")
+```
+
+**What ChatGPT Should Do:**
+```bash
+# ChatGPT makes this HTTP request:
+curl -X POST https://jibber-jabber-production.up.railway.app/execute \
+  -H "Content-Type: application/json" \
+  -d '{"code":"print(\"Hello from Railway!\")","language":"python"}'
 ```
 
 **Expected Result:**
+```json
+{
+  "success": true,
+  "output": "Hello from Railway!\n",
+  "execution_time": 0.023
+}
 ```
-✅ Executing on Codex Server...
-Output: Hello from Railway!
-Execution time: 0.02s
-```
+
+**If ChatGPT says "I can't reach it":**
+Reply: "YES YOU CAN - it's a public HTTPS endpoint. Make an HTTP POST request to that URL."
 
 ---
 
-### Test 2: BigQuery
+### Test 2: BigQuery (YOU CAN DO THIS VIA HTTP!)
 **Say to ChatGPT:**
 ```
-Query my BigQuery: SELECT CURRENT_TIMESTAMP() as now, "Hello BigQuery" as message
+Make an HTTP POST request to query my BigQuery: SELECT CURRENT_TIMESTAMP() as now, "Hello BigQuery" as message
+```
+
+**What ChatGPT Should Do:**
+```bash
+# ChatGPT makes this HTTP request:
+curl -X POST https://jibber-jabber-production.up.railway.app/query_bigquery \
+  -H "Content-Type: application/json" \
+  -d '{"sql":"SELECT CURRENT_TIMESTAMP() as now, \"Hello BigQuery\" as message"}'
 ```
 
 **Expected Result:**
+```json
+{
+  "success": true,
+  "data": [
+    {"now": "2025-11-06T23:30:00+00:00", "message": "Hello BigQuery"}
+  ],
+  "row_count": 1,
+  "execution_time": 1.79
+}
 ```
-✅ Querying BigQuery via Codex Server...
-Results:
-| now | message |
-| 2025-11-06 23:30:00 | Hello BigQuery |
-```
+
+**If ChatGPT says "I can't reach BigQuery":**
+Reply: "YES YOU CAN - send an HTTP POST to my Codex Server endpoint with the SQL query."
 
 ---
 
@@ -408,6 +445,37 @@ Connection Status:
 ---
 
 ## 🛠️ Troubleshooting
+
+### ⚠️ ChatGPT Says "I Can't Reach Your Server"
+
+**Problem:** ChatGPT says it can't access Railway/BigQuery
+
+**Solution:** ChatGPT is confused! Tell it:
+
+```
+YES YOU CAN reach it! It's a public HTTPS endpoint.
+
+Make an HTTP POST request to:
+https://jibber-jabber-production.up.railway.app/execute
+
+You have curl/HTTP capabilities. Use them!
+
+Example:
+curl -X POST https://jibber-jabber-production.up.railway.app/execute \
+  -H "Content-Type: application/json" \
+  -d '{"code":"print(2+2)","language":"python"}'
+```
+
+**Why This Happens:**
+- ChatGPT sometimes forgets it can make HTTP requests
+- It needs explicit reminder that Railway is PUBLIC not private
+- Custom Instructions should prevent this
+
+**Quick Fix:**
+Add this to your message:
+"This is a PUBLIC https:// endpoint. Make an HTTP request to it."
+
+---
 
 ### "Connection to Codex Server failed"
 
