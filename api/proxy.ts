@@ -29,6 +29,7 @@ function guardSelectOnly(sql: string) {
 export default async function handler(req: Request) {
     const railwayBase = RAILWAY_BASE || (globalThis as any).process?.env?.RAILWAY_BASE;
     const codexToken = CODEX_TOKEN || (globalThis as any).process?.env?.CODEX_TOKEN;
+    // const SQL_HMAC_KEY = CODEX_TOKEN || (globalThis as any).process?.env?.SQL_HMAC_KEY; // OPTIONAL: if you want signed SQL
 
     if (!railwayBase) return bad('RAILWAY_BASE not set on proxy', 500);
 
