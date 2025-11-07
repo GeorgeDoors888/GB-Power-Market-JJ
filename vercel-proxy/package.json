@@ -11,5 +11,9 @@
         "@types/node": "^20.19.24",
         "@vercel/node": "^5.5.4",
         "vercel": "^33.0.0"
+    },
+    "dependencies": {
+        "@types/node-fetch": "^2.6.13",
+        "node-fetch": "^3.3.2"
     }
 }
