@@ -44,11 +44,14 @@ app.add_middleware(
 )
 
 # Request/Response Models
+
+
 class CodeRequest(BaseModel):
     code: str
     language: str = "python"
     timeout: int = 30
     args: Optional[List[str]] = None
+
 
 class CodeResponse(BaseModel):
     output: str
@@ -57,16 +60,19 @@ class CodeResponse(BaseModel):
     execution_time: float
     timestamp: str
 
+
 class HealthResponse(BaseModel):
     status: str
     version: str
     languages: List[str]
     timestamp: str
 
+
 class BigQueryRequest(BaseModel):
     sql: str
     timeout: int = 60
     max_results: int = 1000
+
 
 class BigQueryResponse(BaseModel):
     success: bool
@@ -75,6 +81,7 @@ class BigQueryResponse(BaseModel):
     error: Optional[str] = None
     execution_time: float
     timestamp: str
+
 
 # Security: Forbidden patterns
 FORBIDDEN_PATTERNS = [
@@ -88,6 +95,7 @@ FORBIDDEN_PATTERNS = [
     'file(',
 ]
 
+
 def validate_code(code: str, language: str) -> None:
     """Validate code for security issues"""
     if language == "python":
@@ -98,14 +106,15 @@ def validate_code(code: str, language: str) -> None:
                     detail=f"Forbidden pattern detected: {pattern}"
                 )
 
+
 def execute_python(code: str, timeout: int = 30) -> dict:
     """Execute Python code in a temporary file"""
     start_time = datetime.now()
-    
+
     with tempfile.NamedTemporaryFile(mode='w', suffix='.py', delete=False) as f:
         f.write(code)
         temp_file = f.name
-    
+
     try:
         logger.info(f"Executing Python code: {temp_file}")
         result = subprocess.run(
@@ -115,9 +124,9 @@ def execute_python(code: str, timeout: int = 30) -> dict:
             timeout=timeout,
             env={'PYTHONIOENCODING': 'utf-8'}
         )
-        
+
         execution_time = (datetime.now() - start_time).total_seconds()
-        
+
         return {
             'output': result.stdout,
             'error': result.stderr if result.stderr else None,
@@ -146,14 +155,15 @@ def execute_python(code: str, timeout: int = 30) -> dict:
         except:
             pass
 
+
 def execute_javascript(code: str, timeout: int = 30) -> dict:
     """Execute JavaScript code using Node.js"""
     start_time = datetime.now()
-    
+
     with tempfile.NamedTemporaryFile(mode='w', suffix='.js', delete=False) as f:
         f.write(code)
         temp_file = f.name
-    
+
     try:
         logger.info(f"Executing JavaScript code: {temp_file}")
         result = subprocess.run(
@@ -162,9 +172,9 @@ def execute_javascript(code: str, timeout: int = 30) -> dict:
             text=True,
             timeout=timeout
         )
-        
+
         execution_time = (datetime.now() - start_time).total_seconds()
-        
+
         return {
             'output': result.stdout,
             'error': result.stderr if result.stderr else None,
@@ -202,6 +212,8 @@ def execute_javascript(code: str, timeout: int = 30) -> dict:
             pass
 
 # API Endpoints
+
+
 @app.get("/", response_model=HealthResponse)
 async def root():
     """Root endpoint with server info"""
@@ -211,6 +223,7 @@ async def root():
         "languages": ["python", "javascript"],
         "timestamp": datetime.now().isoformat()
     }
+
 
 @app.get("/health", response_model=HealthResponse)
 async def health_check():
@@ -222,15 +235,16 @@ async def health_check():
         "timestamp": datetime.now().isoformat()
     }
 
+
 @app.post("/execute", response_model=CodeResponse)
 async def execute_code(request: CodeRequest):
     """
     Execute code in a sandboxed environment
-    
+
     Supported languages:
     - python
     - javascript
-    
+
     Example:
     ```
     {
@@ -241,14 +255,14 @@ async def execute_code(request: CodeRequest):
     ```
     """
     logger.info(f"Received execution request for {request.language}")
-    
+
     # Validate code
     try:
         validate_code(request.code, request.language)
     except HTTPException as e:
         logger.warning(f"Code validation failed: {e.detail}")
         raise e
-    
+
     # Execute based on language
     if request.language == "python":
         result = execute_python(request.code, request.timeout)
@@ -259,7 +273,7 @@ async def execute_code(request: CodeRequest):
             status_code=400,
             detail=f"Unsupported language: {request.language}. Supported: python, javascript"
         )
-    
+
     response = CodeResponse(
         output=result['output'],
         error=result['error'],
@@ -267,9 +281,11 @@ async def execute_code(request: CodeRequest):
         execution_time=result['execution_time'],
         timestamp=datetime.now().isoformat()
     )
-    
-    logger.info(f"Execution completed: exit_code={response.exit_code}, time={response.execution_time}s")
+
+    logger.info(
+        f"Execution completed: exit_code={response.exit_code}, time={response.execution_time}s")
     return response
+
 
 @app.get("/languages")
 async def get_supported_languages():
@@ -289,15 +305,16 @@ async def get_supported_languages():
         ]
     }
 
+
 @app.post("/query_bigquery", response_model=BigQueryResponse)
 async def query_bigquery(request: BigQueryRequest):
     """
     Execute BigQuery SQL query and return results
-    
+
     Requires:
     - Service account JSON at /workspace/gridsmart_service_account.json
     - google-cloud-bigquery package installed
-    
+
     Example:
     ```
     {
@@ -309,19 +326,20 @@ async def query_bigquery(request: BigQueryRequest):
     """
     logger.info(f"Received BigQuery request: {request.sql[:100]}...")
     start_time = datetime.now()
-    
+
     # Check for credentials - either from file or base64 environment variable
     service_account_path = os.environ.get(
         'GOOGLE_APPLICATION_CREDENTIALS',
         '/workspace/gridsmart_service_account.json'
     )
-    
+
     # If base64 credentials exist, decode and write to temp file
     credentials_base64 = os.environ.get('GOOGLE_CREDENTIALS_BASE64')
     if credentials_base64:
         import base64
         with tempfile.NamedTemporaryFile(mode='w', suffix='.json', delete=False) as f:
-            credentials_json = base64.b64decode(credentials_base64).decode('utf-8')
+            credentials_json = base64.b64decode(
+                credentials_base64).decode('utf-8')
             f.write(credentials_json)
             service_account_path = f.name
         logger.info(f"Using base64-encoded credentials from environment")
@@ -333,7 +351,7 @@ async def query_bigquery(request: BigQueryRequest):
             execution_time=0,
             timestamp=datetime.now().isoformat()
         )
-    
+
     # Create Python script to execute BigQuery query
     query_script = f"""
 import json
@@ -375,12 +393,12 @@ except Exception as e:
     print(json.dumps(output, default=str))
     sys.exit(1)
 """
-    
+
     # Execute the query script
     with tempfile.NamedTemporaryFile(mode='w', suffix='.py', delete=False) as f:
         f.write(query_script)
         temp_file = f.name
-    
+
     try:
         result = subprocess.run(
             [sys.executable, temp_file],
@@ -388,9 +406,9 @@ except Exception as e:
             text=True,
             timeout=request.timeout + 10
         )
-        
+
         execution_time = (datetime.now() - start_time).total_seconds()
-        
+
         if result.returncode != 0:
             logger.error(f"BigQuery query failed: {result.stderr}")
             return BigQueryResponse(
@@ -399,12 +417,13 @@ except Exception as e:
                 execution_time=execution_time,
                 timestamp=datetime.now().isoformat()
             )
-        
+
         # Parse the JSON output
         query_result = json.loads(result.stdout)
-        
+
         if query_result.get('success'):
-            logger.info(f"BigQuery query successful: {query_result.get('row_count')} rows")
+            logger.info(
+                f"BigQuery query successful: {query_result.get('row_count')} rows")
             return BigQueryResponse(
                 success=True,
                 data=query_result.get('data'),
@@ -420,7 +439,7 @@ except Exception as e:
                 execution_time=execution_time,
                 timestamp=datetime.now().isoformat()
             )
-            
+
     except subprocess.TimeoutExpired:
         logger.error(f"BigQuery query timed out after {request.timeout}s")
         return BigQueryResponse(
@@ -453,7 +472,7 @@ except Exception as e:
 
 if __name__ == "__main__":
     import uvicorn
-    
+
     logger.info("Starting Codex Server...")
     port = int(os.environ.get("PORT", 8000))
     uvicorn.run(

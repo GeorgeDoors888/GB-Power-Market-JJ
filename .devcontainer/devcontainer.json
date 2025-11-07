@@ -1,15 +1,15 @@
 {
   "name": "Codex Server Development",
   "image": "mcr.microsoft.com/devcontainers/python:3.14",
-  
   "features": {
     "ghcr.io/devcontainers/features/node:1": {
       "version": "lts"
     },
     "ghcr.io/devcontainers/features/git:1": {}
   },
-  
-  "forwardPorts": [8000],
+  "forwardPorts": [
+    8000
+  ],
   "portsAttributes": {
     "8000": {
       "label": "Codex Server API",
@@ -17,9 +17,7 @@
       "protocol": "http"
     }
   },
-  
   "postCreateCommand": "bash .devcontainer/setup.sh",
-  
   "customizations": {
     "vscode": {
       "extensions": [
@@ -39,6 +37,5 @@
       "idleTimeout": "10m"
     }
   },
-  
   "remoteUser": "vscode"
 }
