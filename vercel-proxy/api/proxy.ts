@@ -3,11 +3,11 @@ export const config = { runtime: 'edge' };
 export default async function handler(req: Request): Promise<Response> {
     const RAILWAY_BASE = 'https://jibber-jabber-production.up.railway.app';
     const CODEX_TOKEN = 'codex_fQI8xJXNPnhasYBOjd6h7mPHoF7HNI0Dh8rlgoJ2skA';
-    
+
     try {
         const url = new URL(req.url);
         const path = url.searchParams.get('path') || '';
-        
+
         const ALLOW = ['/health', '/query_bigquery_get', '/query_bigquery', '/run_stack_check', '/execute', '/languages'];
         if (!ALLOW.includes(path)) {
             return new Response(JSON.stringify({ ok: false, error: 'path not allowed' }), {
@@ -32,7 +32,7 @@ export default async function handler(req: Request): Promise<Response> {
 
         return new Response(await response.text(), {
             status: response.status,
-            headers: { 
+            headers: {
                 'Content-Type': 'application/json',
                 'Access-Control-Allow-Origin': '*'
             }
