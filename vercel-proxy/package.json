@@ -1,14 +1,14 @@
 {
-  "name": "railway-codex-proxy",
-  "version": "1.0.0",
-  "description": "Vercel Edge Function proxy for Railway Codex Server - enables ChatGPT access",
-  "type": "module",
-  "scripts": {
-    "dev": "vercel dev",
-    "deploy": "vercel --prod"
-  },
-  "devDependencies": {
-    "@types/node": "^20.10.0",
-    "vercel": "^33.0.0"
-  }
+    "name": "railway-codex-proxy",
+    "version": "1.0.0",
+    "description": "Vercel Edge Function proxy for Railway Codex Server - enables ChatGPT access",
+    "type": "module",
+    "scripts": {
+        "dev": "vercel dev",
+        "deploy": "vercel --prod"
+    },
+    "devDependencies": {
+        "@types/node": "^20.10.0",
+        "vercel": "^33.0.0"
+    }
 }
