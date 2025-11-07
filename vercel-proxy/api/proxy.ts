@@ -86,6 +86,12 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         
         return res.status(response.status).send(text);
     } catch (e: any) {
-        return bad(res, `error: ${e?.message || String(e)}`, 500);
+        console.error('Proxy error:', e);
+        return res.status(500).json({ 
+            ok: false, 
+            error: `error: ${e?.message || String(e)}`,
+            stack: e?.stack,
+            name: e?.name
+        });
     }
 }
