@@ -1,5 +1,5 @@
-// Vercel Edge Function proxy for Railway Codex
-export const config = { runtime: 'edge' };
+// Vercel Serverless Function proxy for Railway Codex
+// Using Node.js runtime instead of edge for better env var support
 
 const ALLOW = new Set<string>([
     '/health',
@@ -24,9 +24,7 @@ function guardSelectOnly(sql: string) {
 
 export default async function handler(req: Request) {
     try {
-        // @ts-ignore - process.env exists in Vercel Edge Runtime  
         const RAILWAY_BASE = process.env.RAILWAY_BASE;
-        // @ts-ignore - process.env exists in Vercel Edge Runtime
         const CODEX_TOKEN = process.env.CODEX_TOKEN;
 
         if (!RAILWAY_BASE) return bad('RAILWAY_BASE not set on proxy', 500);
