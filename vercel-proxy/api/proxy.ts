@@ -1,9 +1,8 @@
 // Vercel Edge Function proxy for Railway Codex
 export const config = { runtime: 'edge' };
 
-// Environment variables are accessed via declare const in edge runtime
-declare const RAILWAY_BASE: string | undefined;
-declare const CODEX_TOKEN: string | undefined;
+// Declare process.env for TypeScript
+declare const process: { env: { [key: string]: string | undefined } };
 
 const ALLOW = new Set<string>([
     '/health',
@@ -27,7 +26,9 @@ function guardSelectOnly(sql: string) {
 }
 
 export default async function handler(req: Request) {
-    // RAILWAY_BASE and CODEX_TOKEN are accessed via declare const above
+    // Access environment variables from the edge runtime
+    const RAILWAY_BASE = process.env.RAILWAY_BASE;
+    const CODEX_TOKEN = process.env.CODEX_TOKEN;
 
     if (!RAILWAY_BASE) return bad('RAILWAY_BASE not set on proxy', 500);
 
