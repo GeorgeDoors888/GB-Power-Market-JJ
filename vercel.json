@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "vercel-proxy/api/**/*.ts": {
+      "runtime": "edge"
+    }
+  }
+}
