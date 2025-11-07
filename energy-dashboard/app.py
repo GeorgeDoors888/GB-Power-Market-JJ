@@ -8,11 +8,12 @@ from fastapi.responses import HTMLResponse, JSONResponse
 from pydantic import BaseModel
 
 # ==== Config via env ====
-CODEX_BASE   = os.environ.get("CODEX_BASE", "https://jibber-jabber-production.up.railway.app")
-CODEX_TOKEN  = os.environ.get("CODEX_TOKEN")  # set in Railway -> Variables
-PROJECT      = os.environ.get("BQ_PROJECT", "jibber-jabber-knowledge")
-DATASET      = os.environ.get("BQ_DATASET", "uk_energy_insights")
-REFRESH_MIN  = int(os.environ.get("REFRESH_MIN", "5"))
+CODEX_BASE = os.environ.get(
+    "CODEX_BASE", "https://jibber-jabber-production.up.railway.app")
+CODEX_TOKEN = os.environ.get("CODEX_TOKEN")  # set in Railway -> Variables
+PROJECT = os.environ.get("BQ_PROJECT", "jibber-jabber-knowledge")
+DATASET = os.environ.get("BQ_DATASET", "uk_energy_insights")
+REFRESH_MIN = int(os.environ.get("REFRESH_MIN", "5"))
 
 # Optional overrides for table names (comma-separated)
 OVERRIDE_TABLES = {
@@ -27,12 +28,13 @@ CANDIDATES = {
     "demand": [
         "fes_electricity_demand_summary_data_table_ed1",  # you listed this
         "demand_24h",                                     # generic
-        "bmrs_mid",                                       # market index data often contains demand series
+        # market index data often contains demand series
+        "bmrs_mid",
     ],
     "fuel": [
         "fuel_by_type",       # generic
         "generation_mix",     # generic
-        "bmrs_fuelinst_iris", # if mirrored here via views
+        "bmrs_fuelinst_iris",  # if mirrored here via views
     ],
     "bmu": [
         "bmrs_data",                # your note "balancing mechanism data"
@@ -46,6 +48,8 @@ CANDIDATES = {
 }
 
 # ---------------- Helpers ----------------
+
+
 def codex_query(sql: str, timeout: int = 60, max_results: int = 2000):
     url = f"{CODEX_BASE}/query_bigquery"
     headers = {"Content-Type": "application/json"}
@@ -53,13 +57,17 @@ def codex_query(sql: str, timeout: int = 60, max_results: int = 2000):
         headers["Authorization"] = f"Bearer {CODEX_TOKEN}"
 
     payload = {"sql": sql, "timeout": timeout, "max_results": max_results}
-    r = requests.post(url, headers=headers, data=json.dumps(payload), timeout=timeout + 5)
+    r = requests.post(url, headers=headers, data=json.dumps(
+        payload), timeout=timeout + 5)
     if r.status_code != 200:
-        raise HTTPException(status_code=502, detail=f"Codex error {r.status_code}: {r.text}")
+        raise HTTPException(
+            status_code=502, detail=f"Codex error {r.status_code}: {r.text}")
     data = r.json()
     if not data.get("success", False):
-        raise HTTPException(status_code=502, detail=f"BigQuery error: {data.get('error')}")
+        raise HTTPException(
+            status_code=502, detail=f"BigQuery error: {data.get('error')}")
     return data["data"]
+
 
 def list_tables():
     sql = f"""
@@ -71,6 +79,7 @@ def list_tables():
     rows = codex_query(sql, timeout=60, max_results=500)
     return {r["table_name"] for r in rows}
 
+
 def pick_table(kind: str, available: set) -> str | None:
     override = OVERRIDE_TABLES.get(kind)
     if override:
@@ -80,12 +89,16 @@ def pick_table(kind: str, available: set) -> str | None:
             return t
     return None
 
+
 def fq(table: str) -> str:
     return f"`{PROJECT}.{DATASET}.{table}`"
+
 
 app = FastAPI(title="UK Energy Dashboard (via Codex)")
 
 # -------------- API --------------
+
+
 @app.get("/api/summary")
 def api_summary():
     """
@@ -104,11 +117,12 @@ def api_summary():
 
     # Decide tables
     tbl_demand = pick_table("demand", available)
-    tbl_fuel   = pick_table("fuel", available)
-    tbl_bmu    = pick_table("bmu", available)
-    tbl_costs  = pick_table("balancing_costs", available)
+    tbl_fuel = pick_table("fuel", available)
+    tbl_bmu = pick_table("bmu", available)
+    tbl_costs = pick_table("balancing_costs", available)
 
-    used = {"demand": tbl_demand, "fuel": tbl_fuel, "bmu": tbl_bmu, "balancing_costs": tbl_costs}
+    used = {"demand": tbl_demand, "fuel": tbl_fuel,
+            "bmu": tbl_bmu, "balancing_costs": tbl_costs}
 
     # 1) Current demand (latest row)
     current_demand = None
@@ -183,7 +197,8 @@ def api_summary():
           LIMIT 100
         """
         try:
-            balancing_costs = codex_query(sql_costs, timeout=60, max_results=100)
+            balancing_costs = codex_query(
+                sql_costs, timeout=60, max_results=100)
         except Exception:
             balancing_costs = []
 
@@ -199,6 +214,8 @@ def api_summary():
     })
 
 # -------------- UI --------------
+
+
 @app.get("/", response_class=HTMLResponse)
 def index():
     return HTMLResponse(f"""
@@ -356,6 +373,7 @@ def index():
 </body>
 </html>
     """)
+
 
 @app.get("/health")
 def health():

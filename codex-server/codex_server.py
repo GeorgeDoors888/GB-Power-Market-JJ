@@ -475,15 +475,15 @@ except Exception as e:
 async def query_bigquery_get(sql: str):
     """
     Execute BigQuery SQL query via GET (for ChatGPT browser tool compatibility)
-    
+
     Example:
     GET /query_bigquery_get?sql=SELECT%20schema_name%20FROM%20%60jibber-jabber-knowledge.INFORMATION_SCHEMA.SCHEMATA%60
     """
     logger.info(f"BigQuery GET query received: {sql[:100]}...")
-    
+
     # Reuse the existing BigQuery logic by creating a request object
     request = BigQueryRequest(sql=sql, timeout=60, max_results=1000)
-    
+
     # Call the POST endpoint logic
     return await query_bigquery(request)
 
