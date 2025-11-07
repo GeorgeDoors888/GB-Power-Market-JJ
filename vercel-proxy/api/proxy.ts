@@ -8,7 +8,7 @@ export default async function handler(req: Request): Promise<Response> {
         const url = new URL(req.url);
         const path = url.searchParams.get('path') || '';
 
-        const ALLOW = ['/health', '/query_bigquery_get', '/query_bigquery', '/run_stack_check', '/execute', '/languages'];
+        const ALLOW = ['/health', '/query_bigquery_get', '/query_bigquery', '/run_stack_check'];
         if (!ALLOW.includes(path)) {
             return new Response(JSON.stringify({ ok: false, error: 'path not allowed' }), {
                 status: 403,
@@ -44,4 +44,3 @@ export default async function handler(req: Request): Promise<Response> {
         });
     }
 }
-// Updated Fri Nov  7 12:17:25 PM UTC 2025
