@@ -1,6 +1,9 @@
 // Vercel Edge Function proxy for Railway Codex
-import type { NextRequest } from 'next/server';
 export const config = { runtime: 'edge' };
+
+// Environment variables are accessed via declare const in edge runtime
+declare const RAILWAY_BASE: string | undefined;
+declare const CODEX_TOKEN: string | undefined;
 
 const ALLOW = new Set<string>([
     '/health',
@@ -23,10 +26,8 @@ function guardSelectOnly(sql: string) {
     if (sql.length > 5000) throw new Error('SQL too long');
 }
 
-export default async function handler(req: NextRequest) {
-    const RAILWAY_BASE = process.env.RAILWAY_BASE; // e.g. https://jibber-jabber-production.up.railway.app
-    const CODEX_TOKEN = process.env.CODEX_TOKEN;  // your Railway bearer token (not exposed)
-    // const SQL_HMAC_KEY = process.env.SQL_HMAC_KEY; // OPTIONAL: if you want signed SQL
+export default async function handler(req: Request) {
+    // RAILWAY_BASE and CODEX_TOKEN are accessed via declare const above
 
     if (!RAILWAY_BASE) return bad('RAILWAY_BASE not set on proxy', 500);
 
