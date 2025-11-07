@@ -54,3 +54,9 @@ codex-server/*.log
 
 # Service Account Keys (SENSITIVE)
 *service_account*.json
+
+# Additional credentials - NEVER commit!
+arbitrage-bq-key.json
+.env.ai-gateway
+api-gateway-deploy.tar.gz
+deploy_package/
