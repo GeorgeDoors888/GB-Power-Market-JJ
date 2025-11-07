@@ -1,0 +1,1 @@
+# Vercel Edge Function Proxy
