@@ -19,7 +19,7 @@ I have a working data infrastructure with 6 BigQuery datasets containing 397 tab
 - Only SELECT queries are allowed
 
 **Example - List my datasets:**
-https://gb-power-market-jj.vercel.app/api/proxy?path=/query_bigquery_get&sql=SELECT%20schema_name%20FROM%20%60jibber-jabber-knowledge.INFORMATION_SCHEMA.SCHEMATA%60
+https://gb-power-market-jj.vercel.app/api/proxy-v2?path=/query_bigquery_get&sql=SELECT%20schema_name%20FROM%20%60jibber-jabber-knowledge.INFORMATION_SCHEMA.SCHEMATA%60
 
 **Available datasets:**
 1. `bmrs_data` - BMRS (Balancing Mechanism Reporting Service) data
@@ -53,22 +53,22 @@ Let's analyze my UK energy data!
 
 ### 1. List All Datasets
 ```
-https://gb-power-market-jj.vercel.app/api/proxy?path=/query_bigquery_get&sql=SELECT%20schema_name%20FROM%20%60jibber-jabber-knowledge.INFORMATION_SCHEMA.SCHEMATA%60
+https://gb-power-market-jj.vercel.app/api/proxy-v2?path=/query_bigquery_get&sql=SELECT%20schema_name%20FROM%20%60jibber-jabber-knowledge.INFORMATION_SCHEMA.SCHEMATA%60
 ```
 
 ### 2. List Tables in uk_energy_insights
 ```
-https://gb-power-market-jj.vercel.app/api/proxy?path=/query_bigquery_get&sql=SELECT%20table_name%20FROM%20%60jibber-jabber-knowledge.uk_energy_insights.INFORMATION_SCHEMA.TABLES%60%20LIMIT%2020
+https://gb-power-market-jj.vercel.app/api/proxy-v2?path=/query_bigquery_get&sql=SELECT%20table_name%20FROM%20%60jibber-jabber-knowledge.uk_energy_insights.INFORMATION_SCHEMA.TABLES%60%20LIMIT%2020
 ```
 
 ### 3. Sample Fuel Generation Data
 ```
-https://gb-power-market-jj.vercel.app/api/proxy?path=/query_bigquery_get&sql=SELECT%20*%20FROM%20%60jibber-jabber-knowledge.uk_energy_insights.bmrs_fuelhh%60%20LIMIT%2010
+https://gb-power-market-jj.vercel.app/api/proxy-v2?path=/query_bigquery_get&sql=SELECT%20*%20FROM%20%60jibber-jabber-knowledge.uk_energy_insights.bmrs_fuelhh%60%20LIMIT%2010
 ```
 
 ### 4. Recent System Prices
 ```
-https://gb-power-market-jj.vercel.app/api/proxy?path=/query_bigquery_get&sql=SELECT%20*%20FROM%20%60jibber-jabber-knowledge.uk_energy_insights.bmrs_detsysprices%60%20ORDER%20BY%20settlementdate%20DESC%20LIMIT%2010
+https://gb-power-market-jj.vercel.app/api/proxy-v2?path=/query_bigquery_get&sql=SELECT%20*%20FROM%20%60jibber-jabber-knowledge.uk_energy_insights.bmrs_detsysprices%60%20ORDER%20BY%20settlementdate%20DESC%20LIMIT%2010
 ```
 
 ---
@@ -127,19 +127,19 @@ https://gb-power-market-jj.vercel.app/api/proxy?path=/query_bigquery_get&sql=SEL
 
 ### Health Check
 ```
-https://gb-power-market-jj.vercel.app/api/proxy?path=/health
+https://gb-power-market-jj.vercel.app/api/proxy-v2?path=/health
 ```
 **Response:** Server status
 
 ### BigQuery Query (GET)
 ```
-https://gb-power-market-jj.vercel.app/api/proxy?path=/query_bigquery_get&sql=YOUR_SQL
+https://gb-power-market-jj.vercel.app/api/proxy-v2?path=/query_bigquery_get&sql=YOUR_SQL
 ```
 **Response:** Query results as JSON
 
 ### BigQuery Query (POST)
 ```
-POST https://gb-power-market-jj.vercel.app/api/proxy?path=/query_bigquery
+POST https://gb-power-market-jj.vercel.app/api/proxy-v2?path=/query_bigquery
 Body: {"sql": "YOUR SQL QUERY"}
 ```
 **Response:** Query results as JSON
@@ -169,7 +169,7 @@ Body: {"sql": "YOUR SQL QUERY"}
 
 Test the proxy is working:
 ```bash
-curl "https://gb-power-market-jj.vercel.app/api/proxy?path=/health"
+curl "https://gb-power-market-jj.vercel.app/api/proxy-v2?path=/health"
 ```
 
 Expected response:

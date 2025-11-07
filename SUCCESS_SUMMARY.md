@@ -53,8 +53,8 @@ ChatGPT will immediately start exploring your data using its browser tool.
 | Service | URL | Status |
 |---------|-----|--------|
 | **Vercel Proxy** | https://gb-power-market-jj.vercel.app | ✅ LIVE |
-| **Test Endpoint** | [Health Check](https://gb-power-market-jj.vercel.app/api/proxy?path=/health) | ✅ WORKING |
-| **Sample Query** | [List Datasets](https://gb-power-market-jj.vercel.app/api/proxy?path=/query_bigquery_get&sql=SELECT%20schema_name%20FROM%20%60jibber-jabber-knowledge.INFORMATION_SCHEMA.SCHEMATA%60) | ✅ WORKING |
+| **Test Endpoint** | [Health Check](https://gb-power-market-jj.vercel.app/api/proxy-v2?path=/health) | ✅ WORKING |
+| **Sample Query** | [List Datasets](https://gb-power-market-jj.vercel.app/api/proxy-v2?path=/query_bigquery_get&sql=SELECT%20schema_name%20FROM%20%60jibber-jabber-knowledge.INFORMATION_SCHEMA.SCHEMATA%60) | ✅ WORKING |
 | **Railway Backend** | https://jibber-jabber-production.up.railway.app | ✅ LIVE |
 
 ---
@@ -63,7 +63,7 @@ ChatGPT will immediately start exploring your data using its browser tool.
 
 ### 1. Health Check ✅
 ```bash
-curl "https://gb-power-market-jj.vercel.app/api/proxy?path=/health"
+curl "https://gb-power-market-jj.vercel.app/api/proxy-v2?path=/health"
 ```
 **Response:**
 ```json
@@ -72,7 +72,7 @@ curl "https://gb-power-market-jj.vercel.app/api/proxy?path=/health"
 
 ### 2. List Datasets ✅
 ```bash
-curl "https://gb-power-market-jj.vercel.app/api/proxy?path=/query_bigquery_get&sql=SELECT%20schema_name%20FROM%20%60jibber-jabber-knowledge.INFORMATION_SCHEMA.SCHEMATA%60"
+curl "https://gb-power-market-jj.vercel.app/api/proxy-v2?path=/query_bigquery_get&sql=SELECT%20schema_name%20FROM%20%60jibber-jabber-knowledge.INFORMATION_SCHEMA.SCHEMATA%60"
 ```
 **Response:**
 ```json
@@ -197,7 +197,7 @@ Questions? Check the documentation:
 
 ```bash
 # Quick test
-curl "https://gb-power-market-jj.vercel.app/api/proxy?path=/health"
+curl "https://gb-power-market-jj.vercel.app/api/proxy-v2?path=/health"
 
 # Then open ChatGPT and start analyzing!
 ```

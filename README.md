@@ -66,7 +66,7 @@ https://gb-power-market-jj.vercel.app/api/proxy---
 
 Start by exploring my datasets:## 🚀 Quick Start
 
-https://gb-power-market-jj.vercel.app/api/proxy?path=/query_bigquery_get&sql=SELECT%20schema_name%20FROM%20%60jibber-jabber-knowledge.INFORMATION_SCHEMA.SCHEMATA%60
+https://gb-power-market-jj.vercel.app/api/proxy-v2?path=/query_bigquery_get&sql=SELECT%20schema_name%20FROM%20%60jibber-jabber-knowledge.INFORMATION_SCHEMA.SCHEMATA%60
 
 ### ⚠️ BEFORE WRITING ANY NEW QUERY/SCRIPT
 
@@ -112,7 +112,7 @@ See full instructions: https://github.com/GeorgeDoors888/overarch-jibber-jabber/
 
 # Health check2. **✅ Verify your setup**:
 
-curl "https://gb-power-market-jj.vercel.app/api/proxy?path=/health"   ```bash
+curl "https://gb-power-market-jj.vercel.app/api/proxy-v2?path=/health"   ```bash
 
 # ✅ Response: {"status":"healthy","version":"1.0.0"}   # Test BigQuery access
 
@@ -120,7 +120,7 @@ curl "https://gb-power-market-jj.vercel.app/api/proxy?path=/health"   ```bash
 
 # List datasets   
 
-curl "https://gb-power-market-jj.vercel.app/api/proxy?path=/query_bigquery_get&sql=SELECT%20schema_name%20FROM%20%60jibber-jabber-knowledge.INFORMATION_SCHEMA.SCHEMATA%60"   # Test Python packages
+curl "https://gb-power-market-jj.vercel.app/api/proxy-v2?path=/query_bigquery_get&sql=SELECT%20schema_name%20FROM%20%60jibber-jabber-knowledge.INFORMATION_SCHEMA.SCHEMATA%60"   # Test Python packages
 
 # ✅ Response: {"success":true,"data":[...]}   python3 -c 'import pandas, google.cloud.bigquery, gspread; print("✅ Required packages installed!")'
 

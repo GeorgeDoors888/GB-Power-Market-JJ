@@ -87,7 +87,7 @@ https://gb-power-market-jj.vercel.app
 
 #### 1. Health Check
 ```
-GET /api/proxy?path=/health
+GET /api/proxy-v2?path=/health
 ```
 **Response:**
 ```json
@@ -100,11 +100,11 @@ GET /api/proxy?path=/health
 
 #### 2. BigQuery Query (GET)
 ```
-GET /api/proxy?path=/query_bigquery_get&sql=<URL_ENCODED_SQL>
+GET /api/proxy-v2?path=/query_bigquery_get&sql=<URL_ENCODED_SQL>
 ```
 **Example:**
 ```
-/api/proxy?path=/query_bigquery_get&sql=SELECT%20*%20FROM%20%60jibber-jabber-knowledge.uk_energy_insights.bmrs_fuelhh%60%20LIMIT%205
+/api/proxy-v2?path=/query_bigquery_get&sql=SELECT%20*%20FROM%20%60jibber-jabber-knowledge.uk_energy_insights.bmrs_fuelhh%60%20LIMIT%205
 ```
 
 **Response:**
@@ -121,7 +121,7 @@ GET /api/proxy?path=/query_bigquery_get&sql=<URL_ENCODED_SQL>
 
 #### 3. BigQuery Query (POST)
 ```
-POST /api/proxy?path=/query_bigquery
+POST /api/proxy-v2?path=/query_bigquery
 Content-Type: application/json
 
 {
@@ -214,17 +214,17 @@ overarch-jibber-jabber/
 
 **1. Health Check:**
 ```bash
-curl "https://gb-power-market-jj.vercel.app/api/proxy?path=/health"
+curl "https://gb-power-market-jj.vercel.app/api/proxy-v2?path=/health"
 ```
 
 **2. List Datasets:**
 ```bash
-curl "https://gb-power-market-jj.vercel.app/api/proxy?path=/query_bigquery_get&sql=SELECT%20schema_name%20FROM%20%60jibber-jabber-knowledge.INFORMATION_SCHEMA.SCHEMATA%60"
+curl "https://gb-power-market-jj.vercel.app/api/proxy-v2?path=/query_bigquery_get&sql=SELECT%20schema_name%20FROM%20%60jibber-jabber-knowledge.INFORMATION_SCHEMA.SCHEMATA%60"
 ```
 
 **3. Sample Data:**
 ```bash
-curl "https://gb-power-market-jj.vercel.app/api/proxy?path=/query_bigquery_get&sql=SELECT%20*%20FROM%20%60jibber-jabber-knowledge.uk_energy_insights.bmrs_fuelhh%60%20LIMIT%203"
+curl "https://gb-power-market-jj.vercel.app/api/proxy-v2?path=/query_bigquery_get&sql=SELECT%20*%20FROM%20%60jibber-jabber-knowledge.uk_energy_insights.bmrs_fuelhh%60%20LIMIT%203"
 ```
 
 ### Expected Responses
@@ -389,7 +389,7 @@ Error responses:
 
 1. **Test the proxy:**
    ```bash
-   curl "https://gb-power-market-jj.vercel.app/api/proxy?path=/health"
+   curl "https://gb-power-market-jj.vercel.app/api/proxy-v2?path=/health"
    ```
 
 2. **Open ChatGPT** and paste from `CHATGPT_INSTRUCTIONS.md`
