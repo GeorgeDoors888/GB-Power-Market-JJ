@@ -1,6 +1,9 @@
 // Vercel Edge Function proxy for Railway Codex
-import type { NextRequest } from 'next/server';
 export const config = { runtime: 'edge' };
+
+// Environment variables (injected at runtime by Vercel)
+declare const RAILWAY_BASE: string | undefined;
+declare const CODEX_TOKEN: string | undefined;
 
 const ALLOW = new Set<string>([
     '/health',
@@ -23,19 +26,18 @@ function guardSelectOnly(sql: string) {
     if (sql.length > 5000) throw new Error('SQL too long');
 }
 
-export default async function handler(req: NextRequest) {
-    const RAILWAY_BASE = process.env.RAILWAY_BASE; // e.g. https://jibber-jabber-production.up.railway.app
-    const CODEX_TOKEN = process.env.CODEX_TOKEN;  // your Railway bearer token (not exposed)
-    // const SQL_HMAC_KEY = process.env.SQL_HMAC_KEY; // OPTIONAL: if you want signed SQL
+export default async function handler(req: Request) {
+    const railwayBase = RAILWAY_BASE || (globalThis as any).process?.env?.RAILWAY_BASE;
+    const codexToken = CODEX_TOKEN || (globalThis as any).process?.env?.CODEX_TOKEN;
 
-    if (!RAILWAY_BASE) return bad('RAILWAY_BASE not set on proxy', 500);
+    if (!railwayBase) return bad('RAILWAY_BASE not set on proxy', 500);
 
     const incoming = new URL(req.url);
     const path = incoming.searchParams.get('path') || '';
     if (!ALLOW.has(path)) return bad('path not allowed', 403);
 
     // Build target URL
-    const target = new URL(RAILWAY_BASE + path);
+    const target = new URL(railwayBase + path);
 
     // Pass through GET query params (except 'path')
     if (req.method === 'GET') {
@@ -58,7 +60,7 @@ export default async function handler(req: NextRequest) {
         method: req.method,
         headers: {
             'content-type': req.headers.get('content-type') || 'application/json',
-            'authorization': `Bearer ${CODEX_TOKEN ?? ''}`,
+            'authorization': `Bearer ${codexToken ?? ''}`,
         },
     };
 
