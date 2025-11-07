@@ -1,9 +1,6 @@
 // Vercel Edge Function proxy for Railway Codex
 export const config = { runtime: 'edge' };
 
-// Declare process.env for TypeScript
-declare const process: { env: { [key: string]: string | undefined } };
-
 const ALLOW = new Set<string>([
     '/health',
     '/query_bigquery_get', // GET with ?sql=
@@ -26,8 +23,9 @@ function guardSelectOnly(sql: string) {
 }
 
 export default async function handler(req: Request) {
-    // Access environment variables from the edge runtime
+    // @ts-ignore - process.env exists in Vercel Edge Runtime
     const RAILWAY_BASE = process.env.RAILWAY_BASE;
+    // @ts-ignore - process.env exists in Vercel Edge Runtime
     const CODEX_TOKEN = process.env.CODEX_TOKEN;
 
     if (!RAILWAY_BASE) return bad('RAILWAY_BASE not set on proxy', 500);
