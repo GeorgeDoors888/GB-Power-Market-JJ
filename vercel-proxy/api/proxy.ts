@@ -1,7 +1,7 @@
 // Vercel Serverless Function proxy for Railway Codex
 // Using Node.js runtime for process.env support
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import fetch from 'node-fetch';
+const fetch = require('node-fetch');
 
 const ALLOW = new Set<string>([
     '/health',
