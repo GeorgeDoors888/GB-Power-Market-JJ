@@ -1,72 +1,142 @@
-# GB Power Market JJ (Jibber Jabber)
+# 🚀 Overarch Jibber Jabber - UK Energy Data Platform# GB Power Market JJ (Jibber Jabber)
 
-[![Deploy](https://github.com/GeorgeDoors888/overarch-jibber-jabber/actions/workflows/deploy.yml/badge.svg)](https://github.com/GeorgeDoors888/overarch-jibber-jabber/actions/workflows/deploy.yml)
+
+
+**AI-Powered UK Energy Market Analysis with ChatGPT Integration**[![Deploy](https://github.com/GeorgeDoors888/overarch-jibber-jabber/actions/workflows/deploy.yml/badge.svg)](https://github.com/GeorgeDoors888/overarch-jibber-jabber/actions/workflows/deploy.yml)
+
 [![CI](https://github.com/GeorgeDoors888/overarch-jibber-jabber/actions/workflows/ci.yml/badge.svg)](https://github.com/GeorgeDoors888/overarch-jibber-jabber/actions/workflows/ci.yml)
 
-**Repository**: https://github.com/GeorgeDoors888/overarch-jibber-jabber  
-**Local Path**: `~/GB Power Market JJ`  
+[![Vercel](https://img.shields.io/badge/Vercel-Live-brightgreen)](https://gb-power-market-jj.vercel.app)
+
+[![Railway](https://img.shields.io/badge/Railway-Live-blue)](https://jibber-jabber-production.up.railway.app)**Repository**: https://github.com/GeorgeDoors888/overarch-jibber-jabber  
+
+[![BigQuery](https://img.shields.io/badge/BigQuery-397_Tables-orange)](https://console.cloud.google.com/bigquery)**Local Path**: `~/GB Power Market JJ`  
+
 **Purpose**: GB power market data pipeline, analysis, and dashboard system
 
 ---
 
-## 🔗 Quick Links
-
-### 🌐 Live Services
-- 📊 [Google Sheets Dashboard](https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/) - Analysis BI Enhanced
-- 🔍 [Search API Health](http://94.237.55.15:8080/health) - FastAPI status check
-- 🗺️ [Generator Map](http://94.237.55.15/gb_power_comprehensive_map.html) - GB power stations
-- ⚡ [IRIS Pipeline Status](http://94.237.55.234) - Real-time data streaming
-
-### 📖 Documentation
-- 🏗️ [Architecture Overview](UNIFIED_ARCHITECTURE_HISTORICAL_AND_REALTIME.md) - Complete system design
-- ⚙️ [Deployment Guide](DEPLOYMENT_COMPLETE.md) - Setup & deployment
-- 🔌 [API Documentation](drive-bq-indexer/API.md) - FastAPI endpoints
-- ⚠️ [Data Reference](STOP_DATA_ARCHITECTURE_REFERENCE.md) - **READ BEFORE QUERYING**
-- 📋 [Architecture Cross-Check](ARCHITECTURE_CROSSCHECK.md) - Implementation verification
-
-### 🛠️ Development
-- 🚀 [GitHub Actions](https://github.com/GeorgeDoors888/overarch-jibber-jabber/actions) - CI/CD workflows
-- 🐛 [Issue Resolution](RECURRING_ISSUE_SOLUTION.md) - Common problems
-- 📚 [Full Documentation Index](DOCUMENTATION_INDEX.md) - All 22 documentation files
-
 ---
 
-## 🚀 Quick Start
+## 🎯 What is This?
+
+## 🔗 Quick Links
+
+A complete UK energy market data platform that enables **ChatGPT to directly query** 397 BigQuery tables containing comprehensive UK energy data through a secure Vercel Edge Function proxy.
+
+### 🌐 Live Services
+
+### Key Features- 📊 [Google Sheets Dashboard](https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/) - Analysis BI Enhanced
+
+- 🔍 [Search API Health](http://94.237.55.15:8080/health) - FastAPI status check
+
+- ✅ **ChatGPT Integration** - Ask questions about UK energy data in natural language- 🗺️ [Generator Map](http://94.237.55.15/gb_power_comprehensive_map.html) - GB power stations
+
+- ✅ **397 BigQuery Tables** - Comprehensive UK energy market data- ⚡ [IRIS Pipeline Status](http://94.237.55.234) - Real-time data streaming
+
+- ✅ **Real-time Access** - Half-hourly generation data, system prices, grid warnings
+
+- ✅ **Secure Proxy** - Vercel Edge Function with SQL validation### 📖 Documentation
+
+- ✅ **Zero Cost** - Running on free tiers (Vercel + Railway)- 🏗️ [Architecture Overview](UNIFIED_ARCHITECTURE_HISTORICAL_AND_REALTIME.md) - Complete system design
+
+- ⚙️ [Deployment Guide](DEPLOYMENT_COMPLETE.md) - Setup & deployment
+
+---- 🔌 [API Documentation](drive-bq-indexer/API.md) - FastAPI endpoints
+
+- ⚠️ [Data Reference](STOP_DATA_ARCHITECTURE_REFERENCE.md) - **READ BEFORE QUERYING**
+
+## 🚀 Quick Start with ChatGPT- 📋 [Architecture Cross-Check](ARCHITECTURE_CROSSCHECK.md) - Implementation verification
+
+
+
+**Copy this to ChatGPT to get started:**### 🛠️ Development
+
+- 🚀 [GitHub Actions](https://github.com/GeorgeDoors888/overarch-jibber-jabber/actions) - CI/CD workflows
+
+```- 🐛 [Issue Resolution](RECURRING_ISSUE_SOLUTION.md) - Common problems
+
+I have a UK energy data platform with 397 BigQuery tables accessible at:- 📚 [Full Documentation Index](DOCUMENTATION_INDEX.md) - All 22 documentation files
+
+
+
+https://gb-power-market-jj.vercel.app/api/proxy---
+
+
+
+Start by exploring my datasets:## 🚀 Quick Start
+
+https://gb-power-market-jj.vercel.app/api/proxy?path=/query_bigquery_get&sql=SELECT%20schema_name%20FROM%20%60jibber-jabber-knowledge.INFORMATION_SCHEMA.SCHEMATA%60
 
 ### ⚠️ BEFORE WRITING ANY NEW QUERY/SCRIPT
 
-**READ THIS FIRST (prevents wasted time):**
-```bash
-open STOP_DATA_ARCHITECTURE_REFERENCE.md
+Please use your browser tool to:
+
+1. List all my datasets**READ THIS FIRST (prevents wasted time):**
+
+2. Show tables in uk_energy_insights```bash
+
+3. Help me analyze UK energy market trendsopen STOP_DATA_ARCHITECTURE_REFERENCE.md
+
 ```
 
-**Quick table coverage check:**
+See full instructions: https://github.com/GeorgeDoors888/overarch-jibber-jabber/blob/main/CHATGPT_INSTRUCTIONS.md
+
+```**Quick table coverage check:**
+
 ```bash
-./check_table_coverage.sh bmrs_bod
+
+---./check_table_coverage.sh bmrs_bod
+
 ./check_table_coverage.sh demand_outturn
-```
 
-### New Users: Start Here!
+## 📖 Documentation```
+
+
+
+- **[CHATGPT_INSTRUCTIONS.md](CHATGPT_INSTRUCTIONS.md)** - Complete ChatGPT guide### New Users: Start Here!
+
+- **[GB_POWER_MARKET_JJ_DOCS.md](GB_POWER_MARKET_JJ_DOCS.md)** - Full system documentation
 
 1. **📖 Read the configuration guide first**:
-   ```bash
+
+---   ```bash
+
    open PROJECT_CONFIGURATION.md
-   ```
+
+## ✅ Verified Working   ```
+
    This contains ALL critical settings (BigQuery project, region, table names, Python commands)
 
-2. **✅ Verify your setup**:
-   ```bash
-   # Test BigQuery access
-   python3 -c 'from google.cloud import bigquery; client = bigquery.Client(project="inner-cinema-476211-u9"); print("✅ BigQuery access working!")'
-   
-   # Test Python packages
-   python3 -c 'import pandas, google.cloud.bigquery, gspread; print("✅ Required packages installed!")'
-   ```
+```bash
 
-3. **📊 View the live dashboard**:
+# Health check2. **✅ Verify your setup**:
+
+curl "https://gb-power-market-jj.vercel.app/api/proxy?path=/health"   ```bash
+
+# ✅ Response: {"status":"healthy","version":"1.0.0"}   # Test BigQuery access
+
+   python3 -c 'from google.cloud import bigquery; client = bigquery.Client(project="inner-cinema-476211-u9"); print("✅ BigQuery access working!")'
+
+# List datasets   
+
+curl "https://gb-power-market-jj.vercel.app/api/proxy?path=/query_bigquery_get&sql=SELECT%20schema_name%20FROM%20%60jibber-jabber-knowledge.INFORMATION_SCHEMA.SCHEMATA%60"   # Test Python packages
+
+# ✅ Response: {"success":true,"data":[...]}   python3 -c 'import pandas, google.cloud.bigquery, gspread; print("✅ Required packages installed!")'
+
+```   ```
+
+
+
+---3. **📊 View the live dashboard**:
+
    https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
 
----
+**Status:** ✅ LIVE  
+
+**Last Updated:** November 7, 2025  ---
+
+**Maintainer:** George Major (george@upowerenergy.uk)
 
 ## 📚 Documentation Index
 

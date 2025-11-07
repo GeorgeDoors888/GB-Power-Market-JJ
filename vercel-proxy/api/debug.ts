@@ -18,10 +18,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
             fetchAvailable: typeof fetch !== 'undefined'
         });
     } catch (e: any) {
-        return res.status(500).json({ 
-            ok: false, 
+        return res.status(500).json({
+            ok: false,
             error: e.message,
-            stack: e.stack 
+            stack: e.stack
         });
     }
 }
