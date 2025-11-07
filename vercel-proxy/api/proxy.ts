@@ -1,97 +1,78 @@
-// Vercel Serverless Function proxy for Railway Codex
-// Using Node.js runtime for process.env support
-import type { VercelRequest, VercelResponse } from '@vercel/node';
-const fetch = require('node-fetch');
+// Vercel Edge Runtime proxy for Railway Codex - optimized for ChatGPT
+export const config = {
+  runtime: 'edge',
+};
 
 const ALLOW = new Set<string>([
     '/health',
-    '/query_bigquery_get', // GET with ?sql=
-    '/query_bigquery',     // POST { sql: ... }
-    '/run_stack_check'     // GET (your secured checker)
+    '/query_bigquery_get',
+    '/query_bigquery',
+    '/run_stack_check'
 ]);
 
-function bad(res: VercelResponse, error: string, status = 400) {
-    return res.status(status).json({ ok: false, error });
-}
-
-// OPTIONAL: basic SQL guard
-function guardSelectOnly(sql: string) {
-    const s = sql.trim().toLowerCase();
-    if (!s.startsWith('select')) throw new Error('only SELECT statements allowed');
-    if (s.includes(';')) throw new Error('multiple statements not allowed');
-    if (sql.length > 5000) throw new Error('SQL too long');
-}
-
-export default async function handler(req: VercelRequest, res: VercelResponse) {
+export default async function handler(req: Request) {
     try {
-        // Enable CORS
-        res.setHeader('Access-Control-Allow-Origin', '*');
-        res.setHeader('Content-Type', 'application/json');
+        const url = new URL(req.url);
+        const path = url.searchParams.get('path') || '';
+        
+        if (!ALLOW.has(path)) {
+            return new Response(JSON.stringify({ ok: false, error: 'path not allowed' }), {
+                status: 403,
+                headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' }
+            });
+        }
 
+        // Environment variables in Edge Runtime
         const RAILWAY_BASE = process.env.RAILWAY_BASE;
         const CODEX_TOKEN = process.env.CODEX_TOKEN;
 
-        if (!RAILWAY_BASE) return bad(res, 'RAILWAY_BASE not set on proxy', 500);
-
-        const path = (req.query.path as string) || '';
-        if (!ALLOW.has(path)) return bad(res, 'path not allowed', 403);
+        if (!RAILWAY_BASE) {
+            return new Response(JSON.stringify({ ok: false, error: 'RAILWAY_BASE not configured' }), {
+                status: 500,
+                headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' }
+            });
+        }
 
         // Build target URL
         const targetUrl = new URL(RAILWAY_BASE + path);
-
-        // Pass through GET query params (except 'path')
-        if (req.method === 'GET') {
-            for (const [key, value] of Object.entries(req.query)) {
-                if (key !== 'path' && value) {
-                    targetUrl.searchParams.set(key, String(value));
-                }
-            }
-            // SQL guard for GET
-            const sql = targetUrl.searchParams.get('sql') || '';
-            if (sql && path === '/query_bigquery_get') {
-                try {
-                    guardSelectOnly(sql);
-                } catch (e: any) {
-                    return bad(res, e.message, 400);
-                }
+        
+        // Copy query params except 'path'
+        for (const [key, value] of url.searchParams.entries()) {
+            if (key !== 'path') {
+                targetUrl.searchParams.set(key, value);
             }
         }
 
-        // Prepare request to Railway
-        const fetchOptions: any = {
-            method: req.method || 'GET',
-            headers: {
-                'content-type': req.headers['content-type'] || 'application/json',
-                'authorization': `Bearer ${CODEX_TOKEN ?? ''}`,
-            },
+        // Prepare headers
+        const headers: Record<string, string> = {
+            'Content-Type': req.headers.get('Content-Type') || 'application/json',
+            'Authorization': `Bearer ${CODEX_TOKEN}`,
         };
 
-        // Forward body for POST
-        if (req.method === 'POST') {
-            const bodyText = JSON.stringify(req.body);
-            // SQL guard for POST
-            if (path === '/query_bigquery' && req.body?.sql) {
-                try {
-                    guardSelectOnly(String(req.body.sql));
-                } catch (e: any) {
-                    return bad(res, e.message, 400);
-                }
-            }
-            if (bodyText.length > 200_000) return bad(res, 'payload too large', 413);
-            fetchOptions.body = bodyText;
-        }
+        // Make request to Railway
+        const railwayResponse = await fetch(targetUrl.toString(), {
+            method: req.method,
+            headers,
+            body: req.method !== 'GET' ? await req.text() : undefined,
+        });
 
-        const response = await fetch(targetUrl.toString(), fetchOptions);
-        const text = await response.text();
-        
-        return res.status(response.status).send(text);
+        const responseText = await railwayResponse.text();
+
+        return new Response(responseText, {
+            status: railwayResponse.status,
+            headers: {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*',
+            }
+        });
+
     } catch (e: any) {
-        console.error('Proxy error:', e);
-        return res.status(500).json({ 
+        return new Response(JSON.stringify({ 
             ok: false, 
-            error: `error: ${e?.message || String(e)}`,
-            stack: e?.stack,
-            name: e?.name
+            error: e.message || String(e)
+        }), {
+            status: 500,
+            headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' }
         });
     }
 }
