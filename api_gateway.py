@@ -9,11 +9,13 @@ from fastapi import FastAPI, HTTPException, Header, Depends, Request, Response
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from fastapi.responses import JSONResponse
 from google.cloud import bigquery
+from google.oauth2 import service_account
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 import paramiko
 import os
 import sys
+import base64
 from typing import Optional, Dict, Any, List
 from datetime import datetime, timezone
 import logging
@@ -84,10 +86,22 @@ app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 
 security = HTTPBearer()
 
-# Initialize clients
+# Initialize BigQuery client with credentials
 try:
-    bq_client = bigquery.Client(project=BQ_PROJECT)
-    logger.info(f"✅ BigQuery client initialized for project {BQ_PROJECT}")
+    # Try to load credentials from base64 env var (for Railway)
+    creds_base64 = os.environ.get("GOOGLE_CREDENTIALS_BASE64")
+    if creds_base64:
+        logger.info("Loading credentials from GOOGLE_CREDENTIALS_BASE64")
+        creds_json = base64.b64decode(creds_base64).decode('utf-8')
+        creds_dict = json.loads(creds_json)
+        credentials = service_account.Credentials.from_service_account_info(creds_dict)
+        bq_client = bigquery.Client(project=BQ_PROJECT, credentials=credentials)
+        logger.info(f"✅ BigQuery client initialized for project {BQ_PROJECT} with base64 credentials")
+    else:
+        # Fall back to default credentials (for local development)
+        logger.info("Using default credentials (ADC)")
+        bq_client = bigquery.Client(project=BQ_PROJECT)
+        logger.info(f"✅ BigQuery client initialized for project {BQ_PROJECT} with default credentials")
 except Exception as e:
     logger.error(f"❌ Failed to initialize BigQuery client: {e}")
     bq_client = None
