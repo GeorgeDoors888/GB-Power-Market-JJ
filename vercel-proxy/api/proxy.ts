@@ -58,10 +58,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         }
 
         // Prepare request to Railway
-        const fetchOptions: RequestInit = {
-            method: req.method,
+        const fetchOptions: any = {
+            method: req.method || 'GET',
             headers: {
-                'content-type': (req.headers['content-type'] || 'application/json') as string,
+                'content-type': req.headers['content-type'] || 'application/json',
                 'authorization': `Bearer ${CODEX_TOKEN ?? ''}`,
             },
         };
