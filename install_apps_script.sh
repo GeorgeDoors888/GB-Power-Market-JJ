@@ -1,0 +1,35 @@
+#!/bin/bash
+# Quick installer helper for Google Sheets Apps Script
+
+echo "📋 Google Sheets Apps Script Installation Helper"
+echo "================================================"
+echo ""
+echo "✅ I've opened your Google Sheet in the browser"
+echo ""
+echo "📝 Follow these steps:"
+echo ""
+echo "1. In your Google Sheet, click: Extensions → Apps Script"
+echo "2. Delete any existing code in Code.gs"
+echo "3. Copy the ENTIRE file: google_sheets_dashboard.gs"
+echo "4. Paste into the Apps Script editor"
+echo "5. Click Save (💾) or press Cmd+S"
+echo "6. Click Run → Select 'Setup_Dashboard_AutoRefresh'"
+echo "7. Authorize when prompted (it's safe - your own script)"
+echo ""
+echo "🎯 File to copy: google_sheets_dashboard.gs"
+echo "📏 File size: 549 lines"
+echo ""
+echo "Opening the code file for you..."
+echo ""
+
+# Open the file in VS Code
+code "google_sheets_dashboard.gs"
+
+echo "✅ File opened in VS Code!"
+echo ""
+echo "💡 Quick tip: Select All (Cmd+A) → Copy (Cmd+C)"
+echo "   Then paste into Apps Script editor"
+echo ""
+echo "📚 Full guide: GOOGLE_SHEETS_APPS_SCRIPT_GUIDE.md"
+echo ""
+echo "🆘 If you need help: Check APPS_SCRIPT_QUICK_REF.md"
