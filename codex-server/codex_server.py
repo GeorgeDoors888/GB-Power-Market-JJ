@@ -413,10 +413,11 @@ except Exception as e:
         execution_time = (datetime.now() - start_time).total_seconds()
 
         if result.returncode != 0:
-            logger.error(f"BigQuery query failed: {result.stderr}")
+            error_detail = f"STDERR: {result.stderr}\nSTDOUT: {result.stdout}\nReturn Code: {result.returncode}"
+            logger.error(f"BigQuery query failed: {error_detail}")
             return BigQueryResponse(
                 success=False,
-                error=result.stderr or "Query execution failed",
+                error=error_detail or "Query execution failed",
                 execution_time=execution_time,
                 timestamp=datetime.now().isoformat()
             )
