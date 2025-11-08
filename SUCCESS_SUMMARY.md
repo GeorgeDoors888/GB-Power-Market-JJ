@@ -193,6 +193,57 @@ Questions? Check the documentation:
 
 ---
 
+# 🎉 UPDATE: Railway BigQuery Fix Complete (Nov 8, 2025)
+
+## ✅ Apps Script Dashboard Backend Fixed
+
+### Problem Solved
+Apps Script dashboard was missing SSP, SBP, BOALF, and BOD data because Railway backend was querying **wrong BigQuery project**.
+
+### Fixes Applied ✅
+1. ✅ Added `BQ_PROJECT_ID=inner-cinema-476211-u9` to Railway
+2. ✅ Updated `GOOGLE_CREDENTIALS_BASE64` with inner-cinema credentials
+3. ✅ Modified `codex_server.py` to use environment variable
+4. ✅ Deployed via Railway CLI (`railway up`)
+5. ✅ **Verified: 155,405 rows accessible from BigQuery**
+
+### Test Results ✅
+```bash
+# Direct Railway Test
+curl "https://jibber-jabber-production.up.railway.app/query_bigquery_get?sql=..."
+# ✅ Result: {"success": true, "data": [{"cnt": 155405}]}
+
+# Full Chain Test (Apps Script path)
+curl "https://gb-power-market-jj.vercel.app/api/proxy-v2?path=/query_bigquery_get&sql=..."
+# ✅ Result: {"success": true, "data": [{"cnt": 155405}]}
+```
+
+### Architecture Now Working ✅
+```
+Google Sheets (Apps Script)
+    ↓
+Vercel Proxy (/api/proxy-v2)
+    ↓
+Railway Backend (jibber-jabber-production.up.railway.app)
+    ↓
+BigQuery (inner-cinema-476211-u9.uk_energy_prod) ✅
+    ↓
+155,405 rows of data accessible!
+```
+
+### Next Step 🎯
+**Test your Google Sheet dashboard:**
+1. Open: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit
+2. Click: ⚡ Power Market → 🔄 Refresh Now (today)
+3. Verify: SSP, SBP, BOALF, BOD columns populate
+
+### Documentation
+- `RAILWAY_BIGQUERY_FIX_STATUS.md` - Complete fix details
+- `PROJECT_IDENTITY_MASTER.md` - Project identity guide
+- `REPOSITORY_ANALYSIS.md` - Repository situation explained
+
+---
+
 ## 🚀 Start Now!
 
 ```bash

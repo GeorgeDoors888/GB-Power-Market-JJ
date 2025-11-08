@@ -42,44 +42,118 @@ Apps Script dashboard missing data: SSP, SBP, BOALF, BOD prices not populating.
 
 ## Current Status
 
-### Configuration ✅
-- ✅ BQ_PROJECT_ID set correctly
+### Configuration ✅ COMPLETE
+- ✅ BQ_PROJECT_ID set correctly (`inner-cinema-476211-u9`)
 - ✅ GOOGLE_CREDENTIALS_BASE64 updated with correct credentials
 - ✅ Code fixes committed and pushed to GitHub
+- ✅ Railway CLI installed and configured
+- ✅ Railway project linked to local directory
 
-### Deployment ⏸️
-- ⏸️ Railway deployment stuck on old commit (`f210c2f1`)
-- ⏸️ Latest commit (`c12a81ea`) not deployed yet
-- ⏸️ Need manual redeploy to pull latest code
+### Deployment ✅ SUCCESS
+- ✅ Deployed via Railway CLI (`railway up`)
+- ✅ Build completed in 29.10 seconds
+- ✅ Latest commit (`fefc7d20`) now running
+- ✅ Server started successfully on port 8080
+- ✅ Using Nixpacks v1.38.0 with Python virtual environment
 
-### Testing ❌
-- ❌ BigQuery queries still failing
-- ❌ Error message empty (need better logging from latest commit)
-- ❌ Apps Script still missing SSP/SBP/BOALF/BOD data
+### Testing ✅ VERIFIED
+- ✅ **BigQuery queries WORKING!**
+- ✅ Test query returned 155,405 rows from `bmrs_mid` table
+- ✅ Debug endpoint confirms correct project: `inner-cinema-476211-u9`
+- ✅ Full chain working: Vercel → Railway → BigQuery
+- ✅ Execution time: ~2 seconds (normal performance)
+- ⏸️ **Pending:** Apps Script dashboard verification (user action needed)
 
 ## Next Steps
 
-1. **Manually trigger Railway redeploy** to pull commit `c12a81ea`
-2. **Check Deploy Logs** for actual error message
-3. **Debug based on error** (permissions, table access, etc.)
-4. **Test Apps Script** once Railway working
+1. ✅ **COMPLETED:** Railway CLI deployment successful
+2. ✅ **COMPLETED:** BigQuery access verified
+3. ✅ **COMPLETED:** Full chain tested (Vercel → Railway → BigQuery)
+4. 🎯 **USER ACTION NEEDED:** Test Apps Script dashboard
+   - Open: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit
+   - Go to "Live Dashboard" tab
+   - Click: ⚡ Power Market → 🔄 Refresh Now (today)
+   - Verify: SSP, SBP, BOALF, BOD columns populate
+   - Check: Audit_Log tab for success messages
+
+## Successful Test Results
+
+### Direct Railway Test ✅
+```bash
+curl "https://jibber-jabber-production.up.railway.app/query_bigquery_get?sql=SELECT%20COUNT(*)%20as%20cnt%20FROM%20\`inner-cinema-476211-u9.uk_energy_prod.bmrs_mid\`%20LIMIT%201"
+```
+**Result:**
+```json
+{
+  "success": true,
+  "data": [{"cnt": 155405}],
+  "row_count": 1,
+  "error": null,
+  "execution_time": 1.902459
+}
+```
+
+### Full Chain Test (Vercel → Railway) ✅
+```bash
+curl "https://gb-power-market-jj.vercel.app/api/proxy-v2?path=/query_bigquery_get&sql=SELECT%20COUNT(*)%20as%20cnt%20FROM%20\`inner-cinema-476211-u9.uk_energy_prod.bmrs_mid\`%20LIMIT%201"
+```
+**Result:**
+```json
+{
+  "success": true,
+  "data": [{"cnt": 155405}],
+  "row_count": 1,
+  "error": null,
+  "execution_time": 2.192703
+}
+```
+
+### Debug Endpoint Verification ✅
+```bash
+curl "https://jibber-jabber-production.up.railway.app/debug/env"
+```
+**Result:**
+```json
+{
+  "BQ_PROJECT_ID": "inner-cinema-476211-u9",
+  "GOOGLE_CREDENTIALS_BASE64_preview": "ewogICJ0eXBlIjogInNlcnZpY2VfYWNjb3VudCIsCiAgInByb2...",
+  "project_in_credentials": "inner-cinema-476211-u9"
+}
+```
 
 ## Railway Deployment Info
 
 - **Project:** jibber-jabber-production
 - **Project ID:** c0c79bb5-e2fc-4e0e-93db-39d6027301ca
 - **URL:** https://jibber-jabber-production.up.railway.app
+- **Region:** asia-southeast1-eqsg3a
 - **Start Command:** `python codex_server.py`
-- **Current Active Commit:** f210c2f1 (old)
-- **Should Be On Commit:** c12a81ea (latest)
+- **Deployment Method:** Railway CLI (`railway up` from codex-server directory)
+- **Current Active Commit:** fefc7d20 ✅ (latest with all fixes)
+- **Build System:** Nixpacks v1.38.0
+- **Build Time:** 29.10 seconds
+- **Status:** ✅ Running successfully
 
 ## Test Commands
 
-```bash
-# Test BigQuery access
-curl "https://jibber-jabber-production.up.railway.app/query_bigquery_get?sql=SELECT%20COUNT(*)%20as%20cnt%20FROM%20\`inner-cinema-476211-u9.uk_energy_prod.bmrs_mid\`%20LIMIT%201"
+✅ **All tests passing!**
 
-# Should return success with count, not "Query execution failed"
+```bash
+# Test BigQuery access directly
+curl "https://jibber-jabber-production.up.railway.app/query_bigquery_get?sql=SELECT%20COUNT(*)%20as%20cnt%20FROM%20\`inner-cinema-476211-u9.uk_energy_prod.bmrs_mid\`%20LIMIT%201"
+# ✅ Returns: {"success": true, "data": [{"cnt": 155405}]}
+
+# Test through Vercel proxy (full chain)
+curl "https://gb-power-market-jj.vercel.app/api/proxy-v2?path=/query_bigquery_get&sql=SELECT%20COUNT(*)%20as%20cnt%20FROM%20\`inner-cinema-476211-u9.uk_energy_prod.bmrs_mid\`%20LIMIT%201"
+# ✅ Returns: {"success": true, "data": [{"cnt": 155405}]}
+
+# Check environment configuration
+curl "https://jibber-jabber-production.up.railway.app/debug/env"
+# ✅ Returns: {"BQ_PROJECT_ID": "inner-cinema-476211-u9", ...}
+
+# Health check
+curl "https://jibber-jabber-production.up.railway.app/health"
+# ✅ Returns: {"status": "healthy", "version": "1.0.0"}
 ```
 
 ## Architecture
