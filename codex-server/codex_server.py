@@ -352,6 +352,9 @@ async def query_bigquery(request: BigQueryRequest):
             timestamp=datetime.now().isoformat()
         )
 
+    # Get project ID from environment or use default
+    bq_project = os.environ.get('BQ_PROJECT_ID', 'inner-cinema-476211-u9')
+    
     # Create Python script to execute BigQuery query
     query_script = f"""
 import json
@@ -362,7 +365,7 @@ import os
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = '{service_account_path}'
 
 try:
-    client = bigquery.Client(project='jibber-jabber-knowledge')
+    client = bigquery.Client(project='{bq_project}')
     
     query = '''
 {request.sql}
