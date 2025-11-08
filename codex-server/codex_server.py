@@ -236,6 +236,33 @@ async def health_check():
     }
 
 
+@app.get("/debug/env")
+async def debug_env():
+    """Debug endpoint to check environment variables"""
+    import base64
+    creds_b64 = os.environ.get('GOOGLE_CREDENTIALS_BASE64', 'NOT_SET')
+    bq_project = os.environ.get('BQ_PROJECT_ID', 'NOT_SET')
+    
+    # Decode first 100 chars of credentials to verify
+    creds_preview = "NOT_SET"
+    project_in_creds = "UNKNOWN"
+    if creds_b64 != 'NOT_SET':
+        try:
+            creds_json = base64.b64decode(creds_b64).decode('utf-8')
+            creds_dict = json.loads(creds_json)
+            project_in_creds = creds_dict.get('project_id', 'NOT_FOUND')
+            creds_preview = creds_b64[:50] + "..."
+        except Exception as e:
+            creds_preview = f"ERROR: {str(e)}"
+    
+    return {
+        "BQ_PROJECT_ID": bq_project,
+        "GOOGLE_CREDENTIALS_BASE64_preview": creds_preview,
+        "project_in_credentials": project_in_creds,
+        "timestamp": datetime.now().isoformat()
+    }
+
+
 @app.post("/execute", response_model=CodeResponse)
 async def execute_code(request: CodeRequest):
     """
