@@ -88,43 +88,43 @@ def update_dashboard():
         except Exception as e:
             logging.warning(f"  Could not read A1: {e}")
         
-        # Use fixed date range: last 7 days
-        days = 7
+        # Use TODAY ONLY starting from 00:00 (Settlement Period 1)
         date_to = datetime.now().date()
-        date_from = date_to - timedelta(days=days)
+        date_from = date_to  # Same day - only show today's data from 00:00
         
-        logging.info(f"  Date Range: {date_from} to {date_to} ({days} days)")
+        logging.info(f"  Date Range: TODAY ONLY ({date_from}) starting from SP 1 (00:00)")
         
         # Query latest generation data (UNION historical + IRIS)
         logging.info("📊 Querying BigQuery for latest data...")
         query = f"""
         WITH combined_generation AS (
-          -- Historical data
+          -- Historical data (if today exists in historical table)
           SELECT 
             CAST(settlementDate AS DATE) as date,
+            settlementPeriod,
             fuelType,
-            SUM(generation) as total_generation
+            generation as total_generation
           FROM `{PROJECT_ID}.{DATASET}.bmrs_fuelinst`
-          WHERE CAST(settlementDate AS DATE) BETWEEN '{date_from}' AND '{date_to}'
-            AND CAST(settlementDate AS DATE) < CURRENT_DATE()
-          GROUP BY date, fuelType
+          WHERE CAST(settlementDate AS DATE) = '{date_from}'
+            AND settlementPeriod >= 1
           
           UNION ALL
           
-          -- Real-time IRIS data (last 48 hours)
+          -- Real-time IRIS data (today only)
           SELECT 
             CAST(settlementDate AS DATE) as date,
+            settlementPeriod,
             fuelType,
-            SUM(generation) as total_generation
+            generation as total_generation
           FROM `{PROJECT_ID}.{DATASET}.bmrs_fuelinst_iris`
-          WHERE CAST(settlementDate AS DATE) >= DATE_SUB(CURRENT_DATE(), INTERVAL 2 DAY)
-            AND CAST(settlementDate AS DATE) BETWEEN '{date_from}' AND '{date_to}'
-          GROUP BY date, fuelType
+          WHERE CAST(settlementDate AS DATE) = '{date_from}'
+            AND settlementPeriod >= 1
         )
         SELECT 
           fuelType,
           SUM(total_generation) as total_mwh,
-          COUNT(DISTINCT date) as days_with_data
+          MIN(settlementPeriod) as first_sp,
+          MAX(settlementPeriod) as last_sp
         FROM combined_generation
         GROUP BY fuelType
         ORDER BY total_mwh DESC
@@ -134,6 +134,10 @@ def update_dashboard():
         df = bq_client.query(query).to_dataframe()
         
         logging.info(f"✅ Retrieved {len(df)} fuel types")
+        if len(df) > 0 and 'first_sp' in df.columns:
+            first_sp = df['first_sp'].min()
+            last_sp = df['last_sp'].max()
+            logging.info(f"   Settlement Periods: SP {first_sp} (00:00) to SP {last_sp}")
         
         # Update summary metrics on sheet
         total_generation = df['total_mwh'].sum()
