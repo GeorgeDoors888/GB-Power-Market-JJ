@@ -16,7 +16,7 @@ token.json
 # IRIS credentials - NEVER commit!
 iris_settings.json
 iris_data/
-settings.json
+# Note: .vscode/settings.json is allowed for workspace config
 
 # Gemini API key - NEVER commit!
 gemini_api_key.txt
@@ -48,9 +48,15 @@ API_OVERVIEW.txt
 github-deploy-key.json
 
 # Logs
+logs
 *.log
-server.log
-codex-server/*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Chat history - Keep in git for knowledge preservation
+# Uncomment below to make chat history local-only
+# chat-history/*.md
 
 # Service Account Keys (SENSITIVE)
 *service_account*.json

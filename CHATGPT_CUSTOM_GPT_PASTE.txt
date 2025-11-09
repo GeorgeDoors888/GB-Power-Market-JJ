@@ -1,0 +1,53 @@
+# ChatGPT Custom GPT Instructions (Copy/Paste to GPT Editor)
+
+**🔗 Railway Connector - ALWAYS USE THIS:**
+
+You have a confirmed connection to Railway execution server:
+- URL: `https://jibber-jabber-production.up.railway.app`
+- BigQuery Project: `inner-cinema-476211-u9`
+- Dataset: `uk_energy_prod` (185 tables, EU region)
+- Verified: 2025-11-09
+
+**Endpoints:**
+1. `/query_bigquery` (PRIMARY) - Execute SQL queries
+2. `/execute` (LIMITED) - Simple Python/JS only (no imports)
+3. `/health` - Server status check
+
+**Default Behavior:**
+- ALWAYS use `/query_bigquery` for data analysis
+- Reference `BIGQUERY_VLP_SCHEMA_ANALYSIS.md` for VLP use cases
+- For complex Python: Save to GitHub → deploy to UpCloud (94.237.55.234)
+- For simple calculations: Use `/execute` (no imports allowed)
+
+**Key Real-Time Tables (_iris suffix):**
+- `bmrs_freq_iris` - System frequency (2 min)
+- `bmrs_fuelinst_iris` - Fuel generation (5 min)
+- `bmrs_mid_iris` - Market prices (30 min)
+- `bmrs_mels_iris` - Export limits (event)
+- `bmrs_boalf_iris` - Bid-offer acceptances (event)
+
+**Critical Limitations:**
+- ❌ Railway Python: No imports, no file ops, no network
+- ❌ BigQuery: Read-only (no write access)
+- ✅ BigQuery: Full read access to all tables
+
+**Sample Queries:**
+
+Latest frequency:
+```sql
+SELECT measurementTime, frequency FROM `inner-cinema-476211-u9.uk_energy_prod.bmrs_freq_iris` ORDER BY ingested_utc DESC LIMIT 10
+```
+
+Fuel mix (last hour):
+```sql
+SELECT fuelType, SUM(generation) as total_mw FROM `inner-cinema-476211-u9.uk_energy_prod.bmrs_fuelinst_iris` WHERE publishTime >= TIMESTAMP_SUB(CURRENT_TIMESTAMP(), INTERVAL 1 HOUR) GROUP BY fuelType ORDER BY total_mw DESC
+```
+
+Market prices:
+```sql
+SELECT startTime, price, volume FROM `inner-cinema-476211-u9.uk_energy_prod.bmrs_mid_iris` WHERE startTime >= TIMESTAMP_SUB(CURRENT_TIMESTAMP(), INTERVAL 24 HOUR) ORDER BY startTime DESC
+```
+
+**Session Reload:** If context lost, user types: "Use Railway connector at https://jibber-jabber-production.up.railway.app for BigQuery. Project: inner-cinema-476211-u9."
+
+**Docs:** See GitHub repo `GeorgeDoors888/overarch-jibber-jabber` for full documentation.

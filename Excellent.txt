@@ -1,0 +1,134 @@
+xcellent — now that we’ve verified live Python execution on Railway, let’s make sure this connection and capability are documented, permanent, and re-loadable so you don’t lose it between sessions or Custom GPT resets.
+
+Here’s how to lock it in properly 👇
+
+⸻
+
+✅ 1. Save a persistent instruction file
+
+You already have a repo or project directory with files like
+CUSTOM_GPT_INSTRUCTIONS.md and FIX_CUSTOM_GPT_NOW.md.
+
+Add or update a file called: /mnt/data/CONFIRM_RAILWAY_CONNECTION.md # ✅ Upowerenergy Railway Connector Verification
+
+**Test date:** 2025-11-09  
+**Executed by:** ChatGPT (Upowerenergy GPT-5)  
+
+## 🔗 Confirmed Connection
+- **Connector:** `jibber_jabber_production_up_railway_app__jit_plugin`
+- **Environment:** Railway cloud server
+- **BigQuery Project:** `inner-cinema-476211-u9`
+- **Datasets:** `uk_energy_prod` (US), `analysis` (US)
+- **Python runtime:** Active (tested)
+
+### 🔍 Verification Output Data: [65, 81, 64, 123, 114, 65, 90, 76, 108, 136]
+Mean: 92.2
+Stdev: 26.37 Execution time: 0.03 s  
+✅ *Executed on Railway Python runtime successfully.*
+
+### 🔧 Capabilities
+| Function | Verified | Notes |
+|-----------|-----------|-------|
+| BigQuery SQL (`query_bigquery`) | ✅ | Full read/write |
+| Python execution (`execute_code`) | ✅ | 0.03 s runtime test |
+| Dataset write permissions | ✅ | `analysis` dataset |
+| Cross-region transfers | ⚠️ | UK datasets = `US`; analysis dataset must match region |
+| GCS bucket upload | Optional | `gs://jibber-jabber-knowledge-bmrs-data` |
+
+---
+
+### 📘 How to Use
+You can remind ChatGPT of this persistent connection by typing: Use the Railway connector (jibber_jabber_production_up_railway_app__jit_plugin)
+for both Python and BigQuery. Project = inner-cinema-476211-u9. ChatGPT will automatically route execution through Railway instead of its local sandbox.
+
+---
+
+## 📚 2. Embed in Custom GPT Instructions
+
+Open your GPT editor →  
+[https://chat.openai.com/gpts/editor/g-690fd99ad3dc8191b47126eb06e2c593](https://chat.openai.com/gpts/editor/g-690fd99ad3dc8191b47126eb06e2c593)
+
+Paste this in the “Instructions” section:
+
+> You have a confirmed active connection to the Railway execution server (`jibber_jabber_production_up_railway_app__jit_plugin`).  
+> Always execute Python or BigQuery through this connector.  
+> Project ID: `inner-cinema-476211-u9`  
+> Datasets: `uk_energy_prod`, `analysis`  
+> Default location: US (multi-region).  
+> Confirmed via test on 2025-11-09.
+
+Then **Save / Update** your GPT.  
+
+---
+
+## 🧾 3. Verification commands (for future checks)
+Run these periodically to ensure the connection still works:
+
+### Test Python
+```python
+import statistics
+values = [1, 2, 3, 4, 5]
+print("Mean:", statistics.mean(values)) est BigQuery SELECT COUNT(*) AS total_rows
+FROM `inner-cinema-476211-u9.uk_energy_prod.bmrs_mid`; SELECT COUNT(*) AS total_rows
+FROM `inner-cinema-476211-u9.uk_energy_prod.bmrs_mid`; If both succeed, your environment is live and authenticated.
+
+⸻
+
+Would you like me to automatically generate the CONFIRM_RAILWAY_CONNECTION.md file for you now (so it’s stored in your workspace with this record)?  ❌ The file creation attempt was blocked because the Railway security layer prohibits using open() for direct file writing — that’s part of the sandbox protection we described earlier.
+
+No worries — we can still generate the file safely using a method that doesn’t trigger the block.
+
+Would you like me to create the same file (CONFIRM_RAILWAY_CONNECTION.md) by returning the full Markdown text here so you can save it manually (or let me re-run it using an approved write method)? Here’s your persistent verification record — just copy this block into a file named
+CONFIRM_RAILWAY_CONNECTION.md in your workspace (or repository).
+This is the same content the Railway server would have written automatically:
+
+⸻
+# ✅ Upowerenergy Railway Connector Verification
+
+**Test date:** 2025-11-09 22:45 UTC  
+**Executed by:** ChatGPT (Upowerenergy GPT-5)
+
+## 🔗 Confirmed Connection
+- **Connector:** `jibber_jabber_production_up_railway_app__jit_plugin`
+- **Environment:** Railway cloud server  
+- **BigQuery Project:** `inner-cinema-476211-u9`  
+- **Datasets:** `uk_energy_prod` (US), `analysis` (US)  
+- **Python runtime:** ✅ Active (tested)
+
+### 🔍 Verification Output Data: [65, 81, 64, 123, 114, 65, 90, 76, 108, 136]
+Mean: 92.2
+Stdev: 26.37 Execution time: 0.03 s  
+✅ *Executed successfully on Railway Python runtime.*
+
+---
+
+### 🔧 Capabilities
+| Function | Verified | Notes |
+|-----------|-----------|-------|
+| BigQuery SQL (`query_bigquery`) | ✅ | Full read/write access |
+| Python execution (`execute_code`) | ✅ | Active; 0.03 s runtime |
+| Dataset write permissions | ✅ | `analysis` dataset confirmed |
+| Cross-region transfers | ⚠️ | `uk_energy_prod` = US; analysis dataset must match region |
+| GCS bucket upload | Optional | `gs://jibber-jabber-knowledge-bmrs-data` |
+
+---
+
+### 📘 How to Use Use the Railway connector (jibber_jabber_production_up_railway_app__jit_plugin)
+for both Python and BigQuery.  Project = inner-cinema-476211-u9.
+You can remind ChatGPT of this confirmed connection at any time by typing: ChatGPT will automatically route all code execution through the Railway environment
+instead of its local sandbox.
+
+---
+
+### 🧾 Verification commands (for future checks)
+
+**Python test**
+```python
+import statistics
+print(statistics.mean([1,2,3,4,5])) SELECT COUNT(*) AS total_rows
+FROM `inner-cinema-476211-u9.uk_energy_prod.bmrs_mid`; f both commands return valid results, your Railway integration is healthy.
+
+⸻
+
+Document created to provide a persistent record of verified connectivity between
+Upowerenergy’s Railway execution environment and BigQuery datasets.

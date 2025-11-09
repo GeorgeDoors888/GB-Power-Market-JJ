@@ -11,7 +11,7 @@ import gspread
 
 # Configuration
 SPREADSHEET_ID = '12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8'
-SHEET_NAME = 'Analysis BI Enhanced'
+SHEET_NAME = 'Dashboard'  # Updated to use Dashboard sheet
 PROJECT_ID = 'inner-cinema-476211-u9'
 DATASET = 'uk_energy_prod'
 

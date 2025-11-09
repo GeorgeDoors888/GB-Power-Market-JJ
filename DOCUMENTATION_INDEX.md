@@ -26,6 +26,12 @@
 1. **[QUICK_START_ANALYSIS.md](#quick-start-analysis)** - ⚡ Copy-paste commands to run analysis NOW
 2. **[CODE_REVIEW_SUMMARY.md](#code-review-summary)** - Complete code review & function guide
 
+### For Dashboard Users
+1. **[DASHBOARD_REFRESH_QUICK_REF.md](#dashboard-refresh-quick-ref)** - ⚡ One-page data refresh guide (NEW!)
+2. **[DASHBOARD_DATA_REFRESH_GUIDE.md](#dashboard-data-refresh-guide)** - 📘 Complete refresh documentation (NEW!)
+3. **[DASHBOARD_SEPARATE_DATA_COMPLETE.md](#dashboard-separate-data)** - 📊 Hidden ChartData implementation (NEW!)
+4. **[ENHANCED_BI_ANALYSIS_README.md](#enhanced-bi-analysis-readme)** - Dashboard guide
+
 ### For New Users
 1. **[README.md](#readme)** - Project overview and quick start
 2. **[PROJECT_IDS.md](#project-ids)** - ⚠️ **CRITICAL:** Google Cloud project IDs (BigQuery vs Sheets)
@@ -626,6 +632,158 @@ Comprehensive summary of entire session covering system recovery, code review, s
 ---
 
 ## 📊 Dashboard Documentation
+
+### DASHBOARD_REFRESH_QUICK_REF.md {#dashboard-refresh-quick-ref}
+**Category**: ⚡ Quick Reference  
+**Status**: ✅ Active  
+**Date**: November 9, 2025  
+**Size**: One-page guide
+
+**Summary**:  
+Single-page quick reference for dashboard data refresh behavior. Answers the critical question: "Does old data get deleted?" with immediate commands and verification steps.
+
+**Key Content**:
+- Data refresh behavior table (old data deleted: YES ✅)
+- Sheet structure diagram (Dashboard + hidden ChartData)
+- Quick commands (manual refresh, auto-refresh setup, troubleshooting)
+- Update sequence (6 steps from auth to chart refresh)
+- Key code snippets (`.clear()` operations)
+- Verification checklist
+- Common issues & one-line fixes
+- Emergency commands section
+
+**Critical Info**:
+- `.clear()` removes ALL data before each write
+- Both Dashboard (30 rows) and ChartData (80 rows) cleared
+- Charts auto-update when data changes
+- Zero risk of data accumulation
+- Complete replacement strategy = best practice
+
+**Quick Commands**:
+```bash
+# Manual refresh
+python3 enhance_dashboard_layout.py
+
+# Auto-refresh (every 5 min)
+*/5 * * * * python3 enhance_dashboard_layout.py >> logs/dashboard_enhance.log 2>&1
+
+# Hide ChartData if visible
+python3 -c "import gspread; [hide_logic]"
+```
+
+**When to Use**: Quick lookup during development, verifying clearing behavior, troubleshooting data issues
+
+**Related**: [DASHBOARD_DATA_REFRESH_GUIDE.md](#dashboard-data-refresh-guide), [DASHBOARD_SEPARATE_DATA_COMPLETE.md](#dashboard-separate-data)
+
+---
+
+### DASHBOARD_DATA_REFRESH_GUIDE.md {#dashboard-data-refresh-guide}
+**Category**: 📘 Complete Documentation  
+**Status**: ✅ Active  
+**Date**: November 9, 2025  
+**Size**: 700+ lines (comprehensive)
+
+**Summary**:  
+Exhaustive documentation of dashboard data refresh system. Explains architecture, data flow, clearing behavior, chart synchronization, troubleshooting, and best practices. The definitive guide for understanding how dashboard data updates work.
+
+**Key Content**:
+- Two-sheet architecture diagram (Dashboard visible + ChartData hidden)
+- Complete data refresh process (6 steps with code)
+- `.clear()` behavior explained (what it does, why it matters)
+- Data flow diagrams (BigQuery → Python → Sheets → Charts)
+- Update frequency & timing (manual + cron)
+- Chart synchronization mechanics (range-based linking)
+- Data lifecycle examples (timeline view)
+- Code reference (key functions with line numbers)
+- BigQuery queries (generation + trend data)
+- Troubleshooting section (5 common issues + solutions)
+- Performance metrics (execution time, data volume)
+- Best practices (✅ Do's and ❌ Don'ts)
+- Integration details (Apps Script, auto-refresh)
+- Security & access control
+- Version history
+- FAQ section (6 questions)
+
+**Architecture Details**:
+```
+BigQuery → enhance_dashboard_layout.py
+         ↓
+Dashboard (30 rows, visible) + ChartData (80 rows, hidden)
+         ↓
+Apps Script (dashboard_charts_v2.gs)
+         ↓
+4 Charts (Line, Pie, Area, Column)
+```
+
+**Critical Insights**:
+- Complete data replacement prevents accumulation
+- `.clear()` is atomic operation (fast & reliable)
+- Charts detect range changes and auto-refresh
+- No manual chart updates needed
+- Rolling 24-hour window with auto-refresh
+
+**Performance**:
+- Execution time: 6-9 seconds
+- Dashboard: 180 cells (30×6)
+- ChartData: 480 cells (80×6)
+- BigQuery: ~10 MB processed
+- Network: ~20 KB transfer
+
+**When to Use**: Understanding dashboard architecture, implementing auto-refresh, troubleshooting complex issues, onboarding new developers
+
+**Related**: [DASHBOARD_REFRESH_QUICK_REF.md](#dashboard-refresh-quick-ref), [DASHBOARD_SEPARATE_DATA_COMPLETE.md](#dashboard-separate-data), [ENHANCED_BI_ANALYSIS_README.md](#enhanced-bi-analysis-readme)
+
+---
+
+### DASHBOARD_SEPARATE_DATA_COMPLETE.md {#dashboard-separate-data}
+**Category**: 📊 Implementation Summary  
+**Status**: ✅ Active  
+**Date**: November 9, 2025  
+**Size**: 200+ lines
+
+**Summary**:  
+Documents the separation of dashboard display data from chart source data. Explains the two-sheet structure (Dashboard visible, ChartData hidden), implementation details, and benefits of this architecture.
+
+**Key Content**:
+- What changed (clean Dashboard + hidden ChartData)
+- Sheet structure details (30 rows vs 80 rows)
+- Files updated (enhance_dashboard_layout.py, dashboard_charts_v2.gs)
+- How to create charts (30-second manual process)
+- Data flow diagram (BigQuery → Sheets → Charts)
+- Auto-refresh setup (cron every 5 min)
+- Current status (data stats, links)
+- Benefits list (5 advantages)
+- Troubleshooting (3 common issues)
+- Next steps
+
+**Two-Sheet Structure**:
+- **Dashboard** (visible): KPIs + generation mix table
+- **ChartData** (hidden): 24h trend data (48 settlement periods × 5 series)
+
+**Implementation**:
+```python
+# Dashboard: Clean display
+dashboard.clear()
+dashboard.update('A1:F30', layout_data)
+
+# ChartData: Hidden source data
+chart_data.clear()
+chart_data.update('A1:F80', chart_data_rows)
+ss.batch_update({'requests': [{'updateSheetProperties': {'hidden': True}}]})
+```
+
+**Benefits**:
+- Clean dashboard (no cluttered data tables)
+- Hidden ChartData (invisible to viewers)
+- Professional look (separation of concerns)
+- Better performance (optimized data structure)
+- Easy maintenance (update data without affecting display)
+
+**When to Use**: Understanding dashboard redesign, implementing similar pattern, troubleshooting chart data issues
+
+**Related**: [DASHBOARD_DATA_REFRESH_GUIDE.md](#dashboard-data-refresh-guide), [DASHBOARD_REFRESH_QUICK_REF.md](#dashboard-refresh-quick-ref)
+
+---
 
 ## �📊 Dashboard Documentation
 

@@ -1,0 +1,7 @@
+# Keep chat history in git but ignore sensitive content if needed
+# Comment out the line below if you want to commit chat histories
+# *.md
+
+# Ignore temporary files
+*.tmp
+*.bak
