@@ -10,7 +10,7 @@ const BIGQUERY_PROJECT_ID = 'inner-cinema-476211-u9';
 const POSTCODE_API_URL = 'https://api.postcodes.io/postcodes/';
 
 /**
- * Main function to lookup DNO from postcode
+ * Main function to lookup DNO from postcode OR dropdown
  * Called when user clicks button or runs manually
  */
 function lookupDNO() {
@@ -24,8 +24,17 @@ function lookupDNO() {
   // Get postcode from input cell (B4)
   const postcode = sheet.getRange('B4').getValue().toString().trim();
   
-  if (!postcode || postcode === 'ENTER POSTCODE HERE') {
-    SpreadsheetApp.getUi().alert('Please enter a postcode in cell B4');
+  // Get DNO selection from dropdown (E4)
+  const dnoSelection = sheet.getRange('E4').getValue().toString().trim();
+  
+  // Determine which method to use
+  let useDnoDropdown = false;
+  if (dnoSelection && dnoSelection !== 'Select DNO ID...' && dnoSelection.includes(' - ')) {
+    useDnoDropdown = true;
+  }
+  
+  if (!useDnoDropdown && (!postcode || postcode === 'ENTER POSTCODE')) {
+    SpreadsheetApp.getUi().alert('Please enter a postcode in B4 OR select a DNO from dropdown in E4');
     return;
   }
   
@@ -34,31 +43,57 @@ function lookupDNO() {
   SpreadsheetApp.flush();
   
   try {
-    // Step 1: Get coordinates from postcode
-    Logger.log('Looking up postcode: ' + postcode);
-    const coords = getCoordinatesFromPostcode(postcode);
+    let dnoData;
+    let lat, lng;
     
-    if (!coords) {
-      sheet.getRange('A10').setValue('Error: Invalid postcode or postcode not found');
-      return;
+    if (useDnoDropdown) {
+      // Method 1: Lookup by DNO ID from dropdown
+      Logger.log('Looking up by DNO selection: ' + dnoSelection);
+      const mpanId = parseInt(dnoSelection.split(' - ')[0]);
+      dnoData = findDNOByMPAN(mpanId);
+      
+      if (!dnoData) {
+        sheet.getRange('A10').setValue('Error: DNO not found');
+        return;
+      }
+      
+      // For dropdown, use centroid of DNO area (approximate)
+      const centroid = getDNOCentroid(mpanId);
+      lat = centroid.latitude;
+      lng = centroid.longitude;
+      
+    } else {
+      // Method 2: Lookup by postcode
+      Logger.log('Looking up postcode: ' + postcode);
+      const coords = getCoordinatesFromPostcode(postcode);
+      
+      if (!coords) {
+        sheet.getRange('A10').setValue('Error: Invalid postcode or postcode not found');
+        return;
+      }
+      
+      Logger.log('Coordinates: ' + coords.latitude + ', ' + coords.longitude);
+      lat = coords.latitude;
+      lng = coords.longitude;
+      
+      // Find DNO using BigQuery spatial query
+      dnoData = findDNOFromCoordinates(lat, lng);
+      
+      if (!dnoData) {
+        sheet.getRange('A10').setValue('Error: Could not determine DNO for this location');
+        return;
+      }
     }
-    
-    Logger.log('Coordinates: ' + coords.latitude + ', ' + coords.longitude);
     
     // Update location cells
-    sheet.getRange('B14').setValue(coords.latitude);
-    sheet.getRange('B15').setValue(coords.longitude);
+    sheet.getRange('B14').setValue(lat);
+    sheet.getRange('B15').setValue(lng);
     
-    // Step 2: Find DNO using BigQuery spatial query
-    const dnoData = findDNOFromCoordinates(coords.latitude, coords.longitude);
-    
-    if (!dnoData) {
-      sheet.getRange('A10').setValue('Error: Could not determine DNO for this location');
-      return;
-    }
-    
-    // Step 3: Populate results
+    // Populate results
     populateDNOResults(sheet, dnoData);
+    
+    // Add Google Map
+    addGoogleMap(sheet, lat, lng, dnoData);
     
     Logger.log('DNO lookup completed successfully');
     
@@ -321,4 +356,125 @@ function testLookup() {
   const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('BESS_VLP');
   sheet.getRange('B4').setValue('SW1A 1AA'); // Test with Buckingham Palace postcode
   lookupDNO();
+}
+
+/**
+ * Find DNO by MPAN ID (for dropdown selection)
+ */
+function findDNOByMPAN(mpanId) {
+  try {
+    const query = `
+      SELECT 
+        mpan_distributor_id,
+        dno_key,
+        dno_name,
+        dno_short_code,
+        market_participant_id,
+        gsp_group_id,
+        gsp_group_name,
+        primary_coverage_area
+      FROM \`${BIGQUERY_PROJECT_ID}.uk_energy_prod.neso_dno_reference\`
+      WHERE mpan_distributor_id = ${mpanId}
+      LIMIT 1
+    `;
+    
+    const request = {
+      query: query,
+      useLegacySql: false,
+      location: 'US'
+    };
+    
+    const queryResults = BigQuery.Jobs.query(request, BIGQUERY_PROJECT_ID);
+    const jobId = queryResults.jobReference.jobId;
+    
+    let sleepTimeMs = 500;
+    while (!queryResults.jobComplete) {
+      Utilities.sleep(sleepTimeMs);
+      sleepTimeMs *= 2;
+      queryResults = BigQuery.Jobs.getQueryResults(BIGQUERY_PROJECT_ID, jobId);
+    }
+    
+    if (queryResults.rows && queryResults.rows.length > 0) {
+      const row = queryResults.rows[0];
+      
+      return {
+        mpan_id: row.f[0].v,
+        dno_key: row.f[1].v,
+        dno_name: row.f[2].v,
+        short_code: row.f[3].v,
+        participant_id: row.f[4].v,
+        gsp_group_id: row.f[5].v,
+        gsp_group_name: row.f[6].v,
+        coverage_area: row.f[7].v
+      };
+    }
+    
+    return null;
+    
+  } catch (error) {
+    Logger.log('Error finding DNO by MPAN: ' + error.toString());
+    return null;
+  }
+}
+
+/**
+ * Get approximate centroid coordinates for a DNO area
+ */
+function getDNOCentroid(mpanId) {
+  // Approximate centroids for each DNO (pre-calculated)
+  const centroids = {
+    10: {latitude: 52.2, longitude: 0.7},    // Eastern
+    11: {latitude: 51.5, longitude: -0.1},   // London
+    12: {latitude: 51.1, longitude: 0.1},    // South Eastern
+    13: {latitude: 52.8, longitude: -1.2},   // East Midlands
+    14: {latitude: 52.5, longitude: -2.0},   // West Midlands
+    15: {latitude: 54.9, longitude: -1.6},   // North East
+    16: {latitude: 53.8, longitude: -2.5},   // North West
+    17: {latitude: 58.0, longitude: -4.5},   // Scottish Hydro
+    18: {latitude: 55.9, longitude: -3.2},   // SP Distribution
+    19: {latitude: 51.1, longitude: 0.0},    // South Eastern (same as 12)
+    20: {latitude: 51.0, longitude: -1.3},   // Southern Electric
+    21: {latitude: 51.6, longitude: -3.2},   // South Wales
+    22: {latitude: 50.7, longitude: -4.0},   // South West
+    23: {latitude: 53.8, longitude: -1.1}    // Yorkshire
+  };
+  
+  return centroids[mpanId] || {latitude: 52.5, longitude: -1.5}; // Default to UK center
+}
+
+/**
+ * Add Google Map to the sheet showing site location and DNO area
+ */
+function addGoogleMap(sheet, lat, lng, dnoData) {
+  try {
+    // Create map URL with marker
+    const mapUrl = `https://maps.googleapis.com/maps/api/staticmap?` +
+      `center=${lat},${lng}` +
+      `&zoom=10` +
+      `&size=600x400` +
+      `&markers=color:red%7Clabel:S%7C${lat},${lng}` +
+      `&key=YOUR_GOOGLE_MAPS_API_KEY`;
+    
+    // For now, create a text link (Google Sheets doesn't support embedded images easily in Apps Script)
+    const mapLink = `https://www.google.com/maps?q=${lat},${lng}&z=10`;
+    
+    // Add clickable link
+    const richText = SpreadsheetApp.newRichTextValue()
+      .setText('🗺️ View on Google Maps')
+      .setLinkUrl(mapLink)
+      .build();
+    
+    sheet.getRange('A19').setRichTextValue(richText);
+    
+    // Add map info
+    sheet.getRange('A20').setValue(`Location: ${lat.toFixed(6)}, ${lng.toFixed(6)}`);
+    sheet.getRange('A21').setValue(`DNO: ${dnoData.dno_name} (${dnoData.dno_key})`);
+    sheet.getRange('A22').setValue(`GSP: ${dnoData.gsp_group_id} - ${dnoData.gsp_group_name}`);
+    
+    Logger.log('Map link added successfully');
+    
+  } catch (error) {
+    Logger.log('Error adding map: ' + error.toString());
+    sheet.getRange('A19').setValue('Map unavailable');
+  }
 }
