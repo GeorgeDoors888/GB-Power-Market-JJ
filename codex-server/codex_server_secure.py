@@ -421,5 +421,7 @@ if __name__ == "__main__":
     print(f"\n📖 API Documentation: http://localhost:8000/docs")
     print("="*60 + "\n")
     
-    logger.info("Starting Codex Server...")
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    # Use PORT environment variable for Railway, default to 8000 for local
+    port = int(os.getenv("PORT", 8000))
+    logger.info(f"Starting Codex Server on port {port}...")
+    uvicorn.run(app, host="0.0.0.0", port=port)
