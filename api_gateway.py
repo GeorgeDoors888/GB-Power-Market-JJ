@@ -220,17 +220,38 @@ def require_approval(action_name: str):
     return decorator
 
 def get_sheets_client():
-    """Get authenticated Google Sheets client"""
+    """Get authenticated Google Sheets client using workspace delegation"""
     try:
-        scope = [
-            'https://spreadsheets.google.com/feeds',
-            'https://www.googleapis.com/auth/drive'
-        ]
-        creds = ServiceAccountCredentials.from_json_keyfile_name(
-            'inner-cinema-credentials.json', scope)
-        return gspread.authorize(creds)
+        # Try to load workspace credentials from base64 env var (for Railway)
+        workspace_creds_base64 = os.environ.get("GOOGLE_WORKSPACE_CREDENTIALS")
+        
+        if workspace_creds_base64:
+            logger.info("Loading workspace credentials from GOOGLE_WORKSPACE_CREDENTIALS")
+            creds_json = base64.b64decode(workspace_creds_base64).decode('utf-8')
+            creds_dict = json.loads(creds_json)
+            
+            # Create credentials with delegation
+            credentials = service_account.Credentials.from_service_account_info(
+                creds_dict,
+                scopes=['https://www.googleapis.com/auth/spreadsheets',
+                       'https://www.googleapis.com/auth/drive.readonly']
+            ).with_subject('george@upowerenergy.uk')
+            
+            return gspread.authorize(credentials)
+        else:
+            # Fall back to local credentials file
+            logger.info("Using local workspace-credentials.json file")
+            credentials = service_account.Credentials.from_service_account_file(
+                'workspace-credentials.json',
+                scopes=['https://www.googleapis.com/auth/spreadsheets',
+                       'https://www.googleapis.com/auth/drive.readonly']
+            ).with_subject('george@upowerenergy.uk')
+            
+            return gspread.authorize(credentials)
+            
     except Exception as e:
         logger.error(f"Failed to initialize Sheets client: {e}")
+        logger.error(traceback.format_exc())
         return None
 
 # ============================================
@@ -920,6 +941,129 @@ def emergency_shutdown(
         "message": "Emergency shutdown would be initiated (not implemented in this version)",
         "timestamp": datetime.now(timezone.utc).isoformat()
     }
+
+        }
+    }
+
+# ============================================
+# GOOGLE WORKSPACE ENDPOINTS (NEW)
+# ============================================
+
+@app.get("/workspace/health")
+@limiter.limit(f"{RATE_LIMIT_MIN}/minute")
+def workspace_health(
+    request: Request,
+    api_key: str = Depends(verify_api_key)
+):
+    """Check if Workspace delegation is working"""
+    try:
+        gc = get_sheets_client()
+        if not gc:
+            return {
+                "status": "error",
+                "message": "Could not initialize Sheets client"
+            }
+        
+        # Try to access the dashboard
+        sheet = gc.open_by_key(SHEETS_ID)
+        
+        return {
+            "status": "healthy",
+            "message": "Workspace access working!",
+            "services": {
+                "sheets": "ok",
+                "drive": "ok"
+            },
+            "dashboard": {
+                "title": sheet.title,
+                "worksheets": len(sheet.worksheets())
+            }
+        }
+    except Exception as e:
+        logger.error(f"Workspace health check failed: {e}")
+        return {
+            "status": "error",
+            "message": str(e)
+        }
+
+
+@app.get("/workspace/dashboard")
+@limiter.limit(f"{RATE_LIMIT_MIN}/minute")
+def get_dashboard_info(
+    request: Request,
+    api_key: str = Depends(verify_api_key)
+):
+    """Get GB Energy Dashboard information"""
+    log_action("WORKSPACE_DASHBOARD_ACCESS", {"spreadsheet_id": SHEETS_ID})
+    
+    try:
+        gc = get_sheets_client()
+        if not gc:
+            raise HTTPException(status_code=503, detail="Sheets client not available")
+        
+        sheet = gc.open_by_key(SHEETS_ID)
+        
+        worksheets = []
+        for ws in sheet.worksheets():
+            worksheets.append({
+                "id": ws.id,
+                "title": ws.title,
+                "rows": ws.row_count,
+                "cols": ws.col_count
+            })
+        
+        return {
+            "success": True,
+            "title": sheet.title,
+            "spreadsheet_id": sheet.id,
+            "url": sheet.url,
+            "worksheets": worksheets,
+            "total_worksheets": len(worksheets)
+        }
+    except Exception as e:
+        logger.error(f"Dashboard access error: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.post("/workspace/read_sheet")
+@limiter.limit(f"{RATE_LIMIT_MIN}/minute")
+async def read_sheet_data(
+    request: Request,
+    api_key: str = Depends(verify_api_key)
+):
+    """Read data from any worksheet in the dashboard"""
+    body = await request.json()
+    worksheet_name = body.get('worksheet_name', 'Dashboard')
+    cell_range = body.get('range', '')
+    
+    log_action("WORKSPACE_READ_SHEET", {
+        "worksheet": worksheet_name,
+        "range": cell_range
+    })
+    
+    try:
+        gc = get_sheets_client()
+        if not gc:
+            raise HTTPException(status_code=503, detail="Sheets client not available")
+        
+        sheet = gc.open_by_key(SHEETS_ID)
+        worksheet = sheet.worksheet(worksheet_name)
+        
+        if cell_range:
+            data = worksheet.get(cell_range)
+        else:
+            data = worksheet.get_all_values()
+        
+        return {
+            "success": True,
+            "worksheet_name": worksheet_name,
+            "rows": len(data),
+            "cols": len(data[0]) if data else 0,
+            "data": data[:100]  # Limit to first 100 rows
+        }
+    except Exception as e:
+        logger.error(f"Read sheet error: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
 
 # ============================================
 # STARTUP & SHUTDOWN
