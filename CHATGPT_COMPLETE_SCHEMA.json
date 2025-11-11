@@ -1,0 +1,628 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "GB Power Market API - Complete",
+    "description": "Execute Python code, query BigQuery database, and access Google Workspace (Drive, Sheets, Docs) with full read/write capabilities for UK energy market analysis",
+    "version": "2.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://jibber-jabber-production.up.railway.app"
+    }
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "operationId": "health_check",
+        "summary": "Health Check",
+        "description": "Check if the API server is running",
+        "responses": {
+          "200": {
+            "description": "Server is healthy",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {"type": "string"},
+                    "message": {"type": "string"}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/execute": {
+      "post": {
+        "operationId": "execute_code",
+        "summary": "Execute Python Code",
+        "description": "Execute arbitrary Python code in a secure sandboxed environment. Supports pandas, numpy, matplotlib, and other data science libraries.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "code": {
+                    "type": "string",
+                    "description": "Python code to execute"
+                  },
+                  "timeout": {
+                    "type": "integer",
+                    "description": "Timeout in seconds (default: 30)",
+                    "default": 30
+                  }
+                },
+                "required": ["code"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Code executed successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "output": {"type": "string"},
+                    "error": {"type": "string"}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/query_bigquery": {
+      "post": {
+        "operationId": "query_bigquery",
+        "summary": "Query BigQuery Database",
+        "description": "Execute SQL queries on UK energy market BigQuery database (inner-cinema-476211-u9.uk_energy_prod). Returns results as JSON.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "query": {
+                    "type": "string",
+                    "description": "SQL query to execute"
+                  },
+                  "limit": {
+                    "type": "integer",
+                    "description": "Maximum rows to return (default: 1000)",
+                    "default": 1000
+                  }
+                },
+                "required": ["query"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Query executed successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "results": {
+                      "type": "array",
+                      "items": {"type": "object"}
+                    },
+                    "row_count": {"type": "integer"},
+                    "columns": {
+                      "type": "array",
+                      "items": {"type": "string"}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/workspace/health": {
+      "get": {
+        "operationId": "workspace_health",
+        "summary": "Workspace Health Check",
+        "description": "Check Google Workspace authentication and list ALL accessible spreadsheets (not just GB Energy Dashboard). Returns full inventory of available spreadsheets.",
+        "responses": {
+          "200": {
+            "description": "Workspace is accessible",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {"type": "string"},
+                    "message": {"type": "string"},
+                    "accessible_spreadsheets": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {"type": "string"},
+                          "title": {"type": "string"}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/workspace/list_spreadsheets": {
+      "get": {
+        "operationId": "list_spreadsheets",
+        "summary": "List All Google Sheets Spreadsheets",
+        "description": "Get complete inventory of all accessible Google Sheets spreadsheets with metadata (ID, title, URL, last modified, creator).",
+        "responses": {
+          "200": {
+            "description": "List of all spreadsheets",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "spreadsheets": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {"type": "string"},
+                          "title": {"type": "string"},
+                          "url": {"type": "string"},
+                          "last_modified": {"type": "string"},
+                          "created_by": {"type": "string"}
+                        }
+                      }
+                    },
+                    "count": {"type": "integer"}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/workspace/get_spreadsheet": {
+      "post": {
+        "operationId": "get_spreadsheet",
+        "summary": "Get Spreadsheet Metadata",
+        "description": "Get metadata for ANY spreadsheet by ID or title. Returns all worksheet names, row counts, and column counts. If no spreadsheet_id provided, defaults to GB Energy Dashboard.",
+        "requestBody": {
+          "required": false,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "spreadsheet_id": {
+                    "type": "string",
+                    "description": "Google Sheets spreadsheet ID (if omitted, uses GB Energy Dashboard)"
+                  },
+                  "spreadsheet_title": {
+                    "type": "string",
+                    "description": "Alternative: find spreadsheet by title instead of ID"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Spreadsheet metadata",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "spreadsheet_id": {"type": "string"},
+                    "title": {"type": "string"},
+                    "url": {"type": "string"},
+                    "worksheets": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "title": {"type": "string"},
+                          "row_count": {"type": "integer"},
+                          "col_count": {"type": "integer"}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/workspace/read_sheet": {
+      "post": {
+        "operationId": "read_sheet",
+        "summary": "Read Data from Spreadsheet Worksheet",
+        "description": "Read data from ANY spreadsheet worksheet. Specify spreadsheet by ID or title. Returns data as 2D array with optional headers. If no spreadsheet_id provided, defaults to GB Energy Dashboard.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "spreadsheet_id": {
+                    "type": "string",
+                    "description": "Google Sheets spreadsheet ID (if omitted, uses GB Energy Dashboard)"
+                  },
+                  "spreadsheet_title": {
+                    "type": "string",
+                    "description": "Alternative: find spreadsheet by title instead of ID"
+                  },
+                  "worksheet_name": {
+                    "type": "string",
+                    "description": "Name of the worksheet to read (default: first worksheet)"
+                  },
+                  "range": {
+                    "type": "string",
+                    "description": "Cell range in A1 notation (e.g., 'A1:E10'). If omitted, reads all data."
+                  },
+                  "include_headers": {
+                    "type": "boolean",
+                    "description": "Include first row as headers (default: true)",
+                    "default": true
+                  }
+                },
+                "required": ["worksheet_name"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Worksheet data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "spreadsheet_id": {"type": "string"},
+                    "spreadsheet_title": {"type": "string"},
+                    "worksheet_name": {"type": "string"},
+                    "headers": {
+                      "type": "array",
+                      "items": {"type": "string"}
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "array",
+                        "items": {"type": "string"}
+                      }
+                    },
+                    "row_count": {"type": "integer"}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/workspace/write_sheet": {
+      "post": {
+        "operationId": "write_sheet",
+        "summary": "Write Data to Spreadsheet Worksheet",
+        "description": "Write or update data in ANY spreadsheet worksheet. Specify spreadsheet by ID or title. Can update single cells or ranges. If no spreadsheet_id provided, defaults to GB Energy Dashboard.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "spreadsheet_id": {
+                    "type": "string",
+                    "description": "Google Sheets spreadsheet ID (if omitted, uses GB Energy Dashboard)"
+                  },
+                  "spreadsheet_title": {
+                    "type": "string",
+                    "description": "Alternative: find spreadsheet by title instead of ID"
+                  },
+                  "worksheet_name": {
+                    "type": "string",
+                    "description": "Name of the worksheet to write to"
+                  },
+                  "range": {
+                    "type": "string",
+                    "description": "Cell range in A1 notation (e.g., 'A1' or 'A1:C3')"
+                  },
+                  "values": {
+                    "type": "array",
+                    "description": "2D array of values to write [[row1], [row2], ...]",
+                    "items": {
+                      "type": "array",
+                      "items": {"type": "string"}
+                    }
+                  }
+                },
+                "required": ["worksheet_name", "range", "values"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Data written successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {"type": "string"},
+                    "updated_cells": {"type": "integer"},
+                    "updated_range": {"type": "string"}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/workspace/list_drive_files": {
+      "get": {
+        "operationId": "list_drive_files",
+        "summary": "List Files in Google Drive",
+        "description": "Browse all files in Google Drive with optional filtering by MIME type, folder, or search query. Returns file metadata (ID, name, type, size, modified date).",
+        "parameters": [
+          {
+            "name": "mime_type",
+            "in": "query",
+            "schema": {"type": "string"},
+            "description": "Filter by MIME type (e.g., 'application/vnd.google-apps.spreadsheet' for Sheets)"
+          },
+          {
+            "name": "folder_id",
+            "in": "query",
+            "schema": {"type": "string"},
+            "description": "List files in specific folder"
+          },
+          {
+            "name": "max_results",
+            "in": "query",
+            "schema": {"type": "integer", "default": 100},
+            "description": "Maximum number of files to return (default: 100)"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of Drive files",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "files": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {"type": "string"},
+                          "name": {"type": "string"},
+                          "mimeType": {"type": "string"},
+                          "size": {"type": "integer"},
+                          "modifiedTime": {"type": "string"},
+                          "webViewLink": {"type": "string"}
+                        }
+                      }
+                    },
+                    "count": {"type": "integer"}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/workspace/search_drive": {
+      "post": {
+        "operationId": "search_drive",
+        "summary": "Search Google Drive",
+        "description": "Search Drive files by query string, file type, date range, or other criteria. Returns matching files with full metadata.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "query": {
+                    "type": "string",
+                    "description": "Search query (searches file names and content)"
+                  },
+                  "mime_type": {
+                    "type": "string",
+                    "description": "Filter by MIME type"
+                  },
+                  "modified_after": {
+                    "type": "string",
+                    "description": "ISO 8601 date (e.g., '2025-01-01T00:00:00Z')"
+                  },
+                  "modified_before": {
+                    "type": "string",
+                    "description": "ISO 8601 date"
+                  },
+                  "max_results": {
+                    "type": "integer",
+                    "description": "Maximum results (default: 100)",
+                    "default": 100
+                  }
+                },
+                "required": ["query"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Search results",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "files": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {"type": "string"},
+                          "name": {"type": "string"},
+                          "mimeType": {"type": "string"},
+                          "modifiedTime": {"type": "string"},
+                          "webViewLink": {"type": "string"}
+                        }
+                      }
+                    },
+                    "count": {"type": "integer"},
+                    "query": {"type": "string"}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/workspace/read_doc": {
+      "post": {
+        "operationId": "read_doc",
+        "summary": "Read Google Docs Content",
+        "description": "Read content from ANY Google Docs document. Returns plain text or structured content with formatting information.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "doc_id": {
+                    "type": "string",
+                    "description": "Google Docs document ID"
+                  },
+                  "format": {
+                    "type": "string",
+                    "description": "Output format: 'text' or 'structured' (default: 'text')",
+                    "enum": ["text", "structured"],
+                    "default": "text"
+                  }
+                },
+                "required": ["doc_id"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Document content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "doc_id": {"type": "string"},
+                    "title": {"type": "string"},
+                    "content": {"type": "string"},
+                    "word_count": {"type": "integer"}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/workspace/write_doc": {
+      "post": {
+        "operationId": "write_doc",
+        "summary": "Write to Google Docs Document",
+        "description": "Write or append text to ANY Google Docs document. Can append new content or replace entire document.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "doc_id": {
+                    "type": "string",
+                    "description": "Google Docs document ID"
+                  },
+                  "content": {
+                    "type": "string",
+                    "description": "Text content to write"
+                  },
+                  "mode": {
+                    "type": "string",
+                    "description": "Write mode: 'append' or 'replace' (default: 'append')",
+                    "enum": ["append", "replace"],
+                    "default": "append"
+                  }
+                },
+                "required": ["doc_id", "content"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Content written successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {"type": "string"},
+                    "doc_id": {"type": "string"},
+                    "characters_written": {"type": "integer"}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "BearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "description": "Use bearer token: codex_fQI8xJXNPnhasYBOjd6h7mPHoF7HNI0Dh8rlgoJ2skA"
+      }
+    }
+  },
+  "security": [
+    {
+      "BearerAuth": []
+    }
+  ]
+}
