@@ -1,20 +1,58 @@
-# 🚀 Overarch Jibber Jabber - UK Energy Data Platform# GB Power Market JJ (Jibber Jabber)
+# GB Power Market JJ (Jibber Jabber)
 
+**AI-Powered UK Energy Market Analysis with ChatGPT Integration**
 
-
-**AI-Powered UK Energy Market Analysis with ChatGPT Integration**[![Deploy](https://github.com/GeorgeDoors888/overarch-jibber-jabber/actions/workflows/deploy.yml/badge.svg)](https://github.com/GeorgeDoors888/overarch-jibber-jabber/actions/workflows/deploy.yml)
-
+[![Deploy](https://github.com/GeorgeDoors888/overarch-jibber-jabber/actions/workflows/deploy.yml/badge.svg)](https://github.com/GeorgeDoors888/overarch-jibber-jabber/actions/workflows/deploy.yml)
 [![CI](https://github.com/GeorgeDoors888/overarch-jibber-jabber/actions/workflows/ci.yml/badge.svg)](https://github.com/GeorgeDoors888/overarch-jibber-jabber/actions/workflows/ci.yml)
-
 [![Vercel](https://img.shields.io/badge/Vercel-Live-brightgreen)](https://gb-power-market-jj.vercel.app)
-
-[![Railway](https://img.shields.io/badge/Railway-Live-blue)](https://jibber-jabber-production.up.railway.app)**Repository**: https://github.com/GeorgeDoors888/overarch-jibber-jabber  
-
-[![BigQuery](https://img.shields.io/badge/BigQuery-397_Tables-orange)](https://console.cloud.google.com/bigquery)**Local Path**: `~/GB Power Market JJ`  
-
-**Purpose**: GB power market data pipeline, analysis, and dashboard system
+[![Railway](https://img.shields.io/badge/Railway-Live-blue)](https://jibber-jabber-production.up.railway.app)
+[![BigQuery](https://img.shields.io/badge/BigQuery-397_Tables-orange)](https://console.cloud.google.com/bigquery)
 
 ---
+
+## 🔥 NEW: Google Workspace Integration (November 2025)
+
+**ChatGPT can now access ALL your Google Drive files, Sheets, and Docs!**
+
+✅ **Status:** COMPLETE & PRODUCTION READY  
+✅ **Test Success Rate:** 4/4 (100%)  
+✅ **Documentation:** 5,200+ lines across 12 files
+
+### 📚 Quick Access Documentation
+1. **[DOCUMENTATION_INDEX_WORKSPACE.md](DOCUMENTATION_INDEX_WORKSPACE.md)** ⭐ START HERE
+   - Navigation guide for all Workspace documentation
+   - Quick links to common tasks
+   - Learning path for new users
+
+2. **[WORKSPACE_API_MASTER_REFERENCE.md](WORKSPACE_API_MASTER_REFERENCE.md)** ⭐ Daily Operations
+   - Complete technical reference (1,100+ lines)
+   - All 11 endpoints documented with examples
+   - Authentication, testing, troubleshooting
+
+3. **[PROJECT_LOCKDOWN.md](PROJECT_LOCKDOWN.md)** ⭐ Production Config
+   - Locked configuration settings
+   - Maintenance procedures
+   - Emergency response guide
+
+4. **[PROJECT_COMPLETE.md](PROJECT_COMPLETE.md)** - Success Summary
+   - Project statistics and timeline
+   - Test results: 4/4 queries passed!
+   - Key achievements
+
+### ⚡ What You Can Do Now
+- 📊 **Read ANY Google Sheets** - Dynamic access by ID or title
+- 📝 **Read ANY Google Docs** - Full document content access  
+- 📁 **Browse Google Drive** - List and search all files
+- ✍️ **Write to Sheets & Docs** - Update data programmatically
+- 🗣️ **Natural Language** - Ask ChatGPT about your files!
+
+**Example ChatGPT Queries:**
+```
+"Show me the GB Energy Dashboard structure"
+"Read cells A1 to E10 from the Summary worksheet"
+"List the first 20 files in my Google Drive"
+"Search Drive for spreadsheets containing 'energy'"
+```
 
 ---
 
