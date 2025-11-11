@@ -2,8 +2,8 @@
   "openapi": "3.1.0",
   "info": {
     "title": "GB Power Market API - Complete",
-    "description": "Execute Python code, query BigQuery database, and access Google Workspace (Drive, Sheets, Docs) with full read/write capabilities for UK energy market analysis",
-    "version": "2.0.0"
+    "description": "Execute Python code, query BigQuery database, and access Google Workspace (Drive, Sheets, Docs) with full read/write capabilities for UK energy market analysis. Note: Use get_spreadsheet to access specific spreadsheets by ID or title.",
+    "version": "2.0.1"
   },
   "servers": [
     {
@@ -164,41 +164,7 @@
         }
       }
     },
-    "/workspace/list_spreadsheets": {
-      "get": {
-        "operationId": "list_spreadsheets",
-        "summary": "List All Google Sheets Spreadsheets",
-        "description": "Get complete inventory of all accessible Google Sheets spreadsheets with metadata (ID, title, URL, last modified, creator).",
-        "responses": {
-          "200": {
-            "description": "List of all spreadsheets",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "spreadsheets": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "properties": {
-                          "id": {"type": "string"},
-                          "title": {"type": "string"},
-                          "url": {"type": "string"},
-                          "last_modified": {"type": "string"},
-                          "created_by": {"type": "string"}
-                        }
-                      }
-                    },
-                    "count": {"type": "integer"}
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
+
     "/workspace/get_spreadsheet": {
       "post": {
         "operationId": "get_spreadsheet",
