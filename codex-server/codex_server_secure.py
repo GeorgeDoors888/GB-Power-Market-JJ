@@ -351,7 +351,7 @@ async def get_dashboard_info(authorization: Optional[str] = Header(None)):
 
 
 @app.post("/workspace/read_sheet")
-async def read_sheet_data(authorization: Optional[str] = Header(None)):
+async def read_sheet_data(request: Request, authorization: Optional[str] = Header(None)):
     """Read data from any worksheet in the dashboard"""
     verify_token(authorization)
     
@@ -363,7 +363,7 @@ async def read_sheet_data(authorization: Optional[str] = Header(None)):
         from fastapi import Body
         
         # Get request body
-        body = await Request.json()
+        body = await request.json()
         worksheet_name = body.get('worksheet_name', 'Dashboard')
         cell_range = body.get('range', '')
         
