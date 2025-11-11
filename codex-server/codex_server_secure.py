@@ -242,6 +242,165 @@ async def list_languages():
         ]
     }
 
+# ============================================
+# GOOGLE WORKSPACE ENDPOINTS
+# ============================================
+
+@app.get("/workspace/health")
+async def workspace_health(authorization: Optional[str] = Header(None)):
+    """Check if Workspace delegation is working"""
+    verify_token(authorization)
+    
+    try:
+        import base64
+        import json
+        from google.oauth2 import service_account
+        import gspread
+        
+        # Get workspace credentials from environment
+        workspace_creds_base64 = os.getenv("GOOGLE_WORKSPACE_CREDENTIALS")
+        if not workspace_creds_base64:
+            return {
+                "status": "error",
+                "message": "GOOGLE_WORKSPACE_CREDENTIALS not found in environment"
+            }
+        
+        # Decode credentials
+        creds_json = base64.b64decode(workspace_creds_base64).decode('utf-8')
+        creds_dict = json.loads(creds_json)
+        
+        # Create credentials with delegation
+        credentials = service_account.Credentials.from_service_account_info(
+            creds_dict,
+            scopes=['https://www.googleapis.com/auth/spreadsheets',
+                   'https://www.googleapis.com/auth/drive.readonly']
+        ).with_subject('george@upowerenergy.uk')
+        
+        # Test access
+        gc = gspread.authorize(credentials)
+        sheet = gc.open_by_key('12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8')
+        
+        return {
+            "status": "healthy",
+            "message": "Workspace access working!",
+            "services": {
+                "sheets": "ok",
+                "drive": "ok"
+            },
+            "dashboard": {
+                "title": sheet.title,
+                "worksheets": len(sheet.worksheets())
+            }
+        }
+    except Exception as e:
+        logger.error(f"Workspace health check failed: {e}")
+        return {
+            "status": "error",
+            "message": str(e)
+        }
+
+
+@app.get("/workspace/dashboard")
+async def get_dashboard_info(authorization: Optional[str] = Header(None)):
+    """Get GB Energy Dashboard information"""
+    verify_token(authorization)
+    
+    try:
+        import base64
+        import json
+        from google.oauth2 import service_account
+        import gspread
+        
+        # Get workspace credentials
+        workspace_creds_base64 = os.getenv("GOOGLE_WORKSPACE_CREDENTIALS")
+        if not workspace_creds_base64:
+            raise HTTPException(status_code=503, detail="Workspace credentials not configured")
+        
+        creds_json = base64.b64decode(workspace_creds_base64).decode('utf-8')
+        creds_dict = json.loads(creds_json)
+        
+        credentials = service_account.Credentials.from_service_account_info(
+            creds_dict,
+            scopes=['https://www.googleapis.com/auth/spreadsheets',
+                   'https://www.googleapis.com/auth/drive.readonly']
+        ).with_subject('george@upowerenergy.uk')
+        
+        gc = gspread.authorize(credentials)
+        sheet = gc.open_by_key('12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8')
+        
+        worksheets = []
+        for ws in sheet.worksheets():
+            worksheets.append({
+                "id": ws.id,
+                "title": ws.title,
+                "rows": ws.row_count,
+                "cols": ws.col_count
+            })
+        
+        return {
+            "success": True,
+            "title": sheet.title,
+            "spreadsheet_id": sheet.id,
+            "url": sheet.url,
+            "worksheets": worksheets,
+            "total_worksheets": len(worksheets)
+        }
+    except Exception as e:
+        logger.error(f"Dashboard access error: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.post("/workspace/read_sheet")
+async def read_sheet_data(authorization: Optional[str] = Header(None)):
+    """Read data from any worksheet in the dashboard"""
+    verify_token(authorization)
+    
+    try:
+        import base64
+        import json
+        from google.oauth2 import service_account
+        import gspread
+        from fastapi import Body
+        
+        # Get request body
+        body = await Request.json()
+        worksheet_name = body.get('worksheet_name', 'Dashboard')
+        cell_range = body.get('range', '')
+        
+        # Get workspace credentials
+        workspace_creds_base64 = os.getenv("GOOGLE_WORKSPACE_CREDENTIALS")
+        if not workspace_creds_base64:
+            raise HTTPException(status_code=503, detail="Workspace credentials not configured")
+        
+        creds_json = base64.b64decode(workspace_creds_base64).decode('utf-8')
+        creds_dict = json.loads(creds_json)
+        
+        credentials = service_account.Credentials.from_service_account_info(
+            creds_dict,
+            scopes=['https://www.googleapis.com/auth/spreadsheets',
+                   'https://www.googleapis.com/auth/drive.readonly']
+        ).with_subject('george@upowerenergy.uk')
+        
+        gc = gspread.authorize(credentials)
+        sheet = gc.open_by_key('12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8')
+        worksheet = sheet.worksheet(worksheet_name)
+        
+        if cell_range:
+            data = worksheet.get(cell_range)
+        else:
+            data = worksheet.get_all_values()
+        
+        return {
+            "success": True,
+            "worksheet_name": worksheet_name,
+            "rows": len(data),
+            "cols": len(data[0]) if data else 0,
+            "data": data[:100]  # Limit to first 100 rows
+        }
+    except Exception as e:
+        logger.error(f"Read sheet error: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
 if __name__ == "__main__":
     import uvicorn
     
