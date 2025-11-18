@@ -243,6 +243,114 @@ async def list_languages():
     }
 
 # ============================================
+# BIGQUERY ENDPOINTS
+# ============================================
+
+@app.post("/query_bigquery")
+async def query_bigquery(request: Request, authorization: Optional[str] = Header(None)):
+    """Execute BigQuery SQL query"""
+    verify_token(authorization)
+    
+    try:
+        from google.cloud import bigquery
+        import base64
+        import json
+        
+        body = await request.json()
+        sql = body.get('sql') or body.get('query')
+        
+        if not sql:
+            raise HTTPException(status_code=400, detail="Must provide 'sql' or 'query' parameter")
+        
+        # Get BigQuery credentials
+        bq_creds_base64 = os.getenv("GOOGLE_APPLICATION_CREDENTIALS")
+        if not bq_creds_base64:
+            raise HTTPException(status_code=503, detail="BigQuery credentials not configured")
+        
+        # Decode and create client
+        creds_json = base64.b64decode(bq_creds_base64).decode('utf-8')
+        creds_dict = json.loads(creds_json)
+        
+        project_id = os.getenv("BQ_PROJECT_ID", "inner-cinema-476211-u9")
+        
+        # Create BigQuery client
+        client = bigquery.Client.from_service_account_info(creds_dict, project=project_id)
+        
+        # Execute query
+        query_job = client.query(sql)
+        results = query_job.result()
+        
+        # Convert to list of dicts
+        rows = [dict(row) for row in results]
+        
+        return {
+            "success": True,
+            "rows": len(rows),
+            "results": rows
+        }
+        
+    except Exception as e:
+        logger.error(f"BigQuery query error: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.get("/query_bigquery_get")
+async def query_bigquery_get(sql: str, authorization: Optional[str] = Header(None)):
+    """Execute BigQuery SQL query via GET (for simple queries)"""
+    verify_token(authorization)
+    
+    try:
+        from google.cloud import bigquery
+        import base64
+        import json
+        
+        if not sql:
+            raise HTTPException(status_code=400, detail="Must provide 'sql' parameter")
+        
+        # Get BigQuery credentials
+        bq_creds_base64 = os.getenv("GOOGLE_APPLICATION_CREDENTIALS")
+        if not bq_creds_base64:
+            raise HTTPException(status_code=503, detail="BigQuery credentials not configured")
+        
+        # Decode and create client
+        creds_json = base64.b64decode(bq_creds_base64).decode('utf-8')
+        creds_dict = json.loads(creds_json)
+        
+        project_id = os.getenv("BQ_PROJECT_ID", "inner-cinema-476211-u9")
+        
+        # Create BigQuery client
+        client = bigquery.Client.from_service_account_info(creds_dict, project=project_id)
+        
+        # Execute query
+        query_job = client.query(sql)
+        results = query_job.result()
+        
+        # Convert to list of dicts
+        rows = [dict(row) for row in results]
+        
+        return {
+            "success": True,
+            "rows": len(rows),
+            "results": rows
+        }
+        
+    except Exception as e:
+        logger.error(f"BigQuery query error: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.get("/debug/env")
+async def debug_env(authorization: Optional[str] = Header(None)):
+    """Debug environment variables (auth required)"""
+    verify_token(authorization)
+    
+    return {
+        "has_bigquery_creds": bool(os.getenv("GOOGLE_APPLICATION_CREDENTIALS")),
+        "has_workspace_creds": bool(os.getenv("GOOGLE_WORKSPACE_CREDENTIALS")),
+        "bq_project_id": os.getenv("BQ_PROJECT_ID"),
+        "bq_dataset": os.getenv("BQ_DATASET"),
+        "api_token_set": bool(os.getenv("CODEX_API_TOKEN"))
+    }
+
+# ============================================
 # GOOGLE WORKSPACE ENDPOINTS
 # ============================================
 
