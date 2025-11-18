@@ -1,0 +1,17 @@
+[Unit]
+Description=BigQuery to Google Sheets Auto-Updater
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/gb-power-market
+Environment="GOOGLE_APPLICATION_CREDENTIALS=/opt/gb-power-market/workspace-credentials.json"
+ExecStart=/usr/bin/python3 /opt/gb-power-market/bigquery_to_sheets_updater.py continuous 300
+Restart=always
+RestartSec=60
+StandardOutput=append:/var/log/bq-sheets-updater.log
+StandardError=append:/var/log/bq-sheets-updater.log
+
+[Install]
+WantedBy=multi-user.target

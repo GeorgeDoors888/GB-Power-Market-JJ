@@ -1,18 +1,32 @@
 # 📚 Documentation Index - GB Power Market JJ
 
-**Last Updated**: 31 October 2025  
-**Total Documents**: 26 Markdown files (+ 3 Python scripts)  
-**Purpose**: Complete index of all project documentation
+**Last Updated**: 18 November 2025  
+**Total Documents**: 40+ Core Markdown files (402 total .md files in project)  
+**Purpose**: Complete index of essential project documentation
 
-**🆕 NEW:** Enhanced statistical analysis with 22-month extended range and corrected intraday patterns!
+**🆕 NEW (Nov 18):** Authentication architecture fully documented! PDF indexing complete (96,087 PDFs)!
 
-**📄 NEW:** Comprehensive Google Docs report with 5 sections + strategic recommendations!
+**🆕 NEW (Nov 17):** ChatGPT with Google Workspace access + Railway backend fully operational!
+
+**🆕 NEW (Nov 10-13):** Dashboard fixes, IRIS pipeline safeguards, system status monitoring!
 
 ---
 
 ## 🎯 Quick Navigation
 
-### 🚀 Latest Updates (6 Nov 2025)
+### 🚀 Latest Updates (18 Nov 2025)
+0. **[AUTHENTICATION_ARCHITECTURE.md](#authentication-architecture)** - 🔐 **Complete auth guide** (NEW!)
+1. **[CHATGPT_PDF_ACCESS_GUIDE.md](#chatgpt-pdf-access)** - 📄 **PDF search via ChatGPT** (NEW!)
+2. **[CHATGPT_INSTRUCTIONS_WITH_WORKSPACE.md](#chatgpt-instructions)** - 🤖 **ChatGPT Custom GPT setup** (UPDATED!)
+3. **[RAILWAY_DEPLOYMENT_GUIDE.md](#railway-deployment)** - 🚂 **Railway backend deployment** (UPDATED!)
+
+### 🚀 Recent Updates (10-13 Nov 2025)
+4. **[DASHBOARD_FIX_SUMMARY_NOV_10.md](#dashboard-fix-summary)** - 🔧 **Dashboard fixes** (NEW!)
+5. **[CRITICAL_STATUS_NOV13_2025.md](#critical-status)** - ⚠️ **System status** (NEW!)
+6. **[BATCH_SIZE_CONSTRAINT_ANALYSIS.md](#batch-size-analysis)** - 📊 **IRIS batch limits** (NEW!)
+7. **[UPCLOUD_DASHBOARD_DEPLOYMENT_COMPLETE.md](#upcloud-dashboard)** - ☁️ **UpCloud deploy** (NEW!)
+
+### 🚀 Previous Updates (6 Nov 2025)
 0. **[AUTO_REFRESH_COMPLETE.md](#auto-refresh-complete)** - 🔄 **Self-refreshing BigQuery pipeline** (NEW!)
 1. **[GITHUB_ACTIONS_SETUP.md](#github-actions-setup)** - 🤖 **GitHub Actions auto-deploy guide** (NEW!)
 2. **[STOP_DATA_ARCHITECTURE_REFERENCE.md](#stop-architecture)** - ⚠️ **READ FIRST** to stop repeating data issues
@@ -228,6 +242,134 @@ Detailed technical guide for configuring GitHub Actions to build, deploy, and sc
 - **BigQuery operations:** ALWAYS use `inner-cinema-476211-u9`
 - **Apps Script/Sheets:** ALWAYS use `jibber-jabber-knowledge`
 - **Never mix these up!**
+
+**Related**: [PROJECT_CONFIGURATION.md](#project-configuration), [AUTHENTICATION_ARCHITECTURE.md](#authentication-architecture)
+
+---
+
+### AUTHENTICATION_ARCHITECTURE.md {#authentication-architecture}
+**Category**: 🔐 **Authentication & Security**  
+**Status**: ✅ Active - Comprehensive Guide  
+**Date**: November 18, 2025  
+**Size**: 562 lines
+
+**Summary**:  
+**COMPLETE AUTHENTICATION GUIDE** for the entire project. Explains how BigQuery, Google Drive, Google Sheets, and Railway backend are authorized. Created to answer "How do we authenticate to all these services?"
+
+**Key Content**:
+- **Authentication Overview**: 3 methods (service accounts, domain-wide delegation, Railway backend)
+- **Service Accounts**: 2 accounts explained (inner-cinema for BigQuery, workspace/gridsmart for Drive/Sheets)
+- **Domain-Wide Delegation**: How `jibber-jabber-knowledge@appspot` impersonates george@upowerenergy.uk
+- **Railway Backend**: FastAPI deployment with environment variables
+- **ChatGPT Access Flow**: Step-by-step integration
+- **PDF Extraction Pipeline**: How 96,087 PDFs are indexed and chunked
+- **Code Examples**: Python, curl, Apps Script
+
+**Critical Components**:
+- Service Account 1: `all-jibber@inner-cinema-476211-u9.iam.gserviceaccount.com` (BigQuery)
+- Service Account 2: `jibber-jabber-knowledge@appspot.gserviceaccount.com` (Drive/Sheets with delegation)
+- Railway: https://jibber-jabber-production.up.railway.app
+- Auth Token: `codex_fQI8xJXNPnhasYBOjd6h7mPHoF7HNI0Dh8rlgoJ2skA`
+- PDF Tables: `pdf_metadata_index` (96,087 PDFs), `document_chunks` (3,880 chunks)
+
+**Credential Files**:
+- `inner-cinema-credentials.json` (BigQuery)
+- `workspace-credentials.json` = `gridsmart_service_account.json` (same account, different locations)
+
+**When to Use**: Understanding project authentication, troubleshooting auth errors, setting up new integrations, explaining to team members
+
+**Related**: [PROJECT_IDS.md](#project-ids), [RAILWAY_DEPLOYMENT_GUIDE.md](#railway-deployment), [CHATGPT_INSTRUCTIONS_WITH_WORKSPACE.md](#chatgpt-instructions)
+
+---
+
+### CHATGPT_PDF_ACCESS_GUIDE.md {#chatgpt-pdf-access}
+**Category**: 🤖 **AI Integration**  
+**Status**: ✅ Active - PDF Search via ChatGPT  
+**Date**: November 17, 2025  
+**Size**: 200+ lines
+
+**Summary**:  
+Guide to accessing 96,087 PDFs from Google Drive via ChatGPT. Explains how PDFs are indexed in BigQuery and made searchable through natural language queries.
+
+**Key Content**:
+- PDF indexing overview (96,087 PDFs scanned)
+- BigQuery tables: `pdf_metadata_index`, `document_chunks`
+- Search methods: metadata search, full-text search, chunked content search
+- Railway endpoints for PDF access
+- Example queries for finding documents
+- Chunking strategy: 1000 tokens/chunk, 200 overlap
+
+**PDF Statistics**:
+- Total PDFs: 96,087
+- Fully Chunked: 8 PDFs (3,880 chunks)
+- Indexing Scripts: `index_drive_pdfs.py`, `continuous_extract_fixed.py`
+
+**When to Use**: Searching for PDFs via ChatGPT, understanding PDF indexing pipeline, troubleshooting PDF search
+
+**Related**: [AUTHENTICATION_ARCHITECTURE.md](#authentication-architecture), [CHATGPT_INSTRUCTIONS_WITH_WORKSPACE.md](#chatgpt-instructions)
+
+---
+
+### CHATGPT_INSTRUCTIONS_WITH_WORKSPACE.md {#chatgpt-instructions}
+**Category**: 🤖 **AI Integration**  
+**Status**: ✅ Active - Custom GPT Setup  
+**Date**: November 17, 2025 (Updated)  
+**Size**: 463 lines
+
+**Summary**:  
+Complete instructions for ChatGPT Custom GPT with full Google Workspace access. Includes BigQuery queries, Google Sheets access, Drive search, and Docs creation.
+
+**Key Capabilities**:
+1. **Discover Documentation** - BigQuery registry (546 files)
+2. **Read Core Documentation** - 15 uploaded files
+3. **Query Energy Data** - BigQuery via Railway backend
+4. **✨ Access Google Sheets** - Read/write spreadsheets
+5. **✨ Search Google Drive** - Find files by name/type
+6. **✨ Read/Create Google Docs** - Full document access
+
+**Railway Backend**:
+- URL: https://jibber-jabber-production.up.railway.app
+- Auth: Bearer token `codex_fQI8xJXNPnhasYBOjd6h7mPHoF7HNI0Dh8rlgoJ2skA`
+- Endpoints: `/query_bigquery`, `/read_sheet`, `/gb_energy_dashboard`, `/search_drive`, `/workspace_health`
+
+**When to Use**: Setting up ChatGPT Custom GPT, understanding ChatGPT capabilities, troubleshooting ChatGPT access
+
+**Related**: [AUTHENTICATION_ARCHITECTURE.md](#authentication-architecture), [RAILWAY_DEPLOYMENT_GUIDE.md](#railway-deployment), [CHATGPT_PDF_ACCESS_GUIDE.md](#chatgpt-pdf-access)
+
+---
+
+### RAILWAY_DEPLOYMENT_GUIDE.md {#railway-deployment}
+**Category**: 🚂 **Backend Deployment**  
+**Status**: ✅ Active - Production  
+**Date**: November 17, 2025 (Updated)  
+**Size**: 600+ lines
+
+**Summary**:  
+Complete guide to deploying and maintaining the Railway backend (FastAPI) that powers ChatGPT integration and Workspace access.
+
+**Key Content**:
+- Railway project setup
+- Environment variables configuration
+- Service account deployment
+- Endpoint testing and monitoring
+- Troubleshooting common issues
+- ChatGPT integration steps
+
+**Deployment**:
+- Service: jibber-jabber-production
+- URL: https://jibber-jabber-production.up.railway.app
+- Framework: FastAPI (Python)
+- Authentication: Bearer token + service accounts
+
+**Environment Variables**:
+- `CODEX_API_TOKEN`: Bearer token for auth
+- `GCP_SERVICE_ACCOUNT_JSON`: BigQuery credentials
+- `WORKSPACE_SERVICE_ACCOUNT_JSON`: Drive/Sheets credentials
+- `UPOWERENERGY_DOMAIN`: george@upowerenergy.uk
+
+**When to Use**: Deploying Railway backend, troubleshooting API errors, adding new endpoints, understanding backend architecture
+
+**Related**: [AUTHENTICATION_ARCHITECTURE.md](#authentication-architecture), [CHATGPT_INSTRUCTIONS_WITH_WORKSPACE.md](#chatgpt-instructions)
 
 **Service Accounts**:
 - `all-jibber@inner-cinema-476211-u9.iam.gserviceaccount.com` - BigQuery access
@@ -1300,5 +1442,52 @@ Comprehensive test suite that verifies all analysis functions, imports, and conn
 
 ---
 
-**Total Documents Now**: 25 markdown files + 1 test script  
+## 🆕 New Documentation (Nov 10-18, 2025)
+
+### DASHBOARD_FIX_SUMMARY_NOV_10.md {#dashboard-fix-summary-new}
+**Category**: 🔧 Dashboard Fixes  
+**Status**: ✅ Complete  
+**Date**: November 10, 2025
+
+**Summary**: Comprehensive dashboard fixes including fuel type corrections (75 generators), flag system synchronization, and data source verification for 127 BMUs.
+
+**Related**: [DASHBOARD_DATA_REFRESH_GUIDE.md](#dashboard-data-refresh-guide)
+
+---
+
+### UPCLOUD_DASHBOARD_DEPLOYMENT_COMPLETE.md {#upcloud-dashboard-new}
+**Category**: ☁️ Cloud Deployment  
+**Status**: ✅ Complete  
+**Date**: November 11, 2025
+
+**Summary**: UpCloud server deployment for dashboard auto-refresh (every 5 minutes), IRIS pipeline monitoring, and service management.
+
+**Related**: [DASHBOARD_FIX_SUMMARY_NOV_10.md](#dashboard-fix-summary-new)
+
+---
+
+### CRITICAL_STATUS_NOV13_2025.md {#critical-status-new}
+**Category**: ⚠️ System Status  
+**Status**: ✅ Active  
+**Date**: November 13, 2025
+
+**Summary**: System health monitoring covering IRIS pipeline status, BigQuery table metrics, dashboard refresh frequency, and error tracking.
+
+**Related**: [BATCH_SIZE_CONSTRAINT_ANALYSIS.md](#batch-size-analysis-new)
+
+---
+
+### BATCH_SIZE_CONSTRAINT_ANALYSIS.md {#batch-size-analysis-new}
+**Category**: 📊 Performance  
+**Status**: ✅ Active  
+**Date**: November 13, 2025
+
+**Summary**: IRIS pipeline batch size optimization analysis. Recommends 200-300 rows per batch to balance speed (3x faster) vs reliability (50% fewer errors).
+
+**Related**: [CRITICAL_STATUS_NOV13_2025.md](#critical-status-new)
+
+---
+
+**Total Documents Now**: 40+ core markdown files (402 total .md files in project)  
+**Last Updated**: November 18, 2025  
 **Environment Status**: ✅ Fully operational after crash recovery

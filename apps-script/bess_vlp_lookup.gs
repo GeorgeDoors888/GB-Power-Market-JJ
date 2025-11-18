@@ -274,8 +274,10 @@ function populateDNOResults(sheet, dnoData) {
 function onOpen() {
   const ui = SpreadsheetApp.getUi();
   ui.createMenu('🔋 BESS VLP Tools')
-      .addItem('Lookup DNO from Postcode', 'lookupDNO')
+      .addItem('Lookup DNO from Postcode/Dropdown', 'lookupDNO')
+      .addSeparator()
       .addItem('Refresh DNO Reference Table', 'refreshDNOTable')
+      .addItem('Show/Hide Reference Table', 'toggleReferenceTable')
       .addToUi();
 }
 
@@ -291,6 +293,8 @@ function refreshDNOTable() {
   }
   
   try {
+    SpreadsheetApp.getUi().alert('Refreshing DNO data from BigQuery...\n\nThis will:\n1. Update the hidden reference table\n2. Rebuild the DNO dropdown\n3. Take ~5 seconds');
+    
     const query = `
       SELECT 
         mpan_distributor_id,
@@ -322,14 +326,20 @@ function refreshDNOTable() {
       queryResults = BigQuery.Jobs.getQueryResults(BIGQUERY_PROJECT_ID, jobId);
     }
     
-    // Clear existing reference table
-    sheet.getRange('A20:H50').clearContent();
+    // Clear existing reference table (rows 24-50)
+    sheet.getRange('A24:H50').clearContent();
     
     // Populate new data
     if (queryResults.rows) {
-      const startRow = 20;
+      const startRow = 24;
+      const dropdownValues = [];
+      
       queryResults.rows.forEach((row, index) => {
         const rowNum = startRow + index;
+        const mpanId = row.f[0].v;
+        const dnoName = row.f[2].v;
+        
+        // Populate reference table
         sheet.getRange(rowNum, 1).setValue(row.f[0].v);
         sheet.getRange(rowNum, 2).setValue(row.f[1].v);
         sheet.getRange(rowNum, 3).setValue(row.f[2].v);
@@ -338,14 +348,62 @@ function refreshDNOTable() {
         sheet.getRange(rowNum, 6).setValue(row.f[5].v);
         sheet.getRange(rowNum, 7).setValue(row.f[6].v);
         sheet.getRange(rowNum, 8).setValue(row.f[7].v ? row.f[7].v.substring(0, 50) : '');
+        
+        // Build dropdown list
+        dropdownValues.push(`${mpanId} - ${dnoName}`);
       });
       
-      SpreadsheetApp.getUi().alert('DNO reference table refreshed successfully!');
+      // Update dropdown validation in E4
+      const rule = SpreadsheetApp.newDataValidation()
+        .requireValueInList(dropdownValues, true)
+        .setAllowInvalid(false)
+        .build();
+      sheet.getRange('E4').setDataValidation(rule);
+      
+      SpreadsheetApp.getUi().alert(
+        'Success!',
+        `DNO reference table refreshed successfully!\n\n` +
+        `- ${queryResults.rows.length} DNOs updated\n` +
+        `- Dropdown list rebuilt\n` +
+        `- Reference table updated (rows 24-${startRow + queryResults.rows.length - 1})`,
+        SpreadsheetApp.getUi().ButtonSet.OK
+      );
     }
     
   } catch (error) {
     Logger.log('Error refreshing table: ' + error.toString());
     SpreadsheetApp.getUi().alert('Error refreshing table: ' + error.toString());
+  }
+}
+
+/**
+ * Toggle visibility of reference table (rows 21+)
+ */
+function toggleReferenceTable() {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('BESS_VLP');
+  
+  if (!sheet) {
+    SpreadsheetApp.getUi().alert('BESS_VLP sheet not found!');
+    return;
+  }
+  
+  try {
+    // Check if rows are currently hidden
+    const isHidden = sheet.isRowHiddenByUser(21);
+    
+    if (isHidden) {
+      // Unhide rows 21-50
+      sheet.showRows(21, 30);
+      SpreadsheetApp.getUi().alert('Reference table is now visible (rows 21+)');
+    } else {
+      // Hide rows 21-50
+      sheet.hideRows(21, 30);
+      SpreadsheetApp.getUi().alert('Reference table is now hidden');
+    }
+    
+  } catch (error) {
+    Logger.log('Error toggling reference table: ' + error.toString());
+    SpreadsheetApp.getUi().alert('Error: ' + error.toString());
   }
 }
 
@@ -422,21 +480,22 @@ function findDNOByMPAN(mpanId) {
  */
 function getDNOCentroid(mpanId) {
   // Approximate centroids for each DNO (pre-calculated)
+  // MPAN IDs: 10-23 (matching neso_dno_reference table)
   const centroids = {
-    10: {latitude: 52.2, longitude: 0.7},    // Eastern
-    11: {latitude: 51.5, longitude: -0.1},   // London
-    12: {latitude: 51.1, longitude: 0.1},    // South Eastern
-    13: {latitude: 52.8, longitude: -1.2},   // East Midlands
-    14: {latitude: 52.5, longitude: -2.0},   // West Midlands
-    15: {latitude: 54.9, longitude: -1.6},   // North East
-    16: {latitude: 53.8, longitude: -2.5},   // North West
-    17: {latitude: 58.0, longitude: -4.5},   // Scottish Hydro
-    18: {latitude: 55.9, longitude: -3.2},   // SP Distribution
-    19: {latitude: 51.1, longitude: 0.0},    // South Eastern (same as 12)
-    20: {latitude: 51.0, longitude: -1.3},   // Southern Electric
-    21: {latitude: 51.6, longitude: -3.2},   // South Wales
-    22: {latitude: 50.7, longitude: -4.0},   // South West
-    23: {latitude: 53.8, longitude: -1.1}    // Yorkshire
+    10: {latitude: 52.2, longitude: 0.7},    // MPAN 10: UKPN-EPN (Eastern)
+    11: {latitude: 52.8, longitude: -1.2},   // MPAN 11: NGED-EM (East Midlands)
+    12: {latitude: 51.5, longitude: -0.1},   // MPAN 12: UKPN-LPN (London)
+    13: {latitude: 53.4, longitude: -3.0},   // MPAN 13: SP-Manweb (Merseyside & North Wales)
+    14: {latitude: 52.5, longitude: -2.0},   // MPAN 14: NGED-WM (West Midlands)
+    15: {latitude: 54.9, longitude: -1.6},   // MPAN 15: NPg-NE (North East)
+    16: {latitude: 53.8, longitude: -2.5},   // MPAN 16: ENWL (North West)
+    17: {latitude: 57.5, longitude: -4.5},   // MPAN 17: SSE-SHEPD (North Scotland)
+    18: {latitude: 55.9, longitude: -3.2},   // MPAN 18: SP-Distribution (South Scotland)
+    19: {latitude: 51.1, longitude: 0.3},    // MPAN 19: UKPN-SPN (South Eastern)
+    20: {latitude: 51.0, longitude: -1.3},   // MPAN 20: SSE-SEPD (Southern)
+    21: {latitude: 51.6, longitude: -3.2},   // MPAN 21: NGED-SWales (South Wales)
+    22: {latitude: 50.7, longitude: -4.0},   // MPAN 22: NGED-SW (South West)
+    23: {latitude: 53.8, longitude: -1.1}    // MPAN 23: NPg-Y (Yorkshire)
   };
   
   return centroids[mpanId] || {latitude: 52.5, longitude: -1.5}; // Default to UK center

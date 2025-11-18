@@ -1,0 +1,117 @@
+{
+  "total_rows": 49,
+  "sections": {
+    "header_end": 6,
+    "fuel_start": 7,
+    "interconnector_start": 7,
+    "other_generators_start": 0,
+    "outage_start": 0
+  },
+  "data": [
+    [
+      "File: Dashboard"
+    ],
+    [
+      "\u23f0 Last Updated: 2025-11-10 14:02:10 | \u2705 FRESH"
+    ],
+    [
+      "Data Freshness: \u2705 <10min | \u26a0\ufe0f 10-60min | \ud83d\udd34 >60min"
+    ],
+    [
+      "\ud83d\udcca SYSTEM METRICS"
+    ],
+    [
+      "Total Generation: 31.8 GW | Supply: 32.7 GW | Renewables: 52% | \ud83d\udcb0 Price: (pending data)"
+    ],
+    [],
+    [
+      "\ud83d\udd25 Fuel Breakdown",
+      "",
+      "",
+      "\ud83c\udf0d Interconnectors"
+    ],
+    [
+      "\ud83d\udca8 WIND",
+      "13.3 GW",
+      "",
+      " ElecLink (France)",
+      "999 MW Import"
+    ],
+    [
+      "\ud83d\udd25 CCGT",
+      "11.0 GW",
+      "",
+      " East-West (Ireland)",
+      "0 MW Balanced"
+    ],
+    [
+      "\ud83c\udf31 BIOMASS",
+      "3.3 GW",
+      "",
+      " IFA (France)",
+      "1509 MW Import"
+    ],
+    [
+      "\u269b\ufe0f NUCLEAR",
+      "3.2 GW",
+      "",
+      " Greenlink (Ireland)",
+      "513 MW Export"
+    ],
+    [
+      "\ud83d\udca7 NPSHYD",
+      "0.6 GW",
+      "",
+      " IFA2 (France)",
+      "1 MW Export"
+    ],
+    [
+      "\u26a1 OTHER",
+      "0.4 GW",
+      "",
+      " Moyle (N.Ireland)",
+      "201 MW Export"
+    ],
+    [
+      "\ud83d\udd25 OCGT",
+      "0.0 GW",
+      "",
+      " BritNed (Netherlands)",
+      "833 MW Export"
+    ],
+    [
+      "\ud83d\udee2\ufe0f OIL",
+      "0.0 GW",
+      "",
+      " Nemo (Belgium)",
+      "378 MW Export"
+    ],
+    [
+      "\u26cf\ufe0f COAL",
+      "0.0 GW",
+      "",
+      " NSL (Norway)",
+      "1397 MW Import"
+    ],
+    [
+      "\ud83d\udd0b PS",
+      "-0.0 GW",
+      "",
+      " Viking Link (Denmark)",
+      "1090 MW Export"
+    ],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+  ]
+}

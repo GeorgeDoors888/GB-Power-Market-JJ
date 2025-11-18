@@ -219,9 +219,9 @@ def identify_vlp_operators(battery_bmus):
     return battery_bmus, vlp_batteries, direct_batteries
 
 def analyze_bod_revenue(battery_bmus, vlp_batteries):
-    """Calculate market participation and revenue for VLP vs direct batteries"""
+    """Calculate market participation and revenue for VLP vs direct batteries using BOALF (acceptances)"""
     print("\n" + "="*80)
-    print("💰 STEP 5: Analyze Market Participation & Revenue")
+    print("💰 STEP 5: Analyze Market Participation & Revenue (from Acceptances)")
     print("="*80)
     
     client = bigquery.Client(project=PROJECT_ID)
@@ -230,7 +230,8 @@ def analyze_bod_revenue(battery_bmus, vlp_batteries):
     all_battery_ids = battery_bmus['elexonBmUnit'].tolist()
     vlp_battery_ids = vlp_batteries['elexonBmUnit'].tolist()
     
-    print(f"\n⏳ Analyzing BOD data for {len(all_battery_ids)} battery BMUs...")
+    print(f"\n⏳ Analyzing BOALF (acceptance) data for {len(all_battery_ids)} battery BMUs...")
+    print(f"   Using actual accepted actions (not just submissions)...")
     print(f"   (This may take a minute...)")
     
     # Create SQL query
@@ -238,7 +239,37 @@ def analyze_bod_revenue(battery_bmus, vlp_batteries):
     vlp_ids_str = "', '".join(vlp_battery_ids)
     
     query = f"""
-    WITH battery_activity AS (
+    WITH market_prices AS (
+      -- Get average price per settlement period (bmrs_mid has multiple records per period)
+      SELECT 
+        settlementDate,
+        settlementPeriod,
+        AVG(CASE WHEN price > 0 THEN price END) as avg_price_gbp_mwh
+      FROM `{PROJECT_ID}.{DATASET_ID}.bmrs_mid`
+      WHERE settlementDate >= DATE_SUB(CURRENT_DATE(), INTERVAL 365 DAY)
+        AND price > 0
+      GROUP BY settlementDate, settlementPeriod
+    ),
+    battery_acceptances AS (
+      -- Use BOALF (acceptances) instead of BOD (submissions) for real revenue
+      SELECT 
+        boalf.bmUnit,
+        boalf.settlementDate,
+        boalf.settlementPeriodFrom,
+        boalf.levelFrom,
+        boalf.levelTo,
+        (boalf.levelTo - boalf.levelFrom) as mw_change,
+        boalf.acceptanceNumber,
+        boalf.acceptanceTime,
+        prices.avg_price_gbp_mwh
+      FROM `{PROJECT_ID}.{DATASET_ID}.bmrs_boalf` boalf
+      LEFT JOIN market_prices prices
+        ON boalf.settlementDate = prices.settlementDate 
+        AND boalf.settlementPeriodFrom = prices.settlementPeriod
+      WHERE boalf.bmUnit IN ('{battery_ids_str}')
+        AND boalf.settlementDate >= DATE_SUB(CURRENT_DATE(), INTERVAL 365 DAY)
+    ),
+    battery_activity AS (
       SELECT 
         bmUnit,
         COUNT(*) as total_actions,
@@ -246,31 +277,42 @@ def analyze_bod_revenue(battery_bmus, vlp_batteries):
         MIN(settlementDate) as first_action,
         MAX(settlementDate) as last_action,
         
-        -- Bid activity (selling reduction/buying power)
-        COUNT(CASE WHEN bid > 0 AND bid < 9000 THEN 1 END) as bid_actions,
-        AVG(CASE WHEN bid > 0 AND bid < 9000 THEN bid END) as avg_bid_price,
-        SUM(CASE WHEN bid > 0 AND bid < 9000 THEN ABS(levelTo - levelFrom) END) as total_bid_mw,
+        -- Bid/offer statistics (for discharge/charge identification)
+        COUNT(CASE WHEN mw_change < 0 THEN 1 END) as bid_actions,
+        AVG(CASE WHEN mw_change < 0 THEN avg_price_gbp_mwh END) as avg_bid_price,
+        SUM(CASE WHEN mw_change < 0 THEN ABS(mw_change) END) as total_bid_mw,
         
-        -- Offer activity (selling increase/selling power)
-        COUNT(CASE WHEN offer > 0 AND offer < 9000 THEN 1 END) as offer_actions,
-        AVG(CASE WHEN offer > 0 AND offer < 9000 THEN offer END) as avg_offer_price,
-        SUM(CASE WHEN offer > 0 AND offer < 9000 THEN ABS(levelTo - levelFrom) END) as total_offer_mw,
+        COUNT(CASE WHEN mw_change > 0 THEN 1 END) as offer_actions,
+        AVG(CASE WHEN mw_change > 0 THEN avg_price_gbp_mwh END) as avg_offer_price,
+        SUM(CASE WHEN mw_change > 0 THEN mw_change END) as total_offer_mw,
         
         -- Capacity
         MAX(GREATEST(ABS(levelFrom), ABS(levelTo))) as max_capacity_mw,
-        AVG(ABS(levelTo - levelFrom)) as avg_action_size_mw
+        AVG(ABS(mw_change)) as avg_action_size_mw,
         
-      FROM `{PROJECT_ID}.{DATASET_ID}.{BOD_TABLE}`
-      WHERE bmUnit IN ('{battery_ids_str}')
-        AND settlementDate >= DATE_SUB(CURRENT_DATE(), INTERVAL 365 DAY)
+        -- ACTUAL REVENUE from accepted actions
+        -- Discharge (export): positive MW change × market price × 0.5h
+        SUM(CASE 
+          WHEN mw_change > 0
+          THEN mw_change * COALESCE(avg_price_gbp_mwh, 0) * 0.5
+          ELSE 0 
+        END) as discharge_revenue_gbp,
+        
+        -- Charge (import): negative MW change × market price × 0.5h (cost)
+        SUM(CASE 
+          WHEN mw_change < 0
+          THEN ABS(mw_change) * COALESCE(avg_price_gbp_mwh, 0) * 0.5
+          ELSE 0 
+        END) as charge_cost_gbp
+        
+      FROM battery_acceptances
       GROUP BY bmUnit
     ),
     revenue_estimate AS (
       SELECT 
         *,
-        -- Estimate revenue (simplified: MW * price * 0.5 hours per settlement period)
-        (COALESCE(total_bid_mw, 0) * COALESCE(avg_bid_price, 0) * 0.5 + 
-         COALESCE(total_offer_mw, 0) * COALESCE(avg_offer_price, 0) * 0.5) as estimated_revenue_gbp,
+        -- Net revenue = discharge revenue - charging costs
+        (COALESCE(discharge_revenue_gbp, 0) - COALESCE(charge_cost_gbp, 0)) as estimated_revenue_gbp,
         
         CASE WHEN bmUnit IN ('{vlp_ids_str}') THEN TRUE ELSE FALSE END as is_vlp
       FROM battery_activity
@@ -282,10 +324,11 @@ def analyze_bod_revenue(battery_bmus, vlp_batteries):
     df = client.query(query).to_dataframe()
     
     if len(df) == 0:
-        print(f"⚠️ No BOD data found for battery BMUs")
+        print(f"⚠️ No BOALF acceptance data found for battery BMUs")
+        print(f"   (Note: BOALF shows accepted actions, not all batteries may have acceptances)")
         return None
     
-    print(f"✅ Analyzed {len(df)} battery BMUs with BOD activity")
+    print(f"✅ Analyzed {len(df)} battery BMUs with acceptance activity")
     
     # Calculate summary statistics
     vlp_df = df[df['is_vlp'] == True]

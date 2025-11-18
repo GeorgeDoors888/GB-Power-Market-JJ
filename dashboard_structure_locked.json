@@ -1,0 +1,117 @@
+{
+  "last_read": "2025-11-10T17:26:59.403577",
+  "total_rows": 44,
+  "sections": {
+    "header": {
+      "row": 1,
+      "data": [
+        "File: Dashboard"
+      ],
+      "description": "Main Dashboard title"
+    },
+    "timestamp": {
+      "row": 2,
+      "data": [
+        "\ud83c\udfa8 Design Updated: 2025-11-10 17:12:56 | \u2705 Auto-refresh enabled"
+      ],
+      "description": "Last updated timestamp"
+    },
+    "fuel_interconnectors_header": {
+      "row": 6,
+      "data": [],
+      "description": "Fuel & Interconnectors section header"
+    },
+    "interconnectors": [
+      {
+        "row": 8,
+        "name": "\ud83c\uddeb ElecLink (France)",
+        "data": [
+          "\ud83c\uddeb ElecLink (France)",
+          "999 MW Import"
+        ]
+      },
+      {
+        "row": 9,
+        "name": "\ud83c\uddee East-West (Ireland)",
+        "data": [
+          "\ud83c\uddee East-West (Ireland)",
+          "0 MW Balanced"
+        ]
+      },
+      {
+        "row": 10,
+        "name": "\ud83c\uddeb IFA (France)",
+        "data": [
+          "\ud83c\uddeb IFA (France)",
+          "1509 MW Import"
+        ]
+      },
+      {
+        "row": 11,
+        "name": "\ud83c\uddee Greenlink (Ireland)",
+        "data": [
+          "\ud83c\uddee Greenlink (Ireland)",
+          "513 MW Export"
+        ]
+      },
+      {
+        "row": 12,
+        "name": "\ud83c\uddeb IFA (France)",
+        "data": [
+          "\ud83c\uddeb IFA (France)",
+          "1 MW Export"
+        ]
+      },
+      {
+        "row": 13,
+        "name": "\ud83c\uddee Moyle (Ireland)",
+        "data": [
+          "\ud83c\uddee Moyle (Ireland)",
+          "201 MW Export"
+        ]
+      },
+      {
+        "row": 14,
+        "name": "\ud83c\uddf3 BritNed (Netherlands)",
+        "data": [
+          "\ud83c\uddf3 BritNed (Netherlands)",
+          "833 MW Export"
+        ]
+      },
+      {
+        "row": 15,
+        "name": "\ud83c\udde7 Nemo (Belgium)",
+        "data": [
+          "\ud83c\udde7 Nemo (Belgium)",
+          "378 MW Export"
+        ]
+      },
+      {
+        "row": 16,
+        "name": "\ud83c\uddf3 NSL (Norway)",
+        "data": [
+          "\ud83c\uddf3 NSL (Norway)",
+          "1397 MW Import"
+        ]
+      },
+      {
+        "row": 17,
+        "name": "\ud83c\udde9 Viking Link (Denmark)",
+        "data": [
+          "\ud83c\udde9 Viking Link (Denmark)",
+          "1090 MW Export"
+        ]
+      }
+    ]
+  },
+  "formatting": {
+    "note": "This documents the existing design. NO changes are applied.",
+    "sections": {
+      "header": "Row 1 - Main title with blue background",
+      "timestamp": "Row 2 - Last updated info",
+      "fuel_interconnectors": "Rows 6-17 - Fuel (green) and Interconnectors (blue)",
+      "outages": "Row 20+ - Outages section with red header",
+      "gsp": "Row 36+ - GSP Analysis section"
+    }
+  }
+}

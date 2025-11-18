@@ -1,0 +1,226 @@
+
+================================================================================
+🔋 COMPLETE VLP-BATTERY MARKET ANALYSIS REPORT
+================================================================================
+
+📅 Report Date: 2025-11-10 18:47:29
+📂 Data Sources:
+   - NESO BMU Registration API
+   - BigQuery BOD Table: inner-cinema-476211-u9.uk_energy_prod.bmrs_bod
+   - Generator Register: generators_list.csv
+
+================================================================================
+📊 EXECUTIVE SUMMARY
+================================================================================
+
+Total Battery BMUs Identified: 148
+├─ VLP-Operated: 102 (68.9%)
+└─ Direct-Operated: 46 (31.1%)
+
+
+💰 REVENUE ANALYSIS (Last 365 Days)
+================================================================================
+
+Total Market Revenue: £-202,476,364
+
+VLP-Operated Batteries:
+├─ Revenue: £-34,054,616 (0.0% market share)
+├─ Capacity: 5731.0 MW
+├─ Total Actions: 1,752,831
+└─ Avg Revenue/BMU: £-486,495
+
+Direct-Operated Batteries:
+├─ Revenue: £-168,421,748 (100.0% market share)
+├─ Capacity: 5888.0 MW
+├─ Total Actions: 382,120
+└─ Avg Revenue/BMU: £-4,953,581
+
+
+🏆 TOP 10 REVENUE GENERATORS
+================================================================================
+
+T_DOREW-1 [VLP]
+├─ Revenue: £12,757,018
+├─ Capacity: 96.0 MW
+├─ Actions: 10,594
+├─ Active Days: 218
+├─ Avg Bid Price: £91.82/MWh
+└─ Avg Offer Price: £79.79/MWh
+
+T_DOREW-2 [VLP]
+├─ Revenue: £9,977,588
+├─ Capacity: 93.0 MW
+├─ Actions: 10,763
+├─ Active Days: 220
+├─ Avg Bid Price: £93.81/MWh
+└─ Avg Offer Price: £78.87/MWh
+
+T_SOKYW-1 [DIRECT]
+├─ Revenue: £4,681,309
+├─ Capacity: 235.0 MW
+├─ Actions: 3,981
+├─ Active Days: 107
+├─ Avg Bid Price: £58.04/MWh
+└─ Avg Offer Price: £56.32/MWh
+
+T_CREAW-1 [DIRECT]
+├─ Revenue: £4,397,326
+├─ Capacity: 92.0 MW
+├─ Actions: 5,854
+├─ Active Days: 150
+├─ Avg Bid Price: £67.90/MWh
+└─ Avg Offer Price: £63.59/MWh
+
+T_LIMKW-1 [DIRECT]
+├─ Revenue: £3,984,678
+├─ Capacity: 152.0 MW
+├─ Actions: 4,749
+├─ Active Days: 87
+├─ Avg Bid Price: £64.36/MWh
+└─ Avg Offer Price: £61.50/MWh
+
+T_STRNW-1 [DIRECT]
+├─ Revenue: £3,262,550
+├─ Capacity: 67.0 MW
+├─ Actions: 5,804
+├─ Active Days: 137
+├─ Avg Bid Price: £66.54/MWh
+└─ Avg Offer Price: £59.26/MWh
+
+E_BRYBW-1 [VLP]
+├─ Revenue: £2,108,538
+├─ Capacity: 66.0 MW
+├─ Actions: 6,188
+├─ Active Days: 94
+├─ Avg Bid Price: £73.76/MWh
+└─ Avg Offer Price: £62.08/MWh
+
+E_BABAW-1 [VLP]
+├─ Revenue: £1,971,074
+├─ Capacity: 51.0 MW
+├─ Actions: 8,964
+├─ Active Days: 147
+├─ Avg Bid Price: £73.29/MWh
+└─ Avg Offer Price: £59.83/MWh
+
+T_SAKNW-1 [DIRECT]
+├─ Revenue: £1,662,903
+├─ Capacity: 86.0 MW
+├─ Actions: 2,339
+├─ Active Days: 94
+├─ Avg Bid Price: £55.38/MWh
+└─ Avg Offer Price: £61.55/MWh
+
+T_FALGW-1 [DIRECT]
+├─ Revenue: £1,581,084
+├─ Capacity: 144.0 MW
+├─ Actions: 1,481
+├─ Active Days: 58
+├─ Avg Bid Price: £49.89/MWh
+└─ Avg Offer Price: £55.48/MWh
+
+================================================================================
+🏢 TOP VLP OPERATORS
+================================================================================
+
+Tesla Motors Limited
+├─ BMUs: 15
+└─ Total Capacity: 541.0 MW
+
+Statkraft Markets Gmbh
+├─ BMUs: 11
+└─ Total Capacity: 290.8 MW
+
+A/S Global Risk Management Ltd
+├─ BMUs: 6
+└─ Total Capacity: 0.0 MW
+
+Arenko Cleantech Limited
+├─ BMUs: 6
+└─ Total Capacity: 247.4 MW
+
+EDF Energy Customers Limited
+├─ BMUs: 6
+└─ Total Capacity: 290.4 MW
+
+Risq Energy Limited
+├─ BMUs: 5
+└─ Total Capacity: 5000.0 MW
+
+BP Gas Marketing Limited
+├─ BMUs: 4
+└─ Total Capacity: 183.7 MW
+
+Pivoted Power LLP
+├─ BMUs: 3
+└─ Total Capacity: 157.8 MW
+
+Npower Commercial Gas Limited
+├─ BMUs: 3
+└─ Total Capacity: 97.7 MW
+
+Octopus Energy Trading Limited
+├─ BMUs: 3
+└─ Total Capacity: 115.3 MW
+
+UK Power Reserve Limited
+├─ BMUs: 3
+└─ Total Capacity: 41.4 MW
+
+SMS Energy Services Limited
+├─ BMUs: 2
+└─ Total Capacity: 80.0 MW
+
+RWE Renewables UK Humber Wind
+├─ BMUs: 2
+└─ Total Capacity: 219.0 MW
+
+RWE Generation UK plc
+├─ BMUs: 2
+└─ Total Capacity: 447.0 MW
+
+SSEPG (Operations) Ltd
+├─ BMUs: 2
+└─ Total Capacity: 96.0 MW
+
+================================================================================
+💡 KEY INSIGHTS
+================================================================================
+
+1. VLP MARKET POSITION:
+   • VLPs operate 102 battery BMUs (68.9% of total)
+   • VLPs capture 0.0% of battery balancing revenue
+   • Average VLP revenue: £-486,495 per BMU
+   • Average direct revenue: £-4,953,581 per BMU
+
+2. VLP ADVANTAGES:
+   • Professional optimization and trading
+   • Portfolio diversification across multiple assets
+   • Better market access and liquidity management
+   • Reduced operational burden for asset owners
+
+3. MARKET STRUCTURE:
+   • Battery storage is increasingly important for grid flexibility
+   • VLPs provide aggregation services to smaller storage operators
+   • Direct operation more common for larger, utility-scale batteries
+   • Mixed ownership model emerging (some assets both VLP and direct)
+
+================================================================================
+📋 METHODOLOGY
+================================================================================
+
+VLP Identification Criteria:
+1. Lead party name contains aggregator keywords (virtual, aggregat, flex, etc.)
+2. BMU code patterns indicating aggregation (2__, C__, M__ prefixes)
+3. Multiple BMUs under single lead party (portfolio management)
+
+Revenue Calculation:
+• Based on Bid-Offer Data (BOD) from last 365 days
+• Formula: (MWh traded * Average price * 0.5 hours per period)
+• Note: Simplified estimate, actual revenue includes:
+  - System balancing payments
+  - Availability payments
+  - Response services
+  - Ancillary services revenue
+
+================================================================================

@@ -1,0 +1,436 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "GB Power Market & Workspace API",
+    "description": "Execute code, query BigQuery, and access all Google Workspace files (Sheets, Docs, Drive)",
+    "version": "2.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://jibber-jabber-production.up.railway.app"
+    }
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "summary": "Health Check",
+        "operationId": "health_check",
+        "responses": {
+          "200": {
+            "description": "Server is running"
+          }
+        }
+      }
+    },
+    "/execute": {
+      "post": {
+        "summary": "Execute Code",
+        "description": "Execute Python or JavaScript code",
+        "operationId": "execute_code",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "code": {
+                    "type": "string"
+                  },
+                  "language": {
+                    "type": "string",
+                    "enum": ["python", "javascript"]
+                  }
+                },
+                "required": ["code"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Execution results"
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
+      }
+    },
+    "/query_bigquery": {
+      "post": {
+        "summary": "Query BigQuery",
+        "description": "Execute SQL query on BigQuery",
+        "operationId": "query_bigquery",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "sql": {
+                    "type": "string"
+                  }
+                },
+                "required": ["sql"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Query results"
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
+      }
+    },
+    "/workspace/health": {
+      "get": {
+        "summary": "Workspace Health Check",
+        "description": "Check Google Workspace access and list all accessible spreadsheets",
+        "operationId": "checkWorkspaceHealth",
+        "responses": {
+          "200": {
+            "description": "Workspace health status with list of accessible spreadsheets"
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
+      }
+    },
+    "/workspace/list_spreadsheets": {
+      "get": {
+        "summary": "List All Spreadsheets",
+        "description": "Get complete list of all accessible Google Sheets spreadsheets",
+        "operationId": "listSpreadsheets",
+        "responses": {
+          "200": {
+            "description": "List of all spreadsheets with metadata"
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
+      }
+    },
+    "/workspace/get_spreadsheet": {
+      "post": {
+        "summary": "Get Spreadsheet Info",
+        "description": "Get detailed information about a specific spreadsheet by ID or title",
+        "operationId": "getSpreadsheetInfo",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "spreadsheet_id": {
+                    "type": "string",
+                    "description": "Spreadsheet ID (e.g., '12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8')"
+                  },
+                  "spreadsheet_title": {
+                    "type": "string",
+                    "description": "Spreadsheet title (alternative to ID)"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Spreadsheet info with all worksheets"
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
+      }
+    },
+    "/workspace/read_sheet": {
+      "post": {
+        "summary": "Read Sheet Data",
+        "description": "Read data from any worksheet in any accessible spreadsheet",
+        "operationId": "readSheetData",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "spreadsheet_id": {
+                    "type": "string",
+                    "description": "Spreadsheet ID (defaults to GB Energy Dashboard if not provided)"
+                  },
+                  "spreadsheet_title": {
+                    "type": "string",
+                    "description": "Spreadsheet title (alternative to ID)"
+                  },
+                  "worksheet_name": {
+                    "type": "string",
+                    "description": "Name of worksheet to read"
+                  },
+                  "cell_range": {
+                    "type": "string",
+                    "description": "Optional A1 notation range (e.g., 'A1:E10')"
+                  }
+                },
+                "required": ["worksheet_name"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Worksheet data (up to 100 rows)"
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
+      }
+    },
+    "/workspace/write_sheet": {
+      "post": {
+        "summary": "Write Sheet Data",
+        "description": "Write or update data in a Google Sheets worksheet",
+        "operationId": "writeSheetData",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "spreadsheet_id": {
+                    "type": "string",
+                    "description": "Spreadsheet ID"
+                  },
+                  "spreadsheet_title": {
+                    "type": "string",
+                    "description": "Spreadsheet title (alternative to ID)"
+                  },
+                  "worksheet_name": {
+                    "type": "string",
+                    "description": "Worksheet name"
+                  },
+                  "cell_range": {
+                    "type": "string",
+                    "description": "A1 notation range to write to (e.g., 'A1:B2')"
+                  },
+                  "values": {
+                    "type": "array",
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "description": "2D array of values to write"
+                  }
+                },
+                "required": ["worksheet_name", "cell_range", "values"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Write operation result"
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
+      }
+    },
+    "/workspace/list_drive_files": {
+      "get": {
+        "summary": "List Drive Files",
+        "description": "List files and folders in Google Drive with optional folder filtering",
+        "operationId": "listDriveFiles",
+        "parameters": [
+          {
+            "name": "folder_id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional folder ID to list contents of specific folder"
+          },
+          {
+            "name": "max_results",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "default": 100
+            },
+            "description": "Maximum number of files to return"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of Drive files"
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
+      }
+    },
+    "/workspace/search_drive": {
+      "post": {
+        "summary": "Search Drive",
+        "description": "Search for files in Google Drive by name or content",
+        "operationId": "searchDrive",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "query": {
+                    "type": "string",
+                    "description": "Search query (searches file names and content)"
+                  },
+                  "file_type": {
+                    "type": "string",
+                    "enum": ["spreadsheet", "document", "folder", "pdf", "all"],
+                    "description": "Filter by file type"
+                  }
+                },
+                "required": ["query"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Search results"
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
+      }
+    },
+    "/workspace/read_doc": {
+      "post": {
+        "summary": "Read Google Doc",
+        "description": "Read content from a Google Doc by ID or title",
+        "operationId": "readGoogleDoc",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "document_id": {
+                    "type": "string",
+                    "description": "Google Doc ID"
+                  },
+                  "document_title": {
+                    "type": "string",
+                    "description": "Document title (alternative to ID)"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Document content as plain text"
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
+      }
+    },
+    "/workspace/write_doc": {
+      "post": {
+        "summary": "Write Google Doc",
+        "description": "Create new Google Doc or append content to existing doc",
+        "operationId": "writeGoogleDoc",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "document_id": {
+                    "type": "string",
+                    "description": "Document ID (for updating existing doc)"
+                  },
+                  "document_title": {
+                    "type": "string",
+                    "description": "Document title (for creating new doc or finding existing)"
+                  },
+                  "content": {
+                    "type": "string",
+                    "description": "Text content to write"
+                  },
+                  "mode": {
+                    "type": "string",
+                    "enum": ["create", "append", "replace"],
+                    "description": "Write mode"
+                  }
+                },
+                "required": ["content"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Write operation result with document ID"
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "BearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  }
+}

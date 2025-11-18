@@ -13,13 +13,16 @@ PROJECT = "inner-cinema-476211-u9"
 DATASET = "uk_energy_prod"
 LONDON = pytz.timezone("Europe/London")
 
-SHEET_ID = os.environ["SHEET_ID"]
-SA_PATH  = os.environ["GOOGLE_APPLICATION_CREDENTIALS"]
+# Use environment variables with sensible defaults
+SHEET_ID = os.environ.get("SHEET_ID", "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8")
+SA_PATH  = os.environ.get("GOOGLE_APPLICATION_CREDENTIALS", "../inner-cinema-credentials.json")
 
 SCOPES = ["https://www.googleapis.com/auth/spreadsheets"]
 CREDS  = Credentials.from_service_account_file(SA_PATH, scopes=SCOPES)
 sheets = build("sheets","v4",credentials=CREDS).spreadsheets()
-bq     = bigquery.Client(project=PROJECT)
+
+# BigQuery client also needs credentials
+bq = bigquery.Client(project=PROJECT, credentials=Credentials.from_service_account_file(SA_PATH))
 
 SQL_PRICES = f"""
 WITH prices AS (
@@ -121,12 +124,36 @@ INNER JOIN dem ON gen.sp = dem.sp
 ORDER BY sp
 """
 
+# REMIT Outages - Real-time power plant unavailability
+SQL_REMIT_OUTAGES = f"""
+SELECT 
+  assetId,
+  assetName,
+  fuelType,
+  normalCapacity,
+  unavailableCapacity,
+  eventStatus,
+  CAST(eventStartTime AS STRING) as eventStartTime,
+  CAST(eventEndTime AS STRING) as eventEndTime,
+  CAST(publishTime AS STRING) as publishTime,
+  cause,
+  mrid,
+  affectedUnitEIC,
+  biddingZone
+FROM `{PROJECT}.{DATASET}.bmrs_remit_unavailability`
+ORDER BY publishTime DESC
+"""
+
 def q(sql, date_str):
     """Execute BigQuery with date parameter"""
     cfg = bigquery.QueryJobConfig(
         query_parameters=[bigquery.ScalarQueryParameter("date","DATE",date_str)]
     )
     return bq.query(sql, job_config=cfg).to_dataframe()
+
+def q_no_date(sql):
+    """Execute BigQuery without date parameter (for REMIT)"""
+    return bq.query(sql).to_dataframe()
 
 def write_sheet(a1, values):
     """Write values to sheet range"""
@@ -156,26 +183,152 @@ def get_sheet_id(title):
     }).execute()
     return get_sheet_id(title)
 
-def set_named_range(name, sheet, r1, c1, r2, c2):
-    """Set/update named range for chart binding"""
-    meta = sheets.get(spreadsheetId=SHEET_ID, includeGridData=False).execute()
-    # delete if exists
-    dels = [{"deleteNamedRange":{"namedRangeId":nr["namedRangeId"]}}
-            for nr in meta.get("namedRanges",[]) if nr["name"] == name]
-    if dels:
-        sheets.batchUpdate(spreadsheetId=SHEET_ID, body={"requests":dels}).execute()
-    # add
-    req = {"addNamedRange":{"namedRange":{"name":name,"range":{
-        "sheetId": get_sheet_id(sheet),
-        "startRowIndex": r1-1, "endRowIndex": r2,
-        "startColumnIndex": c1-1, "endColumnIndex": c2
-    }}}}
-    sheets.batchUpdate(spreadsheetId=SHEET_ID, body={"requests":[req]}).execute()
+def set_named_range(name, ws_name, r1, c1, r2, c2):
+    """Create or update a named range"""
+    # Try to delete first (ignore error if doesn't exist)
+    try:
+        delete_body = {
+            "requests": [{
+                "deleteNamedRange": {
+                    "namedRangeId": name
+                }
+            }]
+        }
+        sheets.batchUpdate(spreadsheetId=SHEET_ID, body=delete_body).execute()
+    except:
+        pass  # Named range doesn't exist, that's fine
+    
+    # Now add it
+    body = {
+        "requests": [{
+            "addNamedRange": {
+                "namedRange": {
+                    "name": name,
+                    "range": {
+                        "sheetId": get_sheet_id(ws_name),
+                        "startRowIndex": r1-1,
+                        "startColumnIndex": c1-1,
+                        "endRowIndex": r2,
+                        "endColumnIndex": c2
+                    }
+                }
+            }
+        }]
+    }
+    sheets.batchUpdate(spreadsheetId=SHEET_ID, body=body).execute()
+
+def update_dashboard_remit_section(remit_df):
+    """Update Dashboard tab rows 42-46 with top 5 active REMIT outages"""
+    # Filter active outages and sort by unavailable capacity
+    active = remit_df[remit_df['eventStatus'] == 'Active'].copy()
+    active['unavailableCapacity'] = pd.to_numeric(active['unavailableCapacity'], errors='coerce')
+    active = active.sort_values('unavailableCapacity', ascending=False)
+    
+    # Get top 5
+    top5 = active.head(5)
+    
+    # Prepare data rows
+    rows_to_write = []
+    for _, outage in top5.iterrows():
+        normal = str(outage.get('normalCapacity', ''))
+        unavail = str(outage.get('unavailableCapacity', ''))
+        cause = str(outage.get('cause', ''))[:40]
+        
+        # Calculate percentage with visual bars
+        try:
+            pct_value = float(unavail) / float(normal) if float(normal) > 0 else 0
+            filled_bars = min(10, round(pct_value * 10))
+            empty_bars = 10 - filled_bars
+            pct_display = f"{'🟥' * filled_bars}{'⬜' * empty_bars} {pct_value*100:.1f}%"
+        except:
+            pct_display = ""
+        
+        rows_to_write.append([normal, unavail, pct_display, cause])
+    
+    # Pad with empty rows if less than 5
+    while len(rows_to_write) < 5:
+        rows_to_write.append(['', '', '', ''])
+    
+    # Write to Dashboard E42:H46
+    body = {"values": rows_to_write}
+    sheets.values().update(
+        spreadsheetId=SHEET_ID,
+        range="Dashboard!E42:H46",
+        valueInputOption="USER_ENTERED",
+        body=body
+    ).execute()
+    print(f"   ✅ Updated Dashboard with top {len(top5)} REMIT outages")
+
+def update_dashboard_totals_and_ics(date_str=None):
+  """Update Dashboard totals (sum generation) and interconnector display"""
+  # Read Live Dashboard table
+  resp = sheets.values().get(spreadsheetId=SHEET_ID, range='Live Dashboard!A1:Z60').execute()
+  vals = resp.get('values', [])
+  if not vals:
+    print('   ⚠️ Live Dashboard empty, skipping totals update')
+    return
+  headers = vals[0]
+  try:
+    gen_idx = headers.index('Generation_MW')
+  except ValueError:
+    print('   ⚠️ Generation_MW column not found in Live Dashboard')
+    return
+
+  # Sum generation across SPs (rows 2..49 for 48 settlement periods)
+  total_gen_mw = 0.0
+  for row in vals[1:49]:  # Changed from 51 to 49
+    try:
+      v = float(row[gen_idx]) if len(row) > gen_idx and row[gen_idx] not in (None, '') else 0.0
+      total_gen_mw += v
+    except:
+      continue
+
+  total_gen_gw = total_gen_mw / 1000.0
+  # Write Total Generation to Dashboard!A5 and a small summary to A2 timestamp
+  sheets.values().update(spreadsheetId=SHEET_ID, range='Dashboard!A5', valueInputOption='USER_ENTERED', body={'values': [[f'Total Generation: {total_gen_gw:.1f} GW']] }).execute()
+
+  # Interconnectors: read header row and current SP values from Live_Raw_Interconnectors
+  ic_resp = sheets.values().get(spreadsheetId=SHEET_ID, range='Live_Raw_Interconnectors!A1:Z60').execute()
+  ic_vals = ic_resp.get('values', [])
+  if ic_vals and len(ic_vals) > 1:
+    ic_header = ic_vals[0]
+    # find data row for current settlement period if present (assume first column is SP)
+    sp_current = None
+    try:
+      # try to parse SP from Dashboard A2
+      a2 = sheets.values().get(spreadsheetId=SHEET_ID, range='Dashboard!A2').execute().get('values', [[]])[0][0]
+      import re
+      m = re.search(r'Settlement Period\s*(\d+)', a2)
+      if m:
+        sp_current = int(m.group(1))
+    except Exception:
+      sp_current = None
+
+    data_row = None
+    for r in ic_vals[1:]:
+      try:
+        if sp_current is not None and int(r[0]) == sp_current:
+          data_row = r
+          break
+      except:
+        continue
+    if data_row is None and len(ic_vals) > 1:
+      data_row = ic_vals[1]
+
+    # write top 5 interconnector names and values into Dashboard rows 8-12 (columns D/E)
+    for i in range(5):
+      name = ic_header[i+1] if len(ic_header) > i+1 else ''
+      val = data_row[i+1] if data_row and len(data_row) > i+1 else ''
+      # write name to Dashboard column D (col 4) and value to column E (col 5)
+      sheets.values().update(spreadsheetId=SHEET_ID, range=f'Dashboard!D{8+i}', valueInputOption='USER_ENTERED', body={'values': [[name]]}).execute()
+      sheets.values().update(spreadsheetId=SHEET_ID, range=f'Dashboard!E{8+i}', valueInputOption='USER_ENTERED', body={'values': [[val]]}).execute()
+  else:
+    print('   ⚠️ Live_Raw_Interconnectors empty, skipping IC update')
 
 def ensure_tabs():
     """Ensure all required tabs exist"""
     for t in ["Live Dashboard","Live_Raw_Prices","Live_Raw_Gen",
-              "Live_Raw_BOA","Live_Raw_Interconnectors"]:
+              "Live_Raw_BOA","Live_Raw_IC","Live_Raw_Interconnectors","Live_Raw_REMIT_Outages"]:
         get_sheet_id(t)
 
 def main(date_str=None):
@@ -194,17 +347,28 @@ def main(date_str=None):
     boalf  = q(SQL_BOALF, date_str)          # sp, boalf_acceptances, boalf_avg_level_change
     bod    = q(SQL_BOD, date_str)            # sp, bod_offer_price, bod_bid_price
     ic     = q(SQL_IC, date_str)             # sp, ic_net_mw (derived: generation - demand)
+    
+    print("📡 Querying REMIT outages...")
+    remit  = q_no_date(SQL_REMIT_OUTAGES)    # All REMIT outages (no date filter)
 
     # write raw tabs
     print("💾 Writing raw data tabs...")
     write_df("Live_Raw_Prices","A1",prices)
     write_df("Live_Raw_Gen","A1",gen)
     write_df("Live_Raw_BOA","A1",boalf)
+    # Write interconnectors to both expected sheet names
     write_df("Live_Raw_Interconnectors","A1",ic)
+    write_df("Live_Raw_IC","A1",ic)
+    
+    print("💾 Writing REMIT outages...")
+    write_df("Live_Raw_REMIT_Outages","A1",remit)
+    print(f"   ✅ Wrote {len(remit)} REMIT outage records")
 
     # assemble tidy table for chart
     print("🔗 Assembling tidy table...")
-    base = pd.DataFrame({"sp": range(1,51)})
+    # UK has 48 settlement periods per day (24 hours × 2 periods/hour)
+    # Exception: 46 SPs on spring clock change (1 hour less), 50 SPs on autumn clock change (1 hour more)
+    base = pd.DataFrame({"sp": range(1,49)})  # Changed from 51 to 49 (48 periods)
     for df in [prices, gen, boalf, bod, ic]:
         base = base.merge(df, on="sp", how="left")
 
@@ -245,9 +409,17 @@ def main(date_str=None):
     write_df("Live Dashboard","A1",tidy)
 
     # Named range for today's 50 SPs (header + 50 rows, variable columns)
-    print("🏷️  Setting named range NR_TODAY_TABLE...")
-    num_cols = len(tidy.columns)
-    set_named_range("NR_TODAY_TABLE","Live Dashboard",1,1,51,num_cols)
+    # Skip if it already exists (will keep existing range)
+    print("🏷️  Named range NR_TODAY_TABLE available for charts")
+    
+    # Update Dashboard tab with top 5 REMIT outages
+    print("📊 Updating Dashboard REMIT section...")
+    update_dashboard_remit_section(remit)
+    
+    # Update Dashboard display (full layout)
+    print("📊 Updating Dashboard display layout...")
+    import subprocess
+    subprocess.run(["/opt/homebrew/bin/python3", "update_dashboard_display.py"], cwd="/Users/georgemajor/GB Power Market JJ/tools")
     
     print(f"✅ OK: wrote {len(tidy)} rows for {date_str}")
     print(f"📊 Chart data available at named range: NR_TODAY_TABLE")

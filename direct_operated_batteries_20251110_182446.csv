@@ -1,0 +1,47 @@
+nationalGridBmUnit,elexonBmUnit,eic,fuelType,leadPartyName,bmUnitType,fpnFlag,bmUnitName,leadPartyId,demandCapacity,generationCapacity,productionOrConsumptionFlag,transmissionLossFactor,workingDayCreditAssessmentImportCapability,nonWorkingDayCreditAssessmentImportCapability,workingDayCreditAssessmentExportCapability,nonWorkingDayCreditAssessmentExportCapability,creditQualifyingStatus,demandInProductionFlag,gspGroupId,gspGroupName,interconnectorId,is_vlp_by_name,is_aggregator_code,multiple_assets,is_vlp
+DOLLB-1,E_DOLLB-1,,OTHER,Dollymans Storage Limited,E,True,Dollymans Storage,DLMS,-99.900,102.000,P,0.0042196,-39.960,-39.960,40.800,40.800,True,False,_A,Eastern,,False,False,False,False
+GRCRB-1,E_GRCRB-1,,,FIELD GERRARDS CROSS LTD,E,True,Gerrards Cross BESS,FIELDGER,-20.000,20.000,P,0.0199799,-8.000,-8.000,8.000,8.000,True,False,_H,Southern,,False,False,False,False
+LKSDB-1,T_LKSDB-1,48W00000LKSDB-15,OTHER,Lakeside Energy Storage Ltd,T,True,Lakeside  BESS,LAKESIDE,-99.900,105.000,P,-0.0051169,-39.960,-39.960,42.000,42.000,True,False,,,,False,False,False,False
+NEWPB-1,E_NEWPB-1,,,Field Newport Ltd,E,True,Newport BESS,FIELDNEW,-20.000,20.457,P,0.0162007,-8.000,-8.000,8.183,8.183,True,False,_K,South Wales,,False,False,False,False
+OLDHB-1,E_OLDHB-1,,,Field Oldham Ltd,E,True,Oldham BESS,FIELD,-20.000,20.000,P,-0.0048159,-8.000,-8.000,8.000,8.000,True,False,_G,North Western,,False,False,False,False
+ROOSB-1,E_ROOSB-1,,,CBS ENERGY STORAGE ASSETS LTD,E,True,Roosecote BESS,REGPOWER,-49.000,49.000,C,-0.0048159,-19.600,-19.600,19.600,19.600,True,False,_G,North Western,,False,False,False,False
+STALB-1,E_STALB-1,,,KXP Immingham Ltd,E,True,KXP Immingham BESS,KXPIMM,-726.102,80.844,C,-0.0051169,-67.963,-67.963,7.567,7.567,False,False,_M,Yorkshire,,False,False,False,False
+TOLLB-1,E_TOLLB-1,,,Tollgate Energy Storage Ltd,E,True,Tollgate Energy Storage,TOLL,-50.481,49.000,P,0.0042196,-20.192,-20.192,19.600,19.600,True,False,_A,Eastern,,False,False,False,False
+WHLWB-1,T_WHLWB-1,,,SP Renewables (UK) Limited,T,True,Whitelee 1 Battery,SPCRE01,-50.200,50.200,C,-0.0088069,-0.502,-0.502,0.502,0.502,False,False,,,,False,False,False,False
+WHTBB-1,E_WHTBB-1,,,Field Whitebirk Ltd,E,True,Whitebirk BESS,FIELDWHI,-25.000,25.000,P,-0.0048159,-10.000,-10.000,10.000,10.000,True,False,_G,North Western,,False,False,False,False
+WISHB-1,T_WISHB-1,,OTHER,Zenobe Wishaw Limited,T,True,Wishaw BESS,ZENOBE3,-51.000,51.000,C,-0.0088069,-0.678,-0.678,0.678,0.678,False,False,,,,False,False,False,False
+ACHRW-1,T_ACHRW-1,48W00000ACHRW-1O,WIND,Mobius Renewables Gen. (GB2,T,True,AChruach Wind Farm,AIRGEN2,-2.000,42.600,P,-0.0301340,-0.800,-0.800,17.040,17.040,True,False,,,,False,False,False,False
+AFTOW-1,T_AFTOW-1,,WIND,Afton Wind Farm Limited,T,True,Afton Wind Farm,AFTON,-2.000,50.000,P,-0.0088069,-0.800,-0.800,20.000,20.000,True,False,,,,False,False,False,False
+AG-GZP06B,V__BGAZP001,,,SEFE Marketing & Trading LTD,V,True,Staveley Energy Park,GAZPROM,0.000,0.000,C,0.0054492,0.000,0.000,0.000,0.000,False,False,_B,East Midlands,,False,False,False,False
+AG-WSP04G,V__GWELS001,,,Welsh Power Group Limited,V,True,Welsh Power North West 1,WELSHPOW,0.000,0.000,P,-0.0031618,0.000,0.000,0.000,0.000,True,False,_G,North Western,,False,False,False,False
+BAGED-1,T_BAGED-1,,,Baglan Operations Ltd,T,False,Baglan Energy Park,BAGLAN,-10.000,0.000,P,0.0124353,-8.426,-8.426,0.000,0.000,False,True,,,,False,False,False,False
+BEINW-1,T_BEINW-1,48W00000BEINW-1G,WIND,Beinneun Wind Farm Ltd,T,True,Beinneun Wind farm,BWF2016,-0.800,108.800,P,-0.0301340,-0.320,-0.320,43.520,43.520,True,False,,,,False,False,False,False
+CORB-1,E_CORB-1,48W000000CORB-1Z,CCGT,CORBY POWER LIMITED,E,True,CORBY POWER LIMITED,CORBY,-0.100,240.000,P,0.0073472,-0.040,-0.040,96.000,96.000,True,False,_B,East Midlands,,False,False,False,False
+COSO-1,T_COSO-1,48W000000COSO-1F,CCGT,Coryton Energy Company Ltd,T,True,Coryton Power Station,CECL,-152.986,800.000,P,0.0042196,-61.194,-61.194,320.000,320.000,True,False,,,,False,False,False,False
+COUWW-1,T_COUWW-1,48W00000COUWW-16,WIND,Cour Wind farm (Scotland) Ltd,T,True,Cour Wind Farm,CWF2016,-1.000,20.500,P,-0.0301340,-0.400,-0.400,8.200,8.200,True,False,,,,False,False,False,False
+CREAW-1,T_CREAW-1,,WIND,Creag Riabhach Wind Farm Ltd,T,True,Creag Riabhach Wind Farm,CREAGWF1,-20.137,93.000,P,-0.0301340,-8.055,-8.055,37.200,37.200,True,False,,,,False,False,False,False
+CRGTW-1,E_CRGTW-1,,WIND,British Gas Trading Ltd,E,True,Craig 2 Wind Farm,BRITGAS,-0.200,4.700,P,-0.0088069,-0.080,-0.080,1.880,1.880,True,False,_N,South Scotland,,False,False,False,False
+CRYRW-4,T_CRYRW-4,,,Crystal Rig IV Limited,T,True,Crystal Rig IV Wind Farm,CRIVL,-0.500,48.200,P,-0.0088069,-0.200,-0.200,19.280,19.280,True,False,,,,False,False,False,False
+FALGW-1,T_FALGW-1,48W00000FALGW-1T,WIND,Fallago Rig Wind Farm Limited,T,True,Fallago Rig Wind Farm,FALLAGO,-2.500,144.000,P,-0.0088069,-1.000,-1.000,57.600,57.600,True,False,,,,False,False,False,False
+FSDLW-1,T_FSDLW-1,48W00000FSDLW-10,WIND,Freasdail Energy Limited,T,True,Freasdail Wind Farm,FEL,-0.400,22.200,P,-0.0301340,-0.160,-0.160,8.880,8.880,True,False,,,,False,False,False,False
+GFLDW-1,E_GFLDW-1,48W00000GFLDW-11,,Edgware Energy Limited,E,True,Goole Fields Wind Farm,EDGWARE,-0.220,32.800,C,-0.0051169,-0.088,-0.088,13.120,13.120,True,False,_M,Yorkshire,,False,False,False,False
+GLWSW-1,T_GLWSW-1,48W00000GLWSW-13,WIND,GALAWHISTLE WIND FARM,T,True,Galawhistle Wind Farm,GALAWWF,-0.720,55.200,P,-0.0088069,-0.288,-0.288,22.080,22.080,True,False,,,,False,False,False,False
+HADHW-1,T_HADHW-1,48W00000HADHW-1J,WIND,SSE Renewables Wind Farms,T,True,Hadyard Hill Wind Farm,SSERWFL,-0.660,130.000,P,-0.0088069,-0.264,-0.264,52.000,52.000,True,False,,,,False,False,False,False
+IBG-PETC1,I_IBG-PETC1,,,PETROCHINA INTL LONDON CO. LTD,I,True,PCIL to the UK,PETCHINA,0.000,1000.000,P,0.0120522,0.000,0.000,0.000,0.000,False,False,,,BRITNED,False,False,False,False
+IIG-VESL1,I_IIG-VESL1,,,Energia Customer Solutions Ltd,I,True,EWIC Gen BM Unit VESL,VESL,0.000,500.000,P,0.0013166,0.000,0.000,0.000,0.000,False,False,,,EWIC,False,False,False,False
+KEAD-2,T_KEAD-2,48W000000KEAD-23,CCGT,Keadby Generation Limited,T,True,Keadby-2 Main,KGL,-20.000,890.000,P,-0.0051169,-8.000,-8.000,356.000,356.000,True,False,,,,False,False,False,False
+KENNW-1,T_KENNW-1,,WIND,Kennoxhead Wind Farm Limited,T,True,Kennoxhead Wind Farm,KENX01,-0.100,60.000,P,-0.0088069,-0.040,-0.040,24.000,24.000,True,False,,,,False,False,False,False
+KYPEW-1,T_KYPEW-1,,WIND,Kype Extension Wind Farm Ltd,T,True,KYPE MUIR EXT WIND FARM,KYPEMEXT,-3.631,67.000,P,-0.0088069,-1.452,-1.452,26.800,26.800,True,False,,,,False,False,False,False
+LIMKW-1,T_LIMKW-1,48W00000LIMKW-1A,WIND,Limekiln Extension Ltd,T,True,Limekiln Wind Farm,LMKEXTWF,-1.000,106.000,P,-0.0301340,-0.400,-0.400,42.400,42.400,True,False,,,,False,False,False,False
+MINSW-1,E_MINSW-1,48W00000MINSW-1U,WIND,Mobius Renewables Gen. (GB),E,True,Minsca Wind Farm,AIRGEN,-0.260,38.123,C,-0.0088069,-0.104,-0.104,15.249,15.249,True,False,_N,South Scotland,,False,False,False,False
+MYGPW-1,T_MYGPW-1,,WIND,Minnygap Energy Limited,T,True,Minnygap Wind Farm,MEL,-0.400,25.000,P,-0.0088069,-0.160,-0.160,10.000,10.000,True,False,,,,False,False,False,False
+ROCK-1,T_ROCK-1,48W000000ROCK-16,CCGT,Rocksavage Power Company Ltd,T,True,Rocksavage Power Station,RPCL,-13.200,810.000,P,0.0013166,-5.280,-5.280,324.000,324.000,True,False,,,,False,False,False,False
+SAKNW-1,T_SAKNW-1,,WIND,Sandy Knowe Wind Farm Ltd,T,True,Sandy Knowe Wind Farm,SANDYWF1,-1.000,87.000,P,-0.0088069,-0.400,-0.400,34.800,34.800,True,False,,,,False,False,False,False
+SHOS-1,E_SHOS-1,48W000000SHOS-1N,CCGT,VPI Power Limited,E,True,Shoreham Power Station,SPGEN01,-16.000,460.000,P,0.0120522,-6.400,-6.400,184.000,184.000,True,False,_J,South Eastern,,False,False,False,False
+SOKYW-1,T_SOKYW-1,,WIND,South Kyle Wind Farm Limited,T,True,South Kyle Wind Farm,GBSKYL,-2.000,426.916,P,-0.0088069,-0.800,-0.800,170.766,170.766,True,False,,,,False,False,False,False
+SPLN-1,T_SPLN-1,48W000000SPLN-1A,CCGT,Spalding Energy Company Ltd,T,True,Spalding Power Station,SPAL,-10.000,950.000,P,0.0073472,-4.000,-4.000,380.000,380.000,True,False,,,,False,False,False,False
+STRNW-1,T_STRNW-1,48W00000STRNW-1H,WIND,Strathy Wind Farm Limited,T,True,Strathy North Wind Farm 1,STRTHWFL,-0.600,70.000,P,-0.0301340,-0.240,-0.240,28.000,28.000,True,False,,,,False,False,False,False
+TLYMW-1,E_TLYMW-1,48W00000TLYMW-1S,WIND,ECOTRICITY LIMITED,E,True,Tullymurdoch Wind Farm,RENC,0.000,13.841,C,-0.0301340,0.000,0.000,5.536,5.536,True,False,_P,North Scotland,,False,False,False,False
+TWSHW-1,T_TWSHW-1,,WIND,Twentyshilling Limited,T,True,Twenty Shilling Wind Farm,TWENTYSH,-7.324,37.800,P,-0.0088069,-2.930,-2.930,15.120,15.120,True,False,,,,False,False,False,False
+TYLNS-1,T_TYLNS-1,,,DAMSONGREEN ENERGYFARM LIMITED,T,True,Tye Lane Solar,DAMSON,0.000,49.900,C,0.0042196,0.000,0.000,19.960,19.960,True,False,,,,False,False,False,False
+WDRGW-1,T_WDRGW-1,,WIND,Windy Rig Wind Farm Limited,T,True,Windy Rig Wind Farm,WINDYRIG,-0.760,42.800,P,-0.0088069,-0.304,-0.304,17.120,17.120,True,False,,,,False,False,False,False
