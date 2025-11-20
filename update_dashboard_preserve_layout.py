@@ -102,25 +102,30 @@ print(f"✅ Formatted {len(all_fuel_rows)} fuel types")
 # ====================
 print("\n💰 Step 2: Querying price data...")
 
+# Use bmrs_mid_iris for real-time prices (APXMIDP = market price)
 price_query = f"""
 SELECT 
     settlementPeriod,
-    ROUND(AVG(price), 2) as avg_price
-FROM `{PROJECT_ID}.{DATASET}.bmrs_mid`
+    dataProvider,
+    ROUND(AVG(price), 2) as price
+FROM `{PROJECT_ID}.{DATASET}.bmrs_mid_iris`
 WHERE DATE(settlementDate) = '{today}'
-GROUP BY settlementPeriod
+  AND dataProvider = 'APXMIDP'
+GROUP BY settlementPeriod, dataProvider
 ORDER BY settlementPeriod DESC
 LIMIT 1
 """
 
 try:
     df_price = bq_client.query(price_query).to_dataframe()
-    if not df_price.empty:
-        imbalance_price = df_price['avg_price'].iloc[0]
-        price_display = f"💰 Imbalance: £{imbalance_price:.2f}/MWh"
+    if not df_price.empty and df_price['price'].iloc[0] > 0:
+        market_price = df_price['price'].iloc[0]
+        sp = df_price['settlementPeriod'].iloc[0]
+        price_display = f"💰 Market Price: £{market_price:.2f}/MWh (SP{sp})"
     else:
         price_display = "💰 Price: (pending data)"
-except:
+except Exception as e:
+    print(f"⚠️ Price query error: {e}")
     price_display = "💰 Price: (pending data)"
 
 # ====================
@@ -138,13 +143,19 @@ ic_vals = ic_result.get('values', [])
 
 # Build interconnector rows with COMPLETE flag emojis
 ic_rows = []
+
+# ⚠️ CRITICAL: DO NOT MODIFY FLAG MAPPINGS
+# Flag emojis are TWO Unicode characters (Regional Indicator Symbols)
+# Example: 🇫🇷 = U+1F1EB (F) + U+1F1F7 (R)
+# Any changes here MUST preserve the complete two-character sequences
+# Verify after changes with: python3 verify_dashboard_flags.py
 flag_map = {
-    'ElecLink': '🇫🇷', 'IFA': '🇫🇷', 'IFA2': '🇫🇷',
-    'East-West': '🇮🇪', 'Greenlink': '🇮🇪', 'Moyle': '🇮🇪',
-    'BritNed': '🇳🇱',
-    'Nemo': '🇧🇪',
-    'NSL': '🇳🇴',
-    'Viking': '🇩🇰'
+    'ElecLink': '🇫🇷', 'IFA': '🇫🇷', 'IFA2': '🇫🇷',  # France
+    'East-West': '🇮🇪', 'Greenlink': '🇮🇪', 'Moyle': '🇮🇪',  # Ireland
+    'BritNed': '🇳🇱',  # Netherlands
+    'Nemo': '🇧🇪',  # Belgium
+    'NSL': '🇳🇴',  # Norway
+    'Viking': '🇩🇰'  # Denmark
 }
 
 for row in ic_vals:

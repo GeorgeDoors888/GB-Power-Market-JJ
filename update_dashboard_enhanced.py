@@ -112,26 +112,29 @@ print(f"✅ Other fuels: {len(other_fuels)}")
 # ====================
 # 2. GET PRICE DATA
 # ====================
-print("\n💰 Step 2: Querying price data (Market Imbalance Price)...")
+print("\n💰 Step 2: Querying price data (Real-time Market Price)...")
 
-# Note: bmrs_mid only has 'price' column (Market Imbalance Price)
-# For System Buy/Sell prices, would need different table
+# Use bmrs_mid_iris for real-time prices (APXMIDP = market price)
 price_query = f"""
 SELECT 
     settlementPeriod,
-    ROUND(AVG(price), 2) as avg_price
-FROM `{PROJECT_ID}.{DATASET}.bmrs_mid`
+    dataProvider,
+    ROUND(AVG(price), 2) as price
+FROM `{PROJECT_ID}.{DATASET}.bmrs_mid_iris`
 WHERE DATE(settlementDate) = '{today}'
-GROUP BY settlementPeriod
+  AND dataProvider = 'APXMIDP'
+GROUP BY settlementPeriod, dataProvider
 ORDER BY settlementPeriod DESC
 LIMIT 1
 """
 
 try:
     df_price = bq_client.query(price_query).to_dataframe()
-    if not df_price.empty:
-        imbalance_price = df_price['avg_price'].iloc[0]
-        print(f"✅ Market Imbalance Price: £{imbalance_price:.2f}/MWh")
+    if not df_price.empty and df_price['price'].iloc[0] > 0:
+        market_price = df_price['price'].iloc[0]
+        sp = df_price['settlementPeriod'].iloc[0]
+        print(f"✅ Market Price: £{market_price:.2f}/MWh (SP{sp})")
+        imbalance_price = market_price
     else:
         imbalance_price = None
         print("⚠️ No price data available for today")

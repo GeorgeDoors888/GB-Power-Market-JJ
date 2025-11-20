@@ -5,11 +5,14 @@ from google.cloud import bigquery
 from google.oauth2.service_account import Credentials
 from googleapiclient.discovery import build
 from datetime import date, timedelta
+import pandas as pd
+from pathlib import Path
 
 SHEET_ID = "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8"
 SA_PATH = "inner-cinema-credentials.json"
 PROJECT_ID = "inner-cinema-476211-u9"
 DATASET = "uk_energy_prod"
+BMU_REGISTRATION_FILE = "bmu_registration_data.csv"
 
 # Credentials
 SHEETS_SCOPES = ["https://www.googleapis.com/auth/spreadsheets"]
@@ -20,6 +23,51 @@ sheets = build("sheets", "v4", credentials=SHEETS_CREDS).spreadsheets()
 
 BQ_CREDS = Credentials.from_service_account_file(SA_PATH, scopes=BQ_SCOPES)
 bq_client = bigquery.Client(project=PROJECT_ID, credentials=BQ_CREDS, location="US")
+
+# Load BMU registration data for station names
+def load_bmu_names():
+    """Load BMU registration data to get station names"""
+    try:
+        bmu_file = Path(__file__).parent / BMU_REGISTRATION_FILE
+        if bmu_file.exists():
+            df = pd.read_csv(bmu_file)
+            return df
+        else:
+            print(f"⚠️  BMU registration file not found: {bmu_file}")
+            return None
+    except Exception as e:
+        print(f"⚠️  Error loading BMU data: {e}")
+        return None
+
+def get_station_name(bmu_id, bmu_df):
+    """Get friendly station name from BMU ID"""
+    if bmu_df is None:
+        return None
+    
+    # Try exact match on nationalGridBmUnit
+    match = bmu_df[bmu_df['nationalGridBmUnit'] == bmu_id]
+    
+    # Try elexonBmUnit if no match
+    if len(match) == 0:
+        match = bmu_df[bmu_df['elexonBmUnit'] == bmu_id]
+    
+    # Try partial match (remove prefix/suffix)
+    if len(match) == 0:
+        base_unit = bmu_id.replace('T_', '').replace('I_', '').replace('E_', '').split('-')[0]
+        match = bmu_df[bmu_df['nationalGridBmUnit'].str.contains(base_unit, case=False, na=False)]
+    
+    if len(match) > 0:
+        station_name = match.iloc[0]['bmUnitName']
+        
+        # Clean up station name
+        if 'Generator' in str(station_name):
+            station_name = station_name.split('Generator')[0].strip()
+        elif 'Unit' in str(station_name):
+            station_name = station_name.split('Unit')[0].strip()
+        
+        return station_name
+    
+    return None
 
 def get_unavailability_data():
     """Get current REMIT unavailability/outage data from BigQuery"""
@@ -67,10 +115,21 @@ def get_unavailability_data():
         
         print(f"✅ Found {len(df)} active outages")
         
+        # Load BMU registration data for station names
+        bmu_df = load_bmu_names()
+        
         outages = []
         for _, row in df.iterrows():
             bmu = row['bmu_id']
-            asset_name = row['assetName'] or bmu
+            
+            # Get station name from registration data
+            station_name = get_station_name(bmu, bmu_df)
+            
+            # Use station name if available, otherwise use assetName or BMU ID
+            if station_name:
+                asset_name = station_name
+            else:
+                asset_name = row['assetName'] or bmu
             installed = row['installed_capacity_mw'] or 0
             unavail = row['unavailable_capacity_mw'] or 0
             
@@ -128,12 +187,15 @@ def write_unavailability_to_sheet(outages):
     
     # Prepare data with header
     data = [
-        ['Asset Name', 'BMU Unit', 'Fuel Type', 'Normal (MW)', 'Unavail (MW)', '% Unavailable', 'Cause']
+        ['Station Name', 'BMU Unit', 'Fuel Type', 'Normal (MW)', 'Unavail (MW)', '% Unavailable', 'Cause']
     ]
     
     for outage in outages:
+        # Format display with station name and BMU ID
+        display_name = f"{outage['asset']} ({outage['bmu']})"
+        
         data.append([
-            outage['asset'],
+            display_name,
             outage['bmu'],
             outage['fuel'],
             f"{outage['installed']:.0f}",

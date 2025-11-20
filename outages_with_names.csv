@@ -1,0 +1,12 @@
+unit_id,station_name,fuel_type,capacity_mw,owner
+T_HEYM27,Heysham 2 Generator 7,NUCLEAR,660.0,EDF Energy Nuclear Generation
+T_TORN-2,Torness Generator 2,NUCLEAR,700.0,EDF Energy Nuclear Generation
+I_IED-FRAN1,IED-FRAN1,,,Nat Grid Interconnectors Ltd
+STAY-3,Staythorpe Unit 3,CCGT,464.0,RWE Generation UK plc
+T_HEYM11,Heysham 1 Generator 1,NUCLEAR,610.0,EDF Energy Nuclear Generation
+DINO-3,Dinorwig 3,PS,320.0,First Hydro Company
+DINO-4,Dinorwig 4,PS,320.0,First Hydro Company
+WDNSO-1,West of Duddon Sands Offshore1,WIND,197.0,Morecambe Wind Limited
+CRUA-3,T_CRUA-3,PS,101.0,Drax Pumped Storage Limited
+CRUA-4,T_CRUA-4,PS,104.0,Drax Pumped Storage Limited
+THURB-3,T_THURB-3,,100.0,THURROCK STORAGE LIMITED

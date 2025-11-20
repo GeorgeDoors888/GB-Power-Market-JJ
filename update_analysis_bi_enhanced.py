@@ -11,7 +11,7 @@ import gspread
 
 # Configuration
 SPREADSHEET_ID = '12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8'
-SHEET_NAME = 'Dashboard'  # Updated to use Dashboard sheet
+SHEET_NAME = 'Enhanced_BI_Analysis'  # Separate sheet for detailed analysis (NOT the main Dashboard)
 PROJECT_ID = 'inner-cinema-476211-u9'
 DATASET = 'uk_energy_prod'
 
@@ -83,20 +83,20 @@ try:
     gen_query = f"""
     WITH combined AS (
         SELECT 
-            publishTime as timestamp,
+            CAST(publishTime AS DATETIME) as timestamp,
             fuelType,
             generation,
             'historical' as source
         FROM `{PROJECT_ID}.{DATASET}.bmrs_fuelinst`
-        WHERE publishTime >= DATETIME_SUB(CURRENT_DATETIME(), INTERVAL {days} DAY)
+        WHERE CAST(publishTime AS DATETIME) >= DATETIME_SUB(CURRENT_DATETIME(), INTERVAL {days} DAY)
         UNION ALL
         SELECT 
-            publishTime as timestamp,
+            CAST(publishTime AS DATETIME) as timestamp,
             fuelType,
             generation,
             'real-time' as source
         FROM `{PROJECT_ID}.{DATASET}.bmrs_fuelinst_iris`
-        WHERE publishTime >= DATETIME_SUB(CURRENT_DATETIME(), INTERVAL 48 HOUR)
+        WHERE CAST(publishTime AS DATETIME) >= DATETIME_SUB(CURRENT_DATETIME(), INTERVAL 48 HOUR)
     )
     SELECT 
         fuelType,
@@ -168,18 +168,18 @@ try:
     freq_query = f"""
     WITH combined AS (
         SELECT 
-            measurementTime as timestamp,
+            CAST(measurementTime AS DATETIME) as timestamp,
             frequency,
             'historical' as source
         FROM `{PROJECT_ID}.{DATASET}.bmrs_freq`
-        WHERE measurementTime >= DATETIME_SUB(CURRENT_DATETIME(), INTERVAL {days} DAY)
+        WHERE CAST(measurementTime AS DATETIME) >= DATETIME_SUB(CURRENT_DATETIME(), INTERVAL {days} DAY)
         UNION ALL
         SELECT 
-            measurementTime as timestamp,
+            CAST(measurementTime AS DATETIME) as timestamp,
             frequency,
             'real-time' as source
         FROM `{PROJECT_ID}.{DATASET}.bmrs_freq_iris`
-        WHERE measurementTime >= DATETIME_SUB(CURRENT_DATETIME(), INTERVAL 48 HOUR)
+        WHERE CAST(measurementTime AS DATETIME) >= DATETIME_SUB(CURRENT_DATETIME(), INTERVAL 48 HOUR)
     )
     SELECT 
         timestamp,
@@ -239,16 +239,29 @@ print()
 print("3️⃣ Updating market prices...")
 try:
     price_query = f"""
-    SELECT 
-        settlementDate as date,
-        settlementPeriod as settlement_period,
-        ROUND(price, 2) as price,
-        ROUND(volume, 2) as volume,
-        dataProvider,
-        'mid' as source
-    FROM `{PROJECT_ID}.{DATASET}.bmrs_mid`
-    WHERE settlementDate >= DATE_SUB(CURRENT_DATE(), INTERVAL {days} DAY)
-    ORDER BY settlementDate DESC, settlementPeriod DESC
+    WITH combined AS (
+        SELECT 
+            settlementDate as date,
+            settlementPeriod as settlement_period,
+            ROUND(price, 2) as price,
+            ROUND(volume, 2) as volume,
+            dataProvider,
+            'historical' as source
+        FROM `{PROJECT_ID}.{DATASET}.bmrs_mid`
+        WHERE settlementDate >= DATE_SUB(CURRENT_DATE(), INTERVAL {days} DAY)
+        UNION ALL
+        SELECT 
+            settlementDate as date,
+            settlementPeriod as settlement_period,
+            ROUND(price, 2) as price,
+            ROUND(volume, 2) as volume,
+            dataProvider,
+            'real-time' as source
+        FROM `{PROJECT_ID}.{DATASET}.bmrs_mid_iris`
+        WHERE settlementDate >= DATE_SUB(CURRENT_DATE(), INTERVAL 2 DAY)
+    )
+    SELECT * FROM combined
+    ORDER BY date DESC, settlement_period DESC
     LIMIT 20
     """
     
@@ -299,7 +312,8 @@ try:
         ROUND(netSellPriceCostAdjustmentEnergy, 2) as sell_cost_energy,
         ROUND(netSellPriceVolumeAdjustmentEnergy, 2) as sell_volume_energy,
         ROUND(buyPricePriceAdjustment, 2) as buy_price_adj,
-        ROUND(sellPricePriceAdjustment, 2) as sell_price_adj
+        ROUND(sellPricePriceAdjustment, 2) as sell_price_adj,
+        'historical' as source
     FROM `{PROJECT_ID}.{DATASET}.bmrs_netbsad`
     WHERE settlementDate >= DATE_SUB(CURRENT_DATE(), INTERVAL {days} DAY)
     ORDER BY settlementDate DESC, settlementPeriod DESC

@@ -1,5 +1,5 @@
 {
-  "total_rows": 49,
+  "total_rows": 44,
   "sections": {
     "header_end": 6,
     "fuel_start": 7,
@@ -12,13 +12,17 @@
       "File: Dashboard"
     ],
     [
-      "\u23f0 Last Updated: 2025-11-10 14:02:10 | \u2705 FRESH"
+      "Last Updated",
+      "\u23f0 Last Updated: 2025-11-11 19:55:45 | \u2705 FRESH"
     ],
     [
-      "Data Freshness: \u2705 <10min | \u26a0\ufe0f 10-60min | \ud83d\udd34 >60min"
+      "Market Price",
+      "None",
+      "None",
+      "None"
     ],
     [
-      "\ud83d\udcca SYSTEM METRICS"
+      "View Data tab for details \u2192"
     ],
     [
       "Total Generation: 31.8 GW | Supply: 32.7 GW | Renewables: 52% | \ud83d\udcb0 Price: (pending data)"
@@ -34,84 +38,144 @@
       "\ud83d\udca8 WIND",
       "13.3 GW",
       "",
-      " ElecLink (France)",
+      "\ud83c\uddeb ElecLink (France)",
       "999 MW Import"
     ],
     [
       "\ud83d\udd25 CCGT",
       "11.0 GW",
       "",
-      " East-West (Ireland)",
+      "\ud83c\uddee East-West (Ireland)",
       "0 MW Balanced"
     ],
     [
       "\ud83c\udf31 BIOMASS",
       "3.3 GW",
       "",
-      " IFA (France)",
+      "\ud83c\uddeb IFA (France)",
       "1509 MW Import"
     ],
     [
       "\u269b\ufe0f NUCLEAR",
       "3.2 GW",
       "",
-      " Greenlink (Ireland)",
+      "\ud83c\uddee Greenlink (Ireland)",
       "513 MW Export"
     ],
     [
       "\ud83d\udca7 NPSHYD",
       "0.6 GW",
       "",
-      " IFA2 (France)",
+      "\ud83c\uddeb IFA (France)",
       "1 MW Export"
     ],
     [
       "\u26a1 OTHER",
       "0.4 GW",
       "",
-      " Moyle (N.Ireland)",
+      "Moyle (N.Ireland)",
       "201 MW Export"
     ],
     [
       "\ud83d\udd25 OCGT",
       "0.0 GW",
       "",
-      " BritNed (Netherlands)",
+      "\ud83c\uddf3 BritNed (Netherlands)",
       "833 MW Export"
     ],
     [
       "\ud83d\udee2\ufe0f OIL",
       "0.0 GW",
       "",
-      " Nemo (Belgium)",
+      "\ud83c\udde7 Nemo (Belgium)",
       "378 MW Export"
     ],
     [
       "\u26cf\ufe0f COAL",
       "0.0 GW",
       "",
-      " NSL (Norway)",
+      "\ud83c\uddf3 NSL (Norway)",
       "1397 MW Import"
     ],
     [
       "\ud83d\udd0b PS",
       "-0.0 GW",
       "",
-      " Viking Link (Denmark)",
+      "\ud83c\udde9 Viking Link (Denmark)",
       "1090 MW Export"
     ],
     [],
     [],
+    [
+      "OUTAGES"
+    ],
     [],
-    [],
-    [],
-    [],
-    [],
-    [],
-    [],
-    [],
-    [],
-    [],
-    []
+    [
+      "\u26a1 OUTAGES"
+    ],
+    [
+      "T_HEYM27",
+      "T_HEYM27",
+      "Nuclear",
+      "660",
+      "660",
+      "\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5 100.0%"
+    ],
+    [
+      "T_TORN-2",
+      "T_TORN-2",
+      "Nuclear",
+      "640",
+      "640",
+      "\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5 100.0%"
+    ],
+    [
+      "I_IED-FRAN1",
+      "I_IED-FRAN1",
+      "Unknown",
+      "2000",
+      "500",
+      "\ud83d\udfe5\ud83d\udfe5\u2b1c\u2b1c\u2b1c\u2b1c\u2b1c\u2b1c\u2b1c\u2b1c 25.0%"
+    ],
+    [
+      "STAY-3",
+      "STAY-3",
+      "Fossil Gas",
+      "457",
+      "420",
+      "\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\u2b1c 91.9%"
+    ],
+    [
+      "T_HEYM11",
+      "T_HEYM11",
+      "Nuclear",
+      "610",
+      "400",
+      "\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\u2b1c\u2b1c\u2b1c\u2b1c 65.6%"
+    ],
+    [
+      "DINO-3",
+      "DINO-3",
+      "Hydro Pumped Storage",
+      "300",
+      "300",
+      "\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5 100.0%"
+    ],
+    [
+      "T_SGRWO-1",
+      "T_SGRWO-1",
+      "Wind Offshore",
+      "300",
+      "300",
+      "\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5 100.0%"
+    ],
+    [
+      "DINO-3",
+      "DINO-3",
+      "Hydro Pumped Storage",
+      "300",
+      "300",
+      "\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5 100.0%"
+    ]
   ]
 }
