@@ -81,28 +81,81 @@ def load_bmu_data():
 
 def get_station_name(bmu_code: str, bmu_df: pd.DataFrame) -> str:
     """Convert BMU code to friendly station name with emoji"""
-    if bmu_df.empty:
-        return f"⚡ {bmu_code}"
     
-    # Try exact match
-    match = bmu_df[bmu_df['nationalGridBmUnit'] == bmu_code]
-    if match.empty:
-        match = bmu_df[bmu_df['elexonBmUnit'] == bmu_code]
-    
-    if not match.empty:
-        fuel_type = match.iloc[0]['fuelType']
-        station_name = match.iloc[0]['bmUnitName']
+    # Hardcoded mapping for common outages (fallback when CSV not available)
+    STATION_MAP = {
+        # Interconnectors
+        'I_IED-IFA2': ('🔌', 'IFA2 France (Import)'),
+        'I_IEG-IFA2': ('🔌', 'IFA2 France (Export)'),
+        'I_IED-FRAN1': ('🔌', 'IFA1 France (Import)'),
+        'I_IEG-FRAN1': ('🔌', 'IFA1 France (Export)'),
+        'I_NEMO-1': ('🔌', 'NEMO Belgium'),
+        'I_NSLK-1': ('🔌', 'NSL Norway'),
+        'I_EIRE-1': ('🔌', 'East-West Ireland'),
+        'I_MOYL-1': ('🔌', 'Moyle Ireland'),
         
-        emoji_map = {
-            'NUCLEAR': '⚛️',
-            'CCGT': '🔥',
-            'OCGT': '🔥',
-            'WIND': '💨',
-            'PS': '🔋',
-        }
-        emoji = emoji_map.get(fuel_type, '⚡')
-        return f"{emoji} {station_name}"
+        # Nuclear Plants
+        'T_HEYM27': ('⚛️', 'Heysham 2 Unit 7'),
+        'T_HEYM28': ('⚛️', 'Heysham 2 Unit 8'),
+        'T_HEYM12': ('⚛️', 'Heysham 1 Unit 2'),
+        'T_HEYM11': ('⚛️', 'Heysham 1 Unit 1'),
+        'T_HRTL-1': ('⚛️', 'Hartlepool Unit 1'),
+        'T_HRTL-2': ('⚛️', 'Hartlepool Unit 2'),
+        'T_TORN-1': ('⚛️', 'Torness Unit 1'),
+        'T_TORN-2': ('⚛️', 'Torness Unit 2'),
+        'T_SIZEWELL-B': ('⚛️', 'Sizewell B'),
+        'T_HINKE-3': ('⚛️', 'Hinkley Point B Unit 3'),
+        'T_HINKE-4': ('⚛️', 'Hinkley Point B Unit 4'),
+        
+        # Gas Plants (CCGT)
+        'DAMC-1': ('🔥', 'Damhead Creek'),
+        'DIDCB6': ('🔥', 'Didcot B Unit 6'),
+        'GRAI-6': ('🔥', 'Grain Unit 6'),
+        'PEMB-1': ('🔥', 'Pembroke'),
+        'DRAXX-1': ('🔥', 'Drax Unit 1'),
+        'WBURB-2': ('🔥', 'West Burton B Unit 2'),
+        'T_SUTB-1': ('🔥', 'Sutton Bridge Unit 1'),
+        'KILN-1': ('🔥', 'Killingholme'),
+        'STAY-1': ('🔥', 'Staythorpe'),
+        
+        # Coal (legacy)
+        'RATS-1': ('🪨', 'Ratcliffe'),
+        
+        # Wind
+        'WFOFF-1': ('💨', 'Offshore Wind'),
+        'WNON-1': ('💨', 'Onshore Wind'),
+        
+        # Storage/Batteries
+        'BESS-1': ('🔋', 'Battery Storage'),
+    }
     
+    # Check hardcoded map first
+    if bmu_code in STATION_MAP:
+        emoji, name = STATION_MAP[bmu_code]
+        return f"{emoji} {name}"
+    
+    # Try CSV data if available
+    if not bmu_df.empty:
+        # Try exact match
+        match = bmu_df[bmu_df['nationalGridBmUnit'] == bmu_code]
+        if match.empty:
+            match = bmu_df[bmu_df['elexonBmUnit'] == bmu_code]
+        
+        if not match.empty:
+            fuel_type = match.iloc[0]['fuelType']
+            station_name = match.iloc[0]['bmUnitName']
+            
+            emoji_map = {
+                'NUCLEAR': '⚛️',
+                'CCGT': '🔥',
+                'OCGT': '🔥',
+                'WIND': '💨',
+                'PS': '🔋',
+            }
+            emoji = emoji_map.get(fuel_type, '⚡')
+            return f"{emoji} {station_name}"
+    
+    # Fallback: just show the code
     return f"⚡ {bmu_code}"
 
 class CodeRequest(BaseModel):
