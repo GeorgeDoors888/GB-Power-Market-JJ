@@ -7,6 +7,13 @@ import time
 import logging
 from typing import Optional
 import secrets
+import pandas as pd
+from pathlib import Path
+from datetime import datetime, timezone
+from google.cloud import bigquery
+from google.oauth2 import service_account
+import json
+import base64
 
 # Configure logging
 logging.basicConfig(
@@ -24,6 +31,79 @@ app = FastAPI(
     description="Secure code execution server for Python and JavaScript",
     version="1.0.0"
 )
+
+# Initialize BigQuery client
+try:
+    creds_base64 = os.environ.get("GOOGLE_CREDENTIALS_BASE64")
+    if creds_base64:
+        logger.info("Loading BigQuery credentials from environment")
+        creds_json = base64.b64decode(creds_base64).decode('utf-8')
+        creds_dict = json.loads(creds_json)
+        credentials = service_account.Credentials.from_service_account_info(creds_dict)
+        bq_client = bigquery.Client(project="inner-cinema-476211-u9", credentials=credentials)
+        logger.info("✅ BigQuery client initialized")
+    else:
+        bq_client = bigquery.Client(project="inner-cinema-476211-u9")
+        logger.info("✅ BigQuery client initialized with default credentials")
+except Exception as e:
+    logger.error(f"❌ Failed to initialize BigQuery: {e}")
+    bq_client = None
+
+# BMU Data Loading for Outages
+BMU_REGISTRATION_FILE = 'bmu_registration_data.csv'
+bmu_data_cache = None
+
+def load_bmu_data():
+    """Load BMU registration data for station name lookups"""
+    global bmu_data_cache
+    if bmu_data_cache is None:
+        try:
+            # Try multiple paths (Railway vs local)
+            possible_paths = [
+                Path(__file__).parent.parent / BMU_REGISTRATION_FILE,  # One level up
+                Path(__file__).parent / BMU_REGISTRATION_FILE,  # Same directory
+                Path('/app') / BMU_REGISTRATION_FILE,  # Railway root
+            ]
+            
+            for bmu_file in possible_paths:
+                if bmu_file.exists():
+                    bmu_data_cache = pd.read_csv(bmu_file)
+                    logger.info(f"✅ Loaded {len(bmu_data_cache)} BMU registrations from {bmu_file}")
+                    break
+            
+            if bmu_data_cache is None:
+                logger.warning("⚠️ BMU data file not found")
+                bmu_data_cache = pd.DataFrame()
+        except Exception as e:
+            logger.error(f"❌ Failed to load BMU data: {e}")
+            bmu_data_cache = pd.DataFrame()
+    return bmu_data_cache
+
+def get_station_name(bmu_code: str, bmu_df: pd.DataFrame) -> str:
+    """Convert BMU code to friendly station name with emoji"""
+    if bmu_df.empty:
+        return f"⚡ {bmu_code}"
+    
+    # Try exact match
+    match = bmu_df[bmu_df['nationalGridBmUnit'] == bmu_code]
+    if match.empty:
+        match = bmu_df[bmu_df['elexonBmUnit'] == bmu_code]
+    
+    if not match.empty:
+        fuel_type = match.iloc[0]['fuelType']
+        station_name = match.iloc[0]['bmUnitName']
+        
+        emoji_map = {
+            'NUCLEAR': '⚛️',
+            'CCGT': '🔥',
+            'OCGT': '🔥',
+            'WIND': '💨',
+            'PS': '🔋',
+        }
+        emoji = emoji_map.get(fuel_type, '⚡')
+        return f"{emoji} {station_name}"
+    
+    return f"⚡ {bmu_code}"
 
 class CodeRequest(BaseModel):
     code: str
@@ -191,6 +271,70 @@ async def health_check():
         "languages": ["python", "javascript"],
         "timestamp": time.strftime("%Y-%m-%d %H:%M:%S")
     }
+
+@app.get("/outages/names")
+async def get_outages_with_names():
+    """
+    Get current REMIT outages with station names (no auth required for dashboard)
+    Returns: List of station names for Dashboard display
+    """
+    try:
+        bmu_df = load_bmu_data()
+        
+        if not bq_client:
+            raise HTTPException(status_code=503, detail="BigQuery client not available")
+        
+        query = """
+        WITH latest_revisions AS (
+            SELECT 
+                affectedUnit,
+                MAX(revisionNumber) as max_rev
+            FROM `inner-cinema-476211-u9.uk_energy_prod.bmrs_remit_unavailability`
+            WHERE DATE(eventStartTime) <= CURRENT_DATE()
+                AND (DATE(eventEndTime) >= CURRENT_DATE() OR eventEndTime IS NULL)
+            GROUP BY affectedUnit
+        )
+        SELECT 
+            u.affectedUnit as bmu_id,
+            u.unavailableCapacity as unavailable_mw,
+            u.fuelType,
+            u.eventStartTime
+        FROM `inner-cinema-476211-u9.uk_energy_prod.bmrs_remit_unavailability` u
+        INNER JOIN latest_revisions lr
+            ON u.affectedUnit = lr.affectedUnit
+            AND u.revisionNumber = lr.max_rev
+        WHERE DATE(u.eventStartTime) <= CURRENT_DATE()
+            AND (DATE(u.eventEndTime) >= CURRENT_DATE() OR u.eventEndTime IS NULL)
+        ORDER BY u.unavailableCapacity DESC
+        LIMIT 15
+        """
+        
+        df = bq_client.query(query).to_dataframe()
+        
+        # Enrich with station names
+        outages = []
+        for _, row in df.iterrows():
+            station_name = get_station_name(row['bmu_id'], bmu_df)
+            outages.append({
+                'station_name': station_name,
+                'bmu_id': row['bmu_id'],
+                'unavailable_mw': float(row['unavailable_mw']),
+                'fuel_type': row['fuelType']
+            })
+        
+        logger.info(f"✅ Fetched {len(outages)} outages with station names")
+        
+        return {
+            'status': 'success',
+            'timestamp': datetime.now(timezone.utc).isoformat(),
+            'count': len(outages),
+            'names': [o['station_name'] for o in outages],
+            'outages': outages
+        }
+    
+    except Exception as e:
+        logger.error(f"❌ Error fetching outages: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
 
 @app.post("/execute", response_model=CodeResponse)
 async def execute_code(
