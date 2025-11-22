@@ -1,0 +1,3 @@
+[submodule "overarch-jibber-jabber"]
+	path = overarch-jibber-jabber
+	url = git@github.com:GeorgeDoors888/overarch-jibber-jabber.git
