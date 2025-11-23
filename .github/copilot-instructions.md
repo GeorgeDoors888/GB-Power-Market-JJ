@@ -16,6 +16,26 @@ LOCATION = "US"                        # NOT europe-west2!
 
 **Common Trap**: Two GCP projects exist but `jibber-jabber-knowledge` lacks `bigquery.jobs.create` permission. Always use `inner-cinema-476211-u9`.
 
+### ⚠️ MPAN PARSING (Critical for DNO Lookup)
+```python
+# In dno_lookup_python.py - ALWAYS use these imports
+from mpan_generator_validator import extract_core_from_full_mpan, mpan_core_lookup
+MPAN_PARSER_AVAILABLE = True
+```
+
+**Common Trap**: Import from `mpan_parser` (doesn't exist) instead of `mpan_generator_validator`. This causes fallback to legacy parsing which extracts wrong distributor ID.
+
+**Correct Parsing Flow**:
+1. Full MPAN `00800999932 1405566778899` → Extract core `1405566778899`
+2. Core first 2 digits `14` → NGED West Midlands
+3. Query BigQuery for DNO details and rates
+4. Update Google Sheets with correct information
+
+**Test Command**:
+```bash
+python3 dno_lookup_python.py 14 HV  # Should return NGED West Midlands, Red: 1.764 p/kWh
+```
+
 ### Python Environment
 ```bash
 python3  # NOT `python` on macOS
@@ -288,6 +308,57 @@ WHERE settlementDate >= '2025-10-01'
 GROUP BY bmUnitId
 ```
 
+## DNO Lookup & DUoS Rates System
+
+### Architecture
+**Button Trigger → Webhook → Python → Google Sheets API**
+
+1. **Apps Script Button** (`bess_auto_trigger.gs`): `manualRefreshDno()` function
+2. **Webhook Server** (`dno_webhook_server.py`): Flask on port 5001, exposed via ngrok
+3. **Python Script** (`dno_lookup_python.py`): BigQuery + postcodes.io + gspread
+4. **Google Sheets**: BESS sheet with DNO info and DUoS rates
+
+### BESS Sheet Layout
+
+```
+Row 6:  A6=Postcode | B6=MPAN ID | C6-H6=DNO Details
+Row 9:  A9=Voltage  | B9=Red Rate | C9=Amber | D9=Green
+Row 10: "Weekday Times:" header
+Row 11: Red times   | Amber times | Green times
+Row 12: (continued) | (continued) | (continued)
+Row 13: (continued) | (continued) | Weekend note
+```
+
+### Example Output
+```
+UKPN-EPN (Eastern), HV voltage:
+- Red: 4.837 p/kWh (16:00-19:30 weekdays)
+- Amber: 0.457 p/kWh (08:00-16:00, 19:30-22:00 weekdays)
+- Green: 0.038 p/kWh (00:00-08:00, 22:00-23:59 weekdays + all weekend)
+```
+
+### Running Services
+```bash
+# Webhook server (background)
+python3 dno_webhook_server.py
+
+# ngrok tunnel
+ngrok http 5001
+# Update webhook URL in bess_auto_trigger.gs
+
+# Manual test
+python3 dno_lookup_python.py 10 HV  # MPAN ID, voltage
+```
+
+### Key Files
+- `dno_lookup_python.py` - Main lookup script (gspread + BigQuery)
+- `dno_webhook_server.py` - Flask webhook receiver
+- `bess_auto_trigger.gs` - Apps Script button handler
+- BigQuery tables:
+  - `uk_energy_prod.neso_dno_reference` - DNO details
+  - `gb_power.duos_unit_rates` - DUoS rates by DNO/voltage
+  - `gb_power.duos_time_bands` - Time periods for Red/Amber/Green
+
 ## Contact & Support
 
 **Repository**: https://github.com/GeorgeDoors888/GB-Power-Market-JJ  
@@ -296,5 +367,5 @@ GROUP BY bmUnitId
 
 ---
 
-*Last Updated: November 9, 2025*  
+*Last Updated: November 22, 2025*  
 *For updates to this guide, see: `CHANGELOG.md`*

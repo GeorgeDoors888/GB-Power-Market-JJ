@@ -66,3 +66,21 @@ arbitrage-bq-key.json
 .env.ai-gateway
 api-gateway-deploy.tar.gz
 deploy_package/
+
+# Large directories causing slowness
+iris_windows_deployment/
+overarch-jibber-jabber/
+logs/*.log
+*.html
+dno_api_exploration_*.json
+offshore_wind_farms_backup_*.csv
+
+# Output directories
+output/
+*.png
+*.csv
+duos_parsing_log.txt
+
+# Backup files
+*_backup_*.csv
+*_backup_*.json

@@ -1,7 +1,0 @@
-{
-  "ClientId": "5ac22e4f-fcfa-4be8-b513-a6dc767d6312",
-  "QueueName": "iris.047b7f5d-7cc1-4f3d-a454-fe188a9f42f3",
-  "ServiceBusNamespace": "elexon-insights-iris",
-  "Secret": "gCC8Q~fU.FWRjGiFWZ~Bsixd7xFAAEcv6NsaTdoV",
-  "RelativeFileDownloadDirectory": "./iris_data"
-}

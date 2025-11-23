@@ -1,2 +1,0 @@
-operator_type,n_batteries,total_capacity_mw,total_energy_capacity_mwh,total_net_revenue_gbp,avg_profit_per_cycle,avg_revenue_per_mw,avg_cycles_per_day,avg_utilization_pct,avg_spread_captured,avg_roi_pct,avg_payback_years,avg_rt_efficiency
-VLP,79,8711,17422.0,-108341113.72500002,-647.4720991034324,-8701.752467134549,33.82371471080207,1691.1857355401035,5.152470606898063,-2.175438116783637,-788.9795990902317,86.21986539744753

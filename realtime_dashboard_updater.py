@@ -38,7 +38,7 @@ SHEET_NAME = 'Dashboard'  # Main dashboard sheet
 PROJECT_ID = 'inner-cinema-476211-u9'
 DATASET = 'uk_energy_prod'
 TOKEN_FILE = Path(__file__).parent / 'token.pickle'
-SA_FILE = Path(__file__).parent / 'inner-cinema-credentials.json'  # Service account for BigQuery
+SA_FILE = Path(__file__).parent / 'inner-cinema-credentials.json'  # Service account for BigQuery and Sheets
 
 def update_dashboard():
     """Update the dashboard with latest data"""
@@ -47,35 +47,30 @@ def update_dashboard():
         logging.info("🔄 REAL-TIME DASHBOARD UPDATE STARTED")
         logging.info("=" * 80)
         
-        # Check token file exists
-        if not TOKEN_FILE.exists():
-            logging.error(f"❌ Token file not found: {TOKEN_FILE}")
-            logging.error("   Run: python3 update_analysis_bi_enhanced.py manually first")
+        # Check service account file exists
+        if not SA_FILE.exists():
+            logging.error(f"❌ Service account file not found: {SA_FILE}")
             return False
         
         # Initialize clients
         logging.info("🔧 Connecting to Google Sheets and BigQuery...")
         
-        # Google Sheets (uses OAuth token)
-        with open(TOKEN_FILE, 'rb') as f:
-            creds = pickle.load(f)
-        
-        gc = gspread.authorize(creds)
+        # Google Sheets (use service account)
+        SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
+        sheets_creds = service_account.Credentials.from_service_account_file(
+            str(SA_FILE),
+            scopes=SCOPES
+        )
+        gc = gspread.authorize(sheets_creds)
         spreadsheet = gc.open_by_key(SPREADSHEET_ID)
         sheet = spreadsheet.worksheet(SHEET_NAME)
         
         # BigQuery (uses service account)
-        if SA_FILE.exists():
-            bq_credentials = service_account.Credentials.from_service_account_file(
-                str(SA_FILE),
-                scopes=["https://www.googleapis.com/auth/bigquery"]
-            )
-            bq_client = bigquery.Client(project=PROJECT_ID, credentials=bq_credentials)
-        else:
-            # Fallback: try default credentials
-            logging.warning(f"⚠️  Service account not found: {SA_FILE}")
-            logging.warning("   Trying default credentials...")
-            bq_client = bigquery.Client(project=PROJECT_ID)
+        bq_credentials = service_account.Credentials.from_service_account_file(
+            str(SA_FILE),
+            scopes=["https://www.googleapis.com/auth/bigquery"]
+        )
+        bq_client = bigquery.Client(project=PROJECT_ID, credentials=bq_credentials)
         
         logging.info("✅ Connected successfully")
         

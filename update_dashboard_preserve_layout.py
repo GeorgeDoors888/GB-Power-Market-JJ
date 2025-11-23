@@ -254,10 +254,10 @@ all_data = header_data + data_section
 # ====================
 print(f"\n💾 Step 6: Writing to Dashboard (rows 1-{len(all_data)})...")
 
-# Clear old fuel data
+# Clear old fuel data AND orphaned headers (full width to column K)
 sheets.values().clear(
     spreadsheetId=SHEET_ID,
-    range='Dashboard!A1:F30'
+    range='Dashboard!A1:K30'
 ).execute()
 
 # Write new data using RAW_INPUT to preserve flags
@@ -266,6 +266,30 @@ sheets.values().update(
     range='Dashboard!A1',
     valueInputOption='RAW',  # Use RAW instead of USER_ENTERED to preserve emojis
     body={'values': all_data}
+).execute()
+
+# Add outage section header at row 30
+outage_header = [
+    [''],  # Row 18 - blank
+    [''],  # Row 19 - blank  
+    [''],  # Row 20 - blank
+    [''],  # Row 21 - blank
+    [''],  # Row 22 - blank
+    [''],  # Row 23 - blank
+    [''],  # Row 24 - blank
+    [''],  # Row 25 - blank
+    [''],  # Row 26 - blank
+    [''],  # Row 27 - blank
+    [''],  # Row 28 - blank
+    [''],  # Row 29 - blank
+    ['Asset Name', 'BM Unit', 'Fuel Type', 'Normal (MW)', 'Unavail (MW)', 'Capacity Offline', 'Cause', 'Start Time']  # Row 30
+]
+
+sheets.values().update(
+    spreadsheetId=SHEET_ID,
+    range='Dashboard!A18',
+    valueInputOption='RAW',
+    body={'values': outage_header}
 ).execute()
 
 print("\n" + "=" * 100)

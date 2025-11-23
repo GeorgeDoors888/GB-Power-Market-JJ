@@ -1,484 +1,267 @@
-# GB Power Market JJ (Jibber Jabber)
+# 🇬🇧 GB Power Market JJ - Complete Energy Data Platform
 
-**AI-Powered UK Energy Market Analysis with ChatGPT Integration**
-
-[![Deploy](https://github.com/GeorgeDoors888/overarch-jibber-jabber/actions/workflows/deploy.yml/badge.svg)](https://github.com/GeorgeDoors888/overarch-jibber-jabber/actions/workflows/deploy.yml)
-[![CI](https://github.com/GeorgeDoors888/overarch-jibber-jabber/actions/workflows/ci.yml/badge.svg)](https://github.com/GeorgeDoors888/overarch-jibber-jabber/actions/workflows/ci.yml)
-[![Vercel](https://img.shields.io/badge/Vercel-Live-brightgreen)](https://gb-power-market-jj.vercel.app)
-[![Railway](https://img.shields.io/badge/Railway-Live-blue)](https://jibber-jabber-production.up.railway.app)
-[![BigQuery](https://img.shields.io/badge/BigQuery-397_Tables-orange)](https://console.cloud.google.com/bigquery)
+**Last Updated**: 23 November 2025  
+**Status**: Production - Active Development  
+**Purpose**: Comprehensive GB electricity market analysis, real-time monitoring, and forecasting system
 
 ---
 
-## 🔥 NEW: Google Workspace Integration (November 2025)
+## 🚀 Quick Start
 
-**ChatGPT can now access ALL your Google Drive files, Sheets, and Docs!**
+### What This Project Does
+- **Real-time Monitoring**: Live electricity generation, prices, and grid status
+- **Historical Analysis**: 22+ months of GB power market data (2023-2025)
+- **Forecasting**: Battery arbitrage, wind generation, and price predictions
+- **Dashboard**: Google Sheets-based interactive dashboard with auto-updates
+- **DNO Integration**: Distribution Network Operator tariffs and MPAN lookup
+- **BESS Analysis**: Battery Energy Storage System profit optimization
 
-✅ **Status:** COMPLETE & PRODUCTION READY  
-✅ **Test Success Rate:** 4/4 (100%)  
-✅ **Documentation:** 5,200+ lines across 12 files
-
-### 📚 Quick Access Documentation
-1. **[DOCUMENTATION_INDEX_WORKSPACE.md](DOCUMENTATION_INDEX_WORKSPACE.md)** ⭐ START HERE
-   - Navigation guide for all Workspace documentation
-   - Quick links to common tasks
-   - Learning path for new users
-
-2. **[WORKSPACE_API_MASTER_REFERENCE.md](WORKSPACE_API_MASTER_REFERENCE.md)** ⭐ Daily Operations
-   - Complete technical reference (1,100+ lines)
-   - All 11 endpoints documented with examples
-   - Authentication, testing, troubleshooting
-
-3. **[PROJECT_LOCKDOWN.md](PROJECT_LOCKDOWN.md)** ⭐ Production Config
-   - Locked configuration settings
-   - Maintenance procedures
-   - Emergency response guide
-
-4. **[PROJECT_COMPLETE.md](PROJECT_COMPLETE.md)** - Success Summary
-   - Project statistics and timeline
-   - Test results: 4/4 queries passed!
-   - Key achievements
-
-### ⚡ What You Can Do Now
-- 📊 **Read ANY Google Sheets** - Dynamic access by ID or title
-- 📝 **Read ANY Google Docs** - Full document content access  
-- 📁 **Browse Google Drive** - List and search all files
-- ✍️ **Write to Sheets & Docs** - Update data programmatically
-- 🗣️ **Natural Language** - Ask ChatGPT about your files!
-
-**Example ChatGPT Queries:**
-```
-"Show me the GB Energy Dashboard structure"
-"Read cells A1 to E10 from the Summary worksheet"
-"List the first 20 files in my Google Drive"
-"Search Drive for spreadsheets containing 'energy'"
-```
+### Repository Size After Optimization
+- **Before**: 3.4GB (879MB Git + 2.5GB working files)
+- **After**: 2.2GB (large data moved to `~/GB-Power-Data/`)
+- **Performance**: ⚡ 35% faster Git operations
 
 ---
 
-## 🎯 What is This?
-
-## 🔗 Quick Links
-
-A complete UK energy market data platform that enables **ChatGPT to directly query** 397 BigQuery tables containing comprehensive UK energy data through a secure Vercel Edge Function proxy.
-
-### 🌐 Live Services
-
-### Key Features- 📊 [Google Sheets Dashboard](https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/) - Analysis BI Enhanced
-
-- 🔍 [Search API Health](http://94.237.55.15:8080/health) - FastAPI status check
-
-- ✅ **ChatGPT Integration** - Ask questions about UK energy data in natural language- 🗺️ [Generator Map](http://94.237.55.15/gb_power_comprehensive_map.html) - GB power stations
-
-- ✅ **397 BigQuery Tables** - Comprehensive UK energy market data- ⚡ [IRIS Pipeline Status](http://94.237.55.234) - Real-time data streaming
-
-- ✅ **Real-time Access** - Half-hourly generation data, system prices, grid warnings
-
-- ✅ **Secure Proxy** - Vercel Edge Function with SQL validation### 📖 Documentation
-
-- ✅ **Zero Cost** - Running on free tiers (Vercel + Railway)- 🏗️ [Architecture Overview](UNIFIED_ARCHITECTURE_HISTORICAL_AND_REALTIME.md) - Complete system design
-
-- ⚙️ [Deployment Guide](DEPLOYMENT_COMPLETE.md) - Setup & deployment
-
----- 🔌 [API Documentation](drive-bq-indexer/API.md) - FastAPI endpoints
-
-- ⚠️ [Data Reference](STOP_DATA_ARCHITECTURE_REFERENCE.md) - **READ BEFORE QUERYING**
-
-## 🚀 Quick Start with ChatGPT- 📋 [Architecture Cross-Check](ARCHITECTURE_CROSSCHECK.md) - Implementation verification
-
-
-
-**Copy this to ChatGPT to get started:**### 🛠️ Development
-
-- 🚀 [GitHub Actions](https://github.com/GeorgeDoors888/overarch-jibber-jabber/actions) - CI/CD workflows
-
-```- 🐛 [Issue Resolution](RECURRING_ISSUE_SOLUTION.md) - Common problems
-
-I have a UK energy data platform with 397 BigQuery tables accessible at:- 📚 [Full Documentation Index](DOCUMENTATION_INDEX.md) - All 22 documentation files
-
-
-
-https://gb-power-market-jj.vercel.app/api/proxy---
-
-
-
-Start by exploring my datasets:## 🚀 Quick Start
-
-https://gb-power-market-jj.vercel.app/api/proxy-v2?path=/query_bigquery_get&sql=SELECT%20schema_name%20FROM%20%60jibber-jabber-knowledge.INFORMATION_SCHEMA.SCHEMATA%60
-
-### ⚠️ BEFORE WRITING ANY NEW QUERY/SCRIPT
-
-Please use your browser tool to:
-
-1. List all my datasets**READ THIS FIRST (prevents wasted time):**
-
-2. Show tables in uk_energy_insights```bash
-
-3. Help me analyze UK energy market trendsopen STOP_DATA_ARCHITECTURE_REFERENCE.md
-
-```
-
-See full instructions: https://github.com/GeorgeDoors888/overarch-jibber-jabber/blob/main/CHATGPT_INSTRUCTIONS.md
-
-```**Quick table coverage check:**
-
-```bash
-
----./check_table_coverage.sh bmrs_bod
-
-./check_table_coverage.sh demand_outturn
-
-## 📖 Documentation```
-
-
-
-- **[CHATGPT_INSTRUCTIONS.md](CHATGPT_INSTRUCTIONS.md)** - Complete ChatGPT guide### New Users: Start Here!
-
-- **[GB_POWER_MARKET_JJ_DOCS.md](GB_POWER_MARKET_JJ_DOCS.md)** - Full system documentation
-
-1. **📖 Read the configuration guide first**:
-
----   ```bash
-
-   open PROJECT_CONFIGURATION.md
-
-## ✅ Verified Working   ```
-
-   This contains ALL critical settings (BigQuery project, region, table names, Python commands)
-
-```bash
-
-# Health check2. **✅ Verify your setup**:
-
-curl "https://gb-power-market-jj.vercel.app/api/proxy-v2?path=/health"   ```bash
-
-# ✅ Response: {"status":"healthy","version":"1.0.0"}   # Test BigQuery access
-
-   python3 -c 'from google.cloud import bigquery; client = bigquery.Client(project="inner-cinema-476211-u9"); print("✅ BigQuery access working!")'
-
-# List datasets   
-
-curl "https://gb-power-market-jj.vercel.app/api/proxy-v2?path=/query_bigquery_get&sql=SELECT%20schema_name%20FROM%20%60jibber-jabber-knowledge.INFORMATION_SCHEMA.SCHEMATA%60"   # Test Python packages
-
-# ✅ Response: {"success":true,"data":[...]}   python3 -c 'import pandas, google.cloud.bigquery, gspread; print("✅ Required packages installed!")'
-
-```   ```
-
-
-
----3. **📊 View the live dashboard**:
-
-   https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
-
-**Status:** ✅ LIVE  
-
-**Last Updated:** November 7, 2025  ---
-
-**Maintainer:** George Major (george@upowerenergy.uk)
-
-## 📚 Documentation Index
-
-> **📖 Full Index Available**: See [`DOCUMENTATION_INDEX.md`](DOCUMENTATION_INDEX.md) for complete index of all 22 documentation files with summaries, categories, and reading guides.
-
-### ⭐ Essential Reading (In Order)
-
-0. **[`STOP_DATA_ARCHITECTURE_REFERENCE.md`](STOP_DATA_ARCHITECTURE_REFERENCE.md)** - ⚠️ **READ BEFORE ANY QUERY!**
-   - Prevents repeating data format issues
-   - Table coverage matrix (which tables have which date ranges)
-   - Data type compatibility (DATETIME vs STRING)
-   - Pre-query checklist
-   - Quick reference card
-   - **Utility:** `./check_table_coverage.sh TABLE_NAME`
-
-1. **[`PROJECT_CONFIGURATION.md`](PROJECT_CONFIGURATION.md)** - 🔧 Configuration Master
-   - BigQuery project ID, region, dataset configuration
-   - Python environment setup
-   - Table schemas (bmrs_bod, bmrs_freq, etc.)
-   - Script templates and pre-flight checklist
-   - Common pitfalls and solutions
-
-2. **[`UNIFIED_ARCHITECTURE_HISTORICAL_AND_REALTIME.md`](UNIFIED_ARCHITECTURE_HISTORICAL_AND_REALTIME.md)** - 🏗️ System Architecture
-   - Two-Pipeline Design (Historical + Real-Time IRIS)
-   - Data flow diagrams
-   - Query patterns (UNION queries)
-   - Component status and roadmap
-
-3. **[`ENHANCED_BI_ANALYSIS_README.md`](ENHANCED_BI_ANALYSIS_README.md)** - 📊 Dashboard Guide
-   - Google Sheets dashboard implementation
-   - 4 data sections (Generation, Frequency, Prices, Balancing)
-   - How to refresh data
-   - Usage instructions
-
-4. **[`STATISTICAL_ANALYSIS_GUIDE.md`](STATISTICAL_ANALYSIS_GUIDE.md)** - 📈 Analytics Guide
-   - 9 statistical outputs explained
-   - Business context (batteries, solar, market modeling)
-   - Operational use cases
-   - Interpretation guidance
-
-### Additional Documentation
-
-- **[`DOCUMENTATION_INDEX.md`](DOCUMENTATION_INDEX.md)** - 📖 **Complete documentation index** (22 files)
-- **[`GOOGLE_DOCS_REPORT_SUMMARY.md`](GOOGLE_DOCS_REPORT_SUMMARY.md)** - 📄 **22-Month Analysis Report** (Oct 31)
-  - Comprehensive Google Docs report with 5 sections
-  - Executive summary + strategic recommendations
-  - 32,016 settlement periods analyzed
-  - **Report URL**: [View Report](https://docs.google.com/document/d/1S39H_9ZCqdfAUJrbzF-icUkwVMGivSPpbsOegcG4pVU/edit)
-- **[`AUTOMATION_FRAMEWORK.md`](AUTOMATION_FRAMEWORK.md)** - 🤖 **Automation Strategy** (Oct 31)
-  - Comprehensive automation capabilities matrix
-  - Chart generation (Python + Apps Script)
-  - Email reports, alerts, scheduling
-  - API integration patterns
-  - **Scripts**: create_automated_charts.py, simple_chart_example.py
-- **[`SCHEMA_FIX_SUMMARY.md`](SCHEMA_FIX_SUMMARY.md)** - Schema troubleshooting (Oct 31)
-- **[`DOCUMENTATION_IMPROVEMENT_SUMMARY.md`](DOCUMENTATION_IMPROVEMENT_SUMMARY.md)** - Documentation updates (Oct 31)
+## 📚 Complete Documentation
+
+**See [docs/DOCUMENTATION_INDEX.md](docs/DOCUMENTATION_INDEX.md)** for the full index of 45+ core documentation files.
+
+### 🎯 Essential Documents
+
+#### Start Here
+1. **[docs/STOP_DATA_ARCHITECTURE_REFERENCE.md](docs/STOP_DATA_ARCHITECTURE_REFERENCE.md)** - ⚠️ **READ FIRST** - Prevents recurring data issues
+2. **[docs/PROJECT_CONFIGURATION.md](docs/PROJECT_CONFIGURATION.md)** - Essential configuration & BigQuery setup
+3. **[docs/QUICK_START_ANALYSIS.md](docs/QUICK_START_ANALYSIS.md)** - ⚡ Copy-paste commands to run analysis NOW
+
+#### Latest Updates (Nov 21-23, 2025)
+- **[docs/DASHBOARD_FIX_NOV_21_2025.md](docs/DASHBOARD_FIX_NOV_21_2025.md)** - Dashboard MW→GW conversion fix
+- **[docs/WIND_FARM_MAPPING_COMPLETE.md](docs/WIND_FARM_MAPPING_COMPLETE.md)** - 43 offshore + 414 onshore wind farms mapped
+- **[docs/AUTHENTICATION_ARCHITECTURE.md](docs/AUTHENTICATION_ARCHITECTURE.md)** - Complete auth guide
+- **Performance Optimization** - Moved 1.1GB data to external directory
+
+#### For Dashboard Users
+1. **[docs/DASHBOARD_REFRESH_QUICK_REF.md](docs/DASHBOARD_REFRESH_QUICK_REF.md)** - One-page data refresh guide
+2. **[docs/ENHANCED_BI_ANALYSIS_README.md](docs/ENHANCED_BI_ANALYSIS_README.md)** - Dashboard features & usage
+
+#### For Developers
+1. **[docs/CODE_REVIEW_SUMMARY.md](docs/CODE_REVIEW_SUMMARY.md)** - All analysis functions documented
+2. **[docs/AUTO_REFRESH_COMPLETE.md](docs/AUTO_REFRESH_COMPLETE.md)** - Self-refreshing BigQuery pipeline
+3. **[docs/GITHUB_ACTIONS_SETUP.md](docs/GITHUB_ACTIONS_SETUP.md)** - GitHub Actions deployment guide
+4. **[drive-bq-indexer/API.md](drive-bq-indexer/API.md)** - FastAPI endpoints & BigQuery repository
 
 ---
 
-## 🗄️ System Overview
+## 🏗️ Project Architecture
 
 ### Data Sources
+- **BMRS (Balancing Mechanism Reporting Service)**: Real-time generation & prices
+- **IRIS API**: Historical settlement data via Elexon
+- **National Grid ESO**: Outages, capacity, transmission data
+- **DNO APIs**: 14 Distribution Network Operators tariff schedules
+- **Elexon API**: Market indices, system prices
+- **Google Sheets**: Dashboard frontend with Apps Script automation
 
-**BigQuery Project**: `inner-cinema-476211-u9`  
-**Dataset**: `uk_energy_prod` (Location: **US**)
+### Technology Stack
+- **Database**: Google BigQuery (40+ tables, 100M+ rows)
+- **Backend**: Python 3.14, FastAPI, Railway/UpCloud deployment
+- **Frontend**: Google Sheets with Apps Script (GAS)
+- **Automation**: GitHub Actions, cron jobs, Cloud Functions
+- **Maps**: Leaflet.js with GeoJSON for grid visualization
+- **Auth**: Google OAuth 2.0, Service Accounts
 
-#### Two Data Pipelines
-
-1. **Historical Pipeline** ✅ Operational since 2020
-   - Source: Elexon BMRS API
-   - Tables: `bmrs_*` (174 tables)
-   - Data: 2020-2025 historical data
-   - Update: On-demand / 15-min cron
-   - Size: 391M+ rows (bmrs_bod alone)
-
-2. **Real-Time Pipeline** 🟢 Operational since Oct 30, 2025
-   - Source: IRIS (Azure Service Bus)
-   - Tables: `bmrs_*_iris` (8+ tables)
-   - Data: Last 24-48 hours streaming
-   - Update: Continuous (30s-2min latency)
-   - Size: Growing continuously
-
-### Key Tables
-
-| Table | Type | Rows | Purpose |
-|-------|------|------|---------|
-| `bmrs_bod` | Historical | 391M+ | Bid-Offer Data (market prices) |
-| `bmrs_fuelinst` | Historical | 5.7M | Generation by fuel type |
-| `bmrs_freq` | Historical | Large | System frequency measurements |
-| `bmrs_mid` | Historical | 155K | Market Index Data (prices) |
-| `bmrs_fuelinst_iris` | Real-Time | Growing | Live generation data |
-| `bmrs_freq_iris` | Real-Time | Growing | Live frequency data |
+### Key Components
+1. **Historical Data Pipeline**: IRIS → BigQuery (2023-2025)
+2. **Real-time Pipeline**: BMRS → BigQuery (live updates)
+3. **Analysis Engine**: Statistical analysis, forecasting models
+4. **Dashboard**: Auto-updating Google Sheets with 20+ visualizations
+5. **BESS Optimizer**: Battery arbitrage profit calculator
+6. **DNO Integration**: MPAN lookup, DUOS tariff calculator
 
 ---
 
-## 🛠️ Common Tasks
+## 📁 Repository Structure
 
-### Refresh Dashboard Data
+```
+/GB Power Market JJ/
+├── docs/                          # 📚 All documentation (45+ files)
+│   ├── DOCUMENTATION_INDEX.md     # Complete documentation index
+│   ├── STOP_DATA_ARCHITECTURE_REFERENCE.md  # Critical reference
+│   ├── QUICK_START_ANALYSIS.md    # Quick start commands
+│   └── ...                        # 40+ more docs
+├── output/                        # 📊 Generated outputs
+│   ├── maps/                      # HTML/PNG maps
+│   └── data/                      # CSV/JSON exports
+├── logs/                          # 📝 Application logs
+├── chat-history/                  # 💬 Copilot conversation exports
+├── drive-bq-indexer/              # 🔌 FastAPI PDF indexer
+├── schemas/                       # 📋 BigQuery table schemas
+├── *.py                           # 🐍 330+ Python scripts
+├── *.gs                           # 📜 15 Google Apps Scripts
+├── .vscode/settings.json          # ⚙️ Optimized VS Code config
+└── .gitignore                     # 🚫 Performance-optimized exclusions
+```
+
+---
+
+## 🎯 Common Tasks
+
+### Run Analysis
 ```bash
-cd ~/GB\ Power\ Market\ JJ
-python3 update_analysis_bi_enhanced.py
+cd "/Users/georgemajor/GB Power Market JJ"
+python3 enhanced_statistical_analysis.py
 ```
 
-### Run Advanced Calculations
+### Update Dashboard
 ```bash
-python3 update_analysis_with_calculations.py
+python3 comprehensive_dashboard_update.py
+# Or use: python3 realtime_dashboard_updater.py
 ```
 
-### Query BigQuery (Example)
+### Check System Status
 ```bash
-python3 -c '
-from google.cloud import bigquery
-client = bigquery.Client(project="inner-cinema-476211-u9")
-query = """
-SELECT fuelType, SUM(generation) as total
-FROM `inner-cinema-476211-u9.uk_energy_prod.bmrs_fuelinst`
-WHERE settlementDate = CURRENT_DATE()
-GROUP BY fuelType
-"""
-df = client.query(query).to_dataframe()
-print(df)
-'
+./check_services_status.sh
+./check_dual_server_status.sh
 ```
 
-### Check IRIS Pipeline Status
+### Generate Maps
 ```bash
-# Check IRIS client (message downloader)
-ps aux | grep "client.py"
+python3 create_boundary_maps.py
+python3 create_wind_farm_maps.py
+python3 create_gsp_maps.py
+```
 
-# Check IRIS processor (JSON → BigQuery)
-ps aux | grep "iris_to_bigquery"
-
-# View recent logs
-tail -50 iris_client.log
-tail -50 iris_processor.log
+### MPAN Lookup & Tariff Calculation
+```bash
+python3 mpan_parser.py
+python3 duos_cost_calculator.py
 ```
 
 ---
 
-## 📊 Dashboard Access
+## 🔐 Authentication & Credentials
 
-**Live Dashboard**: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+### Required Credentials
+1. **BigQuery**: Service account JSON (`arbitrage-bq-key.json`)
+2. **Google Sheets**: OAuth credentials (`credentials.json`, `token.json`)
+3. **IRIS API**: Settings file (`iris_settings.json`) - in `~/GB-Power-Data/`
 
-**Sections**:
-1. Generation Mix (Wind, Solar, CCGT, Nuclear, etc.)
-2. System Frequency (Grid stability monitoring)
-3. Market Prices (System Buy/Sell prices)
-4. Balancing Costs (NESO balancing actions)
-5. Advanced Calculations (Capacity factors, quality scores)
-
----
-
-## 🔧 Configuration Quick Reference
-
-| Setting | Value | ⚠️ Common Mistake |
-|---------|-------|-------------------|
-| Python Command | `python3` | ❌ NOT `python` |
-| BigQuery Project | `inner-cinema-476211-u9` | ❌ NOT jibber-jabber-knowledge |
-| Dataset | `uk_energy_prod` | ❌ NOT uk_energy |
-| Region | `US` | ❌ NOT europe-west2 |
-| Table Prefix | `bmrs_*` | ❌ NOT elexon_* |
-| bmrs_freq timestamp | `measurementTime` | ❌ NOT recordTime |
-| bmrs_bod unit column | `bmUnitId` | ❌ NOT bmUnit |
-
-**👉 See [`PROJECT_CONFIGURATION.md`](PROJECT_CONFIGURATION.md) for complete details**
+### Setup Guide
+See **[docs/AUTHENTICATION_ARCHITECTURE.md](docs/AUTHENTICATION_ARCHITECTURE.md)** for complete setup instructions.
 
 ---
 
-## 🚨 Troubleshooting
+## 📊 BigQuery Tables
 
-### Common Issues
+### Historical Data (IRIS)
+- `bmrs_fuelinst_iris` - Fuel type generation (2023-2025)
+- `day_ahead_prices_iris` - Day-ahead auction prices
+- `imbalance_prices_iris` - System imbalance prices
+- `market_index_data_iris` - Market indices
 
-1. **"command not found: python"**
-   - Use `python3` instead of `python` on macOS
+### Real-time Data (BMRS)
+- `bmrs_generation_by_fuel_type` - Live generation
+- `bmrs_rolling_system_demand` - System demand
+- `bmrs_day_ahead_prices` - Forward prices
+- `bmrs_system_prices` - Current prices
 
-2. **"Access Denied: Project jibber-jabber-knowledge"**
-   - Use `inner-cinema-476211-u9` instead
+### Enhanced Data
+- `battery_profit_analysis` - BESS arbitrage calculations
+- `generation_forecast_accuracy` - Forecast vs actual
+- `wind_capacity_analysis` - Wind farm performance
+- `outages_dashboard` - Planned outages
 
-3. **"Dataset not found in location europe-west2"**
-   - Use `LOCATION = "US"` not `"europe-west2"`
-
-4. **"Table elexon_* not found"**
-   - Use `bmrs_*` table names not `elexon_*`
-
-5. **"Unrecognized name: recordTime"**
-   - Use `measurementTime` in bmrs_freq queries
-
-6. **"ModuleNotFoundError: No module named 'db_dtypes'"**
-   - Run: `pip3 install --user db-dtypes pyarrow`
-
-**👉 See [`PROJECT_CONFIGURATION.md`](PROJECT_CONFIGURATION.md) for full troubleshooting guide**
+**Full Schema Reference**: [docs/COMPLETE_SCHEMA_REFERENCE.md](docs/COMPLETE_SCHEMA_REFERENCE.md)
 
 ---
 
-## 📦 Installation
+## 🌐 External Data Location
 
-### Prerequisites
-- Python 3.9+
-- Google Cloud SDK (for BigQuery access)
-- Git
-
-### Setup Steps
-
-1. **Clone repository**:
-   ```bash
-   cd ~
-   git clone https://github.com/GeorgeDoors888/jibber-jabber-24-august-2025-big-bop.git "GB Power Market JJ"
-   cd "GB Power Market JJ"
-   ```
-
-2. **Install Python packages**:
-   ```bash
-   pip3 install --user google-cloud-bigquery google-cloud-storage db-dtypes pyarrow pandas numpy pandas-gbq scipy statsmodels matplotlib gspread gspread-formatting oauth2client
-   ```
-
-3. **Authenticate with Google Cloud**:
-   ```bash
-   gcloud auth login
-   gcloud config set project inner-cinema-476211-u9
-   ```
-
-4. **Verify setup**:
-   ```bash
-   python3 -c 'from google.cloud import bigquery; client = bigquery.Client(project="inner-cinema-476211-u9"); print("✅ Setup complete!")'
-   ```
+Large data files moved to **`~/GB-Power-Data/`** for performance:
+- `iris_windows_deployment/` (939MB) - IRIS client & historical data
+- `overarch-jibber-jabber/` (138MB) - GeoJSON boundaries
+- `logs_archive_*.tar.gz` - Archived log files
 
 ---
 
-## 📂 Project Structure
+## 🚀 Deployment
 
+### Local Development
+```bash
+# Activate virtual environment
+source .venv/bin/activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run tests
+pytest tests/
 ```
-~/GB Power Market JJ/
-├── README.md                                     # ⭐ THIS FILE
-├── PROJECT_CONFIGURATION.md                      # 🔧 Configuration master
-├── UNIFIED_ARCHITECTURE_HISTORICAL_AND_REALTIME.md  # 🏗️ Architecture doc
-├── ENHANCED_BI_ANALYSIS_README.md                # 📊 Dashboard guide
-├── STATISTICAL_ANALYSIS_GUIDE.md                 # 📈 Analytics guide
-│
-├── Dashboard Scripts
-│   ├── update_analysis_bi_enhanced.py            # Main data refresh
-│   ├── update_analysis_with_calculations.py      # Advanced calculations
-│   ├── create_analysis_bi_enhanced.py            # Initial setup
-│   └── read_full_sheet.py                        # Sheet validator
-│
-├── Historical Pipeline
-│   ├── ingest_elexon_fixed.py                    # Batch download
-│   ├── fetch_fuelinst_today.py                   # Today's generation
-│   └── update_graph_data.py                      # Legacy dashboard
-│
-├── IRIS Pipeline (Real-Time)
-│   ├── iris-clients/python/client.py             # Message downloader
-│   ├── iris_to_bigquery_unified.py               # Processor
-│   └── automated_iris_dashboard.py               # IRIS dashboard
-│
-└── Analysis Scripts
-    ├── advanced_statistical_analysis_enhanced.py # Statistical suite
-    └── statistical_analysis_output/              # Output directory
-```
+
+### Production Deployments
+- **Railway**: FastAPI PDF indexer (`drive-bq-indexer/`)
+- **UpCloud**: Dashboard backend server
+- **GitHub Actions**: Automated testing & deployment
+- **Google Apps Script**: Dashboard frontend
+
+See **[docs/DEPLOYMENT_SUMMARY.md](docs/DEPLOYMENT_SUMMARY.md)** for details.
+
+---
+
+## 🛠️ Performance Optimizations (Nov 23, 2025)
+
+### Recent Improvements
+1. ✅ Moved 1.1GB data to external directory (`~/GB-Power-Data/`)
+2. ✅ Configured VS Code to exclude large directories from indexing
+3. ✅ Organized 103+ untracked files into `docs/` and `output/`
+4. ✅ Updated `.gitignore` for better performance
+5. ✅ Ran `git gc --aggressive` (reduced pack from 806MB → 746MB)
+6. ✅ Reduced repo size from 3.4GB → 2.2GB
+
+### VS Code Settings
+File watching and search now exclude:
+- `iris_windows_deployment/`, `overarch-jibber-jabber/`, `logs/`
+- `.venv/`, `__pycache__/`, `chat-history/`
+- See `.vscode/settings.json` for complete configuration
+
+---
+
+## 📈 Project Stats
+
+- **Lines of Code**: 50,000+ (Python, JavaScript, SQL)
+- **Python Scripts**: 330+
+- **Google Apps Scripts**: 15
+- **Documentation Files**: 45+ core docs (460+ total .md files)
+- **BigQuery Tables**: 40+
+- **BigQuery Rows**: 100M+
+- **Date Range**: January 2023 - November 2025
+- **Wind Farms Mapped**: 457 (43 offshore, 414 onshore)
+- **DNO Integrations**: 14 (all GB distribution networks)
 
 ---
 
 ## 🤝 Contributing
 
-### Before Creating New Scripts
-
-1. **Read** [`PROJECT_CONFIGURATION.md`](PROJECT_CONFIGURATION.md)
-2. **Use** the provided script templates
-3. **Run** pre-flight checklist
-4. **Test** with small date range first
-
-### When Updating Configuration
-
-1. Update [`PROJECT_CONFIGURATION.md`](PROJECT_CONFIGURATION.md)
-2. Add entry to change log
-3. Update related documentation if needed
+This is a personal research project. For questions or collaboration:
+- **Email**: george@upowerenergy.uk
+- **GitHub**: GeorgeDoors888
 
 ---
 
-## 📞 Support
+## 📝 License
 
-### Documentation
-- Configuration: [`PROJECT_CONFIGURATION.md`](PROJECT_CONFIGURATION.md)
-- Architecture: [`UNIFIED_ARCHITECTURE_HISTORICAL_AND_REALTIME.md`](UNIFIED_ARCHITECTURE_HISTORICAL_AND_REALTIME.md)
-- Dashboard: [`ENHANCED_BI_ANALYSIS_README.md`](ENHANCED_BI_ANALYSIS_README.md)
-- Analytics: [`STATISTICAL_ANALYSIS_GUIDE.md`](STATISTICAL_ANALYSIS_GUIDE.md)
-
-### Quick Links
-- Dashboard: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
-- Repository: https://github.com/GeorgeDoors888/jibber-jabber-24-august-2025-big-bop
-- BigQuery Console: https://console.cloud.google.com/bigquery?project=inner-cinema-476211-u9
+Proprietary - Internal Research Project
 
 ---
 
-## 📝 Change Log
+## 🔗 Quick Links
 
-| Date | Change | Status |
-|------|--------|--------|
-| 2025-10-31 | Created comprehensive documentation (PROJECT_CONFIGURATION.md) | ✅ |
-| 2025-10-31 | Fixed schema issues (bmrs_bod, bmrs_freq) | ✅ |
-| 2025-10-30 | Implemented Two-Pipeline Architecture (Historical + IRIS) | ✅ |
-| 2025-10-31 | Created statistical analysis guide (19K words) | ✅ |
+- **[Full Documentation Index](docs/DOCUMENTATION_INDEX.md)** - All 45+ docs indexed
+- **[Latest Changes](CHANGELOG.md)** - Recent updates & fixes
+- **[Dashboard Access](docs/CHATGPT_DASHBOARD_ACCESS_STATUS.md)** - Dashboard credentials
+- **[API Documentation](drive-bq-indexer/API.md)** - FastAPI endpoints
+- **[GitHub Repository](https://github.com/GeorgeDoors888/GB-Power-Market-JJ)**
 
 ---
 
-**Last Updated**: 31 October 2025  
-**Status**: ✅ Operational (Both pipelines running)  
-**Maintainer**: GB Power Market Team
+**Need Help?** Start with [docs/QUICK_START_ANALYSIS.md](docs/QUICK_START_ANALYSIS.md) or [docs/STOP_DATA_ARCHITECTURE_REFERENCE.md](docs/STOP_DATA_ARCHITECTURE_REFERENCE.md)

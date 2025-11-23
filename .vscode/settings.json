@@ -5,5 +5,28 @@
   "files.autoSaveDelay": 1000,
   "workbench.localHistory.enabled": true,
   "workbench.localHistory.maxFileSize": 10485760,
-  "workbench.localHistory.maxFileEntries": 100
+  "workbench.localHistory.maxFileEntries": 100,
+  "files.watcherExclude": {
+    "**/iris_windows_deployment/**": true,
+    "**/overarch-jibber-jabber/**": true,
+    "**/logs/**": true,
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/**": true,
+    "**/.venv/**": true,
+    "**/__pycache__/**": true,
+    "**/chat-history/**": true
+  },
+  "search.exclude": {
+    "**/iris_windows_deployment/**": true,
+    "**/overarch-jibber-jabber/**": true,
+    "**/logs/**": true,
+    "**/.venv/**": true,
+    "**/__pycache__/**": true,
+    "**/chat-history/**": true
+  },
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/.DS_Store": true
+  }
 }

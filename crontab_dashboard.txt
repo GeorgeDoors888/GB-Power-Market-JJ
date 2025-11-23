@@ -1,5 +1,0 @@
-# Crontab for GB Power Market JJ Dashboard Auto-Refresh
-# Last updated: 2025-11-09
-
-# Dashboard auto-refresh: Every 5 minutes
-*/5 * * * * cd '/Users/georgemajor/GB Power Market JJ' && /usr/local/bin/python3 realtime_dashboard_updater.py >> logs/dashboard_updater.log 2>&1
