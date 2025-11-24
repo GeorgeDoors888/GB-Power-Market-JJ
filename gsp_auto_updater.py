@@ -2,18 +2,17 @@
 """
 GSP Auto-Updater with Formatting Lock
 =====================================
-Updates GSP data every 30 minutes while preserving Dashboard formatting.
+⚠️ DISABLED - User requested GSP data removal from Dashboard
+GSP data still available in Map_Data_GSP and GSP sheets
 
-Features:
-- Locks down current Dashboard design (colors, widths, fonts)
-- Fetches latest GSP demand/generation data
-- Updates both Generation and Demand tables
-- Preserves all formatting during updates
-- Auto-refresh compatible
-
-Update Frequency: GSP data updates every ~30 minutes in BigQuery
-Recommended: Run every 10 minutes (catches updates quickly)
+This script is DISABLED to prevent GSP data from appearing on Dashboard.
+All GSP functionality has been moved to separate sheets.
 """
+
+import sys
+print("⚠️  GSP Auto-Updater is DISABLED per user request.")
+print("   GSP data removed from Dashboard - available in Map_Data_GSP sheet only")
+sys.exit(0)
 
 import gspread
 from google.oauth2.service_account import Credentials
