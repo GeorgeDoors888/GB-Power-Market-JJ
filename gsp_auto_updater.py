@@ -281,35 +281,38 @@ def update_gsp_data():
     
     print(f"\n✍️ Updating Dashboard...")
     
-    # Update Generation table (left side, columns A-D)
-    if generation_rows:
-        gen_header = [['', 'GSP', 'Region', 'Export (MW)']]
-        dashboard.update(range_name='A57:D57', values=gen_header)
-        dashboard.update(range_name=f'A58:D{57+len(generation_rows)}', values=generation_rows)
-        print(f"   ✅ Generation table: {len(generation_rows)} exporters")
-    else:
-        # No exporters - show message
-        dashboard.update(range_name='A58', values=[['No exporters at this time']])
-        print(f"   ℹ️ No exporters currently")
+    # DISABLED: Dashboard GSP tables - user requested removal
+    # Generation table and Demand table updates commented out
+    # Data still available in Map_Data_GSP sheet
     
-    # Update Demand table (right side, columns H-K)
-    if demand_rows:
-        dem_header = [['', 'GSP', 'Region', 'Import (MW)']]
-        dashboard.update(range_name='H57:K57', values=dem_header)
-        dashboard.update(range_name=f'H58:K{57+len(demand_rows)}', values=demand_rows)
-        print(f"   ✅ Demand table: {len(demand_rows)} importers/balanced")
+    # if generation_rows:
+    #     gen_header = [['', 'GSP', 'Region', 'Export (MW)']]
+    #     dashboard.update(range_name='A57:D57', values=gen_header)
+    #     dashboard.update(range_name=f'A58:D{57+len(generation_rows)}', values=generation_rows)
+    #     print(f"   ✅ Generation table: {len(generation_rows)} exporters")
+    # else:
+    #     dashboard.update(range_name='A58', values=[['No exporters at this time']])
+    #     print(f"   ℹ️ No exporters currently")
     
-    # Clear any old data below
-    max_rows = max(len(generation_rows), len(demand_rows))
-    if max_rows < 20:  # Clear up to 20 rows
-        clear_range = f'A{58+max_rows}:L77'
-        dashboard.batch_clear([clear_range])
+    # if demand_rows:
+    #     dem_header = [['', 'GSP', 'Region', 'Import (MW)']]
+    #     dashboard.update(range_name='H57:K57', values=dem_header)
+    #     dashboard.update(range_name=f'H58:K{57+len(demand_rows)}', values=demand_rows)
+    #     print(f"   ✅ Demand table: {len(demand_rows)} importers/balanced")
     
-    # Update Dashboard timestamp (row 2)
-    now = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    dashboard.update(range_name='A2', values=[[f'⏰ Last Updated: {now} | ✅ Auto-refresh enabled']])
+    # max_rows = max(len(generation_rows), len(demand_rows))
+    # if max_rows < 20:
+    #     clear_range = f'A{58+max_rows}:L77'
+    #     dashboard.batch_clear([clear_range])
     
-    print(f"\n✅ UPDATE COMPLETE")
+    print(f"   ℹ️  Dashboard GSP tables disabled (data in Map_Data_GSP sheet)")
+
+    
+    # Skip Dashboard timestamp update (Dashboard managed separately)
+    # now = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    # dashboard.update(range_name='A2', values=[[f'⏰ Last Updated: {now} | ✅ Auto-refresh enabled']])
+    
+    print(f"\n✅ UPDATE COMPLETE (Dashboard GSP table updates disabled)")
     print(f"   🔗 https://docs.google.com/spreadsheets/d/{DASHBOARD_SHEET_ID}")
     print("="*80)
     

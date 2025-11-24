@@ -43,7 +43,7 @@ if env_file.exists():
                 os.environ[key] = value
 
 # Configuration
-UPCLOUD_HOST = os.environ.get("UPCLOUD_HOST", "94.237.55.15")
+UPCLOUD_HOST = os.environ.get("UPCLOUD_HOST", "94.237.55.234")
 UPCLOUD_USER = os.environ.get("UPCLOUD_USER", "root")
 UPCLOUD_KEY_PATH = os.path.expanduser(os.environ.get("UPCLOUD_SSH_KEY_PATH", "~/.ssh/id_rsa"))
 BQ_PROJECT = os.environ.get("BQ_PROJECT_ID", "inner-cinema-476211-u9")
@@ -1174,6 +1174,64 @@ async def read_sheet_data(
         }
     except Exception as e:
         logger.error(f"Read sheet error: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.post("/api/refresh-dashboard")
+@limiter.limit(f"{RATE_LIMIT_MIN}/minute")
+async def refresh_dashboard_endpoint(
+    request: Request,
+    authorization: Optional[str] = Header(None)
+):
+    """Refresh dashboard by triggering Python script on UpCloud server"""
+    log_action("DASHBOARD_REFRESH", {"trigger": "apps_script"})
+    
+    try:
+        # Run the dashboard refresh script on UpCloud
+        ssh = paramiko.SSHClient()
+        ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+        
+        # Connect to UpCloud server
+        ssh.connect(
+            hostname=UPCLOUD_HOST,
+            username=UPCLOUD_USER,
+            key_filename=UPCLOUD_KEY_PATH,
+            timeout=10
+        )
+        
+        # Execute the enhanced chart update script
+        command = 'cd "/root/GB Power Market JJ" && python3 fix_dashboard_complete.py'
+        stdin, stdout, stderr = ssh.exec_command(command, timeout=120)
+        
+        output = stdout.read().decode()
+        error = stderr.read().decode()
+        exit_code = stdout.channel.recv_exit_status()
+        
+        ssh.close()
+        
+        if exit_code == 0:
+            # Parse output to extract stats
+            periods = 0
+            fuel_types = 0
+            
+            if "Retrieved" in output:
+                import re
+                match = re.search(r'Retrieved (\d+) settlement periods, (\d+) fuel types', output)
+                if match:
+                    periods = int(match.group(1))
+                    fuel_types = int(match.group(2))
+            
+            return {
+                "success": True,
+                "periods": periods,
+                "fuelTypes": fuel_types,
+                "message": "Dashboard refreshed successfully"
+            }
+        else:
+            logger.error(f"Dashboard refresh failed: {error}")
+            raise HTTPException(status_code=500, detail=f"Refresh script failed: {error}")
+            
+    except Exception as e:
+        logger.error(f"Dashboard refresh error: {e}")
         raise HTTPException(status_code=500, detail=str(e))
 
 # ============================================

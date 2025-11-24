@@ -1,0 +1,382 @@
+================================================================================
+📊 READING DASHBOARD CURRENT DESIGN
+================================================================================
+
+📋 DASHBOARD LAYOUT & FORMATTING
+
+�� Total rows with data: 43
+📊 Total charts: 0
+
+================================================================================
+DETAILED LAYOUT
+================================================================================
+
+📍 Row 1:
+  A: "File: Dashboard"
+      BG: #f3f3f3, Text: #000000, Align: CENTER [BOLD, 18pt]
+
+📍 Row 2:
+  A: "⏰ Last Updated: 2025-11-23 23:20:28 | ✅ Auto-refre"
+      BG: #d8eaf6, Text: #000000, Align: LEFT [BOLD]
+  B: "⏰ Last Updated: 2025-11-23 23:20:24 | ✅ FRESH"
+      BG: #d8eaf6, Text: #000000, Align: LEFT [BOLD]
+
+📍 Row 3:
+  A: "Data Freshness: ✅ <10min | ⚠️ 10-60min | 🔴 >60min"
+      BG: #111111, Text: #ffffff, Align: LEFT [BOLD]
+
+📍 Row 4:
+  A: "📊 SYSTEM METRICS"
+      BG: #e43835, Text: #000000, Align: LEFT [16pt]
+
+📍 Row 5:
+  A: "Total Generation: 23.1 GW | Supply: 24.0 GW | Rene"
+      BG: #111111, Text: #ffffff, Align: LEFT
+
+📍 Row 7:
+  A: "🔥 Fuel Breakdown"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  D: "🌍 Interconnectors"
+      BG: #111111, Text: #ffffff, Align: LEFT
+
+📍 Row 8:
+  A: "💨 WIND"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  B: "13.4 GW"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  D: "🇫 ElecLink (France)"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  E: "999 MW Import"
+      BG: #111111, Text: #ffffff, Align: LEFT
+
+📍 Row 9:
+  A: "⚛️ NUCLEAR"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  B: "4.1 GW"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  D: "🇮 East-West (Ireland)"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  E: "0 MW Balanced"
+      BG: #111111, Text: #ffffff, Align: LEFT
+
+📍 Row 10:
+  A: "🌱 BIOMASS"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  B: "3.3 GW"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  D: "🇫 IFA (France)"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  E: "1509 MW Import"
+      BG: #111111, Text: #ffffff, Align: LEFT
+
+📍 Row 11:
+  A: "🔥 CCGT"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  B: "2.3 GW"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  D: "🇮 Greenlink (Ireland)"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  E: "513 MW Export"
+      BG: #111111, Text: #ffffff, Align: LEFT
+
+📍 Row 12:
+  A: "💧 NPSHYD"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  B: "0.4 GW"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  D: "🇫 IFA2 (France)"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  E: "1 MW Export"
+      BG: #111111, Text: #ffffff, Align: LEFT
+
+📍 Row 13:
+  A: "⚡ OTHER"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  B: "0.3 GW"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  D: "🇮 Moyle (N.Ireland)"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  E: "201 MW Export"
+      BG: #111111, Text: #ffffff, Align: LEFT
+
+📍 Row 14:
+  A: "🔥 OCGT"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  B: "0.0 GW"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  D: "🇳 BritNed (Netherlands)"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  E: "833 MW Export"
+      BG: #111111, Text: #ffffff, Align: LEFT
+
+📍 Row 15:
+  A: "🛢️ OIL"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  B: "0.0 GW"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  D: "🇧 Nemo (Belgium)"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  E: "378 MW Export"
+      BG: #111111, Text: #ffffff, Align: LEFT
+
+📍 Row 16:
+  A: "⛏️ COAL"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  B: "0.0 GW"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  D: "🇳 NSL (Norway)"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  E: "1397 MW Import"
+      BG: #111111, Text: #ffffff, Align: LEFT
+
+📍 Row 17:
+  A: "🔋 PS"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  B: "-0.7 GW"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  D: "🇩 Viking Link (Denmark)"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  E: "1090 MW Export"
+      BG: #111111, Text: #ffffff, Align: LEFT
+
+📍 Row 28:
+  A: "LIVE OUTAGES "
+      BG: #111111, Text: #ff0000, Align: LEFT [BOLD, 21pt]
+
+📍 Row 30:
+  A: "Asset Name"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  B: "BM Unit"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  C: "Fuel Type"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  D: "Normal (MW)"
+      BG: #111111, Text: #ffffff, Align: RIGHT
+  E: "Unavail (MW)"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  F: "Capacity Offline"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  G: "Cause"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  H: "Start Time"
+      BG: #111111, Text: #ffffff, Align: LEFT
+
+📍 Row 31:
+  A: "🔥 Little Barford"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  B: "LBAR-1"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  C: "CCGT"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  D: "735"
+      BG: #111111, Text: #ffffff, Align: RIGHT
+  E: "730"
+      BG: #111111, Text: #ffffff, Align: RIGHT
+  F: "🟥🟥🟥🟥🟥🟥🟥🟥🟥⬜ 99.3%"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  G: "Turbine / Generator"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  H: "2025-11-20 22:29:01"
+      BG: #111111, Text: #ffffff, Align: RIGHT
+
+📍 Row 32:
+  A: "🔥 Didcot B Unit 6"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  B: "DIDCB6"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  C: "CCGT"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  D: "710"
+      BG: #111111, Text: #ffffff, Align: RIGHT
+  E: "666"
+      BG: #111111, Text: #ffffff, Align: RIGHT
+  F: "🟥🟥🟥🟥🟥🟥🟥🟥🟥⬜ 93.8%"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  G: "Turbine / Generator"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  H: "2025-11-11 16:00:00"
+      BG: #111111, Text: #ffffff, Align: RIGHT
+
+📍 Row 33:
+  A: "⚛️ Heysham 2 Unit 7"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  B: "T_HEYM27"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  C: "NUCLEAR"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  D: "660"
+      BG: #111111, Text: #ffffff, Align: RIGHT
+  E: "660"
+      BG: #111111, Text: #ffffff, Align: RIGHT
+  F: "🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥 100.0%"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  G: "OPR"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  H: "2025-08-07 07:30:00"
+      BG: #111111, Text: #ffffff, Align: RIGHT
+
+📍 Row 34:
+  A: "🌱 Drax Unit 4"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  B: "DRAXX-4"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  C: "BIOMASS"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  D: "645"
+      BG: #111111, Text: #ffffff, Align: RIGHT
+  E: "645"
+      BG: #111111, Text: #ffffff, Align: RIGHT
+  F: "🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥 100.0%"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  G: "Planned outage"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  H: "2025-11-23 19:44:00"
+      BG: #111111, Text: #ffffff, Align: RIGHT
+
+📍 Row 35:
+  A: "⚛️ Hartlepool Unit 2"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  B: "T_HRTL-2"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  C: "NUCLEAR"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  D: "620"
+      BG: #111111, Text: #ffffff, Align: RIGHT
+  E: "620"
+      BG: #111111, Text: #ffffff, Align: RIGHT
+  F: "🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥 100.0%"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  G: "Maintenance"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  H: "2025-06-03 21:30:00"
+      BG: #111111, Text: #ffffff, Align: RIGHT
+
+📍 Row 36:
+  A: "⚛️ Hartlepool Unit 1"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  B: "T_HRTL-1"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  C: "NUCLEAR"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  D: "620"
+      BG: #111111, Text: #ffffff, Align: RIGHT
+  E: "620"
+      BG: #111111, Text: #ffffff, Align: RIGHT
+  F: "🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥 100.0%"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  G: "Statutory"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  H: "2025-04-27 20:00:00"
+      BG: #111111, Text: #ffffff, Align: RIGHT
+
+📍 Row 37:
+  A: "⚛️ Heysham 1 Unit 2"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  B: "T_HEYM12"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  C: "NUCLEAR"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  D: "585"
+      BG: #111111, Text: #ffffff, Align: RIGHT
+  E: "585"
+      BG: #111111, Text: #ffffff, Align: RIGHT
+  F: "🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥 100.0%"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  G: "Operational"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  H: "2025-08-20 23:00:00"
+      BG: #111111, Text: #ffffff, Align: RIGHT
+
+📍 Row 38:
+  A: "🔌 IFA France (ElecLink)"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  B: "I_IED-FRAN1"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  C: "Interconnector"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  D: "2000"
+      BG: #111111, Text: #ffffff, Align: RIGHT
+  E: "500"
+      BG: #111111, Text: #ffffff, Align: RIGHT
+  F: "🟥🟥⬜⬜⬜⬜⬜⬜⬜⬜ 25.0%"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  G: "DC Cable Fault"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  H: "2025-10-13 06:48:00"
+      BG: #111111, Text: #ffffff, Align: RIGHT
+
+📍 Row 39:
+  A: "🔥 West Burton B Unit 3"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  B: "WBURB-3"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  C: "CCGT"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  D: "435"
+      BG: #111111, Text: #ffffff, Align: RIGHT
+  E: "435"
+      BG: #111111, Text: #ffffff, Align: RIGHT
+  F: "🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥 100.0%"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  G: "Unplanned"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  H: "2025-11-23 13:30:00"
+      BG: #111111, Text: #ffffff, Align: RIGHT
+
+📍 Row 40:
+  A: "🔥 Sutton Bridge"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  B: "T_SUTB-1"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  C: "CCGT"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  D: "832"
+      BG: #111111, Text: #ffffff, Align: RIGHT
+  E: "432"
+      BG: #111111, Text: #ffffff, Align: RIGHT
+  F: "🟥🟥🟥🟥🟥⬜⬜⬜⬜⬜ 51.9%"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  G: "Generator"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  H: "2025-10-21 07:00:00"
+      BG: #111111, Text: #ffffff, Align: RIGHT
+
+📍 Row 41:
+  A: "⚛️ Heysham 1 Unit 1"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  B: "T_HEYM11"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  C: "NUCLEAR"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  D: "610"
+      BG: #111111, Text: #ffffff, Align: RIGHT
+  E: "400"
+      BG: #111111, Text: #ffffff, Align: RIGHT
+  F: "🟥🟥🟥🟥🟥🟥⬜⬜⬜⬜ 65.6%"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  G: "OPR"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  H: "2025-10-16 23:00:00"
+      BG: #111111, Text: #ffffff, Align: RIGHT
+
+📍 Row 42:
+  A: "⚡ Gwynt y Môr"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  B: "GYAR-1"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  C: "WIND OFFSHORE"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  D: "420"
+      BG: #111111, Text: #ffffff, Align: RIGHT
+  E: "335"
+      BG: #111111, Text: #ffffff, Align: RIGHT
+  F: "🟥🟥🟥🟥🟥🟥🟥⬜⬜⬜ 79.8%"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  G: "Turbine / Generator"
+      BG: #111111, Text: #ffffff, Align: LEFT
+  H: "2025-11-22 23:11:00"
+      BG: #111111, Text: #ffffff, Align: RIGHT
+
+================================================================================
+✅ Design exported to dashboard_current_design.json
+================================================================================

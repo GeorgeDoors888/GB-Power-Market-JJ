@@ -259,8 +259,10 @@ def improve_dashboard_layout():
     dashboard.batch_clear(['A60:L80'])
     
     # Re-add GSP Demand table properly at row 57 (column H)
-    dashboard.update('H57', [['🔌 DEMAND (Importing GSPs)']], value_input_option='RAW')
-    dashboard.update('H58', [['GSP', 'Name', 'Import', 'Wind', 'Status']], value_input_option='RAW')
+    # DISABLED: GSP tables removed from Dashboard per user request
+    # dashboard.update('H57', [['🔌 DEMAND (Importing GSPs)']], value_input_option='RAW')
+    # dashboard.update('H58', [['GSP', 'Name', 'Import', 'Wind', 'Status']], value_input_option='RAW')
+    print("   ℹ️  GSP tables disabled (available in Map_Data_GSP sheet)")
     
     print("   ✅ GSP section cleaned")
     

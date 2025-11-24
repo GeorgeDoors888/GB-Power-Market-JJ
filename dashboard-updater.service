@@ -1,0 +1,16 @@
+[Unit]
+Description=GB Energy Dashboard Auto-Updater
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/dashboard
+ExecStart=/usr/bin/python3 /opt/dashboard/fix_dashboard_complete.py
+Restart=on-failure
+RestartSec=300
+StandardOutput=append:/var/log/dashboard-updater.log
+StandardError=append:/var/log/dashboard-updater-error.log
+
+[Install]
+WantedBy=multi-user.target

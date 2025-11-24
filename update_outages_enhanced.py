@@ -323,10 +323,12 @@ def query_outages_enhanced(bq_client):
     WITH all_outages AS (
         SELECT 
             assetName,
+            assetId,
             affectedUnit,
             fuelType,
             normalCapacity,
             unavailableCapacity,
+            revisionNumber,
             ROUND(unavailableCapacity / NULLIF(normalCapacity, 0) * 100, 1) as pct_unavailable,
             cause,
             publishTime,
@@ -341,13 +343,14 @@ def query_outages_enhanced(bq_client):
     latest_per_unit AS (
         SELECT 
             affectedUnit,
-            MAX(publishTime) as latest_publish
+            MAX(revisionNumber) as max_revision
         FROM all_outages
         GROUP BY affectedUnit
     ),
     with_latest AS (
         SELECT 
             o.affectedUnit,
+            o.assetId,
             o.assetName,
             o.fuelType,
             o.normalCapacity,
@@ -355,48 +358,43 @@ def query_outages_enhanced(bq_client):
             o.pct_unavailable,
             o.cause,
             o.publishTime,
-            o.eventStartTime
+            o.eventStartTime,
+            o.revisionNumber
         FROM all_outages o
         INNER JOIN latest_per_unit lpu 
             ON o.affectedUnit = lpu.affectedUnit 
-            AND o.publishTime = lpu.latest_publish
+            AND o.revisionNumber = lpu.max_revision
     ),
-    deduplicated AS (
+    with_names AS (
         SELECT 
-            -- For interconnectors, use base name without I_IED/I_IEG prefix to group pairs
-            CASE 
-                WHEN affectedUnit LIKE 'I_IE%' THEN 
-                    REGEXP_REPLACE(affectedUnit, r'^I_IE[DG]-', '')
-                ELSE affectedUnit
-            END as groupKey,
-            ANY_VALUE(affectedUnit) as affectedUnit,
-            ANY_VALUE(assetName) as assetName,
-            ANY_VALUE(fuelType) as fuelType,
-            MAX(normalCapacity) as normalCapacity,
-            MAX(unavailableCapacity) as unavailableCapacity,
-            MAX(pct_unavailable) as pct_unavailable,
-            ANY_VALUE(cause) as cause,
-            MAX(publishTime) as publishTime,
-            ANY_VALUE(eventStartTime) as eventStartTime
-        FROM with_latest
-        GROUP BY groupKey
+            wl.*,
+            bmu.bmunitname as bmu_name,
+            bmu.fueltype as bmu_fuel,
+            bmu.generationcapacity as bmu_capacity
+        FROM with_latest wl
+        LEFT JOIN `{PROJECT_ID}.{DATASET}.bmu_registration_data` bmu
+            ON wl.affectedUnit = bmu.nationalgridbmunit
+            OR wl.affectedUnit = bmu.elexonbmunit
+            OR wl.assetId = bmu.nationalgridbmunit
+            OR wl.assetId = bmu.elexonbmunit
     )
     SELECT 
         affectedUnit,
-        assetName,
-        fuelType,
-        normalCapacity,
+        COALESCE(bmu_name, assetName, assetId, affectedUnit) as displayName,
+        COALESCE(bmu_fuel, fuelType, 'Unknown') as fuelType,
+        COALESCE(bmu_capacity, normalCapacity, 0) as normalCapacity,
         unavailableCapacity,
         pct_unavailable,
         cause,
         publishTime,
-        eventStartTime
-    FROM deduplicated
+        eventStartTime,
+        revisionNumber
+    FROM with_names
     ORDER BY unavailableCapacity DESC
     """
     
     df = bq_client.query(query).to_dataframe()
-    print(f"✅ Retrieved {len(df)} unique outages (latest publishTime per unit)")
+    print(f"✅ Retrieved {len(df)} unique outages (using MAX(revisionNumber) for deduplication)")
     
     if len(df) > 0:
         total_unavail = df['unavailableCapacity'].sum()
@@ -460,13 +458,17 @@ def update_outages_section(dashboard, outages_df):
     for _, row in outages_df.iterrows():
         unit = str(row['affectedUnit']) if row['affectedUnit'] else ''
         
+        # Use the displayName from query (already has proper station name from BMU lookup)
+        display_name = str(row['displayName']) if row['displayName'] else unit
+        fuel = str(row['fuelType']) if row['fuelType'] else 'Unknown'
+        
         # Classify interconnectors (check unit code patterns)
         is_interconnector = (
             unit.startswith('I_IE') or 
             unit.startswith('I-') or
             'IFA' in unit.upper() or
             '_IFA' in unit.upper() or
-            ('INTER' in str(row['assetName']).upper() if row['assetName'] else False)
+            'INTER' in display_name.upper()
         )
         
         if is_interconnector:
@@ -496,20 +498,12 @@ def update_outages_section(dashboard, outages_df):
             elif 'VIKING' in unit_upper or 'DENM' in unit_upper:
                 display_name = '🔌 Viking (Denmark)'
             else:
-                asset_name = str(row['assetName'])[:25] if row['assetName'] else 'Interconnector'
-                display_name = f"🔌 {asset_name}"
+                display_name = f"🔌 {display_name}"
         else:
-            # Look up known generators
-            if unit in GENERATOR_NAMES:
-                asset_name = GENERATOR_NAMES[unit]
-                fuel = FUEL_TYPE_MAP.get(unit, row['fuelType'] if row['fuelType'] else 'UNKNOWN')
-            else:
-                asset_name = str(row['assetName'])[:25] if row['assetName'] else 'Unknown'
-                fuel = str(row['fuelType']) if row['fuelType'] else 'UNKNOWN'
-            
-            fuel = fuel.upper()
-            emoji = UNIT_EMOJIS.get(fuel, '⚡')
-            display_name = f"{emoji} {asset_name}"
+            # Add emoji based on fuel type
+            fuel_upper = fuel.upper()
+            emoji = UNIT_EMOJIS.get(fuel_upper, '⚡')
+            display_name = f"{emoji} {display_name}"
         
         normal_mw = int(row['normalCapacity']) if row['normalCapacity'] else 0
         unavail_mw = int(row['unavailableCapacity']) if row['unavailableCapacity'] else 0
@@ -578,10 +572,11 @@ def main():
         print(f"   • Total unavailable: {outages_df['unavailableCapacity'].sum():,.0f} MW")
     print(f"   • Timestamp: {timestamp}")
     print("\n✅ All fixes applied:")
+    print("   • Uses MAX(revisionNumber) not MAX(publishTime) for deduplication")
+    print("   • Joins with bmu_registration_data for proper station names")
     print("   • Interconnectors classified as 'Interconnector' fuel type")
-    print("   • Known generators use proper names from all_generators")
     print("   • Start times formatted correctly (YYYY-MM-DD HH:MM:SS)")
-    print("   • Latest publishTime used per unit (deduplication)")
+    print("   • Shows only Active events currently happening")
     print()
 
 if __name__ == '__main__':

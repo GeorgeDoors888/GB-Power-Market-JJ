@@ -1,0 +1,11 @@
+[Unit]
+Description=Run GB Dashboard Update every 5 minutes
+Requires=dashboard-updater.service
+
+[Timer]
+OnBootSec=2min
+OnUnitActiveSec=5min
+Unit=dashboard-updater.service
+
+[Install]
+WantedBy=timers.target

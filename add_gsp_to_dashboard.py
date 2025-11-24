@@ -1,7 +1,13 @@
 """
 Add GSP Dual-Table Display to Main Dashboard Tab
-Adds below existing content (starting at row 55)
+⚠️ DISABLED - User requested GSP data removal from Dashboard
+GSP data still available in Map_Data_GSP and GSP sheets
 """
+
+import sys
+print("⚠️  This script is disabled. GSP data removed from Dashboard per user request.")
+print("   GSP data is available in: Map_Data_GSP sheet, GSP sheet, and interactive map")
+sys.exit(0)
 
 from google.cloud import bigquery
 from google.oauth2 import service_account

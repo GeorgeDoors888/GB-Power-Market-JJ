@@ -1,0 +1,18 @@
+{
+  "timestamp": "2025-11-24",
+  "merges": [
+    "A1:L1",
+    "A4:L4",
+    "A20:L20"
+  ],
+  "row_heights": {},
+  "column_widths": {},
+  "charts": [
+    {
+      "anchor_row": 18,
+      "anchor_col": "A",
+      "width": 900,
+      "height": 240
+    }
+  ]
+}
