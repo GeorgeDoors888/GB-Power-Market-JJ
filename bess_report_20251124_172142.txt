@@ -1,0 +1,43 @@
+============================================================
+BESS SITE REPORT
+============================================================
+Generated: 2025-11-24T17:21:34.692692
+
+SITE INFORMATION
+------------------------------------------------------------
+Postcode:           rh19 4lx
+MPAN ID:            14
+DNO:                National Grid Electricity Distribution – West Midlands
+DNO Key:            NGED-WM
+Short Code:         WMID
+Market Participant: WMID
+GSP Group:          Midlands (C)
+
+DUOS RATES
+------------------------------------------------------------
+Voltage Level:      HV (6.6-33kV)
+Red Rate:           0.000 p/kWh
+Amber Rate:         0.000 p/kWh
+Green Rate:         0.000 p/kWh
+
+TIME BANDS (Weekday)
+------------------------------------------------------------
+RED (Peak):
+  • 16:00-19:30
+AMBER (Mid-Peak):
+  • 08:00-16:00
+  • 19:30-22:00
+GREEN (Off-Peak):
+  • 00:00-08:00
+  • 22:00-23:59
+  • All Weekend
+
+HALF-HOURLY PROFILE
+------------------------------------------------------------
+Min Demand:         500 kW
+Avg Demand:         1500 kW
+Max Demand:         2500 kW
+
+============================================================
+End of Report
+============================================================

@@ -1,0 +1,19 @@
+[Unit]
+Description=BESS DNO Webhook Server
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/bess
+Environment="GOOGLE_APPLICATION_CREDENTIALS=/root/.google-credentials/inner-cinema-credentials.json"
+Environment="PYTHONUNBUFFERED=1"
+Environment="FLASK_ENV=production"
+ExecStart=/usr/bin/python3 /opt/bess/dno_webhook_server_upcloud.py
+Restart=always
+RestartSec=10
+StandardOutput=append:/var/log/bess/webhook.log
+StandardError=append:/var/log/bess/webhook-error.log
+
+[Install]
+WantedBy=multi-user.target

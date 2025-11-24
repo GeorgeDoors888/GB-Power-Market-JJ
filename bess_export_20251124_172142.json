@@ -1,0 +1,52 @@
+{
+  "metadata": {
+    "export_time": "2025-11-24T17:21:34.692692",
+    "sheet_id": "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8",
+    "sheet_name": "BESS"
+  },
+  "site_info": {
+    "postcode": "rh19 4lx",
+    "mpan_id": "14",
+    "dno_key": "NGED-WM",
+    "dno_name": "National Grid Electricity Distribution \u2013 West Midlands",
+    "short_code": "WMID",
+    "market_participant": "WMID",
+    "gsp_group_id": "C",
+    "gsp_group": "Midlands"
+  },
+  "duos_rates": {
+    "voltage_level": "HV (6.6-33kV)",
+    "red_rate_pkwh": "0.000",
+    "amber_rate_pkwh": "0.000",
+    "green_rate_pkwh": "0.000"
+  },
+  "mpan_details": {
+    "profile_class": "00",
+    "meter_registration": "801 (HH Metered)",
+    "voltage_level": "HV",
+    "charging_class": "Non-Domestic HH",
+    "tariff_id": "520",
+    "loss_factor": "1.025"
+  },
+  "time_bands": {
+    "weekday": {
+      "red": [
+        "16:00-19:30"
+      ],
+      "amber": [
+        "08:00-16:00",
+        "19:30-22:00"
+      ],
+      "green": [
+        "00:00-08:00",
+        "22:00-23:59",
+        "All Weekend"
+      ]
+    }
+  },
+  "hh_profile": {
+    "min_kw": "500",
+    "avg_kw": "1500",
+    "max_kw": "2500"
+  }
+}

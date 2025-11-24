@@ -187,26 +187,42 @@ def get_duos_rates(dno_key, voltage_level, llfc=None):
     """
     client = bigquery.Client(project=PROJECT_ID, location="EU")
     
-    # Build query - if LLFC provided, try to use it for more specific lookup
+    # Build query - if LLFC provided AND it's valid (3-4 digits), try to use it
     llfc_filter = ""
-    if llfc:
+    if llfc and len(str(llfc)) <= 4 and str(llfc).isdigit():
         llfc_filter = f" AND tariff_code LIKE '%{llfc}%'"
+        print(f"   ℹ️  Using LLFC {llfc} for more specific rate lookup")
+    elif llfc:
+        print(f"   ⚠️  LLFC {llfc} looks invalid (too long or not numeric), ignoring")
     
-    # Get rates
+    # Get rates - try current first, then closest future if none found
     rates_query = f"""
-    SELECT 
-        time_band_name,
-        ROUND(AVG(unit_rate_p_kwh), 4) as rate_p_kwh
-    FROM `{PROJECT_ID}.gb_power.duos_unit_rates`
-    WHERE dno_key = '{dno_key}'
-      AND voltage_level = '{voltage_level}'
-      AND (tariff_code LIKE '%Non-Domestic%' OR tariff_code LIKE '%Site Specific%')
-      {llfc_filter}
-    GROUP BY time_band_name
+    WITH ranked_rates AS (
+        SELECT 
+            time_band_name,
+            ROUND(AVG(unit_rate_p_kwh), 4) as rate_p_kwh,
+            effective_from,
+            ROW_NUMBER() OVER (PARTITION BY time_band_name ORDER BY ABS(DATE_DIFF(effective_from, CURRENT_DATE(), DAY))) as rank
+        FROM `{PROJECT_ID}.gb_power.duos_unit_rates`
+        WHERE dno_key = '{dno_key}'
+          AND voltage_level = '{voltage_level}'
+          {llfc_filter}
+        GROUP BY time_band_name, effective_from
+    )
+    SELECT time_band_name, rate_p_kwh
+    FROM ranked_rates
+    WHERE rank = 1
     ORDER BY time_band_name
     """
     
     rates_df = client.query(rates_query).to_dataframe()
+    
+    # Debug: Show what we got
+    if len(rates_df) == 0:
+        print(f"   ⚠️  WARNING: No rates found for {dno_key} {voltage_level}")
+        print(f"   Query: {rates_query}")
+    else:
+        print(f"   ✅ Found {len(rates_df)} rate bands")
     
     # Get time band details
     time_bands_query = f"""
