@@ -48,24 +48,23 @@ function getConstraintData() {
     // Read boundary data from rows 116-126
     const boundaryData = dashboard.getRange('A116:H126').getValues();
     
+    // Helper functions defined ONCE (outside loop)
+    function parsePercent(value) {
+      if (typeof value === 'number') return value;
+      if (typeof value === 'string') {
+        return parseFloat(value.replace('%', '')) || 0;
+      }
+      return 0;
+    }
+    
+    function parseNumber(value) {
+      if (typeof value === 'number') return value;
+      return parseFloat(value) || 0;
+    }
+    
     const constraints = [];
     for (let i = 1; i < boundaryData.length; i++) {
       if (boundaryData[i][0]) {
-        // Helper function to parse percentage strings like "25.2%" to 25.2
-        function parsePercent(value) {
-          if (typeof value === 'number') return value;
-          if (typeof value === 'string') {
-            return parseFloat(value.replace('%', '')) || 0;
-          }
-          return 0;
-        }
-        
-        // Helper function to parse numbers that might be strings
-        function parseNumber(value) {
-          if (typeof value === 'number') return value;
-          return parseFloat(value) || 0;
-        }
-        
         constraints.push({
           boundary_id: String(boundaryData[i][0]),
           name: String(boundaryData[i][1] || 'Unknown'),
