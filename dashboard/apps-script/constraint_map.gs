@@ -4,6 +4,14 @@
 // ============================================================================
 
 /**
+ * @OnlyCurrentDoc
+ * 
+ * Required OAuth Scopes:
+ * - https://www.googleapis.com/auth/spreadsheets.currentonly
+ * - https://www.googleapis.com/auth/script.container.ui
+ */
+
+/**
  * Add custom menu for map controls
  */
 function onOpen() {
