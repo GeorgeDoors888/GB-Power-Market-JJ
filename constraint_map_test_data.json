@@ -1,0 +1,122 @@
+[
+  {
+    "boundary_id": "BRASIZEX",
+    "name": "BRASIZEX",
+    "flow_mw": 1394.0,
+    "limit_mw": 5537.0,
+    "util_pct": 25.2,
+    "margin_mw": 4143.0,
+    "status": "\ud83d\udfe2 Normal",
+    "direction": "\u2014",
+    "lat": null,
+    "lng": null
+  },
+  {
+    "boundary_id": "ERROEX",
+    "name": "ERROEX",
+    "flow_mw": 91.0,
+    "limit_mw": 364.0,
+    "util_pct": 25.0,
+    "margin_mw": 273.0,
+    "status": "\ud83d\udfe2 Normal",
+    "direction": "\u2014",
+    "lat": null,
+    "lng": null
+  },
+  {
+    "boundary_id": "ESTEX",
+    "name": "ESTEX",
+    "flow_mw": 2497.0,
+    "limit_mw": 38595.0,
+    "util_pct": 6.5,
+    "margin_mw": 36098.0,
+    "status": "\ud83d\udfe2 Normal",
+    "direction": "\u2014",
+    "lat": null,
+    "lng": null
+  },
+  {
+    "boundary_id": "FLOWSTH",
+    "name": "FLOWSTH",
+    "flow_mw": 2117.0,
+    "limit_mw": 9676.0,
+    "util_pct": 21.9,
+    "margin_mw": 7559.0,
+    "status": "\ud83d\udfe2 Normal",
+    "direction": "\u2014",
+    "lat": null,
+    "lng": null
+  },
+  {
+    "boundary_id": "GALLEX",
+    "name": "GALLEX",
+    "flow_mw": -8.0,
+    "limit_mw": 146.0,
+    "util_pct": -5.3,
+    "margin_mw": 153.0,
+    "status": "\ud83d\udfe2 Normal",
+    "direction": "\u2014",
+    "lat": null,
+    "lng": null
+  },
+  {
+    "boundary_id": "GETEX",
+    "name": "GETEX",
+    "flow_mw": 34.0,
+    "limit_mw": 108.0,
+    "util_pct": 31.6,
+    "margin_mw": 74.0,
+    "status": "\ud83d\udfe2 Normal",
+    "direction": "\u2014",
+    "lat": null,
+    "lng": null
+  },
+  {
+    "boundary_id": "GM+SNOW5A",
+    "name": "GM+SNOW5A",
+    "flow_mw": 948.0,
+    "limit_mw": 3360.0,
+    "util_pct": 28.2,
+    "margin_mw": 2412.0,
+    "status": "\ud83d\udfe2 Normal",
+    "direction": "\u2014",
+    "lat": null,
+    "lng": null
+  },
+  {
+    "boundary_id": "HARSPNBLY",
+    "name": "HARSPNBLY",
+    "flow_mw": 3406.0,
+    "limit_mw": 4582.0,
+    "util_pct": 74.3,
+    "margin_mw": 1176.0,
+    "status": "\ud83d\udfe1 Moderate",
+    "direction": "\u2014",
+    "lat": null,
+    "lng": null
+  },
+  {
+    "boundary_id": "NKILGRMO",
+    "name": "NKILGRMO",
+    "flow_mw": 1570.0,
+    "limit_mw": 2458.0,
+    "util_pct": 63.9,
+    "margin_mw": 888.0,
+    "status": "\ud83d\udfe1 Moderate",
+    "direction": "\u2014",
+    "lat": null,
+    "lng": null
+  },
+  {
+    "boundary_id": "SCOTEX",
+    "name": "SCOTEX",
+    "flow_mw": 2379.0,
+    "limit_mw": 4536.0,
+    "util_pct": 52.5,
+    "margin_mw": 2157.0,
+    "status": "\ud83d\udfe1 Moderate",
+    "direction": "\u2014",
+    "lat": null,
+    "lng": null
+  }
+]
