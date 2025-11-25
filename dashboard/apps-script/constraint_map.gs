@@ -48,6 +48,20 @@ function getConstraintData() {
     // Read boundary data from rows 116-126
     const boundaryData = dashboard.getRange('A116:H126').getValues();
     
+    // ✅ Coordinate lookup for GB transmission boundaries
+    const boundaryCoords = {
+      'BRASIZEX': {lat: 51.8, lng: -2.0},
+      'ERROEX': {lat: 53.5, lng: -2.5},
+      'ESTEX': {lat: 51.5, lng: 0.5},
+      'FLOWSTH': {lat: 52.0, lng: -1.5},
+      'GALLEX': {lat: 53.0, lng: -3.0},
+      'GETEX': {lat: 52.5, lng: -1.0},
+      'GM+SNOW5A': {lat: 53.5, lng: -2.2},
+      'HARSPNBLY': {lat: 55.0, lng: -3.5},
+      'NKILGRMO': {lat: 56.5, lng: -5.0},
+      'SCOTEX': {lat: 55.5, lng: -3.0}
+    };
+    
     // Helper functions defined ONCE (outside loop)
     function parsePercent(value) {
       if (typeof value === 'number') return value;
@@ -64,21 +78,25 @@ function getConstraintData() {
     
     const constraints = [];
     for (let i = 1; i < boundaryData.length; i++) {
-      if (boundaryData[i][0]) {
+      const boundaryId = String(boundaryData[i][0]);
+      if (boundaryId) {
+        const coords = boundaryCoords[boundaryId] || {lat: 54.5, lng: -2.5};
         constraints.push({
-          boundary_id: String(boundaryData[i][0]),
+          boundary_id: boundaryId,
           name: String(boundaryData[i][1] || 'Unknown'),
           flow_mw: parseNumber(boundaryData[i][2]),
           limit_mw: parseNumber(boundaryData[i][3]),
           util_pct: parsePercent(boundaryData[i][4]),
           margin_mw: parseNumber(boundaryData[i][5]),
           status: String(boundaryData[i][6] || 'Unknown'),
-          direction: String(boundaryData[i][7] || 'N/A')
+          direction: String(boundaryData[i][7] || 'N/A'),
+          lat: coords.lat,
+          lng: coords.lng
         });
       }
     }
     
-    Logger.log('Retrieved ' + constraints.length + ' constraints');
+    Logger.log('Retrieved ' + constraints.length + ' constraints with coordinates');
     return constraints;
     
   } catch (error) {
