@@ -1,0 +1,37 @@
+# Exclude data/analysis files from Copilot indexing
+*.csv
+analysis_*.csv
+battery_*.csv
+bmu_*.csv
+*_20*.csv
+*_20*.txt
+
+# Exclude logs
+*.log
+logs/
+*.log.*
+
+# Exclude archived/backup files
+archive/
+backup/
+old/
+deprecated/
+
+# Exclude large data directories
+drive-bq-indexer/data/
+data/
+exports/
+
+# Exclude generated reports
+*_report_*.txt
+*_analysis_*.csv
+*_summary_*.csv
+
+# Exclude credential files
+*credentials*.json
+*-key.json
+
+# Exclude cache
+__pycache__/
+*.pyc
+.pytest_cache/

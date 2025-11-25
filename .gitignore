@@ -84,3 +84,20 @@ duos_parsing_log.txt
 # Backup files
 *_backup_*.csv
 *_backup_*.json
+
+# Performance optimization - exclude large CSV/analysis files
+analysis_*.csv
+battery_*.csv
+bmu_*.csv
+*_20*.csv
+*_report_*.txt
+*_analysis_*.csv
+*_summary_*.csv
+
+# Exclude archived data
+archive/
+backup/
+old/
+deprecated/
+data/
+exports/

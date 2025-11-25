@@ -1,0 +1,18 @@
+# Exclude from VS Code file watching
+*.csv
+*.log
+logs/**
+**/__pycache__/**
+*.pyc
+*_20*.csv
+*_20*.txt
+analysis_*.csv
+battery_*.csv
+bmu_*.csv
+*.tmp
+*.temp
+.git/**
+node_modules/**
+venv/**
+.venv/**
+ENV/**
