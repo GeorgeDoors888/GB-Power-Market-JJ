@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GB Transmission Constraints Map</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            height: 100vh;
+            overflow: hidden;
+        }
+        #map {
+            height: 100%;
+            width: 100%;
+        }
+        .info-window {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        .info-window h3 {
+            margin: 0 0 10px 0;
+            color: #1a73e8;
+            font-size: 16px;
+        }
+        .info-window table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .info-window td {
+            padding: 4px 8px;
+        }
+        .info-window td:first-child {
+            font-weight: 600;
+            color: #666;
+        }
+        .legend {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            z-index: 1000;
+            font-size: 12px;
+        }
+        .legend h4 {
+            margin: 0 0 10px 0;
+            font-size: 14px;
+            color: #333;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin: 5px 0;
+        }
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-right: 8px;
+            border: 2px solid #fff;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        }
+        .update-time {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background: white;
+            padding: 8px 12px;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            font-size: 11px;
+            color: #666;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    
+    <div class="legend">
+        <h4>🗺️ GB Transmission Constraints</h4>
+        <div class="legend-item">
+            <span class="legend-color" style="background: #4CAF50;"></span>
+            <span>&lt;50% Normal</span>
+        </div>
+        <div class="legend-item">
+            <span class="legend-color" style="background: #FFC107;"></span>
+            <span>50-75% Moderate</span>
+        </div>
+        <div class="legend-item">
+            <span class="legend-color" style="background: #FF9800;"></span>
+            <span>75-90% High</span>
+        </div>
+        <div class="legend-item">
+            <span class="legend-color" style="background: #F44336;"></span>
+            <span>&gt;90% Critical</span>
+        </div>
+    </div>
+    
+    <div class="update-time">
+        Updated: 2025-11-25 14:20:30
+    </div>
+    
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCsH49dmxEqcX0Hhi_UJGS8VvuGNLuggTQ"></script>
+    <script>
+        // Embedded constraint data (from Google Sheets via Python)
+        const constraints = [
+  {
+    "boundary_id": "BRASIZEX",
+    "name": "BRASIZEX",
+    "flow_mw": 1394.0,
+    "limit_mw": 5537.0,
+    "util_pct": 25.2,
+    "margin_mw": 4143.0,
+    "status": "\ud83d\udfe2 Normal",
+    "direction": "\u2014",
+    "lat": 51.8,
+    "lng": -2.0,
+    "description": "Bristol area"
+  },
+  {
+    "boundary_id": "ERROEX",
+    "name": "ERROEX",
+    "flow_mw": 91.0,
+    "limit_mw": 364.0,
+    "util_pct": 25.0,
+    "margin_mw": 273.0,
+    "status": "\ud83d\udfe2 Normal",
+    "direction": "\u2014",
+    "lat": 53.5,
+    "lng": -2.5,
+    "description": "North West"
+  },
+  {
+    "boundary_id": "ESTEX",
+    "name": "ESTEX",
+    "flow_mw": 2497.0,
+    "limit_mw": 38595.0,
+    "util_pct": 6.5,
+    "margin_mw": 36098.0,
+    "status": "\ud83d\udfe2 Normal",
+    "direction": "\u2014",
+    "lat": 51.5,
+    "lng": 0.5,
+    "description": "Essex/East"
+  },
+  {
+    "boundary_id": "FLOWSTH",
+    "name": "FLOWSTH",
+    "flow_mw": 2117.0,
+    "limit_mw": 9676.0,
+    "util_pct": 21.9,
+    "margin_mw": 7559.0,
+    "status": "\ud83d\udfe2 Normal",
+    "direction": "\u2014",
+    "lat": 52.0,
+    "lng": -1.5,
+    "description": "Flow South"
+  },
+  {
+    "boundary_id": "GALLEX",
+    "name": "GALLEX",
+    "flow_mw": -8.0,
+    "limit_mw": 146.0,
+    "util_pct": -5.3,
+    "margin_mw": 153.0,
+    "status": "\ud83d\udfe2 Normal",
+    "direction": "\u2014",
+    "lat": 53.0,
+    "lng": -3.0,
+    "description": "North Wales"
+  },
+  {
+    "boundary_id": "GETEX",
+    "name": "GETEX",
+    "flow_mw": 34.0,
+    "limit_mw": 108.0,
+    "util_pct": 31.6,
+    "margin_mw": 74.0,
+    "status": "\ud83d\udfe2 Normal",
+    "direction": "\u2014",
+    "lat": 52.5,
+    "lng": -1.0,
+    "description": "Get Export"
+  },
+  {
+    "boundary_id": "GM+SNOW5A",
+    "name": "GM+SNOW5A",
+    "flow_mw": 948.0,
+    "limit_mw": 3360.0,
+    "util_pct": 28.2,
+    "margin_mw": 2412.0,
+    "status": "\ud83d\udfe2 Normal",
+    "direction": "\u2014",
+    "lat": 53.5,
+    "lng": -2.2,
+    "description": "Greater Manchester/Snowdonia"
+  },
+  {
+    "boundary_id": "HARSPNBLY",
+    "name": "HARSPNBLY",
+    "flow_mw": 3406.0,
+    "limit_mw": 4582.0,
+    "util_pct": 74.3,
+    "margin_mw": 1176.0,
+    "status": "\ud83d\udfe1 Moderate",
+    "direction": "\u2014",
+    "lat": 55.0,
+    "lng": -3.5,
+    "description": "Harker-Stella/Penwortham-Blyth"
+  },
+  {
+    "boundary_id": "NKILGRMO",
+    "name": "NKILGRMO",
+    "flow_mw": 1570.0,
+    "limit_mw": 2458.0,
+    "util_pct": 63.9,
+    "margin_mw": 888.0,
+    "status": "\ud83d\udfe1 Moderate",
+    "direction": "\u2014",
+    "lat": 56.5,
+    "lng": -5.0,
+    "description": "North Kilbride-Grudie-Moyle"
+  },
+  {
+    "boundary_id": "SCOTEX",
+    "name": "SCOTEX",
+    "flow_mw": 2379.0,
+    "limit_mw": 4536.0,
+    "util_pct": 52.5,
+    "margin_mw": 2157.0,
+    "status": "\ud83d\udfe1 Moderate",
+    "direction": "\u2014",
+    "lat": 55.5,
+    "lng": -3.0,
+    "description": "Scotland Export"
+  }
+];
+        
+        let map;
+        
+        function initMap() {
+            // Create map centered on UK
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: { lat: 54.5, lng: -3.5 },
+                zoom: 6,
+                mapTypeId: 'roadmap',
+                styles: [
+                    {
+                        featureType: 'poi',
+                        elementType: 'labels',
+                        stylers: [{ visibility: 'off' }]
+                    }
+                ]
+            });
+            
+            // Create markers for each constraint
+            constraints.forEach(constraint => {
+                createMarker(constraint);
+            });
+            
+            console.log('✅ Map loaded with ' + constraints.length + ' constraints');
+        }
+        
+        function createMarker(constraint) {
+            const color = getMarkerColor(constraint.util_pct);
+            const icon = {
+                path: google.maps.SymbolPath.CIRCLE,
+                fillColor: color,
+                fillOpacity: 0.9,
+                strokeColor: '#ffffff',
+                strokeWeight: 2,
+                scale: 10
+            };
+            
+            const marker = new google.maps.Marker({
+                position: { lat: constraint.lat, lng: constraint.lng },
+                map: map,
+                title: constraint.boundary_id,
+                icon: icon
+            });
+            
+            const infoContent = createInfoWindow(constraint);
+            const infowindow = new google.maps.InfoWindow({
+                content: infoContent
+            });
+            
+            marker.addListener('click', () => {
+                infowindow.open(map, marker);
+            });
+        }
+        
+        function getMarkerColor(utilization) {
+            if (utilization < 50) return '#4CAF50';  // Green
+            if (utilization < 75) return '#FFC107';  // Yellow
+            if (utilization < 90) return '#FF9800';  // Orange
+            return '#F44336';  // Red
+        }
+        
+        function createInfoWindow(c) {
+            return `
+                <div class="info-window">
+                    <h3>${c.boundary_id} - ${c.name}</h3>
+                    <table>
+                        <tr><td>Flow:</td><td>${c.flow_mw.toFixed(0)} MW</td></tr>
+                        <tr><td>Limit:</td><td>${c.limit_mw.toFixed(0)} MW</td></tr>
+                        <tr><td>Utilization:</td><td>${c.util_pct.toFixed(1)}%</td></tr>
+                        <tr><td>Margin:</td><td>${c.margin_mw.toFixed(0)} MW</td></tr>
+                        <tr><td>Status:</td><td>${c.status}</td></tr>
+                        <tr><td>Direction:</td><td>${c.direction}</td></tr>
+                    </table>
+                </div>
+            `;
+        }
+        
+        // Initialize map on load
+        window.onload = initMap;
+    </script>
+</body>
+</html>
