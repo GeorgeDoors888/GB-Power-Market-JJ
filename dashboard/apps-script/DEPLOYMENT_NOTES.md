@@ -2,15 +2,16 @@
 
 ## ✅ Deployed Successfully
 
-**Current Deployment (Version 11):** ✅ **PRODUCTION - PERCENTAGE FIX**
-- Version: 11
-- Date: 25 Nov 2025, 01:15
-- Deployment ID: `AKfycbwGVxPUIa2lihLbweEItcf1zWEwrpxlSTbTc4kKrZ1smvCLxIRare936UvNEa_AObHH`
-- Web App URL: https://script.google.com/macros/s/AKfycbwGVxPUIa2lihLbweEItcf1zWEwrpxlSTbTc4kKrZ1smvCLxIRare936UvNEa_AObHH/exec
-- **Fix**: parsePercent() function to handle "25.2%" strings correctly
+**Current Deployment (Version 12):** ✅ **PRODUCTION - OPTIMIZED**
+- Version: 12
+- Date: 25 Nov 2025, 01:20
+- Deployment ID: `AKfycby5CVm7Mv5-DqwrmjRC84JJJn1iqHOUAEwIDpEWlFMzIH5ITvoE-4Pr2FhbLJHWC4ze`
+- Web App URL: https://script.google.com/macros/s/AKfycby5CVm7Mv5-DqwrmjRC84JJJn1iqHOUAEwIDpEWlFMzIH5ITvoE-4Pr2FhbLJHWC4ze/exec
+- **Fix**: Moved parsePercent() and parseNumber() OUTSIDE loop (was causing server error)
 
 **Previous Deployments:**
-- Version 10 (25 Nov 2025, 01:03): Error handling + Maps API (broken - no parsePercent)
+- Version 11 (25 Nov 2025, 01:15): Percentage fix (functions inside loop - broken)
+- Version 10 (25 Nov 2025, 01:03): Error handling + Maps API (no parsePercent - broken)
 - Version 8 (25 Nov 2025, 00:47): Added API key
 - Version 7 (25 Nov 2025, 00:31): Initial deployment
 
