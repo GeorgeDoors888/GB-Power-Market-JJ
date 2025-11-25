@@ -2,7 +2,13 @@
 
 ## ✅ Deployed Successfully
 
-**Deployment Details:**
+**Current Deployment (Version 8):**
+- Version: 8 ✅ **ACTIVE WITH API KEY**
+- Date: 25 Nov 2025, 00:47
+- Deployment ID: `AKfycbw5DSYuky8TrsgMPOsl-arEdQ96gnYHd19f9W6KdUIdbsXJpfH5zlYu8mWNPh1OmcY9`
+- Web App URL: https://script.google.com/macros/s/AKfycbw5DSYuky8TrsgMPOsl-arEdQ96gnYHd19f9W6KdUIdbsXJpfH5zlYu8mWNPh1OmcY9/exec
+
+**Previous Deployment (Version 7):**
 - Version: 7
 - Date: 25 Nov 2025, 00:31
 - Deployment ID: `AKfycbyq7s0Ga37EV8HY1nrsV0Zt2bNgBIPClTbrt7kL0W1k_tqhCMeEodZvZIRNqiLOzTCA`
@@ -10,9 +16,9 @@
 
 ## 🔑 Google Maps API Key
 
-**Updated** constraint_map.html with your API key:
-```
-AIzaSyDjw_YjobTs0DCbZwl6p1vXbPSxG6YQNCE
+**✅ CONFIGURED** in constraint_map.html (line 110):
+```html
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjw_YjobTs0DCbZwl6p1vXbPSxG6YQNCE"></script>
 ```
 
 ## 📍 How to Use
