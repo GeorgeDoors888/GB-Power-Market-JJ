@@ -1,0 +1,232 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <base target="_top">
+  <style>
+    body {
+      font-family: 'Google Sans', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #1a1a1a;
+      color: #ffffff;
+    }
+    #map {
+      width: 100%;
+      height: calc(100vh - 120px);
+      border: none;
+    }
+    #controls {
+      background: #2d2d2d;
+      padding: 15px;
+      border-bottom: 2px solid #4CAF50;
+    }
+    #legend {
+      background: #2d2d2d;
+      padding: 10px;
+      font-size: 12px;
+    }
+    .legend-item {
+      display: inline-block;
+      margin-right: 15px;
+    }
+    .legend-color {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      margin-right: 5px;
+      vertical-align: middle;
+      border-radius: 3px;
+    }
+    .layer-toggle {
+      margin: 5px 10px;
+    }
+    #loading {
+      text-align: center;
+      padding: 20px;
+      font-size: 16px;
+    }
+    .info-popup {
+      background: #2d2d2d;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+    .info-popup h3 {
+      margin: 0 0 10px 0;
+      color: #4CAF50;
+    }
+    .info-popup table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .info-popup td {
+      padding: 5px;
+      border-bottom: 1px solid #444;
+    }
+    .info-popup td:first-child {
+      font-weight: bold;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <div id="controls">
+    <strong>🗺️ GB Transmission Constraints</strong>
+    <span style="float: right; font-size: 12px;" id="lastUpdate">Loading...</span>
+    <br>
+    <label class="layer-toggle">
+      <input type="checkbox" id="showBoundaries" checked onchange="toggleLayer('boundaries')"> Boundaries
+    </label>
+    <label class="layer-toggle">
+      <input type="checkbox" id="showDNO" checked onchange="toggleLayer('dno')"> DNO Areas
+    </label>
+    <label class="layer-toggle">
+      <input type="checkbox" id="showTNUOS" checked onchange="toggleLayer('tnuos')"> TNUoS Zones
+    </label>
+    <label class="layer-toggle">
+      <input type="checkbox" id="showGSP" onchange="toggleLayer('gsp')"> GSP Regions
+    </label>
+  </div>
+  
+  <div id="legend">
+    <span class="legend-item">
+      <span class="legend-color" style="background: #4CAF50;"></span> <50% Normal
+    </span>
+    <span class="legend-item">
+      <span class="legend-color" style="background: #FFC107;"></span> 50-75% Moderate
+    </span>
+    <span class="legend-item">
+      <span class="legend-color" style="background: #FF9800;"></span> 75-90% High
+    </span>
+    <span class="legend-item">
+      <span class="legend-color" style="background: #F44336;"></span> >90% Critical
+    </span>
+  </div>
+  
+  <div id="loading">⏳ Loading constraint data...</div>
+  <div id="map"></div>
+  
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
+  <script>
+    let map;
+    let layers = {
+      boundaries: null,
+      dno: null,
+      tnuos: null,
+      gsp: null
+    };
+    
+    // Initialize map
+    function initMap() {
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: { lat: 54.5, lng: -2.5 },
+        zoom: 6,
+        mapTypeId: 'terrain',
+        styles: [
+          { elementType: 'geometry', stylers: [{ color: '#242f3e' }] },
+          { elementType: 'labels.text.stroke', stylers: [{ color: '#242f3e' }] },
+          { elementType: 'labels.text.fill', stylers: [{ color: '#746855' }] }
+        ]
+      });
+      
+      loadConstraintData();
+    }
+    
+    // Load constraint data from Apps Script
+    function loadConstraintData() {
+      google.script.run
+        .withSuccessHandler(onDataLoaded)
+        .withFailureHandler(onError)
+        .getConstraintData();
+    }
+    
+    // Process loaded data
+    function onDataLoaded(constraints) {
+      document.getElementById('loading').style.display = 'none';
+      document.getElementById('lastUpdate').textContent = 'Updated: ' + new Date().toLocaleTimeString();
+      
+      // Create boundary markers/polygons
+      constraints.forEach(c => {
+        createBoundaryMarker(c);
+      });
+    }
+    
+    // Create boundary visualization
+    function createBoundaryMarker(constraint) {
+      // Approximate boundary locations (simplified)
+      const boundaryLocations = {
+        'B6': { lat: 55.5, lng: -3.0 },
+        'B7': { lat: 55.0, lng: -3.5 },
+        'B8': { lat: 54.5, lng: -2.5 },
+        'SC1': { lat: 57.0, lng: -4.0 },
+        'EC5': { lat: 51.5, lng: 0.5 },
+        'NW1': { lat: 53.5, lng: -2.5 },
+        'SW1': { lat: 51.0, lng: -3.5 }
+      };
+      
+      const loc = boundaryLocations[constraint.boundary_id];
+      if (!loc) return;
+      
+      // Determine color based on utilization
+      let color = '#4CAF50'; // Green
+      if (constraint.util_pct >= 90) color = '#F44336'; // Red
+      else if (constraint.util_pct >= 75) color = '#FF9800'; // Orange
+      else if (constraint.util_pct >= 50) color = '#FFC107'; // Yellow
+      
+      // Create circle marker
+      const circle = new google.maps.Circle({
+        strokeColor: color,
+        strokeOpacity: 0.8,
+        strokeWeight: 2,
+        fillColor: color,
+        fillOpacity: 0.35,
+        map: map,
+        center: loc,
+        radius: 30000 // 30km radius
+      });
+      
+      // Add click listener for info window
+      const infoWindow = new google.maps.InfoWindow({
+        content: createInfoContent(constraint)
+      });
+      
+      circle.addListener('click', () => {
+        infoWindow.setPosition(loc);
+        infoWindow.open(map);
+      });
+    }
+    
+    // Create info window content
+    function createInfoContent(c) {
+      return `
+        <div class="info-popup">
+          <h3>${c.boundary_id} - ${c.name}</h3>
+          <table>
+            <tr><td>Flow:</td><td>${c.flow_mw} MW</td></tr>
+            <tr><td>Limit:</td><td>${c.limit_mw} MW</td></tr>
+            <tr><td>Utilization:</td><td>${c.util_pct}%</td></tr>
+            <tr><td>Margin:</td><td>${c.margin_mw} MW</td></tr>
+            <tr><td>Status:</td><td>${c.status}</td></tr>
+            <tr><td>Direction:</td><td>${c.direction}</td></tr>
+          </table>
+        </div>
+      `;
+    }
+    
+    // Toggle layer visibility
+    function toggleLayer(layerName) {
+      // Implementation for layer toggling
+      console.log('Toggle layer:', layerName);
+    }
+    
+    // Error handler
+    function onError(error) {
+      document.getElementById('loading').innerHTML = '❌ Error loading data: ' + error;
+    }
+    
+    // Initialize on load
+    window.onload = initMap;
+  </script>
+</body>
+</html>
