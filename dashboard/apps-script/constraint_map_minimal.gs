@@ -12,16 +12,26 @@
 function onOpen() {
   SpreadsheetApp.getUi()
     .createMenu('🗺️ Constraint Map')
-    .addItem('📍 Show Interactive Map', 'showConstraintMap')
+    .addItem('📍 Show Map (Leaflet - No API Key)', 'showConstraintMapLeaflet')
+    .addItem('📍 Show Map (Google Maps)', 'showConstraintMapGoogle')
     .addItem('🔄 Refresh Map Data', 'refreshMapData')
     .addToUi();
 }
 
 /**
- * Show interactive constraint map in sidebar
- * Uses Python-generated HTML with embedded data
+ * Show Leaflet map (recommended - no API key issues)
  */
-function showConstraintMap() {
+function showConstraintMapLeaflet() {
+  const html = HtmlService.createHtmlOutputFromFile('ConstraintMap_Leaflet')
+    .setTitle('GB Transmission Constraints')
+    .setWidth(600);
+  SpreadsheetApp.getUi().showSidebar(html);
+}
+
+/**
+ * Show Google Maps version (requires API key)
+ */
+function showConstraintMapGoogle() {
   const html = HtmlService.createHtmlOutputFromFile('ConstraintMap_Python')
     .setTitle('GB Transmission Constraints')
     .setWidth(600);
