@@ -107,7 +107,7 @@
   <div id="loading">⏳ Loading constraint data...</div>
   <div id="map"></div>
   
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjw_YjobTs0DCbZwl6p1vXbPSxG6YQNCE"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjw_YjobTs0DCbZwl6p1vXbPSxG6YQNCE&callback=initMap" async defer></script>
   <script>
     let map;
     let layers = {
@@ -122,12 +122,7 @@
       map = new google.maps.Map(document.getElementById('map'), {
         center: { lat: 54.5, lng: -2.5 },
         zoom: 6,
-        mapTypeId: 'terrain',
-        styles: [
-          { elementType: 'geometry', stylers: [{ color: '#242f3e' }] },
-          { elementType: 'labels.text.stroke', stylers: [{ color: '#242f3e' }] },
-          { elementType: 'labels.text.fill', stylers: [{ color: '#746855' }] }
-        ]
+        mapTypeId: 'roadmap'
       });
       
       loadConstraintData();
@@ -135,14 +130,21 @@
     
     // Load constraint data from Apps Script
     function loadConstraintData() {
+      console.log('Loading constraint data...');
+      
       // Check if running in Apps Script context (sidebar) or standalone
       if (typeof google !== 'undefined' && google.script && google.script.run) {
+        console.log('Running in Apps Script context');
         // Running in Google Sheets sidebar
         google.script.run
           .withSuccessHandler(onDataLoaded)
-          .withFailureHandler(onError)
+          .withFailureHandler(function(error) {
+            console.error('Error from getConstraintData:', error);
+            onError(error.message || 'Server error occurred. Check Dashboard rows 116-126 have data.');
+          })
           .getConstraintData();
       } else {
+        console.log('Not in Apps Script context');
         // Running as standalone web app - show demo data
         onError('This map must be accessed from Google Sheets Dashboard. Go to: Dashboard → Menu: 🗺️ Constraint Map → 📍 Show Interactive Map');
       }
@@ -150,13 +152,22 @@
     
     // Process loaded data
     function onDataLoaded(constraints) {
+      console.log('Data loaded:', constraints);
       document.getElementById('loading').style.display = 'none';
       document.getElementById('lastUpdate').textContent = 'Updated: ' + new Date().toLocaleTimeString();
+      
+      if (!constraints || constraints.length === 0) {
+        document.getElementById('loading').innerHTML = '⚠️ No constraint data found. Check Dashboard rows 116-126.';
+        document.getElementById('loading').style.display = 'block';
+        return;
+      }
       
       // Create boundary markers/polygons
       constraints.forEach(c => {
         createBoundaryMarker(c);
       });
+      
+      console.log('Created ' + constraints.length + ' boundary markers');
     }
     
     // Create boundary visualization
@@ -229,11 +240,13 @@
     
     // Error handler
     function onError(error) {
-      document.getElementById('loading').innerHTML = '❌ Error loading data: ' + error;
+      console.error('Error:', error);
+      document.getElementById('loading').innerHTML = '❌ Error: ' + (error.message || error);
+      document.getElementById('loading').style.display = 'block';
     }
     
-    // Initialize on load
-    window.onload = initMap;
+    // Global callback for Google Maps
+    window.initMap = initMap;
   </script>
 </body>
 </html>

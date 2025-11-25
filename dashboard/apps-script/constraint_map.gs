@@ -37,29 +37,40 @@ function showConstraintMap() {
  * Get constraint data from BigQuery via Dashboard sheet
  */
 function getConstraintData() {
-  const ss = SpreadsheetApp.getActive();
-  const dashboard = ss.getSheetByName('Dashboard');
-  
-  // Read boundary data from rows 116-126
-  const boundaryData = dashboard.getRange('A116:H126').getValues();
-  
-  const constraints = [];
-  for (let i = 1; i < boundaryData.length; i++) {
-    if (boundaryData[i][0]) {
-      constraints.push({
-        boundary_id: boundaryData[i][0],
-        name: boundaryData[i][1],
-        flow_mw: parseFloat(boundaryData[i][2]) || 0,
-        limit_mw: parseFloat(boundaryData[i][3]) || 0,
-        util_pct: parseFloat(boundaryData[i][4]) || 0,
-        margin_mw: parseFloat(boundaryData[i][5]) || 0,
-        status: boundaryData[i][6],
-        direction: boundaryData[i][7]
-      });
+  try {
+    const ss = SpreadsheetApp.getActive();
+    const dashboard = ss.getSheetByName('Dashboard');
+    
+    if (!dashboard) {
+      throw new Error('Dashboard sheet not found');
     }
+    
+    // Read boundary data from rows 116-126
+    const boundaryData = dashboard.getRange('A116:H126').getValues();
+    
+    const constraints = [];
+    for (let i = 1; i < boundaryData.length; i++) {
+      if (boundaryData[i][0]) {
+        constraints.push({
+          boundary_id: String(boundaryData[i][0]),
+          name: String(boundaryData[i][1] || 'Unknown'),
+          flow_mw: parseFloat(boundaryData[i][2]) || 0,
+          limit_mw: parseFloat(boundaryData[i][3]) || 0,
+          util_pct: parseFloat(boundaryData[i][4]) || 0,
+          margin_mw: parseFloat(boundaryData[i][5]) || 0,
+          status: String(boundaryData[i][6] || 'Unknown'),
+          direction: String(boundaryData[i][7] || 'N/A')
+        });
+      }
+    }
+    
+    Logger.log('Retrieved ' + constraints.length + ' constraints');
+    return constraints;
+    
+  } catch (error) {
+    Logger.log('Error in getConstraintData: ' + error.toString());
+    throw new Error('Failed to load data: ' + error.message);
   }
-  
-  return constraints;
 }
 
 /**
