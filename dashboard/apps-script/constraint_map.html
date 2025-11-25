@@ -135,10 +135,17 @@
     
     // Load constraint data from Apps Script
     function loadConstraintData() {
-      google.script.run
-        .withSuccessHandler(onDataLoaded)
-        .withFailureHandler(onError)
-        .getConstraintData();
+      // Check if running in Apps Script context (sidebar) or standalone
+      if (typeof google !== 'undefined' && google.script && google.script.run) {
+        // Running in Google Sheets sidebar
+        google.script.run
+          .withSuccessHandler(onDataLoaded)
+          .withFailureHandler(onError)
+          .getConstraintData();
+      } else {
+        // Running as standalone web app - show demo data
+        onError('This map must be accessed from Google Sheets Dashboard. Go to: Dashboard → Menu: 🗺️ Constraint Map → 📍 Show Interactive Map');
+      }
     }
     
     // Process loaded data
