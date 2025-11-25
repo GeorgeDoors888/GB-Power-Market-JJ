@@ -2,14 +2,15 @@
 
 ## ✅ Deployed Successfully
 
-**Current Deployment (Version 10):** ✅ **PRODUCTION - WORKING**
-- Version: 10
-- Date: 25 Nov 2025, 01:03
-- Deployment ID: `AKfycbzhhalYiYtV55wMd6h8NRUdfQ-U_rUxjTnVXcMqeeDPUiImsnH7RwYxdZz65pkPY6rc`
-- Web App URL: https://script.google.com/macros/s/AKfycbzhhalYiYtV55wMd6h8NRUdfQ-U_rUxjTnVXcMqeeDPUiImsnH7RwYxdZz65pkPY6rc/exec
-- **Fixes**: Error handling, Google Maps API async loading, better debugging
+**Current Deployment (Version 11):** ✅ **PRODUCTION - PERCENTAGE FIX**
+- Version: 11
+- Date: 25 Nov 2025, 01:15
+- Deployment ID: `AKfycbwGVxPUIa2lihLbweEItcf1zWEwrpxlSTbTc4kKrZ1smvCLxIRare936UvNEa_AObHH`
+- Web App URL: https://script.google.com/macros/s/AKfycbwGVxPUIa2lihLbweEItcf1zWEwrpxlSTbTc4kKrZ1smvCLxIRare936UvNEa_AObHH/exec
+- **Fix**: parsePercent() function to handle "25.2%" strings correctly
 
 **Previous Deployments:**
+- Version 10 (25 Nov 2025, 01:03): Error handling + Maps API (broken - no parsePercent)
 - Version 8 (25 Nov 2025, 00:47): Added API key
 - Version 7 (25 Nov 2025, 00:31): Initial deployment
 
