@@ -51,13 +51,28 @@ function getConstraintData() {
     const constraints = [];
     for (let i = 1; i < boundaryData.length; i++) {
       if (boundaryData[i][0]) {
+        // Helper function to parse percentage strings like "25.2%" to 25.2
+        function parsePercent(value) {
+          if (typeof value === 'number') return value;
+          if (typeof value === 'string') {
+            return parseFloat(value.replace('%', '')) || 0;
+          }
+          return 0;
+        }
+        
+        // Helper function to parse numbers that might be strings
+        function parseNumber(value) {
+          if (typeof value === 'number') return value;
+          return parseFloat(value) || 0;
+        }
+        
         constraints.push({
           boundary_id: String(boundaryData[i][0]),
           name: String(boundaryData[i][1] || 'Unknown'),
-          flow_mw: parseFloat(boundaryData[i][2]) || 0,
-          limit_mw: parseFloat(boundaryData[i][3]) || 0,
-          util_pct: parseFloat(boundaryData[i][4]) || 0,
-          margin_mw: parseFloat(boundaryData[i][5]) || 0,
+          flow_mw: parseNumber(boundaryData[i][2]),
+          limit_mw: parseNumber(boundaryData[i][3]),
+          util_pct: parsePercent(boundaryData[i][4]),
+          margin_mw: parseNumber(boundaryData[i][5]),
           status: String(boundaryData[i][6] || 'Unknown'),
           direction: String(boundaryData[i][7] || 'N/A')
         });
