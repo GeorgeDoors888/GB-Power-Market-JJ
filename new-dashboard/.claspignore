@@ -1,0 +1,4 @@
+# Ignore all except specific files
+**/**
+!Code.gs
+!appsscript.json

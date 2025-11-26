@@ -1,0 +1,105 @@
+╔═══════════════════════════════════════════════════════════════╗
+║  ✅ APPS SCRIPT DEPLOYMENT SUCCESSFUL                        ║
+╚═══════════════════════════════════════════════════════════════╝
+
+🎉 DEPLOYMENT DETAILS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Deployment ID: @2
+Description: Battery Revenue Analysis v1.1 - Added 7-week refresh with VLP ownership
+Script ID: 1svUewU3Q0n77ku0VJgtJ3GquVsSRii-pfOREpCQ9mG-v1x2oWtGZuiuz
+Spreadsheet: Dashboard V2 (1LmMq4OEE639Y-XXpOJ3xnvpAmHB6vUovh5g6gaU_vzc)
+
+📋 FILES DEPLOYED
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✓ Code.gs (24.7 KB, 565 lines)
+✓ appsscript.json (manifest)
+
+🆕 NEW FEATURES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Menu: ⚡ Battery Trading
+  └─ 🔄 Refresh Battery Revenue (7 Weeks)  [NEW]
+  
+Function: refreshBatteryRevenue()
+  • Calls webhook: POST /refresh-battery-revenue
+  • Triggers: battery_revenue_analyzer_fixed.py
+  • Updates: 7-week historical data + VLP ownership
+  • Response: Toast with summary stats
+
+🔍 WHAT'S NEW IN THIS VERSION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. New menu item: "🔄 Refresh Battery Revenue (7 Weeks)"
+   - Webhook integration with Flask server
+   - JSON response parsing
+   - Multi-line toast notifications
+   - Error handling with fallback message
+
+2. Enhanced refreshBatteryRevenue() function:
+   - POST request to CONFIG.WEBHOOK_URL/refresh-battery-revenue
+   - Displays: today's acceptances, historical days, battery units
+   - Shows: "VLP data included" confirmation
+   - Fallback: Manual command if webhook unavailable
+
+3. Improved error handling:
+   - Try-catch with detailed logging
+   - User-friendly error messages
+   - Offline mode support
+
+📱 HOW TO USE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. Open Dashboard V2:
+   https://docs.google.com/spreadsheets/d/1LmMq4OEE639Y-XXpOJ3xnvpAmHB6vUovh5g6gaU_vzc/
+
+2. Refresh the page (if already open)
+
+3. Wait for menus to load (~5 seconds)
+
+4. Click: ⚡ Battery Trading → 🔄 Refresh Battery Revenue (7 Weeks)
+
+5. See toast notification with results!
+
+⚙️ WEBHOOK SETUP (Optional)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+For button refresh to work, start webhook server:
+
+cd ~/GB\ Power\ Market\ JJ/new-dashboard
+./start_battery_webhook.sh
+
+Then update CONFIG.WEBHOOK_URL in Apps Script Editor with ngrok URL.
+
+📊 DATA UPDATED
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Sheet: "Battery Revenue Analysis"
+  • Today's acceptances: 1,218 dispatches
+  • Historical: 44 days (Oct 8 - Nov 26)
+  • Battery units: 10 tracked
+  • VLP ownership: FBPGM002 = Flexitricity, others = Direct BM Unit
+
+�� QUICK LINKS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Apps Script Editor:
+https://script.google.com/home/projects/1svUewU3Q0n77ku0VJgtJ3GquVsSRii-pfOREpCQ9mG-v1x2oWtGZuiuz
+
+Dashboard V2:
+https://docs.google.com/spreadsheets/d/1LmMq4OEE639Y-XXpOJ3xnvpAmHB6vUovh5g6gaU_vzc/
+
+Sheet: "Battery Revenue Analysis"
+
+🎯 NEXT STEPS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. Test the new menu in Dashboard V2
+2. (Optional) Start webhook server for button refresh
+3. Review VLP ownership data in Unit Performance section
+4. Explore battery trading insights
+
+🛠️ DEPLOYMENT COMMANDS USED
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+clasp push -f
+clasp deploy --description "Battery Revenue Analysis v1.1 - Added 7-week refresh with VLP ownership"
+clasp deployments
+
+✅ STATUS: LIVE AND READY TO USE!
+
+═══════════════════════════════════════════════════════════════
+Deployed: November 26, 2025
+Version: 1.1 (Battery Revenue + VLP Ownership)
+═══════════════════════════════════════════════════════════════

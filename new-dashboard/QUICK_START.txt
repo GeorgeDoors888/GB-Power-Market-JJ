@@ -1,0 +1,90 @@
+╔═══════════════════════════════════════════════════════════════╗
+║  🔋 BATTERY REVENUE ANALYSIS - QUICK START GUIDE             ║
+╚═══════════════════════════════════════════════════════════════╝
+
+📊 DASHBOARD
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+https://docs.google.com/spreadsheets/d/1LmMq4OEE639Y-XXpOJ3xnvpAmHB6vUovh5g6gaU_vzc/
+Sheet: "Battery Revenue Analysis"
+
+⚡ MANUAL REFRESH (Recommended)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+cd ~/GB\ Power\ Market\ JJ/new-dashboard
+python3 battery_revenue_analyzer_fixed.py
+
+✅ Updates in ~10 seconds
+✅ No webhook needed
+
+🔘 BUTTON REFRESH (Google Sheets)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. Start webhook server:
+   ./start_battery_webhook.sh
+
+2. Copy ngrok URL from terminal
+
+3. Update Apps Script CONFIG.WEBHOOK_URL
+
+4. In Sheets: ⚡ Battery Trading → 🔄 Refresh Battery Revenue
+
+�� WHAT YOU'LL SEE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✓ Today's 1,218 battery acceptances
+✓ 44 days of historical data (Oct 8 - Nov 26)
+✓ 10 battery units performance
+✓ VLP ownership (Flexitricity vs Direct BM Unit)
+✓ SO Flag participation (0.1% - opportunity to improve!)
+✓ Revenue estimates (£-126,774 to £42,902 daily range)
+
+💰 KEY INSIGHTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• Best day: Nov 21 (£42,902, +92 MW net discharge)
+• Worst day: Nov 26 (£-98,789, -256 MW net charge)
+• Profitable days = positive net MW (discharge > charge)
+• FBPGM002 = only VLP (Flexitricity), others are Direct BM
+• SO participation 0.1% vs 5-10% target = £324k/year opportunity
+
+📋 FILES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+battery_revenue_analyzer_fixed.py   Main analyzer (620 lines)
+battery_revenue_webhook.py          Flask webhook server
+start_battery_webhook.sh            Launcher script
+Code_Package_Test.gs                Apps Script integration
+BATTERY_REVENUE_README.md           Full documentation
+BATTERY_REVENUE_COMPLETE_SETUP.md   Setup summary
+
+🆘 TROUBLESHOOTING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Problem: "Table not found"
+Fix: Check BigQuery location is "US" not "europe-west2"
+
+Problem: "No VLP data"
+Fix: Query vlp_unit_ownership table directly to verify data exists
+
+Problem: "Webhook timeout"
+Fix: Increase timeout in battery_revenue_webhook.py line 40
+
+Problem: "Random headers"
+Fix: Already fixed with batch_clear() operations
+
+Problem: "Prices N/A"
+Fix: Already fixed with UNION ALL (bmrs_mid + bmrs_mid_iris)
+
+📞 QUICK CHECKS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# Test BigQuery connection
+python3 -c "from google.cloud import bigquery; client = bigquery.Client(project='inner-cinema-476211-u9'); print('✅ Connected')"
+
+# Check webhook health
+curl http://localhost:5002/health
+
+# View webhook logs
+tail -f webhook.log
+
+# Stop webhook server
+kill $(cat .webhook_pids) 2>/dev/null
+
+═══════════════════════════════════════════════════════════════
+Last Updated: November 26, 2025
+Status: ✅ Production Ready
+Version: 1.0 (VLP Integration Complete)
+═══════════════════════════════════════════════════════════════
