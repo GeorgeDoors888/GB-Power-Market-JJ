@@ -1,0 +1,39 @@
+================================================================================
+DEPLOY LIVE CONSTRAINT MAP - FETCHES REAL-TIME DATA FROM SHEET
+================================================================================
+
+FILES TO UPLOAD:
+- constraint_map_live.gs (this is the ONLY file needed!)
+
+STEPS:
+1. Open: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8
+2. Go to: Extensions → Apps Script
+3. DELETE ALL existing files (Code.gs, any HTML files)
+4. Click: + (Add file) → Script
+5. Name it: Code
+6. PASTE the entire contents of constraint_map_live.gs
+7. Save (Cmd+S)
+8. Close Apps Script editor
+9. CLOSE and REOPEN your Google Sheet
+10. Look for "��️ Constraint Map" menu
+11. Click: Show Live Map
+
+WHAT THIS DOES:
+✅ Fetches data from Dashboard rows 116-126 EVERY TIME you open the map
+✅ No static HTML - always shows current data
+✅ Color-coded markers (green/yellow/orange/red)
+✅ Click markers for details
+✅ No API key needed (uses OpenStreetMap)
+
+IF BLANK SIDEBAR:
+1. Go to: Extensions → Apps Script
+2. Select function: testMapData
+3. Click Run
+4. Check Execution log - should say "✅ SUCCESS! Data is loading correctly"
+5. If you see authorization prompt, click "Review Permissions" and authorize
+
+FILE LOCATION:
+dashboard/apps-script/constraint_map_live.gs
+
+OPEN FILE NOW:
+open dashboard/apps-script/constraint_map_live.gs

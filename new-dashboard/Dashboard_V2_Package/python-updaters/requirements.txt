@@ -1,0 +1,8 @@
+google-cloud-bigquery>=3.11.0
+gspread>=5.11.0
+google-auth>=2.23.0
+pandas>=2.1.0
+db-dtypes>=1.1.0
+pyarrow>=13.0.0
+flask>=3.0.0
+flask-cors>=4.0.0

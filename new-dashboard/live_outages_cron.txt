@@ -1,0 +1,2 @@
+# Live Outages Auto-Refresh (Every 15 minutes)
+*/15 * * * * cd '/Users/georgemajor/GB Power Market JJ/new-dashboard' && /usr/local/bin/python3 live_outages_updater.py >> logs/outages_cron.log 2>&1

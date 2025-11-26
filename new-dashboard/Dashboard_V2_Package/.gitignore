@@ -1,0 +1,31 @@
+# Credentials
+*.json
+!appsscript.json
+inner-cinema-credentials.json
+token.pickle
+
+# Logs
+logs/
+*.log
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Ngrok
+ngrok.log
+*.pid

@@ -32,8 +32,13 @@ function refreshDnoData() {
     } else {
       // Manual trigger via webhook
       const postcode = sheet.getRange('A6').getValue();
-      const mpan = sheet.getRange('B6').getValue();
+      let mpan = sheet.getRange('B6').getValue();
       const voltage = sheet.getRange('A10').getValue();
+      
+      // Extract MPAN value if it's in dropdown format "ID - CODE"
+      if (typeof mpan === 'string' && mpan.includes(' - ')) {
+        mpan = mpan.split(' - ')[0];
+      }
       
       if (!postcode || !mpan || !voltage) {
         Browser.msgBox('⚠️ Missing Data', 'Please enter Postcode (A6), MPAN (B6), and Voltage (A10)', Browser.Buttons.OK);
@@ -91,13 +96,33 @@ function validateMpan() {
   const sheet = SpreadsheetApp.getActive().getSheetByName('BESS');
   const mpan = sheet.getRange('B6').getValue();
   
-  if (!mpan || mpan.toString().length !== 13) {
-    Browser.msgBox('❌ Invalid MPAN', 'MPAN must be 13 digits', Browser.Buttons.OK);
+  // Extract MPAN value if it's in "ID - CODE" format from dropdown
+  let mpanValue = mpan;
+  if (typeof mpan === 'string' && mpan.includes(' - ')) {
+    mpanValue = mpan.split(' - ')[0];
+  }
+  
+  if (!mpanValue || mpanValue.toString().length < 2) {
+    Browser.msgBox('❌ Invalid MPAN', 'MPAN must be at least 2 digits (Distributor ID)', Browser.Buttons.OK);
     return;
   }
   
-  // Check digit validation would go here
-  Browser.msgBox('✅ MPAN Format Valid', 'MPAN: ' + mpan, Browser.Buttons.OK);
+  // Extract distributor ID (first 2 digits)
+  const distributorId = mpanValue.toString().substring(0, 2);
+  const validIds = ['10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23'];
+  
+  if (validIds.includes(distributorId)) {
+    Browser.msgBox('✅ MPAN Valid', 
+      'MPAN: ' + mpanValue + '\n' +
+      'Distributor ID: ' + distributorId + '\n\n' +
+      'Click "🔄 Refresh DNO Data" to lookup details', 
+      Browser.Buttons.OK);
+  } else {
+    Browser.msgBox('❌ Invalid Distributor ID', 
+      'First 2 digits must be 10-23.\n' +
+      'Found: ' + distributorId, 
+      Browser.Buttons.OK);
+  }
 }
 
 function validatePostcode() {
@@ -192,6 +217,11 @@ function showSettings() {
     <div class="setting">
       <div class="label">📊 Export Formats:</div>
       <div class="value">CSV, JSON, TXT</div>
+    </div>
+    
+    <div class="setting">
+      <div class="label">📋 Data Validation:</div>
+      <div class="value">Dropdowns on A10 (Voltage), B6 (DNO), E10 (Profile), F10 (Meter), H10 (DUoS)</div>
     </div>
     
     <div class="setting">

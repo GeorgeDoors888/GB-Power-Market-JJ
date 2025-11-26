@@ -1,0 +1,30 @@
+================================================================================
+UPDATE EXISTING CONSTRAINT MAP IN YOUR SPREADSHEET
+================================================================================
+
+PROBLEM: Your spreadsheet already has an Apps Script with old map code.
+         We need to REPLACE that code with the new working version.
+
+SOLUTION:
+1. Open: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8
+
+2. Go to: Extensions → Apps Script
+
+3. You'll see existing files. Find the one that has the constraint map code
+
+4. REPLACE the entire contents with the code from:
+   /Users/georgemajor/GB Power Market JJ/constraint_map_simple.gs
+
+5. Save (Cmd+S)
+
+6. Close Apps Script editor
+
+7. Go back to spreadsheet
+
+8. Click: Constraint Map → Interactive map refresh (or close/reopen sheet)
+
+9. Then click: Constraint Map → Show Live Map (or similar menu item)
+
+================================================================================
+OPENING THE FILE NOW...
+================================================================================

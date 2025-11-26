@@ -1,0 +1,21 @@
+{
+  "theme": "Upower GB Energy Dashboard",
+  "colors": {
+    "primary": "#0072ce",
+    "secondary": "#ff7f0f",
+    "success": "#4CAF50",
+    "warning": "#FFC107",
+    "danger": "#F44336",
+    "background": "#FFFFFF",
+    "text": "#333333"
+  },
+  "fonts": {
+    "header": "Arial Bold",
+    "body": "Arial"
+  },
+  "formatting": {
+    "numbers": "#,##0.0",
+    "currency": "£#,##0.00",
+    "percentage": "0.0%"
+  }
+}
