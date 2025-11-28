@@ -101,3 +101,10 @@ old/
 deprecated/
 data/
 exports/
+# Large files
+venv/
+*.geojson
+*.zip
+*.log
+*.xlsx
+pdf_index_state.json
