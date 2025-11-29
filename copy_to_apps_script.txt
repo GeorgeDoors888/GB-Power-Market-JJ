@@ -1,0 +1,14 @@
+📋 COPY THESE FUNCTIONS TO APPS SCRIPT
+
+1. Open: https://docs.google.com/spreadsheets/d/1LmMq4OEE639Y-XXpOJ3xnvpAmHB6vUovh5g6gaU_vzc/edit
+2. Click: Extensions → Apps Script
+3. Delete any existing code
+4. Paste the contents of:
+   - Charts.js (for buildAllCharts function)
+   - Code.js (for formatDashboard function)
+
+Files are in: /Users/georgemajor/GB-Power-Market-JJ/clasp_deploy/
+
+Or run this command to see the code:
+cat /Users/georgemajor/GB-Power-Market-JJ/clasp_deploy/Code.js
+cat /Users/georgemajor/GB-Power-Market-JJ/clasp_deploy/Charts.js

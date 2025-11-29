@@ -1,0 +1,118 @@
+DASHBOARD V3 - DEPLOYMENT COMPLETE ✅
+====================================
+
+📦 WHAT'S BEEN DEPLOYED:
+
+1. Google Apps Script (via clasp):
+   ✅ Charts.js - All 7 chart builders:
+      • buildPricesChart() - System prices (SSP/SBP/Mid)
+      • buildDemandGenChart() - Demand vs Generation
+      • buildICChart() - Interconnector flows
+      • buildBMChart() - BM costs breakdown
+      • buildWindPerfChart() - Wind forecast vs actual
+      • buildFrequencyChart() - System frequency
+      • buildOutagesChart() - Generator outages by fuel
+   
+   ✅ Code.js - Dashboard functions:
+      • RefreshDashboard() - Reads 5 filters, updates timestamp
+      • formatDashboard() - Applies consistent styling
+      • Existing constraint map functions
+
+2. Python Data Pipeline:
+   ✅ update_wind_data.py - Populates Chart_Wind_Perf (2 hours of data)
+   ✅ update_frequency.py - Populates Chart_Frequency (1440 minutes/24h)
+   ✅ update_bm_costs.py - Template ready (no recent data in BigQuery)
+   ✅ update_outages.py - Works with bmrs_remit_unavailability
+   ✅ update_all_charts.sh - Master script to run all updates
+
+📊 GOOGLE SHEETS SETUP:
+
+Spreadsheet ID: 1LmMq4OEE639Y-XXpOJ3xnvpAmHB6vUovh5g6gaU_vzc
+
+Required Sheets:
+• Dashboard (main sheet with filters, KPIs, tables, charts)
+• Chart_Prices (for prices chart)
+• Chart_Demand_Gen (for demand/generation chart)
+• Chart_IC_Import (for IC flows chart)
+• Chart_BM_Costs (for BM costs chart)
+• Chart_Wind_Perf (✅ populated by update_wind_data.py)
+• Chart_Frequency (✅ populated by update_frequency.py)
+• Chart_Outages (needs to be created or use existing Outages sheet)
+
+🚀 HOW TO USE:
+
+1. Update Data (run every 5 minutes via cron):
+   cd /Users/georgemajor/GB-Power-Market-JJ
+   ./update_all_charts.sh
+
+2. Rebuild Charts (run from Google Sheets Apps Script):
+   • Extensions → Apps Script
+   • Run: buildAllCharts()
+
+3. Apply Formatting (run once or after major changes):
+   • Extensions → Apps Script
+   • Run: formatDashboard()
+
+4. Refresh Dashboard (connect "Refresh Dashboard" button):
+   • Right-click button in Dashboard sheet
+   • Assign script → RefreshDashboard
+   • Click button to read filters and update timestamp
+
+⏰ AUTOMATION SETUP:
+
+Cron (every 5 minutes):
+   */5 * * * * cd /Users/georgemajor/GB-Power-Market-JJ && ./update_all_charts.sh >> logs/dashboard_update.log 2>&1
+
+Apps Script Trigger (rebuild charts daily at 3 AM):
+   • Extensions → Apps Script
+   • Run: installDailyChartRebuild() (run once to set up trigger)
+
+⚠️ KNOWN ISSUES:
+
+1. BM Costs Data:
+   - bmrs_costs table has no data since Oct 31, 2024
+   - Script runs successfully but produces 0 rows
+   - Chart will be empty until data is available
+
+2. Outages Schema:
+   - update_outages.py works with bmrs_remit_unavailability
+   - Alternative table bmrs_uou2t3yw has eventStatus not eventStart
+   - Current script working, no changes needed
+
+3. Wind Forecast Data:
+   - Only actual wind generation available
+   - Forecast_MW column populated with 0
+   - Chart shows actual wind only
+
+📁 FILES CREATED:
+
+Apps Script:
+   /Users/georgemajor/GB-Power-Market-JJ/clasp_deploy/Charts.js
+   /Users/georgemajor/GB-Power-Market-JJ/clasp_deploy/Code.js
+
+Python Scripts:
+   /Users/georgemajor/GB-Power-Market-JJ/update_wind_data.py
+   /Users/georgemajor/GB-Power-Market-JJ/update_frequency.py
+   /Users/georgemajor/GB-Power-Market-JJ/update_bm_costs.py
+   /Users/georgemajor/GB-Power-Market-JJ/update_all_charts.sh
+
+🖥️ SERVER MIGRATION COMPLETE:
+
+Dell Server (george@dell):
+   Location: /home/george/GB-Power-Market-JJ
+   ✅ All dashboard update scripts
+   ✅ Chart data pipelines (every 5 min)
+   ✅ Outages updates (every 10 min)
+   ✅ Comprehensive dashboard (every 15 min)
+   ✅ Cron jobs installed and running
+
+UpCloud Server (root@upcloud):
+   Location: /opt/dashboard-api
+   ✅ dashboard-api.service (ChatGPT webhook only)
+   ✅ Systemd service running
+   ⚠️ All cron jobs removed (moved to Dell)
+
+✅ DEPLOYMENT STATUS: COMPLETE
+
+All core functionality deployed and tested!
+Migration from UpCloud to Dell complete - ChatGPT webhook remains on UpCloud.

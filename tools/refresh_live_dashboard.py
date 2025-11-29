@@ -419,7 +419,7 @@ def main(date_str=None):
     # Update Dashboard display (full layout)
     print("📊 Updating Dashboard display layout...")
     import subprocess
-    subprocess.run(["/opt/homebrew/bin/python3", "update_dashboard_display.py"], cwd="/Users/georgemajor/GB Power Market JJ/tools")
+    subprocess.run(["/opt/homebrew/bin/python3", "update_dashboard_display.py"], cwd="/Users/georgemajor/GB-Power-Market-JJ/tools")
     
     print(f"✅ OK: wrote {len(tidy)} rows for {date_str}")
     print(f"📊 Chart data available at named range: NR_TODAY_TABLE")

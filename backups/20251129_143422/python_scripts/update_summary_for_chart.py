@@ -10,7 +10,7 @@ from google.cloud import bigquery
 import pandas as pd
 
 SA_FILE = 'inner-cinema-credentials.json'
-SPREADSHEET_ID = '1LmMq4OEE639Y-XXpOJ3xnvpAmHB6vUovh5g6gaU_vzc'  # Dashboard V2
+SPREADSHEET_ID = '12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8'
 PROJECT_ID = "inner-cinema-476211-u9"
 
 print('=' * 80)
@@ -134,23 +134,38 @@ print(f'   Generation: {df["generation_gw"].min():.2f} - {df["generation_gw"].ma
 print(f'   Wind: {df["wind_percent"].min():.1f}% - {df["wind_percent"].max():.1f}%')
 print(f'   Price: £{df["price_gbp_mwh"].min():.2f} - £{df["price_gbp_mwh"].max():.2f}/MWh')
 
-# Update Dashboard V2 row 5 KPI strip (matches current format)
-print('\n📊 Updating Dashboard V2 row 5 KPI strip...')
+# Update Dashboard row 5 summary and row 6 KPIs
+print('\n📊 Updating Dashboard rows 5-6...')
 latest = df.iloc[-1]
-sheet = spreadsheet.sheet1  # Dashboard V2 main sheet
+dashboard = spreadsheet.worksheet('Dashboard')
 
 # Calculate current SP
 from datetime import datetime
 now = datetime.now()
 sp = (now.hour * 2) + (1 if now.minute < 30 else 2)
 
-# Row 5: KPI Strip matching current format
-# Current format: ⚡ Gen: 28.1 GW | Demand: nan GW | Price: £nan/MWh (SSP: £nan, SBP: £nan) | 14:40
-kpi_text = f'⚡ Gen: {latest["generation_gw"]:.1f} GW | Demand: {latest["demand_gw"]:.1f} GW | Price: £{latest["price_gbp_mwh"]:.2f}/MWh (SSP: £{latest["price_gbp_mwh"]:.2f}, SBP: £{latest["price_gbp_mwh"]:.2f}) | {now.strftime("%H:%M")}'
-sheet.update(range_name='A5', values=[[kpi_text]], value_input_option='USER_ENTERED')
+# Row 5: Human-readable summary
+summary_text = f'Total Generation: {latest["generation_gw"]:.1f} GW | Demand: {latest["demand_gw"]:.1f} GW | Wind: {latest["wind_percent"]:.0f}% | 💰 Market Price: £{latest["price_gbp_mwh"]:.2f}/MWh (SP{sp}, {now.strftime("%H:%M")})'
+dashboard.update(range_name='A5', values=[[summary_text]], value_input_option='USER_ENTERED')
 
-print('✅ Dashboard V2 row 5 updated')
-print(f'   {kpi_text}')
+# Row 6 labels (A6)
+dashboard.update(range_name='A6', values=[['📊 Current:']], value_input_option='USER_ENTERED')
+
+# Row 6: Labeled KPI values (B6:G6) with headers
+kpi_with_labels = [[
+    f'Demand: {float(latest["demand_gw"]):.2f} GW',
+    f'Generation: {float(latest["generation_gw"]):.2f} GW',
+    f'Wind: {float(latest["wind_percent"]):.0f}%',
+    f'Price: £{float(latest["price_gbp_mwh"]):.2f}/MWh',
+    f'Frequency: {float(latest["frequency_hz"]):.2f} Hz',
+    f'Constraint: {float(latest["constraint_mw"]):.0f} MW'
+]]
+
+dashboard.update(range_name='B6:G6', values=kpi_with_labels, value_input_option='USER_ENTERED')
+
+print('✅ Dashboard rows 5-6 updated')
+print(f'   Row 5: {summary_text}')
+print(f'   Row 6: Demand {latest["demand_gw"]:.2f} GW, Generation {latest["generation_gw"]:.2f} GW, Wind {latest["wind_percent"]:.1f}%, Price £{latest["price_gbp_mwh"]:.2f}/MWh')
 
 print('\n' + '=' * 80)
 print('✅ COMPLETE - Chart now displays live data')

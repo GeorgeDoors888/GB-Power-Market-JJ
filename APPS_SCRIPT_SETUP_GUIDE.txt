@@ -1,0 +1,75 @@
+📋 GOOGLE APPS SCRIPT SETUP GUIDE
+==================================
+
+🔗 STEP 1: Open Your Dashboard
+   1. Go to: https://docs.google.com/spreadsheets/d/1LmMq4OEE639Y-XXpOJ3xnvpAmHB6vUovh5g6gaU_vzc
+   2. Wait for the sheet to load
+
+🎨 STEP 2: Open Apps Script Editor
+   1. Click "Extensions" in the menu bar
+   2. Click "Apps Script"
+   3. New tab will open with the script editor
+
+🎯 STEP 3: Run buildAllCharts()
+   1. In the Apps Script editor, find the function dropdown (top toolbar)
+   2. Select: buildAllCharts
+   3. Click the "Run" button (▶️ play icon)
+   4. First time: Click "Review permissions" → Choose your account → "Allow"
+   5. Wait for execution to complete (check bottom status bar)
+   6. ✅ Should see: "Execution completed" with 7 charts created logs
+
+📊 STEP 4: Run formatDashboard()
+   1. In function dropdown, select: formatDashboard
+   2. Click "Run" button (▶️)
+   3. Wait for completion
+   4. ✅ Should see: Alert popup "✅ Dashboard formatting applied!"
+
+🔘 STEP 5: Assign Refresh Dashboard Button
+   1. Go back to your Google Sheets tab
+   2. Find the "Refresh Dashboard" button (drawing/shape in the sheet)
+   3. Right-click the button → Click three dots (...) → "Assign script"
+   4. In the popup dialog, type: RefreshDashboard
+   5. Click "OK"
+   6. ✅ Test it: Click the button, should show filter values and timestamp
+
+⏰ STEP 6: Install Daily Chart Rebuild Trigger
+   1. Go back to Apps Script editor
+   2. In function dropdown, select: installDailyChartRebuild
+   3. Click "Run" button (▶️)
+   4. Check execution log for: "✅ Daily chart rebuild scheduled for 3:00 AM"
+   5. Verify: Click "Triggers" icon (⏰) in left sidebar
+   6. ✅ Should see: buildAllCharts trigger set for 3 AM daily
+
+📝 VERIFICATION CHECKLIST:
+   □ All 7 charts visible in Dashboard sheet
+   □ Dashboard has blue header with proper formatting
+   □ KPI strip has light blue background
+   □ Table headers colored (yellow/green/orange)
+   □ "Refresh Dashboard" button works when clicked
+   □ Daily trigger appears in Triggers list
+
+🎉 If all checkboxes checked → SETUP COMPLETE!
+
+⚠️ TROUBLESHOOTING:
+   - If "buildAllCharts failed": Check if Chart_* sheets exist
+   - If button doesn't work: Re-assign script (case-sensitive!)
+   - If trigger fails: Check Apps Script quota limits
+   - If permissions error: Re-authorize the script
+
+📞 Chart Sheet Names Required:
+   • Chart_Prices
+   • Chart_Demand_Gen
+   • Chart_IC_Import
+   • Chart_BM_Costs
+   • Chart_Wind_Perf (✅ created by update_wind_data.py)
+   • Chart_Frequency (✅ created by update_frequency.py)
+   • Chart_Outages (or use existing "Outages" sheet)
+
+🔧 TECHNICAL INFO:
+   Script ID: 1c9BJqrtruVFh_LT_IWrHOpJIy8c29_zH6v1Co8-KHU9R1o9g2wZZERH5
+   Spreadsheet ID: 1LmMq4OEE639Y-XXpOJ3xnvpAmHB6vUovh5g6gaU_vzc
+   Deployment: @1 (latest version)
+   
+📝 NOTE: Apps Script functions cannot be executed via service account.
+   They require interactive user authorization through the Google Sheets UI.
+   This is a Google security restriction for Apps Script API.
