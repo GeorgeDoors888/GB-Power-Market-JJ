@@ -250,11 +250,16 @@ def main():
         print("\n⚙️  Calculating arbitrage opportunities...")
         results = []
         profitable_count = 0
+        monthly_stats = {}
+        time_band_stats = {'RED': {'total': 0, 'profitable': 0, 'margin_sum': 0},
+                          'AMBER': {'total': 0, 'profitable': 0, 'margin_sum': 0},
+                          'GREEN': {'total': 0, 'profitable': 0, 'margin_sum': 0}}
         
         for _, row in prices_df.iterrows():
             sp = row['settlement_period']
             ssp = row['ssp']
             date = row['settlement_date']
+            month_name = row['month_name']
             
             # Determine time band
             time_band = get_time_band_for_sp(sp)
@@ -268,6 +273,20 @@ def main():
             
             if profitable:
                 profitable_count += 1
+            
+            # Update monthly stats
+            if month_name not in monthly_stats:
+                monthly_stats[month_name] = {'total': 0, 'profitable': 0, 'margin_sum': 0}
+            monthly_stats[month_name]['total'] += 1
+            if profitable:
+                monthly_stats[month_name]['profitable'] += 1
+            monthly_stats[month_name]['margin_sum'] += margin
+            
+            # Update time band stats
+            time_band_stats[time_band]['total'] += 1
+            if profitable:
+                time_band_stats[time_band]['profitable'] += 1
+            time_band_stats[time_band]['margin_sum'] += margin
             
             # Format time
             hour = (sp - 1) // 2
@@ -283,7 +302,8 @@ def main():
                 'total_cost': total_cost,
                 'ppa_price': ppa_price,
                 'margin': margin,
-                'profitable': 'YES' if profitable else 'NO'
+                'profitable': 'YES' if profitable else 'NO',
+                'month': month_name
             })
         
         # Sort by margin (most profitable first)
@@ -292,11 +312,33 @@ def main():
         # Summary stats
         total_periods = len(results)
         profitable_pct = (profitable_count / total_periods * 100) if total_periods > 0 else 0
+        avg_margin = sum(r['margin'] for r in results) / len(results) if results else 0
         
-        print(f"\n📈 Results:")
-        print(f"   Total SPs analyzed: {total_periods}")
-        print(f"   Profitable SPs: {profitable_count} ({profitable_pct:.1f}%)")
-        print(f"   Average margin: £{sum(r['margin'] for r in results)/len(results):.2f}/MWh")
+        print(f"\n📈 Overall Results (24 months):")
+        print(f"   Total SPs analyzed: {total_periods:,}")
+        print(f"   Profitable SPs: {profitable_count:,} ({profitable_pct:.1f}%)")
+        print(f"   Average margin: £{avg_margin:.2f}/MWh")
+        
+        # Time band analysis
+        print(f"\n🎯 Time Band Analysis:")
+        for band in ['RED', 'AMBER', 'GREEN']:
+            stats = time_band_stats[band]
+            band_pct = (stats['profitable'] / stats['total'] * 100) if stats['total'] > 0 else 0
+            band_avg = stats['margin_sum'] / stats['total'] if stats['total'] > 0 else 0
+            print(f"   {band:6s}: {stats['profitable']:,}/{stats['total']:,} profitable ({band_pct:.1f}%) | "
+                  f"Avg margin: £{band_avg:+.2f}/MWh")
+        
+        # Monthly trends (show last 12 months)
+        print(f"\n📅 Monthly Trends (Last 12 Months):")
+        sorted_months = sorted(monthly_stats.keys(), 
+                              key=lambda x: pd.to_datetime(x, format='%b %Y'), 
+                              reverse=True)[:12]
+        for month in reversed(sorted_months):
+            stats = monthly_stats[month]
+            month_pct = (stats['profitable'] / stats['total'] * 100) if stats['total'] > 0 else 0
+            month_avg = stats['margin_sum'] / stats['total'] if stats['total'] > 0 else 0
+            print(f"   {month}: {stats['profitable']:,}/{stats['total']:,} profitable ({month_pct:.1f}%) | "
+                  f"Avg margin: £{month_avg:+.2f}/MWh")
         
         # Show top 10 opportunities
         print(f"\n🎯 Top 10 Arbitrage Opportunities:")
@@ -311,16 +353,68 @@ def main():
         # Header
         header = [
             [""],
-            ["PPA Arbitrage Analysis"],
+            ["PPA ARBITRAGE ANALYSIS - 24 MONTH HISTORICAL"],
+            ["Analysis Date:", datetime.now().strftime('%Y-%m-%d %H:%M')],
             ["PPA Contract Price:", f"£{ppa_price:.2f}/MWh"],
             [""],
+        ]
+        
+        # Overall Summary
+        overall_summary = [
+            ["OVERALL SUMMARY (24 MONTHS)"],
+            ["Total Settlement Periods:", f"{total_periods:,}"],
+            ["Profitable Periods:", f"{profitable_count:,} ({profitable_pct:.1f}%)"],
+            ["Average Margin:", f"£{avg_margin:+.2f}/MWh"],
+            [""],
+        ]
+        
+        # Time Band Summary
+        time_band_summary = [
+            ["TIME BAND ANALYSIS"],
+            ["Band", "Total SPs", "Profitable", "Success Rate", "Avg Margin"],
+        ]
+        for band in ['RED', 'AMBER', 'GREEN']:
+            stats = time_band_stats[band]
+            band_pct = (stats['profitable'] / stats['total'] * 100) if stats['total'] > 0 else 0
+            band_avg = stats['margin_sum'] / stats['total'] if stats['total'] > 0 else 0
+            time_band_summary.append([
+                band,
+                f"{stats['total']:,}",
+                f"{stats['profitable']:,}",
+                f"{band_pct:.1f}%",
+                f"£{band_avg:+.2f}/MWh"
+            ])
+        time_band_summary.append([""])
+        
+        # Monthly Summary (last 12 months)
+        monthly_summary = [
+            ["MONTHLY TRENDS (Last 12 Months)"],
+            ["Month", "Total SPs", "Profitable", "Success Rate", "Avg Margin"],
+        ]
+        sorted_months = sorted(monthly_stats.keys(), 
+                              key=lambda x: pd.to_datetime(x, format='%b %Y'), 
+                              reverse=True)[:12]
+        for month in reversed(sorted_months):
+            stats = monthly_stats[month]
+            month_pct = (stats['profitable'] / stats['total'] * 100) if stats['total'] > 0 else 0
+            month_avg = stats['margin_sum'] / stats['total'] if stats['total'] > 0 else 0
+            monthly_summary.append([
+                month,
+                f"{stats['total']:,}",
+                f"{stats['profitable']:,}",
+                f"{month_pct:.1f}%",
+                f"£{month_avg:+.2f}/MWh"
+            ])
+        monthly_summary.append([""])
+        
+        # Top 30 Opportunities
+        top_opportunities = [
+            ["TOP 30 ARBITRAGE OPPORTUNITIES"],
             ["Date", "SP", "Time", "Band", "SSP (£/MWh)", "Total Cost (£/MWh)", "Margin (£/MWh)", "Profitable?"]
         ]
         
-        # Top 20 results
-        data_rows = []
-        for r in results_sorted[:20]:
-            data_rows.append([
+        for r in results_sorted[:30]:
+            top_opportunities.append([
                 str(r['date']),
                 r['sp'],
                 r['time'],
@@ -331,27 +425,25 @@ def main():
                 r['profitable']
             ])
         
-        # Summary
-        summary = [
-            [""],
-            ["Summary Statistics"],
-            ["Total SPs Analyzed:", total_periods],
-            ["Profitable SPs:", f"{profitable_count} ({profitable_pct:.1f}%)"],
-            ["Unprofitable SPs:", f"{total_periods - profitable_count} ({100-profitable_pct:.1f}%)"],
-            [""],
-            ["Cost Breakdown (per MWh):"],
-            ["DUoS (RED):", f"£{duos_rates['red'] * 1000:.2f}"],
-            ["DUoS (AMBER):", f"£{duos_rates['amber'] * 1000:.2f}"],
-            ["DUoS (GREEN):", f"£{duos_rates['green'] * 1000:.2f}"],
-            ["CCL:", f"£{RATES['ccl'] * 1000:.2f}"],
-            ["RO:", f"£{RATES['ro'] * 1000:.2f}"],
-            ["FiT:", f"£{RATES['fit'] * 1000:.2f}"],
-            ["BSUoS:", f"£{RATES['bsuos_avg'] * 1000:.2f}"],
-            ["TNUoS:", f"£{RATES['tnuos_hv'] * 1000:.2f}"],
+        top_opportunities.append([""])
+        
+        # Cost Breakdown
+        cost_breakdown = [
+            ["COST BREAKDOWN (per MWh)"],
+            ["Component", "RED", "AMBER", "GREEN"],
+            ["DUoS:", f"£{duos_rates['red'] * 1000:.2f}", 
+             f"£{duos_rates['amber'] * 1000:.2f}", 
+             f"£{duos_rates['green'] * 1000:.2f}"],
+            ["CCL:", f"£{RATES['ccl'] * 1000:.2f}", "", ""],
+            ["RO:", f"£{RATES['ro'] * 1000:.2f}", "", ""],
+            ["FiT:", f"£{RATES['fit'] * 1000:.2f}", "", ""],
+            ["BSUoS:", f"£{RATES['bsuos_avg'] * 1000:.2f}", "", ""],
+            ["TNUoS:", f"£{RATES['tnuos_hv'] * 1000:.2f}", "", ""],
         ]
         
         # Combine all data
-        all_data = header + data_rows + summary
+        all_data = (header + overall_summary + time_band_summary + 
+                   monthly_summary + top_opportunities + cost_breakdown)
         
         # Write to A90 onwards
         end_row = 90 + len(all_data)
@@ -360,23 +452,56 @@ def main():
         print(f"   ✅ Written to A90:H{end_row}")
         
         # Update summary cell
-        bess.update(values=[[
-            f"PPA: £{ppa_price}/MWh | {profitable_count}/{total_periods} SPs profitable ({profitable_pct:.1f}%)"
-        ]], range_name='A20')
+        summary_text = (f"24M Analysis: {profitable_count:,}/{total_periods:,} SPs profitable "
+                       f"({profitable_pct:.1f}%) | Avg: £{avg_margin:+.2f}/MWh | "
+                       f"Best: {results_sorted[0]['band']} £{results_sorted[0]['margin']:+.2f}/MWh")
+        bess.update(values=[[summary_text]], range_name='A20')
         
         print("\n" + "=" * 80)
         print("✅ PPA ARBITRAGE ANALYSIS COMPLETE!")
         print("=" * 80)
-        print(f"\n💡 Key Insight:")
+        print(f"\n💡 Key Insights (24 Months):")
+        
+        # Overall profitability
         if profitable_pct > 50:
-            print(f"   🟢 GOOD: {profitable_pct:.0f}% of SPs are profitable")
-            print(f"      Your PPA price (£{ppa_price}/MWh) is competitive!")
+            print(f"   🟢 EXCELLENT: {profitable_pct:.1f}% of SPs profitable")
+            print(f"      Your PPA price (£{ppa_price}/MWh) is highly competitive!")
         elif profitable_pct > 25:
-            print(f"   🟡 MODERATE: {profitable_pct:.0f}% of SPs are profitable")
-            print(f"      Some arbitrage opportunities available")
+            print(f"   🟡 MODERATE: {profitable_pct:.1f}% of SPs profitable")
+            print(f"      Good arbitrage opportunities available")
         else:
-            print(f"   🔴 LIMITED: Only {profitable_pct:.0f}% of SPs are profitable")
-            print(f"      Consider negotiating lower PPA price or target specific time bands")
+            print(f"   🔴 CHALLENGING: Only {profitable_pct:.1f}% of SPs profitable")
+            print(f"      Consider renegotiating PPA or focusing on optimal time bands")
+        
+        # Time band recommendations
+        best_band = max(time_band_stats.items(), 
+                       key=lambda x: x[1]['profitable']/x[1]['total'] if x[1]['total'] > 0 else 0)
+        best_band_pct = (best_band[1]['profitable'] / best_band[1]['total'] * 100) if best_band[1]['total'] > 0 else 0
+        print(f"\n   🎯 Best Time Band: {best_band[0]} ({best_band_pct:.1f}% profitable)")
+        print(f"      Strategy: Focus battery charging during {best_band[0]} periods")
+        
+        # Monthly seasonality
+        best_month = max(monthly_stats.items(), 
+                        key=lambda x: x[1]['profitable']/x[1]['total'] if x[1]['total'] > 0 else 0)
+        worst_month = min(monthly_stats.items(), 
+                         key=lambda x: x[1]['profitable']/x[1]['total'] if x[1]['total'] > 0 else 0)
+        best_month_pct = (best_month[1]['profitable'] / best_month[1]['total'] * 100) if best_month[1]['total'] > 0 else 0
+        worst_month_pct = (worst_month[1]['profitable'] / worst_month[1]['total'] * 100) if worst_month[1]['total'] > 0 else 0
+        
+        print(f"\n   📅 Seasonal Patterns:")
+        print(f"      Best month: {best_month[0]} ({best_month_pct:.1f}% profitable)")
+        print(f"      Worst month: {worst_month[0]} ({worst_month_pct:.1f}% profitable)")
+        print(f"      Variation: {best_month_pct - worst_month_pct:.1f} percentage points")
+        
+        # Potential annual profit
+        avg_daily_sps = 48
+        avg_profitable_daily = avg_daily_sps * (profitable_pct / 100)
+        # Assume 1 MWh per profitable SP
+        annual_profit = avg_profitable_daily * avg_margin * 365
+        print(f"\n   💰 Potential Annual Value:")
+        print(f"      Average {avg_profitable_daily:.0f} profitable SPs/day")
+        print(f"      @ {avg_margin:+.2f} £/MWh margin × 1 MWh × 365 days")
+        print(f"      = £{annual_profit:,.0f}/year potential arbitrage profit")
         
         print(f"\n🔗 View: https://docs.google.com/spreadsheets/d/{DASHBOARD_V2_ID}/edit")
         
