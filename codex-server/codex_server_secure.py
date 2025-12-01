@@ -5,7 +5,7 @@ import tempfile
 import os
 import time
 import logging
-from typing import Optional
+from typing import Optional, List, Dict, Any
 import secrets
 import pandas as pd
 from pathlib import Path
@@ -14,6 +14,8 @@ from google.cloud import bigquery
 from google.oauth2 import service_account
 import json
 import base64
+from googleapiclient.discovery import build
+from google.auth.transport.requests import Request as GoogleAuthRequest
 
 # Configure logging
 logging.basicConfig(
@@ -48,6 +50,24 @@ try:
 except Exception as e:
     logger.error(f"❌ Failed to initialize BigQuery: {e}")
     bq_client = None
+
+# Initialize Google Sheets API client
+SPREADSHEET_ID = '1LmMq4OEE639Y-XXpOJ3xnvpAmHB6vUovh5g6gaU_vzc'
+sheets_service = None
+try:
+    if creds_base64:
+        # Use the same credentials for Sheets API
+        scoped_credentials = credentials.with_scopes([
+            'https://www.googleapis.com/auth/spreadsheets',
+            'https://www.googleapis.com/auth/drive.readonly'
+        ])
+        sheets_service = build('sheets', 'v4', credentials=scoped_credentials)
+        logger.info("✅ Google Sheets API initialized")
+    else:
+        logger.warning("⚠️ No credentials for Sheets API")
+except Exception as e:
+    logger.error(f"❌ Failed to initialize Sheets API: {e}")
+    sheets_service = None
 
 # BMU Data Loading for Outages
 BMU_REGISTRATION_FILE = 'bmu_registration_data.csv'
@@ -1115,6 +1135,118 @@ async def write_google_doc(request: Request, authorization: Optional[str] = Head
         }
     except Exception as e:
         logger.error(f"Write doc error: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+# ============================================================================
+# GOOGLE SHEETS API ENDPOINTS
+# ============================================================================
+
+class SheetsReadRequest(BaseModel):
+    sheet: str
+    range: str
+
+class SheetsWriteRequest(BaseModel):
+    sheet: str
+    range: str
+    values: List[List[Any]]
+
+@app.get("/sheets_health")
+async def sheets_health():
+    """Health check for Google Sheets API"""
+    return {
+        "ok": True,
+        "message": "Google Sheets API is healthy",
+        "spreadsheet_id": SPREADSHEET_ID,
+        "sheets_api_available": sheets_service is not None
+    }
+
+@app.get("/sheets_list")
+async def sheets_list(authorization: str = Header(None)):
+    """List all sheets in the spreadsheet"""
+    if authorization != f"Bearer {API_TOKEN}":
+        raise HTTPException(status_code=401, detail="Unauthorized")
+    
+    if not sheets_service:
+        raise HTTPException(status_code=503, detail="Sheets API not initialized")
+    
+    try:
+        spreadsheet = sheets_service.spreadsheets().get(
+            spreadsheetId=SPREADSHEET_ID
+        ).execute()
+        
+        sheets = [sheet['properties']['title'] for sheet in spreadsheet.get('sheets', [])]
+        
+        return {
+            "ok": True,
+            "spreadsheet_id": SPREADSHEET_ID,
+            "sheets": sheets,
+            "count": len(sheets)
+        }
+    except Exception as e:
+        logger.error(f"Sheets list error: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.post("/sheets_read")
+async def sheets_read(request: SheetsReadRequest, authorization: str = Header(None)):
+    """Read data from a Google Sheet"""
+    if authorization != f"Bearer {API_TOKEN}":
+        raise HTTPException(status_code=401, detail="Unauthorized")
+    
+    if not sheets_service:
+        raise HTTPException(status_code=503, detail="Sheets API not initialized")
+    
+    try:
+        range_name = f"{request.sheet}!{request.range}"
+        result = sheets_service.spreadsheets().values().get(
+            spreadsheetId=SPREADSHEET_ID,
+            range=range_name
+        ).execute()
+        
+        values = result.get('values', [])
+        
+        return {
+            "ok": True,
+            "range": result.get('range'),
+            "values": values,
+            "rows": len(values),
+            "columns": len(values[0]) if values else 0
+        }
+    except Exception as e:
+        logger.error(f"Sheets read error: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.post("/sheets_write")
+async def sheets_write(request: SheetsWriteRequest, authorization: str = Header(None)):
+    """Write data to a Google Sheet"""
+    if authorization != f"Bearer {API_TOKEN}":
+        raise HTTPException(status_code=401, detail="Unauthorized")
+    
+    if not sheets_service:
+        raise HTTPException(status_code=503, detail="Sheets API not initialized")
+    
+    try:
+        range_name = f"{request.sheet}!{request.range}"
+        body = {
+            'values': request.values
+        }
+        
+        result = sheets_service.spreadsheets().values().update(
+            spreadsheetId=SPREADSHEET_ID,
+            range=range_name,
+            valueInputOption='USER_ENTERED',
+            body=body
+        ).execute()
+        
+        return {
+            "ok": True,
+            "updated_range": result.get('updatedRange'),
+            "updated_rows": result.get('updatedRows'),
+            "updated_columns": result.get('updatedColumns'),
+            "updated_cells": result.get('updatedCells')
+        }
+    except Exception as e:
+        logger.error(f"Sheets write error: {e}")
         raise HTTPException(status_code=500, detail=str(e))
 
 

@@ -8,7 +8,8 @@ export default async function handler(req: Request): Promise<Response> {
         const url = new URL(req.url);
         const path = url.searchParams.get('path') || '';
 
-        const ALLOW = ['/health', '/query_bigquery_get', '/query_bigquery', '/run_stack_check'];
+        const ALLOW = ['/health', '/query_bigquery_get', '/query_bigquery', '/run_stack_check', 
+                       '/sheets_health', '/sheets_list', '/sheets_read', '/sheets_write'];
         if (!ALLOW.includes(path)) {
             return new Response(JSON.stringify({ ok: false, error: 'path not allowed' }), {
                 status: 403,
