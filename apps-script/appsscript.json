@@ -1,0 +1,12 @@
+{
+  "timeZone": "Europe/London",
+  "dependencies": {
+    "libraries": [{
+      "userSymbol": "OAuth2",
+      "libraryId": "1B7FSrk57A1B1rD32V57CL-gT9a1I_xCe_xG1MGFD-yX_0vD_4c54D-L4j",
+      "version": "43"
+    }]
+  },
+  "exceptionLogging": "STACKDRIVER",
+  "runtimeVersion": "V8"
+}

@@ -1,0 +1,247 @@
+================================================================================
+BtM PPA REVENUE CALCULATION - WORKED EXAMPLE
+================================================================================
+
+📋 CONFIGURATION
+--------------------------------------------------------------------------------
+Battery Capacity: 5.0 MWh
+Battery Power: 2.5 MW
+Round-trip Efficiency: 85.0%
+Max Cycles/Day: 4
+Site Demand: 2.5 MW (constant)
+
+💰 PPA Contract Price: £150.0/MWh
+
+📊 Fixed Levies (paid on import):
+   TNUoS (Transmission): £12.5/MWh
+   BSUoS (Balancing): £4.5/MWh
+   CCL (Climate): £7.75/MWh
+   RO (Renewables): £61.9/MWh
+   FiT (Feed-in Tariff): £11.5/MWh
+   TOTAL LEVIES: £98.15/MWh
+
+🔴🟡🟢 DUoS Rates (NGED West Midlands):
+   RED:   £17.64/MWh
+   AMBER: £2.05/MWh
+   GREEN: £0.11/MWh
+
+⏰ Annual Hours by Band:
+   RED:   910 hours/year (16:00-19:30 weekdays)
+   AMBER: 1,690 hours/year (08:00-16:00, 19:30-22:00 weekdays)
+   GREEN: 6,160 hours/year (nights + weekends)
+
+================================================================================
+SCENARIO 1: CURRENT MARKET CONDITIONS (Dec 2025)
+================================================================================
+
+💵 System Buy Prices (actual from BigQuery):
+   GREEN: £65.83/MWh
+   AMBER: £73.91/MWh
+   RED:   £92.93/MWh
+
+📊 Total Import Costs (System Buy + DUoS + Levies):
+   GREEN: £65.83 + £0.11 + £98.15 = £164.09/MWh
+   AMBER: £73.91 + £2.05 + £98.15 = £174.11/MWh
+   RED:   £92.93 + £17.64 + £98.15 = £208.72/MWh
+
+❌ PROBLEM: All costs exceed PPA price of £150.0/MWh
+   GREEN loss: £14.09/MWh
+   AMBER loss: £24.11/MWh
+   RED loss:   £58.72/MWh
+
+🔋 Battery Decision: DO NOT CHARGE (all periods unprofitable)
+   Charged: 0 MWh
+   Discharged: 0 MWh
+   Cycles: 0
+   BtM PPA Profit: £0
+
+================================================================================
+SCENARIO 2: HISTORICAL CONDITIONS (2023) - PROFITABLE
+================================================================================
+
+💵 System Buy Prices (historical 2023):
+   GREEN: £30.00/MWh
+   AMBER: £45.00/MWh
+   RED:   £75.00/MWh
+
+📊 Total Import Costs:
+   GREEN: £30.00 + £0.11 + £98.15 = £128.26/MWh ✅ Profitable!
+   AMBER: £45.00 + £2.05 + £98.15 = £145.20/MWh ⚠️  Marginal
+   RED:   £75.00 + £17.64 + £98.15 = £190.79/MWh ❌ Loss
+
+🔋 Battery Charging Strategy:
+   Charging Threshold: £120.0/MWh (PPA price - £30 margin)
+   Can charge GREEN? ❌ NO (£128.26 vs £120.0)
+   Can charge AMBER? ❌ NO (£145.20 vs £120.0)
+   Can charge RED?   ❌ NO (never profitable)
+
+📈 CHARGING BREAKDOWN:
+   GREEN: 0 MWh @ £128.26/MWh = £0
+   AMBER: 0 MWh @ £145.20/MWh = £0
+   RED:   0 MWh (never charge)
+   ---
+   TOTAL CHARGED: 0 MWh
+   CHARGING COST: £0
+   Battery Cycles: 0.0 cycles/year
+
+⚡ AFTER 85% EFFICIENCY:
+   Available for discharge: 0 MWh
+
+📉 DISCHARGE STRATEGY (Priority: RED > AMBER > GREEN):
+   Site demand RED:   2,275 MWh/year
+   Battery serves RED: 0 MWh (0.0% coverage)
+   Site demand AMBER: 4,225 MWh/year
+   Battery serves AMBER: 0 MWh
+   Site demand GREEN: 15,400 MWh/year
+   Battery serves GREEN: 0 MWh (direct import cheaper)
+
+💰 STREAM 2: Battery + VLP Revenue
+   Discharge volume: 0 MWh
+   PPA revenue: 0 × £150.0 = £0
+   VLP revenue: 0 × 20% × £12.0 = £0
+   Total revenue: £0
+   Charging cost: £0
+   ---
+   STREAM 2 PROFIT: £0
+
+💰 STREAM 1: Direct Import (remaining demand)
+   GREEN: 15,400 MWh
+     Revenue: £2,310,000
+     Cost: £1,975,204
+     Profit: £334,796
+   AMBER: 4,225 MWh
+     Revenue: £633,750
+     Cost: £613,470
+     Profit: £20,280
+   RED: 0 MWh (not imported - too expensive)
+   ---
+   STREAM 1 PROFIT: £355,076
+
+================================================================================
+💷 TOTAL ANNUAL PROFIT
+================================================================================
+   Stream 1 (Direct Import): £355,076
+   Stream 2 (Battery + VLP):  £0
+   BtM PPA Subtotal:          £355,076
+   Dynamic Containment:       £195,458
+   ---
+   TOTAL PROFIT:              £550,534
+
+================================================================================
+🔑 KEY INSIGHTS
+================================================================================
+
+1. Battery Value comes from AVOIDING RED LOSSES:
+   - RED import cost: £190.79/MWh
+   - PPA revenue: £150.0/MWh
+   - Loss per MWh: £40.79
+   - Annual RED demand: 2,275 MWh
+   - Without battery loss: £92,797
+   - Battery avoids: £0
+
+2. Arbitrage Profit is SMALL:
+   - Charge GREEN @ £128.26/MWh
+   - Discharge for £150.0/MWh + £2.40 VLP
+   - Gross margin: £24.14/MWh
+   - After 15% losses: £20.52/MWh
+
+3. Fixed Levies are EXPENSIVE:
+   - Levies: £98.15/MWh (66% of total GREEN cost)
+   - Paid on ALL imports (charging + direct)
+   - Annual levy cost: £1,511,510
+
+4. Current Market vs Historical:
+   - 2023 GREEN: £30.00/MWh → Total £128.26 ✅ Profitable
+   - 2025 GREEN: £65.83/MWh → Total £164.09 ❌ Unprofitable
+   - System prices doubled, making BtM PPA unviable
+
+5. Break-even Analysis:
+   - Need GREEN < £21.74/MWh to charge profitably
+   - Currently: £65.83/MWh (£44.09/MWh over threshold)
+
+================================================================================
+SCENARIO 3: OPTIMAL CONDITIONS (Low System Prices)
+================================================================================
+
+💵 System Buy Prices (optimal conditions):
+   GREEN: £15.00/MWh (overnight high wind)
+   AMBER: £35.00/MWh
+   RED:   £65.00/MWh
+
+📊 Total Import Costs:
+   GREEN: £15.00 + £0.11 + £98.15 = £113.26/MWh ✅ PROFITABLE!
+   AMBER: £35.00 + £2.05 + £98.15 = £135.20/MWh ✅ PROFITABLE!
+   RED:   £65.00 + £17.64 + £98.15 = £180.79/MWh ❌ Loss
+
+🔋 Battery Charging Strategy:
+   Charging Threshold: £120.0/MWh
+   Can charge GREEN? ✅ YES (£113.26 vs £120.0)
+   Can charge AMBER? ❌ NO (£135.20 vs £120.0)
+   Can charge RED?   ❌ NO (never profitable)
+
+📈 CHARGING BREAKDOWN:
+   GREEN: 7,305 MWh @ £113.26/MWh = £827,364
+   AMBER: 0 MWh @ £135.20/MWh = £0
+   RED:   0 MWh (never charge)
+   ---
+   TOTAL CHARGED: 7,305 MWh
+   CHARGING COST: £827,364
+   Battery Cycles: 1461.0 cycles/year
+   Average charging cost: £113.26/MWh
+
+⚡ AFTER 85% EFFICIENCY:
+   Available for discharge: 6,209 MWh
+
+📉 DISCHARGE STRATEGY:
+   RED demand: 2,275 MWh
+   Battery serves RED: 2,275 MWh (100.0% coverage) ✅
+   AMBER demand: 4,225 MWh
+   Battery serves AMBER: 3,934 MWh (93.1% coverage)
+
+💰 STREAM 2: Battery + VLP Revenue
+   Discharge volume: 6,209 MWh
+   PPA revenue: 6,209 × £150.0 = £931,388
+   VLP revenue: 6,209 × 20% × £12.0 = £14,902
+   Total revenue: £946,290
+   Charging cost: £827,364
+   ---
+   STREAM 2 PROFIT: £118,925
+   Margin: 12.6%
+
+💰 STREAM 1: Direct Import (remaining demand)
+   GREEN: 15,400 MWh
+     Revenue: £2,310,000
+     Cost: £1,744,204
+     Profit: £565,796
+   AMBER: 291 MWh
+     Revenue: £43,612
+     Cost: £39,309
+     Profit: £4,303
+   RED: 0 MWh (not imported)
+   ---
+   STREAM 1 PROFIT: £570,099
+
+================================================================================
+💷 TOTAL ANNUAL PROFIT (OPTIMAL CONDITIONS)
+================================================================================
+   Stream 1 (Direct Import): £570,099
+   Stream 2 (Battery + VLP):  £118,925
+   BtM PPA Subtotal:          £689,024
+   Dynamic Containment:       £195,458
+   ---
+   TOTAL PROFIT:              £884,482
+
+🎯 BATTERY VALUE PROPOSITION:
+   RED loss without battery: £70,047
+   RED loss with battery: £0
+   SAVINGS FROM BATTERY: £70,047
+   Battery effectively SAVES £30.79/MWh discharged
+
+📊 COMPARISON: No Battery vs With Battery:
+   Without Battery BtM PPA: £1,135,895 (all direct import)
+   With Battery BtM PPA: £689,024
+   Battery Contribution: £-446,871
+
+================================================================================
+END OF WORKED EXAMPLE
+================================================================================

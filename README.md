@@ -1,4 +1,4 @@
-# 🇬🇧 GB Power Market JJ - Complete Energy Data Platform
+# 🇬🇧 GB-Power-Market-JJ - Complete Energy Data Platform
 
 **Last Updated**: 23 November 2025  
 **Status**: Production - Active Development  
@@ -83,7 +83,7 @@
 ## 📁 Repository Structure
 
 ```
-/GB Power Market JJ/
+/GB-Power-Market-JJ/
 ├── docs/                          # 📚 All documentation (45+ files)
 │   ├── DOCUMENTATION_INDEX.md     # Complete documentation index
 │   ├── STOP_DATA_ARCHITECTURE_REFERENCE.md  # Critical reference
@@ -108,7 +108,7 @@
 
 ### Run Analysis
 ```bash
-cd "/Users/georgemajor/GB Power Market JJ"
+cd "/Users/georgemajor/GB-Power-Market-JJ"
 python3 enhanced_statistical_analysis.py
 ```
 

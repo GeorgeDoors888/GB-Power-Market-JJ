@@ -1,0 +1,344 @@
+{
+  "metadata": {
+    "analysis_date": "2025-12-02T10:04:22.346489",
+    "vlp_units": [
+      "2__FBPGM001",
+      "2__FBPGM002"
+    ],
+    "vlp_operator": "BP Gas Marketing Limited",
+    "capacity_mw": {
+      "2__FBPGM001": 33.6,
+      "2__FBPGM002": 50.3,
+      "total": 83.9
+    },
+    "analysis_period": "2025-01-01 to 2025-10-31"
+  },
+  "balancing_actions": {
+    "summary": [
+      {
+        "bmUnit": "2__FBPGM001",
+        "total_actions": 58665,
+        "total_mw_traded": 352321,
+        "avg_mw_per_action": 6.005642205744481,
+        "max_mw_action": 33,
+        "min_mw_action": 0,
+        "stddev_mw": 8.413993943952974,
+        "trading_days": 298,
+        "pct_daytime_actions": 59.15281684138757,
+        "pct_weekend_actions": 30.386090513935077
+      },
+      {
+        "bmUnit": "2__FBPGM002",
+        "total_actions": 50404,
+        "total_mw_traded": 422061,
+        "avg_mw_per_action": 8.373561622093488,
+        "max_mw_action": 49,
+        "min_mw_action": 0,
+        "stddev_mw": 12.186428569993026,
+        "trading_days": 254,
+        "pct_daytime_actions": 59.17189111975245,
+        "pct_weekend_actions": 32.213713197365315
+      }
+    ],
+    "hourly_distribution": [
+      {
+        "hour": 0,
+        "action_count": 3906,
+        "avg_mw": 6.611623143881207
+      },
+      {
+        "hour": 1,
+        "action_count": 3906,
+        "avg_mw": 6.881720430107528
+      },
+      {
+        "hour": 2,
+        "action_count": 4035,
+        "avg_mw": 6.982899628252786
+      },
+      {
+        "hour": 3,
+        "action_count": 3858,
+        "avg_mw": 6.953084499740798
+      },
+      {
+        "hour": 4,
+        "action_count": 3740,
+        "avg_mw": 6.8906417112299465
+      },
+      {
+        "hour": 5,
+        "action_count": 4326,
+        "avg_mw": 7.880258899676376
+      },
+      {
+        "hour": 6,
+        "action_count": 4555,
+        "avg_mw": 7.70472008781559
+      },
+      {
+        "hour": 7,
+        "action_count": 4933,
+        "avg_mw": 6.929657409284411
+      },
+      {
+        "hour": 8,
+        "action_count": 4523,
+        "avg_mw": 6.585231041344239
+      },
+      {
+        "hour": 9,
+        "action_count": 4531,
+        "avg_mw": 6.098212315162216
+      },
+      {
+        "hour": 10,
+        "action_count": 4377,
+        "avg_mw": 6.04112405757368
+      },
+      {
+        "hour": 11,
+        "action_count": 4421,
+        "avg_mw": 6.953404207192942
+      },
+      {
+        "hour": 12,
+        "action_count": 5193,
+        "avg_mw": 6.906990179087234
+      },
+      {
+        "hour": 13,
+        "action_count": 5151,
+        "avg_mw": 7.750145602795576
+      },
+      {
+        "hour": 14,
+        "action_count": 4877,
+        "avg_mw": 7.763379126512195
+      },
+      {
+        "hour": 15,
+        "action_count": 4768,
+        "avg_mw": 7.225880872483223
+      },
+      {
+        "hour": 16,
+        "action_count": 5348,
+        "avg_mw": 7.555534779356768
+      },
+      {
+        "hour": 17,
+        "action_count": 5631,
+        "avg_mw": 8.21683537559936
+      },
+      {
+        "hour": 18,
+        "action_count": 5654,
+        "avg_mw": 8.29483551467987
+      },
+      {
+        "hour": 19,
+        "action_count": 5120,
+        "avg_mw": 7.268750000000002
+      },
+      {
+        "hour": 20,
+        "action_count": 4349,
+        "avg_mw": 5.899977006208323
+      },
+      {
+        "hour": 21,
+        "action_count": 3720,
+        "avg_mw": 6.349193548387095
+      },
+      {
+        "hour": 22,
+        "action_count": 3797,
+        "avg_mw": 6.974980247563866
+      },
+      {
+        "hour": 23,
+        "action_count": 4350,
+        "avg_mw": 6.501149425287356
+      }
+    ],
+    "monthly_trends": [
+      {
+        "month": 1,
+        "month_name": "January",
+        "actions": 12761,
+        "total_mw": 101582,
+        "active_units": 2
+      },
+      {
+        "month": 2,
+        "month_name": "February",
+        "actions": 13689,
+        "total_mw": 102271,
+        "active_units": 2
+      },
+      {
+        "month": 3,
+        "month_name": "March",
+        "actions": 11537,
+        "total_mw": 97933,
+        "active_units": 2
+      },
+      {
+        "month": 4,
+        "month_name": "April",
+        "actions": 11104,
+        "total_mw": 82038,
+        "active_units": 2
+      },
+      {
+        "month": 5,
+        "month_name": "May",
+        "actions": 15645,
+        "total_mw": 105228,
+        "active_units": 2
+      },
+      {
+        "month": 6,
+        "month_name": "June",
+        "actions": 11083,
+        "total_mw": 81504,
+        "active_units": 2
+      },
+      {
+        "month": 7,
+        "month_name": "July",
+        "actions": 8631,
+        "total_mw": 54749,
+        "active_units": 2
+      },
+      {
+        "month": 8,
+        "month_name": "August",
+        "actions": 6472,
+        "total_mw": 43585,
+        "active_units": 2
+      },
+      {
+        "month": 9,
+        "month_name": "September",
+        "actions": 7846,
+        "total_mw": 44935,
+        "active_units": 2
+      },
+      {
+        "month": 10,
+        "month_name": "October",
+        "actions": 10301,
+        "total_mw": 60557,
+        "active_units": 2
+      }
+    ]
+  },
+  "price_analysis": {
+    "total_days": 267,
+    "avg_daily_spread": 123.34859729772889,
+    "max_daily_spread": 423.85,
+    "high_spread_days": 182,
+    "correlation_spread_actions": 0.21600145032370355,
+    "high_spread_summary": [
+      {
+        "date": "2025-01-01",
+        "daily_spread": 207.91,
+        "vlp_actions": 451
+      },
+      {
+        "date": "2025-01-02",
+        "daily_spread": 103.5,
+        "vlp_actions": 549
+      },
+      {
+        "date": "2025-01-06",
+        "daily_spread": 113.37,
+        "vlp_actions": 464
+      },
+      {
+        "date": "2025-01-12",
+        "daily_spread": 138.0,
+        "vlp_actions": 467
+      },
+      {
+        "date": "2025-01-13",
+        "daily_spread": 103.61504009196034,
+        "vlp_actions": 448
+      },
+      {
+        "date": "2025-01-22",
+        "daily_spread": 363.13,
+        "vlp_actions": 556
+      },
+      {
+        "date": "2025-01-24",
+        "daily_spread": 159.6,
+        "vlp_actions": 388
+      },
+      {
+        "date": "2025-01-25",
+        "daily_spread": 200.76999999999998,
+        "vlp_actions": 222
+      },
+      {
+        "date": "2025-01-26",
+        "daily_spread": 156.91,
+        "vlp_actions": 449
+      },
+      {
+        "date": "2025-01-27",
+        "daily_spread": 167.04,
+        "vlp_actions": 261
+      }
+    ]
+  },
+  "frequency_response": null,
+  "generation_data": null,
+  "statistical_analysis": {
+    "total_periods": 23517,
+    "spread_statistics": {
+      "mean": 0.0,
+      "stddev": 0.0,
+      "q25": 0.0,
+      "median": 0.0,
+      "q75": 0.0,
+      "q95": 0.0
+    },
+    "high_opportunity_periods": {
+      "above_50": 0,
+      "above_100": 0,
+      "pct_profitable": 0.0
+    }
+  },
+  "revenue_breakdown": {
+    "arbitrage": {
+      "revenue": 2427863.03969536,
+      "percentage": 17.108382346202983
+    },
+    "ffr": {
+      "revenue": 5512230.0,
+      "percentage": 38.842940016930925
+    },
+    "dc": {
+      "revenue": 1543424.4,
+      "percentage": 10.876023204740658
+    },
+    "bm_premiums": {
+      "revenue": 4707555.629432053,
+      "percentage": 33.172654432125434
+    },
+    "total": {
+      "revenue": 14191073.069127414,
+      "per_mw": 169142.70642583328
+    }
+  },
+  "investment_analysis": {
+    "capex": 41950000.0,
+    "capex_per_mw": 500000.0,
+    "payback_years": 2.9560837151393398,
+    "annual_roi_percent": 33.828541285166665,
+    "viability": "VIABLE"
+  }
+}

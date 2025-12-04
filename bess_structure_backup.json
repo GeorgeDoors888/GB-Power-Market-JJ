@@ -1,0 +1,53 @@
+{
+  "timestamp": "2025-12-01T09:30:03.152952",
+  "sheet_name": "BESS",
+  "structure": {
+    "dno_section": {
+      "postcode": "A6",
+      "mpan": "B6",
+      "dno_key": "C6",
+      "dno_name": "D6",
+      "voltage": "A9",
+      "red_rate": "B9",
+      "amber_rate": "C9",
+      "green_rate": "D9"
+    },
+    "hh_profile": {
+      "min_kw": "B17",
+      "avg_kw": "B18",
+      "max_kw": "B19"
+    },
+    "cost_structure": {
+      "duos_red_pkwh": "B25",
+      "duos_amber_pkwh": "B26",
+      "duos_green_pkwh": "B27",
+      "tnuos": "B30",
+      "bsuos": "B31",
+      "ccl": "B32",
+      "ro": "B33",
+      "fit": "B34",
+      "total_fixed": "B35",
+      "ppa_price": "B38",
+      "red_breakeven": "B41",
+      "amber_breakeven": "B42",
+      "green_breakeven": "B43"
+    },
+    "ppa_analysis": {
+      "total_revenue_header": "A44",
+      "total_profit_header": "B44",
+      "profit_per_day_header": "C44",
+      "total_revenue_value": "A45",
+      "total_profit_value": "B45",
+      "profit_per_day_value": "C45",
+      "details_start": "A47",
+      "last_updated": "B52"
+    }
+  },
+  "scripts_affected": [
+    "update_ppa_analysis.py",
+    "calculate_ppa_profit.py",
+    "generate_hh_profile.py",
+    "dno_lookup_python.py",
+    "dno_webhook_server.py"
+  ]
+}

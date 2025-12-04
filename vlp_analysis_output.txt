@@ -1,0 +1,130 @@
+/Users/georgemajor/Library/Python/3.14/lib/python/site-packages/google/cloud/bigquery/table.py:1994: UserWarning: BigQuery Storage module not found, fetch data with the REST endpoint instead.
+  warnings.warn(
+/Users/georgemajor/Library/Python/3.14/lib/python/site-packages/google/cloud/bigquery/table.py:1994: UserWarning: BigQuery Storage module not found, fetch data with the REST endpoint instead.
+  warnings.warn(
+/Users/georgemajor/Library/Python/3.14/lib/python/site-packages/google/cloud/bigquery/table.py:1994: UserWarning: BigQuery Storage module not found, fetch data with the REST endpoint instead.
+  warnings.warn(
+/Users/georgemajor/Library/Python/3.14/lib/python/site-packages/google/cloud/bigquery/table.py:1994: UserWarning: BigQuery Storage module not found, fetch data with the REST endpoint instead.
+  warnings.warn(
+/Users/georgemajor/Library/Python/3.14/lib/python/site-packages/google/cloud/bigquery/table.py:1994: UserWarning: BigQuery Storage module not found, fetch data with the REST endpoint instead.
+  warnings.warn(
+====================================================================================================
+COMPREHENSIVE VLP REVENUE ANALYSIS - BP GAS MARKETING
+====================================================================================================
+
+SECTION 1: BALANCING MECHANISM ACTIONS (bmrs_boalf)
+====================================================================================================
+Querying balancing actions...
+     bmUnit  total_actions  total_mw_traded  avg_mw_per_action  max_mw_action  min_mw_action  stddev_mw  trading_days  pct_daytime_actions  pct_weekend_actions
+2__FBPGM001          58665           352321           6.005642             33              0   8.413994           298            59.152817            30.386091
+2__FBPGM002          50404           422061           8.373562             49              0  12.186429           254            59.171891            32.213713
+
+Analyzing hourly distribution...
+✅ Hourly distribution: Peak hour 18:00 (5654 actions)
+
+Analyzing monthly trends...
+ month month_name  actions  total_mw  active_units
+     1    January    12761    101582             2
+     2   February    13689    102271             2
+     3      March    11537     97933             2
+     4      April    11104     82038             2
+     5        May    15645    105228             2
+     6       June    11083     81504             2
+     7       July     8631     54749             2
+     8     August     6472     43585             2
+     9  September     7846     44935             2
+    10    October    10301     60557             2
+
+
+SECTION 2: SYSTEM PRICE CORRELATION (bmrs_costs)
+====================================================================================================
+Querying system prices and VLP correlations...
+Total Days Analyzed: 267
+Avg Daily Spread: £123.35/MWh
+Max Daily Spread: £423.85/MWh on 2025-06-30
+High Spread Days (>£100/MWh): 182 days
+Correlation (Spread vs VLP Actions): 0.216
+
+
+SECTION 3: GENERATION OUTPUT (bmrs_indgen_iris)
+====================================================================================================
+Querying generation data...
+⚠️  No generation data found for VLP units (may not report via indgen)
+
+
+SECTION 4: FREQUENCY RESPONSE (bmrs_freq_iris)
+====================================================================================================
+Analyzing grid frequency volatility (FFR opportunity indicator)...
+⚠️  Frequency query error: 400 No matching signature for operator >= for argument types: DATETIME, TIMESTAMP
+  Signature: T1 >= T1
+    Unable to find common supertype for templated argument <T1>
+      Input types for <T1>: {TIMESTAMP, DATETIME} at [11:7]; reason: invalidQuery, location: query, message: No matching signature for operator >= for argument types: DATETIME, TIMESTAMP
+  Signature: T1 >= T1
+    Unable to find common supertype for templated argument <T1>
+      Input types for <T1>: {TIMESTAMP, DATETIME} at [11:7]
+
+Location: US
+Job ID: 6bff47e0-1067-46ae-83c5-b5ac25235ab0
+
+
+SECTION 5: STATISTICAL ANALYSIS
+====================================================================================================
+Calculating price spread statistics...
+Total Settlement Periods: 23,517
+Average Spread: £0.00/MWh
+Std Dev: £0.00/MWh
+Quartiles: Q1=£0.00, Median=£0.00, Q3=£0.00
+95th Percentile: £0.00/MWh
+High Spread Periods (>£50): 0 (0.0%)
+Very High Spread (>£100): 0 (0.0%)
+
+
+SECTION 6: MULTI-STREAM REVENUE CALCULATION
+====================================================================================================
+VLP Capacity: 83.9 MW
+Trading Days (2025): 276
+Total Actions: 109,069
+Avg MW per Action: 7.19
+
+1. ENERGY ARBITRAGE:
+   Annual MWh: 46,313
+   Margin: £61.67/MWh
+   Revenue: £2,427,863/yr
+
+2. FREQUENCY RESPONSE (FFR/DCL):
+   Committed Capacity: 42.0 MW
+   Rate: £15/MW/hr
+   Revenue: £5,512,230/yr
+
+3. DYNAMIC CONTAINMENT:
+   Committed Capacity: 25.2 MW
+   Rate: £7/MW/hr
+   Revenue: £1,543,424/yr
+
+4. BALANCING MECHANISM PREMIUMS:
+   Actions: 109,069
+   Premium: £5/MW
+   Revenue: £4,707,556/yr
+
+====================================================================================================
+TOTAL REVENUE SUMMARY:
+====================================================================================================
+Energy Arbitrage:       £   2,427,863/yr  ( 17.1%)
+Frequency Response:     £   5,512,230/yr  ( 38.8%)
+Dynamic Containment:    £   1,543,424/yr  ( 10.9%)
+BM Premiums:            £   4,707,556/yr  ( 33.2%)
+----------------------------------------------------------------------------------------------------
+TOTAL ANNUAL REVENUE:   £  14,191,073/yr
+Revenue per MW:         £     169,143/MW/yr
+
+INVESTMENT ANALYSIS:
+====================================================================================================
+CAPEX: £41,950,000 (£500,000/MW)
+Payback Period: 3.0 years
+Annual ROI: 33.8%
+NPV (10yr, 8% discount): £53,273,255
+
+Saving analysis data...
+✅ Analysis complete! Data saved to vlp_analysis_data.json
+
+====================================================================================================

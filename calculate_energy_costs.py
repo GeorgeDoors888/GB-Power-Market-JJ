@@ -22,6 +22,21 @@ RATES = {
     'fit': 0.0115,   # Feed-in Tariff (£/kWh) - 2025/26
     'bsuos_avg': 0.0045,  # BSUoS average (£/kWh) - varies daily
     'tnuos_hv': 0.0125,   # TNUoS HV (£/kWh) - varies by zone
+    'ppa_rate': 150.0,    # PPA Contract Price (£/MWh) - from BESS sheet B39
+}
+
+# DUoS rates from BESS spreadsheet (EMID HV)
+DUOS_RATES_EMID_HV = {
+    'red': 0.01764,    # 1.764 p/kWh - from BESS sheet B10
+    'amber': 0.00205,  # 0.205 p/kWh - from BESS sheet C10  
+    'green': 0.00011   # 0.011 p/kWh - from BESS sheet D10
+}
+
+# Custom time bands from BESS spreadsheet
+TIME_BANDS_CUSTOM = {
+    'red': '08:00-16:00',    # Daytime peak (weekdays) - from BESS sheet B13
+    'amber': '19:30-22:00',  # Evening (weekdays) - from BESS sheet B14
+    'green': 'All other times'  # Overnight + weekends
 }
 
 def connect():

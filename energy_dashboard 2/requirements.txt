@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+pydantic
+google-cloud-bigquery
+google-auth
+gspread
+pandas
+matplotlib
+folium
+joblib

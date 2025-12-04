@@ -17,7 +17,7 @@ from datetime import datetime, timedelta
 # Google Sheets configuration
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
 CREDS_FILE = 'inner-cinema-credentials.json'
-SHEET_ID = '12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8'
+SHEET_ID = '1LmMq4OEE639Y-XXpOJ3xnvpAmHB6vUovh5g6gaU_vzc'
 PARAM_SHEET = 'BESS'  # Where parameters are read from (B15:B17)
 DATA_SHEET = 'HH Data'  # Where HH data is written
 
@@ -215,7 +215,18 @@ def generate_and_upload_hh_data(min_kw=500, avg_kw=1500, max_kw=2500, days=365):
     gc = gspread.authorize(creds)
     sh = gc.open_by_key(SHEET_ID)
     bess_ws = sh.worksheet(PARAM_SHEET)
-    hh_data_ws = sh.worksheet(DATA_SHEET)
+    
+    # Create HH Data sheet if it doesn't exist
+    try:
+        hh_data_ws = sh.worksheet(DATA_SHEET)
+        print(f"   ✅ Found existing {DATA_SHEET} sheet")
+    except:
+        print(f"   ⚠️  {DATA_SHEET} sheet not found, creating...")
+        hh_data_ws = sh.add_worksheet(title=DATA_SHEET, rows=20000, cols=10)
+        # Add headers
+        hh_data_ws.update('A1:D1', [['Timestamp', 'Demand (kW)', 'Notes', 'Calculated']])
+        print(f"   ✅ Created {DATA_SHEET} sheet with headers")
+    
     print(f"   ✅ Connected to {PARAM_SHEET} and {DATA_SHEET} sheets")
     
     # Generate profile

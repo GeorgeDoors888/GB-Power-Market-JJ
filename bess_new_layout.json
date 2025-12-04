@@ -1,0 +1,136 @@
+{
+  "old_structure": {
+    "cost_section_start": 21,
+    "duos_rates": {
+      "red": "B25",
+      "amber": "B26",
+      "green": "B27"
+    },
+    "fixed_costs": {
+      "tnuos": "B30",
+      "bsuos": "B31",
+      "ccl": "B32",
+      "ro": "B33",
+      "fit": "B34"
+    },
+    "ppa_price": "B38",
+    "ppa_results_start": 44
+  },
+  "new_structure": {
+    "row_23": {
+      "label": "BtM PPA Direct Flow Excluding BESS ",
+      "col_b": "",
+      "col_c": "",
+      "col_d": ""
+    },
+    "row_25": {
+      "label": "DUoS",
+      "col_b": "",
+      "col_c": "",
+      "col_d": ""
+    },
+    "row_26": {
+      "label": "Red",
+      "col_b": "",
+      "col_c": "",
+      "col_d": ""
+    },
+    "row_27": {
+      "label": "Amber ",
+      "col_b": "",
+      "col_c": "",
+      "col_d": ""
+    },
+    "row_28": {
+      "label": "Green ",
+      "col_b": "",
+      "col_c": "",
+      "col_d": ""
+    },
+    "row_29": {
+      "label": "TNUoS",
+      "col_b": "",
+      "col_c": "",
+      "col_d": ""
+    },
+    "row_30": {
+      "label": "BSUoS",
+      "col_b": "",
+      "col_c": "",
+      "col_d": ""
+    },
+    "row_31": {
+      "label": "CCL",
+      "col_b": "",
+      "col_c": "",
+      "col_d": ""
+    },
+    "row_32": {
+      "label": "RO",
+      "col_b": "",
+      "col_c": "",
+      "col_d": ""
+    },
+    "row_33": {
+      "label": "FiT",
+      "col_b": "",
+      "col_c": "",
+      "col_d": ""
+    },
+    "row_34": {
+      "label": "System Price ",
+      "col_b": "",
+      "col_c": "",
+      "col_d": ""
+    },
+    "row_35": {
+      "label": "Min ",
+      "col_b": "",
+      "col_c": "",
+      "col_d": ""
+    },
+    "row_36": {
+      "label": "Average ",
+      "col_b": "",
+      "col_c": "",
+      "col_d": ""
+    },
+    "row_37": {
+      "label": "Max ",
+      "col_b": "",
+      "col_c": "",
+      "col_d": ""
+    },
+    "row_38": {
+      "label": "Import kWh",
+      "col_b": "",
+      "col_c": "",
+      "col_d": ""
+    },
+    "row_39": {
+      "label": "PPA kWh ",
+      "col_b": "",
+      "col_c": "",
+      "col_d": ""
+    },
+    "row_40": {
+      "label": "Profitable Periods ",
+      "col_b": "",
+      "col_c": "",
+      "col_d": ""
+    },
+    "row_41": {
+      "label": "PPA kWh ",
+      "col_b": "",
+      "col_c": "",
+      "col_d": ""
+    },
+    "row_42": {
+      "label": "PPA Revenue Import ",
+      "col_b": "",
+      "col_c": "",
+      "col_d": ""
+    }
+  },
+  "changes": []
+}

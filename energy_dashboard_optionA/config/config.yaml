@@ -1,0 +1,8 @@
+project_id: inner-cinema-476211-u9
+dataset: uk_energy_prod
+service_account_file: inner-cinema-credentials.json
+spreadsheet_id: 1LmMq4OEE639Y-XXpOJ3xnvpAmHB6vUovh5g6gaU_vzc
+model_paths:
+  turbine: models/turbine_gbr.joblib
+output:
+  map_html: outputs/gsp_curtailment_map.html

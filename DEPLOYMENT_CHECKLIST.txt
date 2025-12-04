@@ -1,0 +1,94 @@
+================================================================================
+VLP REVENUE DASHBOARD - DEPLOYMENT CHECKLIST
+================================================================================
+
+📋 PRE-DEPLOYMENT
+  [ ] Verify CLASP installed: clasp --version
+  [ ] Verify Python 3 installed: python3 --version
+  [ ] Verify credentials file exists: inner-cinema-credentials.json
+  [ ] Review documentation: VLP_DASHBOARD_DEPLOYMENT.md
+
+🚀 AUTOMATED DEPLOYMENT
+  [ ] Run deployment script: ./deploy_vlp_dashboard.sh
+  [ ] Follow prompts for BigQuery Advanced Service setup
+  [ ] Follow prompts for auto-refresh trigger setup
+
+🔧 MANUAL STEPS (if automated fails)
+  [ ] cd energy_dashboard_clasp
+  [ ] clasp login
+  [ ] clasp create --type sheets --title "VLP Revenue Dashboard" --parentId "1LmMq4OEE639Y-XXpOJ3xnvpAmHB6vUovh5g6gaU_vzc"
+  [ ] clasp push
+  [ ] Open Google Sheets: https://docs.google.com/spreadsheets/d/1LmMq4OEE639Y-XXpOJ3xnvpAmHB6vUovh5g6gaU_vzc/edit
+  [ ] Extensions → Apps Script
+  [ ] Services → Enable "BigQuery API"
+  [ ] Go back to Sheet
+  [ ] Menu: ⚡ Energy Tools → 💰 VLP Revenue → 📊 Create VLP Dashboard
+  [ ] Menu: ⚡ Energy Tools → ⏱ Enable Auto-Refresh
+
+✅ POST-DEPLOYMENT TESTING
+  [ ] Verify "VLP Revenue" sheet created
+  [ ] Check live ticker shows current data (not "DATA UNAVAILABLE")
+  [ ] Verify profit icon (🟢/🟡/🔴) displays
+  [ ] Check all 8 services have values
+  [ ] Verify 4 stacking scenarios populated
+  [ ] Check profit by band shows GREEN/AMBER/RED
+  [ ] Test manual refresh: ⚡ Energy Tools → 💰 VLP Revenue → 🔄 Refresh VLP Data
+  [ ] Wait 5 minutes, verify ticker auto-updates
+  [ ] Check Apps Script logs: View → Executions (no errors)
+  [ ] Test Python script: python3 refresh_vlp_dashboard.py
+  [ ] Verify Python output matches Google Sheets
+
+🔍 DATA VALIDATION
+  [ ] Live ticker timestamp is current (< 5 min old)
+  [ ] Market price is reasonable (£20-200/MWh)
+  [ ] Net profit is positive (ideally > £100/MWh)
+  [ ] Trading signal makes sense for current price
+  [ ] DUoS band matches time of day (GREEN/AMBER/RED)
+  [ ] No zero prices (except known Period 47 issue)
+  [ ] All active services show 🟢 status
+  [ ] Total revenue = sum of 8 services
+
+📊 DASHBOARD LAYOUT VERIFICATION
+  [ ] Live ticker: Merged A1:M3, colored background
+  [ ] Current period: A5-B14, 9 rows of data
+  [ ] Service breakdown: A17-E27, 8 services + total row
+  [ ] Cost breakdown: G5-H14, market + DUoS + levies
+  [ ] Stacking scenarios: A30-H35, 4 scenarios with icons
+  [ ] Compatibility matrix: A38-I46, 8x8 grid with ✓/✗
+  [ ] Profit analysis: K17-N20, 3 bands with avg/min/max
+  [ ] Frozen rows: Top 3 rows frozen
+  [ ] Color scheme: Blue/green/orange/red theme applied
+
+🔄 AUTO-REFRESH VERIFICATION
+  [ ] Apps Script → Triggers section shows 3 triggers
+  [ ] refreshDashboard: Every 5 minutes
+  [ ] updateLiveTicker: Every 5 minutes
+  [ ] refreshVlpDashboard: Every 30 minutes
+  [ ] Wait 30 minutes, verify full dashboard updates
+  [ ] Check timestamp in cell A99 updates
+
+🐛 TROUBLESHOOTING (if issues)
+  [ ] BigQuery API enabled? Apps Script → Services
+  [ ] Credentials file valid? Test: python3 -c "from google.cloud import bigquery; client = bigquery.Client(project='inner-cinema-476211-u9'); print('OK')"
+  [ ] View accessible? bq query --project_id=inner-cinema-476211-u9 --use_legacy_sql=false "SELECT COUNT(*) FROM \`inner-cinema-476211-u9.uk_energy_prod.v_btm_bess_inputs\`"
+  [ ] IRIS feed running? Check AlmaLinux server 94.237.55.234
+  [ ] Check error logs: Apps Script → View → Executions
+
+📚 DOCUMENTATION REVIEW
+  [ ] Read VLP_DASHBOARD_QUICK_REFERENCE.md
+  [ ] Bookmark VLP_DASHBOARD_DEPLOYMENT.md for troubleshooting
+  [ ] Review VLP_REVENUE_OUTPUT_SUMMARY.md for data insights
+  [ ] Check PRICING_DATA_ARCHITECTURE.md for IRIS explanation
+
+🎯 NEXT STEPS
+  [ ] Monitor dashboard for 24 hours
+  [ ] Investigate zero-price anomaly (Period 47)
+  [ ] Build 48-period forecast chart
+  [ ] Create Help sheet with service definitions
+  [ ] Set up cron job for Python script (optional)
+  [ ] Export 7-day dataset for analysis
+
+================================================================================
+DEPLOYMENT COMPLETE! 🎉
+Dashboard URL: https://docs.google.com/spreadsheets/d/1LmMq4OEE639Y-XXpOJ3xnvpAmHB6vUovh5g6gaU_vzc/edit
+================================================================================

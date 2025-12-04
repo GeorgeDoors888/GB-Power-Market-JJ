@@ -1,0 +1,145 @@
+================================================================================
+PPA EXPORT STRATEGY - PROFIT ANALYSIS SUMMARY
+================================================================================
+Analysis Period: Oct 18 - Nov 30, 2025 (38 days, 1,767 periods)
+PPA Contract: £150/MWh | Data: Historical (bmrs_costs) + Real-time (bmrs_mid_iris)
+
+================================================================================
+KEY FINDINGS
+================================================================================
+
+✅ PROFITABILITY: 14.4% of periods are profitable for PPA export
+   • 254 profitable periods out of 1,767 analyzed
+   • £8,430.89 total potential profit
+   • £33.19/MWh average profit when profitable
+   • Best period: Oct 27 SP4 → £69.06/MWh profit
+
+❌ UNPROFITABILITY: 85.6% of periods lose money
+   • Market prices too high relative to PPA contract
+   • Average market price: £73.70/MWh (exceeds break-even)
+
+================================================================================
+COST STRUCTURE BREAKDOWN
+================================================================================
+
+PPA Revenue:           £150.00/MWh
+Fixed Costs:           £ 98.15/MWh
+   • TNUoS:            £ 12.50/MWh (transmission)
+   • BSUoS:            £  4.50/MWh (balancing services)
+   • CCL:              £  7.75/MWh (climate change levy)
+   • RO:               £ 61.90/MWh (renewable obligation)
+   • FiT:              £ 11.50/MWh (feed-in tariff)
+
+DUoS (Time-dependent):
+   • RED (16:00-19:30):   £17.64/MWh ❌ Least profitable
+   • AMBER (08:00-16:00): £ 2.05/MWh ⚠️  Moderate
+   • GREEN (Off-peak):    £ 0.11/MWh ✅ Most profitable
+
+================================================================================
+BREAK-EVEN THRESHOLDS (System Buy Price must be below)
+================================================================================
+
+GREEN band:  £51.74/MWh or lower → EXPORT
+AMBER band:  £49.80/MWh or lower → EXPORT
+RED band:    £34.21/MWh or lower → EXPORT (rare)
+
+Current Market Reality:
+   • Average System Buy Price: £73.70/MWh (above all thresholds)
+   • Profitable periods: Only when SBP drops to £17.84/MWh avg
+   • Unprofitable periods: SBP averages £83.07/MWh
+
+================================================================================
+PROFITABILITY BY TIME BAND
+================================================================================
+
+GREEN (Off-peak: 00:00-08:00, 22:00-23:59)
+   • 178 profitable periods (70.1% of all profitable)
+   • Average profit: £32.43/MWh
+   • Best time to export ✅
+
+AMBER (08:00-16:00, 19:30-22:00)
+   • 74 profitable periods (29.1% of all profitable)
+   • Average profit: £35.44/MWh
+   • Moderate opportunity ⚠️
+
+RED (16:00-19:30 peak demand)
+   • 2 profitable periods (0.8% of all profitable)
+   • Average profit: £17.83/MWh
+   • Avoid exporting ❌ High DUoS charges
+
+================================================================================
+DAILY & MONTHLY PROJECTIONS
+================================================================================
+
+Per Day:
+   • 6.7 profitable periods (out of 48)
+   • £221.87 average daily profit
+   • 14% utilization rate
+
+Per Month (30 days):
+   • £6,655.96 expected profit
+   • ~200 profitable periods
+   • 254 MWh export opportunity
+
+Per Year (extrapolated):
+   • £79,872 annual profit potential
+   • Assumes current market conditions continue
+   • 14.4% capacity factor for PPA export
+
+================================================================================
+STRATEGIC RECOMMENDATIONS
+================================================================================
+
+✅ EXPORT WHEN:
+   1. System Buy Price < £51.74/MWh (GREEN band)
+   2. Market Index Price indicates low demand
+   3. Off-peak hours (00:00-08:00, 22:00-23:59)
+   4. Wind generation high (prices drop)
+
+❌ DO NOT EXPORT WHEN:
+   1. Peak hours (16:00-19:30) - RED band DUoS too high
+   2. System Buy Price > £51.74/MWh
+   3. Market prices elevated (grid shortage)
+
+⚠️  MONITOR:
+   • Real-time market prices via bmrs_mid_iris
+   • System imbalance signals
+   • Wind/solar forecasts (affect prices)
+   • Grid frequency (impacts balancing prices)
+
+================================================================================
+DATA QUALITY NOTES
+================================================================================
+
+Historical Data (Oct 18-28): bmrs_costs.systemBuyPrice
+   • Authoritative System Buy Price from Elexon
+   • Actual prices received for export
+
+Real-time Data (Nov 1-30): bmrs_mid_iris.price  
+   • Market Index Price (MIP) as proxy
+   • Typically ±5-10% of actual System Buy Price
+   • Nov data may differ slightly from final settlements
+
+For most accurate Nov analysis: Trigger Elexon API backfill to get
+actual systemBuyPrice data in bmrs_costs table.
+
+================================================================================
+CONCLUSION
+================================================================================
+
+Current Market Conditions: CHALLENGING for PPA export profitability
+   • Only 14.4% of periods are profitable
+   • Market prices averaging £73.70/MWh (too high)
+   • Best opportunities during off-peak GREEN band periods
+
+The £150/MWh PPA contract is marginal given:
+   • £98.15/MWh fixed costs
+   • High average market prices (£73.70/MWh)
+   • Limited profitable windows (6-7 periods/day)
+
+Strategy: Cherry-pick low-price periods during off-peak hours for
+maximum profitability. Avoid peak hours due to high DUoS charges.
+
+================================================================================
+Generated: 30 Nov 2025 | Data: inner-cinema-476211-u9.uk_energy_prod
+================================================================================

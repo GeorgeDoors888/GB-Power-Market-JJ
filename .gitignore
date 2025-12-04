@@ -108,3 +108,5 @@ venv/
 *.log
 *.xlsx
 pdf_index_state.json
+.vercel
+.env*.local

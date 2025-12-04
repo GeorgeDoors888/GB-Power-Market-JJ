@@ -1,0 +1,51 @@
+===============================================================================
+UPLOAD THESE 8 FILES TO CHATGPT FOR COMPLETE ANALYSIS
+===============================================================================
+
+Location: ~/GB-Power-Market-JJ/new-dashboard/
+
+FILES TO UPLOAD:
+1. complete_auto_updater.py (13 KB) - Main orchestrator with cron
+2. battery_revenue_analyzer_fixed.py (23 KB) - BESS revenue engine  
+3. Code.gs (46 KB) - Main Apps Script with menus
+4. DashboardFilters.gs (8.4 KB) - Dropdown and filter logic
+5. add_live_outages_dropdowns.py (4.9 KB) - Python dropdown setup
+
+BONUS FILES (if needed):
+6. UpdateDashboard.gs - Dashboard update triggers
+7. dashboard_v2_complete_updater.py - Alternative updater
+8. COMPLETE_STATUS.md - Status documentation
+
+===============================================================================
+HOW TO UPLOAD
+===============================================================================
+
+1. Open ChatGPT (start a NEW conversation)
+2. Copy the message from: CHATGPT_KICKSTART.md
+3. Paste into ChatGPT
+4. Click attachment icon (📎)
+5. Navigate to: /Users/georgemajor/GB-Power-Market-JJ/new-dashboard/
+6. Select the 5 files listed above
+7. Click "Open"
+8. Send message
+
+ChatGPT will then analyze:
+- VLP logic implementation
+- Dropdown/filter structures  
+- BESS integration
+- Auto-refresh system
+- Production readiness
+
+===============================================================================
+WHAT CHATGPT WILL DOCUMENT
+===============================================================================
+
+✅ Complete technical analysis
+✅ Line-by-line function mapping
+✅ VLP data flow (BigQuery → Python → Sheets)
+✅ Dropdown rebuild logic (Apps Script)
+✅ Integration points and dependencies
+✅ What's working vs what needs finishing
+✅ Deployment recommendations
+
+===============================================================================
