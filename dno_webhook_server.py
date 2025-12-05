@@ -11,10 +11,10 @@ import os
 app = Flask(__name__)
 
 # Change to your project directory
-PROJECT_DIR = "/Users/georgemajor/GB Power Market JJ"
+PROJECT_DIR = "/home/george/GB-Power-Market-JJ"
 
 # Set BigQuery credentials
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = os.path.join(PROJECT_DIR, 'inner-cinema-credentials.json')
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = '/home/george/.config/google-cloud/bigquery-credentials.json'
 
 @app.route('/trigger-dno-lookup', methods=['POST'])
 def trigger_dno_lookup():
@@ -140,11 +140,55 @@ def health():
     """Health check endpoint"""
     return jsonify({'status': 'ok', 'message': 'DNO Webhook Server running'})
 
+@app.route('/refresh-dashboard', methods=['POST'])
+def refresh_dashboard():
+    """
+    Dashboard refresh endpoint
+    Triggers complete BESS data update + dashboard rebuild
+    
+    Usage:
+    POST http://localhost:5001/refresh-dashboard
+    """
+    try:
+        print("🔄 Dashboard refresh triggered...")
+        
+        # Run complete refresh pipeline
+        result = subprocess.run(
+            ['python3', 'refresh_dashboard_complete.py'],
+            cwd=PROJECT_DIR,
+            capture_output=True,
+            text=True,
+            timeout=300  # 5 minutes timeout
+        )
+        
+        return jsonify({
+            'status': 'success' if result.returncode == 0 else 'error',
+            'stdout': result.stdout,
+            'stderr': result.stderr,
+            'returncode': result.returncode,
+            'message': 'Dashboard refresh completed'
+        })
+        
+    except subprocess.TimeoutExpired:
+        return jsonify({
+            'status': 'error',
+            'message': 'Dashboard refresh timeout (>5 minutes)'
+        }), 504
+    except Exception as e:
+        return jsonify({
+            'status': 'error',
+            'message': str(e)
+        }), 500
+
 if __name__ == '__main__':
     print("🚀 Starting DNO Webhook Server...")
     print(f"📁 Project directory: {PROJECT_DIR}")
     print(f"🌐 Listening on http://localhost:5001")
-    print(f"📡 Endpoint: POST http://localhost:5001/trigger-dno-lookup")
+    print(f"📡 Endpoints:")
+    print(f"   POST http://localhost:5001/trigger-dno-lookup")
+    print(f"   POST http://localhost:5001/generate-hh-profile")
+    print(f"   POST http://localhost:5001/refresh-dashboard")
+    print(f"   GET  http://localhost:5001/health")
     print("\nPress Ctrl+C to stop\n")
     
     app.run(host='0.0.0.0', port=5001, debug=False)
