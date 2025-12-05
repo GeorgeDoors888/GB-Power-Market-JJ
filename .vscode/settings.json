@@ -1,12 +1,18 @@
 {
+  "python.languageServer": "None",
   "python.analysis.indexing": false,
   "python.analysis.typeCheckingMode": "off",
+  "python.analysis.autoImportCompletions": false,
+  "python.analysis.diagnosticMode": "openFilesOnly",
+  "extensions.ignoreRecommendations": true,
   "files.watcherExclude": {
     "**/venv/**": true,
     "**/.venv/**": true,
     "**/node_modules/**": true,
     "**/logs/**": true,
-    "**/__pycache__/**": true
+    "**/__pycache__/**": true,
+    "**/.pytest_cache/**": true,
+    "**/.git/objects/**": true
   },
   "files.exclude": {
     "**/venv": true,
