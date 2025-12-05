@@ -20,6 +20,7 @@
 ## 📚 Documentation Files
 
 ### Core Documentation
+- **[DASHBOARD_V3_DOCUMENTATION.md](DASHBOARD_V3_DOCUMENTATION.md)** - ✨ **NEW**: Technical documentation for the V3 Hybrid Dashboard (BigQuery + Sheets)
 - **[BESS_ENGINE_DEPLOYMENT.md](BESS_ENGINE_DEPLOYMENT.md)** - TODAY'S WORK: Complete BESS revenue optimization engine deployment (Dec 1, 2025)
 - **[PROJECT_CONFIGURATION.md](PROJECT_CONFIGURATION.md)** - ⭐ Master configuration reference (read first!)
 - **[STOP_DATA_ARCHITECTURE_REFERENCE.md](STOP_DATA_ARCHITECTURE_REFERENCE.md)** - ⭐ Data schema reference (prevents common mistakes)
@@ -80,6 +81,8 @@
 - **[advanced_fr_optimizer.py](advanced_fr_optimizer.py)** - Advanced FR optimization with constraints
 
 ### Dashboard & Reporting
+- **[apply_dashboard_design.py](python/apply_dashboard_design.py)** - **V3**: Main layout engine (KPIs, Sparklines, Tables)
+- **[populate_dashboard_tables.py](python/populate_dashboard_tables.py)** - **V3**: BigQuery data fetcher (Intraday, Outages, Fuel Mix)
 - **[update_analysis_bi_enhanced.py](update_analysis_bi_enhanced.py)** - Main dashboard refresh script
 - **[realtime_dashboard_updater.py](realtime_dashboard_updater.py)** - Auto-refresh dashboard (runs every 5 min via cron)
 - **[enhance_dashboard_layout.py](enhance_dashboard_layout.py)** - Professional dashboard layout

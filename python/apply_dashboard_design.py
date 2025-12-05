@@ -33,7 +33,7 @@ from googleapiclient.discovery import build
 # CONFIG – EDIT THESE IF NEEDED
 # ---------------------------------------------------------------------
 
-SPREADSHEET_ID = "1LmMq4OEE639Y-XXpOJ3xnvpAmHB6vUovh5g6gaU_vzc"
+SPREADSHEET_ID = "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8"
 SERVICE_ACCOUNT_FILE = os.path.join(os.path.dirname(__file__), "../inner-cinema-credentials.json")
 
 DASHBOARD_SHEET_NAME = "Dashboard V3"
@@ -153,7 +153,7 @@ def build_values_payload(sheet_name: str) -> List[dict]:
             "Wholesale Avg (£/MWh)",
             "Market Vol (%)",
             "Grid Frequency (Hz)",
-            "Carbon Intensity (g/kWh)",
+            "Total Gen (GW)",
             "Selected DNO Volume (MWh)",
             "Selected DNO Revenue (£k)",
         ]],
@@ -181,11 +181,11 @@ def build_values_payload(sheet_name: str) -> List[dict]:
             "=AVERAGE(Frequency_Data!B:B)"
         ]],
     })
-    # Carbon Intensity (Placeholder calculation based on Fuel Mix)
+    # Total Generation (GW)
     data.append({
         "range": f"{sheet_name}!J10",
         "values": [[
-            "142" # Placeholder or calculated
+            "=Fuel_Mix!H1/1000" 
         ]],
     })
     # Selected DNO volume
@@ -206,53 +206,53 @@ def build_values_payload(sheet_name: str) -> List[dict]:
         ]],
     })
 
-    # Sparklines for All‑GB KPI trend (F11:I11)
+    # Sparklines for All‑GB KPI trend (F12:I12) - Shifted down by 1 row due to KPI merge
     data.append({
-        "range": f"{sheet_name}!F11",
+        "range": f"{sheet_name}!F12",
         "values": [['=SPARKLINE(VLP_Data!C2:C50,{"charttype","column";"color","#FFA24D"})']],
     })
     data.append({
-        "range": f"{sheet_name}!G11",
+        "range": f"{sheet_name}!G12",
         "values": [['=SPARKLINE(Market_Prices!C2:C50,{"charttype","line";"color","#3367D6";"linewidth",2})']],
     })
     data.append({
-        "range": f"{sheet_name}!H11",
+        "range": f"{sheet_name}!H12",
         "values": [['=SPARKLINE(Market_Prices!C2:C50,{"charttype","column";"color","#EA4335"})']],
     })
     # Frequency Sparkline
     data.append({
-        "range": f"{sheet_name}!I11",
+        "range": f"{sheet_name}!I12",
         "values": [["=SPARKLINE(Frequency_Data!B2:B60,{\"charttype\",\"line\";\"color\",\"#34A853\";\"linewidth\",2;\"ymin\",49.8;\"ymax\",50.2})"]],
     })
     # Carbon Sparkline (Placeholder)
     data.append({
-        "range": f"{sheet_name}!J11",
+        "range": f"{sheet_name}!J12",
         "values": [["=SPARKLINE({140,145,142,138,141,144,142},{\"charttype\",\"line\";\"color\",\"#555555\";\"linewidth\",2})"]],
     })
 
-    # --- Period Labels (Row 15) ---
+    # --- Period Labels (Row 16) ---
     data.append({
-        "range": f"{sheet_name}!F15:J15",
+        "range": f"{sheet_name}!F16:J16",
         "values": [["Last 7 Days", "Last 7 Days", "Last 7 Days", "Last Hour", "Last 7 Days"]],
     })
 
-    # --- Intraday Section (Row 16 Header, Row 17 Sparklines) ---
+    # --- Intraday Section (Row 17 Header, Row 18 Sparklines) ---
     data.append({
-        "range": f"{sheet_name}!F16:H16",
+        "range": f"{sheet_name}!F17:H17",
         "values": [["Intraday Wind (Today)", "Intraday Demand (Today)", "Intraday Price (Today)"]],
     })
     
-    # Intraday Sparklines (Row 17, merged 17-20)
+    # Intraday Sparklines (Row 18, merged 18-21)
     data.append({
-        "range": f"{sheet_name}!F17",
+        "range": f"{sheet_name}!F18",
         "values": [['=SPARKLINE(Intraday_Data!C2:C100,{"charttype","line";"color","#00B0F0";"linewidth",2})']],
     })
     data.append({
-        "range": f"{sheet_name}!G17",
+        "range": f"{sheet_name}!G18",
         "values": [['=SPARKLINE(Intraday_Data!D2:D100,{"charttype","line";"color","#FF00FF";"linewidth",2})']],
     })
     data.append({
-        "range": f"{sheet_name}!H17",
+        "range": f"{sheet_name}!H18",
         "values": [['=SPARKLINE(Intraday_Data!E2:E100,{"charttype","line";"color","#FFA500";"linewidth",2})']],
     })
 
@@ -271,11 +271,11 @@ def build_values_payload(sheet_name: str) -> List[dict]:
     # --- ESO Interventions header (row 40) + QUERY formula (row 41) ---
     data.append({
         "range": f"{sheet_name}!A40:F40",
-        "values": [["BM Unit", "Mode", "MW", "£/MWh", "Duration (min)", "Action Type"]],
+        "values": [["BM Unit", "Type", "Pair ID", "Offer (£/MWh)", "Bid (£/MWh)", "Date"]],
     })
     data.append({
         "range": f"{sheet_name}!A41",
-        "values": [['=QUERY(ESO_Actions!A:F,"SELECT * ORDER BY A DESC LIMIT 10",1)']],
+        "values": [['=QUERY(ESO_Actions!A:F,"SELECT * ORDER BY F DESC LIMIT 10",1)']],
     })
 
     return data
@@ -363,14 +363,14 @@ def build_formatting_requests(sheet_id: int) -> List[dict]:
             }
         })
 
-    # Set row height for Weekly Sparklines (Rows 11-14 / Index 10-14) - Make them TALLER
+    # Set row height for Weekly Sparklines (Rows 12-15 / Index 11-15) - Make them TALLER
     reqs.append({
         "updateDimensionProperties": {
             "range": {
                 "sheetId": sheet_id,
                 "dimension": "ROWS",
-                "startIndex": 10,
-                "endIndex": 14
+                "startIndex": 11,
+                "endIndex": 15
             },
             "properties": {"pixelSize": 35}, # Increased from 24
             "fields": "pixelSize"
@@ -447,15 +447,29 @@ def build_formatting_requests(sheet_id: int) -> List[dict]:
         }
     })
 
-    # Merge cells for Sparklines (F11:F14, G11:G14, etc.)
-    # This creates a tall cell for the sparkline without affecting row heights for other columns
+    # Merge cells for KPI Values (F10:F11) and Sparklines (F12:F15)
     for col_idx in range(5, 12): # F to L
+        # Merge KPI Value (Rows 10-11)
         reqs.append({
             "mergeCells": {
                 "range": {
                     "sheetId": sheet_id,
-                    "startRowIndex": 10, # Row 11
-                    "endRowIndex": 14,   # Row 15 (exclusive) -> spans 4 rows
+                    "startRowIndex": 9,  # Row 10
+                    "endRowIndex": 11,   # Row 12 (exclusive) -> spans 2 rows
+                    "startColumnIndex": col_idx,
+                    "endColumnIndex": col_idx + 1
+                },
+                "mergeType": "MERGE_ALL"
+            }
+        })
+        
+        # Merge Sparkline (Rows 12-15)
+        reqs.append({
+            "mergeCells": {
+                "range": {
+                    "sheetId": sheet_id,
+                    "startRowIndex": 11, # Row 12
+                    "endRowIndex": 15,   # Row 16 (exclusive) -> spans 4 rows
                     "startColumnIndex": col_idx,
                     "endColumnIndex": col_idx + 1
                 },
@@ -463,14 +477,14 @@ def build_formatting_requests(sheet_id: int) -> List[dict]:
             }
         })
 
-    # Merge cells for Intraday Sparklines (F17:F20, G17:G20, H17:H20)
+    # Merge cells for Intraday Sparklines (F18:F21, G18:G21, H18:H21)
     for col_idx in range(5, 8): # F to H
         reqs.append({
             "mergeCells": {
                 "range": {
                     "sheetId": sheet_id,
-                    "startRowIndex": 16, # Row 17
-                    "endRowIndex": 20,   # Row 21 (exclusive) -> spans 4 rows
+                    "startRowIndex": 17, # Row 18
+                    "endRowIndex": 21,   # Row 22 (exclusive) -> spans 4 rows
                     "startColumnIndex": col_idx,
                     "endColumnIndex": col_idx + 1
                 },
@@ -478,10 +492,10 @@ def build_formatting_requests(sheet_id: int) -> List[dict]:
             }
         })
 
-    # Format Period Labels (Row 15) - Small Italic Grey
+    # Format Period Labels (Row 16) - Small Italic Grey
     reqs.append({
         "repeatCell": {
-            "range": {"sheetId": sheet_id, "startRowIndex": 14, "endRowIndex": 15, "startColumnIndex": 5, "endColumnIndex": 12},
+            "range": {"sheetId": sheet_id, "startRowIndex": 15, "endRowIndex": 16, "startColumnIndex": 5, "endColumnIndex": 12},
             "cell": {
                 "userEnteredFormat": {
                     "textFormat": {"italic": True, "fontSize": 8, "foregroundColor": {"red": 0.4, "green": 0.4, "blue": 0.4}},
@@ -493,14 +507,14 @@ def build_formatting_requests(sheet_id: int) -> List[dict]:
         }
     })
 
-    # Format Intraday Headers (Row 16) - Bold Dark Grey
+    # Format Intraday Headers (Row 17) - Bold Black Text on Light Grey
     reqs.append({
         "repeatCell": {
-            "range": {"sheetId": sheet_id, "startRowIndex": 15, "endRowIndex": 16, "startColumnIndex": 5, "endColumnIndex": 8},
+            "range": {"sheetId": sheet_id, "startRowIndex": 16, "endRowIndex": 17, "startColumnIndex": 5, "endColumnIndex": 8},
             "cell": {
                 "userEnteredFormat": {
-                    "backgroundColor": DARK_GREY,
-                    "textFormat": {"bold": True, "fontSize": 9, "foregroundColor": WHITE},
+                    "backgroundColor": LIGHT_GREY,
+                    "textFormat": {"bold": True, "fontSize": 9, "foregroundColor": BLACK},
                     "horizontalAlignment": "CENTER",
                     "verticalAlignment": "MIDDLE"
                 }
@@ -509,13 +523,14 @@ def build_formatting_requests(sheet_id: int) -> List[dict]:
         }
     })
 
-    # Set Sparkline Cells to White Background (F11:L14)
+    # Set Sparkline Cells to White Background (F12:L15) - Shifted down
     reqs.append({
         "repeatCell": {
-            "range": {"sheetId": sheet_id, "startRowIndex": 10, "endRowIndex": 14, "startColumnIndex": 5, "endColumnIndex": 12},
+            "range": {"sheetId": sheet_id, "startRowIndex": 11, "endRowIndex": 15, "startColumnIndex": 5, "endColumnIndex": 12},
             "cell": {
                 "userEnteredFormat": {
                     "backgroundColor": WHITE,
+                    "textFormat": {"foregroundColor": BLACK}, # Ensure text is visible
                     "borders": {
                         "top": {"style": "SOLID", "color": {"red": 0.8, "green": 0.8, "blue": 0.8}},
                         "bottom": {"style": "SOLID", "color": {"red": 0.8, "green": 0.8, "blue": 0.8}},
@@ -524,17 +539,18 @@ def build_formatting_requests(sheet_id: int) -> List[dict]:
                     }
                 }
             },
-            "fields": "userEnteredFormat.backgroundColor,userEnteredFormat.borders"
+            "fields": "userEnteredFormat.backgroundColor,userEnteredFormat.borders,userEnteredFormat.textFormat"
         }
     })
 
-    # Set Intraday Sparkline Cells to White Background (F17:H20)
+    # Set Intraday Sparkline Cells to White Background (F18:H21)
     reqs.append({
         "repeatCell": {
-            "range": {"sheetId": sheet_id, "startRowIndex": 16, "endRowIndex": 20, "startColumnIndex": 5, "endColumnIndex": 8},
+            "range": {"sheetId": sheet_id, "startRowIndex": 17, "endRowIndex": 21, "startColumnIndex": 5, "endColumnIndex": 8},
             "cell": {
                 "userEnteredFormat": {
                     "backgroundColor": WHITE,
+                    "textFormat": {"foregroundColor": BLACK}, # Ensure text is visible
                     "borders": {
                         "top": {"style": "SOLID", "color": {"red": 0.8, "green": 0.8, "blue": 0.8}},
                         "bottom": {"style": "SOLID", "color": {"red": 0.8, "green": 0.8, "blue": 0.8}},
@@ -543,7 +559,7 @@ def build_formatting_requests(sheet_id: int) -> List[dict]:
                     }
                 }
             },
-            "fields": "userEnteredFormat.backgroundColor,userEnteredFormat.borders"
+            "fields": "userEnteredFormat.backgroundColor,userEnteredFormat.borders,userEnteredFormat.textFormat"
         }
     })
 

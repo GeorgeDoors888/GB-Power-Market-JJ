@@ -26,7 +26,7 @@ from google.cloud import bigquery
 # CONFIG
 # ---------------------------------------------------------------------
 
-SPREADSHEET_ID = "1LmMq4OEE639Y-XXpOJ3xnvpAmHB6vUovh5g6gaU_vzc"
+SPREADSHEET_ID = "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8"
 SERVICE_ACCOUNT_FILE = os.path.join(os.path.dirname(__file__), "../inner-cinema-credentials.json")
 GCP_PROJECT_ID = "inner-cinema-476211-u9"
 
@@ -38,6 +38,7 @@ ESO_SHEET_NAME = "ESO_Actions"
 DNO_MAP_SHEET_NAME = "DNO_Map"
 MARKET_PRICES_SHEET_NAME = "Market_Prices"
 VLP_DATA_SHEET_NAME = "VLP_Data"
+FUEL_MIX_SHEET_NAME = "Fuel_Mix"
 
 
 # ---------------------------------------------------------------------
@@ -170,6 +171,20 @@ def load_chart_data(service, client):
 def load_outages(service, client):
     print("   2. Loading Active Outages from BigQuery...")
     
+    # BM Unit to Plant Name Lookup (Common Units)
+    PLANT_LOOKUP = {
+        "T_DRAXX-1": "Drax Unit 1", "T_DRAXX-2": "Drax Unit 2", "T_DRAXX-3": "Drax Unit 3",
+        "T_DRAXX-4": "Drax Unit 4", "T_DRAXX-5": "Drax Unit 5", "T_DRAXX-6": "Drax Unit 6",
+        "T_HINKB-1": "Hinkley Point B-1", "T_HINKB-2": "Hinkley Point B-2",
+        "T_HYSGM-1": "Heysham 1", "T_HYSGM-2": "Heysham 2",
+        "T_SIZEB-1": "Sizewell B-1", "T_SIZEB-2": "Sizewell B-2",
+        "T_TORP-1": "Torness 1", "T_TORP-2": "Torness 2",
+        "T_HART-1": "Hartlepool 1", "T_HART-2": "Hartlepool 2",
+        "T_AG-U1": "Aberthaw U1", "T_AG-U2": "Aberthaw U2", "T_AG-U3": "Aberthaw U3",
+        "T_RATC-1": "Ratcliffe 1", "T_RATC-2": "Ratcliffe 2", "T_RATC-3": "Ratcliffe 3", "T_RATC-4": "Ratcliffe 4",
+        "T_WBUPS-1": "West Burton 1", "T_WBUPS-2": "West Burton 2", "T_WBUPS-3": "West Burton 3", "T_WBUPS-4": "West Burton 4",
+    }
+
     sql = """
       WITH latest_revisions AS (
           SELECT
@@ -181,7 +196,6 @@ def load_outages(service, client):
       )
       SELECT
           u.affectedUnit as bm_unit,
-          u.affectedUnit as plant,
           u.fuelType as fuel,
           u.unavailableCapacity as mw_lost,
           'GB' as region,
@@ -201,22 +215,36 @@ def load_outages(service, client):
         df = client.query(sql).to_dataframe()
 
         values = []
+        total_mw_lost = 0
+        
         for _, r in df.iterrows():
+            bm_unit = str(r['bm_unit']) if pd.notna(r['bm_unit']) else ''
+            plant_name = PLANT_LOOKUP.get(bm_unit, bm_unit) # Use lookup or fallback to ID
+            mw = int(r['mw_lost']) if pd.notna(r['mw_lost']) else 0
+            total_mw_lost += mw
+            
             values.append([
-                str(r['bm_unit']) if pd.notna(r['bm_unit']) else '',
-                str(r['plant']) if pd.notna(r['plant']) else '',
+                bm_unit,
+                plant_name,
                 str(r['fuel']) if pd.notna(r['fuel']) else '',
-                int(r['mw_lost']) if pd.notna(r['mw_lost']) else 0,
+                mw,
                 str(r['region']) if pd.notna(r['region']) else '',
                 str(r['start_time']) if pd.notna(r['start_time']) else '',
                 str(r['end_time']) if pd.notna(r['end_time']) else '',
                 str(r['status']) if pd.notna(r['status']) else ''
             ])
 
+        # Clear the table area first
         clear_range(service, SPREADSHEET_ID, f"{DASHBOARD_SHEET_NAME}!A25:H39")
+        
         if values:
             write_values(service, SPREADSHEET_ID, f"{DASHBOARD_SHEET_NAME}!A25", values)
-        print(f"   ✅ Active Outages populated ({len(values)} rows)")
+            
+        # Write Total GW Outage at Row 39 (or below the list)
+        total_gw = total_mw_lost / 1000
+        write_values(service, SPREADSHEET_ID, f"{DASHBOARD_SHEET_NAME}!A39", [[f"Total Outage: {total_gw:.2f} GW"]])
+        
+        print(f"   ✅ Active Outages populated ({len(values)} rows, Total: {total_gw:.2f} GW)")
         
     except Exception as e:
         print(f"   ⚠️ Error loading Outages: {e}")
@@ -231,43 +259,20 @@ def load_eso_actions(service, client):
     
     ensure_sheet(service, SPREADSHEET_ID, ESO_SHEET_NAME)
 
+    # Query for real Bid-Offer Data (BOD) to show market depth/actions
+    # We want to show the most recent significant bids/offers
     sql = """
-      WITH recent_actions AS (
-        SELECT
-          bmUnit as bm_unit,
-          CASE 
-            WHEN levelTo > levelFrom THEN 'Increase'
-            WHEN levelTo < levelFrom THEN 'Decrease'
-            ELSE 'Stable'
-          END as mode,
-          ABS(CAST(levelTo AS FLOAT64) - CAST(levelFrom AS FLOAT64)) as mw,
-          TIMESTAMP_DIFF(
-            CAST(timeTo AS TIMESTAMP), 
-            CAST(timeFrom AS TIMESTAMP), 
-            MINUTE
-          ) as duration_min,
-          acceptanceTime,
-          CASE 
-            WHEN soFlag THEN 'System Action'
-            WHEN storFlag THEN 'STOR'
-            ELSE 'BM Action'
-          END as action_type
-        FROM `inner-cinema-476211-u9.uk_energy_prod.bmrs_boalf_iris`
-        WHERE CAST(acceptanceTime AS TIMESTAMP) >= TIMESTAMP_SUB(CURRENT_TIMESTAMP(), INTERVAL 7 DAY)
-          AND levelTo IS NOT NULL
-          AND levelFrom IS NOT NULL
-          AND ABS(CAST(levelTo AS FLOAT64) - CAST(levelFrom AS FLOAT64)) > 0
-        ORDER BY acceptanceTime DESC
-        LIMIT 100
-      )
       SELECT 
-        bm_unit,
-        mode,
-        mw,
-        50.0 as price_gbp_per_mwh,
-        duration_min,
-        action_type
-      FROM recent_actions
+        bmUnit as bm_unit,
+        CASE WHEN offer < 0 THEN 'Bid (Buy)' ELSE 'Offer (Sell)' END as mode,
+        pairId,
+        offer as price,
+        bid as bid_price,
+        CAST(settlementDate AS STRING) as date
+      FROM `inner-cinema-476211-u9.uk_energy_prod.bmrs_bod_iris`
+      WHERE settlementDate >= DATE_SUB(CURRENT_DATE(), INTERVAL 1 DAY)
+      ORDER BY settlementDate DESC, settlementPeriod DESC
+      LIMIT 20
     """
     
     try:
@@ -275,27 +280,27 @@ def load_eso_actions(service, client):
 
         header = [[
             "BM Unit",
-            "Mode",
-            "MW",
-            "£/MWh",
-            "Duration",
-            "Action Type",
+            "Type",
+            "Pair ID",
+            "Offer (£/MWh)",
+            "Bid (£/MWh)",
+            "Date"
         ]]
 
         values = []
         for _, r in df.iterrows():
             values.append([
-                str(r['bm_unit']) if pd.notna(r['bm_unit']) else '',
-                str(r['mode']) if pd.notna(r['mode']) else '',
-                float(r['mw']) if pd.notna(r['mw']) else 0,
-                float(r['price_gbp_per_mwh']) if pd.notna(r['price_gbp_per_mwh']) else 0,
-                int(r['duration_min']) if pd.notna(r['duration_min']) else 0,
-                str(r['action_type']) if pd.notna(r['action_type']) else '',
+                str(r['bm_unit']),
+                str(r['mode']),
+                str(r['pairId']),
+                float(r['price']) if pd.notna(r['price']) else 0,
+                float(r['bid_price']) if pd.notna(r['bid_price']) else 0,
+                str(r['date'])
             ])
 
         clear_range(service, SPREADSHEET_ID, f"{ESO_SHEET_NAME}!A1:F10000")
         write_values(service, SPREADSHEET_ID, f"{ESO_SHEET_NAME}!A1", header + values)
-        print(f"   ✅ ESO Actions populated ({len(values)} rows)")
+        print(f"   ✅ ESO Actions (Bids/Offers) populated ({len(values)} rows)")
         
     except Exception as e:
         print(f"   ⚠️ Error loading ESO Actions: {e}")
@@ -481,6 +486,9 @@ def load_frequency_data(service, client):
 def load_fuel_mix_and_interconnectors(service, client):
     print("   7. Loading Fuel Mix & Interconnectors...")
     
+    # Ensure backing sheet exists for KPI reference
+    ensure_sheet(service, SPREADSHEET_ID, FUEL_MIX_SHEET_NAME)
+    
     # Emoji mappings
     FUEL_EMOJIS = {
         "CCGT": "🔥", "WIND": "💨", "NUCLEAR": "⚛️", "BIOMASS": "🌳", 
@@ -512,6 +520,9 @@ def load_fuel_mix_and_interconnectors(service, client):
             return
 
         total_gen = df['generation'].sum()
+        
+        # Write Total Gen to a specific cell for the Dashboard KPI
+        write_values(service, SPREADSHEET_ID, f"{FUEL_MIX_SHEET_NAME}!H1", [[float(total_gen)]])
         
         fuels = []
         interconnectors = []
@@ -559,6 +570,12 @@ def load_fuel_mix_and_interconnectors(service, client):
         # Clear first to avoid leftovers
         clear_range(service, SPREADSHEET_ID, f"{DASHBOARD_SHEET_NAME}!A10:E25")
         write_values(service, SPREADSHEET_ID, f"{DASHBOARD_SHEET_NAME}!A10", combined_rows)
+        
+        # Write Total Generation and Demand Summary
+        total_gw = total_gen / 1000
+        summary_data = [[f"Total Gen: {total_gw:.2f} GW"]]
+        write_values(service, SPREADSHEET_ID, f"{DASHBOARD_SHEET_NAME}!A21", summary_data)
+        
         print(f"   ✅ Fuel Mix populated ({len(combined_rows)} rows)")
 
     except Exception as e:
@@ -573,29 +590,30 @@ def load_intraday_data(service, client):
     print("   9. Loading Intraday Data (Wind, Demand, Price)...")
     
     # Join FuelInst (Wind), INDO (Demand), MID (Price) for today
+    # Use systemSellPrice as 'price' if available, or average of sell/buy
     sql = """
       WITH 
         periods AS (
           SELECT DISTINCT settlementDate, settlementPeriod
           FROM `inner-cinema-476211-u9.uk_energy_prod.bmrs_fuelinst_iris`
-          WHERE settlementDate = CURRENT_DATE()
+          WHERE settlementDate >= DATE_SUB(CURRENT_DATE(), INTERVAL 1 DAY)
         ),
         wind AS (
           SELECT settlementDate, settlementPeriod, AVG(generation) as wind_mw
           FROM `inner-cinema-476211-u9.uk_energy_prod.bmrs_fuelinst_iris`
-          WHERE settlementDate = CURRENT_DATE() AND fuelType = 'WIND'
+          WHERE settlementDate >= DATE_SUB(CURRENT_DATE(), INTERVAL 1 DAY) AND fuelType = 'WIND'
           GROUP BY 1, 2
         ),
         demand AS (
           SELECT settlementDate, settlementPeriod, AVG(demand) as demand_mw
           FROM `inner-cinema-476211-u9.uk_energy_prod.bmrs_indo_iris`
-          WHERE settlementDate = CURRENT_DATE()
+          WHERE settlementDate >= DATE_SUB(CURRENT_DATE(), INTERVAL 1 DAY)
           GROUP BY 1, 2
         ),
         price AS (
           SELECT settlementDate, settlementPeriod, AVG(price) as price
           FROM `inner-cinema-476211-u9.uk_energy_prod.bmrs_mid_iris`
-          WHERE settlementDate = CURRENT_DATE()
+          WHERE settlementDate >= DATE_SUB(CURRENT_DATE(), INTERVAL 1 DAY)
           GROUP BY 1, 2
         )
       SELECT 

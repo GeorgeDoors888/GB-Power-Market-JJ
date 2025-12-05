@@ -16,8 +16,9 @@ Complete documentation for the BESS Dashboard system.
 | [API_REFERENCE.md](API_REFERENCE.md) | Python functions | 1,100+ | Function docs, examples, models |
 | [CONFIGURATION.md](CONFIGURATION.md) | Settings guide | 750+ | Credentials, rates, parameters |
 | [DEPLOYMENT.md](DEPLOYMENT.md) | Production deployment | 600+ | Deployment, monitoring, backups |
+| [DASHBOARD_V3_DOCUMENTATION.md](DASHBOARD_V3_DOCUMENTATION.md) | Dashboard V3 Technical | 100+ | Hybrid architecture, layout, KPIs |
 
-**Total: 8 files, 5,753+ lines**
+**Total: 9 files, 5,850+ lines**
 
 ---
 
@@ -59,6 +60,13 @@ Complete documentation for the BESS Dashboard system.
   - Integration points (5 external systems)
   - Security architecture & best practices
   - Performance metrics & optimization
+
+### Dashboard V3 (New)
+- [DASHBOARD_V3_DOCUMENTATION.md](DASHBOARD_V3_DOCUMENTATION.md) - Technical documentation for the V3 Hybrid Dashboard
+  - **Hybrid Architecture**: BigQuery (Backend) + Google Sheets (Frontend) + Python (Middleware)
+  - **Visual Layout**: KPI Strip, Intraday Sparklines, Data Tables (Fuel, Outages, ESO)
+  - **Key Scripts**: `apply_dashboard_design.py` (Layout) and `populate_dashboard_tables.py` (Data)
+  - **Data Sources**: Real-time IRIS tables (`bmrs_mid_iris`, `bmrs_fuelinst_iris`)
 
 ### Apps Script
 - [APPS_SCRIPT_GUIDE.md](APPS_SCRIPT_GUIDE.md) - Complete Apps Script reference
@@ -228,7 +236,7 @@ When reporting issues, include:
 
 ---
 
-**Last Updated:** November 30, 2024
-**Documentation Version:** 1.0
-**Total Files:** 8
-**Total Lines:** 5,753+
+**Last Updated:** November 26, 2025
+**Documentation Version:** 1.1
+**Total Files:** 9
+**Total Lines:** 5,850+
