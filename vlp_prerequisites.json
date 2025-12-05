@@ -1,0 +1,21 @@
+{
+  "PROJECT_ID": "inner-cinema-476211-u9",
+  "DATASET": "uk_energy_prod",
+  "SPREADSHEET_ID": "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8",
+  "BATTERY_POWER_MW": 2.5,
+  "BATTERY_ENERGY_MWH": 5.0,
+  "EFFICIENCY": 0.85,
+  "CHP_MAX_MW": 2.0,
+  "SITE_ID": "VLP_SITE_001",
+  "BMU_BATTERY": "2__FBPGM002",
+  "BMU_CHP": "X_CHP01",
+  "SITE_SHARE": 0.7,
+  "FIXED_OPEX_GBP": 100000.0,
+  "tables_exist": {
+    "bmrs_boalf": true,
+    "bmrs_costs": true,
+    "site_metered_flows": false,
+    "esoservices_dc_site": false,
+    "capacity_market_site": false
+  }
+}

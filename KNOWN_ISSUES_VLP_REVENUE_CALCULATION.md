@@ -91,7 +91,8 @@ Current calculations are **~1000x too high**.
 |-------|--------------|---------|-------|
 | `bmrs_bod` | `bid`, `offer` | Submitted BM prices (£/MWh) | Intentions, not acceptances |
 | `bmrs_boalf` | ❌ **NO PRICE** | Acceptance volumes/times only | **Must join with BOD for prices** |
-| `bmrs_mid` | `systemSellPrice`, `systemBuyPrice` | System imbalance price (£/MWh) | Market-wide reference |
+| `bmrs_costs` | `systemSellPrice`, `systemBuyPrice` | System imbalance price (£/MWh, SSP=SBP since 2015) | Market-wide reference |
+| `bmrs_mid` | `price`, `volume` | Wholesale market index price (£/MWh) | Day-ahead/within-day market |
 | `bmrs_market_index` | `midPrice` | Market index price (£/MWh) | Day-ahead reference |
 | `bmrs_cashout` | `cashoutPrice` | System imbalance price (£/MWh) | Alternative to bmrs_mid |
 | `bod_boalf_7d_summary` | `avg_bm_price_gbp_per_mwh` | Pre-joined BOD+BOALF (£/MWh) | ✅ **Ready to use** (if populated) |
@@ -288,7 +289,7 @@ FROM vlp_prices vlp, system_prices sys
    - Use: Primary revenue signal
 
 2. **System Imbalance Price (Reference KPI)**
-   - Source: `bmrs_mid.systemSellPrice`
+   - Source: `bmrs_costs.systemSellPrice` (equals systemBuyPrice - single imbalance price)
    - Shows: Market-wide imbalance settlement price
    - Expected: £20-150/MWh
    - Use: Market baseline context

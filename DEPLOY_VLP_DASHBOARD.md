@@ -9,17 +9,12 @@
 3. Delete any existing code in `Code.gs`
 
 ### Step 2: Copy the VLP Dashboard Script
-The complete script is saved locally at:
-**`~/GB-Power-Market-JJ/Code_Complete.gs`**
+Copy the entire contents of `apps_script_vlp_dashboard/Code.gs` into the Script Editor
 
-Open it and copy ALL 361 lines into the Script Editor.
-
-**Or on Dell:**
+**File location on Dell:**
 ```bash
 cat ~/GB-Power-Market-JJ/apps_script_vlp_dashboard/Code.gs
 ```
-
-Make sure you copy the ENTIRE file - it's 361 lines!
 
 ### Step 3: Save and Test
 1. Click **💾 Save** (Ctrl+S)

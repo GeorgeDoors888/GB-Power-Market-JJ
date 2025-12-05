@@ -147,7 +147,7 @@ steps.append({
 ## ⚠️ Data Limitations
 
 ### Current Setup (Simplified)
-1. **Market Prices:** Using `bmrs_mid` (Market Index Data) as SSP/SBP proxy
+1. **Market Prices:** Using `bmrs_costs` (System Imbalance Prices) for actual SSP/SBP data (note: SSP=SBP since Nov 2015 P305)
    - bmrs_mid has single `price` column (not system sell/buy prices)
    - Assumption: SBP = SSP * 0.95 (5% spread)
 

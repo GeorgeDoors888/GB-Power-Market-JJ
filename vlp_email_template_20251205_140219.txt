@@ -1,0 +1,52 @@
+
+Subject: VLP Aggregation Enquiry - 50 MWh / 25 MW Battery Storage System
+
+Dear [Aggregator] Commercial Team,
+
+I am enquiring about Virtual Lead Party (VLP) aggregation services for a 
+50 MWh / 25 MW battery storage system (2-hour duration, 90% round-trip efficiency).
+
+Battery Specification:
+• Capacity: 50 MWh
+• Power: 25 MW
+• Duration: 2 hours
+• Efficiency: 90% round-trip
+• Location: [TBD - UK grid connection]
+• Expected COD: Q2 2026
+
+Services Required:
+1. Balancing Mechanism (BM) bidding and optimization
+2. BSC settlement management
+3. Real-time dispatch optimization
+4. Optional: Frequency Response (FR) service stacking
+5. Optional: Capacity Market (CM) participation support
+
+Information Requested:
+1. Revenue share structure (% of gross BM revenue)
+2. Contract terms (length, exclusivity, termination clauses)
+3. Minimum performance guarantees (if any)
+4. Case studies of similar 20-30 MW batteries in your portfolio
+5. Expected revenue benchmark (£/MWh or £/month)
+6. Technical requirements (metering, communications, control systems)
+7. Time to market (weeks from contract signing to first dispatch)
+8. Settlement and reporting frequency
+
+Our Analysis:
+• Internal modeling suggests gross BM revenue of £113k/month for 25 MW battery
+• Arbitrage baseline: £122k/month (proven from historical data)
+• We are evaluating VLP route vs. direct BSC accreditation (£100k+ setup cost)
+
+We are available for a call to discuss technical integration, contract terms, 
+and expected revenue performance.
+
+Best regards,
+George Major
+uPower Energy
+george@upowerenergy.uk
++44 [PHONE]
+
+Battery Details Available:
+- Technical specifications
+- Grid connection agreement status
+- Financial model and pro-forma
+- Project timeline and milestones

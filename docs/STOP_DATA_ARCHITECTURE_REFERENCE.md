@@ -2,7 +2,7 @@
 
 **Purpose:** Prevent repeating data format/table confusion  
 **Read this BEFORE writing ANY query or analysis script**  
-**Last Updated:** 31 October 2025
+**Last Updated:** 5 December 2025 (bmrs_costs gap filled)
 
 ---
 
@@ -67,16 +67,23 @@ SELECT * FROM combined
 ## 📊 TABLE COVERAGE MATRIX (21 Nov 2025)
 
 | Table | Type | Date Range | Days | Data Type | Status | **Units** |
-|-------|------|------------|------|-----------|--------|-----------|
+|-------|------|------------|------|-----------|--------|-----------||
 | **bmrs_bod** | Historical | 2024-01-01 → 2025-10-28 | 667 | DATETIME | ✅ Full | £/MWh |
+| **bmrs_costs** | Historical | 2022-01-01 → 2025-12-05 | 1345 | DATETIME | ✅ **Complete** | £/MWh (SSP=SBP) |
 | **bmrs_fuelinst** | Historical | 2024-01-01 → recent | 669 | DATETIME | ✅ Full | **MW** |
 | **bmrs_fuelinst_iris** | Real-time | Recent | ? | DATETIME | 🟢 Live | **MW** ⚠️ |
 | **bmrs_freq** | Historical | Unknown | ? | DATETIME | ⚠️ Check | Hz |
-| **bmrs_mid** | Historical | 2024-01-01 → recent | ? | DATETIME | ✅ Full | £/MWh |
-| **bmrs_mid_iris** | Real-time | Recent | ? | DATETIME | 🟢 Live | £/MWh |
+| **bmrs_mid** | Historical | 2024-01-01 → recent | ? | DATETIME | ✅ Full | £/MWh (wholesale) |
+| **bmrs_mid_iris** | Real-time | Recent | ? | DATETIME | 🟢 Live | £/MWh (wholesale) |
 | **demand_outturn** | Hybrid | 2025-09-27 → 2025-10-25 | 29 | **STRING** | ⚠️ Recent only | MW |
 | **bmrs_bod_iris** | Real-time | Recent | ? | DATETIME | 🟢 Live | £/MWh |
 | **bmrs_freq_iris** | Real-time | Recent | ? | DATETIME | 🟢 Live | Hz |
+
+**⚠️ KEY DISTINCTIONS:**
+- **bmrs_costs**: System **IMBALANCE** prices (SSP/SBP - merged to single price Nov 2015)
+- **bmrs_mid**: **WHOLESALE** market index prices (day-ahead/within-day)
+- Use `bmrs_costs` for battery arbitrage, imbalance settlement
+- Use `bmrs_mid` for wholesale market analysis, forward curves
 
 **⚠️ CRITICAL:** `bmrs_fuelinst_iris.generation` column is in **MW** (NOT MWh!)
 ```python

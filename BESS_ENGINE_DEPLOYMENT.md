@@ -125,7 +125,8 @@ FROM `inner-cinema-476211-u9.uk_energy_prod.fr_clearing_prices`
 
 ### Issue 2: System Prices Table Wrong
 **Error**: `Unrecognized name: systemSellPrice` in `bmrs_mid`
-**Root Cause**: Wrong table selected (bmrs_mid lacks SSP/SBP columns)
+**Root Cause**: Wrong table selected (bmrs_mid lacks SSP/SBP columns - use bmrs_costs instead)
+**Resolution**: All scripts updated to use bmrs_costs table. Data complete 2022-2025 (gap filled Dec 5, 2025).
 **Fix**: Switched to `bmrs_costs`:
 ```sql
 SELECT TIMESTAMP(startTime) as timestamp, 

@@ -47,32 +47,26 @@ sheets = build("sheets", "v4", credentials=creds)
 # === FETCH MARKET DATA FROM BIGQUERY ==============================
 print("📡 Fetching market data from BigQuery via Railway...")
 
-# Get last 7 days of half-hourly data
+# Get last 7 days of half-hourly data (using CORRECT bmrs_costs table)
+# NOTE: bmrs_costs has data through Oct 28, 2025 only (38-day gap to present)
 query = {
     "query": """
         WITH combined AS (
-          -- Historical prices
+          -- Historical system prices (bmrs_costs has SSP/SBP, NOT bmrs_mid!)
           SELECT 
-            CAST(settlementDate AS TIMESTAMP) AS timestamp,
+            TIMESTAMP_ADD(CAST(settlementDate AS TIMESTAMP), 
+                         INTERVAL (settlementPeriod - 1) * 30 MINUTE) AS timestamp,
             settlementPeriod AS sp,
             systemSellPrice AS price_sell,
             systemBuyPrice AS price_buy,
             (systemSellPrice + systemBuyPrice) / 2 AS price_avg
-          FROM `inner-cinema-476211-u9.uk_energy_prod.bmrs_mid`
-          WHERE settlementDate >= DATE_SUB(CURRENT_DATE(), INTERVAL 7 DAY)
-            AND settlementDate < CURRENT_DATE()
-          
-          UNION ALL
-          
-          -- Real-time prices (IRIS)
-          SELECT 
-            CAST(settlementDate AS TIMESTAMP) AS timestamp,
-            settlementPeriod AS sp,
-            systemSellPrice AS price_sell,
-            systemBuyPrice AS price_buy,
-            (systemSellPrice + systemBuyPrice) / 2 AS price_avg
-          FROM `inner-cinema-476211-u9.uk_energy_prod.bmrs_mid_iris`
-          WHERE settlementDate >= CURRENT_DATE()
+          FROM `inner-cinema-476211-u9.uk_energy_prod.bmrs_costs`
+          WHERE settlementDate >= DATE_SUB(CURRENT_DATE(), INTERVAL 90 DAY)
+            AND settlementDate <= '2025-10-28'
+            AND systemSellPrice IS NOT NULL
+            AND systemBuyPrice IS NOT NULL
+          ORDER BY settlementDate DESC, settlementPeriod DESC
+          LIMIT 336
         ),
         freq_data AS (
           SELECT
@@ -109,44 +103,25 @@ try:
     results = r.json().get("results", [])
     
     if not results:
-        print("⚠️  No data returned from BigQuery - using synthetic data")
-        # Generate synthetic data
-        dates = pd.date_range(
-            start=datetime.now() - timedelta(days=7),
-            end=datetime.now(),
-            freq='30min'
-        )
-        df = pd.DataFrame({
-            'timestamp': dates,
-            'sp': range(1, len(dates) + 1),
-            'price_sell': 50 + 30 * np.random.randn(len(dates)),
-            'price_buy': 50 + 30 * np.random.randn(len(dates)),
-            'price_avg': 50 + 30 * np.random.randn(len(dates)),
-            'frequency': 50.0 + 0.2 * np.random.randn(len(dates))
-        })
-    else:
-        df = pd.DataFrame(results)
-        df['timestamp'] = pd.to_datetime(df['timestamp'])
+        print("❌ CRITICAL: No data returned from BigQuery")
+        print("⚠️  bmrs_costs table has data through Oct 28, 2025 only")
+        print("⚠️  Current gap: Oct 29 - Dec 5 (38 days)")
+        print("⚠️  Cannot proceed without real system price data - EXITING")
+        exit(1)
     
-    print(f"✅ Fetched {len(df)} half-hourly periods")
+    df = pd.DataFrame(results)
+    df['timestamp'] = pd.to_datetime(df['timestamp'])
+    
+    print(f"✅ Fetched {len(df)} half-hourly periods from bmrs_costs")
+    print(f"   Date range: {df['timestamp'].min()} to {df['timestamp'].max()}")
+    print(f"   SSP range: £{df['price_sell'].min():.2f} - £{df['price_sell'].max():.2f}/MWh")
+    print(f"   SBP range: £{df['price_buy'].min():.2f} - £{df['price_buy'].max():.2f}/MWh")
 
 except Exception as e:
-    print(f"❌ Error fetching BigQuery data: {e}")
-    print("📊 Generating synthetic data for demonstration...")
-    
-    dates = pd.date_range(
-        start=datetime.now() - timedelta(days=7),
-        end=datetime.now(),
-        freq='30min'
-    )
-    df = pd.DataFrame({
-        'timestamp': dates,
-        'sp': range(1, len(dates) + 1),
-        'price_sell': 50 + 30 * np.random.randn(len(dates)),
-        'price_buy': 50 + 30 * np.random.randn(len(dates)),
-        'price_avg': 50 + 30 * np.random.randn(len(dates)),
-        'frequency': 50.0 + 0.2 * np.random.randn(len(dates))
-    })
+    print(f"❌ CRITICAL ERROR fetching BigQuery data: {e}")
+    print("⚠️  This script requires REAL system prices from bmrs_costs table")
+    print("⚠️  Will NOT use synthetic/random data - EXITING")
+    raise
 
 # === BATTERY DISPATCH OPTIMIZATION ================================
 print("🔋 Calculating optimal battery dispatch...")

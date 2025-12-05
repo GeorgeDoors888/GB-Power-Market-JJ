@@ -383,5 +383,6 @@ GROUP BY d.dno_code, d.area_name
 - `load_dno_transformed.py` - GeoJSON loading script
 - `official_dno_boundaries.geojson` - NESO DNO boundaries
 - `bmrs_mid_iris` - Wholesale price table (schema shown above)
-- `bmrs_boalf` - Balancing actions table (data gap Oct 28 → present)
+- `bmrs_boalf` - Balancing actions table (data current via IRIS real-time feed)
+- `bmrs_costs` - System imbalance prices (data complete 2022-01-01 to 2025-12-05, gap filled)
 - `bmrs_remit_unavailability` - Outages table (assetName often NULL)

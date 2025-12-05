@@ -295,7 +295,7 @@ clasp push
 | Column | Name | Type | Source | Purpose |
 |--------|------|------|--------|---------|
 | **A** | Time/SP | STRING | Settlement Period (P1-P50) | X-axis |
-| **B** | DA Price | FLOAT | `bmrs_mid.systemSellPrice` | Line (right axis) |
+| **B** | Imbalance Price | FLOAT | `bmrs_costs.systemSellPrice` | Line (right axis) |
 | **C** | Imbalance Price | FLOAT | `bmrs_mid.imbalancePriceBuy` | Line (right axis) |
 | **D** | Demand | FLOAT | `demand_outturn.demand` | Area (left axis) |
 | **E** | Generation | FLOAT | SUM of `bmrs_fuelinst.generation` | Area (left axis) |

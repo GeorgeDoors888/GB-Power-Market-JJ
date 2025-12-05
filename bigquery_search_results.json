@@ -1,0 +1,1210 @@
+{
+  "search_date": "2025-12-05T12:01:22.354192",
+  "total_chunks": 1000,
+  "unique_documents": 97,
+  "documents": [
+    {
+      "document_id": "d64f9acddc209a82c2eae59b10217877",
+      "document_name": null,
+      "source": "elexon_bscdocs_comprehensive",
+      "url": null,
+      "matching_chunks": 44,
+      "max_relevance_score": 2,
+      "snippets": [
+        "he Rejection Reason.\nPhysical Interface Details:\nThe physical structure is included in the IDD Part 1 spreadsheet and referenced in the SVA Data Catalogue.\nWhere the P0323 was submitted by manual entry or by file upload into the Self Service Gateway by an\nAMVLP, VLP or Supplier the P0324 will be available to download from the Self Service Gateway. Where the\nP0323 was emailed to the BSC Service Desk, the P0324 will be emailed to the AMVLP, Supplier or VLP.\n9.25P0325: Confirmation of BM Unit Alloc",
+        "he Rejection Reason.\nPhysical Interface Details:\nThe physical structure is included in the IDD Part 1 spreadsheet and referenced in the SVA Data Catalogue.\nWhere the P0323 was submitted by manual entry or by file upload into the Self Service Gateway by an\nAMVLP, VLP or Supplier the P0324 will be available to download from the Self Service Gateway. Where the\nP0323 was emailed to the BSC Service Desk, the P0324 will be emailed to the AMVLP, Supplier or VLP.\n9.25P0325: Confirmation of BM Unit Alloc",
+        "s included in the IDD Part 1 spreadsheet and referenced in the SVA Data Catalogue.\nWhere the P0297 was submitted by manual entry or by file upload into the Self Service Gateway by an AMVLP\nor Supplier the P0298 will be available to download from the Self Service Gateway. Where the P0297 was\nemailed to the BSC Service Desk, the P0298 will be emailed to the AMVLP or Supplier.\n9.9P0299: Confirmation of Asset Registration\nInterface ID:\nP0299User:\nAMVLP \nSupplierTitle:\nConfirmation of \nAsset Registra"
+      ]
+    },
+    {
+      "document_id": "9347db66fa6de52553c62c7865200ba2",
+      "document_name": null,
+      "source": "elexon_bscdocs_comprehensive",
+      "url": null,
+      "matching_chunks": 34,
+      "max_relevance_score": 2,
+      "snippets": [
+        "Pair Delivered Volumes, as appropriate\nBalancing and Settlement Code Page  of \n\u00a9 Elexon Limited 2024\nBSCP602 SVA Metering System and Asset Metering System Register\n7.For AMSID Pair Delivered Volumes, SVAA will assign those delivered volumes to the Associated MSID Pairs and will apply\nlosses to those Delivered Volumes to take account of any losses between the Asset Metering System and the Boundary Point.\n8.Where there is more than one AMVLP using AMSID Pairs and the same MSID Pair, MSID Pair Deli",
+        "Pair Delivered Volumes, as appropriate\nBalancing and Settlement Code Page  of \n\u00a9 Elexon Limited 2024\nBSCP602 SVA Metering System and Asset Metering System Register\n7.For AMSID Pair Delivered Volumes, SVAA will assign those delivered volumes to the Associated MSID Pairs and will apply\nlosses to those Delivered Volumes to take account of any losses between the Asset Metering System and the Boundary Point.\n8.Where there is more than one AMVLP using AMSID Pairs and the same MSID Pair, MSID Pair Deli",
+        "s will be calculated according to a formula set out in the BSC\nConfigurable  Item  \u2018On-Site  Energy  Allocation  Methodology\u2019,  and  will  be\ndeducted from the SVA BM Unit Demand sent to SAA.\n\uf0b7EMR CVA BM Unit Declaration : where Generation and / or Battery Storage\nis  located  behind  one  or  more  CVA  Boundary  Point  Metering  Systems\nincluded in a single CVA BM unit (Type T or E only), the registrant of that\nBM Unit should specify that CVA BM Unit.\nFor each Settlement Period where a CVA BM "
+      ]
+    },
+    {
+      "document_id": "27c6615e38cbfd1be1ae62dd322cc532",
+      "document_name": null,
+      "source": "elexon_bscdocs_comprehensive",
+      "url": null,
+      "matching_chunks": 102,
+      "max_relevance_score": 2,
+      "snippets": [
+        ", to Metering Systems) shall be const rued accordingly, unless the\ncontext otherwise requires.\n1.2.2 For the purposes of the Code:\n(a) a \" Supplier Agent \" is any Party Agent of a Supplier required to be appointed in\nrespect of SVA Metering Systems; and\n(b) references to the allocation of SVA Metering Systems to an Additional BM\nUnit (and cognate expressions) shall be interpreted to mean the  allocation to an\nAdditional BM Unit of Plant and/or Apparatus whose Imports or Exports  of\nelectricity a",
+        ", to Metering Systems) shall be const rued accordingly, unless the\ncontext otherwise requires.\n1.2.2 For the purposes of the Code:\n(a) a \" Supplier Agent \" is any Party Agent of a Supplier required to be appointed in\nrespect of SVA Metering Systems; and\n(b) references to the allocation of SVA Metering Systems to an Additional BM\nUnit (and cognate expressions) shall be interpreted to mean the  allocation to an\nAdditional BM Unit of Plant and/or Apparatus whose Imports or Exports  of\nelectricity a",
+        "ettlement Period j, the sum over all BM Units i other\nthan Interconnector BM Units that are in offtaking Trading Units, a nd\nT \u2013 43 of 84\n\uf053a represents the sum over all Energy Accounts a, other than the T C (Non-IEA) Energy\nAccounts held by the NETSO.\nIn respect of each Settlement Period, for each TC (Non- IEA) Energy Account held by the\nNETSO, the Residual Cashflow Reallocation Proportion will be de termined as follows:\nRCRP aj = 0\n4.10.3 In respect of each Settlement Period, for each Ene rgy A"
+      ]
+    },
+    {
+      "document_id": "023277763c72b0b02c7ac97e403323b2",
+      "document_name": null,
+      "source": "NESO",
+      "url": null,
+      "matching_chunks": 1,
+      "max_relevance_score": 2,
+      "snippets": [
+        "-BM route (e.g. through P354 for Virtual Lead Parties). The key principle being that if a Supplier\u2019s imbalance position is 3 Issue Group (IG) 114 is a collaboration between several organisations working towards identifying a solution for the imbalance in the Balancing and Settlement Code for payments to (or from) Suppliers when their Imbalance position is adjusted (using ABSVD). This issue is referred to as Issue 1. Public 17 adjusted due to a third party\u2019s action (regardless of BM status), then"
+      ]
+    },
+    {
+      "document_id": "cccfba1a66d97af7cff997732fac1bc0",
+      "document_name": null,
+      "source": "elexon_bscdocs_comprehensive",
+      "url": null,
+      "matching_chunks": 30,
+      "max_relevance_score": 2,
+      "snippets": [
+        "that the Metering Equipment detects and operates any alarms required by this Code\nof Practice.\nCommissioning Process \u2013 New Installation\nThe process for commissioning a new installation varies depending on whether the Asset Metering System includes \nmeasurement transformers and where it does, the ownership of them.\nWhere there are no measurement transformers included in the Asset Metering System the SVA MOA or AMMOA will \ncommission the Asset Meter and populate the relevant parts (Meters only) of",
+        "that the Metering Equipment detects and operates any alarms required by this Code\nof Practice.\nCommissioning Process \u2013 New Installation\nThe process for commissioning a new installation varies depending on whether the Asset Metering System includes \nmeasurement transformers and where it does, the ownership of them.\nWhere there are no measurement transformers included in the Asset Metering System the SVA MOA or AMMOA will \ncommission the Asset Meter and populate the relevant parts (Meters only) of",
+        "how to apply a fixed multiplier to the various \nchannels of data that should be utilised in Settlements. The HHDC or AMHHDC (as applicable) will run the aggregation\nrule specified in the \u2018Asset Metering Complex Site Supplementary Information Form\u2019 to apply the fixed multiplier to the \nmetered data measured by the Asset Meter.\nThe SVA MOA or AMMOA identifies a site as complex by setting the \u2018Complex Site Indicator\u2019 (J1687) in the D0268 to \nTrue. The HHDC or AMHHDC will then expect to receive, or "
+      ]
+    },
+    {
+      "document_id": "b58c8f1f30023a627f12c88f44b59d13",
+      "document_name": null,
+      "source": "elexon_bscdocs_comprehensive",
+      "url": null,
+      "matching_chunks": 28,
+      "max_relevance_score": 2,
+      "snippets": [
+        "arly which market you wish to operate in: Non Half Hourly, Half Hourly or both. Applicants who are currently\noperating in a market and who wish to Qualify for the other market will have to Qualify again for the second market they wish to operate in.\nBalancing and Settlement Code Page 12 of 271 26 June 2025\n\u00a9 Elexon Limited 2025\nSelf Assessment Document (SAD) Version 13.0\n1.1Generic Section\nQuestion Guidance Response Evidence\n1.1.1What is the name of \nthe organisation \napplying to become a \nQuali",
+        "arly which market you wish to operate in: Non Half Hourly, Half Hourly or both. Applicants who are currently\noperating in a market and who wish to Qualify for the other market will have to Qualify again for the second market they wish to operate in.\nBalancing and Settlement Code Page 12 of 271 26 June 2025\n\u00a9 Elexon Limited 2025\nSelf Assessment Document (SAD) Version 13.0\n1.1Generic Section\nQuestion Guidance Response Evidence\n1.1.1What is the name of \nthe organisation \napplying to become a \nQuali",
+        "ocal working procedures with evidence as\nto  how  each  has  been  tested).  This  is\nconsidered to be a key requirement of the\nQualification process.\n(7)Performance,  resilience  and  capacity\ntesting (including a description as to how\ntesting  has  demonstrated  that  the  service\nwill  be  able  to  perform  at  the  level  of\nactivity  predicted  by  your  intended\nmaximum scale of operations as detailed in\nSection 1).\n(8)Regression testing.\n(9)Business processes or user acceptance \ntesting "
+      ]
+    },
+    {
+      "document_id": "a16d3627b6510bd68f8c4dbf2fe1d7b3",
+      "document_name": null,
+      "source": "elexon_bscdocs_comprehensive",
+      "url": null,
+      "matching_chunks": 12,
+      "max_relevance_score": 2,
+      "snippets": [
+        "rs to the SAD, and\nparticipants\u2019 obligations to complete and submit the QD to the BSCCo as part of the\nQualification  process. The QD also contains  a confirmation that Applicants  and\nQualified Persons are required to complete in accordance with Section J of the Code,\nwhich confirms that certain representations, warranties and undertakings set out in\nSection J are true and have been complied with.\nThe table below sets out which Applicants or Qualified Persons are subject to the\nprocesses set ou",
+        "rs to the SAD, and\nparticipants\u2019 obligations to complete and submit the QD to the BSCCo as part of the\nQualification  process. The QD also contains  a confirmation that Applicants  and\nQualified Persons are required to complete in accordance with Section J of the Code,\nwhich confirms that certain representations, warranties and undertakings set out in\nSection J are true and have been complied with.\nThe table below sets out which Applicants or Qualified Persons are subject to the\nprocesses set ou",
+        "ing.BSCCoApplicant\nREC Code \nManagerMutually convenient date, time and \nvenue.Phone/Written \nConfirmation\n2.1.6After 2.1.5Applicant completes any relevant section \nof the QD and submits to BSCCo for initial\nreview5 6.ApplicantBSCCoCompleted QD.\nFor Non-UMS capable Supplier, \napplicant to complete appropriate \nsection in QDWritten / Electronic \nConfirmation\n4 VLP and VTP parties will not be required to undergo witness testing.5 The QD may be either submitted in full or section by section, as agre"
+      ]
+    },
+    {
+      "document_id": "9bac6a023310db581f07c06483881934",
+      "document_name": null,
+      "source": "elexon_bscdocs_comprehensive",
+      "url": null,
+      "matching_chunks": 12,
+      "max_relevance_score": 2,
+      "snippets": [
+        "cept the\nforegoing and accept that all applications for certification and/or approval are processed\nby BSCCo subject to and on the basis of the foregoing.\n1 Confidentiality agreements shall not prohibit Party Agents from fulfilling their BSC obligations.\nBalancing and Settlement Code Page 4 of 109 22 September 2025\n\u00a9 Elexon Limited 5\nBSCP601 Metering Protocol Approval and Compliance Testing Version 26.0\nElexon (BSCCo) will confirm with the Meter Manufacturer or Asset Metering Virtual\nLead Party ",
+        "cept the\nforegoing and accept that all applications for certification and/or approval are processed\nby BSCCo subject to and on the basis of the foregoing.\n1 Confidentiality agreements shall not prohibit Party Agents from fulfilling their BSC obligations.\nBalancing and Settlement Code Page 4 of 109 22 September 2025\n\u00a9 Elexon Limited 5\nBSCP601 Metering Protocol Approval and Compliance Testing Version 26.0\nElexon (BSCCo) will confirm with the Meter Manufacturer or Asset Metering Virtual\nLead Party ",
+        "(s) to be tested in the right hand column.\nFor Manufacturers seeking Protocol Approval, enter the Metering Equipment type or Asset Metering Equipment type in the right hand column and the Advanced Data \nServices or Data Collector/s to conduct the testing in the left hand column.\nBalancing and Settlement Code Page 25 of 109 22 September 2025\n\u00a9 Elexon Limited 2025\nBSCP601 Metering Protocol Approval and Compliance Testing Version 26.0\nBalancing and Settlement Code Page 26 of 109 22 September 2025\n\u00a9"
+      ]
+    },
+    {
+      "document_id": "e4c2e061776cf8ea877956e5178067aa",
+      "document_name": null,
+      "source": "elexon_bscdocs_comprehensive",
+      "url": null,
+      "matching_chunks": 26,
+      "max_relevance_score": 2,
+      "snippets": [
+        "ons Equipment) in accordance with Section L; and\n(b)to maintain Meter Technical Details and to provide such Details, in accordance\nwith Section L, to the relevant Data Collector Supplier, Virtual Trading Party or\nVirtual Lead Party to enable such Data Collector to read and process data in\naccordance with the Supplier Volume Allocation Rules;\nin each case, in accordance with BSCP602 and all relevant Code Subsidiary\nDocuments and.\n(c)to maintain such Meter Technical Details as are required in acco",
+        "ons Equipment) in accordance with Section L; and\n(b)to maintain Meter Technical Details and to provide such Details, in accordance\nwith Section L, to the relevant Data Collector Supplier, Virtual Trading Party or\nVirtual Lead Party to enable such Data Collector to read and process data in\naccordance with the Supplier Volume Allocation Rules;\nin each case, in accordance with BSCP602 and all relevant Code Subsidiary\nDocuments and.\n(c)to maintain such Meter Technical Details as are required in acco",
+        "to assign ABSVD to a\nBM Unit, the NETSO shall send to the SVAA  Non BM Unit ABSVD  MSID Pair Data\nsubject to and in accordance with  Section Q, the provisions of this  paragraph 10.1 and\nparagraph 10.2.\n10.1.2In relation to a GSP Group where a Lead Party has registered one or more Secondary BM\nUnits or Additional BM Units with the CRA in accordance with Section K and intends to\noffer Balancing Services, the Lead Party shall allocate MSID Pairs in that GSP Group to\nsuch BM Unit(s) by submitting B"
+      ]
+    },
+    {
+      "document_id": "38a2e6d28f19fef0bd6cbe641c84a41d",
+      "document_name": null,
+      "source": "elexon_bscdocs_comprehensive",
+      "url": null,
+      "matching_chunks": 26,
+      "max_relevance_score": 2,
+      "snippets": [
+        "Delivered Volume001\nP0294 Confirmation of ABS MSID Pair \nDelivered VolumeSVAA NETSO BSCP508 001\nSVAA NETSO BSCP602 001\nSVAA NETSO BSCP703 001\nSVAA NETSO Confirmation of \nABS MSID Pair \nDelivered Volume001\nP0295 ABS MSID Pair Delivered Volume \nException ReportSVAA NETSO ABS MSID Pair \nDelivered Volume \nException Report001\nSVAA NETSO BSCP508 001\nSVAA NETSO BSCP602 001\nSVAA NETSO BSCP703 001\nSVA Data Catalogue\nAppendix A\u00a9 2025 ELEXON.  All Rights Reserved Page 37 of  54\n64.0 22/09/2025 Date/Issue N",
+        "ocation Baselining Detai\nSVAA Supplier Response to P0326 Confirmation of BM Unit Allocation Baselining Detai\nSVAA VLP Response to P0326 Confirmation of BM Unit Allocation Baselining Detai\nSVAA VTP Response to P0326 Confirmation of BM Unit Allocation Baselining Detai\nVersion History:\nCatalogue release \nchange takes effectMod/CP No. Brief description of the change and its reason\n59.0  Data flow created P376\n62.0  Added instance for VTP P415\n62.0  Added instance for VTP P415\nSVA Data Catalogue\nAppe",
+        "er Settlement \nDay per Settlement RunSecondary BM Unit Delivered Volumes\nBSCP703 SVAA SAA Secondary BM Unit Delivered Volumes\nSecondary BM Unit Delivered Volumes SVAA SAA Secondary BM Unit Delivered Volumes\nVersion History:\nCatalogue release \nchange takes effectMod/CP No. Brief description of the change and its reason\n49.0  New flow added P344\n64.0  Flow routes modified CP1603\nSVA Data Catalogue\nAppendix B\u00a9 2025, ELEXON.  All Rights Reserved Page 209 of  249\n64.0 22/09/2025 Date/Issue No: -   Ve"
+      ]
+    },
+    {
+      "document_id": "34a3a5c8a1a926e05c7c6ce80213fb58",
+      "document_name": null,
+      "source": "elexon_bscdocs_comprehensive",
+      "url": null,
+      "matching_chunks": 14,
+      "max_relevance_score": 2,
+      "snippets": [
+        " the relevant Virtual Lead Party, as recorded in the SVA Metering\nSystem Register, with the Secondary Half Hourly Consumption (Losses) (VLOSS i2Nj) for\neach Metering System \"K\" in the relevant Secondary BM Unit \"i2\" for each Settlement\nPeriod \"j\" for each Volume Allocation Run, where received.\n5.2.3The SVAA shall determine the Secondary Half Hourly Delivered (Losses) (VDLOSS i2NKji)\nwithin Consumption Component Class \"N\" (which Consumption Component Class shall be\na Consumption Component Class f",
+        " the relevant Virtual Lead Party, as recorded in the SVA Metering\nSystem Register, with the Secondary Half Hourly Consumption (Losses) (VLOSS i2Nj) for\neach Metering System \"K\" in the relevant Secondary BM Unit \"i2\" for each Settlement\nPeriod \"j\" for each Volume Allocation Run, where received.\n5.2.3The SVAA shall determine the Secondary Half Hourly Delivered (Losses) (VDLOSS i2NKji)\nwithin Consumption Component Class \"N\" (which Consumption Component Class shall be\na Consumption Component Class f",
+        "ttlement Day that most nearly corresponds to the characteristics of\nthe Settlement Day for which variables are to be determined shall be\nused; and\n(ii)in the case where there is no such identifiable Settlement Day, the\nSVAA shall carry out the Volume Allocation Run or, as the case\nmay, the Reconciliation Volume Allocation Run without the missing\nhalf hourly data.\n10.1.3The provisions of paragraph 10.1.4 apply if, for any reason, on or before such time as may\nbe specified in BSCP703 for this purp"
+      ]
+    },
+    {
+      "document_id": "dc467e343b5adaa1cd5045d47c1eb9df",
+      "document_name": null,
+      "source": "elexon_bscdocs_comprehensive",
+      "url": null,
+      "matching_chunks": 96,
+      "max_relevance_score": 2,
+      "snippets": [
+        ")\nAMVLP \nor\nSupplierD0010 Meter Readings\nor\nD0002  Fault Resolution Report or \nRequest for Decision on Further \nAction\nand\nD0268 Half Hourly Meter \nTechnical Details\nIf site is Complex, send Asset \nMetering Complex Site \nSupplementary Information Form. \nRefer to Appendix 3.9 Guide to \nAsset Metering Complex Sites;Electronic\nor other \nmethod, \nas agreed.\n2.2.3.8At same time as 2.2.3.7 Send the relevant Asset Meter information. AMVLP \nor\nSupplierSVAAP0303 Asset Meter Registration Electronic\nor oth",
+        ")\nAMVLP \nor\nSupplierD0010 Meter Readings\nor\nD0002  Fault Resolution Report or \nRequest for Decision on Further \nAction\nand\nD0268 Half Hourly Meter \nTechnical Details\nIf site is Complex, send Asset \nMetering Complex Site \nSupplementary Information Form. \nRefer to Appendix 3.9 Guide to \nAsset Metering Complex Sites;Electronic\nor other \nmethod, \nas agreed.\n2.2.3.8At same time as 2.2.3.7 Send the relevant Asset Meter information. AMVLP \nor\nSupplierSVAAP0303 Asset Meter Registration Electronic\nor oth",
+        "nclude the \nrelevant Asset Meter AMSID and\nthe Identifiers for the SVA MOA\nor AMMOA.\nThe details shall also include the \nSettlement Days for which the \nHHDC and AMHHDC are \nappointed.Internal \nProcess.\n2.1.3.6Following 2.1.3.3 and at \nleast 10 WD before 2.1.3.79Request confirmation of compliance as an Asset \nMetering System and if applicable installation, \nCommissioning and energisation of Asset Metering \nSystemAMVLP10 \nor\nSupplier SVA \nMOA\nor\nAMMOAD0142 Request for Installation or\nChange to a M"
+      ]
+    },
+    {
+      "document_id": "075f0e813e67b177e1ea5a9b97fd0728",
+      "document_name": null,
+      "source": "NESO",
+      "url": null,
+      "matching_chunks": 1,
+      "max_relevance_score": 2,
+      "snippets": [
+        "Public 1 Code Administrator Consultation Response Proforma CM 0103 : STC Consequential Modification for CMP447 (follow on Modification to CMP 428) Industry parties are invited to respond to this consultation expressing their views and supplying the rationale for those views, particularly in respect of any specific questions detailed below. Please send your responses to stcteam@nationalenergyso.com by 5pm on 15 September 2025 . Please note that any responses received after the deadline or sent to"
+      ]
+    },
+    {
+      "document_id": "9a76d533c68846e3c5578afa1a0eb01c",
+      "document_name": null,
+      "source": "elexon_bscdocs_comprehensive",
+      "url": null,
+      "matching_chunks": 12,
+      "max_relevance_score": 2,
+      "snippets": [
+        "\n5 The next ISD/MDD Go Live date can be obtained by emailing MDDC@elexon.co.uk.6 The next ISD/MDD Go Live date can be obtained by emailing MDDC@elexon.co.uk.\n27 May 2025 Version 10.0\n\u00a9 Elexon 2025 Page 10 of 19\nMarket Exit: Withdrawal from the BSC\nAll AMVLP\u2019s must submit a BSCP65/01 form to the CRA to de-register the AMVLP Party role with the same Effective \nTo Date. For the CRA systems to interface successfully with the MDD/ISD process, the letter and the BSCP65/01 form \nmust be received, valid",
+        "\n5 The next ISD/MDD Go Live date can be obtained by emailing MDDC@elexon.co.uk.6 The next ISD/MDD Go Live date can be obtained by emailing MDDC@elexon.co.uk.\n27 May 2025 Version 10.0\n\u00a9 Elexon 2025 Page 10 of 19\nMarket Exit: Withdrawal from the BSC\nAll AMVLP\u2019s must submit a BSCP65/01 form to the CRA to de-register the AMVLP Party role with the same Effective \nTo Date. For the CRA systems to interface successfully with the MDD/ISD process, the letter and the BSCP65/01 form \nmust be received, valid",
+        "Suppliers must submit a BSCP65/01 form to the CRA to de-register the Supplier Trading Party role with the same \nEffective To Date. For the CRA systems to interface successfully with the MDD process, the letter and the BSCP65/01 \nform must be received, validated and processed at least 14 Working Days prior to the Effective To Date.\nSuppliers must contact Ofgem to arrange the withdrawal of their licence obligations.\n4.9.2 Generators\nAll generators must deregister their Trading Units in accordance "
+      ]
+    },
+    {
+      "document_id": "6dfc53ca11c1de1126e910e02a718629",
+      "document_name": null,
+      "source": "elexon_bscdocs_comprehensive",
+      "url": null,
+      "matching_chunks": 28,
+      "max_relevance_score": 2,
+      "snippets": [
+        "ion page can be found on the SVA Qualification page of the BSC Website.\nSecondary BM Units, Meters and Asset Meters \nSecondary BM Units record the amount of Balancing Energy provided by VLPs or AMVLPs to the NETSO.  \nRegistration of Secondary BM Units\nBefore starting your Secondary BM Unit registration, you must contact the NETSO1, to discuss your obligations and \nsign the necessary contractual agreements. The NETSO will give you NGC BM Unit Id(s) which you need to be able to \nregister your Seco",
+        "ion page can be found on the SVA Qualification page of the BSC Website.\nSecondary BM Units, Meters and Asset Meters \nSecondary BM Units record the amount of Balancing Energy provided by VLPs or AMVLPs to the NETSO.  \nRegistration of Secondary BM Units\nBefore starting your Secondary BM Unit registration, you must contact the NETSO1, to discuss your obligations and \nsign the necessary contractual agreements. The NETSO will give you NGC BM Unit Id(s) which you need to be able to \nregister your Seco",
+        "in the June 2022 BSC Release under Modification P375 which introduced AMVLPs, Asset Meters, Asset\nMeter Operator Agents (AMMOAs) and Asset Meter Half Hourly Data Collectors (AMHHDCs).  Further updates were \nmade in the February 2023 Release under Modification P376 to allow VLPs whose assets shares a network connection\nwith other assets to be more accurately recompensed for their actual change from normal usage.  This will be done by \nintroducing Settlement Expected Volumes which will be calculat"
+      ]
+    },
+    {
+      "document_id": "367b42fd6e87e8ce917fe013f0f78428",
+      "document_name": null,
+      "source": "elexon_bscdocs_comprehensive",
+      "url": null,
+      "matching_chunks": 2,
+      "max_relevance_score": 2,
+      "snippets": [
+        "rgy than they contract to buy or sell.\nSuppliers, Asset Metering Virtual Lead Parties, Generators, Licensed Distribution System Operators, the National \nElectricity Transmission System Operator, Interconnector Administrators and Elexon also use this data for other \ncharging purposes, both within and outside the BSC arrangements. For example: Transmission and Distribution Use of\nSystem Charges; allocation between Interconnector Users; Balancing Services delivery, monitoring and payments; \nClimate",
+        "rgy than they contract to buy or sell.\nSuppliers, Asset Metering Virtual Lead Parties, Generators, Licensed Distribution System Operators, the National \nElectricity Transmission System Operator, Interconnector Administrators and Elexon also use this data for other \ncharging purposes, both within and outside the BSC arrangements. For example: Transmission and Distribution Use of\nSystem Charges; allocation between Interconnector Users; Balancing Services delivery, monitoring and payments; \nClimate"
+      ]
+    },
+    {
+      "document_id": "e8e3a0b05469b8aee54dab17e41364ac",
+      "document_name": null,
+      "source": "ofgem_242k_harvest",
+      "url": null,
+      "matching_chunks": 12,
+      "max_relevance_score": 2,
+      "snippets": [
+        "rtunities to provide \nbalancing services;  \no Modification P415 \u2018Facilitating access to wholesale markets for flexibility dispatched \nby Virtual Lead Parties\u2019 follows on from the Wider Access reforms. It will allow \nconsumers offering DSR trade this in the wholesale electricity market through a VLP, \nrather than through their Supplier;  \no Modification P362: Electricity market sandb ox - BSC Sandbox is a means to grant  a \ntemporary derogation from the BSC rules for companies to trial concepts w",
+        "rtunities to provide \nbalancing services;  \no Modification P415 \u2018Facilitating access to wholesale markets for flexibility dispatched \nby Virtual Lead Parties\u2019 follows on from the Wider Access reforms. It will allow \nconsumers offering DSR trade this in the wholesale electricity market through a VLP, \nrather than through their Supplier;  \no Modification P362: Electricity market sandb ox - BSC Sandbox is a means to grant  a \ntemporary derogation from the BSC rules for companies to trial concepts w",
+        "rtunities to provide \nbalancing services;  \no Modification P415 \u2018Facilitating access to wholesale markets for flexibility dispatched \nby Virtual Lead Parties\u2019 follows on from the Wider Access reforms. It will allow \nconsumers offering DSR trade this in the wholesale electricity market through a VLP, \nrather than through their Supplier;  \no Modification P362: Electricity market sandb ox - BSC Sandbox is a means to grant  a \ntemporary derogation from the BSC rules for companies to trial concepts w"
+      ]
+    },
+    {
+      "document_id": "fd6001e926e6428e76f239e76b3c7f9d",
+      "document_name": null,
+      "source": "elexon_bscdocs_comprehensive",
+      "url": null,
+      "matching_chunks": 16,
+      "max_relevance_score": 2,
+      "snippets": [
+        "mpt Export please also complete form BSCP15/4.9A.\nTo register the BM Unit in the ISD database, you will need to raise an ISD change request to register in ISD through \nthe Customer Solution. \nTo register the BM Unit in the MDD Database, please complete MDD Change Request form F509/01  & Entity Form 61.\nPlease Email these Forms to Mddc@elexon.co.uk . The usual EFD is the next available MDD Go live Date as per the \nMDD Release Schedule\nIs there anything else I need to do?\nYou need to allocate SVA ",
+        "mpt Export please also complete form BSCP15/4.9A.\nTo register the BM Unit in the ISD database, you will need to raise an ISD change request to register in ISD through \nthe Customer Solution. \nTo register the BM Unit in the MDD Database, please complete MDD Change Request form F509/01  & Entity Form 61.\nPlease Email these Forms to Mddc@elexon.co.uk . The usual EFD is the next available MDD Go live Date as per the \nMDD Release Schedule\nIs there anything else I need to do?\nYou need to allocate SVA ",
+        " relevant \nBSC Party Role.\nIf you are registering a BM Unit for a Generating Unit that is associated with a Licensable Generating Plant, the BSC \nParty registering the Generating Unit must be the person that generates electricity at that Generating Plant. You will \n1  If a VLP with a Secondary BMU provides Applicable Balancing Services (ABS) using equipment registered in both a Primary and Secondary BMU,but does not submit delivered volume data for this service, the Suppliers Primary BMU will no"
+      ]
+    },
+    {
+      "document_id": "774b79045ad7093218e104df1e6b07b4",
+      "document_name": null,
+      "source": "elexon_bscdocs_comprehensive",
+      "url": null,
+      "matching_chunks": 8,
+      "max_relevance_score": 2,
+      "snippets": [
+        " Cover; and\n(c)after  the  Imbalance  Party  provided  additional  Credit  Cover,  the  ECVAA\nestablished that, or it is determined pursuant to  Section W that, the level 1\ndefault notice should not have been given or that the Imbalance Party was not in\nCredit Default.\nthen paragraph 2.3.4 shall apply.\n2.3.4In the circumstances described in paragraph 2.3.3:\n(a)the Imbalance Party may reduce the amount of its Credit Cover, by an amount\nnot exceeding the amount of the additional Credit Cover provi",
+        " Cover; and\n(c)after  the  Imbalance  Party  provided  additional  Credit  Cover,  the  ECVAA\nestablished that, or it is determined pursuant to  Section W that, the level 1\ndefault notice should not have been given or that the Imbalance Party was not in\nCredit Default.\nthen paragraph 2.3.4 shall apply.\n2.3.4In the circumstances described in paragraph 2.3.3:\n(a)the Imbalance Party may reduce the amount of its Credit Cover, by an amount\nnot exceeding the amount of the additional Credit Cover provi",
+        "rty's Credit\nCover  following  such  reduction  and/or  withdrawal  shall  be  the  amount\ncalculated in accordance with paragraph 2.3A.6; and \n(b)the Non-Supplier Trading Party is a Trading Party or a Virtual Lead Party\nwhich is in Default solely by virtue of Section H.3.1.1(g); and\n(c)the Non-Supplier Trading Party or a Virtual Lead Party meets the conditions set\nout in 2.3A.5.\n2.3A.4If the Panel considers that there is insufficient information available to it to enable it to take\nthe decision"
+      ]
+    },
+    {
+      "document_id": "949795f36b6a47c66d66d69ff73122cd",
+      "document_name": null,
+      "source": "ofgem_242k_harvest",
+      "url": null,
+      "matching_chunks": 1,
+      "max_relevance_score": 2,
+      "snippets": [
+        "his statistical phenomenon \u2013 \ninformational asymmetries \u2013 is also likely to be less important for regulated utilities. \nDirect Equity Issuance Costs \n \nDirect costs at IPO stage and subsequent issues of equity are: \n- Underwriting fees charged by investment banks in the underwriting process \n- Professional fees paid to the advisors, acco untants and lawyers in preparing for the issue \n- Initial listing fees charged by the exchanges \n- Other direct IPO costs such as marketing and PR costs \n \nOxer"
+      ]
+    },
+    {
+      "document_id": "b15203e9643fb2d6a6d6462441e0bdbd",
+      "document_name": null,
+      "source": "ofgem_242k_harvest",
+      "url": null,
+      "matching_chunks": 12,
+      "max_relevance_score": 2,
+      "snippets": [
+        " \n \nThe Office of Gas and Electricity Markets  \n10 South Colonnade, Canary Wharf, London, E14 4PU   Tel 020 7901 7000    \nwww.ofgem.gov.uk  \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \nDear Sara Vaughan , \n \nAuthority decision to \u2018send back\u2019 Balancing and Settlement Code  modification \nproposal  P444 'Compensation for Virtual Lead Party actions in the Balancing \nMechanism'  \n \nOn 15 June 2023 , the Final Modification Report (FMR)  for BSC modification proposa l P444 \nwas submitted to the Authority1 for de",
+        " \n \nThe Office of Gas and Electricity Markets  \n10 South Colonnade, Canary Wharf, London, E14 4PU   Tel 020 7901 7000    \nwww.ofgem.gov.uk  \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \nDear Sara Vaughan , \n \nAuthority decision to \u2018send back\u2019 Balancing and Settlement Code  modification \nproposal  P444 'Compensation for Virtual Lead Party actions in the Balancing \nMechanism'  \n \nOn 15 June 2023 , the Final Modification Report (FMR)  for BSC modification proposa l P444 \nwas submitted to the Authority1 for de",
+        " \n \nThe Office of Gas and Electricity Markets  \n10 South Colonnade, Canary Wharf, London, E14 4PU   Tel 020 7901 7000    \nwww.ofgem.gov.uk  \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \nDear Sara Vaughan , \n \nAuthority decision to \u2018send back\u2019 Balancing and Settlement Code  modification \nproposal  P444 'Compensation for Virtual Lead Party actions in the Balancing \nMechanism'  \n \nOn 15 June 2023 , the Final Modification Report (FMR)  for BSC modification proposa l P444 \nwas submitted to the Authority1 for de"
+      ]
+    },
+    {
+      "document_id": "4238726a7745474f01ad331589b53b5e",
+      "document_name": null,
+      "source": "elexon_bscdocs_comprehensive",
+      "url": null,
+      "matching_chunks": 16,
+      "max_relevance_score": 2,
+      "snippets": [
+        "e is the latest\ndate.\nSplit AMVLP MPID Duplication. \nNot current EFD (latest ETD \nYYYY-MM-DD)This provides a view that the MSID and \nAsset Meter Serial Number is duplicated \nacross multiple AMVLP MPIDs and the \nAMSID pair effective from date is not the \nlatest date. This indicates that the AMSID \nmay have transferred to another AMVLP. \nThe given ETD is the last day of ownership\nfor the AMSID.\nSingle AMVLP MPID \nDuplication. Current EFD.This provides a view that the MSID and \nAsset Meter Serial N",
+        "e is the latest\ndate.\nSplit AMVLP MPID Duplication. \nNot current EFD (latest ETD \nYYYY-MM-DD)This provides a view that the MSID and \nAsset Meter Serial Number is duplicated \nacross multiple AMVLP MPIDs and the \nAMSID pair effective from date is not the \nlatest date. This indicates that the AMSID \nmay have transferred to another AMVLP. \nThe given ETD is the last day of ownership\nfor the AMSID.\nSingle AMVLP MPID \nDuplication. Current EFD.This provides a view that the MSID and \nAsset Meter Serial N",
+        "gsp_group_id has invalid value (allowed \nvalues: \n_A;_B;_C;_D;_E;_F;_G;_H;_J;_K;_L;_M;_N;_P).\n{data item} cannot be nullThis is a mandatory field and cannot be left \nblank or null. E.g. hhdc cannot be null.\n{data item} has invalid date format \n(expected {YYYYMMDD})This failure refers to the date columns. The date \nis in an invalid format. E.g. hhdc_efd has invalid \ndate format (expected YYYYMMDD).\n{data item} is not a valid {data_type_name}Each column has specific allowed data types \n(for exampl"
+      ]
+    },
+    {
+      "document_id": "ba82bd8f12e1351b50d16d7de3ba7d2a",
+      "document_name": null,
+      "source": "elexon_bscdocs_comprehensive",
+      "url": null,
+      "matching_chunks": 2,
+      "max_relevance_score": 2,
+      "snippets": [
+        "adjustments relating to non-BM Balancing Services (Modification P354), the relevant data item is Period \nSupplier BM Unit Non BM ABSVD Volume  (N0636), which will be introduced into version 010 of the SAA-I014 \nreport (in the April 2020 Standalone Release).\nPlease refer to the Interface Definition Document  (IDD) for details of the SAA-I014 Settlement Report. \nThe SAA-I014 does not provide information on the adjustments applied to individual Metering Systems. This \ninformation is available to Su",
+        "adjustments relating to non-BM Balancing Services (Modification P354), the relevant data item is Period \nSupplier BM Unit Non BM ABSVD Volume  (N0636), which will be introduced into version 010 of the SAA-I014 \nreport (in the April 2020 Standalone Release).\nPlease refer to the Interface Definition Document  (IDD) for details of the SAA-I014 Settlement Report. \nThe SAA-I014 does not provide information on the adjustments applied to individual Metering Systems. This \ninformation is available to Su"
+      ]
+    },
+    {
+      "document_id": "e7b05b82e19068fe0d4fdd62de959e51",
+      "document_name": null,
+      "source": "elexon_bscdocs_comprehensive",
+      "url": null,
+      "matching_chunks": 8,
+      "max_relevance_score": 2,
+      "snippets": [
+        "as both a VTP and a VLP may use their Baselined BM\nUnits both in the BM, and to trade Deviation Volumes. In this case the baseline calculated by\nSVAA will be used for both purposes.\nFor the avoidance of doubt, any queries on the Baselining Methodologies and baselining\ntechniques should be directed to the BSC Service Desk.\n\u00a9 Elexon Limited 2024 Page 8 of 22 07 November 2024\nBaselining Methodology Document Version 3.0\n1.2Scope of the Baselining Methodology Document\nThis Baselining Methodology Docu",
+        "as both a VTP and a VLP may use their Baselined BM\nUnits both in the BM, and to trade Deviation Volumes. In this case the baseline calculated by\nSVAA will be used for both purposes.\nFor the avoidance of doubt, any queries on the Baselining Methodologies and baselining\ntechniques should be directed to the BSC Service Desk.\n\u00a9 Elexon Limited 2024 Page 8 of 22 07 November 2024\nBaselining Methodology Document Version 3.0\n1.2Scope of the Baselining Methodology Document\nThis Baselining Methodology Docu",
+        "A Party may treat a Settlement Day as an Event Day if the metered volumes for that\nMISD Pair or AMSID Pair on that Settlement Day are affected by:\ni.Delivery of a Balancing Service;\n\u00a9 Elexon Limited 2024 Page 21 of 22 07 November 2024\nBaselining Methodology Document Version 3.0\nii.Virtual Trading,\niii.A Site outage;\niv.Equipment failure; and/or\nv.Site Disconnection.\nThe Lead Party must retain evidence that the Event Day met these criteria, and provide that\nevidence upon request to BSCCo, the BSC"
+      ]
+    },
+    {
+      "document_id": "a1b1eba9ffb9853378565c3e332a366a",
+      "document_name": null,
+      "source": "elexon_bscdocs_comprehensive",
+      "url": null,
+      "matching_chunks": 10,
+      "max_relevance_score": 2,
+      "snippets": [
+        " time\nusing this BSC Procedure.\nThe \u2018DC Flow Ref\u2019 column provides the data flow references in the BSC SVA Data\nCatalogue.  References that begin with a \u2018P\u2019 have an equivalent BSC SVA Data\nCatalogue data flow.\nData Flow DC Flow Ref FromTo\nSupplier in a GSP Group P0030SupplierSVAA\nData Aggregator in a GSP Group P0031SupplierSVAA\nData Collector in a GSP Group P0032Supplier,\nVTP \n VLP,\nAMVLPSVAA\nAcknowledgement P0024SVAASupplier\nMissing Data P0310SVAAVTP, \nVLP, \nAMVLP, \nHHDA,\nHHDC\nSupplier\nInvalid D",
+        " time\nusing this BSC Procedure.\nThe \u2018DC Flow Ref\u2019 column provides the data flow references in the BSC SVA Data\nCatalogue.  References that begin with a \u2018P\u2019 have an equivalent BSC SVA Data\nCatalogue data flow.\nData Flow DC Flow Ref FromTo\nSupplier in a GSP Group P0030SupplierSVAA\nData Aggregator in a GSP Group P0031SupplierSVAA\nData Collector in a GSP Group P0032Supplier,\nVTP \n VLP,\nAMVLPSVAA\nAcknowledgement P0024SVAASupplier\nMissing Data P0310SVAAVTP, \nVLP, \nAMVLP, \nHHDA,\nHHDC\nSupplier\nInvalid D",
+        "SVAA will generate an AMSID Pair on the successful registration of an Asset and related Asset Metering System(s).4VLPs that wish to register an Asset and its Asset Metering Systems and to allocate the related AMSID Pair to a Secondary BM Unit must \ncomplete the Asset Metering VLP Qualification process to become AMVLPs.\nBalancing and Settlement Code Page 6 of 34 07 November 2024\n\u00a9 Elexon Limited 2024\nBSCP507 Supplier Volume Allocation Standing Data Changes Version 21.0\nThe Supplier must ensure th"
+      ]
+    },
+    {
+      "document_id": "20a27565439d2365e6830eb0516330e3",
+      "document_name": null,
+      "source": "elexon_bscdocs_comprehensive",
+      "url": null,
+      "matching_chunks": 28,
+      "max_relevance_score": 2,
+      "snippets": [
+        "arket Matrix \nReport. \n3.2B.26Following 3.2B.20 Publish BSCCo GSP Group Consumption \nTotals Report and GSP Group Market Matrix \nReportBSCCo P0276 BSCCo GSP Group \nConsumption Totals Report.\nP0277 GSP Group Market Matrix \nReport.BSC Website.\n3.2B.27After 3.2B.14 As for 3.2A.17 - 3.2A.31\n24 This dataflow is optional and is only sent by the SVAA if the Supplier requests the dataflow via the BSC Service Desk.25 This data flow is only produced for the Initial Settlement (SF), Final Reconciliation (RF",
+        "arket Matrix \nReport. \n3.2B.26Following 3.2B.20 Publish BSCCo GSP Group Consumption \nTotals Report and GSP Group Market Matrix \nReportBSCCo P0276 BSCCo GSP Group \nConsumption Totals Report.\nP0277 GSP Group Market Matrix \nReport.BSC Website.\n3.2B.27After 3.2B.14 As for 3.2A.17 - 3.2A.31\n24 This dataflow is optional and is only sent by the SVAA if the Supplier requests the dataflow via the BSC Service Desk.25 This data flow is only produced for the Initial Settlement (SF), Final Reconciliation (RF",
+        "Control\nEvent, as part of a timetabled Reconciliation Volume Allocation Run.\nSVA Metering System and Asset Metering System Register\nThe SVAA shall maintain a register of Half Hourly SVA Metering System\nNumbers (MSIDs) and Asset Metering System Numbers (AMSIDs) which may\nbe submitted by:\ni)A Lead Party (VLP, AMVLP or Supplier) for the purposes of providing\nBalancing Services through SVA Metering Systems; when this is the\ncase, each Metering System Number must be associated with a BM\nUnit; or\nii)A"
+      ]
+    },
+    {
+      "document_id": "7783b3e6290460d92d30f505e5edc90f",
+      "document_name": null,
+      "source": "elexon_bscdocs_comprehensive",
+      "url": null,
+      "matching_chunks": 4,
+      "max_relevance_score": 2,
+      "snippets": [
+        "ry BM Unit\nThe methodology for determining CEI and the length of time for which it applies is based on the type of Primary BM \nUnit:\n\uf0b7The CEI for Credit Qualifying BM Units is based on a comparison of its FPN and the Aggregated Contract \nVolume. For Credit Qualifying BM Units the CEI is only used for the most recent two Working Days.\n\uf0b7The CEI for Interconnector BM Units is based on a comparison of the Interconnector BM Unit\u2019s FPN and the \nAggregated Contract Volume. For Interconnector BM Units t",
+        "ry BM Unit\nThe methodology for determining CEI and the length of time for which it applies is based on the type of Primary BM \nUnit:\n\uf0b7The CEI for Credit Qualifying BM Units is based on a comparison of its FPN and the Aggregated Contract \nVolume. For Credit Qualifying BM Units the CEI is only used for the most recent two Working Days.\n\uf0b7The CEI for Interconnector BM Units is based on a comparison of the Interconnector BM Unit\u2019s FPN and the \nAggregated Contract Volume. For Interconnector BM Units t",
+        "28 April 2025 Version 13.0\n\u00a9 Elexon 2025 Page 0 of 10C R E D I T  C O V E R\nGuidance Note \nCredit Cover\nContents\nContents 1\nWhy do I need Credit Cover? 2\nWhy 29 days? 2\nHow do I lodge Credit Cover? 2\nWhat if I want to withdraw my Credit Cover? 2\nHow much Credit Cover do I need to lodge? 2\nHow is my Indebtedness Calculated? 2\nCEI, MEI and AEI 3\nWhat\u2019s a Credit Qualifying BM Unit? 5\nWhat\u2019s a Non-Credit Qualifying BM Unit? 5\nCredit Assessment Energy Indebtedness (CEI) 6\nCEI for Different Types of P"
+      ]
+    },
+    {
+      "document_id": "ef772df7b03373653b37f5187114451d",
+      "document_name": null,
+      "source": "elexon_bscdocs_comprehensive",
+      "url": null,
+      "matching_chunks": 4,
+      "max_relevance_score": 2,
+      "snippets": [
+        "ation \nexercise as the agent will \nhave demonstrated volume\nand performance \ncapabilities when the \nmaximum Certified volume\nwas granted, This also Step changes in number of\nMetering Systems for \nwhich the agent intends to \nbe responsible (for \nexample an increase of \n25% in the number of \nMetering Systems in 2 \nmonths) over the agent\u2019s \nprevious maximum \nCertified volume, or \nvolume capabilities \ndemonstrated through \ntesting under the \nQualification Process. This\n2 The Removal of Qualification",
+        "ation \nexercise as the agent will \nhave demonstrated volume\nand performance \ncapabilities when the \nmaximum Certified volume\nwas granted, This also Step changes in number of\nMetering Systems for \nwhich the agent intends to \nbe responsible (for \nexample an increase of \n25% in the number of \nMetering Systems in 2 \nmonths) over the agent\u2019s \nprevious maximum \nCertified volume, or \nvolume capabilities \ndemonstrated through \ntesting under the \nQualification Process. This\n2 The Removal of Qualification",
+        "kely to be a Material Change but a \ncombination of likely impacts may also be a Material Change;\n\uf06cA change may be a single change implemented in isolation or a group of changes that are batched together for \nimplementation;\n\uf06cThe extent of the SAD which would be completed and the level of supporting evidence required will vary per \napplication, based on the scope of the re-Qualification and initial assessment of the risk of the re-Qualification \napplicant by Elexon.\nIn all cases, if the organisat"
+      ]
+    },
+    {
+      "document_id": "aaf98b32c960e0fceb9d6e90ddc644a0",
+      "document_name": null,
+      "source": "elexon_bscdocs_comprehensive",
+      "url": null,
+      "matching_chunks": 4,
+      "max_relevance_score": 2,
+      "snippets": [
+        " IUAutomatic\nSAA-I022Issue SAA \nAcknowledgement\nof MessagesOutboundAll automatic \ninbound IUAutomatic\nCDCA Test Flows Available\nFlow NameDescription DirectionApplicable to:Submission \nmethodRequired?\nCDCA-I010Exception Report \nfor missing and \ninvalid period dataOutboundBSC PartyAutomatic\nCDCA-I012Report Raw \nMetered DataOutboundBSC PartyAutomatic\n\u00a9 Elexon 2024 Participant Test Service Booking Form Page 3 of 6\nCDCA-I014Estimated Data \nReportOutboundBSC PartyAutomatic\nCDCA-I041Interconnector \nAgg",
+        " IUAutomatic\nSAA-I022Issue SAA \nAcknowledgement\nof MessagesOutboundAll automatic \ninbound IUAutomatic\nCDCA Test Flows Available\nFlow NameDescription DirectionApplicable to:Submission \nmethodRequired?\nCDCA-I010Exception Report \nfor missing and \ninvalid period dataOutboundBSC PartyAutomatic\nCDCA-I012Report Raw \nMetered DataOutboundBSC PartyAutomatic\n\u00a9 Elexon 2024 Participant Test Service Booking Form Page 3 of 6\nCDCA-I014Estimated Data \nReportOutboundBSC PartyAutomatic\nCDCA-I041Interconnector \nAgg",
+        "e \nGateway or \n\u00a9 Elexon 2024 Participant Test Service Booking Form Page 4 of 6\nPartyemail\nP0301Rejection of \nAMVLP Agent \nRegistrationToAsset Metering \nVirtual Lead \nPartySelf-Service \nGateway or \nemail\nP0302Confirmation of \nAMVLP Agent \nRegistrationToAsset Metering \nVirtual Lead \nPartySelf-Service \nGateway or \nemail\nP0303Registration of \nAsset MetersFromAsset Metering \nVirtual Lead \nPartySelf-Service \nGateway or \nemail\nP0304Rejection of Asset\nMeter RegistrationToAsset Metering \nVirtual Lead \nPa"
+      ]
+    },
+    {
+      "document_id": "8e92e052e3c08a100c811b9bf511c6ef",
+      "document_name": null,
+      "source": "elexon_bscdocs_comprehensive",
+      "url": null,
+      "matching_chunks": 4,
+      "max_relevance_score": 2,
+      "snippets": [
+        "gent Flows  \n5.5                MIDP Flows Requiring Testing  \n5.6                VLP and AMVLP Flows Requiring Testing  \n6.                 Communications Relating to the FAA  \n7.                 Service Requirements \u2013 TAA  \n8.                 Managed Data Network Service  \nBalancing and Settlement Code Page 5 of 21 08 April 2025\n\u00a9 Elexon Limited 2024\nCommunication Requirements Document A Version 23.0\n1.Introduction\n1.1Purpose and Scope\nThis document, as defined in the Code, is a Communication ",
+        "gent Flows  \n5.5                MIDP Flows Requiring Testing  \n5.6                VLP and AMVLP Flows Requiring Testing  \n6.                 Communications Relating to the FAA  \n7.                 Service Requirements \u2013 TAA  \n8.                 Managed Data Network Service  \nBalancing and Settlement Code Page 5 of 21 08 April 2025\n\u00a9 Elexon Limited 2024\nCommunication Requirements Document A Version 23.0\n1.Introduction\n1.1Purpose and Scope\nThis document, as defined in the Code, is a Communication ",
+        "endezvous Routing Daemon\nSAA - Settlement Administration Agent\nSMRA \u2013 Supplier Meter Registration Agent\nSVA \u2013Supplier Volume Allocation\nTAA \u2013 Technical Assurance Agent\nTCP/IP - Transmission Control Protocol/Internet Protocol\nUTC- Co-ordinated Universal Time\nVLP \u2013 Virtual Lead Party\nVTP \u2013Virtual Trading Party \nXSec \u2013 Participant Security Package\n2.2List of Definitions\nUnless  the context  otherwise requires  and save where otherwise defined in this\ndocument, terms and expressions defined in the C"
+      ]
+    },
+    {
+      "document_id": "150e9ad761eda3365bab5d9f0d972184",
+      "document_name": null,
+      "source": "NESO",
+      "url": null,
+      "matching_chunks": 2,
+      "max_relevance_score": 2,
+      "snippets": [
+        "CMP293/294 01/04/2019 Exhibit B Application Form V1.16 CMP293/294 01/04/2019 Exhibit U Request for a statement of works User that owns or operates a Distribution System V1.16 CMP293/294 01/04/2019 Schedule 2 \u2013 Exhibit 1 Bilateral Connection Agreement V1.9 CMP293/294 01/04/2019 Schedule 2 \u2013 Exhibit 2 Bilateral Embedded Generation V1.6 CMP293/294 01/04/2019 Schedule 2 Exhibit 3 Construction Agreement V1.12 CMP293/294 01/04/2019 Schedule 2 Exhibit 3A Offshore Construction Agreement V1.6 CMP293/294 ",
+        "Appendix G And Appendi Bilateral Connection Agreement V2 Establishing ISOP in industry codes 2024 1 October 2024 Schedule 2 Exhibit 2 Bilateral Embedded Generation Agreement V1.7 Establishing ISOP in industry codes 2024 1 October 2024 Schedule 2 Exhibit 3 Construction Agreement V1.17 Establishing ISOP in industry codes 2024 1 October 2024 Schedule 2 Exhibit 3A Offshore Construction Agreement V1.9 Establishing ISOP in industry codes 2024 1 October 2024 Schedule 2 Exhibit 4 Mandatory Services Agre"
+      ]
+    },
+    {
+      "document_id": "222c1e0d9383c42d013744ec52bb741b",
+      "document_name": null,
+      "source": "ofgem_242k_harvest",
+      "url": null,
+      "matching_chunks": 30,
+      "max_relevance_score": 2,
+      "snippets": [
+        "\u0003HYHQWV\u0003ZDV\u0003\nFRQVWDQWO\\\u0003UHILQHG\u0003IROORZLQJ\u0003IHHGEDFN\u0003VHVVLRQV\u0003ZLWK\u0003&(*\u0003PHPEHUV \u0003DQG\u00031RUWKHUQ\u0003\n3RZHUJULG\u0003EXVLQHVV\u0003OHDGV\u0011\u0003\n\u0003\n\u0016\u0011\u0017\u0003 1RUWKHUQ\u00033RZHUJULG\u0003HQVXUHG\u0003WK H\u0003DJHQFLHV\u0003LW\u0003XVHG\u0003XQGHUWRRN\u0003W ULDOV\u0003DQG\u0003WHVWHG\u0003VXUYH\\\u0003\nDQG\u0003ZRUNVKRS\u0003PDWHULDOV\u0003WR\u0003HQVXUH\u0003 WKH\\\u0003ZRXOG\u0003EH\u0003XQGHUVWRRG\u000f\u0003SDUW LFXODUO\\\u0003ZKHUH\u0003WKHUH\u0003\nZDV\u0003OLWWOH\u0003SULRU\u0003NQRZOHGJH\u0003RI\u0003WK H\u0003FRPSDQ\\\u0003RU\u0003WKH\u0003VSHFLILF\u0003WRSLF \u0011\u0003&RQVXOWDWLRQ\u0003PDWHULDOV\u0003\nDQG\u0003VXUYH\\V\u0003ZHUH\u0003WKHQ\u0003UHYLVHG\u0003LQ\u0003WKH\u0003OLJKW\u0003RI\u0003WKLV\u0003WHVWLQJ\u000f\u0003DQG \u0003DOVR\u0003DIWHU\u0003IHHGEDFN\u0003IURP\u0003\nWKH\u0003&(*\u0003RQ\u0003VRPH\u0003WRS",
+        "\u0003HYHQWV\u0003ZDV\u0003\nFRQVWDQWO\\\u0003UHILQHG\u0003IROORZLQJ\u0003IHHGEDFN\u0003VHVVLRQV\u0003ZLWK\u0003&(*\u0003PHPEHUV \u0003DQG\u00031RUWKHUQ\u0003\n3RZHUJULG\u0003EXVLQHVV\u0003OHDGV\u0011\u0003\n\u0003\n\u0016\u0011\u0017\u0003 1RUWKHUQ\u00033RZHUJULG\u0003HQVXUHG\u0003WK H\u0003DJHQFLHV\u0003LW\u0003XVHG\u0003XQGHUWRRN\u0003W ULDOV\u0003DQG\u0003WHVWHG\u0003VXUYH\\\u0003\nDQG\u0003ZRUNVKRS\u0003PDWHULDOV\u0003WR\u0003HQVXUH\u0003 WKH\\\u0003ZRXOG\u0003EH\u0003XQGHUVWRRG\u000f\u0003SDUW LFXODUO\\\u0003ZKHUH\u0003WKHUH\u0003\nZDV\u0003OLWWOH\u0003SULRU\u0003NQRZOHGJH\u0003RI\u0003WK H\u0003FRPSDQ\\\u0003RU\u0003WKH\u0003VSHFLILF\u0003WRSLF \u0011\u0003&RQVXOWDWLRQ\u0003PDWHULDOV\u0003\nDQG\u0003VXUYH\\V\u0003ZHUH\u0003WKHQ\u0003UHYLVHG\u0003LQ\u0003WKH\u0003OLJKW\u0003RI\u0003WKLV\u0003WHVWLQJ\u000f\u0003DQG \u0003DOVR\u0003DIWHU\u0003IHHGEDFN\u0003IURP\u0003\nWKH\u0003&(*\u0003RQ\u0003VRPH\u0003WRS",
+        "\u0003HYHQWV\u0003ZDV\u0003\nFRQVWDQWO\\\u0003UHILQHG\u0003IROORZLQJ\u0003IHHGEDFN\u0003VHVVLRQV\u0003ZLWK\u0003&(*\u0003PHPEHUV \u0003DQG\u00031RUWKHUQ\u0003\n3RZHUJULG\u0003EXVLQHVV\u0003OHDGV\u0011\u0003\n\u0003\n\u0016\u0011\u0017\u0003 1RUWKHUQ\u00033RZHUJULG\u0003HQVXUHG\u0003WK H\u0003DJHQFLHV\u0003LW\u0003XVHG\u0003XQGHUWRRN\u0003W ULDOV\u0003DQG\u0003WHVWHG\u0003VXUYH\\\u0003\nDQG\u0003ZRUNVKRS\u0003PDWHULDOV\u0003WR\u0003HQVXUH\u0003 WKH\\\u0003ZRXOG\u0003EH\u0003XQGHUVWRRG\u000f\u0003SDUW LFXODUO\\\u0003ZKHUH\u0003WKHUH\u0003\nZDV\u0003OLWWOH\u0003SULRU\u0003NQRZOHGJH\u0003RI\u0003WK H\u0003FRPSDQ\\\u0003RU\u0003WKH\u0003VSHFLILF\u0003WRSLF \u0011\u0003&RQVXOWDWLRQ\u0003PDWHULDOV\u0003\nDQG\u0003VXUYH\\V\u0003ZHUH\u0003WKHQ\u0003UHYLVHG\u0003LQ\u0003WKH\u0003OLJKW\u0003RI\u0003WKLV\u0003WHVWLQJ\u000f\u0003DQG \u0003DOVR\u0003DIWHU\u0003IHHGEDFN\u0003IURP\u0003\nWKH\u0003&(*\u0003RQ\u0003VRPH\u0003WRS"
+      ]
+    },
+    {
+      "document_id": "15e757ce3b6f663169b26d7232714eb6",
+      "document_name": null,
+      "source": "NESO",
+      "url": null,
+      "matching_chunks": 9,
+      "max_relevance_score": 2,
+      "snippets": [
+        "Notification EIP Energy Information Platform PoC Proof of Concept ENCC Electricity National Control Centre RoC Report on Change NESO Electricity System Operator RT Real -Time EV Electric Vehicle SLA Service Level Agreement FES Future Energy Scenarios SO System Operator FRCR Frequency Risk and Control Room SoE State of Energy GSP Grid Supply Point SP Service Provider HH Half-Hourly SQSS Security and Quality of Supply Standard HNDFUE High Normal Demand for Uncertain Event STOR Short -Term Operatin",
+        "permittedAsset metering permitted Operational Meter Accuracy RequiredThe accuracy rating required of physical meters providing operational metering+/-1% +/-2%+/-0.5% - +/-2.5%None Operational Meter Refresh FrequencyThe frequency that the physical meter captures real - time data snapshots1Hz 30mHalf-hourly or converted to 30 - minute Settlement Period format.1m -30m Operational Metering LatencyOperational metering data must reach the NESO Control Room within this time5s N/ADependant of type of so",
+        "the boundary i.e. asset meteringAsset metering permittedAsset metering permittedNoAsset metering permittedAsset metering permittedNoAsset metering permitted Operational Meter Accuracy RequiredThe accuracy rating required of physical meters providing operational metering+/-1% +/-2%+/-0.5% / 2%+/-1% for FCR N/A for aFRR, mFRR and RR+/-2% +/-2%+/- 0.5%/2% Operational Meter Refresh FrequencyThe frequency that the physical meter captures real -time data snapshots1Hz 2s \u201315m 10s \u20135m 1s \u20135m 4s \u201310s100 "
+      ]
+    },
+    {
+      "document_id": "fa99a51a84cb1a4fb714eac678da083b",
+      "document_name": null,
+      "source": "elexon_bscdocs_comprehensive",
+      "url": null,
+      "matching_chunks": 10,
+      "max_relevance_score": 2,
+      "snippets": [
+        "f TAA \nrequest in 3.5A.1Registrant and MOA or AMMOA to provide required \ninformation to the TAA for the purposes of the \nInspection Visit.Registrant\nSVA MOA \nor AMMOATAAAsset Meter Technical Details.\nAdditional Asset Metering \nEquipment Technical Details.\nAsset Metering Complex Site \nSupplementary Information Form\nwhere applicableOnline \ndatabase or \nother agreed \nmethod\n3.6A.5On the day of the \nInspection VisitTAA performs Inspection Visit with SVA MOA or \nAMMOA and AMVLP in attendance, if appr",
+        "f TAA \nrequest in 3.5A.1Registrant and MOA or AMMOA to provide required \ninformation to the TAA for the purposes of the \nInspection Visit.Registrant\nSVA MOA \nor AMMOATAAAsset Meter Technical Details.\nAdditional Asset Metering \nEquipment Technical Details.\nAsset Metering Complex Site \nSupplementary Information Form\nwhere applicableOnline \ndatabase or \nother agreed \nmethod\n3.6A.5On the day of the \nInspection VisitTAA performs Inspection Visit with SVA MOA or \nAMMOA and AMVLP in attendance, if appr",
+        "ed Data Service (ADS) \n\uf0b7Asset Metering Half Hourly Data Collectors (AMHHDC)\n\uf0b7Asset Metering Meter Operator Agents (AMMOA)\n\uf0b7Asset Metering Virtual Lead Parties (AMVLPs)\n\uf0b7Market Participants\n\uf0b7SVA Meter Operator Agents (MOAs)\n\uf0b7Panel\n\uf0b7Panel Committees\n\uf0b7Performance Assurance Administrator (PAA)\n\uf0b7Registrants\n\uf0b7Supplier Volume Allocation Agent (SVAA)\n\uf0b7Technical Assurance Agent (TAA)\n1.4Use of the Procedure\nThe Registrant is responsible for ensuring the compliance of its Party Agents, in\nparticular the M"
+      ]
+    },
+    {
+      "document_id": "a10b5fae552dff470b0458e01a85808c",
+      "document_name": null,
+      "source": "ofgem_242k_harvest",
+      "url": null,
+      "matching_chunks": 42,
+      "max_relevance_score": 2,
+      "snippets": [
+        "ommercial decision for the VLP based \non their individual business model. We think there is overall benefit in catering to all potential \nVLP business models and providing a route to market for both demand turn -up and demand \nturn-down actions. We do not consider direct compensati on will negatively impact  energy \nsecurity. We will be carefully monitoring how these arrangements work in practice . \n \nTherefore, on balance, we consider that the Alternative Solution better facilitates BSC \nobject",
+        "ommercial decision for the VLP based \non their individual business model. We think there is overall benefit in catering to all potential \nVLP business models and providing a route to market for both demand turn -up and demand \nturn-down actions. We do not consider direct compensati on will negatively impact  energy \nsecurity. We will be carefully monitoring how these arrangements work in practice . \n \nTherefore, on balance, we consider that the Alternative Solution better facilitates BSC \nobject",
+        "ommercial decision for the VLP based \non their individual business model. We think there is overall benefit in catering to all potential \nVLP business models and providing a route to market for both demand turn -up and demand \nturn-down actions. We do not consider direct compensati on will negatively impact  energy \nsecurity. We will be carefully monitoring how these arrangements work in practice . \n \nTherefore, on balance, we consider that the Alternative Solution better facilitates BSC \nobject"
+      ]
+    },
+    {
+      "document_id": "17639a585c20073f406f83aaa59a6137",
+      "document_name": null,
+      "source": "NESO",
+      "url": null,
+      "matching_chunks": 1,
+      "max_relevance_score": 2,
+      "snippets": [
+        "time period, % that were published to Elexon in time, % that didn\u2019t meet the BSC timescales . As the obligations are different for categories of BSAD e.g. DISBSAD for System / Energy Schedule 7 vs DISBAD for STOR vols, the metrics would need to be split accordingly Q: (05/11/25) As the control room use DFS more and more, when can we expect the outturn DFS delivered per period to be published publicly?Slido code #OTF 29Public Outstanding Advanced Questions Q: (28/10/25) With respect to the Transm"
+      ]
+    },
+    {
+      "document_id": "6f2086c74b1fc677246ee22f4c524b11",
+      "document_name": null,
+      "source": "elexon_bscdocs_comprehensive",
+      "url": null,
+      "matching_chunks": 10,
+      "max_relevance_score": 2,
+      "snippets": [
+        "upplier\u2019s Additional Primary BM Unit to its new Supplier Additional Primary BM\nUnit. Supplier Primary BM Unit ownership can only take place when a Supplier\ntransfers its Supplier ID i.e. ownership of the Supplier ID (and license) is transferred.\nAdditional Primary BM Units registered for CFD Assets will therefore only last for\nthe lifetime of the CFD. When the CFD expires the CFDSSP will instruct BSCCo to\nderegister the relevant Additional Primary BM Units to coincide with the expiry of\nthe CFD.",
+        "upplier\u2019s Additional Primary BM Unit to its new Supplier Additional Primary BM\nUnit. Supplier Primary BM Unit ownership can only take place when a Supplier\ntransfers its Supplier ID i.e. ownership of the Supplier ID (and license) is transferred.\nAdditional Primary BM Units registered for CFD Assets will therefore only last for\nthe lifetime of the CFD. When the CFD expires the CFDSSP will instruct BSCCo to\nderegister the relevant Additional Primary BM Units to coincide with the expiry of\nthe CFD.",
+        "\nCDCA Central Data Collection Agent\nCFD Contract For Difference\nCFDSSP Contract for Difference Settlement Services Provider\nCM Capacity Market\nCMRS Central Meter Registration Service\nCRA Central Registration Agent\nCoPBLP Change of Primary BM Unit Lead Party\nCVA Central Volume Allocation\nDNC Declared Net Capacity\nEDL Electronic Dispatch Logging \nEDT Electronic Data Transfer\nEFD Effective From Date\nETD Effective To Date\nFPN Final Physical Notification \nGSP Grid Supply Point\nIA Interconnector Admin"
+      ]
+    },
+    {
+      "document_id": "93c7b1870e235556bcd968b9fc2371ef",
+      "document_name": null,
+      "source": "elexon_bscdocs_comprehensive",
+      "url": null,
+      "matching_chunks": 2,
+      "max_relevance_score": 2,
+      "snippets": [
+        "upplier base BM Units\n\uf06ca charge for each Additional Supplier BM Unit\n\uf06ca charge for each CVA metering system)\n\uf06ca Notified Volume Charge per MWh for Energy Contract Volume Notification and Meter Volume Reallocation \nNotification\n\uf06ca Base Virtual Lead Party Monthly Charge, payable by each Virtual Lead Party that is not a Trading Party\n\uf06ca Secondary BM Unit Monthly Charge\nIndividual Parties need to pay further charges for services we provide or procure on their behalf e.g. Participant Test \nService Fe",
+        "upplier base BM Units\n\uf06ca charge for each Additional Supplier BM Unit\n\uf06ca charge for each CVA metering system)\n\uf06ca Notified Volume Charge per MWh for Energy Contract Volume Notification and Meter Volume Reallocation \nNotification\n\uf06ca Base Virtual Lead Party Monthly Charge, payable by each Virtual Lead Party that is not a Trading Party\n\uf06ca Secondary BM Unit Monthly Charge\nIndividual Parties need to pay further charges for services we provide or procure on their behalf e.g. Participant Test \nService Fe"
+      ]
+    },
+    {
+      "document_id": "ab72c352b8eb1680a3dfe335b1b1a71d",
+      "document_name": null,
+      "source": "elexon_bscdocs_comprehensive",
+      "url": null,
+      "matching_chunks": 6,
+      "max_relevance_score": 2,
+      "snippets": [
+        "iven to that term in paragraph 1.4.1 of Section S ;\n\"Identifier\": means a unique number and/or letter or, as the case may be, a unique\ncombination of numbers and/or letters;\n\"Imbalance Party\":means a Trading Party or a Virtual Lead Party that holds a Virtual\nBalancing Account;\n\"Impacted  SVA  Metering\nSystem\":means  an  SVA  Metering  System  impacted  by  a  Demand\nDisconnection;\n\"Implementation Date \":means, in relation to an Approved Modification, the date with effect\nfrom  which  the  Code  ",
+        "iven to that term in paragraph 1.4.1 of Section S ;\n\"Identifier\": means a unique number and/or letter or, as the case may be, a unique\ncombination of numbers and/or letters;\n\"Imbalance Party\":means a Trading Party or a Virtual Lead Party that holds a Virtual\nBalancing Account;\n\"Impacted  SVA  Metering\nSystem\":means  an  SVA  Metering  System  impacted  by  a  Demand\nDisconnection;\n\"Implementation Date \":means, in relation to an Approved Modification, the date with effect\nfrom  which  the  Code  ",
+        "d pursuant to Section J; \n\"Unmetered Supplies Operator \"\nor \"UMSO\":has the meaning given to that term in Section S8.2.14;\n\"Unmetered  Supply\nCertificate\":means  a  certificate  issued  by  a  Licensed  Distribution  System\nOperator  permitting  a  supply  of  electricity  to  be  made  on  its\nDistribution System or Associated Distribution System without the\nrequirement for such supply to be metered, such certificate to be\nagreed between the relevant Licensed Distribution System Operator\nand  th"
+      ]
+    },
+    {
+      "document_id": "62bde93e1370e2c74567657a14f7258c",
+      "document_name": null,
+      "source": "ofgem_242k_harvest",
+      "url": null,
+      "matching_chunks": 20,
+      "max_relevance_score": 2,
+      "snippets": [
+        "tly of their \nsupplier, meaning that distributed generation, aggregators, and consumer s will be able to \nregister BM Units and participate directly in  the BM.  \n \nP344 introduces concepts such as VLPs and Secondary BM Units into the BSC , as \ndescribed above . Consequential changes are required to the CUSC  to also reflect these \nchanges.  \n \nThe modification proposal  \n \nCMP297 was proposed by NGET  and was submitted to the CUSC Modifications Panel for \nits consideration on 19 April 2018.  \n ",
+        "tly of their \nsupplier, meaning that distributed generation, aggregators, and consumer s will be able to \nregister BM Units and participate directly in  the BM.  \n \nP344 introduces concepts such as VLPs and Secondary BM Units into the BSC , as \ndescribed above . Consequential changes are required to the CUSC  to also reflect these \nchanges.  \n \nThe modification proposal  \n \nCMP297 was proposed by NGET  and was submitted to the CUSC Modifications Panel for \nits consideration on 19 April 2018.  \n ",
+        "tly of their \nsupplier, meaning that distributed generation, aggregators, and consumer s will be able to \nregister BM Units and participate directly in  the BM.  \n \nP344 introduces concepts such as VLPs and Secondary BM Units into the BSC , as \ndescribed above . Consequential changes are required to the CUSC  to also reflect these \nchanges.  \n \nThe modification proposal  \n \nCMP297 was proposed by NGET  and was submitted to the CUSC Modifications Panel for \nits consideration on 19 April 2018.  \n "
+      ]
+    },
+    {
+      "document_id": "281ca65ac699233d0b7c7e8cc3967030",
+      "document_name": null,
+      "source": "ofgem_242k_harvest",
+      "url": null,
+      "matching_chunks": 6,
+      "max_relevance_score": 2,
+      "snippets": [
+        "for aggregation. In \nparticular DRSC4 states that demand response providers \u201ccan offer demand \nresponse services on an individual or collective basis \u201d i.e. as an aggregator.  \nThe Grid Code definition of demand response providers  confirms this by \nstating that a demand response provider may be \u201c a third party providing \ndemand aggregation from many individual customers \u201d;  \n \nii) providing balancing services (i.e. defence services ) by bidding in to the \nBalancing Market (BM) as a virtual lead",
+        "for aggregation. In \nparticular DRSC4 states that demand response providers \u201ccan offer demand \nresponse services on an individual or collective basis \u201d i.e. as an aggregator.  \nThe Grid Code definition of demand response providers  confirms this by \nstating that a demand response provider may be \u201c a third party providing \ndemand aggregation from many individual customers \u201d;  \n \nii) providing balancing services (i.e. defence services ) by bidding in to the \nBalancing Market (BM) as a virtual lead",
+        "for aggregation. In \nparticular DRSC4 states that demand response providers \u201ccan offer demand \nresponse services on an individual or collective basis \u201d i.e. as an aggregator.  \nThe Grid Code definition of demand response providers  confirms this by \nstating that a demand response provider may be \u201c a third party providing \ndemand aggregation from many individual customers \u201d;  \n \nii) providing balancing services (i.e. defence services ) by bidding in to the \nBalancing Market (BM) as a virtual lead"
+      ]
+    },
+    {
+      "document_id": "1d5023880669a7b54da2fec3ef1217be",
+      "document_name": null,
+      "source": "NESO",
+      "url": null,
+      "matching_chunks": 1,
+      "max_relevance_score": 2,
+      "snippets": [
+        "14.15.81 -84 Inconsistent alignment of formula descriptions 14.15.84 Removed Capitalisation 14.15.87 Alignment issue s 14.15.156 Non-defined terms incorrectly bolded 14.15.117 Incorrect equation formatting 14.17.7 and 14.17.12 Equation formatting error s 14.17.22 Additional paragraph number included in error 14.17.23 and 14.17.24 Paragraph spacing error 14.17.32 and 14.18.32 Cross -reference errors 14.17.40.1 Indentation error 14.18.7 and 14.18. 8 Equation and description formatting errors 14.18"
+      ]
+    },
+    {
+      "document_id": "d5fcfa24d37cf27c13c8b708112aa778",
+      "document_name": null,
+      "source": "elexon_bscdocs_comprehensive",
+      "url": null,
+      "matching_chunks": 2,
+      "max_relevance_score": 2,
+      "snippets": [
+        "ty of Primary BM Units in a\nSwitching Group to instruct CDCA to use a different set of Aggregation Rules (chosen\nfrom a number of pre-registered sets) to reflect the switching of Plant and Apparatus\nbetween Primary BM Units.\nThis procedure does not include the registration of Aggregation Rules for Supplier\nPrimary BM Units.\nThe Virtual Lead Party are not required to register Aggregation Rules for Secondary\nBM Units.\n1.2Main Users of the Procedure and their Responsibilities\nThis BSCP should be us",
+        "ty of Primary BM Units in a\nSwitching Group to instruct CDCA to use a different set of Aggregation Rules (chosen\nfrom a number of pre-registered sets) to reflect the switching of Plant and Apparatus\nbetween Primary BM Units.\nThis procedure does not include the registration of Aggregation Rules for Supplier\nPrimary BM Units.\nThe Virtual Lead Party are not required to register Aggregation Rules for Secondary\nBM Units.\n1.2Main Users of the Procedure and their Responsibilities\nThis BSCP should be us"
+      ]
+    },
+    {
+      "document_id": "b295090cf5c595b70ab23ff68d961ad8",
+      "document_name": null,
+      "source": "elexon_bscdocs_comprehensive",
+      "url": null,
+      "matching_chunks": 14,
+      "max_relevance_score": 2,
+      "snippets": [
+        "Supplier\u2019s Metering Systems subject to half hourly metering and Unmetered Supplies\nsubject to Equivalent Metering for which such Half Hourly Data Aggregator is responsible\nand in respect of a particular Settlement Day:\n(a)receive half hourly Supplier's Metering System Metered Consumption from the\nrelevant Half Hourly Data Collectors;\n(b)undertake checks and provide reports in accordance with BSCP503;\n(c)update standing data entries, notified by the SVAA to the Half Hourly Data\nAggregator, to the",
+        "Supplier\u2019s Metering Systems subject to half hourly metering and Unmetered Supplies\nsubject to Equivalent Metering for which such Half Hourly Data Aggregator is responsible\nand in respect of a particular Settlement Day:\n(a)receive half hourly Supplier's Metering System Metered Consumption from the\nrelevant Half Hourly Data Collectors;\n(b)undertake checks and provide reports in accordance with BSCP503;\n(c)update standing data entries, notified by the SVAA to the Half Hourly Data\nAggregator, to the",
+        "tries  and  update  the  Meter  Technical  Details  (in\naccordance with BSCP603) to take account of new or revised information as\nprovided by the relevant Meter Operator Agent;\n(e)carry out meter advance reading and reconcile the actual meter advance with\nsynthesised meter advance derived from the Asset Meter Register Consumption\ninput to the relevant data collection system;\n(f)process the Asset Meter Register Consumption  in accordance with BSCP603\nand  provide  the  resulting  Asset  Metering "
+      ]
+    },
+    {
+      "document_id": "c1de87709af0bae0fc9b724ec6eac5bb",
+      "document_name": null,
+      "source": "elexon_bscdocs_comprehensive",
+      "url": null,
+      "matching_chunks": 12,
+      "max_relevance_score": 2,
+      "snippets": [
+        "ipant\nTesting Service User Guide available on the BSC Website.\nBalancing and Settlement Code Page 5 of 30 27 February 2025\n\u00a9 ELEXON Limited 2025\nBSCP70 CVA Qualification Testing for Parties and Party Agents Version 15.0\n1.6Associated BSC Procedures\n(a)This procedure interfaces with the following BSCPs:\nBSCP38 Authorisations\nBSCP65 Registration of Parties and Exit Procedures\nBSCP71 Submission of ECVNs and MVRNs\nBSCP537 Qualification for SVA Parties, SVA Party Agents and CVA MOAs\n(b)Other Document",
+        "ipant\nTesting Service User Guide available on the BSC Website.\nBalancing and Settlement Code Page 5 of 30 27 February 2025\n\u00a9 ELEXON Limited 2025\nBSCP70 CVA Qualification Testing for Parties and Party Agents Version 15.0\n1.6Associated BSC Procedures\n(a)This procedure interfaces with the following BSCPs:\nBSCP38 Authorisations\nBSCP65 Registration of Parties and Exit Procedures\nBSCP71 Submission of ECVNs and MVRNs\nBSCP537 Qualification for SVA Parties, SVA Party Agents and CVA MOAs\n(b)Other Document",
+        "nector Administrators, Interconnector Error Administrators, Licensed \nDistribution System Operators (LDSOs), Virtual Trading Parties (VTPs)Virtual Lead \nParties (VLPs) and Asset Metering Virtual Lead Parties (AMVLPs) \u2013 Booking Form\nCRA, CDCA, ECVAA & SAA Data Flows\nPlease return completed application to:  Elexon Support ( https://support.elexon.co.uk/ ).\nTo: BSC Central Services Agent Date Sent:\nFrom: Participant Details\nParty ID: Name of Sender:\nContact email address:\nOur Ref: Contact Tel. No.\n"
+      ]
+    },
+    {
+      "document_id": "2282e75f3ba87e111481ec08742a81e7",
+      "document_name": null,
+      "source": "NESO",
+      "url": null,
+      "matching_chunks": 36,
+      "max_relevance_score": 2,
+      "snippets": [
+        "Complete C onnection and Use of System Code Contents Sections Section 01 Applicability of Sections and Related Agreements Section 02 Connection Section 03 Use of System Section 04 Balancing Services Section 05 Events of default, de -energisation, disconnection Section 06 General Provisions Section 07 CUSC Dispute Resolution Section 08 CUSC Modification Section 09 Interconnectors Section 10 Transition Issues Section 11 Interpretation and Definitions Section 12 Not Used Section 13 Enabling Works S",
+        "such further payment from the due date calculated in accordance with paragraph 1.5 until the date of paymen t. 1.9 If following a dispute or by virtue of the provisions of paragraphs 1.2 or 1.4 it is determined or agreed that a Party was not entitled to any payment it has received, the other Party shall be entitled to interest at the Base Rate on the amount so paid from the date of payment until the date of repayment or the date when the first Party makes a payment to the other Party which takes",
+        "of [ ] 20[XX] BETWEEN (1) The company registered in England with number 11014226 (\u201cThe Company \u201d, which expression shall include its successors and/or permitted assigns); and (2) [ ] a company registered in [ ] with number [ ] whose registered office is at [ ] (the \u201cUser \u201d, which expression shall include its successors and/or permitted assigns). WHEREAS (A) Pursuant to the ESO Licence , The Company is required to prepare a Connection and Use of System Code (\u201cCUSC \u201d) setting out the terms of the "
+      ]
+    },
+    {
+      "document_id": "22d2ba73b258981b42ab3f2f7f105452",
+      "document_name": null,
+      "source": "NESO",
+      "url": null,
+      "matching_chunks": 1,
+      "max_relevance_score": 2,
+      "snippets": [
+        "Public 1 Code Administrator Consultation Response Proforma CM 0103 : STC Consequential Modification for CMP447 (follow on Modification to CMP 428) Industry parties are invited to respond to this consultation expressing their views and supplying the rationale for those views, particularly in respect of any specific questions detailed below. Please send your responses to stcteam@nationalenergyso.com by 5pm on 15 September 2025 . Please note that any responses received after the deadline or sent to"
+      ]
+    },
+    {
+      "document_id": "4b6339b7cba0ba99572f9ee29a2b9468",
+      "document_name": null,
+      "source": "elexon_bscdocs_comprehensive",
+      "url": null,
+      "matching_chunks": 8,
+      "max_relevance_score": 2,
+      "snippets": [
+        "uld be same as \nthe Effective To \nDate of the \nSupplier BM Units.\nThe BSCP65/01 \nform must be \nreceived, validated \nand processed at \nleast 15WDs prior \nto the targeted \nMDD or ISD as \nappropriate Go \nLive date.BSCP65/01 \uf050\nDeregistration of \nMarket \nParticipant ID in \nMDD:\nSubmit \nBSCP509/01 and \nrelated entity forms\nto the MDD Co-\nordinator at least \n15WDs prior to the\ntargeted MDD Go \nLive date.BSCP509/01 \uf050\uf050\nBalancing and Settlement Code Page 64 of 71 22 September 2025\n\u00a9 Elexon Limited 2025\nBS",
+        "uld be same as \nthe Effective To \nDate of the \nSupplier BM Units.\nThe BSCP65/01 \nform must be \nreceived, validated \nand processed at \nleast 15WDs prior \nto the targeted \nMDD or ISD as \nappropriate Go \nLive date.BSCP65/01 \uf050\nDeregistration of \nMarket \nParticipant ID in \nMDD:\nSubmit \nBSCP509/01 and \nrelated entity forms\nto the MDD Co-\nordinator at least \n15WDs prior to the\ntargeted MDD Go \nLive date.BSCP509/01 \uf050\uf050\nBalancing and Settlement Code Page 64 of 71 22 September 2025\n\u00a9 Elexon Limited 2025\nBS",
+        "age 1 of 3\n* Delete as appropriate \nBSCP65/01\nTo: CRA Date Sent:\nFrom: Requesting Participant Details\nParty ID: Name of Sender:\nContact email address:\nOur Ref: Contact Tel. No.\nName of Authorised Signatory:\nAuthorised Signature: Password: \nACTION DESCRIPTION (TICK ONE BOX ONLY)\nRegister Amend \nRegistration\nPARTY NAME\nParty Name (Enter * if data has \nchanged18)\nEffective From Date for new Party \nname19\n18 Use for change of Party Name; a Party name should be a maximum of 30 alphanumeric characters"
+      ]
+    },
+    {
+      "document_id": "239635fab816d6c7ecf298db8a80f3df",
+      "document_name": null,
+      "source": "NESO",
+      "url": null,
+      "matching_chunks": 1,
+      "max_relevance_score": 2,
+      "snippets": [
+        "14.17.40.1 Indentation error 14.18.7 and 14.18. 8 Equation and description formatting errors 14.18.26 Equations and descriptions underlined 14.15. 96-98 Formula description alignment and typo 14.23 Formatting errors on bullet points and missing sub -section 14.29 Full stops missing Indented paragraphs corrected throughout Defined Terms Multiple defined terms not bolded, including: Fixed BSUoS Price Settlement Day Fixed Price Period BM Unit 5 Exempt Export BM Unit BM Unit Metered Volume Settlemen"
+      ]
+    },
+    {
+      "document_id": "25a28158e7d7034eea4e7284ca72409a",
+      "document_name": null,
+      "source": "NESO",
+      "url": null,
+      "matching_chunks": 1,
+      "max_relevance_score": 2,
+      "snippets": [
+        "Electricity Ten Year Statement (ETYS) . Is there a reason for this? And is there somewhere the Network Congestion boundaries are technically defined? A: The majority of the OTF boundaries align with those in Electricity Ten Year Statement (ETYS) but as short -term operations tend to focus on immediate constraints and sometimes short -lived constraints the OTF boundaries tend to be more dynamic and flexible . As the ETYS has to cover long term planning beyond ten years and be comparable to previo"
+      ]
+    },
+    {
+      "document_id": "936dde15d5da6b09b5732552b307eedc",
+      "document_name": null,
+      "source": "ofgem_242k_harvest",
+      "url": null,
+      "matching_chunks": 24,
+      "max_relevance_score": 2,
+      "snippets": [
+        "therefore consider that both \nthe Proposed and Alternative Solutions better promote effective competition in the generation \nand supply of electricity, and sale and purchase of electricity.  \n \nWe believe the  Proposed Solutio n will better facilitate  BSC objective (c) compared to the \nAlternative Solution . We agree  that the Proposed Solution  will create wider market access, and  \nwe believe more VL Ps are likely to enter the market  than under  the Alternative Solution . The \nAlternative So",
+        "therefore consider that both \nthe Proposed and Alternative Solutions better promote effective competition in the generation \nand supply of electricity, and sale and purchase of electricity.  \n \nWe believe the  Proposed Solutio n will better facilitate  BSC objective (c) compared to the \nAlternative Solution . We agree  that the Proposed Solution  will create wider market access, and  \nwe believe more VL Ps are likely to enter the market  than under  the Alternative Solution . The \nAlternative So",
+        "therefore consider that both \nthe Proposed and Alternative Solutions better promote effective competition in the generation \nand supply of electricity, and sale and purchase of electricity.  \n \nWe believe the  Proposed Solutio n will better facilitate  BSC objective (c) compared to the \nAlternative Solution . We agree  that the Proposed Solution  will create wider market access, and  \nwe believe more VL Ps are likely to enter the market  than under  the Alternative Solution . The \nAlternative So"
+      ]
+    },
+    {
+      "document_id": "288528f4cda023b0c6f7233c6e2df72e",
+      "document_name": null,
+      "source": "NESO",
+      "url": null,
+      "matching_chunks": 1,
+      "max_relevance_score": 2,
+      "snippets": [
+        "data submitted to NESO and published to the wider market? Respondent details (required) Please enter your details Respondent name: Company name: Email address: Which best describes your organisation? \u2610Consumer body \u2610Storage \u2610Demand \u2610Supplier \u2610Distribution Network Operator \u2610System Operator \u2610Generator \u2610Transmission Owner \u2610Industry Body \u2610Virtual Lead Party \u2610Interconnector \u2610Other (please state): Please mark here if you would like your response to be treated as confidential: \u2610Confidential (please spe"
+      ]
+    },
+    {
+      "document_id": "a70c136fd555ce664cd7f95ac0157f95",
+      "document_name": null,
+      "source": "elexon_bscdocs_comprehensive",
+      "url": null,
+      "matching_chunks": 2,
+      "max_relevance_score": 2,
+      "snippets": [
+        " If there are any changes in the \nMetering which affects the Metering Dispensation, \nprocesses in BSCP32 \u2018Metering Dispensations\u2019  may \nneed to be followed.\nThe CoPBLP procedure will invalidate any Metering \nVolume Reallocation Notices (MVRNs) submitted by the \nexisting Lead Party for the transferred Primary BM \nUnit(s). If the new Lead Party wishes to submit a new \nMVRN for the Primary BM Unit(s) after they become \nresponsible for it, a valid Metering Volume Reallocation \nNotices Agent (MVRNA) ",
+        " If there are any changes in the \nMetering which affects the Metering Dispensation, \nprocesses in BSCP32 \u2018Metering Dispensations\u2019  may \nneed to be followed.\nThe CoPBLP procedure will invalidate any Metering \nVolume Reallocation Notices (MVRNs) submitted by the \nexisting Lead Party for the transferred Primary BM \nUnit(s). If the new Lead Party wishes to submit a new \nMVRN for the Primary BM Unit(s) after they become \nresponsible for it, a valid Metering Volume Reallocation \nNotices Agent (MVRNA) "
+      ]
+    },
+    {
+      "document_id": "44114c380a43273f6f85f9176bc291e0",
+      "document_name": null,
+      "source": "elexon_bscdocs_comprehensive",
+      "url": null,
+      "matching_chunks": 4,
+      "max_relevance_score": 2,
+      "snippets": [
+        "Party and Party Agents wishing to publish its Authorised Persons List on the BSC\nWebsite, can do so, by providing formal authorisation to BSCCo confirming their\nconsent that BSCCo can disclose such personal data regarding it and its employees to\nthird parties. Formal authorisation must be submitted by a Category A Person to\nBSCCo (in writing) and must clearly state the relevant Party/Party Agent ID(s) to\nwhich the Authorised Persons relate to. Validation of the Category A person will be\nundertak",
+        "Party and Party Agents wishing to publish its Authorised Persons List on the BSC\nWebsite, can do so, by providing formal authorisation to BSCCo confirming their\nconsent that BSCCo can disclose such personal data regarding it and its employees to\nthird parties. Formal authorisation must be submitted by a Category A Person to\nBSCCo (in writing) and must clearly state the relevant Party/Party Agent ID(s) to\nwhich the Authorised Persons relate to. Validation of the Category A person will be\nundertak",
+        " equivalent.Post / Fax / \nEmail/ Self-\nService \nGateway\nBalancing and Settlement Code Page 10 of 21 22 September 2025\n\u00a9 Elexon Limited 2025\nBSCP38 Authorisations Version 28.0\n4.Authorisation Categories\nThe table below identifies for each authorisation category, the Central Service Provider (the BSC Agent or BSCCo undertaking that activity) and \nthe BSC Section or BSCP to which that authorisation level applies.  The final column details which Party or Party Agent is able to authorise \nindividuals"
+      ]
+    },
+    {
+      "document_id": "67ae597aed88b16076537bebc40b0cb4",
+      "document_name": null,
+      "source": "elexon_bscdocs_comprehensive",
+      "url": null,
+      "matching_chunks": 1,
+      "max_relevance_score": 2,
+      "snippets": [
+        "g:\ni)Working Day (WD) or\nii)Settlement Day (SD) and WD.\nThe Load Shaping Service shall calculate Load Shapes in kilo Watt hours (kWh),\notherwise, SVAA processes all consumption data it receives from the Data Service in\nMWh.\nThis BSC Procedure does not cover the receipt of the various standing data related\nchanges which are documented in BSCP507.\nThe remaining sections in this document are:\nSection 2 - Responsibilities of the SVAA services.\nSection 3 - Interface and Timetable Information: this se"
+      ]
+    },
+    {
+      "document_id": "2cca2bf2f41bc24abc78d8fa35952890",
+      "document_name": null,
+      "source": "NESO",
+      "url": null,
+      "matching_chunks": 1,
+      "max_relevance_score": 2,
+      "snippets": [
+        "can we expect the outturn DFS delivered per period to be published publicly? A: DFS settled quantity and cost is published in the Utilisation Report Summary available in the Data Portal (https://www.neso.energy/data -portal/demand -flexibility/dfs_utilisation_report_summary )Slido code #OTF 34Public Outstanding Questions Q: (05/11/25) On the data portal, the OBP Non-BM Reserve Instructions has not been updated in 3 weeks . Is there an issue with OBP, or publishing data from OBP? Advance Q: (06/1"
+      ]
+    },
+    {
+      "document_id": "8c9271cd941dbed6b518cf7d3e3251a4",
+      "document_name": null,
+      "source": "elexon_bscdocs_comprehensive",
+      "url": null,
+      "matching_chunks": 4,
+      "max_relevance_score": 2,
+      "snippets": [
+        "eviation Production is defined as the total net deviation Production over the BSC Season \ndivided by the number of Settlement Periods within that season\nomaximum deviation Production is defined as the maximum Production deviation in any one Settlement \nPeriod during that BSC Season.\noaverage net deviation Consumption is defined as the total net deviation Consumption over the BSC Season \ndivided by the number of Settlement Periods within that season.\nomaximum deviation Consumption is defined as t",
+        "eviation Production is defined as the total net deviation Production over the BSC Season \ndivided by the number of Settlement Periods within that season\nomaximum deviation Production is defined as the maximum Production deviation in any one Settlement \nPeriod during that BSC Season.\noaverage net deviation Consumption is defined as the total net deviation Consumption over the BSC Season \ndivided by the number of Settlement Periods within that season.\nomaximum deviation Consumption is defined as t",
+        "N or _P\n Trading Secondary BM Unit \n BM Unit in GSP Group _N or _P  BM Unit in GSP Group _N or _P  BM Unit in GSP Group _N or _P  SECALF Qualifying i.e. DC = 0,       GC>0 \n P/C Status = C Or Relevant Capacity <=0?\n Yes \n Supplier BM Uniti.e. BM Unit Type \u2018G\u2019 or \u2018S\u2019No \nYes \n Yes   \nYes Yes \nYes \nYes \nNo No No \nNo \nNo \nNo No No  Interconnector BM Unit or Credit Qualifying Yes CAQCE = FPNs\nYes Start\n2.10A Trading Party or Virtual Trading Party  must declare GC and DC values for each Primary BM Uni"
+      ]
+    },
+    {
+      "document_id": "2eed99b8f97bfb215d2d7b440d709c73",
+      "document_name": null,
+      "source": "elexon_bscdocs_comprehensive",
+      "url": null,
+      "matching_chunks": 2,
+      "max_relevance_score": 2,
+      "snippets": [
+        "27 May 2025 Version 5.0\n\u00a9 Elexon 2025 Page 0 of 8MA R K E T  E N T RY:\nPA R T Y  N O VAT I O N\nGuidance Note \nMarket Entry: Party Novation\nContents\nContents 1\nIntroduction 2\nWhat this document covers 2\nWho should use this Guidance Note?\u202f 2\nParty Novation 2\nWhat is Party novation? 2\nWho can apply for a Party novation? 2\nThe Party novation process 3\nNovation Fee 3\nNovation Application Form 3\nAgreement of Novation of a Contract 3\nWho decides if a novation can take place? 3\nName change and other con",
+        "27 May 2025 Version 5.0\n\u00a9 Elexon 2025 Page 0 of 8MA R K E T  E N T RY:\nPA R T Y  N O VAT I O N\nGuidance Note \nMarket Entry: Party Novation\nContents\nContents 1\nIntroduction 2\nWhat this document covers 2\nWho should use this Guidance Note?\u202f 2\nParty Novation 2\nWhat is Party novation? 2\nWho can apply for a Party novation? 2\nThe Party novation process 3\nNovation Fee 3\nNovation Application Form 3\nAgreement of Novation of a Contract 3\nWho decides if a novation can take place? 3\nName change and other con"
+      ]
+    },
+    {
+      "document_id": "325dd8af87492aaf0b8b0818b9da09b1",
+      "document_name": null,
+      "source": "NESO",
+      "url": null,
+      "matching_chunks": 1,
+      "max_relevance_score": 2,
+      "snippets": [
+        "14.15.81 -84 Inconsistent alignment of formula descriptions 14.15.84 Removed Capitalisation 14.15.87 Alignment issue s 14.15.156 Non-defined terms incorrectly bolded 14.15.117 Incorrect equation formatting 14.17.7 and 14.17.12 Equation formatting error s 14.17.22 Additional paragraph number included in error 14.17.23 and 14.17.24 Paragraph spacing error 14.17.32 and 14.18.32 Cross -reference errors 14.17.40.1 Indentation error 14.18.7 and 14.18. 8 Equation and description formatting errors 14.18"
+      ]
+    },
+    {
+      "document_id": "c4cf3745458c0ec71caf043e42f86084",
+      "document_name": null,
+      "source": "elexon_bscdocs_comprehensive",
+      "url": null,
+      "matching_chunks": 2,
+      "max_relevance_score": 2,
+      "snippets": [
+        " files received from the NETSO are given in [NGCSPEC]. The\nnames  of  the  files  received  from  and  sent  to  SVAA  follow  the  following\nconvention:\ncharacter 1: Sender role code (Pool format)\ncharacters 2-5: Sender participant Id (Pool format)\ncharacters 6-14: Unique identifier.\nThe names of all other files follow the convention given in section 2.2.5 of Part 1.\n2.1.6Unstructured File Format\nWith the exception of files from the NETSO and files to and from SVAA, the\nunstructured file format",
+        " files received from the NETSO are given in [NGCSPEC]. The\nnames  of  the  files  received  from  and  sent  to  SVAA  follow  the  following\nconvention:\ncharacter 1: Sender role code (Pool format)\ncharacters 2-5: Sender participant Id (Pool format)\ncharacters 6-14: Unique identifier.\nThe names of all other files follow the convention given in section 2.2.5 of Part 1.\n2.1.6Unstructured File Format\nWith the exception of files from the NETSO and files to and from SVAA, the\nunstructured file format"
+      ]
+    },
+    {
+      "document_id": "3628b464fa157b0850c5b059c8947e9a",
+      "document_name": null,
+      "source": "NESO",
+      "url": null,
+      "matching_chunks": 1,
+      "max_relevance_score": 2,
+      "snippets": [
+        "14.17.40.1 Indentation error 14.18.7 and 14.18. 8 Equation and description formatting errors 14.18.26 Equations and descriptions underlined 14.15. 96-98 Formula description alignment and typo 14.23 Formatting errors on bullet points and missing sub -section 14.29 Full stops missing Indented paragraphs corrected throughout Defined Terms Multiple defined terms not bolded, including: Fixed BSUoS Price Settlement Day Fixed Price Period BM Unit 5 Exempt Export BM Unit BM Unit Metered Volume Settlemen"
+      ]
+    },
+    {
+      "document_id": "243b321f6e9860c1935dd6d79a354e34",
+      "document_name": null,
+      "source": "elexon_bscdocs_comprehensive",
+      "url": null,
+      "matching_chunks": 2,
+      "max_relevance_score": 2,
+      "snippets": [
+        "ggregation sys -\ntem;\n(g)Receive and maintain Additional BM Unit data for each Supplier (in re -\nspect of which the HHDA is appointed) and to receive, validate and\nmaintain details of the SVA Metering Systems for which such Supplier is\nBalancing and Settlement Code Page 7 of 58 22 September 2025\n\u00a9 Elexon Limited 5\nBSCP503 Half Hourly Data Aggregation Version 31.0\nthe Registrant allocated by that Supplier to its Additional BM Units in\nthe same GSP Group; and\n(h)Provide to the SVAA data aggregated",
+        "ggregation sys -\ntem;\n(g)Receive and maintain Additional BM Unit data for each Supplier (in re -\nspect of which the HHDA is appointed) and to receive, validate and\nmaintain details of the SVA Metering Systems for which such Supplier is\nBalancing and Settlement Code Page 7 of 58 22 September 2025\n\u00a9 Elexon Limited 5\nBSCP503 Half Hourly Data Aggregation Version 31.0\nthe Registrant allocated by that Supplier to its Additional BM Units in\nthe same GSP Group; and\n(h)Provide to the SVAA data aggregated"
+      ]
+    },
+    {
+      "document_id": "eb596a411dfeba3c2d7216fcb4a740d0",
+      "document_name": null,
+      "source": "elexon_bscdocs_comprehensive",
+      "url": null,
+      "matching_chunks": 6,
+      "max_relevance_score": 2,
+      "snippets": [
+        " Hourly Asset Metering System Metered \nVolumes from HHDCsSuppliers\nAMVLPsBy +14 WD\n39Ensure Agents send to SAA:\nBM Unit Eligible Exempt Supply Volumes \nfrom ESNAsSuppliersBy + 14 WD \n40Carry out Initial Volume Allocation Run\nCalculate the Supplier Volume Allocations for \neach BM UnitSVAABy +15 WD (from 0900hrs)\n41Send to SAA:\nBM Unit Metered volumes for Supplier BM \nUnits\nSecondary BM Units Demand Volumes\nSecondary BM Unit Delivered Volumes\nSupplier BM Unit Non BMU ABSVD Volume4\nSupplier BM Unit",
+        " Hourly Asset Metering System Metered \nVolumes from HHDCsSuppliers\nAMVLPsBy +14 WD\n39Ensure Agents send to SAA:\nBM Unit Eligible Exempt Supply Volumes \nfrom ESNAsSuppliersBy + 14 WD \n40Carry out Initial Volume Allocation Run\nCalculate the Supplier Volume Allocations for \neach BM UnitSVAABy +15 WD (from 0900hrs)\n41Send to SAA:\nBM Unit Metered volumes for Supplier BM \nUnits\nSecondary BM Units Demand Volumes\nSecondary BM Unit Delivered Volumes\nSupplier BM Unit Non BMU ABSVD Volume4\nSupplier BM Unit",
+        "gh the mechanism of Secondary BM Units and Suppliers will do so through Additional\nBM Units. Virtual Trading Parties will submit Wholesale Market Activity Notifications )  to\nthe ECVAA, will be party to Energy Contract Volume Notifications or Metered Volume\nReallocation  Notifications1 which  reflect  the  Wholesale  volumes  traded  and  will  submit\nMSID  Pair  Delivered  Volumes  relating  to  Wholesale  Market  Activity  through  Trading\nSecondary BM Units. Secondary BM Units, Trading Second"
+      ]
+    },
+    {
+      "document_id": "dcc296c8447f127f3977b6d7a6b9cf35",
+      "document_name": null,
+      "source": "ofgem_242k_harvest",
+      "url": null,
+      "matching_chunks": 24,
+      "max_relevance_score": 2,
+      "snippets": [
+        "tion of P415. The second issu e found \nthat due to the P0287  data flow  reporting data for both the BM and the wholesale m arket, \ncoupled with a lack of a compensation method in the BM , Supplier s who seeks to pass through  \nimbalance  charges to customers wo uld not be able to tell which volumes are eligible for \ncompensation under P415.  \n \nIn the revised  FMR, Elexon notes  the potential that the issue this modification seeks to resolve  \ncould impact more Suppliers with the introduction o",
+        "tion of P415. The second issu e found \nthat due to the P0287  data flow  reporting data for both the BM and the wholesale m arket, \ncoupled with a lack of a compensation method in the BM , Supplier s who seeks to pass through  \nimbalance  charges to customers wo uld not be able to tell which volumes are eligible for \ncompensation under P415.  \n \nIn the revised  FMR, Elexon notes  the potential that the issue this modification seeks to resolve  \ncould impact more Suppliers with the introduction o",
+        "tion of P415. The second issu e found \nthat due to the P0287  data flow  reporting data for both the BM and the wholesale m arket, \ncoupled with a lack of a compensation method in the BM , Supplier s who seeks to pass through  \nimbalance  charges to customers wo uld not be able to tell which volumes are eligible for \ncompensation under P415.  \n \nIn the revised  FMR, Elexon notes  the potential that the issue this modification seeks to resolve  \ncould impact more Suppliers with the introduction o"
+      ]
+    },
+    {
+      "document_id": "acb3f62b99c377d7128f85b9872c0e42",
+      "document_name": null,
+      "source": "ofgem_242k_harvest",
+      "url": null,
+      "matching_chunks": 1,
+      "max_relevance_score": 2,
+      "snippets": [
+        "l must take into consideration and \nare detailed mainly in the Gas Act 1986. \nOffice of Gas and Electricity Markets 9 Millbank Lorldorl SLY1 P 3GE www.ofqem.qov.uk \nErnail: industrycodes@of~em.qov.uk \nProvides for a greater number of valid meter reads to be accepted by the \nTransporters; \nimproves the accuracy of the allocation of energy through the reconciliation \nprocess; \nprovides for a greater number of meter reads to be accepted for the \npurposes of setting Annual Quantities (AQ); \nimproves"
+      ]
+    },
+    {
+      "document_id": "475a19e30d5e985ba8d78a3953b892ab",
+      "document_name": null,
+      "source": "elexon_bscdocs_comprehensive",
+      "url": null,
+      "matching_chunks": 2,
+      "max_relevance_score": 2,
+      "snippets": [
+        "rested in becoming Qualified should contact Elexon for information and guidance on the process. \nThe start of the Qualification Process is triggered by the receipt of a Qualification Letter or, in the case of Suppliers, \nVLPs, AMVLPs, VTPs and LDSOs, when they have acceded to the BSC. The Qualification Process involves the \ncompletion of the Self-Assessment Document (SAD); in some instances the performance of witness testing may \nrequire a site visit to review appropriate supporting evidence.\nA ",
+        "rested in becoming Qualified should contact Elexon for information and guidance on the process. \nThe start of the Qualification Process is triggered by the receipt of a Qualification Letter or, in the case of Suppliers, \nVLPs, AMVLPs, VTPs and LDSOs, when they have acceded to the BSC. The Qualification Process involves the \ncompletion of the Self-Assessment Document (SAD); in some instances the performance of witness testing may \nrequire a site visit to review appropriate supporting evidence.\nA "
+      ]
+    },
+    {
+      "document_id": "f2c40b6f127d4e85f21eeaa6a9cca502",
+      "document_name": null,
+      "source": "elexon_bscdocs_comprehensive",
+      "url": null,
+      "matching_chunks": 4,
+      "max_relevance_score": 2,
+      "snippets": [
+        " Data item created P376\nMSID Pair Id\nThe unique reference for an MSID Pair generated by BSC Systems when \nthe MSID Pair is raised, which should be used by the Virtual Lead Party or \nSupplier for all relevant transactions\nUnits: None\nValid Set:\nDomain: Identifier\nLogical Format: CHAR(18)\nDefault Value: Not required\nNotes:Description:\nAcronym:\nVersion History:\nCatalogue release \nchange takes effectMod/CP No. Brief description of the change and its reason\n41.0  Logical format modified to CHAR(18) C",
+        "o F, the MSID Pair Indicator must be set to A\"Description:\nAcronym:\nVersion History:\nCatalogue release \nchange takes effectMod/CP No. Brief description of the change and its reason\n46.0  Data item created P375\nSVA Data Catalogue\nAppendix C\u00a9 2025, ELEXON.  All Rights Reserved Page 14 of  189\n52.0 06/11/2025 Date/Issue No: -   Version\n94/272\nSVA Data Catalogue Volume 2: Data Items Appendix C\nAMSID Pair in Secondary BM Unit EFD\nThe effective from date for an AMSID Pair in a Secondary BM Unit\nUnits:",
+        "Data File001\nBM Unit Supplier Take Energy Volume Date File 001\nBM Unit SVA Gross Demand Data File 001\nEnergy Breakdown Report 001\nGSP Group Market Matrix Report 001\nHalf Hourly Data Aggregator Operational \nPerformance Report001\nHalf Hourly Data Aggregator Performance Report 001\nNon Half Hourly Data Aggregation Settlement Class \nConsumption Report001\nNon Half Hourly Data Aggregator Operational \nPerformance Report001\nNon Half Hourly Data Aggregator Performance \nReport001\nProfile Administration Ope"
+      ]
+    },
+    {
+      "document_id": "f1c30f249eadf163cc93ec92fa274215",
+      "document_name": null,
+      "source": "elexon_bscdocs_comprehensive",
+      "url": null,
+      "matching_chunks": 1,
+      "max_relevance_score": 2,
+      "snippets": [
+        "y as\nInterconnector Error Administrator (and where it is so appointed in relation to more than\none Interconnector, it shall hold separate such accounts in relation to each), in addition to\nand separately from Energy Accounts which it may hold pursuant to paragraph 1.4.1(c).\n1.4AVirtual Balancing Accounts\n1.4A.1A Party that registers solely as a Virtual Lead Party shall hold a Virtual Balancing Account\nunless it has also registered as Virtual Trading Party or it has otherwise applied to hold\nEner"
+      ]
+    },
+    {
+      "document_id": "15e4ec3cb208ce2b5bd4db9ba9785512",
+      "document_name": null,
+      "source": "elexon_bscdocs_comprehensive",
+      "url": null,
+      "matching_chunks": 2,
+      "max_relevance_score": 2,
+      "snippets": [
+        "ately:\n(i)the Daily Party BM Unit Cashflow;\n(ii)the Daily Party Non-Delivery Charge;\n(iii)the Daily Party Energy Imbalance Cashflow;\n(iv)the Daily Party Information Imbalance Charges;\n(v)the Daily Party Residual Settlement Cashflow;\n(vi)the Daily Party RR Instruction Deviation Cashflow; \n(vii)the Daily Party RR Cashflow;\n(viii)the Daily Virtual Lead Party Compensation Cashflow; \n(ix)the Daily Supplier Compensation Cashflow; and\n(x)the Daily Direct Compensation Cashflow.\n(c)the net credit or debi",
+        "ately:\n(i)the Daily Party BM Unit Cashflow;\n(ii)the Daily Party Non-Delivery Charge;\n(iii)the Daily Party Energy Imbalance Cashflow;\n(iv)the Daily Party Information Imbalance Charges;\n(v)the Daily Party Residual Settlement Cashflow;\n(vi)the Daily Party RR Instruction Deviation Cashflow; \n(vii)the Daily Party RR Cashflow;\n(viii)the Daily Virtual Lead Party Compensation Cashflow; \n(ix)the Daily Supplier Compensation Cashflow; and\n(x)the Daily Direct Compensation Cashflow.\n(c)the net credit or debi"
+      ]
+    },
+    {
+      "document_id": "8b42e26658b69ad003ffb22274f7e681",
+      "document_name": null,
+      "source": "elexon_bscdocs_comprehensive",
+      "url": null,
+      "matching_chunks": 8,
+      "max_relevance_score": 2,
+      "snippets": [
+        "by an Asset Metering System;\n(c)a Secondary BM Unit shall not have a Half Hourly SVA Metering System\nallocated to it which is allocated to one other Secondary BM Unit at the same\ntime; \n(d)a Secondary BM Unit may have an Asset Metering System allocated to it which\nis allocated to one other Secondary BM Unit at the same time, provided that the\nAsset Metering System is used solely for Asset Differencing in one of the\nSecondary BM Units it is allocated to; and\n(e)the Secondary BM Unit does not comp",
+        "by an Asset Metering System;\n(c)a Secondary BM Unit shall not have a Half Hourly SVA Metering System\nallocated to it which is allocated to one other Secondary BM Unit at the same\ntime; \n(d)a Secondary BM Unit may have an Asset Metering System allocated to it which\nis allocated to one other Secondary BM Unit at the same time, provided that the\nAsset Metering System is used solely for Asset Differencing in one of the\nSecondary BM Units it is allocated to; and\n(e)the Secondary BM Unit does not comp",
+        "to  GC  Limits  and  DC  Limits  shall  be  deemed  to  be\nreferences to the GC Limits and DC Limits applicable to Trading\nSecondary BM Units.\n8.1.10The P/C Status of a Trading Secondary BM Unit shall be:\n(a)Production where the Relevant Capacity of that BM Unit is GC; or\n(b)Consumption where the Relevant Capacity of that BM Unit is DC,\nin each case where the Relevant Capacity is determined in accordance with\nparagraph 8.1.8\nK \u2013 62 of 75\n8.2Registration of Secondary BM Units\n8.2.1Each Lead Party"
+      ]
+    },
+    {
+      "document_id": "9bd00bffbfdbcd4aaf37b3a60bba84ad",
+      "document_name": null,
+      "source": "ofgem_242k_harvest",
+      "url": null,
+      "matching_chunks": 6,
+      "max_relevance_score": 2,
+      "snippets": [
+        "ension True-Up Chapter 15\u00a3m 12/13 \nPrices0.5\nPPF PPF Levy Chapter 15\u00a3m 12/13 \nPrices0.0\nTCB Tax Clawback Chapter 15\u00a3m 12/13 \nPrices0.0\nTax Tax True-Up Chapter 15\u00a3m 12/13 \nPrices10.7\nDG5 Distributed Generation for DPCR5 Chapter 15\u00a3m 12/13 \nPrices0.1\nBDC Bad Debts Chapter 15\u00a3m 12/13 \nPrices0.0\nTMA Traffic Management Act Chapter 15\u00a3m 12/13 \nPrices0.0\nUWSUndergrounding & Worst Served Customers \nImprovementsChapter 15\u00a3m 12/13 \nPrices0.0\nLRR Load Related Reopener Chapter 15\u00a3m 12/13 \nPrices0.0\nHVC High",
+        "ension True-Up Chapter 15\u00a3m 12/13 \nPrices0.5\nPPF PPF Levy Chapter 15\u00a3m 12/13 \nPrices0.0\nTCB Tax Clawback Chapter 15\u00a3m 12/13 \nPrices0.0\nTax Tax True-Up Chapter 15\u00a3m 12/13 \nPrices10.7\nDG5 Distributed Generation for DPCR5 Chapter 15\u00a3m 12/13 \nPrices0.1\nBDC Bad Debts Chapter 15\u00a3m 12/13 \nPrices0.0\nTMA Traffic Management Act Chapter 15\u00a3m 12/13 \nPrices0.0\nUWSUndergrounding & Worst Served Customers \nImprovementsChapter 15\u00a3m 12/13 \nPrices0.0\nLRR Load Related Reopener Chapter 15\u00a3m 12/13 \nPrices0.0\nHVC High",
+        "ension True-Up Chapter 15\u00a3m 12/13 \nPrices0.5\nPPF PPF Levy Chapter 15\u00a3m 12/13 \nPrices0.0\nTCB Tax Clawback Chapter 15\u00a3m 12/13 \nPrices0.0\nTax Tax True-Up Chapter 15\u00a3m 12/13 \nPrices10.7\nDG5 Distributed Generation for DPCR5 Chapter 15\u00a3m 12/13 \nPrices0.1\nBDC Bad Debts Chapter 15\u00a3m 12/13 \nPrices0.0\nTMA Traffic Management Act Chapter 15\u00a3m 12/13 \nPrices0.0\nUWSUndergrounding & Worst Served Customers \nImprovementsChapter 15\u00a3m 12/13 \nPrices0.0\nLRR Load Related Reopener Chapter 15\u00a3m 12/13 \nPrices0.0\nHVC High"
+      ]
+    },
+    {
+      "document_id": "417db27d896a99345c958f203aafbec6",
+      "document_name": null,
+      "source": "NESO",
+      "url": null,
+      "matching_chunks": 1,
+      "max_relevance_score": 2,
+      "snippets": [
+        "14.15.81 -84 Inconsistent alignment of formula descriptions 14.15.84 Removed Capitalisation 14.15.87 Alignment issue s 14.15.156 Non-defined terms incorrectly bolded 14.15.117 Incorrect equation formatting 14.17.7 and 14.17.12 Equation formatting error s 14.17.22 Additional paragraph number included in error 14.17.23 and 14.17.24 Paragraph spacing error 14.17.32 and 14.18.32 Cross -reference errors 14.17.40.1 Indentation error 14.18.7 and 14.18. 8 Equation and description formatting errors 14.18"
+      ]
+    },
+    {
+      "document_id": "5e736206a7027c2519bb749b0e615d75",
+      "document_name": null,
+      "source": "elexon_bscdocs_comprehensive",
+      "url": null,
+      "matching_chunks": 4,
+      "max_relevance_score": 2,
+      "snippets": [
+        "it ID\nBM Unit type TAlthough the BSC doesn\u2019t define the term \n\u2018directly connected demand\u2019 Primary BM Unit, \nthe are some large demand assets which are \ndirectly connected to the Transmission System \nwhich only or mainly import electricity from the \nTransmission System.Not fixed \u2013 the \ncentral BSC \nSystems calculate \nthis dynamically \nand it can change \non a daily basis.\nSecondary BM \nUnitV_ prefix in BM Unit ID\nBM Unit type V\nRegistered by a Virtual \nLead Party (VLP) or an \nAsset Metering VLP \n(",
+        "it ID\nBM Unit type TAlthough the BSC doesn\u2019t define the term \n\u2018directly connected demand\u2019 Primary BM Unit, \nthe are some large demand assets which are \ndirectly connected to the Transmission System \nwhich only or mainly import electricity from the \nTransmission System.Not fixed \u2013 the \ncentral BSC \nSystems calculate \nthis dynamically \nand it can change \non a daily basis.\nSecondary BM \nUnitV_ prefix in BM Unit ID\nBM Unit type V\nRegistered by a Virtual \nLead Party (VLP) or an \nAsset Metering VLP \n(",
+        "age BM Unit Flag to \u2018False\u2019 (F).\nSecondary BM Units associated with a VLP and / or AMVLP (and not a VTP)\nThe VLP or AMVLP of a Secondary BM Unit must choose to set the Secondary BM Unit\u2019s P/C Flag to either P or\nC. In other words, it must choose a fixed P/C Status of either Production or Consumption for the Secondary \nBM Unit.  \n10 December 2024 Version 11.0\n\u00a9 Elexon 2024 Page 5 of 12\nProduction / Consumption Status and Flag\nThe Lead Party for the Secondary BM Unit:\n\uf0b7must choose its P/C Flag set"
+      ]
+    },
+    {
+      "document_id": "442c7634493dc2c1a581c9565e343844",
+      "document_name": null,
+      "source": "elexon_bscdocs_comprehensive",
+      "url": null,
+      "matching_chunks": 4,
+      "max_relevance_score": 2,
+      "snippets": [
+        "e rules for trading in the wholesale electricity market and Settlement of Secondary BM Units using \nmetering behind the site Boundary Point (referred to as Asset Metering). Section L: Metering requires Meters and \nOutstations, and Asset Meters used for Settlement purposes to comply with relevant Settlement metering Codes of \nPractice (CoPs). \nFor Boundary Point metering, the current suite of CoPs covers Settlement Metering Equipment4 requirements for \ncircuits at domestic premises all the way up",
+        "e rules for trading in the wholesale electricity market and Settlement of Secondary BM Units using \nmetering behind the site Boundary Point (referred to as Asset Metering). Section L: Metering requires Meters and \nOutstations, and Asset Meters used for Settlement purposes to comply with relevant Settlement metering Codes of \nPractice (CoPs). \nFor Boundary Point metering, the current suite of CoPs covers Settlement Metering Equipment4 requirements for \ncircuits at domestic premises all the way up",
+        "he testing involves setting up the sample Outstations or Asset Meters on a test bench; simulating \ncertain events (e.g. Outstation clock trimming, phase failure(s), reverse running (where fitted), battery failure (where \nfitted), etc.) and comparing the metered data collected using the manufacturer\u2019s software with the metered data \ncollected by the DC\u2019s data collection software.\nNormally, individual DCs apply for protocol approval, although a manufacturer can do this if it chooses to. The HHDC, "
+      ]
+    },
+    {
+      "document_id": "21d0b917f7274f8fa799eee69c01af64",
+      "document_name": null,
+      "source": "ofgem_242k_harvest",
+      "url": null,
+      "matching_chunks": 6,
+      "max_relevance_score": 2,
+      "snippets": [
+        "es?\n\u2022Progress changes on Proposer behalf?\n\u2022Greater utilisation of expertise\n\u2022Principle based change process \u2013consistent across the \ncodes\n\u2022More accessible\n\u2022Shorter documents\n\u2022Single change template?\n\u2022Less phases\n\u2022Change process digitisation\n\nHigh standard of customer service independently verified \nCode administrators\u2019 performance survey, 2018 \nare satisfied with \nELEXON\u2019s service (nearly \n50% are very satisfied ) 86%\nELEXON scored the highest net \nsatisfaction rating of all the code \nbodies for",
+        "es?\n\u2022Progress changes on Proposer behalf?\n\u2022Greater utilisation of expertise\n\u2022Principle based change process \u2013consistent across the \ncodes\n\u2022More accessible\n\u2022Shorter documents\n\u2022Single change template?\n\u2022Less phases\n\u2022Change process digitisation\n\nHigh standard of customer service independently verified \nCode administrators\u2019 performance survey, 2018 \nare satisfied with \nELEXON\u2019s service (nearly \n50% are very satisfied ) 86%\nELEXON scored the highest net \nsatisfaction rating of all the code \nbodies for",
+        "es?\n\u2022Progress changes on Proposer behalf?\n\u2022Greater utilisation of expertise\n\u2022Principle based change process \u2013consistent across the \ncodes\n\u2022More accessible\n\u2022Shorter documents\n\u2022Single change template?\n\u2022Less phases\n\u2022Change process digitisation\n\nHigh standard of customer service independently verified \nCode administrators\u2019 performance survey, 2018 \nare satisfied with \nELEXON\u2019s service (nearly \n50% are very satisfied ) 86%\nELEXON scored the highest net \nsatisfaction rating of all the code \nbodies for"
+      ]
+    },
+    {
+      "document_id": "af63f100e884865b373d3635786cd304",
+      "document_name": null,
+      "source": "elexon_bscdocs_comprehensive",
+      "url": null,
+      "matching_chunks": 4,
+      "max_relevance_score": 2,
+      "snippets": [
+        "rocesses  that  will  be  used  to  make  changes  to  this  Supplier\nCompensation Reference Price Methodology Document.\nIt does not include:\n(a)Details of third party methodologies for calculation of a wholesale cost with\nuplifts\n(b)Calculations  used  to  determine  compensation  due  to  Suppliers  or\n(AM)VLPs\n\u00a9 ELEXON Limited 2025 Page 6 of 9 06 November 2025\nSupplier Compensation Reference Price Methodology Document Version 2.0\n1.3Main Users of the Supplier Compensation Reference Price Meth",
+        "rocesses  that  will  be  used  to  make  changes  to  this  Supplier\nCompensation Reference Price Methodology Document.\nIt does not include:\n(a)Details of third party methodologies for calculation of a wholesale cost with\nuplifts\n(b)Calculations  used  to  determine  compensation  due  to  Suppliers  or\n(AM)VLPs\n\u00a9 ELEXON Limited 2025 Page 6 of 9 06 November 2025\nSupplier Compensation Reference Price Methodology Document Version 2.0\n1.3Main Users of the Supplier Compensation Reference Price Meth",
+        " able to sell Energy that it did not have to purchase, so will pay compensation to a\nmutualised pot of all Suppliers where each Supplier will be paid a share based on their\nFinal Demand.\n\u00a9 ELEXON Limited 2025 Page 5 of 9 06 November 2025\nSupplier Compensation Reference Price Methodology Document Version 2.0\nIn the Balancing Mechanism, this Compensation will be paid or received by Suppliers\nthat are impacted by (AM)VLP actions and the (AM)VLP that took the action in any\ngiven Settlement Period\n\uf0b7W"
+      ]
+    },
+    {
+      "document_id": "988a213f53d812b6fbb35ce00f081e15",
+      "document_name": null,
+      "source": "elexon_bscdocs_comprehensive",
+      "url": null,
+      "matching_chunks": 10,
+      "max_relevance_score": 2,
+      "snippets": [
+        "er \nVolume\nRRABknij MWhPeriod RR Accepted Bid Volume\nX-2 \u2013 60 of 123\nAcronym UnitsCorresponding Defined Term or Expression\nRRABnij MWhPeriod RR Total Accepted Bid Volume\nRRAOknij MWhPeriod RR Accepted Offer Volume\nRRAOnij MWhPeriod RR Total Accepted Offer Volume\nRRAPJ \u00a3/MWhReplacement Reserve Activation Price\nRRAUSBj Replacement Reserve Aggregated Unpriced System \nBuy Action\nRRAUSSj Replacement Reserve Aggregated Unpriced System \nSell Action\nRRAViJ MWhQuarter Hour RR Activated Volume\nRSPj \u00a3/MWhR",
+        "er \nVolume\nRRABknij MWhPeriod RR Accepted Bid Volume\nX-2 \u2013 60 of 123\nAcronym UnitsCorresponding Defined Term or Expression\nRRABnij MWhPeriod RR Total Accepted Bid Volume\nRRAOknij MWhPeriod RR Accepted Offer Volume\nRRAOnij MWhPeriod RR Total Accepted Offer Volume\nRRAPJ \u00a3/MWhReplacement Reserve Activation Price\nRRAUSBj Replacement Reserve Aggregated Unpriced System \nBuy Action\nRRAUSSj Replacement Reserve Aggregated Unpriced System \nSell Action\nRRAViJ MWhQuarter Hour RR Activated Volume\nRSPj \u00a3/MWhR",
+        "port\nMSIDs  included  in  the\nDeclaration  that  are\ndeemed Non-Chargeable in\nthat Settlement Period\nX-2 \u2013 71 of 123\nExpression Acronym UnitsDefinition\n Annual Consumption ANN_CON Ky kWhThe  quantity  submitted  in\naccordance  with    paragraph  \n3.15.2  of  Annex  S-3  for\nMHHS Metering Systems.     \nAsset Metering \nSystem Metered \nConsumptionAMMC Kj kWhThe half hourly metered \nConsumption for a SVA \nMetering System, \ndetermined pursuant to \nparagraph 3.5 of Annex S-2\nfor Non-MHHS Metering \nSys"
+      ]
+    },
+    {
+      "document_id": "38786456083257b0614e4afe24fb6c9f",
+      "document_name": null,
+      "source": "elexon_bscdocs_comprehensive",
+      "url": null,
+      "matching_chunks": 2,
+      "max_relevance_score": 2,
+      "snippets": [
+        "these in the P0210 to the NETSO, alongside Supplier BM Units\u2019 overall \u2018corrected\u201912 and actual gross HH \nmetered volumes. This allows the NETSO to calculate BSUoS excluding SVA Non-Final Demand Facilities Imports. In \norder for the SVAA to report the Imports to SVA Non-Final Demand Facilities in the P0210, SVA Non-Final Demand \nFacility Operators, via their Supplier(s), must register all the associated Import and Export SVA MSIDs in the SVA Non-\nFinal Demand Declaration with the SVAA. \nThe SVAA ",
+        "these in the P0210 to the NETSO, alongside Supplier BM Units\u2019 overall \u2018corrected\u201912 and actual gross HH \nmetered volumes. This allows the NETSO to calculate BSUoS excluding SVA Non-Final Demand Facilities Imports. In \norder for the SVAA to report the Imports to SVA Non-Final Demand Facilities in the P0210, SVA Non-Final Demand \nFacility Operators, via their Supplier(s), must register all the associated Import and Export SVA MSIDs in the SVA Non-\nFinal Demand Declaration with the SVAA. \nThe SVAA "
+      ]
+    },
+    {
+      "document_id": "d2fd8f64d546876bc6635acc0d5bb602",
+      "document_name": null,
+      "source": "elexon_bscdocs_comprehensive",
+      "url": null,
+      "matching_chunks": 3,
+      "max_relevance_score": 2,
+      "snippets": [
+        "mstances set out in this  paragraph 3.4 and BSCP537 to\nremove the Qualification of any Qualified Person (other than a Party acting in its capacity\nas a Supplier, Virtual Lead Party, Virtual Trading Party, Licensed Distribution System\nOperator, SMRA or UMSO), whereupon such person shall cease to be Qualified.\n3.4.2The Performance Assurance Board may only remove a Qualified Person\u2019s Qualification\nwhen that Qualified Person has failed to comply with the requirements and/or standards for\nperformance",
+        "mstances set out in this  paragraph 3.4 and BSCP537 to\nremove the Qualification of any Qualified Person (other than a Party acting in its capacity\nas a Supplier, Virtual Lead Party, Virtual Trading Party, Licensed Distribution System\nOperator, SMRA or UMSO), whereupon such person shall cease to be Qualified.\n3.4.2The Performance Assurance Board may only remove a Qualified Person\u2019s Qualification\nwhen that Qualified Person has failed to comply with the requirements and/or standards for\nperformance",
+        "alling within\nparagraph 4.2.6 but in relation to which either test in paragraph 4.2.5(c) is met.\n5.PARTY RESPONSIBILITIES\n5.1Parties Responsibilities\n5.1.1Each Supplier shall ensure that it and each of its Supplier Agents who are to be responsible\nfor SVA Metering Systems within a SMRS has satisfied the requirements of the Supplier\nQualification  Process  in  accordance  with  this  Section  J  and  BSCP537  before  any\nregistration of that Supplier in respect of a SVA Metering System in that SM"
+      ]
+    },
+    {
+      "document_id": "02c17f6b9a072ee8ac3877e8da296f42",
+      "document_name": null,
+      "source": "elexon_bscdocs_comprehensive",
+      "url": null,
+      "matching_chunks": 2,
+      "max_relevance_score": 2,
+      "snippets": [
+        "cument. It has been produced with a view to simplifying some of the procedural \ncomplexities; the BSC and other related documentation take precedence over this document.\n2. Watch Points\nThis section lists a number of points that may need particular attention.\nEach BSC Party and Party Agent must register and qualify in its own right. \nBSC Parties include:\n\uf06cSupplier\n\uf06cNon-physical Trader\n\uf06cInterconnector User\n\uf06cGenerator\n\uf06cLicenced Distribution System Operator (LDSO)\n\uf06cInterconnector Administrator (IA)",
+        "cument. It has been produced with a view to simplifying some of the procedural \ncomplexities; the BSC and other related documentation take precedence over this document.\n2. Watch Points\nThis section lists a number of points that may need particular attention.\nEach BSC Party and Party Agent must register and qualify in its own right. \nBSC Parties include:\n\uf06cSupplier\n\uf06cNon-physical Trader\n\uf06cInterconnector User\n\uf06cGenerator\n\uf06cLicenced Distribution System Operator (LDSO)\n\uf06cInterconnector Administrator (IA)"
+      ]
+    },
+    {
+      "document_id": "5d1e8469609ad7efa27a4945cd24e4e1",
+      "document_name": null,
+      "source": "NESO",
+      "url": null,
+      "matching_chunks": 1,
+      "max_relevance_score": 2,
+      "snippets": [
+        "Public 1 Code Administrator Consultation Response Proforma CM 0103 : STC Consequential Modification for CMP447 (follow on Modification to CMP 428) Industry parties are invited to respond to this consultation expressing their views and supplying the rationale for those views, particularly in respect of any specific questions detailed below. Please send your responses to stcteam@nationalenergyso.com by 5pm on 15 September 2025 . Please note that any responses received after the deadline or sent to"
+      ]
+    },
+    {
+      "document_id": "d3d54684421b99eba55bd3334afc90ac",
+      "document_name": null,
+      "source": "ofgem_242k_harvest",
+      "url": null,
+      "matching_chunks": 3,
+      "max_relevance_score": 2,
+      "snippets": [
+        "ww.ofgem.gov.uk  2 there is very little difference between the Bid Offer Acceptance  process and TERRE  RR bid \nprocess .  \n \nFor parties that are currently not participating in the BM, P344  creates  the concept of \nSecondary BMUs . It also creates  a new category of party to the BSC, the Virtual Lead \nParty (VLP) , which does not have to hold a supply licence.  VLPs will be able to register \nSecondary BMUs for the sole purpose of pr oviding balancing services to  the cross -border \nRR market (",
+        "ww.ofgem.gov.uk  2 there is very little difference between the Bid Offer Acceptance  process and TERRE  RR bid \nprocess .  \n \nFor parties that are currently not participating in the BM, P344  creates  the concept of \nSecondary BMUs . It also creates  a new category of party to the BSC, the Virtual Lead \nParty (VLP) , which does not have to hold a supply licence.  VLPs will be able to register \nSecondary BMUs for the sole purpose of pr oviding balancing services to  the cross -border \nRR market (",
+        "ww.ofgem.gov.uk  2 there is very little difference between the Bid Offer Acceptance  process and TERRE  RR bid \nprocess .  \n \nFor parties that are currently not participating in the BM, P344  creates  the concept of \nSecondary BMUs . It also creates  a new category of party to the BSC, the Virtual Lead \nParty (VLP) , which does not have to hold a supply licence.  VLPs will be able to register \nSecondary BMUs for the sole purpose of pr oviding balancing services to  the cross -border \nRR market ("
+      ]
+    },
+    {
+      "document_id": "d3aa7f4c96937c336c80b33db7f142a1",
+      "document_name": null,
+      "source": "ofgem_242k_harvest",
+      "url": null,
+      "matching_chunks": 12,
+      "max_relevance_score": 2,
+      "snippets": [
+        " wo rk. This decision is made by or on behalf of GEMA.  \n2 This document is notice of the reasons for this decision as required by section 49A of the Electricity Act 1989.  \n3 Ofgem decision P415 'Facilitating Access to Wholesale Markets for Flexibility Dispatched by VLPs'  \n2 \nThe Office of Gas and Electricity Markets  \n10 South Colonnad e, Canary Wharf, London, E14 4PZ   Tel 020 7901 7000  \nwww.ofgem.gov.uk  text accurately represents the intended P415 solution , as well as applying some house",
+        " wo rk. This decision is made by or on behalf of GEMA.  \n2 This document is notice of the reasons for this decision as required by section 49A of the Electricity Act 1989.  \n3 Ofgem decision P415 'Facilitating Access to Wholesale Markets for Flexibility Dispatched by VLPs'  \n2 \nThe Office of Gas and Electricity Markets  \n10 South Colonnad e, Canary Wharf, London, E14 4PZ   Tel 020 7901 7000  \nwww.ofgem.gov.uk  text accurately represents the intended P415 solution , as well as applying some house",
+        " wo rk. This decision is made by or on behalf of GEMA.  \n2 This document is notice of the reasons for this decision as required by section 49A of the Electricity Act 1989.  \n3 Ofgem decision P415 'Facilitating Access to Wholesale Markets for Flexibility Dispatched by VLPs'  \n2 \nThe Office of Gas and Electricity Markets  \n10 South Colonnad e, Canary Wharf, London, E14 4PZ   Tel 020 7901 7000  \nwww.ofgem.gov.uk  text accurately represents the intended P415 solution , as well as applying some house"
+      ]
+    },
+    {
+      "document_id": "85db53c4c46142556d70baee18b2754d",
+      "document_name": null,
+      "source": "ofgem_242k_harvest",
+      "url": null,
+      "matching_chunks": 3,
+      "max_relevance_score": 2,
+      "snippets": [
+        "\nment_data/file/721357/FINAL_NIS_Policy_D ocument_to_the_Energy_Sector_.pdf   \n3. NIS Regulations 2018, https://www.legislation.gov.uk/uksi/2018/506/made  \n4. NCSC NIS Guidance Collection (including Cyber Assessment Framework )  2018, \nhttps://www.ncsc.gov.uk/guidance/nis -directive -cyber -assessment -framework  \n5. Introducing component -driven and system -driven risk assessments, 2017, \nhttps://www.ncsc.gov.uk/guidance/introducing -component -driven -and-system -driven -\nrisk-assessments  \n6.",
+        "\nment_data/file/721357/FINAL_NIS_Policy_D ocument_to_the_Energy_Sector_.pdf   \n3. NIS Regulations 2018, https://www.legislation.gov.uk/uksi/2018/506/made  \n4. NCSC NIS Guidance Collection (including Cyber Assessment Framework )  2018, \nhttps://www.ncsc.gov.uk/guidance/nis -directive -cyber -assessment -framework  \n5. Introducing component -driven and system -driven risk assessments, 2017, \nhttps://www.ncsc.gov.uk/guidance/introducing -component -driven -and-system -driven -\nrisk-assessments  \n6.",
+        "\nment_data/file/721357/FINAL_NIS_Policy_D ocument_to_the_Energy_Sector_.pdf   \n3. NIS Regulations 2018, https://www.legislation.gov.uk/uksi/2018/506/made  \n4. NCSC NIS Guidance Collection (including Cyber Assessment Framework )  2018, \nhttps://www.ncsc.gov.uk/guidance/nis -directive -cyber -assessment -framework  \n5. Introducing component -driven and system -driven risk assessments, 2017, \nhttps://www.ncsc.gov.uk/guidance/introducing -component -driven -and-system -driven -\nrisk-assessments  \n6."
+      ]
+    },
+    {
+      "document_id": "5b568cdf961ec99f2cf6690a4727c4d2",
+      "document_name": null,
+      "source": "elexon_bscdocs_comprehensive",
+      "url": null,
+      "matching_chunks": 2,
+      "max_relevance_score": 2,
+      "snippets": [
+        "09 September 2025 Version 22.0\n\u00a9 Elexon 2025\nPage 0 of 6S C H E D U L E  O F  M A I N\nA N D  S VA S P E C I F I E D\nC H A R G E S\nGuidance Note\nSchedule of Main and SVA Specified Charges\nContents\nContents 1\nSchedule of Main and SVA Specified Charges 2\nBase Monthly Charge (Annex D-3 3.1(a)) 2\nCVA Metering System Charge (D-3 3.1(b)) 2\nCVA BM Unit Charge (D-3 3.1(c)) 2\nNotified Volume Charge (D-3 3.1(f)) 2\nBase BM Unit Charge (D-3 3.1(g)) 2\nAdditional BM Unit Charge (D-3 3.1(i)) 3\nBase VLP or AMVLP",
+        "09 September 2025 Version 22.0\n\u00a9 Elexon 2025\nPage 0 of 6S C H E D U L E  O F  M A I N\nA N D  S VA S P E C I F I E D\nC H A R G E S\nGuidance Note\nSchedule of Main and SVA Specified Charges\nContents\nContents 1\nSchedule of Main and SVA Specified Charges 2\nBase Monthly Charge (Annex D-3 3.1(a)) 2\nCVA Metering System Charge (D-3 3.1(b)) 2\nCVA BM Unit Charge (D-3 3.1(c)) 2\nNotified Volume Charge (D-3 3.1(f)) 2\nBase BM Unit Charge (D-3 3.1(g)) 2\nAdditional BM Unit Charge (D-3 3.1(i)) 3\nBase VLP or AMVLP"
+      ]
+    },
+    {
+      "document_id": "692cb129d2b9eebcee1de5f67b0473df",
+      "document_name": null,
+      "source": "Elexon",
+      "url": null,
+      "matching_chunks": 4,
+      "max_relevance_score": 2,
+      "snippets": [
+        "BSC ANNUAL REPORT 2023/24 BSC ANNUAL REPORT 2023/24 CON TENTS Report from the Chair 5 Elexon Board remuneration 9 BSC Panel remuneration 9 Equality Diversity and Inclusion (EDI) at Elexon 10 Number of meetings attended by BSC Panel members 11 Operation of the BSC 12 Delivering excellent Settlement services 18 BSC Audit 2023/24 20 Technical Assurance of Metering 22 Review against the annual budget 23 Committee Summaries 26 Credit Committee 26 Imbalance Settlement Group 27 Performance Assurance Bo",
+        "case of P451, Elexon and the Modification Workgroup members were able to make rapid progress when finally quorate and bring the Assessment Report for the change forward by two months ahead of the extended timetable. Of the other six extensions, four were driven by external factors. For example, P412 received the largest single extension (of nine months) due to the requirement for NGESO to provide a recommendation report to enable the Modification process to continue. The remaining two extensions",
+        "Ofgem sent back the change for further analysis and Elexon has been working to finalise this. The analysis will then be presented to the Workgroup, Ofgem and the BSC Panel ahead of returning the final Modification report to Ofgem for decision. Since the VLP role was created, when a market participant works with a VLP to increase generation, or reduce its consumption (in response to a signal from National Grid ESO), the participant\u2019s Supplier will receive details of the \u2018raw delivered volume\u2019. Bu"
+      ]
+    },
+    {
+      "document_id": "69b1263f6df0e2d4c7e044935c67b761",
+      "document_name": null,
+      "source": "NESO",
+      "url": null,
+      "matching_chunks": 1,
+      "max_relevance_score": 2,
+      "snippets": [
+        "can we expect the outturn DFS delivered per period to be published publicly? A: DFS settled quantity and cost is published in the Utilisation Report Summary available in the Data Portal (https://www.neso.energy/data -portal/demand -flexibility/dfs_utilisation_report_summary )Slido code #OTF 34Public Outstanding Questions Q: (05/11/25) On the data portal, the OBP Non-BM Reserve Instructions has not been updated in 3 weeks . Is there an issue with OBP, or publishing data from OBP? Advance Q: (06/1"
+      ]
+    },
+    {
+      "document_id": "429f6555a44383a9f187bc70e21b7616",
+      "document_name": null,
+      "source": "elexon_bscdocs_comprehensive",
+      "url": null,
+      "matching_chunks": 4,
+      "max_relevance_score": 2,
+      "snippets": [
+        "tion scenarios; and\n(e)defaulting rules,\nin order to determine the amounts payable to Suppliers by way of compensation for VLP\nTrading (the \"Supplier Compensation Reference Price Methodology Document \").\n1.16.3The  Panel  shall  review  the  Supplier  Compensation  Reference  Price  Methodology\nDocument from time to time and in any event if the Authority withdraws the default tariff\ncap or makes a change to the methodology for determining the default tariff cap that\nimpacts the Supplier Compensa",
+        "tion scenarios; and\n(e)defaulting rules,\nin order to determine the amounts payable to Suppliers by way of compensation for VLP\nTrading (the \"Supplier Compensation Reference Price Methodology Document \").\n1.16.3The  Panel  shall  review  the  Supplier  Compensation  Reference  Price  Methodology\nDocument from time to time and in any event if the Authority withdraws the default tariff\ncap or makes a change to the methodology for determining the default tariff cap that\nimpacts the Supplier Compensa",
+        " each of:\n(i)the Daily Party BM Unit Cashflow;\n(ii)the Daily Party Residual Settlement Cashflow;\n(iii)the Daily Party RR Cashflow;  \n(iv)the Daily Party RR Instruction Deviation Cashflow; and\n(v)the Daily Supplier Compensation Cashflow,\na positive value of any such Cashflow represents a credit to the relevant Party\nand a negative value of any such Cashflow represents a debit to the relevant\nParty; and\n(b)in relation to each of:\n(i)the Daily Party Energy Imbalance Cashflow;\n(ii)the Daily System O"
+      ]
+    },
+    {
+      "document_id": "3607de0fdb324637b2eec27bafd4ddff",
+      "document_name": null,
+      "source": "elexon_bscdocs_comprehensive",
+      "url": null,
+      "matching_chunks": 4,
+      "max_relevance_score": 2,
+      "snippets": [
+        "econciliation Settlement \nRuns\nPost-Final \nSettlement \nReportFollowing a \nPost-Final \nSettlement \nRunRelevant \nParty\nAny Party \n(on \nrequest)\nAny person\n(on \nrequest)For each Trading Party, Virtual Lead Party and the\nNETSO, a report providing Bid-Offer Data, \nReplacement Reserve Bid Data, Replacement \nReserve Auction Result Data, Acceptance Data \nand Trading Charges relating to that Party, and \nvolumes and prices for the whole system, from a \nPost-Final Settlement Run\nV \u2013 16 of 31\nName of report",
+        "econciliation Settlement \nRuns\nPost-Final \nSettlement \nReportFollowing a \nPost-Final \nSettlement \nRunRelevant \nParty\nAny Party \n(on \nrequest)\nAny person\n(on \nrequest)For each Trading Party, Virtual Lead Party and the\nNETSO, a report providing Bid-Offer Data, \nReplacement Reserve Bid Data, Replacement \nReserve Auction Result Data, Acceptance Data \nand Trading Charges relating to that Party, and \nvolumes and prices for the whole system, from a \nPost-Final Settlement Run\nV \u2013 16 of 31\nName of report",
+        "\nV \u2013 24 of 31\nCategory of\nDataFrequency Recipient General Description\nProfile Data \nReportWhen requested (the \ndata provided relates \nto the BSC Year \npreceding that in \nwhich the request is \nmade)Any person (on \nrequest)Report containing profile coefficients \nper Settlement Period and Settlement \nDay, by GSP Group, Profile Class and \ncombination of Standard Settlement \nConfiguration and Time Pattern \nRegime.\nNote: for requests made during the BSC\nYear ending 31st March 2002, the data \nwill incl"
+      ]
+    },
+    {
+      "document_id": "43d1a6c8bf003d4c43ff8bf71f69d009",
+      "document_name": null,
+      "source": "ofgem_242k_harvest",
+      "url": null,
+      "matching_chunks": 2,
+      "max_relevance_score": 2,
+      "snippets": [
+        "Report\nSSET1001 1MW Battery, Shetland\nPage 49of 55\n\u00a9 Scottish Hydro Electric Power Distribution 201 4Software \u2013Prior to integration with \nANMMicrosoft SQL 2008, Rockwell Factor yTalk View Site Edition, \nRockwell Factory Talk Transaction Manager, Rockwell RSLinx \nClassic , RSLogix5000\nGas detection (NAS)Draeger Regard 3900 control system with 6 X Polytron transmitters \nfor H2S and SO2 gas detection\nFire and gas detection (lead -acid)Very Early Smoke Detection Apparatus (VESDA) Laserplus\n(VLP002) ",
+        "Report\nSSET1001 1MW Battery, Shetland\nPage 49of 55\n\u00a9 Scottish Hydro Electric Power Distribution 201 4Software \u2013Prior to integration with \nANMMicrosoft SQL 2008, Rockwell Factor yTalk View Site Edition, \nRockwell Factory Talk Transaction Manager, Rockwell RSLinx \nClassic , RSLogix5000\nGas detection (NAS)Draeger Regard 3900 control system with 6 X Polytron transmitters \nfor H2S and SO2 gas detection\nFire and gas detection (lead -acid)Very Early Smoke Detection Apparatus (VESDA) Laserplus\n(VLP002) "
+      ]
+    },
+    {
+      "document_id": "7d6875002a578a3ececca2dbf03a9229",
+      "document_name": null,
+      "source": "ofgem_242k_harvest",
+      "url": null,
+      "matching_chunks": 6,
+      "max_relevance_score": 2,
+      "snippets": [
+        "25). Frontier AI: capabilities and risks \u2013 discussion paper. Retrieved \nfrom https://www.gov.uk/government/publications/frontier -ai-capabilities -and-risks-\ndiscussion -paper/frontier -ai-capabilities -and-risks-discussion -paper   \nDSIT. (2024, Feb 6). A pro -innovation approach to AI regulation: government response. \nRetrieved from https://www.gov.uk/government/consultations/ai -regulation -a-pro-\ninnovation -approach -policy -proposals/outcome/a -pro-innovation -approach -to-ai-\nregulation -",
+        "25). Frontier AI: capabilities and risks \u2013 discussion paper. Retrieved \nfrom https://www.gov.uk/government/publications/frontier -ai-capabilities -and-risks-\ndiscussion -paper/frontier -ai-capabilities -and-risks-discussion -paper   \nDSIT. (2024, Feb 6). A pro -innovation approach to AI regulation: government response. \nRetrieved from https://www.gov.uk/government/consultations/ai -regulation -a-pro-\ninnovation -approach -policy -proposals/outcome/a -pro-innovation -approach -to-ai-\nregulation -",
+        "25). Frontier AI: capabilities and risks \u2013 discussion paper. Retrieved \nfrom https://www.gov.uk/government/publications/frontier -ai-capabilities -and-risks-\ndiscussion -paper/frontier -ai-capabilities -and-risks-discussion -paper   \nDSIT. (2024, Feb 6). A pro -innovation approach to AI regulation: government response. \nRetrieved from https://www.gov.uk/government/consultations/ai -regulation -a-pro-\ninnovation -approach -policy -proposals/outcome/a -pro-innovation -approach -to-ai-\nregulation -"
+      ]
+    },
+    {
+      "document_id": "3df2f3b26cfb4c4c7ea26de996756238",
+      "document_name": null,
+      "source": "elexon_bscdocs_comprehensive",
+      "url": null,
+      "matching_chunks": 2,
+      "max_relevance_score": 2,
+      "snippets": [
+        " relevant failing Supplier;\n(j)a Base Virtual Lead Party Monthly Charge, payable by each Virtual Lead Party\nthat is not a Trading Party, at a charge rate as determined and notified to Virtual\nLead Parties by the Panel by publication on the BSC Website; \nD \u2013 24 of 29\n(k)a  Secondary  BM  Unit  Monthly  Charge,  payable  by  each  Party  for  each\nSecondary BM Unit for which that Party is Lead Party for all or any part of that\nmonth, at a charge rate as determined and notified to Parties by the Pa",
+        " relevant failing Supplier;\n(j)a Base Virtual Lead Party Monthly Charge, payable by each Virtual Lead Party\nthat is not a Trading Party, at a charge rate as determined and notified to Virtual\nLead Parties by the Panel by publication on the BSC Website; \nD \u2013 24 of 29\n(k)a  Secondary  BM  Unit  Monthly  Charge,  payable  by  each  Party  for  each\nSecondary BM Unit for which that Party is Lead Party for all or any part of that\nmonth, at a charge rate as determined and notified to Parties by the Pa"
+      ]
+    },
+    {
+      "document_id": "fab75c376c8e3dad43be5e690e54da0a",
+      "document_name": null,
+      "source": "elexon_bscdocs_comprehensive",
+      "url": null,
+      "matching_chunks": 2,
+      "max_relevance_score": 2,
+      "snippets": [
+        "27 May 2025 Version 1.0\n\u00a9 Elexon 2025 Page 0 of 9MA R K E T  E N T RY:\nR E Q U A L I F I C AT I O N\nA N D  R E N E WA L  O F\nQ U A L I F I C AT I O N\nGuidance Note \nMarket Entry: ReQualification and Renewal of Qualification\nContents\nContents 1\nIntroduction 2\nWhat this document covers 2\nWho should use this Guidance Note? 2\nRe-Qualification and Renewal of Qualification 2\nWhat are the Re-Qualification and Renewal of Qualification processes? 2\nWhat is a Material Change? 3\nOther Triggers for Re-Quali",
+        "27 May 2025 Version 1.0\n\u00a9 Elexon 2025 Page 0 of 9MA R K E T  E N T RY:\nR E Q U A L I F I C AT I O N\nA N D  R E N E WA L  O F\nQ U A L I F I C AT I O N\nGuidance Note \nMarket Entry: ReQualification and Renewal of Qualification\nContents\nContents 1\nIntroduction 2\nWhat this document covers 2\nWho should use this Guidance Note? 2\nRe-Qualification and Renewal of Qualification 2\nWhat are the Re-Qualification and Renewal of Qualification processes? 2\nWhat is a Material Change? 3\nOther Triggers for Re-Quali"
+      ]
+    },
+    {
+      "document_id": "0d6613b17299dae56dca4f7a3768988d",
+      "document_name": null,
+      "source": "ofgem_242k_harvest",
+      "url": null,
+      "matching_chunks": 4,
+      "max_relevance_score": 2,
+      "snippets": [
+        "tion may be required to different industry codes.  \nWe want to work with industry stakeholders to identify what changes, if any, are \nrequired. If changes are required, we would expect the modifications to be implemented \nas soon as possible to enable  new products and services that could benefit consumers, \nwhile also ensuring that all consumers remain protecte d. \n \n \n \n \n \n15 Towards a more innovative energy retail market: a call for evidence | DESNZ  \n16 For example : Ofgem decision P415 'Fa",
+        "tion may be required to different industry codes.  \nWe want to work with industry stakeholders to identify what changes, if any, are \nrequired. If changes are required, we would expect the modifications to be implemented \nas soon as possible to enable  new products and services that could benefit consumers, \nwhile also ensuring that all consumers remain protecte d. \n \n \n \n \n \n15 Towards a more innovative energy retail market: a call for evidence | DESNZ  \n16 For example : Ofgem decision P415 'Fa",
+        "tion may be required to different industry codes.  \nWe want to work with industry stakeholders to identify what changes, if any, are \nrequired. If changes are required, we would expect the modifications to be implemented \nas soon as possible to enable  new products and services that could benefit consumers, \nwhile also ensuring that all consumers remain protecte d. \n \n \n \n \n \n15 Towards a more innovative energy retail market: a call for evidence | DESNZ  \n16 For example : Ofgem decision P415 'Fa"
+      ]
+    },
+    {
+      "document_id": "7f7231fcdfac947a4dffff2be99f0433",
+      "document_name": null,
+      "source": "NESO",
+      "url": null,
+      "matching_chunks": 1,
+      "max_relevance_score": 2,
+      "snippets": [
+        "3 Industry body 0 Interconnector 0 Storage 1 Supplier 3 System Operator 1 Transmission Owner 0 Virtual Lead Party 1 Other 0*Please note some responses represent a number of industry sectors and this tally does not include confidential Respondents 13Public CMP440 Workgroup Consultation Responses Review Question Number of Respondents Objectives Yes No N/A or No response Do you believe that the Original Proposal better facilitates the Applicable Objectives?D 3 1 E 1 1 F 1 1 G 0 1 H 1 1 Do you suppo"
+      ]
+    },
+    {
+      "document_id": "82274fb002757c5a58cc2dcdd7030380",
+      "document_name": null,
+      "source": "NESO",
+      "url": null,
+      "matching_chunks": 2,
+      "max_relevance_score": 2,
+      "snippets": [
+        "other User System , as the case may be. The User System includes any Remote Transmission Assets operated by such User or other person and any Plant and/or Apparatus and meters owned or operated by the User or other person in connection with the distribution of electricity but does not include any part of the National Electricity Transmission System . User System Entry Point A point at which ; a Power Generating Module ,; or a Generating Unit , ; or, a CCGT Module ;or a CCGT Unit ; or a Power Par",
+        "Apparatus and the safety of personnel; iii) Control Telephony systems as provided for in CC.6.5.1 \u2013 CC.6.5.5 and ECC.6.5.1 \u2013 ECC.6.5.5; iv) Operational telephony as provided for in STCP 04 -5; and v) Tools and communications systems to facilitate cross border operations. b) In the case of Generators , HVDC System Owners , DC Converter Station Owners , Defence Service Providers and Restoration Contractors : i) Tools for monitoring relevant Plant and Apparatus ; ii) The ability to control, protect"
+      ]
+    },
+    {
+      "document_id": "8ca1c6defb6725447a35e78da54ff3b9",
+      "document_name": null,
+      "source": "NESO",
+      "url": null,
+      "matching_chunks": 1,
+      "max_relevance_score": 2,
+      "snippets": [
+        "3 Industry body 0 Interconnector 0 Storage 1 Supplier 3 System Operator 1 Transmission Owner 0 Virtual Lead Party 1 Other 0*Please note some responses represent a number of industry sectors and this tally does not include confidential Respondents 13Public CMP440 Workgroup Consultation Responses Review Question Number of Respondents Objectives Yes No N/A or No response Do you believe that the Original Proposal better facilitates the Applicable Objectives?D 3 1 E 1 1 F 1 1 G 0 1 H 1 1 Do you suppo"
+      ]
+    }
+  ]
+}

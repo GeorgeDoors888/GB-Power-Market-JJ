@@ -176,7 +176,7 @@ generation_gw = generation_mw / 1000  # MW to GW
 ### 2. Wrong Table for Price
 ```python
 # ❌ WRONG
-FROM bmrs_mid  # Historical table, column: systemSellPrice
+FROM bmrs_costs  # System prices table, column: systemSellPrice (equals systemBuyPrice)
 
 # ✅ CORRECT
 FROM bmrs_mid_iris  # Real-time table, column: price

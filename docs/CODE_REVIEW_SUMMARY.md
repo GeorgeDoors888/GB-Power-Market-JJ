@@ -217,7 +217,8 @@ Tables:         bmrs_* (NOT elexon_*)
 - **bmrs_bod**: Settlement date, period, bid-offer prices, volumes
 - **bmrs_freq**: Timestamp, frequency (Hz)
 - **bmrs_fuelinst**: Publish time, fuel type, generation (MW)
-- **bmrs_mid**: Settlement date, period, SSP/SBP prices, volumes
+- **bmrs_costs**: Settlement date, period, SSP/SBP imbalance prices (SSP=SBP), net imbalance volume
+- **bmrs_mid**: Settlement date, period, wholesale market index price, volume
 
 ---
 

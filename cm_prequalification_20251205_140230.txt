@@ -1,0 +1,234 @@
+
+================================================================================
+CAPACITY MARKET PREQUALIFICATION APPLICATION
+UK Electricity Capacity Market - T-4 Auction
+================================================================================
+
+Application Date: 05 December 2025
+Delivery Year: 2029/30 (T-4 auction, likely opens Q1 2026)
+
+SECTION 1: APPLICANT INFORMATION
+================================================================================
+
+Company Name: uPower Energy Ltd
+Registered Address: [TO BE COMPLETED]
+Company Number: [TO BE COMPLETED]
+VAT Number: [TO BE COMPLETED]
+
+Primary Contact:
+  Name: George Major
+  Email: george@upowerenergy.uk
+  Phone: [TO BE COMPLETED]
+  Position: Director
+
+Secondary Contact:
+  Name: [TO BE COMPLETED]
+  Email: [TO BE COMPLETED]
+  Phone: [TO BE COMPLETED]
+
+SECTION 2: CAPACITY MARKET UNIT (CMU) DETAILS
+================================================================================
+
+CMU Type: Battery Storage (Proven DSR)
+CMU Name: [TO BE ASSIGNED - e.g., "uPower BESS 001"]
+Technology: Lithium-ion Battery Energy Storage System (BESS)
+
+Technical Specification:
+  Installed Capacity: 25 MW (AC)
+  Energy Capacity: 50 MWh
+  Duration: 2 hours
+  Round-trip Efficiency: 90%
+  Technology Type: Grid-scale lithium-ion
+  
+Grid Connection:
+  DNO: [TO BE COMPLETED]
+  GSP Group: [TO BE COMPLETED]
+  Connection Voltage: [TO BE COMPLETED - likely 33kV or 132kV]
+  MPAN: [TO BE COMPLETED]
+  Connection Agreement Status: [TO BE COMPLETED]
+  Expected Energisation Date: Q2 2026
+
+SECTION 3: DE-RATING FACTORS
+================================================================================
+
+Per Ofgem Capacity Market Rules 2024:
+
+Battery Storage De-rating Factors (2-hour duration):
+  Installed Capacity: 25.00 MW
+  De-rating Factor: 96% (per Ofgem CM rules for 2h batteries)
+  De-rated Capacity: 24.00 MW
+  
+Historical Performance: N/A (new build)
+Equivalent Forced Outage Rate (EFOR): Assume 2% (industry standard for new li-ion)
+
+De-rating Calculation Method:
+  Based on 2-hour duration classification
+  Proven DSR technology
+  96% de-rating per Ofgem methodology
+  
+Expected Auction Clearing Price: £45-75/kW/year (based on recent auctions)
+Target Revenue at 24 MW de-rated: £1.08M - £1.80M per annum
+
+SECTION 4: DELIVERY OBLIGATIONS
+================================================================================
+
+Stress Event Participation:
+  We confirm ability to deliver de-rated capacity during System Stress Events
+  Expected response time: < 15 minutes
+  Duration capability: 2 hours continuous at full de-rated capacity
+  
+Availability:
+  Target availability: 98% during delivery year
+  Planned maintenance: To be scheduled outside peak demand periods
+  Remote monitoring: 24/7 real-time monitoring and control
+  
+Performance Testing:
+  Willing to participate in mandatory CM prequalification tests
+  Testing window: [To be scheduled with ESO]
+  Test location: Battery site [TO BE CONFIRMED]
+
+SECTION 5: METERING & SETTLEMENT
+================================================================================
+
+Metering Arrangement:
+  Metering Type: Half-hourly (HH) settlement
+  Meter Operator: [TO BE APPOINTED]
+  Data Aggregator: [TO BE APPOINTED]
+  Metering Point ID: [TO BE ASSIGNED]
+  
+Settlement Agent: [TO BE APPOINTED - likely Elexon/EMRS]
+
+BSC Party Status:
+  [ ] Already BSC party (Party ID: ______)
+  [X] Will use VLP aggregator (see Section 6)
+  [ ] Will become direct BSC party
+
+SECTION 6: VLP AGGREGATOR (IF APPLICABLE)
+================================================================================
+
+VLP Aggregator Details:
+  Company: [TO BE CONFIRMED - likely Limejump, Flexitricity, or Habitat Energy]
+  VLP Party ID: [TO BE ASSIGNED]
+  Agreement Status: Term sheet under negotiation
+  Revenue Share: Expect 15-20% of CM revenues to be retained by VLP
+  
+CM Support Services from VLP:
+  - CM prequalification support
+  - Stress event notification and dispatch
+  - Performance monitoring and reporting
+  - Settlement reconciliation
+  - Penalty management
+
+SECTION 7: FINANCIAL STANDING
+================================================================================
+
+Credit Cover Requirements:
+  Estimated requirement: £300k - £500k (based on 24 MW de-rated x £45-75/kW)
+  Credit cover method: [TO BE DECIDED]
+    Options:
+    [ ] Parent company guarantee
+    [ ] Letter of credit
+    [ ] Cash deposit
+    
+Financial Backing:
+  Project Finance Status: [TO BE COMPLETED]
+  Investor(s): [TO BE COMPLETED]
+  Total Project Value: [TO BE COMPLETED]
+
+SECTION 8: PLANNING & PERMITS
+================================================================================
+
+Planning Permission:
+  Status: [TO BE COMPLETED]
+  Planning Authority: [TO BE COMPLETED]
+  Reference Number: [TO BE COMPLETED]
+  Conditions: [TO BE LISTED]
+
+Environmental Permits:
+  Battery Safety: BS EN IEC 62933 compliance
+  Fire Safety: [TO BE CONFIRMED]
+  Environmental Impact Assessment: [TO BE COMPLETED if required]
+
+Health & Safety:
+  Risk Assessment: [TO BE COMPLETED]
+  Emergency Response Plan: [TO BE COMPLETED]
+  Insurance: [TO BE ARRANGED]
+
+SECTION 9: PROJECT TIMELINE
+================================================================================
+
+Key Milestones:
+  Q1 2026: CM T-4 auction prequalification opens
+  Q2 2026: Submit prequalification application
+  Q2 2026: Battery energisation and commissioning
+  Q3 2026: CM performance testing and certification
+  Q4 2026: T-4 auction (delivery year 2029/30)
+  Q1 2027: Results notification
+  Oct 2029: Delivery year commences (4 years after auction)
+
+Critical Path:
+  ✓ Complete grid connection agreement
+  ✓ Secure planning permission
+  ✓ Finalize battery procurement and construction
+  ✓ Appoint VLP aggregator or become BSC party
+  ✓ Install metering and comms
+  ✓ Complete CM prequalification tests
+
+SECTION 10: SUPPORTING DOCUMENTS (TO BE ATTACHED)
+================================================================================
+
+Required Documents:
+  [ ] Grid connection agreement (signed)
+  [ ] Planning permission certificate
+  [ ] Company incorporation certificate
+  [ ] Financial statements (last 2 years if applicable)
+  [ ] Battery technical specification (manufacturer datasheet)
+  [ ] Site layout plan
+  [ ] Single line diagram
+  [ ] Metering schematic
+  [ ] Insurance certificate
+  [ ] Health & safety risk assessment
+  [ ] VLP aggregator agreement (if applicable)
+
+SECTION 11: DECLARATIONS
+================================================================================
+
+We declare that:
+  [X] All information provided is accurate to the best of our knowledge
+  [X] The CMU will be able to deliver its de-rated capacity during stress events
+  [X] We understand the Capacity Market Rules and our delivery obligations
+  [X] We will maintain required credit cover throughout the delivery year
+  [X] We consent to EMR Delivery Body sharing our data per CM rules
+
+Signed: _________________________  Date: __________
+Name: George Major
+Position: Director
+Company: uPower Energy Ltd
+
+================================================================================
+NEXT STEPS AFTER COMPLETION
+================================================================================
+
+1. Complete all [TO BE COMPLETED] fields with actual project details
+2. Gather all supporting documents listed in Section 10
+3. Confirm VLP aggregator or prepare for direct BSC accreditation
+4. Arrange credit cover (£300k-500k)
+5. Submit via EMR Delivery Body portal (https://emrsettlement.co.uk)
+6. Await prequalification testing schedule from National Grid ESO
+7. Complete mandatory performance tests (typically 2-4 weeks notice)
+8. Receive provisional approval (6-8 weeks after test)
+9. Participate in T-4 auction (Q4 2026 likely)
+10. Sign Capacity Agreement if successful (within 20 business days)
+
+Contact for Queries:
+  EMR Delivery Body: capacity.market@emrsettlement.co.uk
+  Phone: 0207 090 5086
+  Portal: https://emrsettlement.co.uk
+
+Estimated Time to Complete: 8-12 weeks from application to auction eligibility
+Expected Auction Success Rate: 40-50% for batteries (competitive market)
+Target Revenue: £1.08M - £1.80M per annum (£67.5k/month average)
+
+================================================================================
+END OF CAPACITY MARKET PREQUALIFICATION APPLICATION
+================================================================================

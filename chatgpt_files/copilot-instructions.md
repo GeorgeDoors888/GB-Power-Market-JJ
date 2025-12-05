@@ -203,7 +203,8 @@ ssh root@94.237.55.234 'tail -f /opt/iris-pipeline/logs/iris_uploader.log'
 ### Key Tables for VLP Analysis
 ```sql
 -- Market prices
-bmrs_mid (systemSellPrice, systemBuyPrice)
+bmrs_costs (systemSellPrice, systemBuyPrice)  -- SSP=SBP since Nov 2015
+bmrs_mid (price, volume)  -- Wholesale market index, NOT imbalance prices
 
 -- Balancing acceptances  
 bmrs_boalf (acceptanceNumber, acceptanceTime)

@@ -24,7 +24,7 @@ This system creates a self-updating dashboard with professional charts showing:
 ```
 ┌──────────────────────────────────────────────────────────────┐
 │  BIGQUERY (Data Source)                                       │
-│  • bmrs_mid (SSP/SBP prices)                                  │
+│  • bmrs_costs (SSP/SBP imbalance prices, SSP=SBP since 2015)  │
 │  • bmrs_indod (Demand outturn)                                │
 │  • bmrs_fuelinst (Generation + IC imports)                    │
 │  • bmrs_freq (Frequency)                                      │

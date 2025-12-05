@@ -2,11 +2,11 @@
 
 **Purpose**: Understand system pricing data sources and their evolution  
 **Critical Reading**: Essential for anyone querying price data from BigQuery  
-**Last Updated**: 2 December 2025
+**Last Updated**: 5 December 2025 (bmrs_costs gap filled)
 
 ---
 
-## 🎯 The Core Issue: Single vs Dual Pricing
+## 🎯 The Core Issue: Single Imbalance Pricing Since 2015
 
 ### Historical Context (Pre-November 2015)
 
@@ -18,36 +18,51 @@ Before the P305 modification in November 2015, the UK electricity market operate
 **Why two prices?**  
 The market incentivized balance by charging different rates for long vs short positions. If you were short energy, you paid SSP (higher). If you were long, you received SBP (lower). The spread between them encouraged participants to self-balance.
 
-### Modern Era (Post-November 2015)
+### Modern Era (Post-November 2015) ✅ CURRENT
 
 The P305 modification introduced **single imbalance pricing**:
 
-- **Single Imbalance Price**: One unified price for all imbalance energy
-- **Market Index Price**: Reference price from short-term wholesale trades
+- **Single Imbalance Price**: One unified price for all imbalance energy (**SSP = SBP**)
+- **Market Index Price**: Reference price from short-term wholesale trades (separate table)
 
 **Why the change?**  
 Simplified settlement, reduced gaming opportunities, and aligned UK market with European standards.
+
+**⚠️ CRITICAL:** Both `systemSellPrice` and `systemBuyPrice` columns exist in `bmrs_costs` for backward compatibility, but **values are identical** since Nov 2015. Battery arbitrage is based on **temporal** price variation (charge when low, discharge when high), NOT SSP/SBP spread (which is zero).
 
 ---
 
 ## 📊 Data Sources in `inner-cinema-476211-u9.uk_energy_prod`
 
-### 1. Historical Dual-Price Data (2022-2025)
+### 1. System Imbalance Prices (Single Price Since 2015)
 
-**Table**: `bmrs_costs`  
-**Date Range**: 2022-01-01 to 2025-10-28  
+**Table**: `bmrs_costs` ✅ **COMPLETE**  
+**Date Range**: 2022-01-01 to 2025-12-05 (**gap filled Dec 5, 2025**)  
+**Total Rows**: 119,856 (1,345 distinct days)  
 **Columns**:
-- `systemBuyPrice` (SBP) - £/MWh
-- `systemSellPrice` (SSP) - £/MWh
+- `systemBuyPrice` (SBP) - £/MWh (**equals SSP since 2015**)
+- `systemSellPrice` (SSP) - £/MWh (**equals SBP since 2015**)
 - `settlementDate`, `settlementPeriod`
+- `netImbalanceVolume`, `reserveScarcityPrice`
+
+**Correct API Endpoint**:
+```bash
+# ✅ CORRECT - use this for backfills
+https://data.elexon.co.uk/bmrs/api/v1/balancing/settlement/system-prices/{date}
+
+# ❌ WRONG - these don't exist (404 errors)
+/datasets/COSTS
+/datasets/DETS
+```
 
 **Usage**:
 ```sql
 SELECT 
     settlementDate,
     settlementPeriod,
-    systemBuyPrice AS sbp,
-    systemSellPrice AS ssp,
+    systemBuyPrice AS imbalance_price,  -- Same as systemSellPrice
+    systemSellPrice AS imbalance_price_check,  -- Verify equality
+    netImbalanceVolume,
     systemSellPrice - systemBuyPrice AS price_spread
 FROM `inner-cinema-476211-u9.uk_energy_prod.bmrs_costs`
 WHERE settlementDate = '2025-10-15'

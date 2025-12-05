@@ -72,6 +72,20 @@ WITH combined AS (
 SELECT * FROM combined
 ```
 
+### Handling Duplicates in bmrs_costs
+```sql
+-- Pre-existing data (2022-Oct 27) has ~55k duplicate settlement periods
+-- Use GROUP BY or DISTINCT for duplicate-safe queries
+SELECT 
+    DATE(settlementDate) as date,
+    settlementPeriod,
+    AVG(systemSellPrice) as price_sell,  -- AVG handles duplicates
+    AVG(systemBuyPrice) as price_buy
+FROM `inner-cinema-476211-u9.uk_energy_prod.bmrs_costs`
+GROUP BY date, settlementPeriod
+-- Note: New data from Oct 29+ has zero duplicates (automated backfill)
+```
+
 ## Schema Gotchas (Prevent Hours of Debugging)
 
 ### bmrs_bod - Bid-Offer Data
@@ -202,8 +216,12 @@ ssh root@94.237.55.234 'tail -f /opt/iris-pipeline/logs/iris_uploader.log'
 
 ### Key Tables for VLP Analysis
 ```sql
--- Market prices
-bmrs_mid (systemSellPrice, systemBuyPrice)
+-- Imbalance prices (SSP = SBP since Nov 2015, P305 single price)
+bmrs_costs (systemSellPrice, systemBuyPrice)  -- Both columns equal
+bmrs_costs_iris (real-time, currently NOT configured in IRIS)
+
+-- Market index (wholesale, NOT imbalance)
+bmrs_mid (price, volume)  -- Wholesale day-ahead/within-day pricing
 
 -- Balancing acceptances  
 bmrs_boalf (acceptanceNumber, acceptanceTime)
@@ -214,6 +232,8 @@ bmrs_indgen_iris (bmUnitId, generation)
 -- Frequency response
 bmrs_freq (frequency)  -- Stability = revenue opportunity
 ```
+
+**CRITICAL:** Energy Imbalance Price (SSP/SBP) merged to single price in Nov 2015 via BSC Mod P305. Both columns exist in `bmrs_costs` for backward compatibility but values are **identical**. Battery arbitrage is based on **temporal** price variation (charge low, discharge high), NOT SSP/SBP spread (which is zero).
 
 ## Common Pitfalls & Solutions
 

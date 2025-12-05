@@ -1,21 +1,24 @@
--- v_btm_bess_inputs: SIMPLIFIED view for BTM BESS greedy vs optimized dispatch
--- Uses bmrs_mid for market index price (simplified SSP/SBP proxy)
+-- v_btm_bess_inputs: CORRECTED view for BTM BESS greedy vs optimized dispatch
+-- Uses bmrs_costs for REAL systemSellPrice/systemBuyPrice (NOT bmrs_mid!)
 
 CREATE OR REPLACE VIEW `inner-cinema-476211-u9.uk_energy_prod.v_btm_bess_inputs` AS
 
 WITH system_prices AS (
-  -- Get market prices from bmrs_mid (MID = Market Index Data)
-  -- Use price as proxy for both SSP (charge) and SBP (discharge)
+  -- Get REAL system prices from bmrs_costs (SSP/SBP imbalance pricing)
+  -- NOTE: bmrs_costs has data through Oct 28, 2025 only (38-day gap to present)
   SELECT
     TIMESTAMP_ADD(
       CAST(settlementDate AS TIMESTAMP),
       INTERVAL (settlementPeriod - 1) * 30 MINUTE
     ) AS ts_halfhour,
-    price AS ssp,  -- Use market price as SSP proxy
-    price * 0.95 AS sbp,  -- SBP typically 5% lower
-    volume AS imbalance_mwh
-  FROM `inner-cinema-476211-u9.uk_energy_prod.bmrs_mid`
-  WHERE settlementDate >= DATE_SUB(CURRENT_DATE(), INTERVAL 60 DAY)  -- Use 60 days for older data
+    systemSellPrice AS ssp,  -- REAL SSP (charge price when system short)
+    systemBuyPrice AS sbp,   -- REAL SBP (discharge price when system long)
+    netImbalanceVolume AS imbalance_mwh
+  FROM `inner-cinema-476211-u9.uk_energy_prod.bmrs_costs`
+  WHERE settlementDate >= DATE_SUB(DATE('2025-10-28'), INTERVAL 90 DAY)  -- Last 90 days of available data
+    AND settlementDate <= '2025-10-28'  -- Data cutoff date
+    AND systemSellPrice IS NOT NULL
+    AND systemBuyPrice IS NOT NULL
 ),
 
 duos_bands AS (
