@@ -67,19 +67,25 @@ def main():
     print("\n✍️  Writing data to Google Sheets...")
     data = [df.columns.tolist()] + df.values.tolist()
     
+    # Calculate column range dynamically
+    num_cols = len(df.columns)
+    col_letter = chr(64 + num_cols) if num_cols <= 26 else f'A{chr(64 + num_cols - 26)}'
+    
     # Write in batches to avoid timeout
     batch_size = 500
     for i in range(0, len(data), batch_size):
         batch = data[i:i+batch_size]
         start_row = i + 1
         end_row = start_row + len(batch) - 1
-        range_str = f'A{start_row}:Q{end_row}'
+        range_str = f'A{start_row}:{col_letter}{end_row}'
         sheet.update(range_str, batch, value_input_option='USER_ENTERED')
         print(f"   ✅ Wrote rows {start_row}-{end_row}")
     
-    # Format header
+    # Format header (dynamic column range)
     print("\n🎨 Formatting header...")
-    sheet.format('A1:Q1', {
+    num_cols = len(df.columns)
+    col_letter = chr(64 + num_cols) if num_cols <= 26 else f'A{chr(64 + num_cols - 26)}'
+    sheet.format(f'A1:{col_letter}1', {
         'backgroundColor': {'red': 0.2, 'green': 0.6, 'blue': 0.2},
         'textFormat': {'bold': True, 'foregroundColor': {'red': 1, 'green': 1, 'blue': 1}},
         'horizontalAlignment': 'CENTER'

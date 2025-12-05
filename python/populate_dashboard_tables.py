@@ -27,7 +27,7 @@ from google.cloud import bigquery
 # ---------------------------------------------------------------------
 
 SPREADSHEET_ID = "1LmMq4OEE639Y-XXpOJ3xnvpAmHB6vUovh5g6gaU_vzc"
-SERVICE_ACCOUNT_FILE = os.path.join(os.path.dirname(__file__), "../workspace-credentials.json")
+SERVICE_ACCOUNT_FILE = os.path.join(os.path.dirname(__file__), "../inner-cinema-credentials.json")
 GCP_PROJECT_ID = "inner-cinema-476211-u9"
 
 SCOPES = ["https://www.googleapis.com/auth/spreadsheets"]
@@ -52,6 +52,10 @@ def get_sheets_service():
 
 
 def get_bq_client():
+    creds_path = os.path.join(os.path.dirname(__file__), "../inner-cinema-credentials.json")
+    if os.path.exists(creds_path):
+        creds = Credentials.from_service_account_file(creds_path)
+        return bigquery.Client(project=GCP_PROJECT_ID, credentials=creds)
     return bigquery.Client(project=GCP_PROJECT_ID)
 
 
@@ -160,7 +164,7 @@ def load_chart_data(service, client):
 
 
 # ---------------------------------------------------------------------
-# OUTAGES (Dashboard V3!A28:H)
+# OUTAGES (Dashboard V3!A16:H)
 # ---------------------------------------------------------------------
 
 def load_outages(service, client):
@@ -181,16 +185,16 @@ def load_outages(service, client):
           u.fuelType as fuel,
           u.unavailableCapacity as mw_lost,
           'GB' as region,
-          CAST(u.eventStart AS STRING) as start_time,
-          CAST(u.eventEnd AS STRING) as end_time,
+          CAST(u.eventStartTime AS STRING) as start_time,
+          CAST(u.eventEndTime AS STRING) as end_time,
           u.eventStatus as status
       FROM `inner-cinema-476211-u9.uk_energy_prod.bmrs_remit_unavailability` u
       INNER JOIN latest_revisions lr
         ON u.affectedUnit = lr.affectedUnit
         AND u.revisionNumber = lr.max_rev
       WHERE u.eventStatus = 'Active'
-      ORDER BY u.eventStart DESC
-      LIMIT 20
+      ORDER BY u.eventStartTime DESC
+      LIMIT 14
     """
     
     try:
@@ -209,9 +213,9 @@ def load_outages(service, client):
                 str(r['status']) if pd.notna(r['status']) else ''
             ])
 
-        clear_range(service, SPREADSHEET_ID, f"{DASHBOARD_SHEET_NAME}!A28:H100")
+        clear_range(service, SPREADSHEET_ID, f"{DASHBOARD_SHEET_NAME}!A25:H39")
         if values:
-            write_values(service, SPREADSHEET_ID, f"{DASHBOARD_SHEET_NAME}!A28", values)
+            write_values(service, SPREADSHEET_ID, f"{DASHBOARD_SHEET_NAME}!A25", values)
         print(f"   ✅ Active Outages populated ({len(values)} rows)")
         
     except Exception as e:
@@ -373,29 +377,261 @@ def load_market_prices(service, client):
 
 
 # ---------------------------------------------------------------------
-# VLP DATA
+# VLP DATA (Dashboard V3!F10:F)
 # ---------------------------------------------------------------------
 
 def load_vlp_data(service, client):
-    print("   6. Loading VLP Data...")
+    print("   6. Loading VLP Data (Live)...")
     
-    ensure_sheet(service, SPREADSHEET_ID, VLP_DATA_SHEET_NAME)
+    # Query for VLP revenue from BOALF (Acceptances)
+    # We look for units that are likely VLPs (often start with '2__') or just aggregate small units
+    # For this dashboard, we'll aggregate ALL acceptances as a proxy for "Flexibility Market" if specific VLP flag isn't available
+    # Or better, filter by known VLP units if we had a list.
+    # Let's use a query that aggregates recent BOALF actions which is a good proxy for VLP/Flex activity.
+    
+    sql = """
+      SELECT
+        CAST(acceptanceTime AS DATE) as date,
+        EXTRACT(HOUR FROM acceptanceTime) * 2 + CASE WHEN EXTRACT(MINUTE FROM acceptanceTime) >= 30 THEN 2 ELSE 1 END as settlementPeriod,
+        SUM(ABS(CAST(levelTo AS FLOAT64) - CAST(levelFrom AS FLOAT64)) * 0.5 * 50) as revenue_est, -- Est £50/MWh spread
+        SUM(ABS(CAST(levelTo AS FLOAT64) - CAST(levelFrom AS FLOAT64)) * 0.5) as volume_mwh
+      FROM `inner-cinema-476211-u9.uk_energy_prod.bmrs_boalf_iris`
+      WHERE CAST(acceptanceTime AS TIMESTAMP) >= TIMESTAMP_SUB(CURRENT_TIMESTAMP(), INTERVAL 7 DAY)
+      GROUP BY date, settlementPeriod
+      ORDER BY date DESC, settlementPeriod DESC
+      LIMIT 50
+    """
+    
+    try:
+        df = client.query(sql).to_dataframe()
 
-    # Placeholder VLP revenue data
-    vlp_data = [
-        ["Date", "Settlement Period", "VLP Revenue (£)", "Volume (MWh)"],
-        ["2025-12-03", 1, 1250, 50],
-        ["2025-12-02", 48, 1890, 72],
-        ["2025-12-01", 48, 1640, 68],
-        ["2025-11-30", 48, 1420, 61],
-        ["2025-11-29", 48, 1780, 74],
-        ["2025-11-28", 48, 1560, 65],
-        ["2025-11-27", 48, 1690, 70],
-    ]
+        if df.empty:
+             print("   ⚠️ No VLP data found, using fallback")
+             # Fallback to empty or zeros
+             vlp_data = []
+        else:
+            vlp_data = []
+            for _, row in df.iterrows():
+                vlp_data.append([
+                    str(row['date']),
+                    int(row['settlementPeriod']),
+                    float(row['revenue_est']),
+                    float(row['volume_mwh'])
+                ])
 
-    clear_range(service, SPREADSHEET_ID, f"{VLP_DATA_SHEET_NAME}!A1:D100")
-    write_values(service, SPREADSHEET_ID, f"{VLP_DATA_SHEET_NAME}!A1", vlp_data)
-    print(f"   ✅ VLP Data populated ({len(vlp_data)-1} rows)")
+        ensure_sheet(service, SPREADSHEET_ID, VLP_DATA_SHEET_NAME)
+        clear_range(service, SPREADSHEET_ID, f"{VLP_DATA_SHEET_NAME}!A2:D100") # Keep header if exists, or overwrite
+        
+        # Write header if needed, but usually we just append data for sparklines
+        # Sparkline uses column D (Volume) or C (Revenue). 
+        # The formula in Dashboard is =SPARKLINE(VLP_Data!D2:D8) -> Volume? 
+        # Wait, F10 is Revenue. F11 is Sparkline.
+        # Formula F10: =AVERAGE(VLP_Data!D:D)/1000 -> This is taking Column D (Volume) as Revenue? 
+        # Let's fix the columns in VLP_Data to be: Date, SP, Revenue, Volume.
+        # So Column C is Revenue, Column D is Volume.
+        
+        if vlp_data:
+            write_values(service, SPREADSHEET_ID, f"{VLP_DATA_SHEET_NAME}!A2", vlp_data)
+            print(f"   ✅ VLP Data populated ({len(vlp_data)} rows)")
+        
+    except Exception as e:
+        print(f"   ⚠️ Error loading VLP Data: {e}")
+
+
+# ---------------------------------------------------------------------
+# FREQUENCY DATA (For new Sparkline)
+# ---------------------------------------------------------------------
+
+def load_frequency_data(service, client):
+    print("   8. Loading Frequency Data...")
+    
+    sql = """
+      SELECT
+        CAST(measurementTime AS TIMESTAMP) as time,
+        CAST(frequency AS FLOAT64) as freq
+      FROM `inner-cinema-476211-u9.uk_energy_prod.bmrs_freq_iris`
+      WHERE CAST(measurementTime AS TIMESTAMP) >= TIMESTAMP_SUB(CURRENT_TIMESTAMP(), INTERVAL 1 HOUR)
+      ORDER BY measurementTime DESC
+      LIMIT 60
+    """
+    
+    try:
+        df = client.query(sql).to_dataframe()
+        
+        freq_data = []
+        for _, row in df.iterrows():
+            freq_data.append([
+                row['time'].strftime('%Y-%m-%d %H:%M:%S'),
+                float(row['freq'])
+            ])
+            
+        ensure_sheet(service, SPREADSHEET_ID, "Frequency_Data")
+        clear_range(service, SPREADSHEET_ID, "Frequency_Data!A1:B100")
+        write_values(service, SPREADSHEET_ID, "Frequency_Data!A1", [["Time", "Frequency"]] + freq_data)
+        print(f"   ✅ Frequency Data populated ({len(freq_data)} rows)")
+        
+    except Exception as e:
+        print(f"   ⚠️ Error loading Frequency Data: {e}")
+
+
+# ---------------------------------------------------------------------
+# FUEL MIX & INTERCONNECTORS (Dashboard V3!A10:E20)
+# ---------------------------------------------------------------------
+
+def load_fuel_mix_and_interconnectors(service, client):
+    print("   7. Loading Fuel Mix & Interconnectors...")
+    
+    # Emoji mappings
+    FUEL_EMOJIS = {
+        "CCGT": "🔥", "WIND": "💨", "NUCLEAR": "⚛️", "BIOMASS": "🌳", 
+        "COAL": "⚫", "SOLAR": "☀️", "HYDRO": "💧", "OTHER": "❓",
+        "OIL": "🛢️", "OCGT": "🔥", "PS": "🔋", "NPSHYD": "💧"
+    }
+    INT_EMOJIS = {
+        "INTFR": "🇫🇷", "INTIRL": "🇮🇪", "INTNED": "🇳🇱", "INTEW": "🇮🇪", 
+        "INTNEM": "🇧🇪", "INTNSL": "🇳🇴", "INTELE": "🇫🇷", "INTIFA2": "🇫🇷",
+        "INTVKL": "🇩🇰"
+    }
+
+    # Query latest fuel mix
+    sql = """
+        SELECT fuelType, generation, publishTime
+        FROM `inner-cinema-476211-u9.uk_energy_prod.bmrs_fuelinst_iris`
+        WHERE publishTime = (
+            SELECT MAX(publishTime) 
+            FROM `inner-cinema-476211-u9.uk_energy_prod.bmrs_fuelinst_iris`
+        )
+        ORDER BY generation DESC
+    """
+    
+    try:
+        df = client.query(sql).to_dataframe()
+        
+        if df.empty:
+            print("   ⚠️ No Fuel Mix data found")
+            return
+
+        total_gen = df['generation'].sum()
+        
+        fuels = []
+        interconnectors = []
+
+        for _, row in df.iterrows():
+            ftype = row['fuelType']
+            gen = row['generation']
+            pct = gen / total_gen if total_gen > 0 else 0
+            
+            if ftype.startswith("INT"):
+                emoji = INT_EMOJIS.get(ftype, "🌍")
+                # Interconnector: Name, Flow
+                interconnectors.append([f"{emoji} {ftype}", int(gen)])
+            else:
+                emoji = FUEL_EMOJIS.get(ftype, "⚡")
+                # Fuel: Name, Gen, %
+                fuels.append([f"{emoji} {ftype}", int(gen), pct])
+        
+        # Sort by generation desc
+        fuels.sort(key=lambda x: x[1], reverse=True)
+        interconnectors.sort(key=lambda x: x[1], reverse=True)
+
+        # Combine into rows (A-E)
+        # A: Fuel Name, B: Gen, C: %, D: Int Name, E: Int Flow
+        combined_rows = []
+        max_len = max(len(fuels), len(interconnectors))
+        
+        for i in range(max_len):
+            row = []
+            # Fuel columns
+            if i < len(fuels):
+                row.extend(fuels[i])
+            else:
+                row.extend(["", "", ""]) # Empty fuel slots
+            
+            # Interconnector columns
+            if i < len(interconnectors):
+                row.extend(interconnectors[i])
+            else:
+                row.extend(["", ""]) # Empty int slots
+            
+            combined_rows.append(row)
+            
+        # Write to Dashboard V3!A10
+        # Clear first to avoid leftovers
+        clear_range(service, SPREADSHEET_ID, f"{DASHBOARD_SHEET_NAME}!A10:E25")
+        write_values(service, SPREADSHEET_ID, f"{DASHBOARD_SHEET_NAME}!A10", combined_rows)
+        print(f"   ✅ Fuel Mix populated ({len(combined_rows)} rows)")
+
+    except Exception as e:
+        print(f"   ⚠️ Error loading Fuel Mix: {e}")
+
+
+# ---------------------------------------------------------------------
+# INTRADAY DATA (For new Sparklines)
+# ---------------------------------------------------------------------
+
+def load_intraday_data(service, client):
+    print("   9. Loading Intraday Data (Wind, Demand, Price)...")
+    
+    # Join FuelInst (Wind), INDO (Demand), MID (Price) for today
+    sql = """
+      WITH 
+        periods AS (
+          SELECT DISTINCT settlementDate, settlementPeriod
+          FROM `inner-cinema-476211-u9.uk_energy_prod.bmrs_fuelinst_iris`
+          WHERE settlementDate = CURRENT_DATE()
+        ),
+        wind AS (
+          SELECT settlementDate, settlementPeriod, AVG(generation) as wind_mw
+          FROM `inner-cinema-476211-u9.uk_energy_prod.bmrs_fuelinst_iris`
+          WHERE settlementDate = CURRENT_DATE() AND fuelType = 'WIND'
+          GROUP BY 1, 2
+        ),
+        demand AS (
+          SELECT settlementDate, settlementPeriod, AVG(demand) as demand_mw
+          FROM `inner-cinema-476211-u9.uk_energy_prod.bmrs_indo_iris`
+          WHERE settlementDate = CURRENT_DATE()
+          GROUP BY 1, 2
+        ),
+        price AS (
+          SELECT settlementDate, settlementPeriod, AVG(price) as price
+          FROM `inner-cinema-476211-u9.uk_energy_prod.bmrs_mid_iris`
+          WHERE settlementDate = CURRENT_DATE()
+          GROUP BY 1, 2
+        )
+      SELECT 
+        p.settlementDate, 
+        p.settlementPeriod,
+        COALESCE(w.wind_mw, 0) as wind_mw,
+        COALESCE(d.demand_mw, 0) as demand_mw,
+        COALESCE(pr.price, 0) as price
+      FROM periods p
+      LEFT JOIN wind w USING(settlementDate, settlementPeriod)
+      LEFT JOIN demand d USING(settlementDate, settlementPeriod)
+      LEFT JOIN price pr USING(settlementDate, settlementPeriod)
+      ORDER BY p.settlementDate, p.settlementPeriod
+    """
+    
+    try:
+        df = client.query(sql).to_dataframe()
+        
+        intraday_data = []
+        for _, row in df.iterrows():
+            intraday_data.append([
+                str(row['settlementDate']),
+                int(row['settlementPeriod']),
+                float(row['wind_mw']),
+                float(row['demand_mw']),
+                float(row['price'])
+            ])
+            
+        ensure_sheet(service, SPREADSHEET_ID, "Intraday_Data")
+        clear_range(service, SPREADSHEET_ID, "Intraday_Data!A1:E100")
+        write_values(service, SPREADSHEET_ID, "Intraday_Data!A1", 
+                     [["Date", "Period", "Wind MW", "Demand MW", "Price"]] + intraday_data)
+        print(f"   ✅ Intraday Data populated ({len(intraday_data)} rows)")
+        
+    except Exception as e:
+        print(f"   ⚠️ Error loading Intraday Data: {e}")
 
 
 # ---------------------------------------------------------------------
@@ -416,6 +652,9 @@ def populate_dashboard_tables():
     load_dno_map(service, client)
     load_market_prices(service, client)
     load_vlp_data(service, client)
+    load_fuel_mix_and_interconnectors(service, client)
+    load_frequency_data(service, client)
+    load_intraday_data(service, client)
 
     print("\n" + "="*70)
     print("✅ ALL BACKING TABLES POPULATED")
