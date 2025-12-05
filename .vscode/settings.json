@@ -1,32 +1,22 @@
 {
-  "github.copilot.chat.exportHistory": true,
-  "github.copilot.chat.historyLocation": "${workspaceFolder}/chat-history",
-  "files.autoSave": "afterDelay",
-  "files.autoSaveDelay": 1000,
-  "workbench.localHistory.enabled": true,
-  "workbench.localHistory.maxFileSize": 10485760,
-  "workbench.localHistory.maxFileEntries": 100,
+  "python.analysis.indexing": false,
+  "python.analysis.typeCheckingMode": "off",
   "files.watcherExclude": {
-    "**/iris_windows_deployment/**": true,
-    "**/overarch-jibber-jabber/**": true,
-    "**/logs/**": true,
-    "**/.git/objects/**": true,
-    "**/.git/subtree-cache/**": true,
+    "**/venv/**": true,
+    "**/.venv/**": true,
     "**/node_modules/**": true,
-    "**/.venv/**": true,
-    "**/__pycache__/**": true,
-    "**/chat-history/**": true
-  },
-  "search.exclude": {
-    "**/iris_windows_deployment/**": true,
-    "**/overarch-jibber-jabber/**": true,
     "**/logs/**": true,
-    "**/.venv/**": true,
-    "**/__pycache__/**": true,
-    "**/chat-history/**": true
+    "**/__pycache__/**": true
   },
   "files.exclude": {
-    "**/__pycache__": true,
-    "**/.DS_Store": true
+    "**/venv": true,
+    "**/.venv": true,
+    "**/__pycache__": true
+  },
+  "search.exclude": {
+    "**/venv": true,
+    "**/.venv": true,
+    "**/node_modules": true,
+    "**/logs": true
   }
 }
