@@ -97,32 +97,28 @@ def get_next_band_change():
     return next_band, f"{hours}h {minutes}m"
 
 def get_duos_rates_for_dno(dno_name, voltage):
-    """Fetch DUoS rates from BigQuery"""
-    client = bigquery.Client(project=PROJECT_ID, location="US")
-    
-    query = f"""
-    SELECT 
-        red_rate_p_kwh,
-        amber_rate_p_kwh,
-        green_rate_p_kwh
-    FROM `{PROJECT_ID}.gb_power.duos_unit_rates`
-    WHERE dno_name = '{dno_name}'
-      AND voltage_level = '{voltage}'
-    LIMIT 1
-    """
+    """Fetch DUoS rates from BESS sheet (already populated by dno_lookup_python.py)"""
+    scope = ['https://spreadsheets.google.com/feeds',
+             'https://www.googleapis.com/auth/drive']
+    creds = Credentials.from_service_account_file(CREDS_PATH, scopes=scope)
+    gc = gspread.authorize(creds)
+    ss = gc.open_by_key(SHEET_ID)
+    bess_sheet = ss.worksheet('BESS')
     
     try:
-        result = client.query(query).to_dataframe()
-        if not result.empty:
-            return {
-                'RED': result['red_rate_p_kwh'].iloc[0],
-                'AMBER': result['amber_rate_p_kwh'].iloc[0],
-                'GREEN': result['green_rate_p_kwh'].iloc[0]
-            }
+        # DUoS rates are in row 10 (B10, C10, D10)
+        red_rate = float(bess_sheet.acell('B10').value or 0)
+        amber_rate = float(bess_sheet.acell('C10').value or 0)
+        green_rate = float(bess_sheet.acell('D10').value or 0)
+        
+        return {
+            'RED': red_rate,
+            'AMBER': amber_rate,
+            'GREEN': green_rate
+        }
     except Exception as e:
-        print(f"   ❌ Error fetching DUoS rates: {e}")
-    
-    return None
+        print(f'   ❌ Error reading DUoS rates from sheet: {e}')
+        return None
 
 def update_bess_sheet_with_live_rates():
     """Update BESS sheet with current DUoS band and countdown"""

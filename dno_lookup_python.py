@@ -369,7 +369,7 @@ def update_bess_sheet(mpan_id=None, postcode=None, voltage='LV'):
         'https://www.googleapis.com/auth/spreadsheets',
         'https://www.googleapis.com/auth/drive'
     ]
-    creds = Credentials.from_service_account_file('inner-cinema-credentials.json', scopes=SCOPES)
+    creds = Credentials.from_service_account_file('/home/george/inner-cinema-credentials.json', scopes=SCOPES)
     gc = gspread.authorize(creds)
     
     sh = gc.open_by_key(SHEET_ID)

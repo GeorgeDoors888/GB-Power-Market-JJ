@@ -20,6 +20,9 @@ CREDS_PATH = '/home/george/inner-cinema-credentials.json'
 LEVIES_GBP_PER_MWH = 98.15  # Blended (RO, FiT, CfD, CCL, BSUoS, TNUoS)
 PPA_EXPORT_PRICE = 150.00   # £/MWh
 
+# Note: DUoS rates table location changed from gb_power to uk_energy_prod
+# Rates are fetched from sheet directly, not from BigQuery duos_unit_rates
+
 def get_bess_config_from_sheet():
     """Read BESS configuration from sheet"""
     scope = ['https://spreadsheets.google.com/feeds',
