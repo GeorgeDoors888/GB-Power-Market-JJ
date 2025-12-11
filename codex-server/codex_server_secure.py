@@ -1145,6 +1145,7 @@ async def write_google_doc(request: Request, authorization: Optional[str] = Head
 class SheetsReadRequest(BaseModel):
     sheet: str
     range: str
+    spreadsheet_id: Optional[str] = None
 
 class SheetsWriteRequest(BaseModel):
     sheet: str
@@ -1199,7 +1200,7 @@ async def sheets_read(request: SheetsReadRequest, authorization: str = Header(No
     try:
         range_name = f"{request.sheet}!{request.range}"
         result = sheets_service.spreadsheets().values().get(
-            spreadsheetId=SPREADSHEET_ID,
+            spreadsheetId=request.spreadsheet_id or SPREADSHEET_ID,
             range=range_name
         ).execute()
         
