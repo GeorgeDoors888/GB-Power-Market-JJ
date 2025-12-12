@@ -1,6 +1,6 @@
 # 🇬🇧 GB-Power-Market-JJ - Complete Energy Data Platform
 
-**Last Updated**: 23 November 2025  
+**Last Updated**: 12 December 2025  
 **Status**: Production - Active Development  
 **Purpose**: Comprehensive GB electricity market analysis, real-time monitoring, and forecasting system
 
@@ -9,12 +9,18 @@
 ## 🚀 Quick Start
 
 ### What This Project Does
-- **Real-time Monitoring**: Live electricity generation, prices, and grid status
+- **Real-time Monitoring**: Live electricity generation, prices, and grid status (auto-updates every 5 minutes)
 - **Historical Analysis**: 22+ months of GB power market data (2023-2025)
 - **Forecasting**: Battery arbitrage, wind generation, and price predictions
 - **Dashboard**: Google Sheets-based interactive dashboard with auto-updates
+- **Outages Tracking**: 15 active power plant outages with complete details (capacity, timing, operator, duration, planned/unplanned status)
 - **DNO Integration**: Distribution Network Operator tariffs and MPAN lookup
 - **BESS Analysis**: Battery Energy Storage System profit optimization
+
+### Live Dashboard
+**Access**: [Live Dashboard v2](https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit)  
+**Auto-Updates**: Every 5 minutes via cron  
+**Features**: VLP Revenue, Wholesale Prices, Generation Mix, Interconnectors, Outages, Wind Chart
 
 ### Repository Size After Optimization
 - **Before**: 3.4GB (879MB Git + 2.5GB working files)
@@ -41,8 +47,9 @@
 - **Performance Optimization** - Moved 1.1GB data to external directory
 
 #### For Dashboard Users
-1. **[docs/DASHBOARD_REFRESH_QUICK_REF.md](docs/DASHBOARD_REFRESH_QUICK_REF.md)** - One-page data refresh guide
-2. **[docs/ENHANCED_BI_ANALYSIS_README.md](docs/ENHANCED_BI_ANALYSIS_README.md)** - Dashboard features & usage
+1. **[DASHBOARD_AUTO_UPDATE_GUIDE.md](DASHBOARD_AUTO_UPDATE_GUIDE.md)** - ⚡ **NEW** - Auto-update configuration & monitoring
+2. **[docs/DASHBOARD_REFRESH_QUICK_REF.md](docs/DASHBOARD_REFRESH_QUICK_REF.md)** - One-page data refresh guide
+3. **[docs/ENHANCED_BI_ANALYSIS_README.md](docs/ENHANCED_BI_ANALYSIS_README.md)** - Dashboard features & usage
 
 #### For Developers
 1. **[docs/CODE_REVIEW_SUMMARY.md](docs/CODE_REVIEW_SUMMARY.md)** - All analysis functions documented
