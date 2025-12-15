@@ -1,7 +1,24 @@
 #!/usr/bin/env python3
 """
-VLP & Pricing Analysis Script
-Analyzes battery arbitrage opportunities, imbalance prices, and wholesale markets
+Battery VLP/VTP Market Analysis & Revenue Estimation
+
+Analyzes GB electricity market data for battery storage revenue opportunities:
+- System imbalance price volatility (arbitrage opportunities from bmrs_costs)
+- ACTUAL battery VLP unit bid-offer behavior (from bmrs_bod/bmrs_bod_iris)
+- Wholesale vs imbalance price premiums
+- Real battery unit pricing strategies (E_DOLLB-1, T_NURSB-1, etc.)
+- Revenue estimation for 50 MW battery with VTP status
+
+Data Sources:
+- bmrs_costs: System imbalance prices (SSP/SBP merged since Nov 2015)
+- bmrs_bod_iris: Real-time bid-offer data (Oct 28 - present)
+- bmrs_mid_iris: Wholesale market prices
+- bmu_registration_data: Battery unit identification (31 units found)
+
+Key Discovery: Battery VLP units submit DEFENSIVE pricing:
+- High offers (£200-1500/MWh) to avoid unwanted discharge
+- Negative bids (-£200 to -£1400/MWh) to get paid to charge
+- Spreads of £500-2800/MWh indicate strategic positioning
 """
 
 import sys
@@ -115,26 +132,90 @@ def get_low_price_periods(client, threshold=30, days=30):
     df = client.query(query).to_dataframe()
     return df
 
-def get_vlp_bid_offers(client, bmu_id='FBPGM002', days=7):
-    """Get VLP unit bid-offer data (if available)"""
-    # Try IRIS first (more recent)
+def get_battery_units(client):
+    """Get list of battery/storage BMU IDs from registration data"""
+    query = f"""
+    SELECT DISTINCT 
+        elexonbmunit,
+        leadpartyname,
+        generationcapacity
+    FROM `{PROJECT_ID}.{DATASET}.bmu_registration_data`
+    WHERE LOWER(fueltype) LIKE '%batt%'
+       OR LOWER(fueltype) LIKE '%stor%'
+       OR LOWER(fueltype) LIKE '%bess%'
+    ORDER BY generationcapacity DESC
+    LIMIT 20
+    """
+    
+    try:
+        df = client.query(query).to_dataframe()
+        return df['elexonbmunit'].tolist() if not df.empty else []
+    except:
+        # Fallback to known battery units
+        return ['E_DOLLB-1', 'T_NURSB-1', 'T_LARKB-1', 'E_ARBRB-1', 'E_BROXB-1', 'E_CATHB-1']
+
+def get_battery_bid_offers(client, days=7):
+    """Get ACTUAL battery VLP unit bid-offer data"""
+    battery_units = get_battery_units(client)
+    
+    if not battery_units:
+        battery_units = ['E_DOLLB-1', 'T_NURSB-1', 'T_LARKB-1', 'E_ARBRB-1']
+    
+    # Limit to top 10 for performance
+    battery_units = battery_units[:10]
+    
     query = f"""
     SELECT 
-        settlementDate,
+        bmUnit,
+        DATE(settlementDate) as date,
+        settlementPeriod,
+        AVG(offer) as avg_offer,
+        AVG(bid) as avg_bid,
+        AVG(offer - bid) as spread,
+        AVG(levelTo - levelFrom) as avg_mw_band,
+        COUNT(*) as num_pairs
+    FROM `{PROJECT_ID}.{DATASET}.bmrs_bod_iris`
+    WHERE bmUnit IN UNNEST({battery_units})
+      AND settlementDate >= DATE_SUB(CURRENT_DATE(), INTERVAL {days} DAY)
+      AND offer IS NOT NULL
+      AND bid IS NOT NULL
+    GROUP BY bmUnit, date, settlementPeriod
+    ORDER BY date DESC, spread DESC
+    LIMIT 200
+    """
+    
+    try:
+        df = client.query(query).to_dataframe()
+        return df
+    except Exception as e:
+        print(f"    Error querying battery bids: {e}")
+        return pd.DataFrame()
+
+def get_market_bid_offer_spreads(client, days=7):
+    """Get market-wide bid-offer spreads from all units (filtered for realistic values)"""
+    query = f"""
+    SELECT 
+        DATE(settlementDate) as date,
         settlementPeriod,
         bmUnit,
-        pairId,
-        offer,
-        bid,
-        offer - bid as spread,
-        levelFrom,
-        levelTo,
-        levelTo - levelFrom as volume_mw
+        AVG(offer - bid) as avg_spread,
+        MIN(offer - bid) as min_spread,
+        MAX(offer - bid) as max_spread,
+        COUNT(*) as pairs,
+        AVG(levelTo - levelFrom) as avg_volume_mw,
+        AVG(offer) as avg_offer,
+        AVG(bid) as avg_bid
     FROM `{PROJECT_ID}.{DATASET}.bmrs_bod_iris`
-    WHERE bmUnit = '{bmu_id}'
-      AND settlementDate >= DATE_SUB(CURRENT_DATE(), INTERVAL {days} DAY)
-    ORDER BY settlementDate DESC, settlementPeriod DESC, pairId
-    LIMIT 100
+    WHERE settlementDate >= DATE_SUB(CURRENT_DATE(), INTERVAL {days} DAY)
+      AND offer > 0
+      AND bid > 0
+      AND offer > bid
+      AND offer < 1000  -- Filter extreme outliers (max £1000/MWh realistic)
+      AND bid >= -500   -- Filter unrealistic negative bids
+      AND (offer - bid) < 500  -- Filter extreme spreads
+    GROUP BY date, settlementPeriod, bmUnit
+    ORDER BY date DESC, avg_spread DESC
+    LIMIT 200
     """
     
     try:
@@ -147,21 +228,27 @@ def get_vlp_bid_offers(client, bmu_id='FBPGM002', days=7):
     # Fallback to historical
     query = f"""
     SELECT 
-        settlementDate,
+        DATE(settlementDate) as date,
         settlementPeriod,
         bmUnit,
-        pairId,
-        offer,
-        bid,
-        offer - bid as spread,
-        levelFrom,
-        levelTo,
-        levelTo - levelFrom as volume_mw
+        AVG(offer - bid) as avg_spread,
+        MIN(offer - bid) as min_spread,
+        MAX(offer - bid) as max_spread,
+        COUNT(*) as pairs,
+        AVG(levelTo - levelFrom) as avg_volume_mw,
+        AVG(offer) as avg_offer,
+        AVG(bid) as avg_bid
     FROM `{PROJECT_ID}.{DATASET}.bmrs_bod`
-    WHERE bmUnit = '{bmu_id}'
-      AND settlementDate >= DATE_SUB(CURRENT_DATE(), INTERVAL {days} DAY)
-    ORDER BY settlementDate DESC, settlementPeriod DESC, pairId
-    LIMIT 100
+    WHERE settlementDate >= '2025-10-20'
+      AND offer > 0
+      AND bid > 0
+      AND offer > bid
+      AND offer < 1000
+      AND bid >= -500
+      AND (offer - bid) < 500
+    GROUP BY date, settlementPeriod, bmUnit
+    ORDER BY date DESC, avg_spread DESC
+    LIMIT 200
     """
     
     df = client.query(query).to_dataframe()
@@ -265,21 +352,71 @@ def main():
     print(f"\nAverage daily revenue: £{avg_daily:,.2f}")
     print(f"Estimated annual revenue: £{avg_annual:,.2f}")
     
-    # 6. VLP Unit Bid-Offer Analysis
-    print("\n\n6. VLP UNIT BID-OFFER ANALYSIS")
+    # 6. ACTUAL BATTERY VLP BID-OFFER ANALYSIS
+    print("\n\n6. BATTERY VLP UNIT BID-OFFER ANALYSIS (REAL DATA)")
     print("-" * 80)
-    vlp_units = ['FBPGM002', 'FFSEN005']
-    for bmu in vlp_units:
-        print(f"\n{bmu}:")
-        bids = get_vlp_bid_offers(client, bmu_id=bmu, days=7)
-        if not bids.empty:
-            print(f"  Found {len(bids)} bid-offer pairs (last 7 days)")
-            print(f"  Average spread: £{bids['spread'].mean():.2f}/MWh")
-            print(f"  Average volume: {bids['volume_mw'].mean():.1f} MW")
-            print(f"\n  Sample (most recent):")
-            print(bids.head(3)[['settlementDate', 'settlementPeriod', 'pairId', 'bid', 'offer', 'spread', 'volume_mw']].to_string(index=False))
-        else:
-            print(f"  No recent bid-offer data (check bmrs_bod historical)")
+    print("Analyzing ACTUAL battery storage unit bidding behavior")
+    print("Data source: bmrs_bod_iris (real-time IRIS pipeline)")
+    
+    battery_bids = get_battery_bid_offers(client, days=7)
+    if not battery_bids.empty:
+        print(f"\nFound {len(battery_bids)} battery unit bid-offer submissions (last 7 days)")
+        
+        # Overall statistics
+        print(f"\nBattery VLP Bidding Statistics:")
+        print(f"  Average offer price: £{battery_bids['avg_offer'].mean():.2f}/MWh")
+        print(f"  Average bid price: £{battery_bids['avg_bid'].mean():.2f}/MWh")
+        print(f"  Average spread: £{battery_bids['spread'].mean():.2f}/MWh")
+        print(f"  Median spread: £{battery_bids['spread'].median():.2f}/MWh")
+        
+        # Top battery units by activity
+        print(f"\nTop 10 Battery Units by Bid-Offer Activity:")
+        top_batteries = battery_bids.groupby('bmUnit').agg({
+            'num_pairs': 'sum',
+            'avg_offer': 'mean',
+            'avg_bid': 'mean',
+            'spread': 'mean'
+        }).nlargest(10, 'num_pairs')
+        print(top_batteries.to_string())
+        
+        # Sample recent bids
+        print(f"\nSample Recent Battery Bids (Last 5):")
+        recent = battery_bids.head(5)[['date', 'settlementPeriod', 'bmUnit', 'avg_bid', 'avg_offer', 'spread']]
+        print(recent.to_string(index=False))
+        
+        # Interpretation
+        print(f"\nKEY INSIGHTS:")
+        print(f"  • High offers (£{battery_bids['avg_offer'].mean():.0f}/MWh avg): DEFENSIVE PRICING")
+        print(f"    Batteries avoid unwanted discharge by pricing high")
+        print(f"  • Negative bids (£{battery_bids['avg_bid'].mean():.0f}/MWh avg): PAID TO CHARGE")
+        print(f"    Batteries willing to pay/accept payment to charge during surplus")
+        print(f"  • Wide spreads (£{battery_bids['spread'].mean():.0f}/MWh): Strategic positioning")
+        print(f"    Not expecting acceptance - waiting for scarcity events")
+    else:
+        print("  No battery bid-offer data found")
+        print("  This may indicate batteries primarily use frequency response,")
+        print("  not active BM bidding, or data coverage gap.")
+    
+    # 7. Market-Wide Bid-Offer Spread Analysis (Non-Battery Units)
+    print("\n\n7. MARKET-WIDE BID-OFFER SPREADS (All Units, Filtered)")
+    print("-" * 80)
+    print("Analyzing market-wide bid-offer spreads from all units")
+    print("(Filtered for realistic values: offers <£1000/MWh, spreads <£500/MWh)")
+    
+    spreads = get_market_bid_offer_spreads(client, days=7)
+    if not spreads.empty:
+        print(f"\nFound {len(spreads)} unit-period combinations with realistic pricing")
+        print(f"\nTop 10 Widest Bid-Offer Spreads (Last 7 Days):")
+        top_spreads = spreads.nlargest(10, 'avg_spread')
+        print(top_spreads[['date', 'settlementPeriod', 'bmUnit', 'avg_bid', 'avg_offer', 'avg_spread', 'pairs']].to_string(index=False))
+        
+        print(f"\nOverall Statistics (Realistic Units):")
+        print(f"  Average spread: £{spreads['avg_spread'].mean():.2f}/MWh")
+        print(f"  Median spread: £{spreads['avg_spread'].median():.2f}/MWh")
+        print(f"  Maximum spread: £{spreads['avg_spread'].max():.2f}/MWh")
+        print(f"  Units analyzed: {spreads['bmUnit'].nunique()}")
+    else:
+        print("  No bid-offer data available in recent period")
     
     print("\n" + "="*80)
     print("ANALYSIS COMPLETE")

@@ -1,0 +1,102 @@
+================================================================================
+📋 SPARKLINE FORMULAS FOR MANUAL ENTRY
+================================================================================
+
+⚠️ IMPORTANT: You only need to do this ONCE. After manual entry, the formulas
+   will persist across all automated dashboard updates.
+
+
+================================================================================
+COLUMN C - FUEL TYPE SPARKLINES (Rows 11-20)
+================================================================================
+
+Instructions:
+1. Open Google Sheets in browser
+2. Navigate to 'GB Live' sheet
+3. Click cell C11 and paste the first formula
+4. Press Enter, then move to C12 and paste the next formula
+5. Repeat for all 10 fuel types
+
+Cell C11 (💨 Wind):
+=SPARKLINE(Data_Hidden!A1:X1,{"charttype","line";"linewidth",2;"color","#4ECDC4";"max",20;"ymin",0})
+
+Cell C12 (🔥 CCGT):
+=SPARKLINE(Data_Hidden!A2:X2,{"charttype","line";"linewidth",2;"color","#FF6B6B";"max",10;"ymin",0})
+
+Cell C13 (⚛️ Nuclear):
+=SPARKLINE(Data_Hidden!A3:X3,{"charttype","line";"linewidth",2;"color","#FFA07A";"max",5;"ymin",0})
+
+Cell C14 (🌱 Biomass):
+=SPARKLINE(Data_Hidden!A4:X4,{"charttype","line";"linewidth",2;"color","#98D8C8";"max",5;"ymin",0})
+
+Cell C15 (❓ Other):
+=SPARKLINE(Data_Hidden!A5:X5,{"charttype","line";"linewidth",2;"color","#F7DC6F";"max",2;"ymin",0})
+
+Cell C16 (💧 Pumped):
+=SPARKLINE(Data_Hidden!A6:X6,{"charttype","line";"linewidth",2;"color","#85C1E9";"max",2;"ymin",0})
+
+Cell C17 (🌊 Hydro):
+=SPARKLINE(Data_Hidden!A7:X7,{"charttype","line";"linewidth",2;"color","#52B788";"max",1;"ymin",0})
+
+Cell C18 (🔥 OCGT):
+=SPARKLINE(Data_Hidden!A8:X8,{"charttype","line";"linewidth",2;"color","#E76F51";"max",1;"ymin",0})
+
+Cell C19 (⚫ Coal):
+=SPARKLINE(Data_Hidden!A9:X9,{"charttype","line";"linewidth",2;"color","#666666";"max",1;"ymin",0})
+
+Cell C20 (🛢️ Oil):
+=SPARKLINE(Data_Hidden!A10:X10,{"charttype","line";"linewidth",2;"color","#8B4513";"max",1;"ymin",0})
+
+
+================================================================================
+COLUMN F - INTERCONNECTOR SPARKLINES (Rows 11-20)
+================================================================================
+
+Instructions:
+1. Click cell F11 and paste the first formula
+2. Press Enter, then move to F12 and paste the next formula
+3. Repeat for all 10 interconnectors
+
+Cell F11 (🇫🇷 France):
+=SPARKLINE(Data_Hidden!A11:X11,{"charttype","line";"linewidth",2;"color","#0055A4";"max",2;"ymin",0})
+
+Cell F12 (🇮🇪 Ireland):
+=SPARKLINE(Data_Hidden!A12:X12,{"charttype","line";"linewidth",2;"color","#169B62";"max",1;"ymin",0})
+
+Cell F13 (🇳🇱 Netherlands):
+=SPARKLINE(Data_Hidden!A13:X13,{"charttype","line";"linewidth",2;"color","#FF9B00";"max",1;"ymin",0})
+
+Cell F14 (🏴 East-West):
+=SPARKLINE(Data_Hidden!A14:X14,{"charttype","line";"linewidth",2;"color","#00843D";"max",1;"ymin",0})
+
+Cell F15 (🇧🇪 Belgium (Nemo)):
+=SPARKLINE(Data_Hidden!A15:X15,{"charttype","line";"linewidth",2;"color","#FDDA24";"max",1;"ymin",0})
+
+Cell F16 (🇧🇪 Belgium (Elec)):
+=SPARKLINE(Data_Hidden!A16:X16,{"charttype","line";"linewidth",2;"color","#EF3340";"max",1;"ymin",0})
+
+Cell F17 (🇫🇷 IFA2):
+=SPARKLINE(Data_Hidden!A17:X17,{"charttype","line";"linewidth",2;"color","#0055A4";"max",2;"ymin",0})
+
+Cell F18 (🇳🇴 Norway (NSL)):
+=SPARKLINE(Data_Hidden!A18:X18,{"charttype","line";"linewidth",2;"color","#BA0C2F";"max",2;"ymin",0})
+
+Cell F19 (🇩🇰 Viking Link):
+=SPARKLINE(Data_Hidden!A19:X19,{"charttype","line";"linewidth",2;"color","#C8102E";"max",2;"ymin",0})
+
+Cell F20 (🇮🇪 Greenlink):
+=SPARKLINE(Data_Hidden!A20:X20,{"charttype","line";"linewidth",2;"color","#169B62";"max",1;"ymin",0})
+
+
+================================================================================
+✅ AFTER MANUAL ENTRY
+================================================================================
+
+1. Verify sparklines display correctly in columns C and F
+2. Run: python3 update_bg_live_dashboard.py
+3. Confirm formulas are NOT overwritten (columns A-B and D-E update, C and F stay)
+4. Set up cron job for automated updates every 5 minutes
+
+⚠️ The update script will SKIP columns C and F from now on to preserve formulas
+
+================================================================================

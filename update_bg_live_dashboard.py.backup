@@ -1,0 +1,700 @@
+#!/usr/bin/env python3
+"""
+BG Live Dashboard Updater
+Updates the BG Live sheet with real-time grid data from BigQuery
+
+Fills in #REF! errors for:
+- VLP Revenue
+- Wholesale prices
+- Grid frequency  
+- Total generation
+- DNO-specific metrics
+
+Author: Generated for GB Power Market JJ
+Date: 7 December 2025
+"""
+
+import sys
+import logging
+from datetime import datetime, timedelta
+from google.cloud import bigquery
+from google.oauth2 import service_account
+import gspread
+
+# Configuration
+SPREADSHEET_ID = '1MSl8fJ0to6Y08enXA2oysd8wvNUVm3AtfJ1bVqRH8_I'
+SHEET_NAME = 'GB Live'  # Fixed: was 'BG Live'
+PROJECT_ID = 'inner-cinema-476211-u9'
+DATASET = 'uk_energy_prod'
+SA_FILE = '/home/george/inner-cinema-credentials.json'
+
+# Setup logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s %(levelname)s %(message)s',
+    handlers=[logging.StreamHandler(sys.stdout)]
+)
+
+def get_latest_vlp_revenue(bq_client):
+    """Get VLP revenue from last 7 days - using system prices as proxy"""
+    # Note: bmrs_boalf only has acceptanceNumber/Time, not volume/price
+    # Use system imbalance prices from bmrs_costs as VLP revenue indicator
+    query = f"""
+    SELECT 
+        AVG(systemSellPrice) * 1000 as vlp_revenue_k
+    FROM `{PROJECT_ID}.{DATASET}.bmrs_costs`
+    WHERE settlementDate >= DATE_SUB(CURRENT_DATE(), INTERVAL 7 DAY)
+    """
+    
+    try:
+        result = bq_client.query(query).to_dataframe()
+        if not result.empty and result['vlp_revenue_k'][0]:
+            return round(float(result['vlp_revenue_k'][0]), 2)
+    except Exception as e:
+        logging.error(f"Error getting VLP revenue: {e}")
+    
+    return 0.0
+
+def get_wholesale_avg(bq_client):
+    """Get average wholesale price from last 7 days"""
+    query = f"""
+    SELECT 
+        AVG(CAST(price AS FLOAT64)) as avg_price,
+        SUM(CAST(volume AS FLOAT64)) as total_volume
+    FROM `{PROJECT_ID}.{DATASET}.bmrs_mid`
+    WHERE settlementDate >= DATE_SUB(CURRENT_DATE(), INTERVAL 7 DAY)
+      AND price IS NOT NULL
+      AND CAST(price AS FLOAT64) > 0
+    """
+    
+    try:
+        result = bq_client.query(query).to_dataframe()
+        price = 0.0
+        
+        if not result.empty and result['avg_price'][0] is not None:
+            price_val = result['avg_price'][0]
+            # Check if valid number (not NaN)
+            if price_val == price_val:  # NaN != NaN, so this checks for valid numbers
+                price = float(price_val)
+        
+        # Fallback to bmrs_costs if bmrs_mid has no valid data
+        if price == 0:
+            fallback_query = f"""
+            SELECT AVG(systemSellPrice) as avg_price
+            FROM `{PROJECT_ID}.{DATASET}.bmrs_costs`
+            WHERE settlementDate >= DATE_SUB(CURRENT_DATE(), INTERVAL 7 DAY)
+              AND systemSellPrice IS NOT NULL
+            """
+            fallback = bq_client.query(fallback_query).to_dataframe()
+            if not fallback.empty and fallback['avg_price'][0] is not None:
+                fallback_val = fallback['avg_price'][0]
+                if fallback_val == fallback_val:  # Check not NaN
+                    price = float(fallback_val)
+        
+        return {
+            'price': round(price, 2),
+            'volume_pct': 100.0  # Placeholder - needs market share calculation
+        }
+    except Exception as e:
+        logging.error(f"Error getting wholesale avg: {e}")
+    
+    return {'price': 0.0, 'volume_pct': 0.0}
+
+def get_grid_frequency(bq_client):
+    """Get latest grid frequency from last hour"""
+    query = f"""
+    SELECT frequency
+    FROM `{PROJECT_ID}.{DATASET}.bmrs_freq`
+    WHERE CAST(measurementTime AS TIMESTAMP) >= TIMESTAMP_SUB(CURRENT_TIMESTAMP(), INTERVAL 1 HOUR)
+    ORDER BY measurementTime DESC
+    LIMIT 1
+    """
+    
+    try:
+        result = bq_client.query(query).to_dataframe()
+        if not result.empty and result['frequency'][0]:
+            return round(float(result['frequency'][0]), 3)
+    except Exception as e:
+        logging.error(f"Error getting frequency: {e}")
+    
+    return 50.0  # Default
+
+def get_total_generation(bq_client):
+    """Get CURRENT total generation (not cumulative) - latest settlement period"""
+    query = f"""
+    WITH latest_period AS (
+      SELECT MAX(settlementPeriod) as max_period
+      FROM `{PROJECT_ID}.{DATASET}.bmrs_fuelinst_iris`
+      WHERE CAST(settlementDate AS DATE) = CURRENT_DATE()
+    )
+    SELECT SUM(avg_gen) / 1000 as total_gen_gw
+    FROM (
+      SELECT fuelType, AVG(generation) as avg_gen
+      FROM `{PROJECT_ID}.{DATASET}.bmrs_fuelinst_iris`
+      WHERE CAST(settlementDate AS DATE) = CURRENT_DATE()
+        AND settlementPeriod = (SELECT max_period FROM latest_period)
+      GROUP BY fuelType
+    )
+    """
+    
+    try:
+        result = bq_client.query(query).to_dataframe()
+        if not result.empty and result['total_gen_gw'][0]:
+            gen_gw = round(float(result['total_gen_gw'][0]), 2)
+            logging.info(f"  🔌 Total Generation (current period, deduplicated): {gen_gw} GW")
+            return gen_gw
+    except Exception as e:
+        logging.error(f"Error getting total gen: {e}")
+    
+    return 0.0
+
+def get_dno_metrics(bq_client, dno_region='All GB'):
+    """Get DNO-specific volume and revenue from generation data"""
+    # Use fuelinst for volume data
+    query = f"""
+    WITH combined AS (
+      SELECT generation
+      FROM `{PROJECT_ID}.{DATASET}.bmrs_fuelinst`
+      WHERE settlementDate >= DATE_SUB(CURRENT_DATE(), INTERVAL 7 DAY)
+      UNION ALL
+      SELECT generation
+      FROM `{PROJECT_ID}.{DATASET}.bmrs_fuelinst_iris`
+      WHERE settlementDate >= DATE_SUB(CURRENT_DATE(), INTERVAL 1 DAY)
+    )
+    SELECT 
+        SUM(generation) / 2 as total_volume_mwh,
+        SUM(generation) * 50 / 1000 as total_revenue_k
+    FROM combined
+    WHERE generation IS NOT NULL
+    """
+    
+    try:
+        result = bq_client.query(query).to_dataframe()
+        if not result.empty:
+            return {
+                'volume': round(float(result['total_volume_mwh'][0] or 0), 2),
+                'revenue': round(float(result['total_revenue_k'][0] or 0), 2)
+            }
+    except Exception as e:
+        logging.error(f"Error getting DNO metrics: {e}")
+    
+    return {'volume': 0.0, 'revenue': 0.0}
+
+def get_generation_mix(bq_client):
+    """Get current generation mix by fuel type (excluding interconnectors)"""
+    query = f"""
+    WITH latest_generation AS (
+      SELECT 
+        fuelType,
+        AVG(generation) as avg_generation_mw
+      FROM `{PROJECT_ID}.{DATASET}.bmrs_fuelinst_iris`
+      WHERE CAST(settlementDate AS DATE) = CURRENT_DATE()
+        AND settlementPeriod = (
+          SELECT MAX(settlementPeriod) 
+          FROM `{PROJECT_ID}.{DATASET}.bmrs_fuelinst_iris`
+          WHERE CAST(settlementDate AS DATE) = CURRENT_DATE()
+        )
+        AND fuelType NOT LIKE 'INT%'  -- Exclude interconnectors
+      GROUP BY fuelType
+    )
+    SELECT 
+        fuelType,
+        avg_generation_mw / 1000 as generation_gw,
+        avg_generation_mw / (SELECT SUM(avg_generation_mw) FROM latest_generation) as percentage
+    FROM latest_generation
+    ORDER BY avg_generation_mw DESC
+    """
+    
+    try:
+        result = bq_client.query(query).to_dataframe()
+        return result
+    except Exception as e:
+        logging.error(f"Error getting generation mix: {e}")
+        return None
+
+def get_interconnector_flows(bq_client):
+    """Get current interconnector flows separately"""
+    query = f"""
+    WITH latest_flows AS (
+      SELECT 
+        fuelType,
+        AVG(generation) as avg_flow_mw
+      FROM `{PROJECT_ID}.{DATASET}.bmrs_fuelinst_iris`
+      WHERE CAST(settlementDate AS DATE) = CURRENT_DATE()
+        AND settlementPeriod = (
+          SELECT MAX(settlementPeriod) 
+          FROM `{PROJECT_ID}.{DATASET}.bmrs_fuelinst_iris`
+          WHERE CAST(settlementDate AS DATE) = CURRENT_DATE()
+        )
+        AND fuelType LIKE 'INT%'  -- Only interconnectors
+      GROUP BY fuelType
+    )
+    SELECT 
+        fuelType,
+        avg_flow_mw
+    FROM latest_flows
+    ORDER BY avg_flow_mw DESC
+    """
+    
+    try:
+        result = bq_client.query(query).to_dataframe()
+        return result
+    except Exception as e:
+        logging.error(f"Error getting interconnector flows: {e}")
+        return None
+
+def get_historical_metrics_48periods(bq_client):
+    """Get last 48 settlement periods of historical data for all metrics"""
+    query = f"""
+    WITH recent_periods AS (
+      SELECT DISTINCT
+        settlementDate,
+        settlementPeriod
+      FROM `{PROJECT_ID}.{DATASET}.bmrs_costs`
+      WHERE settlementDate >= DATE_SUB(CURRENT_DATE(), INTERVAL 2 DAY)
+      ORDER BY settlementDate DESC, settlementPeriod DESC
+      LIMIT 48
+    ),
+    ordered_periods AS (
+      SELECT * FROM recent_periods ORDER BY settlementDate, settlementPeriod
+    ),
+    generation_data AS (
+      SELECT 
+        CAST(settlementDate AS DATE) as date,
+        settlementPeriod,
+        SUM(avg_gen) / 1000 as total_gen_gw
+      FROM (
+        SELECT 
+          settlementDate, 
+          settlementPeriod, 
+          fuelType,
+          AVG(generation) as avg_gen
+        FROM (
+          SELECT settlementDate, settlementPeriod, fuelType, generation
+          FROM `{PROJECT_ID}.{DATASET}.bmrs_fuelinst`
+          WHERE settlementDate >= DATE_SUB(CURRENT_DATE(), INTERVAL 2 DAY)
+          UNION ALL
+          SELECT settlementDate, settlementPeriod, fuelType, generation
+          FROM `{PROJECT_ID}.{DATASET}.bmrs_fuelinst_iris`
+          WHERE settlementDate >= DATE_SUB(CURRENT_DATE(), INTERVAL 2 DAY)
+        )
+        GROUP BY settlementDate, settlementPeriod, fuelType
+      )
+      GROUP BY date, settlementPeriod
+    ),
+    prices_data AS (
+      SELECT 
+        CAST(settlementDate AS DATE) as date,
+        settlementPeriod,
+        AVG(systemSellPrice) as wholesale_price
+      FROM `{PROJECT_ID}.{DATASET}.bmrs_costs`
+      WHERE settlementDate >= DATE_SUB(CURRENT_DATE(), INTERVAL 2 DAY)
+      GROUP BY date, settlementPeriod
+    )
+    SELECT 
+      o.settlementDate,
+      o.settlementPeriod,
+      COALESCE(p.wholesale_price, 0) as wholesale_price,
+      COALESCE(g.total_gen_gw, 0) as total_gen_gw,
+      50.0 as frequency
+    FROM ordered_periods o
+    LEFT JOIN prices_data p ON CAST(o.settlementDate AS DATE) = p.date AND o.settlementPeriod = p.settlementPeriod
+    LEFT JOIN generation_data g ON CAST(o.settlementDate AS DATE) = g.date AND o.settlementPeriod = g.settlementPeriod
+    ORDER BY o.settlementDate, o.settlementPeriod
+    """
+    
+    try:
+        result = bq_client.query(query).to_dataframe()
+        return result
+    except Exception as e:
+        logging.error(f"Error getting historical metrics: {e}")
+        return None
+
+def get_intraday_charts_data(bq_client):
+    """Get today's intraday data for wind, demand, and price"""
+    query = f"""
+    WITH today_data AS (
+      SELECT 
+        settlementPeriod,
+        SUM(CASE WHEN fuelType = 'WIND' THEN generation ELSE 0 END) / 1000 as wind_gw,
+        SUM(generation) / 1000 as total_demand_gw
+      FROM `{PROJECT_ID}.{DATASET}.bmrs_fuelinst_iris`
+      WHERE CAST(settlementDate AS DATE) = CURRENT_DATE()
+      GROUP BY settlementPeriod
+      ORDER BY settlementPeriod
+    ),
+    prices AS (
+      SELECT 
+        settlementPeriod,
+        AVG(CAST(price AS FLOAT64)) as avg_price
+      FROM (
+        SELECT settlementPeriod, price
+        FROM `{PROJECT_ID}.{DATASET}.bmrs_mid`
+        WHERE CAST(settlementDate AS DATE) = CURRENT_DATE()
+        UNION ALL
+        SELECT settlementPeriod, price
+        FROM `{PROJECT_ID}.{DATASET}.bmrs_mid_iris`
+        WHERE CAST(settlementDate AS DATE) = CURRENT_DATE()
+      )
+      GROUP BY settlementPeriod
+    )
+    SELECT 
+        t.settlementPeriod,
+        t.wind_gw,
+        t.total_demand_gw,
+        COALESCE(p.avg_price, 0) as price
+    FROM today_data t
+    LEFT JOIN prices p ON t.settlementPeriod = p.settlementPeriod
+    ORDER BY t.settlementPeriod
+    """
+    
+    try:
+        result = bq_client.query(query).to_dataframe()
+        return result
+    except Exception as e:
+        logging.error(f"Error getting intraday data: {e}")
+        return None
+
+def update_dashboard():
+    """Main update function"""
+    try:
+        logging.info("=" * 80)
+        logging.info("🔄 BG LIVE DASHBOARD UPDATE STARTED")
+        logging.info("=" * 80)
+        
+        # Initialize clients
+        logging.info("🔧 Connecting to Google Sheets and BigQuery...")
+        
+        # Google Sheets
+        SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
+        sheets_creds = service_account.Credentials.from_service_account_file(
+            SA_FILE, scopes=SCOPES
+        )
+        gc = gspread.authorize(sheets_creds)
+        spreadsheet = gc.open_by_key(SPREADSHEET_ID)
+        sheet = spreadsheet.worksheet(SHEET_NAME)
+        
+        # BigQuery
+        bq_credentials = service_account.Credentials.from_service_account_file(
+            SA_FILE, scopes=["https://www.googleapis.com/auth/bigquery"]
+        )
+        bq_client = bigquery.Client(project=PROJECT_ID, credentials=bq_credentials, location="US")
+        
+        logging.info("✅ Connected successfully")
+        
+        # Update timestamp
+        timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        sheet.update_acell('B2', f'Live Data: {timestamp}')
+        logging.info(f"📅 Updated timestamp: {timestamp}")
+        
+        # Get DNO region from sheet
+        dno_region = sheet.acell('F3').value or 'All GB'
+        logging.info(f"🗺️  DNO Region: {dno_region}")
+        
+        # Fetch all metrics
+        logging.info("📊 Fetching metrics from BigQuery...")
+        
+        vlp_revenue = get_latest_vlp_revenue(bq_client)
+        logging.info(f"  💰 VLP Revenue: £{vlp_revenue}k")
+        
+        wholesale = get_wholesale_avg(bq_client)
+        logging.info(f"  💷 Wholesale Avg: £{wholesale['price']}/MWh")
+        
+        frequency = get_grid_frequency(bq_client)
+        logging.info(f"  ⚡ Grid Frequency: {frequency} Hz")
+        
+        total_gen = get_total_generation(bq_client)
+        logging.info(f"  🔌 Total Generation: {total_gen} GW")
+        
+        dno_metrics = get_dno_metrics(bq_client, dno_region)
+        logging.info(f"  📍 DNO Volume: {dno_metrics['volume']} MWh")
+        logging.info(f"  💵 DNO Revenue: £{dno_metrics['revenue']}k")
+        
+        # Update sheet cells (row 3 based on BG Live structure)
+        logging.info("✍️  Writing to sheet...")
+        
+        updates = [
+            ('F3', vlp_revenue),  # VLP Revenue
+            ('G3', 0 if wholesale['price'] != wholesale['price'] else wholesale['price']),  # Handle NaN
+            ('H3', wholesale['volume_pct']),  # Market Vol %
+            ('I3', frequency),  # Grid Frequency
+            ('J3', total_gen),  # Total Gen
+            ('K3', dno_metrics['volume']),  # DNO Volume
+            ('L3', dno_metrics['revenue']),  # DNO Revenue
+        ]
+        
+        for cell, value in updates:
+            # Handle NaN values
+            if value != value:  # NaN check
+                value = 0
+            sheet.update_acell(cell, value)
+            logging.info(f"    {cell}: {value}")
+        
+        # Get and update generation mix table
+        logging.info("📊 Updating generation mix table...")
+        gen_mix = get_generation_mix(bq_client)
+        interconnectors = get_interconnector_flows(bq_client)
+        
+        if gen_mix is not None and not gen_mix.empty:
+            # Calculate totals
+            total_fuel_gen_gw = gen_mix['generation_gw'].sum()
+            total_interconnector_mw = interconnectors['avg_flow_mw'].sum() if interconnectors is not None and not interconnectors.empty else 0
+            total_interconnector_gw = total_interconnector_mw / 1000
+            
+            # A7: Total generation (fuel + interconnector imports)
+            total_with_interconnectors = total_fuel_gen_gw + total_interconnector_gw
+            
+            # A8: Total demand (same as generation, interconnector exports already negative)
+            total_demand = total_with_interconnectors
+            
+            sheet.update_acell('A7', f'Total Gen: {total_with_interconnectors:.2f} GW')
+            sheet.update_acell('A8', f'Total Demand: {total_demand:.2f} GW')
+            logging.info(f"  ✅ Updated A7: Total Gen {total_with_interconnectors:.2f} GW (Fuel: {total_fuel_gen_gw:.2f} + IC: {total_interconnector_gw:.2f})")
+            logging.info(f"  ✅ Updated A8: Total Demand {total_demand:.2f} GW")
+            
+            # Update generation mix rows (A10:C21)
+            # Fuel type emoji mapping (complete list)
+            fuel_emojis = {
+                'WIND': '💨 Wind',
+                'CCGT': '🔥 CCGT',
+                'NUCLEAR': '⚛️ Nuclear',
+                'BIOMASS': '🌱 Biomass',
+                'NPSHYD': '💧 Hydro',
+                'PS': '⚡ Pumped',
+                'OTHER': '❓ Other',
+                'OCGT': '🔥 OCGT',
+                'COAL': '⚫ Coal',
+                'OIL': '🛢️ Oil',
+            }
+            
+            interconnector_emojis = {
+                'INTFR': '🇫🇷 INTFR',
+                'INTEM': '🇧🇪 INTEM',
+                'INTIRL': '🇮🇪 INTIRL',
+                'INTNED': '🇳🇱 INTNED',
+                'INTEW': '🏴󠁧󠁢󠁥󠁮󠁧󠁿 INTEW',
+                'INTIFA2': '🇫🇷 INTIFA2',
+                'INTELEC': '⚡ INTELEC',
+                'INTNEM': '🇧🇪 INTNEM',
+                'INTNSL': '🇳🇴 INTNSL',
+                'INTVKL': '🇩🇰 INTVKL',
+                'INTGRNL': '🇬🇱 INTGRNL',
+            }
+            
+            # Update fuel types in column A & B (in GW), C (percentage)
+            # Use batch update to avoid API quota
+            fuel_updates = []
+            row_num = 10
+            
+            # Clear all rows first (A10:C21) to remove old data
+            clear_updates = []
+            for clear_row in range(10, 22):
+                clear_updates.append({
+                    'range': f'A{clear_row}:C{clear_row}',
+                    'values': [['', '', '']]
+                })
+            sheet.batch_update(clear_updates)
+            
+            # Now add fuel types only
+            for idx, row in gen_mix.iterrows():
+                if row_num > 21:
+                    break
+                    
+                fuel = row['fuelType']
+                fuel_display = fuel_emojis.get(fuel, fuel)
+                gen_gw = row['generation_gw']  # Already in GW
+                percentage = row['percentage'] * 100  # Convert to percentage (0.463 -> 46.3%)
+                
+                fuel_updates.append({
+                    'range': f'A{row_num}:C{row_num}',
+                    'values': [[fuel_display, f'{gen_gw:.2f}', f'{percentage:.2f}%']]
+                })
+                
+                logging.info(f"  ✅ Row {row_num}: {fuel_display} - {gen_gw:.2f} GW ({percentage:.1f}%)")
+                row_num += 1
+            
+            # Batch update fuel types
+            if fuel_updates:
+                sheet.batch_update(fuel_updates)
+            
+            # Update interconnectors in column D & E (MW)
+            if interconnectors is not None and not interconnectors.empty:
+                ic_updates = []
+                ic_row = 10
+                for idx, row in interconnectors.iterrows():
+                    if ic_row > 21:
+                        break
+                        
+                    ic_name = row['fuelType']
+                    ic_display = interconnector_emojis.get(ic_name, ic_name)
+                    flow_mw = int(row['avg_flow_mw'])
+                    
+                    ic_updates.append({
+                        'range': f'D{ic_row}:E{ic_row}',
+                        'values': [[ic_display, str(flow_mw)]]
+                    })
+                    
+                    logging.info(f"  ✅ Interconnector row {ic_row}: {ic_display} - {flow_mw} MW")
+                    ic_row += 1
+                
+                # Batch update interconnectors
+                if ic_updates:
+                    sheet.batch_update(ic_updates)
+            
+            # Update F10:L21 with repeated metrics for each row
+            logging.info("📊 Updating columns F-L for rows 10-21...")
+            
+            # Prepare batch update for F10:L21
+            metrics_updates = []
+            for row_num in range(10, 22):
+                row_values = [
+                    vlp_revenue,  # F
+                    0 if wholesale['price'] != wholesale['price'] else wholesale['price'],  # G
+                    wholesale['volume_pct'],  # H
+                    frequency,  # I
+                    total_gen,  # J
+                    dno_metrics['volume'],  # K
+                    dno_metrics['revenue'],  # L
+                ]
+                
+                # Handle NaN in values
+                row_values = [0 if v != v else v for v in row_values]
+                
+                metrics_updates.append({
+                    'range': f'F{row_num}:L{row_num}',
+                    'values': [row_values]
+                })
+            
+            # Batch update metrics
+            if metrics_updates:
+                sheet.batch_update(metrics_updates)
+                logging.info(f"  ✅ Completed updating all rows 10-21 with live metrics")
+        
+        # Get 48-period historical data for metric sparklines
+        logging.info("📈 Fetching 48-period historical data...")
+        historical = get_historical_metrics_48periods(bq_client)
+        
+        if historical is not None and not historical.empty:
+            logging.info(f"  ✅ Retrieved {len(historical)} historical periods")
+            
+            # Calculate VLP revenue for each period (proxy using wholesale price * 1000)
+            vlp_revenue_series = (historical['wholesale_price'] * 1000).tolist()
+            wholesale_series = historical['wholesale_price'].tolist()
+            total_gen_series = historical['total_gen_gw'].tolist()
+            frequency_series = historical['frequency'].tolist()
+            
+            # Write historical data to hidden area (rows 30-36, columns M onwards for 48 periods = M:BL)
+            historical_data_updates = [
+                {'range': 'M30:BL30', 'values': [vlp_revenue_series[:48]]},  # VLP Revenue
+                {'range': 'M31:BL31', 'values': [wholesale_series[:48]]},  # Wholesale
+                {'range': 'M32:BL32', 'values': [[100] * min(48, len(historical))]},  # Market Vol (constant 100%)
+                {'range': 'M33:BL33', 'values': [frequency_series[:48]]},  # Frequency
+                {'range': 'M34:BL34', 'values': [total_gen_series[:48]]},  # Total Gen
+                {'range': 'M35:BL35', 'values': [[0] * min(48, len(historical))]},  # DNO Volume (placeholder)
+                {'range': 'M36:BL36', 'values': [[0] * min(48, len(historical))]},  # DNO Revenue (placeholder)
+                {'range': 'L30:L36', 'values': [['VLP Rev £k'], ['Wholesale £/MWh'], ['Market %'], ['Freq Hz'], ['Gen GW'], ['Vol MWh'], ['Rev £k']]}
+            ]
+            
+            sheet.batch_update(historical_data_updates)
+            
+            # Add sparkline formulas with titles in F12:F15 area (below generation mix table)
+            # Row 12: VLP Revenue sparkline with title
+            # Row 13: Wholesale Price sparkline with title  
+            # Row 14: Total Generation sparkline with title
+            # Row 15: Frequency sparkline with title
+            historical_sparklines = [
+                # Titles in column E
+                {'range': 'E12', 'values': [['VLP Revenue Trend']]},
+                {'range': 'E13', 'values': [['Wholesale Price Trend']]},
+                {'range': 'E14', 'values': [['Total Generation Trend']]},
+                {'range': 'E15', 'values': [['Grid Frequency Trend']]},
+                # Sparklines in F12:F15
+                {'range': 'F12', 'values': [['=SPARKLINE(M30:BL30,{"charttype","line";"linewidth",2;"color","#1f77b4"})']]},  # VLP Revenue
+                {'range': 'F13', 'values': [['=SPARKLINE(M31:BL31,{"charttype","line";"linewidth",2;"color","#ff7f0e"})']]},  # Wholesale
+                {'range': 'F14', 'values': [['=SPARKLINE(M34:BL34,{"charttype","line";"linewidth",2;"color","#9467bd"})']]},  # Total Gen
+                {'range': 'F15', 'values': [['=SPARKLINE(M33:BL33,{"charttype","line";"linewidth",2;"color","#d62728"})']]},  # Frequency
+            ]
+            
+            sheet.batch_update(historical_sparklines, value_input_option='USER_ENTERED')
+            logging.info(f"  ✅ Added 48-period sparklines with titles in E12:F15")
+        
+        # Get intraday chart data
+        logging.info("📈 Fetching intraday chart data...")
+        intraday = get_intraday_charts_data(bq_client)
+        
+        if intraday is not None and not intraday.empty:
+            logging.info(f"  ✅ Retrieved {len(intraday)} settlement periods")
+            
+            # Write intraday data to hidden area (rows 25-27, columns M onwards)
+            # Row 25: Wind GW data
+            # Row 26: Demand GW data  
+            # Row 27: Price £/MWh data
+            
+            wind_data = intraday['wind_gw'].tolist()
+            demand_data = intraday['total_demand_gw'].tolist()
+            price_data = intraday['price'].tolist()
+            
+            intraday_updates = [
+                {
+                    'range': f'M25:AQ25',  # Up to 31 settlement periods (columns M-AQ)
+                    'values': [wind_data[:31]]  # Limit to 31 periods max
+                },
+                {
+                    'range': f'M26:AQ26',
+                    'values': [demand_data[:31]]
+                },
+                {
+                    'range': f'M27:AQ27',
+                    'values': [price_data[:31]]
+                },
+                {
+                    'range': 'L25:L27',  # Labels
+                    'values': [['Wind GW'], ['Demand GW'], ['Price £/MWh']]
+                }
+            ]
+            
+            sheet.batch_update(intraday_updates)
+            
+            # Add sparkline formulas to display the data
+            # These will appear in columns F-H of row 23 or similar
+            sparkline_formulas = [
+                {
+                    'range': 'F23',
+                    'values': [['=SPARKLINE(M25:AQ25,{"charttype","line";"linewidth",2;"color","blue"})']]
+                },
+                {
+                    'range': 'G23',
+                    'values': [['=SPARKLINE(M26:AQ26,{"charttype","line";"linewidth",2;"color","orange"})']]
+                },
+                {
+                    'range': 'H23',
+                    'values': [['=SPARKLINE(M27:AQ27,{"charttype","line";"linewidth",2;"color","green"})']]
+                },
+                {
+                    'range': 'F22:H22',  # Headers
+                    'values': [['Intraday Wind', 'Intraday Demand', 'Intraday Price']]
+                }
+            ]
+            
+            sheet.batch_update(sparkline_formulas, value_input_option='USER_ENTERED')
+            
+            logging.info(f"  📊 Wind: {intraday['wind_gw'].iloc[-1]:.2f} GW (latest)")
+            logging.info(f"  📊 Demand: {intraday['total_demand_gw'].iloc[-1]:.2f} GW (latest)")
+            logging.info(f"  📊 Price: £{intraday['price'].iloc[-1]:.2f}/MWh (latest)")
+            logging.info(f"  ✅ Updated sparklines with {len(wind_data)} periods")
+        
+        logging.info("=" * 80)
+        logging.info("✅ BG LIVE DASHBOARD UPDATE COMPLETE")
+        logging.info("=" * 80)
+        
+        return True
+        
+    except Exception as e:
+        logging.error(f"❌ Error updating dashboard: {e}")
+        import traceback
+        traceback.print_exc()
+        return False
+
+if __name__ == '__main__':
+    success = update_dashboard()
+    sys.exit(0 if success else 1)

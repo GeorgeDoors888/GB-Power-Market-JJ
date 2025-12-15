@@ -1,0 +1,45 @@
+[user]
+name = GeorgeDoors888
+email = george@upowerenergy.uk
+
+[credential]
+helper = store
+
+[push]
+default = current
+autoSetupRemote = true
+
+[pull]
+rebase = false
+
+[core]
+autocrlf = input
+editor = code --wait
+
+[alias]
+st = status
+co = checkout
+br = branch
+cm = commit -m
+amend = commit --amend --no-edit
+push-f = push --force-with-lease
+undo = reset HEAD~1 --soft
+
+[diff]
+tool = vscode
+
+[merge]
+tool = vscode
+conflictstyle = diff3
+
+[difftool "vscode"]
+cmd = code --wait --diff $LOCAL $REMOTE
+
+[mergetool "vscode"]
+cmd = code --wait $MERGED
+
+[fetch]
+prune = true
+
+[init]
+defaultBranch = main

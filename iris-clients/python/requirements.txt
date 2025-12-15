@@ -1,0 +1,20 @@
+# Azure Service Bus SDK
+azure-servicebus==7.11.4
+azure-identity==1.15.0
+azure-core==1.29.5
+
+# Google Cloud BigQuery
+google-cloud-bigquery==3.14.0
+google-cloud-core==2.4.1
+google-auth==2.25.2
+
+# Data processing
+pandas==2.1.4
+pyarrow==14.0.1
+db-dtypes==1.2.0
+
+# JSON handling
+dacite==1.8.1
+
+# Utilities
+python-dateutil==2.8.2

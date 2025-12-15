@@ -279,6 +279,217 @@ def get_interconnector_flows(bq_client):
     except Exception as e:
         logging.error(f"Error getting interconnector flows: {e}")
         return None
+
+def get_active_outages(bq_client):
+    """Get top 10 active outages by unavailable capacity - deduplicated by asset with station names from BMU registration"""
+    query = f"""
+    WITH latest_outages AS (
+      SELECT 
+        assetId,
+        assetName,
+        fuelType,
+        normalCapacity,
+        unavailableCapacity,
+        ROUND(100.0 * unavailableCapacity / NULLIF(normalCapacity, 0), 1) as pct_unavailable,
+        eventStatus,
+        eventStartTime,
+        eventEndTime,
+        cause,
+        affectedUnit,
+        ROW_NUMBER() OVER (PARTITION BY assetId ORDER BY createdTime DESC) as rn
+      FROM `{PROJECT_ID}.{DATASET}.bmrs_remit_unavailability`
+      WHERE eventStatus = 'Active'
+        AND TIMESTAMP(eventStartTime) <= CURRENT_TIMESTAMP()
+        AND (TIMESTAMP(eventEndTime) >= CURRENT_TIMESTAMP() OR eventEndTime IS NULL)
+        AND unavailableCapacity > 50  -- Only significant outages
+    )
+    SELECT 
+      o.assetId,
+      o.assetName,
+      CASE 
+        WHEN o.assetId LIKE 'I_%' THEN 'Interconnector'
+        WHEN o.fuelType IS NULL OR o.fuelType = '' THEN 'Unknown'
+        ELSE o.fuelType
+      END as fuelType,
+      o.normalCapacity,
+      o.unavailableCapacity,
+      o.pct_unavailable,
+      o.eventStatus,
+      o.eventStartTime,
+      o.eventEndTime,
+      o.cause,
+      o.affectedUnit,
+      -- Calculate duration in days
+      CASE 
+        WHEN o.eventEndTime IS NOT NULL THEN 
+          DATE_DIFF(DATE(o.eventEndTime), DATE(o.eventStartTime), DAY)
+        ELSE NULL
+      END as duration_days,
+      -- Join with BMU registration to get proper station name
+      -- Try both nationalgridbmunit and elexonbmunit since outage data uses either
+      bmu.bmunitname as station_name,
+      bmu.leadpartyname as operator_name
+    FROM latest_outages o
+    LEFT JOIN `{PROJECT_ID}.{DATASET}.bmu_registration_data` bmu
+      ON (o.affectedUnit = bmu.nationalgridbmunit OR o.affectedUnit = bmu.elexonbmunit)
+    WHERE o.rn = 1  -- Only latest record per asset
+    ORDER BY o.unavailableCapacity DESC
+    LIMIT 10
+    """
+    
+    try:
+        result = bq_client.query(query).to_dataframe()
+        logging.info(f"  ⚠️  Retrieved {len(result)} unique active outages (deduplicated) with station names from BMU registry")
+        return result
+    except Exception as e:
+        logging.error(f"Error getting active outages: {e}")
+        return None
+
+def get_geographic_constraints(bq_client):
+    """Get geographic constraint data for map visualization"""
+    
+    # 1. Top constrained regions by action count (last 7 days) - UNION historical + IRIS
+    # Include transmission-connected units (T_ prefix) as separate category
+    regions_query = f"""
+    WITH combined_boalf AS (
+      SELECT 
+        bmUnit,
+        CAST(settlementDate AS DATE) as date,
+        levelFrom,
+        levelTo,
+        soFlag
+      FROM `{PROJECT_ID}.{DATASET}.bmrs_boalf`
+      WHERE CAST(settlementDate AS DATE) >= DATE_SUB(CURRENT_DATE(), INTERVAL 7 DAY)
+        AND soFlag = TRUE
+      UNION ALL
+      SELECT 
+        bmUnit,
+        CAST(settlementDate AS DATE) as date,
+        levelFrom,
+        levelTo,
+        soFlag
+      FROM `{PROJECT_ID}.{DATASET}.bmrs_boalf_iris`
+      WHERE CAST(settlementDate AS DATE) >= DATE_SUB(CURRENT_DATE(), INTERVAL 7 DAY)
+        AND soFlag = TRUE
+    )
+    SELECT 
+      CASE
+        -- Categorize transmission units by fuel type and location hints
+        WHEN STARTS_WITH(boalf.bmUnit, 'T_') AND bmu.fueltype = 'WIND' THEN 'Transmission Wind'
+        WHEN STARTS_WITH(boalf.bmUnit, 'T_') AND bmu.fueltype IN ('NPSHYD', 'PS') THEN 'Transmission Hydro/Pumped'
+        WHEN STARTS_WITH(boalf.bmUnit, 'T_') THEN 'Transmission Other'
+        -- Interconnectors
+        WHEN STARTS_WITH(boalf.bmUnit, 'I_') OR bmu.bmunittype = 'I' THEN 'Interconnectors'
+        -- Distribution-connected with GSP groups
+        WHEN bmu.gspgroupname IS NOT NULL AND bmu.gspgroupname != '' THEN bmu.gspgroupname
+        -- Unmapped
+        ELSE 'Other/Unmapped'
+      END as region,
+      COUNT(DISTINCT boalf.bmUnit) as units_constrained,
+      COUNT(*) as action_count,
+      ROUND(SUM(ABS(boalf.levelTo - boalf.levelFrom)), 1) as total_mw_adjusted
+    FROM combined_boalf boalf
+    LEFT JOIN `{PROJECT_ID}.{DATASET}.bmu_registration_data` bmu 
+      ON (boalf.bmUnit = bmu.nationalgridbmunit OR boalf.bmUnit = bmu.elexonbmunit)
+    GROUP BY region
+    HAVING region NOT IN ('Other/Unmapped')  -- Exclude unmapped units
+    ORDER BY action_count DESC
+    LIMIT 15
+    """
+    
+    # 2. Regional constraint costs (last 7 days) - only historical DISBSAD (no IRIS version)
+    # Note: DISBSAD data typically lags by 1-2 days due to settlement processing
+    costs_query = f"""
+    SELECT 
+      CASE
+        -- Categorize transmission units by fuel type
+        WHEN STARTS_WITH(disbsad.assetId, 'T_') AND bmu.fueltype = 'WIND' THEN 'Transmission Wind'
+        WHEN STARTS_WITH(disbsad.assetId, 'T_') AND bmu.fueltype IN ('NPSHYD', 'PS') THEN 'Transmission Hydro/Pumped'
+        WHEN STARTS_WITH(disbsad.assetId, 'T_') THEN 'Transmission Other'
+        -- Interconnectors
+        WHEN STARTS_WITH(disbsad.assetId, 'I_') OR bmu.bmunittype = 'I' THEN 'Interconnectors'
+        -- Distribution-connected with GSP groups
+        WHEN bmu.gspgroupname IS NOT NULL AND bmu.gspgroupname != '' THEN bmu.gspgroupname
+        -- Unmapped
+        ELSE 'Other/Unmapped'
+      END as region,
+      ROUND(SUM(disbsad.cost) / 1000, 2) as cost_thousands,
+      MAX(CAST(disbsad.settlementDate AS DATE)) as latest_cost_date
+    FROM `{PROJECT_ID}.{DATASET}.bmrs_disbsad` disbsad
+    LEFT JOIN `{PROJECT_ID}.{DATASET}.bmu_registration_data` bmu 
+      ON (disbsad.assetId = bmu.nationalgridbmunit OR disbsad.assetId = bmu.elexonbmunit)
+    WHERE CAST(disbsad.settlementDate AS DATE) >= DATE_SUB(CURRENT_DATE(), INTERVAL 7 DAY)
+      AND disbsad.cost > 0
+    GROUP BY region
+    HAVING region NOT IN ('Other/Unmapped')
+    ORDER BY cost_thousands DESC
+    LIMIT 15
+    """
+    
+    # 3. Scotland wind curtailment (last 7 days, not just today) - UNION historical + IRIS
+    scotland_query = f"""
+    WITH combined_boalf AS (
+      SELECT 
+        bmUnit,
+        CAST(settlementDate AS DATE) as date,
+        levelFrom,
+        levelTo,
+        soFlag
+      FROM `{PROJECT_ID}.{DATASET}.bmrs_boalf`
+      WHERE CAST(settlementDate AS DATE) >= DATE_SUB(CURRENT_DATE(), INTERVAL 7 DAY)
+        AND soFlag = TRUE
+      UNION ALL
+      SELECT 
+        bmUnit,
+        CAST(settlementDate AS DATE) as date,
+        levelFrom,
+        levelTo,
+        soFlag
+      FROM `{PROJECT_ID}.{DATASET}.bmrs_boalf_iris`
+      WHERE CAST(settlementDate AS DATE) >= DATE_SUB(CURRENT_DATE(), INTERVAL 7 DAY)
+        AND soFlag = TRUE
+    )
+    SELECT 
+      COUNT(DISTINCT boalf.bmUnit) as wind_units,
+      COUNT(*) as curtailment_actions,
+      ROUND(SUM(ABS(boalf.levelFrom - boalf.levelTo)), 1) as mw_curtailed
+    FROM combined_boalf boalf
+    LEFT JOIN `{PROJECT_ID}.{DATASET}.bmu_registration_data` bmu 
+      ON (boalf.bmUnit = bmu.nationalgridbmunit OR boalf.bmUnit = bmu.elexonbmunit)
+    WHERE (bmu.gspgroupname IN ('North Scotland', 'South Scotland')
+           OR boalf.bmUnit LIKE 'T_%')  -- Include transmission wind
+      AND UPPER(COALESCE(bmu.fueltype, '')) = 'WIND'
+      AND boalf.levelTo < boalf.levelFrom  -- Downward adjustment = curtailment
+    """
+    
+    try:
+        regions = bq_client.query(regions_query).to_dataframe()
+        costs = bq_client.query(costs_query).to_dataframe()
+        scotland = bq_client.query(scotland_query).to_dataframe()
+        
+        # Merge costs into regions dataframe
+        if not regions.empty and not costs.empty:
+            regions = regions.merge(costs, on='region', how='left')
+            regions['cost_thousands'] = regions['cost_thousands'].fillna(0)
+            # Get the latest cost date to show data freshness
+            latest_cost_date = costs['latest_cost_date'].max() if 'latest_cost_date' in costs.columns else None
+        else:
+            latest_cost_date = None
+        
+        result = {
+            'regions': regions,
+            'scotland_curtailment': scotland if not scotland.empty else None,
+            'cost_data_date': latest_cost_date
+        }
+        
+        logging.info(f"  🗺️  Retrieved geographic constraints: {len(regions)} regions, Scotland curtailment data")
+        return result
+    except Exception as e:
+        logging.error(f"Error getting geographic constraints: {e}")
+        import traceback
+        traceback.print_exc()
+        return None
+
 def get_historical_metrics_48periods(bq_client):
     """Get last 48 settlement periods of historical data for all metrics"""
     query = f"""
@@ -1120,7 +1331,212 @@ def update_dashboard():
             
             sheet.batch_update(wind_sparklines, value_input_option='USER_ENTERED')
             
-            logging.info(f"  ✅ Added wind forecast section with sparklines (rows 37-50)")
+            logging.info(f"  ✅ Added wind forecast section with sparklines (rows 37-47)")
+        
+        # Add live outages section starting at row 50
+        logging.info("⚠️  Fetching live outages data...")
+        outages = get_active_outages(bq_client)
+        
+        # Also get total count of ALL outages (including small ones)
+        total_outages_query = f"""
+        WITH latest_outages AS (
+          SELECT 
+            unavailableCapacity,
+            ROW_NUMBER() OVER (PARTITION BY assetId ORDER BY createdTime DESC) as rn
+          FROM `{PROJECT_ID}.{DATASET}.bmrs_remit_unavailability`
+          WHERE eventStatus = 'Active'
+            AND TIMESTAMP(eventStartTime) <= CURRENT_TIMESTAMP()
+            AND (TIMESTAMP(eventEndTime) >= CURRENT_TIMESTAMP() OR eventEndTime IS NULL)
+            AND unavailableCapacity > 0
+        )
+        SELECT 
+          COUNT(*) as total_count,
+          SUM(unavailableCapacity) as total_mw
+        FROM latest_outages
+        WHERE rn = 1
+        """
+        total_stats = bq_client.query(total_outages_query).to_dataframe()
+        total_outage_count = int(total_stats['total_count'].iloc[0]) if not total_stats.empty else 0
+        total_unavailable_mw = total_stats['total_mw'].iloc[0] if not total_stats.empty else 0
+        
+        if outages is not None and not outages.empty:
+            # Calculate unavailable capacity for TOP 10 shown
+            top10_unavailable_gw = outages['unavailableCapacity'].sum() / 1000
+            total_unavailable_gw = total_unavailable_mw / 1000
+            
+            # Section header at row 49
+            outages_section = [
+                {'range': 'A49', 'values': [['⚠️  LIVE OUTAGES ANALYSIS']]},
+                {'range': 'A50', 'values': [['Total System Outages']]},
+                {'range': 'B50', 'values': [[f"{total_outage_count} outages | {total_unavailable_gw:.2f} GW offline"]]},
+                {'range': 'A51', 'values': [['Showing Top 10 (≥50 MW)']]},
+                {'range': 'B51', 'values': [[f"{len(outages)} major outages | {top10_unavailable_gw:.2f} GW"]]},
+            ]
+            
+            # Outage table header at row 53 (wider layout with BM Unit, Station Name, Duration)
+            outages_section.append({'range': 'A53', 'values': [['BM Unit']]})
+            outages_section.append({'range': 'B53', 'values': [['Station Name']]})
+            outages_section.append({'range': 'C53', 'values': [['Fuel | MW Lost | % | Duration | Status']]})
+            outages_section.append({'range': 'D53', 'values': [['Cause']]})
+            
+            # Add top 10 outages (rows 54-63)
+            outage_row = 54
+            for idx, row in outages.iterrows():
+                if outage_row > 63:  # Limit to 10 rows
+                    break
+                
+                asset_id = row['assetId']
+                asset_name = row['assetName'] if row['assetName'] else asset_id
+                # Use station name from BMU registration if available
+                station_name = row['station_name'] if row['station_name'] and str(row['station_name']) != 'nan' else asset_name
+                fuel = row['fuelType']
+                unavail_mw = int(row['unavailableCapacity'])
+                normal_mw = int(row['normalCapacity']) if row['normalCapacity'] else unavail_mw
+                pct = row['pct_unavailable']
+                cause = str(row['cause'])[:40]  # Truncate long causes
+                bm_unit = str(row['affectedUnit']) if row['affectedUnit'] else asset_id
+                operator = row['operator_name'] if row['operator_name'] and str(row['operator_name']) != 'nan' else ''
+                
+                # Duration info
+                duration_days = row['duration_days']
+                if duration_days and duration_days > 0:
+                    duration_text = f"{int(duration_days)}d"
+                elif row['eventEndTime']:
+                    duration_text = "<1d"
+                else:
+                    duration_text = "Ongoing"
+                
+                # Add severity emoji based on MW lost
+                if unavail_mw >= 1000:
+                    severity = '🔴'
+                elif unavail_mw >= 500:
+                    severity = '🟠'
+                else:
+                    severity = '🟡'
+                
+                # Status indicator
+                if pct >= 100:
+                    status = '⚫ Offline'
+                elif pct >= 50:
+                    status = '🟠 Limited'
+                else:
+                    status = '🟡 Partial'
+                
+                # Column A: BM Unit ID
+                outages_section.append({
+                    'range': f'A{outage_row}',
+                    'values': [[bm_unit]]
+                })
+                
+                # Column B: Station Name from BMU registration (no VLOOKUP needed)
+                outages_section.append({
+                    'range': f'B{outage_row}',
+                    'values': [[f"{severity} {station_name}"]]
+                })
+                
+                # Column C: Comprehensive inline format (fuel, MW, %, duration, status)
+                inline_info = f"{fuel} | {unavail_mw}/{normal_mw} MW | {pct:.0f}% | {duration_text} | {status}"
+                outages_section.append({
+                    'range': f'C{outage_row}',
+                    'values': [[inline_info]]
+                })
+                
+                # Column D: Cause
+                outages_section.append({
+                    'range': f'D{outage_row}',
+                    'values': [[cause]]
+                })
+                
+                outage_row += 1
+            
+            # Write all outages data
+            sheet.batch_update(outages_section)
+            logging.info(f"  ✅ Added live outages section (rows 49-63, {len(outages)} outages)")
+        
+        # Add geographic constraints section starting at row 65
+        logging.info("🗺️  Fetching geographic constraints data...")
+        geo_data = get_geographic_constraints(bq_client)
+        
+        if geo_data and not geo_data['regions'].empty:
+            regions = geo_data['regions']
+            scotland = geo_data['scotland_curtailment']
+            cost_date = geo_data.get('cost_data_date')
+            
+            # Section header at row 65 with cost data freshness note
+            if cost_date:
+                cost_note = f"(Costs as of {cost_date.strftime('%b %d')})"
+            else:
+                cost_note = "(Cost data unavailable)"
+            
+            geo_section = [
+                {'range': 'A65', 'values': [[f'🗺️  GEOGRAPHIC CONSTRAINTS (Last 7 Days) {cost_note}']]},
+            ]
+            
+            # Scotland wind curtailment summary (row 66-67)
+            if scotland is not None and not scotland.empty and scotland['mw_curtailed'].iloc[0] > 0:
+                mw_curt = scotland['mw_curtailed'].iloc[0]
+                wind_units = int(scotland['wind_units'].iloc[0])
+                actions = int(scotland['curtailment_actions'].iloc[0])
+                geo_section.extend([
+                    {'range': 'A66', 'values': [['🏴󠁧󠁢󠁳󠁣󠁴󠁿 Scotland Wind Curtailment (Last 7 Days)']]},
+                    {'range': 'B66', 'values': [[f"{mw_curt:,.0f} MW curtailed | {wind_units} units | {actions} actions"]]},
+                ])
+            else:
+                geo_section.extend([
+                    {'range': 'A66', 'values': [['🏴󠁧󠁢󠁳󠁣󠁴󠁿 Scotland Wind Curtailment (Last 7 Days)']]},
+                    {'range': 'B66', 'values': [['No significant curtailment in past 7 days']]},
+                ])
+            
+            # Table header at row 68
+            geo_section.extend([
+                {'range': 'A68', 'values': [['Region']]},
+                {'range': 'B68', 'values': [['Actions']]},
+                {'range': 'C68', 'values': [['Units Affected']]},
+                {'range': 'D68', 'values': [['MW Adjusted']]},
+                {'range': 'E68', 'values': [['Cost (£k)']]},
+            ])
+            
+            # Add top 10 constrained regions (rows 69-78)
+            geo_row = 69
+            for idx, row in regions.iterrows():
+                if geo_row > 78:  # Limit to 10 rows
+                    break
+                
+                region = row['region']
+                actions = int(row['action_count'])
+                units = int(row['units_constrained'])
+                mw_adjusted = row['total_mw_adjusted']
+                cost = row.get('cost_thousands', 0)
+                
+                # Add emoji based on activity level
+                if actions >= 100:
+                    emoji = '🔴'
+                elif actions >= 50:
+                    emoji = '🟠'
+                else:
+                    emoji = '🟡'
+                
+                geo_section.extend([
+                    {'range': f'A{geo_row}', 'values': [[f"{emoji} {region}"]]},
+                    {'range': f'B{geo_row}', 'values': [[actions]]},
+                    {'range': f'C{geo_row}', 'values': [[units]]},
+                    {'range': f'D{geo_row}', 'values': [[f"{mw_adjusted:,.0f}"]]},
+                    {'range': f'E{geo_row}', 'values': [[f"£{cost:,.1f}k" if cost > 0 else "N/A"]]},
+                ])
+                
+                geo_row += 1
+            
+            # Write all geographic constraints data
+            sheet.batch_update(geo_section)
+            logging.info(f"  ✅ Added geographic constraints section (rows 65-78, {len(regions)} regions)")
+        else:
+            # Write placeholder if no data
+            geo_section = [
+                {'range': 'A65', 'values': [['🗺️  GEOGRAPHIC CONSTRAINTS (Last 7 Days)']]},
+                {'range': 'A66', 'values': [['No constraint data available for recent periods']]},
+            ]
+            sheet.batch_update(geo_section)
+            logging.info(f"  ⚠️  No geographic constraints data available (historical data may be lagging)")
         
         logging.info("=" * 80)
         logging.info("✅ BG LIVE DASHBOARD UPDATE COMPLETE")

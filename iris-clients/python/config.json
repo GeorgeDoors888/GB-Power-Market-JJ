@@ -1,0 +1,60 @@
+{
+  "ClientId": "5ac22e4f-fcfa-4be8-b513-a6dc767d6312",
+  "QueueName": "iris.047b7f5d-7cc1-4f3d-a454-fe188a9f42f3",
+  "ServiceBusNamespace": "elexon-insights-iris",
+  "TenantId": "6da97c8f-0f41-4e5c-b10b-930c5b8ff3a0",
+  "Secret": "gCC8Q~fU.FWRjGiFWZ~Bsixd7xFAAEcv6NsaTdoV",
+  "FullyQualifiedNamespace": "elexon-insights-iris.servicebus.windows.net",
+  "output_dir": "/opt/iris-pipeline/data",
+  "queues": [
+    {
+      "name": "bmrs-fuelinst",
+      "max_messages": 100,
+      "description": "Fuel generation (B1620)"
+    },
+    {
+      "name": "bmrs-windfor",
+      "max_messages": 50,
+      "description": "Wind forecast (B1440)"
+    },
+    {
+      "name": "bmrs-freq",
+      "max_messages": 100,
+      "description": "System frequency (B1610)"
+    },
+    {
+      "name": "bmrs-mid",
+      "max_messages": 50,
+      "description": "Market Index Data (B1770)"
+    },
+    {
+      "name": "bmrs-boalf",
+      "max_messages": 100,
+      "description": "Balancing acceptances (B1430)"
+    },
+    {
+      "name": "bmrs-bod",
+      "max_messages": 100,
+      "description": "Bid-offer data (B1420)"
+    },
+    {
+      "name": "bmrs-costs",
+      "max_messages": 50,
+      "description": "System costs (B1780)"
+    },
+    {
+      "name": "bmrs-indgen",
+      "max_messages": 100,
+      "description": "Individual generation (B1610)"
+    },
+    {
+      "name": "bmrs-indo",
+      "max_messages": 100,
+      "description": "Day-ahead aggregated generation (B1430)"
+    }
+  ],
+  "logging": {
+    "level": "INFO",
+    "file": "/opt/iris-pipeline/logs/iris_client.log"
+  }
+}

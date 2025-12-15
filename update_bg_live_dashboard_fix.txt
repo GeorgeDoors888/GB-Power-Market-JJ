@@ -1,0 +1,14 @@
+# Fix for update_bg_live_dashboard.py
+
+The script needs these changes:
+
+1. Change row_num = 10 to row_num = 11 (line 625)
+2. Change clear range from (10, 22) to (11, 21) (line 629)
+3. Change sparkline formula from Data_Hidden!A{row_num}:AC{row_num} to Data_Hidden!A{data_hidden_row}:X{data_hidden_row}
+4. Add data_hidden_row = idx + 1 before sparkline formula
+5. Change max row from 21 to 20
+
+Key issue: The sparkline formula is using row_num (which is the GB Live row number)
+instead of a separate Data_Hidden row number. 
+
+GB Live rows 11-20 should reference Data_Hidden rows 1-10 for fuel types.

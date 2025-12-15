@@ -1,0 +1,155 @@
+┌─────────────────────────────────────────────────────────────────┐
+│  🎉 APPS SCRIPT FULLY INTEGRATED - QUICK REFERENCE              │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│  📁 FILE: /home/george/GB-Power-Market-JJ/Code.gs              │
+│  📊 SIZE: 828 lines                                             │
+│  🔧 FUNCTIONS: 10 total                                          │
+│  📦 FEATURES: 3 major systems                                    │
+│                                                                 │
+├─────────────────────────────────────────────────────────────────┤
+│  🗺️  DNO MAP TOOLS                                             │
+├─────────────────────────────────────────────────────────────────┤
+│  ✅ createDNOMap()                                              │
+│     → Interactive UK DNO boundaries (GeoJSON from GitHub)       │
+│     → Menu: 🗺️ DNO Map → View Interactive Map                 │
+│                                                                 │
+│  ✅ createDNOMapWithSites()                                     │
+│     → Map + battery site marker (geocoded from postcode)       │
+│     → Menu: 🗺️ DNO Map → View Map with Site Markers           │
+│                                                                 │
+│  ✅ embedMapInSheet()                                           │
+│     → Upload to Drive + embed via IMAGE() formula              │
+│     → Menu: 🗺️ DNO Map → Embed Map in DNO Sheet               │
+│                                                                 │
+├─────────────────────────────────────────────────────────────────┤
+│  🔋 BESS TOOLS                                                  │
+├─────────────────────────────────────────────────────────────────┤
+│  ✅ generateHHDataDirect()                                      │
+│     → Reads B17-B19 (Min/Avg/Max kW)                           │
+│     → Calls Python webhook or shows command                    │
+│     → Generates 17,520 half-hourly demand values               │
+│     → Menu: 🔋 BESS Tools → 📊 Generate HH Data               │
+│                                                                 │
+│  ✅ manualRefreshDno()                                          │
+│     → Reads A6 (postcode) or B6 (MPAN)                         │
+│     → Geocodes via postcodes.io                                │
+│     → Maps to MPAN via coordinatesToMpan()                     │
+│     → Calls Python webhook for BigQuery lookup                 │
+│     → Writes DNO info to C6-H6, rates to row 9                 │
+│     → Menu: 🔋 BESS Tools → 🔄 Refresh DNO Data               │
+│                                                                 │
+│  ✅ calculatePPAAnalysis()                                      │
+│     → Shows Python command for battery arbitrage               │
+│     → Menu: 🔋 BESS Tools → 💰 Calculate PPA Analysis         │
+│                                                                 │
+│  ✅ showHHDataStatus()                                          │
+│     → Validates HH Data sheet                                  │
+│     → Shows row count, date range, statistics                  │
+│     → Menu: 🔋 BESS Tools → 📈 Show HH Data Status            │
+│                                                                 │
+│  ✅ coordinatesToMpan(lat, lng)                                 │
+│     → Internal: Maps lat/lng to MPAN ID                        │
+│     → 14 UK regions defined                                    │
+│                                                                 │
+│  ✅ onEdit(e)                                                   │
+│     → Auto-trigger: Detects A6/B6 edits on BESS sheet         │
+│     → Waits 1.5s then calls manualRefreshDno()                │
+│     → Requires manual trigger setup in Apps Script             │
+│                                                                 │
+├─────────────────────────────────────────────────────────────────┤
+│  🚀 DEPLOYMENT STATUS                                           │
+├─────────────────────────────────────────────────────────────────┤
+│  Deployment ID: AKfycbxwFCjNeh7YRiO46aSceM5D03XFa11dPosYs...   │
+│  Version: 3 (8 Dec 2025, 22:31)                                │
+│  Status: ✅ Live and deployed                                   │
+│  Web App: https://script.google.com/macros/s/AKfyc...          │
+│  Library: https://script.google.com/macros/library/d/1zwD...   │
+│                                                                 │
+├─────────────────────────────────────────────────────────────────┤
+│  📊 TARGET SPREADSHEET                                          │
+├─────────────────────────────────────────────────────────────────┤
+│  URL: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXF... │
+│  Title: GB Energy Dashboard                                    │
+│  Key Sheets: BESS, DNO, HH Data, Dashboard                     │
+│                                                                 │
+├─────────────────────────────────────────────────────────────────┤
+│  ⚡ USAGE                                                       │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│  1️⃣  DNO LOOKUP:                                               │
+│     • Enter postcode in A6 (e.g., "SW1A 1AA")                  │
+│     • Click: 🔋 BESS Tools → Refresh DNO Data                 │
+│     • DNO info appears in C6-H6 + rates in row 9               │
+│                                                                 │
+│  2️⃣  GENERATE HH DATA:                                         │
+│     • Enter Min/Avg/Max kW in B17-B19                          │
+│     • Click: 🔋 BESS Tools → Generate HH Data                 │
+│     • 17,520 rows created in "HH Data" sheet                   │
+│                                                                 │
+│  3️⃣  VIEW DNO MAP:                                             │
+│     • Click: 🗺️ DNO Map → View Interactive Map                │
+│     • Hover regions, click to zoom                             │
+│     • Or: View Map with Site Markers (needs postcode in A6)    │
+│                                                                 │
+├─────────────────────────────────────────────────────────────────┤
+│  🔧 SETUP STEPS                                                 │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│  Step 1: Copy Code                                             │
+│    cp /home/george/GB-Power-Market-JJ/Code.gs [clipboard]     │
+│                                                                 │
+│  Step 2: Open Spreadsheet                                      │
+│    https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXF...   │
+│                                                                 │
+│  Step 3: Paste into Apps Script                                │
+│    Extensions → Apps Script → Paste → Save                     │
+│                                                                 │
+│  Step 4: Refresh Spreadsheet                                   │
+│    Press F5 or Ctrl+R                                          │
+│                                                                 │
+│  Step 5: Check Menus Appear                                    │
+│    Look for: 🗺️ DNO Map and 🔋 BESS Tools                    │
+│                                                                 │
+│  Step 6 (Optional): Enable Auto-Trigger                        │
+│    Apps Script → Triggers (clock icon) → Add Trigger           │
+│    Function: onEdit, Event: On edit                            │
+│                                                                 │
+├─────────────────────────────────────────────────────────────────┤
+│  🐛 TROUBLESHOOTING                                             │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│  ❌ "Menu doesn't appear"                                       │
+│     → Save code (Ctrl+S), refresh spreadsheet (F5)             │
+│                                                                 │
+│  ❌ "DNO lookup fails"                                          │
+│     → Check postcode format, run manual Python command         │
+│                                                                 │
+│  ❌ "Permission denied"                                         │
+│     → Run function from editor → Review Permissions → Allow    │
+│                                                                 │
+│  ❌ "Webhook not available"                                     │
+│     → Apps Script shows Python command to run manually         │
+│     → Start webhook: python3 dno_webhook_server.py             │
+│                                                                 │
+├─────────────────────────────────────────────────────────────────┤
+│  🔗 RELATED FILES                                               │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│  📄 APPS_SCRIPT_INTEGRATED.md    - Full integration guide      │
+│  📄 Code.gs                      - Main Apps Script (828 lines)│
+│  📄 dno_lookup_python.py         - Python DNO backend          │
+│  📄 generate_hh_profile.py       - Python HH generator         │
+│  📁 gb_power_map_deployment/     - GeoJSON boundaries          │
+│  📁 bg-sparklines-clasp/         - Sparkline version (900+)    │
+│                                                                 │
+├─────────────────────────────────────────────────────────────────┤
+│  📞 SUPPORT                                                     │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│  Repository: https://github.com/GeorgeDoors888/GB-Power-Mark...│
+│  Maintainer: George Major (george@upowerenergy.uk)             │
+│  Status: ✅ Production (Dec 2025)                               │
+│  Last Updated: 8 Dec 2025, 23:00                               │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘

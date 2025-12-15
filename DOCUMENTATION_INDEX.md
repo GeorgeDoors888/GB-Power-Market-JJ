@@ -102,6 +102,31 @@ Complete documentation for the BESS Dashboard system.
   - BigQuery optimization
   - Performance tuning
 
+### Issue Resolution & Fixes (NEW - Dec 2025)
+- [LIVE_DASHBOARD_V2_FIX_SUMMARY.md](LIVE_DASHBOARD_V2_FIX_SUMMARY.md) - Executive summary
+  - ✅ Fixed: Data showing 2-4x too high
+  - Root cause: IRIS duplicate records (multiple publishTime values)
+  - Solution: Added publishTime deduplication to all IRIS queries
+  - Verification: Wind 11.8 GW (was 49.2 GW), CCGT 7.7 GW (was 34.0 GW)
+  
+- [IRIS_DUPLICATE_DATA_FIX.md](IRIS_DUPLICATE_DATA_FIX.md) - Technical deep-dive
+  - Full root cause analysis with query examples
+  - Before/after query comparison
+  - Deduplication pattern for IRIS tables
+  - Prevention guidelines for future queries
+  - Test results and verification
+
+- [SPREADSHEET_IDS_MASTER_REFERENCE.md](SPREADSHEET_IDS_MASTER_REFERENCE.md) - ID reference
+  - ✅ Correct: 1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA (Live Dashboard v2)
+  - ❌ Wrong: 1MSl8fJ0to6Y08enXA2oysd8wvNUVm3AtfJ1bVqRH8_I (Legacy GB Live)
+  - Code templates with correct IDs
+  - Verification checklist
+
+- [SPREADSHEET_CONFUSION_RESOLVED.md](SPREADSHEET_CONFUSION_RESOLVED.md) - ID confusion fix
+  - Diagnosed spreadsheet ID confusion issue
+  - Fixed all scripts to use correct ID
+  - Prevention measures documented
+
 ---
 
 ## 🔍 Search by Problem
