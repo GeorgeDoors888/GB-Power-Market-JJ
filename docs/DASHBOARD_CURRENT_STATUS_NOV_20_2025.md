@@ -277,7 +277,7 @@ Columns D-H: Full reference data
 - **Credentials**: arbitrage-bq-key.json
 
 ### Google Sheets
-- **Spreadsheet ID**: 12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8
+- **Spreadsheet ID**: 1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA
 - **Auth**: token.pickle (OAuth2)
 
 ### Railway
@@ -312,7 +312,7 @@ Columns D-H: Full reference data
 1. **Read this document first** - check PROTECTED SECTIONS
 2. **Backup current Dashboard state**: 
    ```bash
-   python3 -c "import pickle; from googleapiclient.discovery import build; creds = pickle.load(open('token.pickle','rb')); sheets = build('sheets','v4',credentials=creds); result = sheets.spreadsheets().values().get(spreadsheetId='12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8',range='Dashboard!D8:D17').execute(); print(result.get('values'))"
+   python3 -c "import pickle; from googleapiclient.discovery import build; creds = pickle.load(open('token.pickle','rb')); sheets = build('sheets','v4',credentials=creds); result = sheets.spreadsheets().values().get(spreadsheetId='1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA',range='Dashboard!D8:D17').execute(); print(result.get('values'))"
    ```
 3. **Test changes locally** before deploying
 4. **Verify flags after deployment** using verification script:
@@ -334,7 +334,7 @@ with open('token.pickle', 'rb') as token:
 
 sheets = build('sheets', 'v4', credentials=creds)
 result = sheets.spreadsheets().values().get(
-    spreadsheetId='12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8',
+    spreadsheetId='1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA',
     range='Dashboard!D8:D17'
 ).execute()
 
@@ -377,4 +377,4 @@ fi
 
 **Last Updated**: November 20, 2025 22:30 GMT  
 **Status**: ✅ Production Ready  
-**Dashboard**: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+**Dashboard**: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/

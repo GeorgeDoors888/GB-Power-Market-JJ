@@ -2,7 +2,7 @@
 
 **Created**: Nov 6, 2025  
 **File**: `gb_energy_dashboard_apps_script.gs` (246 lines)  
-**Sheet ID**: `12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8`
+**Sheet ID**: `1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA`
 
 ---
 
@@ -36,7 +36,7 @@
 
 ### **Step 1: Open Apps Script Editor**
 
-1. Open your Google Sheet: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit
+1. Open your Google Sheet: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit
 2. Click **Extensions** → **Apps Script**
 3. Delete any existing code in `Code.gs`
 
@@ -158,7 +158,7 @@ ScriptApp.newTrigger("refreshData")
     "manual": "Open Sheet → Extensions → Apps Script → Run refreshData",
     "menu_button": "Open Sheet → Dashboard menu → Refresh Data Now",
     "trigger": "Runs automatically every 15 minutes",
-    "direct_url": "https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit"
+    "direct_url": "https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit"
   }
 }
 ```
@@ -255,8 +255,8 @@ The chart automatically finds these columns (case-insensitive, flexible matching
 
 ### **Google Sheet:**
 ```
-Sheet ID: 12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8
-Direct Link: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit
+Sheet ID: 1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA
+Direct Link: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit
 Apps Script: Extensions → Apps Script
 ```
 

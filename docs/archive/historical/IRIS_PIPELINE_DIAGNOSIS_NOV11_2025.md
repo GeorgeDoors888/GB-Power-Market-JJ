@@ -337,7 +337,7 @@ Dashboard will show fresh data when:
 
 **IRIS Pipeline Server:** 94.237.55.234  
 **BigQuery Project:** inner-cinema-476211-u9  
-**Dashboard:** https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+**Dashboard:** https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 
 **This Document:** IRIS_PIPELINE_DIAGNOSIS_NOV11_2025.md
 

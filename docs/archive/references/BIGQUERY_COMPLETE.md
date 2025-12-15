@@ -292,7 +292,7 @@ ORDER BY total_sites DESC;
 
 ### Google Sheets ✅
 Both datasets also available in:
-- **Spreadsheet ID:** 12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8
+- **Spreadsheet ID:** 1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA
 - **Tab:** "SVA Generators" (7,072 rows)
 - **Tab:** "CVA Plants" (1,581 rows)
 

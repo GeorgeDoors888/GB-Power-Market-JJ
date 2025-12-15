@@ -79,7 +79,7 @@ except Exception as e:
     sys.exit(1)
 
 # Try to access the GB Power Market dashboard
-SPREADSHEET_ID = '12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8'
+SPREADSHEET_ID = '1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA'
 print("📊 Testing Sheets access...")
 print(f"   Target: GB Power Market Dashboard")
 print(f"   ID: {SPREADSHEET_ID}")

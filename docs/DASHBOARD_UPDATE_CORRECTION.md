@@ -100,7 +100,7 @@ import pickle, gspread
 with open('token.pickle', 'rb') as f:
     creds = pickle.load(f)
 gc = gspread.authorize(creds)
-sheet = gc.open_by_key('12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8').worksheet('Dashboard')
+sheet = gc.open_by_key('1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA').worksheet('Dashboard')
 print(sheet.acell('B2').value)
 "
 

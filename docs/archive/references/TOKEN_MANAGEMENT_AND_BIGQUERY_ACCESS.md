@@ -117,7 +117,7 @@ creds = Credentials(token='oauth_token_from_google')
 
 # Open your sheet
 gc = gspread.authorize(creds)
-sheet = gc.open_by_key('12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8')
+sheet = gc.open_by_key('1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA')
 
 # Read data
 worksheet = sheet.worksheet('Analysis BI Enhanced')
@@ -530,7 +530,7 @@ Cell B1: Result: 68.4%
 
 **5-minute setup**:
 
-1. **Open your Sheet**: `12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8`
+1. **Open your Sheet**: `1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA`
 
 2. **Go to**: `Extensions → Apps Script`
 

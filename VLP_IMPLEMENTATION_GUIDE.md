@@ -89,7 +89,7 @@ Before starting implementation, collect:
    - Used in `site_metered_flows` and `capacity_market_site` tables
 
 4. **Spreadsheet ID**:
-   - Default: `12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8` (existing dashboard)
+   - Default: `1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA` (existing dashboard)
    - Or: Create new spreadsheet and use its ID
    - Update `SPREADSHEET_ID` in `vlp_revenue_engine.py`
 
@@ -333,7 +333,7 @@ PROJECT_ID = "inner-cinema-476211-u9"
 DATASET = "uk_energy_prod"
 VIEW = "v_vlp_site_revenue_stack"
 SERVICE_ACCOUNT_FILE = "inner-cinema-credentials.json"
-SPREADSHEET_ID = "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8"  # From todo #1
+SPREADSHEET_ID = "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA"  # From todo #1
 
 # Battery parameters (lines 34-39) - confirm with todo #1
 BATTERY_POWER_MW = 2.5      # Or 25.0 if using larger battery
@@ -503,7 +503,7 @@ for idx, row in df.iterrows():
 
 ### Todo #13: Prepare Dashboard Layout
 
-1. Open spreadsheet: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+1. Open spreadsheet: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 
 2. Navigate to **Dashboard** worksheet (create if doesn't exist)
 
@@ -757,7 +757,7 @@ Create comprehensive documentation after implementation:
 - BMU IDs: FBPGM002 (battery), XXCHP001 (CHP)
 - Battery spec: 2.5 MW / 5.0 MWh / 85% efficiency
 - Site ID: SITE_001
-- Spreadsheet: 12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8
+- Spreadsheet: 1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA
 
 ## Data Dependencies
 [Table schemas with actual column names and sample data]

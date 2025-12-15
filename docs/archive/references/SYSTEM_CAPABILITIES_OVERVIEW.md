@@ -55,7 +55,7 @@ Semantic search across Google Drive documents with AI-powered text extraction
 
 #### 🎯 **Business Intelligence Dashboard**
 
-**Live Dashboard**: [Google Sheets BI Dashboard](https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/)
+**Live Dashboard**: [Google Sheets BI Dashboard](https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/)
 
 **Features**:
 - 📈 10 interactive sheets with real-time data
@@ -408,7 +408,7 @@ ps aux | grep "client.py"
 tail -50 iris_client.log
 
 # View live dashboard
-open https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+open https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 
 # Check generator map
 open http://94.237.55.15/gb_power_comprehensive_map.html
@@ -534,7 +534,7 @@ python -m src.cli build-embeddings
 **Sample Queries**:
 ```
 "List my recent Google Drive files"
-"Open sheet 12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8"
+"Open sheet 1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA"
 "Read the Latest Generation data from my power dashboard"
 ```
 

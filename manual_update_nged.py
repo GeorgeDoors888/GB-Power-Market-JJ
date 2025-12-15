@@ -9,7 +9,7 @@ from google.oauth2.service_account import Credentials
 
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
 CREDS_FILE = 'inner-cinema-credentials.json'
-SHEET_ID = '12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8'
+SHEET_ID = '1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA'
 
 def manual_update_nged_wm():
     """Manually update with NGED West Midlands info for LLFC 520"""

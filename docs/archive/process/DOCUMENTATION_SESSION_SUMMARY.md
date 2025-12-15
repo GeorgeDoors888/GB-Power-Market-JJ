@@ -315,7 +315,7 @@ ssh root@94.237.55.234 'tail -f /opt/iris-pipeline/logs/iris_uploader.log'
 ### Monitor Dashboard
 ```bash
 # Open in browser
-open "https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8"
+open "https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA"
 ```
 
 ---

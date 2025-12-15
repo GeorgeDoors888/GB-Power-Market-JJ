@@ -195,7 +195,7 @@ Alerts:
 - BigQuery access (inner-cinema-476211-u9)
 - Google Sheets access (token.pickle)
 - Python 3.9+
-- Existing dashboard: 12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8
+- Existing dashboard: 1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA
 
 ### Step 1: Run Setup Script
 ```bash
@@ -240,7 +240,7 @@ STEP 2: Populating Analysis sheet with data...
 ```
 
 ### Step 2: Verify in Google Sheets
-1. Open: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+1. Open: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 2. Look for new "Analysis" sheet tab
 3. Verify data is populated
 4. Test dropdown (change from "1 Month" to "1 Week")

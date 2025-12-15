@@ -17,7 +17,7 @@ import pickle
 from gspread_formatting import *
 from collections import Counter
 
-SPREADSHEET_ID = '12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8'
+SPREADSHEET_ID = '1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA'
 
 def export_generators_to_sheets():
     """Export SVA generator data to Google Sheets"""

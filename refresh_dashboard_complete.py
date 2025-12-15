@@ -72,7 +72,7 @@ def main():
     
     if success_count == len(steps):
         print("\n✅ DASHBOARD FULLY REFRESHED")
-        print("🌐 View: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit")
+        print("🌐 View: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit")
         return 0
     else:
         print("\n⚠️  DASHBOARD PARTIALLY REFRESHED")

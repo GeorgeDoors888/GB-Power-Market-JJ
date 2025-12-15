@@ -16,17 +16,18 @@ SHEET_NAME = 'Live Dashboard v2'
 SA_FILE = 'inner-cinema-credentials.json'
 
 def fetch_wind_actual_forecast():
-    """Fetch today's wind actual data (forecast table not available in IRIS)"""
-    print("📊 Fetching wind actual data...")
+    """Fetch today's wind actual and forecast data"""
+    print("📊 Fetching wind actual and forecast data...")
     
     bq_creds = service_account.Credentials.from_service_account_file(
         SA_FILE, scopes=["https://www.googleapis.com/auth/bigquery"]
     )
     bq_client = bigquery.Client(project=PROJECT_ID, credentials=bq_creds, location="US")
     
-    # Get wind generation (actual) from fuelinst_iris - deduplicate by latest publishTime
+    # Get wind generation (actual) and forecast
+    # Wind forecast is hourly - replicate to both half-hourly SPs
     query = f"""
-    WITH ranked_data AS (
+    WITH actual_data AS (
         SELECT
             settlementDate,
             settlementPeriod,
@@ -35,20 +36,66 @@ def fetch_wind_actual_forecast():
         FROM `{PROJECT_ID}.{DATASET}.bmrs_fuelinst_iris`
         WHERE CAST(settlementDate AS DATE) = CURRENT_DATE()
           AND fuelType = 'WIND'
+    ),
+    actual_agg AS (
+        SELECT
+            settlementPeriod,
+            SUM(generation) / 1000 as actual_gw
+        FROM actual_data
+        WHERE rn = 1
+        GROUP BY settlementPeriod
+    ),
+    latest_forecast_date AS (
+        SELECT MAX(CAST(startTime AS DATE)) as max_date
+        FROM `{PROJECT_ID}.{DATASET}.bmrs_windfor_iris`
+    ),
+    forecast_hourly AS (
+        SELECT
+            EXTRACT(HOUR FROM startTime) as hour,
+            generation / 1000 as forecast_gw,
+            CAST(startTime AS DATE) as forecast_date,
+            publishTime,
+            ROW_NUMBER() OVER (
+                PARTITION BY EXTRACT(HOUR FROM startTime), CAST(startTime AS DATE)
+                ORDER BY publishTime DESC
+            ) as rn
+        FROM `{PROJECT_ID}.{DATASET}.bmrs_windfor_iris`
+        WHERE CAST(startTime AS DATE) IN (
+            CURRENT_DATE(),
+            (SELECT max_date FROM latest_forecast_date)
+        )
+    ),
+    forecast_expanded AS (
+        -- Expand hourly forecasts to two settlement periods
+        SELECT hour * 2 + 1 as settlementPeriod, forecast_gw, forecast_date FROM forecast_hourly WHERE rn = 1
+        UNION ALL
+        SELECT hour * 2 + 2 as settlementPeriod, forecast_gw, forecast_date FROM forecast_hourly WHERE rn = 1
     )
     SELECT
-        settlementPeriod,
-        SUM(generation) / 1000 as actual_gw,
-        0 as forecast_gw  -- Placeholder for forecast (not available)
-    FROM ranked_data
-    WHERE rn = 1
-    GROUP BY settlementPeriod
-    ORDER BY settlementPeriod
+        a.settlementPeriod,
+        COALESCE(a.actual_gw, 0) as actual_gw,
+        COALESCE(AVG(f.forecast_gw), 0) as forecast_gw,
+        MAX(f.forecast_date) as forecast_source_date
+    FROM actual_agg a
+    LEFT JOIN forecast_expanded f ON a.settlementPeriod = f.settlementPeriod
+    GROUP BY a.settlementPeriod, a.actual_gw
+    ORDER BY a.settlementPeriod
     """
     
     try:
         df = bq_client.query(query).to_dataframe()
         print(f"   ✅ Retrieved {len(df)} settlement periods")
+        
+        forecast_date = df['forecast_source_date'].dropna().iloc[0] if not df['forecast_source_date'].dropna().empty else None
+        forecast_avg = df['forecast_gw'].mean()
+        actual_avg = df['actual_gw'].mean()
+        
+        print(f"   📊 Actual: {actual_avg:.2f} GW avg")
+        if forecast_avg > 0:
+            print(f"   📊 Forecast: {forecast_avg:.2f} GW avg (from {forecast_date})")
+        else:
+            print(f"   ⚠️  Forecast: No data available (showing 0)")
+        
         return df
     except Exception as e:
         print(f"   ⚠️  Error: {e}")
@@ -74,9 +121,35 @@ def update_chart_data(df):
             round(float(row['forecast_gw']), 2)
         ])
     
-    # Write to A40:C88 (header + 48 periods)
-    sheet.update('A40:C88', data, value_input_option='USER_ENTERED')
+    # Write to A40:C88 (header + 48 periods) with RAW_INPUT to prevent formatting
+    sheet.update(values=data, range_name='A40:C88', value_input_option='RAW')
+    
+    # Apply number formatting (not currency) to columns B and C
+    spreadsheet.batch_update({
+        "requests": [{
+            "repeatCell": {
+                "range": {
+                    "sheetId": sheet.id,
+                    "startRowIndex": 40,  # Row 41 (0-indexed)
+                    "endRowIndex": 88,     # Row 88
+                    "startColumnIndex": 1, # Column B
+                    "endColumnIndex": 3    # Column C (inclusive)
+                },
+                "cell": {
+                    "userEnteredFormat": {
+                        "numberFormat": {
+                            "type": "NUMBER",
+                            "pattern": "0.00"
+                        }
+                    }
+                },
+                "fields": "userEnteredFormat.numberFormat"
+            }
+        }]
+    })
+    
     print(f"   ✅ Updated {len(data)-1} rows of data at A40:C88")
+    print(f"   ✅ Applied number formatting (not currency)")
     
     return sheet
 

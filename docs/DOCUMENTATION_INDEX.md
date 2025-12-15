@@ -217,7 +217,7 @@ Comprehensive UK wind generation mapping project completed. Imported 43 offshore
 
 **Dashboard Location**: Row 100, Column J
 
-**View Map**: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/ (scroll to row 100)
+**View Map**: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/ (scroll to row 100)
 
 ---
 
@@ -1514,7 +1514,7 @@ Guide for setting up Gemini AI analysis features (if implemented).
 
 | Resource | URL |
 |----------|-----|
-| Google Sheet Dashboard | https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/ |
+| Google Sheet Dashboard | https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/ |
 | GitHub Repository | https://github.com/GeorgeDoors888/jibber-jabber-24-august-2025-big-bop |
 | BigQuery Console | https://console.cloud.google.com/bigquery?project=inner-cinema-476211-u9 |
 | FastAPI Search Service | http://94.237.55.15:8080 |

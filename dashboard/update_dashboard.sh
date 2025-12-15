@@ -53,7 +53,7 @@ if [ $EXIT_CODE -eq 0 ]; then
     echo "✅ Dashboard updated successfully!"
     echo ""
     echo "🔗 View dashboard:"
-    echo "   https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit"
+    echo "   https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit"
     echo ""
     echo "📝 Check logs:"
     echo "   tail -f logs/dashboard_updater.log"

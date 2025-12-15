@@ -154,7 +154,7 @@ bq_creds = service_account.Credentials.from_service_account_file(
 - **GSP Regions**: Real-time (every 10 min)
 
 ### View Dashboard
-https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 
 ---
 

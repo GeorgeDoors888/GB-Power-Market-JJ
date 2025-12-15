@@ -22,8 +22,8 @@ You'll get a Google OAuth URL. Open it in your browser, authorize the app, and c
 
 ### Step 2: Get Script ID from Google Sheets
 
-#### Option A: From Existing Sheet (12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8)
-1. Open https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+#### Option A: From Existing Sheet (1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA)
+1. Open https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 2. Extensions → Apps Script
 3. If script exists, copy the Script ID from URL (the long string after `/d/` and before `/edit`)
 4. Create `.clasp.json`:
@@ -40,7 +40,7 @@ EOF
 If no script exists in the sheet:
 ```bash
 cd /home/george/GB-Power-Market-JJ/apps_script_deploy
-clasp create --type sheets --title "BESS Integration" --parentId "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8"
+clasp create --type sheets --title "BESS Integration" --parentId "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA"
 ```
 
 This creates `.clasp.json` automatically.
@@ -58,7 +58,7 @@ clasp push
 ```
 
 ### Step 5: Verify Deployment
-1. Open https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+1. Open https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 2. Refresh the page
 3. Look for "⚡ GB Energy Dashboard" menu in toolbar
 4. Go to BESS sheet, click menu → "Format Enhanced Section"
@@ -70,7 +70,7 @@ clasp push
 
 If clasp authentication fails, use manual deployment:
 
-1. Open https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+1. Open https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 2. Extensions → Apps Script
 3. Delete existing code (if any)
 4. Copy contents of `/home/george/GB-Power-Market-JJ/apps_script_enhanced/bess_integration.gs`
@@ -173,5 +173,5 @@ The Apps Script ONLY touches rows 58+. These sections remain unchanged:
 ---
 
 **Last Updated**: 2025-12-05  
-**Sheet ID**: 12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8  
+**Sheet ID**: 1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA  
 **Project**: GB-Power-Market-JJ

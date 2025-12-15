@@ -117,7 +117,7 @@ crontab -e
 ## 🌐 Dashboard Access
 
 **Primary Dashboard**:
-https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8
+https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA
 
 **Your Shared Dashboard**:
 https://docs.google.com/spreadsheets/d/1LmMq4OEE639Y-XXpOJ3xnvpAmHB6vUovh5g6gaU_vzc/edit?usp=sharing
@@ -200,4 +200,4 @@ If you need to modify the script:
 **🔧 Maintenance**: Easy update scripts provided
 
 **🌐 View Your Dashboard Now**:
-https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8
+https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA

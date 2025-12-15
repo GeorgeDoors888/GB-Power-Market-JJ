@@ -29,7 +29,7 @@ def read_a1(sheet_id: str):
     Read cell A1 from 'Live Dashboard' sheet
     
     Example:
-        curl "http://94.237.55.15:8080/sheets/readA1?sheet_id=12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8"
+        curl "http://94.237.55.15:8080/sheets/readA1?sheet_id=1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA"
     
     Args:
         sheet_id: Google Sheets ID (from URL)
@@ -65,7 +65,7 @@ def list_tabs(sheet_id: str):
     List all sheet tabs
     
     Example:
-        curl "http://94.237.55.15:8080/sheets/listTabs?sheet_id=12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8"
+        curl "http://94.237.55.15:8080/sheets/listTabs?sheet_id=1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA"
     
     Args:
         sheet_id: Google Sheets ID (from URL)
@@ -99,7 +99,7 @@ def read_range(sheet_id: str, range: str):
     Read any range from spreadsheet
     
     Example:
-        curl "http://94.237.55.15:8080/sheets/readRange?sheet_id=12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8&range=Live%20Dashboard!A1:B10"
+        curl "http://94.237.55.15:8080/sheets/readRange?sheet_id=1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA&range=Live%20Dashboard!A1:B10"
     
     Args:
         sheet_id: Google Sheets ID (from URL)
@@ -132,7 +132,7 @@ def read_range(sheet_id: str, range: str):
         raise HTTPException(status_code=500, detail=str(e))
 
 @app.get("/sheets/verifyAccess")
-def verify_access(sheet_id: str = "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8"):
+def verify_access(sheet_id: str = "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA"):
     """
     Comprehensive verification of service account access
     

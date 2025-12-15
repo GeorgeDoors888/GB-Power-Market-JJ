@@ -97,7 +97,7 @@ List the first 10 files in my Google Drive
 ### OLD Behavior (Hardcoded)
 ```json
 {
-  "spreadsheet_id": "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8"
+  "spreadsheet_id": "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA"
 }
 ```
 - ❌ Could only access GB Energy Dashboard

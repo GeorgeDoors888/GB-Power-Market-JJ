@@ -22,7 +22,7 @@ This guide helps you verify that your service account (`jibber-jabber-knowledge@
 
 ### Step 1: Open Apps Script Editor
 
-1. Open your Google Sheet: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+1. Open your Google Sheet: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 2. Click **Extensions → Apps Script**
 3. Copy the contents of `verify_sheets_access.gs` into the editor
 
@@ -128,19 +128,19 @@ curl http://94.237.55.15:8080/health
 
 **Test 2: Read A1**
 ```bash
-curl "http://94.237.55.15:8080/sheets/readA1?sheet_id=12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8"
+curl "http://94.237.55.15:8080/sheets/readA1?sheet_id=1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA"
 # Expected: {"value": "some text", "status": "ok"}
 ```
 
 **Test 3: List Tabs**
 ```bash
-curl "http://94.237.55.15:8080/sheets/listTabs?sheet_id=12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8"
+curl "http://94.237.55.15:8080/sheets/listTabs?sheet_id=1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA"
 # Expected: {"tabs": ["Live Dashboard", "Analysis", ...], "count": 5}
 ```
 
 **Test 4: Read Range**
 ```bash
-curl "http://94.237.55.15:8080/sheets/readRange?sheet_id=12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8&range=Live%20Dashboard!A1:B10"
+curl "http://94.237.55.15:8080/sheets/readRange?sheet_id=1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA&range=Live%20Dashboard!A1:B10"
 # Expected: {"values": [["row1col1", "row1col2"], ...], "rows": 10}
 ```
 
@@ -173,7 +173,7 @@ ssh root@94.237.55.15 "cat /secrets/sa.json | jq .client_email"
 - Add: `jibber-jabber-knowledge@appspot.gserviceaccount.com`
 
 **"404 Sheet not found"**
-- Verify sheet ID: `12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8`
+- Verify sheet ID: `1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA`
 - Check sheet name: `Live Dashboard` (case-sensitive)
 
 ---
@@ -204,7 +204,7 @@ Allows ChatGPT to read your Google Sheets directly in chat (like "list my Drive 
 4. **Test Connection**
    ```
    Ask ChatGPT: "List my recent Google Drive files"
-   Ask ChatGPT: "Open sheet 12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8"
+   Ask ChatGPT: "Open sheet 1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA"
    Ask ChatGPT: "Read cell A1 from Live Dashboard in sheet 12jY0..."
    ```
 
@@ -333,7 +333,7 @@ cat .gitignore | grep -E "(sa\.json|credentials)"
 
 **Solution:**
 ```
-1. Open Sheet: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+1. Open Sheet: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 2. Click Share (top right)
 3. Add: jibber-jabber-knowledge@appspot.gserviceaccount.com
 4. Role: Editor
@@ -388,6 +388,6 @@ ssh root@94.237.55.15 "cat /secrets/sa.json | jq .client_email"
 ---
 
 **Last Updated:** November 5, 2025  
-**Sheet ID:** 12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8  
+**Sheet ID:** 1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA  
 **Service Account:** jibber-jabber-knowledge@appspot.gserviceaccount.com  
 **FastAPI Server:** http://94.237.55.15:8080

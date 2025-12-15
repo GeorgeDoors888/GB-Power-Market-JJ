@@ -104,7 +104,7 @@ pip3 install google-cloud-bigquery gspread google-auth
 **To use service account only:**
 
 1. **Grant service account access to spreadsheet:**
-   - Open: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+   - Open: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
    - Click "Share"
    - Add: Your service account email (from `inner-cinema-credentials.json`)
    - Permissions: Editor

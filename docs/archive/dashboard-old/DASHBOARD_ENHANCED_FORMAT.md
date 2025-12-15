@@ -178,6 +178,6 @@ python3 create_sp_data_sheet.py
 ---
 
 **Status**: ✅ Enhanced format implemented and documented  
-**Dashboard URL**: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8  
+**Dashboard URL**: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA  
 **Update Script**: `update_dashboard_enhanced.py`  
 **Last Updated**: November 10, 2025

@@ -337,7 +337,7 @@ nohup python3 health_check_server.py >> health_server.log 2>&1 &
 
 ## Dashboard Layout Structure
 
-**Google Sheets Dashboard**: [12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8](https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/)
+**Google Sheets Dashboard**: [1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA](https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/)
 
 ### Row Layout (As of November 23, 2025)
 

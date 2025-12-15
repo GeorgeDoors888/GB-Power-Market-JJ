@@ -2,7 +2,7 @@
 
 **Date**: November 22, 2025  
 **Status**: ✅ PRODUCTION READY  
-**Dashboard URL**: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+**Dashboard URL**: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 
 ---
 
@@ -84,7 +84,7 @@ gross_margin_sp = r_bm + r_cm + r_ppa + r_avoided_import
   "BATTERY_POWER_MW": 2.5,
   "BATTERY_ENERGY_MWH": 5.0,
   "BATTERY_EFFICIENCY": 0.85,
-  "SPREADSHEET_ID": "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8",
+  "SPREADSHEET_ID": "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA",
   "SITE_ID": "VLP_SITE_001",
   "SITE_SHARE": 0.7,
   "FIXED_OPEX": 100000

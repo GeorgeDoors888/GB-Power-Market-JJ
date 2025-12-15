@@ -32,7 +32,7 @@ SERVICE_ACCOUNT_FILE = os.environ.get(
     'GOOGLE_APPLICATION_CREDENTIALS',
     '/home/george/.config/google-cloud/bigquery-credentials.json'
 )
-SPREADSHEET_ID = "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8"  # CORRECT sheet
+SPREADSHEET_ID = "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA"  # CORRECT sheet
 
 BATTERY_POWER_MW = 2.5
 BATTERY_ENERGY_MWH = 5.0

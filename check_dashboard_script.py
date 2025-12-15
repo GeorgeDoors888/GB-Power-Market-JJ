@@ -49,7 +49,7 @@ def main():
         print(f"   https://script.google.com/home/projects/{SCRIPT_ID}/edit")
         
         print(f"\n📊 Bound to Google Sheet:")
-        print(f"   https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit")
+        print(f"   https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit")
         
     except Exception as e:
         print(f"❌ Error: {e}")

@@ -9,7 +9,7 @@ from googleapiclient.discovery import build
 import pickle
 
 # --- Configuration ---
-SPREADSHEET_ID = "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8"
+SPREADSHEET_ID = "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA"
 SHEET_ID = 0  # Usually 0 for first sheet, or get from API
 
 print("📊 Simple Chart Creator")

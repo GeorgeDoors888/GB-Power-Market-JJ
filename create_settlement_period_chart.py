@@ -15,7 +15,7 @@ print(f"Date: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 print()
 
 # Configuration
-SPREADSHEET_ID = '12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8'
+SPREADSHEET_ID = '1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA'
 SHEET_NAME = 'Sheet1'
 DATA_RANGE = 'Sheet1!A18:H31'
 

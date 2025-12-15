@@ -18,7 +18,7 @@ SERVICE_ACCOUNT_FILE = os.environ.get(
     'GOOGLE_APPLICATION_CREDENTIALS',
     '/home/george/.config/google-cloud/bigquery-credentials.json'
 )
-SPREADSHEET_ID = "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8"  # CORRECT Main sheet
+SPREADSHEET_ID = "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA"  # CORRECT Main sheet
 RAILWAY_URL = "https://jibber-jabber-production.up.railway.app/query_bigquery"
 RAILWAY_TOKEN = "codex_fQI8xJXNPnhasYBOjd6h7mPHoF7HNI0Dh8rlgoJ2skA"
 

@@ -33,7 +33,7 @@ The **GB Power Market Dashboard** provides real-time insights into UK energy mar
 
 | Resource | URL |
 |----------|-----|
-| **Main Dashboard** | [Google Sheet](https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/) |
+| **Main Dashboard** | [Google Sheet](https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/) |
 | **Generator Map** | http://94.237.55.15/gb_power_comprehensive_map.html |
 | **ChatGPT Proxy** | https://gb-power-market-jj.vercel.app/api/proxy-v2 |
 | **GitHub Repo** | https://github.com/GeorgeDoors888/GB-Power-Market-JJ |
@@ -257,7 +257,7 @@ ORDER BY o.date DESC
 
 ### Access the Dashboard
 
-**Direct Link**: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+**Direct Link**: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 
 ### Share with Team
 
@@ -308,7 +308,7 @@ ssh root@94.237.55.234 'tail -50 /opt/iris-pipeline/logs/iris_uploader.log | gre
 **Command**:
 ```bash
 cd tools
-SHEET_ID="12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8" \
+SHEET_ID="1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA" \
 GOOGLE_APPLICATION_CREDENTIALS="../service_account.json" \
 python3 refresh_live_dashboard.py
 ```
@@ -330,7 +330,7 @@ python3 refresh_live_dashboard.py
 crontab -e
 
 # Add line:
-*/5 * * * * cd /Users/georgemajor/GB\ Power\ Market\ JJ/tools && SHEET_ID="12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8" GOOGLE_APPLICATION_CREDENTIALS="../service_account.json" /opt/homebrew/bin/python3 refresh_live_dashboard.py >> /tmp/dashboard_refresh.log 2>&1
+*/5 * * * * cd /Users/georgemajor/GB\ Power\ Market\ JJ/tools && SHEET_ID="1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA" GOOGLE_APPLICATION_CREDENTIALS="../service_account.json" /opt/homebrew/bin/python3 refresh_live_dashboard.py >> /tmp/dashboard_refresh.log 2>&1
 ```
 
 **Runs**: Every 5 minutes
@@ -367,7 +367,7 @@ crontab -e
 **Goal**: See which power plants are offline right now
 
 **Steps**:
-1. Open [Dashboard](https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/)
+1. Open [Dashboard](https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/)
 2. Go to **"Live_Raw_REMIT_Outages"** tab
 3. Filter by **eventStatus** = "Active"
 4. Sort by **unavailableCapacity** (descending)
@@ -381,7 +381,7 @@ crontab -e
 **Goal**: Identify which DNO serves a proposed battery location
 
 **Steps**:
-1. Open [Dashboard](https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/)
+1. Open [Dashboard](https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/)
 2. Go to **"BESS_VLP"** tab
 3. Cell B4 → Enter postcode (e.g., "RH19 4LX")
 4. Menu → **🔋 BESS VLP Tools** → **Lookup DNO from Postcode/Dropdown**
@@ -451,7 +451,7 @@ ssh root@94.237.55.234 'systemctl restart iris-client iris-uploader'
 ```bash
 # Manual refresh
 cd tools
-SHEET_ID="12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8" \
+SHEET_ID="1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA" \
 GOOGLE_APPLICATION_CREDENTIALS="../service_account.json" \
 python3 refresh_live_dashboard.py
 ```

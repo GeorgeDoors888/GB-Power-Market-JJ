@@ -21,7 +21,7 @@ Elexon BMRS API ───────────> BigQuery
                     Python Scripts (ETL)
                                ↓
               Google Sheets Dashboard ←── ChatGPT reads this!
-                     (Sheet ID: 12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8)
+                     (Sheet ID: 1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA)
                                ↓
                          ChatGPT Conversations
 ```
@@ -41,7 +41,7 @@ Elexon BMRS API ───────────> BigQuery
 ### ✅ Via Google Drive OAuth Integration
 
 ChatGPT can read:
-- **Google Sheets**: Your dashboard at `12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8`
+- **Google Sheets**: Your dashboard at `1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA`
 - **Google Docs**: Any documents you own
 - **Google Drive Files**: Files in your Drive
 
@@ -199,7 +199,7 @@ python3 ask_gemini_analysis.py
 
 ### In Google Sheets
 
-**Your Dashboard** (`12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8`):
+**Your Dashboard** (`1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA`):
 - Analysis BI Enhanced ← **ChatGPT reads this**
 - Fuel Mix ← **ChatGPT reads this**
 - Grid Frequency ← **ChatGPT reads this**
@@ -332,7 +332,7 @@ ChatGPT:
 ### Use Case 1: Daily Market Check
 ```bash
 # Morning routine
-1. Check Sheet: Open 12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8
+1. Check Sheet: Open 1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA
 2. Ask ChatGPT: "What's today's renewable %?"
 3. Ask ChatGPT: "Any frequency issues?"
 4. Ask ChatGPT: "What's the fuel mix trend?"
@@ -376,7 +376,7 @@ ChatGPT:
 
 ### What You Already Have:
 ✅ Google Drive OAuth connected to ChatGPT  
-✅ Google Sheets dashboard (`12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8`)  
+✅ Google Sheets dashboard (`1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA`)  
 ✅ BigQuery with 400M+ rows of power data  
 ✅ IRIS real-time pipeline operational (83.136.250.239)  
 ✅ Power map auto-refreshing (94.237.55.234)  
@@ -468,7 +468,7 @@ iris-health
 
 ### Your Google Sheet
 ```
-Open: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+Open: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 
 Tabs ChatGPT can read:
 - Analysis BI Enhanced (main dashboard)
@@ -508,7 +508,7 @@ Tabs ChatGPT can read:
 - `IRIS_DEPLOYMENT_SUCCESS.md` - Real-time data pipeline
 
 **🔗 Your Key URLs:**
-- Dashboard: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+- Dashboard: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 - Power Map: http://94.237.55.234/gb_power_complete_map.html
 - Search API: http://94.237.55.15:8080/search
 

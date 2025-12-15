@@ -293,7 +293,7 @@ sudo grep CRON /var/log/cron | tail -20
 ### Your URLs:
 - **Power Map**: http://94.237.55.234/gb_power_complete_map.html
 - **Companies CSV**: http://94.237.55.234/property_companies.csv
-- **Google Sheets**: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit
+- **Google Sheets**: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit
 
 ---
 

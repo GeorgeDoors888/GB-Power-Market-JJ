@@ -40,7 +40,7 @@ curl "https://jibber-jabber-production.up.railway.app/debug/env"
 
 **Test the Google Sheet Dashboard:**
 
-1. Open: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit
+1. Open: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit
 2. Go to: **"Live Dashboard"** tab
 3. Click: **⚡ Power Market → 🔄 Refresh Now (today)**
 4. Verify these columns now populate:
@@ -143,7 +143,7 @@ railway up
 
 ## 🔗 Important Links
 
-**Google Sheet:** https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit  
+**Google Sheet:** https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit  
 **Apps Script:** https://script.google.com/home/projects/19d9ooPFGTrzRERacvirLsL-LLWzAwGbUfc7WV-4SFhfF59pefOj8vvkA/edit  
 **Railway Dashboard:** https://railway.app/project/c0c79bb5-e2fc-4e0e-93db-39d6027301ca  
 **Railway Backend:** https://jibber-jabber-production.up.railway.app  

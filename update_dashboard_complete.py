@@ -25,7 +25,7 @@ creds = ServiceAccountCredentials.from_json_keyfile_name('inner-cinema-credentia
 gc = gspread.authorize(creds)
 bq_client = bigquery.Client(project=PROJECT_ID)
 
-ss = gc.open_by_key('12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8')
+ss = gc.open_by_key('1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA')
 dashboard = ss.worksheet('Dashboard')
 
 date_today = datetime.now().date()

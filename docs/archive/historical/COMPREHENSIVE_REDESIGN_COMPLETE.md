@@ -240,6 +240,6 @@ python3 create_sp_data_sheet.py
 ---
 
 **Status**: ✅ All requested features implemented + automatic flag fixing  
-**Dashboard URL**: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8  
+**Dashboard URL**: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA  
 **Last Updated**: November 10, 2025, 16:20 GMT  
 **Flags Status**: ✅ Complete + Auto-verified on every update (🇫🇷 🇮🇪 🇳🇱 🇧🇪 🇳🇴 🇩🇰)

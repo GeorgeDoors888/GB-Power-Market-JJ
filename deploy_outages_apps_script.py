@@ -19,7 +19,7 @@ SCOPES = [
     'https://www.googleapis.com/auth/drive'
 ]
 
-SPREADSHEET_ID = '12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8'
+SPREADSHEET_ID = '1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA'
 PYTHON_API_URL = 'https://jibber-jabber-production.up.railway.app'
 
 # Apps Script code to deploy

@@ -189,7 +189,7 @@ The script will now:
 ---
 
 **Status**: ✅ All user changes preserved and documented  
-**Dashboard URL**: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8  
+**Dashboard URL**: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA  
 **Main Update Script**: `update_dashboard_preserve_layout.py`  
 **Flags Status**: ✅ All complete (🇫🇷 🇮🇪 🇳🇱 🇧🇪 🇳🇴 🇩🇰)  
 **Last Updated**: November 10, 2025, 13:35

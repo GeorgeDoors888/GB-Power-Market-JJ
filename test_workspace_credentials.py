@@ -29,7 +29,7 @@ try:
     print()
     
     print("🎯 Testing with GB Energy Dashboard...")
-    spreadsheet = gc.open_by_key('12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8')
+    spreadsheet = gc.open_by_key('1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA')
     
     print(f"✅ SUCCESS! Can access: {spreadsheet.title}")
     print(f"   Worksheets: {len(spreadsheet.worksheets())}")

@@ -9,7 +9,7 @@ service = build('sheets', 'v4', credentials=creds)
 
 # Read wider range to find data
 result = service.spreadsheets().values().get(
-    spreadsheetId='12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8',
+    spreadsheetId='1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA',
     range='Sheet1!A1:H50'
 ).execute()
 

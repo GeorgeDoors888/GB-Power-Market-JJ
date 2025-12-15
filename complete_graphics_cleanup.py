@@ -15,7 +15,7 @@ scope = ['https://spreadsheets.google.com/feeds',
 creds = ServiceAccountCredentials.from_json_keyfile_name('inner-cinema-credentials.json', scope)
 gc = gspread.authorize(creds)
 
-ss = gc.open_by_key('12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8')
+ss = gc.open_by_key('1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA')
 dashboard = ss.worksheet('Dashboard')
 
 # Read rows 7-17 (fuel types section)

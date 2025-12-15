@@ -52,7 +52,7 @@
 - **Location**: `US` (NOT europe-west2!)
 
 ### **Dashboard**
-- **URL**: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8
+- **URL**: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA
 - **Update Script**: `update_dashboard_preserve_layout.py`
 - **Flags**: Auto-verified every update ✅
 

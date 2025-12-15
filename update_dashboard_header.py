@@ -8,7 +8,7 @@ from google.oauth2.service_account import Credentials
 from datetime import datetime
 
 # Configuration
-SHEET_ID = '12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8'
+SHEET_ID = '1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA'
 
 # Auth
 CREDS = Credentials.from_service_account_file('arbitrage-bq-key.json')

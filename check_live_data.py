@@ -5,7 +5,7 @@ from google.oauth2 import service_account
 from googleapiclient.discovery import build
 import os
 
-SHEET_ID = os.getenv('SHEET_ID', '12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8')
+SHEET_ID = os.getenv('SHEET_ID', '1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA')
 CREDS_FILE = os.getenv('GOOGLE_APPLICATION_CREDENTIALS', 'inner-cinema-credentials.json')
 
 # Connect to Google Sheets

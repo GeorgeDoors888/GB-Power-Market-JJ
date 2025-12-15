@@ -7,7 +7,7 @@
 ## 🔗 Your Live Dashboard
 
 **Google Sheet URL:**
-https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 
 **Sheet Name:** "Analysis BI Enhanced"
 
@@ -75,7 +75,7 @@ Tables:
 
 ### Option 1: View Online (Now)
 ```
-1. Open: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+1. Open: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 2. View "Analysis BI Enhanced" tab
 3. See your power market data
 ```
@@ -182,7 +182,7 @@ with open('generators.json', 'r') as f:
 
 # Connect to Google Sheets
 gc = gspread.authorize(creds)
-sheet = gc.open_by_key('12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8')
+sheet = gc.open_by_key('1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA')
 
 # Create new sheet for generator data
 gen_sheet = sheet.add_worksheet(title="SVA Generators", rows=7100, cols=10)
@@ -246,7 +246,7 @@ import json
 import gspread
 from google.oauth2.service_account import Credentials
 
-SPREADSHEET_ID = '12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8'
+SPREADSHEET_ID = '1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA'
 
 def export_generators_to_sheets():
     """Export SVA generator data to Google Sheets"""
@@ -371,7 +371,7 @@ import json
 import gspread
 from google.oauth2.service_account import Credentials
 
-SPREADSHEET_ID = '12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8'
+SPREADSHEET_ID = '1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA'
 
 def export_cva_to_sheets():
     """Export CVA plant data to Google Sheets"""
@@ -400,7 +400,7 @@ if __name__ == '__main__':
 
 ### View Your Data
 ```
-1. Open: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+1. Open: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 2. See "Analysis BI Enhanced" tab
 3. Your power market analysis is live!
 ```

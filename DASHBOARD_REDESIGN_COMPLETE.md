@@ -175,7 +175,7 @@ Row 26: ⏰ Timestamp
 
 ## 🔗 Resources
 
-**Spreadsheet**: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+**Spreadsheet**: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 
 **Files Created**:
 - `redesign_dashboard_complete.py` - Main implementation script

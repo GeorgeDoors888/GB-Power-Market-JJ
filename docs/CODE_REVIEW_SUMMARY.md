@@ -136,7 +136,7 @@ Interactive Google Sheets dashboard implementing the **Two-Pipeline Architecture
 
 #### Configuration
 ```python
-SPREADSHEET_ID = '12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8'
+SPREADSHEET_ID = '1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA'
 SHEET_NAME = 'Analysis BI Enhanced'
 PROJECT_ID = 'inner-cinema-476211-u9'
 DATASET = 'uk_energy_prod'

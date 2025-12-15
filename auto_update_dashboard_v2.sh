@@ -34,4 +34,13 @@ else
     echo "❌ Wind chart update failed" >> ~/dashboard_v2_updates.log
 fi
 
+# Run battery BM revenue update (every 5 minutes)
+/usr/bin/python3 update_battery_bm_revenue.py >> ~/dashboard_v2_updates.log 2>&1
+
+if [ $? -eq 0 ]; then
+    echo "✅ Battery revenue update successful" >> ~/dashboard_v2_updates.log
+else
+    echo "❌ Battery revenue update failed" >> ~/dashboard_v2_updates.log
+fi
+
 echo "" >> ~/dashboard_v2_updates.log

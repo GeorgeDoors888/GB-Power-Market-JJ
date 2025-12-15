@@ -2,7 +2,7 @@
 
 **Date**: November 10, 2025  
 **Status**: Production Ready  
-**Dashboard**: [Live Link](https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8)
+**Dashboard**: [Live Link](https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA)
 
 ---
 
@@ -243,7 +243,7 @@ Row 58+:   GSP Data (sorted by flow magnitude)
    ✅ Demand table: 18 importers/balanced
 
 ✅ UPDATE COMPLETE
-   🔗 https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8
+   🔗 https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA
 ================================================================================
 ```
 

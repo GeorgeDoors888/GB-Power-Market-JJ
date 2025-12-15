@@ -1,8 +1,10 @@
 # 🇬🇧 GB-Power-Market-JJ - Complete Energy Data Platform
 
-**Last Updated**: 12 December 2025  
+**Last Updated**: 15 December 2025  
 **Status**: Production - Active Development  
 **Purpose**: Comprehensive GB electricity market analysis, real-time monitoring, and forecasting system
+
+⚠️ **DATA DISCLAIMER**: All Balancing Mechanism (BM) revenue figures in this project are **ESTIMATES** derived from Elexon BMRS transparency data (BOALF, BOAV, EBOCF). These are **NOT settlement-grade cashflows**. Actual BOA energy payments are determined through BSC settlement and may vary ±10-20% from our estimates. For details, see [BOA_ENERGY_PAYMENTS_EXPLAINED.md](BOA_ENERGY_PAYMENTS_EXPLAINED.md).
 
 ---
 

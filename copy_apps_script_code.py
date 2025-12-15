@@ -5,7 +5,7 @@ Simpler approach while Apps Script API setup is completed
 """
 
 PYTHON_API_URL = 'https://jibber-jabber-production.up.railway.app'
-SPREADSHEET_ID = '12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8'
+SPREADSHEET_ID = '1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA'
 
 APPS_SCRIPT_CODE = f"""const PYTHON_API_URL = '{PYTHON_API_URL}';
 const SPREADSHEET_ID = '{SPREADSHEET_ID}';

@@ -50,7 +50,7 @@ cp dashboard/apps-script/ConstraintMap_Leaflet.html "$DEPLOY_DIR/ConstraintMap_L
 cat > "$DEPLOY_DIR/.clasp.json" << EOF
 {
   "scriptId": "",
-  "parentId": ["12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8"],
+  "parentId": ["1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA"],
   "rootDir": "."
 }
 EOF
@@ -81,7 +81,7 @@ cd "$DEPLOY_DIR"
 
 # Create new Apps Script project bound to spreadsheet
 echo "📤 Creating Apps Script project..."
-clasp create --type sheets --title "GB Constraint Map" --parentId "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8" || {
+clasp create --type sheets --title "GB Constraint Map" --parentId "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA" || {
     echo "⚠️  Project may already exist, trying to use existing..."
 }
 
@@ -117,7 +117,7 @@ echo "   1. Go to: Extensions → Apps Script"
 echo "   2. Run function: onOpen"
 echo "   3. Authorize when prompted"
 echo ""
-echo "🔗 Sheet: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8"
+echo "🔗 Sheet: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA"
 echo ""
 
 # Clean up

@@ -15,7 +15,7 @@ from datetime import datetime, date
 from flag_utils import verify_and_fix_flags
 
 # Configuration
-SHEET_ID = '12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8'
+SHEET_ID = '1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA'
 PROJECT_ID = 'inner-cinema-476211-u9'
 DATASET = 'uk_energy_prod'
 

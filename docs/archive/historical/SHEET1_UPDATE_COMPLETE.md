@@ -181,12 +181,12 @@ This will update the comprehensive BI analysis dashboard.
 ## 🔗 Quick Links
 
 **Spreadsheet:**
-https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit
+https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit
 
 **Direct Sheet Links:**
-- [Sheet1](https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit#gid=0)
-- [Latest Day Data](https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit#gid=565228616)
-- [Analysis BI Enhanced](https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit#gid=491210454)
+- [Sheet1](https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit#gid=0)
+- [Latest Day Data](https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit#gid=565228616)
+- [Analysis BI Enhanced](https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit#gid=491210454)
 
 **BigQuery:**
 https://console.cloud.google.com/bigquery?project=inner-cinema-476211-u9

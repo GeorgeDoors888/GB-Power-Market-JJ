@@ -6,7 +6,7 @@ from datetime import datetime
 scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
 creds = ServiceAccountCredentials.from_json_keyfile_name('inner-cinema-credentials.json', scope)
 gc = gspread.authorize(creds)
-sheet = gc.open_by_key('12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8')
+sheet = gc.open_by_key('1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA')
 summary = sheet.worksheet('Summary')
 
 all_data = summary.get_all_values()

@@ -4,7 +4,7 @@
 from googleapiclient.discovery import build
 from google.oauth2.service_account import Credentials
 
-SHEET_ID = "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8"
+SHEET_ID = "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA"
 SA_PATH = "inner-cinema-credentials.json"
 SHEETS_SCOPES = ["https://www.googleapis.com/auth/spreadsheets"]
 
@@ -92,7 +92,7 @@ try:
     print("   • Clean format for graphing")
     print("   • Ready for charts/analysis")
     print("\n🌐 View Dashboard:")
-    print("   https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8")
+    print("   https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA")
 
 except Exception as e:
     print(f"❌ Error: {e}")

@@ -12,7 +12,7 @@ Adds a **custom menu to your Google Sheet** that lets you refresh data with one 
 
 ### 1. Install Google Apps Script
 
-1. **Open your sheet**: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+1. **Open your sheet**: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 2. **Click**: Extensions > Apps Script
 3. **Delete** any existing code
 4. **Open** the file: `google_sheets_menu.gs` (in your project folder)

@@ -12,7 +12,7 @@ from googleapiclient.errors import HttpError
 
 # Configuration
 SCRIPT_ID = "1MOwnQtDEMiXCYuaeR5JA4Avz_M-xYzu_iQ20pRLXdsHMTwo4qJ0Cn6wx"
-SHEET_ID = "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8"
+SHEET_ID = "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA"
 SA_PATH = os.environ.get("GOOGLE_APPLICATION_CREDENTIALS", "inner-cinema-credentials.json")
 APPS_SCRIPT_FILE = "google_sheets_dashboard.gs"
 

@@ -13,7 +13,7 @@ import subprocess
 import sys
 
 # Configuration
-SPREADSHEET_ID = '12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8'
+SPREADSHEET_ID = '1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA'
 SHEET_NAME = 'Analysis BI Enhanced'
 TRIGGER_CELL = 'M5'
 STATUS_CELL = 'L5'

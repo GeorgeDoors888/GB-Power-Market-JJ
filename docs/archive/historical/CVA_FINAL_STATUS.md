@@ -46,12 +46,12 @@ Combined with existing **7,072 SVA generators**, the system now provides complet
 
 ### 2. Google Sheets ✅ COMPLETE
 - **Spreadsheet:** GB Energy Dashboard
-- **ID:** `12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8`
+- **ID:** `1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA`
 - **Tab:** "CVA Plants"
 - **Rows:** 1,581 data rows + 1 header
 - **Columns:** 12 fields (ID, Name, Lat, Lng, URL, etc.)
 - **Format:** Purple header (distinct from blue SVA header)
-- **Access:** https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+- **Access:** https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 
 **Dashboard Tabs:**
 ```
@@ -168,7 +168,7 @@ Total CVA Plants:              2,705 (100%)
 1. **View All Data**
    ```bash
    # Google Sheets (web browser)
-   open "https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/"
+   open "https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/"
    
    # Interactive Map (local server)
    python -m http.server 8000 &
@@ -295,7 +295,7 @@ All targets met or exceeded:
 ## 📞 Access Information
 
 ### Google Sheets Dashboard
-**URL:** https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+**URL:** https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 
 **Tabs:**
 1. Analysis BI Enhanced

@@ -13,7 +13,7 @@ The service account `jibber-jabber-knowledge@appspot.gserviceaccount.com` needs 
 ### Step 2: Grant Service Account Permission
 The service account also needs to be added as an editor to the Apps Script project:
 
-1. Open your sheet: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+1. Open your sheet: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 2. Go to **Extensions → Apps Script**
 3. Click **Project Settings** (gear icon ⚙️)
 4. Scroll to **"Google Cloud Project (GCP) Project number"**

@@ -173,7 +173,7 @@ python3 -c 'from google.cloud import bigquery; client = bigquery.Client(project=
 ## Deployment Architecture
 
 ### Live Services
-- **Google Sheets Dashboard**: [12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8](https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/)
+- **Google Sheets Dashboard**: [1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA](https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit)
 - **ChatGPT Proxy**: https://gb-power-market-jj.vercel.app/api/proxy-v2
 - **IRIS Pipeline**: AlmaLinux server 94.237.55.234
 - **Generator Map**: http://94.237.55.15/gb_power_comprehensive_map.html

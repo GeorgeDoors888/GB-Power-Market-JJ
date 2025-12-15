@@ -12,7 +12,7 @@ import time
 
 # Configuration
 CREDENTIALS_FILE = "inner-cinema-credentials.json"
-SPREADSHEET_ID = "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8"
+SPREADSHEET_ID = "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA"
 
 # Scopes needed
 SCOPES = [

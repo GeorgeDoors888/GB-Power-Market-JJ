@@ -6,7 +6,7 @@ Your 7,072 SVA generator locations have been successfully exported to your Googl
 
 ### View Your Data Now
 **Google Sheet URL:**
-https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 
 **New Tab:** "SVA Generators"
 
@@ -53,7 +53,7 @@ https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kP
 
 ### 1. View the Data
 ```
-1. Open: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+1. Open: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 2. Click "SVA Generators" tab at bottom
 3. See all 7,072 generators with locations
 ```
@@ -117,7 +117,7 @@ Method 2: Apps Script
   - Info windows with details
 
 **2. Google Sheets (Dashboard)**
-- **URL:** https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+- **URL:** https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 - **Purpose:** Data analysis & reporting
 - **Tabs:**
   - Analysis BI Enhanced (power market data)
@@ -296,6 +296,6 @@ In Google Sheets:
 ---
 
 **Your Google Sheet is live right now:**
-https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 
 **Go check out the "SVA Generators" tab!** 🎊📊🗺️

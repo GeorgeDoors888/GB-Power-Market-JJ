@@ -251,9 +251,9 @@ gcloud config set project inner-cinema-476211-u9
 
 **Credentials File**: `~/.config/gspread/service_account.json`
 
-**Sheet ID**: `12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8`
+**Sheet ID**: `1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA`
 
-**URL**: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+**URL**: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 
 ### IRIS (Azure Service Bus)
 
@@ -323,7 +323,7 @@ import pandas as pd
 # ============================================
 # CONFIGURATION
 # ============================================
-SHEET_ID = "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8"
+SHEET_ID = "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA"
 SHEET_NAME = "Analysis BI Enhanced"              # Or your sheet name
 PROJECT_ID = "inner-cinema-476211-u9"
 DATASET = "uk_energy_prod"
@@ -502,7 +502,7 @@ Before running any new script, verify:
 
 | Resource | Link |
 |----------|------|
-| Google Sheet Dashboard | https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/ |
+| Google Sheet Dashboard | https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/ |
 | GitHub Repository | https://github.com/GeorgeDoors888/jibber-jabber-24-august-2025-big-bop |
 | BigQuery Console (inner-cinema) | https://console.cloud.google.com/bigquery?project=inner-cinema-476211-u9 |
 | GCP IAM & Admin | https://console.cloud.google.com/iam-admin/iam?project=inner-cinema-476211-u9 |

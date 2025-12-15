@@ -9,7 +9,7 @@ print("🔧 SETUP: GOOGLE SHEETS REFRESH MENU")
 print("=" * 80)
 print()
 
-SPREADSHEET_ID = '12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8'
+SPREADSHEET_ID = '1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA'
 
 print("This will add a custom menu to your Google Sheet that allows you to")
 print("refresh data with a single click - no need to run Python manually!")

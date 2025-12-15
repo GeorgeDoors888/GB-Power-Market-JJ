@@ -12,7 +12,7 @@
 
 **Problem**:
 - Apps Script files reference **WRONG** sheet ID: `1LmMq4OEE639Y-XXpOJ3xnvpAmHB6vUovh5g6gaU_vzc`
-- Python scripts use **CORRECT** sheet ID: `12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8`
+- Python scripts use **CORRECT** sheet ID: `1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA`
 
 **Location**:
 ```
@@ -147,13 +147,13 @@ Update both Apps Script files to reference correct sheet:
  * 1. Open Google Sheets: https://docs.google.com/spreadsheets/d/1LmMq4OEE639Y-XXpOJ3xnvpAmHB6vUovh5g6gaU_vzc/
 
 // NEW (CORRECT):
- * 1. Open Google Sheets: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+ * 1. Open Google Sheets: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 ```
 
 ### Fix #2: Get Correct Script ID
 Need to get the Apps Script project ID from the **CORRECT** sheet:
 
-1. Open: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+1. Open: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 2. Extensions → Apps Script
 3. If script exists, copy Script ID from URL
 4. If no script, create new one and copy ID
@@ -180,7 +180,7 @@ Deploy corrected code to the **CORRECT** sheet:
 After fixes applied, verify:
 
 ### On Correct Sheet (12jY0d4j...):
-- [ ] Open https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+- [ ] Open https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 - [ ] Refresh page (Ctrl+R)
 - [ ] Menu "⚡ GB Energy Dashboard" appears
 - [ ] Go to BESS sheet
@@ -236,4 +236,4 @@ The Apps Script with the menu is deployed to the WRONG sheet. The correct sheet 
 
 **Sheet IDs Quick Reference**:
 - ❌ Wrong: `1LmMq4OEE639Y-XXpOJ3xnvpAmHB6vUovh5g6gaU_vzc` (V2)
-- ✅ Correct: `12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8` (Main)
+- ✅ Correct: `1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA` (Main)

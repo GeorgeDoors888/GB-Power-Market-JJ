@@ -210,7 +210,7 @@ grep CRON /var/log/system.log | tail -20
 grep "Timestamp:" logs/dashboard_updater.log | tail -1
 
 # Open dashboard and check cell A1 in "Live_Raw_Gen" sheet
-# https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+# https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 
 # Force browser refresh (Cmd+Shift+R on Mac)
 ```

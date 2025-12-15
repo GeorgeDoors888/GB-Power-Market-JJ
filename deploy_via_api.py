@@ -10,7 +10,7 @@ import json
 
 # Configuration
 CREDENTIALS_FILE = "inner-cinema-credentials.json"
-SPREADSHEET_ID = "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8"
+SPREADSHEET_ID = "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA"
 SCRIPT_ID = "1c9BJqrtruVFh_LT_IWrHOpJIy8c29_zH6v1Co8-KHU9R1o9g2wZZERH5"
 
 # Scopes needed

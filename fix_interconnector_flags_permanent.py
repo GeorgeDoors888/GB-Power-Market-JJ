@@ -17,7 +17,7 @@ import sys
 
 # Configuration
 SERVICE_ACCOUNT_FILE = 'inner-cinema-credentials.json'
-SHEET_ID = '12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8'
+SHEET_ID = '1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA'
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
 
 # Complete flag mappings (2-character Unicode flags)

@@ -107,9 +107,9 @@ The dashboard now writes **10 columns** to Google Sheets:
 
 ## Google Sheet
 
-**Sheet ID:** `12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8`
+**Sheet ID:** `1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA`
 
-**View at:** https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit
+**View at:** https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit
 
 ### Tabs Created:
 1. **Live Dashboard** - Main tidy table (10 columns)
@@ -140,7 +140,7 @@ make today
 1. Encode service account: `base64 -i inner-cinema-credentials.json | pbcopy`
 2. Add GitHub secrets:
    - `SA_JSON_B64` - Pasted base64 string
-   - `SHEET_ID` - `12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8`
+   - `SHEET_ID` - `1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA`
 3. Enable workflow: `.github/workflows/refresh-dashboard.yml`
 4. Dashboard refreshes every 5 minutes automatically
 

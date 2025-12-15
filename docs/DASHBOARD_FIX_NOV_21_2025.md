@@ -203,7 +203,7 @@ WHERE publishTime = current_sp.latest_time
 **All Sections**: ✅ Operational  
 **Data Quality**: ✅ Correct  
 
-**View Dashboard**: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+**View Dashboard**: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 
 ---
 

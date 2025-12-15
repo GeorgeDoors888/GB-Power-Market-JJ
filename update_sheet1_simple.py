@@ -10,7 +10,7 @@ print("📊 Updating Sheet1 with Analysis Navigation")
 print("=" * 60)
 
 # Configuration
-SPREADSHEET_ID = '12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8'
+SPREADSHEET_ID = '1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA'
 
 # Load credentials
 with open('token.pickle', 'rb') as f:

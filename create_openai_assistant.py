@@ -30,7 +30,7 @@ System Status (2025-11-08)
 - Railway backend: ✅ Working (BigQuery access verified: 155,405 rows)
 - Vercel proxy: ✅ Working (full chain tested)
 - Apps Script: ✅ Deployed (Enhanced Dashboard v2 with chart creation)
-- Google Sheet: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit
+- Google Sheet: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit
 
 Architecture
 - Apps Script → Vercel Proxy → Railway Backend → BigQuery (inner-cinema-476211-u9)

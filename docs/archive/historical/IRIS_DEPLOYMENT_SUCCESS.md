@@ -203,7 +203,7 @@ The GB Power Map automatically uses IRIS data via unified views. The map refresh
 **URL**: http://94.237.55.234/gb_power_complete_map.html
 
 ### Google Sheets Dashboard
-Your dashboard at `12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8` now includes:
+Your dashboard at `1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA` now includes:
 - ✅ Real-time IRIS data (via `*_iris` tables)
 - ✅ Historical data (via `bmrs_*` tables)
 - ✅ Unified views combining both sources

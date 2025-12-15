@@ -295,7 +295,7 @@ creds = Credentials.from_service_account_file(
     scopes=['https://www.googleapis.com/auth/spreadsheets']
 )
 client = gspread.authorize(creds)
-sheet = client.open_by_key('12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8')
+sheet = client.open_by_key('1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA')
 worksheet = sheet.worksheet('Live Dashboard')
 worksheet.update('A1', [[df.to_csv(index=False)]])
 ```

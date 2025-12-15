@@ -19,7 +19,7 @@ CREDS_FILE = "/home/george/.config/google-cloud/bigquery-credentials.json"
 DASHBOARDS = [
     {
         'name': 'Main Dashboard - Dashboard V3',
-        'spreadsheet_id': '12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8',
+        'spreadsheet_id': '1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA',
         'sheet_name': 'Dashboard V3',
         'cells': {
             'wholesale': 'C5',  # Wholesale Price cell

@@ -79,7 +79,7 @@ Results:
 **Status**: Ready for manual installation
 
 **Instructions**:
-1. Open dashboard: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+1. Open dashboard: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 2. Extensions → Apps Script
 3. Create `map_integration.gs` (copy from local file)
 4. Create `dynamicMapView.html` (copy from local file)
@@ -238,7 +238,7 @@ ssh root@94.237.55.234
 
 ### Google Sheets
 ```
-Dashboard (12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8)
+Dashboard (1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA)
 ├── Dashboard                       ← Main data sheet ✅
 ├── Charts                          ← Chart visualizations ✅
 ├── Intraday_Chart_Data            ← Chart data source ✅
@@ -301,7 +301,7 @@ Dashboard (12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8)
 ## 📞 Support
 
 **Repository**: https://github.com/GeorgeDoors888/GB-Power-Market-JJ  
-**Dashboard**: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/  
+**Dashboard**: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/  
 **Maintainer**: George Major (george@upowerenergy.uk)  
 
 **Quick Help**:

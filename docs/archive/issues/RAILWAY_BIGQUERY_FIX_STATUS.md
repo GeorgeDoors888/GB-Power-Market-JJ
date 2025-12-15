@@ -70,7 +70,7 @@ Apps Script dashboard missing data: SSP, SBP, BOALF, BOD prices not populating.
 2. ✅ **COMPLETED:** BigQuery access verified
 3. ✅ **COMPLETED:** Full chain tested (Vercel → Railway → BigQuery)
 4. 🎯 **USER ACTION NEEDED:** Test Apps Script dashboard
-   - Open: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit
+   - Open: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit
    - Go to "Live Dashboard" tab
    - Click: ⚡ Power Market → 🔄 Refresh Now (today)
    - Verify: SSP, SBP, BOALF, BOD columns populate

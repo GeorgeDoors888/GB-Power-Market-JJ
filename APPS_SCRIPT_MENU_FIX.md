@@ -9,7 +9,7 @@ The BESS enhanced section has been formatted via Python:
 - T60:U67: KPIs panel ✅
 - W60:Y67: Revenue stack ✅
 
-View: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+View: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 
 ---
 
@@ -26,7 +26,7 @@ View: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFA
 ### Option 1: Run from Apps Script Editor (RECOMMENDED)
 
 1. **Open your sheet**:
-   https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+   https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 
 2. **Go to Apps Script**:
    Extensions → Apps Script

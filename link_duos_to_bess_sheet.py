@@ -12,7 +12,7 @@ import pandas as pd
 # Configuration
 PROJECT_ID = "inner-cinema-476211-u9"
 DATASET = "gb_power"
-SHEET_ID = "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8"
+SHEET_ID = "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA"
 
 def get_duos_rates():
     """Get all DUoS rates from BigQuery"""

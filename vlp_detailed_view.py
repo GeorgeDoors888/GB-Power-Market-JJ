@@ -138,7 +138,7 @@ def main():
     
     print('\n' + '='*80)
     print('✅ Analysis complete. For full data, check Google Sheets:')
-    print('   https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/')
+    print('   https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/')
     print('   - Dashboard tab: Summary & charts')
     print('   - BESS_VLP tab: All 336 settlement periods with detailed calculations')
     print('='*80 + '\n')

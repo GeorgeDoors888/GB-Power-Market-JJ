@@ -38,7 +38,7 @@ from google.oauth2 import service_account
 import gspread
 
 # Runs every 5 minutes via cron
-# Sheet: 12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8
+# Sheet: 1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA
 # Credentials: inner-cinema-credentials.json
 ```
 
@@ -238,8 +238,8 @@ chmod +x deploy_google_integration.sh
 ## 📊 Google Sheets Dashboard
 
 ### **Main Dashboard**
-- **Sheet ID**: `12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8`
-- **URL**: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+- **Sheet ID**: `1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA`
+- **URL**: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 - **Auto-refresh**: Every 5 minutes via `realtime_dashboard_updater.py`
 
 ### **Worksheets**:

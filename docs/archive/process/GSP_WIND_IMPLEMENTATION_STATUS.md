@@ -99,7 +99,7 @@ Instead of creating a new sheet, add GSP data as a new tab in the existing Dashb
 # Change:
 spreadsheet = gc.open(SHEET_NAME)
 # To:
-spreadsheet = gc.open_by_key("12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8")
+spreadsheet = gc.open_by_key("1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA")
 # Then add new worksheet:
 try:
     gsp_sheet = spreadsheet.worksheet("GSP Analysis")
@@ -356,7 +356,7 @@ LIMIT 500;
 
 **Maintainer**: George Major (george@upowerenergy.uk)  
 **Repository**: https://github.com/GeorgeDoors888/GB-Power-Market-JJ  
-**Dashboard**: [GB DASHBOARD - Power](https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/)
+**Dashboard**: [GB DASHBOARD - Power](https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/)
 
 ---
 

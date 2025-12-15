@@ -173,7 +173,7 @@ The complete code is in `dashboard_outages_apps_script.js`. Key parts:
 ```javascript
 // Configuration - UPDATE THIS!
 const PYTHON_API_URL = 'https://your-railway-app.railway.app/outages/names';
-const SPREADSHEET_ID = '12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8';
+const SPREADSHEET_ID = '1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA';
 
 function updateDashboardOutages() {
   // 1. Call Python API (1 line)

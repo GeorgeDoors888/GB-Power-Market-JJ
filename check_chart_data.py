@@ -15,7 +15,7 @@ creds = ServiceAccountCredentials.from_json_keyfile_name('inner-cinema-credentia
 client = gspread.authorize(creds)
 
 # Open spreadsheet
-spreadsheet = client.open_by_key('12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8')
+spreadsheet = client.open_by_key('1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA')
 
 # List all sheets
 print('\n📋 Current sheets in your dashboard:')

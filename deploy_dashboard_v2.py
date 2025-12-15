@@ -110,7 +110,7 @@ def deploy_dashboard():
         
         print("\n📝 Next Steps:")
         print("1. Open your Google Sheet:")
-        print("   https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit")
+        print("   https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit")
         print("\n2. Reload the page to see the new 'Dashboard' menu")
         print("\n3. Click: Dashboard → Setup (rename+sync+chart+trigger)")
         print("   This will:")

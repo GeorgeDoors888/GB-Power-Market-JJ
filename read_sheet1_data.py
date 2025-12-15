@@ -8,7 +8,7 @@ with open('token.pickle', 'rb') as f:
 
 service = build('sheets', 'v4', credentials=creds)
 result = service.spreadsheets().values().get(
-    spreadsheetId='12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8',
+    spreadsheetId='1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA',
     range='Sheet1!A18:H31'
 ).execute()
 

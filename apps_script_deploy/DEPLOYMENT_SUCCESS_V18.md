@@ -11,7 +11,7 @@
 **Deployment ID**: `AKfycbxk77-vniRB9gEuJ9n7luN3Spes1Nvm-wTNspxhIqVas5AXhR7C0skud7Mp9FXvzmU`  
 **Web App URL**: https://script.google.com/macros/s/AKfycbxk77-vniRB9gEuJ9n7luN3Spes1Nvm-wTNspxhIqVas5AXhR7C0skud7Mp9FXvzmU/exec
 
-**Target Sheet**: ✅ GB Energy Dashboard (12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8)
+**Target Sheet**: ✅ GB Energy Dashboard (1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA)
 
 ---
 
@@ -39,7 +39,7 @@
 ## 🎯 Next Steps (Complete Setup)
 
 ### Step 1: Activate the Menu (5 seconds)
-1. Open: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+1. Open: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 2. **Refresh page**: Ctrl+R (or F5)
 3. **Look for menu**: "⚡ GB Energy Dashboard" should appear in toolbar
 4. If menu doesn't appear immediately, wait 5-10 seconds and refresh again
@@ -182,7 +182,7 @@ Final Result: Formatted enhanced revenue analysis
 **Status**: ✅ Ready to use  
 **Next**: Open sheet, refresh, click menu → Format BESS Enhanced  
 
-**Sheet URL**: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+**Sheet URL**: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 
 ---
 

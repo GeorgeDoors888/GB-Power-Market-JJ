@@ -104,7 +104,7 @@ rm -rf ~/GB\ Power\ Market\ JJ\ -\ GitHub
 Instead, focus on:
 
 1. **Test your Apps Script dashboard** 🎯 HIGH PRIORITY
-   - Open: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit
+   - Open: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit
    - Click: ⚡ Power Market → 🔄 Refresh Now (today)
    - Verify: SSP, SBP, BOALF, BOD columns populate
 

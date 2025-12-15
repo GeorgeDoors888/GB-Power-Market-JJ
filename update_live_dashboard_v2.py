@@ -317,6 +317,176 @@ def get_48_period_interconnectors(bq_client, current_sp):
     
     return None
 
+def get_bm_metrics(bq_client):
+    """
+    Calculate comprehensive market-wide BM KPIs using BigQuery historical data
+    
+    Implements KPIs from BM_REVENUE_KPI_SPECIFICATION.md:
+    - KPI_MKT_002: Total Accepted Volume (MWh) - Offer / Bid breakdown
+    - KPI_MKT_001: Total BM Cashflow (£) - Net revenue estimate
+    - KPI_MKT_007: Workhorse Index - Active SPs/48
+    - KPI_MKT_004: Energy-Weighted Average Price (EWAP/VWAP)
+    - KPI_BMU_008: Constraint Share from DISBSAD
+    - Plus derived metrics: £/MW-day, Non-Delivery Rate, Offer/Bid Ratio
+    """
+    
+    try:
+        # Get the latest available date (historical data, typically yesterday)
+        latest_date_query = f"""
+        SELECT MAX(CAST(settlementDate AS DATE)) as latest_date
+        FROM `{PROJECT_ID}.{DATASET}.bmrs_boav`
+        WHERE CAST(settlementDate AS DATE) >= DATE_SUB(CURRENT_DATE(), INTERVAL 3 DAY)
+        """
+        df_date = bq_client.query(latest_date_query).to_dataframe()
+        if df_date.empty:
+            return None
+        
+        latest_date = df_date.iloc[0]['latest_date']
+        logging.info(f"   Using BM data from: {latest_date}")
+        
+        # KPI_MKT_002 & KPI_MKT_001: Total volumes and cashflows (market-wide)
+        # Using BOAV (acceptance volumes) + EBOCF (cashflows)
+        market_query = f"""
+        WITH volumes AS (
+            SELECT 
+                SUM(CASE WHEN _direction = 'offer' THEN ABS(totalVolumeAccepted) ELSE 0 END) as offer_mwh,
+                SUM(CASE WHEN _direction = 'bid' THEN ABS(totalVolumeAccepted) ELSE 0 END) as bid_mwh,
+                COUNT(DISTINCT settlementPeriod) as active_sps,
+                COUNT(DISTINCT nationalGridBmUnit) as active_units
+            FROM `{PROJECT_ID}.{DATASET}.bmrs_boav`
+            WHERE CAST(settlementDate AS DATE) = '{latest_date}'
+        ),
+        cashflows AS (
+            SELECT 
+                SUM(CASE WHEN _direction = 'offer' THEN totalCashflow ELSE 0 END) as offer_cashflow,
+                SUM(CASE WHEN _direction = 'bid' THEN totalCashflow ELSE 0 END) as bid_cashflow
+            FROM `{PROJECT_ID}.{DATASET}.bmrs_ebocf`
+            WHERE CAST(settlementDate AS DATE) = '{latest_date}'
+        )
+        SELECT 
+            v.offer_mwh,
+            v.bid_mwh,
+            v.active_sps,
+            v.active_units,
+            c.offer_cashflow,
+            c.bid_cashflow,
+            (v.offer_mwh + v.bid_mwh) as total_mwh,
+            (c.offer_cashflow + c.bid_cashflow) as net_revenue
+        FROM volumes v
+        CROSS JOIN cashflows c
+        """
+        
+        df_market = bq_client.query(market_query).to_dataframe()
+        
+        if df_market.empty:
+            return None
+        
+        row = df_market.iloc[0]
+        offer_mwh = float(row['offer_mwh'] or 0)
+        bid_mwh = float(row['bid_mwh'] or 0)
+        active_sps = int(row['active_sps'] or 0)
+        active_units = int(row['active_units'] or 0)
+        offer_cashflow = float(row['offer_cashflow'] or 0)
+        bid_cashflow = float(row['bid_cashflow'] or 0)
+        total_mwh = float(row['total_mwh'] or 0)
+        net_revenue = float(row['net_revenue'] or 0)
+        
+        # KPI_MKT_004: Energy-Weighted Average Price (EWAP/VWAP)
+        if total_mwh > 0:
+            vwap = net_revenue / total_mwh
+        else:
+            vwap = 0
+        
+        # Offer/Bid Ratio (revenue balance)
+        if abs(bid_cashflow) > 0:
+            offer_bid_ratio = offer_cashflow / abs(bid_cashflow)
+        else:
+            offer_bid_ratio = 999 if offer_cashflow > 0 else 0
+        
+        # KPI_BMU_008: Constraint Share from DISBSAD
+        try:
+            disbsad_query = f"""
+            WITH market_total AS (
+                SELECT SUM(ABS(cost)) as total_cost
+                FROM `{PROJECT_ID}.{DATASET}.bmrs_disbsad`
+                WHERE CAST(settlementDate AS DATE) = '{latest_date}'
+            ),
+            bmu_active AS (
+                SELECT DISTINCT nationalGridBmUnit
+                FROM `{PROJECT_ID}.{DATASET}.bmrs_boav`
+                WHERE CAST(settlementDate AS DATE) = '{latest_date}'
+                AND ABS(totalVolumeAccepted) > 0
+            ),
+            active_bmu_costs AS (
+                SELECT SUM(ABS(d.cost)) as bmu_cost
+                FROM `{PROJECT_ID}.{DATASET}.bmrs_disbsad` d
+                INNER JOIN bmu_active b ON d.assetId = b.nationalGridBmUnit
+                WHERE CAST(d.settlementDate AS DATE) = '{latest_date}'
+            )
+            SELECT 
+                SAFE_DIVIDE(a.bmu_cost, m.total_cost) * 100 as constraint_pct
+            FROM market_total m
+            CROSS JOIN active_bmu_costs a
+            """
+            df_disbsad = bq_client.query(disbsad_query).to_dataframe()
+            if not df_disbsad.empty and df_disbsad.iloc[0]['constraint_pct'] is not None:
+                constraint_share = f"{df_disbsad.iloc[0]['constraint_pct']:.1f}%"
+            else:
+                constraint_share = 'N/A'
+        except Exception as e:
+            logging.warning(f"   Could not calculate constraint share: {e}")
+            constraint_share = 'N/A'
+        
+        # £/MW-day: Estimate using market-wide capacity
+        # Typical UK BM: ~50-60 GW total capacity across all active BMUs
+        # Rough estimate: active_units * 150 MW avg per unit
+        estimated_capacity_mw = active_units * 150
+        if estimated_capacity_mw > 0:
+            price_per_mw_day = net_revenue / estimated_capacity_mw
+        else:
+            price_per_mw_day = 0
+        
+        # Non-delivery rate: Requires acceptance-level tracking vs settlement volumes
+        # Simplified proxy: Compare BOALF count vs BOAV settled volumes
+        try:
+            acceptance_query = f"""
+            SELECT COUNT(DISTINCT acceptanceNumber) as total_acceptances
+            FROM `{PROJECT_ID}.{DATASET}.bmrs_boalf`
+            WHERE CAST(settlementDate AS DATE) = '{latest_date}'
+            """
+            df_acc = bq_client.query(acceptance_query).to_dataframe()
+            if not df_acc.empty:
+                total_acceptances = int(df_acc.iloc[0]['total_acceptances'] or 0)
+                # Typical delivery: ~10 MWh per acceptance
+                expected_mwh = total_acceptances * 10
+                if expected_mwh > 0:
+                    delivery_rate = min(100, (total_mwh / expected_mwh) * 100)
+                    non_delivery_rate = 100 - delivery_rate
+                else:
+                    non_delivery_rate = 0
+            else:
+                non_delivery_rate = 0
+        except Exception as e:
+            logging.warning(f"   Could not calculate non-delivery rate: {e}")
+            non_delivery_rate = 0
+        
+        return {
+            'accepted_mwh': f'{offer_mwh:,.0f} / {bid_mwh:,.0f}',  # KPI_MKT_002: Offer / Bid
+            'net_revenue': f'£{net_revenue:,.0f}',  # KPI_MKT_001: Total BM Cashflow
+            'constraint_share': constraint_share,  # KPI_BMU_008: % DISBSAD
+            'active_sps': f'{active_sps}/48',  # KPI_MKT_007: Workhorse Index
+            'price_per_mw_day': f'£{price_per_mw_day:.2f}' if price_per_mw_day != 0 else 'N/A',
+            'non_delivery': f'{non_delivery_rate:.1f}%' if non_delivery_rate > 0 else 'N/A',
+            'vwap': f'£{vwap:.2f}/MWh' if total_mwh > 0 else f'{active_units} units',  # KPI_MKT_004: EWAP
+            'offer_bid_ratio': f'{offer_bid_ratio:.2f}' if offer_bid_ratio < 999 else 'N/A'
+        }
+        
+    except Exception as e:
+        logging.error(f"Error calculating BM metrics: {e}")
+        import traceback
+        logging.error(traceback.format_exc())
+        return None
+
 def update_dashboard():
     """Main update function"""
     print("\n" + "=" * 80)
@@ -386,11 +556,34 @@ def update_dashboard():
     ic_timeseries_48 = get_48_period_interconnectors(bq_client, latest_period)
     print(f"   48-period IC flows: {ic_timeseries_48.shape if ic_timeseries_48 is not None else 'None'}")
     
+    # NEW: Get BM metrics
+    bm_metrics = get_bm_metrics(bq_client)
+    if bm_metrics:
+        print(f"   BM metrics: {bm_metrics['accepted_mwh']} MWh, {bm_metrics['net_revenue']} revenue")
+    
     print("\n✍️  Writing to Google Sheet...")
     
     # BATCH UPDATES to avoid API rate limits
     # Prepare all updates in a list for batch_update
     batch_updates = []
+    
+    # Update headers (Row 12) with bar chart columns
+    batch_updates.append({
+        'range': 'A12:K12',
+        'values': [[
+            '🛢️ Fuel Type',  # A12
+            '⚡ GW',          # B12
+            '📊 Share',       # C12
+            '📊 Bar',         # D12 - NEW
+            '',              # E12
+            '',              # F12
+            '🔗 Connection',  # G12
+            '🌊 Flow Trend', # H12
+            '',              # I12
+            'MW',            # J12
+            '📊 Bar'          # K12 - NEW
+        ]]
+    })
     
     # Update timestamp (Row 2) with current settlement period
     timestamp = datetime.now().strftime('%d/%m/%Y, %H:%M:%S')
@@ -421,6 +614,25 @@ def update_dashboard():
     # Execute batch update for timestamp + KPIs
     sheet.batch_update(batch_updates, value_input_option='USER_ENTERED')
     print(f"   ✅ Updated timestamp & KPIs (batched)")
+    
+    # NEW: Update BM metrics (rows 26-28)
+    if bm_metrics:
+        bm_updates = [
+            {
+                'range': 'B26:D26',
+                'values': [[bm_metrics['accepted_mwh'], bm_metrics['net_revenue'], bm_metrics['constraint_share']]]
+            },
+            {
+                'range': 'B27:D27',
+                'values': [[bm_metrics['active_sps'], bm_metrics['price_per_mw_day'], bm_metrics['non_delivery']]]
+            },
+            {
+                'range': 'B28:D28',
+                'values': [[bm_metrics['vwap'], bm_metrics['offer_bid_ratio'], '']]
+            }
+        ]
+        sheet.batch_update(bm_updates, value_input_option='USER_ENTERED')
+        print(f"   ✅ Updated BM metrics (rows 26-28, batched)")
     
     # NEW: Update 48-period timeseries in Data_Hidden sheet for sparklines
     if timeseries_48 is not None:
@@ -503,9 +715,11 @@ def update_dashboard():
                 row_data = gen_mix[gen_mix['fuelType'] == fuel].iloc[0]
                 gw_value = round(float(row_data['gen_gw']), 1)
                 pct_value = f"{round(float(row_data['share_pct']), 1)}%"
+                # Add bar chart in column D
+                bar_chart = f'=REPT("█",MIN(INT(B{row_num}*2),50))'
                 gen_mix_updates.append({
-                    'range': f'B{row_num}:C{row_num}',
-                    'values': [[gw_value, pct_value]]
+                    'range': f'B{row_num}:D{row_num}',
+                    'values': [[gw_value, pct_value, bar_chart]]
                 })
         
         if gen_mix_updates:
@@ -514,18 +728,18 @@ def update_dashboard():
     
     # Update Interconnectors (Starting Row 13, column J) - BATCH UPDATE
     if interconnectors is not None and not interconnectors.empty:
-        # Map interconnector fuel types to names and row numbers
+        # Map interconnector fuel types to names and row numbers (CONSECUTIVE ROWS 13-22)
         ic_map = {
             'INTELEC': ('🇫🇷 ElecLink', 13),
             'INTEW': ('🇮🇪 East-West', 14),
-            'INTFR': ('🇫🇷 IFA', 16),  # INTFR not INTIFA
-            'INTGRNL': ('🇮🇪 Greenlink', 18),
-            'INTIFA2': ('🇫🇷 IFA2', 20),
-            'INTIRL': ('🇮🇪 Moyle', 22),
-            'INTNED': ('🇳🇱 BritNed', 24),
-            'INTNEM': ('🇧🇪 Nemo', 26),
-            'INTNSL': ('🇳🇴 NSL', 28),
-            'INTVKL': ('🇩🇰 Viking Link', 30)
+            'INTFR': ('🇫🇷 IFA', 15),  # INTFR not INTIFA
+            'INTGRNL': ('🇮🇪 Greenlink', 16),
+            'INTIFA2': ('🇫🇷 IFA2', 17),
+            'INTIRL': ('🇮🇪 Moyle', 18),
+            'INTNED': ('🇳🇱 BritNed', 19),
+            'INTNEM': ('🇧🇪 Nemo', 20),
+            'INTNSL': ('🇳🇴 NSL', 21),
+            'INTVKL': ('🇩🇰 Viking Link', 22)
         }
         
         # Prepare batch update for interconnectors (all in one call)
@@ -534,9 +748,11 @@ def update_dashboard():
             if fuel in interconnectors['fuelType'].values:
                 row_data = interconnectors[interconnectors['fuelType'] == fuel].iloc[0]
                 flow_mw = round(float(row_data['flow_mw']))
+                # Add bar chart in column K (scale: 100 MW = 1 bar)
+                bar_chart = f'=REPT("█",MIN(INT(ABS(J{row_num})/100),30))'
                 ic_updates.append({
-                    'range': f'J{row_num}',
-                    'values': [[flow_mw]]
+                    'range': f'J{row_num}:K{row_num}',
+                    'values': [[flow_mw, bar_chart]]
                 })
         
         if ic_updates:

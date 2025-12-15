@@ -149,7 +149,7 @@ def main():
         print("  6. Wait 10-30 seconds")
         print("  7. Done! Auto-refresh enabled")
         print()
-        print(f"🔗 Sheet: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit")
+        print(f"🔗 Sheet: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit")
         print(f"🔗 Script: https://script.google.com/d/{EXISTING_SCRIPT_ID}/edit")
         print()
         

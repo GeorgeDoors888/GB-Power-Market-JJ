@@ -64,7 +64,7 @@ A complete UK energy market data platform that enables **ChatGPT to directly que
 
 ### 🌐 Live Services
 
-### Key Features- 📊 [Google Sheets Dashboard](https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/) - Analysis BI Enhanced
+### Key Features- 📊 [Google Sheets Dashboard](https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/) - Analysis BI Enhanced
 
 - 🔍 [Search API Health](http://94.237.55.15:8080/health) - FastAPI status check
 
@@ -168,7 +168,7 @@ curl "https://gb-power-market-jj.vercel.app/api/proxy-v2?path=/query_bigquery_ge
 
 ---3. **📊 View the live dashboard**:
 
-   https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+   https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 
 **Status:** ✅ LIVE  
 
@@ -316,7 +316,7 @@ tail -50 iris_processor.log
 
 ## 📊 Dashboard Access
 
-**Live Dashboard**: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+**Live Dashboard**: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 
 **Sections**:
 1. Generation Mix (Wind, Solar, CCGT, Nuclear, etc.)
@@ -462,7 +462,7 @@ tail -50 iris_processor.log
 - Analytics: [`STATISTICAL_ANALYSIS_GUIDE.md`](STATISTICAL_ANALYSIS_GUIDE.md)
 
 ### Quick Links
-- Dashboard: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+- Dashboard: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 - Repository: https://github.com/GeorgeDoors888/jibber-jabber-24-august-2025-big-bop
 - BigQuery Console: https://console.cloud.google.com/bigquery?project=inner-cinema-476211-u9
 

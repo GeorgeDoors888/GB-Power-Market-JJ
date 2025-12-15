@@ -24,5 +24,16 @@
     "**/.venv": true,
     "**/node_modules": true,
     "**/logs": true
-  }
+  },
+  
+  // Copilot workflow settings
+  "chat.todoListTool.enabled": true,
+  "chat.agentSessionsViewLocation": "view",
+  "chat.agent.thinking.collapsedTools": true,
+  
+  // Code quality
+  "editor.formatOnSave": true,
+  "files.eol": "\n",
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true
 }

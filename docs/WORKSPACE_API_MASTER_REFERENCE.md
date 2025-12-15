@@ -193,7 +193,7 @@ curl "https://jibber-jabber-production.up.railway.app/workspace/health" \
   "message": "Google Workspace authentication successful",
   "accessible_spreadsheets": [
     {
-      "id": "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8",
+      "id": "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA",
       "title": "GB Energy Dashboard"
     },
     ...
@@ -223,14 +223,14 @@ curl "https://jibber-jabber-production.up.railway.app/workspace/health" \
 curl -X POST "https://jibber-jabber-production.up.railway.app/workspace/get_spreadsheet" \
   -H "Authorization: Bearer codex_fQI8xJXNPnhasYBOjd6h7mPHoF7HNI0Dh8rlgoJ2skA" \
   -H "Content-Type: application/json" \
-  -d '{"spreadsheet_id": "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8"}'
+  -d '{"spreadsheet_id": "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA"}'
 
 # Response:
 {
   "success": true,
   "title": "GB Energy Dashboard",
-  "spreadsheet_id": "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8",
-  "url": "https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8",
+  "spreadsheet_id": "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA",
+  "url": "https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA",
   "total_worksheets": 29,
   "worksheets": [
     {"title": "Dashboard", "rows": 838, "cols": 27},
@@ -282,7 +282,7 @@ curl -X POST "https://jibber-jabber-production.up.railway.app/workspace/read_she
 {
   "success": true,
   "spreadsheet_title": "GB Energy Dashboard",
-  "spreadsheet_id": "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8",
+  "spreadsheet_id": "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA",
   "worksheet_name": "Dashboard",
   "rows": 44,
   "cols": 8,
@@ -361,7 +361,7 @@ curl "https://jibber-jabber-production.up.railway.app/workspace/list_drive_files
 {
   "files": [
     {
-      "id": "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8",
+      "id": "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA",
       "name": "GB Energy Dashboard",
       "mimeType": "application/vnd.google-apps.spreadsheet",
       "size": null,
@@ -660,7 +660,7 @@ curl "https://jibber-jabber-production.up.railway.app/workspace/health" \
 curl -X POST "https://jibber-jabber-production.up.railway.app/workspace/get_spreadsheet" \
   -H "Authorization: Bearer codex_fQI8xJXNPnhasYBOjd6h7mPHoF7HNI0Dh8rlgoJ2skA" \
   -H "Content-Type: application/json" \
-  -d '{"spreadsheet_id": "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8"}'
+  -d '{"spreadsheet_id": "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA"}'
 ```
 
 **Read Sheet:**
@@ -1032,7 +1032,7 @@ curl "https://jibber-jabber-production.up.railway.app/workspace/health" \
 curl -X POST "https://jibber-jabber-production.up.railway.app/workspace/get_spreadsheet" \
   -H "Authorization: Bearer codex_fQI8xJXNPnhasYBOjd6h7mPHoF7HNI0Dh8rlgoJ2skA" \
   -H "Content-Type: application/json" \
-  -d '{"spreadsheet_id": "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8"}'
+  -d '{"spreadsheet_id": "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA"}'
 ```
 
 **Weekly Checks:**
@@ -1140,7 +1140,7 @@ curl "https://jibber-jabber-production.up.railway.app/workspace/health" \
 curl -X POST "https://jibber-jabber-production.up.railway.app/workspace/get_spreadsheet" \
   -H "Authorization: Bearer codex_fQI8xJXNPnhasYBOjd6h7mPHoF7HNI0Dh8rlgoJ2skA" \
   -H "Content-Type: application/json" \
-  -d '{"spreadsheet_id": "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8"}'
+  -d '{"spreadsheet_id": "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA"}'
 
 # Read sheet
 curl -X POST "https://jibber-jabber-production.up.railway.app/workspace/read_sheet" \

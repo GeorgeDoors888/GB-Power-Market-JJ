@@ -1,7 +1,7 @@
 # Dashboard Status and Troubleshooting Guide
 
 **Last Updated**: November 20, 2025  
-**Dashboard**: [GB Energy Dashboard](https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit)
+**Dashboard**: [GB Energy Dashboard](https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit)
 
 ---
 
@@ -315,7 +315,7 @@ for row in result:
 from googleapiclient.discovery import build
 from google.oauth2 import service_account
 
-SHEET_ID = '12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8'
+SHEET_ID = '1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA'
 creds = service_account.Credentials.from_service_account_file('inner-cinema-credentials.json')
 sheets = build('sheets', 'v4', credentials=creds).spreadsheets()
 

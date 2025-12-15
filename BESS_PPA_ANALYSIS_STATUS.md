@@ -60,7 +60,7 @@ Must charge BELOW these prices to profit:
 ## 🗂️ Google Sheets Structure
 
 ### BESS Sheet Layout
-**URL**: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit#gid=1291323643
+**URL**: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit#gid=1291323643
 
 #### Rows 1-14: DNO & Site Configuration
 - **A6**: Postcode entry
@@ -179,7 +179,7 @@ LOCATION = "US"  # NOT europe-west2!
 ### Google Sheets API
 ```python
 CREDENTIALS_FILE = 'inner-cinema-credentials.json'
-MAIN_DASHBOARD_ID = '12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8'
+MAIN_DASHBOARD_ID = '1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA'
 BESS_SHEET = 'BESS'
 ```
 
@@ -295,8 +295,8 @@ BESS_SHEET = 'BESS'
 - **DNO Lookup**: `dno_lookup_python.py`
 
 ### Google Sheets
-- **Main Dashboard**: [12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8](https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/)
-- **BESS Sheet**: [Direct link with gid](https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit#gid=1291323643)
+- **Main Dashboard**: [1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA](https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/)
+- **BESS Sheet**: [Direct link with gid](https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit#gid=1291323643)
 
 ### BigQuery Tables
 - **Historical**: `inner-cinema-476211-u9.uk_energy_prod.bmrs_costs`

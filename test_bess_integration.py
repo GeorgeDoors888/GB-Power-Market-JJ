@@ -9,7 +9,7 @@ import sys
 
 # Try to get credentials from environment or use default
 CREDS_FILE = os.environ.get('GOOGLE_APPLICATION_CREDENTIALS', 'inner-cinema-credentials.json')
-SHEET_ID = '12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8'  # Main dashboard with existing BESS data
+SHEET_ID = '1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA'  # Main dashboard with existing BESS data
 
 print("=" * 80)
 print("BESS INTEGRATION TEST")

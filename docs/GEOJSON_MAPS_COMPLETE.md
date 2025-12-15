@@ -42,7 +42,7 @@
 - **Row 68 (J68)**: ⚡ DNO Boundaries (NEW - colored regions)
 - **Row 84 (J84)**: 🗺️ Combined Infrastructure (NEW - boundaries + generators)
 
-**View Live**: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8
+**View Live**: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA
 
 ---
 

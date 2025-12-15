@@ -10,7 +10,7 @@ from pathlib import Path
 import json
 
 SA_FILE = 'inner-cinema-credentials.json'
-SPREADSHEET_ID = '12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8'
+SPREADSHEET_ID = '1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA'
 
 # Dark theme colors (RGB 0-1 scale)
 COLORS = {

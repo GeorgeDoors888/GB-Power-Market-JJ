@@ -189,7 +189,7 @@ async def gb_energy_dashboard(authorization: str = Header(None)):
     
     try:
         gc = get_sheets_client()
-        spreadsheet = gc.open_by_key('12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8')
+        spreadsheet = gc.open_by_key('1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA')
         
         worksheets = []
         for ws in spreadsheet.worksheets():
@@ -225,7 +225,7 @@ async def read_sheet(
     if token != "codex_fQI8xJXNPnhasYBOjd6h7mPHoF7HNI0Dh8rlgoJ2skA":
         raise HTTPException(status_code=401, detail="Invalid token")
     
-    spreadsheet_id = request.get('spreadsheet_id', '12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8')
+    spreadsheet_id = request.get('spreadsheet_id', '1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA')
     worksheet_name = request.get('worksheet_name', 'Dashboard')
     
     try:

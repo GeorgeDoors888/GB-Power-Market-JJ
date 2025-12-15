@@ -9,7 +9,7 @@ from google.oauth2.service_account import Credentials
 from googleapiclient.discovery import build
 import sys
 
-SHEET_ID = "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8"
+SHEET_ID = "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA"
 
 def install_apps_script_automated():
     """Fully automated Apps Script installation"""

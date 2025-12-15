@@ -21,7 +21,7 @@
 
 1. **Open your Google Sheet:**
    ```
-   https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+   https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
    ```
 
 2. **Go to Extensions → Apps Script**
@@ -164,7 +164,7 @@ TEST 3: Write to Audit_Log
 ```json
 {
   "overall_status": "✅ ALL TESTS PASSED",
-  "sheet_id": "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8",
+  "sheet_id": "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA",
   "tests": {
     "list_tabs": {
       "status": "✅ PASS",
@@ -263,5 +263,5 @@ scp path/to/sa.json root@94.237.55.15:/secrets/sa.json
 
 **Last Updated:** November 5, 2025  
 **Commit:** 83692c8  
-**Sheet ID:** 12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8  
+**Sheet ID:** 1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA  
 **Service Account:** jibber-jabber-knowledge@appspot.gserviceaccount.com

@@ -53,7 +53,7 @@ New **"Dashboard"** menu with 5 options:
 ### First-Time Setup (Required)
 
 1. **Open your Google Sheet:**
-   https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit
+   https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit
 
 2. **Reload the page** (Cmd+R or Ctrl+R)
    - You should see a new **"Dashboard"** menu appear in the top menu bar
@@ -322,7 +322,7 @@ Market Overview chart updates
 ## 🔗 Important Links
 
 **Google Sheet Dashboard:**
-https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit
+https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit
 
 **Apps Script Editor:**
 https://script.google.com/home/projects/19d9ooPFGTrzRERacvirLsL-LLWzAwGbUfc7WV-4SFhfF59pefOj8vvkA/edit

@@ -124,7 +124,7 @@ ngrok http 5001
 
 **Must have Editor access to:**
 - New Dashboard: `1LmMq4OEE639Y-XXpOJ3xnvpAmHB6vUovh5g6gaU_vzc`
-- Old Dashboard: `12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8`
+- Old Dashboard: `1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA`
 - BESS Sheet: `1MOwnQtDEMiXCYuaeR5JA4Avz_M-xYzu_iQ20pRLXdsHMTwo4qJ0Cn6wx`
 
 ### Environment Variables
@@ -257,7 +257,7 @@ curl -X POST http://localhost:5001/refresh-dashboard
 
 ### Original Dashboard Sections Preserved
 
-**From:** `12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8`
+**From:** `1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA`
 
 - Rows 1-10: KPIs (demand, generation, interconnectors, prices)
 - Rows 116-126: Transmission constraints

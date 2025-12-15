@@ -40,7 +40,7 @@ query = "SELECT * FROM `inner-cinema-476211-u9.uk_energy_prod.bmrs_fuelinst`"
 **Purpose:** Google Sheets automation and service account
 
 ### Used For:
-- ✅ Google Sheets access (12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8)
+- ✅ Google Sheets access (1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA)
 - ✅ Apps Script API
 - ✅ Service account: `jibber-jabber-knowledge@appspot.gserviceaccount.com`
 - ✅ ChatGPT Drive connector authentication

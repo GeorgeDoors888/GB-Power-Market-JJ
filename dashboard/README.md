@@ -1,7 +1,7 @@
 # 📊 Dashboard Git Management & Improvement Guide
 
 **Project:** GB Power Market JJ  
-**Dashboard:** https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit  
+**Dashboard:** https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit  
 **Date:** November 9, 2025  
 **Status:** ✅ Operational with Improvements Available
 
@@ -317,7 +317,7 @@ dashboard/
    python3 deploy_dashboard_charts.py
    ```
    Or manually:
-   - Open: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+   - Open: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
    - Extensions → Apps Script
    - Copy `dashboard_charts_v2.gs` → Save
    - Run `createDashboardCharts()`
@@ -367,7 +367,7 @@ dashboard/
 ### Quick Dashboard Checks
 ```bash
 # Is dashboard updating?
-curl -s "https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/export?format=csv&gid=0" | head
+curl -s "https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/export?format=csv&gid=0" | head
 
 # Check BigQuery data freshness
 python3 -c "from google.cloud import bigquery; client = bigquery.Client(project='inner-cinema-476211-u9'); print(client.query('SELECT MAX(settlementDate) FROM uk_energy_prod.bmrs_fuelinst_iris').to_dataframe())"
@@ -392,7 +392,7 @@ ps aux | grep dashboard_updater
 ## 📞 Support
 
 **Repository:** https://github.com/GeorgeDoors888/GB-Power-Market-JJ  
-**Dashboard:** https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/  
+**Dashboard:** https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/  
 **Maintainer:** George Major (george@upowerenergy.uk)
 
 ---

@@ -2,7 +2,7 @@
 
 ## 🚀 Installation (30 seconds)
 
-1. Open sheet: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit
+1. Open sheet: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit
 2. **Extensions** → **Apps Script**
 3. Copy/paste entire `google_sheets_dashboard.gs` file
 4. **Save** (Cmd+S)

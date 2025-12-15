@@ -79,7 +79,7 @@ Four auto-updating charts:
 
 1. **Open Your Spreadsheet**:
    ```
-   https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+   https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
    ```
 
 2. **Open Apps Script Editor**:
@@ -114,7 +114,7 @@ import pickle, gspread
 with open('token.pickle', 'rb') as f:
     creds = pickle.load(f)
 gc = gspread.authorize(creds)
-ss = gc.open_by_key('12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8')
+ss = gc.open_by_key('1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA')
 dashboard = ss.worksheet('Dashboard')
 print('Dashboard last update:', dashboard.acell('A2').value)
 print('Total rows:', dashboard.row_count)
@@ -171,7 +171,7 @@ crontab -l | grep dashboard
 
 ### View Dashboard
 ```
-🔗 https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit#gid=0
+🔗 https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit#gid=0
 ```
 
 ### Manual Data Refresh
@@ -260,7 +260,7 @@ import pickle, gspread
 with open('token.pickle', 'rb') as f:
     creds = pickle.load(f)
 gc = gspread.authorize(creds)
-ss = gc.open_by_key('12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8')
+ss = gc.open_by_key('1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA')
 dashboard = ss.worksheet('Dashboard')
 all_values = dashboard.get_all_values()
 for i, row in enumerate(all_values[:50]):
@@ -383,7 +383,7 @@ import pickle, gspread
 with open('token.pickle', 'rb') as f:
     creds = pickle.load(f)
 gc = gspread.authorize(creds)
-ss = gc.open_by_key('12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8')
+ss = gc.open_by_key('1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA')
 dashboard = ss.worksheet('Dashboard')
 print(dashboard.acell('A1').value)
 print(dashboard.acell('A2').value)

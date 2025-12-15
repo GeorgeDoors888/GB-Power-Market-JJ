@@ -341,7 +341,7 @@ echo "3. Testing get_spreadsheet..."
 curl -s -X POST "https://jibber-jabber-production.up.railway.app/workspace/get_spreadsheet" \
   -H "Authorization: Bearer codex_fQI8xJXNPnhasYBOjd6h7mPHoF7HNI0Dh8rlgoJ2skA" \
   -H "Content-Type: application/json" \
-  -d '{"spreadsheet_id": "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8"}' | jq .
+  -d '{"spreadsheet_id": "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA"}' | jq .
 
 echo "✅ Health check complete"
 ```
@@ -359,7 +359,7 @@ echo "✅ Health check complete"
    time curl -X POST "https://jibber-jabber-production.up.railway.app/workspace/get_spreadsheet" \
      -H "Authorization: Bearer codex_fQI8xJXNPnhasYBOjd6h7mPHoF7HNI0Dh8rlgoJ2skA" \
      -H "Content-Type: application/json" \
-     -d '{"spreadsheet_id": "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8"}'
+     -d '{"spreadsheet_id": "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA"}'
    ```
 
 3. **Verify Railway Status**

@@ -36,7 +36,7 @@ Open your Google Sheet and you'll see: **"⚡ GB Energy Dashboard"** menu with:
 ## 📋 Testing Checklist
 
 1. **Open Google Sheets**:
-   https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+   https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 
 2. **Check Menu**:
    - [ ] Refresh page (Ctrl+R)
@@ -131,6 +131,6 @@ clasp push
 
 ---
 
-**Sheet**: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/  
+**Sheet**: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/  
 **Deployment**: 5 Dec 2025, 02:28  
 **Status**: 🎉 Ready to use!

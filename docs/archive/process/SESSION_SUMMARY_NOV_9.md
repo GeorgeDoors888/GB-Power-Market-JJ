@@ -28,7 +28,7 @@ Files: 5 changed, 701 insertions(+)
 ## 🎯 Current Status: OPERATIONAL ✅
 
 **Dashboard URL:**  
-https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 
 **Update Frequency:** Every 5 minutes  
 **Cron Status:** ✅ Running with correct Python  

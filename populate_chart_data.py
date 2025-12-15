@@ -28,7 +28,7 @@ gc = gspread.authorize(creds)
 bq_client = bigquery.Client(project=PROJECT_ID)
 
 # Open spreadsheet
-spreadsheet = gc.open_by_key('12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8')
+spreadsheet = gc.open_by_key('1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA')
 
 # Check Chart Data sheet
 try:

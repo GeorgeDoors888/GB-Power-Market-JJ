@@ -281,7 +281,7 @@ Total cols: 27
 
 1. **Open Spreadsheet**:
    ```
-   https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+   https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
    ```
 
 2. **Open Apps Script Editor**:

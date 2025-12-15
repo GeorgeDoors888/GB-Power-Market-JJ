@@ -57,7 +57,7 @@ try:
     SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
     creds = Credentials.from_service_account_file('inner-cinema-credentials.json', scopes=SCOPES)
     gc = gspread.authorize(creds)
-    sh = gc.open_by_key('12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8')
+    sh = gc.open_by_key('1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA')
     dashboard = sh.worksheet('Dashboard')
     
     row2 = dashboard.get('A2')

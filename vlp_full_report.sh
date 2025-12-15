@@ -28,7 +28,7 @@ echo "║                           NEXT STEPS                                  
 echo "╚════════════════════════════════════════════════════════════════════════════╝"
 echo ""
 echo "1️⃣  VIEW DASHBOARD"
-echo "   Open: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/"
+echo "   Open: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/"
 echo "   - Dashboard tab: Revenue breakdown + 19 charts"
 echo "   - BESS_VLP tab: 336 rows of detailed time series data"
 echo ""

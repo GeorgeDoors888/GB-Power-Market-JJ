@@ -20,7 +20,7 @@ print()
 
 # Configuration
 PROJECT_ID = 'inner-cinema-476211-u9'
-SPREADSHEET_ID = '12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8'
+SPREADSHEET_ID = '1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA'
 SHEET1_NAME = 'Sheet1'
 DATA_SHEET_NAME = 'Latest Day Data'
 

@@ -49,7 +49,7 @@ Follow the OAuth flow in your browser and paste the full redirect URL back.
 ### Step 2: Get Script ID
 
 #### Option A: From Existing Apps Script
-1. Open https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+1. Open https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 2. Extensions → Apps Script
 3. If a script exists, copy the Script ID from the URL (after `/d/` and before `/edit`)
 4. Create `.clasp.json`:
@@ -67,7 +67,7 @@ EOF
 If no script exists:
 ```bash
 cd /home/george/GB-Power-Market-JJ/apps_script_deploy
-clasp create --type sheets --title "BESS Integration" --parentId "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8"
+clasp create --type sheets --title "BESS Integration" --parentId "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA"
 ```
 
 ### Step 3: Deploy
@@ -83,7 +83,7 @@ clasp push
 ```
 
 ### Step 4: Verify in Google Sheets
-1. Open https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+1. Open https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 2. Refresh page (Ctrl+R)
 3. Look for "⚡ GB Energy Dashboard" menu
 4. Go to BESS sheet → Menu → "Format Enhanced Section"
@@ -107,7 +107,7 @@ crontab -e
 
 If clasp authentication fails, deploy manually:
 
-1. Open https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+1. Open https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 2. Extensions → Apps Script
 3. Delete existing code (if any)
 4. Copy contents of `/home/george/GB-Power-Market-JJ/apps_script_deploy/Code.gs`
@@ -219,6 +219,6 @@ After deployment, verify:
 
 ---
 
-**Sheet ID**: 12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8  
+**Sheet ID**: 1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA  
 **Project**: GB-Power-Market-JJ  
 **Last Updated**: 2025-12-05

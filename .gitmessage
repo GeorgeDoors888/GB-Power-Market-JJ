@@ -1,0 +1,23 @@
+# <type>(optional scope): <subject>
+#
+# Examples:
+#   feat: add real-time IRIS pipeline for bmrs_fuelinst
+#   fix(auth): refresh token handling in BigQuery client
+#   chore: update dependencies and fix deprecation warnings
+#   docs: add DNO lookup architecture guide
+#   refactor(vlp): extract battery arbitrage logic to separate module
+#
+# Why:
+# - <why are we doing this?>
+#
+# What:
+# - <what changed?>
+#
+# Risk/Impact:
+# - <any migration / perf / breaking change?>
+#
+# Testing:
+# - <tests run>
+#
+# Ticket/Issue:
+# - <JIRA-123 / GitHub #456 / link>

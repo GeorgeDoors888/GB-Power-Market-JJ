@@ -66,10 +66,10 @@
 
 ### 2. Google Sheets ✅
 - **Spreadsheet:** GB Energy Dashboard
-- **ID:** 12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8
+- **ID:** 1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA
 - **Tab:** CVA Plants
 - **Rows:** 1,581 (plus header)
-- **URL:** https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+- **URL:** https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 - **Status:** ✅ Exported successfully
 
 ### 3. BigQuery ⚠️ NEEDS FIX
@@ -94,7 +94,7 @@
 ### View Data Online
 ```bash
 # Google Sheets
-open "https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/"
+open "https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/"
 
 # Interactive Map
 python -m http.server 8000 &

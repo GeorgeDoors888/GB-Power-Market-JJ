@@ -7,7 +7,7 @@ Opens the script editor and provides copy-paste instructions
 import webbrowser
 from pathlib import Path
 
-SHEET_ID = "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8"
+SHEET_ID = "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA"
 SCRIPT_FILE = "dashboard_charts.gs"
 
 print("=" * 70)

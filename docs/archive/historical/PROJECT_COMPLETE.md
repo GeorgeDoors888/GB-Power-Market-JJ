@@ -243,7 +243,7 @@ sudo dscacheutil -flushcache && sudo killall -HUP mDNSResponder
 curl -X POST "https://jibber-jabber-production.up.railway.app/workspace/get_spreadsheet" \
   -H "Authorization: Bearer codex_fQI8xJXNPnhasYBOjd6h7mPHoF7HNI0Dh8rlgoJ2skA" \
   -H "Content-Type: application/json" \
-  -d '{"spreadsheet_id": "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8"}'
+  -d '{"spreadsheet_id": "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA"}'
 
 # Check Railway status
 cd ~/GB\ Power\ Market\ JJ/codex-server && railway status
@@ -294,7 +294,7 @@ cd ~/GB\ Power\ Market\ JJ/codex-server && railway status
 - **Repository:** https://github.com/GeorgeDoors888/GB-Power-Market-JJ
 - **ChatGPT:** https://chatgpt.com/g/g-690f95eceb788191a021dc00389f41ee-gb-power-market-code-execution
 - **Railway Project:** https://railway.app/project/c0c79bb5-e2fc-4e0e-93db-39d6027301ca
-- **GB Energy Dashboard:** https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8
+- **GB Energy Dashboard:** https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA
 
 ---
 

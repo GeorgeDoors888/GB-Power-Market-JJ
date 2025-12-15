@@ -20,7 +20,7 @@ SCOPES = [
 creds = Credentials.from_service_account_file('inner-cinema-credentials.json', scopes=SCOPES)
 gc = gspread.authorize(creds)
 
-SPREADSHEET_ID = '12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8'
+SPREADSHEET_ID = '1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA'
 spreadsheet = gc.open_by_key(SPREADSHEET_ID)
 bq_client = bigquery.Client(project='inner-cinema-476211-u9', location='US', credentials=creds)
 
@@ -285,7 +285,7 @@ print("✅ DNO dropdown created in E4")
 sheet.update(values=[['Note: Use postcode OR DNO dropdown, then click Lookup from menu']], range_name='A6')
 
 print("\n✅ Enhanced BESS_VLP sheet created successfully!")
-print(f"\n📊 Sheet URL: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit#gid={sheet.id}")
+print(f"\n📊 Sheet URL: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit#gid={sheet.id}")
 print("\n🔧 Features added:")
 print("   ✅ DNO dropdown selector (column E4)")
 print("   ✅ Reference table hidden (rows 21+)")

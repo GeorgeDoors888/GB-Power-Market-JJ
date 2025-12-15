@@ -22,7 +22,7 @@ LOCATION="US"
 CREDENTIALS_FILE="inner-cinema-credentials.json"
 DATASET_SOURCE="uk_energy_prod"
 DATASET_ANALYTICS="uk_energy_analysis"
-DASHBOARD_SHEET_ID="12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8"
+DASHBOARD_SHEET_ID="1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA"
 
 echo -e "${BLUE}============================================${NC}"
 echo -e "${BLUE}  Google Integration Deployment${NC}"

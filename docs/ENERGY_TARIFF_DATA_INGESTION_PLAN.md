@@ -11,7 +11,7 @@
 Six critical UK energy tariff datasets exist in **Google Sheets** but need to be ingested into **BigQuery** for analysis. These tariffs represent significant operating costs for battery storage and generation assets.
 
 **Current Status**:
-- ✅ Data exists in Google Sheets: `GB Energy Dashboard` (ID: `12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8`)
+- ✅ Data exists in Google Sheets: `GB Energy Dashboard` (ID: `1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA`)
 - ❌ NOT in BigQuery (tables don't exist)
 - ⚠️ Missing from cost modeling calculations
 
@@ -303,7 +303,7 @@ from datetime import datetime
 ```
 
 **Source Sheet**: `GB Energy Dashboard`  
-**Sheet ID**: `12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8`
+**Sheet ID**: `1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA`
 
 **Worksheets to Process**:
 1. `TNUos_TDR_Bands_2024-25` → `tnuos_tdr_bands` (23 rows, tariff_year='2024-25')

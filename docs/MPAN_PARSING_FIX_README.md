@@ -84,7 +84,7 @@ python3 dno_lookup_python.py 14 HV
 - Red Rate: 1.764 p/kWh
 
 ### Test in BESS Sheet
-1. Open BESS sheet: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+1. Open BESS sheet: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 2. Enter in B6: `00800999932 1405566778899`
 3. Click "Refresh DNO Rates" button
 4. Verify:

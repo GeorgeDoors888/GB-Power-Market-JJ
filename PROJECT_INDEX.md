@@ -246,7 +246,7 @@ SELECT * FROM combined
 ## 🚀 External Services
 
 ### Live Deployments
-- **Google Sheets Dashboard**: [12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8](https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/)
+- **Google Sheets Dashboard**: [1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA](https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/)
 - **BESS Dashboard**: [1LmMq4OEE639Y-XXpOJ3xnvpAmHB6vUovh5g6gaU_vzc](https://docs.google.com/spreadsheets/d/1LmMq4OEE639Y-XXpOJ3xnvpAmHB6vUovh5g6gaU_vzc/)
 - **ChatGPT Proxy**: https://gb-power-market-jj.vercel.app/api/proxy-v2
 - **Railway Sheets API**: https://jibber-jabber-production.up.railway.app

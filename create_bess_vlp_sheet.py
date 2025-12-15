@@ -11,7 +11,7 @@ import requests
 import os
 
 # Configuration
-SPREADSHEET_ID = '12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8'
+SPREADSHEET_ID = '1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA'
 CREDENTIALS_FILE = 'inner-cinema-credentials.json'
 PROJECT_ID = 'inner-cinema-476211-u9'
 

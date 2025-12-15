@@ -22,7 +22,7 @@
 🌍 GSPs included: 18 unique
 ✅ Updated Data tab (18 rows)
 ✅ Updated Summary tab (18 rows)
-🔗 Sheet URL: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8
+🔗 Sheet URL: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA
 ```
 
 **Remaining:**

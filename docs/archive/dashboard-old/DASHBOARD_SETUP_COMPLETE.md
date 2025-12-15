@@ -67,14 +67,14 @@ WHERE DATE(settlementDate) = @date
 # Test with a specific date that has data
 cd "/Users/georgemajor/GB Power Market JJ"
 GOOGLE_APPLICATION_CREDENTIALS="/Users/georgemajor/GB Power Market JJ/inner-cinema-credentials.json" \
-SHEET_ID="12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8" \
+SHEET_ID="1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA" \
 .venv/bin/python tools/refresh_live_dashboard.py --date 2025-11-05
 ```
 
 ### 4. Verify Google Sheet Access
 
 Make sure your service account (`inner-cinema-credentials.json`) has:
-- ✅ Edit access to the Google Sheet (ID: `12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8`)
+- ✅ Edit access to the Google Sheet (ID: `1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA`)
 - ✅ Google Sheets API enabled in Google Cloud Console
 - ✅ BigQuery access (Data Viewer role minimum)
 
@@ -90,7 +90,7 @@ For automated refresh every 5 minutes:
 2. **Add GitHub Secrets:**
    - Go to repo Settings → Secrets and variables → Actions
    - Add `SA_JSON_B64` (paste the base64 string)
-   - Add `SHEET_ID` (value: `12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8`)
+   - Add `SHEET_ID` (value: `1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA`)
 
 3. **Enable workflow:**
    - Go to Actions tab
@@ -197,7 +197,7 @@ GB Power Market JJ/
 ### Environment Variables
 ```bash
 GOOGLE_APPLICATION_CREDENTIALS=/Users/georgemajor/GB Power Market JJ/inner-cinema-credentials.json
-SHEET_ID=12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8
+SHEET_ID=1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA
 ```
 
 ### Makefile Commands

@@ -215,7 +215,7 @@ curl -H "Authorization: Bearer codex_fQI8xJXNPnhasYBOjd6h7mPHoF7HNI0Dh8rlgoJ2skA
 ```json
 {
   "title": "GB Energy Dashboard",
-  "spreadsheet_id": "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8",
+  "spreadsheet_id": "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA",
   "worksheets": [
     {"id": 0, "title": "Dashboard"},
     {"id": 1, "title": "Real-time Data"},
@@ -599,7 +599,7 @@ curl -H "Authorization: Bearer codex_fQI8xJXNPnhasYBOjd6h7mPHoF7HNI0Dh8rlgoJ2skA
 
 **Railway API**: https://jibber-jabber-production.up.railway.app  
 **Auth Token**: `codex_fQI8xJXNPnhasYBOjd6h7mPHoF7HNI0Dh8rlgoJ2skA`  
-**Dashboard ID**: `12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8`
+**Dashboard ID**: `1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA`
 
 **Key Endpoints**:
 - `/workspace_health` - Health check

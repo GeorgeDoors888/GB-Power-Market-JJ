@@ -28,7 +28,7 @@ This is the most reliable method for cross-organization scenarios:
    - Press `Cmd+C` to copy
 
 3. **Open your Google Sheet:**
-   - Go to: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit
+   - Go to: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit
    - Login with: **upowerenergy.uk** account
 
 4. **Open Apps Script editor:**

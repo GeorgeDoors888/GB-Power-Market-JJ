@@ -149,7 +149,7 @@ MPAN 23: Northern Powergrid - Yorkshire (GSP M)
 ## Pending Deployment Steps
 
 ### ⏳ Step 1: Deploy Apps Script (5 minutes)
-1. Open Google Sheets: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit
+1. Open Google Sheets: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit
 2. Click **Extensions → Apps Script**
 3. Delete default code
 4. Paste entire `apps-script/bess_vlp_lookup.gs`
@@ -227,7 +227,7 @@ From earlier analysis:
 - `inner-cinema-476211-u9.uk_energy_prod.neso_dno_boundaries` (14 rows, GEOGRAPHY)
 
 ### Google Sheets
-- Spreadsheet: 12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8
+- Spreadsheet: 1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA
 - New Sheet: BESS_VLP (ID: 244875982)
 
 ---

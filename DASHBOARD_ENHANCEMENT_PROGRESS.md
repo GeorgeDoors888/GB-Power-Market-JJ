@@ -325,7 +325,7 @@ crontab -l | grep -v '/opt/dashboard/refresh.sh' | crontab -
 ```
 
 ### Google Sheets
-- **Dashboard**: [View Live](https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/)
+- **Dashboard**: [View Live](https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/)
 - **Sheet Tabs**: Dashboard, Charts, Intraday_Chart_Data
 
 ---

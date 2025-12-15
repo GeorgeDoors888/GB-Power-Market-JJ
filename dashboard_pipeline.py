@@ -20,7 +20,7 @@ os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = CREDS_FILE
 
 PROJECT_ID = "inner-cinema-476211-u9"
 DATASET = "uk_energy_prod"
-SPREADSHEET_ID = "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8"  # Main dashboard with BESS data
+SPREADSHEET_ID = "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA"  # Main dashboard with BESS data
 
 print(f"\n⚡ DASHBOARD PIPELINE - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 print("=" * 70)

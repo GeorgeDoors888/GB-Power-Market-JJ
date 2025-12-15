@@ -10,7 +10,7 @@ os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 SA_PATH = 'inner-cinema-credentials.json'
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
-SHEET_ID = '12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8'
+SHEET_ID = '1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA'
 
 creds = service_account.Credentials.from_service_account_file(SA_PATH, scopes=SCOPES)
 service = build('sheets', 'v4', credentials=creds)

@@ -3,7 +3,7 @@
 ## Overview
 Automatically syncs BigQuery data to Google Sheets dashboards every 5 minutes.
 
-**Target Sheet:** [GB Energy Dashboard](https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit?usp=sharing)
+**Target Sheet:** [GB Energy Dashboard](https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit?usp=sharing)
 
 ## Architecture
 
@@ -136,7 +136,7 @@ systemctl restart bigquery-sheets-updater.service
 ```python
 PROJECT_ID = "inner-cinema-476211-u9"      # GCP project
 DATASET = "uk_energy_prod"                 # BigQuery dataset
-SPREADSHEET_ID = "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8"  # Target sheet
+SPREADSHEET_ID = "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA"  # Target sheet
 ```
 
 ### Railway API

@@ -58,7 +58,7 @@ AI assistants like ChatGPT and GitHub Copilot **cannot directly execute code** o
 - **Access**: Via service account (arbitrage-bq-sa)
 
 ### 3. **Google Sheets**
-- **Dashboard URL**: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+- **Dashboard URL**: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 - **Tabs**:
   - "Analysis BI Enhanced" - Main dashboard
   - "Live Dashboard" - Real-time view
@@ -573,7 +573,7 @@ gcloud auth application-default login
 **Location**: `~/.config/gcloud/application_default_credentials.json`
 
 #### 3. **Google Sheets Service Account**
-Your Google Sheet (`12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8`) has:
+Your Google Sheet (`1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA`) has:
 - ✅ Service account email added as Editor
 - ✅ Apps Script can access BigQuery
 - ✅ Python scripts can update sheets
@@ -848,7 +848,7 @@ def send_daily_report():
    ```
 
 2. View your Google Sheet:
-   https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+   https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 
 ### **Short-term (1 hour)**
 3. Ask AI to enhance `battery_arbitrage.py`:

@@ -21,7 +21,7 @@ python3 verify_flags.py  # Check flags are complete
 
 ## 📊 Dashboard Status
 
-**URL**: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8
+**URL**: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA
 
 ### **Current Layout** (Preserved)
 - **Title**: "GB DASHBOARD - Power" (user's custom title)
@@ -355,6 +355,6 @@ python3 verify_flags.py
 **Scripts**: ✅ All maintenance scripts working  
 
 **Last Updated**: November 10, 2025, 15:50 GMT  
-**Dashboard URL**: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8  
+**Dashboard URL**: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA  
 **Project ID**: inner-cinema-476211-u9  
 **Dataset**: uk_energy_prod (US region)

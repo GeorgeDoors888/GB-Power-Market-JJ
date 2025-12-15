@@ -32,7 +32,7 @@
 ✅ Formatting: Green highlight applied
 ```
 
-**View Live Results**: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit#gid=244875982
+**View Live Results**: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit#gid=244875982
 
 ---
 
@@ -161,7 +161,7 @@ Based on "done the steps not working", likely issues:
 ### For The User To Follow:
 
 1. **Open Google Sheets**
-   https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit
+   https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit
 
 2. **Open Apps Script Editor**
    - Click: Extensions → Apps Script

@@ -219,7 +219,7 @@ Local Files:
 Google Sheets:
 ├─ SVA Generators tab (7,072 rows)
 └─ CVA Plants tab (1,581 rows)
-   📊 https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+   📊 https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 
 BigQuery: ⭐ NEW - COMPLETE
 ├─ sva_generators table (7,072 rows) ✅

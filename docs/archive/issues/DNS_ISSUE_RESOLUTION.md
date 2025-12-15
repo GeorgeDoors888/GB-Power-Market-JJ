@@ -113,9 +113,9 @@ curl -X GET "https://jibber-jabber-production.up.railway.app/workspace/list_spre
 {
   "spreadsheets": [
     {
-      "id": "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8",
+      "id": "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA",
       "title": "GB Energy Dashboard",
-      "url": "https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/",
+      "url": "https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/",
       ...
     }
   ],

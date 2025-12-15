@@ -91,7 +91,7 @@ python3 dno_webapp_client.py
 ### Step 1: Deploy Apps Script Web App (5 minutes)
 
 1. **Open Google Sheet**:  
-   https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit
+   https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit
 
 2. **Open Apps Script**:  
    Extensions → Apps Script
@@ -552,7 +552,7 @@ function doPost(e) {
 **Project**: GB Power Market JJ  
 **Repository**: https://github.com/GeorgeDoors888/GB-Power-Market-JJ  
 **Maintainer**: George Major (george@upowerenergy.uk)  
-**Sheet**: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit  
+**Sheet**: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit  
 
 **Related Documentation**:
 - `DUOS_COMPLETE_COVERAGE_SUMMARY.md` - All DUoS rates

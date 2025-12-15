@@ -79,7 +79,7 @@ if [ $? -eq 0 ]; then
     crontab -l | grep "gsp_auto_updater.py"
     echo ""
     echo "⏰ Schedule: Every 10 minutes"
-    echo "📊 Dashboard: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8"
+    echo "📊 Dashboard: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA"
     echo ""
     echo "💡 View logs:"
     echo "   tail -f $DIR/logs/gsp_auto_updater.log"

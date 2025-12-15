@@ -26,7 +26,7 @@ gc = gspread.authorize(creds)
 bq_client = bigquery.Client(project=PROJECT_ID)
 
 # Open spreadsheet
-ss = gc.open_by_key('12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8')
+ss = gc.open_by_key('1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA')
 dashboard = ss.worksheet('Dashboard')
 
 # Read current A1 and A2

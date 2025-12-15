@@ -27,7 +27,7 @@ import sys
 CACHE = {}
 CACHE_TTL = 3600  # 1 hour
 
-SHEET_ID = "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8"
+SHEET_ID = "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA"
 CHECK_INTERVAL = 30  # seconds
 
 

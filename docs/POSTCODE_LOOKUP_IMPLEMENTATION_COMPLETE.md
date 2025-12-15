@@ -368,7 +368,7 @@ GET /exec → { status: 'ok', message: 'BESS DNO Lookup API', timestamp: '...' }
 
 ### Step 1: Access Apps Script Editor
 
-1. Open Google Sheet: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+1. Open Google Sheet: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 2. Click **Extensions** → **Apps Script**
 3. This opens the script editor with `bess_webapp_api.gs`
 

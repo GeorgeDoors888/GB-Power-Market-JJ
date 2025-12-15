@@ -535,7 +535,7 @@ WHERE fueltype = 'WIND'
 ```
 
 ### Dashboard
-- **Google Sheets**: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8
+- **Google Sheets**: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA
 - **Wind Map Location**: Row 100, Column J
 - **Update Command**: `python3 auto_update_maps.py`
 

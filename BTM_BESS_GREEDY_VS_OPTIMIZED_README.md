@@ -243,14 +243,14 @@ Check Dashboard sheet exists:
 ```python
 import gspread
 gc = gspread.authorize(creds)
-ss = gc.open_by_key('12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8')
+ss = gc.open_by_key('1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA')
 print([ws.title for ws in ss.worksheets()])
 ```
 
 ## 📚 References
 
 - **BigQuery View:** `inner-cinema-476211-u9.uk_energy_prod.v_btm_bess_inputs`
-- **Google Sheet:** [12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8](https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/)
+- **Google Sheet:** [1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA](https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/)
 - **bmrs_mid:** Market Index Data (half-hourly prices)
 - **IRIS Pipeline:** Real-time data from Azure Service Bus
 

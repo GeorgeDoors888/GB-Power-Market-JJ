@@ -19,7 +19,7 @@ Interactive map visualization system for the GB Energy Dashboard with regional o
 ```
 ┌─────────────────────────────────────────────────┐
 │         Google Sheets Dashboard                 │
-│  (12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8) │
+│  (1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA) │
 └─────────────────┬───────────────────────────────┘
                   │
       ┌───────────▼───────────┐
@@ -209,7 +209,7 @@ Line thickness: Proportional to flow magnitude (max 8px)
 ### Step 1: Install Apps Script Code
 
 1. Open Google Sheets dashboard:
-   https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+   https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 
 2. **Extensions → Apps Script**
 

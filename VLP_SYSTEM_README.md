@@ -3,7 +3,7 @@
 ## Overview
 Automated VLP (Virtual Lead Party) revenue dashboard for battery BESS unit 2__FBPGM002 (Flexgen). Analyzes balancing mechanism (BM) revenue, capacity market (CM) payments, PPA export, and avoided import costs.
 
-**Live Dashboard**: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+**Live Dashboard**: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 
 ## Architecture
 
@@ -131,7 +131,7 @@ python3 vlp_dashboard_simple.py && python3 format_vlp_dashboard.py && python3 cr
 ```
 
 ### Via Apps Script Menu (Once Deployed)
-1. Open Google Sheets: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+1. Open Google Sheets: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 2. Click **🔋 VLP Dashboard** → **🔄 Refresh Data**
 3. Wait 30-60 seconds for pipeline to complete
 

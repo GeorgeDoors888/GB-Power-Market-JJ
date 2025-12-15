@@ -97,7 +97,7 @@ This project provides **comprehensive visibility into the GB electricity market*
 - `dashboard_charts.gs` - Apps Script for charts
 
 **Dashboard URL:**
-https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8
+https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA
 
 **Features:**
 - 📊 Color-coded sections (blue=system, green=fuel, blue=interconnectors)
@@ -259,7 +259,7 @@ ssh root@94.237.55.234 'tail -f /opt/iris-pipeline/logs/iris_uploader.log'
 - Location: US (NOT europe-west2)
 
 **Google Sheets:**
-- Dashboard ID: `12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8`
+- Dashboard ID: `1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA`
 - Service account: same as BigQuery
 - API: enabled, quota sufficient
 

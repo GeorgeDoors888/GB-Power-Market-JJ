@@ -110,7 +110,7 @@ Row 110:  Last Updated: 2025-10-31 15:23:45
 ## 🎯 How to Use
 
 ### 1. Open the Sheet
-https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 
 Look for the **"Analysis BI Enhanced"** tab.
 

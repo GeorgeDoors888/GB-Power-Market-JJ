@@ -25,7 +25,7 @@ print("1. ✅ Share spreadsheet with: all-jibber@inner-cinema-476211-u9.iam.gser
 print("   (Check if you did this - wait 1-2 minutes for permissions to propagate)")
 print()
 print("2. Copy old dashboard structure:")
-print("   - Open old: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8")
+print("   - Open old: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA")
 print("   - Copy rows 1-10 (KPIs) → paste in new Dashboard sheet")
 print("   - Copy rows 116-126 (Constraints) → paste in new Dashboard A116")
 print()

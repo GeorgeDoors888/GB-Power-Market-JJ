@@ -18,7 +18,7 @@ The old dashboard has Apps Script code for:
 - Formatting automation
 
 **Steps**:
-1. Open old dashboard: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8
+1. Open old dashboard: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA
 2. Go to: **Extensions → Apps Script**
 3. Copy all `.gs` files
 4. Open new dashboard: https://docs.google.com/spreadsheets/d/1LmMq4OEE639Y-XXpOJ3xnvpAmHB6vUovh5g6gaU_vzc

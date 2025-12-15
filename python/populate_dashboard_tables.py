@@ -26,7 +26,7 @@ from google.cloud import bigquery
 # CONFIG
 # ---------------------------------------------------------------------
 
-SPREADSHEET_ID = "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8"
+SPREADSHEET_ID = "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA"
 SERVICE_ACCOUNT_FILE = os.path.join(os.path.dirname(__file__), "../inner-cinema-credentials.json")
 GCP_PROJECT_ID = "inner-cinema-476211-u9"
 

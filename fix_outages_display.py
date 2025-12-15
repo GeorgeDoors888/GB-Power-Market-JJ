@@ -16,7 +16,7 @@ import gspread
 import pandas as pd
 
 # Configuration
-SPREADSHEET_ID = '12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8'
+SPREADSHEET_ID = '1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA'
 DASHBOARD_SHEET = 'Dashboard'
 PROJECT_ID = 'inner-cinema-476211-u9'
 DATASET = 'uk_energy_prod'
@@ -234,7 +234,7 @@ def main():
     print("   4. ✅ Filters for current events only")
     print("   5. ✅ Minimum 50 MW threshold (not 100)")
     print("\n🌐 View Dashboard:")
-    print("   https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8")
+    print("   https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA")
 
 if __name__ == "__main__":
     main()

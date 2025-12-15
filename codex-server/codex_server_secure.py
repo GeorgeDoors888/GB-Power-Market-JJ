@@ -750,7 +750,7 @@ async def read_sheet_data(request: Request, authorization: Optional[str] = Heade
         
         # Get request body
         body = await request.json()
-        spreadsheet_id = body.get('spreadsheet_id', '12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8')  # Default to GB Energy Dashboard
+        spreadsheet_id = body.get('spreadsheet_id', '1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA')  # Default to GB Energy Dashboard
         spreadsheet_title = body.get('spreadsheet_title')
         worksheet_name = body.get('worksheet_name', 'Dashboard')
         cell_range = body.get('cell_range', '')
@@ -810,7 +810,7 @@ async def write_sheet_data(request: Request, authorization: Optional[str] = Head
         import gspread
         
         body = await request.json()
-        spreadsheet_id = body.get('spreadsheet_id', '12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8')
+        spreadsheet_id = body.get('spreadsheet_id', '1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA')
         spreadsheet_title = body.get('spreadsheet_title')
         worksheet_name = body.get('worksheet_name', 'Dashboard')
         cell_range = body.get('cell_range')  # Required for writing

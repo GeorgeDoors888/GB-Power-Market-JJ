@@ -14,7 +14,7 @@ DATASET = "uk_energy_prod"
 LONDON = pytz.timezone("Europe/London")
 
 # Use environment variables with sensible defaults
-SHEET_ID = os.environ.get("SHEET_ID", "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8")
+SHEET_ID = os.environ.get("SHEET_ID", "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA")
 SA_PATH  = os.environ.get("GOOGLE_APPLICATION_CREDENTIALS", "../inner-cinema-credentials.json")
 
 SCOPES = ["https://www.googleapis.com/auth/spreadsheets"]

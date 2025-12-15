@@ -5,7 +5,7 @@ from googleapiclient.discovery import build
 from google.oauth2.service_account import Credentials
 import json
 
-SHEET_ID = "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8"
+SHEET_ID = "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA"
 SA_PATH = "inner-cinema-credentials.json"
 SHEETS_SCOPES = ["https://www.googleapis.com/auth/spreadsheets"]
 

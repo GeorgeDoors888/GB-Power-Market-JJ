@@ -63,7 +63,7 @@ python3 enhance_dashboard_layout.py
 6. **Return to spreadsheet** → 4 charts appear!
 
 ### Option 2: Via Spreadsheet Menu
-1. Open your [Dashboard](https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/)
+1. Open your [Dashboard](https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/)
 
 2. Reload page (Cmd+R / Ctrl+R) to activate menu
 
@@ -153,7 +153,7 @@ The script hides it automatically. If visible:
 python3 -c "
 import gspread
 gc = gspread.service_account(filename='inner-cinema-credentials.json')
-ss = gc.open_by_key('12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8')
+ss = gc.open_by_key('1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA')
 chart_data = ss.worksheet('ChartData')
 ss.batch_update({'requests': [{
     'updateSheetProperties': {
@@ -174,7 +174,7 @@ print('✅ ChartData hidden')
 
 ## Links
 
-- **Dashboard**: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+- **Dashboard**: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 - **Apps Script**: https://script.google.com/d/1fILya0xmSWkwXHtY9ulWDTVqFnPQqblpCmKLsa5A-y4dHeOOdU5q1N5A/edit
 
 ---

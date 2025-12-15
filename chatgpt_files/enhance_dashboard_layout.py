@@ -19,7 +19,7 @@ from pathlib import Path
 # Configuration
 PROJECT_ID = "inner-cinema-476211-u9"
 DATASET = "uk_energy_prod"
-SPREADSHEET_ID = "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8"
+SPREADSHEET_ID = "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA"
 TOKEN_FILE = Path("token.pickle")
 SA_FILE = Path("inner-cinema-credentials.json")
 

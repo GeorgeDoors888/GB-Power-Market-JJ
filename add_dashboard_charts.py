@@ -9,7 +9,7 @@ import gspread
 from pathlib import Path
 
 # Configuration
-SPREADSHEET_ID = "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8"
+SPREADSHEET_ID = "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA"
 TOKEN_FILE = Path("token.pickle")
 
 print("📊 Adding Interactive Charts to Dashboard...")

@@ -18,7 +18,7 @@ SCOPES = [
 creds = Credentials.from_service_account_file('inner-cinema-credentials.json', scopes=SCOPES)
 gc = gspread.authorize(creds)
 
-SPREADSHEET_ID = '12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8'
+SPREADSHEET_ID = '1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA'
 spreadsheet = gc.open_by_key(SPREADSHEET_ID)
 sheet = spreadsheet.worksheet('BESS_VLP')
 

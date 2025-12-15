@@ -31,7 +31,7 @@ creds = service_account.Credentials.from_service_account_file(
 
 # Use with gspread
 gc = gspread.authorize(creds)
-spreadsheet = gc.open_by_key('12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8')
+spreadsheet = gc.open_by_key('1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA')
 ```
 
 ## 📊 Current Status

@@ -69,7 +69,7 @@ from google.oauth2.service_account import Credentials
 scopes = ['https://www.googleapis.com/auth/spreadsheets']
 creds = Credentials.from_service_account_file('inner-cinema-credentials.json', scopes=scopes)
 gc = gspread.authorize(creds)
-sh = gc.open_by_key('12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8')
+sh = gc.open_by_key('1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA')
 print('✅ Google Sheets connection successful')
 " 2>/dev/null
 
@@ -87,7 +87,7 @@ echo ""
 echo "📋 Next Steps:"
 echo ""
 echo "1. Open Google Sheets dashboard:"
-echo "   https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/"
+echo "   https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/"
 echo ""
 echo "2. Go to: Extensions → Apps Script"
 echo ""

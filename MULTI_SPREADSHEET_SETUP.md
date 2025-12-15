@@ -30,8 +30,8 @@ Title: BtM
 
 ### 2. **GB Energy Dashboard** (Secondary - Primary BESS)
 ```
-ID: 12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8
-URL: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+ID: 1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA
+URL: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 Title: GB Energy Dashboard
 ```
 
@@ -143,7 +143,7 @@ function onOpen() {
 ### Step 2: Deploy to GB Energy Dashboard (Secondary - No Sparklines)
 
 ```
-1. Open: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+1. Open: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 
 2. Go to: Extensions → Apps Script
 

@@ -9,7 +9,7 @@ import json
 import sys
 
 # Configuration
-SHEET_ID = "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8"
+SHEET_ID = "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA"
 SA_PATH = "smart_grid_credentials.json"
 SCOPES = [
     "https://www.googleapis.com/auth/script.projects",
@@ -98,7 +98,7 @@ def main():
     if len(sys.argv) < 2:
         print("Usage: python deploy_and_run_verification.py <SCRIPT_ID>")
         print("\nTo find your Script ID:")
-        print("1. Open your sheet: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/")
+        print("1. Open your sheet: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/")
         print("2. Go to Extensions → Apps Script")
         print("3. Click Project Settings (gear icon)")
         print("4. Copy the Script ID")

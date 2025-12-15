@@ -1,0 +1,16 @@
+{
+  // Invoke as #reader or #ship in Copilot Chat
+  // VS Code supports tool sets to group related tools for specific workflows
+  
+  "reader": {
+    "tools": ["changes", "codebase", "problems", "usages"],
+    "description": "Read-only context gathering - safe for exploration and analysis",
+    "icon": "book"
+  },
+  
+  "ship": {
+    "tools": ["edit", "terminal", "fetch", "changes", "codebase", "problems", "usages"],
+    "description": "Make changes and run checks (requires approvals for safety)",
+    "icon": "rocket"
+  }
+}

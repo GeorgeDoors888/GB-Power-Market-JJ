@@ -10,7 +10,7 @@ This guide shows you how to install the **GB Power Market Live Dashboard** Apps 
 - Creates interactive charts
 - Writes data to multiple tabs for analysis
 
-**Sheet:** https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit
+**Sheet:** https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit
 
 ---
 
@@ -18,7 +18,7 @@ This guide shows you how to install the **GB Power Market Live Dashboard** Apps 
 
 ### Step 1: Open Apps Script Editor
 
-1. Open your Google Sheet: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit
+1. Open your Google Sheet: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit
 2. Click **Extensions** → **Apps Script**
 3. A new tab will open with the Apps Script editor
 

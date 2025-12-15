@@ -20,7 +20,7 @@ import logging
 PROJECT_ID = "inner-cinema-476211-u9"
 DATASET = "uk_energy_prod"
 BQ_CREDS_FILE = "inner-cinema-credentials.json"
-DASHBOARD_SHEET_ID = "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8"
+DASHBOARD_SHEET_ID = "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA"
 
 # GSP row positions on Dashboard tab
 GSP_START_ROW = 55  # Start AFTER outages section (which ends around row 50)

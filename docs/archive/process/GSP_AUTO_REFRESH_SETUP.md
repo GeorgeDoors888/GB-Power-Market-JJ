@@ -135,7 +135,7 @@ cd ~/GB\ Power\ Market\ JJ
    ✅ Demand table: 18 importers/balanced
 
 ✅ UPDATE COMPLETE
-   🔗 https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8
+   🔗 https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA
 ================================================================================
 ```
 
@@ -342,7 +342,7 @@ crontab -l
 - [ ] Wait 10 minutes, check Dashboard updates
 - [ ] Check logs (`tail -f logs/gsp_auto_updater.log`)
 - [ ] Verify formatting preserved (colors, widths intact)
-- [ ] Bookmark Dashboard: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8
+- [ ] Bookmark Dashboard: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA
 
 ---
 

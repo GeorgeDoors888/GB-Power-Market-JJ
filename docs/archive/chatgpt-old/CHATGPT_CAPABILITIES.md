@@ -10,7 +10,7 @@ ChatGPT (OpenAI's assistant at chat.openai.com) is **ALREADY INTEGRATED** with y
 ## ✅ What ChatGPT CAN Do (No Additional Setup)
 
 ### 1. **Read Your Google Sheet**
-- **Sheet ID**: `12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8`
+- **Sheet ID**: `1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA`
 - **Access**: OAuth token (george@upowerenergy.uk)
 - **Permissions**: Read-only (drive.readonly, spreadsheets.readonly)
 - **Status**: ✅ Working now

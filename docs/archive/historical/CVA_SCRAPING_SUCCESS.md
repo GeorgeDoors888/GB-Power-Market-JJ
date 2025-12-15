@@ -31,7 +31,7 @@
 - **Rows:** 1,581 (plus header)
 - **Columns:** 12 fields including ID, name, lat/lng, URL
 - **Format:** Purple header to distinguish from SVA (blue)
-- **URL:** https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+- **URL:** https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 
 **View tabs:**
 - `Analysis BI Enhanced` - Power market analysis
@@ -169,7 +169,7 @@ Google Sheets  BigQuery    Interactive Map    JSON API
 ## 🔗 Quick Links
 
 ### View Data
-- **Google Sheets:** https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+- **Google Sheets:** https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 - **Interactive Map:** http://localhost:8000/dno_energy_map_advanced.html
 - **Source Website:** https://electricityproduction.uk/
 

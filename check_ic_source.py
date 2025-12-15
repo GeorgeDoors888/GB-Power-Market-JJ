@@ -6,7 +6,7 @@ Check source interconnector data and fix duplicate flags
 from googleapiclient.discovery import build
 from google.oauth2.service_account import Credentials
 
-SHEET_ID = '12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8'
+SHEET_ID = '1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA'
 CREDS = Credentials.from_service_account_file('arbitrage-bq-key.json')
 sheets = build('sheets', 'v4', credentials=CREDS).spreadsheets()
 

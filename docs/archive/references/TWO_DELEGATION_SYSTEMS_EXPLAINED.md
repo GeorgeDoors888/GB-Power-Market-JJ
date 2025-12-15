@@ -79,7 +79,7 @@ with open('token.pickle', 'rb') as f:
     creds = pickle.load(f)
 
 gc = gspread.authorize(creds)
-spreadsheet = gc.open_by_key('12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8')
+spreadsheet = gc.open_by_key('1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA')
 
 # Updates dashboard every 5 minutes
 # When token expires → Script breaks, need manual fix
@@ -98,7 +98,7 @@ creds = service_account.Credentials.from_service_account_file(
 ).with_subject('george@upowerenergy.uk')  # <-- Delegation!
 
 gc = gspread.authorize(creds)
-spreadsheet = gc.open_by_key('12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8')
+spreadsheet = gc.open_by_key('1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA')
 
 # Updates dashboard automatically
 # No expiry, no manual intervention
@@ -203,7 +203,7 @@ creds = service_account.Credentials.from_service_account_file(
 ).with_subject('george@upowerenergy.uk')
 
 gc = gspread.authorize(creds)
-spreadsheet = gc.open_by_key('12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8')
+spreadsheet = gc.open_by_key('1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA')
 print(f"✅ Can access: {spreadsheet.title}")
 ```
 

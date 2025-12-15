@@ -56,7 +56,7 @@ cd /home/george/GB-Power-Market-JJ
 
 ```bash
 # 1. Open CORRECT spreadsheet
-https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit
+https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit
 
 # 2. Extensions → Apps Script
 
@@ -114,7 +114,7 @@ clasp push
 
 After running setup:
 
-- [ ] Opened: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit
+- [ ] Opened: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit
 - [ ] Cell D65 has calendar dropdown
 - [ ] Cell E66 has calendar dropdown
 - [ ] Clicking D65 opens calendar picker
@@ -132,7 +132,7 @@ After running setup:
 
 Make absolutely sure you're looking at:
 ```
-https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit
+https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit
 ```
 
 **NOT**:

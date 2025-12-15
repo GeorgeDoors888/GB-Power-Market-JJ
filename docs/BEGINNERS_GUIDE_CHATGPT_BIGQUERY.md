@@ -128,7 +128,7 @@ Dataset: uk_energy_prod
 Tables: 174+ tables (bmrs_*)
 
 Google Sheets:
-Dashboard: 12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8
+Dashboard: 1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA
 ```
 
 ---
@@ -189,7 +189,7 @@ Then **every Python script** automatically knows:
 ### Task 2: Check Your Dashboard
 
 1. Open browser
-2. Go to: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+2. Go to: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 3. Look at "Dashboard" tab
 4. Data updates every 5 minutes automatically
 
@@ -305,7 +305,7 @@ Multiple security layers protect your data:
 python3 check_iris_data.py
 
 # Review dashboard for anomalies
-# Open: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+# Open: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 
 # Check server health
 ssh root@94.237.55.234 'systemctl status iris-uploader'
@@ -466,7 +466,7 @@ ping 94.237.55.234
 curl https://gb-power-market-jj.vercel.app/api/proxy-v2?path=/health
 
 # View dashboard
-open "https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/"
+open "https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/"
 
 # Check IRIS pipeline (server)
 ssh root@94.237.55.234 'tail -20 /opt/iris-pipeline/logs/iris_uploader.log'

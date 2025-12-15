@@ -57,7 +57,7 @@ echo "✅ ANALYSIS SHEET SETUP COMPLETE!"
 echo "=" * 70
 echo ""
 echo "📚 Documentation: ANALYSIS_SHEET_DESIGN.md"
-echo "🔗 Spreadsheet: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/"
+echo "🔗 Spreadsheet: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/"
 echo ""
 echo "📋 What was created:"
 echo "  ✅ 5 unified BigQuery views (bmrs_*_unified)"

@@ -19,7 +19,7 @@ Your maps are now **automatically updating** in your Dashboard sheet!
 
 ## 📊 View Your Dashboard
 
-**Live Dashboard**: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8
+**Live Dashboard**: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA
 
 The maps are now embedded using `=IMAGE()` formulas with links to:
 - `https://drive.google.com/uc?id=1z2_U9xm_kOG7wnQibZybtrq5akWwkgko` (Generators)
@@ -260,7 +260,7 @@ Run `testMapGeneration()` function
 python3 auto_update_maps.py
 
 # Verify in Dashboard
-open "https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8"
+open "https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA"
 
 # Check cells J20, J36, J52 have IMAGE formulas and display maps
 ```

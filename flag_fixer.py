@@ -12,7 +12,7 @@ import gspread
 from google.oauth2.service_account import Credentials
 
 # --- Configuration ---
-DASHBOARD_SHEET_ID = "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8"
+DASHBOARD_SHEET_ID = "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA"
 CREDS_FILE = 'inner-cinema-credentials.json'
 SHEET_NAME = 'Dashboard'
 FLAG_RANGE = 'D8:D17'

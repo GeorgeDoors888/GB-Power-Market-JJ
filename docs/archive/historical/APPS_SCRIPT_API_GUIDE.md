@@ -10,7 +10,7 @@
 
 1. **Open your Google Sheet:**
    ```
-   https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+   https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
    ```
 
 2. **Go to Extensions → Apps Script**
@@ -45,7 +45,7 @@ python run_apps_script_tests.py AKfycbx...
 ```
 🔍 Remote Apps Script Verification Tests
 ============================================================
-Sheet ID: 12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8
+Sheet ID: 1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA
 Script ID: AKfycbx...
 
 ✅ Connected to Apps Script API
@@ -311,5 +311,5 @@ Once verification passes:
 
 **Last Updated:** November 5, 2025  
 **Script:** run_apps_script_tests.py  
-**Sheet ID:** 12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8  
+**Sheet ID:** 1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA  
 **Project:** inner-cinema-476211-u9

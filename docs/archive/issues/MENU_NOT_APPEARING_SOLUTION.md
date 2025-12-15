@@ -30,7 +30,7 @@ The menu will ONLY appear when you:
 4. Menu should appear
 
 ### Option 3: New Browser Tab
-1. Copy sheet URL: `https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/`
+1. Copy sheet URL: `https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/`
 2. **Open in new private/incognito window**
 3. Menu should appear immediately
 

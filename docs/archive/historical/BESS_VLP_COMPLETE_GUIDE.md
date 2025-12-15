@@ -47,7 +47,7 @@
 ## Quick Start
 
 ### 1. Open the Tool
-[Google Sheet: BESS_VLP](https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/)
+[Google Sheet: BESS_VLP](https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/)
 
 ### 2. Choose Your Method
 
@@ -96,7 +96,7 @@
 
 ### Step 1: Open Apps Script Editor
 
-1. Open [BESS_VLP Google Sheet](https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/)
+1. Open [BESS_VLP Google Sheet](https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/)
 2. Click **Extensions** → **Apps Script**
 
 ### Step 2: Add BigQuery Service ⚠️ CRITICAL
@@ -741,7 +741,7 @@ ORDER BY mpan_distributor_id
 | `enhance_bess_vlp_sheet.py` | `/` | Python sheet builder script |
 | `test_bess_vlp_lookup.py` | `/` | Python proof-of-concept test |
 | `inner-cinema-credentials.json` | `/` | BigQuery service account key |
-| Google Sheet | [Link](https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/) | Production sheet |
+| Google Sheet | [Link](https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/) | Production sheet |
 
 ---
 

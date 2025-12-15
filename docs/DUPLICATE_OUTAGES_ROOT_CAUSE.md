@@ -143,7 +143,7 @@ from google.oauth2.service_account import Credentials
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
 creds = Credentials.from_service_account_file('inner-cinema-credentials.json', scopes=SCOPES)
 gc = gspread.authorize(creds)
-sh = gc.open_by_key('12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8')
+sh = gc.open_by_key('1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA')
 dashboard = sh.worksheet('Dashboard')
 data = dashboard.get('A23:H60')
 totals = [i for i, row in enumerate(data, 23) if row and 'TOTAL' in str(row[0])]

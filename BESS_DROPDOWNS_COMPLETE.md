@@ -2,7 +2,7 @@
 
 **Date:** 24 November 2025  
 **Sheet:** BESS (Battery Energy Storage System)  
-**Sheet ID:** 12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8
+**Sheet ID:** 1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA
 
 ## ✅ Implementation Complete
 
@@ -225,7 +225,7 @@ System extracts core and validates DNO
 ## 🔗 Sheet Access
 
 **Direct Link:**  
-https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit#gid=1291323643
+https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit#gid=1291323643
 
 **Test in Browser:**
 1. Open link above

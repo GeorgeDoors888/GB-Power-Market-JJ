@@ -13,7 +13,7 @@ from google.oauth2 import service_account
 from pathlib import Path
 
 # Configuration
-SPREADSHEET_ID = '12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8'
+SPREADSHEET_ID = '1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA'
 SA_FILE = Path(__file__).parent / 'inner-cinema-credentials.json'
 
 # Color Palette (Mid-Dark Theme)

@@ -20,7 +20,7 @@ print()
 
 # Configuration
 PROJECT_ID = 'inner-cinema-476211-u9'
-SPREADSHEET_ID = '12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8'
+SPREADSHEET_ID = '1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA'
 DATA_SHEET_NAME = 'Latest Day Data'  # Sheet for data
 CHART_SHEET_NAME = 'Sheet1'  # Sheet for chart
 WRITE_RANGE = 'Latest Day Data!A1:H5000'  # Write to separate sheet

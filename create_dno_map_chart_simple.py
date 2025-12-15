@@ -6,7 +6,7 @@ import json
 
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
 CREDS_FILE = '/home/george/inner-cinema-credentials.json'
-SPREADSHEET_ID = '12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8'
+SPREADSHEET_ID = '1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA'
 
 creds = Credentials.from_service_account_file(CREDS_FILE, scopes=SCOPES)
 client = gspread.authorize(creds)
@@ -45,7 +45,7 @@ print(f"✅ Written {len(rows)} rows to A1:D15")
 
 # Now manually add chart:
 print("\n📊 MANUAL STEPS TO ADD MAP:")
-print("1. Open spreadsheet: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/")
+print("1. Open spreadsheet: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/")
 print("2. Go to DNO tab")
 print("3. Select range A1:B15")
 print("4. Insert → Chart")

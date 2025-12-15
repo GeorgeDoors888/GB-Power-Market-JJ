@@ -13,7 +13,7 @@ SERVER_IP = "94.237.55.234"
 MAP_URL = f"http://{SERVER_IP}/gb_power_complete_map.html"
 
 # Your Google Sheets details
-SPREADSHEET_ID = "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8"
+SPREADSHEET_ID = "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA"
 SPREADSHEET_URL = f"https://docs.google.com/spreadsheets/d/{SPREADSHEET_ID}/edit"
 
 def authenticate_google():

@@ -77,7 +77,7 @@ if GSPREAD_AVAILABLE:
         ).with_subject(admin_email)
         
         gc = gspread.authorize(sheets_creds)
-        spreadsheet = gc.open_by_key('12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8')
+        spreadsheet = gc.open_by_key('1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA')
         
         print(f"✅ SUCCESS - Can access Sheets!")
         print(f"   Title: {spreadsheet.title}")

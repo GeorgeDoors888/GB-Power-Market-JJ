@@ -190,7 +190,7 @@ python3 fix_flags_and_outages.py
 
 ### Verify Flags Are Fixed
 
-1. Open dashboard: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+1. Open dashboard: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 2. Check Column D, rows 7-17
 3. All should show: `🇫🇷 Name (Country)` format
 

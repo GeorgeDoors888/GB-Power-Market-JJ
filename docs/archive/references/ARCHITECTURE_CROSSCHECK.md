@@ -196,7 +196,7 @@ Add to top of README:
 ## 🔗 Quick Links
 
 ### Live Services
-- 📊 [Google Sheets Dashboard](https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/)
+- 📊 [Google Sheets Dashboard](https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/)
 - 🔍 [Search API Health](http://94.237.55.15:8080/health)
 - 🗺️ [Generator Map](http://94.237.55.15/gb_power_comprehensive_map.html)
 

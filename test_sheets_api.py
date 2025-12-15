@@ -12,7 +12,7 @@ creds = Credentials.from_service_account_file('inner-cinema-credentials.json', s
 gc = gspread.authorize(creds)
 
 # Try to access the spreadsheet
-SPREADSHEET_ID = '12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8'
+SPREADSHEET_ID = '1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA'
 spreadsheet = gc.open_by_key(SPREADSHEET_ID)
 
 print('✅ Google Sheets API: Connected')

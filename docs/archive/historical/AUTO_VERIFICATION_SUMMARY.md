@@ -275,5 +275,5 @@ python3 create_sp_data_sheet.py
 
 **Implementation Date**: November 10, 2025, 16:20 GMT  
 **Testing**: ✅ All tests passed  
-**Dashboard**: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8  
+**Dashboard**: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA  
 **All Flags**: ✅ Complete and auto-verified (🇫🇷 🇮🇪 🇳🇱 🇧🇪 🇳🇴 🇩🇰)

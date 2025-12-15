@@ -112,7 +112,7 @@ gc = gspread.authorize(creds)
 
 **Before** (Hardcoded):
 ```python
-SPREADSHEET_ID = '12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8'  # GB Energy Dashboard only
+SPREADSHEET_ID = '1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA'  # GB Energy Dashboard only
 spreadsheet = gc.open_by_key(SPREADSHEET_ID)
 ```
 
@@ -190,7 +190,7 @@ curl -X GET "https://jibber-jabber-production.up.railway.app/workspace/list_spre
 curl -X POST "https://jibber-jabber-production.up.railway.app/workspace/read_sheet" \
   -H "Authorization: Bearer codex_fQI8xJXNPnhasYBOjd6h7mPHoF7HNI0Dh8rlgoJ2skA" \
   -H "Content-Type: application/json" \
-  -d '{"worksheet_name": "Dashboard", "spreadsheet_id": "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8"}'
+  -d '{"worksheet_name": "Dashboard", "spreadsheet_id": "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA"}'
 ```
 
 ### Test in ChatGPT

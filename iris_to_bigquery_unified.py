@@ -65,18 +65,30 @@ class IrisUploader:
         Process a single JSON file and upload to BigQuery
         
         Args:
-            filepath: Path to JSON file
+            filepath: Path to JSON file (str or Path object)
         
         Returns:
             bool: True if successful, False otherwise
         """
         try:
+            # Convert string to Path if needed
+            if isinstance(filepath, str):
+                filepath = Path(filepath)
+            
             # Read JSON file
             with open(filepath, 'r') as f:
                 data = json.load(f)
             
-            # Extract report type
-            report_type = data.get('reportType', 'UNKNOWN')
+            # Handle both array and dict formats
+            if isinstance(data, list):
+                # Array format (e.g., WINDFOR) - extract dataset name from first record
+                if not data:
+                    logger.warning(f"Empty array in {filepath.name}")
+                    return False
+                report_type = data[0].get('dataset', 'UNKNOWN')
+            else:
+                # Dict format (e.g., FUELINST) - extract reportType
+                report_type = data.get('reportType', 'UNKNOWN')
             
             # Get table name
             table_name = TABLE_MAPPING.get(report_type)
@@ -111,7 +123,7 @@ class IrisUploader:
         Extract records from IRIS message based on report type
         
         Args:
-            data: Parsed JSON data
+            data: Parsed JSON data (dict or list)
             report_type: BMRS report type
         
         Returns:
@@ -119,8 +131,11 @@ class IrisUploader:
         """
         records = []
         
-        # Most BMRS reports have a 'data' array
-        if 'data' in data:
+        # Handle array format (e.g., WINDFOR)
+        if isinstance(data, list):
+            records = data
+        # Handle dict format with nested data
+        elif 'data' in data:
             records = data['data']
         elif 'items' in data:
             records = data['items']
@@ -130,8 +145,8 @@ class IrisUploader:
         
         # Add metadata to each record
         for record in records:
-            record['_ingestion_time'] = datetime.utcnow().isoformat()
-            record['_report_type'] = report_type
+            record['ingested_utc'] = datetime.utcnow().isoformat()
+            record['source'] = 'IRIS'
         
         return records
     

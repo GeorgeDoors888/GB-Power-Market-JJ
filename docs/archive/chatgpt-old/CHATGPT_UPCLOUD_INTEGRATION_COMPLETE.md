@@ -36,7 +36,7 @@ You have **4 distinct ChatGPT integrations** configured in your GB Power Market 
 **How to Use**:
 ```
 In ChatGPT: "Can you list files from my Google Drive?"
-In ChatGPT: "Read my power dashboard sheet 12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8"
+In ChatGPT: "Read my power dashboard sheet 1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA"
 In ChatGPT: "What's the current renewable percentage?"
 ```
 
@@ -914,7 +914,7 @@ ssh root@94.237.55.234 'tar -czf /backups/maps-$(date +%Y%m%d).tar.gz /var/www/m
 - **Document Search API**: http://94.237.55.15:8080/search
 - **API Health**: http://94.237.55.15:8080/health
 - **Power Map**: http://94.237.55.234/gb_power_complete_map.html
-- **Google Sheets Dashboard**: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+- **Google Sheets Dashboard**: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 - **ChatGPT**: https://chat.openai.com
 - **Gemini API**: https://makersuite.google.com/app/apikey
 

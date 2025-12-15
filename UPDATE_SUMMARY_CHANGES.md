@@ -26,7 +26,7 @@
 ### 1. **Corrected Spreadsheet ID**
 ```python
 # BEFORE (Wrong - Dashboard V1)
-SPREADSHEET_ID = '12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8'
+SPREADSHEET_ID = '1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA'
 
 # AFTER (Correct - Dashboard V2)
 SPREADSHEET_ID = '1LmMq4OEE639Y-XXpOJ3xnvpAmHB6vUovh5g6gaU_vzc'  # Dashboard V2

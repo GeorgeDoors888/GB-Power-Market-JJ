@@ -296,7 +296,7 @@ watch -n 60 'systemctl status bigquery-sheets-updater.service'
 ```python
 PROJECT_ID = "inner-cinema-476211-u9"      # BigQuery project
 DATASET = "uk_energy_prod"                 # BigQuery dataset
-SPREADSHEET_ID = "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8"  # Target sheet
+SPREADSHEET_ID = "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA"  # Target sheet
 ```
 
 ### Railway API
@@ -425,7 +425,7 @@ dataProvider: STRING
    ```
 
 2. **Verify data appears in Google Sheets:**
-   - Open: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+   - Open: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
    - Check: Dashboard, Live BigQuery, Live_Raw_Gen, etc.
    - Confirm: Data is today's date
 

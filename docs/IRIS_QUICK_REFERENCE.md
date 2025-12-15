@@ -224,7 +224,7 @@ python3 check_iris_data.py
 ---
 
 **Quick Access:**
-- Dashboard: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+- Dashboard: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 - Server: `ssh root@94.237.55.234`
 - Logs: `/opt/iris-pipeline/logs/`
 

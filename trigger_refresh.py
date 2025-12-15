@@ -19,7 +19,7 @@ with open('token.pickle', 'rb') as token:
 
 # Connect to sheet
 gc = gspread.authorize(creds)
-spreadsheet = gc.open_by_key('12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8')
+spreadsheet = gc.open_by_key('1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA')
 sheet = spreadsheet.worksheet('Analysis BI Enhanced')
 
 # Write trigger

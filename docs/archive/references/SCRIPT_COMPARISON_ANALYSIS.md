@@ -14,7 +14,7 @@
 **Why?**
 - ✅ Script A is clean, focused, and already integrated with your API
 - ✅ Script B is two incompatible scripts merged together (will cause errors)
-- ✅ Script A works with your existing sheet ID: `12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8`
+- ✅ Script A works with your existing sheet ID: `1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA`
 - ✅ Script B has conflicting sheet IDs and duplicate functions
 
 ---
@@ -25,7 +25,7 @@
 
 | Feature | Script A (Your Current) | Script B (Merged) | Winner |
 |---------|-------------------------|-------------------|--------|
-| **Sheet ID** | `12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8` | TWO DIFFERENT IDs! 🔴 | **Script A** ✅ |
+| **Sheet ID** | `1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA` | TWO DIFFERENT IDs! 🔴 | **Script A** ✅ |
 | **Target Sheet** | "Dashboard" | "Live Dashboard" + "Dashboard" (conflict!) | **Script A** ✅ |
 | **Sheet Rename** | Sheet1 → Dashboard | Sheet1 → Live Dashboard | **Script A** ✅ |
 | **Tab Creation** | Dashboard (single focus) | 15+ tabs (overkill?) | **Script A** ✅ |

@@ -1,7 +1,11 @@
 #!/usr/bin/env python3
 """
 Update outages section in Live Dashboard v2 sheet
-Writes to columns G-J starting at row 40
+Writes to columns G-Q:
+  Row 30: Section title with total MW offline
+  Row 31: Summary statistics
+  Row 33: Column headers
+  Rows 34+: Outage data (top 15 by capacity)
 """
 
 import sys
@@ -156,18 +160,26 @@ def update_outages():
     
     print(f"\n✍️  Writing to Live Dashboard v2 sheet...")
     
-    # Clear old outages data (rows 41-60)
+    # Calculate summary statistics
+    total_outages = len(outages)
+    total_unavail_mw = outages['unavail_mw'].sum()
+    total_normal_mw = outages['normal_mw'].sum()
+    
+    # Clear old outages data (rows 31-60, columns G-Q)
     sheet.batch_update([
-        {'range': 'G41:Q60', 'values': [[''] * 11] * 20}
+        {'range': 'G31:Q60', 'values': [[''] * 11] * 30}
     ])
     
-    # Write header and data
+    # Write summary (row 31), blank (row 32), header (row 33), and data (rows 34+)
+    summary_text = f"⚠️ ACTIVE OUTAGES - Top 15 by Capacity | Total: {total_outages} units | Offline: {total_unavail_mw:,.0f} MW | Normal Capacity: {total_normal_mw:,.0f} MW"
+    
     sheet.batch_update([
-        {'range': 'G40:Q40', 'values': [['Asset Name', 'Fuel Type', 'Unavail (MW)', 'Normal (MW)', 'Cause', 'Type', 'Expected Return', 'Duration', 'Operator', 'Area', 'Zone']]},
-        {'range': f'G41:Q{40 + len(outage_data)}', 'values': outage_data}
+        {'range': 'G31', 'values': [[summary_text]]},
+        {'range': 'G33:Q33', 'values': [['Asset Name', 'Fuel Type', 'Unavail (MW)', 'Normal (MW)', 'Cause', 'Type', 'Expected Return', 'Duration', 'Operator', 'Area', 'Zone']]},
+        {'range': f'G34:Q{33 + len(outage_data)}', 'values': outage_data}
     ])
     
-    print(f"   ✅ Outages updated ({len(outage_data)} units)")
+    print(f"   ✅ Outages updated ({len(outage_data)} units, {total_unavail_mw:,.0f} MW offline)")
     print(f"   First: {outage_data[0][0]} | {outage_data[0][1]} - {outage_data[0][2]} MW (Normal: {outage_data[0][3]} MW) | Return: {outage_data[0][6]}")
     
     # Set column widths for better display

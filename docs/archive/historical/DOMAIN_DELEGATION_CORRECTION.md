@@ -157,7 +157,7 @@ delegated_creds = creds.with_subject('george@upowerenergy.uk')
 ### **System 1: GB Power Market (Standard Auth)**
 
 **Can Access:**
-- ✅ Google Sheets: `12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8` (explicitly shared)
+- ✅ Google Sheets: `1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA` (explicitly shared)
 - ✅ BigQuery: `inner-cinema-476211-u9` project (owns it)
 - ✅ Any file/folder you manually share with `all-jibber@inner-cinema...`
 

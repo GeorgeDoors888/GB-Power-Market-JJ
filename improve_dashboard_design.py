@@ -11,7 +11,7 @@ from googleapiclient.discovery import build
 import gspread
 from datetime import datetime
 
-SHEET_ID = "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8"
+SHEET_ID = "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA"
 CREDS_FILE = "inner-cinema-credentials.json"
 
 def improve_dashboard_layout():

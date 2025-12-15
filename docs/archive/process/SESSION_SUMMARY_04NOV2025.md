@@ -171,7 +171,7 @@ Retrieved 48 records
 
 ### 3. Verify Google Sheets
 
-Open: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8
+Open: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA
 
 Check range `A18:H65` has:
 - 48 rows of settlement period data

@@ -119,7 +119,7 @@ tail -f analysis_updates.log
 
 ## 🔗 Quick Links
 
-- **Spreadsheet:** https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+- **Spreadsheet:** https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 - **BigQuery Console:** https://console.cloud.google.com/bigquery?project=inner-cinema-476211-u9
 - **Dataset:** `inner-cinema-476211-u9.uk_energy_prod`
 
@@ -215,7 +215,7 @@ cd "/Users/georgemajor/GB Power Market JJ"
 ./setup_analysis_sheet.sh
 ```
 
-**Then open:** https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+**Then open:** https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 
 ---
 

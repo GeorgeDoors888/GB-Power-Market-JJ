@@ -71,7 +71,7 @@ curl -H "Authorization: Bearer codex_fQI8xJXNPnhasYBOjd6h7mPHoF7HNI0Dh8rlgoJ2skA
 ```json
 {
   "success": true,
-  "dashboard_id": "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8",
+  "dashboard_id": "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA",
   "title": "GB Energy Dashboard",
   "worksheets": [
     {
@@ -172,7 +172,7 @@ PORT=<auto-set-by-railway>  # Dynamic port assignment
 - **Service Account**: jibber-jabber-knowledge@appspot.gserviceaccount.com
 - **Client ID**: 108583076839984080568
 - **Impersonates**: george@upowerenergy.uk
-- **Dashboard ID**: 12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8
+- **Dashboard ID**: 1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA
 - **Scopes**:
   - `https://www.googleapis.com/auth/spreadsheets`
   - `https://www.googleapis.com/auth/drive`

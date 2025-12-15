@@ -171,7 +171,7 @@ Example: `🟥🟥🟥🟥🟥🟥🟥🟥⬜⬜ 75.0%` = 75% unavailable
 ## Testing
 
 **Manual Test**:
-1. Open Dashboard: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8
+1. Open Dashboard: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA
 2. Check rows 22-69: Should only show SP, Time, Gen, Freq, Price
 3. Check columns E-H in those rows: Should be EMPTY
 4. Scroll to row 72+: Should see separate outage section
@@ -192,7 +192,7 @@ Should output: `✅ LAYOUT VERIFICATION PASSED`
 - ✅ Verification tests passed
 - ✅ Documentation complete
 
-**Dashboard URL**: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8
+**Dashboard URL**: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA
 
 ---
 

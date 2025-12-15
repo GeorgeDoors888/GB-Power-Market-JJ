@@ -12,7 +12,7 @@ from datetime import datetime
 import os
 
 # Configuration
-SPREADSHEET_ID = '12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8'
+SPREADSHEET_ID = '1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA'
 WORKSHEET_NAME = 'Battery_Revenue_Analysis'
 RESULTS_FILE = '/home/george/GB-Power-Market-JJ/logs/battery_revenue_final_20251205_131134.csv'
 

@@ -12,7 +12,7 @@ from datetime import datetime
 # Configuration
 PROJECT_ID = "inner-cinema-476211-u9"
 CREDENTIALS_FILE = "inner-cinema-credentials.json"
-SPREADSHEET_ID = "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8"
+SPREADSHEET_ID = "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA"
 DASHBOARD_SHEET = "Dashboard"
 DATA_RANGE = "A116:H126"
 

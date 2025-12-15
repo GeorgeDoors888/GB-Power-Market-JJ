@@ -5,7 +5,7 @@ from google.oauth2.service_account import Credentials
 
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
 CREDS_FILE = '/home/george/inner-cinema-credentials.json'
-SPREADSHEET_ID = '12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8'
+SPREADSHEET_ID = '1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA'
 
 creds = Credentials.from_service_account_file(CREDS_FILE, scopes=SCOPES)
 client = gspread.authorize(creds)

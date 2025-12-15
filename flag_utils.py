@@ -247,7 +247,7 @@ if __name__ == '__main__':
     from google.oauth2 import service_account
     
     SERVICE_ACCOUNT_FILE = 'inner-cinema-credentials.json'
-    SHEET_ID = '12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8'
+    SHEET_ID = '1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA'
     SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
     
     creds = service_account.Credentials.from_service_account_file(

@@ -349,7 +349,7 @@ creds = service_account.Credentials.from_service_account_file(
 ).with_subject('george@upowerenergy.uk')
 
 gc = gspread.authorize(creds)
-spreadsheet = gc.open_by_key('12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8')
+spreadsheet = gc.open_by_key('1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA')
 print('✅ Sheets connected. Title:', spreadsheet.title)
 "
 ```

@@ -3,8 +3,8 @@
 ## Analysis BI Enhanced Sheet
 
 ### Basic Information
-- **Spreadsheet ID**: `12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8`
-- **Sheet URL**: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+- **Spreadsheet ID**: `1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA`
+- **Sheet URL**: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 - **Sheet Name**: "Analysis BI Enhanced"
 - **Purpose**: Unified GB Power Market analysis combining historical and IRIS real-time data
 

@@ -14,14 +14,14 @@ You have **THREE** different Google Sheets documents in this project:
 
 | Spreadsheet | ID | Purpose | Status |
 |-------------|----|---------| -------|
-| **Main Analysis Dashboard** | `12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8` | Primary dashboard (from copilot-instructions.md) | ✅ **TARGET** |
+| **Main Analysis Dashboard** | `1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA` | Primary dashboard (from copilot-instructions.md) | ✅ **TARGET** |
 | **GB Live/BTM Dashboard** | `1MSl8fJ0to6Y08enXA2oysd8wvNUVm3AtfJ1bVqRH8_I` | BG Live, GB Live sheets | ❌ Wrong target |
 | **Clasp Project Parent** | `1LmMq4OEE639Y-XXpOJ3xnvpAmHB6vUovh5g6gaU_vzc` | Current .clasp.json parent | ❌ Unknown sheet |
 
 ### The Disconnect
 
 1. **add_date_range_controls.gs** references: `1MSl8fJ0to6Y08enXA2oysd8wvNUVm3AtfJ1bVqRH8_I` (wrong!)
-2. **Copilot instructions** reference: `12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8` (correct!)
+2. **Copilot instructions** reference: `1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA` (correct!)
 3. **.clasp.json** points to: `1LmMq4OEE639Y-XXpOJ3xnvpAmHB6vUovh5g6gaU_vzc` (unknown!)
 
 **Result**: Manual copy/paste puts code in wrong spreadsheet, Clasp pushes to unknown spreadsheet.
@@ -38,7 +38,7 @@ You have **THREE** different Google Sheets documents in this project:
 Open Google Sheets: https://docs.google.com/spreadsheets/d/1MSl8fJ0to6Y08enXA2oysd8wvNUVm3AtfJ1bVqRH8_I/edit
 
 // ✅ CORRECT:
-Open Google Sheets: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit
+Open Google Sheets: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit
 ```
 
 ### Issue 2: Clasp Project Misconfiguration
@@ -90,7 +90,7 @@ Found 15 `.clasp.json` files in repository:
 
 ### Scenario C: Wrong Sheet Opened
 
-1. You opened correct sheet: `12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8`
+1. You opened correct sheet: `1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA`
 2. But date controls script hardcoded wrong ID in comments
 3. Followed wrong URL, ended up in different sheet
 4. **Result**: Testing wrong spreadsheet
@@ -119,7 +119,7 @@ clasp create --title "Date Range Controls" --type standalone --rootDir .
 
 Since we need to deploy to an **existing** spreadsheet, we need the Apps Script project ID from that sheet:
 
-1. Open: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit
+1. Open: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit
 2. Extensions → Apps Script
 3. Copy the **Script ID** from URL: `https://script.google.com/d/SCRIPT_ID_HERE/edit`
 4. Update `.clasp.json`:
@@ -137,7 +137,7 @@ Since we need to deploy to an **existing** spreadsheet, we need the Apps Script 
 
 ```bash
 # Update add_date_range_controls.gs to reference correct sheet
-sed -i 's/1MSl8fJ0to6Y08enXA2oysd8wvNUVm3AtfJ1bVqRH8_I/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/g' add_date_range_controls.gs
+sed -i 's/1MSl8fJ0to6Y08enXA2oysd8wvNUVm3AtfJ1bVqRH8_I/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/g' add_date_range_controls.gs
 ```
 
 ### Step 4: Deploy via Clasp
@@ -166,7 +166,7 @@ clasp open  # Verify deployment
 
 ```bash
 # 1. Get existing script ID from your dashboard
-# Open: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit
+# Open: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit
 # Extensions → Apps Script → Copy script ID from URL
 
 # 2. Create Clasp project
@@ -189,7 +189,7 @@ clasp open
 
 ### Option B: Manual Deployment (Quick One-Time Fix)
 
-1. **Open CORRECT sheet**: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit
+1. **Open CORRECT sheet**: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit
 2. Extensions → Apps Script
 3. Paste **corrected** code (with right spreadsheet ID)
 4. Save
@@ -202,7 +202,7 @@ clasp open
 
 After deployment, verify:
 
-- [ ] Opened correct spreadsheet: `12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8`
+- [ ] Opened correct spreadsheet: `1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA`
 - [ ] Cell D65 has calendar picker dropdown
 - [ ] Cell E66 has calendar picker dropdown
 - [ ] C65 shows label "📅 From Date:"
@@ -223,7 +223,7 @@ After deployment, verify:
 ```bash
 # Line 10: Update spreadsheet URL
 # FROM: 1MSl8fJ0to6Y08enXA2oysd8wvNUVm3AtfJ1bVqRH8_I
-# TO:   12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8
+# TO:   1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA
 ```
 
 ### 2. GOOGLE_SHEETS_DATE_CONTROLS.md
@@ -246,7 +246,7 @@ After deployment, verify:
 
 | Sheet | Purpose | Date Controls Needed? |
 |-------|---------|---------------------|
-| **12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8** | Main Analysis Dashboard | ✅ YES |
+| **1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA** | Main Analysis Dashboard | ✅ YES |
 | 1MSl8fJ0to6Y08enXA2oysd8wvNUVm3AtfJ1bVqRH8_I | GB Live/BTM Dashboard | ❌ No |
 | 1LmMq4OEE639Y-XXpOJ3xnvpAmHB6vUovh5g6gaU_vzc | Unknown (old Clasp parent) | ❌ No |
 
@@ -287,7 +287,7 @@ After deployment, verify:
 
 You'll know it's working when:
 
-1. Open: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit
+1. Open: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit
 2. Click cell D65 → Calendar popup appears
 3. Select any date → Cell updates with `yyyy-mm-dd` format
 4. Click cell E66 → Calendar popup appears

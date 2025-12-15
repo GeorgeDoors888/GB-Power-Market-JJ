@@ -27,7 +27,7 @@ python simple_chart_example.py
 📈 Creating SSP vs Date chart...
 ✅ Chart created successfully!
 
-📄 View at: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit
+📄 View at: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit
 ```
 
 ### Step 3: View Result
@@ -191,7 +191,7 @@ python simple_chart_example.py
 python create_automated_charts.py
 
 # View your spreadsheet
-open "https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit"
+open "https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit"
 ```
 
 ---

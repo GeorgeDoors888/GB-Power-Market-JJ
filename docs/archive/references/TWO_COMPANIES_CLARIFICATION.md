@@ -113,7 +113,7 @@ query = "SELECT * FROM uk_energy_prod.bmrs_fuelinst LIMIT 100"
 df = bq_client.query(query).to_dataframe()
 
 # Write to Sheets with uPower Energy credentials
-spreadsheet = gc.open_by_key('12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8')
+spreadsheet = gc.open_by_key('1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA')
 worksheet = spreadsheet.worksheet('Dashboard')
 worksheet.update([df.columns.values.tolist()] + df.values.tolist())
 ```

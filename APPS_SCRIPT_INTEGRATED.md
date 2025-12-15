@@ -34,7 +34,7 @@ Status: ✅ Successfully deployed
 ## 📊 Spreadsheet Targets
 
 ### Primary Spreadsheet (BESS Tools + DNO Map)
-**URL**: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+**URL**: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 **Title**: GB Energy Dashboard
 **Key Sheets**:
 - **BESS** - Battery storage analysis with DNO lookup
@@ -173,7 +173,7 @@ If webhooks unavailable, Apps Script shows terminal commands to run.
 
 ### Option 1: Direct Copy-Paste (Recommended)
 ```
-1. Open spreadsheet: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+1. Open spreadsheet: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 2. Go to: Extensions → Apps Script
 3. Delete any existing code
 4. Copy ENTIRE /home/george/GB-Power-Market-JJ/Code.gs file

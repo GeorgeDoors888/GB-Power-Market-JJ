@@ -31,7 +31,7 @@ make views
 
 ## 📊 View the Dashboard
 
-**Google Sheet:** https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit
+**Google Sheet:** https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit
 
 ### Tabs Available:
 1. **Live Dashboard** - Main data table (50 settlement periods × 10 metrics)
@@ -73,7 +73,7 @@ All settings are in `.env` file:
 ```bash
 # Required for dashboard
 GOOGLE_APPLICATION_CREDENTIALS=/Users/georgemajor/GB Power Market JJ/inner-cinema-credentials.json
-SHEET_ID=12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8
+SHEET_ID=1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA
 
 # BigQuery project
 PROJECT_ID=inner-cinema-476211-u9
@@ -91,7 +91,7 @@ Set up GitHub Actions to refresh every 5 minutes:
 
 2. Add GitHub Secrets (Settings → Secrets → Actions):
    - Name: `SA_JSON_B64` → Paste encoded JSON
-   - Name: `SHEET_ID` → Value: `12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8`
+   - Name: `SHEET_ID` → Value: `1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA`
 
 3. Enable workflow in GitHub Actions tab
 

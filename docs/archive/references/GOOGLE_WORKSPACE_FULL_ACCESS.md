@@ -71,7 +71,7 @@ curl -H "Authorization: Bearer codex_fQI8xJXNPnhasYBOjd6h7mPHoF7HNI0Dh8rlgoJ2skA
   "sample_spreadsheets": [
     {
       "title": "GB Energy Dashboard",
-      "id": "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8",
+      "id": "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA",
       "url": "https://docs.google.com/spreadsheets/d/..."
     }
   ]
@@ -100,7 +100,7 @@ curl -H "Authorization: Bearer codex_fQI8xJXNPnhasYBOjd6h7mPHoF7HNI0Dh8rlgoJ2skA
   "spreadsheets": [
     {
       "title": "GB Energy Dashboard",
-      "id": "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8",
+      "id": "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA",
       "url": "https://docs.google.com/spreadsheets/d/...",
       "worksheets": 29
     },
@@ -131,7 +131,7 @@ curl -H "Authorization: Bearer codex_fQI8xJXNPnhasYBOjd6h7mPHoF7HNI0Dh8rlgoJ2skA
 curl -X POST \
   -H "Authorization: Bearer codex_fQI8xJXNPnhasYBOjd6h7mPHoF7HNI0Dh8rlgoJ2skA" \
   -H "Content-Type: application/json" \
-  -d '{"spreadsheet_id": "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8"}' \
+  -d '{"spreadsheet_id": "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA"}' \
   https://jibber-jabber-production.up.railway.app/workspace/get_spreadsheet
 ```
 
@@ -149,7 +149,7 @@ curl -X POST \
 {
   "success": true,
   "title": "GB Energy Dashboard",
-  "spreadsheet_id": "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8",
+  "spreadsheet_id": "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA",
   "url": "https://docs.google.com/spreadsheets/d/...",
   "worksheets": [
     {
@@ -189,7 +189,7 @@ curl -X POST \
   -H "Authorization: Bearer codex_fQI8xJXNPnhasYBOjd6h7mPHoF7HNI0Dh8rlgoJ2skA" \
   -H "Content-Type: application/json" \
   -d '{
-    "spreadsheet_id": "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8",
+    "spreadsheet_id": "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA",
     "worksheet_name": "Dashboard",
     "cell_range": "A1:E10"
   }' \
@@ -213,7 +213,7 @@ curl -X POST \
 {
   "success": true,
   "spreadsheet_title": "GB Energy Dashboard",
-  "spreadsheet_id": "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8",
+  "spreadsheet_id": "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA",
   "worksheet_name": "Dashboard",
   "rows": 44,
   "cols": 8,
@@ -246,7 +246,7 @@ curl -X POST \
   -H "Authorization: Bearer codex_fQI8xJXNPnhasYBOjd6h7mPHoF7HNI0Dh8rlgoJ2skA" \
   -H "Content-Type: application/json" \
   -d '{
-    "spreadsheet_id": "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8",
+    "spreadsheet_id": "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA",
     "worksheet_name": "Test Data",
     "cell_range": "A1:C3",
     "values": [
@@ -263,7 +263,7 @@ curl -X POST \
 {
   "success": true,
   "spreadsheet_title": "GB Energy Dashboard",
-  "spreadsheet_id": "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8",
+  "spreadsheet_id": "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA",
   "worksheet_name": "Test Data",
   "cell_range": "A1:C3",
   "cells_updated": 9
@@ -301,7 +301,7 @@ curl -H "Authorization: Bearer codex_fQI8xJXNPnhasYBOjd6h7mPHoF7HNI0Dh8rlgoJ2skA
   "total_files": 47,
   "files": [
     {
-      "id": "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8",
+      "id": "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA",
       "name": "GB Energy Dashboard",
       "mimeType": "application/vnd.google-apps.spreadsheet",
       "url": "https://docs.google.com/spreadsheets/d/...",
@@ -354,7 +354,7 @@ curl -X POST \
   "total_results": 3,
   "files": [
     {
-      "id": "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8",
+      "id": "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA",
       "name": "GB Energy Dashboard",
       "mimeType": "application/vnd.google-apps.spreadsheet",
       "url": "https://docs.google.com/spreadsheets/d/..."
@@ -515,7 +515,7 @@ Volume, 250, Today"
 ### Before (Hardcoded)
 ```python
 # Only worked with GB Energy Dashboard
-sheet = gc.open_by_key('12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8')
+sheet = gc.open_by_key('1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA')
 # Read only
 # Limited to 3 endpoints
 ```

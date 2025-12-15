@@ -10,7 +10,7 @@ from google.cloud import bigquery
 import gspread
 
 # Configuration
-SPREADSHEET_ID = '12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8'
+SPREADSHEET_ID = '1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA'
 SHEET_NAME = 'Enhanced_BI_Analysis'  # Separate sheet for detailed analysis (NOT the main Dashboard)
 PROJECT_ID = 'inner-cinema-476211-u9'
 DATASET = 'uk_energy_prod'

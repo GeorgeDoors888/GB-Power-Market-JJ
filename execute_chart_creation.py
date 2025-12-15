@@ -102,7 +102,7 @@ def main():
         
         print("\n✅ CHARTS CREATED SUCCESSFULLY!")
         print(f"\n📊 View Dashboard:")
-        print(f"   https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/")
+        print(f"   https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/")
         print(f"\n✨ 4 Interactive Charts Added:")
         print("   1. ⚡ 24-Hour Generation Trend (Line Chart)")
         print("   2. 🥧 Current Generation Mix (Pie Chart)")

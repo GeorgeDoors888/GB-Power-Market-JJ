@@ -164,6 +164,6 @@ Then please:
 ✅ **Pumped hydro (NPSHYD)**: Already showing in Dashboard Row 12  
 ✅ **Data freshness indicator**: Explained - it's a legend showing what the symbols mean  
 
-**Dashboard URL**: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8
+**Dashboard URL**: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA
 
 Try refreshing your browser - the flags should now be visible! 🎉

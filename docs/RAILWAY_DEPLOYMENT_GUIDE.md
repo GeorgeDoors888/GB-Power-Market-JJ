@@ -148,7 +148,7 @@ GOOGLE_WORKSPACE_CREDENTIALS=<base64-encoded-workspace-credentials>
   - `bmrs_*_iris` - Real-time data tables
 
 ### **Google Workspace Access**
-- **Primary Sheet**: `12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8`
+- **Primary Sheet**: `1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA`
 - **Scopes**:
   - `https://www.googleapis.com/auth/spreadsheets`
   - `https://www.googleapis.com/auth/drive`
@@ -517,7 +517,7 @@ curl -X POST http://localhost:8000/read_sheet \
   -H "Authorization: Bearer codex_fQI8xJXNPnhasYBOjd6h7mPHoF7HNI0Dh8rlgoJ2skA" \
   -H "Content-Type: application/json" \
   -d '{
-    "sheet_id": "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8",
+    "sheet_id": "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA",
     "worksheet": "Dashboard"
   }'
 ```

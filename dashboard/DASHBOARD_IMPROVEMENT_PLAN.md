@@ -1,7 +1,7 @@
 # 📈 Dashboard Improvement Plan - Implementation Guide
 
 **Project:** GB Power Market JJ Dashboard  
-**Dashboard URL:** https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit  
+**Dashboard URL:** https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit  
 **Date:** November 9, 2025  
 **Status:** 🟢 Ready to Implement
 
@@ -57,7 +57,7 @@ crontab -l | grep dashboard
 tail -20 logs/dashboard_updater.log
 
 # Verify dashboard is accessible
-curl -s "https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/export?format=csv&gid=0" | head
+curl -s "https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/export?format=csv&gid=0" | head
 ```
 
 ### Step 2: Deploy Charts (Main Task)
@@ -82,7 +82,7 @@ python3 dashboard/python-updaters/deploy_dashboard_charts.py
 
 1. **Open Apps Script Editor:**
    ```
-   https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit
+   https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit
    → Extensions → Apps Script
    ```
 
@@ -121,7 +121,7 @@ python3 dashboard/python-updaters/deploy_dashboard_charts.py
 python3 update_analysis_bi_enhanced.py
 
 # 2. Open dashboard
-open "https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit"
+open "https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit"
 
 # 3. Verify:
 # ✅ Data shows current settlement period
@@ -581,7 +581,7 @@ git diff
 **Primary Maintainer:** George Major  
 **Email:** george@upowerenergy.uk  
 **Repository:** https://github.com/GeorgeDoors888/GB-Power-Market-JJ  
-**Dashboard:** https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+**Dashboard:** https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 
 **Escalation:**
 1. Check logs: `logs/dashboard_updater.log`

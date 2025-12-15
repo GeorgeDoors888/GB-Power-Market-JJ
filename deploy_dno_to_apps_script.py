@@ -130,7 +130,7 @@ def find_script_id_interactive():
     print("=" * 80)
     
     print("\n1. Open your Google Sheet")
-    print("   https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit")
+    print("   https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit")
     
     print("\n2. Go to: Extensions → Apps Script")
     

@@ -86,7 +86,7 @@ Use just basic data from bmrs_mid without trying to match the jibber-jabber BI p
 
 ## 📄 Sheet URL
 
-https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 
 Look for the **"Analysis BI Enhanced"** tab.
 

@@ -84,8 +84,8 @@ results = client.query(query).result()
 
 ### Main Dashboard
 - **Name:** GB Power Market Dashboard
-- **Spreadsheet ID:** `12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8`
-- **URL:** https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit
+- **Spreadsheet ID:** `1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA`
+- **URL:** https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit
 
 ### Authentication Setup
 ```python
@@ -106,7 +106,7 @@ creds = Credentials.from_service_account_file(
 client = gspread.authorize(creds)
 
 # Open spreadsheet
-spreadsheet = client.open_by_key('12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8')
+spreadsheet = client.open_by_key('1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA')
 sheet = spreadsheet.sheet1
 
 # Read/write data
@@ -273,7 +273,7 @@ google-auth-oauthlib>=0.5.0
 
 ### Production Services
 - **Power Map:** http://94.237.55.234/gb_power_complete_map.html
-- **Dashboard:** https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit
+- **Dashboard:** https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit
 
 ### Google Cloud Console
 - **BigQuery:** https://console.cloud.google.com/bigquery?project=inner-cinema-476211-u9
@@ -435,7 +435,7 @@ from google.oauth2.service_account import Credentials
 scopes = ['https://www.googleapis.com/auth/spreadsheets']
 creds = Credentials.from_service_account_file('smart_grid_credentials.json', scopes=scopes)
 client = gspread.authorize(creds)
-sheet = client.open_by_key('12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8')
+sheet = client.open_by_key('1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA')
 print(f'✅ Sheets Connected - Opened: {sheet.title}')
 "
 ```

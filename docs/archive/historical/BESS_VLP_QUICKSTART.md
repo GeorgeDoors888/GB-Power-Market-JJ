@@ -11,7 +11,7 @@
 ✅ **Apps Script Code**: Ready to deploy (`apps-script/bess_vlp_lookup.gs`)  
 ✅ **Documentation**: Full deployment guide (`BESS_VLP_DEPLOYMENT_GUIDE.md`)
 
-**Sheet URL**: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit#gid=244875982
+**Sheet URL**: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit#gid=244875982
 
 ---
 

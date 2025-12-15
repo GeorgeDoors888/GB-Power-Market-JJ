@@ -7,7 +7,7 @@
 
 ## Before You Start
 
-- [ ] Google Sheet is open: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit
+- [ ] Google Sheet is open: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit
 - [ ] File `google_sheets_dashboard.gs` is open in VS Code
 - [ ] You're logged into Google with the right account
 

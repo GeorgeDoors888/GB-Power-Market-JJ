@@ -16,7 +16,7 @@ import logging
 PROJECT_ID = "inner-cinema-476211-u9"
 DATASET = "uk_energy_prod"
 BQ_CREDS_FILE = "inner-cinema-credentials.json"
-DASHBOARD_SHEET_ID = "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8"
+DASHBOARD_SHEET_ID = "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA"
 
 logging.basicConfig(level=logging.INFO, format='%(message)s')
 logger = logging.getLogger(__name__)

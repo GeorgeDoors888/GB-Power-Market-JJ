@@ -15,7 +15,7 @@ python3 enhance_dashboard_layout.py
 python3 format_dashboard.py
 
 # View dashboard
-open "https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/"
+open "https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/"
 
 # Check auto-refresh logs
 tail -f logs/dashboard_updater.log
@@ -36,7 +36,7 @@ tail -f logs/dashboard_updater.log
 
 ## 🎨 Chart Setup (5 Steps)
 
-1. Open: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+1. Open: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 2. Extensions → Apps Script
 3. Paste `dashboard_charts.gs` content
 4. Run: `createDashboardCharts()`

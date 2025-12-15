@@ -124,7 +124,7 @@ dashboard/
 
 1. **Open Dashboard:**
    ```
-   https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit
+   https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit
    ```
 
 2. **Open Apps Script:**
@@ -356,7 +356,7 @@ crontab -l | grep dashboard
 tail -20 logs/dashboard_updater.log
 
 # 3. Open dashboard
-open "https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit"
+open "https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit"
 
 # 4. Verify:
 # ✅ Last Updated timestamp is recent (< 5 min old)
@@ -370,7 +370,7 @@ open "https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFA
 
 ```bash
 # Open dashboard
-open "https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit"
+open "https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit"
 
 # Verify charts:
 # ✅ 4 charts visible on Dashboard sheet
@@ -528,7 +528,7 @@ git commit -m "docs(dashboard): Update deployment instructions"
 ## 🔗 Quick Links
 
 ### Dashboard & Tools
-- **Live Dashboard:** https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit
+- **Live Dashboard:** https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit
 - **GitHub Repository:** https://github.com/GeorgeDoors888/GB-Power-Market-JJ
 - **BigQuery Console:** https://console.cloud.google.com/bigquery?project=inner-cinema-476211-u9
 

@@ -140,7 +140,7 @@ curl -X POST http://94.237.55.234:5001/trigger-dno-lookup \
 ## 🧪 Test the Auto-Monitor
 
 ### Test 1: Edit A6 (Postcode)
-1. Open BESS sheet: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit
+1. Open BESS sheet: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit
 2. Edit cell **A6** (enter a postcode like "RH19 4LX")
 3. Wait 30 seconds
 4. Check logs:

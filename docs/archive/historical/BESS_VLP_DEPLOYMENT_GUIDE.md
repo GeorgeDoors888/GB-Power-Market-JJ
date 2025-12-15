@@ -2,7 +2,7 @@
 
 **Status**: Sheet Created | Apps Script Ready | Testing Required  
 **Created**: November 9, 2025  
-**Sheet URL**: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit#gid=244875982
+**Sheet URL**: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit#gid=244875982
 
 ---
 
@@ -128,7 +128,7 @@ cd "/Users/georgemajor/GB Power Market JJ"
 
 ### 🟡 Step 2: Deploy Apps Script (PENDING)
 
-1. Open Google Sheets: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit
+1. Open Google Sheets: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit
 
 2. Click **Extensions → Apps Script**
 
@@ -430,7 +430,7 @@ Revenue Analysis (advanced_statistical_analysis_enhanced.py)
 - `inner-cinema-476211-u9.uk_energy_prod.neso_dno_boundaries` (14 rows)
 
 ### Google Sheets Modified
-- Spreadsheet: `12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8`
+- Spreadsheet: `1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA`
 - New Sheet: `BESS_VLP` (Sheet ID: 244875982)
 
 ---

@@ -110,7 +110,7 @@ crontab -e
 ### Step 3: Install Apps Script Charts
 
 1. **Open Google Sheets Dashboard**:
-   - https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+   - https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 
 2. **Open Apps Script Editor**:
    - Click `Extensions` → `Apps Script`

@@ -9,7 +9,7 @@ from google.oauth2 import service_account
 import json
 
 SA_FILE = 'inner-cinema-credentials.json'
-SPREADSHEET_ID = '12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8'
+SPREADSHEET_ID = '1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA'
 
 print('=' * 80)
 print('LOCKING DASHBOARD FORMATTING')

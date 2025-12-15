@@ -9,7 +9,7 @@ import os
 
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
-SHEET_ID = "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8"
+SHEET_ID = "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA"
 SA_PATH = "inner-cinema-credentials.json"
 PROJECT_ID = "inner-cinema-476211-u9"
 DATASET = "uk_energy_prod"
@@ -246,6 +246,6 @@ if __name__ == "__main__":
         print("   • Interconnector status and grid balance")
         print("   • Plain English interpretation of what the data means")
         print("\n🌐 View Dashboard:")
-        print("   https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8")
+        print("   https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA")
     else:
         print("\n❌ Failed to add analysis section")

@@ -206,7 +206,7 @@ python3 enhance_bess_sheet_complete.py
 - ✅ Column widths and frozen headers
 
 ### Step 2: Install Custom Menu
-1. Open Google Sheets: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit
+1. Open Google Sheets: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit
 2. Go to **Extensions → Apps Script**
 3. Click **+ (Add File)** → **Script**
 4. Name it: `bess_custom_menu`

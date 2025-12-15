@@ -233,7 +233,7 @@ BigQuery (inner-cinema-476211-u9.uk_energy_prod) ✅
 
 ### Next Step 🎯
 **Test your Google Sheet dashboard:**
-1. Open: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit
+1. Open: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit
 2. Click: ⚡ Power Market → 🔄 Refresh Now (today)
 3. Verify: SSP, SBP, BOALF, BOD columns populate
 

@@ -113,7 +113,7 @@ F23: =SPARKLINE(Summary!H2:H50,{"charttype","area","color","#8E24AA"})
 
 ### 1. Verify Chart Display
 ```bash
-open "https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/"
+open "https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/"
 ```
 - Navigate to Dashboard sheet
 - Check rows 18-21 for combo chart

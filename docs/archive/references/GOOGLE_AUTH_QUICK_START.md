@@ -62,7 +62,7 @@ import gspread
 PROJECT_ID = "inner-cinema-476211-u9"
 LOCATION = "US"
 CREDENTIALS_FILE = "inner-cinema-credentials.json"
-SHEET_ID = "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8"
+SHEET_ID = "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA"
 
 # Set environment variable
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = CREDENTIALS_FILE
@@ -117,7 +117,7 @@ python3 -c "from google.cloud import bigquery; client = bigquery.Client(project=
 
 ### **View Dashboard**
 ```bash
-open "https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/"
+open "https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/"
 ```
 
 ### **Check Cron Jobs**
@@ -157,8 +157,8 @@ CREDENTIALS_FILE = "inner-cinema-credentials.json"
 ## 📊 Key Resources
 
 ### **Google Sheets Dashboard**
-- **ID**: 12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8
-- **URL**: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+- **ID**: 1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA
+- **URL**: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 
 ### **BigQuery Console**
 - **Project**: https://console.cloud.google.com/bigquery?project=inner-cinema-476211-u9

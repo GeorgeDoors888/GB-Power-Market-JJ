@@ -2,7 +2,7 @@
 
 ## 📋 One-Time Setup (5 minutes)
 
-1. **Open**: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit
+1. **Open**: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit
 2. **Extensions** → **Apps Script**
 3. **Paste** all 246+ lines from `gb_energy_dashboard_apps_script.gs`
 4. **Save** (Cmd/Ctrl+S) as "GB Energy Dashboard Manager"
@@ -71,7 +71,7 @@ Prompt: "Refresh the dashboard"
 
 ## 🔗 Useful Links
 
-- **Google Sheet**: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit
+- **Google Sheet**: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit
 - **API Endpoint**: https://94.237.55.15/sheets/run-apps-script
 - **Full Guide**: `APPS_SCRIPT_DEPLOYMENT_GUIDE.md`
 - **ChatGPT GPT**: https://chatgpt.com/g/g-690c89d2e338819180a9ab96a71e082f-gb-power-market-api

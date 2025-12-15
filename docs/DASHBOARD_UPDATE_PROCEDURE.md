@@ -134,7 +134,7 @@ python3 -c "from google.cloud import bigquery; client = bigquery.Client(project=
 
 ### Check Dashboard State
 ```bash
-python3 -c "import pickle, gspread; creds = pickle.load(open('token.pickle','rb')); gc = gspread.authorize(creds); sheet = gc.open_by_key('12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8').worksheet('Dashboard'); print('Row 2:', sheet.acell('B2').value); print('Row 5:', sheet.acell('B5').value)"
+python3 -c "import pickle, gspread; creds = pickle.load(open('token.pickle','rb')); gc = gspread.authorize(creds); sheet = gc.open_by_key('1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA').worksheet('Dashboard'); print('Row 2:', sheet.acell('B2').value); print('Row 5:', sheet.acell('B5').value)"
 ```
 
 ## 📚 Reference Documentation

@@ -12,7 +12,7 @@ The map uses `google.script.run.getConstraintData()` which **only works inside G
 ### Method 1: From Google Sheets (RECOMMENDED)
 
 1. Open your **Dashboard spreadsheet**: 
-   https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+   https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 
 2. Look for menu: **🗺️ Constraint Map**
    

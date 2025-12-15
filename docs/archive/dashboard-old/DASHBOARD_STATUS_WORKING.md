@@ -27,7 +27,7 @@
 ## 📊 Dashboard Details
 
 ### Live Dashboard
-**URL:** https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+**URL:** https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 
 ### Current Data
 - ✅ **Total Generation:** 21,836,687 MWh (last 7 days)
@@ -241,7 +241,7 @@ tail -f logs/dashboard_updater.log
 crontab -l | grep dashboard
 
 # Access dashboard
-open "https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/"
+open "https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/"
 ```
 
 ---

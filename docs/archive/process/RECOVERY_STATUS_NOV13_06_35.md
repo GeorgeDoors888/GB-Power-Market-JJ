@@ -403,7 +403,7 @@ ssh root@94.237.55.234 'tail -f /opt/iris-pipeline/logs/iris_uploader.log | grep
 python3 -c "from google.cloud import bigquery; client = bigquery.Client(project='inner-cinema-476211-u9', location='US'); print(client.query('SELECT MAX(publishTime) FROM \`inner-cinema-476211-u9.uk_energy_prod.bmrs_fuelinst_iris\`').to_dataframe())"
 
 # Dashboard check (cell B2)
-python3 -c "import gspread; gc = gspread.oauth(); sh = gc.open_by_key('12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8'); ws = sh.worksheet('Dashboard'); print('Last updated:', ws.acell('B2').value)"
+python3 -c "import gspread; gc = gspread.oauth(); sh = gc.open_by_key('1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA'); ws = sh.worksheet('Dashboard'); print('Last updated:', ws.acell('B2').value)"
 ```
 
 ---

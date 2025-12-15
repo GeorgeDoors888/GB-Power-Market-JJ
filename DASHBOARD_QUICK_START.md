@@ -27,7 +27,7 @@ Cell B2:   ⏰ Timestamp with "LIVE AUTO-REFRESH (5 min)"
 
 ### 1. View Dashboard (0 seconds)
 ```bash
-open "https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/"
+open "https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/"
 ```
 
 ### 2. Install Apps Script (30 seconds)

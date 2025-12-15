@@ -115,7 +115,7 @@ tail -f /opt/dashboard-updater/logs/dashboard_updater.log
 
 ### Check Dashboard
 
-**Dashboard URL:** https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+**Dashboard URL:** https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 
 **Check Cell B2:** Should show "⏰ Last Updated: [timestamp] | ✅ FRESH"
 
@@ -232,7 +232,7 @@ crontab -e
 
 **Next Cron Run:** Every 5-minute mark (XX:00, XX:05, XX:10, etc.)
 
-**Dashboard URL:** https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+**Dashboard URL:** https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 
 ---
 

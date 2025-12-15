@@ -17,7 +17,7 @@ CORS(app)
 
 # Configuration
 CREDS_FILE = "../inner-cinema-credentials.json"
-OLD_SHEET_ID = "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8"
+OLD_SHEET_ID = "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA"
 NEW_SHEET_ID = "1LmMq4OEE639Y-XXpOJ3xnvpAmHB6vUovh5g6gaU_vzc"
 BESS_SHEET_ID = "1MOwnQtDEMiXCYuaeR5JA4Avz_M-xYzu_iQ20pRLXdsHMTwo4qJ0Cn6wx"
 PROJECT_ID = "inner-cinema-476211-u9"

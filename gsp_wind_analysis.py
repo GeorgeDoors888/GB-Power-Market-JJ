@@ -205,7 +205,7 @@ def update_google_sheet(df, summary):
     
     # Use existing Dashboard sheet instead of creating new one
     # Service accounts can't create files, but can access shared files
-    DASHBOARD_SHEET_ID = "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8"
+    DASHBOARD_SHEET_ID = "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA"
     
     try:
         spreadsheet = gc.open_by_key(DASHBOARD_SHEET_ID)

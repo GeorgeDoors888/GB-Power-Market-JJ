@@ -46,7 +46,7 @@ curl -X GET "https://jibber-jabber-production.up.railway.app/" \
 curl -X POST "https://jibber-jabber-production.up.railway.app/workspace/get_spreadsheet" \
   -H "Authorization: Bearer codex_fQI8xJXNPnhasYBOjd6h7mPHoF7HNI0Dh8rlgoJ2skA" \
   -H "Content-Type: application/json" \
-  -d '{"spreadsheet_id": "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8"}'
+  -d '{"spreadsheet_id": "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA"}'
 ```
 
 **Response:**
@@ -54,8 +54,8 @@ curl -X POST "https://jibber-jabber-production.up.railway.app/workspace/get_spre
 {
   "success": true,
   "title": "GB Energy Dashboard",
-  "spreadsheet_id": "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8",
-  "url": "https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8",
+  "spreadsheet_id": "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA",
+  "url": "https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA",
   "worksheets": [...29 worksheets...],
   "total_worksheets": 29
 }

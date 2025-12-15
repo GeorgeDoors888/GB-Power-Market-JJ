@@ -33,7 +33,7 @@ You now have a **custom menu in Google Sheets** that lets you refresh data with 
 
 ### Step 1: Install Google Apps Script (2 min)
 
-1. Open your sheet: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+1. Open your sheet: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 2. Click: **Extensions > Apps Script**
 3. Delete any code in editor
 4. Copy ALL code from `google_sheets_menu.gs`

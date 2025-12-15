@@ -9,7 +9,7 @@ from oauth2client.service_account import ServiceAccountCredentials
 scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
 creds = ServiceAccountCredentials.from_json_keyfile_name('inner-cinema-credentials.json', scope)
 gc = gspread.authorize(creds)
-spreadsheet = gc.open_by_key('12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8')
+spreadsheet = gc.open_by_key('1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA')
 
 print('🔒 LOCKING DOWN DASHBOARD SHEET')
 print('=' * 80)
@@ -58,7 +58,7 @@ body = {
 
 print('\n🔒 Applying protection...')
 response = service.spreadsheets().batchUpdate(
-    spreadsheetId='12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8',
+    spreadsheetId='1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA',
     body=body
 ).execute()
 

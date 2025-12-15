@@ -97,7 +97,7 @@ Enable the workflow in `.github/workflows/refresh-dashboard.yml`:
 ### Environment Variables (.env)
 ```bash
 GOOGLE_APPLICATION_CREDENTIALS=/path/to/inner-cinema-credentials.json
-SHEET_ID=12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8
+SHEET_ID=1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA
 ```
 
 ### BigQuery Tables Used

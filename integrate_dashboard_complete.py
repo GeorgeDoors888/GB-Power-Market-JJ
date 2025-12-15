@@ -16,7 +16,7 @@ import gspread
 from pathlib import Path
 
 # Configuration
-SPREADSHEET_ID = '12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8'
+SPREADSHEET_ID = '1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA'
 PROJECT_ID = 'inner-cinema-476211-u9'
 DATASET = 'uk_energy_prod'
 LOCATION = 'US'
@@ -234,7 +234,7 @@ apps_script_guide = """
  */
 
 // Configuration
-const SHEET_ID = '12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8';
+const SHEET_ID = '1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA';
 const DASHBOARD_SHEET = 'Dashboard';
 const MAP_RANGE = 'A47:H60';  // Where map will be embedded
 

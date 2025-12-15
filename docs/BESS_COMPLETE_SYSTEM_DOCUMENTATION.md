@@ -2,7 +2,7 @@
 
 **Date**: 22 November 2025  
 **Status**: ✅ FULLY OPERATIONAL  
-**Google Sheet**: [GB Energy Dashboard](https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit)
+**Google Sheet**: [GB Energy Dashboard](https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit)
 
 ---
 
@@ -345,7 +345,7 @@ python3 dno_webapp_client.py 12 HV    # London, High Voltage
 
 ### Method 2: Via Google Sheet (User-Friendly)
 
-1. **Open Sheet**: [GB Energy Dashboard](https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit)
+1. **Open Sheet**: [GB Energy Dashboard](https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit)
 2. **Navigate to BESS tab**
 3. **Enter MPAN**: Cell B6 (value 10-23)
 4. **Select Voltage**: Cell A9 dropdown (LV/HV/EHV)
@@ -452,7 +452,7 @@ python3 dno_webapp_client.py 12 HV    # London, High Voltage
 **Project**: GB Power Market JJ  
 **Repository**: [GitHub](https://github.com/GeorgeDoors888/GB-Power-Market-JJ)  
 **Maintainer**: George Major (george@upowerenergy.uk)  
-**Google Sheet**: [GB Energy Dashboard](https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit)
+**Google Sheet**: [GB Energy Dashboard](https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit)
 
 **Related Documentation**:
 - `BESS_DNO_LOOKUP_INTEGRATION.md` - Web App integration

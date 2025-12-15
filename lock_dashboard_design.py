@@ -17,7 +17,7 @@ from datetime import datetime
 import json
 
 # --- Configuration ---
-DASHBOARD_SHEET_ID = "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8"
+DASHBOARD_SHEET_ID = "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA"
 CREDS_FILE = 'inner-cinema-credentials.json'
 SHEET_NAME = 'Dashboard'
 

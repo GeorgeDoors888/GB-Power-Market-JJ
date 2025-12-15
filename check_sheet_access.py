@@ -26,4 +26,4 @@ def check_spreadsheet(spreadsheet_id):
 check_spreadsheet("1LmMq4OEE639Y-XXpOJ3xnvpAmHB6vUovh5g6gaU_vzc")
 
 # Check the other ID found in grep
-check_spreadsheet("12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8")
+check_spreadsheet("1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA")

@@ -65,7 +65,7 @@ curl -X GET "https://jibber-jabber-production.up.railway.app/workspace/dashboard
 ```json
 {
   "success": true,
-  "spreadsheet_id": "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8",
+  "spreadsheet_id": "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA",
   "title": "GB Energy Dashboard",
   "url": "https://docs.google.com/spreadsheets/d/...",
   "worksheets": [
@@ -121,7 +121,7 @@ Write data to Google Sheets.
 ```json
 POST /write_sheet
 {
-  "sheet_id": "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8",
+  "sheet_id": "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA",
   "worksheet": "Dashboard",
   "data": [["Header1", "Header2"], ["Value1", "Value2"]],
   "range_name": "A1"
@@ -132,7 +132,7 @@ POST /write_sheet
 List all worksheets with metadata (rows, cols, IDs).
 
 ```
-GET /list_worksheets?sheet_id=12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8
+GET /list_worksheets?sheet_id=1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA
 ```
 
 ### Google Drive

@@ -49,7 +49,7 @@ cd "/Users/georgemajor/GB Power Market JJ"
 - GSP Regions: https://drive.google.com/uc?id=17TKRWnL_6e7gWu6d27O4XFVbe8K8HEmj
 - Transmission: https://drive.google.com/uc?id=1nAOV9B-kxSqCWsuBaXOWPGteBVAVz7jm
 
-**Dashboard**: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8
+**Dashboard**: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA
 
 ## Manual Update Anytime
 

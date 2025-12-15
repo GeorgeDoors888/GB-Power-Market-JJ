@@ -13,7 +13,7 @@ import logging
 
 logging.basicConfig(level=logging.INFO, format='%(message)s')
 
-SPREADSHEET_ID = '12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8'
+SPREADSHEET_ID = '1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA'
 SCRIPT_ID = '1wJuJJSlS-_XjwXBd92fax7THLVbpnjBlhL3HkflsLjUTYkfdsua1YMoS'
 
 print("\n" + "=" * 70)

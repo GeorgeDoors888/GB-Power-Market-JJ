@@ -22,7 +22,7 @@
 ## 📊 What You Have Now
 
 ### Analysis Sheet Created ✅
-**Location:** https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+**Location:** https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 
 **Contents:**
 - **Header:** "ANALYSIS DASHBOARD - Historical + Real-Time Data"
@@ -56,7 +56,7 @@ python3 simple_analysis_sheet.py
 ```
 
 ### View the Sheet
-Open: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+Open: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 Click on: "Analysis" tab
 
 ---
@@ -176,7 +176,7 @@ SELECT * FROM bmrs_freq_unified LIMIT 10
 
 **How to update:** `python3 simple_analysis_sheet.py`
 
-**View it:** https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+**View it:** https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 
 **Next:** Fix other unified views by matching IRIS schemas, then expand Analysis sheet.
 

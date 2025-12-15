@@ -57,7 +57,7 @@ python3 execute_chart_creation.py
 
 ### Hide ChartData (if visible)
 ```bash
-python3 -c "import gspread; gc = gspread.service_account(filename='inner-cinema-credentials.json'); ss = gc.open_by_key('12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8'); cd = ss.worksheet('ChartData'); ss.batch_update({'requests': [{'updateSheetProperties': {'properties': {'sheetId': cd.id, 'hidden': True}, 'fields': 'hidden'}}]}); print('✅ Hidden')"
+python3 -c "import gspread; gc = gspread.service_account(filename='inner-cinema-credentials.json'); ss = gc.open_by_key('1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA'); cd = ss.worksheet('ChartData'); ss.batch_update({'requests': [{'updateSheetProperties': {'properties': {'sheetId': cd.id, 'hidden': True}, 'fields': 'hidden'}}]}); print('✅ Hidden')"
 ```
 
 ---
@@ -175,7 +175,7 @@ python3 enhance_dashboard_layout.py
 | `inner-cinema-credentials.json` | BigQuery/Sheets access |
 | `DASHBOARD_DATA_REFRESH_GUIDE.md` | Detailed documentation |
 
-**Spreadsheet ID:** `12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8`  
+**Spreadsheet ID:** `1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA`  
 **BigQuery Project:** `inner-cinema-476211-u9`  
 **Dataset:** `uk_energy_prod`
 
@@ -224,7 +224,7 @@ GROUP BY settlementDate, settlementPeriod
 
 ## 📞 Quick Links
 
-**Dashboard:** https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/  
+**Dashboard:** https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/  
 **Apps Script:** https://script.google.com/d/1fILya0xmSWkwXHtY9ulWDTVqFnPQqblpCmKLsa5A-y4dHeOOdU5q1N5A/edit  
 **BigQuery Console:** https://console.cloud.google.com/bigquery?project=inner-cinema-476211-u9
 

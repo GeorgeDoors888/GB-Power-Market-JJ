@@ -97,7 +97,7 @@ Features:
 =HYPERLINK("http://94.237.55.234/gb_power_complete_map.html", "🗺️ Live Power Map")
 ```
 
-**Your Sheet**: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/edit
+**Your Sheet**: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit
 
 ---
 

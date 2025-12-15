@@ -6,7 +6,7 @@
 - ✅ Python 3.9+ installed
 - ✅ Google credentials: `/home/george/inner-cinema-credentials.json`
 - ✅ BigQuery access: `inner-cinema-476211-u9.uk_energy_prod`
-- ✅ Google Sheets: `12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8`
+- ✅ Google Sheets: `1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA`
 
 ### Step 1: Install Dependencies (30 seconds)
 ```bash
@@ -56,7 +56,7 @@ python3 create_vlp_charts.py
 ```
 
 ### Step 4: Verify Results (30 seconds)
-Open: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+Open: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 
 **Check**:
 - ✅ Dashboard tab: Revenue breakdown table (A4:B10)
@@ -88,7 +88,7 @@ clasp deploy --description "VLP Dashboard v1.0"
 ```
 
 ### Step 5b: Manual Setup (Alternative - 3 minutes)
-1. Open spreadsheet: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+1. Open spreadsheet: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 2. Extensions → Apps Script
 3. Paste contents of `vlp_menu.gs`
 4. Save (Ctrl+S)

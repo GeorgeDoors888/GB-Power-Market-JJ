@@ -8,7 +8,7 @@ Run after any dashboard update script changes
 import pickle
 from googleapiclient.discovery import build
 
-SPREADSHEET_ID = '12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8'
+SPREADSHEET_ID = '1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA'
 
 # Expected flags in order (rows 8-17)
 REQUIRED_FLAGS = [

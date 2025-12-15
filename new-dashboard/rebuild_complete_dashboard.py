@@ -14,7 +14,7 @@ from google.oauth2 import service_account
 import time
 
 # Configuration
-OLD_ID = '12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8'
+OLD_ID = '1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA'
 NEW_ID = '1LmMq4OEE639Y-XXpOJ3xnvpAmHB6vUovh5g6gaU_vzc'
 SA_FILE = '../inner-cinema-credentials.json'
 

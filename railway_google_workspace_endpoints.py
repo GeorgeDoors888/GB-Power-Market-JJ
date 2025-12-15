@@ -47,7 +47,7 @@ def read_sheet(
     Example:
     POST /read_sheet
     {
-        "sheet_id": "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8",
+        "sheet_id": "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA",
         "worksheet": "Dashboard",
         "range_name": "A1:E10"  // optional
     }
@@ -92,7 +92,7 @@ def write_sheet(
     Example:
     POST /write_sheet
     {
-        "sheet_id": "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8",
+        "sheet_id": "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA",
         "worksheet": "Dashboard",
         "data": [["Header1", "Header2"], ["Value1", "Value2"]],
         "range_name": "A1"
@@ -129,7 +129,7 @@ def list_worksheets(
     List all worksheets in a spreadsheet
     
     Example:
-    GET /list_worksheets?sheet_id=12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8
+    GET /list_worksheets?sheet_id=1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA
     """
     try:
         creds = service_account.Credentials.from_service_account_file(
@@ -366,7 +366,7 @@ def create_doc(
 def gb_energy_dashboard(token: str = Depends(verify_token)):
     """Quick access to GB Energy Dashboard"""
     return list_worksheets(
-        sheet_id="12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8",
+        sheet_id="1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA",
         token=token
     )
 

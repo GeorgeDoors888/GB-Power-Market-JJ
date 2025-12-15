@@ -181,7 +181,7 @@ python3 realtime_dashboard_updater.py
 ```
 
 ### Test 2: Check Dashboard
-1. Open: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+1. Open: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 2. Look at cell B2 - should show recent timestamp
 3. Wait 5 minutes
 4. Refresh browser - timestamp should update

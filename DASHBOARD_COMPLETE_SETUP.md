@@ -2,7 +2,7 @@
 
 **Status**: ✅ Fully Implemented  
 **Date**: 23 November 2025  
-**Dashboard**: [View Live Dashboard](https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/)
+**Dashboard**: [View Live Dashboard](https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/)
 
 ---
 
@@ -140,7 +140,7 @@ ssh root@94.237.55.15 'sudo systemctl status dashboard-updater.timer'
 ```
 
 ### Option 3: Apps Script Setup
-1. Open [Dashboard](https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/)
+1. Open [Dashboard](https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/)
 2. Extensions → Apps Script
 3. Paste `dashboard_auto_refresh.gs` code
 4. Save as "Dashboard Auto-Refresh"
@@ -291,7 +291,7 @@ Edit `add_enhanced_charts_and_flags.py` → `create_enhanced_charts()` function
 
 **Maintainer**: George Major (george@upowerenergy.uk)  
 **Repository**: https://github.com/GeorgeDoors888/GB-Power-Market-JJ  
-**Dashboard**: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/  
+**Dashboard**: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/  
 
 ---
 

@@ -97,14 +97,14 @@ Read document content, create automated reports.
   ```json
   POST /read_sheet
   {
-    "sheet_id": "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8",
+    "sheet_id": "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA",
     "worksheet": "Dashboard",
     "range_name": "A1:E10"
   }
   ```
 - `/write_sheet` - Write data to spreadsheet
 - `/list_worksheets` - List all worksheets in a spreadsheet
-- `/gb_energy_dashboard` - Quick access to GB Energy Dashboard (ID: 12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8)
+- `/gb_energy_dashboard` - Quick access to GB Energy Dashboard (ID: 1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA)
 
 **Drive:**
 - `/search_drive` - Search files by name, type, or date
@@ -422,7 +422,7 @@ Is it about system help?
 
 ## ✨ GB Energy Dashboard Quick Reference
 
-**Spreadsheet ID**: `12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8`
+**Spreadsheet ID**: `1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA`
 
 **Key Worksheets** (29 total):
 - Dashboard - Main overview

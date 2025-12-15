@@ -88,7 +88,7 @@ You requested: "can we include the maps charts and the next item within the shee
 
 ### Step 1: View Your Dashboard (NOW)
 ```bash
-open "https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/"
+open "https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/"
 ```
 
 You'll see:
@@ -318,7 +318,7 @@ SELECT ... FROM combined
 python3 enhanced_dashboard_updater.py
 
 # View dashboard
-open "https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/"
+open "https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/"
 
 # Check map data
 python3 refresh_map_data.py
@@ -347,4 +347,4 @@ tail -f logs/updater.log
 
 **Last Updated**: 2025-11-24 00:41:03  
 **Status**: ✅ Production Ready  
-**View Dashboard**: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+**View Dashboard**: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/

@@ -1,7 +1,7 @@
 # GB Energy Dashboard - Google Workspace Delegation Guide
 
 **Project**: GB Power Market JJ  
-**Dashboard**: GB Energy Dashboard (12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8)  
+**Dashboard**: GB Energy Dashboard (1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA)  
 **Status**: ✅ Workspace Delegation Active  
 **Date**: November 11, 2025
 
@@ -69,11 +69,11 @@ gc = gspread.authorize(creds)  # ✅ Works forever, no re-auth needed
 
 ## 📊 GB Energy Dashboard Details
 
-**Spreadsheet ID**: `12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8`  
+**Spreadsheet ID**: `1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA`  
 **Title**: GB Energy Dashboard  
 **Worksheets**: 29 total  
 **Owner**: george@upowerenergy.uk  
-**URL**: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+**URL**: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 
 ### Key Worksheets
 
@@ -178,7 +178,7 @@ LIMIT 1000
 df = bq_client.query(query).to_dataframe()
 
 # 4. Update Sheets (uPower Energy dashboard)
-spreadsheet = gc.open_by_key('12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8')
+spreadsheet = gc.open_by_key('1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA')
 worksheet = spreadsheet.worksheet('Real-time Data')
 
 # Clear and update
@@ -246,7 +246,7 @@ python3 realtime_dashboard_updater.py
 
 ### Step 5: Check Dashboard
 
-Open dashboard: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+Open dashboard: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 
 Verify:
 - ✅ Data updated successfully
@@ -358,7 +358,7 @@ creds = service_account.Credentials.from_service_account_file(
 ).with_subject('george@upowerenergy.uk')
 
 gc = gspread.authorize(creds)
-spreadsheet = gc.open_by_key('12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8')
+spreadsheet = gc.open_by_key('1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA')
 
 print(f"✅ SUCCESS")
 print(f"Title: {spreadsheet.title}")
@@ -386,7 +386,7 @@ creds = service_account.Credentials.from_service_account_file(
 ).with_subject('george@upowerenergy.uk')
 
 gc = gspread.authorize(creds)
-spreadsheet = gc.open_by_key('12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8')
+spreadsheet = gc.open_by_key('1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA')
 worksheet = spreadsheet.worksheet('Dashboard')
 
 # Read first 5 rows
@@ -443,7 +443,7 @@ EOF
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │              GB Energy Dashboard (Google Sheets)            │
-│         12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8       │
+│         1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA       │
 │                                                             │
 │  Owner: george@upowerenergy.uk                              │
 │  Company: uPower Energy                                     │
@@ -637,7 +637,7 @@ def main():
     df = bq_client.query(query).to_dataframe()
     
     # 4. Update Sheets
-    spreadsheet = gc.open_by_key('12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8')
+    spreadsheet = gc.open_by_key('1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA')
     worksheet = spreadsheet.worksheet('Real-time Data')
     worksheet.update([df.columns.values.tolist()] + df.values.tolist())
     
@@ -650,7 +650,7 @@ if __name__ == '__main__':
 ### Key Files & IDs
 
 **Dashboard**:
-- Spreadsheet ID: `12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8`
+- Spreadsheet ID: `1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA`
 - Title: GB Energy Dashboard
 - Worksheets: 29
 

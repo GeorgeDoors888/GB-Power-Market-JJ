@@ -17,7 +17,7 @@
 |----------|-----|
 | **New Dashboard** | https://docs.google.com/spreadsheets/d/1LmMq4OEE639Y-XXpOJ3xnvpAmHB6vUovh5g6gaU_vzc |
 | **Apps Script Editor** | https://script.google.com/d/1svUewU3Q0n77ku0VJgtJ3GquVsSRii-pfOREpCQ9mG-v1x2oWtGZuiuz/edit |
-| **Old Dashboard** | https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8 |
+| **Old Dashboard** | https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA |
 | **Webhook (public)** | https://5893b8404ab5.ngrok-free.app |
 | **Webhook (local)** | http://localhost:5001 |
 

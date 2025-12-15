@@ -28,7 +28,7 @@
 🌍 GSPs included: 18 unique
 ✅ Updated Data tab (18 rows)
 ✅ Updated Summary tab (18 rows)
-🔗 Sheet URL: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8
+🔗 Sheet URL: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA
 ```
 
 ### How to Run
@@ -225,7 +225,7 @@ complete_vlp_battery_report_20251110_184842.txt
 ```
 
 ### View Results
-- **GSP Dashboard**: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8
+- **GSP Dashboard**: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA
 - **Revenue Reports**: `battery_revenue_analysis_*.csv`
 - **Full Report**: `complete_vlp_battery_report_*.txt`
 

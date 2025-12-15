@@ -32,7 +32,7 @@
 ## 🧪 Testing the Menu
 
 ### Step 1: Open the Spreadsheet
-https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 
 ### Step 2: Reload the Page
 Press **Ctrl+R** or **Cmd+R** to reload the spreadsheet. The custom menu should appear after 2-3 seconds.
@@ -196,7 +196,7 @@ python3 create_vlp_charts.py
 - ✅ Formatting: Applied to Dashboard and BESS_VLP sheets
 - ✅ Charts: 4 charts created successfully
 
-**Dashboard URL**: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+**Dashboard URL**: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 
 ---
 

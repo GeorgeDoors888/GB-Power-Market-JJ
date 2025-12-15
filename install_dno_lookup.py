@@ -7,7 +7,7 @@ Adds menu-driven DNO lookup functionality
 import gspread
 from google.oauth2.service_account import Credentials
 
-SHEET_ID = "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8"
+SHEET_ID = "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA"
 
 def install_apps_script():
     """Instructions to install the Apps Script"""

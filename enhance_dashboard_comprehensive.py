@@ -36,7 +36,7 @@ gc = gspread.authorize(creds)
 PROJECT_ID = "inner-cinema-476211-u9"
 bq_client = bigquery.Client(project=PROJECT_ID, location="US")
 
-SHEET_ID = '12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8'
+SHEET_ID = '1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA'
 sh = gc.open_by_key(SHEET_ID)
 dashboard = sh.worksheet('Dashboard')
 
@@ -762,5 +762,5 @@ print("   8. ✅ Configured constraint cost analysis")
 print("   9. ✅ Setup emergency alert monitoring (6-hour polling)")
 print("   10. ✅ Referenced GeoJSON map locations")
 print("\n🌐 Map Access: http://94.237.55.15/gb_power_comprehensive_map.html")
-print("📝 Dashboard: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/")
+print("📝 Dashboard: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/")
 print("\n" + "=" * 100)

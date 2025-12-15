@@ -96,7 +96,7 @@ def log_all_completed_steps(client):
         status="COMPLETED",
         description="Deployed Conservative/Base/Best/BTM scenarios to Battery_Revenue_Analysis worksheet",
         output_files=[
-            "https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/",
+            "https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/",
             "/home/george/GB-Power-Market-JJ/update_sheets_three_tier_direct.py"
         ],
         metrics={

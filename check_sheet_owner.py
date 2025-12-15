@@ -18,7 +18,7 @@ gc = gspread.authorize(creds)
 drive_service = build('drive', 'v3', credentials=creds)
 
 # Check the spreadsheet
-spreadsheet_id = '12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8'
+spreadsheet_id = '1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA'
 
 try:
     sheet = gc.open_by_key(spreadsheet_id)

@@ -132,7 +132,7 @@ Update: Dashboard rows 31-42 + Row 44 totals
 ## Configuration
 
 ### Spreadsheet
-- **ID**: `12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8`
+- **ID**: `1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA`
 - **Sheet**: `Dashboard`
 - **Outages Range**: A31:I42 (12 rows max)
 - **Totals Row**: Row 44
@@ -188,7 +188,7 @@ Update: Dashboard rows 31-42 + Row 44 totals
 - Add fallback to `assetName` or `affectedUnit`
 
 ## Dashboard Link
-🌐 **View Live Dashboard**: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8
+🌐 **View Live Dashboard**: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA
 
 ## Change Log
 

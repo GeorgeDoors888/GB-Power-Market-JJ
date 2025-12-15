@@ -325,7 +325,7 @@ Console output shows exactly what's happening. Users don't need to guess!
 
 ## 📞 Contact & Support
 
-**Dashboard**: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8  
+**Dashboard**: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA  
 **GitHub**: https://github.com/GeorgeDoors888/GB-Power-Market-JJ  
 **Maintainer**: George Major (george@upowerenergy.uk)  
 **Project**: inner-cinema-476211-u9 (BigQuery)  

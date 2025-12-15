@@ -395,7 +395,7 @@ Many duplicate/overlapping files exist. Consider consolidating:
 
 ## 🔗 **External Resources**
 
-- **Dashboard**: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8
+- **Dashboard**: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA
 - **GitHub**: https://github.com/GeorgeDoors888/GB-Power-Market-JJ
 - **Project**: inner-cinema-476211-u9 (BigQuery)
 - **Dataset**: uk_energy_prod (US region)

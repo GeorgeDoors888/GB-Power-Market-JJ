@@ -62,7 +62,7 @@ curl -H "Authorization: Bearer codex_fQI8xJXNPnhasYBOjd6h7mPHoF7HNI0Dh8rlgoJ2skA
   "sample_spreadsheets": [
     {
       "title": "GB Energy Dashboard",
-      "id": "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8",
+      "id": "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA",
       "url": "https://docs.google.com/spreadsheets/d/..."
     }
   ]
@@ -176,7 +176,7 @@ curl -H "Authorization: Bearer codex_..." \
   "spreadsheets": [
     {
       "title": "GB Energy Dashboard",
-      "id": "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8",
+      "id": "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA",
       "url": "https://docs.google.com/spreadsheets/d/...",
       "worksheets": 29
     }
@@ -195,7 +195,7 @@ curl -H "Authorization: Bearer codex_..." \
 **Request Body**:
 ```json
 {
-  "spreadsheet_id": "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8"
+  "spreadsheet_id": "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA"
   // OR
   "spreadsheet_title": "GB Energy Dashboard"
 }
@@ -215,7 +215,7 @@ curl -X POST \
 {
   "success": true,
   "title": "GB Energy Dashboard",
-  "spreadsheet_id": "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8",
+  "spreadsheet_id": "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA",
   "url": "https://docs.google.com/spreadsheets/d/...",
   "worksheets": [
     {
@@ -240,7 +240,7 @@ curl -X POST \
 **Request Body**:
 ```json
 {
-  "spreadsheet_id": "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8",
+  "spreadsheet_id": "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA",
   // OR
   "spreadsheet_title": "GB Energy Dashboard",
   "worksheet_name": "Dashboard",
@@ -262,7 +262,7 @@ curl -X POST \
 {
   "success": true,
   "spreadsheet_title": "GB Energy Dashboard",
-  "spreadsheet_id": "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8",
+  "spreadsheet_id": "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA",
   "worksheet_name": "HH Profile",
   "rows": 50,
   "cols": 26,
@@ -285,7 +285,7 @@ curl -X POST \
 **Request Body**:
 ```json
 {
-  "spreadsheet_id": "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8",
+  "spreadsheet_id": "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA",
   // OR
   "spreadsheet_title": "GB Energy Dashboard",
   "worksheet_name": "Dashboard",

@@ -12,7 +12,7 @@ SCOPES = [
 creds = Credentials.from_service_account_file('inner-cinema-credentials.json', scopes=SCOPES)
 gc = gspread.authorize(creds)
 
-sheet = gc.open_by_key('12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8')
+sheet = gc.open_by_key('1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA')
 
 print('📊 GOOGLE SHEET: GB Energy Dashboard')
 print('='*80)

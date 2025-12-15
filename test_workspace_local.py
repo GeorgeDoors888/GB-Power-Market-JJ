@@ -116,7 +116,7 @@ def test_read_gb_energy_dashboard():
         gc = gspread.authorize(credentials)
         
         # Open GB Energy Dashboard
-        sheet = gc.open_by_key('12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8')
+        sheet = gc.open_by_key('1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA')
         
         print(f"\n✅ Opened: {sheet.title}")
         print(f"   ID: {sheet.id}")

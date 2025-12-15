@@ -9,7 +9,7 @@ from google.oauth2.service_account import Credentials
 from googleapiclient.discovery import build
 from google.cloud import bigquery
 
-SHEET_ID = os.environ.get("SHEET_ID", "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8")
+SHEET_ID = os.environ.get("SHEET_ID", "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA")
 # When called from refresh_live_dashboard.py, we're in tools/ directory
 import os
 if os.path.exists("inner-cinema-credentials.json"):

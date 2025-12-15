@@ -128,7 +128,7 @@ UPCLOUD_USER = "root"
 UPCLOUD_KEY_PATH = os.path.expanduser("~/.ssh/id_rsa")
 BQ_PROJECT = "inner-cinema-476211-u9"
 BQ_DATASET = "uk_energy_prod"
-SHEETS_ID = "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8"
+SHEETS_ID = "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA"
 
 # API Key validation (replace with your secure key)
 VALID_API_KEY = os.environ.get("AI_GATEWAY_API_KEY", "your-secure-api-key-here")

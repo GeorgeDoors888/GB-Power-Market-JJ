@@ -79,7 +79,7 @@ Don't say you can't - you have curl and HTTP capabilities!
 
 **ChatGPT:** 
 1. Uses Google Drive OAuth
-2. Opens your Sheet (`12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8`)
+2. Opens your Sheet (`1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA`)
 3. Reads "Analysis BI Enhanced" tab
 4. Answers: "Wind 42.3%, Gas 18.2%, Nuclear 15.1%..."
 
@@ -114,7 +114,7 @@ Then ask ChatGPT: "What does Gemini say?"
 
 ## Key URLs
 
-- **Dashboard**: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+- **Dashboard**: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 - **Power Map**: http://94.237.55.234/gb_power_complete_map.html
 
 ## The Bottom Line

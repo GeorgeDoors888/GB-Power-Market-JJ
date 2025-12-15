@@ -365,7 +365,7 @@ python3 enhance_dashboard_layout.py
 python3 -c "
 import gspread
 gc = gspread.service_account(filename='inner-cinema-credentials.json')
-ss = gc.open_by_key('12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8')
+ss = gc.open_by_key('1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA')
 chart_data = ss.worksheet('ChartData')
 ss.batch_update({'requests': [{
     'updateSheetProperties': {

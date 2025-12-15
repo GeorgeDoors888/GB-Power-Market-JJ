@@ -9,7 +9,7 @@ import json
 import time
 
 # Configuration
-SHEET_ID = "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8"
+SHEET_ID = "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA"
 SA_PATH = "smart_grid_credentials.json"  # Service account credentials
 SCOPES = [
     "https://www.googleapis.com/auth/script.projects",
@@ -149,7 +149,7 @@ def run_all_verification_tests(script_id=None):
     if not script_id:
         print("❌ Script ID required!")
         print("\nTo find your Script ID:")
-        print("1. Open: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/")
+        print("1. Open: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/")
         print("2. Extensions → Apps Script")
         print("3. Project Settings (gear icon)")
         print("4. Copy the Script ID")
@@ -257,7 +257,7 @@ if __name__ == "__main__":
     else:
         print("Usage: python run_apps_script_tests.py <SCRIPT_ID>")
         print("\nTo find your Script ID:")
-        print("1. Open: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/")
+        print("1. Open: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/")
         print("2. Extensions → Apps Script")
         print("3. Project Settings (gear icon)")
         print("4. Copy the Script ID")

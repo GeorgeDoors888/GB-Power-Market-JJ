@@ -40,7 +40,7 @@ The Dashboard sheet now includes:
 
 ### Step 1: View Your Dashboard
 ```bash
-open "https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/"
+open "https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/"
 ```
 
 You should see:
@@ -199,7 +199,7 @@ To create charts in Google Sheets:
 ### Service Account
 - File: `inner-cinema-credentials.json`
 - Permissions: Sheets write, BigQuery read
-- Scope: This spreadsheet only (`12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8`)
+- Scope: This spreadsheet only (`1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA`)
 
 ### API Keys
 - Google Maps API: Required for interactive map (in Apps Script)

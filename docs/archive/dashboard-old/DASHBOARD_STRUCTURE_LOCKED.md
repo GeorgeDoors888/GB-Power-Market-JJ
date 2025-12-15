@@ -1,7 +1,7 @@
 # Dashboard Structure - Locked Reference Guide
 
 **Last Verified**: November 10, 2025  
-**Sheet ID**: `12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8`  
+**Sheet ID**: `1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA`  
 **Status**: ✅ Production-locked structure
 
 ---
@@ -181,7 +181,7 @@ from flag_utils import verify_and_fix_flags
 from googleapiclient.discovery import build
 
 sheets_service = build('sheets', 'v4', credentials=creds)
-sheet_id = "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8"
+sheet_id = "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA"
 
 all_complete, num_fixed = verify_and_fix_flags(sheets_service, sheet_id, verbose=False)
 
@@ -410,7 +410,7 @@ Before deploying Dashboard updates:
 
 **Maintainer**: George Major (george@upowerenergy.uk)  
 **Repository**: https://github.com/GeorgeDoors888/GB-Power-Market-JJ  
-**Sheet**: [GB DASHBOARD - Power](https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/)
+**Sheet**: [GB DASHBOARD - Power](https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/)
 
 ---
 

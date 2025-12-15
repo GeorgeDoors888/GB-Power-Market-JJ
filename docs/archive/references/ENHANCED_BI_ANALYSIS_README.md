@@ -100,7 +100,7 @@ This:
 
 ### Using the Sheet
 
-1. **Open the sheet**: https://docs.google.com/spreadsheets/d/12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8/
+1. **Open the sheet**: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/
 
 2. **Select date range**:
    - Use **Quick Select** dropdown (cell B5): Choose "1 Week", "1 Month", etc.

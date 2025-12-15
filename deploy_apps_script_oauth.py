@@ -19,7 +19,7 @@ from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 
 # Configuration
-SHEET_ID = "12jY0d4jzD6lXFOVoqZZNjPRN-hJE3VmWFAPcC_kPKF8"
+SHEET_ID = "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA"
 APPS_SCRIPT_FILE = "google_sheets_dashboard.gs"
 TOKEN_FILE = "apps_script_token.pickle"
 CREDENTIALS_FILE = "oauth_credentials.json"  # Download from Google Cloud Console
