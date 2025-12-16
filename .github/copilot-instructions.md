@@ -223,8 +223,15 @@ bmrs_costs_iris (real-time, currently NOT configured in IRIS)
 -- Market index (wholesale, NOT imbalance)
 bmrs_mid (price, volume)  -- Wholesale day-ahead/within-day pricing
 
--- Balancing acceptances  
-bmrs_boalf (acceptanceNumber, acceptanceTime)
+-- Balancing acceptances WITH PRICES (🆕 PREFERRED SOURCE)
+bmrs_boalf_complete (acceptancePrice, acceptanceVolume, acceptanceType, validation_flag)
+boalf_with_prices (view - Valid records only, includes revenue_estimate_gbp)
+
+-- Balancing acceptances (RAW - NO PRICES)
+bmrs_boalf (acceptanceNumber, acceptanceTime)  -- ⚠️ Lacks price/volume fields!
+
+-- Settlement proxy (volume-weighted average)
+bmrs_disbsad (price, volume)  -- Use for settlement comparison only
 
 -- Individual unit generation
 bmrs_indgen_iris (bmUnitId, generation)
@@ -232,6 +239,18 @@ bmrs_indgen_iris (bmUnitId, generation)
 -- Frequency response
 bmrs_freq (frequency)  -- Stability = revenue opportunity
 ```
+
+**CRITICAL - BOALF Price Data**:
+- **NEW**: Use `bmrs_boalf_complete` or `boalf_with_prices` for **individual acceptance prices**
+- Elexon BOALF API lacks `acceptancePrice` field → derived via BOD matching
+- Filter to `validation_flag='Valid'` (42.8% of records pass Elexon B1610 filters)
+- Match rate: 85-95% (varies by month)
+- Coverage: 2022-2025, ~11M acceptances, ~4.7M Valid
+
+**Price Source Comparison**:
+- `bmrs_boalf_complete`: **Individual** acceptance prices (£85-110/MWh Oct 17 VLP offers)
+- `bmrs_disbsad`: **Volume-weighted** settlement proxy (£79.83/MWh Oct 17-23 avg)
+- Use BOALF for revenue analysis (more accurate), disbsad for settlement validation
 
 **CRITICAL:** Energy Imbalance Price (SSP/SBP) merged to single price in Nov 2015 via BSC Mod P305. Both columns exist in `bmrs_costs` for backward compatibility but values are **identical**. Battery arbitrage is based on **temporal** price variation (charge low, discharge high), NOT SSP/SBP spread (which is zero).
 

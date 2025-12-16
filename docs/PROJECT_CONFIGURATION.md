@@ -110,6 +110,60 @@ bidOfferAcceptanceLevel   # ❌ No acceptance columns
 bidOfferAcceptancePrice   # ❌ No acceptance columns
 ```
 
+#### `bmrs_boalf_complete` (Balancing Acceptance Prices) 🆕
+**⚠️ DERIVED TABLE**: Created by joining `bmrs_boalf` + `bmrs_bod` to derive missing price fields.
+
+**Background**: Elexon BOALF API returns acceptance records but lacks `acceptancePrice`, `acceptanceVolume`, and `acceptanceType` fields. This table derives these fields by matching with BOD submissions.
+
+**Actual Columns**:
+```sql
+-- Primary data
+acceptanceNumber    STRING      -- Unique acceptance ID
+acceptanceTime      TIMESTAMP   -- When acceptance occurred
+bmUnit              STRING      -- BM Unit (e.g., FBPGM002)
+settlementDate      TIMESTAMP   -- Settlement date
+settlementPeriod    INTEGER     -- Settlement period (1-48)
+
+-- Level changes
+levelFrom           INTEGER     -- Starting MW level
+levelTo             INTEGER     -- Ending MW level
+
+-- Derived price fields (from BOD matching)
+acceptancePrice     FLOAT       -- £/MWh (from BOD offer/bid)
+acceptanceVolume    FLOAT       -- MWh (ABS of level change)
+acceptanceType      STRING      -- BID | OFFER | UNKNOWN
+
+-- Elexon B1610 Section 4.3 compliance
+validation_flag     STRING      -- Valid | SO_Test | Low_Volume | Price_Outlier | Unmatched
+
+-- Metadata flags
+soFlag              BOOLEAN     -- System Operator test record (TRUE = exclude)
+storFlag            BOOLEAN     -- STOR flag
+rrFlag              BOOLEAN     -- Replacement Reserve flag
+deemedBoFlag        BOOLEAN     -- Deemed Bid-Offer flag
+
+-- Source tracking
+_price_source       STRING      -- BOD_MATCH | BOD_REALTIME | UNMATCHED
+_matched_pairId     STRING      -- BOD pairId used for matching
+_ingested_utc       TIMESTAMP   -- Upload timestamp
+```
+
+**Data Quality** (as of Dec 2025):
+- Total records: ~11M acceptances (2022-2025)
+- Match rate: 85-95% (varies by month)
+- Valid records: ~42.8% after Elexon B1610 filtering
+- Partitioned: Daily by `settlementDate`
+- Clustered: By `bmUnit` (optimized for VLP battery queries)
+
+**Validation Flag Taxonomy**:
+- `Valid`: Passes all Elexon B1610 filters (±£1,000/MWh, volume ≥0.001 MWh, soFlag=FALSE)
+- `SO_Test`: System Operator test record (soFlag=TRUE) - excluded per B1610
+- `Low_Volume`: Acceptance volume <0.001 MWh - below regulatory threshold
+- `Price_Outlier`: Price exceeds ±£1,000/MWh - non-physical/test pricing
+- `Unmatched`: No matching BOD submission found
+
+**Usage**: For battery arbitrage analysis, filter to `validation_flag='Valid'` or use the `boalf_with_prices` view.
+
 #### `bmrs_freq` (Frequency)
 **⚠️ IMPORTANT**: Timestamp column is `measurementTime`, NOT `recordTime`!
 

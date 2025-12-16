@@ -69,6 +69,8 @@ SELECT * FROM combined
 | Table | Type | Date Range | Days | Data Type | Status | **Units** |
 |-------|------|------------|------|-----------|--------|-----------||
 | **bmrs_bod** | Historical | 2024-01-01 → 2025-10-28 | 667 | DATETIME | ✅ Full | £/MWh |
+| **bmrs_boalf** | Historical | 2022-01-01 → recent | ~1345 | DATETIME | ✅ Full (11M rows) | acceptances |
+| **bmrs_boalf_complete** | **Derived** | 2022-01-01 → recent | ~1345 | DATETIME | ✅ **With Prices** | £/MWh + MW |
 | **bmrs_costs** | Historical | 2022-01-01 → 2025-12-05 | 1345 | DATETIME | ✅ **Complete** | £/MWh (SSP=SBP) |
 | **bmrs_fuelinst** | Historical | 2024-01-01 → recent | 669 | DATETIME | ✅ Full | **MW** |
 | **bmrs_fuelinst_iris** | Real-time | Recent | ? | DATETIME | 🟢 Live | **MW** ⚠️ |
@@ -97,6 +99,124 @@ generation_gw = generation_mwh / 500  # INCORRECT!
 ```
 
 **Reference**: See `update_dashboard_preserve_layout.py` line 56-75 for correct implementation.
+
+---
+
+## 🔐 BOALF Price Derivation Methodology
+
+### The Core Problem
+
+**Elexon BOALF API Limitation**: The `/datasets/BOALF` endpoint returns acceptance records but **DOES NOT include**:
+- `acceptancePrice` (£/MWh)
+- `acceptanceVolume` (MWh)
+- `acceptanceType` (BID/OFFER)
+
+These fields are critical for battery arbitrage analysis but are missing from the API response.
+
+### The Solution: BOD Matching
+
+**Approach**: Join `bmrs_boalf` (acceptances) with `bmrs_bod` (bid-offer submissions) to derive missing price fields.
+
+**Matching Logic**:
+```sql
+-- Join condition
+ON boalf.bmUnit = bod.bmUnit
+   AND DATE(boalf.settlementDate) = DATE(bod.settlementDate)
+   AND boalf.settlementPeriod = bod.settlementPeriod
+
+-- Derive acceptance type from level direction
+acceptanceType = CASE 
+  WHEN levelTo > levelFrom THEN 'OFFER'  -- Increasing = generation offer
+  WHEN levelTo < levelFrom THEN 'BID'    -- Decreasing = reduction bid
+  ELSE 'UNKNOWN'
+END
+
+-- Derive price from BOD offer/bid
+acceptancePrice = CASE
+  WHEN acceptanceType='OFFER' THEN bod.offer
+  WHEN acceptanceType='BID' THEN bod.bid
+  ELSE NULL
+END
+
+-- Derive volume from level change
+acceptanceVolume = ABS(levelTo - levelFrom)  -- MW difference
+```
+
+### Elexon B1610 Section 4.3 Compliance Filters
+
+**Regulatory Requirements** (per Elexon B1610 guidance):
+
+1. **Price bounds**: ±£1,000/MWh
+   - Values outside this range are non-physical/test prices
+   - Filter applied: `ABS(acceptancePrice) <= 1000`
+
+2. **System Operator test records**: Exclude soFlag=TRUE
+   - Test/system records marked with soFlag
+   - Filter applied: `soFlag = FALSE`
+
+3. **Volume threshold**: ≥0.001 MWh
+   - Below this is considered noise/invalid
+   - Filter applied: `ABS(acceptanceVolume) >= 0.001`
+
+### Validation Flag Taxonomy
+
+All records in `bmrs_boalf_complete` receive a `validation_flag`:
+
+| Flag | Meaning | Percentage (Oct 2025) | Action |
+|------|---------|----------------------|--------|
+| `Valid` | Passes all B1610 filters | 42.8% | ✅ Use for analysis |
+| `SO_Test` | soFlag=TRUE (test record) | 23.7% | ❌ Exclude per B1610 |
+| `Low_Volume` | Volume <0.001 MWh | 15.9% | ❌ Below threshold |
+| `Price_Outlier` | Price >±£1,000/MWh | ~0% | ❌ Non-physical pricing |
+| `Unmatched` | No BOD match found | 17.6% | ⚠️ No price available |
+
+### Data Quality Metrics
+
+**Match Rates** (BOD matching success):
+- **Oct 2025**: 71.4% (60,301/84,507 acceptances)
+- **Jan 2022**: 95.9% (44,333/46,231 acceptances)
+- **Typical range**: 85-95% (varies by month based on unit activity)
+
+**Valid Records After Filtering**:
+- ~42.8% of all acceptances pass Elexon B1610 filters
+- Represents ~4.7M valid price records across 2022-2025
+- Suitable for battery arbitrage revenue analysis
+
+### Usage Pattern
+
+**❌ WRONG - Use raw BOALF table**:
+```sql
+-- This table lacks acceptancePrice!
+SELECT bmUnit, AVG(???) as avg_price  -- No price field exists
+FROM `bmrs_boalf`
+WHERE DATE(settlementDate) = '2025-10-17'
+```
+
+**✅ CORRECT - Use filtered view**:
+```sql
+-- Use view with Valid records only
+SELECT 
+  bmUnit,
+  AVG(acceptancePrice) as avg_price_gbp_per_mwh,
+  SUM(revenue_estimate_gbp) as total_revenue
+FROM `inner-cinema-476211-u9.uk_energy_prod.boalf_with_prices`
+WHERE unit_category = 'VLP_Battery'
+  AND acceptanceType = 'OFFER'  -- Discharge = revenue
+  AND settlement_date = '2025-10-17'
+GROUP BY bmUnit
+ORDER BY total_revenue DESC
+```
+
+**Available Tables/Views**:
+1. `bmrs_boalf` - Raw acceptance data (NO PRICES)
+2. `bmrs_boalf_complete` - With derived prices (ALL records + validation_flag)
+3. `boalf_with_prices` - VIEW filtered to `validation_flag='Valid'` (ANALYSIS-READY)
+4. `boalf_outliers_excluded` - Audit table of filtered records
+
+**Reference Scripts**:
+- Creation: `derive_boalf_prices.py` (BOD matching + validation)
+- Historical backfill: `backfill_boalf_historical.sh` (2022-2025 automation)
+- View setup: `setup_boalf_views.py`
 
 ---
 
