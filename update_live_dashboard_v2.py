@@ -1049,6 +1049,27 @@ def update_dashboard():
     print(f"  • Gen Mix: 1 batch update (was 10 individual calls)")
     print(f"  • Interconnectors: 1 batch update (was 10 individual calls)")
     print(f"  • Data_Hidden: 2 updates (fuel + IC timeseries)")
+    
+    # Update outages section (columns G-Q, rows 31+)
+    try:
+        print("\n📊 Updating outages section...")
+        import subprocess
+        result = subprocess.run(
+            ['python3', 'update_live_dashboard_v2_outages.py'],
+            capture_output=True,
+            text=True,
+            cwd='/home/george/GB-Power-Market-JJ'
+        )
+        if result.returncode == 0:
+            # Extract the outages count from output
+            for line in result.stdout.split('\n'):
+                if 'Outages updated' in line:
+                    print(f"   {line.strip()}")
+                    break
+        else:
+            print(f"   ⚠️  Outages update failed: {result.stderr[:100]}")
+    except Exception as e:
+        print(f"   ⚠️  Could not update outages: {e}")
 
 if __name__ == "__main__":
     try:
