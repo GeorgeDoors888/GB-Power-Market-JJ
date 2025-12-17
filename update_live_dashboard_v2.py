@@ -1024,6 +1024,11 @@ def update_dashboard():
                 flow_mw = round(float(row_data['flow_mw']))
                 # Add bar chart in column K (scale: 100 MW = 1 bar)
                 bar_chart = f'=REPT("█",MIN(INT(ABS(J{row_num})/100),30))'
+                # Write connection name (G), MW value (J), and bar chart (K)
+                ic_updates.append({
+                    'range': f'G{row_num}:G{row_num}',
+                    'values': [[name]]
+                })
                 ic_updates.append({
                     'range': f'J{row_num}:K{row_num}',
                     'values': [[flow_mw, bar_chart]]
