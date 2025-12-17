@@ -539,7 +539,7 @@ def update_dashboard():
     print(f"   Latest data: {latest_date}, Period {latest_period}")
     
     kpis = get_kpis(bq_client)
-    print(f"   KPIs: VLP={kpis['vlp_revenue']}, Price={kpis['wholesale']}, Freq={kpis['frequency']}")
+    print(f"   KPIs: Price={kpis['wholesale']}, Freq={kpis['frequency']}, Gen={kpis['total_gen']}, Wind={kpis['wind']}")
     
     gen_mix = get_generation_mix(bq_client)
     print(f"   Generation mix: {len(gen_mix) if gen_mix is not None else 0} fuel types")
