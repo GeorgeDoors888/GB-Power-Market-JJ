@@ -106,15 +106,16 @@ def derive_prices_for_period(start_date, end_date):
     
     query = f"""
     WITH boalf_data AS (
-      -- Get all acceptances in period
+      -- BOALF acceptances: UNION of historical + IRIS real-time
+      -- Historical ends Oct 28, IRIS starts Oct 30 (2-day gap during migration)
       SELECT 
         acceptanceNumber,
         acceptanceTime,
         bmUnit,
         settlementDate,
         settlementPeriodFrom as settlementPeriod,
-        timeFrom,
-        timeTo,
+        CAST(timeFrom AS STRING) as timeFrom,
+        CAST(timeTo AS STRING) as timeTo,
         levelFrom,
         levelTo,
         soFlag,
@@ -123,10 +124,32 @@ def derive_prices_for_period(start_date, end_date):
         deemedBoFlag
       FROM `{PROJECT_ID}.{DATASET}.bmrs_boalf`
       WHERE DATE(settlementDate) BETWEEN '{start_date}' AND '{end_date}'
+        AND DATE(settlementDate) < '2025-10-30'  -- Historical cutoff
+      
+      UNION ALL
+      
+      SELECT 
+        acceptanceNumber,
+        acceptanceTime,
+        bmUnit,
+        settlementDate,
+        settlementPeriodFrom as settlementPeriod,
+        CAST(timeFrom AS STRING) as timeFrom,
+        CAST(timeTo AS STRING) as timeTo,
+        levelFrom,
+        levelTo,
+        soFlag,
+        storFlag,
+        rrFlag,
+        deemedBoFlag
+      FROM `{PROJECT_ID}.{DATASET}.bmrs_boalf_iris`
+      WHERE DATE(settlementDate) BETWEEN '{start_date}' AND '{end_date}'
+        AND DATE(settlementDate) >= '2025-10-30'  -- IRIS starts Oct 30
     ),
     
     bod_data AS (
-      -- Get bid-offer submissions for matching
+      -- BOD data: UNION of historical + IRIS real-time
+      -- Historical ends Oct 28, IRIS starts Oct 28 (overlap handled by date filter)
       -- Filter per Elexon B1610 Section 4.3: |Price| > £1,000/MWh = non-physical
       SELECT 
         bmUnit,
@@ -137,7 +160,23 @@ def derive_prices_for_period(start_date, end_date):
         bid
       FROM `{PROJECT_ID}.{DATASET}.bmrs_bod`
       WHERE DATE(settlementDate) BETWEEN '{start_date}' AND '{end_date}'
+        AND DATE(settlementDate) < '2025-10-29'  -- Historical cutoff (BOD ends Oct 28)
         -- Elexon regulatory limit: ±£1,000/MWh for valid commercial acceptances
+        AND ABS(COALESCE(offer, 0)) <= 1000
+        AND ABS(COALESCE(bid, 0)) <= 1000
+      
+      UNION ALL
+      
+      SELECT 
+        bmUnit,
+        settlementDate,
+        settlementPeriod,
+        pairId,
+        offer,
+        bid
+      FROM `{PROJECT_ID}.{DATASET}.bmrs_bod_iris`
+      WHERE DATE(settlementDate) BETWEEN '{start_date}' AND '{end_date}'
+        AND DATE(settlementDate) >= '2025-10-28'  -- IRIS starts Oct 28
         AND ABS(COALESCE(offer, 0)) <= 1000
         AND ABS(COALESCE(bid, 0)) <= 1000
     ),

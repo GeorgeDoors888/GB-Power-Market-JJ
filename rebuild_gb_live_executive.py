@@ -51,14 +51,14 @@ def create_executive_dashboard():
     
     # KPI Headers (Row 6)
     updates.append({
-        'range': 'A6:F6',
-        'values': [['VLP Revenue (7d avg)', 'Wholesale Price', 'Generation', 'Grid Frequency', 'Demand', 'Net IC Flow']]
+        'range': 'A6:E6',
+        'values': [['Wholesale Price', 'Generation', 'Grid Frequency', 'Demand', 'Net IC Flow']]
     })
     
     # KPI Values (Row 7) - will be populated by data script
     updates.append({
-        'range': 'A7:F7',
-        'values': [['£0k', '£0/MWh', '0 GW', '50.0 Hz', '0 GW', '+0.00 GW']]
+        'range': 'A7:E7',
+        'values': [['£0/MWh', '0 GW', '50.0 Hz', '0 GW', '+0.00 GW']]
     })
     
     # ===== GENERATION MIX SECTION (Row 9) =====
@@ -158,11 +158,11 @@ def create_executive_dashboard():
     print("\n✅ EXECUTIVE DASHBOARD LAYOUT CREATED!")
     print("\n📋 Layout Structure:")
     print("  • Rows 1-2: Header with live status")
-    print("  • Rows 5-7: 6 Key Performance Indicators")
+    print("  • Rows 5-7: 5 Key Performance Indicators")
     print("  • Rows 9-20: Generation Mix (10 fuel types)")
     print("  • Rows 10-20: Interconnectors (9 connections)")
     print("  • Rows 22-24: Trend charts (Wind, Demand, Price)")
-    print("\n🔄 Run update_bg_live_dashboard.py to populate with real data")
+    print("\n🔄 Run update_gb_live_executive.py to populate with real data")
 
 if __name__ == '__main__':
     create_executive_dashboard()

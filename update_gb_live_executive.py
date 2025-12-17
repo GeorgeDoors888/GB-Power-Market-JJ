@@ -38,13 +38,11 @@ def get_kpis(bq_client):
     ),
     prices AS (
         SELECT 
-            AVG(systemSellPrice) as vlp_revenue,
             AVG(systemSellPrice) as wholesale_price
         FROM `{PROJECT_ID}.{DATASET}.bmrs_costs`
         WHERE settlementDate >= DATE_SUB(CURRENT_DATE(), INTERVAL 7 DAY)
     )
     SELECT 
-        p.vlp_revenue * 1000 as vlp_revenue_k,
         p.wholesale_price as wholesale_price,
         g.total_gen_gw,
         50.0 as frequency,
@@ -57,7 +55,6 @@ def get_kpis(bq_client):
         result = bq_client.query(query).to_dataframe()
         if not result.empty:
             return {
-                'vlp_revenue': round(float(result['vlp_revenue_k'].iloc[0]), 2),
                 'wholesale': round(float(result['wholesale_price'].iloc[0]), 2),
                 'total_gen': round(float(result['total_gen_gw'].iloc[0]), 2),
                 'frequency': 50.0,
@@ -68,7 +65,7 @@ def get_kpis(bq_client):
         logging.error(f"Error getting KPIs: {e}")
     
     return {
-        'vlp_revenue': 0, 'wholesale': 0, 'total_gen': 0,
+        'wholesale': 0, 'total_gen': 0,
         'frequency': 50.0, 'demand': 0, 'net_ic_flow': 0
     }
 
@@ -157,9 +154,8 @@ def update_dashboard():
     kpis = get_kpis(bq_client)
     
     kpi_updates = [{
-        'range': 'A7:F7',
+        'range': 'A7:E7',
         'values': [[
-            f"£{kpis['vlp_revenue']:,.0f}k",
             f"£{kpis['wholesale']:.2f}/MWh",
             f"{kpis['total_gen']:.2f} GW",
             f"{kpis['frequency']:.1f} Hz",
@@ -169,7 +165,6 @@ def update_dashboard():
     }]
     sheet.batch_update(kpi_updates)
     
-    print(f"  💰 VLP Revenue (7d avg): £{kpis['vlp_revenue']:,.0f}k")
     print(f"  💷 Wholesale Price: £{kpis['wholesale']:.2f}/MWh")
     print(f"  ⚡ Generation: {kpis['total_gen']:.2f} GW")
     print(f"  📊 Demand: {kpis['demand']:.2f} GW")

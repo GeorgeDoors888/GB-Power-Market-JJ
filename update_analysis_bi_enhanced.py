@@ -2,6 +2,8 @@
 """
 Update Enhanced BI Analysis Sheet
 Reads dropdown selections and refreshes data from BigQuery
+
+Updated Dec 17, 2025: Prefers IRIS tables for recent data, falls back to historical
 """
 
 import pickle
@@ -14,6 +16,75 @@ SPREADSHEET_ID = '1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA'
 SHEET_NAME = 'Enhanced_BI_Analysis'  # Separate sheet for detailed analysis (NOT the main Dashboard)
 PROJECT_ID = 'inner-cinema-476211-u9'
 DATASET = 'uk_energy_prod'
+
+# Data Architecture Helper Functions
+def get_smart_table_query(table_base: str, days: int, timestamp_field: str = 'publishTime') -> str:
+    """
+    Generate optimal query that prefers IRIS tables for recent data.
+    
+    Strategy:
+    - FUELINST: Use IRIS (Oct 28+ coverage, real-time updates)
+    - FREQ: Use IRIS ONLY (historical table was empty until Dec 16)
+    - MID: Use historical (IRIS stopped updating)
+    - COSTS/DISBSAD: Use historical (actively maintained)
+    - BOALF: Use IRIS for recent, historical for older
+    """
+    
+    if table_base == 'bmrs_fuelinst':
+        # IRIS has complete coverage since Oct 28, prefer it
+        return f"""
+        SELECT *
+        FROM `{PROJECT_ID}.{DATASET}.bmrs_fuelinst_iris`
+        WHERE CAST({timestamp_field} AS DATETIME) >= DATETIME_SUB(CURRENT_DATETIME(), INTERVAL {days} DAY)
+        """
+    
+    elif table_base == 'bmrs_freq':
+        # FREQ: IRIS is the ONLY reliable source
+        return f"""
+        SELECT *
+        FROM `{PROJECT_ID}.{DATASET}.bmrs_freq_iris`
+        WHERE CAST(measurementTime AS DATETIME) >= DATETIME_SUB(CURRENT_DATETIME(), INTERVAL {days} DAY)
+        """
+    
+    elif table_base == 'bmrs_mid':
+        # MID: Historical only (stopped Oct 30, IRIS also stale)
+        return f"""
+        SELECT *
+        FROM `{PROJECT_ID}.{DATASET}.bmrs_mid`
+        WHERE CAST(settlementDate AS DATETIME) >= DATETIME_SUB(CURRENT_DATETIME(), INTERVAL {days} DAY)
+        """
+    
+    elif table_base in ['bmrs_costs', 'bmrs_disbsad']:
+        # These are actively maintained in historical tables
+        return f"""
+        SELECT *
+        FROM `{PROJECT_ID}.{DATASET}.{table_base}`
+        WHERE CAST(settlementDate AS DATETIME) >= DATETIME_SUB(CURRENT_DATETIME(), INTERVAL {days} DAY)
+        """
+    
+    elif table_base == 'bmrs_boalf':
+        # BOALF: IRIS for recent (Nov+), historical for older
+        return f"""
+        WITH combined AS (
+            SELECT *, 'iris' as source
+            FROM `{PROJECT_ID}.{DATASET}.bmrs_boalf_iris`
+            WHERE CAST(settlementDate AS DATETIME) >= DATETIME_SUB(CURRENT_DATETIME(), INTERVAL {days} DAY)
+            UNION ALL
+            SELECT *, 'historical' as source
+            FROM `{PROJECT_ID}.{DATASET}.bmrs_boalf`
+            WHERE CAST(settlementDate AS DATETIME) >= DATETIME_SUB(CURRENT_DATETIME(), INTERVAL {days} DAY)
+            AND CAST(settlementDate AS DATETIME) < '2025-11-01'  -- Before IRIS coverage
+        )
+        SELECT * FROM combined
+        """
+    
+    else:
+        # Default: try IRIS first, fall back to historical
+        return f"""
+        SELECT *
+        FROM `{PROJECT_ID}.{DATASET}.{table_base}_iris`
+        WHERE CAST({timestamp_field} AS DATETIME) >= DATETIME_SUB(CURRENT_DATETIME(), INTERVAL {days} DAY)
+        """
 
 print("=" * 80)
 print("🔄 UPDATING ENHANCED BI ANALYSIS SHEET")
@@ -80,41 +151,24 @@ print()
 # ============================================================================
 print("1️⃣ Updating generation data...")
 try:
+    # Use IRIS table (preferred source for FUELINST)
     gen_query = f"""
-    WITH combined AS (
-        SELECT 
-            CAST(publishTime AS DATETIME) as timestamp,
-            fuelType,
-            generation,
-            'historical' as source
-        FROM `{PROJECT_ID}.{DATASET}.bmrs_fuelinst`
-        WHERE CAST(publishTime AS DATETIME) >= DATETIME_SUB(CURRENT_DATETIME(), INTERVAL {days} DAY)
-        UNION ALL
-        SELECT 
-            CAST(publishTime AS DATETIME) as timestamp,
-            fuelType,
-            generation,
-            'real-time' as source
-        FROM `{PROJECT_ID}.{DATASET}.bmrs_fuelinst_iris`
-        WHERE CAST(publishTime AS DATETIME) >= DATETIME_SUB(CURRENT_DATETIME(), INTERVAL 48 HOUR)
-    )
     SELECT 
         fuelType,
         COUNT(*) as record_count,
         ROUND(SUM(generation)/1000, 2) as total_mwh,
         ROUND(AVG(generation), 2) as avg_mw,
         ROUND(MAX(generation), 2) as max_mw,
-        ROUND(MIN(generation), 2) as min_mw,
-        COUNTIF(source='historical') as hist_count,
-        COUNTIF(source='real-time') as iris_count
-    FROM combined
+        ROUND(MIN(generation), 2) as min_mw
+    FROM `{PROJECT_ID}.{DATASET}.bmrs_fuelinst_iris`
+    WHERE CAST(publishTime AS DATETIME) >= DATETIME_SUB(CURRENT_DATETIME(), INTERVAL {days} DAY)
     GROUP BY fuelType
     ORDER BY total_mwh DESC
     LIMIT 20
     """
     
     gen_results = list(bq_client.query(gen_query).result())
-    print(f"  ✅ Retrieved {len(gen_results)} fuel types")
+    print(f"  ✅ Retrieved {len(gen_results)} fuel types (IRIS source)")
     
     # Calculate totals
     total_generation = sum(row.total_mwh for row in gen_results)
@@ -126,7 +180,6 @@ try:
     gen_data = []
     for row in gen_results:
         pct_share = round((row.total_mwh / total_generation * 100), 2) if total_generation > 0 else 0
-        source_mix = f"Hist:{row.hist_count} | IRIS:{row.iris_count}"
         gen_data.append([
             row.fuelType,
             row.total_mwh,
@@ -134,7 +187,7 @@ try:
             pct_share,
             row.max_mw,
             row.min_mw,
-            source_mix
+            row.record_count  # Show record count instead of source mix
         ])
     
     if gen_data:
@@ -165,33 +218,19 @@ print()
 # ============================================================================
 print("2️⃣ Updating frequency data...")
 try:
+    # FREQ: Use IRIS ONLY (historical table was empty until Dec 16)
     freq_query = f"""
-    WITH combined AS (
-        SELECT 
-            CAST(measurementTime AS DATETIME) as timestamp,
-            frequency,
-            'historical' as source
-        FROM `{PROJECT_ID}.{DATASET}.bmrs_freq`
-        WHERE CAST(measurementTime AS DATETIME) >= DATETIME_SUB(CURRENT_DATETIME(), INTERVAL {days} DAY)
-        UNION ALL
-        SELECT 
-            CAST(measurementTime AS DATETIME) as timestamp,
-            frequency,
-            'real-time' as source
-        FROM `{PROJECT_ID}.{DATASET}.bmrs_freq_iris`
-        WHERE CAST(measurementTime AS DATETIME) >= DATETIME_SUB(CURRENT_DATETIME(), INTERVAL 48 HOUR)
-    )
     SELECT 
-        timestamp,
-        ROUND(frequency, 3) as frequency,
-        source
-    FROM combined
+        CAST(measurementTime AS DATETIME) as timestamp,
+        ROUND(frequency, 3) as frequency
+    FROM `{PROJECT_ID}.{DATASET}.bmrs_freq_iris`
+    WHERE CAST(measurementTime AS DATETIME) >= DATETIME_SUB(CURRENT_DATETIME(), INTERVAL {days} DAY)
     ORDER BY timestamp DESC
     LIMIT 20
     """
     
     freq_results = list(bq_client.query(freq_query).result())
-    print(f"  ✅ Retrieved {len(freq_results)} frequency records")
+    print(f"  ✅ Retrieved {len(freq_results)} frequency records (IRIS source)")
     
     # Clear old data
     sheet.update('A38:E59', [['' for _ in range(5)] for _ in range(22)])
@@ -206,7 +245,7 @@ try:
             row.frequency,
             deviation_mhz,
             status,
-            row.source
+            'IRIS'  # Always IRIS for FREQ data
         ])
     
     if freq_data:
@@ -238,35 +277,22 @@ print()
 # ============================================================================
 print("3️⃣ Updating market prices...")
 try:
+    # MID: Historical only (stopped Oct 30, but being backfilled)
     price_query = f"""
-    WITH combined AS (
-        SELECT 
-            settlementDate as date,
-            settlementPeriod as settlement_period,
-            ROUND(price, 2) as price,
-            ROUND(volume, 2) as volume,
-            dataProvider,
-            'historical' as source
-        FROM `{PROJECT_ID}.{DATASET}.bmrs_mid`
-        WHERE settlementDate >= DATE_SUB(CURRENT_DATE(), INTERVAL {days} DAY)
-        UNION ALL
-        SELECT 
-            settlementDate as date,
-            settlementPeriod as settlement_period,
-            ROUND(price, 2) as price,
-            ROUND(volume, 2) as volume,
-            dataProvider,
-            'real-time' as source
-        FROM `{PROJECT_ID}.{DATASET}.bmrs_mid_iris`
-        WHERE settlementDate >= DATE_SUB(CURRENT_DATE(), INTERVAL 2 DAY)
-    )
-    SELECT * FROM combined
+    SELECT 
+        settlementDate as date,
+        settlementPeriod as settlement_period,
+        ROUND(price, 2) as price,
+        ROUND(volume, 2) as volume,
+        dataProvider
+    FROM `{PROJECT_ID}.{DATASET}.bmrs_mid`
+    WHERE settlementDate >= DATE_SUB(CURRENT_DATE(), INTERVAL {days} DAY)
     ORDER BY date DESC, settlement_period DESC
     LIMIT 20
     """
     
     price_results = list(bq_client.query(price_query).result())
-    print(f"  ✅ Retrieved {len(price_results)} price records")
+    print(f"  ✅ Retrieved {len(price_results)} price records (Historical MID)")
     
     # Clear old data
     sheet.update('A63:F84', [['' for _ in range(6)] for _ in range(22)])
@@ -280,7 +306,7 @@ try:
             row.price,  # Market price
             row.volume,  # Traded volume
             row.dataProvider,
-            row.source
+            'Historical'  # MID always from historical table
         ])
     
     if price_data:

@@ -510,12 +510,121 @@ ORDER BY count DESC
 
 ---
 
+## Dashboard Chart Specifications
+
+### Google Sheets Layout (Row K12+)
+
+| Zone | Visual Type | Data Range | Notes |
+|------|-------------|------------|-------|
+| **A1:D5** | KPI Tiles | Text boxes / formula cells | Link to KPIs - show live totals (Coverage %, Avg BM, Avg MID, BM–MID spread) |
+| **A7:G20** | Line Chart | Coverage Timeline | `settlementDate, Coverage %` - highlight IRIS transition (vertical line at 2025-10-29) |
+| **A22:G35** | Column Chart | Avg Price £/MWh by Month | Monthly pivot - show volatility |
+| **I7:N20** | Combo Chart (Dual Axis) | BM vs MID Comparison | Monthly averages - MID (blue), BOALF (orange) |
+| **I22:N35** | Histogram | Spread Distribution | `BM–MID Spread` - identify contango/backwardation |
+| **P7:R20** | Chart | Validation Breakdown | Pivot of `validation_flag` - show % Valid / Unmatched / Low Volume |
+| **P22:R35** | Pie Chart | Source Share | Pivot of `source_flag` - IRIS vs Legacy share |
+
+### Data Source Queries
+
+**Coverage Timeline** (A7:G20):
+```sql
+SELECT 
+    DATE(settlementDate) as date,
+    COUNT(*) as total_records,
+    COUNTIF(validation_flag = 'Valid') as valid_records,
+    ROUND(COUNTIF(validation_flag = 'Valid') * 100.0 / COUNT(*), 2) as coverage_pct
+FROM `inner-cinema-476211-u9.uk_energy_prod.bmrs_boalf_complete`
+GROUP BY date
+ORDER BY date
+```
+
+**BM vs MID Comparison** (I7:N20):
+```sql
+WITH monthly_boalf AS (
+    SELECT 
+        DATE_TRUNC(DATE(settlementDate), MONTH) as month,
+        AVG(acceptancePrice) as avg_bm_price
+    FROM `inner-cinema-476211-u9.uk_energy_prod.boalf_with_prices`
+    GROUP BY month
+),
+monthly_mid AS (
+    SELECT 
+        DATE_TRUNC(DATE(settlementDate), MONTH) as month,
+        AVG(price) as avg_mid_price
+    FROM `inner-cinema-476211-u9.uk_energy_prod.bmrs_mid`
+    GROUP BY month
+)
+SELECT 
+    b.month,
+    b.avg_bm_price,
+    m.avg_mid_price,
+    b.avg_bm_price - m.avg_mid_price as spread
+FROM monthly_boalf b
+LEFT JOIN monthly_mid m USING (month)
+ORDER BY month
+```
+
+**Validation Breakdown** (P7:R20):
+```sql
+SELECT 
+    validation_flag,
+    COUNT(*) as count,
+    ROUND(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER(), 2) as percentage
+FROM `inner-cinema-476211-u9.uk_energy_prod.bmrs_boalf_complete`
+GROUP BY validation_flag
+ORDER BY count DESC
+```
+
+**Source Share** (P22:R35):
+```sql
+SELECT 
+    CASE 
+        WHEN settlementDate >= '2025-10-29' THEN 'IRIS'
+        ELSE 'Legacy'
+    END as source_flag,
+    COUNT(*) as records,
+    ROUND(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER(), 2) as share_pct
+FROM `inner-cinema-476211-u9.uk_energy_prod.bmrs_boalf_complete`
+WHERE validation_flag = 'Valid'
+GROUP BY source_flag
+```
+
+### Chart Configuration Notes
+
+1. **Coverage Timeline** (A7:G20):
+   - Add vertical reference line at 2025-10-29 (IRIS transition)
+   - Use dual Y-axis: left = record count, right = coverage %
+   - Format: Date on X-axis, smooth line
+
+2. **BM vs MID Comparison** (I7:N20):
+   - Series 1 (MID): Blue line, left Y-axis
+   - Series 2 (BOALF): Orange line, left Y-axis
+   - Series 3 (Spread): Gray area chart, right Y-axis
+   - Legend: Top-right corner
+
+3. **Spread Histogram** (I22:N35):
+   - Bins: £5/MWh increments
+   - Highlight zero line (mark contango vs backwardation)
+   - X-axis: Spread (£/MWh), Y-axis: Frequency
+
+4. **Validation Breakdown** (P7:R20):
+   - Stacked bar chart or donut chart
+   - Color coding: Valid (green), SO_Test (blue), Low_Volume (yellow), Unmatched (red)
+   - Show percentages on labels
+
+5. **Source Share** (P22:R35):
+   - Two segments: IRIS (green), Legacy (gray)
+   - Show percentage labels
+   - Title: "Data Source Mix (Valid Records)"
+
+---
+
 **🎉 PROJECT STATUS: PRODUCTION READY**
 
 *All historical data loaded. Battery analysis complete. IRIS enhancement ready for deployment. Documentation comprehensive. Zero blockers.*
 
 ---
 
-*Last Updated: December 16, 2025, 01:08 GMT*  
-*Version: 1.0.0*  
-*Status: ✅ Complete*
+*Last Updated: December 17, 2025*  
+*Version: 1.1.0*  
+*Status: ✅ Complete (+ Dashboard Chart Specs)*

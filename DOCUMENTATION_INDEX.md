@@ -17,8 +17,9 @@ Complete documentation for the BESS Dashboard system.
 | [CONFIGURATION.md](CONFIGURATION.md) | Settings guide | 750+ | Credentials, rates, parameters |
 | [DEPLOYMENT.md](DEPLOYMENT.md) | Production deployment | 600+ | Deployment, monitoring, backups |
 | [DASHBOARD_V3_DOCUMENTATION.md](DASHBOARD_V3_DOCUMENTATION.md) | Dashboard V3 Technical | 100+ | Hybrid architecture, layout, KPIs |
+| [SCRP_MARKET_INDEX_PRICE_ANALYSIS.md](SCRP_MARKET_INDEX_PRICE_ANALYSIS.md) | SCRP & MID Analysis | 900+ | Market prices, VLP revenue, BSC P415/P444 |
 
-**Total: 9 files, 5,850+ lines**
+**Total: 10 files, 6,750+ lines**
 
 ---
 
@@ -92,6 +93,17 @@ Complete documentation for the BESS Dashboard system.
   - DUoS rates by DNO & voltage
   - Battery parameters
   - Time band definitions
+
+### Market Analysis & Pricing
+- [SCRP_MARKET_INDEX_PRICE_ANALYSIS.md](SCRP_MARKET_INDEX_PRICE_ANALYSIS.md) - Supplier Compensation Reference Price (SCRP) methodology
+  - **Verified MID Data**: 155K records, 1,375 days (2022-2025)
+  - **24-Month Trends**: £52.77 to £114.48/MWh monthly averages
+  - **Oct 23-30, 2025**: £50.69/MWh actual (corrected from £24.4/MWh claim)
+  - **MID vs BOALF Comparison**: BOALF avg £41.53/MWh LOWER than MID (negative BIDs)
+  - **VLP Revenue Analysis**: £490K-£2.5M monthly, 22K Oct 2025 actions
+  - **BSC Framework**: P415/P444 modifications, Elexon methodology
+  - **Price Correlation**: Low MID → negative BOALF (excess renewables)
+  - **Worked Examples**: Supplier compensation calculations
 
 ### Troubleshooting
 - [TROUBLESHOOTING.md](TROUBLESHOOTING.md) - Issue resolution

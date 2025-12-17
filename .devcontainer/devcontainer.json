@@ -5,14 +5,21 @@
     "ghcr.io/devcontainers/features/node:1": {
       "version": "lts"
     },
-    "ghcr.io/devcontainers/features/git:1": {}
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/tailscale/codespace:latest": {}
   },
   "forwardPorts": [
-    8000
+    8000,
+    8080
   ],
   "portsAttributes": {
     "8000": {
       "label": "Codex Server API",
+      "onAutoForward": "notify",
+      "protocol": "http"
+    },
+    "8080": {
+      "label": "Dell code-server (via Tailscale)",
       "onAutoForward": "notify",
       "protocol": "http"
     }

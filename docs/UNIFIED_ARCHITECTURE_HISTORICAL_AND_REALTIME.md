@@ -1,19 +1,70 @@
 # 🏗️ Unified Data Architecture: Historical + Real-Time
 
+> **⚠️ VERIFIED DEC 17, 2025**: See [`DATA_ARCHITECTURE_VERIFIED_DEC17_2025.md`](../DATA_ARCHITECTURE_VERIFIED_DEC17_2025.md) for ACTUAL data coverage. This file contains OUTDATED assumptions about historical table status.
+
 > **🔧 Configuration Reference**: See [`PROJECT_CONFIGURATION.md`](PROJECT_CONFIGURATION.md) for BigQuery project IDs, regions, table schemas, and common pitfalls
 
-**Date:** October 30, 2025  
-**Repository:** ~/GB Power Market JJ  
-**Status:** ✅ Operational (Historical) + 🟢 Operational (Real-Time)
+**Date:** December 17, 2025 (REQUIRES CORRECTION - See verified doc above)
+**Repository:** ~/GB Power Market JJ
+**Status:** ⚠️ PARTIALLY INCORRECT - Historical tables have VARYING update status, NOT uniform "Oct 30 freeze"
+
+---
+
+## 🚨 CORRECTION NOTICE (Dec 17, 2025)
+
+**THIS SECTION CONTAINS ERRORS** - Verified data shows:
+
+**What Was WRONG**:
+- ❌ "Historical tables frozen at Oct 30" - INCORRECT (varies by table)
+- ❌ "Use IRIS for Nov-Dec 2025" - OVERSIMPLIFIED (depends on table)
+- ❌ "Historical has no Nov-Dec data" - FALSE (bmrs_costs updated to Dec 8, disbsad to Dec 14)
+
+**ACTUAL State** (Verified Dec 17, 2025):
+- ✅ **bmrs_fuelinst**: Updated to Dec 17 (includes manual backfill)
+- ⚠️ **bmrs_freq**: EMPTY until Dec 16 (ONLY manual backfill exists, use IRIS!)
+- ✅ **bmrs_costs**: Updated to Dec 8, 2025
+- ✅ **bmrs_disbsad**: Updated to Dec 14, 2025
+- ⚠️ **bmrs_mid**: Stopped Oct 30, 2025
+- ⚠️ **bmrs_boalf**: Stopped Nov 4, 2025
+- ⚠️ **bmrs_bod**: Stopped Oct 28, 2025
+
+**Critical Finding**: `bmrs_freq` historical table was NEVER configured for ingestion. All frequency data exists ONLY in `bmrs_freq_iris` (Oct 28 - present).
+
+**Correct Query Pattern**:
+```sql
+-- FUELINST: Use IRIS for recent data
+SELECT * FROM bmrs_fuelinst_iris WHERE settlementDate >= '2025-10-28'
+
+-- FREQ: Use IRIS ONLY (historical table empty!)
+SELECT * FROM bmrs_freq_iris WHERE measurementTime >= '2025-10-28'
+
+-- DISBSAD: Use historical (updated through Dec 14)
+SELECT * FROM bmrs_disbsad WHERE settlementDate >= '2025-11-01'
+```
+
+**Read the verified doc**: [`DATA_ARCHITECTURE_VERIFIED_DEC17_2025.md`](../DATA_ARCHITECTURE_VERIFIED_DEC17_2025.md)
 
 ---
 
 ## 🎯 Executive Summary
 
+**UPDATED DEC 17, 2025**: This document contains outdated assumptions. The dual-pipeline architecture described is fundamentally correct, but table-specific details vary significantly.
+
+**Key Corrections**:
+- FREQ: Historical table was NEVER populated until Dec 17 backfill. Use `bmrs_freq_iris` for all frequency data.
+- FUELINST/DISBSAD/COSTS: Historical tables ARE being updated (not frozen at Oct 30)
+- MID/BOD/BOALF: These DID stop updating (Oct 28-Nov 4), currently being backfilled
+
+**Current State** (Verified Dec 17, 2025):
+1. **IRIS Pipeline** ✅ Operational with auto-restart (systemd services)
+2. **Historical FREQ** 🔄 Being backfilled (2022-present) via `backfill_json_upload.py`
+3. **Historical MID/BOD** 🔄 Gap-fill in progress (Oct 29 - Dec 17)
+4. **Dashboard** ✅ Updated to prefer IRIS sources where appropriate
+
 You have **TWO complementary data pipelines** that work together to provide complete coverage:
 
-1. **Historical Data Pipeline** (Elexon API) - Batch ingestion of past data
-2. **Real-Time Data Pipeline** (IRIS) - Streaming current data
+1. **Historical Data Pipeline** (Elexon API) - Batch ingestion (MANUAL since Oct 2025)
+2. **Real-Time Data Pipeline** (IRIS) - Streaming current data (AUTO with systemd)
 
 Both pipelines write to the same BigQuery project (`inner-cinema-476211-u9`) using **different table names** to keep them separate but queryable together.
 
@@ -164,7 +215,7 @@ Both pipelines write to the same BigQuery project (`inner-cinema-476211-u9`) usi
 **You can query both together:**
 ```sql
 -- Get complete time series: historical + real-time
-SELECT 
+SELECT
     measurementTime,
     frequency,
     'historical' as source
@@ -173,7 +224,7 @@ WHERE measurementTime >= '2025-10-01'
 
 UNION ALL
 
-SELECT 
+SELECT
     measurementTime,
     frequency,
     'real-time' as source
@@ -204,41 +255,60 @@ WHERE measurementTime >= DATETIME_SUB(CURRENT_DATETIME(), INTERVAL 1 HOUR)
 |--------|-------------------|---------------------------|
 | **Data Source** | Elexon BMRS API (REST) | Azure Service Bus (Messages) |
 | **Latency** | 5-30 minutes | 30 seconds - 2 minutes |
-| **Time Range** | 2020-present | Last 24-48 hours |
-| **Update Frequency** | On-demand / 15 min cron | Continuous streaming |
-| **Data Volume** | 5.66M rows (FUELINST) | 100K+ rows (first 4 hours) |
+| **Time Range** | 2020 - Oct 30, 2025 | Oct 30, 2025 - Present |
+| **Update Frequency** | **MANUAL** (cron disabled since Oct) | Continuous streaming (systemd auto-restart) |
+| **Data Volume** | 5.66M rows (FUELINST through Oct) | 100K+ rows (last 7 days) |
 | **Table Names** | `bmrs_*` | `bmrs_*_iris` |
-| **Scripts** | `ingest_elexon_fixed.py` | `iris_to_bigquery_unified.py` |
-| **Status** | ✅ Operational | 🟢 Operational |
+| **Scripts** | `backfill_dec15_17_simple.py` | `iris_to_bigquery_unified.py` |
+| **Systemd Services** | ❌ None (manual execution) | ✅ iris-client.service, iris-uploader.service |
+| **Status** | ⚠️ **Manual only** (last auto: Oct 30) | ✅ **Operational** (auto-restart enabled) |
 | **Cost** | Free (Elexon API) | Free (IRIS messages) |
-| **Reliability** | ⭐⭐⭐⭐ (stable API) | ⭐⭐⭐ (new, monitoring) |
+| **Reliability** | ⭐⭐⭐⭐ (stable API) | ⭐⭐⭐⭐ (systemd monitoring since Dec 17) |
+| **Data Retention** | Permanent (BigQuery) | 24-48h in Azure queue, permanent in BigQuery |
+
+**⚠️ Important**: As of December 2025, historical batch ingestion is **not automated**. For Nov-Dec 2025 data, rely exclusively on IRIS tables. To backfill missing dates, manually run:
+```bash
+python3 backfill_dec15_17_simple.py --start YYYY-MM-DD --end YYYY-MM-DD
+```
 
 ---
 
 ## 🔄 How They Work Together
 
-### Use Case 1: Long-Term Analysis
+### Use Case 1: Long-Term Analysis (2020-Oct 2025)
 **Need:** Analyze frequency trends over the past 6 months
 
-**Solution:** Query historical tables
+**Solution:** Query historical tables (NOTE: Oct 2025 is last available date)
 ```sql
-SELECT 
+SELECT
     DATE(measurementTime) as date,
     AVG(frequency) as avg_frequency,
     MIN(frequency) as min_frequency,
     MAX(frequency) as max_frequency
 FROM `inner-cinema-476211-u9.uk_energy_prod.bmrs_freq`
-WHERE measurementTime >= '2025-04-01'
+WHERE measurementTime BETWEEN '2025-04-01' AND '2025-10-30'  -- Historical range only
 GROUP BY date
 ORDER BY date
 ```
 
-### Use Case 2: Real-Time Monitoring
+### Use Case 2: Recent Analysis (Nov-Dec 2025)
+**Need:** Analyze recent weeks (Nov-Dec 2025)
+
+**Solution:** Use IRIS tables only
+```sql
+SELECT
+    DATE(measurementTime) as date,
+    AVG(frequency) as avg_frequency
+FROM `inner-cinema-476211-u9.uk_energy_prod.bmrs_freq_iris`
+WHERE measurementTime >= '2025-11-01'
+GROUP BY date
+ORDER BY date
+```
 **Need:** Monitor grid frequency in the last hour
 
 **Solution:** Query IRIS tables
 ```sql
-SELECT 
+SELECT
     measurementTime,
     frequency
 FROM `inner-cinema-476211-u9.uk_energy_prod.bmrs_freq_iris`
@@ -256,9 +326,9 @@ WITH combined AS (
   SELECT measurementTime, frequency, 'historical' as source
   FROM `inner-cinema-476211-u9.uk_energy_prod.bmrs_freq`
   WHERE measurementTime >= DATETIME_SUB(CURRENT_DATETIME(), INTERVAL 24 HOUR)
-  
+
   UNION ALL
-  
+
   -- Real-time data (most recent)
   SELECT measurementTime, frequency, 'real-time' as source
   FROM `inner-cinema-476211-u9.uk_energy_prod.bmrs_freq_iris`
@@ -326,7 +396,7 @@ ORDER BY measurementTime DESC
 INSERT INTO `inner-cinema-476211-u9.uk_energy_prod.bmrs_freq`
 SELECT * FROM `inner-cinema-476211-u9.uk_energy_prod.bmrs_freq_iris`
 WHERE measurementTime NOT IN (
-    SELECT measurementTime 
+    SELECT measurementTime
     FROM `inner-cinema-476211-u9.uk_energy_prod.bmrs_freq`
 )
 ```
@@ -339,7 +409,7 @@ SELECT * FROM `inner-cinema-476211-u9.uk_energy_prod.bmrs_freq`
 UNION ALL
 SELECT * FROM `inner-cinema-476211-u9.uk_energy_prod.bmrs_freq_iris`
 WHERE measurementTime > (
-    SELECT MAX(measurementTime) 
+    SELECT MAX(measurementTime)
     FROM `inner-cinema-476211-u9.uk_energy_prod.bmrs_freq`
 )
 ```
@@ -498,5 +568,5 @@ cd ~/GB\ Power\ Market\ JJ
 
 ---
 
-**Last Updated:** October 30, 2025 23:45  
+**Last Updated:** October 30, 2025 23:45
 **Status:** ✅ Historical + 🟢 Real-Time = 🎯 Complete Coverage
