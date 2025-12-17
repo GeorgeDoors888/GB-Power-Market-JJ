@@ -943,7 +943,7 @@ def update_dashboard():
                 first = gen_mix_updates[0]
                 print(f"   DEBUG: First update range={first['range']}, values={first['values']}")
         
-        # Add sparkline formulas to column E for fuel trend charts
+        # Add sparkline formulas to column E for fuel trend charts (COLUMN type for each period)
         # Map fuel types to Data_Hidden rows (rows 2-11 in Data_Hidden)
         fuel_sparkline_map = {
             'WIND': (13, 2, '#4CAF50'),      # Green for wind
@@ -960,10 +960,10 @@ def update_dashboard():
         
         sparkline_updates = []
         for fuel, (dashboard_row, data_row, color) in fuel_sparkline_map.items():
+            # Use COLUMN chart to show each settlement period as a bar
             sparkline_formula = (
-                f'=IF(ISBLANK(Data_Hidden!$B${data_row}:$AW${data_row}),"", '
-                f'SPARKLINE(Data_Hidden!$B${data_row}:$AW${data_row}, '
-                f'{{"charttype","line";"linewidth",2;"color","{color}"}}))' 
+                f'=SPARKLINE(Data_Hidden!$B${data_row}:$AW${data_row}, '
+                f'{{"charttype","column";"color","{color}"}})' 
             )
             sparkline_updates.append({
                 'range': f'E{dashboard_row}',
@@ -972,7 +972,33 @@ def update_dashboard():
         
         if sparkline_updates:
             sheet.batch_update(sparkline_updates, value_input_option='USER_ENTERED')
-            print(f"   ✅ Added fuel trend sparklines (column E, rows 13-22)")
+            print(f"   ✅ Added fuel trend sparklines (column E, rows 13-22, COLUMN type)")
+    
+    # Add KPI sparklines to row 7 (columns A, C, E, G, I for 5 KPIs)
+    # Data_Hidden rows 22-26: Wholesale Price, Frequency, Total Gen, Wind, Demand
+    if kpi_timeseries is not None:
+        kpi_sparkline_configs = [
+            ('A7', 22, 'Wholesale Price', '#e74c3c', 'column'),     # Red
+            ('C7', 23, 'Frequency', '#2ecc71', 'line'),             # Green line for frequency
+            ('E7', 24, 'Total Generation', '#f39c12', 'column'),    # Orange
+            ('G7', 25, 'Wind Output', '#4ECDC4', 'column'),         # Teal
+            ('I7', 26, 'System Demand', '#3498db', 'column')        # Blue
+        ]
+        
+        kpi_sparkline_updates = []
+        for cell, data_row, label, color, chart_type in kpi_sparkline_configs:
+            sparkline_formula = (
+                f'=SPARKLINE(Data_Hidden!$B${data_row}:$AW${data_row}, '
+                f'{{"charttype","{chart_type}";"color","{color}"}})' 
+            )
+            kpi_sparkline_updates.append({
+                'range': cell,
+                'values': [[sparkline_formula]]
+            })
+        
+        if kpi_sparkline_updates:
+            sheet.batch_update(kpi_sparkline_updates, value_input_option='USER_ENTERED')
+            print(f"   ✅ Added KPI sparklines (row 7, columns A/C/E/G/I)")
 
     # Update Interconnectors (Starting Row 13, column J) - BATCH UPDATE
     if interconnectors is not None and not interconnectors.empty:
