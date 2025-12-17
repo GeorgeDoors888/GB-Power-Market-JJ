@@ -592,19 +592,19 @@ def update_dashboard():
     })
     
     # Update KPIs (Row 6) - batch update all at once
-    # Headers: C5=Wholesale Price, E5=Grid Frequency, G5=Total Gen, I5=Wind, K5=Demand
+    # Headers: A5=Wholesale Price, C5=Grid Frequency, E5=Total Gen, G5=Wind, I5=Demand
     batch_updates.append({
-        'range': 'C6:K6',
+        'range': 'A6:I6',
         'values': [[
-            kpis['wholesale'],     # C6
+            kpis['wholesale'],     # A6
+            '',                    # B6
+            kpis['frequency'],     # C6
             '',                    # D6
-            kpis['frequency'],     # E6
+            kpis['total_gen'],     # E6
             '',                    # F6
-            kpis['total_gen'],     # G6
+            kpis['wind'],          # G6
             '',                    # H6
-            kpis['wind'],          # I6
-            '',                    # J6
-            kpis['demand']         # K6
+            kpis['demand']         # I6
         ]]
     })
     
