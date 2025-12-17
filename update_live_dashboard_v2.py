@@ -933,12 +933,46 @@ def update_dashboard():
                 })
 
         if gen_mix_updates:
+            print(f"   DEBUG: About to batch update {len(gen_mix_updates)} fuel rows:")
+            for update in gen_mix_updates[:3]:  # Show first 3
+                print(f"      Range: {update['range']}, Values: {update['values']}")
             sheet.batch_update(gen_mix_updates, value_input_option='USER_ENTERED')
             print(f"   ✅ Updated generation mix ({len(gen_mix_updates)} fuels, batched)")
             # Debug: Show first update
             if gen_mix_updates:
                 first = gen_mix_updates[0]
                 print(f"   DEBUG: First update range={first['range']}, values={first['values']}")
+        
+        # Add sparkline formulas to column E for fuel trend charts
+        # Map fuel types to Data_Hidden rows (rows 2-11 in Data_Hidden)
+        fuel_sparkline_map = {
+            'WIND': (13, 2, '#4CAF50'),      # Green for wind
+            'NUCLEAR': (14, 3, '#9C27B0'),   # Purple for nuclear
+            'CCGT': (15, 4, '#FF5722'),      # Deep orange for gas
+            'BIOMASS': (16, 5, '#8BC34A'),   # Light green for biomass
+            'NPSHYD': (17, 6, '#03A9F4'),    # Light blue for hydro
+            'OTHER': (18, 7, '#9E9E9E'),     # Grey for other
+            'OCGT': (19, 8, '#FF9800'),      # Orange for OCGT
+            'COAL': (20, 9, '#795548'),      # Brown for coal
+            'OIL': (21, 10, '#607D8B'),      # Blue grey for oil
+            'PS': (22, 11, '#E91E63')        # Pink for pumped storage
+        }
+        
+        sparkline_updates = []
+        for fuel, (dashboard_row, data_row, color) in fuel_sparkline_map.items():
+            sparkline_formula = (
+                f'=IF(ISBLANK(Data_Hidden!$B${data_row}:$AW${data_row}),"", '
+                f'SPARKLINE(Data_Hidden!$B${data_row}:$AW${data_row}, '
+                f'{{"charttype","line";"linewidth",2;"color","{color}"}}))' 
+            )
+            sparkline_updates.append({
+                'range': f'E{dashboard_row}',
+                'values': [[sparkline_formula]]
+            })
+        
+        if sparkline_updates:
+            sheet.batch_update(sparkline_updates, value_input_option='USER_ENTERED')
+            print(f"   ✅ Added fuel trend sparklines (column E, rows 13-22)")
 
     # Update Interconnectors (Starting Row 13, column J) - BATCH UPDATE
     if interconnectors is not None and not interconnectors.empty:
