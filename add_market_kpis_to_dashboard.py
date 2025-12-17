@@ -32,8 +32,9 @@ DATASET = 'uk_energy_prod'
 SA_FILE = 'inner-cinema-credentials.json'
 
 # Layout configuration
-KPI_START_ROW = 65  # Start after existing content
-KPI_START_COL_LETTER = 'A'
+# User has already placed labels starting at row 13, columns M, Q, T, W (and continuing below)
+KPI_START_ROW = 13  # Start at row 13 where labels already exist
+KPI_START_COL_LETTER = 'M'  # Column M
 
 logging.basicConfig(level=logging.INFO, format='%(message)s')
 
@@ -178,96 +179,89 @@ def update_market_kpis_section(sheet, spreadsheet, df):
     
     logging.info("\n✍️  Writing market KPIs to Google Sheet...")
     
-    # Define KPI configuration
-    # Format: (row_offset, col_offset, label, column_name, format_suffix)
+    # Define KPI configuration matching user's layout
+    # User's layout starts at row 13, with labels in columns M, Q, T, W (4 per row)
+    # Format: (row, col_letter, label, column_name, format_suffix)
+    # Row 13: Avg Acceptance Price (M) | BM-MID Spread (Q) | Supplier-VLP Diff (T) | Imbalance Premium (W)
+    # Row 15: Volume-Weighted (M) | BM-System Buy (Q) | Daily Comp (T) | Price Volatility (W)
+    # Row 17: Market Index (M) | BM-System Sell (Q) | Daily VLP Revenue (T) | Total BM Energy (W)
+    # Row 19: System Buy (M) | Supplier Comp (Q) | Net Spread (T) | Effective Revenue (W)
+    # Row 21: System Sell (M) | VLP Revenue (Q) | Contango Index (T) | Coverage Reliability (W)
+    
     kpi_config = [
-        # Row 1
-        (0, 0, "Avg Acceptance Price £/MWh", "avg_acceptance_price", ""),
-        (0, 3, "BM–MID Spread", "bm_mid_spread", ""),
-        (0, 6, "Supplier–VLP Diff £/MWh", "supplier_vlp_diff", ""),
-        (0, 9, "Imbalance Premium Index", "imbalance_premium_index", "%"),
+        # Row 13 - Values at row 14, sparklines at row 15? Let's put values+sparklines both at row 14
+        (13, 'M', "Avg Acceptance Price £/MWh", "avg_acceptance_price", ""),
+        (13, 'Q', "BM–MID Spread", "bm_mid_spread", ""),
+        (13, 'T', "Supplier–VLP Diff £/MWh", "supplier_vlp_diff", ""),
+        (13, 'W', "Imbalance Premium Index", "imbalance_premium_index", "%"),
         
-        # Row 2
-        (3, 0, "Volume-Weighted Avg Price", "volume_weighted_price", ""),
-        (3, 3, "BM–System Buy Spread", "bm_system_buy_spread", ""),
-        (3, 6, "Daily Comp £", "daily_comp_gbp_mwh", ""),
-        (3, 9, "Price Volatility σ £/MWh", "price_volatility_sigma", ""),
+        # Row 15 (skip row 14 for spacing)
+        (15, 'M', "Volume-Weighted Avg Price", "volume_weighted_price", ""),
+        (15, 'Q', "BM–System Buy Spread", "bm_system_buy_spread", ""),
+        (15, 'T', "Daily Comp £", "daily_comp_gbp_mwh", ""),
+        (15, 'W', "Price Volatility σ £/MWh", "price_volatility_sigma", ""),
         
-        # Row 3
-        (6, 0, "Avg Market Index Price", "avg_market_index_price", ""),
-        (6, 3, "BM–System Sell Spread", "bm_system_sell_spread", ""),
-        (6, 6, "Daily VLP Revenue £", "daily_vlp_revenue_gbp", ""),
-        (6, 9, "Total BM Energy MWh", "total_bm_energy_mwh", ""),
+        # Row 17
+        (17, 'M', "Avg Market Index Price", "avg_market_index_price", ""),
+        (17, 'Q', "BM–System Sell Spread", "bm_system_sell_spread", ""),
+        (17, 'T', "Daily VLP Revenue £", "daily_vlp_revenue_gbp", ""),
+        (17, 'W', "Total BM Energy MWh", "total_bm_energy_mwh", ""),
         
-        # Row 4
-        (9, 0, "Avg System Buy Price", "avg_system_buy_price", ""),
-        (9, 3, "Supplier Comp £/MWh", "supplier_comp_gbp_mwh", ""),
-        (9, 6, "Net Spread £", "net_spread", ""),
-        (9, 9, "Effective Revenue £/kW-yr", "effective_revenue_gbp_kw_yr", ""),
+        # Row 19
+        (19, 'M', "Avg System Buy Price", "avg_system_buy_price", ""),
+        (19, 'Q', "Supplier Comp £/MWh", "supplier_comp_gbp_mwh", ""),
+        (19, 'T', "Net Spread £", "net_spread", ""),
+        (19, 'W', "Effective Revenue £/kW-yr", "effective_revenue_gbp_kw_yr", ""),
         
-        # Row 5
-        (12, 0, "Avg System Sell Price", "avg_system_sell_price", ""),
-        (12, 3, "VLP Revenue £/MWh", "vlp_revenue_gbp_mwh", ""),
-        (12, 6, "Contango Index", "contango_index", ""),
-        (12, 9, "Coverage Reliability Score", "coverage_reliability_score", "%"),
+        # Row 21
+        (21, 'M', "Avg System Sell Price", "avg_system_sell_price", ""),
+        (21, 'Q', "VLP Revenue £/MWh", "vlp_revenue_gbp_mwh", ""),
+        (21, 'T', "Contango Index", "contango_index", ""),
+        (21, 'W', "Coverage Reliability Score", "coverage_reliability_score", "%"),
     ]
     
     updates = []
     
-    # Add section header
-    header_row = KPI_START_ROW
+    # No header needed - user already has labels in place
+    # Add timestamp in column L
     updates.append({
-        'range': f'A{header_row}',
-        'values': [['📊 MARKET METRICS & ANALYSIS']]
-    })
-    
-    # Add timestamp
-    updates.append({
-        'range': f'K{header_row}',
+        'range': f'L{KPI_START_ROW}',
         'values': [[f"Updated: {datetime.now().strftime('%H:%M:%S')}"]]
     })
     
     # Map column names to Data_Hidden rows (rows 27-50 available)
-    # We'll assign each unique column a row starting at 27
     unique_cols = list(set([col_name for _, _, _, col_name, _ in kpi_config]))
     col_to_row = {col_name: 27 + idx for idx, col_name in enumerate(unique_cols)}
     
     # Create each KPI cell
-    for row_offset, col_offset, label, col_name, suffix in kpi_config:
-        kpi_row = KPI_START_ROW + 2 + row_offset
-        
-        # Calculate column letters
-        label_col = chr(ord('A') + col_offset)
-        value_col = chr(ord('A') + col_offset)
-        sparkline_col = chr(ord('A') + col_offset + 1)
-        
+    for label_row, value_col, label, col_name, suffix in kpi_config:
         # Get current value (latest non-zero period)
         current_value = df[df[col_name] != 0][col_name].iloc[-1] if len(df[df[col_name] != 0]) > 0 else 0
         
-        # Label
-        updates.append({
-            'range': f'{label_col}{kpi_row}',
-            'values': [[label]]
-        })
+        # Value goes in the row below the label
+        value_row = label_row + 1
         
-        # Current value
+        # Current value (large number)
         value_display = f"{current_value}{suffix}"
         updates.append({
-            'range': f'{value_col}{kpi_row + 1}',
+            'range': f'{value_col}{value_row}',
             'values': [[value_display]]
         })
+        
+        # Sparkline goes in column after value (N, R, U, X for M, Q, T, W)
+        sparkline_col = chr(ord(value_col) + 1)
         
         # Get Data_Hidden row for this metric
         data_hidden_row = col_to_row.get(col_name, 27)
         
-        # Sparkline formula
+        # Sparkline formula spanning 2-3 columns for visibility
         sparkline_formula = (
             f'=SPARKLINE(Data_Hidden!$B${data_hidden_row}:$AW${data_hidden_row}, '
             f'{{"charttype","column";"color","#4285F4"}})'
         )
         
         updates.append({
-            'range': f'{sparkline_col}{kpi_row + 1}',
+            'range': f'{sparkline_col}{value_row}',
             'values': [[sparkline_formula]]
         })
     
