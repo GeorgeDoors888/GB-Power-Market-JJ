@@ -25,7 +25,7 @@ def get_kpis(bq_client):
     """Get all KPIs in one query"""
     query = f"""
     WITH latest_gen AS (
-        SELECT 
+        SELECT
             SUM(CASE WHEN fuelType NOT LIKE 'INT%' THEN generation ELSE 0 END) / 1000 as total_gen_gw,
             SUM(CASE WHEN fuelType LIKE 'INT%' THEN generation ELSE 0 END) / 1000 as net_ic_gw
         FROM `{PROJECT_ID}.{DATASET}.bmrs_fuelinst_iris`
@@ -37,12 +37,12 @@ def get_kpis(bq_client):
         )
     ),
     prices AS (
-        SELECT 
+        SELECT
             AVG(systemSellPrice) as wholesale_price
         FROM `{PROJECT_ID}.{DATASET}.bmrs_costs`
         WHERE settlementDate >= DATE_SUB(CURRENT_DATE(), INTERVAL 7 DAY)
     )
-    SELECT 
+    SELECT
         p.wholesale_price as wholesale_price,
         g.total_gen_gw,
         50.0 as frequency,
@@ -50,7 +50,7 @@ def get_kpis(bq_client):
         g.net_ic_gw as net_ic_flow_gw
     FROM prices p, latest_gen g
     """
-    
+
     try:
         result = bq_client.query(query).to_dataframe()
         if not result.empty:
@@ -63,7 +63,7 @@ def get_kpis(bq_client):
             }
     except Exception as e:
         logging.error(f"Error getting KPIs: {e}")
-    
+
     return {
         'wholesale': 0, 'total_gen': 0,
         'frequency': 50.0, 'demand': 0, 'net_ic_flow': 0
@@ -73,7 +73,7 @@ def get_generation_mix(bq_client):
     """Get current generation mix"""
     query = f"""
     WITH latest AS (
-        SELECT 
+        SELECT
             fuelType,
             AVG(generation) / 1000 as gen_gw
         FROM `{PROJECT_ID}.{DATASET}.bmrs_fuelinst_iris`
@@ -86,14 +86,14 @@ def get_generation_mix(bq_client):
         AND fuelType NOT LIKE 'INT%'
         GROUP BY fuelType
     )
-    SELECT 
+    SELECT
         fuelType,
         gen_gw,
         gen_gw / (SELECT SUM(gen_gw) FROM latest) * 100 as share_pct
     FROM latest
     ORDER BY gen_gw DESC
     """
-    
+
     try:
         return bq_client.query(query).to_dataframe()
     except Exception as e:
@@ -103,7 +103,7 @@ def get_generation_mix(bq_client):
 def get_interconnectors(bq_client):
     """Get interconnector flows"""
     query = f"""
-    SELECT 
+    SELECT
         fuelType,
         AVG(generation) as flow_mw
     FROM `{PROJECT_ID}.{DATASET}.bmrs_fuelinst_iris`
@@ -117,7 +117,7 @@ def get_interconnectors(bq_client):
     GROUP BY fuelType
     ORDER BY flow_mw DESC
     """
-    
+
     try:
         return bq_client.query(query).to_dataframe()
     except Exception as e:
@@ -129,30 +129,30 @@ def update_dashboard():
     print("\n" + "=" * 80)
     print("⚡ GB LIVE EXECUTIVE DASHBOARD UPDATE")
     print("=" * 80)
-    
+
     # Connect to services
     print("\n🔧 Connecting to BigQuery and Google Sheets...")
-    
+
     SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
     sheets_creds = service_account.Credentials.from_service_account_file(SA_FILE, scopes=SCOPES)
     gc = gspread.authorize(sheets_creds)
     sheet = gc.open_by_key(SPREADSHEET_ID).worksheet(SHEET_NAME)
-    
+
     bq_creds = service_account.Credentials.from_service_account_file(
         SA_FILE, scopes=["https://www.googleapis.com/auth/bigquery"]
     )
     bq_client = bigquery.Client(project=PROJECT_ID, credentials=bq_creds, location="US")
-    
+
     print("✅ Connected\n")
-    
+
     # Update timestamp
     timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     sheet.update_acell('A2', f'✅ Live Data | Updated: {timestamp}')
-    
+
     # Get and update KPIs
     print("📊 Fetching Key Performance Indicators...")
     kpis = get_kpis(bq_client)
-    
+
     kpi_updates = [{
         'range': 'A7:E7',
         'values': [[
@@ -164,19 +164,19 @@ def update_dashboard():
         ]]
     }]
     sheet.batch_update(kpi_updates)
-    
+
     print(f"  💷 Wholesale Price: £{kpis['wholesale']:.2f}/MWh")
     print(f"  ⚡ Generation: {kpis['total_gen']:.2f} GW")
     print(f"  📊 Demand: {kpis['demand']:.2f} GW")
     print(f"  🔌 Net IC Flow: {kpis['net_ic_flow']:+.2f} GW")
-    
+
     # Add section headers
     sheet.update([['⚡ GENERATION MIX — Live Breakdown']], 'A9:F9')
-    
+
     # Get and update generation mix
     print("\n🔋 Fetching Generation Mix...")
     gen_mix = get_generation_mix(bq_client)
-    
+
     if gen_mix is not None and not gen_mix.empty:
         fuel_emojis = {
             'WIND': '💨 Wind',
@@ -190,16 +190,16 @@ def update_dashboard():
             'COAL': '⚫ Coal',
             'OIL': '🛢️ Oil'
         }
-        
+
         gen_updates = []
         for idx, row in gen_mix.head(10).iterrows():
             fuel = row['fuelType']
             gen_gw = row['gen_gw']
             share = row['share_pct']
-            
+
             trend = '↑' if share > 15 else '→' if share > 5 else '↓'
             status = '🟢 Active' if gen_gw > 0.01 else '⚫ Offline'
-            
+
             gen_updates.append([
                 fuel_emojis.get(fuel, fuel),
                 f"{gen_gw:.2f}",
@@ -208,22 +208,22 @@ def update_dashboard():
                 status
             ])
             print(f"  {fuel_emojis.get(fuel, fuel)}: {gen_gw:.2f} GW ({share:.1f}%)")
-        
+
         # Pad with empty rows if less than 10
         while len(gen_updates) < 10:
             gen_updates.append(['—', '0.00', '0%', '—', '—'])
-        
+
         # Update generation mix (columns A-E, rows 10-19)
         sheet.update(gen_updates, 'A10:E19')
-    
+
     # Get and update interconnectors
     print("\n🔌 Fetching Interconnector Flows...")
-    
+
     # Add interconnector header
     sheet.update([['🔌 INTERCONNECTORS']], 'H9:K9')
-    
+
     ic_data = get_interconnectors(bq_client)
-    
+
     if ic_data is not None and not ic_data.empty:
         ic_emojis = {
             'INTFR': '🇫🇷 France',
@@ -237,15 +237,15 @@ def update_dashboard():
             'INTIRL': '🇮🇪 Ireland',
             'INTGRNL': '🇬🇱 Greenlink'
         }
-        
+
         ic_updates = []
         for idx, row in ic_data.head(10).iterrows():
             ic_name = row['fuelType']
             flow = int(row['flow_mw'])
-            
+
             direction = '← Import' if flow > 0 else '→ Export' if flow < 0 else '—'
             status = '🟢 Active' if abs(flow) > 10 else '⚫ Idle'
-            
+
             ic_updates.append([
                 ic_emojis.get(ic_name, ic_name),
                 str(flow),
@@ -253,13 +253,13 @@ def update_dashboard():
                 status
             ])
             print(f"  {ic_emojis.get(ic_name, ic_name)}: {flow} MW {direction}")
-        
+
         while len(ic_updates) < 10:
             ic_updates.append(['—', '0', '—', '—'])
-        
-        # Update interconnectors (columns H-K, rows 10-19) 
+
+        # Update interconnectors (columns H-K, rows 10-19)
         sheet.update(ic_updates, 'H10:K19')
-    
+
     print("\n" + "=" * 80)
     print("✅ DASHBOARD UPDATE COMPLETE")
     print("=" * 80 + "\n")

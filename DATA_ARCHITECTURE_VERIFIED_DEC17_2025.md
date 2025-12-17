@@ -104,7 +104,7 @@ bmrs_remit_iris:    [No settlementDate field - event-based data]
 
 ### Issue 3: BOD API 1-Hour Maximum Window Limit ⚠️ CRITICAL DISCOVERY
 **Problem**: Backfill script failing with 400 Bad Request for BOD from Nov onwards
-**Symptoms**: 
+**Symptoms**:
 ```
 ❌ HTTP 400: {"errors":{"":["The date range between From and To inclusive must not exceed 1 hour"]}}
 ```
@@ -382,14 +382,14 @@ disbsad_query = """
 ### Scripts Created
 
 #### 1. `backfill_gaps_only.py` (NEW - DEPLOYED)
-**Purpose**: Targeted backfill for specific MID/BOD gaps only  
-**Status**: 🔄 Running (PID 3316591, started 15:43 UTC)  
+**Purpose**: Targeted backfill for specific MID/BOD gaps only
+**Status**: 🔄 Running (PID 3316591, started 15:43 UTC)
 **Features**:
 - MID: 7-day batches (Oct 31 → Dec 17) ✅ COMPLETE
-- BOD: 1-hour batches (Oct 29 → Dec 17) 🔄 IN PROGRESS  
-- Progress tracking: Shows % every 24 hours  
-- Datetime cleaning: Removes 'Z' suffix for BigQuery DATETIME compatibility  
-- JSON upload: Fast bulk loading via LoadJobConfig  
+- BOD: 1-hour batches (Oct 29 → Dec 17) 🔄 IN PROGRESS
+- Progress tracking: Shows % every 24 hours
+- Datetime cleaning: Removes 'Z' suffix for BigQuery DATETIME compatibility
+- JSON upload: Fast bulk loading via LoadJobConfig
 
 **Progress**:
 ```
@@ -400,12 +400,12 @@ BOD:  3 days / 50 days = 6%   🔄 (+126,249 rows, ~20 min remaining)
 **Estimated Completion**: ~16:05 UTC (25 min total runtime)
 
 #### 2. `backfill_json_upload.py` (FIXED)
-**Purpose**: General-purpose backfill with JSON upload method  
-**Status**: ✅ Fixed and tested  
+**Purpose**: General-purpose backfill with JSON upload method
+**Status**: ✅ Fixed and tested
 **Changes Applied**:
-- BOD batching: Changed from `timedelta(days=1)` to `timedelta(hours=1)`  
-- Error handling: Shows actual HTTP status + error detail (first 300 chars)  
-- Rate limiting: 0.5s delay for BOD (2 req/sec), 1-2s for others  
+- BOD batching: Changed from `timedelta(days=1)` to `timedelta(hours=1)`
+- Error handling: Shows actual HTTP status + error detail (first 300 chars)
+- Rate limiting: 0.5s delay for BOD (2 req/sec), 1-2s for others
 
 **Fixed Code**:
 ```python
@@ -420,7 +420,7 @@ def backfill_bod(start_date, end_date, batch_hours: int = 1):
         current = batch_end
         time.sleep(0.5)  # 2 requests/sec
 
-# Lines 32-40: Better error handling  
+# Lines 32-40: Better error handling
 if response.status_code != 200:
     error_detail = response.text[:300]
     print(f"❌ HTTP {response.status_code}: {error_detail}")
@@ -435,9 +435,9 @@ python3 -c "from backfill_json_upload import fetch_and_upload_bod; from datetime
 ```
 
 #### 3. `ingest_freq_daily.py` (EXISTS - NOT SCHEDULED)
-**Purpose**: Daily FREQ ingestion for cron automation  
-**Status**: ⏳ Created but not yet scheduled in crontab  
-**Target**: Yesterday's data from Elexon API  
+**Purpose**: Daily FREQ ingestion for cron automation
+**Status**: ⏳ Created but not yet scheduled in crontab
+**Target**: Yesterday's data from Elexon API
 
 **Pending Deployment**:
 ```bash
@@ -520,8 +520,8 @@ HAVING COUNT(*) > 1;
 
 ---
 
-**Document Created**: Dec 17, 2025 (initial)  
-**Last Updated**: Dec 17, 2025 15:50 UTC (backfill status)  
-**Author**: GitHub Copilot (after user correction)  
-**Status**: ✅ Verified against live BigQuery data  
+**Document Created**: Dec 17, 2025 (initial)
+**Last Updated**: Dec 17, 2025 15:50 UTC (backfill status)
+**Author**: GitHub Copilot (after user correction)
+**Status**: ✅ Verified against live BigQuery data
 **Supersedes**: UNIFIED_ARCHITECTURE_HISTORICAL_AND_REALTIME.md (contains errors)

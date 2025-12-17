@@ -1,9 +1,9 @@
 # BOALF Price Derivation - Project Completion Summary
 
-**Date**: December 16, 2025  
-**Status**: ✅ **PRODUCTION READY**  
-**Historical Backfill**: **100% Complete** (48/48 months, zero failures)  
-**Battery Analysis**: **+40.5% revenue** with BOALF prices vs settlement proxy  
+**Date**: December 16, 2025
+**Status**: ✅ **PRODUCTION READY**
+**Historical Backfill**: **100% Complete** (48/48 months, zero failures)
+**Battery Analysis**: **+40.5% revenue** with BOALF prices vs settlement proxy
 
 ---
 
@@ -17,7 +17,7 @@ Successfully implemented comprehensive BOALF (Balancing Acceptance) price deriva
 
 ### 1. Schema Implementation ✅
 - **Table**: `bmrs_boalf_complete` (20 fields)
-- **New Fields**: 
+- **New Fields**:
   - `acceptancePrice` (FLOAT) - Individual BOD-matched price
   - `acceptanceVolume` (FLOAT) - Calculated from levelFrom/levelTo
   - `acceptanceType` (STRING) - Bid or Offer
@@ -72,8 +72,8 @@ Valid Rate:       42.8% (after Elexon filters)
 
 ## Battery Arbitrage Analysis Results
 
-**Script**: `analyze_battery_boalf_prices.py`  
-**Battery**: 2 MWh capacity, 2 cycles/day, 90% efficiency  
+**Script**: `analyze_battery_boalf_prices.py`
+**Battery**: 2 MWh capacity, 2 cycles/day, 90% efficiency
 **Comparison**: BOALF (individual prices) vs disbsad (settlement proxy)
 
 ### Full October 2025
@@ -226,9 +226,9 @@ WITH combined AS (
   -- Historical (2022 - Oct 2025)
   SELECT * FROM `inner-cinema-476211-u9.uk_energy_prod.boalf_with_prices`
   WHERE settlementDate < '2025-10-30'
-  
+
   UNION ALL
-  
+
   -- Real-time (Oct 2025 - present)
   SELECT * FROM `inner-cinema-476211-u9.uk_energy_prod.bmrs_boalf_iris`
   WHERE settlementDate >= '2025-10-30'
@@ -281,7 +281,7 @@ ORDER BY settlementDate, settlementPeriod
    ```bash
    git add .
    git commit -m "feat: Complete BOALF price derivation with Elexon B1610 compliance
-   
+
    - Historical backfill: 100% (48/48 months, 8 min runtime)
    - Battery analysis: +40% revenue vs settlement proxy
    - Schema: validation_flag taxonomy implemented
@@ -289,7 +289,7 @@ ORDER BY settlementDate, settlementPeriod
    - IRIS: Real-time enhancement ready for Dell deployment
    - Docs: PROJECT_CONFIG, STOP_DATA_ARCH, copilot-instructions updated
    - Performance: BigQuery Storage API → 30-50x speedup"
-   
+
    git push origin main
    ```
 
@@ -337,26 +337,26 @@ ORDER BY settlementDate, settlementPeriod
 ## Technical Lessons Learned
 
 ### 1. BigQuery Storage API Impact
-**Problem**: Estimated 4-6 hours for 48-month backfill  
-**Solution**: Installed `google-cloud-bigquery-storage`  
-**Result**: 8 minutes total (30-50x faster)  
+**Problem**: Estimated 4-6 hours for 48-month backfill
+**Solution**: Installed `google-cloud-bigquery-storage`
+**Result**: 8 minutes total (30-50x faster)
 **Takeaway**: Always install Storage API for large-scale BigQuery operations
 
 ### 2. Boolean vs String Comparisons
-**Problem**: `soFlag IN ('T', 'S')` didn't work (BOOLEAN field)  
-**Solution**: Changed to `soFlag = TRUE`  
+**Problem**: `soFlag IN ('T', 'S')` didn't work (BOOLEAN field)
+**Solution**: Changed to `soFlag = TRUE`
 **Takeaway**: Verify schema data types before building filters
 
 ### 3. String Replacement Challenges
-**Problem**: Whitespace mismatches in multi_replace_string_in_file  
-**Solution**: Bypassed by directly updating schema via BigQuery API  
+**Problem**: Whitespace mismatches in multi_replace_string_in_file
+**Solution**: Bypassed by directly updating schema via BigQuery API
 **Takeaway**: For schema changes, use BigQuery SDK instead of file editing
 
 ### 4. Revenue Paradox Discovery
-**Observation**: BOALF avg £99/MWh, disbsad avg £131/MWh  
-**Expected**: BOALF should yield lower revenue  
-**Actual**: BOALF yields +40% higher revenue  
-**Explanation**: Batteries optimize for peak spreads, BOALF captures actual peaks better  
+**Observation**: BOALF avg £99/MWh, disbsad avg £131/MWh
+**Expected**: BOALF should yield lower revenue
+**Actual**: BOALF yields +40% higher revenue
+**Explanation**: Batteries optimize for peak spreads, BOALF captures actual peaks better
 **Takeaway**: Settlement averages underestimate targeted arbitrage strategies
 
 ---
@@ -433,10 +433,10 @@ Every BOALF record includes:
 
 ## Contact & Support
 
-**Project**: GB Power Market JJ  
-**Repository**: https://github.com/GeorgeDoors888/GB-Power-Market-JJ  
-**Maintainer**: George Major (george@upowerenergy.uk)  
-**Completion Date**: December 16, 2025  
+**Project**: GB Power Market JJ
+**Repository**: https://github.com/GeorgeDoors888/GB-Power-Market-JJ
+**Maintainer**: George Major (george@upowerenergy.uk)
+**Completion Date**: December 16, 2025
 
 **Key Files**:
 - Implementation: `derive_boalf_prices.py`
@@ -450,7 +450,7 @@ Every BOALF record includes:
 
 ### Get VLP Battery Revenue (October 2025)
 ```sql
-SELECT 
+SELECT
     bmUnit,
     COUNT(*) as acceptances,
     SUM(acceptanceVolume) as total_mwh,
@@ -466,7 +466,7 @@ ORDER BY revenue_gbp DESC
 ### Compare BOALF vs disbsad Prices (Daily)
 ```sql
 WITH boalf_prices AS (
-    SELECT 
+    SELECT
         DATE(settlementDate) as date,
         settlementPeriod,
         AVG(acceptancePrice) as boalf_price
@@ -475,7 +475,7 @@ WITH boalf_prices AS (
     GROUP BY date, settlementPeriod
 ),
 disbsad_prices AS (
-    SELECT 
+    SELECT
         DATE(settlementDate) as date,
         settlementPeriod,
         AVG(price) as disbsad_price
@@ -483,7 +483,7 @@ disbsad_prices AS (
     WHERE settlementDate >= '2025-10-01'
     GROUP BY date, settlementPeriod
 )
-SELECT 
+SELECT
     b.date,
     b.settlementPeriod,
     b.boalf_price,
@@ -497,7 +497,7 @@ ORDER BY date, settlementPeriod
 
 ### Validation Flag Distribution (All Time)
 ```sql
-SELECT 
+SELECT
     validation_flag,
     COUNT(*) as count,
     ROUND(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER(), 2) as percentage,
@@ -528,7 +528,7 @@ ORDER BY count DESC
 
 **Coverage Timeline** (A7:G20):
 ```sql
-SELECT 
+SELECT
     DATE(settlementDate) as date,
     COUNT(*) as total_records,
     COUNTIF(validation_flag = 'Valid') as valid_records,
@@ -541,20 +541,20 @@ ORDER BY date
 **BM vs MID Comparison** (I7:N20):
 ```sql
 WITH monthly_boalf AS (
-    SELECT 
+    SELECT
         DATE_TRUNC(DATE(settlementDate), MONTH) as month,
         AVG(acceptancePrice) as avg_bm_price
     FROM `inner-cinema-476211-u9.uk_energy_prod.boalf_with_prices`
     GROUP BY month
 ),
 monthly_mid AS (
-    SELECT 
+    SELECT
         DATE_TRUNC(DATE(settlementDate), MONTH) as month,
         AVG(price) as avg_mid_price
     FROM `inner-cinema-476211-u9.uk_energy_prod.bmrs_mid`
     GROUP BY month
 )
-SELECT 
+SELECT
     b.month,
     b.avg_bm_price,
     m.avg_mid_price,
@@ -566,7 +566,7 @@ ORDER BY month
 
 **Validation Breakdown** (P7:R20):
 ```sql
-SELECT 
+SELECT
     validation_flag,
     COUNT(*) as count,
     ROUND(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER(), 2) as percentage
@@ -577,8 +577,8 @@ ORDER BY count DESC
 
 **Source Share** (P22:R35):
 ```sql
-SELECT 
-    CASE 
+SELECT
+    CASE
         WHEN settlementDate >= '2025-10-29' THEN 'IRIS'
         ELSE 'Legacy'
     END as source_flag,
@@ -625,6 +625,6 @@ GROUP BY source_flag
 
 ---
 
-*Last Updated: December 17, 2025*  
-*Version: 1.1.0*  
+*Last Updated: December 17, 2025*
+*Version: 1.1.0*
 *Status: ✅ Complete (+ Dashboard Chart Specs)*

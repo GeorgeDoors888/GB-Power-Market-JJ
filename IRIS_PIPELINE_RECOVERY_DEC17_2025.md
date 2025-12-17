@@ -11,7 +11,7 @@ During this recovery, several incorrect assumptions were documented about histor
    - `bmrs_costs` updated through Dec 8
    - `bmrs_disbsad` updated through Dec 14
    - `bmrs_fuelinst` updated through Dec 17
-   
+
 2. ❌ "bmrs_freq has historical data" - **FALSE**: Table was EMPTY before Dec 16
    - Historical FREQ ingestion was NEVER configured
    - Manual backfill added 17,283 records for Dec 15-17 ONLY

@@ -24,25 +24,25 @@ logging.basicConfig(level=logging.INFO, format='%(message)s')
 def get_latest_settlement_period(bq_client):
     """Get the actual current settlement period based on current time"""
     from datetime import datetime
-    
+
     # Calculate current settlement period from actual time
     now = datetime.now()
     hours = now.hour
     minutes = now.minute
-    
+
     # Settlement period = (hour * 2) + (1 if minutes >= 30 else 0)
     # Periods run 00:00-00:30 (SP1), 00:30-01:00 (SP2), etc.
     if minutes < 30:
         current_sp = (hours * 2) + 1
     else:
         current_sp = (hours * 2) + 2
-    
+
     # Cap at 48 (max period per day)
     current_sp = min(current_sp, 48)
-    
+
     # Validate we have data for this period
     query = f"""
-    SELECT 
+    SELECT
         MAX(CAST(settlementDate AS DATE)) as latest_date,
         MAX(settlementPeriod) as latest_period
     FROM `{PROJECT_ID}.{DATASET}.bmrs_fuelinst_iris`
@@ -53,13 +53,13 @@ def get_latest_settlement_period(bq_client):
         if not result.empty:
             latest_date = result.iloc[0]['latest_date']
             max_available = int(result.iloc[0]['latest_period'])
-            
+
             # If today's data exists, use calculated period or max available (whichever is smaller)
             if latest_date == datetime.now().date():
                 actual_period = min(current_sp, max_available)
             else:
                 actual_period = max_available
-            
+
             return latest_date, actual_period
     except Exception as e:
         logging.error(f"Error getting latest period: {e}")
@@ -67,16 +67,16 @@ def get_latest_settlement_period(bq_client):
 
 def get_kpis(bq_client):
     """Get all KPIs - Wholesale Price, Frequency, Total Generation, Wind, Demand"""
-    
+
     # Get 7-day average wholesale price
     # Use bmrs_mid_iris (real-time wholesale prices) - has current data through Dec 11
     price_query = f"""
-    SELECT 
+    SELECT
         AVG(price) as avg_price
     FROM `{PROJECT_ID}.{DATASET}.bmrs_mid_iris`
     WHERE settlementDate >= DATE_SUB(CURRENT_DATE(), INTERVAL 7 DAY)
     """
-    
+
     # Get latest generation data
     gen_query = f"""
     WITH latest_period AS (
@@ -90,7 +90,7 @@ def get_kpis(bq_client):
     ),
     -- Deduplicate by latest publishTime
     deduplicated AS (
-        SELECT 
+        SELECT
             fuelType,
             generation,
             ROW_NUMBER() OVER (PARTITION BY fuelType ORDER BY publishTime DESC) as rn
@@ -99,20 +99,20 @@ def get_kpis(bq_client):
           AND settlementPeriod = (SELECT max_sp FROM latest_sp)
     ),
     latest AS (
-        SELECT 
+        SELECT
             fuelType,
             SUM(generation) as generation_mw
         FROM deduplicated
         WHERE rn = 1
         GROUP BY fuelType
     )
-    SELECT 
+    SELECT
         SUM(CASE WHEN fuelType NOT LIKE 'INT%' THEN generation_mw ELSE 0 END) / 1000 as total_gen_gw,
         SUM(CASE WHEN fuelType = 'WIND' THEN generation_mw ELSE 0 END) / 1000 as wind_gw,
         SUM(CASE WHEN fuelType LIKE 'INT%' THEN generation_mw ELSE 0 END) / 1000 as net_ic_gw
     FROM latest
     """
-    
+
     # Get latest frequency from IRIS table (real-time)
     freq_query = f"""
     SELECT frequency
@@ -121,12 +121,12 @@ def get_kpis(bq_client):
     ORDER BY measurementTime DESC
     LIMIT 1
     """
-    
+
     try:
         # Get price
         price_result = bq_client.query(price_query).to_dataframe()
         avg_price = float(price_result['avg_price'].iloc[0]) if not price_result.empty else 0
-        
+
         # Get generation
         gen_result = bq_client.query(gen_query).to_dataframe()
         if not gen_result.empty:
@@ -135,14 +135,14 @@ def get_kpis(bq_client):
             net_ic = float(gen_result['net_ic_gw'].iloc[0])
         else:
             total_gen = wind_gw = net_ic = 0
-        
+
         # Get frequency
         freq_result = bq_client.query(freq_query).to_dataframe()
         frequency = float(freq_result['frequency'].iloc[0]) if not freq_result.empty else 50.0
-        
+
         # Calculate demand (total gen + net imports)
         demand_gw = total_gen + net_ic
-        
+
         return {
             'wholesale': round(avg_price, 2),
             'frequency': round(frequency, 2),
@@ -173,7 +173,7 @@ def get_generation_mix(bq_client):
     ),
     -- Get only the LATEST publishTime for each fuelType (handles revised data)
     deduplicated AS (
-        SELECT 
+        SELECT
             fuelType,
             generation,
             ROW_NUMBER() OVER (PARTITION BY fuelType ORDER BY publishTime DESC) as rn
@@ -183,21 +183,21 @@ def get_generation_mix(bq_client):
           AND fuelType NOT LIKE 'INT%'
     ),
     latest AS (
-        SELECT 
+        SELECT
             fuelType,
             SUM(generation) as generation_mw
         FROM deduplicated
         WHERE rn = 1
         GROUP BY fuelType
     )
-    SELECT 
+    SELECT
         fuelType,
         generation_mw / 1000 as gen_gw,
         generation_mw / (SELECT SUM(generation_mw) FROM latest) * 100 as share_pct
     FROM latest
     ORDER BY generation_mw DESC
     """
-    
+
     try:
         df = bq_client.query(query).to_dataframe()
         if not df.empty:
@@ -206,7 +206,7 @@ def get_generation_mix(bq_client):
         logging.error(f"Error getting generation mix: {e}")
         import traceback
         traceback.print_exc()
-    
+
     return None
 
 def get_interconnectors(bq_client):
@@ -223,7 +223,7 @@ def get_interconnectors(bq_client):
     ),
     -- Deduplicate by latest publishTime
     deduplicated AS (
-        SELECT 
+        SELECT
             fuelType,
             generation,
             ROW_NUMBER() OVER (PARTITION BY fuelType ORDER BY publishTime DESC) as rn
@@ -232,7 +232,7 @@ def get_interconnectors(bq_client):
           AND settlementPeriod = (SELECT max_sp FROM latest_sp)
           AND fuelType LIKE 'INT%'
     )
-    SELECT 
+    SELECT
         fuelType,
         SUM(generation) as flow_mw
     FROM deduplicated
@@ -240,7 +240,7 @@ def get_interconnectors(bq_client):
     GROUP BY fuelType
     ORDER BY ABS(flow_mw) DESC
     """
-    
+
     try:
         df = bq_client.query(query).to_dataframe()
         if not df.empty:
@@ -249,24 +249,50 @@ def get_interconnectors(bq_client):
         logging.error(f"Error getting interconnectors: {e}")
         import traceback
         traceback.print_exc()
-    
+
     return None
 
 def get_48_period_timeseries(bq_client, current_sp):
-    """Get today's data from 00:00 up to current settlement period (fuels only)"""
+    """Get today's data from 00:00 up to current settlement period (fuels only)
+
+    UNIONs historical (bmrs_fuelinst) with real-time (bmrs_fuelinst_iris) to get
+    full 48-period coverage from midnight to current period.
+    """
     query = f"""
-    SELECT 
+    WITH combined_data AS (
+        -- Historical data (00:00 onwards until IRIS takes over)
+        SELECT
+            fuelType,
+            settlementPeriod,
+            SUM(generation) / 1000 as gen_gw
+        FROM `{PROJECT_ID}.{DATASET}.bmrs_fuelinst`
+        WHERE CAST(settlementDate AS DATE) = CURRENT_DATE()
+          AND settlementPeriod <= {current_sp}
+          AND fuelType NOT LIKE 'INT%'
+        GROUP BY settlementPeriod, fuelType
+
+        UNION ALL
+
+        -- Real-time IRIS data (recent periods, may overlap with historical)
+        SELECT
+            fuelType,
+            settlementPeriod,
+            SUM(generation) / 1000 as gen_gw
+        FROM `{PROJECT_ID}.{DATASET}.bmrs_fuelinst_iris`
+        WHERE CAST(settlementDate AS DATE) = CURRENT_DATE()
+          AND settlementPeriod <= {current_sp}
+          AND fuelType NOT LIKE 'INT%'
+        GROUP BY settlementPeriod, fuelType
+    )
+    SELECT
         fuelType,
         settlementPeriod,
-        SUM(generation) / 1000 as gen_gw
-    FROM `{PROJECT_ID}.{DATASET}.bmrs_fuelinst_iris`
-    WHERE CAST(settlementDate AS DATE) = CURRENT_DATE()
-      AND settlementPeriod <= {current_sp}  -- Only up to current period
-      AND fuelType NOT LIKE 'INT%'  -- Exclude interconnectors
+        AVG(gen_gw) as gen_gw  -- AVG handles any period overlap between historical and IRIS
+    FROM combined_data
     GROUP BY settlementPeriod, fuelType
     ORDER BY fuelType, settlementPeriod
     """
-    
+
     try:
         df = bq_client.query(query).to_dataframe()
         if not df.empty:
@@ -281,24 +307,49 @@ def get_48_period_timeseries(bq_client, current_sp):
             return pivot
     except Exception as e:
         logging.error(f"Error getting 48-period data: {e}")
-    
+
     return None
 
 def get_48_period_interconnectors(bq_client, current_sp):
-    """Get today's data from 00:00 up to current settlement period (interconnectors in MW)"""
+    """Get today's data from 00:00 up to current settlement period (interconnectors in MW)
+
+    UNIONs historical with IRIS for full 48-period coverage.
+    """
     query = f"""
-    SELECT 
+    WITH combined_ic AS (
+        -- Historical interconnector data
+        SELECT
+            fuelType,
+            settlementPeriod,
+            SUM(generation) as flow_mw
+        FROM `{PROJECT_ID}.{DATASET}.bmrs_fuelinst`
+        WHERE CAST(settlementDate AS DATE) = CURRENT_DATE()
+          AND settlementPeriod <= {current_sp}
+          AND fuelType LIKE 'INT%'
+        GROUP BY settlementPeriod, fuelType
+
+        UNION ALL
+
+        -- Real-time IRIS interconnector data
+        SELECT
+            fuelType,
+            settlementPeriod,
+            SUM(generation) as flow_mw
+        FROM `{PROJECT_ID}.{DATASET}.bmrs_fuelinst_iris`
+        WHERE CAST(settlementDate AS DATE) = CURRENT_DATE()
+          AND settlementPeriod <= {current_sp}
+          AND fuelType LIKE 'INT%'
+        GROUP BY settlementPeriod, fuelType
+    )
+    SELECT
         fuelType,
         settlementPeriod,
-        SUM(generation) as flow_mw  -- Keep in MW
-    FROM `{PROJECT_ID}.{DATASET}.bmrs_fuelinst_iris`
-    WHERE CAST(settlementDate AS DATE) = CURRENT_DATE()
-      AND settlementPeriod <= {current_sp}  -- Only up to current period
-      AND fuelType LIKE 'INT%'  -- Only interconnectors
+        AVG(flow_mw) as flow_mw  -- AVG handles overlap
+    FROM combined_ic
     GROUP BY settlementPeriod, fuelType
     ORDER BY fuelType, settlementPeriod
     """
-    
+
     try:
         df = bq_client.query(query).to_dataframe()
         if not df.empty:
@@ -313,14 +364,31 @@ def get_48_period_interconnectors(bq_client, current_sp):
             return pivot
     except Exception as e:
         logging.error(f"Error getting 48-period interconnector data: {e}")
-    
+
     return None
 
 def get_kpi_timeseries(bq_client, current_sp):
-    """Get today's KPI timeseries from 00:00 up to current settlement period"""
+    """Get today's KPI timeseries from 00:00 up to current settlement period
+
+    UNIONs historical tables with IRIS tables to get full 48-period coverage.
+    """
     query = f"""
-    WITH gen_by_period AS (
-        SELECT 
+    WITH gen_combined AS (
+        -- Historical generation data
+        SELECT
+            settlementPeriod,
+            SUM(CASE WHEN fuelType NOT LIKE 'INT%' THEN generation ELSE 0 END) / 1000 as total_gen_gw,
+            SUM(CASE WHEN fuelType = 'WIND' THEN generation ELSE 0 END) / 1000 as wind_gw,
+            SUM(CASE WHEN fuelType LIKE 'INT%' THEN generation ELSE 0 END) / 1000 as net_ic_gw
+        FROM `{PROJECT_ID}.{DATASET}.bmrs_fuelinst`
+        WHERE CAST(settlementDate AS DATE) = CURRENT_DATE()
+          AND settlementPeriod <= {current_sp}
+        GROUP BY settlementPeriod
+
+        UNION ALL
+
+        -- Real-time IRIS generation data
+        SELECT
             settlementPeriod,
             SUM(CASE WHEN fuelType NOT LIKE 'INT%' THEN generation ELSE 0 END) / 1000 as total_gen_gw,
             SUM(CASE WHEN fuelType = 'WIND' THEN generation ELSE 0 END) / 1000 as wind_gw,
@@ -330,8 +398,29 @@ def get_kpi_timeseries(bq_client, current_sp):
           AND settlementPeriod <= {current_sp}
         GROUP BY settlementPeriod
     ),
-    prices_by_period AS (
-        SELECT 
+    gen_by_period AS (
+        SELECT
+            settlementPeriod,
+            AVG(total_gen_gw) as total_gen_gw,
+            AVG(wind_gw) as wind_gw,
+            AVG(net_ic_gw) as net_ic_gw
+        FROM gen_combined
+        GROUP BY settlementPeriod
+    ),
+    prices_combined AS (
+        -- Historical wholesale prices
+        SELECT
+            settlementPeriod,
+            AVG(price) as wholesale_price
+        FROM `{PROJECT_ID}.{DATASET}.bmrs_mid`
+        WHERE CAST(settlementDate AS DATE) = CURRENT_DATE()
+          AND settlementPeriod <= {current_sp}
+        GROUP BY settlementPeriod
+
+        UNION ALL
+
+        -- Real-time IRIS prices
+        SELECT
             settlementPeriod,
             AVG(price) as wholesale_price
         FROM `{PROJECT_ID}.{DATASET}.bmrs_mid_iris`
@@ -339,16 +428,42 @@ def get_kpi_timeseries(bq_client, current_sp):
           AND settlementPeriod <= {current_sp}
         GROUP BY settlementPeriod
     ),
-    freq_by_period AS (
-        SELECT 
+    prices_by_period AS (
+        SELECT
+            settlementPeriod,
+            AVG(wholesale_price) as wholesale_price
+        FROM prices_combined
+        GROUP BY settlementPeriod
+    ),
+    freq_combined AS (
+        -- Historical frequency data
+        SELECT
+            CAST(FLOOR((EXTRACT(HOUR FROM measurementTime) * 60 + EXTRACT(MINUTE FROM measurementTime)) / 30) + 1 AS INT64) as settlementPeriod,
+            AVG(frequency) as avg_frequency
+        FROM `{PROJECT_ID}.{DATASET}.bmrs_freq`
+        WHERE CAST(measurementTime AS DATE) = CURRENT_DATE()
+          AND EXTRACT(HOUR FROM measurementTime) * 2 + CAST(EXTRACT(MINUTE FROM measurementTime) >= 30 AS INT64) + 1 <= {current_sp}
+        GROUP BY settlementPeriod
+
+        UNION ALL
+
+        -- Real-time IRIS frequency data
+        SELECT
             CAST(FLOOR((EXTRACT(HOUR FROM measurementTime) * 60 + EXTRACT(MINUTE FROM measurementTime)) / 30) + 1 AS INT64) as settlementPeriod,
             AVG(frequency) as avg_frequency
         FROM `{PROJECT_ID}.{DATASET}.bmrs_freq_iris`
         WHERE CAST(measurementTime AS DATE) = CURRENT_DATE()
           AND EXTRACT(HOUR FROM measurementTime) * 2 + CAST(EXTRACT(MINUTE FROM measurementTime) >= 30 AS INT64) + 1 <= {current_sp}
         GROUP BY settlementPeriod
+    ),
+    freq_by_period AS (
+        SELECT
+            settlementPeriod,
+            AVG(avg_frequency) as avg_frequency
+        FROM freq_combined
+        GROUP BY settlementPeriod
     )
-    SELECT 
+    SELECT
         g.settlementPeriod,
         p.wholesale_price,
         f.avg_frequency as frequency,
@@ -360,7 +475,7 @@ def get_kpi_timeseries(bq_client, current_sp):
     LEFT JOIN freq_by_period f ON g.settlementPeriod = f.settlementPeriod
     ORDER BY g.settlementPeriod
     """
-    
+
     try:
         df = bq_client.query(query).to_dataframe()
         if not df.empty:
@@ -376,13 +491,13 @@ def get_kpi_timeseries(bq_client, current_sp):
         logging.error(f"Error getting KPI timeseries: {e}")
         import traceback
         traceback.print_exc()
-    
+
     return None
 
 def get_bm_metrics(bq_client):
     """
     Calculate comprehensive market-wide BM KPIs using BigQuery historical data
-    
+
     Implements KPIs from BM_REVENUE_KPI_SPECIFICATION.md:
     - KPI_MKT_002: Total Accepted Volume (MWh) - Offer / Bid breakdown
     - KPI_MKT_001: Total BM Cashflow (£) - Net revenue estimate
@@ -391,7 +506,7 @@ def get_bm_metrics(bq_client):
     - KPI_BMU_008: Constraint Share from DISBSAD
     - Plus derived metrics: £/MW-day, Non-Delivery Rate, Offer/Bid Ratio
     """
-    
+
     try:
         # Get the latest available date (historical data, typically yesterday)
         latest_date_query = f"""
@@ -402,15 +517,15 @@ def get_bm_metrics(bq_client):
         df_date = bq_client.query(latest_date_query).to_dataframe()
         if df_date.empty:
             return None
-        
+
         latest_date = df_date.iloc[0]['latest_date']
         logging.info(f"   Using BM data from: {latest_date}")
-        
+
         # KPI_MKT_002 & KPI_MKT_001: Total volumes and cashflows (market-wide)
         # Using BOAV (acceptance volumes) + EBOCF (cashflows)
         market_query = f"""
         WITH volumes AS (
-            SELECT 
+            SELECT
                 SUM(CASE WHEN _direction = 'offer' THEN ABS(totalVolumeAccepted) ELSE 0 END) as offer_mwh,
                 SUM(CASE WHEN _direction = 'bid' THEN ABS(totalVolumeAccepted) ELSE 0 END) as bid_mwh,
                 COUNT(DISTINCT settlementPeriod) as active_sps,
@@ -419,13 +534,13 @@ def get_bm_metrics(bq_client):
             WHERE CAST(settlementDate AS DATE) = '{latest_date}'
         ),
         cashflows AS (
-            SELECT 
+            SELECT
                 SUM(CASE WHEN _direction = 'offer' THEN totalCashflow ELSE 0 END) as offer_cashflow,
                 SUM(CASE WHEN _direction = 'bid' THEN totalCashflow ELSE 0 END) as bid_cashflow
             FROM `{PROJECT_ID}.{DATASET}.bmrs_ebocf`
             WHERE CAST(settlementDate AS DATE) = '{latest_date}'
         )
-        SELECT 
+        SELECT
             v.offer_mwh,
             v.bid_mwh,
             v.active_sps,
@@ -437,12 +552,12 @@ def get_bm_metrics(bq_client):
         FROM volumes v
         CROSS JOIN cashflows c
         """
-        
+
         df_market = bq_client.query(market_query).to_dataframe()
-        
+
         if df_market.empty:
             return None
-        
+
         row = df_market.iloc[0]
         offer_mwh = float(row['offer_mwh'] or 0)
         bid_mwh = float(row['bid_mwh'] or 0)
@@ -452,19 +567,19 @@ def get_bm_metrics(bq_client):
         bid_cashflow = float(row['bid_cashflow'] or 0)
         total_mwh = float(row['total_mwh'] or 0)
         net_revenue = float(row['net_revenue'] or 0)
-        
+
         # KPI_MKT_004: Energy-Weighted Average Price (EWAP/VWAP)
         if total_mwh > 0:
             vwap = net_revenue / total_mwh
         else:
             vwap = 0
-        
+
         # Offer/Bid Ratio (revenue balance)
         if abs(bid_cashflow) > 0:
             offer_bid_ratio = offer_cashflow / abs(bid_cashflow)
         else:
             offer_bid_ratio = 999 if offer_cashflow > 0 else 0
-        
+
         # KPI_BMU_008: Constraint Share from DISBSAD
         try:
             disbsad_query = f"""
@@ -485,7 +600,7 @@ def get_bm_metrics(bq_client):
                 INNER JOIN bmu_active b ON d.assetId = b.nationalGridBmUnit
                 WHERE CAST(d.settlementDate AS DATE) = '{latest_date}'
             )
-            SELECT 
+            SELECT
                 SAFE_DIVIDE(a.bmu_cost, m.total_cost) * 100 as constraint_pct
             FROM market_total m
             CROSS JOIN active_bmu_costs a
@@ -498,7 +613,7 @@ def get_bm_metrics(bq_client):
         except Exception as e:
             logging.warning(f"   Could not calculate constraint share: {e}")
             constraint_share = 'N/A'
-        
+
         # £/MW-day: Estimate using market-wide capacity
         # Typical UK BM: ~50-60 GW total capacity across all active BMUs
         # Rough estimate: active_units * 150 MW avg per unit
@@ -507,7 +622,7 @@ def get_bm_metrics(bq_client):
             price_per_mw_day = net_revenue / estimated_capacity_mw
         else:
             price_per_mw_day = 0
-        
+
         # Non-delivery rate: Requires acceptance-level tracking vs settlement volumes
         # Simplified proxy: Compare BOALF count vs BOAV settled volumes
         try:
@@ -531,7 +646,7 @@ def get_bm_metrics(bq_client):
         except Exception as e:
             logging.warning(f"   Could not calculate non-delivery rate: {e}")
             non_delivery_rate = 0
-        
+
         return {
             'accepted_mwh': f'{offer_mwh:,.0f} / {bid_mwh:,.0f}',  # KPI_MKT_002: Offer / Bid
             'net_revenue': f'£{net_revenue:,.0f}',  # KPI_MKT_001: Total BM Cashflow
@@ -542,7 +657,7 @@ def get_bm_metrics(bq_client):
             'vwap': f'£{vwap:.2f}/MWh' if total_mwh > 0 else f'{active_units} units',  # KPI_MKT_004: EWAP
             'offer_bid_ratio': f'{offer_bid_ratio:.2f}' if offer_bid_ratio < 999 else 'N/A'
         }
-        
+
     except Exception as e:
         logging.error(f"Error calculating BM metrics: {e}")
         import traceback
@@ -554,21 +669,21 @@ def update_dashboard():
     print("\n" + "=" * 80)
     print("⚡ LIVE DASHBOARD V2 UPDATE")
     print("=" * 80)
-    
+
     # Connect to services
     print("\n🔧 Connecting to BigQuery and Google Sheets...")
-    
+
     SCOPES = [
         'https://www.googleapis.com/auth/spreadsheets',
         'https://www.googleapis.com/auth/drive'
     ]
     sheets_creds = service_account.Credentials.from_service_account_file(SA_FILE, scopes=SCOPES)
     gc = gspread.authorize(sheets_creds)
-    
+
     try:
         spreadsheet = gc.open_by_key(SPREADSHEET_ID)
         sheet = spreadsheet.worksheet(SHEET_NAME)
-        
+
         # Try to get or create Data_Hidden sheet for sparklines
         try:
             data_hidden = spreadsheet.worksheet('Data_Hidden')
@@ -587,77 +702,77 @@ def update_dashboard():
     except Exception as e:
         print(f"❌ Error accessing sheets: {e}")
         sys.exit(1)
-    
+
     bq_creds = service_account.Credentials.from_service_account_file(
         SA_FILE, scopes=["https://www.googleapis.com/auth/bigquery"]
     )
     bq_client = bigquery.Client(project=PROJECT_ID, credentials=bq_creds, location="US")
-    
+
     print("✅ Connected\n")
-    
+
     # Get data
     print("📊 Fetching data from BigQuery...")
-    
+
     latest_date, latest_period = get_latest_settlement_period(bq_client)
     print(f"   Latest data: {latest_date}, Period {latest_period}")
-    
+
     kpis = get_kpis(bq_client)
     print(f"   KPIs: Price={kpis['wholesale']}, Freq={kpis['frequency']}, Gen={kpis['total_gen']}, Wind={kpis['wind']}")
-    
+
     gen_mix = get_generation_mix(bq_client)
     print(f"   Generation mix: {len(gen_mix) if gen_mix is not None else 0} fuel types")
-    
+
     interconnectors = get_interconnectors(bq_client)
     print(f"   Interconnectors: {len(interconnectors) if interconnectors is not None else 0} connections")
-    
+
     # NEW: Get 48-period timeseries for sparklines (only up to current period)
     timeseries_48 = get_48_period_timeseries(bq_client, latest_period)
     print(f"   48-period timeseries: {timeseries_48.shape if timeseries_48 is not None else 'None'}")
-    
+
     # NEW: Get 48-period interconnector flows for sparklines (only up to current period)
     ic_timeseries_48 = get_48_period_interconnectors(bq_client, latest_period)
     print(f"   48-period IC flows: {ic_timeseries_48.shape if ic_timeseries_48 is not None else 'None'}")
-    
+
     # NEW: Get KPI timeseries for sparklines
     kpi_timeseries = get_kpi_timeseries(bq_client, latest_period)
     print(f"   KPI timeseries: {len(kpi_timeseries['wholesale']) if kpi_timeseries else 0} periods")
-    
+
     # NEW: Get BM metrics
     bm_metrics = get_bm_metrics(bq_client)
     if bm_metrics:
         print(f"   BM metrics: {bm_metrics['accepted_mwh']} MWh, {bm_metrics['net_revenue']} revenue")
-    
+
     print("\n✍️  Writing to Google Sheet...")
-    
+
     # BATCH UPDATES to avoid API rate limits
     # Prepare all updates in a list for batch_update
     batch_updates = []
-    
+
     # Update headers (Row 12) with bar chart columns
     batch_updates.append({
         'range': 'A12:K12',
         'values': [[
-            '🛢️ Fuel Type',  # A12
-            '⚡ GW',          # B12
-            '📊 Share',       # C12
-            '📊 Bar',         # D12 - NEW
-            '',              # E12
-            '',              # F12
-            '🔗 Connection',  # G12
-            '🌊 Flow Trend', # H12
-            '',              # I12
-            'MW',            # J12
-            '📊 Bar'          # K12 - NEW
+            '🛢️ Fuel Type',      # A12
+            '⚡ GW',              # B12
+            '📊 Share',           # C12
+            '📊 Bar',             # D12
+            '📈 Trend (00:00→)', # E12 - Fuel sparklines
+            '',                  # F12
+            '🔗 Connection',      # G12
+            '🌊 Flow Trend',     # H12 - IC sparklines
+            '',                  # I12
+            'MW',                # J12
+            '📊 Bar'              # K12
         ]]
     })
-    
+
     # Update timestamp (Row 2) with current settlement period
     timestamp = datetime.now().strftime('%d/%m/%Y, %H:%M:%S')
     batch_updates.append({
         'range': 'A2',
         'values': [[f'Last Updated: {timestamp} (v2.0) SP {latest_period}']]
     })
-    
+
     # Update KPIs (Row 6) - batch update all at once
     # Headers: A5=Wholesale Price, C5=Grid Frequency, E5=Total Gen, G5=Wind, I5=Demand
     batch_updates.append({
@@ -674,11 +789,11 @@ def update_dashboard():
             kpis['demand']         # I6
         ]]
     })
-    
+
     # Execute batch update for timestamp + KPIs
     sheet.batch_update(batch_updates, value_input_option='USER_ENTERED')
     print(f"   ✅ Updated timestamp & KPIs (batched)")
-    
+
     # NEW: Update BM metrics (rows 26-28)
     if bm_metrics:
         bm_updates = [
@@ -697,12 +812,12 @@ def update_dashboard():
         ]
         sheet.batch_update(bm_updates, value_input_option='USER_ENTERED')
         print(f"   ✅ Updated BM metrics (rows 26-28, batched)")
-    
+
     # NEW: Update 48-period timeseries in Data_Hidden sheet for sparklines
     if timeseries_48 is not None:
         # Fuel type order matching the dashboard
         fuel_order = ['WIND', 'NUCLEAR', 'CCGT', 'BIOMASS', 'NPSHYD', 'OTHER', 'OCGT', 'COAL', 'OIL', 'PS']
-        
+
         data_rows = []
         for fuel in fuel_order:
             if fuel in timeseries_48.index:
@@ -716,7 +831,7 @@ def update_dashboard():
             else:
                 # No data for this fuel type - use fuel label + empty strings
                 data_rows.append([fuel] + [''] * 48)
-        
+
         # Write to Data_Hidden sheet (rows 2-11, columns A-AW: label + 48 periods)
         if data_rows:
             try:
@@ -726,12 +841,12 @@ def update_dashboard():
                 print(f"   ⚠️  Could not update Data_Hidden: {e}")
     else:
         print(f"   ⚠️  No 48-period data available for fuel sparklines")
-    
+
     # NEW: Update interconnector timeseries in Data_Hidden (rows 12-21)
     if ic_timeseries_48 is not None:
         # Interconnector order matching dashboard (INTFR not INTIFA!)
         ic_order = ['INTELEC', 'INTEW', 'INTFR', 'INTGRNL', 'INTIFA2', 'INTIRL', 'INTNED', 'INTNEM', 'INTNSL', 'INTVKL']
-        
+
         ic_rows = []
         for ic in ic_order:
             if ic in ic_timeseries_48.index:
@@ -745,7 +860,7 @@ def update_dashboard():
             else:
                 # No data for this IC - use label + zeros (not empty strings) to avoid #N/A
                 ic_rows.append([ic] + [0] * latest_period + [''] * (48 - latest_period))
-        
+
         # Write to Data_Hidden sheet (rows 12-21, columns A-AW: label + 48 periods)
         if ic_rows:
             try:
@@ -755,12 +870,12 @@ def update_dashboard():
                 print(f"   ⚠️  Could not update IC Data_Hidden: {e}")
     else:
         print(f"   ⚠️  No 48-period data available for IC sparklines")
-    
+
     # NEW: Update KPI timeseries in Data_Hidden (rows 22-26)
     if kpi_timeseries is not None:
         kpi_labels = ['Wholesale Price', 'Frequency', 'Total Generation', 'Wind Output', 'System Demand']
         kpi_keys = ['wholesale', 'frequency', 'total_gen', 'wind', 'demand']
-        
+
         kpi_rows = []
         for label, key in zip(kpi_labels, kpi_keys):
             row_data = [label] + kpi_timeseries[key]
@@ -770,7 +885,7 @@ def update_dashboard():
             elif len(row_data) > 49:
                 row_data = row_data[:49]
             kpi_rows.append(row_data)
-        
+
         # Write to Data_Hidden sheet (rows 22-26, columns A-AW: label + 48 periods)
         if kpi_rows:
             try:
@@ -780,7 +895,7 @@ def update_dashboard():
                 print(f"   ⚠️  Could not update KPI Data_Hidden: {e}")
     else:
         print(f"   ⚠️  No KPI timeseries data available")
-    
+
     # Update Generation Mix (Starting Row 13) - BATCH UPDATE
     if gen_mix is not None and not gen_mix.empty:
         # Map fuel types to row numbers based on current layout
@@ -796,25 +911,32 @@ def update_dashboard():
             'OIL': 21,
             'PS': 22
         }
-        
+
         # Prepare batch update for generation mix (all 10 rows at once)
         gen_mix_updates = []
         for fuel, row_num in fuel_row_map.items():
             if fuel in gen_mix['fuelType'].values:
                 row_data = gen_mix[gen_mix['fuelType'] == fuel].iloc[0]
                 gw_value = round(float(row_data['gen_gw']), 1)
-                pct_value = f"{round(float(row_data['share_pct']), 1)}%"
+                # Format share as formula to preserve percentage display
+                share_pct_raw = round(float(row_data['share_pct']), 1)
+                pct_formula = f'=TEXT({share_pct_raw}/100,"0.0%")'  # Display as percentage
                 # Add bar chart in column D
                 bar_chart = f'=REPT("█",MIN(INT(B{row_num}*2),50))'
+                # NOTE: Only update B, C, D - leave E alone (contains sparkline formulas)
                 gen_mix_updates.append({
                     'range': f'B{row_num}:D{row_num}',
-                    'values': [[gw_value, pct_value, bar_chart]]
+                    'values': [[gw_value, pct_formula, bar_chart]]
                 })
-        
+
         if gen_mix_updates:
             sheet.batch_update(gen_mix_updates, value_input_option='USER_ENTERED')
             print(f"   ✅ Updated generation mix ({len(gen_mix_updates)} fuels, batched)")
-    
+            # Debug: Show first update
+            if gen_mix_updates:
+                first = gen_mix_updates[0]
+                print(f"   DEBUG: First update range={first['range']}, values={first['values']}")
+
     # Update Interconnectors (Starting Row 13, column J) - BATCH UPDATE
     if interconnectors is not None and not interconnectors.empty:
         # Map interconnector fuel types to names and row numbers (CONSECUTIVE ROWS 13-22)
@@ -830,7 +952,7 @@ def update_dashboard():
             'INTNSL': ('🇳🇴 NSL', 21),
             'INTVKL': ('🇩🇰 Viking Link', 22)
         }
-        
+
         # Prepare batch update for interconnectors (all in one call)
         ic_updates = []
         for fuel, (name, row_num) in ic_map.items():
@@ -843,11 +965,11 @@ def update_dashboard():
                     'range': f'J{row_num}:K{row_num}',
                     'values': [[flow_mw, bar_chart]]
                 })
-        
+
         if ic_updates:
             sheet.batch_update(ic_updates, value_input_option='USER_ENTERED')
             print(f"   ✅ Updated interconnectors ({len(ic_updates)} connections, batched)")
-    
+
     print("\n" + "=" * 80)
     print("✅ DASHBOARD UPDATE COMPLETE")
     print("=" * 80)
