@@ -66,9 +66,9 @@ def get_latest_settlement_period(bq_client):
     return None, None
 
 def get_kpis(bq_client):
-    """Get all KPIs - VLP Revenue, Wholesale Price, Frequency, Demand, Wind"""
+    """Get all KPIs - Wholesale Price, Frequency, Total Generation, Wind, Demand"""
     
-    # Get 7-day average price for VLP revenue and wholesale
+    # Get 7-day average wholesale price
     # Use bmrs_mid_iris (real-time wholesale prices) - has current data through Dec 11
     price_query = f"""
     SELECT 
@@ -144,7 +144,6 @@ def get_kpis(bq_client):
         demand_gw = total_gen + net_ic
         
         return {
-            'vlp_revenue': round(avg_price * 1000, 2),  # Convert to £k
             'wholesale': round(avg_price, 2),
             'frequency': round(frequency, 2),
             'total_gen': round(total_gen, 2),
@@ -156,7 +155,7 @@ def get_kpis(bq_client):
         import traceback
         traceback.print_exc()
         return {
-            'vlp_revenue': 0, 'wholesale': 0, 'frequency': 50.0,
+            'wholesale': 0, 'frequency': 50.0,
             'total_gen': 0, 'wind': 0, 'demand': 0
         }
 
@@ -593,12 +592,10 @@ def update_dashboard():
     })
     
     # Update KPIs (Row 6) - batch update all at once
-    # Headers: A5=VLP Revenue, C5=Wholesale Price, E5=Grid Frequency, G5=Total Gen, I5=Wind, K5=Demand
+    # Headers: C5=Wholesale Price, E5=Grid Frequency, G5=Total Gen, I5=Wind, K5=Demand
     batch_updates.append({
-        'range': 'A6:K6',
+        'range': 'C6:K6',
         'values': [[
-            kpis['vlp_revenue'],  # A6
-            '',                    # B6
             kpis['wholesale'],     # C6
             '',                    # D6
             kpis['frequency'],     # E6
