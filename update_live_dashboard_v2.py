@@ -316,6 +316,69 @@ def get_48_period_interconnectors(bq_client, current_sp):
     
     return None
 
+def get_kpi_timeseries(bq_client, current_sp):
+    """Get today's KPI timeseries from 00:00 up to current settlement period"""
+    query = f"""
+    WITH gen_by_period AS (
+        SELECT 
+            settlementPeriod,
+            SUM(CASE WHEN fuelType NOT LIKE 'INT%' THEN generation ELSE 0 END) / 1000 as total_gen_gw,
+            SUM(CASE WHEN fuelType = 'WIND' THEN generation ELSE 0 END) / 1000 as wind_gw,
+            SUM(CASE WHEN fuelType LIKE 'INT%' THEN generation ELSE 0 END) / 1000 as net_ic_gw
+        FROM `{PROJECT_ID}.{DATASET}.bmrs_fuelinst_iris`
+        WHERE CAST(settlementDate AS DATE) = CURRENT_DATE()
+          AND settlementPeriod <= {current_sp}
+        GROUP BY settlementPeriod
+    ),
+    prices_by_period AS (
+        SELECT 
+            settlementPeriod,
+            AVG(price) as wholesale_price
+        FROM `{PROJECT_ID}.{DATASET}.bmrs_mid_iris`
+        WHERE CAST(settlementDate AS DATE) = CURRENT_DATE()
+          AND settlementPeriod <= {current_sp}
+        GROUP BY settlementPeriod
+    ),
+    freq_by_period AS (
+        SELECT 
+            CAST(FLOOR((EXTRACT(HOUR FROM measurementTime) * 60 + EXTRACT(MINUTE FROM measurementTime)) / 30) + 1 AS INT64) as settlementPeriod,
+            AVG(frequency) as avg_frequency
+        FROM `{PROJECT_ID}.{DATASET}.bmrs_freq_iris`
+        WHERE CAST(measurementTime AS DATE) = CURRENT_DATE()
+          AND EXTRACT(HOUR FROM measurementTime) * 2 + CAST(EXTRACT(MINUTE FROM measurementTime) >= 30 AS INT64) + 1 <= {current_sp}
+        GROUP BY settlementPeriod
+    )
+    SELECT 
+        g.settlementPeriod,
+        p.wholesale_price,
+        f.avg_frequency as frequency,
+        g.total_gen_gw,
+        g.wind_gw,
+        g.total_gen_gw + g.net_ic_gw as demand_gw
+    FROM gen_by_period g
+    LEFT JOIN prices_by_period p ON g.settlementPeriod = p.settlementPeriod
+    LEFT JOIN freq_by_period f ON g.settlementPeriod = f.settlementPeriod
+    ORDER BY g.settlementPeriod
+    """
+    
+    try:
+        df = bq_client.query(query).to_dataframe()
+        if not df.empty:
+            # Return as dict of lists (one list per KPI)
+            return {
+                'wholesale': df['wholesale_price'].fillna(0).tolist(),
+                'frequency': df['frequency'].fillna(50.0).tolist(),
+                'total_gen': df['total_gen_gw'].fillna(0).tolist(),
+                'wind': df['wind_gw'].fillna(0).tolist(),
+                'demand': df['demand_gw'].fillna(0).tolist()
+            }
+    except Exception as e:
+        logging.error(f"Error getting KPI timeseries: {e}")
+        import traceback
+        traceback.print_exc()
+    
+    return None
+
 def get_bm_metrics(bq_client):
     """
     Calculate comprehensive market-wide BM KPIs using BigQuery historical data
@@ -555,6 +618,10 @@ def update_dashboard():
     ic_timeseries_48 = get_48_period_interconnectors(bq_client, latest_period)
     print(f"   48-period IC flows: {ic_timeseries_48.shape if ic_timeseries_48 is not None else 'None'}")
     
+    # NEW: Get KPI timeseries for sparklines
+    kpi_timeseries = get_kpi_timeseries(bq_client, latest_period)
+    print(f"   KPI timeseries: {len(kpi_timeseries['wholesale']) if kpi_timeseries else 0} periods")
+    
     # NEW: Get BM metrics
     bm_metrics = get_bm_metrics(bq_client)
     if bm_metrics:
@@ -688,6 +755,31 @@ def update_dashboard():
                 print(f"   ⚠️  Could not update IC Data_Hidden: {e}")
     else:
         print(f"   ⚠️  No 48-period data available for IC sparklines")
+    
+    # NEW: Update KPI timeseries in Data_Hidden (rows 22-26)
+    if kpi_timeseries is not None:
+        kpi_labels = ['Wholesale Price', 'Frequency', 'Total Generation', 'Wind Output', 'System Demand']
+        kpi_keys = ['wholesale', 'frequency', 'total_gen', 'wind', 'demand']
+        
+        kpi_rows = []
+        for label, key in zip(kpi_labels, kpi_keys):
+            row_data = [label] + kpi_timeseries[key]
+            # Pad to exactly 49 values (1 label + 48 data points)
+            if len(row_data) < 49:
+                row_data.extend([''] * (49 - len(row_data)))
+            elif len(row_data) > 49:
+                row_data = row_data[:49]
+            kpi_rows.append(row_data)
+        
+        # Write to Data_Hidden sheet (rows 22-26, columns A-AW: label + 48 periods)
+        if kpi_rows:
+            try:
+                data_hidden.update(values=kpi_rows, range_name='A22:AW26')
+                print(f"   ✅ Updated KPI sparkline data (5 KPIs × {latest_period} periods)")
+            except Exception as e:
+                print(f"   ⚠️  Could not update KPI Data_Hidden: {e}")
+    else:
+        print(f"   ⚠️  No KPI timeseries data available")
     
     # Update Generation Mix (Starting Row 13) - BATCH UPDATE
     if gen_mix is not None and not gen_mix.empty:
