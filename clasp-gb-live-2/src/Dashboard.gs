@@ -81,6 +81,13 @@ function setupDashboardLayout(sheet) {
 }
 
 function setupDashboardLayoutV2(sheet) {
+  // Check if Python updater is managing the layout
+  const skipAutoLayout = sheet.getRange('AA1').getValue();
+  if (skipAutoLayout === 'PYTHON_MANAGED') {
+    Logger.log('Skipping layout setup - managed by Python script');
+    return;
+  }
+  
   sheet.clear();
   sheet.setFrozenRows(2);
   sheet.getRange('1:1000').setBackground('#ffffff').setFontColor('#333333');
@@ -184,6 +191,14 @@ function setupDashboardLayoutV2(sheet) {
     .setBackground('#ecf0f1');
 
   sheet.getRange('C12').setValue('📊 Share')
+    .setFontWeight('bold')
+    .setBackground('#ecf0f1');
+
+  sheet.getRange('D12').setValue('📊 Bar')
+    .setFontWeight('bold')
+    .setBackground('#ecf0f1');
+
+  sheet.getRange('E12').setValue('📈 Trend (00:00→)')
     .setFontWeight('bold')
     .setBackground('#ecf0f1');
 

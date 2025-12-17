@@ -160,6 +160,13 @@ function addInterconnectorFlag(name) {
  */
 function displayData(sheet, data) {
   if (!data) return;
+  
+  // Check if Python updater is managing the data
+  const isPythonManaged = sheet.getRange('AA1').getValue();
+  if (isPythonManaged === 'PYTHON_MANAGED') {
+    Logger.log('Skipping displayData - managed by Python script');
+    return;
+  }
 
   const sheetName = sheet.getName();
   const isV2 = sheetName.toLowerCase().includes('v2');

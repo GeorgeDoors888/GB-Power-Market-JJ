@@ -683,6 +683,9 @@ def update_dashboard():
     try:
         spreadsheet = gc.open_by_key(SPREADSHEET_ID)
         sheet = spreadsheet.worksheet(SHEET_NAME)
+        
+        # Set flag to prevent Apps Script from clearing the layout
+        sheet.update_acell('AA1', 'PYTHON_MANAGED')
 
         # Try to get or create Data_Hidden sheet for sparklines
         try:
