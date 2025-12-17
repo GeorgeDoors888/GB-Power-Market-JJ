@@ -634,33 +634,33 @@ def update_dashboard():
     # NEW: Update 48-period timeseries in Data_Hidden sheet for sparklines
     if timeseries_48 is not None:
         # Fuel type order matching the dashboard
-        fuel_order = ['WIND', 'CCGT', 'NUCLEAR', 'BIOMASS', 'NPSHYD', 'OTHER', 'OCGT', 'COAL', 'OIL', 'PS']
+        fuel_order = ['WIND', 'NUCLEAR', 'CCGT', 'BIOMASS', 'NPSHYD', 'OTHER', 'OCGT', 'COAL', 'OIL', 'PS']
         
         data_rows = []
         for fuel in fuel_order:
             if fuel in timeseries_48.index:
-                row_data = timeseries_48.loc[fuel].tolist()
-                # Pad to exactly 48 values with empty strings for future periods
-                if len(row_data) < 48:
-                    row_data.extend([''] * (48 - len(row_data)))
-                elif len(row_data) > 48:
-                    row_data = row_data[:48]
+                row_data = [fuel] + timeseries_48.loc[fuel].tolist()  # Add fuel label in column A
+                # Pad to exactly 49 values (1 label + 48 data points)
+                if len(row_data) < 49:
+                    row_data.extend([''] * (49 - len(row_data)))
+                elif len(row_data) > 49:
+                    row_data = row_data[:49]
                 data_rows.append(row_data)
             else:
-                # No data for this fuel type - use empty strings
-                data_rows.append([''] * 48)
+                # No data for this fuel type - use fuel label + empty strings
+                data_rows.append([fuel] + [''] * 48)
         
-        # Write to Data_Hidden sheet (rows 1-10, columns A-AV for 48 periods)
+        # Write to Data_Hidden sheet (rows 2-11, columns A-AW: label + 48 periods)
         if data_rows:
             try:
-                data_hidden.update(values=data_rows, range_name='A1:AV10')
+                data_hidden.update(values=data_rows, range_name='A2:AW11')
                 print(f"   ✅ Updated fuel sparkline data ({len(data_rows)} fuel types × {latest_period} periods)")
             except Exception as e:
                 print(f"   ⚠️  Could not update Data_Hidden: {e}")
     else:
         print(f"   ⚠️  No 48-period data available for fuel sparklines")
     
-    # NEW: Update interconnector timeseries in Data_Hidden (rows 11-20)
+    # NEW: Update interconnector timeseries in Data_Hidden (rows 12-21)
     if ic_timeseries_48 is not None:
         # Interconnector order matching dashboard (INTFR not INTIFA!)
         ic_order = ['INTELEC', 'INTEW', 'INTFR', 'INTGRNL', 'INTIFA2', 'INTIRL', 'INTNED', 'INTNEM', 'INTNSL', 'INTVKL']
@@ -668,21 +668,21 @@ def update_dashboard():
         ic_rows = []
         for ic in ic_order:
             if ic in ic_timeseries_48.index:
-                row_data = ic_timeseries_48.loc[ic].tolist()
-                # Pad to exactly 48 values with empty strings for future periods
-                if len(row_data) < 48:
-                    row_data.extend([''] * (48 - len(row_data)))
-                elif len(row_data) > 48:
-                    row_data = row_data[:48]
+                row_data = [ic] + ic_timeseries_48.loc[ic].tolist()  # Add IC label in column A
+                # Pad to exactly 49 values (1 label + 48 data points)
+                if len(row_data) < 49:
+                    row_data.extend([''] * (49 - len(row_data)))
+                elif len(row_data) > 49:
+                    row_data = row_data[:49]
                 ic_rows.append(row_data)
             else:
-                # No data for this IC - use zeros (not empty strings) to avoid #N/A
-                ic_rows.append([0] * latest_period + [''] * (48 - latest_period))
+                # No data for this IC - use label + zeros (not empty strings) to avoid #N/A
+                ic_rows.append([ic] + [0] * latest_period + [''] * (48 - latest_period))
         
-        # Write to Data_Hidden sheet (rows 11-20, columns A-AV for 48 periods)
+        # Write to Data_Hidden sheet (rows 12-21, columns A-AW: label + 48 periods)
         if ic_rows:
             try:
-                data_hidden.update(values=ic_rows, range_name='A11:AV20')
+                data_hidden.update(values=ic_rows, range_name='A12:AW21')
                 print(f"   ✅ Updated IC sparkline data ({len(ic_rows)} interconnectors × {latest_period} periods)")
             except Exception as e:
                 print(f"   ⚠️  Could not update IC Data_Hidden: {e}")
