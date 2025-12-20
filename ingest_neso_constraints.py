@@ -35,6 +35,7 @@ DATASETS: Dict[str, Dict[str, str]] = {
     "dayahead_constraint_flows": {
         "page_url": "https://www.neso.energy/data-portal/day-ahead-constraint-flows-and-limits",
         "table": f"{PROJECT_ID}.{DATASET_ID}.constraint_flows_da",
+        "force_daily_refresh": True,  # NESO updates same URL daily, force re-download
     },
     "constraint_limits_24m": {
         "page_url": "https://www.neso.energy/data-portal/24-months-ahead-constraint-limits",
@@ -142,7 +143,7 @@ def find_csv_links(page_url: str) -> List[str]:
                 else:
                     from urllib.parse import urljoin
                     links.append(urljoin(page_url, href))
-        
+
         unique_links = sorted(set(links))
         print(f"   Found {len(unique_links)} CSV links")
         return unique_links
@@ -201,6 +202,8 @@ def process_dataset(client: bigquery.Client, dataset_key: str, cfg: Dict[str, st
     """Process one constraint dataset"""
     page_url = cfg["page_url"]
     table_id = cfg["table"]
+    force_refresh = cfg.get("force_daily_refresh", False)
+    
     print(f"\n{'='*70}")
     print(f"📊 DATASET: {dataset_key}")
     print(f"   Page:  {page_url}")
@@ -212,9 +215,17 @@ def process_dataset(client: bigquery.Client, dataset_key: str, cfg: Dict[str, st
         print("⚠️  No CSV links found")
         return
 
+    # Check which URLs we've already processed
     already = set(get_already_processed_urls(client, dataset_key))
-    new_links = [u for u in csv_links if u not in already]
     
+    # If force_daily_refresh is True, clear already-processed URLs for this dataset
+    # This allows daily re-download of same URL (e.g., constraint flows)
+    if force_refresh:
+        print(f"🔄 Force daily refresh enabled - will re-download all CSVs")
+        new_links = csv_links
+    else:
+        new_links = [u for u in csv_links if u not in already]
+
     if not new_links:
         print("✅ No new CSV files to process")
         return
@@ -246,7 +257,7 @@ def process_dataset(client: bigquery.Client, dataset_key: str, cfg: Dict[str, st
                 # Truncate to 300 chars
                 col = col[:300]
                 new_columns.append(col)
-            
+
             df.columns = new_columns
 
             # Ensure table exists (first time only)
@@ -269,7 +280,7 @@ def main():
     print(f"Dataset: {DATASET_ID}")
     print(f"Time: {dt.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     print("="*70)
-    
+
     client = get_bq_client()
     ensure_dataset(client)
     ensure_ingest_log(client)
