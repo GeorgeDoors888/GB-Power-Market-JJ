@@ -726,7 +726,7 @@ def _fetch_bmrs(
     alt_url_root = "https://data.elexon.co.uk/bmrs/api/v1/datasets"
     # params can include strings or lists (e.g., bmUnit repeated params); allow object values
     alt_variants: List[Tuple[str, Dict[str, object], Dict[str, str]]] = []
-    if ds in {"MILS", "MELS", "PN", "QPN"}:
+    if ds in {"MILS", "MELS", "PN", "QPN", "NETBSAD"}:
         # Base variants
         # Build a helper with apiKey query param when available
         _ak = None

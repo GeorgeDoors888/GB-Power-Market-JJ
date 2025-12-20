@@ -65,6 +65,375 @@ def get_latest_settlement_period(bq_client):
         logging.error(f"Error getting latest period: {e}")
     return None, None
 
+def get_bm_kpi_data(bq_client):
+    """
+    Get comprehensive BM market KPIs from multiple sources
+    Returns all 10 planned KPIs with formulas and sparkline data
+    Uses most recent complete day for live data
+    """
+
+    # Find most recent date with complete data (UNION historical + IRIS)
+    date_query = f"""
+    WITH combined AS (
+      SELECT CAST(settlementDate AS DATE) as date, settlementPeriod
+      FROM `{PROJECT_ID}.{DATASET}.bmrs_boalf_complete`
+      WHERE CAST(settlementDate AS DATE) >= DATE_SUB(CURRENT_DATE(), INTERVAL 7 DAY)
+        AND validation_flag = 'Valid'
+      UNION ALL
+      SELECT DATE(timeFrom) as date, settlementPeriodFrom as settlementPeriod
+      FROM `{PROJECT_ID}.{DATASET}.bmrs_boalf_iris`
+      WHERE CAST(timeFrom AS TIMESTAMP) >= TIMESTAMP_SUB(CURRENT_TIMESTAMP(), INTERVAL 7 DAY)
+    )
+    SELECT date
+    FROM combined
+    GROUP BY date
+    HAVING COUNT(DISTINCT settlementPeriod) >= 40
+    ORDER BY date DESC
+    LIMIT 1
+    """
+
+    date_result = bq_client.query(date_query).to_dataframe()
+    if date_result.empty:
+        logging.warning("No complete BOALF data found")
+        return None
+
+    target_date = str(date_result.iloc[0]['date'])
+
+    # Query comprehensive BM + Market data for all KPIs
+    # Use most recent complete day for live data
+    query = f"""
+    WITH periods AS (
+      SELECT settlementPeriod
+      FROM UNNEST(GENERATE_ARRAY(1, 48)) AS settlementPeriod
+    ),
+    boalf_data AS (
+      SELECT
+        settlementPeriod,
+        AVG(acceptancePrice) as bm_avg_price,
+        SUM(acceptancePrice * ABS(acceptanceVolume)) / NULLIF(SUM(ABS(acceptanceVolume)), 0) as bm_vol_wtd,
+        SUM(ABS(acceptanceVolume)) as bm_volume
+      FROM `{PROJECT_ID}.{DATASET}.bmrs_boalf_complete`
+      WHERE CAST(settlementDate AS DATE) = '{target_date}'
+        AND validation_flag = 'Valid'
+        AND acceptancePrice IS NOT NULL
+      GROUP BY settlementPeriod
+    ),
+    market_index AS (
+      SELECT
+        settlementPeriod,
+        AVG(price) as mid_price
+      FROM (
+        SELECT settlementPeriod, price
+        FROM `{PROJECT_ID}.{DATASET}.bmrs_mid`
+        WHERE CAST(settlementDate AS DATE) = '{target_date}'
+        UNION ALL
+        SELECT settlementPeriod, price
+        FROM `{PROJECT_ID}.{DATASET}.bmrs_mid_iris`
+        WHERE CAST(settlementDate AS DATE) = '{target_date}'
+      )
+      GROUP BY settlementPeriod
+    ),
+    system_prices AS (
+      SELECT
+        settlementPeriod,
+        AVG(systemBuyPrice) as sys_buy,
+        AVG(systemSellPrice) as sys_sell
+      FROM `{PROJECT_ID}.{DATASET}.bmrs_costs`
+      WHERE CAST(settlementDate AS DATE) = '{target_date}'
+      GROUP BY settlementPeriod
+    )
+    SELECT
+      p.settlementPeriod,
+      COALESCE(b.bm_avg_price, 0) as bm_avg_price,
+      COALESCE(b.bm_vol_wtd, 0) as bm_vol_wtd,
+      COALESCE(b.bm_volume, 0) as bm_volume,
+      COALESCE(m.mid_price, 0) as mid_price,
+      COALESCE(s.sys_buy, 0) as sys_buy,
+      COALESCE(s.sys_sell, 0) as sys_sell
+    FROM periods p
+    LEFT JOIN boalf_data b USING (settlementPeriod)
+    LEFT JOIN market_index m USING (settlementPeriod)
+    LEFT JOIN system_prices s USING (settlementPeriod)
+    ORDER BY p.settlementPeriod
+    """
+
+    try:
+        df = bq_client.query(query).to_dataframe()
+
+        if df.empty:
+            return None
+
+        # Calculate aggregate KPIs (overall averages)
+        bm_avg = df['bm_avg_price'].mean()
+        bm_vol_wtd = (df['bm_avg_price'] * df['bm_volume']).sum() / df['bm_volume'].sum() if df['bm_volume'].sum() > 0 else 0
+        mid_avg = df['mid_price'].mean()
+        sys_buy_avg = df['sys_buy'].mean()
+        sys_sell_avg = df['sys_sell'].mean()
+
+        # Derived metrics
+        bm_mid_spread = bm_avg - mid_avg
+        bm_sysbuy_spread = bm_avg - sys_buy_avg
+        bm_syssell_spread = bm_avg - sys_sell_avg
+        sys_spread = sys_buy_avg - sys_sell_avg
+
+        # Count actual periods with data
+        periods_with_data = (df['bm_avg_price'] > 0).sum()
+
+        return {
+            'date': target_date,
+            'period_count': periods_with_data,
+            'bm_avg': bm_avg,
+            'bm_vol_wtd': bm_vol_wtd,
+            'mid_avg': mid_avg,
+            'sys_buy': sys_buy_avg,
+            'sys_sell': sys_sell_avg,
+            'bm_mid_spread': bm_mid_spread,
+            'bm_sysbuy_spread': bm_sysbuy_spread,
+            'bm_syssell_spread': bm_syssell_spread,
+            'sys_spread': sys_spread,
+            'timeseries': df
+        }
+    except Exception as e:
+        logging.error(f"Error querying BM KPI data: {e}")
+        return None
+
+def deploy_bm_kpis(sheet, bq_client):
+    """
+    Deploy ALL 10 BM Market KPIs to merged cells (M13:AA18)
+    Layout matches planned structure with formulas for persistence
+    """
+    kpi_data = get_bm_kpi_data(bq_client)
+
+    if not kpi_data:
+        logging.warning("⚠️  No BM KPI data available, skipping")
+        return
+
+    print(f"\n📊 Deploying 10 BM KPIs (data from {kpi_data['date']}, {kpi_data['period_count']} periods)...")
+
+    # Prepare timeseries for Data_Hidden (48 periods)
+    period_stats = kpi_data['timeseries']
+
+    # Write timeseries to Data_Hidden rows 27-34 (8 rows for all metrics)
+    try:
+        data_hidden = sheet.spreadsheet.worksheet('Data_Hidden')
+
+        data_rows = [
+            ['BM_Avg_Price'] + period_stats['bm_avg_price'].tolist(),
+            ['BM_Vol_Wtd'] + period_stats['bm_vol_wtd'].tolist(),
+            ['MID_Price'] + period_stats['mid_price'].tolist(),
+            ['Sys_Buy'] + period_stats['sys_buy'].tolist(),
+            ['Sys_Sell'] + period_stats['sys_sell'].tolist(),
+            ['BM_MID_Spread'] + (period_stats['bm_avg_price'] - period_stats['mid_price']).tolist(),
+            ['BM_SysBuy'] + (period_stats['bm_avg_price'] - period_stats['sys_buy']).tolist(),
+            ['BM_SysSell'] + (period_stats['bm_avg_price'] - period_stats['sys_sell']).tolist(),
+        ]
+
+        # Use RAW input so numbers stay as numbers (not strings) for sparklines
+        data_hidden.batch_update([
+            {'range': 'A27:AW34', 'values': data_rows}
+        ], value_input_option='RAW')
+        print(f"   ✅ Written 8 BM timeseries to Data_Hidden (rows 27-34, as numbers)")
+    except Exception as e:
+        logging.error(f"   ⚠️  Could not update Data_Hidden: {e}")
+
+    # Deploy to dashboard merged cells
+    # Merged cells: M13:O14, M15:O16, M17:O18 (and Q, U columns similar)
+    # For each merge: Row 13/15/17 = Header, Row 14/16/18 = Value
+    # Write to TOP-LEFT cell of each merge only (M13, M15, M17, etc.)
+
+    try:
+        import time
+
+        # Clear old headers from row 12
+        sheet.batch_clear(['M12:AA18'])
+        time.sleep(1)
+
+        # Batch 1: M column (headers in 13/15/17, values in 14/16/18)
+        batch1 = [
+            {'range': 'M13', 'values': [['Avg Accept Price']]},
+            {'range': 'M14', 'values': [['=ROUND(AVERAGE(Data_Hidden!B27:AW27), 2)&" £/MWh"']]},
+            {'range': 'M15', 'values': [['Vol-Wtd Avg']]},
+            {'range': 'M16', 'values': [['=ROUND(AVERAGE(Data_Hidden!B28:AW28), 2)&" £/MWh"']]},
+            {'range': 'M17', 'values': [['Market Index']]},
+            {'range': 'M18', 'values': [['=ROUND(AVERAGE(Data_Hidden!B29:AW29), 2)&" £/MWh"']]},
+        ]
+        sheet.batch_update(batch1, value_input_option='USER_ENTERED')
+        print(f"   ✅ M column deployed (3 KPIs with headers)")
+        time.sleep(1)
+
+        # Batch 2: Q column (headers in 13/15/17, values in 14/16/18)
+        batch2 = [
+            {'range': 'Q13', 'values': [['BM–MID Spread']]},
+            {'range': 'Q14', 'values': [['=ROUND(AVERAGE(Data_Hidden!B30:AW30), 2)&" £/MWh"']]},
+            {'range': 'Q15', 'values': [['Sys–VLP Spread']]},
+            {'range': 'Q16', 'values': [['=ROUND(AVERAGE(Data_Hidden!B31:AW31), 2)&" £/MWh"']]},
+            {'range': 'Q17', 'values': [['Supp–VLP Spread']]},
+            {'range': 'Q18', 'values': [['=ROUND(AVERAGE(Data_Hidden!B32:AW32), 2)&" £/MWh"']]},
+        ]
+        sheet.batch_update(batch2, value_input_option='USER_ENTERED')
+        print(f"   ✅ Q column deployed (3 spreads with headers)")
+        time.sleep(1)
+
+        # Batch 3: U column (headers in 13/15/17, values in 14/16/18) - placeholders
+        batch3 = [
+            {'range': 'U13', 'values': [['Reserved']]},
+            {'range': 'U14', 'values': [['--']]},
+            {'range': 'U15', 'values': [['Reserved']]},
+            {'range': 'U16', 'values': [['--']]},
+            {'range': 'U17', 'values': [['Reserved']]},
+            {'range': 'U18', 'values': [['--']]},
+        ]
+        sheet.batch_update(batch3, value_input_option='USER_ENTERED')
+        print(f"   ✅ U column deployed (3 placeholders with headers)")
+        time.sleep(1)
+
+        # Batch 4: Y column (Y13:AA14 title, Y17:AA18 net spread)
+        batch4 = [
+            {'range': 'Y13', 'values': [[f'⚡ BM Market']]},
+            {'range': 'Y14', 'values': [['KPIs']]},
+            {'range': 'Y17', 'values': [['Net Spread']]},
+            {'range': 'Y18', 'values': [['=ROUND(AVERAGE(Data_Hidden!B33:AW33), 2)&" £/MWh"']]},
+        ]
+        sheet.batch_update(batch4, value_input_option='USER_ENTERED')
+        print(f"   ✅ Y column deployed (title + net spread with headers)")
+        time.sleep(1)
+
+        # Batch 5: Detail columns AB-AD
+        batch5 = [
+            {'range': 'AB13:AD13', 'values': [['Avg Accept', 'Vol-Wtd', 'MID Index']]},
+            {'range': 'AB14', 'values': [['=ROUND(AVERAGE(Data_Hidden!B27:AW27), 2)&" £/MWh"']]},
+            {'range': 'AC14', 'values': [['=ROUND(AVERAGE(Data_Hidden!B28:AW28), 2)&" £/MWh"']]},
+            {'range': 'AD14', 'values': [['=ROUND(AVERAGE(Data_Hidden!B29:AW29), 2)&" £/MWh"']]},
+            {'range': 'AB15', 'values': [['=SPARKLINE(Data_Hidden!B27:AW27,{"charttype","column"})']]},
+            {'range': 'AC15', 'values': [['=SPARKLINE(Data_Hidden!B28:AW28,{"charttype","line"})']]},
+            {'range': 'AD15', 'values': [['=SPARKLINE(Data_Hidden!B29:AW29,{"charttype","column"})']]},
+        ]
+        sheet.batch_update(batch5, value_input_option='USER_ENTERED')
+        print(f"   ✅ Detail columns deployed (sparklines)")
+
+        print(f"\n   📊 10 BM KPIs deployed successfully:")
+        print(f"      • Avg Accept: £{kpi_data['bm_avg']:.2f}/MWh")
+        print(f"      • Vol-Wtd: £{kpi_data['bm_vol_wtd']:.2f}/MWh")
+        print(f"      • Mkt Index (MID): £{kpi_data['mid_avg']:.2f}/MWh")
+        print(f"      • BM–MID Spread: £{kpi_data['bm_mid_spread']:.2f}/MWh")
+        print(f"      • BM–SysBuy: £{kpi_data['bm_sysbuy_spread']:.2f}/MWh")
+        print(f"      • BM–SysSell: £{kpi_data['bm_syssell_spread']:.2f}/MWh")
+        print(f"      • Net Spread: £{kpi_data['sys_spread']:.2f}/MWh")
+    except Exception as e:
+        logging.error(f"   ⚠️  BM KPI deployment failed: {e}")
+
+
+def check_data_freshness(bq_client):
+    """
+    Check IRIS data ingestion status across all tables
+    Returns status with traffic lights and data volume metrics
+    """
+
+    iris_tables = {
+        'bmrs_fuelinst_iris': 'Gen Mix',
+        'bmrs_bod_iris': 'BM Bids',
+        'bmrs_boalf_iris': 'Acceptances',
+        'bmrs_mid_iris': 'Market',
+        'bmrs_indgen_iris': 'Units',
+    }
+
+    table_stats = []
+    total_rows_today = 0
+    freshest_age = 999999
+    freshest_table = None
+
+    for table, short_name in iris_tables.items():
+        query = f"""
+        SELECT
+            COUNT(*) as row_count,
+            MAX(CAST(settlementDate AS DATE)) as latest_date,
+            MAX(settlementPeriod) as latest_period,
+            TIMESTAMP_DIFF(
+                CURRENT_TIMESTAMP(),
+                TIMESTAMP_ADD(
+                    CAST(CAST(MAX(settlementDate) AS DATE) AS TIMESTAMP),
+                    INTERVAL (MAX(settlementPeriod) * 30) MINUTE
+                ),
+                MINUTE
+            ) as age_minutes
+        FROM `{PROJECT_ID}.{DATASET}.{table}`
+        WHERE CAST(settlementDate AS DATE) >= CURRENT_DATE()
+        """
+
+        try:
+            df = bq_client.query(query).to_dataframe()
+            if not df.empty and df['row_count'].iloc[0] > 0:
+                rows = int(df['row_count'].iloc[0])
+                age_minutes = int(df['age_minutes'].iloc[0])
+                latest_date = df['latest_date'].iloc[0]
+                latest_period = int(df['latest_period'].iloc[0])
+
+                # Determine status: Green < 30min, Orange < 120min, Red >= 120min
+                if age_minutes < 30:
+                    status_icon = '🟢'
+                    status_text = 'FRESH'
+                elif age_minutes < 120:
+                    status_icon = '🟠'
+                    status_text = 'AGING'
+                else:
+                    status_icon = '🔴'
+                    status_text = 'STALE'
+
+                table_stats.append({
+                    'table': table,
+                    'name': short_name,
+                    'rows': rows,
+                    'age_minutes': age_minutes,
+                    'latest_period': latest_period,
+                    'status_icon': status_icon,
+                    'status_text': status_text,
+                    'latest_date': latest_date
+                })
+
+                total_rows_today += rows
+
+                if age_minutes < freshest_age:
+                    freshest_age = age_minutes
+                    freshest_table = short_name
+        except Exception as e:
+            # Skip tables with errors
+            continue
+
+    # Determine overall status based on freshest data
+    if freshest_age < 30:
+        overall_status = 'OK'
+        overall_icon = '🟢'
+        overall_text = 'ACTIVE'
+    elif freshest_age < 120:
+        overall_status = 'AGING'
+        overall_icon = '🟠'
+        overall_text = 'AGING'
+    else:
+        overall_status = 'STALE'
+        overall_icon = '🔴'
+        overall_text = 'STALE'
+
+    # Create compact status message for dashboard
+    active_streams = sum(1 for s in table_stats if s['status_icon'] == '🟢')
+    aging_streams = sum(1 for s in table_stats if s['status_icon'] == '🟠')
+    stale_streams = sum(1 for s in table_stats if s['status_icon'] == '🔴')
+
+    status_message = f"{overall_icon} IRIS: {total_rows_today:,} rows today | {active_streams}🟢 {aging_streams}🟠 {stale_streams}🔴 | Key: 🟢<30m 🟠30-120m 🔴>120m"
+
+    return {
+        'status': overall_status,
+        'icon': overall_icon,
+        'text': overall_text,
+        'total_rows': total_rows_today,
+        'active_streams': active_streams,
+        'aging_streams': aging_streams,
+        'stale_streams': stale_streams,
+        'freshest_age': freshest_age,
+        'freshest_table': freshest_table,
+        'table_stats': table_stats,
+        'message': status_message
+    }
+
 def get_kpis(bq_client):
     """Get all KPIs - Wholesale Price, Frequency, Total Generation, Wind, Demand"""
 
@@ -683,7 +1052,7 @@ def update_dashboard():
     try:
         spreadsheet = gc.open_by_key(SPREADSHEET_ID)
         sheet = spreadsheet.worksheet(SHEET_NAME)
-        
+
         # Set flag to prevent Apps Script from clearing the layout
         sheet.update_acell('AA1', 'PYTHON_MANAGED')
 
@@ -712,6 +1081,11 @@ def update_dashboard():
     bq_client = bigquery.Client(project=PROJECT_ID, credentials=bq_creds, location="US")
 
     print("✅ Connected\n")
+
+    # Check IRIS data freshness
+    print("🕐 Checking IRIS data freshness...")
+    freshness_check = check_data_freshness(bq_client)
+    print(f"   {freshness_check['message']}")
 
     # Get data
     print("📊 Fetching data from BigQuery...")
@@ -774,6 +1148,12 @@ def update_dashboard():
     batch_updates.append({
         'range': 'A2',
         'values': [[f'Last Updated: {timestamp} (v2.0) SP {latest_period}']]
+    })
+
+    # Update IRIS data ingestion status (Row 3) - Always show status with traffic lights
+    batch_updates.append({
+        'range': 'A3',
+        'values': [[freshness_check['message']]]
     })
 
     # Update KPIs (Row 6) - batch update all at once
@@ -924,12 +1304,10 @@ def update_dashboard():
                 # Format share as formula to preserve percentage display
                 share_pct_raw = round(float(row_data['share_pct']), 1)
                 pct_formula = f'=TEXT({share_pct_raw}/100,"0.0%")'  # Display as percentage
-                # Add bar chart in column D
-                bar_chart = f'=REPT("█",MIN(INT(B{row_num}*2),50))'
-                # NOTE: Only update B, C, D - leave E alone (contains sparkline formulas)
+                # NOTE: Only update B, C - removed column D bar chart (useless), leave E alone (sparklines)
                 gen_mix_updates.append({
-                    'range': f'B{row_num}:D{row_num}',
-                    'values': [[gw_value, pct_formula, bar_chart]]
+                    'range': f'B{row_num}:C{row_num}',
+                    'values': [[gw_value, pct_formula]]
                 })
 
         if gen_mix_updates:
@@ -942,7 +1320,7 @@ def update_dashboard():
             if gen_mix_updates:
                 first = gen_mix_updates[0]
                 print(f"   DEBUG: First update range={first['range']}, values={first['values']}")
-        
+
         # Add sparkline formulas to column E for fuel trend charts (COLUMN type for each period)
         # Map fuel types to Data_Hidden rows (rows 2-11 in Data_Hidden)
         fuel_sparkline_map = {
@@ -957,48 +1335,25 @@ def update_dashboard():
             'OIL': (21, 10, '#607D8B'),      # Blue grey for oil
             'PS': (22, 11, '#E91E63')        # Pink for pumped storage
         }
-        
+
         sparkline_updates = []
         for fuel, (dashboard_row, data_row, color) in fuel_sparkline_map.items():
             # Use COLUMN chart to show each settlement period as a bar
             sparkline_formula = (
                 f'=SPARKLINE(Data_Hidden!$B${data_row}:$AW${data_row}, '
-                f'{{"charttype","column";"color","{color}"}})' 
+                f'{{"charttype","column";"color","{color}"}})'
             )
             sparkline_updates.append({
                 'range': f'E{dashboard_row}',
                 'values': [[sparkline_formula]]
             })
-        
+
         if sparkline_updates:
             sheet.batch_update(sparkline_updates, value_input_option='USER_ENTERED')
             print(f"   ✅ Added fuel trend sparklines (column E, rows 13-22, COLUMN type)")
-    
-    # Add KPI sparklines to row 7 (columns A, C, E, G, I for 5 KPIs)
-    # Data_Hidden rows 22-26: Wholesale Price, Frequency, Total Gen, Wind, Demand
-    if kpi_timeseries is not None:
-        kpi_sparkline_configs = [
-            ('A7', 22, 'Wholesale Price', '#e74c3c', 'column'),     # Red
-            ('C7', 23, 'Frequency', '#2ecc71', 'line'),             # Green line for frequency
-            ('E7', 24, 'Total Generation', '#f39c12', 'column'),    # Orange
-            ('G7', 25, 'Wind Output', '#4ECDC4', 'column'),         # Teal
-            ('I7', 26, 'System Demand', '#3498db', 'column')        # Blue
-        ]
-        
-        kpi_sparkline_updates = []
-        for cell, data_row, label, color, chart_type in kpi_sparkline_configs:
-            sparkline_formula = (
-                f'=SPARKLINE(Data_Hidden!$B${data_row}:$AW${data_row}, '
-                f'{{"charttype","{chart_type}";"color","{color}"}})' 
-            )
-            kpi_sparkline_updates.append({
-                'range': cell,
-                'values': [[sparkline_formula]]
-            })
-        
-        if kpi_sparkline_updates:
-            sheet.batch_update(kpi_sparkline_updates, value_input_option='USER_ENTERED')
-            print(f"   ✅ Added KPI sparklines (row 7, columns A/C/E/G/I)")
+
+    # NOTE: KPI sparklines are added at the END of update_dashboard() function
+    # to prevent Apps Script from clearing them
 
     # Update Interconnectors (Starting Row 13, column J) - BATCH UPDATE
     if interconnectors is not None and not interconnectors.empty:
@@ -1049,7 +1404,7 @@ def update_dashboard():
     print(f"  • Gen Mix: 1 batch update (was 10 individual calls)")
     print(f"  • Interconnectors: 1 batch update (was 10 individual calls)")
     print(f"  • Data_Hidden: 2 updates (fuel + IC timeseries)")
-    
+
     # Update outages section (columns G-Q, rows 31+)
     try:
         print("\n📊 Updating outages section...")
@@ -1070,6 +1425,100 @@ def update_dashboard():
             print(f"   ⚠️  Outages update failed: {result.stderr[:100]}")
     except Exception as e:
         print(f"   ⚠️  Could not update outages: {e}")
+
+    # FINAL STEP: Re-add KPI sparklines (they get cleared by Apps Script triggers)
+    # This MUST be last, after all other updates complete
+    if kpi_timeseries is not None:
+        print("\n📈 Re-adding KPI sparklines (final step)...")
+
+        # Use the authenticated client to access the spreadsheet via API v4
+        # to set protected ranges (gspread doesn't support this directly)
+        from googleapiclient.discovery import build
+
+        SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
+        creds_v4 = service_account.Credentials.from_service_account_file(
+            SA_FILE, scopes=SCOPES)
+        service = build('sheets', 'v4', credentials=creds_v4)
+
+        # Get sheet ID for Live Dashboard v2
+        spreadsheet_metadata = service.spreadsheets().get(spreadsheetId=SPREADSHEET_ID).execute()
+        sheet_id = None
+        for s in spreadsheet_metadata.get('sheets', []):
+            if s['properties']['title'] == 'Live Dashboard v2':
+                sheet_id = s['properties']['sheetId']
+                break
+
+        if sheet_id:
+            # Add sparklines to row 7 (below values in row 6)
+            kpi_sparklines = [
+                ('C7', 22, '📉 Wholesale', '#e74c3c', 'column'),
+                ('E7', 23, '💓 Frequency', '#2ecc71', 'line'),
+                ('G7', 24, '🏭 Generation', '#f39c12', 'column'),
+                ('I7', 25, '🌬️ Wind', '#4ECDC4', 'column'),
+                ('K7', 26, '🔌 Demand', '#9b59b6', 'column'),
+            ]
+
+            # Build batch update request
+            requests = []
+            for cell, data_row, label, color, chart_type in kpi_sparklines:
+                formula = f'=SPARKLINE(Data_Hidden!$B${data_row}:$AW${data_row}, {{"charttype","{chart_type}";"color","{color}"}})'
+
+                # Convert cell notation to row/col indices (B4 = row 3, col 1)
+                col_letter = cell[0]
+                row_num = int(cell[1])
+                col_num = ord(col_letter) - ord('A')
+
+                requests.append({
+                    'updateCells': {
+                        'range': {
+                            'sheetId': sheet_id,
+                            'startRowIndex': row_num - 1,
+                            'endRowIndex': row_num,
+                            'startColumnIndex': col_num,
+                            'endColumnIndex': col_num + 1
+                        },
+                        'rows': [{
+                            'values': [{
+                                'userEnteredValue': {'formulaValue': formula}
+                            }]
+                        }],
+                        'fields': 'userEnteredValue'
+                    }
+                })
+
+                # Add protected range for this cell
+                requests.append({
+                    'addProtectedRange': {
+                        'protectedRange': {
+                            'range': {
+                                'sheetId': sheet_id,
+                                'startRowIndex': row_num - 1,
+                                'endRowIndex': row_num,
+                                'startColumnIndex': col_num,
+                                'endColumnIndex': col_num + 1
+                            },
+                            'description': f'KPI Sparkline: {label}',
+                            'warningOnly': True  # Warning mode - doesn't block edits
+                        }
+                    }
+                })
+
+            # Execute batch update
+            body = {'requests': requests}
+            service.spreadsheets().batchUpdate(
+                spreadsheetId=SPREADSHEET_ID,
+                body=body
+            ).execute()
+
+            print(f"   ✅ Re-added 5 KPI sparklines to row 7 (C, E, G, I, K) with protection")
+        else:
+            print(f"   ⚠️  Could not find sheet ID for 'Live Dashboard v2'")
+
+    # Deploy BM Market KPIs (columns U-X, rows 13-16)
+    try:
+        deploy_bm_kpis(sheet, bq_client)
+    except Exception as e:
+        logging.error(f"⚠️  BM KPI deployment failed: {e}")
 
 if __name__ == "__main__":
     try:

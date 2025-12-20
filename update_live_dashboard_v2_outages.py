@@ -25,10 +25,10 @@ SA_FILE = '/home/george/inner-cinema-credentials.json'
 logging.basicConfig(level=logging.INFO, format='%(message)s')
 
 def get_outages_data(bq_client):
-    """Get current outages from bmrs_remit_unavailability with proper asset names"""
+    """Get current outages from bmrs_remit_unavailability with proper asset names and deduplication"""
     query = f"""
     WITH latest_revisions AS (
-        SELECT 
+        SELECT
             affectedUnit,
             MAX(revisionNumber) as max_rev
         FROM `{PROJECT_ID}.{DATASET}.bmrs_remit_unavailability`
@@ -36,39 +36,45 @@ def get_outages_data(bq_client):
           AND TIMESTAMP(eventStartTime) <= CURRENT_TIMESTAMP()
           AND (TIMESTAMP(eventEndTime) >= CURRENT_TIMESTAMP() OR eventEndTime IS NULL)
         GROUP BY affectedUnit
+    ),
+    deduplicated AS (
+        SELECT
+            u.affectedUnit as bmu_id,
+            COALESCE(bmu.bmunitname, u.assetName, u.affectedUnit) as asset_name,
+            COALESCE(bmu.fueltype, u.fuelType, 'Unknown') as fuel_type,
+            CAST(u.unavailableCapacity AS INT64) as unavail_mw,
+            CAST(u.normalCapacity AS INT64) as normal_mw,
+            u.cause,
+            u.unavailabilityType,
+            u.participantName,
+            u.affectedArea,
+            u.biddingZone,
+            u.eventStartTime,
+            u.eventEndTime,
+            FORMAT_TIMESTAMP('%Y-%m-%d %H:%M', u.eventStartTime) as start_time,
+            FORMAT_TIMESTAMP('%Y-%m-%d %H:%M', u.eventEndTime) as end_time,
+            TIMESTAMP_DIFF(COALESCE(u.eventEndTime, CURRENT_TIMESTAMP()), u.eventStartTime, HOUR) as duration_hours,
+            u.eventType,
+            ROW_NUMBER() OVER (PARTITION BY u.affectedUnit ORDER BY u.unavailableCapacity DESC) as rn
+        FROM `{PROJECT_ID}.{DATASET}.bmrs_remit_unavailability` u
+        INNER JOIN latest_revisions lr
+            ON u.affectedUnit = lr.affectedUnit
+            AND u.revisionNumber = lr.max_rev
+        LEFT JOIN `{PROJECT_ID}.{DATASET}.bmu_registration_data` bmu
+            ON u.affectedUnit = bmu.nationalgridbmunit
+            OR u.affectedUnit = bmu.elexonbmunit
+        WHERE u.eventStatus = 'Active'
+          AND TIMESTAMP(u.eventStartTime) <= CURRENT_TIMESTAMP()
+          AND (TIMESTAMP(u.eventEndTime) >= CURRENT_TIMESTAMP() OR u.eventEndTime IS NULL)
+          AND u.unavailableCapacity > 50
     )
-    SELECT 
-        u.affectedUnit as bmu_id,
-        COALESCE(bmu.bmunitname, u.assetName, u.affectedUnit) as asset_name,
-        COALESCE(bmu.fueltype, u.fuelType, 'Unknown') as fuel_type,
-        CAST(u.unavailableCapacity AS INT64) as unavail_mw,
-        CAST(u.normalCapacity AS INT64) as normal_mw,
-        u.cause,
-        u.unavailabilityType,
-        u.participantName,
-        u.affectedArea,
-        u.biddingZone,
-        u.eventStartTime,
-        u.eventEndTime,
-        FORMAT_TIMESTAMP('%Y-%m-%d %H:%M', u.eventStartTime) as start_time,
-        FORMAT_TIMESTAMP('%Y-%m-%d %H:%M', u.eventEndTime) as end_time,
-        TIMESTAMP_DIFF(COALESCE(u.eventEndTime, CURRENT_TIMESTAMP()), u.eventStartTime, HOUR) as duration_hours,
-        u.eventType
-    FROM `{PROJECT_ID}.{DATASET}.bmrs_remit_unavailability` u
-    INNER JOIN latest_revisions lr
-        ON u.affectedUnit = lr.affectedUnit
-        AND u.revisionNumber = lr.max_rev
-    LEFT JOIN `{PROJECT_ID}.{DATASET}.bmu_registration_data` bmu
-        ON u.affectedUnit = bmu.nationalgridbmunit
-        OR u.affectedUnit = bmu.elexonbmunit
-    WHERE u.eventStatus = 'Active'
-      AND TIMESTAMP(u.eventStartTime) <= CURRENT_TIMESTAMP()
-      AND (TIMESTAMP(u.eventEndTime) >= CURRENT_TIMESTAMP() OR u.eventEndTime IS NULL)
-      AND u.unavailableCapacity > 50
-    ORDER BY u.unavailableCapacity DESC
+    SELECT * EXCEPT(rn)
+    FROM deduplicated
+    WHERE rn = 1
+    ORDER BY unavail_mw DESC
     LIMIT 15
     """
-    
+
     try:
         df = bq_client.query(query).to_dataframe()
         return df if not df.empty else None
@@ -81,10 +87,10 @@ def update_outages():
     print("\n" + "=" * 80)
     print("⚡ UPDATING LIVE DASHBOARD V2 OUTAGES")
     print("=" * 80)
-    
+
     # Initialize BigQuery client
     bq_client = bigquery.Client(project=PROJECT_ID, location='US')
-    
+
     # Initialize Google Sheets client
     credentials = service_account.Credentials.from_service_account_file(
         SA_FILE,
@@ -93,16 +99,16 @@ def update_outages():
     gc = gspread.authorize(credentials)
     spreadsheet = gc.open_by_key(SPREADSHEET_ID)
     sheet = spreadsheet.worksheet(SHEET_NAME)
-    
+
     print(f"\n📥 Fetching outages data from BigQuery...")
     outages = get_outages_data(bq_client)
-    
+
     if outages is None or len(outages) == 0:
         print("⚠️  No outages data found")
         return
-    
+
     print(f"   ✅ Found {len(outages)} active outages")
-    
+
     # Fuel type emojis
     fuel_emoji = {
         'Fossil Gas': '🏭', 'CCGT': '🏭', 'Gas': '🏭',
@@ -117,16 +123,16 @@ def update_outages():
         'INTFR': '🇫🇷', 'INTEW': '🇮🇪', 'INTNED': '🇳🇱', 'INTIRL': '🇮🇪',
         'INTIFA2': '🇫🇷', 'INTNEM': '🇧🇪', 'INTNSL': '🇳🇴', 'INTVKL': '🇳🇴'
     }
-    
+
     # Format outage data for Live Dashboard v2
-    # Columns: G=Asset Name, H=Fuel Type, I=Unavail MW, J=Normal MW, K=Cause, 
+    # Columns: G=Asset Name, H=Fuel Type, I=Unavail MW, J=Normal MW, K=Cause,
     #          L=Planned/Unplanned, M=Expected Return, N=Duration, O=Operator, P=Area, Q=Zone
     outage_data = []
     for _, row in outages.iterrows():
         asset = str(row['asset_name']) if pd.notna(row['asset_name']) else str(row['bmu_id'])
         fuel = row['fuel_type'] if pd.notna(row['fuel_type']) else 'Unknown'
         fuel_display = f"{fuel_emoji.get(fuel, '❓')} {fuel}" if fuel != 'Unknown' else 'Unknown'
-        
+
         # Format duration (hours to days/hours)
         duration_hours = int(row['duration_hours']) if pd.notna(row['duration_hours']) else 0
         if duration_hours >= 24:
@@ -135,15 +141,15 @@ def update_outages():
             duration_str = f"{days}d {hours}h" if hours > 0 else f"{days}d"
         else:
             duration_str = f"{duration_hours}h"
-        
+
         # Format return date
         return_date = row['end_time'] if pd.notna(row['end_time']) else 'Unknown'
-        
+
         # Format planned/unplanned
         outage_type = row['unavailabilityType'] if pd.notna(row['unavailabilityType']) else 'Unknown'
         outage_emoji = '📅' if outage_type == 'Planned' else '⚡'
         outage_display = f"{outage_emoji} {outage_type}"
-        
+
         outage_data.append([
             asset,  # Column G - Asset Name
             fuel_display,  # Column H - Fuel Type
@@ -157,31 +163,40 @@ def update_outages():
             row['affectedArea'] if pd.notna(row['affectedArea']) else '',  # Column P - Area
             row['biddingZone'] if pd.notna(row['biddingZone']) else ''  # Column Q - Bidding Zone
         ])
-    
+
     print(f"\n✍️  Writing to Live Dashboard v2 sheet...")
-    
+
     # Calculate summary statistics
     total_outages = len(outages)
     total_unavail_mw = outages['unavail_mw'].sum()
     total_normal_mw = outages['normal_mw'].sum()
-    
-    # Clear old outages data (rows 31-60, columns G-Q)
+
+    # Clear old outages data using simple clear method
+    import time
+
+    # Clear the range
+    sheet.batch_clear(['G19:Q54'])
+    time.sleep(1)
+
+    # Write title (row 25), summary (row 26), header (row 27), and data (rows 28+)
+    title_text = f"⚠️ ACTIVE OUTAGES - Top 15 by Capacity | Total: {total_outages} units | Offline: {total_unavail_mw:,.0f} MW | Normal Capacity: {total_normal_mw:,.0f} MW"
+
     sheet.batch_update([
-        {'range': 'G31:Q60', 'values': [[''] * 11] * 30}
+        {'range': 'G25', 'values': [[title_text]]},
     ])
-    
-    # Write summary (row 31), blank (row 32), header (row 33), and data (rows 34+)
-    summary_text = f"⚠️ ACTIVE OUTAGES - Top 15 by Capacity | Total: {total_outages} units | Offline: {total_unavail_mw:,.0f} MW | Normal Capacity: {total_normal_mw:,.0f} MW"
-    
+    time.sleep(0.5)
     sheet.batch_update([
-        {'range': 'G31', 'values': [[summary_text]]},
-        {'range': 'G33:Q33', 'values': [['Asset Name', 'Fuel Type', 'Unavail (MW)', 'Normal (MW)', 'Cause', 'Type', 'Expected Return', 'Duration', 'Operator', 'Area', 'Zone']]},
-        {'range': f'G34:Q{33 + len(outage_data)}', 'values': outage_data}
+        # Row 26 intentionally blank
+        {'range': 'G27:Q27', 'values': [['Asset Name', 'Fuel Type', 'Unavail (MW)', 'Normal (MW)', 'Cause', 'Category', 'Expected Return', 'Duration', 'Operator', 'Area', 'Zone']]},
     ])
-    
+    time.sleep(0.5)
+    sheet.batch_update([
+        {'range': f'G28:Q{27 + len(outage_data)}', 'values': outage_data}
+    ])
+
     print(f"   ✅ Outages updated ({len(outage_data)} units, {total_unavail_mw:,.0f} MW offline)")
     print(f"   First: {outage_data[0][0]} | {outage_data[0][1]} - {outage_data[0][2]} MW (Normal: {outage_data[0][3]} MW) | Return: {outage_data[0][6]}")
-    
+
     # Set column widths for better display
     sheet_id = sheet.id
     requests = [
@@ -274,10 +289,10 @@ def update_outages():
             }
         }
     ]
-    
+
     spreadsheet.batch_update({'requests': requests})
     print(f"   ✅ Column widths optimized")
-    
+
     print("\n" + "=" * 80)
     print("✅ OUTAGES UPDATE COMPLETE")
     print("=" * 80)

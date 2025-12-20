@@ -22,8 +22,8 @@ import requests
 from bs4 import BeautifulSoup
 from google.cloud import bigquery
 
-# Set credentials
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'inner-cinema-credentials.json'
+# Credentials set via environment variable (GOOGLE_APPLICATION_CREDENTIALS)
+# No need to set here - cron job handles it
 
 # --------- CONFIG ---------
 PROJECT_ID = "inner-cinema-476211-u9"
@@ -48,10 +48,7 @@ DATASETS: Dict[str, Dict[str, str]] = {
         "page_url": "https://connecteddata.nationalgrid.co.uk/dataset/flexibility-forecasts",
         "table": f"{PROJECT_ID}.{DATASET_ID}.cmz_forecasts",
     },
-    "flex_requirements": {
-        "page_url": "https://connecteddata.nationalgrid.co.uk/dataset/flexibility-requirements",
-        "table": f"{PROJECT_ID}.{DATASET_ID}.cmz_requirements",
-    },
+    # Note: flex_requirements dataset deprecated/removed from NESO portal (404 as of Dec 2025)
 }
 
 USER_AGENT = "Upowerenergy-Constraints-Ingest/1.0 (george@upowerenergy.uk)"
@@ -154,10 +151,15 @@ def find_csv_links(page_url: str) -> List[str]:
         return []
 
 
-def download_csv_to_dataframe(csv_url: str) -> pd.DataFrame:
+def download_and_parse_csv(csv_url: str) -> pd.DataFrame:
     """Download CSV and return as DataFrame"""
     print(f"📥 Downloading: {csv_url}")
-    df = pd.read_csv(csv_url)
+    # Try UTF-8 first, fall back to latin-1 for files with £ symbol or other special chars
+    try:
+        df = pd.read_csv(csv_url, encoding='utf-8')
+    except UnicodeDecodeError:
+        print(f"   ⚠️  UTF-8 failed, using latin-1 encoding...")
+        df = pd.read_csv(csv_url, encoding='latin-1')
     print(f"   Loaded {len(df):,} rows")
     return df
 
@@ -221,7 +223,7 @@ def process_dataset(client: bigquery.Client, dataset_key: str, cfg: Dict[str, st
 
     for csv_url in new_links:
         try:
-            df = download_csv_to_dataframe(csv_url)
+            df = download_and_parse_csv(csv_url)
 
             # Normalize column names - BigQuery column name rules:
             # - Only letters, numbers, underscores

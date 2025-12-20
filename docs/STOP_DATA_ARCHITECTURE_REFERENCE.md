@@ -1,7 +1,7 @@
 # ⚠️ STOP: Data Architecture Quick Reference
 
-**Purpose:** Prevent repeating data format/table confusion  
-**Read this BEFORE writing ANY query or analysis script**  
+**Purpose:** Prevent repeating data format/table confusion
+**Read this BEFORE writing ANY query or analysis script**
 **Last Updated:** 5 December 2025 (bmrs_costs gap filled)
 
 ---
@@ -26,7 +26,7 @@ We keep rediscovering that:
 ```bash
 # Quick check template
 bq query --use_legacy_sql=false "
-SELECT 
+SELECT
   MIN(settlementDate) as min_date,
   MAX(settlementDate) as max_date,
   COUNT(DISTINCT settlementDate) as unique_dates
@@ -51,9 +51,9 @@ WITH combined AS (
   SELECT CAST(settlementDate AS DATE) as date, ...
   FROM `bmrs_TABLE_NAME`
   WHERE settlementDate < '2025-XX-XX'  -- Cutoff date
-  
+
   UNION ALL
-  
+
   -- Real-time
   SELECT CAST(settlementDate AS DATE) as date, ...
   FROM `bmrs_TABLE_NAME_iris`
@@ -75,8 +75,10 @@ SELECT * FROM combined
 | **bmrs_fuelinst** | Historical | 2024-01-01 → recent | 669 | DATETIME | ✅ Full | **MW** |
 | **bmrs_fuelinst_iris** | Real-time | Recent | ? | DATETIME | 🟢 Live | **MW** ⚠️ |
 | **bmrs_freq** | Historical | Unknown | ? | DATETIME | ⚠️ Check | Hz |
-| **bmrs_mid** | Historical | 2024-01-01 → recent | ? | DATETIME | ✅ Full | £/MWh (wholesale) |
+| **bmrs_mid** | Historical | 2024-01-01 → 2025-12-18 | ~1418 | DATETIME | ⚠️ **24 days missing** | £/MWh (wholesale) |
 | **bmrs_mid_iris** | Real-time | Recent | ? | DATETIME | 🟢 Live | £/MWh (wholesale) |
+| **bmrs_remit** | Historical | N/A | 0 | DATETIME | ❌ Empty (API 404) | Outage messages |
+| **bmrs_remit_iris** | Real-time | 2025-11-18 → recent | ~30 | DATETIME | ✅ **Active** (10.5k records) | Outage messages |
 | **demand_outturn** | Hybrid | 2025-09-27 → 2025-10-25 | 29 | **STRING** | ⚠️ Recent only | MW |
 | **bmrs_bod_iris** | Real-time | Recent | ? | DATETIME | 🟢 Live | £/MWh |
 | **bmrs_freq_iris** | Real-time | Recent | ? | DATETIME | 🟢 Live | Hz |
@@ -86,6 +88,15 @@ SELECT * FROM combined
 - **bmrs_mid**: **WHOLESALE** market index prices (day-ahead/within-day)
 - Use `bmrs_costs` for battery arbitrage, imbalance settlement
 - Use `bmrs_mid` for wholesale market analysis, forward curves
+
+**⚠️ KNOWN DATA GAPS (PERMANENT):**
+- **bmrs_mid**: 24 days missing in 6-day blocks (Apr/Jul/Sep/Oct 2024)
+  - API confirmed 0 records available - NOT RECOVERABLE
+  - Pattern: Apr 16-21, Jul 16-21, Sep 10-15, Oct 08-13
+  - Root cause: Genuine API outages, data never published
+- **bmrs_remit** (Historical): API endpoint returns HTTP 404 (deprecated)
+  - **Use bmrs_remit_iris instead** (active since Nov 18, 2025)
+  - 10,540 records, 177 unique assets, ~150 records/day
 
 **⚠️ CRITICAL:** `bmrs_fuelinst_iris.generation` column is in **MW** (NOT MWh!)
 ```python
@@ -125,7 +136,7 @@ ON boalf.bmUnit = bod.bmUnit
    AND boalf.settlementPeriod = bod.settlementPeriod
 
 -- Derive acceptance type from level direction
-acceptanceType = CASE 
+acceptanceType = CASE
   WHEN levelTo > levelFrom THEN 'OFFER'  -- Increasing = generation offer
   WHEN levelTo < levelFrom THEN 'BID'    -- Decreasing = reduction bid
   ELSE 'UNKNOWN'
@@ -195,7 +206,7 @@ WHERE DATE(settlementDate) = '2025-10-17'
 **✅ CORRECT - Use filtered view**:
 ```sql
 -- Use view with Valid records only
-SELECT 
+SELECT
   bmUnit,
   AVG(acceptancePrice) as avg_price_gbp_per_mwh,
   SUM(revenue_estimate_gbp) as total_revenue
@@ -310,7 +321,7 @@ FROM demand_outturn
 **❌ WRONG:**
 ```sql
 -- Direct join fails: DATETIME vs STRING
-FROM bmrs_bod 
+FROM bmrs_bod
 JOIN demand_outturn USING (settlementDate)
 -- Error: incompatible types
 ```
@@ -559,9 +570,9 @@ All these already exist - **USE THEM:**
 
 ---
 
-**Last Updated:** 31 October 2025  
-**Maintainer:** Document any new discoveries here  
-**Next Update:** When new tables added or coverage changes  
+**Last Updated:** 31 October 2025
+**Maintainer:** Document any new discoveries here
+**Next Update:** When new tables added or coverage changes
 
 **FILE LOCATION:** `/Users/georgemajor/GB Power Market JJ/STOP_DATA_ARCHITECTURE_REFERENCE.md`
 

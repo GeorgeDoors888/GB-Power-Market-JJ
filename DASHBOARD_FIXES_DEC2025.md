@@ -3,7 +3,7 @@
 ## Issues Resolved
 
 ### 1. ✅ Sparklines Being Overwritten/Missing
-**Problem**: Columns D and E (bar charts and sparklines) were disappearing  
+**Problem**: Columns D and E (bar charts and sparklines) were disappearing
 **Root Causes**:
 - Merged cells C12:F22 prevented individual cell values from displaying
 - Apps Script (clasp-deployed) was overwriting Python updates
@@ -19,7 +19,7 @@
 ---
 
 ### 2. ✅ Wrong Sparkline Type (Line Instead of Bars)
-**Problem**: Fuel sparklines showing as line graphs instead of bar charts per settlement period  
+**Problem**: Fuel sparklines showing as line graphs instead of bar charts per settlement period
 **User Requirement**: "these re meant to be bar charts every settlment period 📈 Trend (00:00→)"
 
 **Solution**: Changed sparkline type from LINE to COLUMN in `update_live_dashboard_v2.py`
@@ -27,7 +27,7 @@
 # Before
 sparkline_formula = f'=SPARKLINE(..., {{"charttype","line";"linewidth",2}})'
 
-# After  
+# After
 sparkline_formula = f'=SPARKLINE(..., {{"charttype","column"}})'
 ```
 
@@ -42,7 +42,7 @@ sparkline_formula = f'=SPARKLINE(..., {{"charttype","column"}})'
 
 **Solution**: Added KPI sparkline configuration to main script:
 - A7: Wholesale Price (COLUMN, red)
-- C7: Frequency (LINE, green) 
+- C7: Frequency (LINE, green)
 - E7: Total Generation (COLUMN, orange)
 - G7: Wind Output (COLUMN, teal)
 - I7: System Demand (COLUMN, blue)
@@ -54,7 +54,7 @@ sparkline_formula = f'=SPARKLINE(..., {{"charttype","column"}})'
 ### 4. ✅ Corrupted Data in Generation Mix Section
 **Problem**: Old sparkline formulas and interconnector data appearing in wrong columns (C-G)
 
-**Solution**: 
+**Solution**:
 - Cleared columns C13:G22 using Sheets API
 - Re-ran dashboard updater to populate with fresh formulas
 - Verified =TEXT() and =REPT() formulas correct
@@ -64,7 +64,7 @@ sparkline_formula = f'=SPARKLINE(..., {{"charttype","column"}})'
 ---
 
 ### 5. ✅ Missing Interconnector Connection Names
-**Problem**: Column G (🔗 Connection) was blank for all interconnectors  
+**Problem**: Column G (🔗 Connection) was blank for all interconnectors
 **Root Cause**: `update_live_dashboard_v2.py` only wrote to columns J-K (MW value + bar chart)
 
 **Solution**: Added separate batch update for column G with connection names:
@@ -82,7 +82,7 @@ ic_updates.append({
 ---
 
 ### 6. ✅ Stale/Confusing Outages Data
-**Problem**: 
+**Problem**:
 - Title showing "Total: 5 units" when actually 15 units offline
 - Wrong MW totals (should be 7,881 MW offline)
 - Duplicate/confusing outages rows
@@ -100,7 +100,7 @@ ic_updates.append({
    ```
 3. Updated `auto_update_dashboard_v2.sh` to remove duplicate outages call
 
-**Result**: Outages now update automatically every 5 minutes with main dashboard  
+**Result**: Outages now update automatically every 5 minutes with main dashboard
 **Verified**: Title shows "⚠️ ACTIVE OUTAGES - Top 15 by Capacity | Total: 15 units | Offline: 7,881 MW"
 
 **Commit**: a5fcd22
@@ -126,7 +126,7 @@ ic_updates.append({
 **Log File**: `~/dashboard_v2_updates.log`
 
 ### 📊 Google Sheets
-**Spreadsheet**: [1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA](https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit)  
+**Spreadsheet**: [1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA](https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit)
 **Sheet**: "Live Dashboard v2" (SheetID: 687718775)
 
 ---
@@ -206,5 +206,5 @@ EOF
 
 ---
 
-*Last Updated: December 17, 2025*  
+*Last Updated: December 17, 2025*
 *All issues resolved and verified working*

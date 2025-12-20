@@ -5,7 +5,7 @@ const PUBLICATION_TABLE_ID = 'publication_dashboard_live';
  */
 function fetchData() {
   const query = `SELECT * FROM \`${PROJECT_ID}.${DATASET}.${PUBLICATION_TABLE_ID}\` LIMIT 1`;
-  
+
   Logger.log('Querying: ' + query);
   const results = executeBigQuery(query);
 
@@ -15,7 +15,7 @@ function fetchData() {
   }
 
   const row = results[0].f;
-  
+
   const data = {
     reportDate: row[0].v,
     kpis: {
@@ -60,7 +60,7 @@ function fetchData() {
       };
     }).filter(item => item !== null)
   };
-  
+
   Logger.log('Successfully parsed data');
   return data;
 }
@@ -71,7 +71,7 @@ function fetchData() {
 function addFuelEmoji(fuelType) {
   if (!fuelType) return '';
   const ft = fuelType.toString().toUpperCase();
-  
+
   // Direct Map for Standard Codes
   const map = {
     'WIND': '🌬️ WIND',
@@ -95,7 +95,7 @@ function addFuelEmoji(fuelType) {
     'INTNSL': '🇳🇴 INTNSL',
     'PS': '🔋 PS'
   };
-  
+
   if (map[ft]) return map[ft];
 
   // Fuzzy Match for Constraint Analysis
@@ -160,7 +160,7 @@ function addInterconnectorFlag(name) {
  */
 function displayData(sheet, data) {
   if (!data) return;
-  
+
   // Check if Python updater is managing the data
   const isPythonManaged = sheet.getRange('AA1').getValue();
   if (isPythonManaged === 'PYTHON_MANAGED') {
@@ -211,7 +211,7 @@ function displayData(sheet, data) {
       // Col G: Connection Name
       // Col H-I (Merged): Sparkline Graphic
       // Col J: Flow Value (MW)
-      
+
       // 1. Write Names to G and Values to J
       const v2InterData = data.interconnectors.map(row => [row[0], '', '', row[1]]); // G, H, I, J
       sheet.getRange(13, 7, v2InterData.length, 4).setValues(v2InterData);
@@ -221,7 +221,7 @@ function displayData(sheet, data) {
         const sheetRow = 13 + i;
         const val = parseFloat(row[1]); // Flow value
         // Green if Import (>=0), Red if Export (<0)
-        const color = val >= 0 ? "#2ecc71" : "#e74c3c"; 
+        const color = val >= 0 ? "#2ecc71" : "#e74c3c";
         // Max capacity ~2000MW (IFA) - using ABS(J) for magnitude
         return [`=SPARKLINE(ABS(J${sheetRow}), {"charttype","bar";"max",2000;"color1","${color}"})`];
       });
@@ -237,14 +237,14 @@ function displayData(sheet, data) {
   if (isV2 && data.outages && data.outages.length > 0) {
     // Outages start at row 32 (below Wind Analysis header at 30)
     // Move to Right Side (Column G) to avoid Chart on Left
-    
+
     // Clear previous outages first
     sheet.getRange('G32:L50').clearContent();
-    
+
     // Headers
     sheet.getRange('G31:J31').setValues([['Asset Name', 'Fuel Type', 'Unavail (MW)', 'Cause']]);
     sheet.getRange('G31:J31').setFontWeight('bold').setBackground('#ecf0f1');
-    
+
     const outageData = data.outages.map(o => [o.assetName, o.fuelType, o.unavailMw, o.cause]);
     sheet.getRange(32, 7, outageData.length, 4).setValues(outageData);
   }
@@ -253,7 +253,7 @@ function displayData(sheet, data) {
   if (isV2 && data.constraintAnalysis && data.constraintAnalysis.length > 0) {
     // Start at Row 55
     const startRow = 55;
-    
+
     // Clear previous data
     sheet.getRange(startRow, 1, 25, 8).clearContent(); // Cleared 8 cols
 
@@ -263,22 +263,22 @@ function displayData(sheet, data) {
       .setFontWeight('bold')
       .setBackground('#ecf0f1')
       .setBorder(true, true, true, true, true, true, '#bdc3c7', SpreadsheetApp.BorderStyle.SOLID);
-      
+
     const constraintData = data.constraintAnalysis.map(c => [
-      c.region, 
-      c.dnoArea, 
-      getGspGroupName(c.gspGroup), 
-      addFuelEmoji(c.fuelGroup), 
-      c.nActions, 
-      c.totalMwAdjusted, 
+      c.region,
+      c.dnoArea,
+      getGspGroupName(c.gspGroup),
+      addFuelEmoji(c.fuelGroup),
+      c.nActions,
+      c.totalMwAdjusted,
       c.shareOfTotalPct / 100
     ]);
-    
+
     if (constraintData.length > 0) {
       sheet.getRange(startRow + 1, 1, constraintData.length, 7).setValues(constraintData);
       // Format % column
       sheet.getRange(startRow + 1, 7, constraintData.length, 1).setNumberFormat("0.00%");
-      
+
       // Add Sparkline for Share in Col H
       const shareFormulas = constraintData.map((row, i) => {
         const val = row[6]; // % share
@@ -286,7 +286,7 @@ function displayData(sheet, data) {
         return [`=SPARKLINE(${val}, {"charttype","bar";"max",1;"color1","#3498db"})`];
       });
       sheet.getRange(startRow + 1, 8, shareFormulas.length, 1).setFormulas(shareFormulas);
-      
+
       // Apply Borders to Data
       sheet.getRange(startRow + 1, 1, constraintData.length, 8)
            .setBorder(true, true, true, true, true, true, '#bdc3c7', SpreadsheetApp.BorderStyle.SOLID);

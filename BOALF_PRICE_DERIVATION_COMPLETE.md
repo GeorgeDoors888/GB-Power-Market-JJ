@@ -1,353 +1,999 @@
-# BOALF Acceptance Price Derivation - IMPLEMENTATION COMPLETE ✅
+# BOALF Price Derivation - Complete Technical Guide
 
-**Date**: December 16, 2025  
-**Status**: Production Ready - October 2025 backfill in progress  
-**Table**: `inner-cinema-476211-u9.uk_energy_prod.bmrs_boalf_complete`
-
----
-
-## Executive Summary
-
-Successfully implemented **BOD-based price derivation** to extract missing `acceptancePrice`, `acceptanceVolume`, and `acceptanceType` fields from BOALF (Balancing Mechanism Accepted Offers/Bids) data.
-
-### The Problem
-
-**Elexon BMRS API limitation**: The `/datasets/BOALF` endpoint provides acceptance **metadata** but does NOT include price data:
-
-```
-❌ MISSING FIELDS (from public API):
-- acceptancePrice (£/MWh) - THE critical field for revenue analysis
-- acceptanceVolume (MWh) - Can derive from levelFrom/levelTo
-- acceptanceType (BID/OFFER) - Direction of balancing action
-```
-
-**Available fields** (API response):
-- ✅ acceptanceNumber, acceptanceTime, bmUnit, settlementDate/Period
-- ✅ levelFrom, levelTo (MW output levels)
-- ✅ Flags: soFlag, storFlag, rrFlag, deemedBoFlag
-
-### The Solution
-
-**Join bmrs_bod (bid-offer submissions) + bmrs_boalf (acceptances)** to derive missing fields:
-
-```sql
--- Matching logic
-ON boalf.bmUnit = bod.bmUnit
-AND DATE(boalf.settlementDate) = DATE(bod.settlementDate)  
-AND boalf.settlementPeriod = bod.settlementPeriod
-
--- Derive acceptance type & price
-acceptanceType = CASE 
-  WHEN levelTo > levelFrom THEN 'OFFER' (generator increasing output)
-  WHEN levelTo < levelFrom THEN 'BID' (generator decreasing output)
-  ELSE 'UNKNOWN' (no MW change)
-END
-
-acceptancePrice = CASE
-  WHEN acceptanceType = 'OFFER' THEN bod.offer
-  WHEN acceptanceType = 'BID' THEN bod.bid
-  ELSE NULL
-END
-
-acceptanceVolume = ABS(levelTo - levelFrom)
-```
+**Last Updated:** December 18, 2025 18:50 UTC
+**Purpose:** Explain how to convert BOALF acceptances (MW levels) to revenue (£)
+**Status:** ✅ Production - EBOCF hybrid approach deployed, 98% coverage achieved
 
 ---
 
-## Implementation Details
+## 🚨 The Core Problem
 
-### Script: `derive_boalf_prices.py`
+**BOALF gives you MW levels, NOT prices or revenue.**
 
-**Features**:
-- Deduplication: `ROW_NUMBER() OVER (PARTITION BY acceptanceNumber)` handles multiple BOD pairId matches
-- Extreme price filtering: Exclude BOD prices outside ±£5,000/MWh (default/placeholder values)
-- Type conversions: Pandas Int64 → BigQuery STRING/INTEGER compatibility
-- Batch processing: Date range support for monthly backfills
-- Logging: Detailed match statistics, price distributions by type
+### What BOALF Actually Returns
 
-**Usage**:
+`GET /balancing/acceptances` (dataset BOALF) returns acceptance events per BMU:
+
+```json
+{
+  "settlementDate": "2025-10-22",
+  "settlementPeriodFrom": 35,
+  "settlementPeriodTo": 36,
+  "timeFrom": "2025-10-22T17:00:00Z",
+  "timeTo": "2025-10-22T17:30:00Z",
+  "levelFrom": 50.0,
+  "levelTo": 107.0,
+  "nationalGridBmUnit": "DAMC-1",
+  "bmUnit": "T_DAMC-1",
+  "acceptanceNumber": "000123456",
+  "acceptanceTime": "2025-10-22T17:31:45Z",
+  "deemedBoFlag": false,
+  "soFlag": true,
+  "storFlag": false,
+  "rrFlag": false
+}
+```
+
+**What's included:**
+- ✅ Settlement periods (when the acceptance applies)
+- ✅ Clock time window (`timeFrom` → `timeTo`)
+- ✅ Power levels in MW (`levelFrom` → `levelTo`)
+- ✅ BMU identifiers
+- ✅ Acceptance metadata (number, time, flags)
+
+**What's MISSING:**
+- ❌ Price (£/MWh)
+- ❌ Volume (MWh)
+- ❌ Revenue (£)
+
+**Bottom line:** BOALF tells you *an acceptance happened* but NOT *what it was worth*.
+
+---
+
+## 💡 MW vs MWh - Critical Understanding
+
+### MW = Power (instantaneous rate)
+- **Unit:** Megawatts
+- **Meaning:** Rate of energy transfer at a single moment
+- **Example:** 1 MW = power output right now
+
+### MWh = Energy (integrated over time)
+- **Unit:** Megawatt-hours
+- **Meaning:** Total energy transferred over a period
+- **Example:** 1 MW × 1 hour = 1 MWh
+
+### The Half-Hour Confusion
+
+**Question:** "If I have 1 MW for a 30-minute settlement period, is that 500 kW?"
+
+**NO!** It's **500 kWh** (energy), not 500 kW (power).
+
+**Calculation:**
+```
+1 MW × 0.5 hours = 0.5 MWh = 500 kWh
+```
+
+**Key point:** You're halving the **time**, not the **power**.
+
+### BOALF Complication
+
+An acceptance doesn't always last exactly 30 minutes!
+
+**Example:**
+```json
+{
+  "timeFrom": "2025-10-22T17:15:00Z",
+  "timeTo": "2025-10-22T17:31:00Z",
+  "levelFrom": 50.0,
+  "levelTo": 107.0
+}
+```
+
+This acceptance:
+- Starts at 17:15
+- Ends at 17:31
+- Duration: 16 minutes (NOT 30!)
+- Spans two settlement periods (SP35: 17:00-17:30, SP36: 17:30-18:00)
+
+---
+
+## 📐 Converting MW to MWh (Trapezoid Integration)
+
+### Linear Ramp Approximation
+
+Most acceptances ramp linearly from `levelFrom` to `levelTo`.
+
+**Formula:**
+```
+MWh = (levelFrom + levelTo) / 2 × Δt_hours
+```
+
+Where:
+```
+Δt_hours = (timeTo - timeFrom) in hours
+```
+
+### Example 1: Simple Case
+
+```json
+{
+  "timeFrom": "17:00:00Z",
+  "timeTo": "17:30:00Z",
+  "levelFrom": 50.0,
+  "levelTo": 50.0
+}
+```
+
+**Calculation:**
+```
+Δt = 30 minutes = 0.5 hours
+MWh = (50 + 50) / 2 × 0.5 = 25 MWh
+```
+
+### Example 2: Ramping Acceptance
+
+```json
+{
+  "timeFrom": "17:15:00Z",
+  "timeTo": "17:31:00Z",
+  "levelFrom": 50.0,
+  "levelTo": 107.0
+}
+```
+
+**Calculation:**
+```
+Δt = 16 minutes = 16/60 hours = 0.267 hours
+MWh = (50 + 107) / 2 × 0.267 = 78.5 / 2 × 0.267 = 20.95 MWh
+```
+
+### Splitting Across Settlement Periods
+
+If acceptance spans multiple SPs, split MWh proportionally:
+
+**Example:**
+```
+Acceptance: 17:15 → 17:31 (16 minutes total)
+  - SP35 overlap: 17:15 → 17:30 (15 minutes)
+  - SP36 overlap: 17:30 → 17:31 (1 minute)
+
+Total MWh = 20.95 MWh (calculated above)
+
+SP35 share = 20.95 × (15/16) = 19.64 MWh
+SP36 share = 20.95 × (1/16) = 1.31 MWh
+```
+
+**Python implementation:**
+```python
+from datetime import datetime, timedelta
+
+def calculate_mwh(level_from, level_to, time_from, time_to):
+    """Convert BOALF acceptance to MWh using trapezoid integration"""
+    delta_hours = (time_to - time_from).total_seconds() / 3600
+    avg_mw = (level_from + level_to) / 2
+    mwh = avg_mw * delta_hours
+    return mwh
+
+def split_across_settlement_periods(time_from, time_to, total_mwh):
+    """Split MWh across settlement period boundaries"""
+    # Settlement periods are 30-min blocks starting at 23:00 day before
+    sp_results = []
+
+    current_sp_start = time_from.replace(minute=0 if time_from.minute < 30 else 30, second=0, microsecond=0)
+
+    while current_sp_start < time_to:
+        sp_end = current_sp_start + timedelta(minutes=30)
+
+        overlap_start = max(time_from, current_sp_start)
+        overlap_end = min(time_to, sp_end)
+
+        overlap_minutes = (overlap_end - overlap_start).total_seconds() / 60
+        total_minutes = (time_to - time_from).total_seconds() / 60
+
+        sp_mwh = total_mwh * (overlap_minutes / total_minutes)
+
+        sp_results.append({
+            'sp_start': current_sp_start,
+            'mwh': sp_mwh,
+            'overlap_minutes': overlap_minutes
+        })
+
+        current_sp_start = sp_end
+
+    return sp_results
+```
+
+---
+
+## 💰 Three Methods to Get £/MWh Prices
+
+### Method 1: BOD - Submitted Bid/Offer Prices ⭐ CURRENT METHOD
+
+**What it is:** The actual prices the BMU submitted in their bid/offer curve.
+
+**Endpoint:**
+```
+GET https://data.elexon.co.uk/bmrs/api/v1/balancing/bid-offer
+```
+
+**Example request:**
 ```bash
-# Single day test
-python3 derive_boalf_prices.py --start 2025-10-17 --end 2025-10-17 --dry-run
-
-# Production upload
-python3 derive_boalf_prices.py --start 2025-10-17 --end 2025-10-17
-
-# Monthly batch
-python3 derive_boalf_prices.py --start 2025-10-01 --end 2025-10-31
+curl "https://data.elexon.co.uk/bmrs/api/v1/balancing/bid-offer?\
+bmUnit=T_DAMC-1&\
+from=2025-10-22T17:00:00Z&\
+to=2025-10-22T18:00:00Z&\
+format=json"
 ```
 
-### BigQuery Table Schema
+**Response includes:**
+```json
+{
+  "bmUnit": "T_DAMC-1",
+  "timeFrom": "2025-10-22T17:00:00Z",
+  "timeTo": "2025-10-22T17:30:00Z",
+  "levelFrom": 0,
+  "levelTo": 107,
+  "pairId": 12345,
+  "bid": -50.0,
+  "offer": 997.0
+}
+```
 
-**Table**: `bmrs_boalf_complete`  
-**Partitioning**: Daily by `settlementDate`  
-**Clustering**: `bmUnit` (optimized for VLP battery queries)
+**Join keys BOALF ↔ BOD:**
+```sql
+ON boalf.bmUnit = bod.bmUnit
+AND boalf.timeFrom = bod.timeFrom
+AND boalf.timeTo = bod.timeTo
+AND boalf.levelFrom = bod.levelFrom
+AND boalf.levelTo = bod.levelTo
+AND boalf.pairId = bod.pairId  -- Critical for multi-pair matching!
+```
+
+**Which price to use:**
+- If acceptance is an **offer** (generating/reducing demand): Use `bod.offer`
+- If acceptance is a **bid** (consuming/increasing demand): Use `bod.bid`
+
+**Our implementation:** `boalf_with_prices` table (85-95% match rate)
+
+**Example revenue calculation:**
+```python
+# BOALF acceptance
+level_from = 50.0  # MW
+level_to = 107.0   # MW
+time_from = datetime(2025, 10, 22, 17, 15)
+time_to = datetime(2025, 10, 22, 17, 31)
+
+# Calculate MWh
+mwh = calculate_mwh(level_from, level_to, time_from, time_to)
+# Result: 20.95 MWh
+
+# Matched BOD price
+offer_price = 997.0  # £/MWh (from BOD)
+
+# Calculate revenue
+revenue = mwh * offer_price
+# Result: 20.95 × 997 = £20,887
+```
+
+**Pros:**
+- ✅ Most accurate (actual BMU price)
+- ✅ Action-specific (different prices for different levels)
+- ✅ Available immediately (no settlement delay)
+
+**Cons:**
+- ⚠️ Requires complex 6-field join
+- ⚠️ Match rate 85-95% (some acceptances unmatchable)
+- ⚠️ Multiple pairs at same level (ambiguity)
+
+---
+
+### Method 2: DISEBSP - System Sell/Buy Prices (SSP/SBP)
+
+**What it is:** The cash-out price for being out of balance in that settlement period.
+
+**Endpoint:**
+```
+GET https://data.elexon.co.uk/bmrs/api/v1/balancing/settlement/system-prices/{settlementDate}/{settlementPeriod}
+```
+
+**Example request:**
+```bash
+curl "https://data.elexon.co.uk/bmrs/api/v1/balancing/settlement/system-prices/2025-10-22/35"
+```
+
+**Response includes:**
+```json
+{
+  "settlementDate": "2025-10-22",
+  "settlementPeriod": 35,
+  "systemSellPrice": 150.50,
+  "systemBuyPrice": 150.50,
+  "priceDerivationCode": "BSAD"
+}
+```
+
+**Note:** SSP = SBP since November 2015 (BSC Mod P305 single pricing).
+
+**Join keys BOALF ↔ DISEBSP:**
+```sql
+ON boalf.settlementDate = disebsp.settlementDate
+AND boalf.settlementPeriodFrom = disebsp.settlementPeriod
+```
+
+**Much simpler!** Only 2 fields needed.
+
+**Which price to use:**
+- Always use `systemSellPrice` (equals `systemBuyPrice` post-P305)
+
+**Example revenue calculation:**
+```python
+# BOALF acceptance (same as before)
+mwh = 20.95  # MWh
+
+# DISEBSP price for SP35
+ssp = 150.50  # £/MWh
+
+# Calculate revenue (approximate)
+revenue = mwh * ssp
+# Result: 20.95 × 150.50 = £3,153
+```
+
+**Pros:**
+- ✅ Simple join (only 2 fields)
+- ✅ 100% coverage (always available)
+- ✅ Published quickly (~30 min after SP)
+
+**Cons:**
+- ⚠️ Less accurate (system average, not BMU-specific price)
+- ⚠️ Misses extreme prices (£997/MWh offer → £150/MWh SSP blending)
+- ⚠️ Settlement proxy (not actual BM action price)
+
+**When to use:**
+- Settlement reconciliation
+- System-level analysis
+- When BOD match fails
+
+---
+
+### Method 3: ISPSTACK - Indicative Stack Action Prices
+
+**What it is:** The specific prices of actions included in the system price calculation.
+
+**Endpoint:**
+```
+GET https://data.elexon.co.uk/bmrs/api/v1/balancing/settlement/stack/all/{bidOffer}/{settlementDate}/{settlementPeriod}
+```
+
+**Example request:**
+```bash
+curl "https://data.elexon.co.uk/bmrs/api/v1/balancing/settlement/stack/all/OFFER/2025-10-22/35"
+```
+
+**Response includes:**
+```json
+{
+  "settlementDate": "2025-10-22",
+  "settlementPeriod": 35,
+  "bmUnit": "T_DAMC-1",
+  "acceptanceNumber": "000123456",
+  "pairId": 12345,
+  "cadlFlag": true,
+  "soFlag": true,
+  "storFlag": false,
+  "price": 997.0,
+  "volume": 57.0
+}
+```
+
+**Join keys BOALF ↔ ISPSTACK:**
+```sql
+ON boalf.bmUnit = ispstack.bmUnit
+AND boalf.settlementDate = ispstack.settlementDate
+AND boalf.settlementPeriodFrom = ispstack.settlementPeriod
+AND boalf.acceptanceNumber = ispstack.acceptanceNumber
+```
+
+**Which price to use:**
+- Use `ispstack.price` (already includes bid/offer distinction)
+
+**Example revenue calculation:**
+```python
+# From ISPSTACK (no need for MWh calculation!)
+volume = 57.0  # MWh (already calculated by Elexon)
+price = 997.0  # £/MWh
+
+# Calculate revenue
+revenue = volume * price
+# Result: 57 × 997 = £56,829
+```
+
+**Pros:**
+- ✅ Includes volume (MWh already calculated!)
+- ✅ Specific to system price build
+- ✅ Good match rate (acceptances in stack)
+
+**Cons:**
+- ⚠️ Only includes actions in the stack (misses non-priced acceptances)
+- ⚠️ Indicative (subject to settlement revisions)
+- ⚠️ More complex logic (CADL, SO flags)
+
+**When to use:**
+- Understanding system price composition
+- Validating settlement calculations
+- When BOD match fails but need accurate price
+
+---
+
+## 🚀 Method 4: EBOCF - Pre-Calculated Cashflows (⭐ RECOMMENDED)
+
+**What it is:** Elexon does all the work for you - MW→MWh→£ already calculated.
+
+**Endpoint:**
+```
+GET https://data.elexon.co.uk/bmrs/api/v1/balancing/settlement/indicative/cashflows/all/{bidOffer}/{settlementDate}/{settlementPeriod}
+```
+
+**Example request:**
+```bash
+curl "https://data.elexon.co.uk/bmrs/api/v1/balancing/settlement/indicative/cashflows/all/OFFER/2025-10-22/35"
+```
+
+**Response includes:**
+```json
+{
+  "settlementDate": "2025-10-22",
+  "settlementPeriod": 35,
+  "bmUnit": "T_DAMC-1",
+  "acceptanceNumber": "000123456",
+  "cashflow": 56829.00,
+  "volume": 57.0,
+  "price": 997.0
+}
+```
+
+**No calculation needed!** `cashflow` field is the final £ amount.
+
+**Join keys BOALF ↔ EBOCF:**
+```sql
+ON boalf.bmUnit = ebocf.bmUnit
+AND boalf.settlementDate = ebocf.settlementDate
+AND boalf.settlementPeriodFrom = ebocf.settlementPeriod
+AND boalf.acceptanceNumber = ebocf.acceptanceNumber
+```
+
+**Pros:**
+- ✅ **NO MATH NEEDED** - cashflow already calculated
+- ✅ Volume (MWh) included
+- ✅ Price (£/MWh) included
+- ✅ Handles complex settlement logic
+- ✅ Accounts for flags (SO, STOR, CADL, etc.)
+
+**Cons:**
+- ⚠️ Indicative (subject to settlement revisions)
+- ⚠️ May not cover all acceptances
+- ⚠️ Published with settlement delay
+
+**When to use:**
+- ✅ **RECOMMENDED** for revenue analysis
+- ✅ When you trust Elexon's calculations
+- ✅ When you need final £ amounts
+
+---
+
+## 📊 Comparison: Which Method to Use?
+
+| Method | Accuracy | Coverage | Complexity | Speed | Use Case |
+|--------|----------|----------|------------|-------|----------|
+| **BOD Matching** | ⭐⭐⭐⭐⭐ | 85-95% | High (6-field join) | Fast | Action-level analysis |
+| **DISEBSP (SSP/SBP)** | ⭐⭐⭐ | 100% | Low (2-field join) | Fast | Settlement proxy |
+| **ISPSTACK** | ⭐⭐⭐⭐ | 70-80% | Medium (4-field join) | Medium | Price build validation |
+| **EBOCF Cashflows** | ⭐⭐⭐⭐⭐ | ~95% | **Lowest** (join only) | Medium | **Revenue reporting** |
+
+### Recommendation by Use Case
+
+**Battery revenue analysis (current need):**
+→ Use **EBOCF** (easiest, most reliable)
+→ Fallback to **BOD** for unmatchable cases (our current boalf_with_prices)
+
+**VLP strategy optimization:**
+→ Use **BOD** (need actual bid/offer prices to decide strategy)
+
+**Settlement reconciliation:**
+→ Use **DISEBSP** (system price is the settlement reference)
+
+**Market research / price formation:**
+→ Use **ISPSTACK** (understand what's in the stack)
+
+---
+
+## 💻 Implementation Examples
+
+### Current Approach (BOD Matching)
+
+**SQL for boalf_with_prices:**
+```sql
+WITH boalf_matched AS (
+  SELECT
+    boalf.bmUnit,
+    boalf.settlementDate,
+    boalf.settlementPeriodFrom,
+    boalf.acceptanceNumber,
+    boalf.timeFrom,
+    boalf.timeTo,
+    boalf.levelFrom,
+    boalf.levelTo,
+    bod.offer AS acceptancePrice,
+    bod.pairId,
+    -- Calculate MWh (trapezoid integration)
+    ((boalf.levelFrom + boalf.levelTo) / 2.0) *
+    (TIMESTAMP_DIFF(boalf.timeTo, boalf.timeFrom, SECOND) / 3600.0) AS acceptanceVolume
+  FROM `inner-cinema-476211-u9.uk_energy_prod.bmrs_boalf` AS boalf
+  INNER JOIN `inner-cinema-476211-u9.uk_energy_prod.bmrs_bod` AS bod
+    ON boalf.bmUnit = bod.bmUnit
+    AND boalf.timeFrom = bod.timeFrom
+    AND boalf.timeTo = bod.timeTo
+    AND boalf.levelFrom = bod.levelFrom
+    AND boalf.levelTo = bod.levelTo
+    AND boalf.pairId = bod.pairId
+  WHERE boalf.settlementDate >= '2022-01-01'
+)
+SELECT
+  *,
+  acceptancePrice * acceptanceVolume AS revenue_gbp
+FROM boalf_matched
+WHERE acceptancePrice IS NOT NULL
+  AND acceptanceVolume > 0
+```
+
+**Match statistics:**
+- 11.3M total BOALF records (2022-2025)
+- 9.6-10.7M matched with BOD (~85-95% rate)
+- £6.85B total revenue tracked
+
+---
+
+### Recommended Approach (EBOCF + BOD Hybrid)
+
+**Step 1: Try EBOCF first**
+```sql
+WITH ebocf_data AS (
+  SELECT
+    bmUnit,
+    settlementDate,
+    settlementPeriod,
+    acceptanceNumber,
+    cashflow AS revenue_gbp,
+    volume AS acceptanceVolume,
+    price AS acceptancePrice,
+    'EBOCF' AS source
+  FROM `inner-cinema-476211-u9.uk_energy_prod.bmrs_ebocf`
+  WHERE settlementDate >= '2025-01-01'
+)
+```
+
+**Step 2: Fill gaps with BOD matching**
+```sql
+, bod_matched AS (
+  SELECT
+    boalf.bmUnit,
+    boalf.settlementDate,
+    boalf.settlementPeriodFrom AS settlementPeriod,
+    boalf.acceptanceNumber,
+    bod.offer * ((boalf.levelFrom + boalf.levelTo) / 2.0) *
+      (TIMESTAMP_DIFF(boalf.timeTo, boalf.timeFrom, SECOND) / 3600.0) AS revenue_gbp,
+    ((boalf.levelFrom + boalf.levelTo) / 2.0) *
+      (TIMESTAMP_DIFF(boalf.timeTo, boalf.timeFrom, SECOND) / 3600.0) AS acceptanceVolume,
+    bod.offer AS acceptancePrice,
+    'BOD' AS source
+  FROM `inner-cinema-476211-u9.uk_energy_prod.bmrs_boalf` AS boalf
+  INNER JOIN `inner-cinema-476211-u9.uk_energy_prod.bmrs_bod` AS bod
+    ON boalf.bmUnit = bod.bmUnit
+    AND boalf.timeFrom = bod.timeFrom
+    AND boalf.timeTo = bod.timeTo
+    AND boalf.levelFrom = bod.levelFrom
+    AND boalf.levelTo = bod.levelTo
+    AND boalf.pairId = bod.pairId
+  WHERE boalf.settlementDate >= '2025-01-01'
+    AND boalf.acceptanceNumber NOT IN (SELECT acceptanceNumber FROM ebocf_data)
+)
+```
+
+**Step 3: Combine with priority**
+```sql
+SELECT * FROM ebocf_data
+UNION ALL
+SELECT * FROM bod_matched
+```
+
+**Expected coverage:** ~98-99% (EBOCF ~95% + BOD fills remaining 3-4%)
+
+---
+
+### Python Script to Ingest EBOCF
+
+**File:** `/home/george/GB-Power-Market-JJ/ingest_ebocf_cashflows.py`
+
+```python
+#!/usr/bin/env python3
+"""
+Ingest EBOCF (Indicative Cashflows) from Elexon API to BigQuery
+This gives us pre-calculated revenue (£) without manual MW→MWh→£ math
+"""
+
+import requests
+from google.cloud import bigquery
+from datetime import datetime, timedelta
+import time
+
+PROJECT_ID = "inner-cinema-476211-u9"
+DATASET = "uk_energy_prod"
+TABLE = "bmrs_ebocf"
+
+client = bigquery.Client(project=PROJECT_ID, location="US")
+
+# Elexon API endpoint
+BASE_URL = "https://data.elexon.co.uk/bmrs/api/v1"
+ENDPOINT = "/balancing/settlement/indicative/cashflows/all"
+
+def fetch_ebocf(bid_offer, settlement_date, settlement_period):
+    """
+    Fetch indicative cashflows for a specific SP
+
+    Args:
+        bid_offer: "BID" or "OFFER"
+        settlement_date: "YYYY-MM-DD"
+        settlement_period: 1-50
+    """
+    url = f"{BASE_URL}{ENDPOINT}/{bid_offer}/{settlement_date}/{settlement_period}"
+
+    response = requests.get(url)
+    response.raise_for_status()
+
+    data = response.json()
+    return data.get('data', [])
+
+def ingest_date_range(start_date, end_date):
+    """Ingest EBOCF data for date range"""
+    current = start_date
+
+    while current <= end_date:
+        date_str = current.strftime('%Y-%m-%d')
+        print(f"Processing {date_str}...")
+
+        records = []
+
+        for sp in range(1, 51):  # Settlement periods 1-50
+            for bid_offer in ['BID', 'OFFER']:
+                try:
+                    data = fetch_ebocf(bid_offer, date_str, sp)
+
+                    for row in data:
+                        row['ingestion_timestamp'] = datetime.utcnow().isoformat()
+                        records.append(row)
+
+                    time.sleep(0.1)  # Rate limiting
+
+                except Exception as e:
+                    print(f"  Error {date_str} SP{sp} {bid_offer}: {e}")
+                    continue
+
+        if records:
+            # Upload to BigQuery
+            table_ref = f"{PROJECT_ID}.{DATASET}.{TABLE}"
+            errors = client.insert_rows_json(table_ref, records)
+
+            if errors:
+                print(f"  ❌ Errors uploading {date_str}: {errors}")
+            else:
+                print(f"  ✅ Uploaded {len(records)} records for {date_str}")
+
+        current += timedelta(days=1)
+
+if __name__ == "__main__":
+    # Ingest last 30 days
+    end_date = datetime.now().date()
+    start_date = end_date - timedelta(days=30)
+
+    print(f"Ingesting EBOCF from {start_date} to {end_date}")
+    ingest_date_range(start_date, end_date)
+    print("✅ Complete!")
+```
+
+---
+
+## 🔧 BigQuery Schema for EBOCF
+
+**Table:** `inner-cinema-476211-u9.uk_energy_prod.bmrs_ebocf`
 
 ```sql
-CREATE TABLE `inner-cinema-476211-u9.uk_energy_prod.bmrs_boalf_complete` (
-  -- Original BOALF fields
+CREATE TABLE `inner-cinema-476211-u9.uk_energy_prod.bmrs_ebocf` (
+  settlementDate DATE,
+  settlementPeriod INT64,
+  bmUnit STRING,
+  nationalGridBmUnit STRING,
   acceptanceNumber STRING,
   acceptanceTime TIMESTAMP,
-  bmUnit STRING,
-  settlementDate TIMESTAMP,
-  settlementPeriod INTEGER,
-  timeFrom STRING,
-  timeTo STRING,
-  levelFrom INTEGER,
-  levelTo INTEGER,
+  deemedBoFlag BOOLEAN,
   soFlag BOOLEAN,
   storFlag BOOLEAN,
   rrFlag BOOLEAN,
-  deemedBoFlag BOOLEAN,
-  
-  -- DERIVED FIELDS (from BOD matching)
-  acceptancePrice FLOAT64,      -- £/MWh (offer/bid price from BOD submission)
-  acceptanceVolume FLOAT64,     -- MW (ABS(levelTo - levelFrom))
-  acceptanceType STRING,        -- BID | OFFER | UNKNOWN
-  
-  -- Metadata
-  _price_source STRING,         -- BOD_MATCH | UNMATCHED | BOD_REALTIME
-  _matched_pairId STRING,       -- BOD pairId used for price match
-  _ingested_utc TIMESTAMP       -- Upload timestamp
+  cashflow FLOAT64,          -- Revenue in £ (pre-calculated!)
+  volume FLOAT64,             -- MWh (pre-calculated!)
+  price FLOAT64,              -- £/MWh (pre-calculated!)
+  bidOffer STRING,            -- "BID" or "OFFER"
+  ingestion_timestamp TIMESTAMP
 )
-PARTITION BY DATE(settlementDate)
-CLUSTER BY bmUnit;
+PARTITION BY settlementDate
+CLUSTER BY bmUnit, settlementPeriod;
 ```
 
 ---
 
-## Test Results: October 17, 2025
+## 📈 Revenue Analysis Queries
 
-**High VLP Price Day** (Oct 17 = peak of £79.83/MWh 6-day event)
-
-### Match Rate
-- **Total acceptances**: 3,948
-- **Matched with BOD prices**: 3,945 (99.9%)
-- **Unmatched**: 3 (0.1%)
-
-### Price Distribution
-
-| Acceptance Type | Count | Avg Price | Min Price | Max Price | Avg Volume (MW) |
-|-----------------|-------|-----------|-----------|-----------|-----------------|
-| **OFFER**       | 1,313 | £105.87/MWh | -£451/MWh* | £285.88/MWh | 42.6 MW |
-| **BID**         | 2,239 | £47.62/MWh | -£873/MWh* | £104.40/MWh | 17.9 MW |
-| **UNKNOWN**     | 396   | NULL      | NULL      | NULL      | 0 MW (no change) |
-
-*Negative prices indicate payment to reduce output (wind curtailment, interconnector flow reversal)
-
-### VLP Battery Acceptances
-
-**Top 10 VLP battery offer prices** (Oct 17, 2025):
-
-```
-bmUnit          Settlement Period   Type    Price        Volume   levelFrom → levelTo
-2__FFSEN007     SP27               OFFER   £136.45/MWh  9 MW     -9 → 0
-2__FFSEN007     SP31               OFFER   £135.60/MWh  17 MW    -20 → -3
-2__FBPGM002     SP36               OFFER   £134.36/MWh  17 MW    0 → 17
-2__FBPGM001     SP36               OFFER   £133.97/MWh  11 MW    0 → 11
-```
-
-**Key insight**: VLP batteries (FFSEN, FBPGM units) accepted at **£130-136/MWh** during peak hours, significantly higher than Oct 17-23 average of £79.83/MWh from settlement data (bmrs_disbsad).
-
----
-
-## Data Coverage
-
-### Current Status (Dec 16, 2025)
-
-✅ **Completed**:
-- Oct 17, 2025: 3,948 rows uploaded (99.9% match rate)
-- Table created with partitioning + clustering
-
-⏳ **In Progress**:
-- Oct 1-31, 2025: Full month backfill running (expect ~120k acceptances)
-
-🔜 **Planned**:
-- Historical backfill: 2022-01-01 to 2025-11-30 (~11M total acceptances)
-- IRIS real-time integration: Derive prices for live BOALF stream
-
-### Source Data Coverage
-
-| Table | Date Range | Rows | Units |
-|-------|------------|------|-------|
-| `bmrs_bod` (bid-offer submissions) | 2022-01-01 to 2025-10-28 | 391M | 1,957 |
-| `bmrs_boalf` (acceptances) | 2022-01-01 to 2025-11-04 | 11.5M | 672 |
-| **Overlap period** | **2022-01-01 to 2025-10-28** | **~10.5M acceptances** | **Derivable** |
-
----
-
-## Validation vs Settlement Proxy
-
-### Previous Approach (bmrs_disbsad)
-- **Source**: Settlement data (post-facto, what was actually paid)
-- **Calculation**: `SAFE_DIVIDE(cost, volume)` = effective £/MWh
-- **Pros**: Actual payments, includes all settlement adjustments
-- **Cons**: Not canonical acceptance prices, doesn't distinguish BID vs OFFER
-
-### New Approach (bmrs_boalf_complete)
-- **Source**: BOD-derived acceptance prices (pre-settlement, what NESO accepted)
-- **Calculation**: Direct from BOD `offer`/`bid` fields matched to acceptances
-- **Pros**: Canonical acceptance prices, BID/OFFER distinction, closer to regulatory data
-- **Cons**: 10-15% unmatched (units without BOD submissions)
-
-### Expected Variance
-- **BOD-derived acceptance prices**: £85-110/MWh for VLP OFFERs (Oct 17-23 period)
-- **bmrs_disbsad settlement proxy**: £79.83/MWh average (Oct 17-23)
-- **Difference**: +7-38% higher (BOD captures individual acceptance prices vs volume-weighted settlement)
-
-**For battery revenue modeling**:
-- **Conservative**: Use bmrs_disbsad settlement proxy (lower, reflects actual payments)
-- **Regulatory/Compliance**: Use bmrs_boalf_complete BOD-derived (canonical acceptance prices)
-- **Hybrid**: Use BOD-derived for analysis, validate against settlement for revenue projections
-
----
-
-## Usage Examples
-
-### Query 1: VLP Battery Acceptance Prices (Oct 17-23 High-Price Event)
+### Total VLP Revenue (EBOCF Method)
 
 ```sql
-SELECT 
-  DATE(settlementDate) as date,
+SELECT
   bmUnit,
-  acceptanceType,
-  COUNT(*) as num_acceptances,
-  ROUND(AVG(acceptancePrice), 2) as avg_price_gbp_mwh,
-  ROUND(SUM(acceptancePrice * acceptanceVolume), 0) as total_revenue_gbp
-FROM `inner-cinema-476211-u9.uk_energy_prod.bmrs_boalf_complete`
-WHERE bmUnit IN ('2__FBPGM002', '2__FFSEN005', '2__FFSEN007')
-  AND DATE(settlementDate) BETWEEN '2025-10-17' AND '2025-10-23'
-  AND acceptanceType = 'OFFER'
-  AND acceptancePrice IS NOT NULL
-GROUP BY date, bmUnit, acceptanceType
-ORDER BY date, avg_price_gbp_mwh DESC;
+  SUM(cashflow) AS total_revenue_gbp,
+  SUM(volume) AS total_volume_mwh,
+  AVG(price) AS avg_price_per_mwh,
+  COUNT(*) AS acceptance_count
+FROM `inner-cinema-476211-u9.uk_energy_prod.bmrs_ebocf`
+WHERE settlementDate BETWEEN '2025-10-01' AND '2025-10-31'
+  AND bmUnit IN ('T_FBPGM002', 'T_FFSEN005')  -- Known VLP units
+GROUP BY bmUnit
+ORDER BY total_revenue_gbp DESC
 ```
 
-### Query 2: BID vs OFFER Price Comparison
+### Hybrid EBOCF + BOD Query
 
 ```sql
-SELECT 
-  acceptanceType,
-  COUNT(*) as count,
-  ROUND(AVG(acceptancePrice), 2) as avg_price,
-  ROUND(PERCENTILE_CONT(acceptancePrice, 0.5) OVER(), 2) as median_price,
-  ROUND(MIN(acceptancePrice), 2) as min_price,
-  ROUND(MAX(acceptancePrice), 2) as max_price
-FROM `inner-cinema-476211-u9.uk_energy_prod.bmrs_boalf_complete`
-WHERE DATE(settlementDate) BETWEEN '2025-10-01' AND '2025-10-31'
-  AND acceptancePrice IS NOT NULL
-GROUP BY acceptanceType;
+WITH all_revenue AS (
+  -- EBOCF (preferred)
+  SELECT
+    bmUnit,
+    settlementDate,
+    cashflow AS revenue_gbp,
+    'EBOCF' AS source
+  FROM `inner-cinema-476211-u9.uk_energy_prod.bmrs_ebocf`
+  WHERE settlementDate >= '2025-01-01'
+
+  UNION ALL
+
+  -- BOD fallback (for missing EBOCF)
+  SELECT
+    boalf.bmUnit,
+    boalf.settlementDate,
+    bod.offer * ((boalf.levelFrom + boalf.levelTo) / 2.0) *
+      (TIMESTAMP_DIFF(boalf.timeTo, boalf.timeFrom, SECOND) / 3600.0) AS revenue_gbp,
+    'BOD' AS source
+  FROM `inner-cinema-476211-u9.uk_energy_prod.bmrs_boalf` AS boalf
+  INNER JOIN `inner-cinema-476211-u9.uk_energy_prod.bmrs_bod` AS bod
+    ON boalf.bmUnit = bod.bmUnit
+    AND boalf.timeFrom = bod.timeFrom
+    AND boalf.timeTo = bod.timeTo
+    AND boalf.levelFrom = bod.levelFrom
+    AND boalf.levelTo = bod.levelTo
+    AND boalf.pairId = bod.pairId
+  WHERE boalf.settlementDate >= '2025-01-01'
+    AND boalf.acceptanceNumber NOT IN (
+      SELECT acceptanceNumber FROM `inner-cinema-476211-u9.uk_energy_prod.bmrs_ebocf`
+    )
+)
+SELECT
+  bmUnit,
+  DATE_TRUNC(settlementDate, MONTH) AS month,
+  SUM(revenue_gbp) AS revenue_gbp,
+  COUNTIF(source = 'EBOCF') AS ebocf_count,
+  COUNTIF(source = 'BOD') AS bod_count,
+  ROUND(100.0 * COUNTIF(source = 'EBOCF') / COUNT(*), 1) AS ebocf_coverage_pct
+FROM all_revenue
+WHERE bmUnit LIKE 'T_%'  -- VLP units
+GROUP BY bmUnit, month
+ORDER BY month DESC, revenue_gbp DESC
 ```
 
-### Query 3: Match Rate Quality Check
+---
 
+## 🎯 Action Items
+
+### Immediate (Add EBOCF Ingestion)
+
+1. **Create EBOCF table:**
+   ```bash
+   bq mk --table \
+     inner-cinema-476211-u9:uk_energy_prod.bmrs_ebocf \
+     --schema=settlementDate:DATE,settlementPeriod:INTEGER,bmUnit:STRING,cashflow:FLOAT,volume:FLOAT,price:FLOAT
+   ```
+
+2. **Run ingestion script:**
+   ```bash
+   python3 ingest_ebocf_cashflows.py
+   ```
+
+3. **Verify data:**
+   ```sql
+   SELECT COUNT(*), MIN(settlementDate), MAX(settlementDate)
+   FROM `inner-cinema-476211-u9.uk_energy_prod.bmrs_ebocf`
+   ```
+
+### Medium-Term (Hybrid Approach)
+
+4. **Update boalf_with_prices to use EBOCF first:**
+   - Modify SQL to UNION EBOCF + BOD
+   - Track coverage % by source
+   - Compare revenue totals (validation)
+
+5. **Add to ingest_elexon_fixed.py:**
+   - Add EBOCF to CHUNK_RULES
+   - Daily chunks (same as BOALF)
+   - Automated backfill
+
+### Long-Term (IRIS Integration)
+
+6. **Check if EBOCF available in IRIS:**
+   - May not exist (derived calculation)
+   - Alternative: Calculate from BOALF + BOD in real-time
+   - Or accept 30-min lag from historical batch
+
+---
+
+## 📚 Reference Documentation
+
+### Elexon API Endpoints (BMRS API v1)
+
+**Base URL:** `https://data.elexon.co.uk/bmrs/api/v1`
+
+**Balancing Data:**
+- BOALF: `GET /balancing/acceptances`
+- BOD: `GET /balancing/bid-offer`
+- DISEBSP: `GET /balancing/settlement/system-prices/{date}/{sp}`
+- ISPSTACK: `GET /balancing/settlement/stack/all/{bidOffer}/{date}/{sp}`
+- EBOCF: `GET /balancing/settlement/indicative/cashflows/all/{bidOffer}/{date}/{sp}`
+- DISPTAV: `GET /balancing/settlement/indicative/volumes/all/{bidOffer}/{date}`
+
+**API Documentation:**
+- Swagger: https://data.elexon.co.uk/bmrs/api/v1/swagger/index.html
+- Developer Portal: https://www.elexon.co.uk/data/data-insights/
+
+### Related Internal Docs
+
+- `BOALF_API_REFERENCE.md` - Current BOD matching approach
+- `STOP_DATA_ARCHITECTURE_REFERENCE.md` - Table schemas
+- `PROJECT_CONFIGURATION.md` - BigQuery setup
+
+---
+
+## 🧮 Quick Reference Formulas
+
+### MW to MWh (Trapezoid)
+```
+MWh = (levelFrom + levelTo) / 2 × Δt_hours
+```
+
+### Settlement Period Overlap
+```
+SP_MWh = Total_MWh × (SP_overlap_minutes / Total_minutes)
+```
+
+### Revenue Calculation
+```
+Revenue_£ = MWh × Price_£_per_MWh
+```
+
+### Average Price from Actions
+```
+Avg_£_per_MWh = SUM(Revenue_£) / SUM(MWh)
+```
+
+---
+
+**Last Updated:** December 18, 2025 18:50 UTC
+**Status:** ✅ IMPLEMENTED - Hybrid approach live in production
+
+---
+
+## 📋 Implementation Status (December 2025)
+
+### ✅ Completed Implementation
+
+**EBOCF Hybrid View (Dec 14-18, 2025)**
+- Created `boalf_with_ebocf_hybrid` BigQuery view
+- Coverage: 4.6M records, £16.2B total revenue
+- Gap period filled: 235,676 records, £376.5M (Nov 5 - Dec 18)
+- Source breakdown: 79% EBOCF (3.67M) + 21% BOD matching (973k)
+- Match rate: 98% overall coverage (up from 87%)
+
+**BOALF Backfill (Nov 5 - Dec 18, 2025)**
+- Successfully filled 44-day gap in bmrs_boalf table
+- Records added: 829,239 acceptances
+- Revenue tracked: £117.6M
+- Fixed datetime format issues (ISO 8601 Z suffix)
+- Added all 25 schema fields including metadata
+
+**EBOCF Backfill (Dec 14-18, 2025)**
+- Successfully filled 5-day gap in bmrs_ebocf table
+- Records added: 38,960 cashflow records
+- API calls: 500 (2 directions × 5 days × 50 settlement periods)
+- Pre-calculated revenue data (no MW→MWh→£ conversion needed)
+
+**Auto-Ingestion Deployed**
+- Script: `auto_ingest_realtime.py`
+- Schedule: Every 15 minutes via cron
+- Datasets operational: COSTS (system prices), FREQ, MID
+- FUELINST: API deprecated (last data Oct 30, 2025)
+
+### ⚠️ Known API Changes
+
+**DISBSAD → DISEBSP Migration**
+- Old endpoint: `/datasets/DISBSAD` (404 - deprecated)
+- New endpoint: `/balancing/settlement/system-prices/{date}/{sp}`
+- Dataset name: DISEBSP (replaces DISBSAD)
+- Coverage: Auto-ingested via COSTS dataset (bmrs_costs table)
+- Verified: Dec 14-18 has 48 records/day, £57-88/MWh
+
+**NETBSAD Endpoint Resolution (Dec 18, 2025)** ✅
+- **Correct endpoint:** `/datasets/NETBSAD/stream` (NOT `/datasets/NETBSAD`)
+- **Parameters:** `from` and `to` (NOT `publishDateTimeFrom`/`publishDateTimeTo`)
+- **Response format:** JSON array directly (NOT wrapped in `{"data": [...]}`)
+- **Status:** Actively publishing (updates hourly per METADATA endpoint)
+- **Backfill complete:** 2,072 records for Oct 29 - Dec 18, 2025 (100% coverage)
+- **Total coverage:** 84,098 records, 2022-01-01 through 2025-12-18
+- **See:** `NETBSAD_BACKFILL_INCIDENT_REPORT.md` for full resolution details
+
+**Other Dataset Status (as of Dec 18, 2025)**
+- **PN/QPN:** Still return 404 - need to test if `/stream` variants exist
+- **FUELINST:** API structure changed (last data Oct 30, 2025)
+- **Pattern:** Some Elexon datasets require `/stream` suffix (not documented clearly)
+
+**Action required:** Test PN, QPN, and other 404-returning datasets with `/stream` suffix before marking as deprecated
+
+### 📊 Current Data Coverage (as of Dec 18, 2025)
+
+| Table | Latest Date | Gap Status | Records | Notes |
+|-------|-------------|------------|---------|-------|
+| bmrs_boalf | Dec 18, 2025 | ✅ Complete | 12.3M | Continuous through Dec 18 |
+| bmrs_ebocf | Dec 18, 2025 | ✅ Complete | 7.14M | Continuous through Dec 18 |
+| boalf_with_prices | Dec 18, 2025 | ✅ Complete | 1.3M | £6.85B tracked, 85-95% match |
+| boalf_with_ebocf_hybrid | Dec 18, 2025 | ✅ Complete | 4.6M | £16.2B tracked, 98% coverage |
+| bmrs_costs (DISEBSP) | Dec 18, 2025 | ✅ Complete | 66.5k | 100% coverage (1,448 days), auto-ingesting |
+| bmrs_indgen | Dec 20, 2025 | ✅ Complete | 2.73M | Backfilled through Dec 20 |
+| bmrs_inddem | Dec 20, 2025 | ✅ Complete | 2.73M | Backfilled through Dec 20 |
+| bmrs_netbsad | Dec 18, 2025 | ✅ Complete | 84k | 100% coverage, uses /stream endpoint |
+| bmrs_mid | Dec 18, 2025 | ⚠️ Partial gaps | 160k | 24 missing days (API outages, not recoverable) |
+| bmrs_pn | Oct 28, 2025 | ⚠️ Endpoint unavailable | 173M | API returns 404 (check if /stream variant exists) |
+| bmrs_qpn | Oct 28, 2025 | ⚠️ Endpoint unavailable | 153M | API returns 404 (check if /stream variant exists) |
+
+---
+
+## 🔧 Current Production Setup
+
+**Primary Revenue Tracking:**
 ```sql
-SELECT 
-  DATE(settlementDate) as date,
-  COUNT(*) as total_acceptances,
-  SUM(CASE WHEN _price_source = 'BOD_MATCH' THEN 1 ELSE 0 END) as matched,
-  ROUND(100.0 * SUM(CASE WHEN _price_source = 'BOD_MATCH' THEN 1 ELSE 0 END) / COUNT(*), 1) as match_rate_pct
-FROM `inner-cinema-476211-u9.uk_energy_prod.bmrs_boalf_complete`
-WHERE DATE(settlementDate) BETWEEN '2025-10-01' AND '2025-10-31'
-GROUP BY date
-ORDER BY date;
+-- Use the hybrid view for all revenue analysis
+SELECT * FROM `inner-cinema-476211-u9.uk_energy_prod.boalf_with_ebocf_hybrid`
+WHERE settlementDate >= '2025-11-01'
+ORDER BY settlementDate, settlementPeriod
 ```
 
----
+**Data Sources (priority order):**
+1. **EBOCF** (79%): Pre-calculated cashflows from Elexon settlement
+2. **BOD Matching** (21%): Bid-offer data matching for gaps
 
-## Next Steps
-
-### Immediate (Dec 16-17, 2025)
-1. ✅ Complete October 2025 backfill (running)
-2. 🔜 Validate Oct data: Compare VLP battery prices vs bmrs_disbsad
-3. 🔜 Create `boalf_with_prices` view (filtered to successful matches only)
-
-### Short-term (Dec 18-20, 2025)
-4. 🔜 Create historical backfill automation script (`backfill_boalf_historical.sh`)
-5. 🔜 Run full 2022-2025 backfill (46 months, ~11M acceptances, 4-6 hour runtime)
-6. 🔜 Modify IRIS pipeline to derive prices for real-time acceptances
-
-### Medium-term (Dec 2025)
-7. 🔜 Update battery arbitrage analysis to use BOD-derived OFFER prices
-8. 🔜 Document BOALF vs DISBSAD variance in revenue projections
-9. 🔜 Update project documentation (PROJECT_CONFIGURATION.md, STOP_DATA_ARCHITECTURE_REFERENCE.md)
+**Auto-Ingestion Status:**
+- ✅ COSTS (system prices): Every 15 min, path-based API
+- ✅ FREQ (frequency): Every 15 min
+- ✅ MID (market index): Every 15 min
+- ⚠️ FUELINST: Deprecated (use INDGEN/INDDEM instead)
 
 ---
 
-## Technical Notes
+## 🎯 Next Steps
 
-### Why NOT Use External Endpoints?
-
-Tested alternative BOALF price sources (all **FAILED** from this environment):
-
-1. **B1610 FTP**: `ftp://ftp.elexon.co.uk/downloads/B1610/`
-   - ❌ DNS resolution failure, FTP port unreachable
-
-2. **IRIS B1610 Stream**: `https://api.bmreports.com/BMRS/B1610-IRIS/v1`
-   - ❌ Connection timeout, API key required
-
-3. **Elexon Insights API**: `https://data.elexon.co.uk/bmrs/api/v1/balancing/bid-offer-acceptances`
-   - ❌ 404 Not Found (endpoint doesn't exist or wrong path)
-
-**Conclusion**: BOD+BOALF join is the **only viable approach** given:
-- We already have complete bmrs_bod and bmrs_boalf tables in BigQuery
-- 99.9% match rate achievable with proper deduplication
-- No external API dependencies
-- Can apply to both historical and real-time (IRIS) data
-
-### Performance Considerations
-
-**Single-day query** (Oct 17, 2025):
-- Runtime: ~3 seconds
-- Rows scanned: 3,948 BOALF + ~400k BOD (single day)
-- Cost: Negligible (<$0.01)
-
-**Monthly query** (Oct 2025):
-- Runtime: ~30-60 seconds (estimated)
-- Rows scanned: ~120k BOALF + ~12M BOD (31 days)
-- Cost: ~$0.05-0.10
-
-**Full historical** (2022-2025, 46 months):
-- Runtime: 4-6 hours (estimate, 5-8 min per month)
-- Rows scanned: ~11M BOALF + ~391M BOD (full table)
-- Cost: $5-10 (within free tier monthly quota)
-
-**Optimization**: Table partitioning by settlementDate ensures queries only scan relevant date ranges, not full BOD table.
-
----
-
-## Key Achievements ✅
-
-1. **Solved BOALF API limitation**: Derived acceptancePrice field missing from public API
-2. **99.9% match rate**: Successfully matched 3,945/3,948 acceptances (Oct 17 test)
-3. **Production-ready table**: Created `bmrs_boalf_complete` with partitioning + clustering
-4. **VLP battery insights**: Identified £130-136/MWh peak acceptance prices (vs £80/MWh avg)
-5. **Scalable solution**: Can backfill 2022-2025 history + integrate with IRIS real-time
-6. **Canonical pricing**: BOD-derived acceptance prices closer to regulatory B1610 data than settlement proxy
-
----
-
-## Files Created
-
-| File | Purpose |
-|------|---------|
-| `derive_boalf_prices.py` | Main derivation script (BOD+BOALF join) |
-| `BOALF_PRICE_DERIVATION_COMPLETE.md` | This documentation |
-| `derive_boalf_oct2025.log` | October 2025 backfill log (in progress) |
-| `derive_boalf_prices.log` | Script execution logs |
-
----
-
-## References
-
-- **Elexon BMRS API docs**: https://data.elexon.co.uk/bmrs/api/documentation
-- **B1610 Specification**: Balancing Mechanism Acceptance Level (BOALF) data flow
-- **Project Config**: `PROJECT_CONFIGURATION.md` (to be updated)
-- **Architecture Ref**: `STOP_DATA_ARCHITECTURE_REFERENCE.md` (to be updated)
-- **Copilot Instructions**: `.github/copilot-instructions.md` (to be updated)
-
----
-
-**Status**: ✅ **Phase 1 Complete** - Core implementation + Oct 17 test successful  
-**Next**: 🔄 October 2025 full month backfill in progress  
-**ETA**: Historical backfill (2022-2025) ready by Dec 18, 2025
+1. **Complete INDGEN/INDDEM backfills** - Currently 81.6% done, finishing in background
+2. **Fix NETBSAD endpoint** - Update to `/datasets/NETBSAD`, backfill Oct 29 - Dec 18
+3. **Monitor auto-ingestion** - Verify 15-min cron stability over 24-48 hours
+4. **Add EBOCF to auto-ingestion** - Currently manual backfill only
+5. **Create revenue reconciliation** - Compare EBOCF vs BOD totals monthly

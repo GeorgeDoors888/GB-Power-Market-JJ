@@ -40,6 +40,7 @@ TABLE_MAPPING = {
     'COSTS': 'bmrs_costs_iris',
     'INDGEN': 'bmrs_indgen_iris',
     'INDO': 'bmrs_indo_iris',
+    'REMIT': 'bmrs_remit_iris',  # REMIT - Outages and unavailability
     'B1620': 'bmrs_fuelinst_iris',  # Alternative naming
     'B1440': 'bmrs_windfor_iris',
     'B1610': 'bmrs_freq_iris',
@@ -52,21 +53,21 @@ TABLE_MAPPING = {
 
 class IrisUploader:
     """Uploads IRIS data to BigQuery"""
-    
+
     def __init__(self, project_id=PROJECT_ID, dataset=DATASET):
         """Initialize BigQuery client"""
         self.project_id = project_id
         self.dataset = dataset
         self.client = bigquery.Client(project=project_id)
         logger.info(f"Connected to BigQuery: {project_id}.{dataset}")
-    
+
     def process_file(self, filepath):
         """
         Process a single JSON file and upload to BigQuery
-        
+
         Args:
             filepath: Path to JSON file (str or Path object)
-        
+
         Returns:
             bool: True if successful, False otherwise
         """
@@ -74,11 +75,11 @@ class IrisUploader:
             # Convert string to Path if needed
             if isinstance(filepath, str):
                 filepath = Path(filepath)
-            
+
             # Read JSON file
             with open(filepath, 'r') as f:
                 data = json.load(f)
-            
+
             # Handle both array and dict formats
             if isinstance(data, list):
                 # Array format (e.g., WINDFOR) - extract dataset name from first record
@@ -89,48 +90,48 @@ class IrisUploader:
             else:
                 # Dict format (e.g., FUELINST) - extract reportType
                 report_type = data.get('reportType', 'UNKNOWN')
-            
+
             # Get table name
             table_name = TABLE_MAPPING.get(report_type)
             if not table_name:
                 logger.warning(f"Unknown report type: {report_type} in {filepath.name}")
                 return False
-            
+
             # Extract records
             records = self._extract_records(data, report_type)
             if not records:
                 logger.warning(f"No records extracted from {filepath.name}")
                 return False
-            
+
             # Upload to BigQuery
             self._upload_records(table_name, records)
-            
+
             # Delete processed file
             filepath.unlink()
             logger.info(f"Processed and deleted: {filepath.name}")
-            
+
             return True
-            
+
         except json.JSONDecodeError as e:
             logger.error(f"Invalid JSON in {filepath.name}: {e}")
             return False
         except Exception as e:
             logger.error(f"Error processing {filepath.name}: {e}")
             return False
-    
+
     def _extract_records(self, data, report_type):
         """
         Extract records from IRIS message based on report type
-        
+
         Args:
             data: Parsed JSON data (dict or list)
             report_type: BMRS report type
-        
+
         Returns:
             list: List of record dictionaries
         """
         records = []
-        
+
         # Handle array format (e.g., WINDFOR)
         if isinstance(data, list):
             records = data
@@ -142,64 +143,64 @@ class IrisUploader:
         else:
             # Single record format
             records = [data]
-        
+
         # Add metadata to each record
         for record in records:
             record['ingested_utc'] = datetime.utcnow().isoformat()
             record['source'] = 'IRIS'
-        
+
         return records
-    
+
     def _upload_records(self, table_name, records):
         """
         Upload records to BigQuery table
-        
+
         Args:
             table_name: Target table name
             records: List of records to upload
         """
         table_id = f"{self.project_id}.{self.dataset}.{table_name}"
-        
+
         try:
             # Insert rows
             errors = self.client.insert_rows_json(table_id, records)
-            
+
             if errors:
                 logger.error(f"Errors inserting into {table_name}: {errors}")
             else:
                 logger.info(f"Inserted {len(records)} rows into {table_name}")
-                
+
         except exceptions.NotFound:
             logger.error(f"Table not found: {table_id}")
         except Exception as e:
             logger.error(f"Upload failed for {table_name}: {e}")
-    
+
     def process_all_files(self):
-        """Process all JSON files in data directory"""
-        json_files = list(DATA_DIR.glob('*.json'))
-        
+        """Process all JSON files in data directory (including subdirectories)"""
+        json_files = list(DATA_DIR.glob('**/*.json'))
+
         if not json_files:
             logger.info("No files to process")
             return 0
-        
+
         logger.info(f"Found {len(json_files)} files to process")
-        
+
         success_count = 0
         for filepath in json_files:
             if self.process_file(filepath):
                 success_count += 1
-        
+
         logger.info(f"Successfully processed {success_count}/{len(json_files)} files")
         return success_count
-    
+
     def get_table_stats(self):
         """Get row counts for all IRIS tables"""
         stats = {}
-        
+
         for table_name in set(TABLE_MAPPING.values()):
             try:
                 query = f"""
-                    SELECT 
+                    SELECT
                         COUNT(*) as row_count,
                         MAX(_ingestion_time) as latest_ingestion
                     FROM `{self.project_id}.{self.dataset}.{table_name}`
@@ -213,29 +214,42 @@ class IrisUploader:
                 stats[table_name] = {'status': 'table_not_found'}
             except Exception as e:
                 stats[table_name] = {'error': str(e)}
-        
+
         return stats
 
 
 def main():
     """Main entry point"""
     import sys
-    
+    import time
+
     uploader = IrisUploader()
-    
+
+    # Check if running in continuous mode
+    continuous = '--continuous' in sys.argv or '--daemon' in sys.argv
+    scan_interval = 5  # seconds
+
     try:
-        # Process all files
-        processed = uploader.process_all_files()
-        
-        # Show stats if requested
-        if '--stats' in sys.argv:
-            stats = uploader.get_table_stats()
-            logger.info("Table statistics:")
-            for table, data in stats.items():
-                logger.info(f"  {table}: {data}")
-        
-        sys.exit(0 if processed > 0 else 1)
-        
+        if continuous:
+            logger.info("🔄 Running in continuous mode (Ctrl-C to stop)")
+            logger.info(f"⏱️  Scan interval: {scan_interval}s")
+
+            while True:
+                processed = uploader.process_all_files()
+                time.sleep(scan_interval)
+        else:
+            # One-shot mode
+            processed = uploader.process_all_files()
+
+            # Show stats if requested
+            if '--stats' in sys.argv:
+                stats = uploader.get_table_stats()
+                logger.info("Table statistics:")
+                for table, data in stats.items():
+                    logger.info(f"  {table}: {data}")
+
+            sys.exit(0 if processed > 0 else 1)
+
     except KeyboardInterrupt:
         logger.info("Interrupted by user")
         sys.exit(1)

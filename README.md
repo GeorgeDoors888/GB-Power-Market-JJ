@@ -1,7 +1,7 @@
 # 🇬🇧 GB-Power-Market-JJ - Complete Energy Data Platform
 
-**Last Updated**: 15 December 2025  
-**Status**: Production - Active Development  
+**Last Updated**: 15 December 2025
+**Status**: Production - Active Development
 **Purpose**: Comprehensive GB electricity market analysis, real-time monitoring, and forecasting system
 
 ⚠️ **DATA DISCLAIMER**: All Balancing Mechanism (BM) revenue figures in this project are **ESTIMATES** derived from Elexon BMRS transparency data (BOALF, BOAV, EBOCF). These are **NOT settlement-grade cashflows**. Actual BOA energy payments are determined through BSC settlement and may vary ±10-20% from our estimates. For details, see [BOA_ENERGY_PAYMENTS_EXPLAINED.md](BOA_ENERGY_PAYMENTS_EXPLAINED.md).
@@ -20,8 +20,8 @@
 - **BESS Analysis**: Battery Energy Storage System profit optimization
 
 ### Live Dashboard
-**Access**: [Live Dashboard v2](https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit)  
-**Auto-Updates**: Every 5 minutes via cron  
+**Access**: [Live Dashboard v2](https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit)
+**Auto-Updates**: Every 5 minutes via cron
 **Features**: VLP Revenue, Wholesale Prices, Generation Mix, Interconnectors, Outages, Wind Chart
 
 ### Repository Size After Optimization
@@ -41,6 +41,7 @@
 1. **[docs/STOP_DATA_ARCHITECTURE_REFERENCE.md](docs/STOP_DATA_ARCHITECTURE_REFERENCE.md)** - ⚠️ **READ FIRST** - Prevents recurring data issues
 2. **[docs/PROJECT_CONFIGURATION.md](docs/PROJECT_CONFIGURATION.md)** - Essential configuration & BigQuery setup
 3. **[docs/QUICK_START_ANALYSIS.md](docs/QUICK_START_ANALYSIS.md)** - ⚡ Copy-paste commands to run analysis NOW
+4. **[ENDPOINT_PATTERNS.md](ENDPOINT_PATTERNS.md)** - 🔌 Elexon API endpoint reference (standard vs stream variants)
 
 #### Latest Updates (Nov 21-23, 2025)
 - **[docs/DASHBOARD_FIX_NOV_21_2025.md](docs/DASHBOARD_FIX_NOV_21_2025.md)** - Dashboard MW→GW conversion fix

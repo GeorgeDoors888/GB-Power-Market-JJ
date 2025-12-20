@@ -17,7 +17,7 @@ function setupDashboardLayout(sheet) {
     .setHorizontalAlignment('center')
     .setVerticalAlignment('middle');
   sheet.setRowHeight(1, 50);
-  
+
   sheet.getRange('A2:L2').merge()
     .setValue('Last Updated: ' + new Date().toLocaleString('en-GB', { timeZone: 'Europe/London' }))
     .setBackground('#424242')
@@ -25,15 +25,15 @@ function setupDashboardLayout(sheet) {
     .setFontSize(10)
     .setHorizontalAlignment('center');
 
-  // KPI Section
-  sheet.getRange('A4:L4').merge()
+  // KPI Section - Row 4 left unmerged for sparklines
+  sheet.getRange('A4')
     .setValue('Key Performance Indicators')
     .setFontSize(14)
     .setFontWeight('bold');
-  
-  const kpiHeaders = ['VLP Revenue (£k)', 'Wholesale Avg (£/MWh)', 'Grid Frequency (Hz)', 
+
+  const kpiHeaders = ['VLP Revenue (£k)', 'Wholesale Avg (£/MWh)', 'Grid Frequency (Hz)',
                       'Total Gen (GW)', 'Wind Gen (GW)', 'Demand (GW)'];
-  
+
   for (let i = 0; i < kpiHeaders.length; i++) {
     const col = i * 2 + 1;
     sheet.getRange(5, col, 1, 2).merge()
@@ -42,21 +42,21 @@ function setupDashboardLayout(sheet) {
       .setHorizontalAlignment('center')
       .setBackground('#eeeeee')
       .setBorder(true, true, true, true, null, null);
-    
+
     sheet.getRange(6, col)
       .setFontSize(18)
       .setFontWeight('bold')
       .setHorizontalAlignment('center')
       .setVerticalAlignment('middle')
       .setBorder(null, true, null, true, null, null);
-    
+
     sheet.getRange(7, col, 2, 1).merge()
       .setBorder(true, true, true, true, null, null);
-    
+
     sheet.getRange(6, col + 1, 3, 1).merge()
       .setBorder(null, true, true, null, null, null);
   }
-  
+
   sheet.setRowHeight(6, 40);
   sheet.setRowHeights(7, 2, 20);
 
@@ -72,10 +72,10 @@ function setupDashboardLayout(sheet) {
     .setFontWeight('bold')
     .setHorizontalAlignment('center')
     .setBackground('#eeeeee');
-    
+
   sheet.getRange('A12').setValue('Fuel Type').setFontWeight('bold');
   sheet.getRange('B12').setValue('MW').setFontWeight('bold');
-  
+
   sheet.getRange('D12').setValue('Connection').setFontWeight('bold');
   sheet.getRange('E12').setValue('Flow (MW)').setFontWeight('bold');
 }
@@ -87,11 +87,11 @@ function setupDashboardLayoutV2(sheet) {
     Logger.log('Skipping layout setup - managed by Python script');
     return;
   }
-  
+
   sheet.clear();
   sheet.setFrozenRows(2);
   sheet.getRange('1:1000').setBackground('#ffffff').setFontColor('#333333');
-  sheet.setColumnWidths(1, 12, 100); 
+  sheet.setColumnWidths(1, 12, 100);
 
   // Modern Header with Emojis ⚡🇬🇧
   sheet.getRange('A1:L1').merge()
@@ -103,7 +103,7 @@ function setupDashboardLayoutV2(sheet) {
     .setHorizontalAlignment('left')
     .setVerticalAlignment('middle');
   sheet.setRowHeight(1, 60);
-  
+
   // Sub-header
   sheet.getRange('A2:L2').merge()
     .setValue('📊 Live Executive Dashboard | Last Updated: ' + new Date().toLocaleString('en-GB', { timeZone: 'Europe/London' }))
@@ -114,23 +114,24 @@ function setupDashboardLayoutV2(sheet) {
     .setVerticalAlignment('middle');
   sheet.setRowHeight(2, 30);
 
-  // KPI Section - Advanced Card Layout
-  sheet.getRange('A4:L4').merge()
+  // KPI Section - Row 4 left unmerged for sparklines (C4, E4, G4, I4, K4)
+  // Only set text in A4, leave other cells for sparklines
+  sheet.getRange('A4')
     .setValue('🚀 Market Overview')
     .setFontSize(16)
     .setFontWeight('bold')
     .setFontColor('#2c3e50');
-  
-  const kpiHeaders = ['💰 VLP Revenue', '📉 Wholesale Price', '💓 Grid Frequency', 
+
+  const kpiHeaders = ['💰 VLP Revenue', '📉 Wholesale Price', '💓 Grid Frequency',
                       '🏭 Total Generation', '🌬️ Wind Output', '🔌 System Demand'];
-  
+
   // Create card-like look for KPIs
   for (let i = 0; i < kpiHeaders.length; i++) {
     const col = i * 2 + 1;
-    
+
     // 1. Card Container (Border around the whole card)
     // We will border the individual sections to look like a card
-    
+
     // Header (Row 5)
     sheet.getRange(5, col, 1, 2).merge()
       .setValue(kpiHeaders[i])
@@ -139,7 +140,7 @@ function setupDashboardLayoutV2(sheet) {
       .setBackground('#f1f2f6') // Light grey
       .setFontColor('#57606f')
       .setBorder(true, true, false, true, null, null, '#dfe4ea', SpreadsheetApp.BorderStyle.SOLID_MEDIUM);
-    
+
     // Value (Row 6)
     sheet.getRange(6, col, 1, 2).merge()
       .setFontSize(24) // Larger font
@@ -149,7 +150,7 @@ function setupDashboardLayoutV2(sheet) {
       .setBackground('#ffffff')
       .setFontColor('#2f3542')
       .setBorder(false, true, false, true, null, null, '#dfe4ea', SpreadsheetApp.BorderStyle.SOLID_MEDIUM);
-      
+
     // Sparkline area (Row 7-8 merged)
     sheet.getRange(7, col, 2, 2).merge()
       .setBackground('#ffffff')
@@ -157,7 +158,7 @@ function setupDashboardLayoutV2(sheet) {
       .setVerticalAlignment('middle')
       .setBorder(false, true, true, true, null, null, '#dfe4ea', SpreadsheetApp.BorderStyle.SOLID_MEDIUM);
   }
-  
+
   sheet.setRowHeight(6, 60); // Taller for value
   sheet.setRowHeights(7, 2, 60); // Much taller for sparklines (was 30)
 
@@ -185,7 +186,7 @@ function setupDashboardLayoutV2(sheet) {
   sheet.getRange('A12').setValue('🛢️ Fuel Type')
     .setFontWeight('bold')
     .setBackground('#ecf0f1');
-    
+
   sheet.getRange('B12').setValue('⚡ GW')
     .setFontWeight('bold')
     .setBackground('#ecf0f1');
@@ -206,7 +207,7 @@ function setupDashboardLayoutV2(sheet) {
   sheet.getRange('G12').setValue('🔗 Connection')
     .setFontWeight('bold')
     .setBackground('#ecf0f1');
-    
+
   sheet.getRange('H12:I12').merge()
     .setValue('🌊 Flow Trend')
     .setFontWeight('bold')
@@ -226,7 +227,7 @@ function setupDashboardLayoutV2(sheet) {
 
   // Add Conditional Formatting
   var rules = sheet.getConditionalFormatRules();
-  
+
   // Frequency Rule (Green if stable)
   var freqRange = sheet.getRange("E6");
   var ruleFreq = SpreadsheetApp.newConditionalFormatRule()
