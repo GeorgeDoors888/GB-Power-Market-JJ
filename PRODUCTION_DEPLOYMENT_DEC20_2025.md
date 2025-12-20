@@ -1,16 +1,16 @@
 # Production Deployment Summary - December 20, 2025
 
-**Date**: December 20, 2025  
-**Time**: 12:43-12:47 GMT  
-**Status**: ✅ COMPLETE
+**Date**: December 20, 2025
+**Time**: 12:43-12:47 GMT (Initial), 13:46-14:00 GMT (NESO Fix)
+**Status**: ✅ COMPLETE + DATA GAP RESOLVED
 
 ---
 
 ## 🎯 What Was Deployed
 
 ### Scripts Migrated to Production
-**From**: Local Dell workstation (`localhost.localdomain`)  
-**To**: AlmaLinux UpCloud server (`94.237.55.234`)  
+**From**: Local Dell workstation (`localhost.localdomain`)
+**To**: AlmaLinux UpCloud server (`94.237.55.234`)
 **Location**: `/opt/gb-power-ingestion/`
 
 | Script | Purpose | Frequency | Status |
@@ -20,6 +20,7 @@
 | `auto_ingest_indgen.py` | Individual Generation | Every 15 min | ✅ Active |
 | `auto_backfill_disbsad_daily.py` | Balancing Costs | Every 30 min | ✅ Active |
 | `backfill_dets_system_prices.py` | Detailed System Prices | Hourly | ✅ Active |
+| `ingest_neso_constraints.py` | **NESO Constraints** | **Every 6 hours** | ✅ Active (Fixed 13:46) |
 
 ---
 
@@ -199,19 +200,19 @@ ssh root@94.237.55.234 'systemctl status crond'
 
 ## ⚠️ Known Issues & Solutions
 
-### Issue: "No matching signature for operator >=" 
-**Cause**: `_ingested_utc` stored as STRING, not TIMESTAMP  
+### Issue: "No matching signature for operator >="
+**Cause**: `_ingested_utc` stored as STRING, not TIMESTAMP
 **Solution**: Cast to TIMESTAMP in queries:
 ```sql
 WHERE CAST(_ingested_utc AS TIMESTAMP) >= TIMESTAMP_SUB(CURRENT_TIMESTAMP(), INTERVAL 15 MINUTE)
 ```
 
 ### Issue: Duplicate Records Between Historical + IRIS Tables
-**Cause**: 50-day overlap period (Oct 28 - Dec 17)  
+**Cause**: 50-day overlap period (Oct 28 - Dec 17)
 **Solution**: Use date-based UNION queries (see `SHEETS_QUERY_DEDUPLICATION_GUIDE.md`)
 
 ### Issue: BOD "413 Request Too Large"
-**Status**: ✅ FIXED  
+**Status**: ✅ FIXED
 **Solution**: Batched uploads (500 records per batch)
 
 ---
@@ -247,6 +248,6 @@ ssh root@94.237.55.234 'crontab -r'
 
 ---
 
-**Deployment Status**: ✅ **PRODUCTION READY**  
-**Next Review**: December 21, 2025  
+**Deployment Status**: ✅ **PRODUCTION READY**
+**Next Review**: December 21, 2025
 **Automated Check**: In progress (13:47 GMT)

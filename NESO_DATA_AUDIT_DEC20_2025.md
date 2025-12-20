@@ -1,6 +1,6 @@
 # NESO Data Availability Audit
-**Date**: December 20, 2025, 14:02 GMT  
-**Auditor**: GitHub Copilot  
+**Date**: December 20, 2025, 14:02 GMT
+**Auditor**: GitHub Copilot
 **Scope**: Complete inventory of NESO data sources vs BigQuery coverage
 
 ---
@@ -13,7 +13,7 @@
 - ✅ **NESO Data Portal API accessible** with 124 datasets available
 - ✅ **Constraint ingestion script deployed** (ingest_neso_constraints.py)
 
-**Previous Assessment**: "Only neso_dno_reference table exists, no NESO ingestion"  
+**Previous Assessment**: "Only neso_dno_reference table exists, no NESO ingestion"
 **Reality**: Constraint data has been ingested, but not documented or monitored
 
 ---
@@ -21,19 +21,21 @@
 ## Current NESO Data in BigQuery
 
 ### uk_constraints Dataset (US Region)
-**Status**: ✅ EXISTS  
-**Created**: Unknown (predates this audit)  
-**Last Update**: Check ingest_log table
+**Status**: ✅ EXISTS & CURRENT
+**Created**: Unknown (predates this audit)
+**Last Update**: December 20, 2025 13:46 GMT (data gap fixed)
 
-| Table | Records | Description |
-|-------|---------|-------------|
-| constraint_flows_da | 863,599 | Day-ahead constraint flows and limits |
-| cmz_forecasts | 1,239 | CMZ (Constraint Management Zone) forecasts |
-| cmis_arming | 314 | CMIS (Constraint Management Intertrip Service) |
-| constraint_limits_24m | 104 | 24-month ahead constraint limits |
-| ingest_log | 5 | Tracks ingested resources |
+| Table | Records | Description | Latest Data |
+|-------|---------|-------------|-------------|
+| constraint_flows_da | **1,740,206** | Day-ahead constraint flows and limits | **2025-12-20** ✅ |
+| cmz_forecasts | 1,239 | CMZ (Constraint Management Zone) forecasts | 2025-11-24 |
+| cmis_arming | 865 | CMIS (Constraint Management Intertrip Service) | 2025-09-17 |
+| constraint_limits_24m | 208 | 24-month ahead constraint limits | 2025-12-20 ✅ |
+| ingest_log | 7 | Tracks ingested resources | - |
 
-**Total**: 865,256 constraint records
+**Total**: 1,742,525 constraint records
+
+**⚠️ Data Gap Fixed**: constraint_flows_da was 26 days stale (last: Nov 25). Root cause: NESO uses same URL for daily updates, script was skipping re-downloads. Fixed with `force_daily_refresh` flag. Added 876,607 new rows to bring data current.
 
 ### uk_energy_prod Dataset - NESO Tables
 
@@ -47,7 +49,7 @@
 **Total**: 375 reference records
 
 ### Combined NESO Coverage
-- **Operational Data**: 865K+ constraint records (time-series)
+- **Operational Data**: 1.74M+ constraint records (time-series) - **CURRENT as of Dec 20**
 - **Reference Data**: 375 records (DNOs, GSP groups, boundaries)
 - **Total**: 865,631 NESO-sourced records in BigQuery
 
@@ -106,9 +108,9 @@
 ## Configured Ingestion Scripts
 
 ### 1. ingest_neso_constraints.py ✅ DEPLOYED
-**Status**: Has run successfully (uk_constraints dataset populated)  
-**Target Dataset**: inner-cinema-476211-u9.uk_constraints  
-**Last Run**: Unknown (check ingest_log)  
+**Status**: Has run successfully (uk_constraints dataset populated)
+**Target Dataset**: inner-cinema-476211-u9.uk_constraints
+**Last Run**: Unknown (check ingest_log)
 **Cron Status**: ❌ NOT SCHEDULED (not in AlmaLinux or Dell crontabs)
 
 **Ingests**:
@@ -134,24 +136,24 @@ LIMIT 5
 (Run this query to see last execution times)
 
 ### 2. load_neso_dno_reference.py ✅ COMPLETED
-**Status**: One-time load, completed  
-**Purpose**: Load DNO Master Reference CSV into BigQuery  
-**Result**: 14 DNO records in neso_dno_reference table  
-**Source**: `/Users/georgemajor/Jibber-Jabber-Work/DNO_Master_Reference.csv`  
+**Status**: One-time load, completed
+**Purpose**: Load DNO Master Reference CSV into BigQuery
+**Result**: 14 DNO records in neso_dno_reference table
+**Source**: `/Users/georgemajor/Jibber-Jabber-Work/DNO_Master_Reference.csv`
 **Cron**: Not needed (static reference data)
 
 ### 3. download_neso_bmu_data.py ⏳ UNKNOWN STATUS
-**Purpose**: Download BMU registration data from NESO  
+**Purpose**: Download BMU registration data from NESO
 **Target URLs**:
 - https://data.nationalgrideso.com/.../bmu-fuel-type.csv
 - https://data.nationalgrideso.com/.../registered-bmus.csv
 
-**Status**: Script exists, unknown if executed or loaded to BigQuery  
+**Status**: Script exists, unknown if executed or loaded to BigQuery
 **Action Required**: Check if BMU data exists in BigQuery, run if missing
 
 ### 4. load_official_neso_boundaries.py ⏳ UNKNOWN STATUS
-**Purpose**: Load DNO/GSP boundary GeoJSON data  
-**Result**: neso_dno_boundaries (14 rows), neso_gsp_boundaries (333 rows)  
+**Purpose**: Load DNO/GSP boundary GeoJSON data
+**Result**: neso_dno_boundaries (14 rows), neso_gsp_boundaries (333 rows)
 **Status**: Appears completed (tables exist with data)
 
 ---
@@ -276,7 +278,7 @@ LIMIT 5
 ### Immediate Actions
 
 #### 1. ✅ Add Constraint Monitoring (COMPLETED)
-**Status**: ✅ DEPLOYED Dec 20, 2025 13:18 GMT  
+**Status**: ✅ DEPLOYED Dec 20, 2025 13:18 GMT
 **Solution Implemented**:
 ```bash
 # Deployed to AlmaLinux production
@@ -321,8 +323,8 @@ Create new ingestion scripts for:
 - 24-month constraint cost forecasts (strategic planning)
 - Wind forecasts (price prediction)
 
-**Template**: Use ingest_neso_constraints.py as template  
-**Schedule**: Daily ingestion (forecasts update daily)  
+**Template**: Use ingest_neso_constraints.py as template
+**Schedule**: Daily ingestion (forecasts update daily)
 **Priority Order**:
 1. BSUoS forecasts (immediate cost impact)
 2. Constraint cost forecasts (strategic value)
@@ -339,7 +341,7 @@ Similar to existing IRIS/BMRS monitoring but for uk_constraints dataset
 ### Long-Term Opportunities
 
 #### 6. ⏳ NESO API Query Automation
-**Current**: Web scraping for CSV downloads  
+**Current**: Web scraping for CSV downloads
 **Opportunity**: Direct CKAN API queries using datastore_search_sql
 
 **Benefits**:
@@ -357,8 +359,8 @@ data = resp.json()['result']['records']
 ```
 
 #### 7. ⏳ Constraint-Based Trading Strategy
-**Concept**: Use constraint forecasts to predict price spikes  
-**Data**: 24-month constraint limits + day-ahead flows  
+**Concept**: Use constraint forecasts to predict price spikes
+**Data**: 24-month constraint limits + day-ahead flows
 **Application**: Identify constrained periods → high balancing prices → deploy VLP batteries
 
 **ROI Potential**: High (constraint periods = £100-200/MWh vs £30-50/MWh normal)
@@ -425,7 +427,7 @@ data = resp.json()['result']['records']
 
 ## Conclusion
 
-**Initial Assessment**: "Only neso_dno_reference table exists, no NESO ingestion"  
+**Initial Assessment**: "Only neso_dno_reference table exists, no NESO ingestion"
 **Actual Finding**: **865K+ NESO constraint records ingested, but undocumented/unmonitored**
 
 **Key Insights**:
@@ -464,7 +466,7 @@ data = resp.json()['result']['records']
 
 ---
 
-**Audit Completed**: December 20, 2025, 14:10 GMT  
-**Deployment Completed**: December 20, 2025, 13:18 GMT  
-**Next Review**: Monitor cron execution Dec 20, 19:00 GMT (6 hours)  
+**Audit Completed**: December 20, 2025, 14:10 GMT
+**Deployment Completed**: December 20, 2025, 13:18 GMT
+**Next Review**: Monitor cron execution Dec 20, 19:00 GMT (6 hours)
 **Signed**: GitHub Copilot (Automated Audit & Deployment)
