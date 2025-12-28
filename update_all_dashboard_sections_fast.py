@@ -92,37 +92,48 @@ def get_latest_interconnectors():
         return {}
 
 def update_generation_mix(gen_data):
-    """Update generation mix section (A13:D22) - leaves column E sparklines untouched"""
+    """Update generation mix section with data (A-C) and sparklines (D)"""
     print("\n🔋 Updating Generation Mix...")
     
+    # Map fuel types to Data_Hidden row numbers for sparklines
     fuel_types = [
-        ('WIND', '🌬️ WIND'),
-        ('NUCLEAR', '⚛️ NUCLEAR'),
-        ('CCGT', '🏭 CCGT'),
-        ('BIOMASS', '🌿 BIOMASS'),
-        ('NPSHYD', '💧 NPSHYD'),
-        ('OTHER', '❓ OTHER'),
-        ('OCGT', '🛢️ OCGT'),
-        ('COAL', '⛏️ COAL'),
-        ('OIL', '🛢️ OIL'),
-        ('PS', '💧 PS'),
+        ('WIND', '🌬️ WIND', 2),
+        ('NUCLEAR', '⚛️ NUCLEAR', 3),
+        ('CCGT', '🏭 CCGT', 4),
+        ('BIOMASS', '🌿 BIOMASS', 5),
+        ('NPSHYD', '💧 NPSHYD', 6),
+        ('OTHER', '❓ OTHER', 7),
+        ('OCGT', '🛢️ OCGT', 8),
+        ('COAL', '⛏️ COAL', 9),
+        ('OIL', '🛢️ OIL', 10),
+        ('PS', '💧 PS', 11),
     ]
     
-    rows = []
-    for fuel_key, fuel_label in fuel_types:
-        gen_mw = gen_data.get(fuel_key, 0)
-        gen_gw = gen_mw / 1000
-        # Only update live values A-D, preserve existing sparklines in column E
-        rows.append([fuel_label, f'{gen_mw:.0f}', 'MW', f'{gen_gw:.2f} GW'])
+    # Prepare data rows (A-C only: label, MW value, "MW" text)
+    data_rows = []
+    sparkline_updates = []
     
-    # Update columns A-D only (label, MW value, "MW" text, GW value)
-    # Column E sparklines are maintained by Data_Hidden and should not be overwritten
+    for fuel_key, fuel_label, data_row in fuel_types:
+        gen_mw = gen_data.get(fuel_key, 0)
+        # Data: Label, MW value, "MW" unit
+        data_rows.append([fuel_label, f'{gen_mw:.0f}', 'MW'])
+        
+        # Sparkline formula for merged D-E-F cell (bar chart from Data_Hidden)
+        dash_row = 13 + len(sparkline_updates)  # Rows 13-22
+        sparkline = f'=SPARKLINE(Data_Hidden!B{data_row}:AX{data_row},{{"charttype","bar"}})'  
+        sparkline_updates.append({'range': f'{SHEET_NAME}!D{dash_row}', 'values': [[sparkline]]})
+    
+    # Update columns A-C with data (label, MW, "MW")
     sheets_api.update_single_range(
         SPREADSHEET_ID,
-        f'{SHEET_NAME}!A13:D22',
-        rows
+        f'{SHEET_NAME}!A13:C22',
+        data_rows
     )
-    print(f"   ✅ Updated {len(rows)} fuel types (sparklines preserved)")
+    
+    # Update column D with sparklines (merged D-E-F cells show bar charts)
+    sheets_api.batch_update(SPREADSHEET_ID, sparkline_updates)
+    
+    print(f"   ✅ Updated {len(data_rows)} fuel types with sparklines")
 
 def update_demand(demand_mw):
     """Update demand section"""
@@ -135,35 +146,47 @@ def update_demand(demand_mw):
     print(f"   ✅ Demand: {demand_mw:.0f} MW")
 
 def update_interconnectors(ic_data):
-    """Update interconnector section (G13:I20) - leaves column J sparklines untouched"""
+    """Update interconnector section with data (G-I) and sparklines (J)"""
     print("\n🔌 Updating Interconnectors...")
     
+    # Map interconnectors to Data_Hidden row numbers
     interconnectors = [
-        ('IFA', 'IFA (FR)'),
-        ('IFA2', 'IFA2 (FR)'),
-        ('ELECLINK', 'ElecLink (FR)'),
-        ('BRITNED', 'BritNed (NL)'),
-        ('NEMO', 'Nemo (BE)'),
-        ('NSL', 'NSL (NO)'),
-        ('EWIC', 'EWIC (IE)'),
-        ('MOYLE', 'Moyle (NI)'),
+        ('IFA', 'IFA (FR)', 14),
+        ('IFA2', 'IFA2 (FR)', 16),
+        ('ELECLINK', 'ElecLink (FR)', 12),
+        ('BRITNED', 'BritNed (NL)', 18),
+        ('NEMO', 'Nemo (BE)', 19),
+        ('NSL', 'NSL (NO)', 20),
+        ('EWIC', 'EWIC (IE)', 13),
+        ('MOYLE', 'Moyle (NI)', 17),
     ]
     
-    rows = []
-    for ic_key, ic_label in interconnectors:
+    # Prepare data rows (G-I: label, MW value, direction)
+    data_rows = []
+    sparkline_updates = []
+    
+    for ic_key, ic_label, data_row in interconnectors:
         flow = ic_data.get(ic_key, 0)
         direction = '→ Import' if flow > 0 else '← Export' if flow < 0 else '—'
-        # Only update live values G-I, preserve existing sparklines in column J
-        rows.append([ic_label, f'{abs(flow):.0f} MW', direction])
+        # Data: Label, MW only (direction goes in next column after sparkline)
+        data_rows.append([ic_label, f'{abs(flow):.0f} MW'])
+        
+        # Sparkline formula for merged I-J cell (bar chart from Data_Hidden)
+        dash_row = 13 + len(sparkline_updates)  # Rows 13-20
+        sparkline = f'=SPARKLINE(Data_Hidden!B{data_row}:AX{data_row},{{\"charttype\",\"bar\"}})'
+        sparkline_updates.append({'range': f'{SHEET_NAME}!I{dash_row}', 'values': [[sparkline]]})
     
-    # Update columns G-I only (label, MW value, direction)
-    # Column J sparklines are maintained by Data_Hidden and should not be overwritten
+    # Update columns G-H with data
     sheets_api.update_single_range(
         SPREADSHEET_ID,
-        f'{SHEET_NAME}!G13:I20',
-        rows
+        f'{SHEET_NAME}!G13:H20',
+        data_rows
     )
-    print(f"   ✅ Updated {len(rows)} interconnectors (sparklines preserved)")
+    
+    # Update column I with sparklines (merged I-J cells show bar charts)
+    sheets_api.batch_update(SPREADSHEET_ID, sparkline_updates)
+    
+    print(f"   ✅ Updated {len(data_rows)} interconnectors with sparklines")
 
 def get_latest_outages():
     """Get latest power station outages"""
