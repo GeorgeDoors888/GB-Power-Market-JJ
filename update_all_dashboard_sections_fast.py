@@ -77,7 +77,7 @@ def get_latest_interconnectors():
         return {}
 
 def update_generation_mix(gen_data):
-    """Update generation mix section (A13:D22)"""
+    """Update generation mix section with sparklines (B13:E22)"""
     print("\n🔋 Updating Generation Mix...")
     
     fuel_types = [
@@ -96,14 +96,18 @@ def update_generation_mix(gen_data):
     rows = []
     for fuel_key, fuel_label in fuel_types:
         gen_mw = gen_data.get(fuel_key, 0)
-        rows.append([fuel_label, f'{gen_mw:.0f}', 'MW', f'{gen_mw/1000:.2f} GW'])
+        gen_gw = gen_mw / 1000
+        # Create sparkline formula for bar chart
+        sparkline = f'=SPARKLINE({{{gen_mw}}}, {{"charttype","bar"; "max",40000; "color1","#4285F4"}})'
+        rows.append([fuel_label, f'{gen_mw:.0f}', 'MW', f'{gen_gw:.2f} GW', sparkline])
     
+    # Update columns A-E (label, MW value, "MW" text, GW value, sparkline)
     sheets_api.update_single_range(
         SPREADSHEET_ID,
-        f'{SHEET_NAME}!A13:D22',
+        f'{SHEET_NAME}!A13:E22',
         rows
     )
-    print(f"   ✅ Updated {len(rows)} fuel types")
+    print(f"   ✅ Updated {len(rows)} fuel types with sparklines")
 
 def update_demand(demand_mw):
     """Update demand section"""
@@ -116,7 +120,7 @@ def update_demand(demand_mw):
     print(f"   ✅ Demand: {demand_mw:.0f} MW")
 
 def update_interconnectors(ic_data):
-    """Update interconnector section (G13:J22)"""
+    """Update interconnector section with sparklines (G13:J22)"""
     print("\n🔌 Updating Interconnectors...")
     
     interconnectors = [
@@ -134,14 +138,16 @@ def update_interconnectors(ic_data):
     for ic_key, ic_label in interconnectors:
         flow = ic_data.get(ic_key, 0)
         direction = '→ Import' if flow > 0 else '← Export' if flow < 0 else '—'
-        rows.append([ic_label, f'{abs(flow):.0f} MW', direction, ''])
+        # Create sparkline formula for bar chart
+        sparkline = f'=SPARKLINE({{{abs(flow)}}}, {{"charttype","bar"; "max",3000; "color1","{"#34A853" if flow > 0 else "#EA4335"}"}})'
+        rows.append([ic_label, f'{abs(flow):.0f} MW', direction, sparkline])
     
     sheets_api.update_single_range(
         SPREADSHEET_ID,
         f'{SHEET_NAME}!G13:J20',
         rows
     )
-    print(f"   ✅ Updated {len(rows)} interconnectors")
+    print(f"   ✅ Updated {len(rows)} interconnectors with sparklines")
 
 def update_timestamp():
     """Update last updated timestamp"""
