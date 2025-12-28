@@ -107,14 +107,14 @@ def get_bm_vwap():
     return 0.0
 
 def get_dispatch_rate():
-    """Get BM dispatch rate (acceptances per hour)"""
+    """Get BM dispatch rate (acceptances per hour) from IRIS real-time data"""
     query = f"""
     WITH recent_acceptances AS (
         SELECT 
             COUNT(*) as total_acceptances,
             COUNT(DISTINCT bmUnit) as active_units
-        FROM `{PROJECT_ID}.{DATASET}.bmrs_boalf`
-        WHERE CAST(settlementDate AS DATE) >= DATE_SUB(CURRENT_DATE(), INTERVAL 1 DAY)
+        FROM `{PROJECT_ID}.{DATASET}.bmrs_boalf_iris`
+        WHERE CAST(acceptanceTime AS TIMESTAMP) >= TIMESTAMP_SUB(CURRENT_TIMESTAMP(), INTERVAL 24 HOUR)
     )
     SELECT 
         total_acceptances / 24.0 as acceptances_per_hour,

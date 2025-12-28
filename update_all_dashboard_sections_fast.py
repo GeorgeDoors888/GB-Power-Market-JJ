@@ -55,13 +55,14 @@ def get_latest_demand():
     return 0.0
 
 def get_latest_interconnectors():
-    """Get latest interconnector flows - use historical table"""
+    """Get latest interconnector flows from bmrs_fuelinst_iris"""
     query = f"""
     SELECT 
-        interconnectorName,
-        flow
-    FROM `{PROJECT_ID}.{DATASET}.interconnector_flows_iris`
-    ORDER BY settlementDate DESC, settlementPeriod DESC
+        fuelType,
+        generation as flow
+    FROM `{PROJECT_ID}.{DATASET}.bmrs_fuelinst_iris`
+    WHERE fuelType IN ('INTFR', 'INTIRL', 'INTNED', 'INTEW', 'INTNEM', 'INTELEC', 'INTNSL', 'INTIFA2')
+    ORDER BY publishTime DESC
     LIMIT 50
     """
     try:
@@ -69,8 +70,22 @@ def get_latest_interconnectors():
         if df.empty:
             return {}
         
-        # Group by interconnector and get latest
-        latest = df.groupby('interconnectorName').first()['flow'].to_dict()
+        # Group by fuel type and get latest - map to interconnector names
+        ic_map = {
+            'INTFR': 'IFA',
+            'INTIFA2': 'IFA2',
+            'INTELEC': 'ELECLINK',
+            'INTNED': 'BRITNED',
+            'INTNEM': 'NEMO',
+            'INTNSL': 'NSL',
+            'INTEW': 'EWIC',
+            'INTIRL': 'MOYLE'
+        }
+        latest = {}
+        for fuel_type, flow in df.groupby('fuelType').first()['flow'].items():
+            ic_name = ic_map.get(fuel_type)
+            if ic_name:
+                latest[ic_name] = flow
         return latest
     except:
         # Return empty if table doesn't exist
@@ -149,6 +164,61 @@ def update_interconnectors(ic_data):
     )
     print(f"   ✅ Updated {len(rows)} interconnectors with sparklines")
 
+def get_latest_outages():
+    """Get latest power station outages"""
+    query = f"""
+    SELECT 
+        affectedUnit,
+        eventType,
+        fuelType,
+        mwCapacity
+    FROM `{PROJECT_ID}.{DATASET}.neso_remit_outages`
+    WHERE eventStatus = 'Active'
+    AND eventStart <= CURRENT_DATE()
+    AND (eventEnd >= CURRENT_DATE() OR eventEnd IS NULL)
+    ORDER BY mwCapacity DESC
+    LIMIT 10
+    """
+    try:
+        df = bq_client.query(query).to_dataframe()
+        return df.to_dict('records') if not df.empty else []
+    except:
+        return []
+
+def update_outages(outages_data):
+    """Update outages section (K27-K36)"""
+    print("\n⚠️  Updating Outages...")
+    
+    if not outages_data:
+        # Clear section if no outages
+        rows = [['No active outages']] + [[''] for _ in range(9)]
+        sheets_api.update_single_range(
+            SPREADSHEET_ID,
+            f'{SHEET_NAME}!K27:K36',
+            rows
+        )
+        print(f"   ✅ No active outages")
+        return
+    
+    rows = []
+    for outage in outages_data[:10]:
+        unit = outage.get('affectedUnit', 'Unknown')
+        event_type = outage.get('eventType', '')
+        fuel = outage.get('fuelType', '')
+        mw = outage.get('mwCapacity', 0)
+        rows.append([f'{unit} ({fuel}) • {mw:.0f}MW • {event_type}'])
+    
+    # Pad to 10 rows
+    while len(rows) < 10:
+        rows.append([''])
+    
+    sheets_api.update_single_range(
+        SPREADSHEET_ID,
+        f'{SHEET_NAME}!K27:K36',
+        rows
+    )
+    print(f"   ✅ Updated {len(outages_data)} outages")
+
 def update_timestamp():
     """Update last updated timestamp"""
     now = datetime.now(pytz.timezone('Europe/London'))
@@ -179,16 +249,19 @@ def main():
         gen_data = get_latest_generation_mix()
         demand_mw = get_latest_demand()
         ic_data = get_latest_interconnectors()
+        outages_data = get_latest_outages()
         
         print(f"   ✅ Generation: {len(gen_data)} fuel types")
         print(f"   ✅ Demand: {demand_mw:.0f} MW")
         print(f"   ✅ Interconnectors: {len(ic_data)} flows")
+        print(f"   ✅ Outages: {len(outages_data)} active")
         
         # Update all sections
         update_timestamp()
         update_generation_mix(gen_data)
         update_demand(demand_mw)
         update_interconnectors(ic_data)
+        update_outages(outages_data)
         
         print("\n" + "=" * 100)
         print("✅ DASHBOARD UPDATE COMPLETE!")
