@@ -187,7 +187,7 @@ def main():
     client = bq_client()
     
     log_progress("=" * 70)
-    log_progress("🚀 CONTINUOUS EXTRACTION STARTED")
+    log_progress("⚡ CONTINUOUS EXTRACTION STARTED")
     log_progress("Will run until all documents are processed")
     log_progress(f"Batch size: {BATCH_SIZE:,} | Workers: {MAX_WORKERS}")
     log_progress("=" * 70)

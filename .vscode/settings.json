@@ -30,6 +30,7 @@
   "chat.todoListTool.enabled": true,
   "chat.agentSessionsViewLocation": "view",
   "chat.agent.thinking.collapsedTools": true,
+  "github.copilot.chat.terminalAccess": "enabled",
   
   // Code quality
   "editor.formatOnSave": true,

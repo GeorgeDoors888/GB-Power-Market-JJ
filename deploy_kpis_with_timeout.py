@@ -216,7 +216,7 @@ def deploy_to_dashboard(df):
 def main():
     """Main execution with timeout handling"""
     print("=" * 60)
-    print("🚀 BM Market KPIs Deployment (Timeout-Protected)")
+    print("⚡ BM Market KPIs Deployment (Timeout-Protected)")
     print("=" * 60)
     print()
 

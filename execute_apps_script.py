@@ -43,7 +43,7 @@ def execute_function(function_name):
         return False
 
 if __name__ == "__main__":
-    print("🚀 EXECUTING APPS SCRIPT FUNCTIONS")
+    print("⚡ EXECUTING APPS SCRIPT FUNCTIONS")
     print("=" * 60)
     
     print("\n1️⃣ Running formatDashboard...")

@@ -164,7 +164,7 @@ def verify_sparklines():
 
 if __name__ == '__main__':
     logging.info("=" * 70)
-    logging.info("🚀 WRITING SPARKLINES VIA GOOGLE SHEETS API V4")
+    logging.info("⚡ WRITING SPARKLINES VIA GOOGLE SHEETS API V4")
     logging.info("=" * 70)
     
     success = write_sparklines_v4_api()

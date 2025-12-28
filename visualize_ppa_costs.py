@@ -17,7 +17,7 @@ from matplotlib.patches import Rectangle
 import seaborn as sns
 
 # Configuration
-DASHBOARD_V2_ID = '1LmMq4OEE639Y-XXpOJ3xnvpAmHB6vUovh5g6gaU_vzc'
+DASHBOARD_V2_ID = '1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA'
 CREDENTIALS_FILE = 'inner-cinema-credentials.json'
 PROJECT_ID = 'inner-cinema-476211-u9'
 

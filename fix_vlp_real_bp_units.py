@@ -13,7 +13,7 @@ SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
 creds = Credentials.from_service_account_file('inner-cinema-credentials.json', scopes=SCOPES)
 gc = gspread.authorize(creds)
 
-SPREADSHEET_ID = '1LmMq4OEE639Y-XXpOJ3xnvpAmHB6vUovh5g6gaU_vzc'
+SPREADSHEET_ID = '1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA'
 PROJECT_ID = 'inner-cinema-476211-u9'
 DATASET = 'uk_energy_prod'
 
@@ -201,7 +201,7 @@ if not vlp_units_df.empty:
     print(f"  • £{estimated_arb_revenue:,.0f}/yr arbitrage (est.)")
     print(f"  • £{total_vlp_revenue:,.0f}/yr TOTAL")
     print()
-    print("Open: https://docs.google.com/spreadsheets/d/1LmMq4OEE639Y-XXpOJ3xnvpAmHB6vUovh5g6gaU_vzc/")
+    print("Open: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/")
 
 else:
     print("❌ No VLP data found in bmrs_boalf")

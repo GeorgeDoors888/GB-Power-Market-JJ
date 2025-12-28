@@ -16,7 +16,7 @@ import os
 
 # Configuration
 SERVICE_ACCOUNT = 'inner-cinema-credentials.json'
-SPREADSHEET_ID = '1LmMq4OEE639Y-XXpOJ3xnvpAmHB6vUovh5g6gaU_vzc'  # BESS Dashboard
+SPREADSHEET_ID = '1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA'  # BESS Dashboard
 SHEET_NAME = 'Code_Repository'
 
 # Files to upload for ChatGPT access
@@ -53,7 +53,7 @@ FILES_TO_UPLOAD = [
 ]
 
 def main():
-    print("🚀 Uploading code files to Google Sheets for ChatGPT access...")
+    print("⚡ Uploading code files to Google Sheets for ChatGPT access...")
     
     # Authenticate
     scopes = [

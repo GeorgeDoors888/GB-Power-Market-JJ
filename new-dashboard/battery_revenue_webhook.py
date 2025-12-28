@@ -123,7 +123,7 @@ if __name__ == '__main__':
     print("   POST /refresh-battery-analysis - Legacy endpoint (stub)")
     print("   GET  /health                   - Health check")
     print()
-    print("🚀 Starting server on http://0.0.0.0:5002")
+    print("⚡ Starting server on http://0.0.0.0:5002")
     print("=" * 80)
     
     app.run(host='0.0.0.0', port=5002, debug=True)

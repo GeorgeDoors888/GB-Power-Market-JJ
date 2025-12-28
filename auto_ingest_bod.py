@@ -111,10 +111,10 @@ def upload_to_bigquery(client, records, batch_size=500):
     # Upload in batches to avoid 413 Request Too Large
     total_uploaded = 0
     total_errors = 0
-    
+
     for i in range(0, len(records), batch_size):
         batch = records[i:i + batch_size]
-        
+
         try:
             errors = client.insert_rows_json(table_id, batch)
 

@@ -271,7 +271,7 @@ def status():
 
 if __name__ == '__main__':
     print("="*60)
-    print("🚀 DNO WEBHOOK SERVER FOR UPCLOUD")
+    print("⚡ DNO WEBHOOK SERVER FOR UPCLOUD")
     print("="*60)
     print(f"📁 Project directory: {PROJECT_DIR}")
     print(f"🔑 Credentials: {CREDENTIALS_PATH}")

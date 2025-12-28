@@ -28,7 +28,7 @@ sheet_id = '1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA'
 sh = gc.open_by_key(sheet_id)
 dashboard = sh.worksheet('Dashboard')
 
-print("🚀 Implementing Constraint System in Dashboard")
+print("⚡ Implementing Constraint System in Dashboard")
 print("="*60)
 
 # Step 1: Check if constraint tables exist

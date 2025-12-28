@@ -205,7 +205,7 @@ def ingest_dataset(client, dataset_name, config):
 def main():
     """Main execution"""
     logging.info("=" * 60)
-    logging.info("🚀 GB Power Market - Auto Real-Time Ingestion")
+    logging.info("⚡ GB Power Market - Auto Real-Time Ingestion")
     logging.info("=" * 60)
 
     client = bigquery.Client(project=PROJECT_ID, location='US')

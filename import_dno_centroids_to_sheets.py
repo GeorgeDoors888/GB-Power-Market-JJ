@@ -11,7 +11,7 @@ import csv
 scopes = ['https://www.googleapis.com/auth/spreadsheets']
 creds = ServiceAccountCredentials.from_json_keyfile_name('inner-cinema-credentials.json', scopes)
 gc = gspread.authorize(creds)
-spreadsheet = gc.open_by_key('1LmMq4OEE639Y-XXpOJ3xnvpAmHB6vUovh5g6gaU_vzc')
+spreadsheet = gc.open_by_key('1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA')
 
 print('📊 Importing DNO Centroids to Google Sheets...')
 print('='*80)
@@ -68,7 +68,7 @@ for i, row in enumerate(data[:5], 1):
     print(f'   {i}. {row[0]:6s} {row[1][:30]:30s} {row[2]:8s} {row[3]:8s}')
 
 print('\n📊 Next steps:')
-print('   1. Open: https://docs.google.com/spreadsheets/d/1LmMq4OEE639Y-XXpOJ3xnvpAmHB6vUovh5g6gaU_vzc')
+print('   1. Open: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA')
 print('   2. Go to DNO_CENTROIDS tab')
 print('   3. Select data range A1:F15')
 print('   4. Insert → Chart')

@@ -1,0 +1,187 @@
+{
+  "spreadsheet_id": "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA",
+  "title": "GB Live 2",
+  "url": "https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit",
+  "script_id": "1b2dOZ4lw-zJvKdZ4MaJ48f1NR7ewCtUbZOGWGb3n8O7P-kgnUsThs980",
+  "locale": "en_GB",
+  "timezone": "Europe/London",
+  "sheets": [
+    {
+      "sheet_id": 2004945866,
+      "title": "DATA",
+      "index": 0,
+      "sheet_type": "GRID",
+      "grid_properties": {
+        "row_count": 1000,
+        "column_count": 26,
+        "frozen_row_count": 4,
+        "frozen_column_count": 1,
+        "hide_gridlines": false
+      },
+      "tab_color": {
+        "red": 1,
+        "green": 0.4
+      },
+      "hidden": false
+    },
+    {
+      "sheet_id": 1201966776,
+      "title": "INSTRUCTIONS",
+      "index": 1,
+      "sheet_type": "GRID",
+      "grid_properties": {
+        "row_count": 1000,
+        "column_count": 26,
+        "frozen_row_count": 6,
+        "frozen_column_count": 1,
+        "hide_gridlines": false
+      },
+      "tab_color": {
+        "red": 1,
+        "green": 0.4
+      },
+      "hidden": false
+    },
+    {
+      "sheet_id": 687718775,
+      "title": "Live Dashboard v2",
+      "index": 2,
+      "sheet_type": "GRID",
+      "grid_properties": {
+        "row_count": 1009,
+        "column_count": 49,
+        "frozen_row_count": 2,
+        "frozen_column_count": 0,
+        "hide_gridlines": false
+      },
+      "tab_color": {
+        "red": 1,
+        "green": 0.4
+      },
+      "hidden": false
+    },
+    {
+      "sheet_id": 225925794,
+      "title": "Analysis",
+      "index": 3,
+      "sheet_type": "GRID",
+      "grid_properties": {
+        "row_count": 2018,
+        "column_count": 26,
+        "frozen_row_count": 0,
+        "frozen_column_count": 0,
+        "hide_gridlines": false
+      },
+      "tab_color": {
+        "green": 0.49803922,
+        "blue": 1
+      },
+      "hidden": false
+    },
+    {
+      "sheet_id": 115327894,
+      "title": "BtM",
+      "index": 4,
+      "sheet_type": "GRID",
+      "grid_properties": {
+        "row_count": 1072,
+        "column_count": 27,
+        "frozen_row_count": 0,
+        "frozen_column_count": 0,
+        "hide_gridlines": false
+      },
+      "tab_color": null,
+      "hidden": false
+    },
+    {
+      "sheet_id": 1758096144,
+      "title": "BESS_Event",
+      "index": 5,
+      "sheet_type": "GRID",
+      "grid_properties": {
+        "row_count": 100,
+        "column_count": 20,
+        "frozen_row_count": 0,
+        "frozen_column_count": 0,
+        "hide_gridlines": false
+      },
+      "tab_color": null,
+      "hidden": false
+    },
+    {
+      "sheet_id": 1979713595,
+      "title": "BtM Calculator",
+      "index": 6,
+      "sheet_type": "GRID",
+      "grid_properties": {
+        "row_count": 1000,
+        "column_count": 26,
+        "frozen_row_count": 2,
+        "frozen_column_count": 0,
+        "hide_gridlines": false
+      },
+      "tab_color": null,
+      "hidden": false
+    },
+    {
+      "sheet_id": 2132067470,
+      "title": "DATA DICTIONARY",
+      "index": 7,
+      "sheet_type": "GRID",
+      "grid_properties": {
+        "row_count": 1000,
+        "column_count": 26,
+        "frozen_row_count": 5,
+        "frozen_column_count": 1,
+        "hide_gridlines": false
+      },
+      "tab_color": null,
+      "hidden": false
+    },
+    {
+      "sheet_id": 1891330986,
+      "title": "Data_Hidden",
+      "index": 8,
+      "sheet_type": "GRID",
+      "grid_properties": {
+        "row_count": 50,
+        "column_count": 49,
+        "frozen_row_count": 0,
+        "frozen_column_count": 0,
+        "hide_gridlines": false
+      },
+      "tab_color": null,
+      "hidden": true
+    },
+    {
+      "sheet_id": 486714144,
+      "title": "DropdownData",
+      "index": 9,
+      "sheet_type": "GRID",
+      "grid_properties": {
+        "row_count": 2718,
+        "column_count": 10,
+        "frozen_row_count": 0,
+        "frozen_column_count": 0,
+        "hide_gridlines": false
+      },
+      "tab_color": null,
+      "hidden": true
+    },
+    {
+      "sheet_id": 273713365,
+      "title": "DNO Constraint Costs",
+      "index": 10,
+      "sheet_type": "GRID",
+      "grid_properties": {
+        "row_count": 100,
+        "column_count": 20,
+        "frozen_row_count": 1,
+        "frozen_column_count": 0,
+        "hide_gridlines": false
+      },
+      "tab_color": null,
+      "hidden": false
+    }
+  ]
+}

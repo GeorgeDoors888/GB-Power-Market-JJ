@@ -216,7 +216,7 @@ def deploy_to_dashboard(df, date, kpis):
 
 def main():
     print("=" * 60)
-    print("🚀 BM Market KPIs Deployment (FORMULA VERSION)")
+    print("⚡ BM Market KPIs Deployment (FORMULA VERSION)")
     print("=" * 60)
 
     print("\n📊 Connecting to BigQuery...")

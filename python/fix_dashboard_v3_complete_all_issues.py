@@ -39,7 +39,7 @@ IC_FLAG_MAP = {
 }
 
 def main():
-    print("🚀 Dashboard V3 - Complete Fix Starting...")
+    print("⚡ Dashboard V3 - Complete Fix Starting...")
     print("="*80)
     
     # Initialize Google Sheets

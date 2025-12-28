@@ -145,7 +145,7 @@ def deploy_generation_sparklines():
 def main():
     """Deploy all sparklines"""
     print("=" * 60)
-    print("🚀 SPARKLINE DEPLOYMENT - Live Dashboard v2")
+    print("⚡ SPARKLINE DEPLOYMENT - Live Dashboard v2")
     print("=" * 60)
     print()
 

@@ -15,7 +15,7 @@ def install_apps_script_automated():
     """Fully automated Apps Script installation"""
     
     print("=" * 80)
-    print("🚀 Automated Apps Script Installation")
+    print("⚡ Automated Apps Script Installation")
     print("=" * 80)
     
     # Read the Apps Script content

@@ -1256,7 +1256,7 @@ if __name__ == "__main__":
     
     # Print the API token on startup
     print("\n" + "="*60)
-    print("🚀 Codex Server Starting...")
+    print("⚡ Codex Server Starting...")
     print("="*60)
     print(f"\n🔑 Your API Token (SAVE THIS!):")
     print(f"   {API_TOKEN}")

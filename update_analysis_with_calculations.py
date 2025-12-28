@@ -333,7 +333,7 @@ def update_advanced_metrics(sheet, bq_client, days):
     print("✅ Advanced metrics updated!")
 
 def main():
-    print("🚀 Updating Analysis BI Enhanced with Advanced Calculations...")
+    print("⚡ Updating Analysis BI Enhanced with Advanced Calculations...")
     print(f"📅 Timestamp: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     
     # Connect to Google Sheets

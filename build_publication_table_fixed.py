@@ -127,7 +127,7 @@ SELECT
   ARRAY(SELECT price FROM IntradayPrice) AS intraday_price
 """
 
-print("🚀 Executing publication query...")
+print("⚡ Executing publication query...")
 job = client.query(publication_query)
 job.result()  # Wait for completion
 

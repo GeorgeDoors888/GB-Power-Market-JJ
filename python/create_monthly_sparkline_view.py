@@ -16,7 +16,7 @@ PROJECT_ID = "inner-cinema-476211-u9"
 DATASET = "uk_energy_prod"
 
 def main():
-    print("🚀 Creating Monthly Sparkline View for VLP Revenue")
+    print("⚡ Creating Monthly Sparkline View for VLP Revenue")
     print(f"📍 Project: {PROJECT_ID}")
     print(f"📍 Dataset: {DATASET}\n")
     

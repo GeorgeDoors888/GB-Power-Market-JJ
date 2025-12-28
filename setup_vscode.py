@@ -443,7 +443,7 @@ def open_vscode():
 
 def main():
     """Main setup function"""
-    print_header("🚀 VS Code Auto-Setup for GB Power Market")
+    print_header("⚡ VS Code Auto-Setup for GB Power Market")
     print_info("This script will:")
     print_info("  1. Check/Install VS Code")
     print_info("  2. Install essential extensions")

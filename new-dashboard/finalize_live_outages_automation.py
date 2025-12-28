@@ -298,7 +298,7 @@ def enhance_dropdowns(sheet):
 
 def main():
     """Execute all automation tasks"""
-    print("🚀 FINALIZING LIVE OUTAGES AUTOMATION\n")
+    print("⚡ FINALIZING LIVE OUTAGES AUTOMATION\n")
     
     try:
         spreadsheet, sheet = connect_sheets()

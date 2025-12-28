@@ -201,7 +201,7 @@ def create_capacity_market_site():
 
 
 def main():
-    print('🚀 CREATING VLP DATA TABLES')
+    print('⚡ CREATING VLP DATA TABLES')
     print('='*60)
     
     try:

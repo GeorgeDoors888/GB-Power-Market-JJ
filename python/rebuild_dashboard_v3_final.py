@@ -26,7 +26,7 @@ except ImportError as e:
 
 def main():
     print("\n" + "=" * 80)
-    print("🚀 GB ENERGY DASHBOARD V3 - PROFESSIONAL REBUILD")
+    print("⚡ GB ENERGY DASHBOARD V3 - PROFESSIONAL REBUILD")
     print("=" * 80)
     print("\nThis script will:")
     print("  1. Populate all backing data tables from BigQuery")
@@ -49,7 +49,7 @@ def main():
     print("\n🎨 PHASE 2: APPLYING DASHBOARD DESIGN")
     print("-" * 80)
     print("\n" + "=" * 70)
-    print("🚀 APPLYING GB ENERGY DASHBOARD V3 DESIGN")
+    print("⚡ APPLYING GB ENERGY DASHBOARD V3 DESIGN")
     print("=" * 70)
     setup_dashboard_v3()
     print("\n" + "=" * 70)

@@ -1,0 +1,308 @@
+[
+  {
+    "id": "f0055054-c55c-4068-a01c-61da4334e58f",
+    "name": "thermal-constraint-costs",
+    "title": "Thermal Constraint Costs",
+    "search_term": "constraint cost"
+  },
+  {
+    "id": "fb56b46e-cef3-4eb8-9294-0ca19769b7eb",
+    "name": "constraint-breakdown",
+    "title": "Constraint Breakdown Costs and Volume",
+    "search_term": "constraint cost"
+  },
+  {
+    "id": "51bb8f5a-3c95-4f7f-9a72-3b36cb7f1dc0",
+    "name": "24-months-ahead-constraint-cost-forecast",
+    "title": "24 Months Ahead Constraint Cost Forecast",
+    "search_term": "constraint cost"
+  },
+  {
+    "id": "8df6dd77-315f-465e-a8d9-ce0492853050",
+    "name": "outturn-voltage-costs",
+    "title": "Voltage System Costs",
+    "search_term": "constraint cost"
+  },
+  {
+    "id": "7c20761d-3aab-4e9f-926e-6117fa8c4524",
+    "name": "constraint-management-intertrip-service-information-cmis",
+    "title": "Constraint Management Intertrip Service Information (CMIS)",
+    "search_term": "constraint cost"
+  },
+  {
+    "id": "1a03230c-94c6-4816-bb93-e4450f31aa17",
+    "name": "balancing-services-contract-enactment",
+    "title": "Balancing Services Contract Enactment",
+    "search_term": "constraint cost"
+  },
+  {
+    "id": "fdcb1853-4279-4fc9-acb2-d603965eab12",
+    "name": "interconnector-requirement-and-auction-summary-data",
+    "title": "Interconnector Requirement and Auction Summary Data",
+    "search_term": "constraint cost"
+  },
+  {
+    "id": "fb56b46e-cef3-4eb8-9294-0ca19769b7eb",
+    "name": "constraint-breakdown",
+    "title": "Constraint Breakdown Costs and Volume",
+    "search_term": "historic constraint breakdown"
+  },
+  {
+    "id": "8df6dd77-315f-465e-a8d9-ce0492853050",
+    "name": "outturn-voltage-costs",
+    "title": "Voltage System Costs",
+    "search_term": "historic constraint breakdown"
+  },
+  {
+    "id": "829e325f-8926-40ab-9dd6-8b7aea6cb244",
+    "name": "demand-flexibility",
+    "title": "Demand Flexibility Service",
+    "search_term": "historic constraint breakdown"
+  },
+  {
+    "id": "1a03230c-94c6-4816-bb93-e4450f31aa17",
+    "name": "balancing-services-contract-enactment",
+    "title": "Balancing Services Contract Enactment",
+    "search_term": "mandatory balancing services"
+  },
+  {
+    "id": "ca51d03a-53e8-4397-aee1-2f40f9973b96",
+    "name": "balancing-services-adjustment-data-forward-contracts",
+    "title": "Balancing Services Adjustment Data (BSAD) Forward Contracts",
+    "search_term": "mandatory balancing services"
+  },
+  {
+    "id": "69c869a5-e6c6-4f48-852b-395a05882ef9",
+    "name": "aggregated-bsad",
+    "title": "Aggregated Balancing Services Adjustment Data (BSAD)",
+    "search_term": "mandatory balancing services"
+  },
+  {
+    "id": "4878d09f-8938-4e8f-8f3e-538b3355861a",
+    "name": "disaggregated-bsad",
+    "title": "Disaggregated Balancing Services Adjustment Data (BSAD)",
+    "search_term": "mandatory balancing services"
+  },
+  {
+    "id": "d13d78fc-60d9-4f4d-87b6-e25a20f669c0",
+    "name": "daily-balancing-costs-balancing-services-use-of-system",
+    "title": "Daily Balancing Services Use of System (BSUoS) Cost Data",
+    "search_term": "mandatory balancing services"
+  },
+  {
+    "id": "252b7bd1-7452-41bf-9b60-540cb1c0751a",
+    "name": "daily-balancing-volume-balancing-services-use-of-system",
+    "title": "Daily Balancing Services Use of System (BSUoS) Volume Data",
+    "search_term": "mandatory balancing services"
+  },
+  {
+    "id": "a8368560-87ac-4d31-85b7-625322430456",
+    "name": "balancing-services-use-of-system-bsuos-daily-forecast",
+    "title": "Daily Balancing Services Use of System (BSUoS) Forecast",
+    "search_term": "mandatory balancing services"
+  },
+  {
+    "id": "c0376ed7-3205-4fe2-9496-28496f1f287a",
+    "name": "bsuos-monthly-forecast",
+    "title": "Monthly Balancing Services Use of System (BSUoS) Forecast Data",
+    "search_term": "mandatory balancing services"
+  },
+  {
+    "id": "d6a4bf54-c63f-4014-a716-49fd3878ca52",
+    "name": "current-balancing-services-use-of-system-bsuos-data",
+    "title": "Current Balancing Services Use of System (BSUoS) Charges",
+    "search_term": "mandatory balancing services"
+  },
+  {
+    "id": "6b31e0f0-f711-461c-84bb-4ed4775a9992",
+    "name": "balancing-reserve-auction-requirement-forecast",
+    "title": "Balancing Reserve Auction Requirement Forecast",
+    "search_term": "mandatory balancing services"
+  },
+  {
+    "id": "fc8dadc7-235d-44b0-bab2-320dc76095de",
+    "name": "ancillary-services-important-industry-notifications",
+    "title": "Ancillary Services Important Industry Notifications",
+    "search_term": "mandatory balancing services"
+  },
+  {
+    "id": "7e142b03-8650-4f46-8420-7ce1e84e1e5b",
+    "name": "obligatory-reactive-power-service-orps-utilisation",
+    "title": "Obligatory Reactive Power Service (ORPS)",
+    "search_term": "mandatory balancing services"
+  },
+  {
+    "id": "769ec53a-9940-4df3-a867-6fa62d483097",
+    "name": "obp-reserve-availability-utilisation-price",
+    "title": "Open Balancing Platform (OBP) - Reserve Availability MW and Utilisation Price",
+    "search_term": "mandatory balancing services"
+  },
+  {
+    "id": "0ba217bb-846b-470e-9717-ff152d97d009",
+    "name": "obp-non-bm-reserve-instructions",
+    "title": "Open Balancing Platform (OBP) - Non-BM Reserve Instructions",
+    "search_term": "mandatory balancing services"
+  },
+  {
+    "id": "73edf630-fe9e-45a6-a2be-fa0d31a8ec1d",
+    "name": "obp-non-bm-physical-notifications",
+    "title": "Open Balancing Platform (OBP) - Non-BM Physical Notifications (PN)",
+    "search_term": "mandatory balancing services"
+  },
+  {
+    "id": "6c862622-48ff-4025-b998-d4d3db9e984d",
+    "name": "bsuos-fixed-tariffs",
+    "title": "BSUoS Fixed Tariffs",
+    "search_term": "mandatory balancing services"
+  },
+  {
+    "id": "7247a5da-563e-4159-b8c1-e388e39ff5a2",
+    "name": "quick-reserve-auction-requirement-forecast",
+    "title": "Quick Reserve Auction Requirement Forecast",
+    "search_term": "mandatory balancing services"
+  },
+  {
+    "id": "94c65383-a108-468f-aad4-1d96380be93f",
+    "name": "eac-br-auction-results",
+    "title": "EAC-BR Auction Results",
+    "search_term": "mandatory balancing services"
+  },
+  {
+    "id": "c9843f08-bb12-461d-9741-69729fe887a0",
+    "name": "eac-br-mock-auction-results",
+    "title": "EAC-BR Mock Auction Results",
+    "search_term": "mandatory balancing services"
+  },
+  {
+    "id": "cb295f83-bfb8-4aa0-9b92-0a6791342c7e",
+    "name": "contract-transfer-of-obligation",
+    "title": "Contract Transfer of Obligation",
+    "search_term": "mandatory balancing services"
+  },
+  {
+    "id": "c7f21d91-4e93-4162-9caa-ad9165db9c5e",
+    "name": "skip-rates",
+    "title": "Skip Rates",
+    "search_term": "skip rate"
+  },
+  {
+    "id": "d13d78fc-60d9-4f4d-87b6-e25a20f669c0",
+    "name": "daily-balancing-costs-balancing-services-use-of-system",
+    "title": "Daily Balancing Services Use of System (BSUoS) Cost Data",
+    "search_term": "balancing services cost"
+  },
+  {
+    "id": "1a03230c-94c6-4816-bb93-e4450f31aa17",
+    "name": "balancing-services-contract-enactment",
+    "title": "Balancing Services Contract Enactment",
+    "search_term": "balancing services cost"
+  },
+  {
+    "id": "ca51d03a-53e8-4397-aee1-2f40f9973b96",
+    "name": "balancing-services-adjustment-data-forward-contracts",
+    "title": "Balancing Services Adjustment Data (BSAD) Forward Contracts",
+    "search_term": "balancing services cost"
+  },
+  {
+    "id": "69c869a5-e6c6-4f48-852b-395a05882ef9",
+    "name": "aggregated-bsad",
+    "title": "Aggregated Balancing Services Adjustment Data (BSAD)",
+    "search_term": "balancing services cost"
+  },
+  {
+    "id": "4878d09f-8938-4e8f-8f3e-538b3355861a",
+    "name": "disaggregated-bsad",
+    "title": "Disaggregated Balancing Services Adjustment Data (BSAD)",
+    "search_term": "balancing services cost"
+  },
+  {
+    "id": "252b7bd1-7452-41bf-9b60-540cb1c0751a",
+    "name": "daily-balancing-volume-balancing-services-use-of-system",
+    "title": "Daily Balancing Services Use of System (BSUoS) Volume Data",
+    "search_term": "balancing services cost"
+  },
+  {
+    "id": "c0376ed7-3205-4fe2-9496-28496f1f287a",
+    "name": "bsuos-monthly-forecast",
+    "title": "Monthly Balancing Services Use of System (BSUoS) Forecast Data",
+    "search_term": "balancing services cost"
+  },
+  {
+    "id": "a8368560-87ac-4d31-85b7-625322430456",
+    "name": "balancing-services-use-of-system-bsuos-daily-forecast",
+    "title": "Daily Balancing Services Use of System (BSUoS) Forecast",
+    "search_term": "balancing services cost"
+  },
+  {
+    "id": "d6a4bf54-c63f-4014-a716-49fd3878ca52",
+    "name": "current-balancing-services-use-of-system-bsuos-data",
+    "title": "Current Balancing Services Use of System (BSUoS) Charges",
+    "search_term": "balancing services cost"
+  },
+  {
+    "id": "8df6dd77-315f-465e-a8d9-ce0492853050",
+    "name": "outturn-voltage-costs",
+    "title": "Voltage System Costs",
+    "search_term": "balancing services cost"
+  },
+  {
+    "id": "59f20804-9c9e-4f70-a809-c4c48a4f4c6e",
+    "name": "system-inertia-cost",
+    "title": "System Inertia Cost",
+    "search_term": "balancing services cost"
+  },
+  {
+    "id": "fb56b46e-cef3-4eb8-9294-0ca19769b7eb",
+    "name": "constraint-breakdown",
+    "title": "Constraint Breakdown Costs and Volume",
+    "search_term": "balancing services cost"
+  },
+  {
+    "id": "23d66321-9c65-4825-9d62-94b6b24a1207",
+    "name": "gb-system-inertia-bid-and-offer-costs",
+    "title": "Great Britain System Inertia Bid and Offer Costs",
+    "search_term": "balancing services cost"
+  },
+  {
+    "id": "6b31e0f0-f711-461c-84bb-4ed4775a9992",
+    "name": "balancing-reserve-auction-requirement-forecast",
+    "title": "Balancing Reserve Auction Requirement Forecast",
+    "search_term": "balancing services cost"
+  },
+  {
+    "id": "fc8dadc7-235d-44b0-bab2-320dc76095de",
+    "name": "ancillary-services-important-industry-notifications",
+    "title": "Ancillary Services Important Industry Notifications",
+    "search_term": "balancing services cost"
+  },
+  {
+    "id": "7e142b03-8650-4f46-8420-7ce1e84e1e5b",
+    "name": "obligatory-reactive-power-service-orps-utilisation",
+    "title": "Obligatory Reactive Power Service (ORPS)",
+    "search_term": "balancing services cost"
+  },
+  {
+    "id": "7c20761d-3aab-4e9f-926e-6117fa8c4524",
+    "name": "constraint-management-intertrip-service-information-cmis",
+    "title": "Constraint Management Intertrip Service Information (CMIS)",
+    "search_term": "balancing services cost"
+  },
+  {
+    "id": "769ec53a-9940-4df3-a867-6fa62d483097",
+    "name": "obp-reserve-availability-utilisation-price",
+    "title": "Open Balancing Platform (OBP) - Reserve Availability MW and Utilisation Price",
+    "search_term": "balancing services cost"
+  },
+  {
+    "id": "0ba217bb-846b-470e-9717-ff152d97d009",
+    "name": "obp-non-bm-reserve-instructions",
+    "title": "Open Balancing Platform (OBP) - Non-BM Reserve Instructions",
+    "search_term": "balancing services cost"
+  },
+  {
+    "id": "73edf630-fe9e-45a6-a2be-fa0d31a8ec1d",
+    "name": "obp-non-bm-physical-notifications",
+    "title": "Open Balancing Platform (OBP) - Non-BM Physical Notifications (PN)",
+    "search_term": "balancing services cost"
+  }
+]

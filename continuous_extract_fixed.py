@@ -296,7 +296,7 @@ def process_batch(cfg, dataset, client, batch_num):
 
 def main():
     """Main extraction loop"""
-    log_progress("🚀 Starting FIXED continuous extraction")
+    log_progress("⚡ Starting FIXED continuous extraction")
     log_progress(f"   MAX_WORKERS: {MAX_WORKERS}")
     log_progress(f"   BATCH_SIZE: {BATCH_SIZE}")
     log_progress(f"   Target: Process ALL 153K documents")

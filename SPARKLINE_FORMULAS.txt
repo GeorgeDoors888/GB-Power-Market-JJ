@@ -1,0 +1,62 @@
+================================================================================
+SPARKLINE FORMULAS FOR LIVE DASHBOARD V2
+================================================================================
+
+Copy and paste these formulas into the Google Sheets cells manually:
+
+Cell N14 (BM Avg Price):
+=SPARKLINE(Data_Hidden!B27:AW27,{"charttype","bar"})
+
+Cell N16 (Vol-Wtd Avg):
+=SPARKLINE(Data_Hidden!B28:AW28,{"charttype","bar"})
+
+Cell N18 (MID Price):
+=SPARKLINE(Data_Hidden!B29:AW29,{"charttype","bar"})
+
+Cell R14 (BM-MID Spread):
+=SPARKLINE(Data_Hidden!B32:AW32,{"charttype","bar"})
+
+Cell R16 (Sys Sell):
+=SPARKLINE(Data_Hidden!B31:AW31,{"charttype","bar"})
+
+Cell R18 (Sys Buy):
+=SPARKLINE(Data_Hidden!B30:AW30,{"charttype","bar"})
+
+================================================================================
+INSTRUCTIONS
+================================================================================
+
+1. Open the spreadsheet:
+   https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit#gid=687718775
+
+2. Click on cell N14 and paste the first formula
+3. Press Enter
+4. Repeat for the other 5 cells
+
+EXPECTED RESULTS:
+- N18 (MID Price): ✅ Will work immediately (has data: 73.5, 80.41, 78.04...)
+- R16 (Sys Sell): ✅ Will work immediately (has data: 87.8, 101.11...)
+- R18 (Sys Buy): ✅ Will work immediately (has data: 87.8, 101.11...)
+- R14 (BM-MID Spread): ✅ Will work immediately (calculated from MID/Sys)
+
+- N14 (BM Avg Price): ⏳ Will show zeros until BOALF data backfilled
+- N16 (Vol-Wtd Avg): ⏳ Will show zeros until BOALF data backfilled
+
+================================================================================
+DATA STATUS (as of 2025-12-20 16:30)
+================================================================================
+
+Data_Hidden Row Status:
+✅ Row 29 (MID Price):    73.5, 80.41, 78.04, 74.13, 74.34 ... (48 periods)
+✅ Row 30 (Sys Buy):      87.8, 101.11, 87.8, 87.8, 87.8 ... (48 periods)
+✅ Row 31 (Sys Sell):     87.8, 101.11, 87.8, 87.8, 87.8 ... (48 periods)
+✅ Row 32 (BM-MID Spread): -73.5, -80.41, -78.04 ... (calculated)
+❌ Row 27 (BM Avg Price): 0, 0, 0 ... (waiting for BOALF backfill)
+❌ Row 28 (BM Vol Wtd):   0, 0, 0 ... (waiting for BOALF backfill)
+
+Automation:
+✅ update_data_hidden_only.py runs every 15 minutes (cron)
+✅ Daily pipeline at 3 AM (complete refresh)
+✅ FastSheets implementation (266x faster than gspread)
+
+================================================================================

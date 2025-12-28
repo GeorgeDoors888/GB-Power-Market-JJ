@@ -14,7 +14,7 @@ from googleapiclient.discovery import build
 SCRIPT_ID = os.environ.get('APPS_SCRIPT_ID', "1NH75y8hbrHd0H7972ooEUdi2v8ICON3IVHrOdm1aLnDIaPvdL4DVj6GR")
 TOKEN_FILE = "apps_script_token.pickle"
 
-print("🚀 Executing Dashboard Charts Creation")
+print("⚡ Executing Dashboard Charts Creation")
 print("=" * 60)
 
 def get_credentials():

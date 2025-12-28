@@ -390,7 +390,7 @@ def validate_data(bq_client):
 def main():
     """Main execution function."""
     print("="*80)
-    print("🚀 ENERGY TARIFF DATA INGESTION")
+    print("⚡ ENERGY TARIFF DATA INGESTION")
     print("="*80)
     print(f"\nSource: Google Sheets (ID: {SHEET_ID})")
     print(f"Target: {PROJECT_ID}.{DATASET}")

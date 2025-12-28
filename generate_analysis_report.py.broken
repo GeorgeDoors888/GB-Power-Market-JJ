@@ -1,0 +1,285 @@
+#!/usr/bin/env python3
+"""
+Generate reports and graphs based on Analysis sheet dropdown selections
+Reads: Date range, filters, report category, report type, graph type
+Outputs: Data table + charts to Analysis sheet
+"""
+
+from google.cloud import bigquery
+from googleapiclient.discovery import build
+from google.oauth2.service_account import Credentials
+import pandas as pd
+from datetime import datetime, timedelta
+
+SPREADSHEET_ID = '1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA'
+CREDENTIALS_FILE = 'inner-cinema-credentials.json'
+PROJECT_ID = 'inner-cinema-476211-u9'
+
+print("📊 Reading Analysis sheet selections...\n")
+
+creds = Credentials.from_service_account_file(CREDENTIALS_FILE)
+sheets_service = build('sheets', 'v4', credentials=creds)
+bq_client = bigquery.Client(project=PROJECT_ID, location='US')
+
+# Read user selections
+selections = sheets_service.spreadsheets().values().batchGet(
+    spreadsheetId=SPREADSHEET_ID,
+    ranges=['Analysis!B4', 'Analysis!D4', 'Analysis!B5:B9', 'Analysis!B11:B13']
+).execute()
+
+from_date_raw = selections['valueRanges'][0]['values'][0][0] if selections['valueRanges'][0].get('values') else None
+to_date_raw = selections['valueRanges'][1]['values'][0][0] if selections['valueRanges'][1].get('values') else None
+filters = [row[0] if row else 'All' for row in selections['valueRanges'][2].get('values', [['All']]*5)]
+report_options = [row[0] if row else '' for row in selections['valueRanges'][3].get('values', [['']]*3)]
+
+# Parse dates - handle both YYYY-MM-DD and DD/MM/YYYY formats
+def parse_date(date_str):
+    """Convert any date format to YYYY-MM-DD"""
+    if not date_str:
+        return None
+    date_str = str(date_str).strip()
+    
+    # Try DD/MM/YYYY format (from Google Sheets)
+    if '/' in date_str:
+        parts = date_str.split('/')
+        if len(parts) == 3:
+            day, month, year = parts
+            return f"{year}-{month.zfill(2)}-{day.zfill(2)}"
+    
+    # Already in YYYY-MM-DD format
+    if '-' in date_str and len(date_str) == 10:
+        return date_str
+    
+    # Try parsing with datetime
+    try:
+        from datetime import datetime
+        dt = datetime.strptime(date_str, '%d/%m/%Y')
+        return dt.strftime('%Y-%m-%d')
+    except:
+        pass
+    
+    return date_str  # Return as-is if can't parse
+
+from_date = parse_date(from_date_raw)
+to_date = parse_date(to_date_raw)
+
+party_role, bmu_id, unit_name, gen_type, lead_party = filters
+report_category, report_type, graph_type = report_options
+
+print(f"📅 Date Range: {from_date} → {to_date}")
+print(f"🔍 Filters: Party={party_role}, BMU={bmu_id}, GenType={gen_type}")
+print(f"📊 Report: {report_category}")
+print(f"📋 Type: {report_type}")
+print(f"📈 Graph: {graph_type}\n")
+
+# Build filters dictionary
+filters_dict = {
+    'party_role': party_role,
+    'bmu_id': bmu_id,
+    'gen_type': gen_type,
+    'lead_party': lead_party
+}
+
+# Build query based on category
+query = get_query_for_category(report_category, from_date, to_date, filters_dict)
+    """Generate BigQuery SQL based on report category"""
+    
+    gen_type = filters_dict.get('gen_type', 'All')
+    bmu_id = filters_dict.get('bmu_id', 'All')
+    
+    if '⚡ Generation' in category:
+        # Generation & Fuel Mix
+        where_clauses = [
+            f"settlementDate >= '{from_dt}'",
+            f"settlementDate <= '{to_dt}'",
+            "generation > 0"
+        ]
+        
+        # Add fuel type filter if specified
+        if gen_type and gen_type != 'All':
+            where_clauses.append(f"fuelType = '{gen_type}'")
+        
+        # Add BMU filter if specified
+        if bmu_id and bmu_id != 'All':
+            where_clauses.append(f"bmUnit = '{bmu_id}'")
+        
+        where_clause = " AND ".join(where_clauses)
+        
+        return f"""
+        SELECT 
+            CAST(settlementDate AS DATE) as date,
+            settlementPeriod,
+            fuelType,
+            generation as generation_mw
+        FROM `{PROJECT_ID}.uk_energy_prod.bmrs_fuelinst_iris`
+        WHERE {where_clause}
+        ORDER BY settlementDate, settlementPeriod, fuelType
+        LIMIT 10000
+        """
+    
+    elif '💰 Balancing' in category:
+        # Balancing Mechanism Trading
+        return f"""
+        SELECT 
+            CAST(settlementDate AS DATE) as date,
+            settlementPeriod,
+            bmUnit,
+            acceptancePrice,
+            acceptanceVolume,
+            revenue_estimate_gbp
+        FROM `{PROJECT_ID}.uk_energy_prod.boalf_with_prices`
+        WHERE settlementDate >= '{from_dt}'
+          AND settlementDate <= '{to_dt}'
+          AND validation_flag = 'Valid'
+        ORDER BY revenue_estimate_gbp DESC
+        LIMIT 10000
+        """
+    
+    elif '💷 Pricing' in category:
+        # Pricing & Settlement
+        return f"""
+        SELECT 
+            CAST(settlementDate AS DATE) as date,
+            settlementPeriod,
+            systemSellPrice as price_gbp_per_mwh,
+            systemBuyPrice
+        FROM `{PROJECT_ID}.uk_energy_prod.bmrs_costs`
+        WHERE settlementDate >= '{from_dt}'
+          AND settlementDate <= '{to_dt}'
+        ORDER BY settlementDate, settlementPeriod
+        LIMIT 10000
+        """
+    
+    elif '📡 System' in category:
+        # System Operations
+        return f"""
+        SELECT 
+            CAST(measurementTime AS DATETIME) as timestamp,
+            frequency
+        FROM `{PROJECT_ID}.uk_energy_prod.bmrs_freq_iris`
+        WHERE measurementTime >= '{from_dt}'
+          AND measurementTime <= '{to_dt}'
+        ORDER BY measurementTime
+        LIMIT 10000
+        """
+    
+    elif '🔌 Grid' in category:
+        # Grid Infrastructure
+        return f"""
+        SELECT 
+            dno_name,
+            voltage_level,
+            red_rate_p_per_kwh,
+            amber_rate_p_per_kwh,
+            green_rate_p_per_kwh
+        FROM `{PROJECT_ID}.gb_power.duos_unit_rates`
+        ORDER BY dno_name, voltage_level
+        """
+    
+    elif '📋 Reference' in category:
+        # Reference Data
+        return f"""
+        SELECT 
+            bm_unit_id,
+            bmu_name,
+            lead_party_name,
+            fuel_type,
+            generation_capacity_mw,
+            is_battery_storage,
+            is_vlp
+        FROM `{PROJECT_ID}.uk_energy_prod.dim_bmu`
+        ORDER BY bm_unit_id
+        LIMIT 5000
+        """
+    
+    elif '📊 Analytics' in category:
+        # Analytics & Derived
+        return f"""
+        SELECT 
+            bmUnit,
+            AVG(acceptancePrice) as avg_price_gbp_mwh,
+            SUM(acceptanceVolume) as total_volume_mwh,
+            SUM(revenue_estimate_gbp) as total_revenue_gbp,
+            COUNT(*) as num_acceptances
+        FROM `{PROJECT_ID}.uk_energy_prod.boalf_with_prices`
+        WHERE settlementDate >= '{from_dt}'
+          AND settlementDate <= '{to_dt}'
+          AND validation_flag = 'Valid'
+        GROUP BY bmUnit
+        ORDER BY total_revenue_gbp DESC
+        LIMIT 100
+        """
+    
+    else:
+        # Default: Recent generation
+        return f"""
+        SELECT * FROM `{PROJECT_ID}.uk_energy_prod.bmrs_fuelinst_iris`
+        WHERE settlementDate >= '{from_dt}'
+        LIMIT 100
+        """
+
+# Execute query
+print("🔄 Querying BigQuery...\n")
+
+from_dt = from_date if from_date else (datetime.now() - timedelta(days=7)).strftime('%Y-%m-%d')
+to_dt = to_date if to_date else datetime.now().strftime('%Y-%m-%d')
+
+query = get_query_for_category(report_category, from_dt, to_dt, {})
+
+try:
+    df = bq_client.query(query).to_dataframe()
+    print(f"✅ Retrieved {len(df)} rows\n")
+    
+    # Prepare data for Google Sheets
+    if len(df) > 0:
+        # Convert all data to strings/numbers for JSON serialization
+        for col in df.columns:
+            if pd.api.types.is_datetime64_any_dtype(df[col]):
+                df[col] = df[col].dt.strftime('%Y-%m-%d %H:%M:%S')
+            elif hasattr(df[col].dtype, 'name') and 'date' in df[col].dtype.name:
+                df[col] = df[col].apply(lambda x: x.strftime('%Y-%m-%d') if pd.notna(x) else '')
+        
+        # Replace NaN/None with empty strings
+        df = df.fillna('')
+        
+        # Convert to list of lists for Sheets API
+        header = [list(df.columns)]
+        data_rows = df.head(1000).values.tolist()  # Limit to 1000 rows for display
+        all_data = header + data_rows
+        
+        # Write to Analysis sheet starting at row 18
+        print("📝 Writing results to Google Sheets...\n")
+        sheets_service.spreadsheets().values().clear(
+            spreadsheetId=SPREADSHEET_ID,
+            range='Analysis!A18:Z10000'
+        ).execute()
+        
+        sheets_service.spreadsheets().values().update(
+            spreadsheetId=SPREADSHEET_ID,
+            range=f'Analysis!A18:Z{18+len(all_data)}',
+            valueInputOption='RAW',
+            body={'values': all_data}
+        ).execute()
+        
+        print(f"✅ Written {len(data_rows)} rows to Analysis sheet")
+        print(f"   Location: Row 18+")
+        print(f"   Columns: {', '.join(df.columns.tolist()[:5])}{'...' if len(df.columns) > 5 else ''}")
+        
+        # Summary stats
+        print(f"\n📈 Data Summary:")
+        print(f"   Total Rows: {len(df):,}")
+        print(f"   Date Range: {from_dt} → {to_dt}")
+        print(f"   Category: {report_category}")
+        
+    else:
+        print("⚠️  No data found for this query")
+        
+except Exception as e:
+    print(f"❌ Error: {e}")
+    print(f"\nQuery attempted:\n{query}")
+
+print("\n✅ Report generation complete!")
+print("\n💡 Next steps:")
+print("   1. Review data in Analysis sheet (row 18+)")
+print("   2. Create charts manually or via Apps Script")
+print("   3. Adjust date range/filters and re-run")

@@ -25,7 +25,7 @@ print(f"   Total files: {total_files:,}")
 print(f"   Remaining: {remaining_files:,}")
 print(f"   Progress: {(files_processed/total_files*100):.2f}%")
 
-print(f"\n🚀 Current Speed:")
+print(f"\n⚡ Current Speed:")
 print(f"   ~{seconds_per_file:.1f} seconds per file")
 print(f"   ~{3600/seconds_per_file:.1f} files per hour")
 print(f"   ~{(3600/seconds_per_file)*24:.0f} files per day")

@@ -5,7 +5,7 @@ from googleapiclient.discovery import build
 SERVICE_ACCOUNT_FILE = "workspace-credentials.json"
 SCOPES = ["https://www.googleapis.com/auth/drive"]
 
-SPREADSHEET_ID = "1LmMq4OEE639Y-XXpOJ3xnvpAmHB6vUovh5g6gaU_vzc"
+SPREADSHEET_ID = "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA"
 
 def share_spreadsheet():
     creds = Credentials.from_service_account_file(

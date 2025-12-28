@@ -12,7 +12,7 @@ def deploy_to_apps_script(script_id):
     """Deploy DNO lookup code to Apps Script via API"""
     
     print("=" * 80)
-    print("🚀 Deploying to Apps Script via API")
+    print("⚡ Deploying to Apps Script via API")
     print("=" * 80)
     
     # Read the DNO lookup code

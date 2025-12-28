@@ -1,0 +1,418 @@
+{
+  "DATA": {
+    "sheet_name": "DATA",
+    "sample_rows": 50,
+    "sample_cols": 8,
+    "headers": [
+      "GB POWER MARKET JJ - DATA PLATFORM SUMMARY"
+    ],
+    "sample_data": [
+      [
+        "GB POWER MARKET JJ - DATA PLATFORM SUMMARY"
+      ],
+      [
+        "Complete reference for data sources, Python capabilities, and system architecture"
+      ],
+      [
+        "Last Updated: December 23, 2025 | Project: inner-cinema-476211-u9.uk_energy_prod"
+      ],
+      [],
+      [
+        "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550"
+      ],
+      [
+        "\ud83d\udcca PLATFORM SOPHISTICATION & SCALE"
+      ],
+      [
+        "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550"
+      ],
+      [],
+      [
+        "Metric",
+        "Value",
+        "Description",
+        "Context"
+      ],
+      [
+        "Total BMRS Tables",
+        "174+",
+        "Complete Elexon BMRS data catalog",
+        "Covers all market operations: generation, balancing, prices, outages, forecasts"
+      ]
+    ]
+  },
+  "Live Dashboard v2": {
+    "sheet_name": "Live Dashboard v2",
+    "sample_rows": 50,
+    "sample_cols": 26,
+    "headers": [
+      "\u26a1 GB LIVE ENERGY VIEW",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "=SPARKLINE({10,20,15,25,30})"
+    ],
+    "sample_data": [
+      [
+        "\u26a1 GB LIVE ENERGY VIEW",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "=SPARKLINE({10,20,15,25,30})"
+      ],
+      [
+        "Last Updated: 28/12/2025, 17:02:40 (v2.0) SP 35",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Batch Test 1"
+      ],
+      [
+        "\u26a0\ufe0f IRIS Delayed (5m ago)",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Batch Test 2"
+      ],
+      [
+        "\u26a1 Market Overview",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Batch Test 3"
+      ],
+      [
+        "BM-MID Spread \u00a3/MWh",
+        "",
+        "Market Index \u00a3/MWh ",
+        "",
+        "Grid Frequency ",
+        "",
+        "\ud83c\udfed Total Generation",
+        "",
+        "\ud83c\udf2c\ufe0f Wind Output",
+        "",
+        "\ud83d\udd0c System Demand"
+      ],
+      [
+        "\u00a369.69",
+        "",
+        "\u00a346.30",
+        "",
+        "+0.000 Hz",
+        "",
+        "38.0 GW",
+        "",
+        "3.6 GW",
+        "",
+        "38.0 GW"
+      ],
+      [],
+      [],
+      [],
+      [
+        "\ud83d\udd0b Generation Mix",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "\ud83c\udf0d Interconnectors & Map"
+      ]
+    ]
+  },
+  "Analysis": {
+    "sheet_name": "Analysis",
+    "sample_rows": 50,
+    "sample_cols": 9,
+    "headers": [
+      "Analysis"
+    ],
+    "sample_data": [
+      [
+        "Analysis"
+      ],
+      [],
+      [],
+      [
+        "From Date:",
+        "23/12/2025",
+        "To Date:",
+        "23/12/2025"
+      ],
+      [
+        "Party Role:",
+        "All"
+      ],
+      [
+        "BMU IDs:",
+        "All"
+      ],
+      [
+        "Unit Names:"
+      ],
+      [
+        "Generation Type:",
+        "All"
+      ],
+      [
+        "Lead Party:",
+        "All"
+      ],
+      []
+    ]
+  },
+  "BtM": {
+    "sheet_name": "BtM",
+    "sample_rows": 47,
+    "sample_cols": 10,
+    "headers": [],
+    "sample_data": [
+      [],
+      [],
+      [
+        "Instructions: Fill in postcode & MPAN, then use menu: \ud83d\udd0b BESS Tools \u2192 Refresh DNO Data"
+      ],
+      [
+        "Status: Ready"
+      ],
+      [
+        "Site Post Code",
+        "MPAN or Distributor ID",
+        "DNO_Key",
+        "DNO_Name",
+        "",
+        "",
+        "",
+        "",
+        "Supplement",
+        "MPAN Core "
+      ],
+      [
+        "\u2190 Enter postcode",
+        "\u2190 Enter MPAN (10-23), then use menu: DNO Lookup \u2192 Refresh",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "00801520",
+        "2412345678904"
+      ],
+      [],
+      [],
+      [
+        "Voltage Level",
+        "Red Rate (p/kWh)",
+        "Amber Rate (p/kWh)",
+        "Green Rate (p/kWh)",
+        "",
+        "",
+        "",
+        "",
+        "Tariff ID",
+        "Loss Factor"
+      ],
+      [
+        "HV (6.6-33kV)",
+        "",
+        "",
+        "",
+        "00 (Half-Hourly)"
+      ]
+    ]
+  },
+  "BESS_Event": {
+    "sheet_name": "BESS_Event",
+    "sample_rows": 30,
+    "sample_cols": 3,
+    "headers": [],
+    "sample_data": [
+      [],
+      [
+        "Input / Parameter",
+        "Value",
+        "Note"
+      ],
+      [
+        "Discharged MWh",
+        "1",
+        "(MWh this SP)"
+      ],
+      [
+        "Settlement Period hours",
+        "0.5",
+        "(0.5 for GB SP)"
+      ],
+      [],
+      [
+        "Energy Route",
+        "BM",
+        "(BM, PPA, Wholesale, ESO Util, BtM Avoided)"
+      ],
+      [],
+      [
+        "BM price (\u00a3/MWh)",
+        "\u00a3220.00"
+      ],
+      [
+        "PPA price (\u00a3/MWh)",
+        "\u00a3150.00"
+      ],
+      [
+        "Wholesale price (\u00a3/MWh)",
+        "\u00a3130.00"
+      ]
+    ]
+  },
+  "DATA DICTIONARY": {
+    "sheet_name": "DATA DICTIONARY",
+    "sample_rows": 30,
+    "sample_cols": 8,
+    "headers": [
+      "GB POWER MARKET JJ - DATA DICTIONARY"
+    ],
+    "sample_data": [
+      [
+        "GB POWER MARKET JJ - DATA DICTIONARY"
+      ],
+      [
+        "Complete reference for all KPIs, columns, and metrics across all sheets"
+      ],
+      [
+        "Last Updated: December 23, 2025"
+      ],
+      [],
+      [
+        "Sheet",
+        "Column/KPI",
+        "Description",
+        "Units",
+        "Source Table(s)",
+        "Update Frequency",
+        "Calculation Method",
+        "Example Values"
+      ],
+      [
+        "LIVE DASHBOARD V2 - MARKET METRICS"
+      ],
+      [
+        "Live Dashboard v2",
+        "BM-MID Spread (A5)",
+        "Balancing Mechanism vs Market Index price difference",
+        "\u00a3/MWh",
+        "bmrs_costs, bmrs_mid",
+        "5 min",
+        "System Price - MID Price",
+        "\u00a315-40/MWh"
+      ],
+      [
+        "Live Dashboard v2",
+        "Market Index (C5)",
+        "Wholesale day-ahead/within-day price",
+        "\u00a3/MWh",
+        "bmrs_mid",
+        "5 min",
+        "Latest MID price from Elexon",
+        "\u00a330-60/MWh"
+      ],
+      [
+        "Live Dashboard v2",
+        "Spread Sparkline (A7-B9)",
+        "48-period sparkline showing BM-MID spread trend",
+        "Visual",
+        "bmrs_costs, bmrs_mid",
+        "5 min",
+        "LET formula with SPARKLINE",
+        "Purple/crimson bars"
+      ],
+      []
+    ]
+  }
+}

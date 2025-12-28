@@ -47,7 +47,7 @@ def run_script(name, script_path):
         return False
 
 def main():
-    print('\n🚀 UNIFIED DASHBOARD REFRESH')
+    print('\n⚡ UNIFIED DASHBOARD REFRESH')
     print('='*80)
     print(f'Start time: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}')
     print(f'Scripts to run: {len(SCRIPTS)}')

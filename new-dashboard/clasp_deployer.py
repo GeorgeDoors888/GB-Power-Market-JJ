@@ -65,7 +65,7 @@ class ClaspDeployer:
         if not self.check_clasp_installed():
             return False
         
-        print("🚀 Pushing to Apps Script...")
+        print("⚡ Pushing to Apps Script...")
         
         result = subprocess.run(
             ['clasp', 'push'],
@@ -107,7 +107,7 @@ class ClaspDeployer:
     def deploy_to_new_sheet(self, spreadsheet_id, webhook_url=None):
         """Complete deployment to new spreadsheet"""
         print("=" * 80)
-        print(f"🚀 DEPLOYING TO NEW SHEET: {spreadsheet_id}")
+        print(f"⚡ DEPLOYING TO NEW SHEET: {spreadsheet_id}")
         print("=" * 80)
         
         # Step 1: Update code with config
@@ -148,7 +148,7 @@ class ClaspDeployer:
                 
                 if current_modified > last_modified:
                     print(f"\n⚡ Change detected at {datetime.now().strftime('%H:%M:%S')}")
-                    print("🚀 Auto-deploying...")
+                    print("⚡ Auto-deploying...")
                     
                     if self.push():
                         print("✅ Deployed successfully")

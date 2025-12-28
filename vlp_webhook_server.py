@@ -114,7 +114,7 @@ def health():
     return jsonify({'status': 'ok', 'service': 'vlp-webhook'})
 
 if __name__ == '__main__':
-    print("🚀 VLP Webhook Server")
+    print("⚡ VLP Webhook Server")
     print("=" * 60)
     print("Endpoints:")
     print("  POST /refresh-vlp       - Refresh dashboard data")

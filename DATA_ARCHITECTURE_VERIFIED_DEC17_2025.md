@@ -1,10 +1,20 @@
 # GB Power Market - Verified Data Architecture (Dec 17, 2025)
 
-## Executive Summary
+> **📅 UPDATED**: See [`BIGQUERY_DATA_STATUS_DEC22_2025.md`](BIGQUERY_DATA_STATUS_DEC22_2025.md) for current status (Dec 22, 2025)
+>
+> This document represents the **baseline audit** from Dec 17. Major improvements since then:
+> - ✅ bmrs_freq backfilled: 294k → 1.2M rows
+> - ✅ bmrs_bod backfilled: 391M → 405M rows (+14M)
+> - ✅ All cron jobs configured and running
+> - ✅ Both pipelines fully operational
+
+## Executive Summary (Baseline: Dec 17, 2025)
 
 **CRITICAL FINDING**: The historical (`bmrs_freq`) table was **EMPTY** prior to Dec 16, 2025 backfill. Only IRIS (`bmrs_freq_iris`) contains historical frequency data going back to Oct 28, 2025.
 
 **Root Cause**: Historical API pipeline was **NEVER** configured for FREQ ingestion. The bmrs_freq table exists but was unpopulated until the Dec 15-17 manual backfill.
+
+**STATUS UPDATE (Dec 22)**: Issue resolved - FREQ now fully backfilled with 1.2M rows.
 
 ## Two-Pipeline Architecture (VERIFIED)
 

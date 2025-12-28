@@ -165,7 +165,7 @@ def backfill_windfor_gap():
 
 def main():
     """Run all backfills"""
-    logging.info("🚀 Starting Backfill Process - Dec 20, 2025")
+    logging.info("⚡ Starting Backfill Process - Dec 20, 2025")
     logging.info(f"Project: {PROJECT_ID}")
     logging.info(f"Dataset: {DATASET}\n")
 

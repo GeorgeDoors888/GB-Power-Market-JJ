@@ -39,7 +39,7 @@ tables = [
 
 for table, date_col in tables:
     query = f'''
-    SELECT 
+    SELECT
         MAX(CAST({date_col} AS DATE)) as latest_date,
         COUNT(*) as total_rows
     FROM \`inner-cinema-476211-u9.uk_energy_prod.{table}\`

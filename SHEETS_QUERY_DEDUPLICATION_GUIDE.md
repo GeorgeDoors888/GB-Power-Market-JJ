@@ -1,8 +1,8 @@
 # Google Sheets Query Deduplication Guide
 
-**Spreadsheet**: [GB Power Market Dashboard](https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit?usp=sharing)  
-**Apps Script ID**: `1b2dOZ4lw-zJvKdZ4MaJ48f1NR7ewCtUbZOGWGb3n8O7P-kgnUsThs980`  
-**Issue**: Historical and IRIS tables overlap, causing duplicate records in queries  
+**Spreadsheet**: [GB Power Market Dashboard](https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit?usp=sharing)
+**Apps Script ID**: `1b2dOZ4lw-zJvKdZ4MaJ48f1NR7ewCtUbZOGWGb3n8O7P-kgnUsThs980`
+**Issue**: Historical and IRIS tables overlap, causing duplicate records in queries
 **Solution**: Use date-based UNION queries to avoid duplication
 
 ---
@@ -36,9 +36,9 @@ SELECT * FROM (
   SELECT settlementDate, bmUnit, offer, bid, pairId, '_historical' as source
   FROM `inner-cinema-476211-u9.uk_energy_prod.bmrs_bod`
   WHERE settlementDate < TIMESTAMP_SUB(CURRENT_TIMESTAMP(), INTERVAL 30 DAY)
-  
+
   UNION ALL
-  
+
   -- Real-time data (last 30 days only)
   SELECT settlementDate, bmUnit, offer, bid, pairId, '_iris' as source
   FROM `inner-cinema-476211-u9.uk_energy_prod.bmrs_bod_iris`
@@ -58,9 +58,9 @@ SELECT * FROM (
   -- Historical: Everything before IRIS started
   SELECT * FROM `inner-cinema-476211-u9.uk_energy_prod.bmrs_bod`
   WHERE CAST(settlementDate AS DATE) < '2025-10-28'
-  
+
   UNION ALL
-  
+
   -- IRIS: Everything from IRIS start date onwards
   SELECT * FROM `inner-cinema-476211-u9.uk_energy_prod.bmrs_bod_iris`
   WHERE CAST(settlementDate AS DATE) >= '2025-10-28'
@@ -73,7 +73,7 @@ For dashboard/real-time analysis, just use IRIS (last 50 days):
 
 ```sql
 -- ✅ SIMPLE: IRIS only (last 50 days)
-SELECT 
+SELECT
   settlementDate,
   bmUnit,
   AVG(offer) as avg_offer,
@@ -115,7 +115,7 @@ SELECT * FROM `inner-cinema-476211-u9.uk_energy_prod.bmrs_bod_iris`
 
 ### Current Apps Script Issues
 
-**Location**: Extensions → Apps Script  
+**Location**: Extensions → Apps Script
 **Script ID**: `1b2dOZ4lw-zJvKdZ4MaJ48f1NR7ewCtUbZOGWGb3n8O7P-kgnUsThs980`
 
 **Common mistake in sheets**:
@@ -135,7 +135,7 @@ function queryBodNoDuplicates(startDate, endDate) {
   var sql = `
     SELECT * FROM (
       -- Historical data (before IRIS)
-      SELECT 
+      SELECT
         settlementDate,
         bmUnit,
         offer,
@@ -146,11 +146,11 @@ function queryBodNoDuplicates(startDate, endDate) {
       WHERE CAST(settlementDate AS DATE) < '2025-10-28'
         AND settlementDate >= @startDate
         AND settlementDate <= @endDate
-      
+
       UNION ALL
-      
+
       -- IRIS data (from Oct 28 onwards)
-      SELECT 
+      SELECT
         settlementDate,
         bmUnit,
         offer,
@@ -165,7 +165,7 @@ function queryBodNoDuplicates(startDate, endDate) {
     ORDER BY settlementDate DESC
     LIMIT 10000
   `;
-  
+
   var request = {
     query: sql,
     useLegacySql: false,
@@ -175,7 +175,7 @@ function queryBodNoDuplicates(startDate, endDate) {
       {name: 'endDate', parameterType: {type: 'DATE'}, parameterValue: {value: endDate}}
     ]
   };
-  
+
   var response = BigQuery.Jobs.query(request, 'inner-cinema-476211-u9');
   return response.rows;
 }
@@ -206,14 +206,14 @@ Use these cutoff dates in your UNION queries:
 WITH overlap_period AS (
   SELECT DATE('2025-11-15') as test_date
 )
-SELECT 
+SELECT
   'Historical' as source,
   COUNT(*) as record_count
 FROM `inner-cinema-476211-u9.uk_energy_prod.bmrs_bod`
 CROSS JOIN overlap_period
 WHERE CAST(settlementDate AS DATE) = overlap_period.test_date
 UNION ALL
-SELECT 
+SELECT
   'IRIS' as source,
   COUNT(*) as record_count
 FROM `inner-cinema-476211-u9.uk_energy_prod.bmrs_bod_iris`
@@ -276,10 +276,10 @@ FROM (
 
 ---
 
-**Last Updated**: December 20, 2025 12:47 GMT  
-**Maintained By**: George Major (george@upowerenergy.uk)  
-**Production Status**: ✅ Deployed to AlmaLinux (94.237.55.234)  
-**Related Docs**: 
+**Last Updated**: December 20, 2025 12:47 GMT
+**Maintained By**: George Major (george@upowerenergy.uk)
+**Production Status**: ✅ Deployed to AlmaLinux (94.237.55.234)
+**Related Docs**:
 - `DATA_GAPS_ROOT_CAUSE_RESOLUTION_DEC20.md` - Coverage analysis
 - `STOP_DATA_ARCHITECTURE_REFERENCE.md` - Schema details
 - `IRIS_DEPLOYMENT_GUIDE_ALMALINUX.md` - IRIS pipeline setup

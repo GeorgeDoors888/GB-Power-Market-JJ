@@ -9,7 +9,7 @@ import gspread
 from gspread_formatting import *
 import time
 
-SPREADSHEET_ID = '1LmMq4OEE639Y-XXpOJ3xnvpAmHB6vUovh5g6gaU_vzc'
+SPREADSHEET_ID = '1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA'
 CREDENTIALS_FILE = 'inner-cinema-credentials.json'
 
 def get_sheets_client():

@@ -104,7 +104,7 @@ def main():
     ensure_tables(cfg["dataset"])
     client = bq_client()
     
-    print("🚀 ROBUST PARALLEL EXTRACTION")
+    print("⚡ ROBUST PARALLEL EXTRACTION")
     print("=" * 70)
     
     # Clear error log

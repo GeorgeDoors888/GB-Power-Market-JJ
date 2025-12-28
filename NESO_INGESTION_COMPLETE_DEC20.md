@@ -63,7 +63,7 @@ os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'inner-cinema-credentials.json'
 
 ### Root Cause Analysis
 
-1. **NESO Publishing Behavior**: 
+1. **NESO Publishing Behavior**:
    - Constraint flows updated **daily** on same URL
    - File: `day-ahead-constraints-limits-and-flow-output-v1.5.csv`
    - Portal shows: "Updated 21 hours ago"
@@ -156,7 +156,7 @@ Fix NESO constraint flows ingestion - force daily refresh
 
 ### Expected Behavior Going Forward
 
-✅ **Constraint Flows** (daily): 
+✅ **Constraint Flows** (daily):
 - Re-downloads every cron run (6 hours)
 - NESO updates URL daily → our script force-refreshes
 - No manual intervention needed

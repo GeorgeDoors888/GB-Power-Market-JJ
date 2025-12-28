@@ -1,0 +1,188 @@
+════════════════════════════════════════════════════════════════════════════
+🎯 NEXT TODO: FIX IRIS BOALF DATA COLLECTION
+════════════════════════════════════════════════════════════════════════════
+
+STATUS: Local configuration is correct ✅
+        AlmaLinux server needs investigation ⚠️
+
+════════════════════════════════════════════════════════════════════════════
+📊 CURRENT SITUATION
+════════════════════════════════════════════════════════════════════════════
+
+What's Working:
+✅ Local config: iris-clients/python/config.json has BOALF configured
+✅ Uploader: iris_to_bigquery_unified.py knows BOALF → bmrs_boalf_iris
+✅ Other IRIS streams: fuelinst (8,840), mid (12), indgen (17,478) working
+
+What's Broken:
+❌ bmrs_boalf_iris: Last data Dec 18, no Dec 19-20 records
+❌ This blocks BM acceptance price sparklines (rows 27-28 in Data_Hidden)
+
+Impact:
+⏳ 2 of 6 sparklines flat (N14 BM Avg Price, N16 Vol-Wtd Avg)
+✅ 4 of 6 sparklines work (MID, Sys Buy/Sell, BM-MID Spread)
+
+════════════════════════════════════════════════════════════════════════════
+🔍 ROOT CAUSE ANALYSIS
+════════════════════════════════════════════════════════════════════════════
+
+Timeline:
+- Dec 17: BOALF data flowing (4,566 records) ✅
+- Dec 18: BOALF data flowing (6,086 records) ✅
+- Dec 19: NO DATA ❌
+- Dec 20: NO DATA ❌
+
+Hypothesis:
+1. IRIS client on AlmaLinux server stopped/crashed after Dec 18
+2. IRIS API endpoint changed or has authentication issue
+3. IRIS service configuration changed
+4. Network/firewall issue blocking BOALF stream specifically
+
+Other IRIS streams (FUELINST, MID, INDGEN) are working, so it's likely
+a BOALF-specific issue rather than general IRIS failure.
+
+════════════════════════════════════════════════════════════════════════════
+🛠️ STEP-BY-STEP FIX PROCEDURE
+════════════════════════════════════════════════════════════════════════════
+
+STEP 1: SSH to AlmaLinux Server
+────────────────────────────────────────────────────────────────────────────
+ssh root@94.237.55.234
+
+STEP 2: Check IRIS Service Status
+────────────────────────────────────────────────────────────────────────────
+cd /opt/iris-pipeline
+
+# Check if service is running
+ps aux | grep iris
+systemctl status iris-client  # Or whatever the service name is
+
+# Check recent logs
+tail -100 logs/iris_client.log
+tail -100 logs/iris_uploader.log
+
+# Look for BOALF-specific errors
+grep -i "boalf\|b1430" logs/iris_client.log | tail -20
+
+STEP 3: Verify Configuration
+────────────────────────────────────────────────────────────────────────────
+# Check if BOALF is in the config
+cat config.yml | grep -A 5 -i boalf
+
+# Compare with local working config
+cat /home/george/GB-Power-Market-JJ/iris-clients/python/config.json | grep -A 3 boalf
+
+STEP 4: Check IRIS API Connectivity
+────────────────────────────────────────────────────────────────────────────
+# Test BOALF endpoint manually
+curl -H "key: YOUR_API_KEY" \
+  "https://data.elexon.co.uk/bmrs/api/v1/datasets/BOALF?publishDateTimeFrom=2025-12-19T00:00:00Z"
+
+# If 401/403: API key issue
+# If 404: Endpoint moved
+# If 200: Connectivity OK, check client code
+
+STEP 5: Restart Service (if config is correct)
+────────────────────────────────────────────────────────────────────────────
+systemctl restart iris-client
+# OR
+pkill -9 python  # If running as script
+cd /opt/iris-pipeline && python3 client.py &
+
+# Monitor logs
+tail -f logs/iris_client.log
+
+STEP 6: Backfill Missing Data (once service running)
+────────────────────────────────────────────────────────────────────────────
+# On local machine
+cd /home/george/GB-Power-Market-JJ
+python3 daily_data_pipeline.py
+
+# This will:
+# 1. Backfill BOAV+EBOCF (already done)
+# 2. Backfill BOALF raw data (Dec 19-20) ← KEY STEP
+# 3. Run BOD matching (derive prices)
+# 4. Update Data_Hidden (populate sparklines)
+# 5. Refresh dashboard
+
+════════════════════════════════════════════════════════════════════════════
+🔧 ALTERNATIVE: Manual BOALF Backfill (If IRIS unfixable)
+════════════════════════════════════════════════════════════════════════════
+
+If you can't fix IRIS, you can backfill from Elexon API directly:
+
+cd /home/george/GB-Power-Market-JJ
+
+# Backfill Dec 19
+python3 ingest_boalf_manual.py --date 2025-12-19
+
+# Backfill Dec 20
+python3 ingest_boalf_manual.py --date 2025-12-20
+
+# Then run BOD matching
+python3 derive_boalf_prices.py --start 2025-12-19 --end 2025-12-20
+
+# Then update Data_Hidden
+python3 update_data_hidden_only.py
+
+NOTE: We'd need to create ingest_boalf_manual.py (doesn't exist yet)
+      Or use the existing backfill scripts if they work
+
+════════════════════════════════════════════════════════════════════════════
+✅ SUCCESS CRITERIA
+════════════════════════════════════════════════════════════════════════════
+
+You'll know it's fixed when:
+
+1. bmrs_boalf_iris has Dec 19-20 data:
+   python3 -c "
+   from google.cloud import bigquery
+   client = bigquery.Client(project='inner-cinema-476211-u9', location='US')
+   query = 'SELECT MAX(DATE(settlementDate)) FROM \`inner-cinema-476211-u9.uk_energy_prod.bmrs_boalf_iris\`'
+   print(client.query(query).to_dataframe())
+   "
+
+   Expected: 2025-12-20
+
+2. bmrs_boalf_complete has Dec 19-20 prices:
+   Similar query but on bmrs_boalf_complete table
+
+3. Data_Hidden rows 27-28 have non-zero values:
+   python3 -c "
+   from fast_sheets import FastSheets
+   sheets = FastSheets('inner-cinema-credentials.json')
+   result = sheets.read('1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA', 'Data_Hidden!B27:F27')
+   print(result)
+   "
+
+   Expected: Non-zero prices like [95.2, 87.3, 102.1, ...]
+
+4. Sparklines N14 and N16 show bar charts in Google Sheets
+
+════════════════════════════════════════════════════════════════════════════
+📞 ESCALATION
+════════════════════════════════════════════════════════════════════════════
+
+If IRIS server is inaccessible or you can't restart it:
+→ Ask system administrator with server access
+→ Or use manual backfill approach (see Alternative section)
+
+If Elexon API changed:
+→ Check Elexon documentation: https://developer.data.elexon.co.uk/
+→ Update API endpoints in client code
+
+════════════════════════════════════════════════════════════════════════════
+⏱️ ESTIMATED TIME TO FIX
+════════════════════════════════════════════════════════════════════════════
+
+If service just needs restart: 5 minutes
+If config needs updating: 15-30 minutes
+If API issue needs debugging: 1-2 hours
+If need manual backfill solution: 30-60 minutes (to create script)
+
+════════════════════════════════════════════════════════════════════════════
+
+Quick diagnostic command for AlmaLinux server:
+ssh root@94.237.55.234 'cd /opt/iris-pipeline && tail -50 logs/iris_client.log | grep -i "boalf\|error"'
+
+════════════════════════════════════════════════════════════════════════════

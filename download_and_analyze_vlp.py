@@ -475,7 +475,7 @@ def generate_summary_report(vlp_df, battery_df):
 
 def main():
     """Main execution function"""
-    print("🚀 Starting VLP Analysis Pipeline")
+    print("⚡ Starting VLP Analysis Pipeline")
     print("="*80)
     
     # Step 1: Download REMIT data

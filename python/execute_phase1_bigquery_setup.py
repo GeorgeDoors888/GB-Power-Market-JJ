@@ -96,7 +96,7 @@ def verify_table_exists(client, table_id):
 
 
 def main():
-    print("🚀 BigQuery Table & View Creation - Phase 1")
+    print("⚡ BigQuery Table & View Creation - Phase 1")
     print(f"📍 Project: {PROJECT_ID}")
     print(f"📍 Dataset: {DATASET}")
     

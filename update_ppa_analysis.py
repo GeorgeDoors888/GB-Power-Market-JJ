@@ -15,7 +15,7 @@ from datetime import datetime
 
 # Configuration
 CREDENTIALS_FILE = '/Users/georgemajor/GB-Power-Market-JJ/inner-cinema-credentials.json'
-MAIN_DASHBOARD_ID = '1LmMq4OEE639Y-XXpOJ3xnvpAmHB6vUovh5g6gaU_vzc'
+MAIN_DASHBOARD_ID = '1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA'
 CACHE_FILE = '/tmp/ppa_analysis_cache.json'
 CACHE_DURATION = 3600  # 1 hour
 

@@ -85,7 +85,7 @@ def main():
     ensure_tables(dataset)
     client = bq_client()
     
-    print("🚀 IMMEDIATE FEEDBACK EXTRACTION")
+    print("⚡ IMMEDIATE FEEDBACK EXTRACTION")
     print("Saves after EVERY successful document")
     print("=" * 70)
     

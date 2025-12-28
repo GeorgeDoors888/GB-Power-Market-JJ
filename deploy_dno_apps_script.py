@@ -15,7 +15,7 @@ SCRIPT_FILE = 'dno_map_apps_script.gs'
 def deploy_apps_script():
     """Deploy the Apps Script code to the spreadsheet"""
     
-    print("🚀 Deploying DNO Map Apps Script...")
+    print("⚡ Deploying DNO Map Apps Script...")
     print("=" * 80)
     
     # Authenticate
@@ -133,7 +133,7 @@ def deploy_apps_script():
                 print("   ✅ Creating new Code.gs")
             
             # Push the updated content
-            print("\n🚀 Pushing updated content...")
+            print("\n⚡ Pushing updated content...")
             request_body = {
                 'files': files_content
             }

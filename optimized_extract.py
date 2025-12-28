@@ -82,7 +82,7 @@ def main():
     ensure_tables(cfg["dataset"])
     client = bq_client()
     
-    print("🚀 OPTIMIZED EXTRACTION (4 WORKERS)")
+    print("⚡ OPTIMIZED EXTRACTION (4 WORKERS)")
     print("=" * 70)
     
     # Clear error log

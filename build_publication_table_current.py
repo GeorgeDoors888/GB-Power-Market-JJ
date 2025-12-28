@@ -361,7 +361,7 @@ SELECT
   ARRAY(SELECT STRUCT(region, dno_area, gsp_group, fuel_group, n_actions, total_mw_adjusted, share_of_total_pct) FROM ConstraintAnalysis) AS constraint_analysis
 """
 
-print("🚀 Executing publication query...")
+print("⚡ Executing publication query...")
 job = client.query(publication_query)
 job.result()  # Wait for completion
 

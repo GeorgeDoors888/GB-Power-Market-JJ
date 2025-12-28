@@ -251,7 +251,7 @@ def main():
     print("=" * 80)
     
     print("\n📂 Files ready in: apps_script_deploy_package/")
-    print("\n🚀 Quick deployment (2 minutes):")
+    print("\n⚡ Quick deployment (2 minutes):")
     print("   1. Open: Extensions → Apps Script")
     print("   2. Upload: Code.gs (from package)")
     print("   3. Upload: ConstraintMap_Leaflet.html (from package)")

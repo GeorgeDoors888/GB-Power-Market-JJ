@@ -152,7 +152,7 @@ PROJECT_ID = "inner-cinema-476211-u9"
 DATASET = "uk_energy_prod"
 VIEW = "v_btm_bess_inputs"
 SERVICE_ACCOUNT_FILE = "inner-cinema-credentials.json"
-SPREADSHEET_ID = "1LmMq4OEE639Y-XXpOJ3xnvpAmHB6vUovh5g6gaU_vzc"
+SPREADSHEET_ID = "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA"  # GB Live 2 - CORRECT!
 
 BATTERY_POWER_MW = 2.5
 BATTERY_ENERGY_MWH = 5.0

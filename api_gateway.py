@@ -1256,7 +1256,7 @@ async def startup_event():
     )
     
     print("\n" + "="*70)
-    print("🚀 AI Gateway API Server - Level 3 Full Automation")
+    print("⚡ AI Gateway API Server - Level 3 Full Automation")
     print("="*70)
     print(f"📝 Audit logs: {LOG_FILE}")
     print(f"🔒 API Key: {'✅ Configured' if VALID_API_KEY else '❌ MISSING'}")

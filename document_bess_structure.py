@@ -12,7 +12,7 @@ SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
 creds = Credentials.from_service_account_file('inner-cinema-credentials.json', scopes=SCOPES)
 gc = gspread.authorize(creds)
 
-SPREADSHEET_ID = '1LmMq4OEE639Y-XXpOJ3xnvpAmHB6vUovh5g6gaU_vzc'
+SPREADSHEET_ID = '1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA'
 ss = gc.open_by_key(SPREADSHEET_ID)
 bess = ss.worksheet('BESS')
 
@@ -215,7 +215,7 @@ with open('bess_sheet_constants.py', 'w') as f:
     f.write(f'Generated: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}\n')
     f.write('DO NOT EDIT - Regenerate using read BESS sheet script\n')
     f.write('"""\n\n')
-    f.write('SPREADSHEET_ID = "1LmMq4OEE639Y-XXpOJ3xnvpAmHB6vUovh5g6gaU_vzc"\n')
+    f.write('SPREADSHEET_ID = "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA"\n')
     f.write('SHEET_NAME = "BESS"\n\n')
     f.write('# BESS Configuration Input Cells\n')
     f.write('CELL_IMPORT_CAPACITY_KW = "F13"\n')

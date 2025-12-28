@@ -339,7 +339,7 @@ def update_dashboard_summary():
 def update_all_sheets():
     """Run all sheet updates"""
     print("=" * 80)
-    print("🚀 Starting BigQuery → Sheets Auto-Update")
+    print("⚡ Starting BigQuery → Sheets Auto-Update")
     print(f"⏰ Time: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     print("=" * 80)
     

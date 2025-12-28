@@ -871,10 +871,8 @@ def update_dashboard():
             # Format cause/event type
             cause = str(row['cause']) if pd.notna(row['cause']) else str(row['eventType'])
 
-            # Get operator, area, zone
+            # Get operator (removed area/zone - redundant EIC codes)
             operator = str(row['participantId']) if pd.notna(row['participantId']) else ''
-            area = str(row['affectedArea']) if pd.notna(row['affectedArea']) else ''
-            zone = str(row['biddingZone']) if pd.notna(row['biddingZone']) else ''
 
             outage_data.append([
                 asset,  # Asset Name
@@ -886,23 +884,21 @@ def update_dashboard():
                 str(row['end_time']) if pd.notna(row['end_time']) else 'TBD',  # Expected Return
                 format_duration(row['hours_remaining']) if pd.notna(row['hours_remaining']) else '',  # Duration
                 operator,  # Operator
-                area,  # Area
-                zone,  # Zone
             ])
 
-        # Clear old data first (rows 25-47)
+        # Clear old data first (rows 25-47, now 9 columns instead of 11)
         gb_live.batch_update([
-            {'range': 'G25:Q47', 'values': [[''] * 11] * 23}
+            {'range': 'G25:O47', 'values': [[''] * 9] * 23}
         ])
 
-        # Write outage headers and data
+        # Write outage headers and data (removed Area/Zone columns - redundant EIC codes)
         # Row 25: Main header with totals
         # Row 26: Column headers
         # Row 27+: Data
         gb_live.batch_update([
             {'range': 'G25', 'values': [[header_text]]},
-            {'range': 'G26:Q26', 'values': [['Asset Name', 'Fuel Type', 'Unavail (MW)', 'Normal (MW)', 'Type', 'Category', 'Expected Return', 'Duration', 'Operator', 'Area', 'Zone']]},
-            {'range': f'G27:Q{26 + len(outage_data)}', 'values': outage_data}
+            {'range': 'G26:O26', 'values': [['Asset Name', 'Fuel Type', 'Unavail (MW)', 'Normal (MW)', 'Type', 'Category', 'Expected Return', 'Duration', 'Operator']]},
+            {'range': f'G27:O{26 + len(outage_data)}', 'values': outage_data}
         ])
         print(f"   ✅ Outages updated ({len(outage_data)} units at row 27)")
         print(f"   Total offline: {total_unavail:,} MW of {total_normal:,} MW normal capacity")

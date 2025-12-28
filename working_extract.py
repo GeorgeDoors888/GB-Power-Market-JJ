@@ -107,7 +107,7 @@ def main():
     ensure_tables(dataset)
     client = bq_client()
     
-    print("🚀 WORKING EXTRACTION")
+    print("⚡ WORKING EXTRACTION")
     print("✅ Skips known corrupted files")
     print("🔀 Randomizes processing order")
     print("=" * 70)

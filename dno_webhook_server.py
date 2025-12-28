@@ -181,7 +181,7 @@ def refresh_dashboard():
         }), 500
 
 if __name__ == '__main__':
-    print("🚀 Starting DNO Webhook Server...")
+    print("⚡ Starting DNO Webhook Server...")
     print(f"📁 Project directory: {PROJECT_DIR}")
     print(f"🌐 Listening on http://localhost:5001")
     print(f"📡 Endpoints:")

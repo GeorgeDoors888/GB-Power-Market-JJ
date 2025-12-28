@@ -144,7 +144,7 @@ def main():
         print("  1. Go to your Google Sheet")
         print("  2. Refresh the page (Cmd+R or F5)")
         print("  3. Look for menu: ⚡ Power Market")
-        print("  4. Click: ⚡ Power Market → 🚀 One-Click Setup")
+        print("  4. Click: ⚡ Power Market → ⚡ One-Click Setup")
         print("  5. Authorize when prompted")
         print("  6. Wait 10-30 seconds")
         print("  7. Done! Auto-refresh enabled")

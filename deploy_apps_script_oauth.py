@@ -171,7 +171,7 @@ def find_existing_script(drive_service, sheet_id):
 
 def main():
     """Main deployment function with OAuth"""
-    print("🚀 Google Apps Script Deployment (OAuth)")
+    print("⚡ Google Apps Script Deployment (OAuth)")
     print("=" * 50)
     
     try:
@@ -213,7 +213,7 @@ def main():
                     print(f"\n📝 Next steps:")
                     print(f"1. Refresh your Google Sheet")
                     print(f"2. Menu '⚡ Power Market' should appear")
-                    print(f"3. Click: ⚡ Power Market → 🚀 One-Click Setup")
+                    print(f"3. Click: ⚡ Power Market → ⚡ One-Click Setup")
                     return
         
         # No existing script - try to create one
@@ -228,7 +228,7 @@ def main():
         print(f"\n📝 Next steps:")
         print(f"1. Refresh your Google Sheet")
         print(f"2. Menu '⚡ Power Market' should appear")
-        print(f"3. Click: ⚡ Power Market → 🚀 One-Click Setup")
+        print(f"3. Click: ⚡ Power Market → ⚡ One-Click Setup")
         
     except FileNotFoundError as e:
         print(f"\n❌ File Error: {e}")

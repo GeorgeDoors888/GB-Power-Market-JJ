@@ -9,7 +9,7 @@ import gspread
 from google.oauth2.service_account import Credentials
 from datetime import datetime
 
-SPREADSHEET_ID = '1LmMq4OEE639Y-XXpOJ3xnvpAmHB6vUovh5g6gaU_vzc'
+SPREADSHEET_ID = '1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA'
 DASHBOARD = 'Dashboard'
 
 print("🧹 Clearing outages section...")

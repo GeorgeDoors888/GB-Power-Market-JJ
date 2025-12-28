@@ -355,7 +355,7 @@ def update_market_kpis(sheet, data_hidden, df):
 
 def main():
     """Main execution with optimized API handling"""
-    print("🚀 Deploying BM Market KPIs to Live Dashboard v2 (Optimized)...")
+    print("⚡ Deploying BM Market KPIs to Live Dashboard v2 (Optimized)...")
     print(f"   Max retries: {MAX_RETRIES}, Backoff: {INITIAL_BACKOFF}s, Batch delay: {BATCH_DELAY}s\n")
 
     try:

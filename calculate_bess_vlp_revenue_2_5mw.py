@@ -13,7 +13,7 @@ SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
 creds = Credentials.from_service_account_file('inner-cinema-credentials.json', scopes=SCOPES)
 gc = gspread.authorize(creds)
 
-SPREADSHEET_ID = '1LmMq4OEE639Y-XXpOJ3xnvpAmHB6vUovh5g6gaU_vzc'
+SPREADSHEET_ID = '1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA'
 PROJECT_ID = 'inner-cinema-476211-u9'
 DATASET = 'uk_energy_prod'
 
@@ -239,4 +239,4 @@ print(f"  • Revenue per MW: £{total_vlp_revenue/capacity_mw:,.0f}/MW/yr (indu
 print(f"  • Primary revenue: FFR ({ffr_revenue/total_vlp_revenue*100:.0f}%) + BM ({bm_revenue/total_vlp_revenue*100:.0f}%)")
 print(f"  • Data-driven: Based on 109,069 actual VLP actions from BP Gas Marketing")
 print()
-print("View: https://docs.google.com/spreadsheets/d/1LmMq4OEE639Y-XXpOJ3xnvpAmHB6vUovh5g6gaU_vzc/")
+print("View: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/")

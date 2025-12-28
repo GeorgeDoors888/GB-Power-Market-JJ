@@ -14,7 +14,7 @@ import numpy as np
 
 PROJECT_ID = "inner-cinema-476211-u9"
 DATASET = "uk_energy_prod"
-SHEET_ID = '1LmMq4OEE639Y-XXpOJ3xnvpAmHB6vUovh5g6gaU_vzc'
+SHEET_ID = '1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA'
 CREDS_PATH = '/home/george/inner-cinema-credentials.json'
 
 # Battery specs

@@ -7,7 +7,7 @@ Uses B17 (Min kW), B18 (Avg kW), B19 (Max kW) to calculate HH demand
 import gspread
 from google.oauth2.service_account import Credentials
 
-SPREADSHEET_ID = '1LmMq4OEE639Y-XXpOJ3xnvpAmHB6vUovh5g6gaU_vzc'
+SPREADSHEET_ID = '1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA'
 RATES = {'ccl': 0.00775, 'ro': 0.0619, 'fit': 0.0115, 'bsuos': 0.0045, 'tnuos': 0.0125,
          'duos_red': 0.01764, 'duos_amber': 0.00205, 'duos_green': 0.00011}
 

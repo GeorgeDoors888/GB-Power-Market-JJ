@@ -203,7 +203,7 @@ def process_dataset(client: bigquery.Client, dataset_key: str, cfg: Dict[str, st
     page_url = cfg["page_url"]
     table_id = cfg["table"]
     force_refresh = cfg.get("force_daily_refresh", False)
-    
+
     print(f"\n{'='*70}")
     print(f"📊 DATASET: {dataset_key}")
     print(f"   Page:  {page_url}")
@@ -217,7 +217,7 @@ def process_dataset(client: bigquery.Client, dataset_key: str, cfg: Dict[str, st
 
     # Check which URLs we've already processed
     already = set(get_already_processed_urls(client, dataset_key))
-    
+
     # If force_daily_refresh is True, clear already-processed URLs for this dataset
     # This allows daily re-download of same URL (e.g., constraint flows)
     if force_refresh:

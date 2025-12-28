@@ -328,7 +328,7 @@ def update_market_kpis(sheet, data_hidden, df):
 
 def main():
     """Main execution"""
-    print("🚀 Deploying BM Market KPIs to Live Dashboard v2...")
+    print("⚡ Deploying BM Market KPIs to Live Dashboard v2...")
 
     try:
         # BigQuery client

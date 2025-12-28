@@ -47,6 +47,7 @@
 - **[docs/DASHBOARD_FIX_NOV_21_2025.md](docs/DASHBOARD_FIX_NOV_21_2025.md)** - Dashboard MW→GW conversion fix
 - **[docs/WIND_FARM_MAPPING_COMPLETE.md](docs/WIND_FARM_MAPPING_COMPLETE.md)** - 43 offshore + 414 onshore wind farms mapped
 - **[docs/AUTHENTICATION_ARCHITECTURE.md](docs/AUTHENTICATION_ARCHITECTURE.md)** - Complete auth guide
+- **[PERFORMANCE_OPTIMIZATION_COMPLETE.md](PERFORMANCE_OPTIMIZATION_COMPLETE.md)** - ⚡ **166x faster** Google Sheets API (133s → 0.8s)
 - **Performance Optimization** - Moved 1.1GB data to external directory
 
 #### For Dashboard Users

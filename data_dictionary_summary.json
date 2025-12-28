@@ -1,0 +1,48 @@
+{
+  "total_tables": 308,
+  "categories": {
+    "Generator Data": 1,
+    "Balancing Mechanism": 5,
+    "Other/Views": 177,
+    "BESS Data": 2,
+    "Market Analysis": 2,
+    "BMRS Real-time (IRIS)": 38,
+    "BMRS Historical": 64,
+    "DNO & Network": 3,
+    "P114 Settlement": 2,
+    "VLP Analysis": 1,
+    "NESO Data": 13
+  },
+  "key_tables": {
+    "VLP Analysis": [
+      "vlp_units",
+      "mart_vlp_revenue_p114",
+      "boalf_with_prices"
+    ],
+    "Settlement": [
+      "p114_settlement_canonical",
+      "elexon_p114_s0142_bpi"
+    ],
+    "Real-time": [
+      "bmrs_fuelinst_iris",
+      "bmrs_freq_iris",
+      "bmrs_bod_iris"
+    ],
+    "Constraint Costs": [
+      "constraint_costs_by_dno_latest",
+      "neso_constraint_breakdown_2025_2026"
+    ],
+    "DNO": [
+      "neso_dno_boundaries",
+      "neso_dno_reference",
+      "duos_unit_rates"
+    ]
+  },
+  "most_important": [
+    "bmrs_bod (391M rows) - Bid-Offer Data",
+    "p114_settlement_canonical - Settlement revenue",
+    "bmrs_boalf_complete - Balancing acceptances WITH PRICES",
+    "neso_dno_boundaries - Geographic boundaries (GEOGRAPHY type)",
+    "bmrs_fuelinst - Generation mix by fuel type"
+  ]
+}

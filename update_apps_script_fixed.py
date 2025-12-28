@@ -253,7 +253,7 @@ try:
     print("  • Charts aggregate data by Settlement Period")
     print("  • Top 5 fuel sources shown in line/area charts")
     print("=" * 60)
-    print("\n🚀 Next step: Run createDashboardCharts() again")
+    print("\n⚡ Next step: Run createDashboardCharts() again")
     print("   URL: https://script.google.com/d/" + SCRIPT_ID + "/edit")
     
 except Exception as e:

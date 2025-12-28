@@ -103,7 +103,7 @@ def main():
         print("❌ Cancelled")
         return
 
-    print("\n🚀 Starting cleanup...")
+    print("\n⚡ Starting cleanup...")
     print("=" * 70)
 
     # Remove duplicates in batches

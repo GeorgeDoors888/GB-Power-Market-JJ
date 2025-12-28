@@ -17,7 +17,7 @@ def deploy_new_dashboard(name, include_apps_script=True, webhook_url=None):
     Complete deployment: Create sheet + Apply template + Deploy Apps Script
     """
     print("=" * 80)
-    print(f"🚀 DEPLOYING NEW DASHBOARD: {name}")
+    print(f"⚡ DEPLOYING NEW DASHBOARD: {name}")
     print("=" * 80)
     
     # Step 1: Create new spreadsheet
@@ -43,7 +43,7 @@ def deploy_new_dashboard(name, include_apps_script=True, webhook_url=None):
     
     # Step 3: Deploy Apps Script
     if include_apps_script:
-        print("\n🚀 Step 3: Deploying Apps Script...")
+        print("\n⚡ Step 3: Deploying Apps Script...")
         deployer = ClaspDeployer()
         deployer.deploy_to_new_sheet(new_sheet.id, webhook_url)
     

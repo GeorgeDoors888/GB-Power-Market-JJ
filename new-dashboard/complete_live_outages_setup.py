@@ -242,7 +242,7 @@ def health():
     return jsonify({'status': 'ok', 'service': 'Live Outages Webhook'})
 
 if __name__ == '__main__':
-    print("🚀 Starting webhook server on http://localhost:5002")
+    print("⚡ Starting webhook server on http://localhost:5002")
     print("📡 Expose with: ngrok http 5002")
     app.run(host='0.0.0.0', port=5002, debug=False)
 '''
@@ -279,7 +279,7 @@ def create_cron_job():
 
 def main():
     print("=" * 80)
-    print("🚀 COMPLETE LIVE OUTAGES SETUP")
+    print("⚡ COMPLETE LIVE OUTAGES SETUP")
     print("=" * 80)
     
     try:

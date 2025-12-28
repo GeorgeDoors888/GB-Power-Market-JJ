@@ -13,7 +13,7 @@ SPREADSHEET_ID = '1MSl8fJ0to6Y08enXA2oysd8wvNUVm3AtfJ1bVqRH8_I'
 SCRIPT_FILE = '/home/george/GB-Power-Market-JJ/dno_map_apps_script.gs'
 
 def main():
-    print("🚀 Deploying DNO Map to Google Sheet via Apps Script API...")
+    print("⚡ Deploying DNO Map to Google Sheet via Apps Script API...")
     print("=" * 80)
     
     # Authenticate
@@ -102,7 +102,7 @@ def main():
             })
         
         # Push update
-        print("   🚀 Pushing to Apps Script...")
+        print("   ⚡ Pushing to Apps Script...")
         response = script_service.projects().updateContent(
             scriptId=script_id,
             body={'files': files_content}

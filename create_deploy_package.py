@@ -37,7 +37,7 @@ def main():
 1. **Code.gs** - Main Apps Script file (30 lines)
 2. **ConstraintMap_Leaflet.html** - Map with embedded data
 
-## 🚀 Deployment Steps:
+## ⚡ Deployment Steps:
 
 ### Step 1: Open Apps Script
 1. Open your Google Sheet: GB Energy Dashboard

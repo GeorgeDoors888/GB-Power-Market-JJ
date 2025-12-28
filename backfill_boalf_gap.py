@@ -287,7 +287,7 @@ def verify_gap_filled():
 def main():
     """Main backfill function"""
     logging.info("="*70)
-    logging.info(f"🚀 BOALF Gap Backfill - {GAP_START} to {GAP_END}")
+    logging.info(f"⚡ BOALF Gap Backfill - {GAP_START} to {GAP_END}")
     logging.info("="*70)
     logging.info(f"📍 Target: {BQ_PROJECT}.{BQ_DATASET}.{BQ_TABLE}")
     logging.info(f"📅 Gap Period: {GAP_START} to {GAP_END}")

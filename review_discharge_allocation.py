@@ -9,7 +9,7 @@ from oauth2client.service_account import ServiceAccountCredentials
 import pandas as pd
 
 # Configuration
-SHEET_ID = "1LmMq4OEE639Y-XXpOJ3xnvpAmHB6vUovh5g6gaU_vzc"
+SHEET_ID = "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA"
 REVIEW_TAB = "Discharge_Allocation_Review"
 
 # Setup Google Sheets

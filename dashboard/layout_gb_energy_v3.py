@@ -491,7 +491,7 @@ def setup_gb_dashboard_v3(spreadsheet_id: str):
     gc = get_client()
     
     print('=' * 70)
-    print('🚀 GB ENERGY DASHBOARD V3 - LAYOUT BUILDER')
+    print('⚡ GB ENERGY DASHBOARD V3 - LAYOUT BUILDER')
     print('=' * 70)
     
     # Get or create Dashboard sheet

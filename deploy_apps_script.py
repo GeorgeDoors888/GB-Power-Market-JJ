@@ -141,7 +141,7 @@ def deploy_to_sheet_bound_script(sheets_service, sheet_id, code):
 
 def main():
     """Main deployment function"""
-    print("🚀 Google Apps Script Deployment Tool")
+    print("⚡ Google Apps Script Deployment Tool")
     print("=" * 50)
     
     try:

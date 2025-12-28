@@ -411,7 +411,7 @@ def create_analysis_sheet():
 def main():
     """Main execution"""
     print("=" * 70)
-    print("🚀 ANALYSIS SHEET SETUP")
+    print("⚡ ANALYSIS SHEET SETUP")
     print("=" * 70)
     print()
     

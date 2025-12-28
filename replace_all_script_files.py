@@ -116,7 +116,7 @@ def main():
         print("Next steps:")
         print("  1. Refresh your Google Sheet (Cmd+R)")
         print("  2. Wait 5-10 seconds")
-        print("  3. Click: ⚡ Power Market → 🚀 One-Click Setup")
+        print("  3. Click: ⚡ Power Market → ⚡ One-Click Setup")
         print()
         
     except HttpError as e:

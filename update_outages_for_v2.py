@@ -18,7 +18,7 @@ import gspread
 import pandas as pd
 
 # Configuration - DASHBOARD V2
-SPREADSHEET_ID = '1LmMq4OEE639Y-XXpOJ3xnvpAmHB6vUovh5g6gaU_vzc'  # Dashboard V2
+SPREADSHEET_ID = '1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA'  # Dashboard V2
 DASHBOARD_SHEET = 'Dashboard'
 OUTAGES_SHEET = 'Outages'  # Full history
 PROJECT_ID = 'inner-cinema-476211-u9'

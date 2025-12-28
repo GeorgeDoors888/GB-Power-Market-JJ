@@ -1,0 +1,83 @@
+
+================================================================================
+✅ COMPLETED TASKS
+================================================================================
+
+1. ✅ Fixed update_data_hidden_only.py performance (gspread → FastSheets, 266x faster)
+2. ✅ Fixed MID price query (filter price > 0 to remove zeros)
+3. ✅ Populated Data_Hidden rows 29-31 with today's market data
+4. ✅ Installed cron automation (every 15 min + daily 3 AM pipeline)
+5. ✅ Created SPARKLINE_FORMULAS.txt with copy-paste formulas
+
+================================================================================
+📊 CURRENT STATE
+================================================================================
+
+Data_Hidden Sparkline Data (Settlement Periods 1-48):
+✅ Row 29 (MID Price):     73.5, 80.41, 78.04... (READY for sparkline)
+✅ Row 30 (Sys Buy):       87.8, 101.11, 87.8... (READY for sparkline)
+✅ Row 31 (Sys Sell):      87.8, 101.11, 87.8... (READY for sparkline)
+✅ Row 32 (BM-MID Spread): -73.5, -80.41... (READY for sparkline)
+❌ Row 27 (BM Avg Price):  All zeros (needs BOALF data)
+❌ Row 28 (BM Vol Wtd):    All zeros (needs BOALF data)
+
+Sparkline Formulas:
+❌ Cells N14, N16, N18, R14, R16, R18 are EMPTY (API can't write them)
+   → MANUAL ACTION REQUIRED: Copy formulas from SPARKLINE_FORMULAS.txt
+
+================================================================================
+🚨 ROOT CAUSE ANALYSIS
+================================================================================
+
+BOALF Data Gap:
+- bmrs_boalf:          Latest = Dec 18 ❌
+- bmrs_boalf_iris:     Latest = Dec 18 ❌
+- bmrs_boalf_complete: Latest = Dec 18 ❌
+
+BUT:
+
+DIAGNOSIS: IRIS pipeline on AlmaLinux server is NOT collecting BOALF stream
+
+================================================================================
+🎯 IMMEDIATE ACTIONS
+================================================================================
+
+1. MANUAL (2 minutes):
+   - Open: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit#gid=687718775
+   - Copy formulas from SPARKLINE_FORMULAS.txt into cells N14, N16, N18, R14, R16, R18
+   - Result: 4/6 sparklines will work immediately (MID, Sys Buy, Sys Sell, Spread)
+
+2. FIX IRIS BOALF COLLECTION (AlmaLinux server):
+   ssh root@94.237.55.234
+   cd /opt/iris-pipeline
+   
+   Check if BOALF endpoint is configured:
+   cat config.yml | grep -i boalf
+   
+   If missing, add BOALF to the IRIS client endpoints
+   Restart IRIS service
+   
+3. BACKFILL BOALF (once IRIS fixed):
+   The daily_data_pipeline.py will handle this automatically at 3 AM
+   Or run manually:
+   cd /home/george/GB-Power-Market-JJ
+   python3 daily_data_pipeline.py
+
+================================================================================
+🔄 AUTOMATED SCHEDULE (Already Running)
+================================================================================
+
+Every 15 minutes:
+  → update_data_hidden_only.py (refresh sparkline data)
+
+Every 2 hours:
+  → ingest_bm_settlement_data.py (BOAV/EBOCF volumes)
+
+Every 30 minutes:
+  → derive_boalf_prices.py (BOD matching for prices)
+
+Daily 3 AM:
+  → daily_data_pipeline.py (complete 5-step refresh)
+
+================================================================================
+

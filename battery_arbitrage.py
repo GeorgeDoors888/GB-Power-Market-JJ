@@ -18,7 +18,7 @@ DATASET = "uk_energy_prod"
 MAX_BYTES_PROCESSED = 2e12  # 2 TB
 
 def main():
-    print(f"🚀 Starting GB Power Market Analysis")
+    print(f"⚡ Starting GB Power Market Analysis")
     print(f"   Time: {datetime.now(timezone.utc):%Y-%m-%d %H:%M:%S UTC}")
     print(f"   Project: {PROJECT}")
     print(f"   Dataset: {DATASET}")

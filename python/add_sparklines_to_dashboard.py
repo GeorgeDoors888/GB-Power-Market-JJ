@@ -141,7 +141,7 @@ def add_sparklines_to_dashboard(sheet, formulas, stats):
     print(f"✅ Sparklines added to rows {SPARKLINE_START_ROW}-{row}")
 
 def main():
-    print("🚀 Adding Monthly Sparklines to Dashboard V3\n")
+    print("⚡ Adding Monthly Sparklines to Dashboard V3\n")
     
     # Connect to BigQuery
     print("📊 Connecting to BigQuery...")

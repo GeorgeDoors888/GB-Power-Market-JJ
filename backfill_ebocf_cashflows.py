@@ -156,7 +156,7 @@ def upload_records(client, records):
 def backfill_date_range():
     """Backfill EBOCF for gap period"""
     logging.info("=" * 60)
-    logging.info("🚀 EBOCF Backfill - Pre-Calculated Cashflows")
+    logging.info("⚡ EBOCF Backfill - Pre-Calculated Cashflows")
     logging.info("=" * 60)
     logging.info(f"📅 Gap Period: {GAP_START} to {GAP_END}")
     logging.info(f"📍 Target: {BQ_PROJECT}.{BQ_DATASET}.{BQ_TABLE}")

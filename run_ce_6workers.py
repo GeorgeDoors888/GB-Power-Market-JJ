@@ -13,7 +13,7 @@ mod.MAX_WORKERS = 6
 with open('/tmp/continuous_extract.pid', 'w') as f:
     f.write(str(os.getpid()))
 
-print(f"🚀 Starting continuous extraction with {mod.MAX_WORKERS} workers")
+print(f"⚡ Starting continuous extraction with {mod.MAX_WORKERS} workers")
 print(f"📝 PID: {os.getpid()}")
 
 # Run main extraction

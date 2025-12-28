@@ -315,7 +315,7 @@ def update_google_sheet(df):
 
 def main():
     """Main function to run the data pipeline."""
-    print("🚀 Starting the GB Live Dashboard Updater...")
+    print("⚡ Starting the GB Live Dashboard Updater...")
     try:
         latest_date = fetch_latest_date()
         data_df = build_and_fetch_data(latest_date)

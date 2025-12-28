@@ -106,7 +106,7 @@ def deploy(df):
     print(f"✅ DONE! M14=£{avg:.2f}, Q14=£{vol:.2f}")
 
 if __name__ == '__main__':
-    print("🚀 Minimal BM KPI Deployment\n")
+    print("⚡ Minimal BM KPI Deployment\n")
     df = get_data()
     deploy(df)
     print("\n✅ Complete! Check dashboard.")

@@ -1,0 +1,90 @@
+#!/usr/bin/env python3
+"""
+Add date picker dropdowns to Analysis sheet for date range selection
+"""
+
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
+from datetime import datetime, timedelta
+
+# Setup
+SPREADSHEET_ID = '1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA'
+CREDENTIALS_FILE = 'inner-cinema-credentials.json'
+
+# Authorize
+scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
+creds = ServiceAccountCredentials.from_json_keyfile_name(CREDENTIALS_FILE, scope)
+gc = gspread.authorize(creds)
+sh = gc.open_by_key(SPREADSHEET_ID)
+
+# Get Analysis sheet
+try:
+    analysis_sheet = sh.worksheet('Analysis')
+    print("✅ Found 'Analysis' sheet")
+except gspread.WorksheetNotFound:
+    print("❌ 'Analysis' sheet not found")
+    exit(1)
+
+# Clear and setup date picker area (B2:C3)
+print("\n📅 Setting up date range selector...")
+
+# Headers and initial values
+analysis_sheet.update('B2', [['From Date:']])
+analysis_sheet.update('C2', [[(datetime.now() - timedelta(days=7)).strftime('%Y-%m-%d')]])
+analysis_sheet.update('B3', [['To Date:']])
+analysis_sheet.update('C3', [[datetime.now().strftime('%Y-%m-%d')]])
+
+# Format headers (bold)
+analysis_sheet.format('B2:B3', {
+    'textFormat': {'bold': True},
+    'backgroundColor': {'red': 0.9, 'green': 0.9, 'blue': 0.9}
+})
+
+# Add data validation for date format on C2:C3
+# Note: Google Sheets date validation uses date pickers automatically
+sheet_id = analysis_sheet.id
+
+# Build request for date validation
+requests = [
+    {
+        'setDataValidation': {
+            'range': {
+                'sheetId': sheet_id,
+                'startRowIndex': 1,  # Row 2 (0-indexed)
+                'endRowIndex': 3,    # Row 3 (exclusive, so 1-2)
+                'startColumnIndex': 2,  # Column C (0-indexed)
+                'endColumnIndex': 3     # Column C (exclusive)
+            },
+            'rule': {
+                'condition': {
+                    'type': 'DATE_IS_VALID'
+                },
+                'showCustomUi': True,
+                'strict': True,
+                'inputMessage': 'Enter date in YYYY-MM-DD format or use date picker'
+            }
+        }
+    }
+]
+
+# Execute batch update
+sh.batch_update({'requests': requests})
+
+print("✅ Date pickers added to Analysis sheet")
+print(f"   From Date: C2 (default: 7 days ago)")
+print(f"   To Date:   C3 (default: today)")
+print("\n📝 Users can click cells C2 and C3 to see date picker popup")
+
+# Add instruction text
+analysis_sheet.update('B5', [['Instructions:']])
+analysis_sheet.update('B6:B8', [
+    ['1. Click cell C2 to select FROM date'],
+    ['2. Click cell C3 to select TO date'],
+    ['3. Dates will be used for analysis queries']
+])
+
+analysis_sheet.format('B5', {'textFormat': {'bold': True, 'fontSize': 11}})
+analysis_sheet.format('B6:B8', {'textFormat': {'fontSize': 9, 'italic': True}})
+
+print("✅ Instructions added to Analysis sheet")
+print("\n🎉 COMPLETE - Date range selector ready!")

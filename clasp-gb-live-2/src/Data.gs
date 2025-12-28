@@ -209,23 +209,16 @@ function displayData(sheet, data) {
     if (isV2) {
       // v2 Layout:
       // Col G: Connection Name
-      // Col H-I (Merged): Sparkline Graphic
-      // Col J: Flow Value (MW)
+      // Col H: Sparkline Graphic (DO NOT OVERWRITE - managed by Python update_live_metrics.py)
+      // Col I: Current Flow Value (MW)
 
-      // 1. Write Names to G and Values to J
-      const v2InterData = data.interconnectors.map(row => [row[0], '', '', row[1]]); // G, H, I, J
-      sheet.getRange(13, 7, v2InterData.length, 4).setValues(v2InterData);
+      // Only write Names to G - Python script manages sparklines in H
+      const v2InterData = data.interconnectors.map(row => [row[0]]); // G only
+      sheet.getRange(13, 7, v2InterData.length, 1).setValues(v2InterData);
 
-      // 2. Write Sparklines to H (which fills H-I merge)
-      const interFormulas = data.interconnectors.map((row, i) => {
-        const sheetRow = 13 + i;
-        const val = parseFloat(row[1]); // Flow value
-        // Green if Import (>=0), Red if Export (<0)
-        const color = val >= 0 ? "#2ecc71" : "#e74c3c";
-        // Max capacity ~2000MW (IFA) - using ABS(J) for magnitude
-        return [`=SPARKLINE(ABS(J${sheetRow}), {"charttype","bar";"max",2000;"color1","${color}"})`];
-      });
-      sheet.getRange(13, 8, interFormulas.length, 1).setFormulas(interFormulas);
+      // Note: Sparklines in column H are managed by Python script update_live_metrics.py
+      // which creates time-series sparklines with proper positive/negative coloring
+      // DO NOT write to column H here to avoid overwriting them
 
     } else {
       // v1: Connection in D (col 4), Flow in E (col 5)
@@ -233,7 +226,11 @@ function displayData(sheet, data) {
     }
   }
 
-  // Display Outages (v2 only)
+  // Display Outages (v2 only) - DISABLED: Python manages G25:K41
+  // NOTE: Active Outages are now managed by Python update_live_metrics.py at G25:K41
+  // This section is disabled to prevent data conflicts and overlapping ranges (G31-41)
+  // Python version has 5 columns (includes Normal Capacity) vs Apps Script's 4 columns
+  /*
   if (isV2 && data.outages && data.outages.length > 0) {
     // Outages start at row 32 (below Wind Analysis header at 30)
     // Move to Right Side (Column G) to avoid Chart on Left
@@ -248,6 +245,7 @@ function displayData(sheet, data) {
     const outageData = data.outages.map(o => [o.assetName, o.fuelType, o.unavailMw, o.cause]);
     sheet.getRange(32, 7, outageData.length, 4).setValues(outageData);
   }
+  */
 
   // Display Constraint Analysis (v2 only)
   if (isV2 && data.constraintAnalysis && data.constraintAnalysis.length > 0) {

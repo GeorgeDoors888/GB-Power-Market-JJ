@@ -109,7 +109,7 @@ def main():
     ensure_tables(dataset)
     client = bq_client()
     
-    print("🚀 EXTRACTION WITH TIMEOUTS")
+    print("⚡ EXTRACTION WITH TIMEOUTS")
     print(f"⏱️  {TIMEOUT_SECONDS}s timeout per document")
     print("=" * 70)
     

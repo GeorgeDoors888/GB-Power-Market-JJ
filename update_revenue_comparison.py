@@ -9,7 +9,7 @@ from oauth2client.service_account import ServiceAccountCredentials
 import pandas as pd
 
 # Google Sheets setup
-SHEET_ID = "1LmMq4OEE639Y-XXpOJ3xnvpAmHB6vUovh5g6gaU_vzc"
+SHEET_ID = "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA"
 TAB_NAME = "Revenue_Analysis_Comparison"
 CREDS_PATH = '/home/george/inner-cinema-credentials.json'
 

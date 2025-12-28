@@ -111,7 +111,7 @@ def update_script_content(script_service, script_id, code):
 
 def main():
     """Main deployment function"""
-    print("🚀 Apps Script Deployment - Update Existing Script")
+    print("⚡ Apps Script Deployment - Update Existing Script")
     print("=" * 60)
     print(f"📝 Script ID: {SCRIPT_ID}")
     print(f"📊 Sheet ID: {SHEET_ID}")
@@ -155,7 +155,7 @@ def main():
         print(f"\n📝 Next steps:")
         print(f"   1. Refresh your Google Sheet (Cmd+R or F5)")
         print(f"   2. Check for menu: ⚡ Power Market")
-        print(f"   3. Click: ⚡ Power Market → 🚀 One-Click Setup")
+        print(f"   3. Click: ⚡ Power Market → ⚡ One-Click Setup")
         print(f"   4. Authorize when prompted (safe - your own script)")
         print(f"   5. Wait 10-30 seconds for setup to complete")
         print(f"\n✅ Dashboard will auto-refresh every 5 minutes!")

@@ -1,12 +1,14 @@
 # 🏗️ Unified Data Architecture: Historical + Real-Time
 
-> **⚠️ VERIFIED DEC 17, 2025**: See [`DATA_ARCHITECTURE_VERIFIED_DEC17_2025.md`](../DATA_ARCHITECTURE_VERIFIED_DEC17_2025.md) for ACTUAL data coverage. This file contains OUTDATED assumptions about historical table status.
+> **✅ LATEST STATUS**: See [`BIGQUERY_DATA_STATUS_DEC22_2025.md`](../BIGQUERY_DATA_STATUS_DEC22_2025.md) for current data coverage (Updated Dec 22, 2025)
+
+> **📜 HISTORICAL VERIFICATION**: See [`DATA_ARCHITECTURE_VERIFIED_DEC17_2025.md`](../DATA_ARCHITECTURE_VERIFIED_DEC17_2025.md) for Dec 17 baseline
 
 > **🔧 Configuration Reference**: See [`PROJECT_CONFIGURATION.md`](PROJECT_CONFIGURATION.md) for BigQuery project IDs, regions, table schemas, and common pitfalls
 
-**Date:** December 17, 2025 (REQUIRES CORRECTION - See verified doc above)
+**Date:** December 22, 2025 (Architecture Stable, Data Status Updated)
 **Repository:** ~/GB Power Market JJ
-**Status:** ⚠️ PARTIALLY INCORRECT - Historical tables have VARYING update status, NOT uniform "Oct 30 freeze"
+**Status:** ✅ OPERATIONAL - All major backfills complete, both pipelines running
 
 ---
 

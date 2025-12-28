@@ -123,8 +123,10 @@ def lookup_dno_by_mpan(mpan_id):
     return df.iloc[0].to_dict()
 
 def get_duos_rates(dno_key, voltage_level):
-    """Query BigQuery for DUoS rates"""
-    client = bigquery.Client(project=PROJECT_ID, location="EU")
+    """Query BigQuery for DUoS rates
+    NOTE: gb_power dataset is in EU location!
+    """
+    client = bigquery.Client(project=PROJECT_ID, location="EU")  # gb_power dataset location
     
     query = f"""
     SELECT 

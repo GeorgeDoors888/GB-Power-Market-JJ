@@ -11,7 +11,7 @@ from google.oauth2 import service_account
 from googleapiclient.discovery import build
 
 # Configuration
-SPREADSHEET_ID = "1LmMq4OEE639Y-XXpOJ3xnvpAmHB6vUovh5g6gaU_vzc"  # Sheet 2 (Dashboard V3)
+SPREADSHEET_ID = "1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA"  # Sheet 2 (Dashboard V3)
 SHEET_NAME = "VLP Documents"
 CSV_FILE = "vlp_documents_complete.csv"
 CREDENTIALS_PATH = os.path.expanduser("~/.config/google-cloud/bigquery-credentials.json")
