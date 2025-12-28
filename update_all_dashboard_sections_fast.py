@@ -92,7 +92,7 @@ def get_latest_interconnectors():
         return {}
 
 def update_generation_mix(gen_data):
-    """Update generation mix section with sparklines (B13:E22)"""
+    """Update generation mix section (A13:D22) - leaves column E sparklines untouched"""
     print("\n🔋 Updating Generation Mix...")
     
     fuel_types = [
@@ -112,17 +112,17 @@ def update_generation_mix(gen_data):
     for fuel_key, fuel_label in fuel_types:
         gen_mw = gen_data.get(fuel_key, 0)
         gen_gw = gen_mw / 1000
-        # Create sparkline formula for bar chart
-        sparkline = f'=SPARKLINE({{{gen_mw}}}, {{"charttype","bar"; "max",40000; "color1","#4285F4"}})'
-        rows.append([fuel_label, f'{gen_mw:.0f}', 'MW', f'{gen_gw:.2f} GW', sparkline])
+        # Only update live values A-D, preserve existing sparklines in column E
+        rows.append([fuel_label, f'{gen_mw:.0f}', 'MW', f'{gen_gw:.2f} GW'])
     
-    # Update columns A-E (label, MW value, "MW" text, GW value, sparkline)
+    # Update columns A-D only (label, MW value, "MW" text, GW value)
+    # Column E sparklines are maintained by Data_Hidden and should not be overwritten
     sheets_api.update_single_range(
         SPREADSHEET_ID,
-        f'{SHEET_NAME}!A13:E22',
+        f'{SHEET_NAME}!A13:D22',
         rows
     )
-    print(f"   ✅ Updated {len(rows)} fuel types with sparklines")
+    print(f"   ✅ Updated {len(rows)} fuel types (sparklines preserved)")
 
 def update_demand(demand_mw):
     """Update demand section"""
@@ -135,7 +135,7 @@ def update_demand(demand_mw):
     print(f"   ✅ Demand: {demand_mw:.0f} MW")
 
 def update_interconnectors(ic_data):
-    """Update interconnector section with sparklines (G13:J22)"""
+    """Update interconnector section (G13:I20) - leaves column J sparklines untouched"""
     print("\n🔌 Updating Interconnectors...")
     
     interconnectors = [
@@ -153,16 +153,17 @@ def update_interconnectors(ic_data):
     for ic_key, ic_label in interconnectors:
         flow = ic_data.get(ic_key, 0)
         direction = '→ Import' if flow > 0 else '← Export' if flow < 0 else '—'
-        # Create sparkline formula for bar chart
-        sparkline = f'=SPARKLINE({{{abs(flow)}}}, {{"charttype","bar"; "max",3000; "color1","{"#34A853" if flow > 0 else "#EA4335"}"}})'
-        rows.append([ic_label, f'{abs(flow):.0f} MW', direction, sparkline])
+        # Only update live values G-I, preserve existing sparklines in column J
+        rows.append([ic_label, f'{abs(flow):.0f} MW', direction])
     
+    # Update columns G-I only (label, MW value, direction)
+    # Column J sparklines are maintained by Data_Hidden and should not be overwritten
     sheets_api.update_single_range(
         SPREADSHEET_ID,
-        f'{SHEET_NAME}!G13:J20',
+        f'{SHEET_NAME}!G13:I20',
         rows
     )
-    print(f"   ✅ Updated {len(rows)} interconnectors with sparklines")
+    print(f"   ✅ Updated {len(rows)} interconnectors (sparklines preserved)")
 
 def get_latest_outages():
     """Get latest power station outages"""
