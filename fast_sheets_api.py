@@ -101,6 +101,104 @@ class FastSheetsAPI:
             logging.info(f"✅ Cleared {range_name}")
         except HttpError as e:
             logging.error(f"❌ Clear failed: {e}")
+    
+    def get_sheet_id(self, spreadsheet_id, sheet_name):
+        """Get the sheetId for a given sheet name"""
+        try:
+            spreadsheet = self.service.spreadsheets().get(
+                spreadsheetId=spreadsheet_id
+            ).execute()
+            
+            for sheet in spreadsheet.get('sheets', []):
+                if sheet['properties']['title'] == sheet_name:
+                    return sheet['properties']['sheetId']
+            
+            logging.error(f"❌ Sheet '{sheet_name}' not found")
+            return None
+        
+        except HttpError as e:
+            logging.error(f"❌ Failed to get sheet ID: {e}")
+            return None
+    
+    def merge_cells(self, spreadsheet_id, sheet_name, range_notation):
+        """
+        Merge cells in A1 notation (e.g., 'N13:P13')
+        
+        Args:
+            spreadsheet_id: The spreadsheet ID
+            sheet_name: Sheet name (e.g., 'Live Dashboard v2')
+            range_notation: A1 notation like 'N13:P13'
+        """
+        try:
+            # Get sheet ID
+            sheet_id = self.get_sheet_id(spreadsheet_id, sheet_name)
+            if sheet_id is None:
+                return False
+            
+            # Parse range notation (e.g., 'N13:P13')
+            parts = range_notation.split(':')
+            if len(parts) != 2:
+                logging.error(f"❌ Invalid range notation: {range_notation}")
+                return False
+            
+            start_cell = parts[0]
+            end_cell = parts[1]
+            
+            # Convert A1 to row/col indices (0-based)
+            def a1_to_indices(cell):
+                col = 0
+                row = 0
+                i = 0
+                while i < len(cell) and cell[i].isalpha():
+                    col = col * 26 + (ord(cell[i].upper()) - ord('A') + 1)
+                    i += 1
+                row = int(cell[i:])
+                return row - 1, col - 1  # 0-based
+            
+            start_row, start_col = a1_to_indices(start_cell)
+            end_row, end_col = a1_to_indices(end_cell)
+            
+            # First unmerge in case already merged, then merge
+            requests = [
+                {
+                    'unmergeCells': {
+                        'range': {
+                            'sheetId': sheet_id,
+                            'startRowIndex': start_row,
+                            'endRowIndex': end_row + 1,
+                            'startColumnIndex': start_col,
+                            'endColumnIndex': end_col + 1
+                        }
+                    }
+                },
+                {
+                    'mergeCells': {
+                        'range': {
+                            'sheetId': sheet_id,
+                            'startRowIndex': start_row,
+                            'endRowIndex': end_row + 1,
+                            'startColumnIndex': start_col,
+                            'endColumnIndex': end_col + 1
+                        },
+                        'mergeType': 'MERGE_ALL'
+                    }
+                }
+            ]
+            
+            # Execute
+            self.service.spreadsheets().batchUpdate(
+                spreadsheetId=spreadsheet_id,
+                body={'requests': requests}
+            ).execute()
+            
+            logging.info(f"✅ Merged {range_notation}")
+            return True
+        
+        except HttpError as e:
+            # Ignore unmerge errors (cells might not be merged), but log merge failures
+            if 'unmergeCells' not in str(e):
+                logging.error(f"❌ Merge failed for {range_notation}: {e}")
+            return False
 
 
 def test_performance():
