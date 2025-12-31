@@ -1,0 +1,49 @@
+-- BigQuery Scheduled Query: HH DATA 90-Day Cleanup
+-- Purpose: Automatically delete HH DATA records older than 90 days
+-- Schedule: Monthly on 1st at 02:00 UTC
+-- 
+-- MANUAL SETUP REQUIRED (BigQuery Console):
+-- 1. Open: https://console.cloud.google.com/bigquery?project=inner-cinema-476211-u9
+-- 2. Click: "Scheduled queries" in left sidebar
+-- 3. Click: "+ Create scheduled query"
+-- 4. Paste this SQL:
+
+DELETE FROM `inner-cinema-476211-u9.uk_energy_prod.hh_data_btm_generated`
+WHERE generated_at < TIMESTAMP_SUB(CURRENT_TIMESTAMP(), INTERVAL 90 DAY);
+
+-- 5. Configuration:
+--    Name: btm_hh_data_cleanup_90day
+--    Schedule: Every 1st of month at 02:00 UTC
+--    Repeat: Repeats monthly
+--    Location: US (must match table location)
+--    Destination: None (DELETE query)
+--
+-- 6. Click "Save" and "Enable"
+--
+-- Expected Behavior:
+-- • Runs on 1st of each month at 02:00 UTC
+-- • Deletes records where generated_at is >90 days old
+-- • Keeps recent 3 months of data
+-- • Zero cost (DELETE is free in BigQuery)
+--
+-- Manual Execution (test before scheduling):
+-- DELETE FROM `inner-cinema-476211-u9.uk_energy_prod.hh_data_btm_generated`
+-- WHERE generated_at < TIMESTAMP_SUB(CURRENT_TIMESTAMP(), INTERVAL 90 DAY);
+--
+-- Verify what will be deleted:
+-- SELECT 
+--   COUNT(*) as records_to_delete,
+--   MIN(generated_at) as oldest_record,
+--   MAX(generated_at) as newest_in_deletion
+-- FROM `inner-cinema-476211-u9.uk_energy_prod.hh_data_btm_generated`
+-- WHERE generated_at < TIMESTAMP_SUB(CURRENT_TIMESTAMP(), INTERVAL 90 DAY);
+--
+-- Check retention status:
+-- SELECT 
+--   DATE(generated_at) as generation_date,
+--   COUNT(*) as records,
+--   TIMESTAMP_DIFF(CURRENT_TIMESTAMP(), MIN(generated_at), DAY) as days_old
+-- FROM `inner-cinema-476211-u9.uk_energy_prod.hh_data_btm_generated`
+-- GROUP BY generation_date
+-- ORDER BY generation_date DESC
+-- LIMIT 10;

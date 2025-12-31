@@ -1,0 +1,70 @@
+
+KPI LABEL CORRECTIONS - 2025-12-29 14:04:31
+================================================================================
+
+Changes Made:
+
+Row 13:
+  OLD: 💷 System Price (Real-time)
+  NEW: 💷 Single Imbalance Price (Real-time)
+
+Row 14:
+  OLD: 📈 Hourly Average
+  NEW: 📈 Hourly Average SIP
+
+Row 15:
+  OLD: 📊 7-Day Average
+  NEW: 📊 7-Day Average SIP
+
+Row 16:
+  OLD: 📉 30-Day Range (Low)
+  NEW: 📉 30-Day Min SIP
+
+Row 17:
+  OLD: 📅 30-Day Average
+  NEW: 📅 30-Day Average SIP
+
+Row 18:
+  OLD: 📈 30-Day Range (High)
+  NEW: 📈 30-Day Max SIP
+
+Row 19:
+  OLD: ⚙️ BM Dispatch Rate
+  NEW: ⚙️ BM Acceptance Rate (%)
+
+Row 20:
+  OLD: 🎯 BM Volume-Weighted Price
+  NEW: 🎯 BM Volume-Weighted Avg Price
+
+Row 21:
+  OLD: Single-Price Frequency
+  NEW: 📊 Single-Price Frequency (%)
+
+Row 22:
+  OLD: 💰 Total BM Cashflow
+  NEW: 💰 Total BM Cashflow (£M)
+
+================================================================================
+Terminology Standards Applied:
+
+1. Single Imbalance Price (SIP)
+   - Replaces ambiguous "System Price"
+   - Clarifies that SSP = SBP since P305 (Nov 2015)
+   
+2. BM Acceptance Rate
+   - More accurate than "Dispatch Rate"
+   - Measures % of periods with balancing actions
+   
+3. Explicit Units
+   - All percentages marked with (%)
+   - All monetary values marked with (£M) or (£)
+   
+4. Trader-Focused Language
+   - "Volume-Weighted Avg" instead of generic "BM Price"
+   - "Peak Price Today" instead of "Range (High)"
+   
+Reference:
+- BSC Modification P305: https://www.elexon.co.uk/mod-proposal/p305/
+- Balancing Mechanism Guide: BMRS documentation
+- Energy Trading terminology standards
+

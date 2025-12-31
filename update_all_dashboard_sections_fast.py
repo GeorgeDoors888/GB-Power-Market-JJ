@@ -22,6 +22,28 @@ sheets_api = FastSheetsAPI('inner-cinema-credentials.json')
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'inner-cinema-credentials.json'
 bq_client = bigquery.Client(project=PROJECT_ID, location='US')
 
+def generate_dynamic_sparkline_ic(data):
+    """
+    Generate dynamic sparkline formula for interconnectors (LET with auto-scaling).
+    Shows green bars for imports (+), red bars for exports (-), with gray axis line.
+    
+    Args:
+        data: List of 48 numeric values (interconnector flows in MW)
+    
+    Returns:
+        String with =IFERROR(LET(...)) formula
+    """
+    clean_data = [float(item) if isinstance(item, (int, float)) and item is not None else 0 for item in data]
+    if not clean_data:
+        return ''
+    
+    data_str = ",".join(map(str, clean_data))
+    
+    # LET formula with 15% padding, green for positive (imports), red for negative (exports)
+    formula = f'''=IFERROR(LET(r,{{{data_str}}},x,FILTER(r,(r<>0)*(r<>"")),lo,MIN(x),hi,MAX(x),span,hi-lo,pad,MAX(1,span*0.15),SPARKLINE(IF((r=0)+(r=""),NA(),r),{{"charttype","column";"axis",true;"axiscolor","#999";"color","#34A853";"negcolor","#EA4335";"empty","ignore";"ymin",lo-pad;"ymax",hi+pad}})),"")'''
+    
+    return formula
+
 def get_latest_generation_mix():
     """Get latest generation by fuel type"""
     query = f"""
@@ -91,6 +113,75 @@ def get_latest_interconnectors():
         # Return empty if table doesn't exist
         return {}
 
+def get_interconnector_48_periods():
+    """Get 48 periods of interconnector data for dynamic sparklines"""
+    query = f"""
+    WITH deduped AS (
+      SELECT DISTINCT
+        settlementPeriod,
+        fuelType,
+        generation,
+        publishTime
+      FROM `{PROJECT_ID}.{DATASET}.bmrs_fuelinst_iris`
+      WHERE CAST(settlementDate AS DATE) = CURRENT_DATE()
+        AND fuelType IN ('INTFR', 'INTIRL', 'INTNED', 'INTEW', 'INTNEM', 'INTELEC', 'INTNSL', 'INTIFA2')
+    ),
+    latest_per_period AS (
+      SELECT
+        settlementPeriod,
+        fuelType,
+        MAX(publishTime) as max_publish
+      FROM deduped
+      GROUP BY settlementPeriod, fuelType
+    )
+    SELECT
+      d.settlementPeriod,
+      d.fuelType as interconnector,
+      AVG(d.generation) as net_flow
+    FROM deduped d
+    JOIN latest_per_period l
+      ON d.settlementPeriod = l.settlementPeriod
+      AND d.fuelType = l.fuelType
+      AND d.publishTime = l.max_publish
+    GROUP BY d.settlementPeriod, d.fuelType
+    ORDER BY d.settlementPeriod, interconnector
+    """
+    try:
+        df = bq_client.query(query).to_dataframe()
+        if df.empty:
+            return {}
+        
+        # Map fuel types to interconnector names
+        ic_map = {
+            'INTFR': 'IFA',
+            'INTIFA2': 'IFA2',
+            'INTELEC': 'ELECLINK',
+            'INTNED': 'BRITNED',
+            'INTNEM': 'NEMO',
+            'INTNSL': 'NSL',
+            'INTEW': 'EWIC',
+            'INTIRL': 'MOYLE'
+        }
+        
+        # Pivot to get 48 periods per interconnector
+        result = {}
+        for fuel_type, ic_name in ic_map.items():
+            ic_data = df[df['interconnector'] == fuel_type].sort_values('settlementPeriod')
+            if not ic_data.empty:
+                # Pad to 48 periods if needed
+                periods = list(range(1, 49))
+                flows = []
+                for p in periods:
+                    period_data = ic_data[ic_data['settlementPeriod'] == p]
+                    if not period_data.empty:
+                        flows.append(float(period_data['net_flow'].iloc[0]))
+                    else:
+                        flows.append(0)
+                result[ic_name] = flows
+        return result
+    except:
+        return {}
+
 def update_generation_mix(gen_data):
     """Update generation mix section with data (A-C) and sparklines (D)"""
     print("\n🔋 Updating Generation Mix...")
@@ -118,9 +209,9 @@ def update_generation_mix(gen_data):
         # Data: Label, MW value, "MW" unit
         data_rows.append([fuel_label, f'{gen_mw:.0f}', 'MW'])
         
-        # Sparkline formula for merged D-E-F cell (bar chart from Data_Hidden)
+        # Sparkline formula for merged D-E-F cell (column chart from Data_Hidden)
         dash_row = 13 + len(sparkline_updates)  # Rows 13-22
-        sparkline = f'=SPARKLINE(Data_Hidden!B{data_row}:AX{data_row},{{"charttype","bar"}})'  
+        sparkline = f'=SPARKLINE(Data_Hidden!B{data_row}:AX{data_row},{{"charttype","column"}})'  
         sparkline_updates.append({'range': f'{SHEET_NAME}!D{dash_row}', 'values': [[sparkline]]})
     
     # Update columns A-C with data (label, MW, "MW")
@@ -136,44 +227,40 @@ def update_generation_mix(gen_data):
     print(f"   ✅ Updated {len(data_rows)} fuel types with sparklines")
 
 def update_demand(demand_mw):
-    """Update demand section"""
-    print("\n📊 Updating Demand...")
-    sheets_api.update_single_range(
-        SPREADSHEET_ID,
-        f'{SHEET_NAME}!A25:D25',
-        [[f'Demand: {demand_mw:.0f} MW', '', '', f'{demand_mw/1000:.2f} GW']]
-    )
-    print(f"   ✅ Demand: {demand_mw:.0f} MW")
+    """Update demand section - DISABLED (was conflicting with wind dashboard at row 25)"""
+    # NOTE: Demand update to A25:D25 removed to prevent overwriting wind dashboard
+    # Wind dashboard now uses rows 60-94 but row 25 reserved for future use
+    pass
 
-def update_interconnectors(ic_data):
-    """Update interconnector section with data (G-I) and sparklines (J)"""
+def update_interconnectors(ic_data, ic_48periods):
+    """Update interconnector section with data (G-I) and dynamic sparklines (J)"""
     print("\n🔌 Updating Interconnectors...")
     
-    # Map interconnectors to Data_Hidden row numbers
+    # Map interconnectors to display labels
     interconnectors = [
-        ('IFA', 'IFA (FR)', 14),
-        ('IFA2', 'IFA2 (FR)', 16),
-        ('ELECLINK', 'ElecLink (FR)', 12),
-        ('BRITNED', 'BritNed (NL)', 18),
-        ('NEMO', 'Nemo (BE)', 19),
-        ('NSL', 'NSL (NO)', 20),
-        ('EWIC', 'EWIC (IE)', 13),
-        ('MOYLE', 'Moyle (NI)', 17),
+        ('IFA', 'IFA (FR)'),
+        ('IFA2', 'IFA2 (FR)'),
+        ('ELECLINK', 'ElecLink (FR)'),
+        ('BRITNED', 'BritNed (NL)'),
+        ('NEMO', 'Nemo (BE)'),
+        ('NSL', 'NSL (NO)'),
+        ('EWIC', 'EWIC (IE)'),
+        ('MOYLE', 'Moyle (NI)'),
     ]
     
-    # Prepare data rows (G-I: label, MW value, direction)
+    # Prepare data rows (G-H: label, MW value)
     data_rows = []
     sparkline_updates = []
     
-    for ic_key, ic_label, data_row in interconnectors:
+    for ic_key, ic_label in interconnectors:
         flow = ic_data.get(ic_key, 0)
-        direction = '→ Import' if flow > 0 else '← Export' if flow < 0 else '—'
-        # Data: Label, MW only (direction goes in next column after sparkline)
+        # Data: Label, MW only
         data_rows.append([ic_label, f'{abs(flow):.0f} MW'])
         
-        # Sparkline formula for merged I-J cell (bar chart from Data_Hidden)
+        # Dynamic sparkline formula from 48-period data
         dash_row = 13 + len(sparkline_updates)  # Rows 13-20
-        sparkline = f'=SPARKLINE(Data_Hidden!B{data_row}:AX{data_row},{{\"charttype\",\"bar\"}})'
+        periods_data = ic_48periods.get(ic_key, [0] * 48)
+        sparkline = generate_dynamic_sparkline_ic(periods_data)
         sparkline_updates.append({'range': f'{SHEET_NAME}!I{dash_row}', 'values': [[sparkline]]})
     
     # Update columns G-H with data
@@ -183,10 +270,10 @@ def update_interconnectors(ic_data):
         data_rows
     )
     
-    # Update column I with sparklines (merged I-J cells show bar charts)
+    # Update column I with dynamic sparklines (merged I-J cells show bar charts)
     sheets_api.batch_update(SPREADSHEET_ID, sparkline_updates)
     
-    print(f"   ✅ Updated {len(data_rows)} interconnectors with sparklines")
+    print(f"   ✅ Updated {len(data_rows)} interconnectors with dynamic sparklines")
 
 def get_latest_outages():
     """Get latest power station outages"""
@@ -273,24 +360,27 @@ def main():
         gen_data = get_latest_generation_mix()
         demand_mw = get_latest_demand()
         ic_data = get_latest_interconnectors()
-        outages_data = get_latest_outages()
+        ic_48periods = get_interconnector_48_periods()  # NEW: 48-period data for dynamic sparklines
         
         print(f"   ✅ Generation: {len(gen_data)} fuel types")
         print(f"   ✅ Demand: {demand_mw:.0f} MW")
-        print(f"   ✅ Interconnectors: {len(ic_data)} flows")
-        print(f"   ✅ Outages: {len(outages_data)} active")
+        print(f"   ✅ Interconnectors: {len(ic_data)} flows (latest)")
+        print(f"   ✅ Interconnectors 48p: {len(ic_48periods)} timeseries")
         
         # Update all sections
         update_timestamp()
         update_generation_mix(gen_data)
         update_demand(demand_mw)
-        update_interconnectors(ic_data)
-        update_outages(outages_data)
+        update_interconnectors(ic_data, ic_48periods)  # Pass both latest + 48-period data
+        
+        # NOTE: Outages section (G25:K41) is handled by update_live_metrics.py
+        # We don't update it here to avoid conflicts
         
         print("\n" + "=" * 100)
         print("✅ DASHBOARD UPDATE COMPLETE!")
         print("=" * 100)
         print(f"\n🔗 View: https://docs.google.com/spreadsheets/d/{SPREADSHEET_ID}/edit")
+        print("\nℹ️  Outages & KPIs: Run update_live_metrics.py for full dashboard update")
         
     except Exception as e:
         print(f"\n❌ ERROR: {str(e)}")

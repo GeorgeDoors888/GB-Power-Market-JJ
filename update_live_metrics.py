@@ -15,8 +15,8 @@ import pytz
 from datetime import datetime, timedelta
 from google.cloud import bigquery
 from cache_manager import CacheManager
-import gspread
 from google.oauth2.service_account import Credentials
+from googleapiclient.discovery import build
 # from unicode_sparkline import generate_unicode_sparkline # Deprecated
 
 # --- New Sparkline Generation ---
@@ -71,15 +71,8 @@ def generate_gs_sparkline_formula(data, options, add_spacing=True):
     if charttype == 'line':
         add_spacing = False
 
-    # Add 2 spaces between each data point for better bar/column visibility
-    if add_spacing and len(clean_data) > 1:
-        spaced_data = []
-        for val in clean_data:
-            spaced_data.append(val)
-            spaced_data.append(0)  # Space 1
-            spaced_data.append(0)  # Space 2
-        # Remove trailing spaces
-        clean_data = spaced_data[:-2] if len(spaced_data) > 2 else spaced_data
+    # No spacing - maximum bar thickness (spacing removed per user request)
+    # Bars will be as thick as possible with no gaps
 
     # Build the options string: {"option1","value1";"option2","value2"}
     option_pairs = []
@@ -122,8 +115,11 @@ def generate_gs_sparkline_with_let(data, color, charttype="column", negcolor=Non
     data_str = ",".join(map(str, clean_data))
 
     # Build sparkline options based on chart type
+    # ALWAYS include axis for column charts (shows zero baseline), use axiscolor #999 for subtle gray line
     if charttype == "column" and negcolor:
-        sparkline_options = f'{{"charttype","column";"color","{color}";"negcolor","{negcolor}";"empty","ignore";"ymin",lo-pad;"ymax",hi+pad}}'
+        sparkline_options = f'{{"charttype","column";"axis",true;"axiscolor","#999";"color","{color}";"negcolor","{negcolor}";"empty","ignore";"ymin",lo-pad;"ymax",hi+pad}}'
+    elif charttype == "column":
+        sparkline_options = f'{{"charttype","column";"axis",true;"axiscolor","#999";"color","{color}";"empty","ignore";"ymin",lo-pad;"ymax",hi+pad}}'
     else:
         sparkline_options = f'{{"charttype","{charttype}";"color","{color}";"empty","ignore";"ymin",lo-pad;"ymax",hi+pad}}'
 
@@ -178,6 +174,7 @@ socket.setdefaulttimeout(120)
 PROJECT_ID = 'inner-cinema-476211-u9'
 DATASET = 'uk_energy_prod'
 SPREADSHEET_ID = '1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA'
+LIVE_DASHBOARD_SHEET_ID = 687718775  # Cached sheet ID for 'Live Dashboard v2' (avoids slow API call)
 
 # Setup logging
 logging.basicConfig(
@@ -669,12 +666,16 @@ def get_system_price_analysis(bq_client):
     """
     query = f"""
     WITH
+    all_periods AS (
+      SELECT period FROM UNNEST(GENERATE_ARRAY(1, 48)) AS period
+    ),
     current_prices AS (
       SELECT
         settlementPeriod as period,
-        systemSellPrice as current_price
+        AVG(systemSellPrice) as current_price
       FROM `{PROJECT_ID}.{DATASET}.bmrs_costs`
       WHERE CAST(settlementDate AS DATE) = CURRENT_DATE()
+      GROUP BY settlementPeriod
     ),
     hist_7d AS (
       SELECT
@@ -697,22 +698,22 @@ def get_system_price_analysis(bq_client):
       GROUP BY settlementPeriod
     )
     SELECT
-      c.period,
-      c.current_price,
+      ap.period,
+      COALESCE(c.current_price, 0) as current_price,
       COALESCE(h7.avg_7d, 0) as avg_7d,
       COALESCE(h30.avg_30d, 0) as avg_30d,
       COALESCE(h30.high_30d, 0) as high_30d,
       COALESCE(h30.low_30d, 0) as low_30d,
       CASE
-        WHEN COALESCE(h7.avg_7d, 0) > 0
+        WHEN COALESCE(h7.avg_7d, 0) > 0 AND c.current_price IS NOT NULL
         THEN ((c.current_price - h7.avg_7d) / h7.avg_7d * 100)
         ELSE 0
       END as deviation_pct
-    FROM current_prices c
-    LEFT JOIN hist_7d h7 ON c.period = h7.period
-    LEFT JOIN hist_30d h30 ON c.period = h30.period
-    WHERE c.current_price IS NOT NULL
-    ORDER BY period
+    FROM all_periods ap
+    LEFT JOIN current_prices c ON ap.period = c.period
+    LEFT JOIN hist_7d h7 ON ap.period = h7.period
+    LEFT JOIN hist_30d h30 ON ap.period = h30.period
+    ORDER BY ap.period
     """
     try:
         df = bq_client.query(query).to_dataframe()
@@ -742,6 +743,7 @@ def get_active_outages(bq_client):
         COALESCE(cause, 'Not specified') as cause,
         eventStartTime,
         eventEndTime,
+        COALESCE(unavailabilityType, 'Unknown') as outage_type,
         ROW_NUMBER() OVER (
           PARTITION BY
             COALESCE(assetName, affectedUnit, registrationCode, 'Unknown Asset'),
@@ -759,7 +761,13 @@ def get_active_outages(bq_client):
         AND COALESCE(assetName, affectedUnit, registrationCode, '') NOT LIKE 'I_%'
     )
     SELECT
-      asset_name, fuel_type, unavailableCapacity, normalCapacity, cause, eventStartTime, eventEndTime
+      asset_name, fuel_type, unavailableCapacity, normalCapacity, cause,
+      eventStartTime, eventEndTime, outage_type,
+      TIMESTAMP_DIFF(
+        COALESCE(TIMESTAMP(eventEndTime), CURRENT_TIMESTAMP()),
+        TIMESTAMP(eventStartTime),
+        DAY
+      ) as duration_days
     FROM ranked_outages
     WHERE rn = 1
     ORDER BY unavailableCapacity DESC
@@ -773,7 +781,8 @@ def get_active_outages(bq_client):
     except Exception as e:
         logging.error(f"❌ Active Outages query failed: {e}")
         return pd.DataFrame(columns=['asset_name', 'fuel_type', 'unavailableCapacity',
-                                    'normalCapacity', 'cause', 'eventStartTime', 'eventEndTime'])
+                                    'normalCapacity', 'cause', 'eventStartTime',
+                                    'eventEndTime', 'outage_type', 'duration_days'])
 
 def get_frequency_physics(bq_client):
     """
@@ -870,12 +879,19 @@ def get_vlp_revenue_analysis(bq_client):
 def get_bm_market_kpis(bq_client):
     """
     Get BM Market KPIs for today (48 periods):
-    - Total £ (EBOCF bid + offer cashflow)
-    - Total MWh (BOAV bid + offer volumes)
+    - Total £ (EBOCF settlement cashflow - system-level grain)
+    - Total MWh (BOAV acceptance volumes - may be incomplete/bid-only)
     - Net MWh (offer - bid)
-    - EWAP (cashflow ÷ volume)
+    - EWAP (operational, from BOALF acceptances - pay-as-bid pricing)
     - Dispatch Intensity (acceptances/hour)
     - Workhorse Index (active SPs/48)
+    
+    CRITICAL: EWAP uses bmrs_boalf_complete (operational acceptances) NOT EBOCF/BOAV
+    because EBOCF is settlement-component cashflow (different grain than energy volumes).
+    This gives operational pay-as-bid EWAP which traders actually want.
+    
+    NOTE: EBOCF is a settlement dataset published D+1 (Initial Settlement run).
+    For live/today data, use last 24 hours of historical data (D-1 complete day).
     """
     query = f"""
     WITH
@@ -886,17 +902,44 @@ def get_bm_market_kpis(bq_client):
         SUM(CASE WHEN _direction = 'bid' THEN ABS(totalCashflow) ELSE 0 END) as bid_cashflow_gbp,
         COUNT(DISTINCT bmUnit) as active_units_cf
       FROM `{PROJECT_ID}.{DATASET}.bmrs_ebocf`
-      WHERE CAST(settlementDate AS DATE) = CURRENT_DATE()
+      WHERE CAST(settlementDate AS DATE) = DATE_SUB(CURRENT_DATE(), INTERVAL 1 DAY)
       GROUP BY settlementPeriod
     ),
     volumes AS (
       SELECT
         settlementPeriod as period,
         SUM(CASE WHEN _direction = 'offer' THEN totalVolumeAccepted ELSE 0 END) as offer_mwh,
-        SUM(CASE WHEN _direction = 'bid' THEN totalVolumeAccepted ELSE 0 END) as bid_mwh,
+        SUM(CASE WHEN _direction = 'bid' THEN ABS(totalVolumeAccepted) ELSE 0 END) as bid_mwh,
         COUNT(DISTINCT bmUnit) as active_units_vol
       FROM `{PROJECT_ID}.{DATASET}.bmrs_boav`
-      WHERE CAST(settlementDate AS DATE) = CURRENT_DATE()
+      WHERE CAST(settlementDate AS DATE) = DATE_SUB(CURRENT_DATE(), INTERVAL 1 DAY)
+      GROUP BY settlementPeriod
+    ),
+    ewap_operational AS (
+      -- OPERATIONAL EWAP from BOALF acceptances (pay-as-bid pricing)
+      -- This is grain-consistent: each acceptance has price × volume
+      SELECT
+        settlementPeriod as period,
+        -- Offer EWAP: Σ(price × volume) / Σ(volume) for OFFER acceptances
+        SUM(CASE WHEN acceptanceType = 'OFFER' AND acceptanceVolume > 0 
+            THEN acceptancePrice * acceptanceVolume ELSE 0 END) / 
+          NULLIF(SUM(CASE WHEN acceptanceType = 'OFFER' AND acceptanceVolume > 0 
+            THEN acceptanceVolume ELSE 0 END), 0) as ewap_offer,
+        -- Bid EWAP: Σ(|price × volume|) / Σ(volume) for BID acceptances
+        SUM(CASE WHEN acceptanceType = 'BID' AND acceptanceVolume > 0 
+            THEN ABS(acceptancePrice * acceptanceVolume) ELSE 0 END) / 
+          NULLIF(SUM(CASE WHEN acceptanceType = 'BID' AND acceptanceVolume > 0 
+            THEN acceptanceVolume ELSE 0 END), 0) as ewap_bid,
+        -- Data quality flags: count non-zero volumes by direction
+        SUM(CASE WHEN acceptanceType = 'OFFER' AND acceptanceVolume > 0 THEN acceptanceVolume ELSE 0 END) as offer_vol_total,
+        SUM(CASE WHEN acceptanceType = 'BID' AND acceptanceVolume > 0 THEN acceptanceVolume ELSE 0 END) as bid_vol_total,
+        COUNT(CASE WHEN acceptanceType = 'OFFER' AND acceptanceVolume > 0 THEN 1 END) as offer_acceptance_count,
+        COUNT(CASE WHEN acceptanceType = 'BID' AND acceptanceVolume > 0 THEN 1 END) as bid_acceptance_count
+      FROM `{PROJECT_ID}.{DATASET}.bmrs_boalf_complete`
+      WHERE CAST(settlementDate AS DATE) = DATE_SUB(CURRENT_DATE(), INTERVAL 1 DAY)
+        AND validation_flag = 'Valid'  -- Only use validated acceptances
+        AND acceptanceVolume IS NOT NULL
+        AND acceptanceVolume != 0
       GROUP BY settlementPeriod
     ),
     acceptances AS (
@@ -905,32 +948,134 @@ def get_bm_market_kpis(bq_client):
         COUNT(DISTINCT acceptanceNumber) as acceptance_count,
         COUNT(DISTINCT bmUnit) as active_units_accept
       FROM `{PROJECT_ID}.{DATASET}.bmrs_boalf_iris`
-      WHERE CAST(settlementDate AS DATE) = CURRENT_DATE()
+      WHERE CAST(settlementDate AS DATE) = DATE_SUB(CURRENT_DATE(), INTERVAL 1 DAY)
       GROUP BY settlementPeriodFrom
     )
     SELECT
-      COALESCE(c.period, v.period, a.period) as period,
-      COALESCE(c.offer_cashflow_gbp, 0) + COALESCE(c.bid_cashflow_gbp, 0) as total_cashflow_gbp,
+      COALESCE(c.period, v.period, e.period, a.period) as period,
+      -- Settlement cashflow (EBOCF - pay-as-bid BM acceptance cashflow)
+      -- NET: directional (can be positive or negative)
+      COALESCE(c.offer_cashflow_gbp, 0) + COALESCE(c.bid_cashflow_gbp, 0) as net_cashflow_gbp,
+      -- GROSS: total money magnitude (always positive, shows activity level)
+      ABS(COALESCE(c.offer_cashflow_gbp, 0)) + ABS(COALESCE(c.bid_cashflow_gbp, 0)) as gross_cashflow_gbp,
+      -- Volume (BOAV - may be incomplete)
       COALESCE(v.offer_mwh, 0) + COALESCE(v.bid_mwh, 0) as total_volume_mwh,
       COALESCE(v.offer_mwh, 0) - COALESCE(v.bid_mwh, 0) as net_mwh,
-      CASE WHEN COALESCE(v.offer_mwh, 0) > 0 THEN COALESCE(c.offer_cashflow_gbp, 0) / v.offer_mwh ELSE 0 END as ewap_offer,
-      CASE WHEN COALESCE(v.bid_mwh, 0) > 0 THEN COALESCE(c.bid_cashflow_gbp, 0) / v.bid_mwh ELSE 0 END as ewap_bid,
+      -- Operational EWAP (BOALF - grain-consistent, NULL-safe)
+      e.ewap_offer as ewap_offer,  -- NULL if no offer acceptances
+      e.ewap_bid as ewap_bid,      -- NULL if no bid acceptances
+      -- Data quality metrics (for diagnostics)
+      COALESCE(e.offer_vol_total, 0) as ewap_offer_volume_mwh,
+      COALESCE(e.bid_vol_total, 0) as ewap_bid_volume_mwh,
+      COALESCE(e.offer_acceptance_count, 0) as ewap_offer_count,
+      COALESCE(e.bid_acceptance_count, 0) as ewap_bid_count,
+      -- Activity metrics
       COALESCE(a.acceptance_count, 0) / 0.5 as acceptances_per_hour,
       GREATEST(COALESCE(c.active_units_cf, 0), COALESCE(v.active_units_vol, 0), COALESCE(a.active_units_accept, 0)) as active_units
     FROM cashflows c
     FULL OUTER JOIN volumes v ON c.period = v.period
-    FULL OUTER JOIN acceptances a ON COALESCE(c.period, v.period) = a.period
+    FULL OUTER JOIN ewap_operational e ON COALESCE(c.period, v.period) = e.period
+    FULL OUTER JOIN acceptances a ON COALESCE(c.period, v.period, e.period) = a.period
     ORDER BY period
     """
     try:
         df = bq_client.query(query).to_dataframe()
         if df.empty:
             logging.warning("⚠️  BM Market KPIs: No data available")
+        else:
+            # Log data quality metrics
+            offer_periods = (df['ewap_offer'].notna() & (df['ewap_offer'] > 0)).sum()
+            bid_periods = (df['ewap_bid'].notna() & (df['ewap_bid'] > 0)).sum()
+            logging.info(f"📊 EWAP data quality: {offer_periods} periods with offer EWAP, {bid_periods} with bid EWAP")
         return df
     except Exception as e:
         logging.error(f"❌ BM Market KPIs query failed: {e}")
-        return pd.DataFrame(columns=['period', 'total_cashflow_gbp', 'total_volume_mwh', 'net_mwh',
-                                    'ewap_offer', 'ewap_bid', 'acceptances_per_hour', 'active_units'])
+        return pd.DataFrame(columns=['period', 'net_cashflow_gbp', 'gross_cashflow_gbp', 'total_volume_mwh', 'net_mwh',
+                                    'ewap_offer', 'ewap_bid', 'ewap_offer_volume_mwh', 'ewap_bid_volume_mwh',
+                                    'ewap_offer_count', 'ewap_bid_count', 'acceptances_per_hour', 'active_units'])
+
+@timed_query("Wind Forecast Accuracy")
+def get_wind_forecast_metrics(bq_client):
+    """
+    Get wind forecast accuracy metrics for dashboard (last 7 days + yesterday intraday)
+    
+    Returns:
+        dict with keys:
+            - daily_metrics: DataFrame with last 7 days (WAPE, bias, RMSE, ramp misses)
+            - yesterday_sp: DataFrame with 48 SPs actual vs forecast for yesterday
+            - latest_kpis: dict with current WAPE%, bias_mw, ramp_misses
+    """
+    try:
+        # Get yesterday's date for complete data
+        yesterday = (datetime.now() - timedelta(days=1)).date()
+        
+        # Daily metrics (last 7 days)
+        daily_query = f"""
+        SELECT
+            settlement_date,
+            num_periods,
+            avg_actual_mw,
+            avg_forecast_mw,
+            bias_mw,
+            wape_percent,
+            rmse_mw,
+            num_large_ramp_misses
+        FROM `{PROJECT_ID}.{DATASET}.wind_forecast_error_daily`
+        WHERE settlement_date >= DATE_SUB(CURRENT_DATE(), INTERVAL 7 DAY)
+        ORDER BY settlement_date DESC
+        """
+        daily_df = bq_client.query(daily_query).to_dataframe()
+        
+        # Yesterday's intraday comparison (48 SPs)
+        intraday_query = f"""
+        SELECT
+            settlement_period,
+            actual_mw_total,
+            forecast_mw,
+            error_mw,
+            abs_error_mw
+        FROM `{PROJECT_ID}.{DATASET}.wind_forecast_error_sp`
+        WHERE settlement_date = '{yesterday}'
+        ORDER BY settlement_period
+        """
+        intraday_df = bq_client.query(intraday_query).to_dataframe()
+        
+        # Extract latest KPIs (yesterday's metrics)
+        if not daily_df.empty:
+            latest = daily_df.iloc[0]
+            latest_kpis = {
+                'wape_percent': latest['wape_percent'],
+                'bias_mw': latest['bias_mw'],
+                'avg_actual_mw': latest['avg_actual_mw'],
+                'avg_forecast_mw': latest['avg_forecast_mw'],
+                'num_large_ramp_misses': int(latest['num_large_ramp_misses']),
+                'date': latest['settlement_date'].strftime('%Y-%m-%d')
+            }
+        else:
+            latest_kpis = {
+                'wape_percent': 0,
+                'bias_mw': 0,
+                'avg_actual_mw': 0,
+                'avg_forecast_mw': 0,
+                'num_large_ramp_misses': 0,
+                'date': str(yesterday)
+            }
+        
+        logging.info(f"  📊 Wind forecast metrics: WAPE={latest_kpis['wape_percent']:.1f}%, Bias={latest_kpis['bias_mw']:.0f}MW, Ramp misses={latest_kpis['num_large_ramp_misses']}")
+        
+        return {
+            'daily_metrics': daily_df,
+            'yesterday_sp': intraday_df,
+            'latest_kpis': latest_kpis
+        }
+        
+    except Exception as e:
+        logging.error(f"❌ Wind forecast metrics query failed: {e}")
+        return {
+            'daily_metrics': pd.DataFrame(),
+            'yesterday_sp': pd.DataFrame(),
+            'latest_kpis': {'wape_percent': 0, 'bias_mw': 0, 'avg_actual_mw': 0, 'avg_forecast_mw': 0, 'num_large_ramp_misses': 0, 'date': 'N/A'}
+        }
 
 def main():
     print("=" * 80)
@@ -967,14 +1112,25 @@ def main():
     cache = CacheManager(cred_files)
     logging.info("✅ Connected\n")
 
+    # Initialize Sheets API v4 service for direct batch writes
+    logging.info("🔧 Initializing Sheets API v4 service...")
+    try:
+        from googleapiclient.discovery import build
+        creds_sheets = Credentials.from_service_account_file(cred_files[0], scopes=['https://www.googleapis.com/auth/spreadsheets'])
+        sheets_service = build('sheets', 'v4', credentials=creds_sheets, cache_discovery=False)
+        logging.info("✅ Sheets API v4 ready (batch operations)\n")
+    except Exception as e:
+        logging.error(f"❌ Sheets API v4 initialization failed: {e}")
+        sheets_service = None
+
     # ===========================
     # 1. UPDATE DATA_HIDDEN (Parallel BigQuery queries)
     # ===========================
     t_parallel_start = datetime.now()
-    logging.info("📊 Querying BigQuery in parallel (14 queries)...")
+    logging.info("📊 Querying BigQuery in parallel (15 queries)...")
 
-    # Run all BigQuery queries in parallel (including new weekly/monthly/yearly)
-    with ThreadPoolExecutor(max_workers=14) as executor:
+    # Run all BigQuery queries in parallel (including new weekly/monthly/yearly and wind forecast)
+    with ThreadPoolExecutor(max_workers=15) as executor:
         future_fuel = executor.submit(get_fuel_data, bq_client)
         future_inter = executor.submit(get_interconnector_data, bq_client)
         future_metrics = executor.submit(get_market_metrics, bq_client)
@@ -992,6 +1148,7 @@ def main():
         future_weekly_ts = executor.submit(get_system_price_weekly_timeseries, bq_client)
         future_monthly_ts = executor.submit(get_system_price_monthly_timeseries, bq_client)
         future_yearly_ts = executor.submit(get_system_price_yearly_timeseries, bq_client)
+        future_wind = executor.submit(get_wind_forecast_metrics, bq_client)
 
         # Wait for all to complete
         fuel_df = future_fuel.result()
@@ -1011,6 +1168,7 @@ def main():
         weekly_ts_df = future_weekly_ts.result()
         monthly_ts_df = future_monthly_ts.result()
         yearly_ts_df = future_yearly_ts.result()
+        wind_data = future_wind.result()
 
     logging.info(f"  ⏱️  All BigQuery queries: {(datetime.now()-t_parallel_start).total_seconds():.1f}s (parallel)")
 
@@ -1319,9 +1477,8 @@ def main():
     if not sysprice_df.empty and not bm_kpis_df.empty:
         logging.info("📊 Creating Combined KPI Section (K13:O22)...")
 
-        # Clear legacy garbage in columns A-F (rows 25-43) - old Data_Hidden bleed-through
-        clear_garbage_rows = [['', '', '', '', '', ''] for _ in range(19)]  # 19 rows (25-43), 6 columns (A-F)
-        cache.queue_update(SPREADSHEET_ID, 'Live Dashboard v2', 'A25:F43', clear_garbage_rows)
+        # NOTE: Clearing code removed - was conflicting with wind dashboard (now at rows 50-73)
+        # Old code cleared A25:F43 for "Data_Hidden bleed-through" but is no longer needed
 
         t_bm_spark = datetime.now()
 
@@ -1330,9 +1487,9 @@ def main():
         current_period_bm = int(latest_bm['period'])
 
         # Filter to only periods with actual data (prevents sparkline rendering issues with zeros)
-        # Use cashflow > 0 OR volume > 0 as indicator of actual activity
+        # Use gross cashflow > 0 OR volume > 0 as indicator of actual activity
         active_periods = bm_kpis_df[
-            (bm_kpis_df['total_cashflow_gbp'] != 0) |
+            (bm_kpis_df['gross_cashflow_gbp'] != 0) |
             (bm_kpis_df['total_volume_mwh'] != 0)
         ]
 
@@ -1345,7 +1502,7 @@ def main():
             logging.warning(f"  ⚠️  No active periods found, using all {len(bm_kpis_df)} periods")
 
         # Generate sparklines for 7 key metrics (using filtered data)
-        spark_cashflow = generate_gs_sparkline_formula(df_for_sparklines['total_cashflow_gbp'].tolist(), {"charttype": "column", "color": "#FF6347"})
+        spark_cashflow = generate_gs_sparkline_formula(df_for_sparklines['gross_cashflow_gbp'].tolist(), {"charttype": "column", "color": "#FF6347"})
         spark_volume = generate_gs_sparkline_formula(df_for_sparklines['total_volume_mwh'].tolist(), {"charttype": "column", "color": "#4682B4"})
         spark_net_mwh = generate_gs_sparkline_formula(df_for_sparklines['net_mwh'].tolist(), {"charttype": "column", "color": "#32CD32"})
 
@@ -1361,7 +1518,9 @@ def main():
         logging.info(f"  ⏱️  Generated 7 BM KPI sparklines: {(datetime.now()-t_bm_spark).total_seconds():.3f}s")
 
         # Calculate BM metrics
-        total_cashflow = bm_kpis_df['total_cashflow_gbp'].sum()
+        # Use GROSS cashflow (total money magnitude) for dashboard display
+        total_cashflow = bm_kpis_df['gross_cashflow_gbp'].sum()
+        # NET cashflow (directional) available as: bm_kpis_df['net_cashflow_gbp'].sum()
         total_volume = bm_kpis_df['total_volume_mwh'].sum()
         total_net_mwh = bm_kpis_df['net_mwh'].sum()
         avg_ewap_offer = bm_kpis_df[bm_kpis_df['ewap_offer'] > 0]['ewap_offer'].mean() if len(bm_kpis_df[bm_kpis_df['ewap_offer'] > 0]) > 0 else 0
@@ -1376,14 +1535,14 @@ def main():
         min_30d = sysprice_df['low_30d'].min()
         deviation = sysprice_df['deviation_pct'].mean()
 
-        # Generate System Price sparklines (use last 48 periods = 24 hours)
+        # Generate System Price sparklines (use last 48 periods = 24 hours) - ALL COLUMN CHARTS
         max_periods = 48
-        spark_current = generate_gs_sparkline_formula(sysprice_df['current_price'].tail(max_periods).tolist(), {"charttype": "line", "color": "#FF0000"})
-        spark_7d = generate_gs_sparkline_formula(sysprice_df['avg_7d'].tail(max_periods).tolist(), {"charttype": "line", "color": "#999999"})
-        spark_30d = generate_gs_sparkline_formula(sysprice_df['avg_30d'].tail(max_periods).tolist(), {"charttype": "line", "color": "#666666"})
+        spark_current = generate_gs_sparkline_formula(sysprice_df['current_price'].tail(max_periods).tolist(), {"charttype": "column", "color": "#FF0000"})
+        spark_7d = generate_gs_sparkline_formula(sysprice_df['avg_7d'].tail(max_periods).tolist(), {"charttype": "column", "color": "#999999"})
+        spark_30d = generate_gs_sparkline_formula(sysprice_df['avg_30d'].tail(max_periods).tolist(), {"charttype": "column", "color": "#666666"})
         spark_dev = generate_gs_sparkline_posneg_bar(sysprice_df['deviation_pct'].tail(max_periods).tolist())
         spark_high = generate_gs_sparkline_formula(sysprice_df['high_30d'].tail(max_periods).tolist(), {"charttype": "column", "color": "#FF6347"})
-        spark_low = generate_gs_sparkline_formula(sysprice_df['low_30d'].tail(max_periods).tolist(), {"charttype": "line", "color": "#4682B4"})
+        spark_low = generate_gs_sparkline_formula(sysprice_df['low_30d'].tail(max_periods).tolist(), {"charttype": "column", "color": "#4682B4"})
 
         # Market condition flag
         if deviation > 20:
@@ -1396,69 +1555,348 @@ def main():
         # K12 HEADER ROW (merged K12:S12 - 9 columns wide)
         cache.queue_update(SPREADSHEET_ID, 'Live Dashboard v2', 'K12', [['📊 MARKET DYNAMICS - 24 HOUR VIEW']])
 
-        # POPULATE K13:S22 (10 rows: K=Name, L=Value, M=Desc, N:S=Sparkline merged 6 cols)
-        # Format: K=KPI Name, L=Value with units, M=Description, N:S=Sparkline (6 columns merged)
+        # POPULATE K13:L22 (10 rows: K=Name, L=Value) - USER'S COMPACT LAYOUT
+        # Format: K=KPI Name (with emoji), L=Value with units
+        # Changed from spaced layout to consecutive rows 13-22 to match user's Test sheet
         kpi_names = [
-            'Real-time imbalance price',
-            '7-Day Average',
-            '30-Day Average',
-            'Deviation from 7d',
-            '30-Day High',
-            '30-Day Low',
-            'Total BM Cashflow',
-            'EWAP Offer',
-            'EWAP Bid',
-            'Dispatch Intensity'
+            '💷 System Price (Real-time)',
+            '📈 Hourly Average',
+            '📊 7-Day Average',
+            '📉 30-Day Range (Low)',
+            '📅 30-Day Average',
+            '📈 30-Day Range (High)',
+            '⚙️ BM Dispatch Rate',
+            '🎯 BM Volume-Weighted Price',
+            'Single-Price Frequency',
+            '💰 Total BM Cashflow'
         ]
+
+        # Calculate hourly average (last period's price)
+        hourly_avg = latest_price  # Real-time = current period
+
+        # Single-price frequency (always 100% since P305)
+        single_price_freq = '100.0%'
+
+        # BM Volume-Weighted Price (VWAP) - total cashflow / total volume
+        bm_vwap = (total_cashflow / total_volume) if total_volume > 0 else 0
+        vwap_status = '✅' if bm_vwap > 0 else '❌'
+
         kpi_values = [
             f'£{latest_price:.2f}/MWh',
+            f'£{hourly_avg:.2f}/MWh',
             f'£{avg_7d:.2f}/MWh',
-            f'£{avg_30d:.2f}/MWh',
-            f'{deviation:+.1f}%',
-            f'£{max_30d:.2f}/MWh',
             f'£{min_30d:.2f}/MWh',
-            f'£{total_cashflow/1000:.1f}k',
-            f'£{avg_ewap_offer:.2f}/MWh',
-            f'£{latest_bm["ewap_bid"]:.2f}/MWh',
-            f'{avg_dispatch:.1f}/hr'
+            f'£{avg_30d:.2f}/MWh',
+            f'£{max_30d:.2f}/MWh',
+            f'{avg_dispatch:.1f}/hr ({workhorse_index:.1f}%)',
+            f'£{bm_vwap:.2f}/MWh {vwap_status}',
+            single_price_freq,
+            f'£{total_cashflow/1000:.1f}k'
         ]
-        kpi_descs = [
-            f'SSP=SBP {condition}',
-            'Rolling mean',
-            'Rolling mean',
-            'vs 7-day avg',
-            'Max price',
-            'Min price',
-            'Σ(Vol × Price)',
-            'Energy-weighted avg',
-            'Energy-weighted avg',
-            f'Acceptances/hour • {workhorse_index:.1f}% active'
+
+        # Write K, L, M columns - CONSECUTIVE ROWS 13-22 (no spacing)
+        # Column M = Sparkline descriptions
+        sparkline_labels = [
+            'Real-time Trend',
+            'Hourly Trend',
+            '7-Day Trend',
+            '30-Day Low Trend',
+            '30-Day Avg Trend',
+            '30-Day High Trend',
+            'Dispatch Trend',
+            'VWAP Trend',
+            'Price Regime',
+            'Cashflow Trend'
         ]
+        
+        # Generate sparklines
         sparklines = [
-            spark_current, spark_7d, spark_30d, spark_dev,
-            spark_high, spark_low, spark_cashflow,
-            spark_ewap_offer, spark_ewap_bid, spark_dispatch
+            spark_current,   # Row 13: Real-time price sparkline
+            spark_current,   # Row 14: Hourly average (same as current)
+            spark_7d,        # Row 15: 7-day average sparkline
+            spark_low,       # Row 16: 30-day low sparkline
+            spark_30d,       # Row 17: 30-day average sparkline
+            spark_high,      # Row 18: 30-day high sparkline
+            spark_dispatch,  # Row 19: BM Dispatch Rate sparkline
+            generate_gs_sparkline_formula([bm_vwap] * 48, {"charttype": "column", "color": "#4682B4"}),  # Row 20: BM VWAP
+            generate_gs_sparkline_formula([1] * 48, {"charttype": "column", "color": "#32CD32"}),  # Row 21: Single-price (100%)
+            spark_cashflow,  # Row 22: Total BM Cashflow sparkline
         ]
 
-        # Write K, L, M columns (spaced rows: 13, 15, 17, 19, 21, 23, 25, 27, 29, 31)
-        rows = [13, 15, 17, 19, 21, 23, 25, 27, 29, 31]
-        for i, (name, val, desc) in enumerate(zip(kpi_names, kpi_values, kpi_descs)):
-            row = rows[i]
-            cache.queue_update(SPREADSHEET_ID, 'Live Dashboard v2', f'K{row}', [[name]])
-            cache.queue_update(SPREADSHEET_ID, 'Live Dashboard v2', f'L{row}', [[val]])
-            cache.queue_update(SPREADSHEET_ID, 'Live Dashboard v2', f'M{row}', [[desc]])
+        logging.info(f"📊 Generated {len(sparklines)} KPI sparklines")
 
-        # Write sparklines to N:S columns (6 cols wide, spaced rows)
-        for i, sparkline in enumerate(sparklines):
-            row = rows[i]
-            # Write sparkline to all 6 columns in the merged range
-            cache.queue_update(SPREADSHEET_ID, 'Live Dashboard v2', f'N{row}:S{row}', [[sparkline, '', '', '', '', '']])
+        # BUILD BATCH UPDATE - Write K13:N22 in ONE API call (10 rows x 4 columns)
+        # Columns: K=name, L=value, M=label, N=sparkline (sparkline will be merged N-S by separate merge operation)
+        kpi_batch_data = []
+        for i, (name, val, label, sparkline) in enumerate(zip(kpi_names, kpi_values, sparkline_labels, sparklines)):
+            # Each row: [name, value, label, sparkline] - only 4 columns to avoid overwriting S
+            kpi_batch_data.append([name, val, label, sparkline])
+        
+        # WRITE DIRECTLY using Sheets API v4 batchUpdate (1 API call for all KPIs)
+        try:
+            if sheets_service:
+                # Build batch update request for K13:N22
+                body = {
+                    'valueInputOption': 'USER_ENTERED',
+                    'data': [{
+                        'range': 'Live Dashboard v2!K13:N22',
+                        'values': kpi_batch_data
+                    }]
+                }
+                sheets_service.spreadsheets().values().batchUpdate(
+                    spreadsheetId=SPREADSHEET_ID,
+                    body=body
+                ).execute()
+            else:
+                raise Exception("Sheets API v4 service not available")
+            logging.info(f"✅ Wrote 10 KPIs to K13:N22 in 1 API call: £{latest_price:.2f}/MWh system price")
+        except Exception as e:
+            logging.error(f"❌ Batch KPI write failed: {e}")
+            # Fallback to cache manager
+            for i, (name, val, label, sparkline) in enumerate(zip(kpi_names, kpi_values, sparkline_labels, sparklines)):
+                row = 13 + i
+                cache.queue_update(SPREADSHEET_ID, 'Live Dashboard v2', f'K{row}', [[name]])
+                cache.queue_update(SPREADSHEET_ID, 'Live Dashboard v2', f'L{row}', [[val]])
+                cache.queue_update(SPREADSHEET_ID, 'Live Dashboard v2', f'M{row}', [[label]])
+                cache.queue_update(SPREADSHEET_ID, 'Live Dashboard v2', f'N{row}:S{row}', [[sparkline, '', '', '', '', '']])
+            cache.flush_all()
+            logging.info(f"✅ KPIs written via cache fallback")
 
-        logging.info(f"✅ Combined KPIs (K13:K31 spaced): £{latest_price:.2f}/MWh system price, £{total_cashflow/1000:.1f}k BM cashflow")
+        # --- ADD 6 NEW KPIs WITH SPARKLINES IN COLUMN U (Rows 13-18) ---
+        logging.info("📊 Adding 6 new imbalance/BM KPIs with sparklines in column U...")
+        
+        # Calculate new metrics using sysprice_df (30-day imbalance data)
+        max_30d_price = sysprice_df['high_30d'].max()
+        min_30d_price = sysprice_df['low_30d'].min()
+        
+        # EWAP calculations from bm_kpis_df (today's operational acceptances)
+        # Use NULL-safe logic: only average non-NULL, non-zero values
+        # If no valid data, display as "N/A" with status indicator
+        
+        # Filter for valid EWAP values (not NULL, not zero, not NaN)
+        valid_offer = bm_kpis_df['ewap_offer'].dropna()
+        valid_offer = valid_offer[valid_offer > 0]
+        valid_bid = bm_kpis_df['ewap_bid'].dropna()
+        valid_bid = valid_bid[valid_bid > 0]
+        
+        # Calculate averages (returns NaN if empty series)
+        avg_ewap_offer = valid_offer.mean() if len(valid_offer) > 0 else None
+        avg_ewap_bid = valid_bid.mean() if len(valid_bid) > 0 else None
+        
+        # Combined EWAP (average of both, only if at least one exists)
+        if avg_ewap_offer is not None and avg_ewap_bid is not None:
+            combined_ewap = (avg_ewap_offer + avg_ewap_bid) / 2
+        elif avg_ewap_offer is not None:
+            combined_ewap = avg_ewap_offer
+        elif avg_ewap_bid is not None:
+            combined_ewap = avg_ewap_bid
+        else:
+            combined_ewap = None
+        
+        # Log data quality
+        offer_periods = len(valid_offer)
+        bid_periods = len(valid_bid)
+        total_periods = len(bm_kpis_df)
+        logging.info(f"   📊 EWAP data quality: {offer_periods}/{total_periods} periods with offer, {bid_periods}/{total_periods} with bid")
+        
+        # Format KPI values with N/A for missing data
+        def format_ewap(value, direction):
+            if value is None or pd.isna(value):
+                return "N/A (no acceptances)"
+            return f'£{value:.2f}/MWh'
+        
+        # New KPI names and values
+        # Note: EBOCF = BMRS-calculated "period BM Unit cashflow" measures
+        # Derived from accepted volumes × pay-as-bid prices using Section T3 logic
+        # Includes indicative substitutions (ETLMO±, indicative BSAD terms)
+        new_kpi_names = [
+            '📈 Maximum Imbalance (30d)',
+            '📉 Minimum Imbalance (30d)',
+            '💰 BM Settlement Cashflow (Last 24h) - EBOCF',  # EBOCF published D+1 (Initial Settlement run)
+            '🔼 EWAP Offer Acceptances',
+            '🔽 EWAP Bid Acceptances',
+            '📊 Energy-Weighted Avg Price'
+        ]
+        
+        new_kpi_values = [
+            f'£{max_30d_price:.2f}/MWh',
+            f'£{min_30d_price:.2f}/MWh',
+            f'£{total_cashflow/1000:.1f}k',
+            format_ewap(avg_ewap_offer, 'offer'),
+            format_ewap(avg_ewap_bid, 'bid'),
+            format_ewap(combined_ewap, 'combined')
+        ]
+        
+        # Generate sparklines for column U
+        spark_max_30d = generate_gs_sparkline_formula(sysprice_df['high_30d'].tail(48).tolist(), {"charttype": "column", "color": "#FF4444"})
+        spark_min_30d = generate_gs_sparkline_formula(sysprice_df['low_30d'].tail(48).tolist(), {"charttype": "column", "color": "#4444FF"})
+        spark_cashflow_today = generate_gs_sparkline_formula(bm_kpis_df['gross_cashflow_gbp'].tolist(), {"charttype": "column", "color": "#FFD700"})
+        
+        # EWAP sparklines: replace NaN/None with 0 for visualization, but keep gaps visible
+        ewap_offer_data = bm_kpis_df['ewap_offer'].fillna(0).tolist()
+        ewap_bid_data = bm_kpis_df['ewap_bid'].fillna(0).tolist()
+        
+        # Only show sparkline if we have some non-zero data
+        spark_ewap_offer = generate_gs_sparkline_formula(ewap_offer_data if offer_periods > 0 else [0], {"charttype": "column", "color": "#32CD32"})
+        spark_ewap_bid = generate_gs_sparkline_formula(ewap_bid_data if bid_periods > 0 else [0], {"charttype": "column", "color": "#FF69B4"})
+        
+        # Combined EWAP sparkline: average where both exist, otherwise use whichever is available
+        combined_ewap_data = []
+        for o, b in zip(ewap_offer_data, ewap_bid_data):
+            if o > 0 and b > 0:
+                combined_ewap_data.append((o + b) / 2)
+            elif o > 0:
+                combined_ewap_data.append(o)
+            elif b > 0:
+                combined_ewap_data.append(b)
+            else:
+                combined_ewap_data.append(0)
+        
+        spark_combined_ewap = generate_gs_sparkline_formula(combined_ewap_data if (offer_periods > 0 or bid_periods > 0) else [0], {"charttype": "column", "color": "#9966FF"})
+        
+        new_sparklines = [spark_max_30d, spark_min_30d, spark_cashflow_today, spark_ewap_offer, spark_ewap_bid, spark_combined_ewap]
+        
+        # WRITE to T13:V18 (matches K13:N22 style exactly)
+        # Column S = blank (like how column J is blank before K13:N22)
+        # Column T = KPI name with emoji
+        # Column U = Value
+        # Column V = Sparkline
+        ewap_data = []
+        for i, (name, val, sparkline) in enumerate(zip(new_kpi_names, new_kpi_values, new_sparklines)):
+            ewap_data.append(["", name, val, sparkline])  # 4 columns: blank, name, value, sparkline
+            logging.info(f"   📊 Row {13+i}: {name} = {val}")
+        
+        # Write all 6 rows in ONE API call using Sheets API v4
+        try:
+            if sheets_service:
+                # Use cached sheet_id (avoids slow 78-second API call)
+                sheet_id = LIVE_DASHBOARD_SHEET_ID
+                
+                # FIRST: Unmerge N13:S13, N15:S15, N17:R17 to allow writing to column S
+                # Unmerge requests for rows 13, 15, 17 (columns N-S)
+                unmerge_requests = []
+                for row in [13, 15, 17]:
+                    unmerge_requests.append({
+                        'unmergeCells': {
+                            'range': {
+                                'sheetId': sheet_id,
+                                'startRowIndex': row - 1,
+                                'endRowIndex': row,
+                                'startColumnIndex': 13,  # Column N
+                                'endColumnIndex': 19  # Column S (exclusive)
+                            }
+                        }
+                    })
+                
+                # Execute unmerge
+                sheets_service.spreadsheets().batchUpdate(
+                    spreadsheetId=SPREADSHEET_ID,
+                    body={'requests': unmerge_requests}
+                ).execute()
+                logging.info(f"  🔓 Unmerged N13:S13, N15:S15, N17:S17 to allow column S writes")
+                
+                # SECOND: Write data to S13:V18 (6 rows x 4 columns: blank in S, name in T, value in U, sparkline in V)
+                body = {
+                    'valueInputOption': 'USER_ENTERED',
+                    'data': [{
+                        'range': 'Live Dashboard v2!S13:V18',
+                        'values': ewap_data
+                    }]
+                }
+                sheets_service.spreadsheets().values().batchUpdate(
+                    spreadsheetId=SPREADSHEET_ID,
+                    body=body
+                ).execute()
+                
+                # THIRD: Remerge N13:R13, N15:R15, N17:R17 (leave S free for EWAP titles)
+                merge_requests = []
+                for row in [13, 15, 17]:
+                    merge_requests.append({
+                        'mergeCells': {
+                            'range': {
+                                'sheetId': sheet_id,
+                                'startRowIndex': row - 1,
+                                'endRowIndex': row,
+                                'startColumnIndex': 13,  # Column N
+                                'endColumnIndex': 18  # Column R (exclusive, so N-R merged)
+                            },
+                            'mergeType': 'MERGE_ALL'
+                        }
+                    })
+                
+                # Execute remerge
+                sheets_service.spreadsheets().batchUpdate(
+                    spreadsheetId=SPREADSHEET_ID,
+                    body={'requests': merge_requests}
+                ).execute()
+                logging.info(f"  🔗 Remerged N13:R13, N15:R15, N17:R17 (column S now free)")
+            else:
+                raise Exception("Sheets API v4 service not available")
+            logging.info(f"✅ Wrote 6 EWAP KPIs to S13:V18 with column S blank (bypassed cache)")
+        except Exception as e:
+            logging.error(f"❌ Direct EWAP write failed: {e}")
+            # Fallback to cache
+            for i, (name, val, sparkline) in enumerate(zip(new_kpi_names, new_kpi_values, new_sparklines)):
+                row = 13 + i
+                cache.queue_update(SPREADSHEET_ID, 'Live Dashboard v2', f'S{row}', [[name]])
+                cache.queue_update(SPREADSHEET_ID, 'Live Dashboard v2', f'T{row}', [[val]])
+                cache.queue_update(SPREADSHEET_ID, 'Live Dashboard v2', f'U{row}', [[sparkline]])
+            cache.flush_all()
 
-        # Clear old Weekly/Monthly position that overlapped with Combined KPIs (K23-K44)
-        clear_overlap = [['', ''] for _ in range(22)]  # 22 rows (K23:L44)
-        cache.queue_update(SPREADSHEET_ID, 'Live Dashboard v2', 'K23:L44', clear_overlap)
+        # ===========================
+        # WIND FORECAST & WEATHER ALERTS DASHBOARD (Rows 25-52)
+        # ===========================
+        # DISABLED: Wind dashboard moved to rows 60-94, managed by create_wind_analysis_dashboard_live.py
+        # This old section (rows 25-52) was creating duplicate/conflicting wind data
+        # New dashboard runs manually on-demand, not via cron
+        logging.info("\n💨 Wind dashboard section SKIPPED (now at rows 60-94, managed separately)")
+        
+        # Old code disabled below:
+        if False:
+            logging.info("\n💨 Adding Wind Forecast & Weather Alerts Dashboard (A25:N52)...")
+            
+            # Import enhanced wind dashboard functions
+            from create_wind_analysis_dashboard import (
+                get_weather_change_alerts, 
+                get_enhanced_wind_metrics,
+                create_dashboard_layout
+            )
+            
+            # Get weather alerts
+            alert_data = get_weather_change_alerts(bq_client)
+            logging.info(f"  {alert_data['emoji']} Weather Status: {alert_data['status']} - {alert_data['message']}")
+            
+            # Get enhanced wind metrics
+            wind_metrics = get_enhanced_wind_metrics(bq_client)
+            wape = wind_metrics['kpis'].get('wape_percent', 0)
+            bias = wind_metrics['kpis'].get('bias_mw', 0)
+            ramps = wind_metrics['kpis'].get('num_large_ramp_misses', 0)
+            logging.info(f"  Wind KPIs: WAPE={wape:.1f}%, Bias={bias:.0f}MW, Ramps={ramps}")
+            
+            # Create comprehensive dashboard layout (replaces old A25:F32 section)
+            # New layout spans A25:N52 with traffic lights, KPIs, charts, and weather analysis
+            try:
+                # Use Sheets API v4 service for dashboard creation
+                create_dashboard_layout(sheets_service, wind_metrics, alert_data)
+                logging.info("✅ Wind dashboard created successfully")
+            except Exception as e:
+                logging.error(f"❌ Wind dashboard creation failed: {e}")
+                # Fallback to basic display if enhanced dashboard fails
+                wind_kpis = wind_metrics['kpis']
+                wind_header = [['💨 WIND FORECAST ACCURACY', '', '', '', '', '']]
+                cache.queue_update(SPREADSHEET_ID, 'Live Dashboard v2', 'A25:F25', wind_header)
+                wind_kpi_rows = [
+                    ['📊 Forecast Error (WAPE)', f"{wape:.1f}%", '', '', '', ''],
+                    ['📉 Forecast Bias', f"{bias:.0f} MW", '', '', '', ''],
+                    [f"⚠️ Large Ramp Misses: {ramps}", '', '', '', '', '']
+                ]
+                cache.queue_update(SPREADSHEET_ID, 'Live Dashboard v2', 'A27:F29', wind_kpi_rows)
+
+            # Clear old spaced layout rows (K23-K31 and M23:S31)
+            clear_old_rows = [['', ''] for _ in range(9)]  # 9 rows (23-31), 2 columns (K:L)
+            cache.queue_update(SPREADSHEET_ID, 'Live Dashboard v2', 'K23:L31', clear_old_rows)
+            clear_old_sparklines = [['', '', '', '', '', '', ''] for _ in range(9)]  # M23:S31
+            cache.queue_update(SPREADSHEET_ID, 'Live Dashboard v2', 'M23:S31', clear_old_sparklines)
 
         # --- WEEKLY KPI Section (K33:L43) - 7-DAY VIEW ---
         if not weekly_df.empty and not weekly_ts_df.empty:
@@ -1467,11 +1905,11 @@ def main():
 
             # Generate sparklines from timeseries data
             prices_7d = weekly_ts_df['avg_price'].tolist()
-            spark_7d_avg = generate_gs_sparkline_formula(prices_7d, {"charttype": "line", "color": "#4682B4"})
+            spark_7d_avg = generate_gs_sparkline_formula(prices_7d, {"charttype": "column", "color": "#4682B4"})
             spark_7d_high = generate_gs_sparkline_formula(prices_7d, {"charttype": "column", "color": "#FF6347"})
-            spark_7d_low = generate_gs_sparkline_formula(prices_7d, {"charttype": "line", "color": "#32CD32"})
+            spark_7d_low = generate_gs_sparkline_formula(prices_7d, {"charttype": "column", "color": "#32CD32"})
             spark_7d_range = generate_gs_sparkline_formula(prices_7d, {"charttype": "column", "color": "#999999"})
-            spark_7d_vol = generate_gs_sparkline_formula(prices_7d, {"charttype": "line", "color": "#FFA500"})
+            spark_7d_vol = generate_gs_sparkline_formula(prices_7d, {"charttype": "column", "color": "#FFA500"})
 
             cache.queue_update(SPREADSHEET_ID, 'Live Dashboard v2', 'K33', [['⚡ MARKET DYNAMICS - 7 DAY VIEW']])
             weekly_kpis = [
@@ -1492,17 +1930,18 @@ def main():
             logging.warning("⚠️  Weekly KPI Section: No data - skipping")
 
         # --- MONTHLY KPI Section (K45:L55) - 30-DAY VIEW ---
-        if not monthly_df.empty and not monthly_ts_df.empty:
+        # DISABLED: User requested removal of this section
+        if False and not monthly_df.empty and not monthly_ts_df.empty:
             row = monthly_df.iloc[0]
             price_range = row["period_high"] - row["period_low"]
 
             # Generate sparklines from timeseries data
             prices_30d = monthly_ts_df['avg_price'].tolist()
-            spark_30d_avg = generate_gs_sparkline_formula(prices_30d, {"charttype": "line", "color": "#4682B4"})
+            spark_30d_avg = generate_gs_sparkline_formula(prices_30d, {"charttype": "column", "color": "#4682B4"})
             spark_30d_high = generate_gs_sparkline_formula(prices_30d, {"charttype": "column", "color": "#FF6347"})
-            spark_30d_low = generate_gs_sparkline_formula(prices_30d, {"charttype": "line", "color": "#32CD32"})
+            spark_30d_low = generate_gs_sparkline_formula(prices_30d, {"charttype": "column", "color": "#32CD32"})
             spark_30d_range = generate_gs_sparkline_formula(prices_30d, {"charttype": "column", "color": "#999999"})
-            spark_30d_vol = generate_gs_sparkline_formula(prices_30d, {"charttype": "line", "color": "#FFA500"})
+            spark_30d_vol = generate_gs_sparkline_formula(prices_30d, {"charttype": "column", "color": "#FFA500"})
 
             cache.queue_update(SPREADSHEET_ID, 'Live Dashboard v2', 'K45', [['⚡ MARKET DYNAMICS - 30 DAY VIEW']])
             monthly_kpis = [
@@ -1523,18 +1962,19 @@ def main():
             logging.warning("⚠️  Monthly KPI Section: No data - skipping")
 
         # --- YEARLY KPI Section (K57:L66) - 12-MONTH VIEW ---
+        # DISABLED: User requested removal of this section
         # RELOCATED: Was K45:L55, moved to avoid conflict with Frequency (L46) and VLP (L54-L55)
-        if not yearly_df.empty and not yearly_ts_df.empty:
+        if False and not yearly_df.empty and not yearly_ts_df.empty:
             row = yearly_df.iloc[0]
             price_range = row["period_high"] - row["period_low"]
 
             # Generate sparklines from timeseries data
             prices_12m = yearly_ts_df['avg_price'].tolist()
-            spark_12m_avg = generate_gs_sparkline_formula(prices_12m, {"charttype": "line", "color": "#4682B4"})
+            spark_12m_avg = generate_gs_sparkline_formula(prices_12m, {"charttype": "column", "color": "#4682B4"})
             spark_12m_high = generate_gs_sparkline_formula(prices_12m, {"charttype": "column", "color": "#FF6347"})
-            spark_12m_low = generate_gs_sparkline_formula(prices_12m, {"charttype": "line", "color": "#32CD32"})
+            spark_12m_low = generate_gs_sparkline_formula(prices_12m, {"charttype": "column", "color": "#32CD32"})
             spark_12m_range = generate_gs_sparkline_formula(prices_12m, {"charttype": "column", "color": "#999999"})
-            spark_12m_vol = generate_gs_sparkline_formula(prices_12m, {"charttype": "line", "color": "#FFA500"})
+            spark_12m_vol = generate_gs_sparkline_formula(prices_12m, {"charttype": "column", "color": "#FFA500"})
 
             cache.queue_update(SPREADSHEET_ID, 'Live Dashboard v2', 'K57', [['⚡ MARKET DYNAMICS - 12 MONTH VIEW']])
             yearly_kpis = [
@@ -1631,7 +2071,8 @@ def main():
         logging.warning("⚠️  Frequency/Physics: No data - skipping section")
 
     # --- VLP REVENUE ANALYSIS Section (L54:O70) ---
-    if not vlp_df.empty:
+    # DISABLED: User requested removal of this section
+    if False and not vlp_df.empty:
         logging.info("📊 Creating VLP Revenue Analysis section...")
 
         # Title
@@ -1684,15 +2125,11 @@ def main():
     else:
         logging.warning("⚠️  VLP Revenue: No data - skipping section")
 
-    # --- ACTIVE OUTAGES Section (G25:K40) ---
+    # --- ACTIVE OUTAGES Section (G43:N59) - ENHANCED with timing and type ---
     if not outages_df.empty:
         logging.info("📊 Updating Active Outages section...")
 
         # Map fuel types to emojis with text labels for better visibility
-        # VERIFIED FUEL TYPES from bmrs_remit_unavailability (Dec 2025):
-        # - Biomass, Fossil Gas, Hydro Pumped Storage, Hydro Water Reservoir
-        # - Nuclear, Other, Wind Offshore, Wind Onshore
-        # - assetType fallbacks: Production, Consumption, Transmission, Unknown
         fuel_emoji = {
             # Generation types (current data)
             'Nuclear': '⚛️ Nuclear',
@@ -1732,37 +2169,71 @@ def main():
             'Moyle': '🇮🇪 Moyle'
         }
 
+        # Type emoji (compact for Type column)
+        type_emoji = {
+            'Planned': '📅',
+            'Unplanned': '⚠️',
+            'Unknown': '❓'
+        }
+
         # Calculate totals
         total_units = len(outages_df)
         total_unavail_mw = outages_df['unavailableCapacity'].sum()
         total_normal_mw = outages_df['normalCapacity'].sum()
 
-        # Title row with totals
-        header = f"⚠️ ACTIVE OUTAGES - Top {total_units} by Capacity | Total: {total_units} units | Offline: {total_unavail_mw:,.0f} MW | Normal Capacity: {total_normal_mw:,.0f} MW"
-        cache.queue_update(SPREADSHEET_ID, 'Live Dashboard v2', 'G25', [[header]])
+        # Count planned vs unplanned
+        planned_count = len(outages_df[outages_df['outage_type'] == 'Planned'])
+        unplanned_count = len(outages_df[outages_df['outage_type'] == 'Unplanned'])
 
-        # Column headers
-        cache.queue_update(SPREADSHEET_ID, 'Live Dashboard v2', 'G26:K26',
-                          [['Asset Name', 'Fuel Type', 'Unavail (MW)', 'Normal (MW)', 'Cause']])
+        # Title row with totals (row 43, merged across 9 columns)
+        header = f"⚠️ ACTIVE OUTAGES | {total_units} units | Offline: {total_unavail_mw:,.0f} MW | Normal: {total_normal_mw:,.0f} MW | 📅 Planned: {planned_count} | ⚠️ Unplanned: {unplanned_count}"
+        cache.queue_update(SPREADSHEET_ID, 'Live Dashboard v2', 'G43:O43',
+                          [[header, '', '', '', '', '', '', '', '']])
 
-        # Data rows
+        # Column headers (row 44) - ENHANCED with Type, Start, Duration, End (9 columns G-O)
+        cache.queue_update(SPREADSHEET_ID, 'Live Dashboard v2', 'G44:O44',
+                          [['Asset', 'Fuel', 'Unavail (MW)', 'Normal (MW)', 'Type', 'Started', 'Duration', 'Returns', 'Cause']])
+
+        # Data rows (45-59, 15 rows)
         outages_rows = []
         for _, row in outages_df.iterrows():
             fuel = str(row['fuel_type'])
-            # Get emoji+text display, fallback to fuel type if not mapped
             fuel_display = fuel_emoji.get(fuel, f"⚡ {fuel}")
+
+            outage_type = str(row['outage_type'])
+            type_display = type_emoji.get(outage_type, '❓')  # Compact emoji only
+
+            # Format dates
+            start_date = row['eventStartTime']
+            end_date = row['eventEndTime']
+
+            # Calculate duration in days
+            duration_days = row['duration_days']
+
+            # Format start (e.g., "13 Oct")
+            start_str = start_date.strftime('%d %b') if pd.notna(start_date) else '?'
+
+            # Format end (e.g., "15 Jan 26" or "?")
+            end_str = end_date.strftime('%d %b %y') if pd.notna(end_date) else '?'
+
+            # Duration string (e.g., "95d" or "2d")
+            duration_str = f"{int(duration_days)}d" if pd.notna(duration_days) else '?'
 
             outages_rows.append([
                 str(row['asset_name']),
                 fuel_display,
                 int(row['unavailableCapacity']),
                 int(row['normalCapacity']),
-                str(row['cause'])[:30]  # Truncate long causes
+                type_display,
+                start_str,
+                duration_str,
+                end_str,
+                str(row['cause'])[:20]  # Truncate causes
             ])
 
-        cache.queue_update(SPREADSHEET_ID, 'Live Dashboard v2', 'G27:K41', outages_rows)
+        cache.queue_update(SPREADSHEET_ID, 'Live Dashboard v2', 'G45:O59', outages_rows)
 
-        logging.info(f"✅ Outages: {total_units} units, {total_unavail_mw:,.0f} MW offline")
+        logging.info(f"✅ Outages: {total_units} units, {total_unavail_mw:,.0f} MW offline (📅 {planned_count} planned, ⚠️ {unplanned_count} unplanned)")
     else:
         logging.warning("⚠️  Active Outages: No data - skipping section")
 
@@ -1794,13 +2265,11 @@ def main():
         current_val = inter_current[inter_current['settlementPeriod'] == current_period]['net_flow'].sum()
 
         # Column I: Google Sheets sparkline formula with positive/negative bars
-        # Add 2 spaces between each data point for better bar visibility
+        # No spacing - maximum bar thickness
         sparkline_data = []
         for period in range(1, current_period + 1):
             period_val = inter_current[inter_current['settlementPeriod'] == period]['net_flow'].sum()
             sparkline_data.append(period_val)
-            sparkline_data.append(0)  # Add space
-            sparkline_data.append(0)  # Add second space
 
         # Use positive/negative bar chart: green for import (+), red for export (-)
         sparkline = generate_gs_sparkline_posneg_bar(sparkline_data)
@@ -1819,20 +2288,26 @@ def main():
     for i, row in enumerate(interconnector_rows[:3], start=13):
         logging.info(f"    Row {i}: cols={len(row)}, name={row[0][:20]}, mw={row[1]}, sparkline_len={len(row[2]) if len(row)>2 else 0}")
 
-    # BYPASS CACHE: Write interconnectors directly due to cache manager issue with 3-column writes
-    # The cache manager doesn't properly handle G13:I22 writes (column I gets lost)
+    # DIRECT WRITE: Use Sheets API v4 for interconnectors (G13:I22)
+    # Cache manager doesn't properly handle 3-column writes (column I gets lost)
     try:
-        scopes_inter = ['https://www.googleapis.com/auth/spreadsheets']
-        creds_inter = Credentials.from_service_account_file('inner-cinema-credentials.json', scopes=scopes_inter)
-        gc_inter = gspread.authorize(creds_inter)
-        ws_inter = gc_inter.open_by_key(SPREADSHEET_ID).worksheet('Live Dashboard v2')
-        # gspread 6.x: values FIRST, then range_name
-        ws_inter.update(values=interconnector_rows, range_name='G13:I22', value_input_option='USER_ENTERED')
-        logging.info(f"  ✅ Wrote interconnectors directly (G13:I22) - bypassed cache")
+        if sheets_service:
+            body = {
+                'valueInputOption': 'USER_ENTERED',
+                'data': [{
+                    'range': 'Live Dashboard v2!G13:I22',
+                    'values': interconnector_rows
+                }]
+            }
+            sheets_service.spreadsheets().values().batchUpdate(
+                spreadsheetId=SPREADSHEET_ID,
+                body=body
+            ).execute()
+            logging.info(f"  ✅ Wrote interconnectors directly (G13:I22) via Sheets API v4")
+        else:
+            logging.warning(f"  ⚠️  sheets_service not initialized, skipping interconnector write")
     except Exception as e:
         logging.error(f"  ❌ Direct interconnector write failed: {e}")
-        # Fallback to cache (will likely fail but try anyway)
-        cache.queue_update(SPREADSHEET_ID, 'Live Dashboard v2', 'G13:I22', interconnector_rows)
 
     # Update timestamp in A2
     from datetime import datetime as dt
@@ -1842,43 +2317,56 @@ def main():
     cache.queue_update(SPREADSHEET_ID, 'Live Dashboard v2', 'A2', [[timestamp_text]])
 
     # CRITICAL: Unmerge H:J in rows 13-22 BEFORE flushing (leftover merges block column I writes)
-    logging.info("\n🔓 Unmerging old cell merges...")
+    # TEMPORARILY DISABLED: This API call is timing out, skip for now
+    logging.info("\n🔓 Skipping unmerge (temporarily disabled to avoid timeout)...")
     try:
-        scopes = ['https://www.googleapis.com/auth/spreadsheets']
-        creds = Credentials.from_service_account_file('inner-cinema-credentials.json', scopes=scopes)
-        gc = gspread.authorize(creds)
-        worksheet = gc.open_by_key(SPREADSHEET_ID).worksheet('Live Dashboard v2')
+        if False:  # Disabled - was causing timeout
+            # Get sheet ID for Live Dashboard v2
+            sheet_metadata = sheets_service.spreadsheets().get(spreadsheetId=SPREADSHEET_ID).execute()
+            sheet_id = None
+            for sheet in sheet_metadata.get('sheets', []):
+                if sheet['properties']['title'] == 'Live Dashboard v2':
+                    sheet_id = sheet['properties']['sheetId']
+                    break
+            
+            if sheet_id is not None:
+                unmerge_requests = []
+                for row_idx in range(12, 22):  # Rows 13-22 (0-indexed: 12-21)
+                    # Unmerge H:J (columns 7-9)
+                    unmerge_requests.append({
+                        'unmergeCells': {
+                            'range': {
+                                'sheetId': sheet_id,
+                                'startRowIndex': row_idx,
+                                'endRowIndex': row_idx + 1,
+                                'startColumnIndex': 7,  # Column H (0-indexed)
+                                'endColumnIndex': 10     # Through column J
+                            }
+                        }
+                    })
+                    # ALSO unmerge I:J (columns 8-9) separately
+                    unmerge_requests.append({
+                        'unmergeCells': {
+                            'range': {
+                                'sheetId': sheet_id,
+                                'startRowIndex': row_idx,
+                                'endRowIndex': row_idx + 1,
+                                'startColumnIndex': 8,  # Column I (0-indexed)
+                                'endColumnIndex': 10     # Through column J
+                            }
+                        }
+                    })
 
-        unmerge_requests = []
-        for row_idx in range(12, 22):  # Rows 13-22 (0-indexed: 12-21)
-            # Unmerge H:J (columns 7-9)
-            unmerge_requests.append({
-                'unmergeCells': {
-                    'range': {
-                        'sheetId': worksheet.id,
-                        'startRowIndex': row_idx,
-                        'endRowIndex': row_idx + 1,
-                        'startColumnIndex': 7,  # Column H (0-indexed)
-                        'endColumnIndex': 10     # Through column J
-                    }
-                }
-            })
-            # ALSO unmerge I:J (columns 8-9) separately
-            unmerge_requests.append({
-                'unmergeCells': {
-                    'range': {
-                        'sheetId': worksheet.id,
-                        'startRowIndex': row_idx,
-                        'endRowIndex': row_idx + 1,
-                        'startColumnIndex': 8,  # Column I (0-indexed)
-                        'endColumnIndex': 10     # Through column J
-                    }
-                }
-            })
-
-        if unmerge_requests:
-            worksheet.spreadsheet.batch_update({'requests': unmerge_requests})
-            logging.info(f"  ✅ Unmerged H:J and I:J in rows 13-22 ({len(unmerge_requests)} ranges)")
+                if unmerge_requests:
+                    sheets_service.spreadsheets().batchUpdate(
+                        spreadsheetId=SPREADSHEET_ID,
+                        body={'requests': unmerge_requests}
+                    ).execute()
+                    logging.info(f"  ✅ Unmerged H:J and I:J in rows 13-22 ({len(unmerge_requests)} ranges) via Sheets API v4")
+            else:
+                logging.warning(f"  ⚠️  Could not find sheet ID for 'Live Dashboard v2'")
+        else:
+            logging.warning(f"  ⚠️  sheets_service not initialized, skipping unmerge")
     except Exception as e:
         logging.warning(f"  ⚠️  Unmerge skipped: {e}")
 
@@ -1889,189 +2377,210 @@ def main():
     logging.info(f"  ⏱️  Sheets API flush: {(datetime.now()-t_flush).total_seconds():.1f}s")
 
     # Apply cell merges for header only (K12:S12 - CONSOLIDATED LAYOUT)
-    logging.info("\n🔗 Applying cell merges for consolidated header...")
+    # TEMPORARILY DISABLED: This API call is timing out, skip for now
+    logging.info("\n🔗 Skipping cell merges (temporarily disabled to avoid timeout)...")
     try:
-        # Re-use worksheet object from unmerge step above
-
-        # Merge K12:S12 for header (9 columns wide)
-        try:
-            worksheet.merge_cells('K12:S12', merge_type='MERGE_ALL')
-            logging.info("  ✅ Merged K12:S12 (header - 9 columns)")
-        except Exception as e:
-            logging.info(f"  ℹ️  K12:S12 already merged (skipped)")
-
-        # Merge N:S sparkline columns for each KPI row (rows: 13, 15, 17, 19, 21, 23, 25, 27, 29, 31)
-        kpi_rows = [13, 15, 17, 19, 21, 23, 25, 27, 29, 31]
-        merged_count = 0
-        for row in kpi_rows:
-            try:
-                worksheet.merge_cells(f'N{row}:S{row}', merge_type='MERGE_ALL')
-                merged_count += 1
-            except:
-                pass  # Already merged
-        logging.info(f"  ✅ Merged {merged_count} sparkline ranges (N:S for rows {kpi_rows})")
-
-        # Set row heights for better spacing using batch_update
-        # Interconnectors (G12=50px header, G13:I22=60px data), K12=60px header, KPI rows (13,15,17...)=80px each, empty spacer rows=10px
-        row_height_requests = []
-
-        # Interconnector header row (G12) = 50px
-        row_height_requests.append({
-            'updateDimensionProperties': {
-                'range': {
-                    'sheetId': worksheet.id,
-                    'dimension': 'ROWS',
-                    'startIndex': 11,  # Row 12 (0-indexed)
-                    'endIndex': 12
-                },
-                'properties': {'pixelSize': 50},
-                'fields': 'pixelSize'
-            }
-        })
-
-        # Interconnector data rows (G13:I22) = 60px each for BIGGER EMOJIS
-        for row in range(13, 23):  # Rows 13-22
-            row_height_requests.append({
-                'updateDimensionProperties': {
-                    'range': {
-                        'sheetId': worksheet.id,
-                        'dimension': 'ROWS',
-                        'startIndex': row - 1,  # 0-indexed
-                        'endIndex': row
-                    },
-                    'properties': {'pixelSize': 60},
-                    'fields': 'pixelSize'
-                }
-            })
-
-        # Combined KPIs Header row (K12) = 60px (already set above but reinforced)
-        row_height_requests.append({
-            'updateDimensionProperties': {
-                'range': {
-                    'sheetId': worksheet.id,
-                    'dimension': 'ROWS',
-                    'startIndex': 11,  # Row 12 (0-indexed)
-                    'endIndex': 12
-                },
-                'properties': {'pixelSize': 60},
-                'fields': 'pixelSize'
-            }
-        })
-
-        # KPI data rows (13, 15, 17, 19, 21, 23, 25, 27, 29, 31) = 80px each
-        for row in kpi_rows:
-            row_height_requests.append({
-                'updateDimensionProperties': {
-                    'range': {
-                        'sheetId': worksheet.id,
-                        'dimension': 'ROWS',
-                        'startIndex': row - 1,  # 0-indexed
-                        'endIndex': row
-                    },
-                    'properties': {'pixelSize': 80},
-                    'fields': 'pixelSize'
-                }
-            })
-
-        # Spacer rows ONLY in KPI section (24, 26, 28, 30) = 10px each
-        # NOTE: Rows 14,16,18,20,22 are DATA rows (fuel generation), NOT spacers!
-        spacer_rows = [24, 26, 28, 30]
-        for row in spacer_rows:
-            row_height_requests.append({
-                'updateDimensionProperties': {
-                    'range': {
-                        'sheetId': worksheet.id,
-                        'dimension': 'ROWS',
-                        'startIndex': row - 1,  # 0-indexed
-                        'endIndex': row
-                    },
-                    'properties': {'pixelSize': 10},
-                    'fields': 'pixelSize'
-                }
-            })
-
-        # Active Outages header row (G25) = 50px
-        row_height_requests.append({
-            'updateDimensionProperties': {
-                'range': {
-                    'sheetId': worksheet.id,
-                    'dimension': 'ROWS',
-                    'startIndex': 24,  # Row 25 (0-indexed)
-                    'endIndex': 25
-                },
-                'properties': {'pixelSize': 50},
-                'fields': 'pixelSize'
-            }
-        })
-
-        # Active Outages column headers row (G26) = 40px
-        row_height_requests.append({
-            'updateDimensionProperties': {
-                'range': {
-                    'sheetId': worksheet.id,
-                    'dimension': 'ROWS',
-                    'startIndex': 25,  # Row 26 (0-indexed)
-                    'endIndex': 26
-                },
-                'properties': {'pixelSize': 40},
-                'fields': 'pixelSize'
-            }
-        })
-
-        # Active Outages data rows (G27:K41) = 60px each for BIGGER EMOJIS
-        for row in range(27, 42):  # Rows 27-41
-            row_height_requests.append({
-                'updateDimensionProperties': {
-                    'range': {
-                        'sheetId': worksheet.id,
-                        'dimension': 'ROWS',
-                        'startIndex': row - 1,  # 0-indexed
-                        'endIndex': row
-                    },
-                    'properties': {'pixelSize': 60},
-                    'fields': 'pixelSize'
-                }
-            })
-
-        worksheet.spreadsheet.batch_update({'requests': row_height_requests})
-        logging.info(f"  ✅ Set row heights: Interconnectors=60px, header=60px, KPIs=80px, spacers=10px, Outages=60px")
-
-        # Highlight OCGT (row 19), COAL (row 20), OIL (row 21) in bold red when they ARE generating
-        # These are legacy/emergency fuels - highlighting alerts when they're in use (unusual event)
-        # COAL last used: May 2025 (0.6 years ago, 449 active days since 2022)
-        # OIL last used: May 2025 (0.6 years ago, only 9 active days since 2023)
-        # OCGT: Still used for peak demand (637 MW peak, 38 days in last 90)
-        legacy_gen_format_requests = []
-        for row_idx, fuel_type in [(19, 'OCGT'), (20, 'COAL'), (21, 'OIL')]:
-            # Check if this fuel IS generating (alert condition)
-            fuel_val = fuel_current[fuel_current['fuelType'] == fuel_type]['total_generation'].sum()
-            if fuel_val > 10:  # More than 10 MW = actively generating
-                # Format columns A, B, C, D (fuel name, MW, %, sparkline) in bold red
-                legacy_gen_format_requests.append({
-                    'repeatCell': {
+        if False:  # Disabled - was causing timeout
+            # Get sheet ID for Live Dashboard v2 (reuse from unmerge step)
+            sheet_metadata = sheets_service.spreadsheets().get(spreadsheetId=SPREADSHEET_ID).execute()
+            sheet_id = None
+            for sheet in sheet_metadata.get('sheets', []):
+                if sheet['properties']['title'] == 'Live Dashboard v2':
+                    sheet_id = sheet['properties']['sheetId']
+                    break
+            
+            if sheet_id is not None:
+                merge_requests = []
+                
+                # Merge K12:S12 for header (9 columns wide)
+                merge_requests.append({
+                    'mergeCells': {
                         'range': {
-                            'sheetId': worksheet.id,
-                            'startRowIndex': row_idx - 1,  # 0-indexed
-                            'endRowIndex': row_idx,
-                            'startColumnIndex': 0,  # Column A
-                            'endColumnIndex': 4     # Columns A-D
+                            'sheetId': sheet_id,
+                            'startRowIndex': 11,  # Row 12 (0-indexed)
+                            'endRowIndex': 12,
+                            'startColumnIndex': 10,  # Column K
+                            'endColumnIndex': 19     # Through column S
                         },
-                        'cell': {
-                            'userEnteredFormat': {
-                                'textFormat': {
-                                    'foregroundColor': {'red': 0.8, 'green': 0.0, 'blue': 0.0},
-                                    'bold': True,
-                                    'fontSize': 11
-                                }
-                            }
+                        'mergeType': 'MERGE_ALL'
+                    }
+                })
+                
+                # Merge N:S sparkline columns for each KPI row (rows: 13, 15, 17, 19, 21, 23, 25, 27, 29, 31)
+                kpi_rows = [13, 15, 17, 19, 21, 23, 25, 27, 29, 31]
+                for row in kpi_rows:
+                    merge_requests.append({
+                        'mergeCells': {
+                            'range': {
+                                'sheetId': sheet_id,
+                                'startRowIndex': row - 1,  # 0-indexed
+                                'endRowIndex': row,
+                                'startColumnIndex': 13,  # Column N
+                                'endColumnIndex': 19     # Through column S
+                            },
+                            'mergeType': 'MERGE_ALL'
+                        }
+                    })
+                
+                if merge_requests:
+                    sheets_service.spreadsheets().batchUpdate(
+                        spreadsheetId=SPREADSHEET_ID,
+                        body={'requests': merge_requests}
+                    ).execute()
+                    logging.info(f"  ✅ Merged K12:S12 header + {len(kpi_rows)} sparkline ranges via Sheets API v4")
+            else:
+                logging.warning(f"  ⚠️  Could not find sheet ID for 'Live Dashboard v2'")
+        else:
+            logging.warning(f"  ⚠️  sheets_service not initialized, skipping merge")
+        
+        # Set row heights and legacy fuel formatting using Sheets API v4
+        # TEMPORARILY DISABLED: Skipping to avoid timeout issues
+        logging.info("  ⚠️  Skipping row height formatting (temporarily disabled)")
+        if False and sheets_service and sheet_id is not None:
+            row_height_requests = []
+
+            # Interconnector header row (G12) = 50px
+            row_height_requests.append({
+                'updateDimensionProperties': {
+                    'range': {
+                        'sheetId': sheet_id,
+                        'dimension': 'ROWS',
+                        'startIndex': 11,  # Row 12 (0-indexed)
+                        'endIndex': 12
+                    },
+                    'properties': {'pixelSize': 50},
+                    'fields': 'pixelSize'
+                }
+            })
+
+            # Interconnector data rows (G13:I22) = 60px each for BIGGER EMOJIS
+            for row in range(13, 23):  # Rows 13-22
+                row_height_requests.append({
+                    'updateDimensionProperties': {
+                        'range': {
+                            'sheetId': sheet_id,
+                            'dimension': 'ROWS',
+                            'startIndex': row - 1,  # 0-indexed
+                            'endIndex': row
                         },
-                        'fields': 'userEnteredFormat.textFormat'
+                        'properties': {'pixelSize': 60},
+                        'fields': 'pixelSize'
                     }
                 })
 
-        if legacy_gen_format_requests:
-            worksheet.spreadsheet.batch_update({'requests': legacy_gen_format_requests})
-            logging.info(f"  🔴 ALERT: {len(legacy_gen_format_requests)} legacy fuels actively generating (highlighted in bold red)")
+            # Combined KPIs Header row (K12) = 60px
+            row_height_requests.append({
+                'updateDimensionProperties': {
+                    'range': {
+                        'sheetId': sheet_id,
+                        'dimension': 'ROWS',
+                        'startIndex': 11,  # Row 12 (0-indexed)
+                        'endIndex': 12
+                    },
+                    'properties': {'pixelSize': 60},
+                    'fields': 'pixelSize'
+                }
+            })
+
+            # KPI data rows (13, 15, 17, 19, 21, 23, 25, 27, 29, 31) = 80px each
+            for row in kpi_rows:
+                row_height_requests.append({
+                    'updateDimensionProperties': {
+                        'range': {
+                            'sheetId': sheet_id,
+                            'dimension': 'ROWS',
+                            'startIndex': row - 1,  # 0-indexed
+                            'endIndex': row
+                        },
+                        'properties': {'pixelSize': 80},
+                        'fields': 'pixelSize'
+                    }
+                })
+
+            # Spacer rows ONLY in KPI section (24, 26, 28, 30) = 10px each
+            spacer_rows = [24, 26, 28, 30]
+            for row in spacer_rows:
+                row_height_requests.append({
+                    'updateDimensionProperties': {
+                        'range': {
+                            'sheetId': sheet_id,
+                            'dimension': 'ROWS',
+                            'startIndex': row - 1,  # 0-indexed
+                            'endIndex': row
+                        },
+                        'properties': {'pixelSize': 10},
+                        'fields': 'pixelSize'
+                    }
+                })
+
+            # Active Outages header row (G25) = 50px
+            row_height_requests.append({
+                'updateDimensionProperties': {
+                    'range': {
+                        'sheetId': sheet_id,
+                        'dimension': 'ROWS',
+                        'startIndex': 24,  # Row 25 (0-indexed)
+                        'endIndex': 25
+                    },
+                    'properties': {'pixelSize': 50},
+                    'fields': 'pixelSize'
+                }
+            })
+
+            # Active Outages column headers row (G26) = 40px
+            row_height_requests.append({
+                'updateDimensionProperties': {
+                    'range': {
+                        'sheetId': sheet_id,
+                        'dimension': 'ROWS',
+                        'startIndex': 25,  # Row 26 (0-indexed)
+                        'endIndex': 26
+                    },
+                    'properties': {'pixelSize': 40},
+                    'fields': 'pixelSize'
+                }
+            })
+
+            # Highlight OCGT (row 19), COAL (row 20), OIL (row 21) in bold red when they ARE generating
+            # These are legacy/emergency fuels - highlighting alerts when they're in use (unusual event)
+            legacy_gen_format_requests = []
+            for row_idx, fuel_type in [(19, 'OCGT'), (20, 'COAL'), (21, 'OIL')]:
+                # Check if this fuel IS generating (alert condition)
+                fuel_val = fuel_current[fuel_current['fuelType'] == fuel_type]['total_generation'].sum()
+                if fuel_val > 10:  # More than 10 MW = actively generating
+                    # Format columns A, B, C, D (fuel name, MW, %, sparkline) in bold red
+                    legacy_gen_format_requests.append({
+                        'repeatCell': {
+                            'range': {
+                                'sheetId': sheet_id,
+                                'startRowIndex': row_idx - 1,  # 0-indexed
+                                'endRowIndex': row_idx,
+                                'startColumnIndex': 0,  # Column A
+                                'endColumnIndex': 4     # Columns A-D
+                            },
+                            'cell': {
+                                'userEnteredFormat': {
+                                    'textFormat': {
+                                        'foregroundColor': {'red': 0.8, 'green': 0.0, 'blue': 0.0},
+                                        'bold': True,
+                                        'fontSize': 11
+                                    }
+                                }
+                            },
+                            'fields': 'userEnteredFormat.textFormat'
+                        }
+                    })
+
+            # Combine all requests and execute in one batch
+            all_requests = row_height_requests + legacy_gen_format_requests
+            if all_requests:
+                sheets_service.spreadsheets().batchUpdate(
+                    spreadsheetId=SPREADSHEET_ID,
+                    body={'requests': all_requests}
+                ).execute()
+                logging.info(f"  ✅ Set row heights via Sheets API v4: Interconnectors=60px, KPIs=80px, spacers=10px")
+                if legacy_gen_format_requests:
+                    logging.info(f"  🔴 ALERT: {len(legacy_gen_format_requests)} legacy fuels actively generating (highlighted in bold red)")
 
     except Exception as e:
         logging.warning(f"  ⚠️  Cell merge/formatting failed (non-critical): {e}")

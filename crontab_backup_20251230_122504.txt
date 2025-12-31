@@ -1,0 +1,70 @@
+GOOGLE_APPLICATION_CREDENTIALS=/home/george/GB-Power-Market-JJ/inner-cinema-credentials.json
+
+# ====================================================================
+# DAILY COMPLETE DATA PIPELINE - Runs at 3 AM
+# ====================================================================
+0 3 * * * cd /home/george/GB-Power-Market-JJ && /usr/bin/python3 daily_data_pipeline.py >> logs/daily_pipeline.log 2>&1
+
+# ====================================================================
+# REAL-TIME UPDATES (STAGGERED to avoid resource contention)
+# ====================================================================
+
+# Monitor DISBSAD freshness (every 15 min at :08, :23, :38, :53)
+8,23,38,53 * * * * /usr/bin/python3 /home/george/GB-Power-Market-JJ/monitor_disbsad_freshness.py >> /home/george/GB-Power-Market-JJ/logs/disbsad_monitor.log 2>&1
+
+# Resource monitoring (every 5 min at :00, :05, :10...)
+*/5 * * * * /usr/bin/python3 /home/george/GB-Power-Market-JJ/monitor_dell_resources.py >> /home/george/GB-Power-Market-JJ/logs/resource_monitor.log 2>&1
+
+# ====================================================================
+# HOURLY/PERIODIC UPDATES (STAGGERED)
+# ====================================================================
+
+# BtM sync every 30 minutes (at :10 and :40)
+10,40 * * * * /home/george/GB-Power-Market-JJ/run_btm_sync.sh
+
+# Auto-backfill system prices (bmrs_costs) - Every 30 minutes (at :15 and :45)
+15,45 * * * * cd /home/george/GB-Power-Market-JJ && /usr/bin/python3 auto_backfill_costs_daily.py >> logs/costs_backfill.log 2>&1
+
+# BM settlement data (BOAV + EBOCF) - Every 2 hours at :25
+25 */2 * * * cd /home/george/GB-Power-Market-JJ && /usr/bin/python3 ingest_bm_settlement_data.py --recent 1 >> logs/bm_settlement.log 2>&1
+
+# ====================================================================
+# DAILY UPDATES (Once per day)
+# ====================================================================
+
+# BM revenue analysis daily at 5am
+0 5 * * * /home/george/GB-Power-Market-JJ/auto_update_bm_revenue_full_history.sh
+
+# BM Market KPIs Daily Pipeline (5:30 AM - after daily data refresh)
+30 5 * * * cd /home/george/GB-Power-Market-JJ && python3 parallel_bm_kpi_pipeline.py --days 7
+
+# Real-time ingestion (COSTS, FUELINST, FREQ, MID)
+*/15 * * * * cd /home/george/GB-Power-Market-JJ && /usr/bin/python3 auto_ingest_realtime.py >> logs/realtime_ingest.log 2>&1
+
+# BOD ingestion (bid-offer data)
+*/30 * * * * cd /home/george/GB-Power-Market-JJ && /usr/bin/python3 auto_ingest_bod.py >> logs/bod_ingest.log 2>&1
+
+# WINDFOR ingestion
+*/15 * * * * cd /home/george/GB-Power-Market-JJ && /usr/bin/python3 auto_ingest_windfor.py >> logs/windfor_ingest.log 2>&1
+
+# INDGEN ingestion
+*/15 * * * * cd /home/george/GB-Power-Market-JJ && /usr/bin/python3 auto_ingest_indgen.py >> logs/indgen_ingest.log 2>&1
+
+# Publication table for Apps Script (wind forecast chart) - Every 15 min
+*/15 * * * * cd /home/george/GB-Power-Market-JJ && /usr/bin/python3 build_publication_table_current.py >> logs/publication_table.log 2>&1
+
+# Dashboard updates - FAST script every 5 minutes, FULL script every 10 minutes (staggered)
+*/5 * * * * cd /home/george/GB-Power-Market-JJ && /usr/bin/python3 update_all_dashboard_sections_fast.py >> logs/dashboard_auto_update.log 2>&1
+1,11,21,31,41,51 * * * * cd /home/george/GB-Power-Market-JJ && /usr/bin/python3 update_live_metrics.py >> logs/unified_update.log 2>&1
+
+# ============================================
+# GB Power Market - Daily Data Downloads
+# Installed: 2025-12-28 23:58:19
+# ============================================
+
+# P114 Settlement Data - Daily at 2am (after Elexon publishes)
+0 2 * * * /home/george/GB-Power-Market-JJ/auto_download_p114_daily.py >> /home/george/GB-Power-Market-JJ/logs/p114_daily.log 2>&1
+
+# NESO Constraint Costs & Publications - Daily at 3am
+0 3 * * * /home/george/GB-Power-Market-JJ/auto_download_neso_daily.py >> /home/george/GB-Power-Market-JJ/logs/neso_daily.log 2>&1
+

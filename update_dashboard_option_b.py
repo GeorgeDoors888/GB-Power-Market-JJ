@@ -338,8 +338,8 @@ def main():
         # Update KPI section (includes status indicators)
         update_kpi_section()
         
-        # Add panel headers
-        add_panel_headers()
+        # Add panel headers - DISABLED: Creates empty sections without data
+        # add_panel_headers()
         
         print("\n" + "=" * 100)
         print("✅ DASHBOARD UPDATE COMPLETE!")

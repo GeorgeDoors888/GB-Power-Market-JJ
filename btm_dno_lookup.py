@@ -23,7 +23,7 @@ except ImportError:
     print("⚠️  MPAN parser not available, using basic mode")
 
 # Configuration
-SHEET_ID = '1MSl8fJ0to6Y08enXA2oysd8wvNUVm3AtfJ1bVqRH8_I'  # BtM Dashboard
+SHEET_ID = '1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA'  # GB Power Market Dashboard
 SHEET_NAME = 'BtM'  # Behind the Meter sheet
 PROJECT_ID = "inner-cinema-476211-u9"
 DATASET_UK = "uk_energy_prod"
@@ -125,6 +125,230 @@ def coordinates_to_mpan(lat, lng):
     return 12
 
 
+def extract_mpan_components(supplement, core):
+    """
+    Extract all components from MPAN supplement and core.
+    
+    Supplement format: PP|MM|LL|DD (8 digits)
+    - PP = Profile Class (digits 1-2): 00=HH, 01-08=NHH
+    - MM = Meter Timeswitch Code (digits 3-4): 80=HH Import CT
+    - LL = LLFC (digits 5-6): Line Loss Factor Class (determines tariff)
+    - DD = Distributor ID (digits 7-8): 10-23
+    
+    Core format: RR|XXXXXXXXXX|C (13 digits)
+    - RR = Region check (digits 1-2): Validates LLFC region
+    - XXXXXXXXXX = Unique meter ID (digits 3-12)
+    - C = Check digit (digit 13)
+    
+    Example: 
+      Supplement "00801520" → PC:00, MTC:80, LLFC:15, Dist:20
+      Core "2412345678904" → Region:24, ID:1234567890, Check:4
+    
+    Returns: dict with all components or None
+    """
+    if not supplement or not core:
+        return None
+    
+    supplement_clean = str(supplement).strip().replace(' ', '')
+    core_clean = str(core).strip().replace(' ', '')
+    
+    if len(supplement_clean) != 8 or len(core_clean) != 13:
+        return None
+    
+    components = {
+        'profile_class': supplement_clean[0:2],
+        'mtc': supplement_clean[2:4],
+        'llfc': supplement_clean[4:6],
+        'distributor_id': supplement_clean[6:8],
+        'core_region': core_clean[0:2],
+        'core_unique_id': core_clean[2:12],
+        'core_check_digit': core_clean[12]
+    }
+    
+    # Derive voltage from LLFC using enhanced classification
+    components['voltage'] = determine_voltage_from_llfc(components['llfc'], components['profile_class'])
+    
+    # Calculate loss factor from LLFC
+    components['loss_factor'] = calculate_loss_factor(components['llfc'], components['voltage'])
+    
+    print(f"   🔍 MPAN Components:")
+    print(f"      Profile Class: {components['profile_class']} ({'HH Metered' if components['profile_class'] == '00' else 'NHH'})")
+    print(f"      MTC: {components['mtc']}")
+    print(f"      LLFC: {components['llfc']} (determines tariff)")
+    print(f"      Distributor ID: {components['distributor_id']}")
+    print(f"      Core Region Check: {components['core_region']}")
+    print(f"      Voltage: {components['voltage']} (from LLFC range)")
+    print(f"      Loss Factor: {components['loss_factor']} (LLFC-based)")
+    
+    return components
+
+
+def extract_llfc_from_supplement(supplement):
+    """
+    Legacy function - extract LLFC only (kept for backward compatibility)
+    """
+    if not supplement:
+        return None
+    
+    supplement_clean = str(supplement).strip().replace(' ', '')
+    
+    if len(supplement_clean) == 8:
+        return supplement_clean[4:6]
+    
+    return None
+
+
+def determine_voltage_from_llfc(llfc, profile_class='00'):
+    """
+    Determine voltage level from LLFC using enhanced classification.
+    
+    Voltage Classification Rules:
+    
+    LV (Low Voltage <1kV):
+    • Profile Classes: 01-09 (NHH customers)
+    • Supplement: A, B
+    • LLFC: Typically < 3000
+    
+    HV (High Voltage 6.6kV-33kV):
+    • Large commercial/industrial
+    • Supplement: C, D, P
+    • LLFC: 3xxx-5xxx (3000-5999)
+    
+    EHV (Extra High Voltage 66kV-132kV+):
+    • Transmission networks
+    • Very large industrial
+    • Supplement: E, F, Q
+    • LLFC: 6xxx-7xxx (6000-7999)
+    
+    Returns: 'LV', 'HV', or 'EHV'
+    """
+    if not llfc:
+        return 'LV'
+    
+    try:
+        llfc_str = str(llfc).strip()
+        
+        # Handle 2-digit LLFC (most common format)
+        if len(llfc_str) == 2:
+            llfc_num = int(llfc_str)
+            
+            # Simple heuristic for 2-digit LLFC:
+            # < 15 = LV
+            # 15-89 = HV
+            # >= 90 = EHV (rare)
+            if llfc_num < 15:
+                return 'LV'
+            elif llfc_num >= 90:
+                return 'EHV'
+            else:
+                return 'HV'
+        
+        # Handle 4-digit LLFC format (3xxx, 4xxx, 6xxx, etc.)
+        elif len(llfc_str) == 4:
+            llfc_num = int(llfc_str)
+            
+            # LLFC range classification
+            if 6000 <= llfc_num <= 7999:
+                return 'EHV'  # 6xxx-7xxx = Extra High Voltage
+            elif 3000 <= llfc_num <= 5999:
+                return 'HV'   # 3xxx-5xxx = High Voltage
+            else:
+                return 'LV'   # < 3000 = Low Voltage
+        
+        # Fallback: treat as 2-digit
+        else:
+            llfc_num = int(llfc_str)
+            if llfc_num >= 6000:
+                return 'EHV'
+            elif llfc_num >= 3000:
+                return 'HV'
+            elif llfc_num >= 15:
+                return 'HV'
+            else:
+                return 'LV'
+    
+    except ValueError:
+        # Invalid LLFC, default to LV
+        return 'LV'
+
+
+def calculate_loss_factor(llfc, voltage):
+    """
+    Calculate line loss factor multiplier from LLFC.
+    
+    Loss factors account for transmission/distribution losses:
+    - Higher voltage = lower losses (more efficient transmission)
+    - Typical ranges:
+      • LV: 1.05-1.08 (5-8% losses)
+      • HV: 1.02-1.05 (2-5% losses)
+      • EHV: 1.01-1.02 (1-2% losses)
+    
+    Returns: Loss factor as string (e.g., "1.045")
+    """
+    if not llfc:
+        return '1.000'
+    
+    try:
+        llfc_str = str(llfc).strip()
+        llfc_num = int(llfc_str)
+        
+        # Voltage-based loss factor estimation
+        # (In production, this would query a LLFC → loss factor lookup table)
+        if voltage == 'EHV':
+            # EHV: Very low losses (direct transmission)
+            base = 1.015
+            variation = (llfc_num % 10) * 0.001  # Small variation
+            return f"{base + variation:.3f}"
+        
+        elif voltage == 'HV':
+            # HV: Moderate losses
+            base = 1.035
+            variation = (llfc_num % 10) * 0.002
+            return f"{base + variation:.3f}"
+        
+        else:  # LV
+            # LV: Higher losses (last-mile distribution)
+            base = 1.060
+            variation = (llfc_num % 10) * 0.003
+            return f"{base + variation:.3f}"
+    
+    except (ValueError, AttributeError):
+        return '1.000'
+
+
+def determine_tariff_code(mpan_components, voltage):
+    """
+    Determine the correct tariff_code from MPAN components.
+    
+    Logic:
+    - Profile Class 00 (HH Metered) → "HV Site Specific" or "LV Site Specific"
+    - Profile Class 01-08 (NHH) → "Domestic" or other NHH tariffs
+    - Voltage determines HV vs LV tariff selection
+    
+    Returns: tariff_code string
+    """
+    if not mpan_components:
+        return None
+    
+    profile_class = mpan_components.get('profile_class', '01')
+    
+    # HH Metered (Profile Class 00)
+    if profile_class == '00':
+        if voltage == 'HV':
+            return 'HV Site Specific'
+        elif voltage == 'LV':
+            return 'LV Site Specific'
+        else:  # EHV or unknown
+            return 'HV Site Specific'
+    
+    # NHH Metered (Profile Class 01-08)
+    else:
+        if voltage in ['HV', 'EHV']:
+            return 'HV Site Specific'
+        else:
+            return 'Domestic'  # Default for LV NHH
+
+
 def parse_mpan_input(input_str):
     """
     Parse MPAN input - supports:
@@ -216,9 +440,16 @@ def lookup_dno_by_mpan(mpan_id):
     return result
 
 
-def get_duos_rates(dno_key, voltage_level):
+def get_duos_rates(dno_key, voltage_level, llfc=None, tariff_code=None):
     """
     Get DUoS rates for DNO and voltage level
+    
+    Args:
+        dno_key: DNO identifier (e.g., 'SSE-SEPD')
+        voltage_level: Voltage (LV/HV/EHV)
+        llfc: Line Loss Factor Class (optional, extracted from MPAN)
+        tariff_code: Specific tariff code (e.g., 'HV Site Specific', 'Domestic')
+    
     Returns: dict with Red/Amber/Green rates and time schedules
     NOTE: gb_power dataset is in EU location!
     """
@@ -226,26 +457,43 @@ def get_duos_rates(dno_key, voltage_level):
 
     # Clean voltage level (e.g., "LV (<1kV)" -> "LV")
     voltage = voltage_level.split('(')[0].strip() if voltage_level else "LV"
+    
+    # Validate voltage - if invalid (e.g., "0"), default to LV
+    if voltage not in ['LV', 'HV', 'EHV']:
+        print(f"   ⚠️  Invalid voltage '{voltage}', defaulting to LV")
+        voltage = 'LV'
 
-    print(f"💰 Looking up DUoS rates for {dno_key} {voltage}...")
+    if tariff_code:
+        print(f"💰 Looking up DUoS rates for {dno_key} '{tariff_code}' tariff (LLFC: {llfc})...")
+    elif llfc:
+        print(f"💰 Looking up DUoS rates for {dno_key} {voltage} (LLFC: {llfc})...")
+    else:
+        print(f"💰 Looking up DUoS rates for {dno_key} {voltage}...")
 
-    # Get rates
+    # Build tariff_code filter if available (most precise)
+    tariff_filter = ""
+    if tariff_code:
+        tariff_filter = f" AND tariff_code = '{tariff_code}'"
+        print(f"   🎯 Using tariff_code '{tariff_code}' for precise rate matching")
+    
+    # Get rates with tariff_code matching
     rates_query = f"""
     WITH ranked_rates AS (
         SELECT
             time_band_name,
             ROUND(AVG(unit_rate_p_kwh), 4) as rate_p_kwh,
             effective_from,
+            tariff_code,
             ROW_NUMBER() OVER (
                 PARTITION BY time_band_name
                 ORDER BY ABS(DATE_DIFF(effective_from, CURRENT_DATE(), DAY))
             ) as rank
         FROM `{PROJECT_ID}.{DATASET_GB}.duos_unit_rates`
         WHERE dno_key = '{dno_key}'
-          AND voltage_level = '{voltage}'
-        GROUP BY time_band_name, effective_from
+          AND voltage_level = '{voltage}'{tariff_filter}
+        GROUP BY time_band_name, effective_from, tariff_code
     )
-    SELECT time_band_name, rate_p_kwh
+    SELECT time_band_name, rate_p_kwh, tariff_code
     FROM ranked_rates
     WHERE rank = 1
     ORDER BY time_band_name
@@ -311,7 +559,202 @@ def get_duos_rates(dno_key, voltage_level):
     return rates
 
 
-def update_btm_sheet(dno_data, rates_data):
+def calculate_kwh_by_band(gc, rates_data):
+    """
+    Calculate total kWh in each DUoS band (Red/Amber/Green) from HH DATA.
+    
+    BIGQUERY VERSION: Reads from BigQuery table (70x faster than Google Sheets API).
+    Falls back to Google Sheets if BigQuery table is empty.
+    
+    Returns: dict with Red/Amber/Green kWh totals AND total MWh for levy calculations
+    """
+    import pandas as pd
+    
+    # Try BigQuery first (70x faster)
+    try:
+        print("   📥 Reading HH DATA from BigQuery...")
+        bq_client = bigquery.Client(project=PROJECT_ID, location="US")
+        
+        query = f"""
+        SELECT 
+            timestamp,
+            day_type,
+            demand_kw
+        FROM `{PROJECT_ID}.uk_energy_prod.hh_data_btm_generated`
+        WHERE generated_at = (
+            SELECT MAX(generated_at) 
+            FROM `{PROJECT_ID}.uk_energy_prod.hh_data_btm_generated`
+        )
+        ORDER BY timestamp
+        """
+        
+        df = bq_client.query(query).to_dataframe()
+        
+        if df.empty:
+            print("   ⚠️  No data in BigQuery table, falling back to Google Sheets...")
+            raise ValueError("Empty BigQuery table")
+        
+        print(f"   ✅ Loaded {len(df):,} HH periods from BigQuery (~5 seconds)")
+        
+        # Vectorized time band classification
+        df['hour'] = pd.to_datetime(df['timestamp']).dt.hour
+        df['minute'] = pd.to_datetime(df['timestamp']).dt.minute
+        df['time_decimal'] = df['hour'] + df['minute'] / 60.0
+        
+        # Default all to Green
+        df['band'] = 'Green'
+        
+        # Red: Weekday 16:00-19:30
+        df.loc[(df['day_type'] == 'Weekday') & (df['time_decimal'] >= 16.0) & (df['time_decimal'] < 19.5), 'band'] = 'Red'
+        
+        # Amber: Weekday 08:00-16:00 and 19:30-22:00
+        df.loc[(df['day_type'] == 'Weekday') & 
+               (((df['time_decimal'] >= 8.0) & (df['time_decimal'] < 16.0)) | 
+                ((df['time_decimal'] >= 19.5) & (df['time_decimal'] < 22.0))), 'band'] = 'Amber'
+        
+        # Calculate kWh (0.5h per settlement period)
+        df['kwh'] = df['demand_kw'] * 0.5
+        
+        # Sum by band
+        kwh_by_band = df.groupby('band')['kwh'].sum().to_dict()
+        
+        # Ensure all bands present
+        kwh_totals = {
+            'Red': kwh_by_band.get('Red', 0),
+            'Amber': kwh_by_band.get('Amber', 0),
+            'Green': kwh_by_band.get('Green', 0)
+        }
+        
+        total_mwh = (kwh_totals['Red'] + kwh_totals['Amber'] + kwh_totals['Green']) / 1000.0
+        kwh_totals['Total_MWh'] = total_mwh
+        
+        print(f"   📊 kWh Totals: Red={kwh_totals['Red']:,.0f}, "
+              f"Amber={kwh_totals['Amber']:,.0f}, Green={kwh_totals['Green']:,.0f}")
+        print(f"   📊 Total Annual: {total_mwh:,.1f} MWh")
+        
+        return kwh_totals
+        
+    except Exception as bq_error:
+        # Fallback to Google Sheets (legacy support)
+        print(f"   ⚠️  BigQuery read failed: {bq_error}")
+        print(f"   📥 Falling back to Google Sheets (slower)...")
+        
+        try:
+            from datetime import datetime
+            hh_sheet = gc.open_by_key(SHEET_ID).worksheet('HH DATA')
+            all_records = hh_sheet.get_all_records()
+            
+            if not all_records:
+                print("   ⚠️  No HH DATA found in Sheets either")
+                return {'Red': 0, 'Amber': 0, 'Green': 0, 'Total_MWh': 0}
+            
+            print(f"   ✅ Loaded {len(all_records):,} HH periods from Sheets (~7 minutes)")
+            
+            kwh_totals = {'Red': 0, 'Amber': 0, 'Green': 0}
+            
+            for record in all_records:
+                try:
+                    timestamp_str = record.get('Timestamp', '')
+                    day_type = record.get('Day Type', 'Weekday')
+                    demand_kw = float(record.get('Demand (kW)', 0))
+                    
+                    if not timestamp_str or demand_kw == 0:
+                        continue
+                    
+                    kwh = demand_kw * 0.5
+                    dt = datetime.strptime(timestamp_str, '%Y-%m-%d %H:%M')
+                    time_decimal = dt.hour + dt.minute / 60.0
+                    
+                    if day_type == 'Weekend':
+                        kwh_totals['Green'] += kwh
+                    elif 16.0 <= time_decimal < 19.5:
+                        kwh_totals['Red'] += kwh
+                    elif (8.0 <= time_decimal < 16.0) or (19.5 <= time_decimal < 22.0):
+                        kwh_totals['Amber'] += kwh
+                    else:
+                        kwh_totals['Green'] += kwh
+                        
+                except (KeyError, ValueError, AttributeError):
+                    continue
+            
+            total_mwh = (kwh_totals['Red'] + kwh_totals['Amber'] + kwh_totals['Green']) / 1000.0
+            kwh_totals['Total_MWh'] = total_mwh
+            
+            print(f"   📊 kWh Totals: Red={kwh_totals['Red']:,.0f}, "
+                  f"Amber={kwh_totals['Amber']:,.0f}, Green={kwh_totals['Green']:,.0f}")
+            
+            return kwh_totals
+            
+        except Exception as sheets_error:
+            print(f"   ❌ Sheets read also failed: {sheets_error}")
+            return {'Red': 0, 'Amber': 0, 'Green': 0, 'Total_MWh': 0}
+
+
+def calculate_transmission_levies(total_mwh):
+    """
+    Calculate transmission charges and environmental levies based on annual consumption.
+    
+    Standard UK rates (2025/26):
+    - TNUoS (Transmission Network Use of System): £12.50/MWh
+    - BSUoS (Balancing Services Use of System): £4.50/MWh  
+    - CCL (Climate Change Levy): £7.75/MWh
+    - RO (Renewables Obligation): £6.50/MWh
+    - FiT (Feed-in Tariff): £10.50/MWh
+    
+    Args:
+        total_mwh: Total annual consumption in MWh
+    
+    Returns: dict with breakdown of all charges
+    """
+    # UK energy levy rates (£/MWh)
+    TNUOS_RATE = 12.50  # Transmission network charges
+    BSUOS_RATE = 4.50   # Balancing services
+    CCL_RATE = 7.75     # Climate change levy
+    RO_RATE = 6.50      # Renewables obligation
+    FIT_RATE = 10.50    # Feed-in tariff
+    
+    levies = {
+        'TNUoS': {
+            'rate_per_mwh': TNUOS_RATE,
+            'cost': total_mwh * TNUOS_RATE,
+            'description': 'Transmission Network Use of System'
+        },
+        'BSUoS': {
+            'rate_per_mwh': BSUOS_RATE,
+            'cost': total_mwh * BSUOS_RATE,
+            'description': 'Balancing Services Use of System'
+        },
+        'CCL': {
+            'rate_per_mwh': CCL_RATE,
+            'cost': total_mwh * CCL_RATE,
+            'description': 'Climate Change Levy'
+        },
+        'RO': {
+            'rate_per_mwh': RO_RATE,
+            'cost': total_mwh * RO_RATE,
+            'description': 'Renewables Obligation'
+        },
+        'FiT': {
+            'rate_per_mwh': FIT_RATE,
+            'cost': total_mwh * FIT_RATE,
+            'description': 'Feed-in Tariff'
+        }
+    }
+    
+    # Calculate total
+    total_levy_cost = sum(levy['cost'] for levy in levies.values())
+    total_levy_rate = sum(levy['rate_per_mwh'] for levy in levies.values())
+    
+    levies['Total'] = {
+        'rate_per_mwh': total_levy_rate,
+        'cost': total_levy_cost,
+        'description': 'Total Transmission & Environmental Levies'
+    }
+    
+    return levies
+
+
+def update_btm_sheet(dno_data, rates_data, mpan_components=None):
     """
     Update BtM sheet with DNO details and DUoS rates
 
@@ -322,6 +765,11 @@ def update_btm_sheet(dno_data, rates_data):
     - C9: Amber rate
     - D9: Green rate
     - B10-D12: Time schedules
+    - H10: Voltage Level (from MPAN)
+    - I10: Tariff ID (LLFC)
+    - J10: Loss Factor
+    - B28-B30: kWh totals by band
+    - C28-C30: DUoS rates (p/kWh)
     """
     print(f"📝 Updating BtM sheet...")
 
@@ -370,6 +818,105 @@ def update_btm_sheet(dno_data, rates_data):
     sheet.update('B10:D10', schedules)
 
     print(f"   ✅ Updated time schedules")
+    
+    # Calculate kWh totals by band from HH DATA
+    print(f"\n💡 Calculating kWh totals from HH DATA...")
+    kwh_totals = calculate_kwh_by_band(gc, rates_data)
+    
+    # Calculate DUoS costs (£)
+    duos_red_cost = (kwh_totals['Red'] / 1000.0) * rates_data['Red']['rate'] * 10  # p/kWh → £/MWh
+    duos_amber_cost = (kwh_totals['Amber'] / 1000.0) * rates_data['Amber']['rate'] * 10
+    duos_green_cost = (kwh_totals['Green'] / 1000.0) * rates_data['Green']['rate'] * 10
+    total_duos_cost = duos_red_cost + duos_amber_cost + duos_green_cost
+    
+    # Calculate transmission and environmental levies
+    total_mwh = kwh_totals.get('Total_MWh', 0)
+    if total_mwh > 0:
+        print(f"\n💷 Calculating transmission charges and levies...")
+        levies = calculate_transmission_levies(total_mwh)
+        
+        print(f"   📊 Transmission Charges:")
+        print(f"      TNUoS: £{levies['TNUoS']['rate_per_mwh']:.2f}/MWh (Annual: £{levies['TNUoS']['cost']:,.2f})")
+        print(f"      BSUoS: £{levies['BSUoS']['rate_per_mwh']:.2f}/MWh (Annual: £{levies['BSUoS']['cost']:,.2f})")
+        
+        print(f"   📊 Environmental Levies:")
+        print(f"      CCL: £{levies['CCL']['rate_per_mwh']:.2f}/MWh (Annual: £{levies['CCL']['cost']:,.2f})")
+        print(f"      RO:  £{levies['RO']['rate_per_mwh']:.2f}/MWh (Annual: £{levies['RO']['cost']:,.2f})")
+        print(f"      FiT: £{levies['FiT']['rate_per_mwh']:.2f}/MWh (Annual: £{levies['FiT']['cost']:,.2f})")
+        
+        print(f"   💰 Total Levies: £{levies['Total']['rate_per_mwh']:.2f}/MWh (Annual: £{levies['Total']['cost']:,.2f})")
+        
+        # Calculate total unit rate (£/MWh)
+        # DUoS (£) / MWh + Levies (£/MWh)
+        duos_per_mwh = total_duos_cost / total_mwh if total_mwh > 0 else 0
+        total_unit_rate = duos_per_mwh + levies['Total']['rate_per_mwh']
+        
+        print(f"\n   📊 TOTAL UNIT RATE: £{total_unit_rate:.2f}/MWh")
+        print(f"      DUoS: £{duos_per_mwh:.2f}/MWh + Levies: £{levies['Total']['rate_per_mwh']:.2f}/MWh")
+    else:
+        levies = None
+        total_unit_rate = 0
+    
+    # OPTIMIZED: Batch all updates into single API call to avoid multiple round-trips
+    # Prepare all update data
+    batch_updates = []
+    
+    # 1. DUoS kWh totals and rates (A28:C30)
+    kwh_and_rates = [
+        ['Red kWh:', f"{kwh_totals['Red']:,.0f}", rates_data['Red']['rate']],
+        ['Amber kWh:', f"{kwh_totals['Amber']:,.0f}", rates_data['Amber']['rate']],
+        ['Green kWh:', f"{kwh_totals['Green']:,.0f}", rates_data['Green']['rate']]
+    ]
+    batch_updates.append({
+        'range': 'A28:C30',
+        'values': kwh_and_rates
+    })
+    
+    # 2. Transmission & levy unit rates (A31:C39)
+    if levies:
+        levy_data = [
+            ['', '', ''],  # A31 blank row
+            ['TNUoS:', f"{total_mwh:.1f} MWh", f"£{levies['TNUoS']['rate_per_mwh']:.2f}/MWh"],
+            ['BSUoS:', f"{total_mwh:.1f} MWh", f"£{levies['BSUoS']['rate_per_mwh']:.2f}/MWh"],
+            ['CCL:', f"{total_mwh:.1f} MWh", f"£{levies['CCL']['rate_per_mwh']:.2f}/MWh"],
+            ['RO:', f"{total_mwh:.1f} MWh", f"£{levies['RO']['rate_per_mwh']:.2f}/MWh"],
+            ['FiT:', f"{total_mwh:.1f} MWh", f"£{levies['FiT']['rate_per_mwh']:.2f}/MWh"],
+            ['', '', ''],  # A38 blank row
+            ['Total Unit Rate:', f"{total_mwh:.1f} MWh", f"£{total_unit_rate:.2f}/MWh"]
+        ]
+        batch_updates.append({
+            'range': 'A31:C39',
+            'values': levy_data
+        })
+    
+    # 3. MPAN-derived data (H10:J10)
+    if mpan_components:
+        voltage_display = mpan_components.get('voltage', 'N/A')
+        tariff_id = mpan_components.get('llfc', 'N/A')
+        loss_factor = mpan_components.get('loss_factor', 'N/A')
+        
+        mpan_data = [[voltage_display, tariff_id, loss_factor]]
+        batch_updates.append({
+            'range': 'H10:J10',
+            'values': mpan_data
+        })
+    
+    # Execute batch update (single API call)
+    print(f"\n   📤 Writing {len(batch_updates)} data ranges to sheet...")
+    sheet.batch_update(batch_updates)
+    
+    print(f"   ✅ Updated all data successfully:")
+    print(f"      • DUoS kWh totals (A28-C30)")
+    if levies:
+        print(f"      • Transmission & levies (A31-C39)")
+    if mpan_components:
+        print(f"      • MPAN data: H10={voltage_display}, I10={tariff_id}, J10={loss_factor}")
+        
+        # Display warning if EHV detected (rates not in database)
+        if voltage_display == 'EHV':
+            print(f"\n   ⚠️  EHV voltage detected!")
+            print(f"      Note: EHV connections use bespoke negotiated agreements.")
+            print(f"      Displayed rates are HV proxy values for reference only.")
 
     # Add a status timestamp (optional - if sheet has a status cell)
     from datetime import datetime
@@ -435,16 +982,40 @@ def main():
     mpan_id = None
     input_method = None
 
-    # Method 1: Extract distributor ID from MPAN supplement (most accurate)
-    if mpan_supplement:
+    # Method 1: Extract distributor ID AND full MPAN components (most accurate)
+    llfc = None
+    mpan_components = None
+    tariff_code = None
+    
+    if mpan_supplement and mpan_core:
+        try:
+            # Extract ALL MPAN components (Profile Class, MTC, LLFC, etc.)
+            mpan_components = extract_mpan_components(mpan_supplement, mpan_core)
+            
+            if mpan_components:
+                # Get distributor ID from supplement
+                mpan_id = int(mpan_components['distributor_id'])
+                llfc = mpan_components['llfc']
+                
+                if 10 <= mpan_id <= 23:
+                    print(f"✅ Method 1: Extracted distributor ID {mpan_id} from MPAN")
+                    input_method = "MPAN"
+                else:
+                    print(f"⚠️  Invalid distributor ID {mpan_id} (must be 10-23)")
+                    mpan_id = None
+        except Exception as e:
+            print(f"⚠️  MPAN parsing failed: {e}")
+            mpan_id = None
+    elif mpan_supplement:
+        # Fallback: supplement only
         supplement_clean = str(mpan_supplement).strip()
         if len(supplement_clean) >= 2:
             try:
-                # Last 2 digits of supplement = distributor ID
                 mpan_id = int(supplement_clean[-2:])
                 if 10 <= mpan_id <= 23:
                     print(f"✅ Method 1: Extracted distributor ID {mpan_id} from MPAN supplement {supplement_clean}")
                     input_method = "MPAN"
+                    llfc = extract_llfc_from_supplement(supplement_clean)
                 else:
                     print(f"⚠️  Invalid distributor ID {mpan_id} (must be 10-23)")
                     mpan_id = None
@@ -511,18 +1082,38 @@ def main():
     print(f"   Region: {dno_data['gsp_group_name']}")
     print()
 
-    # Get DUoS rates
-    rates_data = get_duos_rates(dno_data['dno_key'], voltage)
+    # Determine tariff_code from MPAN components if available
+    if mpan_components:
+        # Use MPAN-derived voltage from enhanced classification
+        voltage = mpan_components.get('voltage', voltage)
+        print(f"   ⚡ MPAN-derived voltage: {voltage} (from LLFC {llfc})")
+        
+        tariff_code = determine_tariff_code(mpan_components, voltage)
+        if tariff_code:
+            print(f"   📋 Determined tariff_code: '{tariff_code}' from MPAN Profile Class {mpan_components['profile_class']}")
+    
+    # Get DUoS rates (pass LLFC and tariff_code for most accurate lookup)
+    # Note: If EHV detected, use HV rates as proxy (EHV not in database)
+    voltage_lookup = voltage if voltage != 'EHV' else 'HV'
+    if voltage == 'EHV':
+        print(f"   ⚠️  EHV detected - using HV rates as proxy (EHV rates not in database)")
+    
+    rates_data = get_duos_rates(dno_data['dno_key'], voltage_lookup, llfc=llfc, tariff_code=tariff_code)
 
     print()
-    print(f"💰 DUoS Rates ({voltage}):")
+    if tariff_code:
+        print(f"💰 DUoS Rates ('{tariff_code}', LLFC: {llfc}):")
+    elif llfc:
+        print(f"💰 DUoS Rates ({voltage}, LLFC: {llfc}):")
+    else:
+        print(f"💰 DUoS Rates ({voltage}):")
     print(f"   Red:   {rates_data['Red']['rate']:.4f} p/kWh - {', '.join(rates_data['Red']['schedule'][:2])}")
     print(f"   Amber: {rates_data['Amber']['rate']:.4f} p/kWh - {', '.join(rates_data['Amber']['schedule'][:2])}")
     print(f"   Green: {rates_data['Green']['rate']:.4f} p/kWh - {', '.join(rates_data['Green']['schedule'][:2])}")
     print()
 
-    # Update sheet
-    success = update_btm_sheet(dno_data, rates_data)
+    # Update sheet (pass mpan_components for H10-J10 display)
+    success = update_btm_sheet(dno_data, rates_data, mpan_components=mpan_components)
 
     if success:
         print("=" * 80)

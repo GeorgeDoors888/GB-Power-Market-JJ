@@ -1,8 +1,8 @@
 # 🇬🇧 GB-Power-Market-JJ - Complete Energy Data Platform
 
-**Last Updated**: 15 December 2025
-**Status**: Production - Active Development
-**Purpose**: Comprehensive GB electricity market analysis, real-time monitoring, and forecasting system
+**Last Updated**: 30 December 2025
+**Status**: Production - Active Development + Wind Forecasting Pipeline
+**Purpose**: Comprehensive GB electricity market analysis, real-time monitoring, forecasting, and weather data automation
 
 ⚠️ **DATA DISCLAIMER**: All Balancing Mechanism (BM) revenue figures in this project are **ESTIMATES** derived from Elexon BMRS transparency data (BOALF, BOAV, EBOCF). These are **NOT settlement-grade cashflows**. Actual BOA energy payments are determined through BSC settlement and may vary ±10-20% from our estimates. For details, see [BOA_ENERGY_PAYMENTS_EXPLAINED.md](BOA_ENERGY_PAYMENTS_EXPLAINED.md).
 
@@ -13,7 +13,9 @@
 ### What This Project Does
 - **Real-time Monitoring**: Live electricity generation, prices, and grid status (auto-updates every 5 minutes)
 - **Historical Analysis**: 22+ months of GB power market data (2023-2025)
-- **Forecasting**: Battery arbitrage, wind generation, and price predictions
+- **Wind Forecasting**: ML-powered wind generation predictions with 14.4x faster training (parallel processing)
+- **Weather Automation**: Automated ERA5, GFS, and REMIT data ingestion via cron (every 6 hours to daily)
+- **Icing Detection**: Advanced icing risk classifier for offshore wind farms (48 farms, 2021-2025)
 - **Dashboard**: Google Sheets-based interactive dashboard with auto-updates
 - **Outages Tracking**: 15 active power plant outages with complete details (capacity, timing, operator, duration, planned/unplanned status)
 - **DNO Integration**: Distribution Network Operator tariffs and MPAN lookup
@@ -43,7 +45,9 @@
 3. **[docs/QUICK_START_ANALYSIS.md](docs/QUICK_START_ANALYSIS.md)** - ⚡ Copy-paste commands to run analysis NOW
 4. **[ENDPOINT_PATTERNS.md](ENDPOINT_PATTERNS.md)** - 🔌 Elexon API endpoint reference (standard vs stream variants)
 
-#### Latest Updates (Nov 21-23, 2025)
+#### Latest Updates (Nov 21-Dec 30, 2025)
+- **[WIND_FORECASTING_COMPLETE_IMPLEMENTATION.md](WIND_FORECASTING_COMPLETE_IMPLEMENTATION.md)** - 🌬️ Complete wind forecasting system (12 todos complete + 19 enhancements)
+- **[WEATHER_DATA_AUTOMATION_GUIDE.md](WEATHER_DATA_AUTOMATION_GUIDE.md)** - 🤖 Automated weather data ingestion (ERA5, GFS, REMIT via cron)
 - **[docs/DASHBOARD_FIX_NOV_21_2025.md](docs/DASHBOARD_FIX_NOV_21_2025.md)** - Dashboard MW→GW conversion fix
 - **[docs/WIND_FARM_MAPPING_COMPLETE.md](docs/WIND_FARM_MAPPING_COMPLETE.md)** - 43 offshore + 414 onshore wind farms mapped
 - **[docs/AUTHENTICATION_ARCHITECTURE.md](docs/AUTHENTICATION_ARCHITECTURE.md)** - Complete auth guide

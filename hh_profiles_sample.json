@@ -1,0 +1,6 @@
+{
+  "total_count": 17520,
+  "results": [
+    {"timestamp": "2019-07-28T09:00:00+00:00", "non_variable": 100, "solar_and_storage": 50, "storage": 50, "domestic": 17.0420303, "commercial": 64.54066859999999, "industrial": 77.6756251, "network_rail": 43.581448099999996, "ev_charging": 35.467, "datacentre": 80.7768002, "solar_and_wind_and_storage": 50}
+  ]
+}
