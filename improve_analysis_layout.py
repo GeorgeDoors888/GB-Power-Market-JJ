@@ -178,7 +178,7 @@ new_labels = [
     ['BMU/Station IDs:'],  # Row 6 - Keep but simplify
     # Row 7 - DELETE (was confusing "Party Roles" with BMU data)
     ['Party Role:'],       # Row 8 - Was A5, move to A7
-    ['Generation Type:'],  # Row 9 - Was A8, move to A8  
+    ['Generation Type:'],  # Row 9 - Was A8, move to A8
     ['Lead Party:']        # Row 10 - Was A9, move to A9
 ]
 
@@ -230,13 +230,13 @@ def create_dropdown_validation(sheet_id, row, col, source_range):
 validations = [
     # B6: BMU IDs (allow manual comma-separated)
     create_dropdown_validation(analysis_sheet_id, 6, 2, 'D2:D200'),
-    
+
     # B7: Party Role (from Categories)
     create_dropdown_validation(analysis_sheet_id, 7, 2, 'A2:A25'),
-    
+
     # B8: Generation Type
     create_dropdown_validation(analysis_sheet_id, 8, 2, 'C2:C20'),
-    
+
     # B9: Lead Party (from Parties)
     create_dropdown_validation(analysis_sheet_id, 9, 2, 'B2:B25')
 ]

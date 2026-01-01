@@ -1,7 +1,7 @@
 # Wind Dashboard - Live Data Reader
 
-**Created**: December 30, 2025  
-**Script**: `create_wind_analysis_dashboard_live.py`  
+**Created**: December 30, 2025
+**Script**: `create_wind_analysis_dashboard_live.py`
 **Purpose**: Read wind data DIRECTLY from Google Sheets dashboard instead of BigQuery cache
 
 ---
@@ -65,7 +65,7 @@ result = sheets_service.spreadsheets().values().get(
 ```python
 # Still uses BigQuery for 6-hour GFS forecasts
 query = """
-SELECT 
+SELECT
     farm_name,
     forecast_horizon_hours,
     wind_speed_100m,
@@ -84,7 +84,7 @@ WHERE CAST(forecast_horizon_hours AS INT64) BETWEEN 1 AND 6
 ```python
 # Uses BigQuery views (NESO forecasts vs B1610 actual)
 daily_query = """
-SELECT 
+SELECT
     settlement_date,
     avg_actual_mw,
     avg_forecast_mw,
@@ -366,6 +366,6 @@ print(f'Latest forecast: {df[\"latest\"][0]}')
 
 ---
 
-**Last Updated**: December 30, 2025  
-**Status**: ✅ Production Ready  
+**Last Updated**: December 30, 2025
+**Status**: ✅ Production Ready
 **Tested**: Wind reading verified (4,789 MW = 4.79 GW)

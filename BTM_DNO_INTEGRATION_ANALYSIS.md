@@ -1,6 +1,6 @@
 # BtM Sheet - DNO/MPAN/DUoS Integration Analysis
 
-**Created**: December 30, 2025  
+**Created**: December 30, 2025
 **Purpose**: Analyze how to incorporate existing DNO lookup functionality into BtM sheet for HH profile generation
 
 ---
@@ -44,7 +44,7 @@
 ## 🔗 Integration Opportunities
 
 ### Scenario A: Site-Specific Load Profiles
-**Business Case**: Generate HH profiles that reflect actual DNO DUoS pricing  
+**Business Case**: Generate HH profiles that reflect actual DNO DUoS pricing
 **Value**: Optimize charge/discharge timing based on Red/Amber/Green bands
 
 **Integration Design**:
@@ -93,7 +93,7 @@ Enhanced HH DATA Sheet Output:
 ## 📊 Implementation Options
 
 ### Option 1: Unified Script (Recommended)
-**Create**: `btm_complete_generator.py`  
+**Create**: `btm_complete_generator.py`
 **Combines**:
 1. DNO lookup (from `dno_lookup_python.py`)
 2. DUoS rate retrieval (from `dno_lookup_python.py`)
@@ -109,22 +109,22 @@ def main():
     voltage = read_cell('A9')
     scale_value = read_cell('B17/B18/B19')  # Whichever has value
     supply_type = read_cell('B20')
-    
+
     # Step 2: DNO lookup
     if postcode:
         coords = lookup_postcode(postcode)
         mpan_id = coordinates_to_mpan(*coords)
     dno_info = lookup_dno_by_mpan(mpan_id)
-    
+
     # Step 3: DUoS rate lookup
     duos_rates = get_duos_rates(dno_info['dno_key'], voltage)
-    
+
     # Step 4: Update DNO section (rows 6-13)
     update_dno_section(dno_info, duos_rates)
-    
+
     # Step 5: Fetch UK Power Networks profiles
     profiles = fetch_ukpn_profiles(supply_type)
-    
+
     # Step 6: Generate HH data with DUoS band classification
     hh_data = []
     for record in profiles:
@@ -133,7 +133,7 @@ def main():
         duos_band = classify_time_band(timestamp, duos_rates)
         demand_kw = scale_value * (record[supply_type] / 100)
         duos_rate = duos_rates[duos_band]['rate']
-        
+
         hh_data.append([
             timestamp,
             sp,
@@ -143,7 +143,7 @@ def main():
             duos_band,
             duos_rate
         ])
-    
+
     # Step 7: Upload to HH DATA sheet
     upload_hh_data(hh_data)
 ```
@@ -188,7 +188,7 @@ python3 generate_hh_data_api.py
 ---
 
 ### Option 3: Apps Script Integration (Browser-Only)
-**Enhance**: `btm_hh_generator.gs`  
+**Enhance**: `btm_hh_generator.gs`
 **Add**:
 1. DNO lookup function (call BigQuery via proxy)
 2. DUoS rate lookup
@@ -214,22 +214,22 @@ python3 generate_hh_data_api.py
 def classify_time_band(timestamp, duos_rates):
     """
     Classify timestamp into Red/Amber/Green DUoS band
-    
+
     Args:
         timestamp: datetime object
         duos_rates: dict from get_duos_rates()
-        
+
     Returns:
         'Red', 'Amber', or 'Green'
     """
     hour = timestamp.hour
     minute = timestamp.minute
     is_weekend = timestamp.weekday() >= 5
-    
+
     # Weekend is always Green
     if is_weekend:
         return 'Green'
-    
+
     # Parse time schedules from duos_rates
     for band in ['Red', 'Amber', 'Green']:
         schedules = duos_rates[band]['schedule']
@@ -238,7 +238,7 @@ def classify_time_band(timestamp, duos_rates):
                 continue
             if time_in_range(hour, minute, schedule_str):
                 return band
-    
+
     # Default to Green if not matched
     return 'Green'
 
@@ -250,15 +250,15 @@ def time_in_range(hour, minute, schedule_str):
     # Parse "HH:MM-HH:MM" format
     if '-' not in schedule_str:
         return False
-    
+
     start_str, end_str = schedule_str.split('-')
     start_h, start_m = map(int, start_str.strip().split(':'))
     end_h, end_m = map(int, end_str.strip().split(':'))
-    
+
     time_minutes = hour * 60 + minute
     start_minutes = start_h * 60 + start_m
     end_minutes = end_h * 60 + end_m
-    
+
     return start_minutes <= time_minutes < end_minutes
 ```
 
@@ -373,7 +373,7 @@ Annual DUoS Charges = £1.51M
    ```bash
    # Optional: Run DNO lookup first (populates B9-D9)
    python3 dno_lookup_python.py
-   
+
    # Generate HH data (now includes DUoS bands if available)
    python3 generate_hh_data_api.py
    ```
@@ -401,7 +401,7 @@ Annual DUoS Charges = £1.51M
        .addItem('📊 View HH DATA Sheet', 'viewHHDataSheet')
        .addToUi();
    }
-   
+
    function runCompleteAnalysis() {
      // Show instructions to run: python3 btm_complete_generator.py
    }
@@ -474,7 +474,7 @@ Annual DUoS Charges = £1.51M
 
 ---
 
-**Status**: ✅ Analysis Complete  
-**Ready For**: Implementation Phase 1  
-**Estimated Time**: 1 hour  
+**Status**: ✅ Analysis Complete
+**Ready For**: Implementation Phase 1
+**Estimated Time**: 1 hour
 **Expected Value**: Enhanced load profile visibility with DUoS band classification

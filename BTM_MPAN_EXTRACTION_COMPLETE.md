@@ -174,7 +174,7 @@ Every tariff has:
 
 **Accuracy**: ~80% (works for most common cases)
 
-**Impact**: 
+**Impact**:
 - If wrong voltage detected, may get LV rates for HV meter (or vice versa)
 - Rates differ significantly: HV ~1.5 p/kWh vs LV ~12 p/kWh
 

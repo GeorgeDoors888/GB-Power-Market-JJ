@@ -1,6 +1,6 @@
 # Analysis Sheet Layout Guide
 
-**Last Updated**: December 31, 2025  
+**Last Updated**: December 31, 2025
 **Status**: ✅ Professional layout implemented
 
 ## 📊 Overview
@@ -46,9 +46,9 @@ Lead Party: Flexgen Battery Storage
 Visual separator for entity filtering section.
 
 ### Row 6: BMU/Station IDs
-**Label**: `BMU/Station IDs:`  
-**Input**: `B6`  
-**Type**: Dropdown + Manual Entry (comma-separated)  
+**Label**: `BMU/Station IDs:`
+**Input**: `B6`
+**Type**: Dropdown + Manual Entry (comma-separated)
 **Options**: 200+ BMU IDs from BigQuery
 
 **Examples**:
@@ -67,20 +67,20 @@ E_FARNB-1, E_HAWKB-1, T_HUMR-1       (multiple BMUs)
 
 **Tooltip** (hover B6):
 > Enter BMU/Station IDs comma-separated.
-> 
+>
 > Examples:
 > • E_FARNB-1, E_HAWKB-1
 > • T_HUMR-1
 > • V__JZENO001
-> 
+>
 > Leave blank or "All" for all units.
-> 
+>
 > 💡 Use dropdown for suggestions.
 
 ### Row 7: Party Role
-**Label**: `Party Role:`  
-**Input**: `B7`  
-**Type**: Dropdown from Categories tab  
+**Label**: `Party Role:`
+**Input**: `B7`
+**Type**: Dropdown from Categories tab
 **Options**: 19 BSC/CUSC roles + "All"
 
 **Available Roles**:
@@ -104,19 +104,19 @@ E_FARNB-1, E_HAWKB-1, T_HUMR-1       (multiple BMUs)
 
 **Tooltip** (hover B7):
 > Select BSC party role category.
-> 
+>
 > Examples:
 > • Generator - Power stations
 > • Virtual Lead Party - Battery/VLP
 > • Interconnector - Cross-border links
 > • Supplier - Licensed retailers
-> 
+>
 > Filters report to show only units in this category.
 
 ### Row 8: Generation Type
-**Label**: `Generation Type:`  
-**Input**: `B8`  
-**Type**: Dropdown (standard categories)  
+**Label**: `Generation Type:`
+**Input**: `B8`
+**Type**: Dropdown (standard categories)
 **Options**: 15 generation types + "All"
 
 **Categories**:
@@ -146,20 +146,20 @@ E_FARNB-1, E_HAWKB-1, T_HUMR-1       (multiple BMUs)
 
 **Tooltip** (hover B8):
 > Select generation technology type.
-> 
+>
 > Examples:
 > • Battery Storage
 > • Wind (Offshore)
 > • Gas (CCGT)
 > • Nuclear
 > • Solar
-> 
+>
 > Filters report by fuel/technology type.
 
 ### Row 9: Lead Party
-**Label**: `Lead Party:`  
-**Input**: `B9`  
-**Type**: Dropdown from Parties tab  
+**Label**: `Lead Party:`
+**Input**: `B9`
+**Type**: Dropdown from Parties tab
 **Options**: 18+ lead parties + "All"
 
 **Available Parties** (see Parties tab for full list):
@@ -177,13 +177,13 @@ E_FARNB-1, E_HAWKB-1, T_HUMR-1       (multiple BMUs)
 
 **Tooltip** (hover B9):
 > Select lead party organization.
-> 
+>
 > Examples:
 > • Drax Power Limited
 > • Flexgen Battery Storage
 > • EDF Energy
 > • National Energy System Operator
-> 
+>
 > Filters report to show units operated by this party.
 
 ## 🎨 Visual Design
@@ -389,5 +389,5 @@ function onEdit(e) {
 
 ---
 
-*For support, see: generate_analysis_report.py or improve_analysis_layout.py*  
+*For support, see: generate_analysis_report.py or improve_analysis_layout.py*
 *Spreadsheet: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit*

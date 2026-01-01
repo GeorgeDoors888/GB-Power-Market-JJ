@@ -1,7 +1,7 @@
 # Analysis Dropdown System - Complete Implementation
 
-**Status**: ✅ FULLY OPERATIONAL (November 22, 2025)  
-**Version**: 2.0 - Enhanced Multi-Category System  
+**Status**: ✅ FULLY OPERATIONAL (November 22, 2025)
+**Version**: 2.0 - Enhanced Multi-Category System
 **Spreadsheet**: [GB Power Market Analysis](https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit)
 
 ## Overview
@@ -50,8 +50,8 @@ Row 11: Category: 🔍 Party Analysis (VTP/VLP Performance)
 ## 📋 12 Data Categories
 
 ### Category 1: 📊 Analytics & Derived (Balancing with Prices)
-**Source Tables**: `bmrs_boalf_complete`, `dim_party`, `bmu_registration_data`  
-**Filters Supported**: BMU, Party, Lead Party, Date  
+**Source Tables**: `bmrs_boalf_complete`, `dim_party`, `bmu_registration_data`
+**Filters Supported**: BMU, Party, Lead Party, Date
 **Use Case**: Revenue analysis, VLP performance tracking
 
 **Example Output**:
@@ -66,8 +66,8 @@ Date       | SP | BMU        | Party Name  | Volume (MWh) | Price (£/MWh) | Acc
 ---
 
 ### Category 2: ⚡ Generation & Fuel Mix (Aggregated)
-**Source Tables**: `bmrs_fuelinst_iris`, `bmrs_fuelinst` (historical)  
-**Filters Supported**: Fuel Type, Date  
+**Source Tables**: `bmrs_fuelinst_iris`, `bmrs_fuelinst` (historical)
+**Filters Supported**: Fuel Type, Date
 **Use Case**: UK energy mix analysis, renewable penetration
 
 **Example Output**:
@@ -83,8 +83,8 @@ Date       | SP | Fuel Type | Generation (MW)
 ---
 
 ### Category 3: 🔋 Individual BMU Generation (B1610)
-**Source Tables**: `bmrs_indgen`, `bmrs_indgen_iris`  
-**Filters Supported**: BMU, Date  
+**Source Tables**: `bmrs_indgen`, `bmrs_indgen_iris`
+**Filters Supported**: BMU, Date
 **Use Case**: Unit-level generation tracking, capacity factor analysis
 
 **Example Output**:
@@ -99,8 +99,8 @@ Date       | SP | BMU        | Generation (MWh)
 ---
 
 ### Category 4: 💰 Balancing Actions (MELs/MILs)
-**Source Tables**: `bmrs_mels_iris`, `bmrs_mils_iris`  
-**Filters Supported**: BMU, Date  
+**Source Tables**: `bmrs_mels_iris`, `bmrs_mils_iris`
+**Filters Supported**: BMU, Date
 **Use Case**: System operator instructions, constraint management
 
 **Example Output**:
@@ -115,8 +115,8 @@ Date       | SP | BMU        | Level From (MW) | Level To (MW)
 ---
 
 ### Category 5: 📡 System Operations (Frequency/Prices)
-**Source Tables**: `bmrs_freq`, `bmrs_costs`  
-**Filters Supported**: Date  
+**Source Tables**: `bmrs_freq`, `bmrs_costs`
+**Filters Supported**: Date
 **Use Case**: Grid stability analysis, price correlation
 
 **Example Output**:
@@ -131,8 +131,8 @@ Date       | SP | SSP (£/MWh) | SBP (£/MWh) | Avg Freq (Hz)
 ---
 
 ### Category 6: 🚧 Physical Constraints (NESO Regional)
-**Source Tables**: `neso_constraint_breakdown_2024_2025`  
-**Filters Supported**: Date  
+**Source Tables**: `neso_constraint_breakdown_2024_2025`
+**Filters Supported**: Date
 **Use Case**: Transmission cost analysis, regional bottlenecks
 
 **Example Output**:
@@ -147,8 +147,8 @@ Date       | Largest Loss (£) | Inertia (£) | Voltage (£) | Thermal (£)
 ---
 
 ### Category 7: 🔌 Interconnectors (Cross-Border)
-**Source Tables**: `bmrs_fuelinst_iris` (filtered to INT* fuel types)  
-**Filters Supported**: Date  
+**Source Tables**: `bmrs_fuelinst_iris` (filtered to INT* fuel types)
+**Filters Supported**: Date
 **Use Case**: Import/export analysis, cross-border flows
 
 **Example Output**:
@@ -164,8 +164,8 @@ Date       | SP | Fuel Type | Flow (MW)
 ---
 
 ### Category 8: 📈 Market Prices (MID/SSP/SBP)
-**Source Tables**: `bmrs_mid`  
-**Filters Supported**: Date  
+**Source Tables**: `bmrs_mid`
+**Filters Supported**: Date
 **Use Case**: Wholesale price analysis (NOT imbalance prices)
 
 **Example Output**:
@@ -180,8 +180,8 @@ Date       | SP | MID Price (£/MWh) | Volume (MWh)
 ---
 
 ### Category 9: 📉 Demand Forecasts (NESO)
-**Source Tables**: `bmrs_inddem`  
-**Filters Supported**: Date  
+**Source Tables**: `bmrs_inddem`
+**Filters Supported**: Date
 **Use Case**: Load forecasting accuracy, demand trends
 
 **Example Output**:
@@ -196,8 +196,8 @@ Date       | SP | Transmission Demand (MW)
 ---
 
 ### Category 10: 🌬️ Wind Forecasts (Generation)
-**Source Tables**: `bmrs_windfor`  
-**Filters Supported**: Date  
+**Source Tables**: `bmrs_windfor`
+**Filters Supported**: Date
 **Use Case**: Wind forecast accuracy, renewable integration
 
 **Example Output**:
@@ -212,8 +212,8 @@ Date       | SP | Forecast Wind (MW)
 ---
 
 ### Category 11: ⚠️ REMIT Messages (Unavailability)
-**Source Tables**: `bmrs_remit_unavailability`  
-**Filters Supported**: BMU (registrationCode), Date  
+**Source Tables**: `bmrs_remit_unavailability`
+**Filters Supported**: BMU (registrationCode), Date
 **Use Case**: Outage tracking, capacity availability
 
 **Example Output**:
@@ -228,8 +228,8 @@ Date       | BMU             | Type      | Fuel   | Available (MW) | Unavailable
 ---
 
 ### Category 12: 🔍 Party Analysis (VTP/VLP Performance)
-**Source Tables**: `bmrs_boalf_complete`, `dim_party`, `bmu_registration_data`  
-**Filters Supported**: Party Role (VTP/VLP), Lead Party, Date  
+**Source Tables**: `bmrs_boalf_complete`, `dim_party`, `bmu_registration_data`
+**Filters Supported**: Party Role (VTP/VLP), Lead Party, Date
 **Use Case**: Aggregator performance, trader analysis
 
 **Example Output**:
@@ -268,11 +268,11 @@ else:
 def get_query_with_filters(category, from_dt, to_dt, party_roles, gen_type='All', bmu_id='All', lead_party='All'):
     # Parse multi-select BMUs
     bmu_list = [b.strip() for b in bmu_id.split(',') if b.strip()] if bmu_id != 'All' else []
-    
+
     # Build filters
     bmu_filter = build_bmu_filter(bmu_list)
     party_filter = build_party_filter(party_roles)
-    
+
     # Category-specific queries (12 branches)
     if '📊 Analytics' in category:
         return analytics_query(from_dt, to_dt, bmu_filter, party_filter, ...)
@@ -304,9 +304,9 @@ def get_query_with_filters(category, from_dt, to_dt, party_roles, gen_type='All'
 
 ### BigQuery Tables Inventory (335 Total)
 
-**Historical (64 tables)**: `bmrs_boalf`, `bmrs_bod`, `bmrs_costs`, `bmrs_freq`, `bmrs_fuelinst`, etc.  
-**Real-Time (38 tables)**: `bmrs_*_iris` suffix (last 24-48h from IRIS)  
-**Analysis (229 tables)**: `constraint_costs_*`, `neso_constraint_*`, `wind_*`, etc.  
+**Historical (64 tables)**: `bmrs_boalf`, `bmrs_bod`, `bmrs_costs`, `bmrs_freq`, `bmrs_fuelinst`, etc.
+**Real-Time (38 tables)**: `bmrs_*_iris` suffix (last 24-48h from IRIS)
+**Analysis (229 tables)**: `constraint_costs_*`, `neso_constraint_*`, `wind_*`, etc.
 **Reference (4 tables)**: `dim_bmu_master` (NEW), `dim_party`, `bmu_registration_data`, `neso_dno_reference`
 
 ### dim_bmu_master Reference Table
@@ -421,7 +421,7 @@ Expected Result:
 ## 🔍 Troubleshooting
 
 ### Issue 1: "No Data Returned"
-**Symptoms**: Query runs successfully but 0 rows  
+**Symptoms**: Query runs successfully but 0 rows
 **Causes**:
 1. Date range outside data coverage (check with `check_table_coverage.sh`)
 2. BMU ID typo (case-sensitive: E_FARNB-1 not e_farnb-1)
@@ -433,15 +433,15 @@ Expected Result:
 ./check_table_coverage.sh bmrs_boalf_complete
 
 # Verify BMU exists
-python3 -c "from google.cloud import bigquery; client = bigquery.Client(project='inner-cinema-476211-u9'); 
-df = client.query('SELECT DISTINCT bmUnit FROM \`inner-cinema-476211-u9.uk_energy_prod.bmrs_boalf_complete\` 
+python3 -c "from google.cloud import bigquery; client = bigquery.Client(project='inner-cinema-476211-u9');
+df = client.query('SELECT DISTINCT bmUnit FROM \`inner-cinema-476211-u9.uk_energy_prod.bmrs_boalf_complete\`
 WHERE bmUnit LIKE \"%FARNB%\" LIMIT 10').to_dataframe(); print(df)"
 ```
 
 ---
 
 ### Issue 2: "BMU Not Found in Multi-Select"
-**Symptoms**: 5 BMUs entered, only 3 return data  
+**Symptoms**: 5 BMUs entered, only 3 return data
 **Expected Behavior**: This is CORRECT - not all BMUs are active in every date range
 
 **Example**:
@@ -455,7 +455,7 @@ Check row 16 summary indicator: "📊 318 ROWS | **3 BMUs** | 2025-12-01 → 202
 ---
 
 ### Issue 3: "Query Timeout"
-**Symptoms**: Query runs >30 seconds, times out  
+**Symptoms**: Query runs >30 seconds, times out
 **Causes**: 100+ BMUs in multi-select, no date filter, very wide date range
 
 **Solution**:
@@ -466,13 +466,13 @@ Check row 16 summary indicator: "📊 318 ROWS | **3 BMUs** | 2025-12-01 → 202
 ---
 
 ### Issue 4: "Wrong Column Names"
-**Symptoms**: BigQuery error "Unrecognized name: X"  
+**Symptoms**: BigQuery error "Unrecognized name: X"
 **Cause**: Table schema changed or incorrect table selected
 
 **Solution**: Check schema with:
 ```bash
-python3 -c "from google.cloud import bigquery; client = bigquery.Client(project='inner-cinema-476211-u9'); 
-table = client.get_table('inner-cinema-476211-u9.uk_energy_prod.TABLE_NAME'); 
+python3 -c "from google.cloud import bigquery; client = bigquery.Client(project='inner-cinema-476211-u9');
+table = client.get_table('inner-cinema-476211-u9.uk_energy_prod.TABLE_NAME');
 [print(f'{f.name} ({f.field_type})') for f in table.schema]"
 ```
 
@@ -504,11 +504,11 @@ table = client.get_table('inner-cinema-476211-u9.uk_energy_prod.TABLE_NAME');
 
 ## 🎯 Success Metrics (Achieved)
 
-✅ **All 12 categories operational** (100% pass rate)  
-✅ **Multi-select BMU filtering working** (tested with 5 BMUs)  
-✅ **Query performance <5s** (99th percentile)  
-✅ **2,778 BMUs available** (complete UK coverage)  
-✅ **Yellow summary indicator** (instant row count visibility)  
+✅ **All 12 categories operational** (100% pass rate)
+✅ **Multi-select BMU filtering working** (tested with 5 BMUs)
+✅ **Query performance <5s** (99th percentile)
+✅ **2,778 BMUs available** (complete UK coverage)
+✅ **Yellow summary indicator** (instant row count visibility)
 ✅ **Filter compatibility validated** (12x6 matrix tested)
 
 ---
@@ -524,9 +524,9 @@ table = client.get_table('inner-cinema-476211-u9.uk_energy_prod.TABLE_NAME');
 
 ## 👤 Contact & Support
 
-**Maintainer**: George Major (george@upowerenergy.uk)  
-**Repository**: https://github.com/GeorgeDoors888/GB-Power-Market-JJ  
-**Last Updated**: November 22, 2025  
+**Maintainer**: George Major (george@upowerenergy.uk)
+**Repository**: https://github.com/GeorgeDoors888/GB-Power-Market-JJ
+**Last Updated**: November 22, 2025
 **Script**: `generate_analysis_report.py` (enhanced query engine)
 
 ---

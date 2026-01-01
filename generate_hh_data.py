@@ -4,7 +4,7 @@ Generate HH (Half-Hourly) Profile Data for BtM Sheet
 
 Reads parameters from BtM sheet:
 - B17: Min kW
-- B18: Avg kW  
+- B18: Avg kW
 - B19: Max kW
 - B20: Supply Type (dropdown)
 
@@ -28,28 +28,28 @@ def main():
     creds = service_account.Credentials.from_service_account_file(
         'inner-cinema-credentials.json', scopes=SCOPES)
     service = build('sheets', 'v4', credentials=creds)
-    
+
     print('📊 HH DATA GENERATOR')
     print('=' * 80)
-    
+
     # 1. Read inputs from BtM sheet
     result = service.spreadsheets().values().batchGet(
         spreadsheetId=SPREADSHEET_ID,
         ranges=['BtM!B17', 'BtM!B18', 'BtM!B19', 'BtM!B20']
     ).execute()
-    
+
     values = result['valueRanges']
     min_kw = float(values[0].get('values', [[500]])[0][0])
     avg_kw = float(values[1].get('values', [[1000]])[0][0])
     max_kw = float(values[2].get('values', [[1500]])[0][0])
     supply_type = values[3].get('values', [['Commercial']])[0][0]
-    
+
     print(f'📌 BtM Parameters:')
     print(f'   Min kW: {min_kw:,.0f}')
     print(f'   Avg kW: {avg_kw:,.0f}')
     print(f'   Max kW: {max_kw:,.0f}')
     print(f'   Supply Type: {supply_type}')
-    
+
     # 2. Define realistic hourly profiles (% of max capacity)
     profiles = {
         'Domestic': {
@@ -93,13 +93,13 @@ def main():
             'weekend': [50]*24
         }
     }
-    
+
     # 3. Get/create HH DATA sheet
     spreadsheet = service.spreadsheets().get(spreadsheetId=SPREADSHEET_ID).execute()
-    hh_sheet_id = next((s['properties']['sheetId'] 
-                        for s in spreadsheet['sheets'] 
+    hh_sheet_id = next((s['properties']['sheetId']
+                        for s in spreadsheet['sheets']
                         if s['properties']['title'] == 'HH DATA'), None)
-    
+
     if hh_sheet_id:
         print('🗑️  Clearing old HH DATA...')
         # Resize to 20k rows
@@ -115,7 +115,7 @@ def main():
                 }
             }]}
         ).execute()
-        
+
         # Clear
         service.spreadsheets().values().clear(
             spreadsheetId=SPREADSHEET_ID,
@@ -136,32 +136,32 @@ def main():
             }]}
         ).execute()
         print('✅ Sheet created')
-    
+
     # 4. Generate 1 year of HH data
     start_date = datetime(2024, 1, 1)
     hh_data = [['Timestamp', 'Settlement Period', 'Day Type', 'Demand (kW)', 'Profile %']]
-    
+
     profile = profiles.get(supply_type, profiles['Commercial'])
-    
+
     for day in range(365):
         current_date = start_date + timedelta(days=day)
         is_weekend = current_date.weekday() >= 5
         day_type = 'Weekend' if is_weekend else 'Weekday'
         pattern = profile['weekend'] if is_weekend else profile['weekday']
-        
+
         for sp in range(1, 49):  # 48 settlement periods per day
             hour = (sp - 1) // 2
-            
+
             # Base profile % with random variation
             profile_pct = pattern[hour] + random.uniform(-5, 5)
             profile_pct = max(0, min(100, profile_pct))
-            
+
             # Scale to kW range: profile % directly maps between Min and Max
             # 0% = min_kw, 100% = max_kw (avg_kw is ignored)
             demand_kw = min_kw + (profile_pct / 100.0) * (max_kw - min_kw)
-            
+
             timestamp = current_date.strftime('%Y-%m-%d') + f' {hour:02d}:{30 if sp % 2 == 0 else "00"}'
-            
+
             hh_data.append([
                 timestamp,
                 sp,
@@ -169,9 +169,9 @@ def main():
                 round(demand_kw, 2),
                 round(profile_pct, 1)
             ])
-    
+
     print(f'✅ Generated {len(hh_data)-1:,} HH periods (365 days)')
-    
+
     # 5. Upload in batches (5000 rows per batch)
     for i in range(0, len(hh_data), 5000):
         batch = hh_data[i:i+5000]
@@ -182,11 +182,11 @@ def main():
             body={'values': batch}
         ).execute()
         print(f'📤 Uploaded rows {i+1:,} to {i+len(batch):,}')
-    
+
     # 6. Calculate actual average
     total_demand = sum(row[3] for row in hh_data[1:])
     actual_avg = total_demand / len(hh_data[1:])
-    
+
     print('\n' + '=' * 80)
     print('✅ COMPLETE - HH DATA SHEET READY')
     print(f'\n📊 Summary:')

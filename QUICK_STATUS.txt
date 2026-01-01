@@ -1,0 +1,43 @@
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                     WEATHER DATA DOWNLOAD - QUICK STATUS                     ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+✅ COMPLETED
+  • Packages installed (cdsapi, copernicusmarine, xarray)
+  • CDS credentials configured and tested
+  • ERA5 download RUNNING (PID 3148930)
+  • Scripts created (download + ingestion)
+
+🔄 IN PROGRESS  
+  • ERA5: Downloading 246 files (1-12 hours)
+    Monitor: tail -f era5_download.log
+    Progress: ls era5_points/*.parquet | wc -l
+
+⏳ TODO (In Order)
+  1. Set CMEMS credentials (see SETUP_CMEMS_CREDENTIALS.md)
+  2. Run: python3 download_cmems_waves_uk.py
+  3. Run: python3 ingest_era5_to_bigquery.py
+  4. Run: python3 ingest_cmems_waves_to_bigquery.py
+  5. Create spatial analysis views (SQL in NEXT_STEPS_EXECUTION_STATUS.md)
+
+📊 EXPECTED OUTPUT
+  • ERA5: 2.15M rows → uk_energy_prod.era5_turbine_hourly
+  • CMEMS: 500k-2M rows → uk_energy_prod.cmems_waves_uk_grid
+  • Views: era5_to_wind_farms, waves_to_wind_farms, combined_weather_waves
+
+⏱️  TIMELINE
+  Now: ERA5 downloading (0/246 files)
+  +1-12h: ERA5 complete
+  +0.5-4h: CMEMS download (after you set credentials)
+  +30min: BigQuery ingestion
+  Total: 2-17 hours
+
+📖 DOCUMENTATION
+  • Full details: NEXT_STEPS_EXECUTION_STATUS.md
+  • Download plan: WEATHER_WAVE_DATA_DOWNLOAD_PLAN.md
+  • CMEMS setup: SETUP_CMEMS_CREDENTIALS.md
+
+═══════════════════════════════════════════════════════════════════════════════
+Last updated: 31 Dec 2025 11:24 UTC
+Check anytime: cat QUICK_STATUS.txt
+═══════════════════════════════════════════════════════════════════════════════

@@ -1,5 +1,5 @@
 # Report Generation System Diagnosis
-**Date**: December 31, 2025  
+**Date**: December 31, 2025
 **Status**: ❌ ISSUE IDENTIFIED - Category Mismatch
 
 ---
@@ -18,7 +18,7 @@ User sees manual terminal command message instead of automatic report generation
 
 ### Issue 1: No Apps Script Button ✅ FIXED
 
-**Problem**: User must manually run `python3 generate_analysis_report.py`  
+**Problem**: User must manually run `python3 generate_analysis_report.py`
 **Solution**: Created `analysis_report_generator.gs` with Apps Script menu
 
 **Installation Steps**:
@@ -107,11 +107,11 @@ Add new category checks to `generate_analysis_report.py`:
 elif 'VLP Revenue' in category or 'VLP Revenue Analysis' in category:
     # Use boalf_with_prices for VLP revenue calculation
     # Filter to VLP operators from B10
-    
+
 elif 'Curtailment' in category or 'Curtailment Analysis' in category:
     # Use REMIT unavailability data + wind forecast vs actual
     # Calculate curtailment = forecast - actual
-    
+
 elif 'Settlement' in category or 'Settlement (DISBSAD)' in category:
     # Use bmrs_disbsad table for settlement prices
 ```
@@ -136,63 +136,63 @@ After fixing category mismatch:
 ## 📊 Script Categories Explained
 
 ### 1. 📊 Analytics & Derived (Balancing with Prices)
-**Tables**: `bmrs_boalf_complete`  
-**Output**: date, settlementPeriod, bmUnit, party_name, volume_mwh, price_gbp_mwh, acceptance_count  
+**Tables**: `bmrs_boalf_complete`
+**Output**: date, settlementPeriod, bmUnit, party_name, volume_mwh, price_gbp_mwh, acceptance_count
 **Use**: VLP revenue analysis, BOD acceptances with prices
 
 ### 2. ⚡ Generation & Fuel Mix (Aggregated)
-**Tables**: `bmrs_fuelinst_iris`  
-**Output**: date, settlementPeriod, fuelType, generation_mw  
+**Tables**: `bmrs_fuelinst_iris`
+**Output**: date, settlementPeriod, fuelType, generation_mw
 **Use**: Fuel mix breakdown, generation type analysis
 
 ### 3. 🔋 Individual BMU Generation (B1610)
-**Tables**: `bmrs_indgen`  
-**Output**: date, settlementPeriod, bmUnit, generation_mwh  
+**Tables**: `bmrs_indgen`
+**Output**: date, settlementPeriod, bmUnit, generation_mwh
 **Use**: Individual unit performance tracking
 
 ### 4. 💰 Balancing Actions (MELs/MILs)
-**Tables**: `bmrs_mels_iris`, `bmrs_mils_iris`  
-**Output**: date, settlementPeriod, bmUnit, levelFrom, levelTo  
+**Tables**: `bmrs_mels_iris`, `bmrs_mils_iris`
+**Output**: date, settlementPeriod, bmUnit, levelFrom, levelTo
 **Use**: Export/import limits, balancing actions
 
 ### 5. 📡 System Operations (Frequency/Prices)
-**Tables**: `bmrs_freq`, `bmrs_costs`  
-**Output**: date, settlementPeriod, ssp, sbp, avg_freq  
+**Tables**: `bmrs_freq`, `bmrs_costs`
+**Output**: date, settlementPeriod, ssp, sbp, avg_freq
 **Use**: Frequency response, system prices
 
 ### 6. 🚧 Physical Constraints (NESO Regional)
-**Tables**: `neso_constraint_breakdown_2024_2025`  
-**Output**: date, largest_loss_cost, inertia_cost, voltage_cost, thermal_cost  
+**Tables**: `neso_constraint_breakdown_2024_2025`
+**Output**: date, largest_loss_cost, inertia_cost, voltage_cost, thermal_cost
 **Use**: Constraint cost analysis
 
 ### 7. 🔌 Interconnectors (Cross-Border)
-**Tables**: `bmrs_fuelinst_iris` (fuelType LIKE 'INT%')  
-**Output**: date, settlementPeriod, fuelType, flow_mw  
+**Tables**: `bmrs_fuelinst_iris` (fuelType LIKE 'INT%')
+**Output**: date, settlementPeriod, fuelType, flow_mw
 **Use**: Interconnector flow analysis
 
 ### 8. 📈 Market Prices (MID/SSP/SBP)
-**Tables**: `bmrs_mid`  
-**Output**: date, settlementPeriod, mid_price_gbp_mwh, volume_mwh  
+**Tables**: `bmrs_mid`
+**Output**: date, settlementPeriod, mid_price_gbp_mwh, volume_mwh
 **Use**: Market pricing analysis
 
 ### 9. 📉 Demand Forecasts (NESO)
-**Tables**: `bmrs_inddem`  
-**Output**: date, settlementPeriod, demand_mw  
+**Tables**: `bmrs_inddem`
+**Output**: date, settlementPeriod, demand_mw
 **Use**: Demand forecast vs actual
 
 ### 10. 🌬️ Wind Forecasts (Generation)
-**Tables**: `bmrs_windfor`  
-**Output**: date, settlementPeriod, forecast_wind_mw  
+**Tables**: `bmrs_windfor`
+**Output**: date, settlementPeriod, forecast_wind_mw
 **Use**: Wind forecasting accuracy
 
 ### 11. ⚠️ REMIT Messages (Unavailability)
-**Tables**: `bmrs_remit_unavailability`  
-**Output**: date, bmUnit, unavailabilityType, fuelType, availableCapacity, unavailableCapacity  
+**Tables**: `bmrs_remit_unavailability`
+**Output**: date, bmUnit, unavailabilityType, fuelType, availableCapacity, unavailableCapacity
 **Use**: Curtailment analysis, unavailability tracking
 
 ### 12. 🔍 Party Analysis (VTP/VLP Performance)
-**Tables**: `bmrs_boalf_complete` + `dim_party`  
-**Output**: date, party_name, bmu_count, total_volume_mwh, avg_price_gbp_mwh  
+**Tables**: `bmrs_boalf_complete` + `dim_party`
+**Output**: date, party_name, bmu_count, total_volume_mwh, avg_price_gbp_mwh
 **Use**: Lead party performance comparison
 
 ---
@@ -225,8 +225,8 @@ After fixing category mismatch:
 
 ---
 
-**Status**: ⏳ Awaiting category dropdown fix  
-**Next**: Update DropdownData column E, then test report generation  
+**Status**: ⏳ Awaiting category dropdown fix
+**Next**: Update DropdownData column E, then test report generation
 **Timeline**: 20 minutes to full working state
 
 ---

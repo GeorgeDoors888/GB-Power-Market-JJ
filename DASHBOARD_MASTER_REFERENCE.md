@@ -1,9 +1,9 @@
 # GB Power Market Dashboard - Complete Technical Reference
 
-**Dashboard URL**: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit?usp=sharing  
-**Apps Script ID**: `1b2dOZ4lw-zJvKdZ4MaJ48f1NR7ewCtUbZOGWGb3n8O7P-kgnUsThs980`  
-**API**: Google Sheets API v4  
-**Sheet Name**: "Live Dashboard v2"  
+**Dashboard URL**: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit?usp=sharing
+**Apps Script ID**: `1b2dOZ4lw-zJvKdZ4MaJ48f1NR7ewCtUbZOGWGb3n8O7P-kgnUsThs980`
+**API**: Google Sheets API v4
+**Sheet Name**: "Live Dashboard v2"
 **Last Updated**: December 30, 2025
 
 ---
@@ -66,8 +66,8 @@
   /usr/bin/python3 update_all_dashboard_sections_fast.py >> logs/dashboard_auto_update.log 2>&1
 ```
 
-**Script**: `update_all_dashboard_sections_fast.py`  
-**Technology**: Direct Google Sheets API v4 (298x faster than gspread)  
+**Script**: `update_all_dashboard_sections_fast.py`
+**Technology**: Direct Google Sheets API v4 (298x faster than gspread)
 **Updates**:
 - Generation Mix (A13-D22)
 - Demand metrics
@@ -98,8 +98,8 @@ def update_generation_mix():
   /usr/bin/python3 update_live_metrics.py >> logs/unified_update.log 2>&1
 ```
 
-**Script**: `update_live_metrics.py` (2599 lines)  
-**Technology**: Google Sheets API v4 + BigQuery  
+**Script**: `update_live_metrics.py` (2599 lines)
+**Technology**: Google Sheets API v4 + BigQuery
 **Updates**:
 - **Data_Hidden sheet**: 48 settlement periods of historical data
 - **Live Dashboard v2**: All dynamic sparklines, KPIs, spreads
@@ -113,16 +113,16 @@ def generate_gs_sparkline_formula(data, options, add_spacing=True):
     """
     Generates native Google Sheets =SPARKLINE() formula with correctly formatted options.
     Shows only current settlement periods (1 to current), not padded to 48.
-    
+
     VERIFIED WORKING VERSION (from test_sparkline_formula.py)
     """
     clean_data = [item if isinstance(item, (int, float)) else 0 for item in data]
-    
+
     # Disable spacing for line charts (looks choppy)
     charttype = options.get('charttype', 'column')
     if charttype == 'line':
         add_spacing = False
-    
+
     # Build options string: {"option1","value1";"option2","value2"}
     option_pairs = []
     for key, value in options.items():
@@ -130,9 +130,9 @@ def generate_gs_sparkline_formula(data, options, add_spacing=True):
             option_pairs.append(f'"{key}","{value}"')
         else:
             option_pairs.append(f'"{key}",{value}')
-    
+
     options_string = ";".join(option_pairs)
-    
+
     # Final formula: =SPARKLINE({data},{options})
     formula = f'=SPARKLINE({{{",".join(map(str, clean_data))}}},{{{options_string}}})'
     return formula
@@ -163,16 +163,16 @@ def generate_gs_sparkline_with_let(data, color, charttype="column", negcolor=Non
     Generates =LET() formula with SPARKLINE that auto-scales using MIN/MAX with 15% padding.
     Better visual scaling than hardcoded ymin/ymax values.
     """
-    clean_data = [float(item) if isinstance(item, (int, float)) and item is not None else 0 
+    clean_data = [float(item) if isinstance(item, (int, float)) and item is not None else 0
                   for item in data]
     data_str = ",".join(map(str, clean_data))
-    
+
     # LET formula with 15% padding
     formula = f'''=IFERROR(LET(r,{{{data_str}}},x,FILTER(r,(r<>0)*(r<>"")),lo,MIN(x),hi,MAX(x),span,hi-lo,pad,MAX(1,span*0.15),SPARKLINE(IF((r=0)+(r=""),NA(),r),{{"charttype","{charttype}";"axis",true;"axiscolor","#999";"color","{color}"'''
-    
+
     if negcolor:
         formula += f''';"negcolor","{negcolor}"'''
-    
+
     formula += ''';"empty","ignore";"ymin",lo-pad;"ymax",hi+pad}})),"")'''
     return formula
 ```
@@ -196,11 +196,11 @@ function displayInterconnectors(sheet, data) {
   // Col G: Connection Name
   // Col H: Sparkline Graphic (DO NOT OVERWRITE - managed by Python)
   // Col I: Current Flow Value (MW)
-  
+
   // Only write Names to G - Python script manages sparklines in H
   const v2InterData = data.interconnectors.map(row => [row[0]]); // G only
   sheet.getRange(13, 7, v2InterData.length, 1).setValues(v2InterData);
-  
+
   // Note: Sparklines in column H are managed by Python script update_live_metrics.py
   // which creates time-series sparklines with proper positive/negative coloring
   // DO NOT write to column H here to avoid overwriting them
@@ -352,10 +352,10 @@ Live Dashboard v2 Sheet
 function applyWindTrafficLights() {
   var sheet = SpreadsheetApp.getActiveSpreadsheet()
     .getSheetByName("Live Dashboard v2");
-  
+
   // Wind change % column (D27:D33)
   var range = sheet.getRange("D27:D33");
-  
+
   var rules = [
     // 🔴 Critical (60%+)
     SpreadsheetApp.newConditionalFormatRule()
@@ -364,7 +364,7 @@ function applyWindTrafficLights() {
       .setBold(true)
       .setRanges([range])
       .build(),
-    
+
     // 🟡 Warning (40-60%)
     SpreadsheetApp.newConditionalFormatRule()
       .whenNumberBetween(40, 59)
@@ -372,7 +372,7 @@ function applyWindTrafficLights() {
       .setBold(true)
       .setRanges([range])
       .build(),
-    
+
     // 🟡 Caution (20-40%)
     SpreadsheetApp.newConditionalFormatRule()
       .whenNumberBetween(20, 39)
@@ -380,10 +380,10 @@ function applyWindTrafficLights() {
       .setRanges([range])
       .build()
   ];
-  
+
   var existingRules = sheet.getConditionalFormatRules();
   sheet.setConditionalFormatRules(existingRules.concat(rules));
-  
+
   Logger.log("✅ Traffic lights applied to wind alerts");
 }
 ```
@@ -545,7 +545,7 @@ grep -n "getRange(13, 8" clasp-gb-live-2/src/Data.gs
 
 ---
 
-**Last Updated**: December 30, 2025  
-**Maintained By**: AI Coding Agent  
-**Status**: ✅ Production (automated updates running)  
+**Last Updated**: December 30, 2025
+**Maintained By**: AI Coding Agent
+**Status**: ✅ Production (automated updates running)
 **Traffic Lights**: ⏳ Pending (Apps Script deployment needed)

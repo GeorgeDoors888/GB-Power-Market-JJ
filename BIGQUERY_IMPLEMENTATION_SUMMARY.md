@@ -250,7 +250,7 @@ Industrial: 50 MW
 Storage: 5 MW
 
 -- Query specific profile
-SELECT * FROM table 
+SELECT * FROM table
 WHERE supply_type = 'Commercial'
   AND generated_at = (SELECT MAX(generated_at) WHERE supply_type = 'Commercial')
 ```
@@ -258,13 +258,13 @@ WHERE supply_type = 'Commercial'
 ### 4. SQL Analysis
 ```sql
 -- JOIN with other BigQuery tables
-SELECT 
+SELECT
   h.timestamp,
   h.demand_kw,
   c.systemSellPrice as imbalance_price,
   h.demand_kw * c.systemSellPrice as revenue
 FROM hh_data_btm_generated h
-JOIN bmrs_costs c 
+JOIN bmrs_costs c
   ON DATE(h.timestamp) = DATE(c.settlementDate)
   AND h.settlement_period = c.settlementPeriod
 ```
@@ -340,12 +340,12 @@ time python3 btm_dno_lookup.py
 
 ## 🏆 Success Metrics
 
-✅ **Performance**: 7 minutes → 10 seconds = 70x faster  
-✅ **Storage**: 17,520-row sheet eliminated from workbook  
-✅ **Scalability**: Can handle millions of rows with same performance  
-✅ **Maintainability**: Auto-cleanup prevents data accumulation  
-✅ **Flexibility**: SQL queries enable advanced analysis  
-✅ **Reliability**: BigQuery uptime 99.99% SLA  
+✅ **Performance**: 7 minutes → 10 seconds = 70x faster
+✅ **Storage**: 17,520-row sheet eliminated from workbook
+✅ **Scalability**: Can handle millions of rows with same performance
+✅ **Maintainability**: Auto-cleanup prevents data accumulation
+✅ **Flexibility**: SQL queries enable advanced analysis
+✅ **Reliability**: BigQuery uptime 99.99% SLA
 
 ---
 
@@ -385,9 +385,9 @@ time python3 btm_dno_lookup.py
 
 ---
 
-**Implementation Date**: December 30, 2025  
-**Status**: ✅ Complete - Ready for Production  
-**Expected Impact**: 70x performance improvement (7 min → 10 sec)  
+**Implementation Date**: December 30, 2025
+**Status**: ✅ Complete - Ready for Production
+**Expected Impact**: 70x performance improvement (7 min → 10 sec)
 **Maintainer**: George Major (george@upowerenergy.uk)
 
 ---

@@ -1,7 +1,7 @@
 # Analysis Sheet Dropdown System - Comprehensive Design
 
-**Date**: December 30, 2025  
-**Status**: 🎯 Design Phase  
+**Date**: December 30, 2025
+**Status**: 🎯 Design Phase
 **Goal**: Enable structured search across ALL Elexon/NESO data with multi-select, BMU-level filtering, and advanced capabilities
 
 ---
@@ -10,9 +10,9 @@
 
 ### Available Data (335 BigQuery Tables)
 
-**Historical Tables (64)**: bmrs_* prefix, 2020-present  
-**Real-Time Tables (38)**: *_iris suffix, last 24-48h  
-**Reference Tables (4)**: dim_party, dim_bmu, bmu_registration_data, neso_dno_reference  
+**Historical Tables (64)**: bmrs_* prefix, 2020-present
+**Real-Time Tables (38)**: *_iris suffix, last 24-48h
+**Reference Tables (4)**: dim_party, dim_bmu, bmu_registration_data, neso_dno_reference
 **Analysis Tables (229)**: constraints, wind forecasts, interconnectors, REMIT, custom views
 
 ### Key Data Categories
@@ -70,14 +70,14 @@
 
 ```
 Row 1:  [ANALYSIS]
-Row 2:  
+Row 2:
 Row 3:  ━━━━ FILTERS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 Row 4:  From Date: [DD/MM/YYYY]  |  To Date: [DD/MM/YYYY]  |  Quick Select: [Last 7 Days ▼]
-Row 5:  
+Row 5:
 Row 6:  BMU/Station Search: [Type to search 2000+ BMUs...]  |  Selected: [3 BMUs, click to view ▼]
 Row 7:  Party Role: [All ▼ | VTP | VLP | Production | Consumption | etc.]  |  Multi-select: [Yes]
 Row 8:  Lead Party: [All ▼ | Flexitricity | EDF | Statkraft | etc.]  |  Multi-select: [Yes]
-Row 9:  
+Row 9:
 Row 10: Fuel Type: [All ▼ | CCGT | WIND | NUCLEAR | etc.]  |  Location/Region: [All ▼ | Scotland | Wales | etc.]
 Row 11: Constraint Type: [All ▼ | Transmission | Distribution | Outage | etc.]
 Row 12:
@@ -90,8 +90,8 @@ Row 15: [Generate Report Button] | Data Available: [2020-01-01 → 2025-12-30 (1
 
 #### 1. Date Range (B4:F4)
 
-**From Date (B4)**: DD/MM/YYYY text input with validation  
-**To Date (D4)**: DD/MM/YYYY text input with validation  
+**From Date (B4)**: DD/MM/YYYY text input with validation
+**To Date (D4)**: DD/MM/YYYY text input with validation
 **Quick Select (F4)**: Dropdown
 - Last 7 Days
 - Last 30 Days
@@ -102,19 +102,19 @@ Row 15: [Generate Report Button] | Data Available: [2020-01-01 → 2025-12-30 (1
 
 #### 2. BMU/Station Search (B6:F6)
 
-**Search Box (B6)**: Text input with autocomplete  
+**Search Box (B6)**: Text input with autocomplete
 - Search by: BMU ID (E_*, M_*, T_*, I_*, D_*, 2__*)
 - Search by: Station name ("Hornsea", "Drax", etc.)
 - Search by: Party name ("Flexitricity", "EDF", etc.)
 - Fuzzy matching enabled
 
-**Selected BMUs (F6)**: Multi-select display  
+**Selected BMUs (F6)**: Multi-select display
 - Shows count: "3 BMUs selected"
 - Click to see list in popup
 - Comma-separated format: "E_FARNB-1, E_HAWKB-1, 2__FFSEN007"
 - "Select All" and "Clear All" buttons
 
-**Data Source**: `bmu_registration_data` + `dim_bmu`  
+**Data Source**: `bmu_registration_data` + `dim_bmu`
 - 2000+ BMUs available
 - Includes: BMU ID, station name, party, fuel type, capacity, location
 
@@ -130,12 +130,12 @@ Row 15: [Generate Report Button] | Data Available: [2020-01-01 → 2025-12-30 (1
 - **Interconnector** (I_* international links)
 - **Storage** (BESS/pumped storage units)
 
-**Multi-Select**: Yes (comma-separated)  
+**Multi-Select**: Yes (comma-separated)
 **Data Source**: `dim_party` + BMU naming patterns
 
 #### 4. Lead Party (B8)
 
-**Options**: Dynamic list from `dim_party` + `bmu_registration_data`  
+**Options**: Dynamic list from `dim_party` + `bmu_registration_data`
 - All (default)
 - Top 20 parties by BMU count:
   - Flexitricity Limited (59 BMUs, VLP)
@@ -145,7 +145,7 @@ Row 15: [Generate Report Button] | Data Available: [2020-01-01 → 2025-12-30 (1
   - GridBeyond (26 BMUs, VLP)
   - ... (50+ total)
 
-**Multi-Select**: Yes  
+**Multi-Select**: Yes
 **Search**: Enabled (fuzzy matching)
 
 #### 5. Fuel Type (B10)
@@ -159,7 +159,7 @@ Row 15: [Generate Report Button] | Data Available: [2020-01-01 → 2025-12-30 (1
 - **Storage**: PS (pumped storage)
 - **Other**: OTHER
 
-**Multi-Select**: Yes  
+**Multi-Select**: Yes
 **Applicability**: Fuel mix categories only
 
 #### 6. Location/Region (D10)
@@ -171,7 +171,7 @@ Row 15: [Generate Report Button] | Data Available: [2020-01-01 → 2025-12-30 (1
 - **Constraint Zones**: B4, B7a, B7b, B7c, B9, etc. (from NESO data)
 - **Offshore Wind Zones**: Dogger Bank, Hornsea, Moray Firth, Irish Sea, etc.
 
-**Multi-Select**: Yes  
+**Multi-Select**: Yes
 **Data Source**: `neso_dno_reference` + `offshore_wind_farms`
 
 #### 7. Constraint Type (B11)
@@ -185,7 +185,7 @@ Row 15: [Generate Report Button] | Data Available: [2020-01-01 → 2025-12-30 (1
 - **Thermal Overload**
 - **System Frequency**
 
-**Multi-Select**: Yes  
+**Multi-Select**: Yes
 **Applicability**: Physical Constraints category only
 
 #### 8. Report Category (B14)
@@ -339,7 +339,7 @@ WHERE bmUnit LIKE '2__AFLEX%'
 ### Phase 2: Reference Tables (Todo #6)
 - Create `dim_bmu_master` table:
   ```sql
-  SELECT 
+  SELECT
     r.elexonbmunit as bmu_id,
     r.bmunitname as station_name,
     r.leadpartyname as party_name,
@@ -391,7 +391,7 @@ WITH bmu_parties AS (
   WHERE p.is_vlp = TRUE
   AND p.party_name IN ('Flexitricity Limited', 'GridBeyond')
 )
-SELECT 
+SELECT
   CAST(b.settlementDate AS DATE) as date,
   b.settlementPeriod,
   b.bmUnit,
@@ -415,7 +415,7 @@ ORDER BY date, b.settlementPeriod
 
 **Generated Query**:
 ```sql
-SELECT 
+SELECT
   CAST(f.startTime AS DATE) as date,
   f.settlementPeriod,
   wf.wind_farm_name,
@@ -424,8 +424,8 @@ SELECT
   w.generation_actual_mw
 FROM generation_forecast_wind f
 JOIN wind_farm_to_bmu wf ON f.bmUnit = wf.bmUnit
-LEFT JOIN wind_outturn_sp w 
-  ON f.settlementDate = w.settlementDate 
+LEFT JOIN wind_outturn_sp w
+  ON f.settlementDate = w.settlementDate
   AND f.settlementPeriod = w.settlementPeriod
   AND f.bmUnit = w.bmUnit
 WHERE CAST(f.startTime AS DATE) >= '2025-12-15'
@@ -443,7 +443,7 @@ ORDER BY date, f.settlementPeriod, wf.wind_farm_name
 
 **Generated Query**:
 ```sql
-SELECT 
+SELECT
   date,
   dno_region,
   constraint_type,
@@ -467,7 +467,7 @@ ORDER BY date, dno_region
 
 **Generated Query**:
 ```sql
-SELECT 
+SELECT
   CAST(settlementDate AS DATE) as date,
   settlementPeriod,
   bmUnit,
@@ -505,7 +505,7 @@ ORDER BY date, settlementPeriod, bmUnit
 
 ---
 
-**Document**: ANALYSIS_DROPDOWN_DESIGN.md  
-**Status**: 🎯 Ready for Implementation  
-**Next**: Todo #4 - Design Analysis Sheet Layout v2  
+**Document**: ANALYSIS_DROPDOWN_DESIGN.md
+**Status**: 🎯 Ready for Implementation
+**Next**: Todo #4 - Design Analysis Sheet Layout v2
 **ETA**: 2-3 days for full implementation

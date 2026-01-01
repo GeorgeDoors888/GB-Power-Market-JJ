@@ -8,7 +8,7 @@
 **Schema**:
 - `timestamp` (DATETIME) - HH period timestamp
 - `settlement_period` (INT64) - 1-48
-- `day_type` (STRING) - Weekday/Weekend  
+- `day_type` (STRING) - Weekday/Weekend
 - `demand_kw` (FLOAT64) - Demand in kW
 - `profile_pct` (FLOAT64) - Profile percentage
 - `supply_type` (STRING) - Commercial/Industrial/etc
@@ -183,7 +183,7 @@ WHERE generated_at < TIMESTAMP_SUB(CURRENT_TIMESTAMP(), INTERVAL 90 DAY);
 ### View Current Data
 ```sql
 -- Check what's in the table
-SELECT 
+SELECT
   supply_type,
   MIN(timestamp) as first_period,
   MAX(timestamp) as last_period,
@@ -219,7 +219,7 @@ ORDER BY timestamp;
 3. Verify table: `SELECT COUNT(*) FROM inner-cinema-476211-u9.uk_energy_prod.hh_data_btm_generated`
 
 ### Issue: "HH DATA sheet not found"
-**Cause**: Sheet was already deleted after upload  
+**Cause**: Sheet was already deleted after upload
 **Solution**: Regenerate HH DATA using button in Google Sheets
 
 ### Issue: btm_dno_lookup.py still slow
@@ -297,7 +297,7 @@ ORDER BY created DESC;
 
 ---
 
-**Implementation Date**: December 30, 2025  
-**Status**: ✅ Complete and ready to use  
+**Implementation Date**: December 30, 2025
+**Status**: ✅ Complete and ready to use
 **Expected Performance**: 70x faster (7 min → 10 sec)
 

@@ -1,7 +1,7 @@
 # Google Sheets Dashboard - Update System Documentation
 
-**Dashboard URL**: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit  
-**Sheet Name**: "Live Dashboard v2"  
+**Dashboard URL**: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit
+**Sheet Name**: "Live Dashboard v2"
 **Last Updated**: December 30, 2025
 
 ---
@@ -52,8 +52,8 @@
 */5 * * * * cd /home/george/GB-Power-Market-JJ && \
   /usr/bin/python3 update_all_dashboard_sections_fast.py >> logs/dashboard_auto_update.log 2>&1
 ```
-**Script**: `update_all_dashboard_sections_fast.py`  
-**Updates**: Generation mix, demand, interconnectors, wind, outages, KPIs  
+**Script**: `update_all_dashboard_sections_fast.py`
+**Updates**: Generation mix, demand, interconnectors, wind, outages, KPIs
 **Speed**: 298x faster than gspread (uses direct Sheets API v4)
 
 #### 2. **Comprehensive Updates** (Every 10 minutes, staggered)
@@ -61,7 +61,7 @@
 1,11,21,31,41,51 * * * * cd /home/george/GB-Power-Market-JJ && \
   /usr/bin/python3 update_live_metrics.py >> logs/unified_update.log 2>&1
 ```
-**Script**: `update_live_metrics.py`  
+**Script**: `update_live_metrics.py`
 **Updates**:
 - Data_Hidden sheet: Fuel generation, interconnectors, market metrics (48 settlement periods)
 - Live Dashboard v2: IRIS freshness, KPIs, market metrics, spreads
@@ -261,7 +261,7 @@ You wanted a **traffic light alert system** with:
 # Debug and retry formatting
 python3 apply_traffic_light_formatting.py
 ```
-**Issue**: Google Sheets API timing out on `.get()` calls  
+**Issue**: Google Sheets API timing out on `.get()` calls
 **Fix**: May need network troubleshooting or retry logic
 
 ### **Option 2: Apps Script (Fastest)**
@@ -271,10 +271,10 @@ Create Apps Script directly in Google Sheets to apply conditional formatting:
 function applyWindTrafficLights() {
   var sheet = SpreadsheetApp.getActiveSpreadsheet()
     .getSheetByName("Live Dashboard v2");
-  
+
   // Wind change alerts (A27-A33, Column D = Change %)
   var changeRange = sheet.getRange("D27:D33");
-  
+
   // Critical: 60%+ (RED)
   var criticalRule = SpreadsheetApp.newConditionalFormatRule()
     .whenNumberGreaterThanOrEqualTo(60)
@@ -282,7 +282,7 @@ function applyWindTrafficLights() {
     .setBold(true)
     .setRanges([changeRange])
     .build();
-    
+
   // Warning: 40-60% (ORANGE)
   var warningRule = SpreadsheetApp.newConditionalFormatRule()
     .whenNumberBetween(40, 59)
@@ -290,18 +290,18 @@ function applyWindTrafficLights() {
     .setBold(true)
     .setRanges([changeRange])
     .build();
-    
+
   // Caution: 20-40% (YELLOW)
   var cautionRule = SpreadsheetApp.newConditionalFormatRule()
     .whenNumberBetween(20, 39)
     .setBackground("#FFEB3B")
     .setRanges([changeRange])
     .build();
-  
+
   var rules = sheet.getConditionalFormatRules();
   rules.push(criticalRule, warningRule, cautionRule);
   sheet.setConditionalFormatRules(rules);
-  
+
   Logger.log("✅ Traffic lights applied");
 }
 ```

@@ -106,12 +106,12 @@ print(f"📊 Report: {report_category}\n")
 # Build query with enhanced filters
 def get_query_with_filters(category, from_dt, to_dt, party_roles, gen_type='All', bmu_id='All', lead_party='All'):
     """Build BigQuery query for 12 data categories with multi-select BMU support"""
-    
+
     # Parse multi-select BMU IDs (comma-separated)
     bmu_list = []
     if bmu_id and bmu_id != 'All':
         bmu_list = [b.strip() for b in bmu_id.split(',') if b.strip()]
-    
+
     # Build BMU filter for single or multiple IDs
     bmu_filter = ""
     if bmu_list:
@@ -120,12 +120,12 @@ def get_query_with_filters(category, from_dt, to_dt, party_roles, gen_type='All'
         else:
             bmu_in_clause = "', '".join(bmu_list)
             bmu_filter = f"AND bmUnit IN ('{bmu_in_clause}')"
-    
+
     # Build lead party filter
     lead_party_filter = ""
     if lead_party and lead_party != 'All':
         lead_party_filter = f"AND party_name LIKE '%{lead_party}%'"
-    
+
     # Build party role filter
     party_filter = ""
     if 'All' not in party_roles and party_roles:
@@ -145,21 +145,21 @@ def get_query_with_filters(category, from_dt, to_dt, party_roles, gen_type='All'
                 party_conditions.append("bmUnit LIKE 'I_%'")
             elif role == 'Storage':
                 party_conditions.append("(bmUnit LIKE '%STORAGE%' OR bmUnit LIKE '%BESS%')")
-        
+
         if party_conditions:
             party_filter = f"AND ({' OR '.join(party_conditions)})"
-    
+
     # ==========================
     # CATEGORY 1: Analytics & Derived (Balancing with Prices)
     # ==========================
     if '📊 Analytics' in category or 'Analytics & Derived' in category:
         # Need party lookup for VTP/VLP filtering
         needs_party = any(role in ['VTP', 'VLP'] for role in party_roles) or lead_party != 'All'
-        
+
         if needs_party:
             bmu_filter_joined = bmu_filter.replace("bmUnit", "b.bmUnit")
             party_filter_joined = party_filter.replace("is_vtp", "bp.is_vtp").replace("is_vlp", "bp.is_vlp").replace("bmUnit", "b.bmUnit")
-            
+
             return f"""
             WITH bmu_parties AS (
                 SELECT DISTINCT r.elexonbmunit as bmUnit, p.party_name, p.is_vlp, p.is_vtp
@@ -188,13 +188,13 @@ def get_query_with_filters(category, from_dt, to_dt, party_roles, gen_type='All'
             GROUP BY date, settlementPeriod, bmUnit
             ORDER BY date, settlementPeriod LIMIT 10000
             """
-    
+
     # ==========================
     # CATEGORY 2: Generation & Fuel Mix (Aggregated)
     # ==========================
     elif '⚡ Generation' in category or 'Generation & Fuel Mix' in category:
         fuel_filter = f"AND fuelType = '{gen_type}'" if gen_type and gen_type != 'All' else ""
-        
+
         return f"""
         SELECT
             CAST(settlementDate AS DATE) as date, settlementPeriod, fuelType, SUM(generation) as generation_mw
@@ -203,7 +203,7 @@ def get_query_with_filters(category, from_dt, to_dt, party_roles, gen_type='All'
         GROUP BY date, settlementPeriod, fuelType
         ORDER BY date, settlementPeriod LIMIT 10000
         """
-    
+
     # ==========================
     # CATEGORY 3: Individual BMU Generation (B1610)
     # ==========================
@@ -220,7 +220,7 @@ def get_query_with_filters(category, from_dt, to_dt, party_roles, gen_type='All'
         GROUP BY date, settlementPeriod, bmUnit
         ORDER BY date, settlementPeriod LIMIT 10000
         """
-    
+
     # ==========================
     # CATEGORY 4: Balancing Actions (MELs/MILs)
     # ==========================
@@ -237,7 +237,7 @@ def get_query_with_filters(category, from_dt, to_dt, party_roles, gen_type='All'
         WHERE CAST(timeFrom AS DATE) >= '{from_dt}' AND CAST(timeFrom AS DATE) <= '{to_dt}' {bmu_filter}
         ORDER BY date, settlementPeriod LIMIT 10000
         """
-    
+
     # ==========================
     # CATEGORY 5: System Operations (Frequency/Prices)
     # ==========================
@@ -260,7 +260,7 @@ def get_query_with_filters(category, from_dt, to_dt, party_roles, gen_type='All'
         FROM prices p LEFT JOIN freq f ON p.date = f.date
         ORDER BY p.date, p.settlementPeriod LIMIT 10000
         """
-    
+
     # ==========================
     # CATEGORY 6: Physical Constraints (NESO Regional)
     # ==========================
@@ -278,7 +278,7 @@ def get_query_with_filters(category, from_dt, to_dt, party_roles, gen_type='All'
         GROUP BY date
         ORDER BY date DESC LIMIT 10000
         """
-    
+
     # ==========================
     # CATEGORY 7: Interconnectors (Cross-Border)
     # ==========================
@@ -292,7 +292,7 @@ def get_query_with_filters(category, from_dt, to_dt, party_roles, gen_type='All'
         GROUP BY date, settlementPeriod, fuelType
         ORDER BY date, settlementPeriod LIMIT 10000
         """
-    
+
     # ==========================
     # CATEGORY 8: Market Prices (MID/SSP/SBP)
     # ==========================
@@ -306,7 +306,7 @@ def get_query_with_filters(category, from_dt, to_dt, party_roles, gen_type='All'
         GROUP BY date, settlementPeriod
         ORDER BY date, settlementPeriod LIMIT 10000
         """
-    
+
     # ==========================
     # CATEGORY 9: Demand Forecasts (NESO)
     # ==========================
@@ -320,7 +320,7 @@ def get_query_with_filters(category, from_dt, to_dt, party_roles, gen_type='All'
         GROUP BY date, settlementPeriod
         ORDER BY date, settlementPeriod LIMIT 10000
         """
-    
+
     # ==========================
     # CATEGORY 10: Wind Forecasts (Generation)
     # ==========================
@@ -333,24 +333,24 @@ def get_query_with_filters(category, from_dt, to_dt, party_roles, gen_type='All'
         GROUP BY date, settlementPeriod
         ORDER BY date, settlementPeriod LIMIT 10000
         """
-    
+
     # ==========================
     # CATEGORY 11: REMIT Messages (Unavailability)
     # ==========================
     elif '⚠️ REMIT' in category or 'REMIT Messages' in category:
         # Note: Use registrationCode (BMU ID) instead of bmUnit
         bmu_filter_remit = bmu_filter.replace("bmUnit", "registrationCode")
-        
+
         return f"""
         SELECT
             CAST(eventStartTime AS DATE) as date, registrationCode as bmUnit, unavailabilityType, fuelType,
-            affectedUnit, CAST(availableCapacity AS FLOAT64) as availableCapacity, 
+            affectedUnit, CAST(availableCapacity AS FLOAT64) as availableCapacity,
             CAST(unavailableCapacity AS FLOAT64) as unavailableCapacity
         FROM `{PROJECT_ID}.uk_energy_prod.bmrs_remit_unavailability`
         WHERE CAST(eventStartTime AS DATE) >= '{from_dt}' AND CAST(eventStartTime AS DATE) <= '{to_dt}' {bmu_filter_remit}
         ORDER BY date, registrationCode LIMIT 10000
         """
-    
+
     # ==========================
     # CATEGORY 12: Party Analysis (VTP/VLP Performance)
     # ==========================
@@ -358,7 +358,7 @@ def get_query_with_filters(category, from_dt, to_dt, party_roles, gen_type='All'
         vtp_filter = "AND is_vtp = TRUE" if 'VTP' in party_roles else ""
         vlp_filter = "AND is_vlp = TRUE" if 'VLP' in party_roles else ""
         role_filter = vtp_filter or vlp_filter
-        
+
         return f"""
         WITH party_bmus AS (
             SELECT r.elexonbmunit as bmUnit, p.party_name, p.is_vtp, p.is_vlp
@@ -377,7 +377,7 @@ def get_query_with_filters(category, from_dt, to_dt, party_roles, gen_type='All'
         GROUP BY date, pb.party_name
         ORDER BY date, total_volume_mwh DESC LIMIT 10000
         """
-    
+
     # Default fallback: Return aggregated fuel type data
     return f"""
     SELECT
@@ -411,7 +411,7 @@ try:
     date_max = df['date'].max() if 'date' in df.columns else 'N/A'
     bmu_display = bmu_id if bmu_id and bmu_id != 'All' else 'All BMUs'
     summary_text = f"📊 {len(df)} ROWS BELOW ({date_min} → {date_max}) | Filter: {bmu_display} | ⬇️ SCROLL DOWN TO SEE ALL DATA ⬇️"
-    
+
     # Write summary indicator at row 16
     sheets_service.spreadsheets().values().update(
         spreadsheetId=SPREADSHEET_ID,
@@ -419,7 +419,7 @@ try:
         body={'values': [[summary_text, '', '', '', '', '']]},
         valueInputOption='RAW'
     ).execute()
-    
+
     # Format summary with yellow background and bold text
     try:
         # Get Analysis sheet ID
@@ -429,7 +429,7 @@ try:
             if sheet['properties']['title'] == 'Analysis':
                 analysis_sheet_id = sheet['properties']['sheetId']
                 break
-        
+
         if analysis_sheet_id:
             sheets_service.spreadsheets().batchUpdate(
                 spreadsheetId=SPREADSHEET_ID,

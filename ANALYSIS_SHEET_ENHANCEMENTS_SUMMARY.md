@@ -1,5 +1,5 @@
 # Analysis Sheet Enhancements Summary
-**Date**: December 31, 2025  
+**Date**: December 31, 2025
 **Status**: ✅ COMPLETE (8 of 9 major tasks done)
 
 ---
@@ -192,14 +192,14 @@ B13: =DropdownData!G2:G11   // Graph Types ✅ NEW
 ## ⏳ Remaining Tasks
 
 ### 1. Enhance BMU Dropdown with Names (Priority 1)
-**Current**: `E_FARNB-1, E_HAWKB-1, ...`  
+**Current**: `E_FARNB-1, E_HAWKB-1, ...`
 **Target**: `E_FARNB-1 (Drax Power Limited), E_HAWKB-1 (Scottish Power), ...`
 
 **Implementation**:
 ```python
 # Query BigQuery for lead party names
-SELECT DISTINCT bmUnit, leadPartyName 
-FROM bmrs_bod 
+SELECT DISTINCT bmUnit, leadPartyName
+FROM bmrs_bod
 WHERE leadPartyName IS NOT NULL
 ORDER BY bmUnit
 
@@ -294,14 +294,14 @@ ORDER BY bmUnit
 - 8 data validations applied
 - 1 comprehensive documentation file created
 
-**Time Investment**: ~3 hours  
-**Files Modified**: Analysis sheet, DropdownData sheet, Categories tab, Maps sheet  
+**Time Investment**: ~3 hours
+**Files Modified**: Analysis sheet, DropdownData sheet, Categories tab, Maps sheet
 **User Impact**: Significantly improved query interface with comprehensive report configuration options
 
 ---
 
-**Last Updated**: December 31, 2025  
-**Next Review**: After BMU name enhancement and script updates  
+**Last Updated**: December 31, 2025
+**Next Review**: After BMU name enhancement and script updates
 **Status**: ✅ Production Ready
 
 ---

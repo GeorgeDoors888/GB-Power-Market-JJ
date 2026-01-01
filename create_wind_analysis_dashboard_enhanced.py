@@ -115,22 +115,22 @@ def get_per_farm_forecast_errors(bq_client):
         ORDER BY wape_percent DESC
         LIMIT 15
         """
-        
+
         df = bq_client.query(query).to_dataframe()
-        
+
         if df.empty:
             logging.warning("No per-farm forecast data available")
             return pd.DataFrame()
-        
+
         # Add ranking
         df['rank'] = range(1, len(df) + 1)
         df['performance'] = df['wape_percent'].apply(
             lambda x: '🔴 Poor' if x > 30 else ('🟡 Fair' if x > 20 else '🟢 Good')
         )
-        
+
         logging.info(f"Retrieved per-farm errors for {len(df)} farms")
         return df
-        
+
     except Exception as e:
         logging.error(f"Per-farm forecast error query failed: {e}")
         return pd.DataFrame()
@@ -194,9 +194,9 @@ def get_imbalance_price_correlation(bq_client):
         WHERE fe.abs_error_mw > 500  -- Significant errors only
         ORDER BY revenue_impact_gbp DESC
         """
-        
+
         df = bq_client.query(query).to_dataframe()
-        
+
         if df.empty:
             logging.warning("No imbalance price correlation data available")
             return {
@@ -205,20 +205,20 @@ def get_imbalance_price_correlation(bq_client):
                 'avg_impact_per_error': 0,
                 'worst_period': None
             }
-        
+
         # Calculate aggregates
         total_impact = df['revenue_impact_gbp'].sum()
         avg_impact = df['revenue_impact_gbp'].mean()
         worst_period = df.iloc[0] if len(df) > 0 else None
-        
+
         # Calculate correlation coefficient
         if len(df) > 2:
             correlation = df['abs_error_mw'].corr(df['imbalance_price'])
         else:
             correlation = 0
-        
+
         logging.info(f"Calculated imbalance impact: £{total_impact:,.0f} over 7 days")
-        
+
         return {
             'correlation_df': df.head(20),  # Top 20 worst impacts
             'total_impact_7d': total_impact,
@@ -226,7 +226,7 @@ def get_imbalance_price_correlation(bq_client):
             'worst_period': worst_period,
             'correlation_coef': correlation
         }
-        
+
     except Exception as e:
         logging.error(f"Imbalance price correlation query failed: {e}")
         return {
@@ -258,30 +258,30 @@ def get_hour_of_day_accuracy(bq_client):
         HAVING COUNT(*) >= 4  -- Minimum 4 observations
         ORDER BY hour_of_day, day_of_week
         """
-        
+
         df = bq_client.query(query).to_dataframe()
-        
+
         if df.empty:
             logging.warning("No hour-of-day accuracy data available")
             return pd.DataFrame()
-        
+
         # Create heatmap matrix (7 days × 24 hours)
         heatmap = df.pivot(index='day_of_week', columns='hour_of_day', values='avg_error_pct')
-        
+
         # Fill missing values with NaN
         heatmap = heatmap.reindex(index=range(7), columns=range(24))
-        
+
         # Identify worst periods
         worst_hours = df.nlargest(5, 'avg_error_pct')[['hour_of_day', 'day_of_week', 'avg_error_pct']]
-        
+
         logging.info(f"Calculated hour-of-day accuracy for {len(df)} time periods")
-        
+
         return {
             'raw_data': df,
             'heatmap': heatmap,
             'worst_hours': worst_hours
         }
-        
+
     except Exception as e:
         logging.error(f"Hour-of-day accuracy query failed: {e}")
         return {
@@ -297,26 +297,26 @@ def create_enhanced_dashboard_sections(sheets_service, bq_client):
     """
     try:
         batch_data = []
-        
+
         # ==================================================
         # SECTION 5: PER-FARM ERROR ANALYSIS (A53:N62)
         # ==================================================
-        
+
         logging.info("Fetching per-farm forecast errors...")
         farm_errors = get_per_farm_forecast_errors(bq_client)
-        
+
         # Row 53: Section header
         batch_data.append({
             'range': f'{SHEET_NAME}!A53:N53',
             'values': [['🎯 PER-FARM FORECAST ACCURACY (Worst Performers)', '', '', '', '', '', '', '', '', '', '', '', '', '']]
         })
-        
+
         # Row 54: Column headers
         batch_data.append({
             'range': f'{SHEET_NAME}!A54:G54',
             'values': [['Rank', 'Farm Name', 'WAPE %', 'Bias (MW)', 'RMSE (MW)', 'Avg Actual (MW)', 'Performance']]
         })
-        
+
         # Rows 55-62: Farm data
         farm_rows = []
         if not farm_errors.empty:
@@ -332,30 +332,30 @@ def create_enhanced_dashboard_sections(sheets_service, bq_client):
                 ])
         else:
             farm_rows = [['No data available', '', '', '', '', '', '']] * 8
-        
+
         batch_data.append({
             'range': f'{SHEET_NAME}!A55:G62',
             'values': farm_rows
         })
-        
+
         # ==================================================
         # SECTION 6: IMBALANCE PRICE IMPACT (A63:N72)
         # ==================================================
-        
+
         logging.info("Calculating imbalance price correlation...")
         price_impact = get_imbalance_price_correlation(bq_client)
-        
+
         # Row 63: Section header
         batch_data.append({
             'range': f'{SHEET_NAME}!A63:N63',
             'values': [['💰 FORECAST ERROR REVENUE IMPACT (Last 7 Days)', '', '', '', '', '', '', '', '', '', '', '', '', '']]
         })
-        
+
         # Row 64: Summary KPIs
         total_impact = price_impact['total_impact_7d']
         avg_impact = price_impact['avg_impact_per_error']
         correlation = price_impact.get('correlation_coef', 0)
-        
+
         batch_data.append({
             'range': f'{SHEET_NAME}!A64:F64',
             'values': [[
@@ -365,13 +365,13 @@ def create_enhanced_dashboard_sections(sheets_service, bq_client):
                 '', '', ''
             ]]
         })
-        
+
         # Row 65: Column headers
         batch_data.append({
             'range': f'{SHEET_NAME}!A65:G65',
             'values': [['Date', 'SP', 'Error (MW)', 'Error %', 'Price (£/MWh)', 'Impact (£)', 'Severity']]
         })
-        
+
         # Rows 66-72: Top impact periods
         impact_rows = []
         correlation_df = price_impact['correlation_df']
@@ -388,25 +388,25 @@ def create_enhanced_dashboard_sections(sheets_service, bq_client):
                 ])
         else:
             impact_rows = [['No significant errors', '', '', '', '', '', '']] * 7
-        
+
         batch_data.append({
             'range': f'{SHEET_NAME}!A66:G72',
             'values': impact_rows
         })
-        
+
         # ==================================================
         # SECTION 7: HOUR-OF-DAY ACCURACY HEATMAP (A73:N82)
         # ==================================================
-        
+
         logging.info("Calculating hour-of-day accuracy patterns...")
         hour_data = get_hour_of_day_accuracy(bq_client)
-        
+
         # Row 73: Section header
         batch_data.append({
             'range': f'{SHEET_NAME}!A73:N73',
             'values': [['📅 FORECAST ACCURACY BY TIME (30-Day Pattern)', '', '', '', '', '', '', '', '', '', '', '', '', '']]
         })
-        
+
         # Row 74: Worst hours summary
         worst_hours = hour_data.get('worst_hours', pd.DataFrame())
         if not worst_hours.empty:
@@ -416,12 +416,12 @@ def create_enhanced_dashboard_sections(sheets_service, bq_client):
             ])
         else:
             worst_summary = "No pattern data available"
-        
+
         batch_data.append({
             'range': f'{SHEET_NAME}!A74:N74',
             'values': [[worst_summary, '', '', '', '', '', '', '', '', '', '', '', '', '']]
         })
-        
+
         # Rows 75-82: Hour-of-day data table
         raw_data = hour_data.get('raw_data', pd.DataFrame())
         if not raw_data.empty:
@@ -430,7 +430,7 @@ def create_enhanced_dashboard_sections(sheets_service, bq_client):
                 'range': f'{SHEET_NAME}!A75:E75',
                 'values': [['Hour', 'Day', 'Avg Error %', 'Avg Error MW', 'Ramp Misses']]
             })
-            
+
             # Rows 76-82: Sample data (show subset)
             hour_rows = []
             sample_data = raw_data.nsmallest(7, 'avg_error_pct')  # Best 7 periods
@@ -443,7 +443,7 @@ def create_enhanced_dashboard_sections(sheets_service, bq_client):
                     f"{row['avg_error_mw']:.0f}",
                     int(row['ramp_misses'])
                 ])
-            
+
             batch_data.append({
                 'range': f'{SHEET_NAME}!A76:E82',
                 'values': hour_rows
@@ -453,26 +453,26 @@ def create_enhanced_dashboard_sections(sheets_service, bq_client):
                 'range': f'{SHEET_NAME}!A75:E82',
                 'values': [['No hour-of-day data available', '', '', '', '']] * 8
             })
-        
+
         # ==================================================
         # BATCH UPDATE TO GOOGLE SHEETS
         # ==================================================
-        
+
         logging.info(f"Updating {len(batch_data)} ranges in Google Sheets...")
-        
+
         body = {'data': batch_data, 'valueInputOption': 'USER_ENTERED'}
         sheets_service.spreadsheets().values().batchUpdate(
             spreadsheetId=SPREADSHEET_ID,
             body=body
         ).execute()
-        
+
         logging.info("✅ Enhanced dashboard sections created successfully")
-        
+
         # Apply formatting
         apply_enhanced_formatting(sheets_service)
-        
+
         return True
-        
+
     except Exception as e:
         logging.error(f"Failed to create enhanced dashboard sections: {e}")
         return False
@@ -484,7 +484,7 @@ def apply_enhanced_formatting(sheets_service):
     """
     try:
         requests = []
-        
+
         # Section headers (rows 53, 63, 73)
         for row_index in [52, 62, 72]:  # 0-indexed
             requests.append({
@@ -510,7 +510,7 @@ def apply_enhanced_formatting(sheets_service):
                     'fields': 'userEnteredFormat(backgroundColor,textFormat,horizontalAlignment)'
                 }
             })
-        
+
         # Column headers (rows 54, 65, 75)
         for row_index in [53, 64, 74]:  # 0-indexed
             requests.append({
@@ -535,16 +535,16 @@ def apply_enhanced_formatting(sheets_service):
                     'fields': 'userEnteredFormat(backgroundColor,textFormat,horizontalAlignment)'
                 }
             })
-        
+
         # Apply all formatting
         body = {'requests': requests}
         sheets_service.spreadsheets().batchUpdate(
             spreadsheetId=SPREADSHEET_ID,
             body=body
         ).execute()
-        
+
         logging.info("✅ Enhanced formatting applied")
-        
+
     except Exception as e:
         logging.error(f"Failed to apply enhanced formatting: {e}")
 
@@ -556,20 +556,20 @@ def main():
     logging.info("="*80)
     logging.info("ENHANCED WIND ANALYSIS DASHBOARD")
     logging.info("="*80)
-    
+
     # Initialize BigQuery client
     bq_client = bigquery.Client(project=PROJECT_ID, location='US')
-    
+
     # Initialize Google Sheets client
     creds = Credentials.from_service_account_file(
         'inner-cinema-credentials.json',
         scopes=['https://www.googleapis.com/auth/spreadsheets']
     )
     sheets_service = build('sheets', 'v4', credentials=creds)
-    
+
     # Create enhanced sections
     success = create_enhanced_dashboard_sections(sheets_service, bq_client)
-    
+
     if success:
         logging.info("\n" + "="*80)
         logging.info("✅ ENHANCED DASHBOARD DEPLOYMENT COMPLETE")
@@ -583,7 +583,7 @@ def main():
     else:
         logging.error("\n❌ Enhanced dashboard deployment failed")
         return 1
-    
+
     return 0
 
 

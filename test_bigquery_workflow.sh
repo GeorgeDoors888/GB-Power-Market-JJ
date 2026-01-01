@@ -95,13 +95,13 @@ START_TIME=$(date +%s)
 if time python3 btm_dno_lookup.py > /tmp/btm_test_output.txt 2>&1; then
     END_TIME=$(date +%s)
     DURATION=$((END_TIME - START_TIME))
-    
+
     if [ "$DURATION" -le 20 ]; then
         echo "${GREEN}✅ Completed in ${DURATION} seconds (target: <20 sec)${NC}"
     else
         echo "${YELLOW}⚠️  Completed in ${DURATION} seconds (slower than expected)${NC}"
     fi
-    
+
     # Check if BigQuery was used
     if grep -q "Reading HH DATA from BigQuery" /tmp/btm_test_output.txt; then
         echo "${GREEN}✅ Used BigQuery (fast path)${NC}"
@@ -158,7 +158,7 @@ print(f"Modified: {table.modified}")
 
 # Get unique supply types
 query = f"""
-SELECT 
+SELECT
   supply_type,
   COUNT(*) as records,
   MAX(generated_at) as last_generated

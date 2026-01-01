@@ -57,7 +57,7 @@ try:
         spreadsheetId=SPREADSHEET_ID,
         range='Definitions!A1:E5'
     ).execute()
-    
+
     values = result.get('values', [])
     print(f"✅ Definitions sheet exists with {len(values)} rows")
     print(f"   Header: {values[0] if values else 'N/A'}")
@@ -76,7 +76,7 @@ try:
         spreadsheetId=SPREADSHEET_ID,
         range='Analysis!A15:A18'
     ).execute()
-    
+
     notes = [row[0] if row else '' for row in result.get('values', [])]
     print(f"✅ Found {len(notes)} helper notes:")
     for note in notes:

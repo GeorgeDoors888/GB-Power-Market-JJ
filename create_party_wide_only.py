@@ -12,7 +12,7 @@ CREDENTIALS_FILE = "inner-cinema-credentials.json"
 
 # Category names (from Categories tab)
 CATEGORIES = [
-    "Generator", "Supplier", "Network Operator", "Interconnector", 
+    "Generator", "Supplier", "Network Operator", "Interconnector",
     "Virtual Lead Party", "Storage Operator", "Distribution System Operator",
     "Transmission System Operator", "Non-Physical Trader", "Party Agent",
     "Data Aggregator", "Meter Operator", "Data Collector", "Licensed Distributor",

@@ -1,13 +1,13 @@
 /**
  * BtM Calculate 2 Button - Apps Script Functions
- * 
+ *
  * Triggers comprehensive BtM calculations:
  * - DNO & DUoS rate lookup
  * - kWh calculation by time band (Red/Amber/Green)
  * - Transmission charges (TNUoS, BSUoS)
  * - Environmental levies (CCL, RO, FiT)
  * - Total unit rate (£/MWh)
- * 
+ *
  * Installation:
  * 1. Open: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit
  * 2. Extensions > Apps Script
@@ -38,18 +38,18 @@ function Calculate2() {
   const ui = SpreadsheetApp.getUi();
   const ss = SpreadsheetApp.getActiveSpreadsheet();
   const btmSheet = ss.getSheetByName('BtM');
-  
+
   if (!btmSheet) {
     ui.alert('❌ Error', 'BtM sheet not found', ui.ButtonSet.OK);
     return;
   }
-  
+
   // Read input cells
   const postcode = btmSheet.getRange('H6').getValue() || '(empty)';
   const mpanSupplement = btmSheet.getRange('I6').getValue() || '(empty)';
   const mpanCore = btmSheet.getRange('J6').getValue() || '(empty)';
   const voltage = btmSheet.getRange('B9').getValue() || 'LV';
-  
+
   // Show calculation dialog
   const message = `
 📊 BtM Comprehensive Calculation
@@ -77,9 +77,9 @@ python3 btm_dno_lookup.py
 
 Continue?
 `;
-  
+
   const response = ui.alert('⚡ Calculate All', message, ui.ButtonSet.YES_NO);
-  
+
   if (response === ui.Button.YES) {
     ui.alert(
       '✅ Ready to Calculate',
@@ -96,7 +96,7 @@ Continue?
  */
 function produceHHData() {
   const ui = SpreadsheetApp.getUi();
-  
+
   // Check if btm_hh_generator.gs is loaded
   if (typeof generateHHDataDirect === 'function') {
     // Call the function from btm_hh_generator.gs
@@ -110,11 +110,11 @@ function produceHHData() {
       'Continue?',
       ui.ButtonSet.YES_NO
     );
-    
+
     if (response !== ui.Button.YES) {
       return;
     }
-    
+
     try {
       ui.alert('⏳ Generating HH data...\n\nThis will take 10-15 seconds.\nPlease wait.');
       const result = generateHHDataDirect();
@@ -145,7 +145,7 @@ function produceHHData() {
 function viewBtmSheet() {
   const ss = SpreadsheetApp.getActiveSpreadsheet();
   const btmSheet = ss.getSheetByName('BtM');
-  
+
   if (btmSheet) {
     ss.setActiveSheet(btmSheet);
     btmSheet.getRange('C6').activate();  // DNO results
@@ -179,7 +179,7 @@ function showAbout() {
 function testBtmAccess() {
   const ss = SpreadsheetApp.getActiveSpreadsheet();
   const btmSheet = ss.getSheetByName('BtM');
-  
+
   if (btmSheet) {
     Logger.log('✅ BtM sheet found');
     Logger.log('Sheet ID: ' + ss.getId());

@@ -1,7 +1,7 @@
 # Analysis Sheet Enhancement - Complete Implementation
 
-**Date**: December 30, 2025  
-**Status**: ✅ COMPLETE  
+**Date**: December 30, 2025
+**Status**: ✅ COMPLETE
 **Version**: 2.0 - Enhanced with Multiple Selections & Definitions
 
 ---
@@ -25,7 +25,7 @@
 
 ### 2. Comprehensive Definitions Sheet ✅
 
-**Location**: New "Definitions" sheet  
+**Location**: New "Definitions" sheet
 **Columns**:
 - Party Role
 - Short Description
@@ -37,7 +37,7 @@
 
 ### 3. Transmission Demand Users Sheet ✅
 
-**Location**: New "Transmission Demand" sheet  
+**Location**: New "Transmission Demand" sheet
 **Data**: List of transmission-connected demand users
 - Party Name
 - BMU ID (D_ prefix)
@@ -48,17 +48,17 @@
 
 ### 4. Multiple Selection Support ✅
 
-**Feature**: Comma-separated selections in dropdowns  
-**Example**: `Production, VTP, VLP` to analyze multiple party types  
-**Implementation**: 
+**Feature**: Comma-separated selections in dropdowns
+**Example**: `Production, VTP, VLP` to analyze multiple party types
+**Implementation**:
 - Parse comma-separated values
 - Extract role names from "Role - Description" format
 - Generate SQL with OR conditions
 
 ### 5. Search Functionality ✅
 
-**Feature**: Google Sheets native dropdown search  
-**How to use**: 
+**Feature**: Google Sheets native dropdown search
+**How to use**:
 - Click dropdown in B5
 - Start typing (e.g., "VLP" or "battery")
 - Dropdown filters to matching options
@@ -67,8 +67,8 @@
 
 ### 6. Automatic Data Cleanup ✅
 
-**Trigger**: Every report generation (manual or webhook)  
-**Action**: Clears rows 19-10000 in Analysis sheet before writing new data  
+**Trigger**: Every report generation (manual or webhook)
+**Action**: Clears rows 19-10000 in Analysis sheet before writing new data
 **Benefit**: No stale data, always fresh results
 
 ### 7. Enhanced Query Engine ✅
@@ -132,8 +132,8 @@
 
 ### Multiple Selection Example
 
-**Scenario**: Analyze battery storage and VTP generation  
-**Input**: In B5, enter: `VLP, VTP` or select both from dropdown  
+**Scenario**: Analyze battery storage and VTP generation
+**Input**: In B5, enter: `VLP, VTP` or select both from dropdown
 **Result**: Query filters to BMU IDs matching either pattern:
 - VLP: `FBPGM*, FESEN*, *STORAGE*`
 - VTP: `T_*`
@@ -164,8 +164,8 @@
 
 ## 🔄 WEBHOOK INTEGRATION ✅
 
-**Endpoint**: `/generate-report` (report_webhook_server.py)  
-**Trigger**: Analysis sheet CALCULATE button or external call  
+**Endpoint**: `/generate-report` (report_webhook_server.py)
+**Trigger**: Analysis sheet CALCULATE button or external call
 **Process**:
 1. ✅ Reads dropdown selections from Analysis sheet
 2. ✅ **Clears old data** (rows 19-10000) automatically
@@ -196,49 +196,49 @@
 ## 🎓 PARTY ROLE DEFINITIONS
 
 ### Production (formerly "Generator")
-**Definition**: Organizations that generate electricity from power stations using coal, gas, nuclear, or renewable sources.  
-**BMU Prefixes**: E_, M_  
-**Examples**: EDF Energy, SSE Thermal, Drax Group  
+**Definition**: Organizations that generate electricity from power stations using coal, gas, nuclear, or renewable sources.
+**BMU Prefixes**: E_, M_
+**Examples**: EDF Energy, SSE Thermal, Drax Group
 **Note**: Changed from "Generator" to "Production" for clarity
 
 ### VTP (Virtual Transmission Point) 🆕
-**Definition**: Virtual aggregation points for multiple small generators connected at transmission level, managed by National Grid ESO.  
-**BMU Prefix**: T_  
-**Examples**: T_DRAXX (Drax aggregated), T_WBURB (Burbo Bank Wind Farm)  
+**Definition**: Virtual aggregation points for multiple small generators connected at transmission level, managed by National Grid ESO.
+**BMU Prefix**: T_
+**Examples**: T_DRAXX (Drax aggregated), T_WBURB (Burbo Bank Wind Farm)
 **Use Case**: Wind farms, solar parks, distributed generation
 
 ### VLP (Virtual Lead Party) 🆕
-**Definition**: Aggregators managing multiple battery energy storage systems (BESS) as a single BMU to provide fast frequency response and arbitrage services.  
-**Patterns**: FBPGM, FESEN, *STORAGE*  
-**Examples**: Flexgen (FBPGM002), Gresham House (FFSEN005)  
+**Definition**: Aggregators managing multiple battery energy storage systems (BESS) as a single BMU to provide fast frequency response and arbitrage services.
+**Patterns**: FBPGM, FESEN, *STORAGE*
+**Examples**: Flexgen (FBPGM002), Gresham House (FFSEN005)
 **Revenue Model**: Charge cheap, discharge expensive (imbalance arbitrage)
 
 ### Consumption 🆕
-**Definition**: Large industrial consumers connected directly to transmission network (132kV+), including data centers, heavy industry, and rail networks.  
-**BMU Prefix**: D_  
-**Examples**: London Underground, Tata Steel, data centers  
+**Definition**: Large industrial consumers connected directly to transmission network (132kV+), including data centers, heavy industry, and rail networks.
+**BMU Prefix**: D_
+**Examples**: London Underground, Tata Steel, data centers
 **Capability**: Can provide demand-side response
 
 ### Supplier
-**Definition**: Companies that sell electricity to households and businesses, managing supply-demand balance for customer portfolios.  
-**BMU Prefix**: 2__  
+**Definition**: Companies that sell electricity to households and businesses, managing supply-demand balance for customer portfolios.
+**BMU Prefix**: 2__
 **Examples**: British Gas, EDF Customer Supply, E.ON UK
 
 ### Trader
-**Definition**: Companies trading electricity in wholesale markets without physical generation or supply assets.  
-**Pattern**: Various  
-**Examples**: Shell Energy Europe, Vitol, Gunvor  
+**Definition**: Companies trading electricity in wholesale markets without physical generation or supply assets.
+**Pattern**: Various
+**Examples**: Shell Energy Europe, Vitol, Gunvor
 **Role**: Provide market liquidity and arbitrage
 
 ### Interconnector
-**Definition**: Physical cables connecting GB to other countries, enabling import/export of electricity.  
-**BMU Prefix**: I_  
+**Definition**: Physical cables connecting GB to other countries, enabling import/export of electricity.
+**BMU Prefix**: I_
 **Examples**: IFA (France), BritNed (Netherlands), Moyle (Northern Ireland)
 
 ### Storage
-**Definition**: Battery energy storage systems and pumped hydro that can both consume (charge) and generate (discharge).  
-**Pattern**: Various (often includes STORAGE, BESS keywords)  
-**Examples**: Dinorwig (pumped hydro), Hornsea BESS, Minety BESS  
+**Definition**: Battery energy storage systems and pumped hydro that can both consume (charge) and generate (discharge).
+**Pattern**: Various (often includes STORAGE, BESS keywords)
+**Examples**: Dinorwig (pumped hydro), Hornsea BESS, Minety BESS
 **Use Case**: Grid balancing, arbitrage, frequency response
 
 ---
@@ -321,7 +321,7 @@ Added to rows 15-18:
 
 ---
 
-**Implementation Complete**: December 30, 2025  
-**Maintainer**: AI Coding Agent  
-**Repository**: /home/george/GB-Power-Market-JJ  
+**Implementation Complete**: December 30, 2025
+**Maintainer**: AI Coding Agent
+**Repository**: /home/george/GB-Power-Market-JJ
 **Status**: ✅ Production Ready

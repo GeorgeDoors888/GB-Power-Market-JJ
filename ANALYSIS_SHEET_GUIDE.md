@@ -9,7 +9,7 @@ Party categorization system for BSC/CUSC market participants. Enables tracking w
 ## 🏗️ Database Structure (4 Tabs)
 
 ### 1. **Categories Tab**
-**Purpose**: Master list of BSC/CUSC roles  
+**Purpose**: Master list of BSC/CUSC roles
 **Columns**:
 - Category ID (1-19)
 - Category Name
@@ -41,7 +41,7 @@ Party categorization system for BSC/CUSC market participants. Enables tracking w
 19. Balancing Mechanism Unit (BMU)
 
 ### 2. **Parties Tab**
-**Purpose**: List of all BSC signatories and market participants  
+**Purpose**: List of all BSC signatories and market participants
 **Columns**:
 - Party ID (P001, P002, ...)
 - Party Name (full legal name)
@@ -66,7 +66,7 @@ Party categorization system for BSC/CUSC market participants. Enables tracking w
 - Known VLP operators (batteries)
 
 ### 3. **Party_Category Tab** (Link Table)
-**Purpose**: Many-to-many relationships between parties and categories  
+**Purpose**: Many-to-many relationships between parties and categories
 **Structure**: One row per party-category combination
 
 **Columns**:
@@ -96,7 +96,7 @@ P010     | Virtual Lead Party     | Manual      | Medium     | FALSE
 - Audit trail (who added, when, confidence level)
 
 ### 4. **Party_Wide Tab** (Boolean View)
-**Purpose**: Pivot table showing TRUE/FALSE for each party-category combination  
+**Purpose**: Pivot table showing TRUE/FALSE for each party-category combination
 **Layout**: Each category becomes a column
 
 **Structure**:
@@ -272,7 +272,7 @@ Import into Python/Excel for further analysis
 
 ---
 
-**Created**: December 30, 2025  
-**Status**: Structure designed, awaiting network-stable deployment  
+**Created**: December 30, 2025
+**Status**: Structure designed, awaiting network-stable deployment
 **Priority**: Medium (analysis feature, not critical path)
 

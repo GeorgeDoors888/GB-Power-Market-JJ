@@ -25,7 +25,7 @@ print(f"\nB11 Current Value: '{b11}'")
 def test_category_match(category):
     """Test which query category a selection would match"""
     matches = []
-    
+
     if not category or category == 'All Reports':
         matches.append("✅ DEFAULT FALLBACK")
     if '📊 Analytics' in category or 'Analytics & Derived' in category:
@@ -52,7 +52,7 @@ def test_category_match(category):
         matches.append("✅ REMIT Messages (remit_unavailability)")
     if '🔍 Party' in category or 'Party Analysis' in category:
         matches.append("✅ Party Analysis (boalf + dim_party)")
-    
+
     return matches
 
 print(f"\nCategory Match Test: {test_category_match(b11)}")

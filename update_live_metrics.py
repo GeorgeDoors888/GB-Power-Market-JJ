@@ -885,11 +885,11 @@ def get_bm_market_kpis(bq_client):
     - EWAP (operational, from BOALF acceptances - pay-as-bid pricing)
     - Dispatch Intensity (acceptances/hour)
     - Workhorse Index (active SPs/48)
-    
+
     CRITICAL: EWAP uses bmrs_boalf_complete (operational acceptances) NOT EBOCF/BOAV
     because EBOCF is settlement-component cashflow (different grain than energy volumes).
     This gives operational pay-as-bid EWAP which traders actually want.
-    
+
     NOTE: EBOCF is a settlement dataset published D+1 (Initial Settlement run).
     For live/today data, use last 24 hours of historical data (D-1 complete day).
     """
@@ -921,14 +921,14 @@ def get_bm_market_kpis(bq_client):
       SELECT
         settlementPeriod as period,
         -- Offer EWAP: Σ(price × volume) / Σ(volume) for OFFER acceptances
-        SUM(CASE WHEN acceptanceType = 'OFFER' AND acceptanceVolume > 0 
-            THEN acceptancePrice * acceptanceVolume ELSE 0 END) / 
-          NULLIF(SUM(CASE WHEN acceptanceType = 'OFFER' AND acceptanceVolume > 0 
+        SUM(CASE WHEN acceptanceType = 'OFFER' AND acceptanceVolume > 0
+            THEN acceptancePrice * acceptanceVolume ELSE 0 END) /
+          NULLIF(SUM(CASE WHEN acceptanceType = 'OFFER' AND acceptanceVolume > 0
             THEN acceptanceVolume ELSE 0 END), 0) as ewap_offer,
         -- Bid EWAP: Σ(|price × volume|) / Σ(volume) for BID acceptances
-        SUM(CASE WHEN acceptanceType = 'BID' AND acceptanceVolume > 0 
-            THEN ABS(acceptancePrice * acceptanceVolume) ELSE 0 END) / 
-          NULLIF(SUM(CASE WHEN acceptanceType = 'BID' AND acceptanceVolume > 0 
+        SUM(CASE WHEN acceptanceType = 'BID' AND acceptanceVolume > 0
+            THEN ABS(acceptancePrice * acceptanceVolume) ELSE 0 END) /
+          NULLIF(SUM(CASE WHEN acceptanceType = 'BID' AND acceptanceVolume > 0
             THEN acceptanceVolume ELSE 0 END), 0) as ewap_bid,
         -- Data quality flags: count non-zero volumes by direction
         SUM(CASE WHEN acceptanceType = 'OFFER' AND acceptanceVolume > 0 THEN acceptanceVolume ELSE 0 END) as offer_vol_total,
@@ -998,7 +998,7 @@ def get_bm_market_kpis(bq_client):
 def get_wind_forecast_metrics(bq_client):
     """
     Get wind forecast accuracy metrics for dashboard (last 7 days + yesterday intraday)
-    
+
     Returns:
         dict with keys:
             - daily_metrics: DataFrame with last 7 days (WAPE, bias, RMSE, ramp misses)
@@ -1008,7 +1008,7 @@ def get_wind_forecast_metrics(bq_client):
     try:
         # Get yesterday's date for complete data
         yesterday = (datetime.now() - timedelta(days=1)).date()
-        
+
         # Daily metrics (last 7 days)
         daily_query = f"""
         SELECT
@@ -1025,7 +1025,7 @@ def get_wind_forecast_metrics(bq_client):
         ORDER BY settlement_date DESC
         """
         daily_df = bq_client.query(daily_query).to_dataframe()
-        
+
         # Yesterday's intraday comparison (48 SPs)
         intraday_query = f"""
         SELECT
@@ -1039,7 +1039,7 @@ def get_wind_forecast_metrics(bq_client):
         ORDER BY settlement_period
         """
         intraday_df = bq_client.query(intraday_query).to_dataframe()
-        
+
         # Extract latest KPIs (yesterday's metrics)
         if not daily_df.empty:
             latest = daily_df.iloc[0]
@@ -1060,15 +1060,15 @@ def get_wind_forecast_metrics(bq_client):
                 'num_large_ramp_misses': 0,
                 'date': str(yesterday)
             }
-        
+
         logging.info(f"  📊 Wind forecast metrics: WAPE={latest_kpis['wape_percent']:.1f}%, Bias={latest_kpis['bias_mw']:.0f}MW, Ramp misses={latest_kpis['num_large_ramp_misses']}")
-        
+
         return {
             'daily_metrics': daily_df,
             'yesterday_sp': intraday_df,
             'latest_kpis': latest_kpis
         }
-        
+
     except Exception as e:
         logging.error(f"❌ Wind forecast metrics query failed: {e}")
         return {
@@ -1608,7 +1608,7 @@ def main():
             'Price Regime',
             'Cashflow Trend'
         ]
-        
+
         # Generate sparklines
         sparklines = [
             spark_current,   # Row 13: Real-time price sparkline
@@ -1631,7 +1631,7 @@ def main():
         for i, (name, val, label, sparkline) in enumerate(zip(kpi_names, kpi_values, sparkline_labels, sparklines)):
             # Each row: [name, value, label, sparkline] - only 4 columns to avoid overwriting S
             kpi_batch_data.append([name, val, label, sparkline])
-        
+
         # WRITE DIRECTLY using Sheets API v4 batchUpdate (1 API call for all KPIs)
         try:
             if sheets_service:
@@ -1664,25 +1664,25 @@ def main():
 
         # --- ADD 6 NEW KPIs WITH SPARKLINES IN COLUMN U (Rows 13-18) ---
         logging.info("📊 Adding 6 new imbalance/BM KPIs with sparklines in column U...")
-        
+
         # Calculate new metrics using sysprice_df (30-day imbalance data)
         max_30d_price = sysprice_df['high_30d'].max()
         min_30d_price = sysprice_df['low_30d'].min()
-        
+
         # EWAP calculations from bm_kpis_df (today's operational acceptances)
         # Use NULL-safe logic: only average non-NULL, non-zero values
         # If no valid data, display as "N/A" with status indicator
-        
+
         # Filter for valid EWAP values (not NULL, not zero, not NaN)
         valid_offer = bm_kpis_df['ewap_offer'].dropna()
         valid_offer = valid_offer[valid_offer > 0]
         valid_bid = bm_kpis_df['ewap_bid'].dropna()
         valid_bid = valid_bid[valid_bid > 0]
-        
+
         # Calculate averages (returns NaN if empty series)
         avg_ewap_offer = valid_offer.mean() if len(valid_offer) > 0 else None
         avg_ewap_bid = valid_bid.mean() if len(valid_bid) > 0 else None
-        
+
         # Combined EWAP (average of both, only if at least one exists)
         if avg_ewap_offer is not None and avg_ewap_bid is not None:
             combined_ewap = (avg_ewap_offer + avg_ewap_bid) / 2
@@ -1692,19 +1692,19 @@ def main():
             combined_ewap = avg_ewap_bid
         else:
             combined_ewap = None
-        
+
         # Log data quality
         offer_periods = len(valid_offer)
         bid_periods = len(valid_bid)
         total_periods = len(bm_kpis_df)
         logging.info(f"   📊 EWAP data quality: {offer_periods}/{total_periods} periods with offer, {bid_periods}/{total_periods} with bid")
-        
+
         # Format KPI values with N/A for missing data
         def format_ewap(value, direction):
             if value is None or pd.isna(value):
                 return "N/A (no acceptances)"
             return f'£{value:.2f}/MWh'
-        
+
         # New KPI names and values
         # Note: EBOCF = BMRS-calculated "period BM Unit cashflow" measures
         # Derived from accepted volumes × pay-as-bid prices using Section T3 logic
@@ -1717,7 +1717,7 @@ def main():
             '🔽 EWAP Bid Acceptances',
             '📊 Energy-Weighted Avg Price'
         ]
-        
+
         new_kpi_values = [
             f'£{max_30d_price:.2f}/MWh',
             f'£{min_30d_price:.2f}/MWh',
@@ -1726,20 +1726,20 @@ def main():
             format_ewap(avg_ewap_bid, 'bid'),
             format_ewap(combined_ewap, 'combined')
         ]
-        
+
         # Generate sparklines for column U
         spark_max_30d = generate_gs_sparkline_formula(sysprice_df['high_30d'].tail(48).tolist(), {"charttype": "column", "color": "#FF4444"})
         spark_min_30d = generate_gs_sparkline_formula(sysprice_df['low_30d'].tail(48).tolist(), {"charttype": "column", "color": "#4444FF"})
         spark_cashflow_today = generate_gs_sparkline_formula(bm_kpis_df['gross_cashflow_gbp'].tolist(), {"charttype": "column", "color": "#FFD700"})
-        
+
         # EWAP sparklines: replace NaN/None with 0 for visualization, but keep gaps visible
         ewap_offer_data = bm_kpis_df['ewap_offer'].fillna(0).tolist()
         ewap_bid_data = bm_kpis_df['ewap_bid'].fillna(0).tolist()
-        
+
         # Only show sparkline if we have some non-zero data
         spark_ewap_offer = generate_gs_sparkline_formula(ewap_offer_data if offer_periods > 0 else [0], {"charttype": "column", "color": "#32CD32"})
         spark_ewap_bid = generate_gs_sparkline_formula(ewap_bid_data if bid_periods > 0 else [0], {"charttype": "column", "color": "#FF69B4"})
-        
+
         # Combined EWAP sparkline: average where both exist, otherwise use whichever is available
         combined_ewap_data = []
         for o, b in zip(ewap_offer_data, ewap_bid_data):
@@ -1751,11 +1751,11 @@ def main():
                 combined_ewap_data.append(b)
             else:
                 combined_ewap_data.append(0)
-        
+
         spark_combined_ewap = generate_gs_sparkline_formula(combined_ewap_data if (offer_periods > 0 or bid_periods > 0) else [0], {"charttype": "column", "color": "#9966FF"})
-        
+
         new_sparklines = [spark_max_30d, spark_min_30d, spark_cashflow_today, spark_ewap_offer, spark_ewap_bid, spark_combined_ewap]
-        
+
         # WRITE to T13:V18 (matches K13:N22 style exactly)
         # Column S = blank (like how column J is blank before K13:N22)
         # Column T = KPI name with emoji
@@ -1765,13 +1765,13 @@ def main():
         for i, (name, val, sparkline) in enumerate(zip(new_kpi_names, new_kpi_values, new_sparklines)):
             ewap_data.append(["", name, val, sparkline])  # 4 columns: blank, name, value, sparkline
             logging.info(f"   📊 Row {13+i}: {name} = {val}")
-        
+
         # Write all 6 rows in ONE API call using Sheets API v4
         try:
             if sheets_service:
                 # Use cached sheet_id (avoids slow 78-second API call)
                 sheet_id = LIVE_DASHBOARD_SHEET_ID
-                
+
                 # FIRST: Unmerge N13:S13, N15:S15, N17:R17 to allow writing to column S
                 # Unmerge requests for rows 13, 15, 17 (columns N-S)
                 unmerge_requests = []
@@ -1787,14 +1787,14 @@ def main():
                             }
                         }
                     })
-                
+
                 # Execute unmerge
                 sheets_service.spreadsheets().batchUpdate(
                     spreadsheetId=SPREADSHEET_ID,
                     body={'requests': unmerge_requests}
                 ).execute()
                 logging.info(f"  🔓 Unmerged N13:S13, N15:S15, N17:S17 to allow column S writes")
-                
+
                 # SECOND: Write data to S13:V18 (6 rows x 4 columns: blank in S, name in T, value in U, sparkline in V)
                 body = {
                     'valueInputOption': 'USER_ENTERED',
@@ -1807,7 +1807,7 @@ def main():
                     spreadsheetId=SPREADSHEET_ID,
                     body=body
                 ).execute()
-                
+
                 # THIRD: Remerge N13:R13, N15:R15, N17:R17 (leave S free for EWAP titles)
                 merge_requests = []
                 for row in [13, 15, 17]:
@@ -1823,7 +1823,7 @@ def main():
                             'mergeType': 'MERGE_ALL'
                         }
                     })
-                
+
                 # Execute remerge
                 sheets_service.spreadsheets().batchUpdate(
                     spreadsheetId=SPREADSHEET_ID,
@@ -1850,29 +1850,29 @@ def main():
         # This old section (rows 25-52) was creating duplicate/conflicting wind data
         # New dashboard runs manually on-demand, not via cron
         logging.info("\n💨 Wind dashboard section SKIPPED (now at rows 60-94, managed separately)")
-        
+
         # Old code disabled below:
         if False:
             logging.info("\n💨 Adding Wind Forecast & Weather Alerts Dashboard (A25:N52)...")
-            
+
             # Import enhanced wind dashboard functions
             from create_wind_analysis_dashboard import (
-                get_weather_change_alerts, 
+                get_weather_change_alerts,
                 get_enhanced_wind_metrics,
                 create_dashboard_layout
             )
-            
+
             # Get weather alerts
             alert_data = get_weather_change_alerts(bq_client)
             logging.info(f"  {alert_data['emoji']} Weather Status: {alert_data['status']} - {alert_data['message']}")
-            
+
             # Get enhanced wind metrics
             wind_metrics = get_enhanced_wind_metrics(bq_client)
             wape = wind_metrics['kpis'].get('wape_percent', 0)
             bias = wind_metrics['kpis'].get('bias_mw', 0)
             ramps = wind_metrics['kpis'].get('num_large_ramp_misses', 0)
             logging.info(f"  Wind KPIs: WAPE={wape:.1f}%, Bias={bias:.0f}MW, Ramps={ramps}")
-            
+
             # Create comprehensive dashboard layout (replaces old A25:F32 section)
             # New layout spans A25:N52 with traffic lights, KPIs, charts, and weather analysis
             try:
@@ -2328,7 +2328,7 @@ def main():
                 if sheet['properties']['title'] == 'Live Dashboard v2':
                     sheet_id = sheet['properties']['sheetId']
                     break
-            
+
             if sheet_id is not None:
                 unmerge_requests = []
                 for row_idx in range(12, 22):  # Rows 13-22 (0-indexed: 12-21)
@@ -2388,10 +2388,10 @@ def main():
                 if sheet['properties']['title'] == 'Live Dashboard v2':
                     sheet_id = sheet['properties']['sheetId']
                     break
-            
+
             if sheet_id is not None:
                 merge_requests = []
-                
+
                 # Merge K12:S12 for header (9 columns wide)
                 merge_requests.append({
                     'mergeCells': {
@@ -2405,7 +2405,7 @@ def main():
                         'mergeType': 'MERGE_ALL'
                     }
                 })
-                
+
                 # Merge N:S sparkline columns for each KPI row (rows: 13, 15, 17, 19, 21, 23, 25, 27, 29, 31)
                 kpi_rows = [13, 15, 17, 19, 21, 23, 25, 27, 29, 31]
                 for row in kpi_rows:
@@ -2421,7 +2421,7 @@ def main():
                             'mergeType': 'MERGE_ALL'
                         }
                     })
-                
+
                 if merge_requests:
                     sheets_service.spreadsheets().batchUpdate(
                         spreadsheetId=SPREADSHEET_ID,
@@ -2432,7 +2432,7 @@ def main():
                 logging.warning(f"  ⚠️  Could not find sheet ID for 'Live Dashboard v2'")
         else:
             logging.warning(f"  ⚠️  sheets_service not initialized, skipping merge")
-        
+
         # Set row heights and legacy fuel formatting using Sheets API v4
         # TEMPORARILY DISABLED: Skipping to avoid timeout issues
         logging.info("  ⚠️  Skipping row height formatting (temporarily disabled)")

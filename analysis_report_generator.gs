@@ -1,6 +1,6 @@
 /**
  * Analysis Report Generator - Apps Script Functions
- * 
+ *
  * Installation:
  * 1. Open Google Sheets: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA/edit
  * 2. Go to: Extensions > Apps Script
@@ -18,7 +18,7 @@
  */
 function onOpen() {
   const ui = SpreadsheetApp.getUi();
-  
+
   // Create Analysis Tools menu
   ui.createMenu('📊 Analysis Tools')
       .addItem('🔄 Generate Report', 'generateAnalysisReport')
@@ -27,7 +27,7 @@ function onOpen() {
       .addSeparator()
       .addItem('ℹ️ Help', 'showAnalysisHelp')
       .addToUi();
-  
+
   // Keep existing BtM menu if it exists
   ui.createMenu('⚡ BtM Tools')
       .addItem('🔄 Generate HH Data', 'produceHHData')
@@ -43,19 +43,19 @@ function generateAnalysisReport() {
   const ui = SpreadsheetApp.getUi();
   const ss = SpreadsheetApp.getActiveSpreadsheet();
   const analysisSheet = ss.getSheetByName('Analysis');
-  
+
   if (!analysisSheet) {
     ui.alert('❌ Error', 'Analysis sheet not found!', ui.ButtonSet.OK);
     return;
   }
-  
+
   // Read current configuration
   const fromDate = analysisSheet.getRange('B4').getValue();
   const toDate = analysisSheet.getRange('D4').getValue();
   const category = analysisSheet.getRange('B11').getValue();
   const reportType = analysisSheet.getRange('B12').getValue();
   const graphType = analysisSheet.getRange('B13').getValue();
-  
+
   // Confirm action
   const response = ui.alert(
     '🔄 Generate Analysis Report',
@@ -68,18 +68,18 @@ function generateAnalysisReport() {
     'Continue?',
     ui.ButtonSet.YES_NO
   );
-  
+
   if (response !== ui.Button.YES) {
     return;
   }
-  
+
   try {
     // Show progress
     ui.alert('⏳ Generating report...\n\nThis will take 5-15 seconds.\nPlease wait.');
-    
+
     // OPTION 1: Call webhook server (if running)
     const WEBHOOK_URL = 'https://YOUR_WEBHOOK_URL_HERE/generate_report';
-    
+
     try {
       const webhookResponse = UrlFetchApp.fetch(WEBHOOK_URL, {
         method: 'post',
@@ -90,7 +90,7 @@ function generateAnalysisReport() {
         }),
         muteHttpExceptions: true
       });
-      
+
       if (webhookResponse.getResponseCode() === 200) {
         const result = JSON.parse(webhookResponse.getContentText());
         ui.alert(
@@ -107,7 +107,7 @@ function generateAnalysisReport() {
       // Webhook not available, show manual instructions
       Logger.log('Webhook not available: ' + webhookError);
     }
-    
+
     // OPTION 2: Manual instructions (fallback)
     ui.alert(
       '🔄 Generate Report',
@@ -126,7 +126,7 @@ function generateAnalysisReport() {
       'the webhook server (see documentation)',
       ui.ButtonSet.OK
     );
-    
+
   } catch (error) {
     ui.alert('❌ Error', 'Failed to generate report:\n\n' + error.toString(), ui.ButtonSet.OK);
   }
@@ -138,7 +138,7 @@ function generateAnalysisReport() {
 function viewReportResults() {
   const ss = SpreadsheetApp.getActiveSpreadsheet();
   const analysisSheet = ss.getSheetByName('Analysis');
-  
+
   if (analysisSheet) {
     ss.setActiveSheet(analysisSheet);
     analysisSheet.getRange('A18').activate();
@@ -161,12 +161,12 @@ function clearReportData() {
   const ui = SpreadsheetApp.getUi();
   const ss = SpreadsheetApp.getActiveSpreadsheet();
   const analysisSheet = ss.getSheetByName('Analysis');
-  
+
   if (!analysisSheet) {
     ui.alert('❌ Error', 'Analysis sheet not found!', ui.ButtonSet.OK);
     return;
   }
-  
+
   const response = ui.alert(
     '🧹 Clear Report Data',
     'This will clear all report data from row 17+\n\n' +
@@ -174,11 +174,11 @@ function clearReportData() {
     'Continue?',
     ui.ButtonSet.YES_NO
   );
-  
+
   if (response !== ui.Button.YES) {
     return;
   }
-  
+
   try {
     analysisSheet.getRange('A17:Z10000').clearContent();
     ui.alert('✅ Success', 'Report data cleared!', ui.ButtonSet.OK);
@@ -245,7 +245,7 @@ function viewHHDataSheet() {
   // Keep existing BtM function - see btm_hh_generator.gs
   const ss = SpreadsheetApp.getActiveSpreadsheet();
   const hhSheet = ss.getSheetByName('HH DATA');
-  
+
   if (hhSheet) {
     ss.setActiveSheet(hhSheet);
     hhSheet.getRange('A1').activate();

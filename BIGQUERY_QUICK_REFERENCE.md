@@ -32,7 +32,7 @@ python3 btm_dno_lookup.py
 
 ### Check Data in BigQuery
 ```sql
-SELECT 
+SELECT
   supply_type,
   COUNT(*) as records,
   MAX(generated_at) as last_upload

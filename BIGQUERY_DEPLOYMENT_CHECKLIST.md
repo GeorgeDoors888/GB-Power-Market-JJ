@@ -222,7 +222,7 @@ python3 btm_dno_lookup.py
 
 ---
 
-**Last Updated**: December 30, 2025  
-**Status**: ✅ Implementation complete, ready for testing  
+**Last Updated**: December 30, 2025
+**Status**: ✅ Implementation complete, ready for testing
 **Next Action**: Run `./test_bigquery_workflow.sh` to validate end-to-end workflow
 

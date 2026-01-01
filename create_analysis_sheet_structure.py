@@ -41,7 +41,7 @@ CATEGORIES = [
 
 def create_analysis_sheets():
     """Create all Analysis sheet tabs"""
-    
+
     print("🔐 Authenticating with Google Sheets...")
     scopes = [
         'https://www.googleapis.com/auth/spreadsheets',
@@ -49,26 +49,26 @@ def create_analysis_sheets():
     ]
     creds = Credentials.from_service_account_file(CREDENTIALS_FILE, scopes=scopes)
     gc = gspread.authorize(creds)
-    
+
     print(f"📊 Opening spreadsheet: {SHEET_ID}")
     wb = gc.open_by_key(SHEET_ID)
-    
+
     # Create Categories tab
     print("\n1️⃣ Creating Categories tab...")
     create_categories_tab(wb)
-    
+
     # Create Parties tab
     print("\n2️⃣ Creating Parties tab...")
     create_parties_tab(wb)
-    
+
     # Create Party_Category link table
     print("\n3️⃣ Creating Party_Category tab...")
     create_party_category_tab(wb)
-    
+
     # Create Party_Wide boolean view
     print("\n4️⃣ Creating Party_Wide tab...")
     create_party_wide_tab(wb)
-    
+
     print("\n✅ All Analysis tabs created successfully!")
     print("\nNext steps:")
     print("1. Populate Parties tab with Elexon BSC signatories")
@@ -78,7 +78,7 @@ def create_analysis_sheets():
 
 def create_categories_tab(wb):
     """Create Categories tab with BSC/CUSC role definitions"""
-    
+
     # Check if tab exists
     try:
         sheet = wb.worksheet('Categories')
@@ -87,18 +87,18 @@ def create_categories_tab(wb):
     except gspread.exceptions.WorksheetNotFound:
         print("   ➕ Creating new Categories tab...")
         sheet = wb.add_worksheet(title='Categories', rows=100, cols=10)
-    
+
     # Headers
     headers = [['Category ID', 'Category Name', 'Description', 'Code', 'BSC/CUSC', 'Active', 'Notes']]
     sheet.update('A1:G1', headers)
-    
+
     # Format headers
     sheet.format('A1:G1', {
         'backgroundColor': {'red': 0.26, 'green': 0.52, 'blue': 0.96},
         'textFormat': {'foregroundColor': {'red': 1, 'green': 1, 'blue': 1}, 'bold': True},
         'horizontalAlignment': 'CENTER'
     })
-    
+
     # Write categories
     data = []
     for cat in CATEGORIES:
@@ -111,20 +111,20 @@ def create_categories_tab(wb):
             'TRUE',
             ''
         ])
-    
+
     sheet.update(f'A2:G{len(data)+1}', data)
-    
+
     # Auto-resize columns
     sheet.columns_auto_resize(0, 6)
-    
+
     # Freeze header row
     sheet.freeze(rows=1)
-    
+
     print(f"   ✅ Categories tab created with {len(CATEGORIES)} categories")
 
 def create_parties_tab(wb):
     """Create Parties tab for Elexon BSC signatories"""
-    
+
     try:
         sheet = wb.worksheet('Parties')
         print("   ⚠️  Parties tab exists, clearing...")
@@ -132,7 +132,7 @@ def create_parties_tab(wb):
     except gspread.exceptions.WorksheetNotFound:
         print("   ➕ Creating new Parties tab...")
         sheet = wb.add_worksheet(title='Parties', rows=1000, cols=15)
-    
+
     # Headers
     headers = [[
         'Party ID',
@@ -152,32 +152,32 @@ def create_parties_tab(wb):
         'Notes'
     ]]
     sheet.update('A1:O1', headers)
-    
+
     # Format headers
     sheet.format('A1:O1', {
         'backgroundColor': {'red': 0.26, 'green': 0.52, 'blue': 0.96},
         'textFormat': {'foregroundColor': {'red': 1, 'green': 1, 'blue': 1}, 'bold': True},
         'horizontalAlignment': 'CENTER'
     })
-    
+
     # Sample data (will be populated from Elexon API)
     sample_data = [
         ['P001', 'Example Generator Ltd', 'ExGen', '', '2020-01-15', 'Active', 'EGEN', '12345678', '', '', '', '', '', '', 'Sample data'],
         ['P002', 'Example Supplier PLC', 'ExSup', '', '2019-06-20', 'Active', 'ESUP', '87654321', '', '', '', '', '', '', 'Sample data'],
     ]
     sheet.update('A2:O3', sample_data)
-    
+
     # Freeze header row
     sheet.freeze(rows=1)
-    
+
     # Auto-resize columns
     sheet.columns_auto_resize(0, 14)
-    
+
     print(f"   ✅ Parties tab created (ready for data import)")
 
 def create_party_category_tab(wb):
     """Create Party_Category link table (many-to-many)"""
-    
+
     try:
         sheet = wb.worksheet('Party_Category')
         print("   ⚠️  Party_Category tab exists, clearing...")
@@ -185,7 +185,7 @@ def create_party_category_tab(wb):
     except gspread.exceptions.WorksheetNotFound:
         print("   ➕ Creating new Party_Category tab...")
         sheet = wb.add_worksheet(title='Party_Category', rows=5000, cols=8)
-    
+
     # Headers
     headers = [[
         'Party ID',
@@ -198,14 +198,14 @@ def create_party_category_tab(wb):
         'Notes'
     ]]
     sheet.update('A1:H1', headers)
-    
+
     # Format headers
     sheet.format('A1:H1', {
         'backgroundColor': {'red': 0.26, 'green': 0.52, 'blue': 0.96},
         'textFormat': {'foregroundColor': {'red': 1, 'green': 1, 'blue': 1}, 'bold': True},
         'horizontalAlignment': 'CENTER'
     })
-    
+
     # Sample data
     sample_data = [
         ['P001', 'Generator', 'Elexon API', 'High', 'TRUE', '2025-12-30', 'System', ''],
@@ -213,7 +213,7 @@ def create_party_category_tab(wb):
         ['P002', 'Supplier', 'Elexon API', 'High', 'TRUE', '2025-12-30', 'System', ''],
     ]
     sheet.update('A2:H4', sample_data)
-    
+
     # Data validation for Category Name (dropdown from Categories tab)
     # Note: Using batch_update for data validation (format() doesn't support dataValidation)
     try:
@@ -239,18 +239,18 @@ def create_party_category_tab(wb):
         sheet.spreadsheet.batch_update({'requests': [validation_rule]})
     except Exception as e:
         print(f"   ⚠️  Data validation skipped: {e}")
-    
+
     # Freeze header row
     sheet.freeze(rows=1)
-    
+
     # Auto-resize columns
     sheet.columns_auto_resize(0, 7)
-    
+
     print(f"   ✅ Party_Category link table created")
 
 def create_party_wide_tab(wb):
     """Create Party_Wide boolean flags view"""
-    
+
     try:
         sheet = wb.worksheet('Party_Wide')
         print("   ⚠️  Party_Wide tab exists, clearing...")
@@ -258,50 +258,50 @@ def create_party_wide_tab(wb):
     except gspread.exceptions.WorksheetNotFound:
         print("   ➕ Creating new Party_Wide tab...")
         sheet = wb.add_worksheet(title='Party_Wide', rows=1000, cols=30)
-    
+
     # Build headers: Party ID + all category names as columns
     category_names = [cat['name'] for cat in CATEGORIES]
     headers = [['Party ID', 'Party Name'] + category_names + ['Total Categories']]
-    
+
     sheet.update(f'A1:{chr(65+len(headers[0])-1)}1', headers)
-    
+
     # Format headers
     sheet.format(f'A1:{chr(65+len(headers[0])-1)}1', {
         'backgroundColor': {'red': 0.26, 'green': 0.52, 'blue': 0.96},
         'textFormat': {'foregroundColor': {'red': 1, 'green': 1, 'blue': 1}, 'bold': True},
         'horizontalAlignment': 'CENTER'
     })
-    
+
     # Sample formulas (row 2 as template)
     # Party ID and Name lookup from Parties tab
     formulas_row2 = [
         ['P001', '=VLOOKUP(A2,Parties!A:B,2,FALSE)']
     ]
-    
+
     # Add formula for each category column (check if Party_Category has this combination)
     for i, cat in enumerate(CATEGORIES):
         col_letter = chr(67 + i)  # Start from column C
         formula = f'=IF(COUNTIFS(Party_Category!$A:$A,$A2,Party_Category!$B:$B,{col_letter}$1)>0,"TRUE","FALSE")'
         formulas_row2[0].append(formula)
-    
+
     # Total categories formula
     end_col = chr(67 + len(CATEGORIES) - 1)
     total_formula = f'=COUNTIF(C2:{end_col}2,"TRUE")'
     formulas_row2[0].append(total_formula)
-    
+
     sheet.update(f'A2:{chr(65+len(formulas_row2[0])-1)}2', formulas_row2)
-    
+
     # Freeze header row and first two columns
     sheet.freeze(rows=1, cols=2)
-    
+
     # Auto-resize columns
     sheet.columns_auto_resize(0, len(headers[0])-1)
-    
+
     # Conditional formatting for TRUE/FALSE
     sheet.format('C2:Z1000', {
         'horizontalAlignment': 'CENTER'
     })
-    
+
     print(f"   ✅ Party_Wide boolean view created with {len(CATEGORIES)} category columns")
     print(f"   📋 Formula template in row 2 (copy down for more parties)")
 

@@ -30,23 +30,23 @@ def main():
     creds = service_account.Credentials.from_service_account_file(
         'inner-cinema-credentials.json', scopes=SCOPES)
     service = build('sheets', 'v4', credentials=creds)
-    
+
     print('📊 HH DATA GENERATOR (API-powered)')
     print('=' * 80)
-    
+
     # 1. Read inputs from BtM sheet
     result = service.spreadsheets().values().batchGet(
         spreadsheetId=SPREADSHEET_ID,
         ranges=['BtM!B17', 'BtM!B18', 'BtM!B19', 'BtM!B20']
     ).execute()
-    
+
     values = result['valueRanges']
     min_kw = float(values[0].get('values', [[0]])[0][0] or 0)
     avg_kw = float(values[1].get('values', [[0]])[0][0] or 0)
     max_kw = float(values[2].get('values', [[0]])[0][0] or 0)
     supply_type = values[3].get('values', [['Commercial']])[0][0]
     supply_type_key = supply_type.lower().replace(' ', '_')
-    
+
     # Determine which scaling value to use (priority: Max > Avg > Min)
     if max_kw > 0:
         scale_value = max_kw
@@ -60,29 +60,29 @@ def main():
     else:
         print('❌ Error: Please enter a value in B17 (Min kW), B18 (Avg kW), or B19 (Max kW)')
         sys.exit(1)
-    
+
     print(f'📌 BtM Parameters:')
     print(f'   {scale_type} kW: {scale_value:,.0f} (scaling value)')
     print(f'   Supply Type: {supply_type} (API key: {supply_type_key})')
-    
+
     # 2. Fetch all HH profile data from UK Power Networks (using export endpoint for all 17,520 records)
     export_url = f'{BASE_URL}/api/v2/catalog/datasets/{DATASET_ID}/exports/json?limit=-1'
     print(f'\n🌐 Fetching all 17,520 HH periods from UK Power Networks...')
     print(f'   Using export endpoint for complete dataset')
-    
+
     try:
         response = requests.get(export_url, timeout=60)
         response.raise_for_status()
         all_records = response.json()
-        
+
         print(f'✅ Fetched {len(all_records)} HH periods from UK Power Networks')
-        
+
     except Exception as e:
         print(f'❌ API Error: {e}')
         print(f'   Check BASE_URL: {BASE_URL}')
         print(f'   Check DATASET_ID: {DATASET_ID}')
         sys.exit(1)
-    
+
     # Transform export format to our format
     api_data = {
         'total_count': len(all_records),
@@ -103,19 +103,19 @@ def main():
             for record in all_records
         ]
     }
-    
+
     # 2b. Validate supply type exists
     if not api_data.get('results'):
         print('❌ No data returned from API')
         sys.exit(1)
-    
+
     first_record = api_data['results'][0]
     if supply_type_key not in first_record:
         available = [k for k in first_record.keys() if k != 'timestamp']
         print(f'❌ Supply type "{supply_type_key}" not found in API data')
         print(f'   Available: {", ".join(available)}')
         sys.exit(1)
-    
+
     # 3. Find or create HH DATA sheet
     spreadsheet = service.spreadsheets().get(spreadsheetId=SPREADSHEET_ID).execute()
     hh_sheet_id = None
@@ -123,7 +123,7 @@ def main():
         if sheet['properties']['title'] == 'HH DATA':
             hh_sheet_id = sheet['properties']['sheetId']
             break
-    
+
     if hh_sheet_id:
         print('\n📄 Clearing existing HH DATA sheet...')
         # Resize if needed
@@ -139,7 +139,7 @@ def main():
                 }
             }]}
         ).execute()
-        
+
         # Clear content
         service.spreadsheets().values().clear(
             spreadsheetId=SPREADSHEET_ID,
@@ -159,27 +159,27 @@ def main():
             }]}
         ).execute()
         print('✅ Sheet created')
-    
+
     # 4. Process API data and write to sheet
     print(f'\n📝 Processing {len(api_data["results"])} HH periods...')
     hh_data = [['Timestamp', 'Settlement Period', 'Day Type', 'Demand (kW)', 'Profile %']]
-    
+
     sp = 1
     for record in api_data['results']:
         # Parse timestamp
         timestamp = datetime.fromisoformat(record['timestamp'].replace('Z', '+00:00'))
         is_weekend = timestamp.weekday() >= 5
         day_type = 'Weekend' if is_weekend else 'Weekday'
-        
+
         # Get profile % from API
         profile_pct = float(record[supply_type_key])
-        
+
         # Scale profile: demand = scale_value × (profile% / 100)
         demand_kw = scale_value * (profile_pct / 100.0)
-        
+
         # Format timestamp
         formatted_time = timestamp.strftime('%Y-%m-%d %H:%M')
-        
+
         hh_data.append([
             formatted_time,
             sp,
@@ -187,12 +187,12 @@ def main():
             round(demand_kw, 2),
             round(profile_pct, 1)
         ])
-        
+
         # Increment settlement period (1-48, resets at midnight)
         sp += 1
         if sp > 48:
             sp = 1
-    
+
     # 5. Upload to Google Sheets in batches
     print(f'📤 Uploading {len(hh_data) - 1} periods to HH DATA sheet...')
     batch_size = 5000
@@ -200,17 +200,17 @@ def main():
         batch = hh_data[i:i + batch_size]
         start_row = i + 1
         end_row = start_row + len(batch) - 1
-        
+
         service.spreadsheets().values().update(
             spreadsheetId=SPREADSHEET_ID,
             range=f'HH DATA!A{start_row}:E{end_row}',
             valueInputOption='RAW',
             body={'values': batch}
         ).execute()
-        
+
         if i > 0:  # Skip header batch
             print(f'   Rows {start_row:,}-{end_row:,}')
-    
+
     # 6. Format headers
     print('\n🎨 Formatting headers...')
     service.spreadsheets().batchUpdate(
@@ -236,7 +236,7 @@ def main():
             }
         }]}
     ).execute()
-    
+
     print('\n' + '=' * 80)
     print(f'✅ COMPLETE - HH DATA READY')
     print(f'   Profile: {supply_type.title()}')

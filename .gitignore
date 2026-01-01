@@ -110,3 +110,4 @@ venv/
 pdf_index_state.json
 .vercel
 .env*.local
+cmems_waves_uk/*.nc

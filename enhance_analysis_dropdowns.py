@@ -39,9 +39,9 @@ print("\n📊 STEP 1: Querying BigQuery for party roles and definitions...\n")
 
 party_role_query = f"""
 WITH party_stats AS (
-  SELECT 
+  SELECT
     nationalGridBmUnit AS partyName,
-    CASE 
+    CASE
       WHEN bmUnitId LIKE 'T_%' THEN 'VTP'  -- Virtual Transmission Point
       WHEN bmUnitId LIKE '%FBPGM%' OR bmUnitId LIKE '%FESEN%' OR bmUnitId LIKE '%STORAGE%' THEN 'VLP'  -- Virtual Lead Party (Battery storage)
       WHEN bmUnitId LIKE 'E_%' OR bmUnitId LIKE 'M_%' THEN 'Production'  -- Generation units
@@ -57,7 +57,7 @@ WITH party_stats AS (
     AND settlementDate >= DATE_SUB(CURRENT_DATE(), INTERVAL 30 DAY)
   GROUP BY partyName, party_role
 )
-SELECT 
+SELECT
   party_role,
   COUNT(DISTINCT partyName) as party_count,
   SUM(unit_count) as total_units
@@ -85,13 +85,13 @@ LIMIT 50
 try:
     party_roles_df = bq_client.query(party_role_query).to_dataframe()
     demand_users_df = bq_client.query(demand_query).to_dataframe()
-    
+
     print(f"✅ Found {len(party_roles_df)} party role categories")
     print(f"✅ Found {len(demand_users_df)} transmission-connected demand users\n")
-    
+
     for _, row in party_roles_df.iterrows():
         print(f"   {row['party_role']}: {row['party_count']} parties, {row['total_units']} units")
-    
+
 except Exception as e:
     print(f"⚠️  Error querying BigQuery: {e}")
     print("   Using default party roles...\n")
@@ -304,7 +304,7 @@ print("\n📝 STEP 5: Creating Transmission Demand Users sheet...\n")
 if not demand_users_df.empty:
     # Check if sheet exists
     demand_sheet_exists = any(sheet['properties']['title'] == 'Transmission Demand' for sheet in sheets_metadata['sheets'])
-    
+
     if not demand_sheet_exists:
         request = {
             'addSheet': {
@@ -323,7 +323,7 @@ if not demand_users_df.empty:
             body={'requests': [request]}
         ).execute()
         print("✅ Created Transmission Demand sheet")
-    
+
     # Prepare data
     demand_data = [['Party Name', 'BMU ID', 'Avg Demand (MW)', 'Type']]
     for _, row in demand_users_df.iterrows():
@@ -333,7 +333,7 @@ if not demand_users_df.empty:
             f"{abs(row['avg_demand_mw']):.1f}",
             'Transmission-Connected Demand'
         ])
-    
+
     # Write data
     sheets_service.spreadsheets().values().update(
         spreadsheetId=SPREADSHEET_ID,
@@ -341,7 +341,7 @@ if not demand_users_df.empty:
         valueInputOption='RAW',
         body={'values': demand_data}
     ).execute()
-    
+
     print(f"✅ Written {len(demand_data)-1} transmission demand users\n")
 else:
     print("⚠️  No demand user data available (BigQuery query may have failed)\n")

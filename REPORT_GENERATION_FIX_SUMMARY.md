@@ -1,5 +1,5 @@
 # Report Generation Fix - Final Summary
-**Date**: December 31, 2025  
+**Date**: December 31, 2025
 **Status**: ✅ FIXED - Categories Now Match Script Logic
 
 ---
@@ -77,33 +77,33 @@ All Reports
 ## 📊 Category-to-Use-Case Mapping
 
 ### VLP Revenue Analysis
-**Use**: `📊 Analytics & Derived (Balancing with Prices)`  
-**Output**: date, settlementPeriod, bmUnit, party_name, volume_mwh, price_gbp_mwh, acceptance_count  
+**Use**: `📊 Analytics & Derived (Balancing with Prices)`
+**Output**: date, settlementPeriod, bmUnit, party_name, volume_mwh, price_gbp_mwh, acceptance_count
 **Filter**: Set B10 to specific VLP operator (Flexgen, Harmony Energy, etc.)
 
-### Curtailment Analysis  
-**Use**: `⚠️ REMIT Messages (Unavailability)`  
-**Output**: date, bmUnit, unavailabilityType, fuelType, availableCapacity, unavailableCapacity  
+### Curtailment Analysis
+**Use**: `⚠️ REMIT Messages (Unavailability)`
+**Output**: date, bmUnit, unavailabilityType, fuelType, availableCapacity, unavailableCapacity
 **Filter**: Set B8 Generation Type to "Wind" or "Solar"
 
 ### Generator Performance
-**Use**: `⚡ Generation & Fuel Mix (Aggregated)` or `🔋 Individual BMU`  
-**Output**: date, settlementPeriod, fuelType/bmUnit, generation_mw/mwh  
+**Use**: `⚡ Generation & Fuel Mix (Aggregated)` or `🔋 Individual BMU`
+**Output**: date, settlementPeriod, fuelType/bmUnit, generation_mw/mwh
 **Filter**: Set B6 to specific BMU IDs
 
 ### Balancing Mechanism
-**Use**: `📊 Analytics & Derived (Balancing with Prices)`  
-**Output**: date, settlementPeriod, bmUnit, volume_mwh, price_gbp_mwh  
+**Use**: `📊 Analytics & Derived (Balancing with Prices)`
+**Output**: date, settlementPeriod, bmUnit, volume_mwh, price_gbp_mwh
 **Note**: Uses bmrs_boalf_complete with validated acceptances + prices
 
 ### Market Pricing
-**Use**: `📈 Market Prices (MID/SSP/SBP)`  
-**Output**: date, settlementPeriod, mid_price_gbp_mwh, volume_mwh  
+**Use**: `📈 Market Prices (MID/SSP/SBP)`
+**Output**: date, settlementPeriod, mid_price_gbp_mwh, volume_mwh
 **Note**: Market Index Data (wholesale pricing)
 
 ### Settlement Analysis
-**Use**: `📡 System Operations (Frequency/Prices)`  
-**Output**: date, settlementPeriod, ssp, sbp, avg_freq  
+**Use**: `📡 System Operations (Frequency/Prices)`
+**Output**: date, settlementPeriod, ssp, sbp, avg_freq
 **Note**: System prices (SSP=SBP since P305) + frequency
 
 ---
@@ -165,8 +165,8 @@ All Reports
 
 ### Issue 1: Script Timeout (30-45 seconds)
 
-**Symptoms**: `python3 generate_analysis_report.py` hangs or times out  
-**Cause**: Large date ranges + complex queries  
+**Symptoms**: `python3 generate_analysis_report.py` hangs or times out
+**Cause**: Large date ranges + complex queries
 **Workaround**:
 - Use smaller date ranges (7-14 days instead of 30)
 - Add LIMIT clause to queries (already set to 10,000)
@@ -176,9 +176,9 @@ All Reports
 
 ### Issue 2: No Webhook Automation
 
-**Symptoms**: Apps Script button shows "Run this command in terminal"  
-**Cause**: Webhook server not configured  
-**Workaround**: Run `python3 generate_analysis_report.py` manually  
+**Symptoms**: Apps Script button shows "Run this command in terminal"
+**Cause**: Webhook server not configured
+**Workaround**: Run `python3 generate_analysis_report.py` manually
 **Future Fix**: Set up Flask webhook server (see `dno_webhook_server.py` pattern)
 
 ---
@@ -245,8 +245,8 @@ $ python3 test_report_category_fix.py
 
 ---
 
-**Status**: ✅ READY FOR PRODUCTION  
-**Next Action**: Install Apps Script button for one-click automation  
+**Status**: ✅ READY FOR PRODUCTION
+**Next Action**: Install Apps Script button for one-click automation
 **Support**: See REPORT_GENERATION_DIAGNOSIS.md for troubleshooting
 
 ---

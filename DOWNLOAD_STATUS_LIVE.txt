@@ -1,0 +1,42 @@
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                    🚀 LIVE DOWNLOAD STATUS - 31 DEC 2025                     ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+✅ ERA5 DOWNLOAD - RUNNING
+   Process: python3 download_era5_turbine_points.py
+   Started: 11:22 UTC
+   Status: In progress (CDS queue processing)
+   Monitor: tail -f era5_download.log
+   Progress: ls era5_points/*.parquet | wc -l (target: 246)
+
+✅ CMEMS DOWNLOAD - RUNNING  
+   Process: python3 download_cmems_waves_uk.py (PID 3153962)
+   Started: 11:47 UTC
+   Status: In progress (downloading 2020 data)
+   Monitor: ls cmems_waves_uk/*.nc | wc -l (target: 6-7)
+
+📊 WHAT'S BEING DOWNLOADED
+
+ERA5 (Hourly at 41 Turbine Locations):
+  • u100, v100 → wind speed/direction at 100m hub height
+  • t2m, d2m → temperature, humidity at 2m
+  • 2020-2025 (6 years)
+  • 246 requests (41 turbines × 6 years)
+  • Expected: 2.15M rows → uk_energy_prod.era5_turbine_hourly
+
+CMEMS (UK Grid 49.5-61.5°N, -12.0-4.5°E):
+  • VHM0, VTPK, VMDR (significant wave height, period, direction)
+  • Partitioned: SW1, SW2, WW (primary swell, secondary swell, wind waves)
+  • 2020-2025 (6 years, 3-hourly)
+  • 12 wave variables total
+  • Expected: 500k-2M rows → uk_energy_prod.cmems_waves_uk_grid
+
+🔐 CREDENTIALS: Both configured and working
+🎯 PRODUCTS: ERA5 (CDS) + CMEMS BLUE OCEAN (waves reanalysis + forecast)
+
+⏱️  CHECK PROGRESS ANYTIME:
+   ps aux | grep "download_" | grep -v grep
+   ls era5_points/*.parquet 2>/dev/null | wc -l
+   ls cmems_waves_uk/*.nc 2>/dev/null | wc -l
+
+Last updated: 31 Dec 2025 11:50 UTC

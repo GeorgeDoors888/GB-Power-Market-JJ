@@ -24,7 +24,7 @@ CREDENTIALS_FILE = "inner-cinema-credentials.json"
 
 # Initialize clients
 bq_client = bigquery.Client(project=PROJECT_ID, location="US")
-creds = Credentials.from_service_account_file(CREDENTIALS_FILE, 
+creds = Credentials.from_service_account_file(CREDENTIALS_FILE,
     scopes=['https://www.googleapis.com/auth/spreadsheets'])
 sheets_service = build('sheets', 'v4', credentials=creds)
 
@@ -46,20 +46,20 @@ def get_grid_summary():
     # Simplified: Just get total capacity and use forecast data for current
     query = f"""
     WITH capacity AS (
-        SELECT 
+        SELECT
             SUM(capacity_mw) as total_capacity_mw,
             COUNT(DISTINCT farm_name) as num_farms
         FROM `{PROJECT_ID}.{DATASET}.wind_farm_to_bmu`
     ),
     current_wind AS (
-        SELECT 
+        SELECT
             SUM(forecast_mw) as current_generation_mw
         FROM `{PROJECT_ID}.{DATASET}.wind_forecast_sp`
         WHERE settlement_date >= CURRENT_DATE()
         ORDER BY settlement_date DESC, settlement_period DESC
         LIMIT 1
     )
-    SELECT 
+    SELECT
         c.total_capacity_mw,
         COALESCE(w.current_generation_mw, 0) as current_generation_mw,
         c.num_farms,
@@ -74,7 +74,7 @@ def get_top_farms_current():
     """Get top 5 wind farms by current generation - using forecast data"""
     query = f"""
     WITH latest_forecast AS (
-        SELECT 
+        SELECT
             farm_name,
             forecast_mw as generation_mw,
             settlement_date,
@@ -84,13 +84,13 @@ def get_top_farms_current():
         QUALIFY ROW_NUMBER() OVER (ORDER BY settlement_date DESC, settlement_period DESC) = 1
     ),
     farm_capacity AS (
-        SELECT 
+        SELECT
             farm_name,
             SUM(capacity_mw) as capacity_mw
         FROM `{PROJECT_ID}.{DATASET}.wind_farm_to_bmu`
         GROUP BY farm_name
     )
-    SELECT 
+    SELECT
         lf.farm_name,
         lf.generation_mw,
         fc.capacity_mw,
@@ -107,7 +107,7 @@ def get_wind_change_alerts():
     # Use existing wind_forecast_error_sp view which has the data we need
     query = f"""
     WITH recent_errors AS (
-        SELECT 
+        SELECT
             farm_name,
             forecast_mw,
             actual_mw,
@@ -115,7 +115,7 @@ def get_wind_change_alerts():
             ABS(error_pct) as abs_error_pct,
             settlement_date,
             settlement_period,
-            CASE 
+            CASE
                 WHEN ABS(error_pct) >= 40 THEN 'CRITICAL'
                 WHEN ABS(error_pct) >= 20 THEN 'WARNING'
                 ELSE 'STABLE'
@@ -126,7 +126,7 @@ def get_wind_change_alerts():
         ORDER BY ABS(error_pct) DESC
         LIMIT 10
     )
-    SELECT 
+    SELECT
         farm_name,
         actual_mw as current_wind,
         forecast_mw as forecast_wind,
@@ -145,22 +145,22 @@ def get_ice_alerts():
     try:
         query = f"""
         WITH latest_weather AS (
-            SELECT 
+            SELECT
                 wf.farm_name,
                 era5.temperature_2m,
                 era5.relative_humidity_2m,
                 era5.precipitation,
                 era5.wind_speed_100m,
                 era5.time_utc,
-                CASE 
-                    WHEN era5.temperature_2m BETWEEN -3 AND 2 
-                        AND era5.relative_humidity_2m > 92 
-                        AND era5.precipitation > 0 
-                        AND EXTRACT(MONTH FROM era5.time_utc) IN (11, 12, 1, 2, 3) 
+                CASE
+                    WHEN era5.temperature_2m BETWEEN -3 AND 2
+                        AND era5.relative_humidity_2m > 92
+                        AND era5.precipitation > 0
+                        AND EXTRACT(MONTH FROM era5.time_utc) IN (11, 12, 1, 2, 3)
                         THEN 'HIGH'
-                    WHEN era5.temperature_2m BETWEEN -5 AND 5 
-                        AND era5.relative_humidity_2m > 85 
-                        AND EXTRACT(MONTH FROM era5.time_utc) IN (11, 12, 1, 2, 3) 
+                    WHEN era5.temperature_2m BETWEEN -5 AND 5
+                        AND era5.relative_humidity_2m > 85
+                        AND EXTRACT(MONTH FROM era5.time_utc) IN (11, 12, 1, 2, 3)
                         THEN 'MODERATE'
                     ELSE 'LOW'
                 END as ice_risk
@@ -170,7 +170,7 @@ def get_ice_alerts():
             WHERE era5.time_utc >= TIMESTAMP_SUB(CURRENT_TIMESTAMP(), INTERVAL 3 HOUR)
             QUALIFY ROW_NUMBER() OVER (PARTITION BY wf.farm_name ORDER BY era5.time_utc DESC) = 1
         )
-        SELECT 
+        SELECT
             farm_name,
             temperature_2m,
             relative_humidity_2m,
@@ -180,7 +180,7 @@ def get_ice_alerts():
             time_utc as last_update
         FROM latest_weather
         WHERE ice_risk IN ('HIGH', 'MODERATE')
-        ORDER BY 
+        ORDER BY
             CASE ice_risk WHEN 'HIGH' THEN 1 WHEN 'MODERATE' THEN 2 ELSE 3 END,
             farm_name
         LIMIT 8
@@ -202,7 +202,7 @@ def get_ice_alerts():
 def get_hourly_wind_sparkline_data(farm_name, hours=24):
     """Get hourly wind speed data for sparkline (last 24h)"""
     query = f"""
-    SELECT 
+    SELECT
         wind_speed_100m,
         time_utc
     FROM `{PROJECT_ID}.{DATASET}.openmeteo_wind_historic`
@@ -222,25 +222,25 @@ def get_hourly_wind_sparkline_data(farm_name, hours=24):
 def create_traffic_light_dashboard():
     """Create comprehensive traffic light dashboard with visuals"""
     logger.info("🚦 Creating Wind Forecasting Traffic Light Dashboard...")
-    
+
     # Get sheet ID
     sheet_id = get_sheet_id(SHEET_NAME)
     if sheet_id is None:
         logger.error("Cannot proceed without valid sheet ID")
         return
-    
+
     # Section 1: Grid Summary (A90-A98)
     logger.info("📊 Building grid summary section...")
     grid_summary = get_grid_summary()
     top_farms = get_top_farms_current()
-    
+
     grid_data = [
         ["🌊 UK OFFSHORE WIND - GRID SUMMARY", "", "", "", "", ""],
         [f"Last Update: {datetime.now().strftime('%Y-%m-%d %H:%M')}", "", "", "", "", ""],
         ["", "", "", "", "", ""],
         ["Total Capacity", "Current Output", "Capacity Factor", "Active Farms", "", ""],
     ]
-    
+
     if grid_summary is not None:
         grid_data.append([
             f"{grid_summary['total_capacity_mw']:.0f} MW",
@@ -251,13 +251,13 @@ def create_traffic_light_dashboard():
         ])
     else:
         grid_data.append(["No data", "No data", "No data", "No data", "", ""])
-    
+
     grid_data.extend([
         ["", "", "", "", "", ""],
         ["🏆 TOP 5 WIND FARMS (Current Generation)", "", "", "", "", ""],
         ["Rank", "Farm Name", "Output (MW)", "Capacity (MW)", "CF %", "Status"],
     ])
-    
+
     if len(top_farms) > 0:
         for idx, row in top_farms.iterrows():
             status = "🟢" if row['capacity_factor_pct'] >= 60 else "🟡" if row['capacity_factor_pct'] >= 30 else "🔴"
@@ -269,17 +269,17 @@ def create_traffic_light_dashboard():
                 f"{row['capacity_factor_pct']:.1f}",
                 status
             ])
-    
+
     # Section 2: Wind Change Alerts (A100-A115)
     logger.info("⚠️ Building wind change alerts...")
     wind_alerts = get_wind_change_alerts()
-    
+
     alert_data = [
         ["", "", "", "", "", "", ""],
         ["🚨 WIND CHANGE ALERTS (Historical Causation)", "", "", "", "", "", ""],
         ["Farm", "Current Wind", "Forecast Wind", "Change %", "Direction Δ", "Lead Time", "Alert"],
     ]
-    
+
     if len(wind_alerts) > 0:
         for _, row in wind_alerts.iterrows():
             alert_icon = "🔴" if row['alert_level'] == 'CRITICAL' else "🟡" if row['alert_level'] == 'WARNING' else "🟢"
@@ -294,17 +294,17 @@ def create_traffic_light_dashboard():
             ])
     else:
         alert_data.append(["No alerts", "", "", "", "", "", "🟢"])
-    
+
     # Section 3: Ice Alerts (A117-A130)
     logger.info("❄️ Building ice risk alerts...")
     ice_alerts = get_ice_alerts()
-    
+
     ice_data = [
         ["", "", "", "", "", "", ""],
         ["❄️ ICING RISK ALERTS (Weather Variables)", "", "", "", "", "", ""],
         ["Farm", "Temp (°C)", "Humidity %", "Precip (mm)", "Wind (m/s)", "Risk", "Alert"],
     ]
-    
+
     if len(ice_alerts) > 0:
         for _, row in ice_alerts.iterrows():
             alert_icon = "🔴" if row['ice_risk'] == 'HIGH' else "🟡"
@@ -319,14 +319,14 @@ def create_traffic_light_dashboard():
             ])
     else:
         ice_data.append(["No ice risk", "", "", "", "", "LOW", "🟢"])
-    
+
     # Combine all sections
     all_data = grid_data + alert_data + ice_data
-    
+
     # Write to Google Sheets
     logger.info(f"📝 Writing {len(all_data)} rows to Google Sheets...")
     range_name = f"{SHEET_NAME}!A90:G{90 + len(all_data) - 1}"
-    
+
     body = {'values': all_data}
     sheets_service.spreadsheets().values().update(
         spreadsheetId=SPREADSHEET_ID,
@@ -334,17 +334,17 @@ def create_traffic_light_dashboard():
         valueInputOption='USER_ENTERED',
         body=body
     ).execute()
-    
+
     logger.info("✅ Data written successfully")
-    
+
     # Apply conditional formatting and visual styling
     logger.info("🎨 Applying traffic light conditional formatting...")
     apply_traffic_light_formatting(sheet_id)
-    
+
     # Add sparklines for wind trends
     logger.info("📈 Adding sparkline charts...")
     add_sparkline_charts(sheet_id, wind_alerts)
-    
+
     logger.info("✅ TRAFFIC LIGHT DASHBOARD COMPLETE!")
     print("\n" + "="*70)
     print("✅ WIND FORECASTING TRAFFIC LIGHT DASHBOARD DEPLOYED")
@@ -367,7 +367,7 @@ def create_traffic_light_dashboard():
 def apply_traffic_light_formatting(sheet_id):
     """Apply conditional formatting rules for traffic lights"""
     requests = []
-    
+
     # Rule 1: Red alert for CRITICAL (change % >= 40%)
     requests.append({
         'addConditionalFormatRule': {
@@ -387,7 +387,7 @@ def apply_traffic_light_formatting(sheet_id):
             'index': 0
         }
     })
-    
+
     # Rule 2: Yellow alert for WARNING (change % 20-40%)
     requests.append({
         'addConditionalFormatRule': {
@@ -407,7 +407,7 @@ def apply_traffic_light_formatting(sheet_id):
             'index': 1
         }
     })
-    
+
     # Rule 3: Green alert for STABLE
     requests.append({
         'addConditionalFormatRule': {
@@ -427,7 +427,7 @@ def apply_traffic_light_formatting(sheet_id):
             'index': 2
         }
     })
-    
+
     # Rule 4: Ice risk alerts (red/yellow)
     requests.append({
         'addConditionalFormatRule': {
@@ -447,7 +447,7 @@ def apply_traffic_light_formatting(sheet_id):
             'index': 3
         }
     })
-    
+
     # Apply header formatting
     requests.append({
         'repeatCell': {
@@ -468,7 +468,7 @@ def apply_traffic_light_formatting(sheet_id):
             'fields': 'userEnteredFormat(backgroundColor,textFormat,horizontalAlignment)'
         }
     })
-    
+
     # Execute formatting
     try:
         body = {'requests': requests}
@@ -485,10 +485,10 @@ def add_sparkline_charts(sheet_id, wind_alerts):
     # Note: Google Sheets sparklines are added via formulas, not API
     # This function documents the approach but requires Apps Script integration
     logger.info("📊 Sparkline charts require Apps Script - see documentation")
-    
+
     # Example sparkline formula that could be added:
     # =SPARKLINE(H100:H124, {"charttype","line"; "linewidth",2; "color","blue"})
-    
+
     # For now, log the farms that need sparklines
     if len(wind_alerts) > 0:
         logger.info(f"Sparklines needed for {len(wind_alerts)} farms:")

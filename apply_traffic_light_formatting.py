@@ -19,12 +19,12 @@ CREDENTIALS_FILE = "inner-cinema-credentials.json"
 def main():
     """Apply traffic light formatting to existing wind dashboard sections"""
     logger.info("🚦 Applying Traffic Light Formatting...")
-    
+
     # Initialize Google Sheets API
-    creds = Credentials.from_service_account_file(CREDENTIALS_FILE, 
+    creds = Credentials.from_service_account_file(CREDENTIALS_FILE,
         scopes=['https://www.googleapis.com/auth/spreadsheets'])
     service = build('sheets', 'v4', credentials=creds)
-    
+
     # Get sheet ID
     spreadsheet = service.spreadsheets().get(spreadsheetId=SPREADSHEET_ID).execute()
     sheet_id = None
@@ -32,19 +32,19 @@ def main():
         if sheet['properties']['title'] == SHEET_NAME:
             sheet_id = sheet['properties']['sheetId']
             break
-    
+
     if sheet_id is None:
         logger.error(f"Sheet '{SHEET_NAME}' not found")
         return
-    
+
     logger.info(f"Found sheet ID: {sheet_id}")
-    
+
     # Build formatting requests
     requests = []
-    
+
     # 1. Wind Change Alerts (A26-A33) - Column G has the alert icons
     logger.info("Formatting wind change alerts (A26-A33)...")
-    
+
     # Critical (60%+ change) - RED background
     requests.append({
         'addConditionalFormatRule': {
@@ -64,7 +64,7 @@ def main():
             'index': 0
         }
     })
-    
+
     # Warning (40-60% change) - ORANGE background
     requests.append({
         'addConditionalFormatRule': {
@@ -87,7 +87,7 @@ def main():
             'index': 1
         }
     })
-    
+
     # Stable (20-40% change) - YELLOW background
     requests.append({
         'addConditionalFormatRule': {
@@ -110,10 +110,10 @@ def main():
             'index': 2
         }
     })
-    
+
     # 2. Revenue Impact (A63-A72) - Severity column highlighting
     logger.info("Formatting revenue impact severity (A63-A72)...")
-    
+
     # High severity - RED text
     requests.append({
         'addConditionalFormatRule': {
@@ -132,7 +132,7 @@ def main():
             'index': 3
         }
     })
-    
+
     # Medium severity - ORANGE text
     requests.append({
         'addConditionalFormatRule': {
@@ -151,10 +151,10 @@ def main():
             'index': 4
         }
     })
-    
+
     # 3. Hour-of-Day Accuracy (A73-A82) - Error % color scale
     logger.info("Formatting hour-of-day accuracy (A73-A82)...")
-    
+
     # High error (>50%) - RED background
     requests.append({
         'addConditionalFormatRule': {
@@ -174,7 +174,7 @@ def main():
             'index': 5
         }
     })
-    
+
     # Moderate error (10-50%) - YELLOW background
     requests.append({
         'addConditionalFormatRule': {
@@ -196,7 +196,7 @@ def main():
             'index': 6
         }
     })
-    
+
     # Low error (<10%) - GREEN background
     requests.append({
         'addConditionalFormatRule': {
@@ -215,10 +215,10 @@ def main():
             'index': 7
         }
     })
-    
+
     # 4. Add header styling for all sections
     logger.info("Formatting section headers...")
-    
+
     # Wind alerts header (A26)
     requests.append({
         'repeatCell': {
@@ -243,7 +243,7 @@ def main():
             'fields': 'userEnteredFormat(backgroundColor,textFormat,horizontalAlignment)'
         }
     })
-    
+
     # Revenue impact header (A63)
     requests.append({
         'repeatCell': {
@@ -268,7 +268,7 @@ def main():
             'fields': 'userEnteredFormat(backgroundColor,textFormat,horizontalAlignment)'
         }
     })
-    
+
     # Hour-of-day header (A73)
     requests.append({
         'repeatCell': {
@@ -293,7 +293,7 @@ def main():
             'fields': 'userEnteredFormat(backgroundColor,textFormat,horizontalAlignment)'
         }
     })
-    
+
     # Execute all formatting requests
     logger.info(f"Applying {len(requests)} formatting rules...")
     try:
@@ -302,9 +302,9 @@ def main():
             spreadsheetId=SPREADSHEET_ID,
             body=body
         ).execute()
-        
+
         logger.info(f"✅ Applied {len(response.get('replies', []))} formatting updates")
-        
+
         print("\n" + "="*70)
         print("✅ TRAFFIC LIGHT FORMATTING COMPLETE")
         print("="*70)
@@ -325,7 +325,7 @@ def main():
         print(f"    • GREEN: <10% error")
         print("="*70)
         print(f"\n📊 View dashboard: https://docs.google.com/spreadsheets/d/{SPREADSHEET_ID}/edit")
-        
+
     except Exception as e:
         logger.error(f"Failed to apply formatting: {e}")
         raise

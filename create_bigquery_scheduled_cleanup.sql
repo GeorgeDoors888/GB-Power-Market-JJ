@@ -1,7 +1,7 @@
 -- BigQuery Scheduled Query: HH DATA 90-Day Cleanup
 -- Purpose: Automatically delete HH DATA records older than 90 days
 -- Schedule: Monthly on 1st at 02:00 UTC
--- 
+--
 -- MANUAL SETUP REQUIRED (BigQuery Console):
 -- 1. Open: https://console.cloud.google.com/bigquery?project=inner-cinema-476211-u9
 -- 2. Click: "Scheduled queries" in left sidebar
@@ -31,7 +31,7 @@ WHERE generated_at < TIMESTAMP_SUB(CURRENT_TIMESTAMP(), INTERVAL 90 DAY);
 -- WHERE generated_at < TIMESTAMP_SUB(CURRENT_TIMESTAMP(), INTERVAL 90 DAY);
 --
 -- Verify what will be deleted:
--- SELECT 
+-- SELECT
 --   COUNT(*) as records_to_delete,
 --   MIN(generated_at) as oldest_record,
 --   MAX(generated_at) as newest_in_deletion
@@ -39,7 +39,7 @@ WHERE generated_at < TIMESTAMP_SUB(CURRENT_TIMESTAMP(), INTERVAL 90 DAY);
 -- WHERE generated_at < TIMESTAMP_SUB(CURRENT_TIMESTAMP(), INTERVAL 90 DAY);
 --
 -- Check retention status:
--- SELECT 
+-- SELECT
 --   DATE(generated_at) as generation_date,
 --   COUNT(*) as records,
 --   TIMESTAMP_DIFF(CURRENT_TIMESTAMP(), MIN(generated_at), DAY) as days_old

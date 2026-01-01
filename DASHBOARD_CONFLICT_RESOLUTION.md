@@ -1,7 +1,7 @@
 # Dashboard Layout Conflict Resolution & Design Guide
 
-**Date**: December 30, 2025  
-**Issue**: Multiple cron jobs and scripts writing to overlapping row ranges  
+**Date**: December 30, 2025
+**Issue**: Multiple cron jobs and scripts writing to overlapping row ranges
 **Solution**: Coordinated row allocation registry with safe update zones
 
 ---
@@ -50,8 +50,8 @@ Rows 74-102: Available for future features
 ## 🔧 Fixes Applied
 
 ### 1. Wind Dashboard Moved
-**Old location**: Rows 25-48 (conflicted with clearing zone)  
-**New location**: Rows 50-73 (safe zone)  
+**Old location**: Rows 25-48 (conflicted with clearing zone)
+**New location**: Rows 50-73 (safe zone)
 **Script**: `create_wind_analysis_dashboard_live.py`
 
 **Changes**:
@@ -78,7 +78,7 @@ clear_garbage_rows = [['', '', '', '', '', ''] for _ in range(19)]  # 19 rows (2
 cache.queue_update(SPREADSHEET_ID, 'Live Dashboard v2', 'A25:F43', clear_garbage_rows)
 ```
 
-**Recommended action**: 
+**Recommended action**:
 - **Option A**: Remove entirely if Data_Hidden bleed-through no longer occurs
 - **Option B**: Reduce range to rows 36-43 (preserves outages in 25-35)
 - **Option C**: Change to columns A:E only (preserves column F)
@@ -320,40 +320,40 @@ def main():
     # Step 1: Check for conflicts
     print(f"Checking rows {START_ROW}-{END_ROW}, columns {COLUMNS}...")
     conflicts = check_row_conflict(START_ROW, END_ROW, COLUMNS)
-    
+
     if conflicts:
         print(f"⚠️ CONFLICTS FOUND: {conflicts}")
         return False
-    
+
     # Step 2: Verify safe to write
     safe, reason = is_safe_to_write(START_ROW, END_ROW, COLUMNS, SCRIPT_NAME)
     if not safe:
         print(f"⚠️ NOT SAFE: {reason}")
         return False
-    
+
     print(f"✅ Safe to proceed: {reason}")
-    
+
     # Step 3: Prepare data
     dashboard_data = [
         ['🔋 BATTERY DASHBOARD', '', '', '', '', '', ''],
         ['KPI 1', 'Value 1', '', '', '', '', ''],
         # ... more rows
     ]
-    
+
     # Step 4: Write to sheets
     creds = Credentials.from_service_account_file(
         'inner-cinema-credentials.json',
         scopes=['https://www.googleapis.com/auth/spreadsheets']
     )
     sheets_service = build('sheets', 'v4', credentials=creds, cache_discovery=False)
-    
+
     result = sheets_service.spreadsheets().values().update(
         spreadsheetId=SPREADSHEET_ID,
         range=f'{SHEET_NAME}!{COLUMNS}{START_ROW}:{COLUMNS}{END_ROW}',
         valueInputOption='USER_ENTERED',
         body={'values': dashboard_data}
     ).execute()
-    
+
     print(f"✅ Updated {result.get('updatedCells')} cells")
     return True
 
@@ -417,6 +417,6 @@ python3 update_live_metrics.py
 
 ---
 
-**Status**: ✅ Wind dashboard fixed (moved to rows 50-73)  
-**Next Step**: Consider removing clearing code from `update_live_metrics.py` line 1482  
+**Status**: ✅ Wind dashboard fixed (moved to rows 50-73)
+**Next Step**: Consider removing clearing code from `update_live_metrics.py` line 1482
 **Last Updated**: December 30, 2025

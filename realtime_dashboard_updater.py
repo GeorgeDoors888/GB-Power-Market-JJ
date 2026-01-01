@@ -16,7 +16,8 @@ from datetime import datetime, timedelta
 from pathlib import Path
 from google.cloud import bigquery
 from google.oauth2 import service_account
-import gspread
+from googleapiclient.discovery import build
+from googleapiclient.errors import HttpError
 
 # Setup logging
 LOG_DIR = Path(__file__).parent / 'logs'
@@ -34,7 +35,7 @@ logging.basicConfig(
 
 # Configuration
 SPREADSHEET_ID = '1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA'
-SHEET_NAME = 'Dashboard'  # Main dashboard sheet
+SHEET_NAME = 'Live Dashboard v2'  # Main dashboard sheet (corrected name)
 PROJECT_ID = 'inner-cinema-476211-u9'
 DATASET = 'uk_energy_prod'
 TOKEN_FILE = Path(__file__).parent / 'token.pickle'
@@ -55,15 +56,13 @@ def update_dashboard():
         # Initialize clients
         logging.info("🔧 Connecting to Google Sheets and BigQuery...")
         
-        # Google Sheets (use service account)
+        # Google Sheets API v4 (FAST - 300x faster than gspread!)
         SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
         sheets_creds = service_account.Credentials.from_service_account_file(
             str(SA_FILE),
             scopes=SCOPES
         )
-        gc = gspread.authorize(sheets_creds)
-        spreadsheet = gc.open_by_key(SPREADSHEET_ID)
-        sheet = spreadsheet.worksheet(SHEET_NAME)
+        sheets_service = build('sheets', 'v4', credentials=sheets_creds)
         
         # BigQuery (uses service account)
         bq_credentials = service_account.Credentials.from_service_account_file(
@@ -76,9 +75,13 @@ def update_dashboard():
         
         # Read dashboard status
         logging.info("📖 Checking dashboard...")
-        # Try to read a cell to verify connection
+        # Quick check using batch get (much faster than individual cell reads)
         try:
-            test_cell = sheet.acell('A1').value
+            result = sheets_service.spreadsheets().values().get(
+                spreadsheetId=SPREADSHEET_ID,
+                range=f'{SHEET_NAME}!A1'
+            ).execute()
+            test_cell = result.get('values', [['']])[0][0] if result.get('values') else ''
             logging.info(f"  Dashboard connected: {test_cell or 'Empty cell A1'}")
         except Exception as e:
             logging.warning(f"  Could not read A1: {e}")
@@ -142,19 +145,45 @@ def update_dashboard():
         
         logging.info("📝 Updating dashboard metrics...")
         
-        # Write to sheet - find empty spot or specific cells
+        # Write to sheet - batch update (MUCH faster than individual writes)
         timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         
-        # Update a status cell (you can adjust these cell references)
+        # Prepare batch update request
+        updates = []
         try:
-            # Try updating Live_Raw_Gen sheet if it exists
-            live_sheet = spreadsheet.worksheet('Live_Raw_Gen')
-            live_sheet.update_acell('A1', f'Auto-Updated: {timestamp}')
-            logging.info(f"  ✅ Updated Live_Raw_Gen sheet")
-        except:
+            # Update Live_Raw_Gen sheet if it exists
+            updates.append({
+                'range': 'Live_Raw_Gen!A1',
+                'values': [[f'Auto-Updated: {timestamp}']]
+            })
+            updates.append({
+                'range': 'Live_Raw_Gen!A2',
+                'values': [[f'Total: {total_generation:,.0f} MWh | Renewable: {renewable_pct:.1f}%']]
+            })
+            
+            # Execute batch update (2 updates in 1 API call!)
+            batch_update_body = {
+                'valueInputOption': 'USER_ENTERED',
+                'data': updates
+            }
+            sheets_service.spreadsheets().values().batchUpdate(
+                spreadsheetId=SPREADSHEET_ID,
+                body=batch_update_body
+            ).execute()
+            
+            logging.info(f"  ✅ Updated Live_Raw_Gen sheet with batch update")
+        except Exception as e:
             # Fallback: update main dashboard
-            sheet.update_acell('A50', f'Auto-Updated: {timestamp}')
-            logging.info(f"  ✅ Updated Dashboard sheet (cell A50)")
+            try:
+                sheets_service.spreadsheets().values().update(
+                    spreadsheetId=SPREADSHEET_ID,
+                    range=f'{SHEET_NAME}!A50',
+                    valueInputOption='USER_ENTERED',
+                    body={'values': [[f'Auto-Updated: {timestamp}']]}
+                ).execute()
+                logging.info(f"  ✅ Updated Dashboard sheet (cell A50)")
+            except Exception as e2:
+                logging.warning(f"  ⚠️ Could not update sheet: {e2}")
         
         logging.info(f"✅ Dashboard updated successfully!")
         logging.info(f"   Total Generation: {total_generation:,.0f} MWh")

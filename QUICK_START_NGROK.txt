@@ -1,0 +1,150 @@
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                  🌐 SEARCH INTERFACE - QUICK START GUIDE                     ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+📋 ONE-TIME SETUP (5 minutes)
+═══════════════════════════════════════════════════════════════════════════════
+
+1️⃣  Get ngrok Account (FREE)
+    → Visit: https://dashboard.ngrok.com/signup
+    → Sign up with email/Google/GitHub
+    → Verify email
+
+2️⃣  Get Authtoken
+    → Visit: https://dashboard.ngrok.com/get-started/your-authtoken
+    → Copy token (looks like: 2abc123def456ghi789jkl)
+
+3️⃣  Configure ngrok
+    → Run: ngrok config add-authtoken YOUR_TOKEN_HERE
+    → Verify: cat ~/.config/ngrok/ngrok.yml
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🚀 DAILY STARTUP (30 seconds)
+═══════════════════════════════════════════════════════════════════════════════
+
+1️⃣  Start All Services
+    cd ~/GB-Power-Market-JJ
+    ./start_all_services.sh
+
+    Expected Output:
+    ✅ API server healthy
+    ✅ ngrok authenticated  
+    ✅ ngrok tunnel active
+    🌐 Public URL: https://abc123.ngrok-free.app
+    ✅ Apps Script updated
+
+2️⃣  Install Apps Script (if first time OR URL changed)
+    → Open: https://docs.google.com/spreadsheets/d/1-u794iGngn5_Ql_XocKSwvHSKWABWO0bVsudkUJAFqA
+    → Extensions > Apps Script
+    → Replace Code.gs with search_interface.gs
+    → Save (Ctrl+S) and refresh spreadsheet
+
+3️⃣  Test Automatic Execution
+    → Go to "Search" tab in Google Sheets
+    → Fill in search criteria (e.g., Organization: "Flexitricity Limited")
+    → Click Search button
+    → Results should populate automatically! ✨
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🔧 TROUBLESHOOTING
+═══════════════════════════════════════════════════════════════════════════════
+
+❌ "Authentication failed"
+   → Run: ngrok config add-authtoken YOUR_TOKEN
+
+❌ "Failed to get ngrok public URL"
+   → Check: tail -20 logs/ngrok.log
+   → Verify token: cat ~/.config/ngrok/ngrok.yml
+
+❌ Command dialog still showing
+   → Check ngrok running: ps aux | grep ngrok
+   → Check Apps Script endpoint: grep API_ENDPOINT search_interface.gs
+   → Should show: https://...ngrok-free.app/search
+
+❌ API server not responding
+   → Restart: pkill -f search_api_server && ./start_search_api.sh
+   → Check: curl http://localhost:5002/health
+
+═══════════════════════════════════════════════════════════════════════════════
+
+📊 SERVICE MONITORING
+═══════════════════════════════════════════════════════════════════════════════
+
+Check Status:
+  ps aux | grep search_api_server | grep -v grep
+  ps aux | grep ngrok | grep -v grep
+  curl http://localhost:5002/health
+
+View Logs:
+  tail -f logs/search_api.log
+  tail -f logs/ngrok.log
+
+ngrok Web UI:
+  http://localhost:4040
+
+Stop All:
+  pkill ngrok && pkill -f search_api_server
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🎯 EXPECTED BEHAVIOR
+═══════════════════════════════════════════════════════════════════════════════
+
+✅ AUTOMATIC (ngrok running):
+   1. Click Search button
+   2. Brief "Executing search..." alert
+   3. Results populate automatically in rows 25+
+   4. Timestamp updates in E22
+   5. Result count shows in J22
+
+❌ MANUAL FALLBACK (ngrok stopped):
+   1. Click Search button
+   2. Command dialog appears
+   3. Copy command to terminal
+   4. Results populate after manual execution
+
+═══════════════════════════════════════════════════════════════════════════════
+
+📝 QUICK COMMANDS
+═══════════════════════════════════════════════════════════════════════════════
+
+# Start everything
+./start_all_services.sh
+
+# Just ngrok
+./start_ngrok_tunnel.sh
+
+# Get current ngrok URL
+curl -s http://localhost:4040/api/tunnels | python3 -c \
+"import sys, json; print(json.load(sys.stdin)['tunnels'][0]['public_url'])"
+
+# Update Apps Script with new URL
+python3 update_apps_script_endpoint.py https://YOUR_URL.ngrok-free.app
+
+# Stop everything
+pkill ngrok && pkill -f search_api_server
+
+═══════════════════════════════════════════════════════════════════════════════
+
+📚 DOCUMENTATION
+═══════════════════════════════════════════════════════════════════════════════
+
+Complete Guide: NGROK_SETUP_GUIDE.md
+Search Todos: SEARCH_SHEET_ENHANCEMENT_TODOS.md
+Integration: SEARCH_ANALYSIS_INTEGRATION_TODOS.md
+
+═══════════════════════════════════════════════════════════════════════════════
+
+💡 NOTES
+═══════════════════════════════════════════════════════════════════════════════
+
+• Free ngrok tunnels expire after 2 hours of inactivity
+• When tunnel restarts, URL changes → must update Apps Script
+• Paid ngrok plans ($8/mo) provide static URLs
+• For production, consider deploying API to cloud (AlmaLinux VPS, Railway, etc.)
+
+═══════════════════════════════════════════════════════════════════════════════
+Last Updated: December 31, 2025
+Status: ✅ Ready for authentication and deployment
