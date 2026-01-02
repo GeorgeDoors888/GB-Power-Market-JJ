@@ -4,9 +4,20 @@ Wind Turbine Icing Risk Analysis - CORRECTED VERSION
 
 FIXED BUGS (Jan 2, 2026):
 - Bug #1: dew_point_spread_c was calculated as dew_point (algebraic error)
+  Original: T - (T - ((100-RH)/5)) = (100-RH)/5 (dew point proxy, NOT spread)
+  Fixed: (T - dew_point_c) = actual spread
+
 - Bug #2: Thresholds compared dew point instead of dew point spread
+  Original: (T - ((100-RH)/5)) <= 2  (tests dew point value)
+  Fixed: (T - dew_point_c) <= 2      (tests spread)
+
 - Bug #3: Approximate formula T-(100-RH)/5 replaced with Magnus formula
+  Magnus (Alduchov & Eskridge 1996) is accurate near 0°C
+  Critical for icing detection where small errors matter
+
 - Bug #4: LAG(3) changed to time-based INTERVAL 3 HOUR for pressure changes
+  LAG(3) = "3 rows back" (breaks with data gaps)
+  Fixed: LEFT JOIN with TIMESTAMP_SUB(..., INTERVAL 3 HOUR)
 
 Implements icing risk detection using Magnus dew point spread method:
 - Temperature: -10°C to +2°C (cold but not extreme)
@@ -21,8 +32,9 @@ Physical mechanisms:
 4. Centrifugal shedding (competing effect at high RPM)
 
 Magnus formula (Alduchov & Eskridge 1996):
+  gamma = ln(RH/100) + (17.625*T)/(243.04+T)
   Td = (243.04 * gamma) / (17.625 - gamma)
-  where gamma = ln(RH/100) + (17.625*T)/(243.04+T)
+  Spread = T - Td
 """
 
 import pandas as pd
@@ -40,7 +52,7 @@ def create_icing_risk_view():
     print("=" * 80)
     print()
     
-    client = bigquery.Client(project=PROJECT_ID)
+    client = bigquery.Client(project=PROJECT_ID, location="US")
     
     query = """
     CREATE OR REPLACE VIEW `inner-cinema-476211-u9.uk_energy_prod.wind_icing_risk` AS
