@@ -304,8 +304,90 @@ def analyze_icing_mechanism_flags():
     print(f"   Impact: High turbulence → uneven ice accretion → imbalance")
     print()
 
+def detect_icing_episodes():
+    """Detect consecutive HIGH icing risk hours (episodes that operators care about)."""
+    
+    print("=" * 80)
+    print("🧊 DETECTING ICING EPISODES (CONSECUTIVE HIGH RISK HOURS)")
+    print("=" * 80)
+    print()
+    
+    client = bigquery.Client(project=PROJECT_ID)
+    
+    query = """
+    WITH high_risk_events AS (
+      SELECT 
+        farm_name,
+        timestamp,
+        temperature_2m_c,
+        dew_point_spread_c,
+        wind_speed_100m_ms,
+        gust_factor
+      FROM `inner-cinema-476211-u9.uk_energy_prod.wind_icing_risk`
+      WHERE icing_risk_level = 'HIGH'
+      ORDER BY farm_name, timestamp
+    ),
+    with_gap_flag AS (
+      SELECT
+        *,
+        -- Flag new episode when gap > 2 hours from previous event
+        CASE 
+          WHEN TIMESTAMP_DIFF(
+            timestamp, 
+            LAG(timestamp) OVER (PARTITION BY farm_name ORDER BY timestamp),
+            HOUR
+          ) > 2 OR LAG(timestamp) OVER (PARTITION BY farm_name ORDER BY timestamp) IS NULL
+          THEN 1 
+          ELSE 0 
+        END AS new_episode_flag
+      FROM high_risk_events
+    ),
+    with_episode_id AS (
+      SELECT
+        *,
+        -- Cumulative sum of new_episode_flag gives episode ID
+        SUM(new_episode_flag) OVER (PARTITION BY farm_name ORDER BY timestamp) AS episode_id
+      FROM with_gap_flag
+    ),
+    episode_summary AS (
+      SELECT
+        farm_name,
+        episode_id,
+        MIN(timestamp) as episode_start,
+        MAX(timestamp) as episode_end,
+        COUNT(*) as duration_hours,
+        AVG(temperature_2m_c) as avg_temp,
+        AVG(dew_point_spread_c) as avg_spread,
+        AVG(wind_speed_100m_ms) as avg_wind,
+        AVG(gust_factor) as avg_gust_factor
+      FROM with_episode_id
+      GROUP BY farm_name, episode_id
+      HAVING COUNT(*) >= 3  -- Only episodes ≥3 consecutive hours
+    )
+    SELECT * FROM episode_summary
+    ORDER BY duration_hours DESC, farm_name, episode_start
+    LIMIT 20
+    """
+    
+    df = client.query(query).to_dataframe()
+    
+    if len(df) > 0:
+        print(f"Found {len(df)} icing episodes (≥3 consecutive hours)\n")
+        print("Top 20 longest episodes:\n")
+        
+        for idx, row in df.iterrows():
+            print(f"Episode {idx+1}: {row['farm_name']}")
+            print(f"  Duration: {int(row['duration_hours'])} consecutive hours")
+            print(f"  Period: {row['episode_start']} to {row['episode_end']}")
+            print(f"  Conditions: {row['avg_temp']:.1f}°C, spread {row['avg_spread']:.2f}°C, "
+                  f"wind {row['avg_wind']:.1f} m/s, gust {row['avg_gust_factor']:.2f}x")
+            print()
+    else:
+        print("No icing episodes ≥3 hours detected")
+    print()
+
 def correlate_with_generation():
-    """Correlate icing risk with generation data (if available)."""
+    """Correlate icing risk with generation data using wind_farm_to_bmu mapping."""
     
     print("=" * 80)
     print("⚙️  CORRELATING ICING RISK WITH WIND GENERATION")
@@ -314,50 +396,96 @@ def correlate_with_generation():
     
     client = bigquery.Client(project=PROJECT_ID)
     
-    # Check if we have generation data overlapping with icing risk
+    # Check HIGH icing periods with generation data
     query = """
-    WITH icing_periods AS (
+    WITH icing_hours AS (
       SELECT 
         farm_name,
-        DATE(timestamp) as icing_date,
-        COUNT(*) as icing_hours
+        timestamp,
+        temperature_2m_c,
+        dew_point_spread_c,
+        wind_speed_100m_ms,
+        icing_risk_level
       FROM `inner-cinema-476211-u9.uk_energy_prod.wind_icing_risk`
       WHERE icing_risk_level = 'HIGH'
-      GROUP BY farm_name, icing_date
+        AND timestamp >= '2024-01-01'  -- Limit to recent data
     ),
-    
-    generation_data AS (
-      SELECT 
-        bmUnit,
-        CAST(settlementDate AS DATE) as gen_date,
-        AVG(levelTo) as avg_generation_mw,
-        MAX(levelTo) as max_generation_mw
-      FROM `inner-cinema-476211-u9.uk_energy_prod.bmrs_pn`
-      WHERE CAST(settlementDate AS DATE) >= '2022-01-01'
-      GROUP BY bmUnit, gen_date
+    mapped_farms AS (
+      SELECT
+        i.farm_name,
+        i.timestamp,
+        i.temperature_2m_c,
+        i.dew_point_spread_c,
+        i.wind_speed_100m_ms,
+        m.bm_unit_id,
+        m.capacity_mw
+      FROM icing_hours i
+      JOIN `inner-cinema-476211-u9.uk_energy_prod.wind_farm_to_bmu` m
+        ON i.farm_name = m.farm_name
+    ),
+    with_generation AS (
+      SELECT
+        f.farm_name,
+        f.bm_unit_id,
+        f.capacity_mw,
+        COUNT(DISTINCT DATE(f.timestamp)) as icing_days,
+        COUNT(*) as icing_hours,
+        AVG(f.temperature_2m_c) as avg_temp_icing,
+        AVG(f.wind_speed_100m_ms) as avg_wind_icing,
+        AVG(p.levelTo) as avg_generation_during_icing_mw,
+        AVG(p.levelTo / NULLIF(f.capacity_mw, 0) * 100) as capacity_factor_during_icing_pct
+      FROM mapped_farms f
+      LEFT JOIN `inner-cinema-476211-u9.uk_energy_prod.bmrs_pn` p
+        ON f.bm_unit_id = p.bmUnit
+        AND TIMESTAMP_TRUNC(f.timestamp, HOUR) = TIMESTAMP_TRUNC(CAST(p.settlementDate AS TIMESTAMP), HOUR)
+      GROUP BY f.farm_name, f.bm_unit_id, f.capacity_mw
     )
-    
-    SELECT 
-        'Analysis not yet possible' as note,
-        'Need wind farm to BMU mapping' as action,
-        'Use wind_farm_to_bmu table' as solution
+    SELECT * FROM with_generation
+    WHERE icing_hours >= 3  -- Only farms with 3+ HIGH icing hours
+    ORDER BY icing_hours DESC
     """
     
     df = client.query(query).to_dataframe()
     
-    print("⚠️  Generation correlation requires wind farm to BM unit mapping")
-    print()
+    if len(df) > 0:
+        print(f"✅ Found {len(df)} farms with HIGH icing risk & generation data\n")
+        
+        for idx, row in df.iterrows():
+            print(f"{row['farm_name']} ({row['bm_unit_id']})")
+            print(f"  Capacity: {row['capacity_mw']:.0f} MW")
+            print(f"  HIGH icing: {int(row['icing_hours'])} hours across {int(row['icing_days'])} days")
+            print(f"  Conditions: {row['avg_temp_icing']:.1f}°C, wind {row['avg_wind_icing']:.1f} m/s")
+            
+            if pd.notna(row['avg_generation_during_icing_mw']):
+                print(f"  Generation during icing: {row['avg_generation_during_icing_mw']:.1f} MW "
+                      f"({row['capacity_factor_during_icing_pct']:.1f}% capacity factor)")
+            else:
+                print(f"  ⚠️  No generation data available for this period")
+            print()
+        
+        print("=" * 80)
+        print("💡 INTERPRETATION:")
+        print("=" * 80)
+        print("Compare capacity factor during icing vs normal conditions:")
+        print("  • Normal offshore wind CF: 40-50% typical")
+        print("  • Icing impact: 5-20% CF reduction expected")
+        print("  • Severe icing: >20% CF drop or complete shutdown")
+        print()
+        
+    else:
+        print("⚠️  No farms with both HIGH icing risk and generation data")
+        print()
+        print("Possible reasons:")
+        print("  1. HIGH icing events too rare (only 619 hours total)")
+        print("  2. No BM units mapped for affected farms")
+        print("  3. Generation data not available for icing period")
+        print()
+    
     print("Next steps:")
-    print("  1. Join wind_icing_risk with wind_farm_to_bmu (farm → BMU IDs)")
-    print("  2. Join with bmrs_pn (BMU → actual generation)")
-    print("  3. Compare generation during HIGH icing risk vs normal conditions")
-    print("  4. Calculate icing-related yield losses")
-    print()
-    print("Expected findings:")
-    print("  - Power curve deviations during HIGH icing risk")
-    print("  - Capacity factor drops (5-20% typical)")
-    print("  - False anemometer readings")
-    print("  - Turbine shutdowns (safety systems)")
+    print("  1. Expand to MEDIUM icing risk (147k hours) for better statistics")
+    print("  2. Compare generation during icing vs similar wind/temp without icing")
+    print("  3. Build power curve deviation model (actual vs expected)")
+    print("  4. Calculate revenue impact (£/MWh × lost generation)")
     print()
 
 def export_sample_high_risk_events():
@@ -428,10 +556,13 @@ def main():
         # Step 3: Analyze mechanisms
         analyze_icing_mechanism_flags()
         
-        # Step 4: Correlate with generation (preliminary)
+        # Step 4: Detect icing episodes (consecutive hours)
+        detect_icing_episodes()
+        
+        # Step 5: Correlate with generation (using wind_farm_to_bmu mapping)
         correlate_with_generation()
         
-        # Step 5: Export sample events
+        # Step 6: Export sample events
         export_sample_high_risk_events()
         
         print("=" * 80)
@@ -440,9 +571,10 @@ def main():
         print()
         print("Next steps:")
         print("  1. Review exported CSV for high-risk event validation")
-        print("  2. Correlate with actual generation drops (requires BMU mapping)")
-        print("  3. Add icing risk section to WIND_YIELD_DROPS_UPSTREAM_ANALYSIS.md")
-        print("  4. Consider adding icing alerts to dashboard (rows 65-70)")
+        print("  2. Analyze capacity factor drops during icing episodes")
+        print("  3. Build power curve deviation model (actual vs expected)")
+        print("  4. Calculate revenue impact from icing-related losses")
+        print("  5. Add icing alerts to dashboard (rows 65-70)")
         print()
         
     except Exception as e:
