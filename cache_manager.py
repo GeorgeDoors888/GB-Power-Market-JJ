@@ -320,13 +320,74 @@ class CacheManager:
                     self._flush_queue(sheet_id, worksheet_name)
 
     def flush_all(self):
-        """Manually flush all queued operations"""
+        """Manually flush all queued operations - OPTIMIZED: ONE API CALL FOR ALL WORKSHEETS"""
         with self.lock:
-            queue_keys = list(self.batch_queue.keys())
+            # Group all operations by spreadsheet ID
+            operations_by_sheet = {}
+            for (sheet_id, worksheet_name), ops in self.batch_queue.items():
+                if not ops:
+                    continue
+                if sheet_id not in operations_by_sheet:
+                    operations_by_sheet[sheet_id] = []
+                operations_by_sheet[sheet_id].extend([
+                    {
+                        'worksheet': worksheet_name,
+                        'range': op['range'],
+                        'values': op['values']
+                    } for op in ops
+                ])
+            
+            # Clear all queues
+            for queue_key in self.batch_queue.keys():
+                self.batch_queue[queue_key].clear()
+                self.last_flush[queue_key] = time.time()
+        
+        # Flush each spreadsheet in ONE call
+        for sheet_id, operations in operations_by_sheet.items():
+            self._flush_all_worksheets(sheet_id, operations)
 
-        for queue_key in queue_keys:
-            sheet_id, worksheet_name = queue_key
-            self._flush_queue(sheet_id, worksheet_name)
+    def _flush_all_worksheets(self, sheet_id, operations):
+        """Flush ALL worksheets for a spreadsheet in ONE API call - MAXIMUM PERFORMANCE"""
+        if not operations:
+            return
+
+        try:
+            # Get access token
+            creds = ServiceAccountCredentials.from_json_keyfile_name(
+                self.credentials_files[self.current_account_idx],
+                ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
+            )
+            access_token = creds.get_access_token().access_token
+
+            # Build batch update request for ALL worksheets
+            data_list = []
+            for op in operations:
+                worksheet_name = op['worksheet']
+                full_range = f"{worksheet_name}!{op['range']}" if '!' not in op['range'] else op['range']
+                data_list.append({
+                    'range': full_range,
+                    'values': op['values']
+                })
+
+            # ONE API call for entire spreadsheet (all worksheets)
+            url = f'https://sheets.googleapis.com/v4/spreadsheets/{sheet_id}/values:batchUpdate'
+            headers = {'Authorization': f'Bearer {access_token}'}
+            body = {
+                'valueInputOption': 'USER_ENTERED',  # Parse formulas
+                'data': data_list
+            }
+
+            self._increment_request_count()
+            response = requests.post(url, headers=headers, json=body)
+            response.raise_for_status()
+
+            # Count worksheets
+            worksheets = set(op['worksheet'] for op in operations)
+            print(f"✅ Flushed {len(data_list)} updates across {len(worksheets)} worksheets in ONE API call")
+
+        except Exception as e:
+            print(f"❌ Batch update failed: {e}")
+            # Don't raise - log and continue
 
     def cache_data(self, key, data, ttl=None):
         """Cache data with Redis or in-memory fallback (Layer 4)"""

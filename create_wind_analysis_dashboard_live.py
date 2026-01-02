@@ -438,13 +438,19 @@ def create_dashboard_layout(sheets_service, live_wind_data, forecast_errors, ale
             'values': [['📉 Forecast Bias (7d avg)', f"{bias_mw:+.0f} MW", bias_status, '']]
         })
 
-        # Row 64 (right): Ramp Misses
+        # Row 29 (right): Ramp Misses - write to D29
         ramp_count = kpis.get('num_large_ramp_misses', 0)
         ramp_status = '🔴 High' if ramp_count > 10 else ('🟡 Med' if ramp_count > 5 else '🟢 Low')
 
         batch_data.append({
-            'range': f'{SHEET_NAME}!E29:H64',
-            'values': [['⚠️ Large Ramp Misses (30d)', f"{ramp_count} events", ramp_status, '>500MW/30min']]
+            'range': f'{SHEET_NAME}!D29',
+            'values': [[f'⚠️ Large Ramp Misses (30d) • {ramp_count} events • {ramp_status} • >500MW/30min']]
+        })
+
+        # Clear old E29:H29 range (stale data from previous format)
+        batch_data.append({
+            'range': f'{SHEET_NAME}!E29:H29',
+            'values': [['', '', '', '']]
         })
 
 

@@ -1898,36 +1898,11 @@ def main():
             clear_old_sparklines = [['', '', '', '', '', '', ''] for _ in range(9)]  # M23:S31
             cache.queue_update(SPREADSHEET_ID, 'Live Dashboard v2', 'M23:S31', clear_old_sparklines)
 
-        # --- WEEKLY KPI Section (K33:L43) - 7-DAY VIEW ---
-        if not weekly_df.empty and not weekly_ts_df.empty:
-            row = weekly_df.iloc[0]
-            price_range = row["period_high"] - row["period_low"]
-
-            # Generate sparklines from timeseries data
-            prices_7d = weekly_ts_df['avg_price'].tolist()
-            spark_7d_avg = generate_gs_sparkline_formula(prices_7d, {"charttype": "column", "color": "#4682B4"})
-            spark_7d_high = generate_gs_sparkline_formula(prices_7d, {"charttype": "column", "color": "#FF6347"})
-            spark_7d_low = generate_gs_sparkline_formula(prices_7d, {"charttype": "column", "color": "#32CD32"})
-            spark_7d_range = generate_gs_sparkline_formula(prices_7d, {"charttype": "column", "color": "#999999"})
-            spark_7d_vol = generate_gs_sparkline_formula(prices_7d, {"charttype": "column", "color": "#FFA500"})
-
-            cache.queue_update(SPREADSHEET_ID, 'Live Dashboard v2', 'K33', [['⚡ MARKET DYNAMICS - 7 DAY VIEW']])
-            weekly_kpis = [
-                [f'7-Day Average Price • £{row["period_avg"]:.2f}/MWh • Daily avg', spark_7d_avg],
-                [f'7-Day High • £{row["period_high"]:.2f}/MWh • Peak daily', spark_7d_high],
-                [f'7-Day Low • £{row["period_low"]:.2f}/MWh • Min daily', spark_7d_low],
-                [f'Price Range • £{price_range:.2f}/MWh • High - Low', spark_7d_range],
-                [f'Volatility (StdDev) • £{row["volatility"]:.2f}/MWh • Price variance', spark_7d_vol],
-                [f'Avg Daily Cashflow • £{row["avg_daily_cashflow"]/1000:.1f}k • BM settlement', ''],
-                [f'Avg Active Units • {row["avg_active_units"]:.1f} units • Daily avg', ''],
-                ['', ''],
-                ['', ''],
-                ['', '']
-            ]
-            cache.queue_update(SPREADSHEET_ID, 'Live Dashboard v2', 'K34:L43', weekly_kpis)
-            logging.info(f"✅ Weekly KPIs (K33:L43): £{row['period_avg']:.2f}/MWh avg, {len(prices_7d)} daily sparklines")
-        else:
-            logging.warning("⚠️  Weekly KPI Section: No data - skipping")
+        # --- WEEKLY KPI Section - DISABLED (conflicts with H25 outages section) ---
+        # This section has been removed to prevent data conflicts.
+        # The 7-day market dynamics data was being written to K33:L43, which conflicts
+        # with the active outages section at H25 and surrounding areas.
+        logging.info("✅ Weekly KPIs section: Disabled (removed to fix H25 outages conflict)")
 
         # --- MONTHLY KPI Section (K45:L55) - 30-DAY VIEW ---
         # DISABLED: User requested removal of this section
